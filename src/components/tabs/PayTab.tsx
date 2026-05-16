@@ -70,7 +70,7 @@ export default function PayTab({ userState }: Props) {
       {/* Email header banner */}
       <section>
         <img
-          src="/ChinaTravel-AI-Buddy/email_header.jpg"
+          src="/email_header.jpg"
           alt={t('pay.bannerAlt')}
           style={{
             width: '100%',

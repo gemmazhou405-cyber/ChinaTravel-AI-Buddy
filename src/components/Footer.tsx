@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-start justify-between gap-6 mb-8 pb-8 border-b border-white/10">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <img src="/ChinaTravel-AI-Buddy/logo.png" width="32" height="32" alt="ChinaEase Buddy" style={{ borderRadius: '6px' }} />
+              <img src="/logo.png" width="32" height="32" alt="ChinaEase Buddy" style={{ borderRadius: '6px' }} />
               <span className="text-white font-semibold text-base tracking-tight">ChinaEase Buddy</span>
             </div>
             <p className="text-white/40 text-xs leading-relaxed max-w-xs">
