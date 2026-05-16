@@ -1,0 +1,376 @@
+{
+  "translation": {
+    "nav": {
+      "howItWorks": "使い方",
+      "startFree": "無料で始める",
+      "login": "ログイン",
+      "logout": "ログアウト",
+      "currentPlan": "{{plan}}プラン"
+    },
+    "hero": {
+      "badge": "AI搭載 · オフライン対応",
+      "line1": "中国語不要。",
+      "line2": "VPN不要。",
+      "line3": "問題なし。",
+      "subtitle": "中国国内で使えるAI旅行サポート。メニュー解読、カード決済、会話サポートをVPNなしで利用できます。",
+      "cta": "無料で始める — ダウンロード不要",
+      "trust": "中国国内で利用可 · VPN不要 · 無料で開始"
+    },
+    "tabs": {
+      "before": "出発前",
+      "stay": "宿泊",
+      "food": "食事",
+      "transport": "交通",
+      "emergency": "緊急",
+      "pay": "支払い"
+    },
+    "before": {
+      "title": "旅行前チェックリスト",
+      "done": "完了",
+      "items": {
+        "visa": "中国観光ビザを申請",
+        "visaSub": "多くの国籍で必要 · 2〜4週間を見込む",
+        "vpn": "到着前にVPNを準備",
+        "vpnSub": "Google、WhatsApp、多くのアプリは中国でブロックされます",
+        "wechat": "外国カードをWeChat Payに連携",
+        "wechatSub": "主要なVisa/Mastercardに対応",
+        "maps": "オフライン地図をダウンロード",
+        "mapsSub": "Amap（高德）またはBaidu Mapsはデータなしでも利用可",
+        "embassy": "大使館連絡先を保存",
+        "embassySub": "パスポート紛失や緊急時のため"
+      },
+      "tipsTitle": "重要なヒント",
+      "tips": {
+        "sim": {
+          "title": "SIMカード",
+          "tag": "通信",
+          "body": "主要空港でChina Unicom旅行者向けSIMを購入できます。初日からデータと通話が利用可能です。"
+        },
+        "apps": {
+          "title": "入れておくアプリ",
+          "tag": "必須",
+          "body": "WeChat、Didi、Alipay、Meituan、Baidu Translateを搭乗前にインストールしましょう。"
+        },
+        "cash": {
+          "title": "現金かカード？",
+          "tag": "お金",
+          "body": "小さな店用に¥500〜1000の現金を持ちましょう。多くのモールはVisaタッチ決済に対応しています。"
+        }
+      }
+    },
+    "stay": {
+      "phrasesTitle": "ホテル用フレーズ",
+      "phrasesSub": "カードをタップして中国語をコピーできます。",
+      "tipsTitle": "知っておくと便利",
+      "phrases": {
+        "reservation": "予約があります",
+        "earlyCheckin": "早めにチェックインできますか？",
+        "lateCheckout": "レイトチェックアウトをお願いします",
+        "wifi": "WiFiパスワードをお願いします",
+        "towels": "タオルを追加してください",
+        "roomService": "ルームサービス"
+      },
+      "tips": {
+        "registration": {
+          "title": "登録が必要",
+          "body": "ホテルは外国人宿泊者を地元警察に登録する必要があります。チェックイン時は必ずパスポートを持参してください。"
+        },
+        "wifi": {
+          "title": "ホテルWiFiとVPN",
+          "body": "ホテルWiFiを使う前にVPNへ接続しましょう。中国のインターネットは多くの西側アプリやサイトをブロックします。"
+        },
+        "address": {
+          "title": "ホテル住所を保存",
+          "body": "ホテル住所の中国語表記をスクリーンショットで保存し、タクシー運転手に見せましょう。"
+        }
+      },
+      "addressCard": "住所カード生成",
+      "addressSub": "タクシー用にホテル住所を中国語で表示",
+      "generate": "生成"
+    },
+    "food": {
+      "decoderTitle": "メニュー解読",
+      "decoderSub": "中国語メニューを撮影またはアップロードすると、説明付きで即時翻訳します。",
+      "dropZone": "メニュー写真をここにドロップ",
+      "dropZoneSub": "またはタップして選択 · JPG, PNG, HEIC",
+      "analyzing": "メニューを解析中...",
+      "clear": "クリア",
+      "allergyTitle": "アレルギー警告",
+      "customize": "カスタマイズ",
+      "phrasesTitle": "レストラン用フレーズ",
+      "showPhrase": "フレーズを表示",
+      "hide": "隠す",
+      "copy": "クリップボードにコピー",
+      "ai": "IA",
+      "phrases": {
+        "vegetarian": "私はベジタリアンです",
+        "spicy": "辛すぎないようにお願いします",
+        "msg": "MSGなしでお願いします",
+        "menu": "メニューを見せてもらえますか？",
+        "bill": "お会計をお願いします",
+        "spicyQ": "この料理は辛いですか？"
+      },
+      "menuItems": [
+        {
+          "cn": "宫保鸡丁",
+          "en": "宮保鶏丁",
+          "desc": "ピーナッツ入りの辛い炒め物",
+          "alert": "🥜"
+        },
+        {
+          "cn": "麻婆豆腐",
+          "en": "麻婆豆腐",
+          "desc": "柔らかい豆腐の辛いソース煮",
+          "alert": "🌶️"
+        },
+        {
+          "cn": "清蒸鱼",
+          "en": "蒸し魚",
+          "desc": "生姜とネギを添えた丸ごとの蒸し魚",
+          "alert": ""
+        }
+      ],
+      "allergyCards": [
+        {
+          "chinese": "花生过敏",
+          "pinyin": "Huāshēng guòmǐn",
+          "chinesePhrase": "我对花生过敏，请不要在我的食物中使用花生或花生油。",
+          "color": "bg-amber-50 border-amber-200",
+          "iconColor": "text-amber-500",
+          "badge": "bg-amber-100 text-amber-700",
+          "name": "ピーナッツアレルギー",
+          "phrase": "ピーナッツアレルギーがあります。料理にピーナッツやピーナッツ油を使わないでください。"
+        },
+        {
+          "chinese": "贝类过敏",
+          "pinyin": "Bèilèi guòmǐn",
+          "chinesePhrase": "我对贝类过敏（虾、蟹、龙虾），请在我的菜肴中完全避免。",
+          "color": "bg-blue-50 border-blue-200",
+          "iconColor": "text-blue-500",
+          "badge": "bg-blue-100 text-blue-700",
+          "name": "甲殻類アレルギー",
+          "phrase": "エビ、カニ、ロブスターなどの甲殻類アレルギーがあります。料理に入れないでください。"
+        },
+        {
+          "chinese": "无麸质",
+          "pinyin": "Wú fūzhì",
+          "chinesePhrase": "我不能食用麸质，请避免在我的食物中使用小麦、大麦和黑麦。",
+          "color": "bg-green-50 border-green-200",
+          "iconColor": "text-green-500",
+          "badge": "bg-green-100 text-green-700",
+          "name": "グルテンフリー",
+          "phrase": "グルテンを食べられません。小麦、大麦、ライ麦を避けてください。"
+        }
+      ]
+    },
+    "transport": {
+      "appsTitle": "おすすめアプリ",
+      "metroTitle": "地下鉄フレーズ",
+      "taxiTitle": "タクシーフレーズ",
+      "trainTitle": "鉄道チケットヘルパー",
+      "trainSub": "高速鉄道（高铁）は主要都市を結びます。Trip.comでパスポート番号を使って予約できます。",
+      "from": "出発都市...",
+      "to": "到着都市...",
+      "search": "ルート検索",
+      "apps": [
+        {
+          "name": "Didi",
+          "label": "滴滴",
+          "desc": "中国版Uber。旅行前にダウンロードしましょう。",
+          "color": "bg-orange-50 text-orange-700 border-orange-200"
+        },
+        {
+          "name": "Amap",
+          "label": "高德地图",
+          "desc": "最適なナビアプリ。オフラインでも利用できます。",
+          "color": "bg-blue-50 text-blue-700 border-blue-200"
+        },
+        {
+          "name": "Trip.com",
+          "label": "携程",
+          "desc": "電車、航空券、バスを予約できます。",
+          "color": "bg-sky-50 text-sky-700 border-sky-200"
+        }
+      ],
+      "phrases": {
+        "whereSubway": "地下鉄はどこですか？",
+        "whichLine": "どの路線が...へ行きますか？",
+        "howManyStops": "何駅ですか？",
+        "transfer": "ここで乗り換えですか？",
+        "address": "この住所へ行ってください",
+        "leftRight": "左へ / 右へ曲がってください",
+        "stopHere": "ここで停めてください",
+        "meter": "メーターを使ってください"
+      }
+    },
+    "emergency": {
+      "bannerTitle": "緊急連絡先",
+      "bannerSub": "番号をタップして直接発信。中国では現地SIMがなくても利用できます。",
+      "callTitle": "タップして電話",
+      "lostPassport": "パスポート紛失",
+      "medical": "医療緊急",
+      "tapCopy": "中国語文をコピー",
+      "locationTitle": "現在地を共有",
+      "locationSub": "GPS座標を中国語で緊急サービスやホテルへ送れます。",
+      "locationBtn": "中国語で現在地をコピー",
+      "embassyPhrase": "Veuillez contacter mon ambassade. Je suis ressortissant étranger et j’ai besoin d’une assistance consulaire.",
+      "medicalPhrase": "Veuillez appeler une ambulance. J’ai besoin d’une aide médicale urgente.",
+      "numbers": {
+        "police": "Police",
+        "policeDesc": "Vol, agression, objets perdus, menaces à la sécurité",
+        "ambulance": "Ambulance",
+        "ambulanceDesc": "Urgences médicales, blessures, maladie",
+        "fire": "Pompiers",
+        "fireDesc": "Incendie, fuite de gaz, opérations de secours"
+      }
+    },
+    "pay": {
+      "plansTitle": "プラン",
+      "currentPlan": "現在のプラン：",
+      "aiUsed": "AI利用数：",
+      "refund": "3日間返金ポリシー · 使った分だけ支払い",
+      "paymentTitle": "中国の支払い方法",
+      "wechatSetup": "WeChat Pay設定",
+      "exchangeTip": "為替レートのヒント",
+      "exchangeBody": "最良の人民元レートには銀行ATM（ICBC、中国銀行）を利用しましょう。空港やホテルの両替は避けてください。",
+      "currency": "通貨換算",
+      "currencyLive": "USD · EUR · GBP · AUD → RMB en direct",
+      "open": "開く",
+      "secure": "Paiement sécurisé via PayPal",
+      "bannerAlt": "Votre aventure en Chine commence maintenant",
+      "paymentSoon": "支払い機能は準備中です。サポートにお問い合わせください。",
+      "plans": {
+        "free": {
+          "name": "無料",
+          "desc": "どんな旅行にも必要な基本ツール",
+          "cta": "無料で始める",
+          "features": [
+            "AI会話2回",
+            "基本のオフライン緊急カード",
+            "基本フレーズカード",
+            "出発前チェックリスト"
+          ]
+        },
+        "trip": {
+          "name": "Trip Pass",
+          "desc": "中国旅行をフルサポート",
+          "cta": "Trip Passを9.90ドルで購入",
+          "features": [
+            "AI会話50回",
+            "メニュー読み取り20回",
+            "完全オフライン緊急キット",
+            "支払い・交通ガイド",
+            "9都市パック"
+          ]
+        },
+        "group": {
+          "name": "Group Pass",
+          "desc": "家族・グループ旅行向け",
+          "cta": "Group Passを39.90ドルで購入",
+          "features": [
+            "AI会話200回",
+            "メニュー読み取り100回",
+            "旅行者プロフィール5人分",
+            "優先医療サポート",
+            "共有緊急カード"
+          ]
+        }
+      },
+      "methods": [
+        {
+          "name": "WeChat Pay",
+          "label": "微信支付",
+          "desc": "外国のVisa/Mastercardを連携。ほぼどこでも利用可能。",
+          "status": "おすすめ",
+          "statusColor": "bg-green-100 text-green-700",
+          "icon": "💬"
+        },
+        {
+          "name": "Alipay",
+          "label": "支付宝",
+          "desc": "国際版は外国カードに対応。オンライン購入に便利。",
+          "status": "おすすめ",
+          "statusColor": "bg-green-100 text-green-700",
+          "icon": "💙"
+        },
+        {
+          "name": "Visa / Mastercard",
+          "label": "信用卡",
+          "desc": "大手ホテル、モール、高級レストランで利用可。小規模店では限定的。",
+          "status": "限定的",
+          "statusColor": "bg-amber-100 text-amber-700",
+          "icon": "💳"
+        },
+        {
+          "name": "現金（RMB）",
+          "label": "人民币",
+          "desc": "予備として¥500を常に持ちましょう。ICBCや中国銀行で両替できます。",
+          "status": "常に便利",
+          "statusColor": "bg-blue-100 text-blue-700",
+          "icon": "💵"
+        }
+      ],
+      "setup": {
+        "step1": "WeChatをダウンロードして登録を完了",
+        "step2": "「Me」→「Services」→「WeChat Pay」をタップ",
+        "step3": "外国のVisaまたはMastercardを連携",
+        "step4": "旅行予算に合わせて1日限度額を設定",
+        "step5": "指紋認証またはFace IDを有効化"
+      }
+    },
+    "chat": {
+      "title": "Buddyに質問",
+      "subtitle": "AI旅行コンパニオン · 常時利用可能",
+      "placeholder": "中国旅行について何でも質問...",
+      "suggested": "おすすめ質問",
+      "suggestions": {
+        "s1": "Comment aller de l’aéroport de Shanghai au centre-ville ?",
+        "s2": "Que faire si je perds mon passeport ?",
+        "s3": "Comment commander sans parler chinois ?",
+        "s4": "Peut-on boire l’eau du robinet ?"
+      },
+      "welcome": "こんにちは！私はBuddy、中国旅行のAIコンパニオンです。交通、安全な食事、支払い、緊急時のことを何でも聞いてください。",
+      "quotaExceeded": "Vous avez utilisé les {{limit}} conversations IA de votre forfait {{plan}}. Passez au Trip Pass (9,90 $) pour 50 conversations, ou au Group Pass (39,90 $) pour 200.",
+      "notLoggedIn": "AIチャットを使うにはサインインしてください。",
+      "trouble": "問題が発生しました。もう一度お試しください。",
+      "connectionIssue": "接続に問題があります。インターネットを確認してください。",
+      "askBuddy": "Buddyに質問"
+    },
+    "auth": {
+      "title": "ChinaEase Buddy",
+      "subtitle": "アカウントはFirebaseで安全に保存されます",
+      "signup": "無料登録",
+      "login": "ログイン",
+      "email": "メールアドレス",
+      "password": "パスワード",
+      "createAccount": "無料アカウント作成",
+      "loginBtn": "ログイン",
+      "loading": "お待ちください...",
+      "error": "問題が発生しました",
+      "freeNote": "無料プランにはAI会話2回分が含まれます。クレジットカード不要。"
+    },
+    "footer": {
+      "tagline": "中国を訪れる外国人旅行者向けAI旅行コンパニオン。メニュー解読、交通案内、緊急対応をサポート。",
+      "product": "製品",
+      "support": "サポート",
+      "features": "機能",
+      "pricing": "料金",
+      "download": "ダウンロード",
+      "helpCenter": "ヘルプセンター",
+      "contact": "お問い合わせ",
+      "status": "ステータス",
+      "legalTitle": "法的免責事項",
+      "legalBody": "ChinaEase Buddyは一般的な旅行情報とAI翻訳を利便性のために提供するものであり、法律・医療・金融の専門的助言に代わるものではありません。緊急番号やフレーズは参考情報です。現地当局で必ず確認してください。翻訳、決済処理、第三者サービスの利用可能性を保証するものではありません。",
+      "refundTitle": "返金ポリシー",
+      "refundBody": "AI会話を使用していない場合、3日以内は全額返金。未使用のAI枠に応じて一部返金も可能です。サポートへご連絡ください。",
+      "rights": "© 2026 ChinaEase Buddy. 無断転載を禁じます。",
+      "privacy": "プライバシー",
+      "terms": "利用規約",
+      "cookies": "Cookieポリシー"
+    },
+    "toast": {
+      "copied": "コピーしました！",
+      "saved": "保存しました！"
+    }
+  }
+}

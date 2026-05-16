@@ -1,0 +1,376 @@
+{
+  "translation": {
+    "nav": {
+      "howItWorks": "So funktioniert es",
+      "startFree": "Kostenlos starten",
+      "login": "Einloggen",
+      "logout": "Ausloggen",
+      "currentPlan": "{{plan}}-Tarif"
+    },
+    "hero": {
+      "badge": "KI-gestützt · Offline nutzbar",
+      "line1": "Kein Chinesisch.",
+      "line2": "Kein VPN.",
+      "line3": "Kein Problem.",
+      "subtitle": "KI-Reisehilfe, die in China funktioniert. Menüs entschlüsseln, mit Karte bezahlen und mühelos kommunizieren — ganz ohne VPN.",
+      "cta": "Kostenlos starten — kein Download nötig",
+      "trust": "Funktioniert in China · Kein VPN nötig · Kostenlos starten"
+    },
+    "tabs": {
+      "before": "Vor der Reise",
+      "stay": "Aufenthalt",
+      "food": "Essen",
+      "transport": "Transport",
+      "emergency": "Notfall",
+      "pay": "Bezahlen"
+    },
+    "before": {
+      "title": "Checkliste vor der Reise",
+      "done": "erledigt",
+      "items": {
+        "visa": "Touristenvisum für China beantragen",
+        "visaSub": "Für die meisten Nationalitäten erforderlich · 2–4 Wochen einplanen",
+        "vpn": "VPN vor der Ankunft einrichten",
+        "vpnSub": "Google, WhatsApp und viele Apps sind in China blockiert",
+        "wechat": "Ausländische Karte mit WeChat Pay verknüpfen",
+        "wechatSub": "Große Visa-/Mastercard-Karten werden inzwischen akzeptiert",
+        "maps": "Offline-Karten herunterladen",
+        "mapsSub": "Amap (高德) oder Baidu Maps funktionieren ohne mobile Daten",
+        "embassy": "Botschaftskontakt speichern",
+        "embassySub": "Für Passverlust oder Notfälle"
+      },
+      "tipsTitle": "Wichtige Tipps",
+      "tips": {
+        "sim": {
+          "title": "SIM-Karte",
+          "tag": "Verbindung",
+          "body": "Kaufen Sie an großen Flughäfen eine China-Unicom-Touristen-SIM — inklusive Daten und Anrufen ab Tag 1."
+        },
+        "apps": {
+          "title": "Apps installieren",
+          "tag": "Unverzichtbar",
+          "body": "WeChat, Didi, Alipay, Meituan und Baidu Translate vor dem Abflug installieren."
+        },
+        "cash": {
+          "title": "Bargeld oder Karte?",
+          "tag": "Geld",
+          "body": "Nehmen Sie ¥500–1000 Bargeld für kleine Händler mit. Die meisten Einkaufszentren akzeptieren kontaktloses Visa."
+        }
+      }
+    },
+    "stay": {
+      "phrasesTitle": "Hotel-Sätze",
+      "phrasesSub": "Tippen Sie auf eine Karte, um den chinesischen Text zu kopieren.",
+      "tipsTitle": "Gut zu wissen",
+      "phrases": {
+        "reservation": "Ich habe eine Reservierung",
+        "earlyCheckin": "Kann ich früher einchecken?",
+        "lateCheckout": "Später Check-out bitte",
+        "wifi": "Das WLAN-Passwort bitte",
+        "towels": "Mehr Handtücher bitte",
+        "roomService": "Zimmerservice"
+      },
+      "tips": {
+        "registration": {
+          "title": "Registrierung erforderlich",
+          "body": "Hotels müssen ausländische Gäste bei der lokalen Polizei registrieren. Tragen Sie beim Check-in immer Ihren Reisepass bei sich."
+        },
+        "wifi": {
+          "title": "Hotel-WLAN und VPN",
+          "body": "Verbinden Sie Ihr VPN, bevor Sie Hotel-WLAN nutzen. Chinesisches Internet blockiert viele westliche Apps und Websites."
+        },
+        "address": {
+          "title": "Hoteladresse speichern",
+          "body": "Speichern Sie die Hoteladresse in chinesischen Schriftzeichen als Screenshot und zeigen Sie sie direkt Taxifahrern."
+        }
+      },
+      "addressCard": "Adresskarten-Generator",
+      "addressSub": "Hoteladresse auf Chinesisch für Taxifahrten anzeigen",
+      "generate": "Erstellen"
+    },
+    "food": {
+      "decoderTitle": "Menü-Decoder",
+      "decoderSub": "Laden Sie ein Foto eines chinesischen Menüs hoch oder fotografieren Sie es — sofortige Übersetzungen mit Erklärungen.",
+      "dropZone": "Menüfoto hier ablegen",
+      "dropZoneSub": "oder tippen zum Auswählen · JPG, PNG, HEIC",
+      "analyzing": "Menü wird analysiert...",
+      "clear": "Löschen",
+      "allergyTitle": "Allergiehinweise",
+      "customize": "Anpassen",
+      "phrasesTitle": "Restaurant-Sätze",
+      "showPhrase": "Satz anzeigen",
+      "hide": "Ausblenden",
+      "copy": "In Zwischenablage kopieren",
+      "ai": "IA",
+      "phrases": {
+        "vegetarian": "Ich bin Vegetarier(in)",
+        "spicy": "Bitte nicht zu scharf",
+        "msg": "Bitte ohne Glutamat",
+        "menu": "Kann ich die Speisekarte sehen?",
+        "bill": "Die Rechnung bitte",
+        "spicyQ": "Ist dieses Gericht scharf?"
+      },
+      "menuItems": [
+        {
+          "cn": "宫保鸡丁",
+          "en": "Kung-Pao-Hähnchen",
+          "desc": "Scharfes Pfannengericht mit Erdnüssen",
+          "alert": "🥜"
+        },
+        {
+          "cn": "麻婆豆腐",
+          "en": "Mapo-Tofu",
+          "desc": "Seidentofu in scharfer Sauce",
+          "alert": "🌶️"
+        },
+        {
+          "cn": "清蒸鱼",
+          "en": "Gedämpfter Fisch",
+          "desc": "Ganzer Fisch mit Ingwer und Frühlingszwiebeln",
+          "alert": ""
+        }
+      ],
+      "allergyCards": [
+        {
+          "chinese": "花生过敏",
+          "pinyin": "Huāshēng guòmǐn",
+          "chinesePhrase": "我对花生过敏，请不要在我的食物中使用花生或花生油。",
+          "color": "bg-amber-50 border-amber-200",
+          "iconColor": "text-amber-500",
+          "badge": "bg-amber-100 text-amber-700",
+          "name": "Erdnussallergie",
+          "phrase": "Ich bin allergisch gegen Erdnüsse. Bitte verwenden Sie keine Erdnüsse und kein Erdnussöl in meinem Essen."
+        },
+        {
+          "chinese": "贝类过敏",
+          "pinyin": "Bèilèi guòmǐn",
+          "chinesePhrase": "我对贝类过敏（虾、蟹、龙虾），请在我的菜肴中完全避免。",
+          "color": "bg-blue-50 border-blue-200",
+          "iconColor": "text-blue-500",
+          "badge": "bg-blue-100 text-blue-700",
+          "name": "Schalentierallergie",
+          "phrase": "Ich bin allergisch gegen Schalentiere. Bitte halten Sie Garnelen, Krabben und Hummer von meinem Gericht fern."
+        },
+        {
+          "chinese": "无麸质",
+          "pinyin": "Wú fūzhì",
+          "chinesePhrase": "我不能食用麸质，请避免在我的食物中使用小麦、大麦和黑麦。",
+          "color": "bg-green-50 border-green-200",
+          "iconColor": "text-green-500",
+          "badge": "bg-green-100 text-green-700",
+          "name": "Glutenfrei",
+          "phrase": "Ich kann kein Gluten essen. Bitte vermeiden Sie Weizen, Gerste und Roggen in meinem Essen."
+        }
+      ]
+    },
+    "transport": {
+      "appsTitle": "Empfohlene Apps",
+      "metroTitle": "U-Bahn-Sätze",
+      "taxiTitle": "Taxi-Sätze",
+      "trainTitle": "Zugticket-Hilfe",
+      "trainSub": "Hochgeschwindigkeitszüge (高铁) verbinden große Städte. Buchen Sie auf Trip.com mit Ihrer Passnummer.",
+      "from": "Ab Stadt...",
+      "to": "Nach Stadt...",
+      "search": "Routen suchen",
+      "apps": [
+        {
+          "name": "Didi",
+          "label": "滴滴",
+          "desc": "Chinas Uber. Vor der Reise herunterladen.",
+          "color": "bg-orange-50 text-orange-700 border-orange-200"
+        },
+        {
+          "name": "Amap",
+          "label": "高德地图",
+          "desc": "Beste Navigations-App — funktioniert offline.",
+          "color": "bg-blue-50 text-blue-700 border-blue-200"
+        },
+        {
+          "name": "Trip.com",
+          "label": "携程",
+          "desc": "Züge, Flüge und Busse buchen.",
+          "color": "bg-sky-50 text-sky-700 border-sky-200"
+        }
+      ],
+      "phrases": {
+        "whereSubway": "Wo ist die U-Bahn?",
+        "whichLine": "Welche Linie fährt nach...?",
+        "howManyStops": "Wie viele Stationen?",
+        "transfer": "Hier umsteigen?",
+        "address": "Bitte fahren Sie zu dieser Adresse",
+        "leftRight": "Links abbiegen / rechts abbiegen",
+        "stopHere": "Bitte hier anhalten",
+        "meter": "Bitte benutzen Sie das Taxameter"
+      }
+    },
+    "emergency": {
+      "bannerTitle": "Notfallkontakte",
+      "bannerSub": "Tippen Sie auf eine Nummer, um direkt anzurufen. Diese Nummern funktionieren von jedem Telefon in China, auch ohne lokale SIM.",
+      "callTitle": "Zum Anrufen tippen",
+      "lostPassport": "Pass verloren",
+      "medical": "Medizinischer Notfall",
+      "tapCopy": "Zum Kopieren des chinesischen Textes tippen",
+      "locationTitle": "Standort teilen",
+      "locationSub": "Senden Sie Ihre GPS-Koordinaten auf Chinesisch an Notdienste oder Ihr Hotel.",
+      "locationBtn": "Standort auf Chinesisch kopieren",
+      "embassyPhrase": "Veuillez contacter mon ambassade. Je suis ressortissant étranger et j’ai besoin d’une assistance consulaire.",
+      "medicalPhrase": "Veuillez appeler une ambulance. J’ai besoin d’une aide médicale urgente.",
+      "numbers": {
+        "police": "Police",
+        "policeDesc": "Vol, agression, objets perdus, menaces à la sécurité",
+        "ambulance": "Ambulance",
+        "ambulanceDesc": "Urgences médicales, blessures, maladie",
+        "fire": "Pompiers",
+        "fireDesc": "Incendie, fuite de gaz, opérations de secours"
+      }
+    },
+    "pay": {
+      "plansTitle": "Tarife",
+      "currentPlan": "Aktueller Tarif:",
+      "aiUsed": "KI genutzt:",
+      "refund": "3-Tage-Rückerstattung · Sie zahlen nur, was Sie nutzen",
+      "paymentTitle": "Zahlungsmethoden in China",
+      "wechatSetup": "WeChat Pay einrichten",
+      "exchangeTip": "Wechselkurs-Tipp",
+      "exchangeBody": "Nutzen Sie Bankautomaten (ICBC, Bank of China) für die besten RMB-Kurse. Vermeiden Sie Flughafenstände und Hotelschalter.",
+      "currency": "Währungsrechner",
+      "currencyLive": "USD · EUR · GBP · AUD → RMB en direct",
+      "open": "Öffnen",
+      "secure": "Paiement sécurisé via PayPal",
+      "bannerAlt": "Votre aventure en Chine commence maintenant",
+      "paymentSoon": "Zahlung bald verfügbar! Bitte kontaktieren Sie den Support.",
+      "plans": {
+        "free": {
+          "name": "Kostenlos",
+          "desc": "Wichtige Werkzeuge für jede Reise",
+          "cta": "Kostenlos starten",
+          "features": [
+            "2 KI-Gespräche",
+            "Wichtige Offline-Notfallkarten",
+            "Basis-Phrasekarten",
+            "Checkliste vor der Reise"
+          ]
+        },
+        "trip": {
+          "name": "Trip Pass",
+          "desc": "Volle Unterstützung für Ihre Chinareise",
+          "cta": "Trip Pass für 9,90 $ kaufen",
+          "features": [
+            "50 KI-Gespräche",
+            "20 Menü-Scans",
+            "Komplettes Offline-Notfallkit",
+            "Zahlungs- und Transportguides",
+            "9 Stadt-Survival-Pakete"
+          ]
+        },
+        "group": {
+          "name": "Group Pass",
+          "desc": "Für Familien und Gruppenreisen",
+          "cta": "Group Pass für 39,90 $ kaufen",
+          "features": [
+            "200 KI-Gespräche",
+            "100 Menü-Scans",
+            "5 Reisendenprofile",
+            "Priorisierte medizinische Hilfe",
+            "Gemeinsame Notfallkarten"
+          ]
+        }
+      },
+      "methods": [
+        {
+          "name": "WeChat Pay",
+          "label": "微信支付",
+          "desc": "Ausländische Visa/Mastercard verknüpfen. Fast überall akzeptiert.",
+          "status": "Empfohlen",
+          "statusColor": "bg-green-100 text-green-700",
+          "icon": "💬"
+        },
+        {
+          "name": "Alipay",
+          "label": "支付宝",
+          "desc": "Internationale Version unterstützt ausländische Karten. Sehr gut für Onlinekäufe.",
+          "status": "Empfohlen",
+          "statusColor": "bg-green-100 text-green-700",
+          "icon": "💙"
+        },
+        {
+          "name": "Visa / Mastercard",
+          "label": "信用卡",
+          "desc": "Funktioniert in großen Hotels, Einkaufszentren und gehobenen Restaurants. Bei kleinen Händlern selten akzeptiert.",
+          "status": "Begrenzt",
+          "statusColor": "bg-amber-100 text-amber-700",
+          "icon": "💳"
+        },
+        {
+          "name": "Bargeld (RMB)",
+          "label": "人民币",
+          "desc": "Immer ¥500 als Reserve mitnehmen. Fremdwährung bei ICBC oder Bank of China wechseln.",
+          "status": "Immer nützlich",
+          "statusColor": "bg-blue-100 text-blue-700",
+          "icon": "💵"
+        }
+      ],
+      "setup": {
+        "step1": "WeChat herunterladen und Registrierung abschließen",
+        "step2": "Auf „Me“ → „Services“ → „WeChat Pay“ tippen",
+        "step3": "Ausländische Visa oder Mastercard verknüpfen",
+        "step4": "Tageslimit passend zum Reisebudget festlegen",
+        "step5": "Fingerabdruck oder Face ID aktivieren"
+      }
+    },
+    "chat": {
+      "title": "Buddy fragen",
+      "subtitle": "KI-Reisebegleiter · Immer verfügbar",
+      "placeholder": "Fragen Sie alles zur Chinareise...",
+      "suggested": "Vorgeschlagene Fragen",
+      "suggestions": {
+        "s1": "Comment aller de l’aéroport de Shanghai au centre-ville ?",
+        "s2": "Que faire si je perds mon passeport ?",
+        "s3": "Comment commander sans parler chinois ?",
+        "s4": "Peut-on boire l’eau du robinet ?"
+      },
+      "welcome": "Hallo! Ich bin Buddy, Ihr KI-Reisebegleiter für China. Fragen Sie mich zu Verkehr, sicherem Essen, Zahlungen oder Notfällen.",
+      "quotaExceeded": "Vous avez utilisé les {{limit}} conversations IA de votre forfait {{plan}}. Passez au Trip Pass (9,90 $) pour 50 conversations, ou au Group Pass (39,90 $) pour 200.",
+      "notLoggedIn": "Bitte melden Sie sich an, um den KI-Chat zu nutzen.",
+      "trouble": "Dabei gab es ein Problem. Bitte versuchen Sie es erneut.",
+      "connectionIssue": "Verbindungsproblem. Prüfen Sie Ihr Internet und versuchen Sie es erneut.",
+      "askBuddy": "Buddy fragen"
+    },
+    "auth": {
+      "title": "ChinaEase Buddy",
+      "subtitle": "Ihr Konto wird sicher mit Firebase gespeichert",
+      "signup": "Kostenlos registrieren",
+      "login": "Einloggen",
+      "email": "E-Mail-Adresse",
+      "password": "Passwort",
+      "createAccount": "Kostenloses Konto erstellen",
+      "loginBtn": "Einloggen",
+      "loading": "Bitte warten...",
+      "error": "Etwas ist schiefgelaufen",
+      "freeNote": "Der kostenlose Tarif enthält 2 KI-Gespräche. Keine Kreditkarte erforderlich."
+    },
+    "footer": {
+      "tagline": "KI-Reisebegleiter für ausländische Reisende in China. Menüs entschlüsseln, Verkehr verstehen, Notfälle bewältigen.",
+      "product": "Produkt",
+      "support": "Support",
+      "features": "Funktionen",
+      "pricing": "Preise",
+      "download": "Download",
+      "helpCenter": "Hilfe-Center",
+      "contact": "Kontakt",
+      "status": "Status",
+      "legalTitle": "Rechtlicher Hinweis",
+      "legalBody": "ChinaEase Buddy bietet allgemeine Reiseinformationen und KI-gestützte Übersetzungen nur als praktische Hilfe. Es ersetzt keine professionelle rechtliche, medizinische oder finanzielle Beratung. Notrufnummern und Phrasen dienen als Referenz — prüfen Sie sie immer bei lokalen Behörden. ChinaEase garantiert nicht die Genauigkeit von Übersetzungen, Zahlungsabwicklung oder Verfügbarkeit von Drittanbietern. Nutzer sind selbst für die Einhaltung lokaler Gesetze verantwortlich.",
+      "refundTitle": "Rückerstattungsrichtlinie",
+      "refundBody": "Vollständige Rückerstattung innerhalb von 3 Tagen, wenn keine KI-Gespräche genutzt wurden. Teilweise Rückerstattung nach ungenutztem KI-Kontingent. Kontaktieren Sie den Support zur Anfrage.",
+      "rights": "© 2026 ChinaEase Buddy. Alle Rechte vorbehalten.",
+      "privacy": "Datenschutz",
+      "terms": "Nutzungsbedingungen",
+      "cookies": "Cookie-Richtlinie"
+    },
+    "toast": {
+      "copied": "Kopiert!",
+      "saved": "Gespeichert!"
+    }
+  }
+}
