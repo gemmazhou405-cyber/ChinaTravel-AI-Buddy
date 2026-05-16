@@ -27,11 +27,11 @@ export default function App() {
         onAuthClick={() => setAuthOpen(true)}
         onLogout={logout}
       />
-      <div className="sticky top-0 z-40 bg-white shadow-sm">
+      <div id="tabs" className="sticky top-0 z-40 bg-white shadow-sm">
         <TabNav activeTab={activeTab} onTabChange={setActiveTab} />
       </div>
       <TabContent activeTab={activeTab} userState={userState} showToast={showToast} />
-      <Footer />
+      <Footer onTabChange={setActiveTab} />
       <ChatButton onClick={() => setChatOpen(true)} />
       {chatOpen && (
         <ChatModal

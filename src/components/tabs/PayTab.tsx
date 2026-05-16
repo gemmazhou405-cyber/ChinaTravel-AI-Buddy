@@ -42,6 +42,7 @@ interface PaymentMethod {
 
 export default function PayTab({ userState }: Props) {
   const { t } = useTranslation();
+  const assetBase = import.meta.env.BASE_URL;
   const paymentMethods = t('pay.methods', { returnObjects: true }) as PaymentMethod[];
   const setupSteps = [
     t('pay.setup.step1'),
@@ -70,7 +71,7 @@ export default function PayTab({ userState }: Props) {
       {/* Email header banner */}
       <section>
         <img
-          src="/email_header.jpg"
+          src={`${assetBase}email_header.jpg`}
           alt={t('pay.bannerAlt')}
           style={{
             width: '100%',

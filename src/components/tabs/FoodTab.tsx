@@ -31,11 +31,25 @@ interface MenuItem {
 
 interface AllergyCardProps {
   card: AllergyCardData;
+  showToast: (msg: string) => void;
 }
 
-function AllergyCard({ card }: AllergyCardProps) {
+function AllergyCard({ card, showToast }: AllergyCardProps) {
   const { t } = useTranslation();
   const [expanded, setExpanded] = useState(false);
+  const speakChinese = (text: string) => {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'zh-CN';
+      u.rate = 0.8;
+      window.speechSynthesis.speak(u);
+    }
+  };
+  const copyPhrase = async (text: string) => {
+    await navigator.clipboard?.writeText(text);
+    showToast(t('toast.copied'));
+  };
 
   return (
     <div className={`border rounded-2xl p-4 transition-all ${card.color}`}>
@@ -63,23 +77,48 @@ function AllergyCard({ card }: AllergyCardProps) {
             <p className="text-gray-600 text-xs leading-relaxed mb-2">{card.phrase}</p>
             <p className="text-gray-800 text-sm font-medium leading-relaxed">{card.chinesePhrase}</p>
           </div>
-          <button className="mt-2 w-full text-xs text-gray-400 flex items-center justify-center gap-1 hover:text-gray-600 transition-colors">
-            <MessageSquare className="w-3 h-3" />
-            {t('food.copy')}
-          </button>
+          <div className="flex gap-2 mt-2">
+            <button onClick={() => speakChinese(card.chinesePhrase)} className="flex-1 text-xs text-[#155e63] flex items-center justify-center gap-1">
+              🔊 Speak
+            </button>
+            <button onClick={() => copyPhrase(card.chinesePhrase)} className="flex-1 text-xs text-gray-400 flex items-center justify-center gap-1 hover:text-gray-600 transition-colors">
+              <MessageSquare className="w-3 h-3" />
+              📋 Copy
+            </button>
+          </div>
         </div>
       )}
     </div>
   );
 }
 
-export default function FoodTab() {
+interface Props {
+  showToast: (msg: string) => void;
+}
+
+export default function FoodTab({ showToast }: Props) {
   const { t } = useTranslation();
   const [dragOver, setDragOver] = useState(false);
   const [uploadedFile, setUploadedFile] = useState<string | null>(null);
+  const [selectedPhrase, setSelectedPhrase] = useState<(typeof PHRASE_CARDS)[number] | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
   const allergyCards = t('food.allergyCards', { returnObjects: true }) as AllergyCardData[];
   const menuItems = t('food.menuItems', { returnObjects: true }) as MenuItem[];
+
+  const speakChinese = (text: string) => {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'zh-CN';
+      u.rate = 0.8;
+      window.speechSynthesis.speak(u);
+    }
+  };
+
+  const copyPhrase = async (text: string) => {
+    await navigator.clipboard?.writeText(text);
+    showToast(t('toast.copied'));
+  };
 
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
@@ -166,7 +205,7 @@ export default function FoodTab() {
         </div>
         <div className="space-y-3">
           {allergyCards.map((card) => (
-            <AllergyCard key={card.name} card={card} />
+            <AllergyCard key={card.name} card={card} showToast={showToast} />
           ))}
         </div>
       </section>
@@ -178,15 +217,51 @@ export default function FoodTab() {
           {PHRASE_CARDS.map((p) => (
             <div
               key={p.labelKey}
+              onClick={() => setSelectedPhrase(p)}
               className="bg-white border border-gray-100 rounded-2xl p-3.5 shadow-sm hover:shadow-md hover:border-[#155e63]/20 transition-all cursor-pointer group"
             >
               <p className="text-gray-500 text-xs mb-1 group-hover:text-[#155e63] transition-colors">{t(p.labelKey)}</p>
               <p className="text-gray-900 font-medium text-sm">{p.chinese}</p>
               <p className="text-gray-400 text-xs mt-0.5">{p.pinyin}</p>
+              <div className="flex gap-2 mt-1">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    speakChinese(p.chinese);
+                  }}
+                  className="text-xs text-[#155e63] flex items-center gap-1"
+                >
+                  🔊 Speak
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    copyPhrase(p.chinese);
+                  }}
+                  className="text-xs text-gray-400"
+                >
+                  📋 Copy
+                </button>
+              </div>
             </div>
           ))}
         </div>
       </section>
+
+      {selectedPhrase && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50" onClick={() => setSelectedPhrase(null)}>
+          <div className="bg-white rounded-3xl p-6 w-full max-w-sm text-center shadow-2xl" onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => setSelectedPhrase(null)} className="ml-auto mb-4 block text-gray-400 text-xl">✕</button>
+            <p className="text-sm font-semibold text-[#155e63] mb-5">{t(selectedPhrase.labelKey)}</p>
+            <p className="text-4xl font-bold text-gray-950 leading-tight mb-4">{selectedPhrase.chinese}</p>
+            <p className="text-gray-500 text-base mb-6">{selectedPhrase.pinyin}</p>
+            <div className="flex gap-2">
+              <button onClick={() => speakChinese(selectedPhrase.chinese)} className="flex-1 bg-[#155e63] text-white rounded-xl py-3 text-sm font-medium">🔊 Speak</button>
+              <button onClick={() => copyPhrase(selectedPhrase.chinese)} className="flex-1 border border-gray-200 rounded-xl py-3 text-sm font-medium text-gray-600">📋 Copy</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

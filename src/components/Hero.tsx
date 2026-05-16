@@ -25,6 +25,7 @@ export default function Hero({ user, userState, onAuthClick, onLogout }: Props) 
   const { t } = useTranslation();
   const [lang, setLang] = useState(i18n.language.toUpperCase());
   const [langOpen, setLangOpen] = useState(false);
+  const assetBase = import.meta.env.BASE_URL;
 
   useEffect(() => {
     const saved = window.localStorage?.getItem('chinaease-lang');
@@ -48,14 +49,14 @@ export default function Hero({ user, userState, onAuthClick, onLogout }: Props) 
         className="absolute inset-0 bg-cover bg-center"
         style={{
           background:
-            'linear-gradient(to right, rgba(0,0,0,0.70) 0%, rgba(21,94,99,0.45) 50%, rgba(0,0,0,0.20) 100%), url("/hero.jpg") center/cover no-repeat',
+            `linear-gradient(to right, rgba(0,0,0,0.70) 0%, rgba(21,94,99,0.45) 50%, rgba(0,0,0,0.20) 100%), url("${assetBase}hero.jpg") center/cover no-repeat`,
         }}
       />
 
       {/* Nav bar */}
       <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 py-5 md:px-10">
         <div className="flex items-center gap-2.5">
-          <img src="/logo.png" width="40" height="40" alt="ChinaEase Buddy" style={{ borderRadius: '8px' }} />
+          <img src={`${assetBase}logo.png`} width="40" height="40" alt="ChinaEase Buddy" style={{ borderRadius: '8px' }} />
           <span className="text-white font-semibold text-lg tracking-tight">ChinaEase Buddy</span>
         </div>
         <div className="flex items-center gap-3">
@@ -86,7 +87,11 @@ export default function Hero({ user, userState, onAuthClick, onLogout }: Props) 
           </div>
 
           <a
-            href="#"
+            href="#tabs"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('tabs')?.scrollIntoView({ behavior: 'smooth' });
+            }}
             className="hidden md:block text-white/80 text-sm hover:text-white transition-colors"
           >
             {t('nav.howItWorks')}

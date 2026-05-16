@@ -1,4 +1,5 @@
 import { Phone, FileText, Heart, MapPin, Shield, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const EMERGENCY_NUMBERS = [
@@ -60,13 +61,23 @@ function EmergencyCallButton({ number, labelKey, sublabel, color, hoverColor, ri
 
 function PhraseCard({ title, icon, en, zh, color, showToast }: { title: string; icon: React.ReactNode; en: string; zh: string; color: string; showToast: (msg: string) => void }) {
   const { t } = useTranslation();
+  const [open, setOpen] = useState(false);
+  const speakChinese = (text: string) => {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'zh-CN';
+      u.rate = 0.8;
+      window.speechSynthesis.speak(u);
+    }
+  };
   const handleCopy = async () => {
     await navigator.clipboard?.writeText(zh);
     showToast(t('toast.copied'));
   };
 
   return (
-    <div className={`border rounded-2xl p-4 ${color}`}>
+    <div className={`border rounded-2xl p-4 ${color} cursor-pointer`} onClick={() => setOpen(true)}>
       <div className="flex items-center gap-2 mb-3">
         {icon}
         <h3 className="font-semibold text-gray-800 text-sm">{title}</h3>
@@ -75,12 +86,43 @@ function PhraseCard({ title, icon, en, zh, color, showToast }: { title: string; 
       <div className="bg-white rounded-xl p-3 shadow-sm">
         <p className="text-gray-800 text-sm font-medium leading-relaxed">{zh}</p>
       </div>
-      <button
-        onClick={handleCopy}
-        className="mt-2 text-xs text-gray-400 hover:text-gray-600 transition-colors"
-      >
-        {t('emergency.tapCopy')}
-      </button>
+      <div className="flex gap-2 mt-1">
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            speakChinese(zh);
+          }}
+          className="text-xs text-[#155e63] flex items-center gap-1"
+        >
+          🔊 Speak
+        </button>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            handleCopy();
+          }}
+          className="text-xs text-gray-400"
+        >
+          📋 Copy
+        </button>
+      </div>
+      {open && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50" onClick={(e) => {
+          e.stopPropagation();
+          setOpen(false);
+        }}>
+          <div className="bg-white rounded-3xl p-6 w-full max-w-sm text-center shadow-2xl" onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => setOpen(false)} className="ml-auto mb-4 block text-gray-400 text-xl">✕</button>
+            <p className="text-sm font-semibold text-[#155e63] mb-5">{title}</p>
+            <p className="text-4xl font-bold text-gray-950 leading-tight mb-4">{zh}</p>
+            <p className="text-gray-500 text-base mb-6">{en}</p>
+            <div className="flex gap-2">
+              <button onClick={() => speakChinese(zh)} className="flex-1 bg-[#155e63] text-white rounded-xl py-3 text-sm font-medium">🔊 Speak</button>
+              <button onClick={handleCopy} className="flex-1 border border-gray-200 rounded-xl py-3 text-sm font-medium text-gray-600">📋 Copy</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -92,9 +134,24 @@ interface Props {
 export default function EmergencyTab({ showToast }: Props) {
   const { t } = useTranslation();
 
-  const copyLocation = async () => {
-    await navigator.clipboard?.writeText('这是我的当前位置，请派人帮助我。');
-    showToast(t('toast.copied'));
+  const copyLocation = () => {
+    const nav = window.navigator;
+    if (nav.geolocation) {
+      nav.geolocation.getCurrentPosition(
+        (pos) => {
+          const text = `我的位置：纬度${pos.coords.latitude.toFixed(4)}，经度${pos.coords.longitude.toFixed(4)}`;
+          nav.clipboard?.writeText(text);
+          alert('Location copied in Chinese!');
+        },
+        () => {
+          nav.clipboard?.writeText('无法获取位置，请告诉救援人员您的地址。');
+          alert('Could not get location. Generic message copied.');
+        }
+      );
+    } else {
+      nav.clipboard?.writeText('无法获取位置，请告诉救援人员您的地址。');
+      alert('Could not get location. Generic message copied.');
+    }
   };
 
   return (

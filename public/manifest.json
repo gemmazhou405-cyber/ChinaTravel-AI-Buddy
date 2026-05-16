@@ -1,0 +1,13 @@
+{
+  "name": "ChinaEase Buddy",
+  "short_name": "ChinaEase",
+  "description": "AI travel companion for China",
+  "start_url": "/ChinaTravel-AI-Buddy/",
+  "display": "standalone",
+  "background_color": "#f7f3ea",
+  "theme_color": "#155e63",
+  "icons": [
+    { "src": "/ChinaTravel-AI-Buddy/logo.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/ChinaTravel-AI-Buddy/logo.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

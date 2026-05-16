@@ -18,10 +18,22 @@ const TIPS = [
 
 export default function BeforeTab() {
   const { t } = useTranslation();
-  const [checked, setChecked] = useState<number[]>([]);
+  const [checked, setChecked] = useState<number[]>(() => {
+    try {
+      const saved = localStorage.getItem('chinaease-checklist');
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  });
 
-  const toggle = (id: number) =>
-    setChecked((prev) => prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]);
+  const toggle = (id: number) => {
+    setChecked((prev) => {
+      const next = prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id];
+      localStorage.setItem('chinaease-checklist', JSON.stringify(next));
+      return next;
+    });
+  };
 
   return (
     <div className="space-y-6">
