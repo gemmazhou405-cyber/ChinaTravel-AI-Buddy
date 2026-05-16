@@ -51,7 +51,7 @@ export default function Hero({ user, userState, onAuthClick, onLogout }: Props) 
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          background: `linear-gradient(to right, rgba(0,0,0,0.70) 0%, rgba(21,94,99,0.45) 50%, rgba(0,0,0,0.20) 100%), url("${assetBase}hero.jpg") center center/cover no-repeat`,
+          background: `linear-gradient(to right, rgba(0,0,0,0.70) 0%, rgba(21,94,99,0.45) 50%, rgba(0,0,0,0.20) 100%), url("${assetBase}hero.jpg") right center/cover no-repeat`,
         }}
       />
 
