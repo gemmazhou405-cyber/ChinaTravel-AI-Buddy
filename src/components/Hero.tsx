@@ -44,16 +44,14 @@ export default function Hero({ user, userState, onAuthClick, onLogout }: Props) 
 
   return (
     <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
-      {/* Background photo with gradient overlay */}
       <div
-        className="absolute inset-0 bg-cover"
+        className="absolute inset-0 bg-cover bg-center"
         style={{
           background:
             `linear-gradient(to right, rgba(0,0,0,0.70) 0%, rgba(21,94,99,0.45) 50%, rgba(0,0,0,0.20) 100%), url("${assetBase}hero.jpg") center top/cover no-repeat`,
         }}
       />
 
-      {/* Nav bar */}
       <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 py-5 md:px-10">
         <div className="flex items-center gap-2.5">
           <img src={`${assetBase}logo.png`} width="40" height="40" alt="ChinaEase Buddy" style={{ borderRadius: '8px' }} />
@@ -113,7 +111,6 @@ export default function Hero({ user, userState, onAuthClick, onLogout }: Props) 
         </div>
       </div>
 
-      {/* Hero content */}
       <div className="relative z-10 flex flex-col md:flex-row items-end md:items-center justify-between px-6 pb-16 pt-32 md:px-10 md:pb-24 max-w-7xl mx-auto w-full">
         <div className="flex-1 max-w-2xl">
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 mb-6">
@@ -123,7 +120,7 @@ export default function Hero({ user, userState, onAuthClick, onLogout }: Props) 
 
           <h1
             className="font-black text-white leading-none tracking-tight mb-6"
-            style={{ fontSize: 'clamp(2.5rem, 7vw, 5.5rem)' }}
+            style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}
           >
             {t('hero.line1')}<br />
             {t('hero.line2')}<br />
@@ -147,7 +144,6 @@ export default function Hero({ user, userState, onAuthClick, onLogout }: Props) 
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 animate-bounce">
         <div className="w-5 h-8 border-2 border-white/30 rounded-full flex items-start justify-center pt-1.5">
           <div className="w-1 h-2 bg-white/60 rounded-full" />
