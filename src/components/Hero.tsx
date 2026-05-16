@@ -48,12 +48,22 @@ export default function Hero({ user, userState, onAuthClick, onLogout }: Props) 
 
   return (
     <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          background: `linear-gradient(to right, rgba(0,0,0,0.70) 0%, rgba(21,94,99,0.45) 50%, rgba(0,0,0,0.20) 100%), url("${assetBase}hero.jpg") right center/cover no-repeat`,
-        }}
-      />
+      <style>{`
+        .hero-bg {
+          background:
+            linear-gradient(to right, rgba(0,0,0,0.70) 0%, rgba(21,94,99,0.45) 50%, rgba(0,0,0,0.20) 100%),
+            url("/hero.jpg") center center/cover no-repeat;
+        }
+        @media (max-width: 768px) {
+          .hero-bg {
+            background:
+              linear-gradient(to bottom, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.75) 100%),
+              url("/hero-mobile.jpg") center top/cover no-repeat;
+          }
+        }
+      `}</style>
+
+      <div className="hero-bg absolute inset-0" />
 
       <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 py-5 md:px-10">
         <div className="flex items-center gap-2.5">
