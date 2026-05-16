@@ -51,7 +51,7 @@ export default function Hero({ user, userState, onAuthClick, onLogout }: Props) 
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          background: `linear-gradient(to right, rgba(0,0,0,0.70) 0%, rgba(21,94,99,0.45) 50%, rgba(0,0,0,0.20) 100%), url("${assetBase}hero.jpg") center top/cover no-repeat`,
+          background: `linear-gradient(to right, rgba(0,0,0,0.70) 0%, rgba(21,94,99,0.45) 50%, rgba(0,0,0,0.20) 100%), url("${assetBase}hero.jpg") center center/cover no-repeat`,
         }}
       />
 
@@ -120,10 +120,10 @@ export default function Hero({ user, userState, onAuthClick, onLogout }: Props) 
 
           <h1
             className="font-black text-white leading-none tracking-tight mb-6"
-            style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}
+            style={{ fontSize: 'clamp(2rem, 6vw, 5.5rem)' }}
           >
-            {t('hero.line1')}
-            {t('hero.line2')}
+            {t('hero.line1')}<br />
+            {t('hero.line2')}<br />
             <span className="text-[#7dd3d8]">{t('hero.line3')}</span>
           </h1>
 
