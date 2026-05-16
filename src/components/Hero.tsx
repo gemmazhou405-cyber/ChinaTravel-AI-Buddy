@@ -7,11 +7,11 @@ import i18n from '../i18n';
 
 const LANGS = [
   { code: 'en', label: 'English' },
-  { code: 'fr', label: 'Français' },
+  { code: 'fr', label: 'Francais' },
   { code: 'de', label: 'Deutsch' },
-  { code: 'es', label: 'Español' },
-  { code: 'ja', label: '日本語' },
-  { code: 'ko', label: '한국어' },
+  { code: 'es', label: 'Espanol' },
+  { code: 'ja', label: 'Japanese' },
+  { code: 'ko', label: 'Korean' },
 ];
 
 interface Props {
@@ -40,6 +40,10 @@ export default function Hero({ user, userState, onAuthClick, onLogout }: Props) 
     setLang(code.toUpperCase());
     setLangOpen(false);
     window.localStorage?.setItem('chinaease-lang', code);
+  };
+
+  const scrollToTabs = () => {
+    document.getElementById('tabs')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -82,16 +86,12 @@ export default function Hero({ user, userState, onAuthClick, onLogout }: Props) 
             )}
           </div>
 
-          
-            href="#tabs"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById('tabs')?.scrollIntoView({ behavior: 'smooth' });
-            }}
+          <button
+            onClick={scrollToTabs}
             className="hidden md:block text-white/80 text-sm hover:text-white transition-colors"
           >
             {t('nav.howItWorks')}
-          </a>
+          </button>
 
           {user ? (
             <button
@@ -122,8 +122,8 @@ export default function Hero({ user, userState, onAuthClick, onLogout }: Props) 
             className="font-black text-white leading-none tracking-tight mb-6"
             style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}
           >
-            {t('hero.line1')}<br />
-            {t('hero.line2')}<br />
+            {t('hero.line1')}
+            {t('hero.line2')}
             <span className="text-[#7dd3d8]">{t('hero.line3')}</span>
           </h1>
 
