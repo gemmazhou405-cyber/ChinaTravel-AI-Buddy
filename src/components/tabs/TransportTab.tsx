@@ -1,19 +1,15 @@
 import { Brain as Train, Car, Plane, Navigation, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import taxiCards from '../../data/phraseCards/taxi.json';
+import PhraseCard from '../PhraseCard';
+import type { PhraseCardData } from '../../types/phraseCard';
 
 const METRO_PHRASES = [
   { key: 'transport.phrases.whereSubway', zh: '地铁站在哪里？', pinyin: 'Dìtiě zhàn zài nǎlǐ?' },
   { key: 'transport.phrases.whichLine', zh: '几号线去...？', pinyin: 'Jǐ hào xiàn qù...?' },
   { key: 'transport.phrases.howManyStops', zh: '几站？', pinyin: 'Jǐ zhàn?' },
   { key: 'transport.phrases.transfer', zh: '在这里换乘吗？', pinyin: 'Zài zhèlǐ huànchéng ma?' },
-];
-
-const TAXI_PHRASES = [
-  { key: 'transport.phrases.address', zh: '请去这个地址', pinyin: 'Qǐng qù zhège dìzhǐ' },
-  { key: 'transport.phrases.leftRight', zh: '左转 / 右转', pinyin: 'Zuǒ zhuǎn / Yòu zhuǎn' },
-  { key: 'transport.phrases.stopHere', zh: '请在这里停车', pinyin: 'Qǐng zài zhèlǐ tíngchē' },
-  { key: 'transport.phrases.meter', zh: '请打表', pinyin: 'Qǐng dǎ biǎo' },
 ];
 
 interface TransportApp {
@@ -29,8 +25,9 @@ interface Props {
 
 export default function TransportTab({ showToast }: Props) {
   const { t } = useTranslation();
-  const [selectedPhrase, setSelectedPhrase] = useState<(typeof METRO_PHRASES | typeof TAXI_PHRASES)[number] | null>(null);
+  const [selectedPhrase, setSelectedPhrase] = useState<(typeof METRO_PHRASES)[number] | null>(null);
   const apps = t('transport.apps', { returnObjects: true }) as TransportApp[];
+  const taxiPhraseCards = taxiCards as PhraseCardData[];
 
   const speakChinese = (text: string) => {
     if ('speechSynthesis' in window) {
@@ -124,36 +121,8 @@ export default function TransportTab({ showToast }: Props) {
           <h2 className="text-base font-semibold text-gray-900">{t('transport.taxiTitle')}</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-          {TAXI_PHRASES.map((p) => (
-            <div
-              key={p.key}
-              onClick={() => setSelectedPhrase(p)}
-              className="text-left bg-white border border-gray-100 rounded-2xl p-3.5 shadow-sm hover:shadow-md hover:border-[#155e63]/20 transition-all group"
-            >
-              <p className="text-gray-500 text-xs group-hover:text-[#155e63] mb-1 transition-colors">{t(p.key)}</p>
-              <p className="text-gray-900 font-medium text-sm">{p.zh}</p>
-              <p className="text-gray-400 text-xs mt-0.5">{p.pinyin}</p>
-              <div className="flex gap-2 mt-1">
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    speakChinese(p.zh);
-                  }}
-                  className="text-xs text-[#155e63] flex items-center gap-1"
-                >
-                  🔊 Speak
-                </button>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    copyPhrase(p.zh);
-                  }}
-                  className="text-xs text-gray-400"
-                >
-                  📋 Copy
-                </button>
-              </div>
-            </div>
+          {taxiPhraseCards.map((card, index) => (
+            <PhraseCard key={card.id} card={card} locked={index >= 3} />
           ))}
         </div>
       </section>

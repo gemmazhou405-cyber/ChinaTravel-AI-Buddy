@@ -1,0 +1,67 @@
+[
+  {
+    "id": "taxi_001",
+    "scene": "taxi",
+    "priority": "high",
+    "english": "Please take me to this address.",
+    "chinese": "请带我去这个地址。",
+    "pinyin": "Qǐng dài wǒ qù zhège dìzhǐ.",
+    "usageNote": "Show this to a taxi or DiDi driver when you already have the address ready.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请带我去这个地址。",
+    "tags": ["taxi", "address", "driver"]
+  },
+  {
+    "id": "taxi_002",
+    "scene": "taxi",
+    "priority": "high",
+    "english": "Please use the meter.",
+    "chinese": "请打表。",
+    "pinyin": "Qǐng dǎbiǎo.",
+    "usageNote": "Use this before the ride starts if you are taking a street taxi.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请打表。",
+    "tags": ["taxi", "fare", "meter"]
+  },
+  {
+    "id": "taxi_003",
+    "scene": "taxi",
+    "priority": "medium",
+    "english": "How much will it cost approximately?",
+    "chinese": "大概多少钱？",
+    "pinyin": "Dàgài duōshǎo qián?",
+    "usageNote": "Ask for a rough estimate before agreeing to a longer ride.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "大概多少钱？",
+    "tags": ["taxi", "fare", "estimate"]
+  },
+  {
+    "id": "taxi_004",
+    "scene": "taxi",
+    "priority": "medium",
+    "english": "Please take the fastest route.",
+    "chinese": "请走最快的路线。",
+    "pinyin": "Qǐng zǒu zuì kuài de lùxiàn.",
+    "usageNote": "Useful when you are in a hurry or heading to a station or airport.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请走最快的路线。",
+    "tags": ["taxi", "route", "urgent"]
+  },
+  {
+    "id": "taxi_005",
+    "scene": "taxi",
+    "priority": "medium",
+    "english": "Please take me to the nearest subway station.",
+    "chinese": "请带我去最近的地铁站。",
+    "pinyin": "Qǐng dài wǒ qù zuìjìn de dìtiě zhàn.",
+    "usageNote": "Use this if traffic is bad and you want to switch to the metro.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请带我去最近的地铁站。",
+    "tags": ["taxi", "subway", "transfer"]
+  }
+]
