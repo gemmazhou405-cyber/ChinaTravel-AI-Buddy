@@ -20,9 +20,10 @@ interface TransportApp {
 
 interface Props {
   showToast: (msg: string) => void;
+  onUpgradeClick: () => void;
 }
 
-export default function TransportTab({ showToast }: Props) {
+export default function TransportTab({ showToast, onUpgradeClick }: Props) {
   const { t } = useTranslation();
   const [selectedPhrase, setSelectedPhrase] = useState<(typeof METRO_PHRASES)[number] | null>(null);
   const apps = t('transport.apps', { returnObjects: true }) as TransportApp[];
@@ -118,6 +119,7 @@ export default function TransportTab({ showToast }: Props) {
         icon={<Car className="w-4 h-4 text-[#155e63]" />}
         cards={taxiCards}
         freeLimit={3}
+        onUpgradeClick={onUpgradeClick}
       />
 
       <PhraseCardCategorySection
@@ -125,6 +127,7 @@ export default function TransportTab({ showToast }: Props) {
         icon={<Train className="w-4 h-4 text-[#155e63]" />}
         cards={trainCards}
         freeLimit={3}
+        onUpgradeClick={onUpgradeClick}
       />
 
       <PhraseCardCategorySection
@@ -132,6 +135,7 @@ export default function TransportTab({ showToast }: Props) {
         icon={<Plane className="w-4 h-4 text-[#155e63]" />}
         cards={airportCards}
         freeLimit={3}
+        onUpgradeClick={onUpgradeClick}
       />
 
       <div className="bg-[#155e63]/5 border border-[#155e63]/15 rounded-2xl p-4">

@@ -33,9 +33,10 @@ const TIPS = [
 
 interface Props {
   showToast: (msg: string) => void;
+  onUpgradeClick: () => void;
 }
 
-export default function StayTab({ showToast }: Props) {
+export default function StayTab({ showToast, onUpgradeClick }: Props) {
   const { t } = useTranslation();
   const [selectedPhrase, setSelectedPhrase] = useState<(typeof HOTEL_PHRASES)[number] | null>(null);
   const [showModal, setShowModal] = useState(false);
@@ -135,6 +136,7 @@ export default function StayTab({ showToast }: Props) {
         icon={<Building2 className="w-4 h-4 text-[#155e63]" />}
         cards={hotelCards}
         freeLimit={3}
+        onUpgradeClick={onUpgradeClick}
       />
 
       <div className="bg-[#155e63]/5 border border-[#155e63]/15 rounded-2xl p-4 flex items-center justify-between">

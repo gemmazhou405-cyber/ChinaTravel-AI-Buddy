@@ -7,9 +7,10 @@ interface Props {
   icon: ReactNode;
   cards: PhraseCardData[];
   freeLimit: number;
+  onUpgradeClick?: () => void;
 }
 
-export default function PhraseCardCategorySection({ title, icon, cards, freeLimit }: Props) {
+export default function PhraseCardCategorySection({ title, icon, cards, freeLimit, onUpgradeClick }: Props) {
   return (
     <section>
       <div className="flex items-center gap-2 mb-3">
@@ -18,7 +19,7 @@ export default function PhraseCardCategorySection({ title, icon, cards, freeLimi
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
         {cards.map((card, index) => (
-          <PhraseCard key={card.id} card={card} locked={index >= freeLimit} />
+          <PhraseCard key={card.id} card={card} locked={index >= freeLimit} onUpgradeClick={onUpgradeClick} />
         ))}
       </div>
     </section>

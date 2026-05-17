@@ -11,17 +11,18 @@ interface Props {
   activeTab: TabId;
   userState: UserState | null;
   showToast: (msg: string) => void;
+  onUpgradeClick: () => void;
 }
 
-export default function TabContent({ activeTab, userState, showToast }: Props) {
+export default function TabContent({ activeTab, userState, showToast, onUpgradeClick }: Props) {
   return (
     <main className="max-w-3xl mx-auto px-4 py-6 md:px-6 pb-28">
       {activeTab === 'before' && <BeforeTab />}
-      {activeTab === 'stay' && <StayTab showToast={showToast} />}
+      {activeTab === 'stay' && <StayTab showToast={showToast} onUpgradeClick={onUpgradeClick} />}
       {activeTab === 'food' && <FoodTab showToast={showToast} />}
-      {activeTab === 'transport' && <TransportTab showToast={showToast} />}
-      {activeTab === 'emergency' && <EmergencyTab showToast={showToast} />}
-      {activeTab === 'pay' && <PayTab userState={userState} />}
+      {activeTab === 'transport' && <TransportTab showToast={showToast} onUpgradeClick={onUpgradeClick} />}
+      {activeTab === 'emergency' && <EmergencyTab showToast={showToast} onUpgradeClick={onUpgradeClick} />}
+      {activeTab === 'pay' && <PayTab userState={userState} onUpgradeClick={onUpgradeClick} />}
     </main>
   );
 }

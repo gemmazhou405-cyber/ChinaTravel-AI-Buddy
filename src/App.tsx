@@ -18,6 +18,13 @@ export default function App() {
   const [toast, setToast] = useState<string | null>(null);
   const { user, userState, logout, signup, login, incrementAiUsed } = useAuth();
   const showToast = (msg: string) => setToast(msg);
+  const handleUpgradeClick = () => {
+    setActiveTab('pay');
+    showToast('Unlock all phrase cards with Trip Pass.');
+    window.setTimeout(() => {
+      document.getElementById('tabs')?.scrollIntoView({ behavior: 'smooth' });
+    }, 0);
+  };
 
   return (
     <div className="min-h-screen bg-[#f7f3ea] font-sans">
@@ -30,7 +37,12 @@ export default function App() {
       <div id="tabs" className="sticky top-0 z-40 bg-white shadow-sm">
         <TabNav activeTab={activeTab} onTabChange={setActiveTab} />
       </div>
-      <TabContent activeTab={activeTab} userState={userState} showToast={showToast} />
+      <TabContent
+        activeTab={activeTab}
+        userState={userState}
+        showToast={showToast}
+        onUpgradeClick={handleUpgradeClick}
+      />
       <Footer onTabChange={setActiveTab} />
       <ChatButton onClick={() => setChatOpen(true)} />
       {chatOpen && (

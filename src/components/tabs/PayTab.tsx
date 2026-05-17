@@ -31,6 +31,7 @@ const PLANS = [
 
 interface Props {
   userState: UserState | null;
+  onUpgradeClick: () => void;
 }
 
 interface PaymentMethod {
@@ -42,7 +43,7 @@ interface PaymentMethod {
   icon: string;
 }
 
-export default function PayTab({ userState }: Props) {
+export default function PayTab({ userState, onUpgradeClick }: Props) {
   const { t } = useTranslation();
   const assetBase = import.meta.env.BASE_URL;
   const paymentMethods = t('pay.methods', { returnObjects: true }) as PaymentMethod[];
@@ -175,6 +176,7 @@ export default function PayTab({ userState }: Props) {
         icon={<CreditCard className="w-4 h-4 text-[#155e63]" />}
         cards={paymentCards}
         freeLimit={3}
+        onUpgradeClick={onUpgradeClick}
       />
 
       {/* WeChat Pay setup */}

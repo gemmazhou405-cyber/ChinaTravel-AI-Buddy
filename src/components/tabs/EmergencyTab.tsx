@@ -131,9 +131,10 @@ function PhraseCard({ title, icon, en, zh, color, showToast }: { title: string; 
 
 interface Props {
   showToast: (msg: string) => void;
+  onUpgradeClick: () => void;
 }
 
-export default function EmergencyTab({ showToast }: Props) {
+export default function EmergencyTab({ showToast, onUpgradeClick }: Props) {
   const { t } = useTranslation();
 
   const copyLocation = () => {
@@ -206,18 +207,21 @@ export default function EmergencyTab({ showToast }: Props) {
           icon={<Building2 className="w-4 h-4 text-[#155e63]" />}
           cards={hospitalCards}
           freeLimit={3}
+          onUpgradeClick={onUpgradeClick}
         />
         <PhraseCardCategorySection
           title="Police"
           icon={<Siren className="w-4 h-4 text-[#155e63]" />}
           cards={policeCards}
           freeLimit={3}
+          onUpgradeClick={onUpgradeClick}
         />
         <PhraseCardCategorySection
           title="Pharmacy"
           icon={<Pill className="w-4 h-4 text-[#155e63]" />}
           cards={pharmacyCards}
           freeLimit={3}
+          onUpgradeClick={onUpgradeClick}
         />
       </section>
 

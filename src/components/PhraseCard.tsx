@@ -5,10 +5,15 @@ import type { PhraseCardData } from '../types/phraseCard';
 interface Props {
   card: PhraseCardData;
   locked?: boolean;
+  onUpgradeClick?: () => void;
 }
 
-export default function PhraseCard({ card, locked = false }: Props) {
+export default function PhraseCard({ card, locked = false, onUpgradeClick }: Props) {
   const [showLocal, setShowLocal] = useState(false);
+
+  const handleLockedClick = () => {
+    if (locked) onUpgradeClick?.();
+  };
 
   const speakChinese = () => {
     if (locked || !('speechSynthesis' in window)) return;
@@ -26,13 +31,23 @@ export default function PhraseCard({ card, locked = false }: Props) {
 
   return (
     <>
-      <div className={`relative bg-white border border-gray-100 rounded-2xl p-3.5 shadow-sm transition-all ${locked ? 'opacity-55' : 'hover:shadow-md hover:border-[#155e63]/20'}`}>
+      <div
+        onClick={handleLockedClick}
+        className={`relative bg-white border border-gray-100 rounded-2xl p-3.5 shadow-sm transition-all ${locked ? 'opacity-55 cursor-pointer' : 'hover:shadow-md hover:border-[#155e63]/20'}`}
+      >
         {locked && (
           <div className="absolute inset-0 z-10 flex items-center justify-center rounded-2xl bg-white/70 backdrop-blur-[1px]">
-            <div className="flex items-center gap-1.5 rounded-full bg-[#155e63] px-3 py-1.5 text-xs font-semibold text-white shadow-sm">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onUpgradeClick?.();
+              }}
+              className="flex items-center gap-1.5 rounded-full bg-[#155e63] px-3 py-1.5 text-xs font-semibold text-white shadow-sm"
+            >
               <Lock className="h-3 w-3" />
               Upgrade to unlock
-            </div>
+            </button>
           </div>
         )}
 
