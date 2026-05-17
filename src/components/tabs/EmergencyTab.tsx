@@ -1,6 +1,8 @@
-import { Phone, FileText, Heart, MapPin, Shield, ChevronRight } from 'lucide-react';
+import { Phone, FileText, Heart, MapPin, Shield, ChevronRight, Building2, Pill, Siren } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import PhraseCardCategorySection from '../PhraseCardCategorySection';
+import { hospitalCards, pharmacyCards, policeCards } from '../../data/phraseCards';
 
 const EMERGENCY_NUMBERS = [
   {
@@ -196,6 +198,28 @@ export default function EmergencyTab({ showToast }: Props) {
         color="bg-red-50 border-red-200"
         showToast={showToast}
       />
+
+      <section className="space-y-5">
+        <h2 className="text-base font-semibold text-gray-900">Emergency Phrase Cards</h2>
+        <PhraseCardCategorySection
+          title="Hospital"
+          icon={<Building2 className="w-4 h-4 text-[#155e63]" />}
+          cards={hospitalCards}
+          freeLimit={3}
+        />
+        <PhraseCardCategorySection
+          title="Police"
+          icon={<Siren className="w-4 h-4 text-[#155e63]" />}
+          cards={policeCards}
+          freeLimit={3}
+        />
+        <PhraseCardCategorySection
+          title="Pharmacy"
+          icon={<Pill className="w-4 h-4 text-[#155e63]" />}
+          cards={pharmacyCards}
+          freeLimit={3}
+        />
+      </section>
 
       {/* Location share */}
       <div className="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm">

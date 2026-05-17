@@ -1,9 +1,8 @@
 import { Brain as Train, Car, Plane, Navigation, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import taxiCards from '../../data/phraseCards/taxi.json';
-import PhraseCard from '../PhraseCard';
-import type { PhraseCardData } from '../../types/phraseCard';
+import PhraseCardCategorySection from '../PhraseCardCategorySection';
+import { taxiCards } from '../../data/phraseCards';
 
 const METRO_PHRASES = [
   { key: 'transport.phrases.whereSubway', zh: '地铁站在哪里？', pinyin: 'Dìtiě zhàn zài nǎlǐ?' },
@@ -27,7 +26,6 @@ export default function TransportTab({ showToast }: Props) {
   const { t } = useTranslation();
   const [selectedPhrase, setSelectedPhrase] = useState<(typeof METRO_PHRASES)[number] | null>(null);
   const apps = t('transport.apps', { returnObjects: true }) as TransportApp[];
-  const taxiPhraseCards = taxiCards as PhraseCardData[];
 
   const speakChinese = (text: string) => {
     if ('speechSynthesis' in window) {
@@ -115,17 +113,12 @@ export default function TransportTab({ showToast }: Props) {
         </div>
       </section>
 
-      <section>
-        <div className="flex items-center gap-2 mb-3">
-          <Car className="w-4 h-4 text-[#155e63]" />
-          <h2 className="text-base font-semibold text-gray-900">{t('transport.taxiTitle')}</h2>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-          {taxiPhraseCards.map((card, index) => (
-            <PhraseCard key={card.id} card={card} locked={index >= 3} />
-          ))}
-        </div>
-      </section>
+      <PhraseCardCategorySection
+        title={t('transport.taxiTitle')}
+        icon={<Car className="w-4 h-4 text-[#155e63]" />}
+        cards={taxiCards}
+        freeLimit={3}
+      />
 
       <div className="bg-[#155e63]/5 border border-[#155e63]/15 rounded-2xl p-4">
         <div className="flex items-center gap-2 mb-2">
