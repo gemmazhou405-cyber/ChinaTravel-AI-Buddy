@@ -1,6 +1,8 @@
-import { MapPin, Wifi, Key, MessageSquare, ChevronRight } from 'lucide-react';
+import { Building2, MapPin, Wifi, Key, MessageSquare, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import PhraseCardCategorySection from '../PhraseCardCategorySection';
+import { hotelCards } from '../../data/phraseCards';
 
 const HOTEL_PHRASES = [
   { key: 'stay.phrases.reservation', zh: '我有预订', pinyin: 'Wǒ yǒu yùdìng' },
@@ -127,6 +129,13 @@ export default function StayTab({ showToast }: Props) {
           ))}
         </div>
       </section>
+
+      <PhraseCardCategorySection
+        title="Hotel Phrase Cards"
+        icon={<Building2 className="w-4 h-4 text-[#155e63]" />}
+        cards={hotelCards}
+        freeLimit={3}
+      />
 
       <div className="bg-[#155e63]/5 border border-[#155e63]/15 rounded-2xl p-4 flex items-center justify-between">
         <div>

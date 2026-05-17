@@ -2,7 +2,7 @@ import { Brain as Train, Car, Plane, Navigation, ChevronRight } from 'lucide-rea
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PhraseCardCategorySection from '../PhraseCardCategorySection';
-import { taxiCards } from '../../data/phraseCards';
+import { airportCards, taxiCards, trainCards } from '../../data/phraseCards';
 
 const METRO_PHRASES = [
   { key: 'transport.phrases.whereSubway', zh: '地铁站在哪里？', pinyin: 'Dìtiě zhàn zài nǎlǐ?' },
@@ -117,6 +117,20 @@ export default function TransportTab({ showToast }: Props) {
         title={t('transport.taxiTitle')}
         icon={<Car className="w-4 h-4 text-[#155e63]" />}
         cards={taxiCards}
+        freeLimit={3}
+      />
+
+      <PhraseCardCategorySection
+        title="Train Phrase Cards"
+        icon={<Train className="w-4 h-4 text-[#155e63]" />}
+        cards={trainCards}
+        freeLimit={3}
+      />
+
+      <PhraseCardCategorySection
+        title="Airport Phrase Cards"
+        icon={<Plane className="w-4 h-4 text-[#155e63]" />}
+        cards={airportCards}
         freeLimit={3}
       />
 

@@ -1,7 +1,9 @@
-import { Smartphone, DollarSign, Info, ChevronRight, Check, Zap } from 'lucide-react';
+import { Smartphone, DollarSign, Info, ChevronRight, Check, Zap, CreditCard } from 'lucide-react';
 import { PAYPAL_USERNAME } from '../../firebase-config';
 import { UserState } from '../../hooks/useAuth';
 import { useTranslation } from 'react-i18next';
+import PhraseCardCategorySection from '../PhraseCardCategorySection';
+import { paymentCards } from '../../data/phraseCards';
 
 const PLANS = [
   {
@@ -167,6 +169,13 @@ export default function PayTab({ userState }: Props) {
           ))}
         </div>
       </section>
+
+      <PhraseCardCategorySection
+        title="Payment Phrase Cards"
+        icon={<CreditCard className="w-4 h-4 text-[#155e63]" />}
+        cards={paymentCards}
+        freeLimit={3}
+      />
 
       {/* WeChat Pay setup */}
       <section>
