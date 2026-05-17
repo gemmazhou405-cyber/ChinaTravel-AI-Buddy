@@ -57,8 +57,9 @@ export default function Hero({ user, userState, onAuthClick, onLogout }: Props) 
         @media (max-width: 768px) {
           .hero-bg {
             background:
-              linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(21,94,99,0.30) 50%, rgba(0,0,0,0.15) 100%),
-              url("/hero-mobile.jpg") center 25%/cover no-repeat;
+              linear-gradient(to bottom, rgba(0,0,0,0.22) 0%, rgba(21,94,99,0.12) 38%, rgba(0,0,0,0.34) 76%, rgba(0,0,0,0.52) 100%),
+              linear-gradient(to right, rgba(0,0,0,0.24) 0%, rgba(21,94,99,0.10) 54%, rgba(0,0,0,0.08) 100%),
+              url("/hero-mobile.jpg") 57% 18%/cover no-repeat;
           }
         }
       `}</style>
@@ -131,7 +132,7 @@ export default function Hero({ user, userState, onAuthClick, onLogout }: Props) 
           </div>
 
           <h1
-            className="font-black text-white leading-none tracking-tight mb-4"
+            className="font-black text-white leading-none tracking-tight mb-4 drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)]"
             style={{ fontSize: 'clamp(2.8rem, 9vw, 5.5rem)' }}
           >
             {t('hero.line1')}<br />
@@ -139,16 +140,18 @@ export default function Hero({ user, userState, onAuthClick, onLogout }: Props) 
             <span className="text-[#7dd3d8]">{t('hero.line3')}</span>
           </h1>
 
-          <p className="text-white/75 text-sm md:text-lg leading-relaxed mb-6 max-w-lg">
+          <p className="text-white/82 text-sm md:text-lg leading-relaxed mb-6 max-w-lg drop-shadow-[0_2px_10px_rgba(0,0,0,0.45)]">
             {t('hero.subtitle')}
           </p>
 
-          <button
-            onClick={onAuthClick}
-            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#155e63] text-white font-semibold px-8 py-4 rounded-xl hover:bg-[#0e4a4e] transition-all shadow-xl text-base"
-          >
-            {t('hero.cta')}
-          </button>
+          <div className="absolute right-5 bottom-[20vh] z-20 w-[min(17.5rem,calc(100vw-2.5rem))] md:static md:w-auto">
+            <button
+              onClick={onAuthClick}
+              className="w-full md:w-auto flex items-center justify-center gap-2 bg-[#155e63] text-white font-semibold px-5 py-3.5 md:px-8 md:py-4 rounded-xl hover:bg-[#0e4a4e] transition-all shadow-2xl md:shadow-xl text-sm md:text-base"
+            >
+              {t('hero.cta')}
+            </button>
+          </div>
 
           <p className="text-white/50 text-xs mt-3">
             {t('hero.trust')}
