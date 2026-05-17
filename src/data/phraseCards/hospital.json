@@ -1,0 +1,67 @@
+[
+  {
+    "id": "hospital_001",
+    "scene": "hospital",
+    "priority": "high",
+    "english": "Please take me to the nearest hospital.",
+    "chinese": "请带我去最近的医院。",
+    "pinyin": "Qǐng dài wǒ qù zuìjìn de yīyuàn.",
+    "usageNote": "Use this with a taxi driver, hotel staff, or local person when you need medical help.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "请带我去最近的医院。",
+    "tags": ["hospital", "medical", "directions"]
+  },
+  {
+    "id": "hospital_002",
+    "scene": "hospital",
+    "priority": "high",
+    "english": "I need emergency medical help.",
+    "chinese": "我需要紧急医疗救助。",
+    "pinyin": "Wǒ xūyào jǐnjí yīliáo jiùzhù.",
+    "usageNote": "Show this at a hospital front desk or to emergency responders.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "我需要紧急医疗救助。",
+    "tags": ["hospital", "emergency", "medical"]
+  },
+  {
+    "id": "hospital_003",
+    "scene": "hospital",
+    "priority": "high",
+    "english": "I am allergic to this medicine.",
+    "chinese": "我对这种药过敏。",
+    "pinyin": "Wǒ duì zhè zhǒng yào guòmǐn.",
+    "usageNote": "Use this before receiving medication, injections, or prescriptions.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "我对这种药过敏。",
+    "tags": ["hospital", "allergy", "medicine"]
+  },
+  {
+    "id": "hospital_004",
+    "scene": "hospital",
+    "priority": "medium",
+    "english": "Can you help me find an English-speaking doctor?",
+    "chinese": "可以帮我找会说英语的医生吗？",
+    "pinyin": "Kěyǐ bāng wǒ zhǎo huì shuō Yīngyǔ de yīshēng ma?",
+    "usageNote": "Useful at reception desks in large hospitals or international clinics.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "可以帮我找会说英语的医生吗？",
+    "tags": ["hospital", "doctor", "english"]
+  },
+  {
+    "id": "hospital_005",
+    "scene": "hospital",
+    "priority": "medium",
+    "english": "I need a receipt and medical report for insurance.",
+    "chinese": "我需要收据和病历，用于保险报销。",
+    "pinyin": "Wǒ xūyào shōujù hé bìnglì, yòngyú bǎoxiǎn bàoxiāo.",
+    "usageNote": "Ask for this before leaving the hospital if you need travel insurance reimbursement.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我需要收据和病历，用于保险报销。",
+    "tags": ["hospital", "insurance", "receipt"]
+  }
+]

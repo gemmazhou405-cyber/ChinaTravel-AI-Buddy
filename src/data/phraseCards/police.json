@@ -1,0 +1,67 @@
+[
+  {
+    "id": "police_001",
+    "scene": "police",
+    "priority": "high",
+    "english": "I need police help.",
+    "chinese": "我需要警察帮助。",
+    "pinyin": "Wǒ xūyào jǐngchá bāngzhù.",
+    "usageNote": "Use this when asking a local person, hotel staff, or officer for urgent police assistance.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "我需要警察帮助。",
+    "tags": ["police", "emergency", "help"]
+  },
+  {
+    "id": "police_002",
+    "scene": "police",
+    "priority": "high",
+    "english": "My passport has been lost or stolen.",
+    "chinese": "我的护照丢了，或者被偷了。",
+    "pinyin": "Wǒ de hùzhào diū le, huòzhě bèi tōu le.",
+    "usageNote": "Show this at a police station when filing a report for passport loss or theft.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "我的护照丢了，或者被偷了。",
+    "tags": ["police", "passport", "lost", "theft"]
+  },
+  {
+    "id": "police_003",
+    "scene": "police",
+    "priority": "high",
+    "english": "Please help me contact my embassy.",
+    "chinese": "请帮我联系我的大使馆。",
+    "pinyin": "Qǐng bāng wǒ liánxì wǒ de dàshǐguǎn.",
+    "usageNote": "Use this if you need consular assistance after an incident.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "请帮我联系我的大使馆。",
+    "tags": ["police", "embassy", "consular"]
+  },
+  {
+    "id": "police_004",
+    "scene": "police",
+    "priority": "medium",
+    "english": "I need to file a police report.",
+    "chinese": "我需要报案。",
+    "pinyin": "Wǒ xūyào bào'àn.",
+    "usageNote": "Use this at a police station for theft, loss, accident, or other incidents.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我需要报案。",
+    "tags": ["police", "report", "incident"]
+  },
+  {
+    "id": "police_005",
+    "scene": "police",
+    "priority": "medium",
+    "english": "Can I have a copy of the report?",
+    "chinese": "可以给我一份报案记录吗？",
+    "pinyin": "Kěyǐ gěi wǒ yī fèn bào'àn jìlù ma?",
+    "usageNote": "Ask for this if you need documentation for insurance, embassy, or airline claims.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "可以给我一份报案记录吗？",
+    "tags": ["police", "report", "insurance"]
+  }
+]

@@ -1,0 +1,67 @@
+[
+  {
+    "id": "pharmacy_001",
+    "scene": "pharmacy",
+    "priority": "high",
+    "english": "I need medicine for a fever.",
+    "chinese": "我需要退烧药。",
+    "pinyin": "Wǒ xūyào tuìshāo yào.",
+    "usageNote": "Use this at a pharmacy when you have a fever and need basic medicine.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我需要退烧药。",
+    "tags": ["pharmacy", "fever", "medicine"]
+  },
+  {
+    "id": "pharmacy_002",
+    "scene": "pharmacy",
+    "priority": "high",
+    "english": "I am allergic to this ingredient.",
+    "chinese": "我对这种成分过敏。",
+    "pinyin": "Wǒ duì zhè zhǒng chéngfèn guòmǐn.",
+    "usageNote": "Show this before buying medicine if you have allergies or sensitivities.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "我对这种成分过敏。",
+    "tags": ["pharmacy", "allergy", "ingredient"]
+  },
+  {
+    "id": "pharmacy_003",
+    "scene": "pharmacy",
+    "priority": "medium",
+    "english": "Can I take this with food?",
+    "chinese": "这个药可以饭后吃吗？",
+    "pinyin": "Zhège yào kěyǐ fànhòu chī ma?",
+    "usageNote": "Use this to ask how to take medicine safely.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这个药可以饭后吃吗？",
+    "tags": ["pharmacy", "instructions", "food"]
+  },
+  {
+    "id": "pharmacy_004",
+    "scene": "pharmacy",
+    "priority": "medium",
+    "english": "How many times per day should I take this?",
+    "chinese": "这个药一天吃几次？",
+    "pinyin": "Zhège yào yītiān chī jǐ cì?",
+    "usageNote": "Ask this when confirming dosage instructions.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这个药一天吃几次？",
+    "tags": ["pharmacy", "dosage", "instructions"]
+  },
+  {
+    "id": "pharmacy_005",
+    "scene": "pharmacy",
+    "priority": "medium",
+    "english": "Do I need to see a doctor for this?",
+    "chinese": "这种情况需要看医生吗？",
+    "pinyin": "Zhè zhǒng qíngkuàng xūyào kàn yīshēng ma?",
+    "usageNote": "Use this if symptoms seem serious or you are unsure whether pharmacy medicine is enough.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "这种情况需要看医生吗？",
+    "tags": ["pharmacy", "doctor", "medical"]
+  }
+]
