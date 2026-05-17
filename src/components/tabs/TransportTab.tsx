@@ -26,6 +26,8 @@ interface Props {
 export default function TransportTab({ showToast, onUpgradeClick }: Props) {
   const { t } = useTranslation();
   const [selectedPhrase, setSelectedPhrase] = useState<(typeof METRO_PHRASES)[number] | null>(null);
+  const [fromCity, setFromCity] = useState('');
+  const [toCity, setToCity] = useState('');
   const apps = t('transport.apps', { returnObjects: true }) as TransportApp[];
 
   const speakChinese = (text: string) => {
@@ -147,8 +149,18 @@ export default function TransportTab({ showToast, onUpgradeClick }: Props) {
           {t('transport.trainSub')}
         </p>
         <div className="flex gap-2">
-          <div className="flex-1 bg-white rounded-xl px-3 py-2 text-xs text-gray-400 border border-gray-100">{t('transport.from')}</div>
-          <div className="flex-1 bg-white rounded-xl px-3 py-2 text-xs text-gray-400 border border-gray-100">{t('transport.to')}</div>
+          <input
+            value={fromCity}
+            onChange={(e) => setFromCity(e.target.value)}
+            placeholder={t('transport.from')}
+            className="flex-1 min-w-0 bg-white rounded-xl px-3 py-2 text-xs text-gray-700 border border-gray-100 outline-none focus:border-[#155e63]/40 placeholder:text-gray-400"
+          />
+          <input
+            value={toCity}
+            onChange={(e) => setToCity(e.target.value)}
+            placeholder={t('transport.to')}
+            className="flex-1 min-w-0 bg-white rounded-xl px-3 py-2 text-xs text-gray-700 border border-gray-100 outline-none focus:border-[#155e63]/40 placeholder:text-gray-400"
+          />
         </div>
         <button
           onClick={() => window.open('https://www.trip.com/trains/', '_blank')}

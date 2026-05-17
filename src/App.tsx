@@ -22,7 +22,7 @@ export default function App() {
     setActiveTab('pay');
     showToast('Unlock all phrase cards with Trip Pass.');
     window.setTimeout(() => {
-      document.getElementById('tabs')?.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('plans')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 0);
   };
 

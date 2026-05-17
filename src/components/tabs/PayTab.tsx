@@ -72,7 +72,7 @@ export default function PayTab({ userState, onUpgradeClick }: Props) {
   return (
     <div className="space-y-6">
       {/* Email header banner */}
-      <section>
+      <section id="plans">
         <img
           src={`${assetBase}email_header.jpg`}
           alt={t('pay.bannerAlt')}

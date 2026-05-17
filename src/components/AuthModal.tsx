@@ -27,7 +27,13 @@ export default function AuthModal({ onClose, onSignup, onLogin }: Props) {
       }
       onClose();
     } catch (e) {
-      setError(e instanceof Error ? e.message : t('auth.error'));
+      const message = e instanceof Error ? e.message : '';
+      if (mode === 'signup' && message.includes('auth/email-already-in-use')) {
+        setMode('login');
+        setError('This email already has an account. Please log in instead.');
+      } else {
+        setError(message || t('auth.error'));
+      }
     } finally {
       setLoading(false);
     }
