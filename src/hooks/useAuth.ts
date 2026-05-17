@@ -7,13 +7,44 @@ import {
   User,
 } from 'firebase/auth';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
-import { auth, db } from '../firebase-config';
+import { PLAN_LIMITS, auth, db } from '../firebase-config';
 
 export interface UserState {
   uid: string;
   email: string;
   plan: 'free' | 'trip' | 'group';
-  aiUsed: number;
+  planExpiresAt: number | null;
+  buddyAiQuotaTotal: number;
+  buddyAiQuotaUsed: number;
+  menuScanQuotaTotal: number;
+  menuScanQuotaUsed: number;
+  dailyBuddyAiLimit: number;
+  dailyBuddyAiUsed: number;
+  dailyResetAt: number | null;
+}
+
+type StoredUserState = Partial<UserState> & {
+  aiUsed?: number;
+};
+
+function normalizeUserState(data: StoredUserState, uid: string, email: string): UserState {
+  const plan = data.plan && data.plan in PLAN_LIMITS ? data.plan : 'free';
+  const limits = PLAN_LIMITS[plan];
+  const legacyAiUsed = typeof data.aiUsed === 'number' ? data.aiUsed : 0;
+
+  return {
+    uid: data.uid || uid,
+    email: data.email || email,
+    plan,
+    planExpiresAt: data.planExpiresAt ?? null,
+    buddyAiQuotaTotal: data.buddyAiQuotaTotal ?? limits.buddyAi,
+    buddyAiQuotaUsed: data.buddyAiQuotaUsed ?? legacyAiUsed,
+    menuScanQuotaTotal: data.menuScanQuotaTotal ?? limits.menuScan,
+    menuScanQuotaUsed: data.menuScanQuotaUsed ?? 0,
+    dailyBuddyAiLimit: data.dailyBuddyAiLimit ?? limits.dailyBuddyAi,
+    dailyBuddyAiUsed: data.dailyBuddyAiUsed ?? 0,
+    dailyResetAt: data.dailyResetAt ?? null,
+  };
 }
 
 async function sendWelcomeEmail(email: string) {
@@ -36,7 +67,7 @@ async function sendWelcomeEmail(email: string) {
             <ol>
               <li><strong>Add to home screen</strong> — save the app for offline use</li>
               <li><strong>Review Arrival Guide</strong> — set up Alipay before landing</li>
-              <li><strong>Try AI Chat</strong> — you have 2 free conversations waiting</li>
+              <li><strong>Try Buddy AI</strong> — you have 5 free messages waiting</li>
             </ol>
             <a href="https://gemmazhou405-cyber.github.io/ChinaTravel-AI-Buddy/"
                style="display:inline-block;background:#155e63;color:white;
@@ -68,7 +99,7 @@ export function useAuth() {
         const docRef = doc(db, 'users', u.uid);
         const snap = await getDoc(docRef);
         if (snap.exists()) {
-          setUserState(snap.data() as UserState);
+          setUserState(normalizeUserState(snap.data() as StoredUserState, u.uid, u.email || ''));
         }
       } else {
         setUserState(null);
@@ -84,7 +115,14 @@ export function useAuth() {
       uid: cred.user.uid,
       email,
       plan: 'free',
-      aiUsed: 0,
+      planExpiresAt: null,
+      buddyAiQuotaTotal: 5,
+      buddyAiQuotaUsed: 0,
+      menuScanQuotaTotal: 3,
+      menuScanQuotaUsed: 0,
+      dailyBuddyAiLimit: 5,
+      dailyBuddyAiUsed: 0,
+      dailyResetAt: null,
     };
     await setDoc(doc(db, 'users', cred.user.uid), newUser);
     sendWelcomeEmail(email);
@@ -95,7 +133,9 @@ export function useAuth() {
   const login = async (email: string, password: string) => {
     const cred = await signInWithEmailAndPassword(auth, email, password);
     const snap = await getDoc(doc(db, 'users', cred.user.uid));
-    if (snap.exists()) setUserState(snap.data() as UserState);
+    if (snap.exists()) {
+      setUserState(normalizeUserState(snap.data() as StoredUserState, cred.user.uid, cred.user.email || email));
+    }
     return cred.user;
   };
 
@@ -106,9 +146,28 @@ export function useAuth() {
 
   const incrementAiUsed = async () => {
     if (!user || !userState) return;
-    const newCount = userState.aiUsed + 1;
-    await setDoc(doc(db, 'users', user.uid), { aiUsed: newCount }, { merge: true });
-    setUserState((prev) => (prev ? { ...prev, aiUsed: newCount } : null));
+
+    const now = Date.now();
+
+    if (userState.planExpiresAt && now > userState.planExpiresAt) {
+      return;
+    }
+
+    const oneDayMs = 24 * 60 * 60 * 1000;
+    const shouldResetDaily = !userState.dailyResetAt || now - userState.dailyResetAt > oneDayMs;
+
+    const newDailyUsed = shouldResetDaily ? 1 : userState.dailyBuddyAiUsed + 1;
+    const newDailyResetAt = shouldResetDaily ? now : userState.dailyResetAt;
+    const newTotalUsed = userState.buddyAiQuotaUsed + 1;
+
+    const updates = {
+      buddyAiQuotaUsed: newTotalUsed,
+      dailyBuddyAiUsed: newDailyUsed,
+      dailyResetAt: newDailyResetAt,
+    };
+
+    await setDoc(doc(db, 'users', user.uid), updates, { merge: true });
+    setUserState((prev) => (prev ? { ...prev, ...updates } : null));
   };
 
   return { user, userState, loading, signup, login, logout, incrementAiUsed };

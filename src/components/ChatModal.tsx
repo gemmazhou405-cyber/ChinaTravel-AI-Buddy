@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { X, Send, Sparkles } from 'lucide-react';
-import { COZE_WORKER_URL, COZE_BOT_ID, PLAN_LIMITS } from '../firebase-config';
+import { COZE_WORKER_URL, COZE_BOT_ID } from '../firebase-config';
 import { UserState } from '../hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 
@@ -45,12 +45,36 @@ export default function ChatModal({ onClose, userState, onNeedAuth, onIncrementU
       return;
     }
 
-    const limit = PLAN_LIMITS[userState.plan];
-    if (userState.aiUsed >= limit) {
+    const now = Date.now();
+
+    if (userState.planExpiresAt && now > userState.planExpiresAt) {
+      const expiredMsg: Message = {
+        id: Date.now(),
+        role: 'buddy',
+        text: t('chat.planExpired'),
+      };
+      setMessages((prev) => [...prev, expiredMsg]);
+      return;
+    }
+
+    const oneDayMs = 24 * 60 * 60 * 1000;
+    const dailyReset = !userState.dailyResetAt || now - userState.dailyResetAt > oneDayMs;
+    const currentDailyUsed = dailyReset ? 0 : userState.dailyBuddyAiUsed;
+    if (currentDailyUsed >= userState.dailyBuddyAiLimit) {
+      const dailyLimitMsg: Message = {
+        id: Date.now(),
+        role: 'buddy',
+        text: t('chat.dailyQuotaExceeded', { limit: userState.dailyBuddyAiLimit }),
+      };
+      setMessages((prev) => [...prev, dailyLimitMsg]);
+      return;
+    }
+
+    if (userState.buddyAiQuotaUsed >= userState.buddyAiQuotaTotal) {
       const limitMsg: Message = {
         id: Date.now(),
         role: 'buddy',
-        text: t('chat.quotaExceeded', { limit, plan: userState.plan }),
+        text: t('chat.quotaExceeded', { limit: userState.buddyAiQuotaTotal, plan: userState.plan }),
       };
       setMessages((prev) => [...prev, limitMsg]);
       return;

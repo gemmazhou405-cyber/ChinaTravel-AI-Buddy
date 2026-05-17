@@ -227,8 +227,8 @@
     "pay": {
       "plansTitle": "Plans",
       "currentPlan": "Current plan:",
-      "aiUsed": "AI used:",
-      "refund": "3-day refund policy · Pay only for what you use",
+      "aiUsed": "Buddy AI used:",
+      "refund": "One-time payment · No auto-renewal · 3-day refund policy",
       "paymentTitle": "Payment Methods in China",
       "wechatSetup": "WeChat Pay Setup",
       "exchangeTip": "Exchange Rate Tip",
@@ -245,7 +245,8 @@
           "desc": "Essential tools for any trip",
           "cta": "Start Free",
           "features": [
-            "2 AI conversations",
+            "5 Buddy AI messages",
+            "3 menu/photo scans",
             "Core offline emergency cards",
             "Basic phrase cards",
             "Pre-flight checklist"
@@ -253,11 +254,11 @@
         },
         "trip": {
           "name": "Trip Pass",
-          "desc": "Full power for your China trip",
+          "desc": "Valid for 7 days",
           "cta": "Buy Trip Pass $9.90",
           "features": [
-            "50 AI conversations",
-            "20 menu decoder scans",
+            "50 Buddy AI messages",
+            "20 menu/photo scans",
             "Full offline emergency kit",
             "Payment and transport guides",
             "9 city survival packs"
@@ -265,13 +266,13 @@
         },
         "group": {
           "name": "Group Pass",
-          "desc": "For families and group travel",
+          "desc": "Valid for 14 days · Up to 5 travelers",
           "cta": "Buy Group Pass $39.90",
           "features": [
-            "200 AI conversations",
-            "100 menu decoder scans",
+            "200 Buddy AI messages",
+            "100 menu/photo scans",
             "5 traveler profiles",
-            "Priority medical assistance",
+            "Medical phrase cards & hospital helper",
             "Shared emergency cards"
           ]
         }
@@ -330,11 +331,13 @@
         "s4": "Is it safe to drink tap water?"
       },
       "welcome": "Hi! I'm Buddy, your AI travel companion for China. Ask me anything about getting around, eating safely, payments, or emergencies.",
-      "quotaExceeded": "You've used all {{limit}} AI conversations on your {{plan}} plan. Upgrade to Trip Pass ($9.90) for 50 conversations, or Group Pass ($39.90) for 200.",
+      "quotaExceeded": "You have used all {{limit}} Buddy AI messages on your {{plan}} plan. Upgrade to Trip Pass ($9.90) for 50 Buddy AI messages, or Group Pass ($39.90) for 200.",
       "notLoggedIn": "Please sign in to use AI chat.",
       "trouble": "I had trouble with that. Please try again.",
       "connectionIssue": "Connection issue. Please check your internet and try again.",
-      "askBuddy": "Ask Buddy"
+      "askBuddy": "Ask Buddy",
+      "planExpired": "Your pass has expired. Please upgrade to continue using Buddy AI.",
+      "dailyQuotaExceeded": "You have reached today's limit of {{limit}} Buddy AI messages. Please try again tomorrow."
     },
     "auth": {
       "title": "ChinaEase Buddy",
@@ -347,7 +350,7 @@
       "loginBtn": "Log In",
       "loading": "Please wait...",
       "error": "Something went wrong",
-      "freeNote": "Free plan includes 2 AI conversations. No credit card needed."
+      "freeNote": "Free plan includes 5 Buddy AI messages and 3 menu/photo scans. No credit card needed."
     },
     "footer": {
       "tagline": "AI travel companion for foreign tourists visiting China. Decode menus, navigate transit, handle emergencies.",
@@ -362,7 +365,7 @@
       "legalTitle": "Legal Disclaimer",
       "legalBody": "ChinaEase Buddy provides general travel information and AI-assisted translations for convenience only. It is not a substitute for professional legal, medical, or financial advice. Emergency numbers and phrases are provided as reference — always verify with local authorities. ChinaEase does not guarantee the accuracy of translations, payment processing, or third-party service availability. Users are responsible for ensuring compliance with local laws and regulations.",
       "refundTitle": "Refund Policy",
-      "refundBody": "Full refund within 3 days if no AI conversations were used. Partial refund calculated by unused AI quota. Contact support to request.",
+      "refundBody": "Full refund within 3 days if no Buddy AI messages were used. Partial refund calculated by unused quota. Contact support to request.",
       "rights": "© 2026 ChinaEase Buddy. All rights reserved.",
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",

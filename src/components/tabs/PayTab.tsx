@@ -91,7 +91,7 @@ export default function PayTab({ userState }: Props) {
         {userState && (
           <p className="text-xs text-gray-500 mb-3">
             {t('pay.currentPlan')} <span className="font-semibold text-[#155e63]">{userState.plan}</span> · {t('pay.aiUsed')}{' '}
-            <span className="font-semibold text-[#155e63]">{userState.aiUsed}</span>
+            <span className="font-semibold text-[#155e63]">{userState.buddyAiQuotaUsed}/{userState.buddyAiQuotaTotal}</span>
           </p>
         )}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">

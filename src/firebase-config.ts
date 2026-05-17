@@ -16,9 +16,9 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 
 export const PLAN_LIMITS = {
-  free: 2,
-  trip: 50,
-  group: 200,
+  free: { buddyAi: 5, menuScan: 3, dailyBuddyAi: 5, durationDays: null },
+  trip: { buddyAi: 50, menuScan: 20, dailyBuddyAi: 20, durationDays: 7 },
+  group: { buddyAi: 200, menuScan: 100, dailyBuddyAi: 50, durationDays: 14 },
 } as const;
 
 export const COZE_WORKER_URL = 'https://chinaease-proxy.gemmazhou405.workers.dev';

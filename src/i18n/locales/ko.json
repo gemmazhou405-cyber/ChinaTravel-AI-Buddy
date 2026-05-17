@@ -227,8 +227,8 @@
     "pay": {
       "plansTitle": "플랜",
       "currentPlan": "현재 플랜:",
-      "aiUsed": "AI 사용:",
-      "refund": "3일 환불 정책 · 사용한 만큼만 결제",
+      "aiUsed": "Buddy AI 사용:",
+      "refund": "일회성 결제 · 자동 갱신 없음 · 3일 환불 정책",
       "paymentTitle": "중국 결제 방법",
       "wechatSetup": "WeChat Pay 설정",
       "exchangeTip": "환율 팁",
@@ -242,10 +242,11 @@
       "plans": {
         "free": {
           "name": "무료",
-          "desc": "모든 여행에 필요한 기본 도구",
+          "desc": "여행에 필요한 기본 도구",
           "cta": "무료 시작",
           "features": [
-            "AI 대화 2회",
+            "Buddy AI 메시지 5회",
+            "메뉴/사진 스캔 3회",
             "기본 오프라인 긴급 카드",
             "기본 문구 카드",
             "출발 전 체크리스트"
@@ -253,25 +254,25 @@
         },
         "trip": {
           "name": "Trip Pass",
-          "desc": "중국 여행을 위한 풀 파워",
+          "desc": "7일간 유효",
           "cta": "Trip Pass $9.90 구매",
           "features": [
-            "AI 대화 50회",
-            "메뉴 스캔 20회",
+            "Buddy AI 메시지 50회",
+            "메뉴/사진 스캔 20회",
             "전체 오프라인 긴급 키트",
             "결제 및 교통 가이드",
-            "9개 도시 팩"
+            "9개 도시 생존 팩"
           ]
         },
         "group": {
           "name": "Group Pass",
-          "desc": "가족 및 단체 여행용",
+          "desc": "14일간 유효 · 최대 5명 여행자",
           "cta": "Group Pass $39.90 구매",
           "features": [
-            "AI 대화 200회",
-            "메뉴 스캔 100회",
+            "Buddy AI 메시지 200회",
+            "메뉴/사진 스캔 100회",
             "여행자 프로필 5개",
-            "우선 의료 지원",
+            "의료 문구 카드 및 병원 도우미",
             "공유 긴급 카드"
           ]
         }
@@ -330,11 +331,13 @@
         "s4": "Peut-on boire l’eau du robinet ?"
       },
       "welcome": "안녕하세요! 저는 중국 여행 AI 동반자 Buddy입니다. 교통, 안전한 식사, 결제, 긴급 상황을 무엇이든 물어보세요.",
-      "quotaExceeded": "Vous avez utilisé les {{limit}} conversations IA de votre forfait {{plan}}. Passez au Trip Pass (9,90 $) pour 50 conversations, ou au Group Pass (39,90 $) pour 200.",
+      "quotaExceeded": "{{plan}} 플랜의 Buddy AI 메시지 {{limit}}회를 모두 사용했습니다. Trip Pass($9.90)로 업그레이드하면 50회, Group Pass($39.90)는 200회를 사용할 수 있습니다.",
       "notLoggedIn": "AI 채팅을 사용하려면 로그인하세요.",
       "trouble": "문제가 발생했습니다. 다시 시도해 주세요.",
       "connectionIssue": "연결 문제가 있습니다. 인터넷을 확인하고 다시 시도하세요.",
-      "askBuddy": "Buddy에게 질문"
+      "askBuddy": "Buddy에게 질문",
+      "planExpired": "패스가 만료되었습니다. Buddy AI를 계속 사용하려면 업그레이드하세요.",
+      "dailyQuotaExceeded": "오늘의 Buddy AI 메시지 {{limit}}회 한도에 도달했습니다. 내일 다시 시도하세요."
     },
     "auth": {
       "title": "ChinaEase Buddy",
@@ -347,7 +350,7 @@
       "loginBtn": "로그인",
       "loading": "잠시만 기다려 주세요...",
       "error": "문제가 발생했습니다",
-      "freeNote": "무료 플랜에는 AI 대화 2회가 포함됩니다. 신용카드가 필요 없습니다."
+      "freeNote": "무료 플랜에는 Buddy AI 메시지 5회와 메뉴/사진 스캔 3회가 포함됩니다. 신용카드가 필요 없습니다."
     },
     "footer": {
       "tagline": "중국을 방문하는 외국인 관광객을 위한 AI 여행 동반자. 메뉴 해석, 교통 안내, 긴급 상황 대응.",
@@ -362,7 +365,7 @@
       "legalTitle": "법적 고지",
       "legalBody": "ChinaEase Buddy는 편의를 위한 일반 여행 정보와 AI 번역을 제공합니다. 법률, 의료, 금융 전문가의 조언을 대체하지 않습니다. 긴급 번호와 문구는 참고용이며 현지 당국에 항상 확인하세요. 번역 정확성, 결제 처리 또는 제3자 서비스 가용성을 보장하지 않습니다.",
       "refundTitle": "환불 정책",
-      "refundBody": "AI 대화를 사용하지 않은 경우 3일 이내 전액 환불. 미사용 AI 할당량에 따라 부분 환불됩니다. 지원팀에 문의하세요.",
+      "refundBody": "Buddy AI 메시지를 사용하지 않은 경우 3일 이내 전액 환불. 미사용 할당량에 따라 부분 환불됩니다. 지원팀에 문의하세요.",
       "rights": "© 2026 ChinaEase Buddy. 모든 권리 보유.",
       "privacy": "개인정보 처리방침",
       "terms": "서비스 약관",

@@ -227,8 +227,8 @@
     "pay": {
       "plansTitle": "Forfaits",
       "currentPlan": "Forfait actuel :",
-      "aiUsed": "IA utilisée :",
-      "refund": "Politique de remboursement de 3 jours · Payez seulement ce que vous utilisez",
+      "aiUsed": "Buddy AI utilisé :",
+      "refund": "Paiement unique · Sans renouvellement automatique · Remboursement sous 3 jours",
       "paymentTitle": "Moyens de paiement en Chine",
       "wechatSetup": "Configuration de WeChat Pay",
       "exchangeTip": "Conseil de change",
@@ -242,36 +242,37 @@
       "plans": {
         "free": {
           "name": "Gratuit",
-          "desc": "Outils essentiels pour tout voyage",
+          "desc": "Outils essentiels pour chaque voyage",
           "cta": "Commencer gratuitement",
           "features": [
-            "2 conversations IA",
-            "Cartes d’urgence hors ligne",
+            "5 messages Buddy AI",
+            "3 scans menu/photo",
+            "Cartes d’urgence hors ligne essentielles",
             "Cartes de phrases de base",
-            "Liste avant départ"
+            "Liste de préparation avant le vol"
           ]
         },
         "trip": {
           "name": "Trip Pass",
-          "desc": "Toute la puissance pour votre voyage en Chine",
+          "desc": "Valable 7 jours",
           "cta": "Acheter Trip Pass 9,90 $",
           "features": [
-            "50 conversations IA",
-            "20 scans de menu",
+            "50 messages Buddy AI",
+            "20 scans menu/photo",
             "Kit d’urgence hors ligne complet",
             "Guides paiement et transport",
-            "9 packs ville"
+            "9 packs de survie par ville"
           ]
         },
         "group": {
           "name": "Group Pass",
-          "desc": "Pour familles et groupes",
+          "desc": "Valable 14 jours · Jusqu’à 5 voyageurs",
           "cta": "Acheter Group Pass 39,90 $",
           "features": [
-            "200 conversations IA",
-            "100 scans de menu",
+            "200 messages Buddy AI",
+            "100 scans menu/photo",
             "5 profils voyageurs",
-            "Assistance médicale prioritaire",
+            "Cartes médicales et aide hôpital",
             "Cartes d’urgence partagées"
           ]
         }
@@ -330,11 +331,13 @@
         "s4": "Peut-on boire l’eau du robinet ?"
       },
       "welcome": "Bonjour ! Je suis Buddy, votre compagnon IA pour la Chine. Posez-moi vos questions sur les transports, les repas, les paiements ou les urgences.",
-      "quotaExceeded": "Vous avez utilisé les {{limit}} conversations IA de votre forfait {{plan}}. Passez au Trip Pass (9,90 $) pour 50 conversations, ou au Group Pass (39,90 $) pour 200.",
+      "quotaExceeded": "Vous avez utilisé les {{limit}} messages Buddy AI de votre forfait {{plan}}. Passez au Trip Pass (9,90 $) pour 50 messages Buddy AI, ou au Group Pass (39,90 $) pour 200.",
       "notLoggedIn": "Connectez-vous pour utiliser le chat IA.",
       "trouble": "J’ai eu un problème. Veuillez réessayer.",
       "connectionIssue": "Problème de connexion. Vérifiez Internet et réessayez.",
-      "askBuddy": "Demander à Buddy"
+      "askBuddy": "Demander à Buddy",
+      "planExpired": "Votre pass a expiré. Veuillez mettre à niveau pour continuer à utiliser Buddy AI.",
+      "dailyQuotaExceeded": "Vous avez atteint la limite quotidienne de {{limit}} messages Buddy AI. Réessayez demain."
     },
     "auth": {
       "title": "ChinaEase Buddy",
@@ -347,7 +350,7 @@
       "loginBtn": "Connexion",
       "loading": "Veuillez patienter...",
       "error": "Une erreur est survenue",
-      "freeNote": "Le forfait gratuit inclut 2 conversations IA. Aucune carte bancaire requise."
+      "freeNote": "Le forfait gratuit inclut 5 messages Buddy AI et 3 scans menu/photo. Aucune carte bancaire requise."
     },
     "footer": {
       "tagline": "Compagnon IA pour les voyageurs étrangers en Chine. Décodez les menus, naviguez, gérez les urgences.",
@@ -362,7 +365,7 @@
       "legalTitle": "Mentions légales",
       "legalBody": "ChinaEase Buddy fournit des informations générales de voyage et des traductions assistées par IA à titre pratique uniquement. Il ne remplace pas un avis juridique, médical ou financier professionnel. Les numéros et phrases d’urgence sont fournis comme référence — vérifiez toujours auprès des autorités locales. ChinaEase ne garantit pas l’exactitude des traductions, le traitement des paiements ou la disponibilité des services tiers. Les utilisateurs sont responsables du respect des lois et réglementations locales.",
       "refundTitle": "Politique de remboursement",
-      "refundBody": "Remboursement complet sous 3 jours si aucune conversation IA n’a été utilisée. Remboursement partiel selon le quota IA non utilisé. Contactez le support pour demander.",
+      "refundBody": "Remboursement complet sous 3 jours si aucun message Buddy AI n’a été utilisé. Remboursement partiel selon le quota non utilisé. Contactez le support pour demander.",
       "rights": "© 2026 ChinaEase Buddy. Tous droits réservés.",
       "privacy": "Politique de confidentialité",
       "terms": "Conditions d’utilisation",
