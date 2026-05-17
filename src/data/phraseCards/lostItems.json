@@ -1,0 +1,483 @@
+[
+  {
+    "id": "lostItems_001",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "I lost my passport.",
+    "chinese": "我的护照不见了。",
+    "pinyin": "Wǒ de hùzhào bùjiàn le.",
+    "usageNote": "Use when your passport is missing.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我的护照不见了。",
+    "tags": [
+      "passport",
+      "lost"
+    ]
+  },
+  {
+    "id": "lostItems_002",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "My phone is missing.",
+    "chinese": "我的手机不见了。",
+    "pinyin": "Wǒ de shǒujī bùjiàn le.",
+    "usageNote": "Use when you can't find your phone.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我的手机不见了。",
+    "tags": [
+      "phone",
+      "lost"
+    ]
+  },
+  {
+    "id": "lostItems_003",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "I can't find my wallet.",
+    "chinese": "我找不到我的钱包。",
+    "pinyin": "Wǒ zhǎo bù dào wǒ de qiánbāo.",
+    "usageNote": "Use when your wallet is lost.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我找不到我的钱包。",
+    "tags": [
+      "wallet",
+      "lost"
+    ]
+  },
+  {
+    "id": "lostItems_004",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "My bag was stolen.",
+    "chinese": "我的包被偷了。",
+    "pinyin": "Wǒ de bāo bèi tōu le.",
+    "usageNote": "Use if your bag was stolen.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我的包被偷了。",
+    "tags": [
+      "bag",
+      "stolen"
+    ]
+  },
+  {
+    "id": "lostItems_005",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "I need to report to the police.",
+    "chinese": "我需要报警。",
+    "pinyin": "Wǒ xūyào bàojǐng.",
+    "usageNote": "Use to indicate you want to call the police.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "我需要报警。",
+    "tags": [
+      "police",
+      "report"
+    ]
+  },
+  {
+    "id": "lostItems_006",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "Where is the police station?",
+    "chinese": "警察局在哪里？",
+    "pinyin": "Jǐngchá jú zài nǎlǐ?",
+    "usageNote": "Use to ask for the location of the police station.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "警察局在哪里？",
+    "tags": [
+      "police",
+      "location"
+    ]
+  },
+  {
+    "id": "lostItems_007",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "Can you help me find my lost item?",
+    "chinese": "你能帮我找一下丢失的东西吗？",
+    "pinyin": "Nǐ néng bāng wǒ zhǎo yīxià diūshī de dōngxī ma?",
+    "usageNote": "Use to ask for help in finding lost items.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "你能帮我找一下丢失的东西吗？",
+    "tags": [
+      "help",
+      "lost"
+    ]
+  },
+  {
+    "id": "lostItems_008",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "I lost my belongings.",
+    "chinese": "我丢了东西。",
+    "pinyin": "Wǒ diū le dōngxī.",
+    "usageNote": "General phrase for lost items.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我丢了东西。",
+    "tags": [
+      "belongings",
+      "lost"
+    ]
+  },
+  {
+    "id": "lostItems_009",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "Please help me.",
+    "chinese": "请帮帮我。",
+    "pinyin": "Qǐng bāng bāng wǒ.",
+    "usageNote": "Use to request assistance.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "请帮帮我。",
+    "tags": [
+      "help"
+    ]
+  },
+  {
+    "id": "lostItems_010",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "I need to contact the embassy.",
+    "chinese": "我需要联系大使馆。",
+    "pinyin": "Wǒ xūyào liánxì dàshǐguǎn.",
+    "usageNote": "Use when you need embassy assistance, e.g., for lost passport.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我需要联系大使馆。",
+    "tags": [
+      "embassy",
+      "contact"
+    ]
+  },
+  {
+    "id": "lostItems_011",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "What should I do?",
+    "chinese": "我该怎么办？",
+    "pinyin": "Wǒ gāi zěnme bàn?",
+    "usageNote": "Use to ask for advice on the situation.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我该怎么办？",
+    "tags": [
+      "advice"
+    ]
+  },
+  {
+    "id": "lostItems_012",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "I lost my ID card.",
+    "chinese": "我丢了身份证。",
+    "pinyin": "Wǒ diū le shēnfènzhèng.",
+    "usageNote": "Use when your ID card is lost.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我丢了身份证。",
+    "tags": [
+      "id",
+      "lost"
+    ]
+  },
+  {
+    "id": "lostItems_013",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "My bag is gone.",
+    "chinese": "我的包不见了。",
+    "pinyin": "Wǒ de bāo bùjiàn le.",
+    "usageNote": "Similar to 'My bag is missing.'",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我的包不见了。",
+    "tags": [
+      "bag",
+      "lost"
+    ]
+  },
+  {
+    "id": "lostItems_014",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "I think it was pickpocketed.",
+    "chinese": "我觉得是被扒手偷了。",
+    "pinyin": "Wǒ juédé shì bèi pāshǒu tōu le.",
+    "usageNote": "Use if you suspect pickpocketing.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我觉得是被扒手偷了。",
+    "tags": [
+      "pickpocket",
+      "stolen"
+    ]
+  },
+  {
+    "id": "lostItems_015",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "Where did you lose it?",
+    "chinese": "您在哪里丢失的？",
+    "pinyin": "Nín zài nǎlǐ diūshī de?",
+    "usageNote": "Use to ask where the item was lost.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "您在哪里丢失的？",
+    "tags": [
+      "location",
+      "lost"
+    ]
+  },
+  {
+    "id": "lostItems_016",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "Can I use your phone to call the police?",
+    "chinese": "请问我能用您的手机报警吗？",
+    "pinyin": "Qǐngwèn wǒ néng yòng nín de shǒujī bàojǐng ma?",
+    "usageNote": "Polite way to ask to borrow a phone for emergency.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "请问我能用您的手机报警吗？",
+    "tags": [
+      "phone",
+      "police",
+      "borrow"
+    ]
+  },
+  {
+    "id": "lostItems_017",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "I need to cancel my credit cards.",
+    "chinese": "我需要挂失信用卡。",
+    "pinyin": "Wǒ xūyào guàshī xìnyòngkǎ.",
+    "usageNote": "Use to inform about canceling credit cards.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我需要挂失信用卡。",
+    "tags": [
+      "credit",
+      "cancel"
+    ]
+  },
+  {
+    "id": "lostItems_018",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "I lost my hotel key.",
+    "chinese": "我丢了酒店房卡。",
+    "pinyin": "Wǒ diū le jiǔdiàn fángkǎ.",
+    "usageNote": "Use when hotel key card is lost.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我丢了酒店房卡。",
+    "tags": [
+      "hotel",
+      "key"
+    ]
+  },
+  {
+    "id": "lostItems_019",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "My luggage is missing at the airport.",
+    "chinese": "我的行李在机场不见了。",
+    "pinyin": "Wǒ de xíngli zài jīchǎng bùjiàn le.",
+    "usageNote": "Use for lost luggage at airport.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我的行李在机场不见了。",
+    "tags": [
+      "luggage",
+      "airport",
+      "lost"
+    ]
+  },
+  {
+    "id": "lostItems_020",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "I need to file a report.",
+    "chinese": "我需要报案。",
+    "pinyin": "Wǒ xūyào bào'àn.",
+    "usageNote": "Use to indicate you want to file a police report.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "我需要报案。",
+    "tags": [
+      "report",
+      "police"
+    ]
+  },
+  {
+    "id": "lostItems_021",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "I need to describe what was lost.",
+    "chinese": "我需要描述丢失的物品。",
+    "pinyin": "Wǒ xūyào miáoshù diūshī de wùpǐn.",
+    "usageNote": "Use when providing details of lost items.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我需要描述丢失的物品。",
+    "tags": [
+      "describe",
+      "details"
+    ]
+  },
+  {
+    "id": "lostItems_022",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "It was a black backpack.",
+    "chinese": "是一个黑色的背包。",
+    "pinyin": "Shì yīgè hēisè de bēibāo.",
+    "usageNote": "Use to describe the lost item.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "是一个黑色的背包。",
+    "tags": [
+      "description",
+      "backpack"
+    ]
+  },
+  {
+    "id": "lostItems_023",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "There was a passport and wallet inside.",
+    "chinese": "里面有护照和钱包。",
+    "pinyin": "Lǐmiàn yǒu hùzhào hé qiánbāo.",
+    "usageNote": "Use to specify contents of lost bag.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "里面有护照和钱包。",
+    "tags": [
+      "contents",
+      "passport",
+      "wallet"
+    ]
+  },
+  {
+    "id": "lostItems_024",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "I am a tourist and lost my documents.",
+    "chinese": "我是游客，丢了证件。",
+    "pinyin": "Wǒ shì yóukè, diū le zhèngjiàn.",
+    "usageNote": "Use to explain your situation as a tourist.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我是游客，丢了证件。",
+    "tags": [
+      "tourist",
+      "documents"
+    ]
+  },
+  {
+    "id": "lostItems_025",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "How do I get a replacement passport?",
+    "chinese": "如何补办护照？",
+    "pinyin": "Rúhé bǔbàn hùzhào?",
+    "usageNote": "Use to ask about replacing a lost passport.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "如何补办护照？",
+    "tags": [
+      "passport",
+      "replace"
+    ]
+  },
+  {
+    "id": "lostItems_026",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "I need to inform my bank.",
+    "chinese": "我需要通知银行。",
+    "pinyin": "Wǒ xūyào tōngzhī yínháng.",
+    "usageNote": "Use to inform about notifying bank for lost cards.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我需要通知银行。",
+    "tags": [
+      "bank",
+      "inform"
+    ]
+  },
+  {
+    "id": "lostItems_027",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "Can you write down the details?",
+    "chinese": "请帮我写下详细信息。",
+    "pinyin": "Qǐng bāng wǒ xiě xià xiángxì xìnxī.",
+    "usageNote": "Polite request to record details.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请帮我写下详细信息。",
+    "tags": [
+      "write",
+      "details"
+    ]
+  },
+  {
+    "id": "lostItems_028",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "I lost my camera.",
+    "chinese": "我丢了相机。",
+    "pinyin": "Wǒ diū le xiàngjī.",
+    "usageNote": "Use when your camera is lost.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我丢了相机。",
+    "tags": [
+      "camera",
+      "lost"
+    ]
+  },
+  {
+    "id": "lostItems_029",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "I need to call my hotel.",
+    "chinese": "我需要打电话给酒店。",
+    "pinyin": "Wǒ xūyào dǎ diànhuà gěi jiǔdiàn.",
+    "usageNote": "Use to contact your hotel for assistance.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我需要打电话给酒店。",
+    "tags": [
+      "hotel",
+      "call"
+    ]
+  },
+  {
+    "id": "lostItems_030",
+    "scene": "lostItems",
+    "priority": "high",
+    "english": "I need to make a statement.",
+    "chinese": "我需要做笔录。",
+    "pinyin": "Wǒ xūyào zuò bǐlù.",
+    "usageNote": "Use when required to give a statement to police.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "我需要做笔录。",
+    "tags": [
+      "statement",
+      "police"
+    ]
+  }
+]

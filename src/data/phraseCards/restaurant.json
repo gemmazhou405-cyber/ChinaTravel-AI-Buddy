@@ -1,0 +1,479 @@
+[
+  {
+    "id": "restaurant_001",
+    "scene": "restaurant",
+    "priority": "high",
+    "english": "Table for two, please.",
+    "chinese": "两位，有位置吗？",
+    "pinyin": "Liǎng wèi, yǒu wèizhì ma?",
+    "usageNote": "Use when arriving at a restaurant to request seating.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "两位，有位置吗？",
+    "tags": [
+      "table",
+      "arrival"
+    ]
+  },
+  {
+    "id": "restaurant_002",
+    "scene": "restaurant",
+    "priority": "high",
+    "english": "May I see the menu, please?",
+    "chinese": "请给我菜单看看。",
+    "pinyin": "Qǐng gěi wǒ càidān kànkan.",
+    "usageNote": "Polite way to ask for the menu.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请给我菜单看看。",
+    "tags": [
+      "menu",
+      "ordering"
+    ]
+  },
+  {
+    "id": "restaurant_003",
+    "scene": "restaurant",
+    "priority": "high",
+    "english": "What do you recommend?",
+    "chinese": "有什么推荐的吗？",
+    "pinyin": "Yǒu shénme tuījiàn de ma?",
+    "usageNote": "Ask the server for their top picks.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "有什么推荐的吗？",
+    "tags": [
+      "recommendation",
+      "ordering"
+    ]
+  },
+  {
+    "id": "restaurant_004",
+    "scene": "restaurant",
+    "priority": "high",
+    "english": "I would like to order this one.",
+    "chinese": "我要这个。",
+    "pinyin": "Wǒ yào zhège.",
+    "usageNote": "Say this while pointing at a menu item.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我要这个。",
+    "tags": [
+      "ordering"
+    ]
+  },
+  {
+    "id": "restaurant_005",
+    "scene": "restaurant",
+    "priority": "high",
+    "english": "We are ready to order.",
+    "chinese": "我们可以点菜了。",
+    "pinyin": "Wǒmen kěyǐ diǎncài le.",
+    "usageNote": "Signal the server you are ready.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我们可以点菜了。",
+    "tags": [
+      "ordering"
+    ]
+  },
+  {
+    "id": "restaurant_006",
+    "scene": "restaurant",
+    "priority": "high",
+    "english": "I am allergic to peanuts.",
+    "chinese": "我对花生过敏。",
+    "pinyin": "Wǒ duì huāshēng guòmǐn.",
+    "usageNote": "Critical allergy warning; peanut oil is common in Chinese cooking.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "我对花生过敏。",
+    "tags": [
+      "allergy",
+      "peanut"
+    ]
+  },
+  {
+    "id": "restaurant_007",
+    "scene": "restaurant",
+    "priority": "high",
+    "english": "I am allergic to seafood.",
+    "chinese": "我对海鲜过敏。",
+    "pinyin": "Wǒ duì hǎixiān guòmǐn.",
+    "usageNote": "Important in coastal cities where seafood is widely used.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "我对海鲜过敏。",
+    "tags": [
+      "allergy",
+      "seafood"
+    ]
+  },
+  {
+    "id": "restaurant_008",
+    "scene": "restaurant",
+    "priority": "medium",
+    "english": "I am allergic to dairy products.",
+    "chinese": "我对牛奶过敏。",
+    "pinyin": "Wǒ duì niúnǎi guòmǐn.",
+    "usageNote": "Useful since some dishes use milk or butter.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "我对牛奶过敏。",
+    "tags": [
+      "allergy",
+      "dairy"
+    ]
+  },
+  {
+    "id": "restaurant_009",
+    "scene": "restaurant",
+    "priority": "medium",
+    "english": "I am allergic to eggs.",
+    "chinese": "我对鸡蛋过敏。",
+    "pinyin": "Wǒ duì jīdàn guòmǐn.",
+    "usageNote": "Eggs are common in stir-fries and soups.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "我对鸡蛋过敏。",
+    "tags": [
+      "allergy",
+      "eggs"
+    ]
+  },
+  {
+    "id": "restaurant_010",
+    "scene": "restaurant",
+    "priority": "high",
+    "english": "Does this dish contain nuts?",
+    "chinese": "这个菜里有坚果吗？",
+    "pinyin": "Zhège cài lǐ yǒu jiānguǒ ma?",
+    "usageNote": "Show this before eating if you have nut allergies.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "这个菜里有坚果吗？",
+    "tags": [
+      "allergy",
+      "question"
+    ]
+  },
+  {
+    "id": "restaurant_011",
+    "scene": "restaurant",
+    "priority": "high",
+    "english": "I am vegetarian.",
+    "chinese": "我吃素。",
+    "pinyin": "Wǒ chī sù.",
+    "usageNote": "Short and clear; widely understood in China.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我吃素。",
+    "tags": [
+      "dietary",
+      "vegetarian"
+    ]
+  },
+  {
+    "id": "restaurant_012",
+    "scene": "restaurant",
+    "priority": "medium",
+    "english": "I do not eat meat.",
+    "chinese": "我不吃肉。",
+    "pinyin": "Wǒ bù chī ròu.",
+    "usageNote": "Clarify no meat at all if needed.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我不吃肉。",
+    "tags": [
+      "dietary",
+      "meat"
+    ]
+  },
+  {
+    "id": "restaurant_013",
+    "scene": "restaurant",
+    "priority": "medium",
+    "english": "I do not eat pork.",
+    "chinese": "我不吃猪肉。",
+    "pinyin": "Wǒ bù chī zhūròu.",
+    "usageNote": "Pork is very common in Chinese cuisine.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我不吃猪肉。",
+    "tags": [
+      "dietary",
+      "pork"
+    ]
+  },
+  {
+    "id": "restaurant_014",
+    "scene": "restaurant",
+    "priority": "medium",
+    "english": "I do not eat beef.",
+    "chinese": "我不吃牛肉。",
+    "pinyin": "Wǒ bù chī niúròu.",
+    "usageNote": "Some people avoid beef for religious reasons.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我不吃牛肉。",
+    "tags": [
+      "dietary",
+      "beef"
+    ]
+  },
+  {
+    "id": "restaurant_015",
+    "scene": "restaurant",
+    "priority": "high",
+    "english": "Less spicy, please.",
+    "chinese": "少放点辣，谢谢。",
+    "pinyin": "Shǎo fàng diǎn là, xièxie.",
+    "usageNote": "Chinese dishes can be very spicy; adjust to your taste.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "少放点辣，谢谢。",
+    "tags": [
+      "spicy",
+      "preference"
+    ]
+  },
+  {
+    "id": "restaurant_016",
+    "scene": "restaurant",
+    "priority": "medium",
+    "english": "No MSG, please.",
+    "chinese": "不要放味精。",
+    "pinyin": "Bùyào fàng wèijīng.",
+    "usageNote": "MSG is common; some people are sensitive to it.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "不要放味精。",
+    "tags": [
+      "preference",
+      "condiment"
+    ]
+  },
+  {
+    "id": "restaurant_017",
+    "scene": "restaurant",
+    "priority": "high",
+    "english": "May I have a glass of water, please?",
+    "chinese": "请给我一杯水。",
+    "pinyin": "Qǐng gěi wǒ yī bēi shuǐ.",
+    "usageNote": "Tap water is not drinkable in China; you will get boiled or bottled water.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请给我一杯水。",
+    "tags": [
+      "drink",
+      "water"
+    ]
+  },
+  {
+    "id": "restaurant_018",
+    "scene": "restaurant",
+    "priority": "medium",
+    "english": "No ice, please.",
+    "chinese": "不要加冰。",
+    "pinyin": "Bùyào jiā bīng.",
+    "usageNote": "Many cold drinks come with ice by default.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "不要加冰。",
+    "tags": [
+      "drink",
+      "preference"
+    ]
+  },
+  {
+    "id": "restaurant_019",
+    "scene": "restaurant",
+    "priority": "high",
+    "english": "Can I have the bill, please?",
+    "chinese": "买单，谢谢。",
+    "pinyin": "Mǎidān, xièxie.",
+    "usageNote": "买单 is the standard word for asking for the check.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "买单，谢谢。",
+    "tags": [
+      "bill",
+      "payment"
+    ]
+  },
+  {
+    "id": "restaurant_020",
+    "scene": "restaurant",
+    "priority": "high",
+    "english": "Can I pay with WeChat Pay?",
+    "chinese": "可以微信支付吗？",
+    "pinyin": "Kěyǐ Wēixìn zhīfù ma?",
+    "usageNote": "WeChat Pay is the most popular payment method in China.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "可以微信支付吗？",
+    "tags": [
+      "payment",
+      "wechat"
+    ]
+  },
+  {
+    "id": "restaurant_021",
+    "scene": "restaurant",
+    "priority": "high",
+    "english": "Can I pay with Alipay?",
+    "chinese": "可以支付宝支付吗？",
+    "pinyin": "Kěyǐ Zhīfùbǎo zhīfù ma?",
+    "usageNote": "Alipay is another widely accepted mobile payment.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "可以支付宝支付吗？",
+    "tags": [
+      "payment",
+      "alipay"
+    ]
+  },
+  {
+    "id": "restaurant_022",
+    "scene": "restaurant",
+    "priority": "medium",
+    "english": "Can I pay by credit card?",
+    "chinese": "可以刷卡吗？",
+    "pinyin": "Kěyǐ shuā kǎ ma?",
+    "usageNote": "Not all restaurants accept credit cards; check first.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "可以刷卡吗？",
+    "tags": [
+      "payment",
+      "credit-card"
+    ]
+  },
+  {
+    "id": "restaurant_023",
+    "scene": "restaurant",
+    "priority": "high",
+    "english": "How much is this?",
+    "chinese": "这个多少钱？",
+    "pinyin": "Zhège duōshao qián?",
+    "usageNote": "Useful when prices are not listed on the menu.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这个多少钱？",
+    "tags": [
+      "price",
+      "ordering"
+    ]
+  },
+  {
+    "id": "restaurant_024",
+    "scene": "restaurant",
+    "priority": "high",
+    "english": "This is delicious!",
+    "chinese": "好吃！",
+    "pinyin": "Hǎochī!",
+    "usageNote": "A great compliment to the chef or server.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "好吃！",
+    "tags": [
+      "feedback",
+      "compliment"
+    ]
+  },
+  {
+    "id": "restaurant_025",
+    "scene": "restaurant",
+    "priority": "high",
+    "english": "Could you pack this to go?",
+    "chinese": "请帮我打包。",
+    "pinyin": "Qǐng bāng wǒ dǎbāo.",
+    "usageNote": "打包 means take-away packing; very common request.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请帮我打包。",
+    "tags": [
+      "packing",
+      "takeaway"
+    ]
+  },
+  {
+    "id": "restaurant_026",
+    "scene": "restaurant",
+    "priority": "medium",
+    "english": "Where is the restroom?",
+    "chinese": "请问洗手间在哪里？",
+    "pinyin": "Qǐngwèn xǐshǒujiān zài nǎlǐ?",
+    "usageNote": "洗手间 is the polite term for restroom.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请问洗手间在哪里？",
+    "tags": [
+      "restroom"
+    ]
+  },
+  {
+    "id": "restaurant_027",
+    "scene": "restaurant",
+    "priority": "medium",
+    "english": "Can we have more napkins, please?",
+    "chinese": "能再给点纸巾吗？",
+    "pinyin": "Néng zài gěi diǎn zhǐjīn ma?",
+    "usageNote": "纸巾 means napkins or tissues.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "能再给点纸巾吗？",
+    "tags": [
+      "request",
+      "napkin"
+    ]
+  },
+  {
+    "id": "restaurant_028",
+    "scene": "restaurant",
+    "priority": "medium",
+    "english": "I have a reservation.",
+    "chinese": "我预订了位子。",
+    "pinyin": "Wǒ yùdìng le wèizi.",
+    "usageNote": "预订 means reservation; useful for popular restaurants.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我预订了位子。",
+    "tags": [
+      "reservation",
+      "table"
+    ]
+  },
+  {
+    "id": "restaurant_029",
+    "scene": "restaurant",
+    "priority": "medium",
+    "english": "What is in this dish?",
+    "chinese": "这个菜里面有什么？",
+    "pinyin": "Zhège cài lǐmiàn yǒu shénme?",
+    "usageNote": "Useful for checking ingredients before ordering.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这个菜里面有什么？",
+    "tags": [
+      "question",
+      "ingredients"
+    ]
+  },
+  {
+    "id": "restaurant_030",
+    "scene": "restaurant",
+    "priority": "high",
+    "english": "Thank you, the food was wonderful.",
+    "chinese": "谢谢，菜很好吃。",
+    "pinyin": "Xièxie, cài hěn hǎochī.",
+    "usageNote": "A warm farewell to the staff after your meal.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "谢谢，菜很好吃。",
+    "tags": [
+      "feedback",
+      "compliment"
+    ]
+  }
+]

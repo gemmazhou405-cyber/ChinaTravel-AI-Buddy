@@ -4,129 +4,479 @@
     "scene": "train",
     "priority": "high",
     "english": "Where is the ticket office?",
-    "chinese": "售票处在哪里？",
-    "pinyin": "Shòupiào chù zài nǎlǐ?",
-    "usageNote": "Use this at railway stations if you need manual ticket help.",
+    "chinese": "请问售票处在哪里？",
+    "pinyin": "Qǐngwèn shòupiàochù zài nǎlǐ?",
+    "usageNote": "Ask for the location of the ticket counter.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "售票处在哪里？",
-    "tags": ["train", "ticket", "station"]
+    "audioText": "请问售票处在哪里？",
+    "tags": [
+      "ticket",
+      "station"
+    ]
   },
   {
     "id": "train_002",
     "scene": "train",
     "priority": "high",
-    "english": "Where is the entrance for this train?",
-    "chinese": "这趟车的检票口在哪里？",
-    "pinyin": "Zhè tàng chē de jiǎnpiào kǒu zài nǎlǐ?",
-    "usageNote": "Show your ticket and ask for the correct gate.",
+    "english": "I would like to buy one ticket to Beijing.",
+    "chinese": "我想买一张去北京的票。",
+    "pinyin": "Wǒ xiǎng mǎi yī zhāng qù Běijīng de piào.",
+    "usageNote": "State your purchase request clearly.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "这趟车的检票口在哪里？",
-    "tags": ["train", "gate", "station"]
+    "audioText": "我想买一张去北京的票。",
+    "tags": [
+      "ticket"
+    ]
   },
   {
     "id": "train_003",
     "scene": "train",
     "priority": "high",
-    "english": "Which platform should I go to?",
-    "chinese": "我应该去哪个站台？",
-    "pinyin": "Wǒ yīnggāi qù nǎge zhàntái?",
-    "usageNote": "Use this after security or ticket check.",
+    "english": "What time does the next train depart?",
+    "chinese": "下一班火车几点发车？",
+    "pinyin": "Xià yī bān huǒchē jǐ diǎn fāchē?",
+    "usageNote": "Ask about the departure time of the next train.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "我应该去哪个站台？",
-    "tags": ["train", "platform", "station"]
+    "audioText": "下一班火车几点发车？",
+    "tags": [
+      "schedule",
+      "departure"
+    ]
   },
   {
     "id": "train_004",
     "scene": "train",
-    "priority": "medium",
-    "english": "Is this seat mine?",
-    "chinese": "这是我的座位吗？",
-    "pinyin": "Zhè shì wǒ de zuòwèi ma?",
-    "usageNote": "Use this on board if you are unsure about your seat.",
+    "priority": "high",
+    "english": "Is this the platform for the train to Shanghai?",
+    "chinese": "这里是去上海的列车站台吗？",
+    "pinyin": "Zhèlǐ shì qù Shànghǎi de lièchē zhàntái ma?",
+    "usageNote": "Confirm you are at the correct platform.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "这是我的座位吗？",
-    "tags": ["train", "seat", "ticket"]
+    "audioText": "这里是去上海的列车站台吗？",
+    "tags": [
+      "platform",
+      "confirmation"
+    ]
   },
   {
     "id": "train_005",
     "scene": "train",
-    "priority": "medium",
-    "english": "I missed my train. What can I do?",
-    "chinese": "我错过火车了，该怎么办？",
-    "pinyin": "Wǒ cuòguò huǒchē le, gāi zěnme bàn?",
-    "usageNote": "Use this at the service desk if you miss departure.",
+    "priority": "high",
+    "english": "Which platform does my train leave from?",
+    "chinese": "我的火车在哪个站台发车？",
+    "pinyin": "Wǒ de huǒchē zài nǎgè zhàntái fāchē?",
+    "usageNote": "Ask for your train's platform number.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "我错过火车了，该怎么办？",
-    "tags": ["train", "missed", "help"]
+    "audioText": "我的火车在哪个站台发车？",
+    "tags": [
+      "platform"
+    ]
   },
   {
     "id": "train_006",
     "scene": "train",
-    "priority": "medium",
-    "english": "Can I change this ticket?",
-    "chinese": "这张票可以改签吗？",
-    "pinyin": "Zhè zhāng piào kěyǐ gǎiqiān ma?",
-    "usageNote": "Use this for ticket changes at a station counter.",
+    "priority": "high",
+    "english": "How long is the train ride?",
+    "chinese": "火车要坐多久？",
+    "pinyin": "Huǒchē yào zuò duōjiǔ?",
+    "usageNote": "Ask about the travel duration.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "这张票可以改签吗？",
-    "tags": ["train", "ticket", "change"]
+    "audioText": "火车要坐多久？",
+    "tags": [
+      "duration",
+      "schedule"
+    ]
   },
   {
     "id": "train_007",
     "scene": "train",
     "priority": "medium",
-    "english": "Where is the exit?",
-    "chinese": "出口在哪里？",
-    "pinyin": "Chūkǒu zài nǎlǐ?",
-    "usageNote": "Use this after arriving at a large station.",
+    "english": "Do I need to transfer?",
+    "chinese": "我需要换乘吗？",
+    "pinyin": "Wǒ xūyào huànchéng ma?",
+    "usageNote": "Ask if you need to change trains.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "出口在哪里？",
-    "tags": ["train", "exit", "station"]
+    "audioText": "我需要换乘吗？",
+    "tags": [
+      "transfer"
+    ]
   },
   {
     "id": "train_008",
     "scene": "train",
-    "priority": "low",
-    "english": "Where can I store my luggage?",
-    "chinese": "哪里可以寄存行李？",
-    "pinyin": "Nǎlǐ kěyǐ jìcún xíngli?",
-    "usageNote": "Ask station staff if you need luggage storage.",
+    "priority": "high",
+    "english": "Where is my seat?",
+    "chinese": "我的座位在哪里？",
+    "pinyin": "Wǒ de zuòwèi zài nǎlǐ?",
+    "usageNote": "Find your assigned seat.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "哪里可以寄存行李？",
-    "tags": ["train", "luggage", "storage"]
+    "audioText": "我的座位在哪里？",
+    "tags": [
+      "seating"
+    ]
   },
   {
     "id": "train_009",
     "scene": "train",
-    "priority": "low",
-    "english": "Does this train stop at this city?",
-    "chinese": "这趟车到这个城市吗？",
-    "pinyin": "Zhè tàng chē dào zhège chéngshì ma?",
-    "usageNote": "Use this if you are unsure before boarding.",
+    "priority": "medium",
+    "english": "Excuse me, is this seat taken?",
+    "chinese": "打扰一下，这个座位有人吗？",
+    "pinyin": "Dǎrǎo yīxià, zhège zuòwèi yǒu rén ma?",
+    "usageNote": "Politely check if a seat is available.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "这趟车到这个城市吗？",
-    "tags": ["train", "destination", "route"]
+    "audioText": "打扰一下，这个座位有人吗？",
+    "tags": [
+      "seating",
+      "polite"
+    ]
   },
   {
     "id": "train_010",
     "scene": "train",
-    "priority": "low",
-    "english": "Please tell me when we arrive.",
-    "chinese": "到了请告诉我。",
-    "pinyin": "Dào le qǐng gàosu wǒ.",
-    "usageNote": "Useful if you worry about missing your stop.",
+    "priority": "medium",
+    "english": "Can I change to a window seat?",
+    "chinese": "我可以换到靠窗的座位吗？",
+    "pinyin": "Wǒ kěyǐ huàn dào kào chuāng de zuòwèi ma?",
+    "usageNote": "Request a seat change if possible.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "到了请告诉我。",
-    "tags": ["train", "arrival", "help"]
+    "audioText": "我可以换到靠窗的座位吗？",
+    "tags": [
+      "seating"
+    ]
+  },
+  {
+    "id": "train_011",
+    "scene": "train",
+    "priority": "medium",
+    "english": "Is there a dining car on this train?",
+    "chinese": "这列车有餐车吗？",
+    "pinyin": "Zhè lièchē yǒu cānchē ma?",
+    "usageNote": "Inquire about food service on board.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这列车有餐车吗？",
+    "tags": [
+      "facilities",
+      "food"
+    ]
+  },
+  {
+    "id": "train_012",
+    "scene": "train",
+    "priority": "high",
+    "english": "When does the train arrive in Guangzhou?",
+    "chinese": "火车什么时候到达广州？",
+    "pinyin": "Huǒchē shénme shíhòu dàodá Guǎngzhōu?",
+    "usageNote": "Ask about the arrival time at your destination.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "火车什么时候到达广州？",
+    "tags": [
+      "arrival",
+      "schedule"
+    ]
+  },
+  {
+    "id": "train_013",
+    "scene": "train",
+    "priority": "medium",
+    "english": "Where is the restroom?",
+    "chinese": "洗手间在哪里？",
+    "pinyin": "Xǐshǒujiān zài nǎlǐ?",
+    "usageNote": "Find the toilet on the train or in the station.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "洗手间在哪里？",
+    "tags": [
+      "facilities",
+      "restroom"
+    ]
+  },
+  {
+    "id": "train_014",
+    "scene": "train",
+    "priority": "medium",
+    "english": "Is there Wi-Fi on the train?",
+    "chinese": "火车上有Wi-Fi吗？",
+    "pinyin": "Huǒchē shàng yǒu Wi-Fi ma?",
+    "usageNote": "Ask about internet availability.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "火车上有Wi-Fi吗？",
+    "tags": [
+      "facilities",
+      "wifi"
+    ]
+  },
+  {
+    "id": "train_015",
+    "scene": "train",
+    "priority": "medium",
+    "english": "Can I charge my phone here?",
+    "chinese": "这里可以给手机充电吗？",
+    "pinyin": "Zhèlǐ kěyǐ gěi shǒujī chōngdiàn ma?",
+    "usageNote": "Look for a power outlet.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这里可以给手机充电吗？",
+    "tags": [
+      "facilities",
+      "charging"
+    ]
+  },
+  {
+    "id": "train_016",
+    "scene": "train",
+    "priority": "high",
+    "english": "This is my ticket.",
+    "chinese": "这是我的车票。",
+    "pinyin": "Zhè shì wǒ de chēpiào.",
+    "usageNote": "Present your ticket for inspection.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这是我的车票。",
+    "tags": [
+      "ticket",
+      "inspection"
+    ]
+  },
+  {
+    "id": "train_017",
+    "scene": "train",
+    "priority": "high",
+    "english": "My train has been delayed. What should I do?",
+    "chinese": "我的火车晚点了，我该怎么办？",
+    "pinyin": "Wǒ de huǒchē wǎndiǎn le, wǒ gāi zěnme bàn?",
+    "usageNote": "Ask for advice if your train is delayed.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "我的火车晚点了，我该怎么办？",
+    "tags": [
+      "delay",
+      "problem"
+    ]
+  },
+  {
+    "id": "train_018",
+    "scene": "train",
+    "priority": "high",
+    "english": "I missed my train. Can I change my ticket?",
+    "chinese": "我错过火车了，可以改签吗？",
+    "pinyin": "Wǒ cuòguò huǒchē le, kěyǐ gǎiqiān ma?",
+    "usageNote": "Ask about changing your ticket after missing the train.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "我错过火车了，可以改签吗？",
+    "tags": [
+      "missed",
+      "ticket",
+      "change"
+    ]
+  },
+  {
+    "id": "train_019",
+    "scene": "train",
+    "priority": "medium",
+    "english": "Can I get a refund for this ticket?",
+    "chinese": "这张票可以退票吗？",
+    "pinyin": "Zhè zhāng piào kěyǐ tuìpiào ma?",
+    "usageNote": "Inquire about the refund policy.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这张票可以退票吗？",
+    "tags": [
+      "ticket",
+      "refund"
+    ]
+  },
+  {
+    "id": "train_020",
+    "scene": "train",
+    "priority": "high",
+    "english": "Help! My luggage is stuck.",
+    "chinese": "帮帮忙！我的行李卡住了。",
+    "pinyin": "Bāng bang máng! Wǒ de xíngli kǎ zhù le.",
+    "usageNote": "Call for help with stuck luggage.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "帮帮忙！我的行李卡住了。",
+    "tags": [
+      "emergency",
+      "luggage"
+    ]
+  },
+  {
+    "id": "train_021",
+    "scene": "train",
+    "priority": "medium",
+    "english": "Where can I store my luggage?",
+    "chinese": "行李可以放在哪里？",
+    "pinyin": "Xíngli kěyǐ fàng zài nǎlǐ?",
+    "usageNote": "Ask about luggage storage options.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "行李可以放在哪里？",
+    "tags": [
+      "luggage",
+      "storage"
+    ]
+  },
+  {
+    "id": "train_022",
+    "scene": "train",
+    "priority": "high",
+    "english": "I need to get off at the next stop.",
+    "chinese": "我需要在下一站下车。",
+    "pinyin": "Wǒ xūyào zài xià yī zhàn xià chē.",
+    "usageNote": "Inform the conductor of your imminent departure.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我需要在下一站下车。",
+    "tags": [
+      "departure",
+      "stop"
+    ]
+  },
+  {
+    "id": "train_023",
+    "scene": "train",
+    "priority": "medium",
+    "english": "Is this the last stop?",
+    "chinese": "这是终点站吗？",
+    "pinyin": "Zhè shì zhōngdiǎn zhàn ma?",
+    "usageNote": "Confirm if you've reached the final destination.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这是终点站吗？",
+    "tags": [
+      "arrival",
+      "final"
+    ]
+  },
+  {
+    "id": "train_024",
+    "scene": "train",
+    "priority": "medium",
+    "english": "Can I get a receipt for my ticket?",
+    "chinese": "可以给我一张车票的发票吗？",
+    "pinyin": "Kěyǐ gěi wǒ yī zhāng chēpiào de fāpiào ma?",
+    "usageNote": "Request a receipt for reimbursement.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "可以给我一张车票的发票吗？",
+    "tags": [
+      "ticket",
+      "receipt"
+    ]
+  },
+  {
+    "id": "train_025",
+    "scene": "train",
+    "priority": "medium",
+    "english": "Where is the lost and found office?",
+    "chinese": "失物招领处在哪里？",
+    "pinyin": "Shīwù zhāolǐng chù zài nǎlǐ?",
+    "usageNote": "Report or retrieve a lost item.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "失物招领处在哪里？",
+    "tags": [
+      "lost",
+      "found",
+      "station"
+    ]
+  },
+  {
+    "id": "train_026",
+    "scene": "train",
+    "priority": "low",
+    "english": "What is the train number?",
+    "chinese": "这趟车的车次是多少？",
+    "pinyin": "Zhè tàng chē de chēcì shì duōshǎo?",
+    "usageNote": "Ask for the specific train number for reference.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这趟车的车次是多少？",
+    "tags": [
+      "information",
+      "number"
+    ]
+  },
+  {
+    "id": "train_027",
+    "scene": "train",
+    "priority": "medium",
+    "english": "How do I get to the subway from the train station?",
+    "chinese": "从火车站怎么换乘地铁？",
+    "pinyin": "Cóng huǒchē zhàn zěnme huànchéng dìtiě?",
+    "usageNote": "Ask for directions to connect to the metro.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "从火车站怎么换乘地铁？",
+    "tags": [
+      "transfer",
+      "subway",
+      "direction"
+    ]
+  },
+  {
+    "id": "train_028",
+    "scene": "train",
+    "priority": "high",
+    "english": "Please don't smoke here.",
+    "chinese": "请不要在这里吸烟。",
+    "pinyin": "Qǐng bùyào zài zhèlǐ xīyān.",
+    "usageNote": "Politely remind someone of the no-smoking rule.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请不要在这里吸烟。",
+    "tags": [
+      "safety",
+      "rules",
+      "polite"
+    ]
+  },
+  {
+    "id": "train_029",
+    "scene": "train",
+    "priority": "high",
+    "english": "I feel sick. Is there a doctor on the train?",
+    "chinese": "我感觉不舒服，车上有医生吗？",
+    "pinyin": "Wǒ gǎnjué bù shūfu, chē shàng yǒu yīshēng ma?",
+    "usageNote": "Seek medical help on the train if feeling unwell.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "我感觉不舒服，车上有医生吗？",
+    "tags": [
+      "emergency",
+      "medical",
+      "health"
+    ]
+  },
+  {
+    "id": "train_030",
+    "scene": "train",
+    "priority": "high",
+    "english": "Thank you for your help.",
+    "chinese": "谢谢您的帮助。",
+    "pinyin": "Xièxie nín de bāngzhù.",
+    "usageNote": "Express gratitude to staff or other passengers.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "谢谢您的帮助。",
+    "tags": [
+      "polite",
+      "thanks"
+    ]
   }
 ]

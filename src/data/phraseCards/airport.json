@@ -3,130 +3,460 @@
     "id": "airport_001",
     "scene": "airport",
     "priority": "high",
-    "english": "Where is the check-in counter for this flight?",
-    "chinese": "这个航班的值机柜台在哪里？",
-    "pinyin": "Zhège hángbān de zhíjī guìtái zài nǎlǐ?",
-    "usageNote": "Show this to airport staff when you cannot find your airline counter.",
+    "english": "Excuse me, where is the baggage claim?",
+    "chinese": "你好，请问行李提取处在哪里？",
+    "pinyin": "nǐ hǎo, qǐngwèn xínglǐ tíqǔ chù zài nǎlǐ?",
+    "usageNote": "Use upon arrival to find where to collect luggage.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "这个航班的值机柜台在哪里？",
-    "tags": ["airport", "check-in", "flight"]
+    "audioText": "你好，请问行李提取处在哪里？",
+    "tags": [
+      "directions",
+      "luggage"
+    ]
   },
   {
     "id": "airport_002",
     "scene": "airport",
     "priority": "high",
-    "english": "I have a connecting flight.",
-    "chinese": "我有转机航班。",
-    "pinyin": "Wǒ yǒu zhuǎnjī hángbān.",
-    "usageNote": "Use this when asking airport staff about transfers.",
+    "english": "I need to go through immigration.",
+    "chinese": "我需要办理入境手续。",
+    "pinyin": "wǒ xūyào bànlǐ rùjìng shǒuxù.",
+    "usageNote": "State your purpose at the immigration hall entrance.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "我有转机航班。",
-    "tags": ["airport", "transfer", "flight"]
+    "audioText": "我需要办理入境手续。",
+    "tags": [
+      "immigration"
+    ]
   },
   {
     "id": "airport_003",
     "scene": "airport",
     "priority": "high",
-    "english": "My luggage did not arrive.",
-    "chinese": "我的行李没有到。",
-    "pinyin": "Wǒ de xíngli méiyǒu dào.",
-    "usageNote": "Use this at the baggage service counter.",
+    "english": "Here is my passport and boarding pass.",
+    "chinese": "这是我的护照和登机牌。",
+    "pinyin": "zhè shì wǒ de hùzhào hé dēngjī pái.",
+    "usageNote": "Present documents to an official when asked.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "我的行李没有到。",
-    "tags": ["airport", "luggage", "baggage"]
+    "audioText": "这是我的护照和登机牌。",
+    "tags": [
+      "immigration",
+      "customs"
+    ]
   },
   {
     "id": "airport_004",
     "scene": "airport",
-    "priority": "medium",
-    "english": "Where can I buy a SIM card?",
-    "chinese": "在哪里可以买电话卡？",
-    "pinyin": "Zài nǎlǐ kěyǐ mǎi diànhuà kǎ?",
-    "usageNote": "Ask this in the arrivals hall after landing.",
+    "priority": "high",
+    "english": "I am here on vacation.",
+    "chinese": "我是来度假的。",
+    "pinyin": "wǒ shì lái dùjià de.",
+    "usageNote": "Common answer to the question about the purpose of your visit.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "在哪里可以买电话卡？",
-    "tags": ["airport", "sim", "arrival"]
+    "audioText": "我是来度假的。",
+    "tags": [
+      "immigration"
+    ]
   },
   {
     "id": "airport_005",
     "scene": "airport",
-    "priority": "medium",
-    "english": "Where is the taxi pickup area?",
-    "chinese": "出租车上客区在哪里？",
-    "pinyin": "Chūzūchē shàngkè qū zài nǎlǐ?",
-    "usageNote": "Use this when leaving the airport by taxi.",
+    "priority": "high",
+    "english": "I will stay for ten days.",
+    "chinese": "我会停留十天。",
+    "pinyin": "wǒ huì tíngliú shí tiān.",
+    "usageNote": "Answer how long you plan to stay in China.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "出租车上客区在哪里？",
-    "tags": ["airport", "taxi", "arrival"]
+    "audioText": "我会停留十天。",
+    "tags": [
+      "immigration"
+    ]
   },
   {
     "id": "airport_006",
     "scene": "airport",
-    "priority": "medium",
-    "english": "Where is the airport shuttle bus?",
-    "chinese": "机场大巴在哪里？",
-    "pinyin": "Jīchǎng dàbā zài nǎlǐ?",
-    "usageNote": "Ask this if you want a shuttle bus into the city.",
+    "priority": "high",
+    "english": "I have nothing to declare.",
+    "chinese": "我没有需要申报的物品。",
+    "pinyin": "wǒ méiyǒu xūyào shēnbào de wùpǐn.",
+    "usageNote": "Use at the customs checkpoint if you have no goods to declare.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "机场大巴在哪里？",
-    "tags": ["airport", "bus", "transport"]
+    "audioText": "我没有需要申报的物品。",
+    "tags": [
+      "customs"
+    ]
   },
   {
     "id": "airport_007",
     "scene": "airport",
-    "priority": "medium",
-    "english": "Where is international departures?",
-    "chinese": "国际出发在哪里？",
-    "pinyin": "Guójì chūfā zài nǎlǐ?",
-    "usageNote": "Use this when navigating a large terminal.",
+    "priority": "high",
+    "english": "Where is the customs declaration form?",
+    "chinese": "海关申报表在哪里？",
+    "pinyin": "hǎiguān shēnbào biǎo zài nǎlǐ?",
+    "usageNote": "Ask an airport staff member if you need a form.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "国际出发在哪里？",
-    "tags": ["airport", "departure", "international"]
+    "audioText": "海关申报表在哪里？",
+    "tags": [
+      "customs"
+    ]
   },
   {
     "id": "airport_008",
     "scene": "airport",
-    "priority": "low",
-    "english": "Is there a place to exchange money?",
-    "chinese": "这里有换钱的地方吗？",
-    "pinyin": "Zhèlǐ yǒu huànqián de dìfang ma?",
-    "usageNote": "Use this if you need emergency cash after arrival.",
+    "priority": "high",
+    "english": "My luggage has not arrived.",
+    "chinese": "我的行李没有到。",
+    "pinyin": "wǒ de xínglǐ méiyǒu dào.",
+    "usageNote": "Report missing baggage to the airline counter immediately.",
     "showToLocal": true,
-    "emergencyRelevant": false,
-    "audioText": "这里有换钱的地方吗？",
-    "tags": ["airport", "money", "exchange"]
+    "emergencyRelevant": true,
+    "audioText": "我的行李没有到。",
+    "tags": [
+      "luggage",
+      "emergency"
+    ]
   },
   {
     "id": "airport_009",
     "scene": "airport",
-    "priority": "low",
-    "english": "Can you help me find this gate?",
-    "chinese": "可以帮我找这个登机口吗？",
-    "pinyin": "Kěyǐ bāng wǒ zhǎo zhège dēngjīkǒu ma?",
-    "usageNote": "Show your boarding pass with this phrase.",
+    "priority": "high",
+    "english": "Can you help me with a luggage cart?",
+    "chinese": "请帮我拿个行李推车，好吗？",
+    "pinyin": "qǐng bāng wǒ ná ge xínglǐ tuīchē, hǎo ma?",
+    "usageNote": "Ask airport staff or a nearby person for help with a cart.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "可以帮我找这个登机口吗？",
-    "tags": ["airport", "gate", "boarding"]
+    "audioText": "请帮我拿个行李推车，好吗？",
+    "tags": [
+      "luggage"
+    ]
   },
   {
     "id": "airport_010",
     "scene": "airport",
-    "priority": "low",
-    "english": "My flight has been delayed. What should I do?",
-    "chinese": "我的航班延误了，我该怎么办？",
-    "pinyin": "Wǒ de hángbān yánwù le, wǒ gāi zěnme bàn?",
-    "usageNote": "Use this with airline staff during delays.",
+    "priority": "high",
+    "english": "Where can I find a taxi?",
+    "chinese": "请问在哪里可以打到出租车？",
+    "pinyin": "qǐngwèn zài nǎlǐ kěyǐ dǎ dào chūzū chē?",
+    "usageNote": "Ask for directions to the official taxi stand.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "我的航班延误了，我该怎么办？",
-    "tags": ["airport", "delay", "flight"]
+    "audioText": "请问在哪里可以打到出租车？",
+    "tags": [
+      "transportation"
+    ]
+  },
+  {
+    "id": "airport_011",
+    "scene": "airport",
+    "priority": "medium",
+    "english": "Is there an airport shuttle bus?",
+    "chinese": "请问有机场大巴吗？",
+    "pinyin": "qǐngwèn yǒu jīchǎng dàbā ma?",
+    "usageNote": "Ask about shuttle buses to the city center.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请问有机场大巴吗？",
+    "tags": [
+      "transportation"
+    ]
+  },
+  {
+    "id": "airport_012",
+    "scene": "airport",
+    "priority": "medium",
+    "english": "Where is the subway station?",
+    "chinese": "请问地铁站在哪里？",
+    "pinyin": "qǐngwèn dìtiě zhàn zài nǎlǐ?",
+    "usageNote": "Use this phrase to find the metro connection at the airport.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请问地铁站在哪里？",
+    "tags": [
+      "transportation"
+    ]
+  },
+  {
+    "id": "airport_013",
+    "scene": "airport",
+    "priority": "medium",
+    "english": "Can you call a taxi for me, please?",
+    "chinese": "可以请你帮我叫一辆出租车吗？",
+    "pinyin": "kěyǐ qǐng nǐ bāng wǒ jiào yī liàng chūzū chē ma?",
+    "usageNote": "Request this service from your hotel or a help desk.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "可以请你帮我叫一辆出租车吗？",
+    "tags": [
+      "transportation"
+    ]
+  },
+  {
+    "id": "airport_014",
+    "scene": "airport",
+    "priority": "medium",
+    "english": "How much is the fare to the city center?",
+    "chinese": "到市中心的车费大概是多少？",
+    "pinyin": "dào shì zhōngxīn de chēfèi dàgài shì duōshǎo?",
+    "usageNote": "Ask the taxi driver before starting the ride.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "到市中心的车费大概是多少？",
+    "tags": [
+      "transportation",
+      "money"
+    ]
+  },
+  {
+    "id": "airport_015",
+    "scene": "airport",
+    "priority": "medium",
+    "english": "Please take me to this address.",
+    "chinese": "请带我去这个地址。",
+    "pinyin": "qǐng dài wǒ qù zhège dìzhǐ.",
+    "usageNote": "Show the driver the written address on your phone or paper.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请带我去这个地址。",
+    "tags": [
+      "transportation"
+    ]
+  },
+  {
+    "id": "airport_016",
+    "scene": "airport",
+    "priority": "medium",
+    "english": "I have a connecting flight.",
+    "chinese": "我要转机。",
+    "pinyin": "wǒ yào zhuǎn jī.",
+    "usageNote": "Inform staff if you need to find your next departure gate quickly.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我要转机。",
+    "tags": [
+      "transit"
+    ]
+  },
+  {
+    "id": "airport_017",
+    "scene": "airport",
+    "priority": "medium",
+    "english": "Which gate is for flight CA123?",
+    "chinese": "CA123航班在哪个登机口？",
+    "pinyin": "CA123 hángbān zài nǎge dēngjī kǒu?",
+    "usageNote": "Ask an airport employee for your specific gate number.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "CA123航班在哪个登机口？",
+    "tags": [
+      "departure"
+    ]
+  },
+  {
+    "id": "airport_018",
+    "scene": "airport",
+    "priority": "medium",
+    "english": "Where is the check-in counter for Air China?",
+    "chinese": "中国国际航空的值机柜台在哪里？",
+    "pinyin": "zhōngguó guójì hángkōng de zhí jī guìtái zài nǎlǐ?",
+    "usageNote": "Look for signs or ask for help to find your airline's desk.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "中国国际航空的值机柜台在哪里？",
+    "tags": [
+      "check-in"
+    ]
+  },
+  {
+    "id": "airport_019",
+    "scene": "airport",
+    "priority": "medium",
+    "english": "I would like a window seat, please.",
+    "chinese": "请给我一个靠窗的座位。",
+    "pinyin": "qǐng gěi wǒ yīgè kào chuāng de zuòwèi.",
+    "usageNote": "Make this request during check-in.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请给我一个靠窗的座位。",
+    "tags": [
+      "check-in"
+    ]
+  },
+  {
+    "id": "airport_020",
+    "scene": "airport",
+    "priority": "medium",
+    "english": "How much luggage can I carry on?",
+    "chinese": "我可以随身携带多少行李？",
+    "pinyin": "wǒ kěyǐ suíshēn xiédài duōshǎo xínglǐ?",
+    "usageNote": "Ask about carry-on baggage allowances at the check-in counter.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我可以随身携带多少行李？",
+    "tags": [
+      "luggage",
+      "check-in"
+    ]
+  },
+  {
+    "id": "airport_021",
+    "scene": "airport",
+    "priority": "low",
+    "english": "Is there free Wi-Fi here?",
+    "chinese": "这里有免费的无线网络吗？",
+    "pinyin": "zhèlǐ yǒu miǎnfèi de wúxiàn wǎngluò ma?",
+    "usageNote": "Ask airport staff or look for signage about Wi-Fi access.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这里有免费的无线网络吗？",
+    "tags": [
+      "facility"
+    ]
+  },
+  {
+    "id": "airport_022",
+    "scene": "airport",
+    "priority": "low",
+    "english": "Where is the currency exchange?",
+    "chinese": "请问货币兑换处在哪里？",
+    "pinyin": "qǐngwèn huòbì duìhuàn chù zài nǎlǐ?",
+    "usageNote": "Use this to find a place to exchange money after landing.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请问货币兑换处在哪里？",
+    "tags": [
+      "money",
+      "facility"
+    ]
+  },
+  {
+    "id": "airport_023",
+    "scene": "airport",
+    "priority": "low",
+    "english": "Is there a SIM card shop?",
+    "chinese": "请问有卖手机卡的商店吗？",
+    "pinyin": "qǐngwèn yǒu mài shǒujī kǎ de shāngdiàn ma?",
+    "usageNote": "Ask for a store to buy a local SIM card for your phone.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请问有卖手机卡的商店吗？",
+    "tags": [
+      "facility",
+      "communication"
+    ]
+  },
+  {
+    "id": "airport_024",
+    "scene": "airport",
+    "priority": "low",
+    "english": "Where can I find a luggage storage service?",
+    "chinese": "请问行李寄存处在哪里？",
+    "pinyin": "qǐngwèn xínglǐ jìcún chù zài nǎlǐ?",
+    "usageNote": "Useful if you want to store bags before exploring the city.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请问行李寄存处在哪里？",
+    "tags": [
+      "luggage",
+      "facility"
+    ]
+  },
+  {
+    "id": "airport_025",
+    "scene": "airport",
+    "priority": "low",
+    "english": "I need to print my boarding pass.",
+    "chinese": "我需要打印我的登机牌。",
+    "pinyin": "wǒ xūyào dǎyìn wǒ de dēngjī pái.",
+    "usageNote": "Ask for help at an airline service counter or kiosk.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我需要打印我的登机牌。",
+    "tags": [
+      "check-in"
+    ]
+  },
+  {
+    "id": "airport_026",
+    "scene": "airport",
+    "priority": "low",
+    "english": "Is there a smoking area?",
+    "chinese": "请问有吸烟区吗？",
+    "pinyin": "qǐngwèn yǒu xīyān qū ma?",
+    "usageNote": "Use this to find a designated smoking zone.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请问有吸烟区吗？",
+    "tags": [
+      "facility"
+    ]
+  },
+  {
+    "id": "airport_027",
+    "scene": "airport",
+    "priority": "low",
+    "english": "Can I have a receipt for my taxi fare?",
+    "chinese": "可以给我一张出租车发票吗？",
+    "pinyin": "kěyǐ gěi wǒ yī zhāng chūzū chē fāpiào ma?",
+    "usageNote": "Request a official receipt from the taxi driver.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "可以给我一张出租车发票吗？",
+    "tags": [
+      "transportation",
+      "money"
+    ]
+  },
+  {
+    "id": "airport_028",
+    "scene": "airport",
+    "priority": "medium",
+    "english": "My flight has been delayed.",
+    "chinese": "我的航班延误了。",
+    "pinyin": "wǒ de hángbān yánwù le.",
+    "usageNote": "Inform others about your flight status and check monitors for updates.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我的航班延误了。",
+    "tags": [
+      "departure"
+    ]
+  },
+  {
+    "id": "airport_029",
+    "scene": "airport",
+    "priority": "medium",
+    "english": "Which baggage belt is for flight MU567?",
+    "chinese": "MU567航班的行李在几号传送带？",
+    "pinyin": "MU567 hángbān de xínglǐ zài jǐ hào chuánsòng dài?",
+    "usageNote": "Check the flight information display and ask staff if unsure.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "MU567航班的行李在几号传送带？",
+    "tags": [
+      "luggage"
+    ]
+  },
+  {
+    "id": "airport_030",
+    "scene": "airport",
+    "priority": "high",
+    "english": "I lost my passport at the airport.",
+    "chinese": "我在机场把护照弄丢了。",
+    "pinyin": "wǒ zài jīchǎng bǎ hùzhào nòng diū le.",
+    "usageNote": "Report this immediately to airport police or your embassy.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "我在机场把护照弄丢了。",
+    "tags": [
+      "emergency",
+      "immigration"
+    ]
   }
 ]

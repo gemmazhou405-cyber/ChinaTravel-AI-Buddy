@@ -1,0 +1,478 @@
+[
+  {
+    "id": "emergency_001",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "Help!",
+    "chinese": "救命啊！",
+    "pinyin": "Jiùmìng a!",
+    "usageNote": "Use in life-threatening situations to attract immediate attention.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "救命啊！",
+    "tags": [
+      "help",
+      "urgent"
+    ]
+  },
+  {
+    "id": "emergency_002",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "Please call the police!",
+    "chinese": "请帮我报警！",
+    "pinyin": "Qǐng bāng wǒ bàojǐng!",
+    "usageNote": "Ask someone nearby to contact police for you.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请帮我报警！",
+    "tags": [
+      "police",
+      "safety"
+    ]
+  },
+  {
+    "id": "emergency_003",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "Please call an ambulance!",
+    "chinese": "请帮我叫救护车！",
+    "pinyin": "Qǐng bāng wǒ jiào jiùhùchē!",
+    "usageNote": "Request emergency medical transport immediately.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请帮我叫救护车！",
+    "tags": [
+      "medical",
+      "ambulance"
+    ]
+  },
+  {
+    "id": "emergency_004",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "There's been an accident!",
+    "chinese": "出事故了！",
+    "pinyin": "Chū shìgù le!",
+    "usageNote": "Alert others that an accident has occurred.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "出事故了！",
+    "tags": [
+      "accident"
+    ]
+  },
+  {
+    "id": "emergency_005",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "Please call the fire department!",
+    "chinese": "请帮我叫消防队！",
+    "pinyin": "Qǐng bāng wǒ jiào xiāofángduì!",
+    "usageNote": "Use when reporting a fire or requesting firefighters.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请帮我叫消防队！",
+    "tags": [
+      "fire",
+      "emergency"
+    ]
+  },
+  {
+    "id": "emergency_006",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "I need help!",
+    "chinese": "我需要帮助！",
+    "pinyin": "Wǒ xūyào bāngzhù!",
+    "usageNote": "General request for assistance in any emergency.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我需要帮助！",
+    "tags": [
+      "help"
+    ]
+  },
+  {
+    "id": "emergency_007",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "Where is the nearest hospital?",
+    "chinese": "最近的医院在哪里？",
+    "pinyin": "Zuìjìn de yīyuàn zài nǎlǐ?",
+    "usageNote": "Ask for directions to the closest medical facility.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "最近的医院在哪里？",
+    "tags": [
+      "hospital",
+      "directions"
+    ]
+  },
+  {
+    "id": "emergency_008",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "I'm lost and need help.",
+    "chinese": "我迷路了，需要帮助。",
+    "pinyin": "Wǒ mílù le, xūyào bāngzhù.",
+    "usageNote": "Use when disoriented and seeking assistance.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我迷路了，需要帮助。",
+    "tags": [
+      "lost",
+      "help"
+    ]
+  },
+  {
+    "id": "emergency_009",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "Can you help me?",
+    "chinese": "您能帮帮我吗？",
+    "pinyin": "Nín néng bāng bang wǒ ma?",
+    "usageNote": "Polite way to ask a stranger for assistance.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "您能帮帮我吗？",
+    "tags": [
+      "help",
+      "polite"
+    ]
+  },
+  {
+    "id": "emergency_010",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "I have a medical emergency.",
+    "chinese": "我有紧急医疗情况。",
+    "pinyin": "Wǒ yǒu jǐnjí yīliáo qíngkuàng.",
+    "usageNote": "Clearly communicate urgency to medical staff or bystanders.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我有紧急医疗情况。",
+    "tags": [
+      "medical",
+      "urgent"
+    ]
+  },
+  {
+    "id": "emergency_011",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "Someone is hurt!",
+    "chinese": "有人受伤了！",
+    "pinyin": "Yǒurén shòushāng le!",
+    "usageNote": "Alert others that a person has been injured.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "有人受伤了！",
+    "tags": [
+      "injury",
+      "urgent"
+    ]
+  },
+  {
+    "id": "emergency_012",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "I need to go to the hospital.",
+    "chinese": "我需要去医院。",
+    "pinyin": "Wǒ xūyào qù yīyuàn.",
+    "usageNote": "Indicate need for hospital transport or directions.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我需要去医院。",
+    "tags": [
+      "hospital",
+      "medical"
+    ]
+  },
+  {
+    "id": "emergency_013",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "Please help me contact my family.",
+    "chinese": "请帮我联系家人。",
+    "pinyin": "Qǐng bāng wǒ liánxì jiārén.",
+    "usageNote": "Ask for help reaching your family members.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请帮我联系家人。",
+    "tags": [
+      "family",
+      "contact"
+    ]
+  },
+  {
+    "id": "emergency_014",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "Fire!",
+    "chinese": "着火了！",
+    "pinyin": "Zháohuǒ le!",
+    "usageNote": "Shout to warn others of a fire.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "着火了！",
+    "tags": [
+      "fire",
+      "urgent"
+    ]
+  },
+  {
+    "id": "emergency_015",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "I have difficulty breathing.",
+    "chinese": "我呼吸困难。",
+    "pinyin": "Wǒ hūxī kùnnán.",
+    "usageNote": "Describe respiratory distress to medical responders.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我呼吸困难。",
+    "tags": [
+      "medical",
+      "breathing"
+    ]
+  },
+  {
+    "id": "emergency_016",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "I have chest pain.",
+    "chinese": "我胸口疼。",
+    "pinyin": "Wǒ xiōngkǒu téng.",
+    "usageNote": "Describe a common serious symptom to responders.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我胸口疼。",
+    "tags": [
+      "medical",
+      "pain"
+    ]
+  },
+  {
+    "id": "emergency_017",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "I'm allergic to certain medications.",
+    "chinese": "我对某些药物过敏。",
+    "pinyin": "Wǒ duì mǒuxiē yàowù guòmǐn.",
+    "usageNote": "Inform medical staff of your medication allergies.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我对某些药物过敏。",
+    "tags": [
+      "allergy",
+      "medical"
+    ]
+  },
+  {
+    "id": "emergency_018",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "Where is the police station?",
+    "chinese": "派出所在哪里？",
+    "pinyin": "Pàichūsuǒ zài nǎlǐ?",
+    "usageNote": "Ask for directions to the nearest police station.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "派出所在哪里？",
+    "tags": [
+      "police",
+      "directions"
+    ]
+  },
+  {
+    "id": "emergency_019",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "My wallet was stolen.",
+    "chinese": "我的钱包被偷了。",
+    "pinyin": "Wǒ de qiánbāo bèi tōu le.",
+    "usageNote": "Report theft to police or others nearby.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我的钱包被偷了。",
+    "tags": [
+      "theft",
+      "police"
+    ]
+  },
+  {
+    "id": "emergency_020",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "I've lost my passport.",
+    "chinese": "我的护照丢了。",
+    "pinyin": "Wǒ de hùzhào diū le.",
+    "usageNote": "Report a lost passport to authorities or your embassy.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我的护照丢了。",
+    "tags": [
+      "passport",
+      "lost"
+    ]
+  },
+  {
+    "id": "emergency_021",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "Please take me to the hospital.",
+    "chinese": "请送我去医院。",
+    "pinyin": "Qǐng sòng wǒ qù yīyuàn.",
+    "usageNote": "Ask a taxi driver or passerby for hospital transport.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请送我去医院。",
+    "tags": [
+      "hospital",
+      "transport"
+    ]
+  },
+  {
+    "id": "emergency_022",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "I need medicine.",
+    "chinese": "我需要药物。",
+    "pinyin": "Wǒ xūyào yàowù.",
+    "usageNote": "Express need for medication at a pharmacy or clinic.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我需要药物。",
+    "tags": [
+      "medicine",
+      "pharmacy"
+    ]
+  },
+  {
+    "id": "emergency_023",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "My phone is dead.",
+    "chinese": "我手机没电了。",
+    "pinyin": "Wǒ shǒujī méi diàn le.",
+    "usageNote": "Explain why you cannot make calls or show maps.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我手机没电了。",
+    "tags": [
+      "phone",
+      "dead"
+    ]
+  },
+  {
+    "id": "emergency_024",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "I don't speak Chinese.",
+    "chinese": "我不会说中文。",
+    "pinyin": "Wǒ bù huì shuō Zhōngwén.",
+    "usageNote": "Let others know you need language assistance.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我不会说中文。",
+    "tags": [
+      "language"
+    ]
+  },
+  {
+    "id": "emergency_025",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "Please speak slowly.",
+    "chinese": "请说慢一点。",
+    "pinyin": "Qǐng shuō màn yīdiǎn.",
+    "usageNote": "Ask someone to slow down so you can understand.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请说慢一点。",
+    "tags": [
+      "language",
+      "polite"
+    ]
+  },
+  {
+    "id": "emergency_026",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "I have travel insurance.",
+    "chinese": "我有旅行保险。",
+    "pinyin": "Wǒ yǒu lǚxíng bǎoxiǎn.",
+    "usageNote": "Mention insurance when seeking medical treatment.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我有旅行保险。",
+    "tags": [
+      "insurance"
+    ]
+  },
+  {
+    "id": "emergency_027",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "Is there a pharmacy nearby?",
+    "chinese": "附近有药房吗？",
+    "pinyin": "Fùjìn yǒu yàofáng ma?",
+    "usageNote": "Ask for the nearest pharmacy to buy medicine.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "附近有药房吗？",
+    "tags": [
+      "pharmacy",
+      "directions"
+    ]
+  },
+  {
+    "id": "emergency_028",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "I have food allergies.",
+    "chinese": "我对某些食物过敏。",
+    "pinyin": "Wǒ duì mǒuxiē shíwù guòmǐn.",
+    "usageNote": "Inform restaurant staff or medical responders of allergies.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我对某些食物过敏。",
+    "tags": [
+      "allergy",
+      "food"
+    ]
+  },
+  {
+    "id": "emergency_029",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "Please stay calm.",
+    "chinese": "请保持冷静。",
+    "pinyin": "Qǐng bǎochí lěngjìng.",
+    "usageNote": "Useful to calm yourself or others in a crisis.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请保持冷静。",
+    "tags": [
+      "calm",
+      "advice"
+    ]
+  },
+  {
+    "id": "emergency_030",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "Thank you for your help.",
+    "chinese": "谢谢您的帮助。",
+    "pinyin": "Xièxie nín de bāngzhù.",
+    "usageNote": "Express gratitude after someone assists you.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "谢谢您的帮助。",
+    "tags": [
+      "thanks",
+      "polite"
+    ]
+  }
+]

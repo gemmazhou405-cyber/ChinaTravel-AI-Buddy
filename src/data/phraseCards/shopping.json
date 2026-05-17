@@ -1,0 +1,482 @@
+[
+  {
+    "id": "shopping_001",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "Hello, I need some help.",
+    "chinese": "你好，我需要一些帮助。",
+    "pinyin": "Nǐ hǎo, wǒ xūyào yīxiē bāngzhù.",
+    "usageNote": "Use to greet and ask for assistance in a store.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "你好，我需要一些帮助。",
+    "tags": [
+      "greeting",
+      "assistance"
+    ]
+  },
+  {
+    "id": "shopping_002",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "How much is this?",
+    "chinese": "这个多少钱？",
+    "pinyin": "Zhège duōshǎo qián?",
+    "usageNote": "Ask for the price of an item.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这个多少钱？",
+    "tags": [
+      "price",
+      "inquiry"
+    ]
+  },
+  {
+    "id": "shopping_003",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "Is there a discount?",
+    "chinese": "有折扣吗？",
+    "pinyin": "Yǒu zhékòu ma?",
+    "usageNote": "Inquire about discounts or sales.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "有折扣吗？",
+    "tags": [
+      "discount",
+      "price"
+    ]
+  },
+  {
+    "id": "shopping_004",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "Can you lower the price?",
+    "chinese": "可以便宜一点吗？",
+    "pinyin": "Kěyǐ piányi yīdiǎn ma?",
+    "usageNote": "Use for bargaining at markets.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "可以便宜一点吗？",
+    "tags": [
+      "bargaining",
+      "price"
+    ]
+  },
+  {
+    "id": "shopping_005",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "That's too expensive.",
+    "chinese": "太贵了。",
+    "pinyin": "Tài guì le.",
+    "usageNote": "Express that the price is too high.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "太贵了。",
+    "tags": [
+      "bargaining",
+      "price"
+    ]
+  },
+  {
+    "id": "shopping_006",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "What sizes do you have?",
+    "chinese": "你们有什么尺码？",
+    "pinyin": "Nǐmen yǒu shénme chǐmǎ?",
+    "usageNote": "Ask about available sizes.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "你们有什么尺码？",
+    "tags": [
+      "sizes",
+      "inquiry"
+    ]
+  },
+  {
+    "id": "shopping_007",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "Do you have this in medium?",
+    "chinese": "这件有中码吗？",
+    "pinyin": "Zhè jiàn yǒu zhōng mǎ ma?",
+    "usageNote": "Request a specific size.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这件有中码吗？",
+    "tags": [
+      "sizes",
+      "request"
+    ]
+  },
+  {
+    "id": "shopping_008",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "Can I try this on?",
+    "chinese": "我可以试穿吗？",
+    "pinyin": "Wǒ kěyǐ shì chuān ma?",
+    "usageNote": "Ask to try on clothing.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我可以试穿吗？",
+    "tags": [
+      "trying on",
+      "clothing"
+    ]
+  },
+  {
+    "id": "shopping_009",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "Where is the fitting room?",
+    "chinese": "试衣间在哪里？",
+    "pinyin": "Shì yī jiān zài nǎlǐ?",
+    "usageNote": "Locate the fitting room.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "试衣间在哪里？",
+    "tags": [
+      "trying on",
+      "location"
+    ]
+  },
+  {
+    "id": "shopping_010",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "I want to return this item.",
+    "chinese": "我想退货。",
+    "pinyin": "Wǒ xiǎng tuì huò.",
+    "usageNote": "Initiate a return.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我想退货。",
+    "tags": [
+      "returns",
+      "request"
+    ]
+  },
+  {
+    "id": "shopping_011",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "What is your return policy?",
+    "chinese": "你们的退货政策是什么？",
+    "pinyin": "Nǐmen de tuì huò zhèngcè shì shénme?",
+    "usageNote": "Ask about return rules.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "你们的退货政策是什么？",
+    "tags": [
+      "returns",
+      "policy"
+    ]
+  },
+  {
+    "id": "shopping_012",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "Do you accept credit cards?",
+    "chinese": "你们接受信用卡吗？",
+    "pinyin": "Nǐmen jiēshòu xìnyòngkǎ ma?",
+    "usageNote": "Inquire about payment methods.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "你们接受信用卡吗？",
+    "tags": [
+      "payment",
+      "credit card"
+    ]
+  },
+  {
+    "id": "shopping_013",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "Can I pay with WeChat Pay?",
+    "chinese": "可以用微信支付吗？",
+    "pinyin": "Kěyǐ yòng Wēixìn zhīfù ma?",
+    "usageNote": "Ask about mobile payment options.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "可以用微信支付吗？",
+    "tags": [
+      "payment",
+      "mobile"
+    ]
+  },
+  {
+    "id": "shopping_014",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "Do you have this in another color?",
+    "chinese": "这个有其他颜色吗？",
+    "pinyin": "Zhège yǒu qítā yánsè ma?",
+    "usageNote": "Ask for color variants.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这个有其他颜色吗？",
+    "tags": [
+      "color",
+      "inquiry"
+    ]
+  },
+  {
+    "id": "shopping_015",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "Is this on sale?",
+    "chinese": "这个打折吗？",
+    "pinyin": "Zhège dǎzhé ma?",
+    "usageNote": "Check if an item is discounted.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这个打折吗？",
+    "tags": [
+      "sale",
+      "discount"
+    ]
+  },
+  {
+    "id": "shopping_016",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "I'm just looking, thank you.",
+    "chinese": "我只是看看，谢谢。",
+    "pinyin": "Wǒ zhǐ shì kàn kàn, xièxiè.",
+    "usageNote": "Politely decline assistance.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我只是看看，谢谢。",
+    "tags": [
+      "browsing",
+      "polite"
+    ]
+  },
+  {
+    "id": "shopping_017",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "Can you gift wrap this?",
+    "chinese": "可以帮我包装一下吗？",
+    "pinyin": "Kěyǐ bāng wǒ bāozhuāng yīxià ma?",
+    "usageNote": "Request gift wrapping.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "可以帮我包装一下吗？",
+    "tags": [
+      "service",
+      "gift"
+    ]
+  },
+  {
+    "id": "shopping_018",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "Where is the cashier?",
+    "chinese": "收银台在哪里？",
+    "pinyin": "Shōuyín tái zài nǎlǐ?",
+    "usageNote": "Find the payment counter.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "收银台在哪里？",
+    "tags": [
+      "payment",
+      "location"
+    ]
+  },
+  {
+    "id": "shopping_019",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "I need a bag.",
+    "chinese": "我需要一个袋子。",
+    "pinyin": "Wǒ xūyào yīgè dàizi.",
+    "usageNote": "Ask for a shopping bag.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我需要一个袋子。",
+    "tags": [
+      "bag",
+      "request"
+    ]
+  },
+  {
+    "id": "shopping_020",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "Is there a warranty?",
+    "chinese": "有保修吗？",
+    "pinyin": "Yǒu bǎoxiū ma?",
+    "usageNote": "Inquire about product warranty.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "有保修吗？",
+    "tags": [
+      "warranty",
+      "inquiry"
+    ]
+  },
+  {
+    "id": "shopping_021",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "Can I get a receipt?",
+    "chinese": "可以给我收据吗？",
+    "pinyin": "Kěyǐ gěi wǒ shōujù ma?",
+    "usageNote": "Request a receipt after purchase.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "可以给我收据吗？",
+    "tags": [
+      "receipt",
+      "payment"
+    ]
+  },
+  {
+    "id": "shopping_022",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "This is damaged.",
+    "chinese": "这个是坏的。",
+    "pinyin": "Zhège shì huài de.",
+    "usageNote": "Point out a defective item.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这个是坏的。",
+    "tags": [
+      "defective",
+      "returns"
+    ]
+  },
+  {
+    "id": "shopping_023",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "I want to exchange this.",
+    "chinese": "我想换货。",
+    "pinyin": "Wǒ xiǎng huàn huò.",
+    "usageNote": "Request an exchange.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我想换货。",
+    "tags": [
+      "exchange",
+      "returns"
+    ]
+  },
+  {
+    "id": "shopping_024",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "What material is this made of?",
+    "chinese": "这个是什么材质的？",
+    "pinyin": "Zhège shì shénme cáizhì de?",
+    "usageNote": "Ask about material composition.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这个是什么材质的？",
+    "tags": [
+      "material",
+      "inquiry"
+    ]
+  },
+  {
+    "id": "shopping_025",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "Can I see that one?",
+    "chinese": "我可以看看那个吗？",
+    "pinyin": "Wǒ kěyǐ kàn kàn nàgè ma?",
+    "usageNote": "Ask to inspect an item.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我可以看看那个吗？",
+    "tags": [
+      "viewing",
+      "request"
+    ]
+  },
+  {
+    "id": "shopping_026",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "Do you have a smaller size?",
+    "chinese": "你们有小一号的吗？",
+    "pinyin": "Nǐmen yǒu xiǎo yī hào de ma?",
+    "usageNote": "Request a smaller size.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "你们有小一号的吗？",
+    "tags": [
+      "sizes",
+      "request"
+    ]
+  },
+  {
+    "id": "shopping_027",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "This fits perfectly.",
+    "chinese": "这个很合身。",
+    "pinyin": "Zhège hěn hé shēn.",
+    "usageNote": "Express that clothing fits well.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这个很合身。",
+    "tags": [
+      "fit",
+      "compliment"
+    ]
+  },
+  {
+    "id": "shopping_028",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "I'll take this one.",
+    "chinese": "我要这个。",
+    "pinyin": "Wǒ yào zhège.",
+    "usageNote": "Decide to purchase an item.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我要这个。",
+    "tags": [
+      "purchase",
+      "decision"
+    ]
+  },
+  {
+    "id": "shopping_029",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "Can you deliver this to my hotel?",
+    "chinese": "可以送到我的酒店吗？",
+    "pinyin": "Kěyǐ sòng dào wǒ de jiǔdiàn ma?",
+    "usageNote": "Ask for delivery service.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "可以送到我的酒店吗？",
+    "tags": [
+      "delivery",
+      "service"
+    ]
+  },
+  {
+    "id": "shopping_030",
+    "scene": "shopping",
+    "priority": "high",
+    "english": "Thank you for your help.",
+    "chinese": "谢谢你的帮助。",
+    "pinyin": "Xièxiè nǐ de bāngzhù.",
+    "usageNote": "Express gratitude after assistance.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "谢谢你的帮助。",
+    "tags": [
+      "gratitude",
+      "polite"
+    ]
+  }
+]

@@ -4,129 +4,477 @@
     "scene": "hotel",
     "priority": "high",
     "english": "I have a reservation.",
-    "chinese": "我有预订。",
-    "pinyin": "Wǒ yǒu yùdìng.",
-    "usageNote": "Show this at the hotel front desk when checking in.",
+    "chinese": "我预订了房间。",
+    "pinyin": "wǒ yùdìng le fángjiān.",
+    "usageNote": "Used when you have a booking at the hotel.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "我有预订。",
-    "tags": ["hotel", "check-in", "reservation"]
+    "audioText": "我预订了房间。",
+    "tags": [
+      "check-in",
+      "reservation"
+    ]
   },
   {
     "id": "hotel_002",
     "scene": "hotel",
     "priority": "high",
-    "english": "Here is my passport.",
-    "chinese": "这是我的护照。",
-    "pinyin": "Zhè shì wǒ de hùzhào.",
-    "usageNote": "Use this during foreign guest registration.",
+    "english": "I'd like to check in.",
+    "chinese": "我想办理入住。",
+    "pinyin": "wǒ xiǎng bànlǐ rùzhù.",
+    "usageNote": "Request to start the check-in process.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "这是我的护照。",
-    "tags": ["hotel", "passport", "check-in"]
+    "audioText": "我想办理入住。",
+    "tags": [
+      "check-in"
+    ]
   },
   {
     "id": "hotel_003",
     "scene": "hotel",
     "priority": "high",
-    "english": "Please write the hotel address in Chinese.",
-    "chinese": "请用中文写一下酒店地址。",
-    "pinyin": "Qǐng yòng Zhōngwén xiě yīxià jiǔdiàn dìzhǐ.",
-    "usageNote": "Ask for this before taking taxis or rideshares.",
+    "english": "What time is check-in?",
+    "chinese": "入住时间是几点？",
+    "pinyin": "rùzhù shíjiān shì jǐ diǎn?",
+    "usageNote": "Ask about the check-in time.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "请用中文写一下酒店地址。",
-    "tags": ["hotel", "address", "taxi"]
+    "audioText": "入住时间是几点？",
+    "tags": [
+      "check-in",
+      "time"
+    ]
   },
   {
     "id": "hotel_004",
     "scene": "hotel",
-    "priority": "medium",
-    "english": "What is the WiFi password?",
-    "chinese": "WiFi密码是多少？",
-    "pinyin": "WiFi mìmǎ shì duōshǎo?",
-    "usageNote": "Use this at reception or in a restaurant inside the hotel.",
+    "priority": "high",
+    "english": "Can I have the key to my room?",
+    "chinese": "能给我房间钥匙吗？",
+    "pinyin": "néng gěi wǒ fángjiān yàoshi ma?",
+    "usageNote": "Request the room key after check-in.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "WiFi密码是多少？",
-    "tags": ["hotel", "wifi", "internet"]
+    "audioText": "能给我房间钥匙吗？",
+    "tags": [
+      "check-in",
+      "key"
+    ]
   },
   {
     "id": "hotel_005",
     "scene": "hotel",
-    "priority": "medium",
-    "english": "Can I check in early?",
-    "chinese": "我可以提前入住吗？",
-    "pinyin": "Wǒ kěyǐ tíqián rùzhù ma?",
-    "usageNote": "Ask this if you arrive before standard check-in time.",
+    "priority": "high",
+    "english": "Is breakfast included?",
+    "chinese": "包含早餐吗？",
+    "pinyin": "bāohán zǎocān ma?",
+    "usageNote": "Ask if breakfast is part of the room rate.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "我可以提前入住吗？",
-    "tags": ["hotel", "check-in", "early"]
+    "audioText": "包含早餐吗？",
+    "tags": [
+      "check-in",
+      "breakfast"
+    ]
   },
   {
     "id": "hotel_006",
     "scene": "hotel",
-    "priority": "medium",
-    "english": "Can I have late checkout?",
-    "chinese": "可以延迟退房吗？",
-    "pinyin": "Kěyǐ yánchí tuìfáng ma?",
-    "usageNote": "Use this at reception the night before or morning of departure.",
+    "priority": "high",
+    "english": "Can I have a room with a view?",
+    "chinese": "我能要一个有风景的房间吗？",
+    "pinyin": "wǒ néng yào yīgè yǒu fēngjǐng de fángjiān ma?",
+    "usageNote": "Request a room with a nice view.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "可以延迟退房吗？",
-    "tags": ["hotel", "checkout", "late"]
+    "audioText": "我能要一个有风景的房间吗？",
+    "tags": [
+      "room-request",
+      "view"
+    ]
   },
   {
     "id": "hotel_007",
     "scene": "hotel",
-    "priority": "medium",
-    "english": "Please send more towels.",
-    "chinese": "请送一些毛巾。",
-    "pinyin": "Qǐng sòng yīxiē máojīn.",
-    "usageNote": "Use this with housekeeping or front desk staff.",
+    "priority": "high",
+    "english": "My room is too noisy.",
+    "chinese": "我的房间太吵了。",
+    "pinyin": "wǒ de fángjiān tài chǎo le.",
+    "usageNote": "Report a noise issue in your room.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "请送一些毛巾。",
-    "tags": ["hotel", "housekeeping", "towels"]
+    "audioText": "我的房间太吵了。",
+    "tags": [
+      "room-request",
+      "complaint"
+    ]
   },
   {
     "id": "hotel_008",
     "scene": "hotel",
-    "priority": "low",
-    "english": "The air conditioner is not working.",
-    "chinese": "空调坏了。",
-    "pinyin": "Kōngtiáo huài le.",
-    "usageNote": "Use this when reporting a room problem.",
+    "priority": "high",
+    "english": "Can I have extra towels?",
+    "chinese": "能多给我几条毛巾吗？",
+    "pinyin": "néng duō gěi wǒ jǐ tiáo máojīn ma?",
+    "usageNote": "Request additional towels.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "空调坏了。",
-    "tags": ["hotel", "room", "maintenance"]
+    "audioText": "能多给我几条毛巾吗？",
+    "tags": [
+      "room-request",
+      "towels"
+    ]
   },
   {
     "id": "hotel_009",
     "scene": "hotel",
-    "priority": "low",
-    "english": "Can you help me call a taxi?",
-    "chinese": "可以帮我叫出租车吗？",
-    "pinyin": "Kěyǐ bāng wǒ jiào chūzūchē ma?",
-    "usageNote": "Ask reception for help if you cannot use DiDi.",
+    "priority": "high",
+    "english": "Is there a safe in the room?",
+    "chinese": "房间里有保险箱吗？",
+    "pinyin": "fángjiān lǐ yǒu bǎoxiǎn xiāng ma?",
+    "usageNote": "Ask about security facilities in the room.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "可以帮我叫出租车吗？",
-    "tags": ["hotel", "taxi", "front-desk"]
+    "audioText": "房间里有保险箱吗？",
+    "tags": [
+      "room-request",
+      "safe"
+    ]
   },
   {
     "id": "hotel_010",
     "scene": "hotel",
-    "priority": "low",
-    "english": "Please keep my luggage for a few hours.",
-    "chinese": "请帮我寄存几个小时行李。",
-    "pinyin": "Qǐng bāng wǒ jìcún jǐ gè xiǎoshí xíngli.",
-    "usageNote": "Use this after checkout if you still have time before leaving.",
+    "priority": "high",
+    "english": "I need to use the internet.",
+    "chinese": "我需要用网络。",
+    "pinyin": "wǒ xūyào yòng wǎngluò.",
+    "usageNote": "Request internet access.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "请帮我寄存几个小时行李。",
-    "tags": ["hotel", "luggage", "storage"]
+    "audioText": "我需要用网络。",
+    "tags": [
+      "room-request",
+      "internet"
+    ]
+  },
+  {
+    "id": "hotel_011",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "Where is the swimming pool?",
+    "chinese": "游泳池在哪里？",
+    "pinyin": "yóuyǒngchí zài nǎlǐ?",
+    "usageNote": "Ask for the location of the pool.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "游泳池在哪里？",
+    "tags": [
+      "facilities",
+      "pool"
+    ]
+  },
+  {
+    "id": "hotel_012",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "What time does the restaurant open?",
+    "chinese": "餐厅几点开门？",
+    "pinyin": "cāntīng jǐ diǎn kāimén?",
+    "usageNote": "Ask about restaurant hours.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "餐厅几点开门？",
+    "tags": [
+      "facilities",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "hotel_013",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "Can I store my luggage here?",
+    "chinese": "我能把行李寄存在这里吗？",
+    "pinyin": "wǒ néng bǎ xínglǐ jìcún zài zhèlǐ ma?",
+    "usageNote": "Request luggage storage.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我能把行李寄存在这里吗？",
+    "tags": [
+      "facilities",
+      "luggage"
+    ]
+  },
+  {
+    "id": "hotel_014",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "Is there a gym?",
+    "chinese": "有健身房吗？",
+    "pinyin": "yǒu jiànshēnfáng ma?",
+    "usageNote": "Ask about gym facilities.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "有健身房吗？",
+    "tags": [
+      "facilities",
+      "gym"
+    ]
+  },
+  {
+    "id": "hotel_015",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "How do I call the front desk?",
+    "chinese": "怎么打电话给前台？",
+    "pinyin": "zěnme dǎ diànhuà gěi qiántái?",
+    "usageNote": "Ask for instructions to contact the front desk.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "怎么打电话给前台？",
+    "tags": [
+      "facilities",
+      "front-desk"
+    ]
+  },
+  {
+    "id": "hotel_016",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "I'd like to check out.",
+    "chinese": "我想退房。",
+    "pinyin": "wǒ xiǎng tuì fáng.",
+    "usageNote": "Request to check out of the hotel.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我想退房。",
+    "tags": [
+      "checkout"
+    ]
+  },
+  {
+    "id": "hotel_017",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "Can I have my bill, please?",
+    "chinese": "请给我账单。",
+    "pinyin": "qǐng gěi wǒ zhàngdān.",
+    "usageNote": "Request the bill for checkout.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请给我账单。",
+    "tags": [
+      "checkout",
+      "bill"
+    ]
+  },
+  {
+    "id": "hotel_018",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "What time is checkout?",
+    "chinese": "退房时间是几点？",
+    "pinyin": "tuì fáng shíjiān shì jǐ diǎn?",
+    "usageNote": "Ask about the checkout time.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "退房时间是几点？",
+    "tags": [
+      "checkout",
+      "time"
+    ]
+  },
+  {
+    "id": "hotel_019",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "Can I leave my luggage here after checkout?",
+    "chinese": "退房后我能把行李留在这里吗？",
+    "pinyin": "tuì fáng hòu wǒ néng bǎ xínglǐ liú zài zhèlǐ ma?",
+    "usageNote": "Ask if luggage can be stored after checkout.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "退房后我能把行李留在这里吗？",
+    "tags": [
+      "checkout",
+      "luggage"
+    ]
+  },
+  {
+    "id": "hotel_020",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "Thank you for your help.",
+    "chinese": "谢谢您的帮助。",
+    "pinyin": "xièxie nín de bāngzhù.",
+    "usageNote": "Express gratitude to hotel staff.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "谢谢您的帮助。",
+    "tags": [
+      "general",
+      "thanks"
+    ]
+  },
+  {
+    "id": "hotel_021",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "I lost my key.",
+    "chinese": "我丢了钥匙。",
+    "pinyin": "wǒ diū le yàoshi.",
+    "usageNote": "Report a lost room key.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我丢了钥匙。",
+    "tags": [
+      "room-request",
+      "key"
+    ]
+  },
+  {
+    "id": "hotel_022",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "The air conditioning is not working.",
+    "chinese": "空调不工作了。",
+    "pinyin": "kōngtiáo bù gōngzuò le.",
+    "usageNote": "Report an issue with the air conditioning.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "空调不工作了。",
+    "tags": [
+      "room-request",
+      "maintenance"
+    ]
+  },
+  {
+    "id": "hotel_023",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "Can I have a wake-up call?",
+    "chinese": "能给我一个叫醒服务吗？",
+    "pinyin": "néng gěi wǒ yīgè jiào xǐng fúwù ma?",
+    "usageNote": "Request a morning wake-up call.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "能给我一个叫醒服务吗？",
+    "tags": [
+      "room-request",
+      "service"
+    ]
+  },
+  {
+    "id": "hotel_024",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "Is there a laundry service?",
+    "chinese": "有洗衣服务吗？",
+    "pinyin": "yǒu xǐ yī fúwù ma?",
+    "usageNote": "Ask about laundry services.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "有洗衣服务吗？",
+    "tags": [
+      "facilities",
+      "laundry"
+    ]
+  },
+  {
+    "id": "hotel_025",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "Where can I get a taxi?",
+    "chinese": "我在哪里可以叫到出租车？",
+    "pinyin": "wǒ zài nǎlǐ kěyǐ jiào dào chūzū chē?",
+    "usageNote": "Ask for taxi services.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我在哪里可以叫到出租车？",
+    "tags": [
+      "facilities",
+      "transport"
+    ]
+  },
+  {
+    "id": "hotel_026",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "I need to extend my stay.",
+    "chinese": "我需要延长住宿。",
+    "pinyin": "wǒ xūyào yáncháng zhùsù.",
+    "usageNote": "Request to extend the hotel stay.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我需要延长住宿。",
+    "tags": [
+      "checkout",
+      "extend"
+    ]
+  },
+  {
+    "id": "hotel_027",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "Can I change my room?",
+    "chinese": "我能换房间吗？",
+    "pinyin": "wǒ néng huàn fángjiān ma?",
+    "usageNote": "Request to change rooms.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我能换房间吗？",
+    "tags": [
+      "room-request",
+      "change"
+    ]
+  },
+  {
+    "id": "hotel_028",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "Do you have a map of the city?",
+    "chinese": "有城市地图吗？",
+    "pinyin": "yǒu chéngshì dìtú ma?",
+    "usageNote": "Ask for a city map.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "有城市地图吗？",
+    "tags": [
+      "facilities",
+      "map"
+    ]
+  },
+  {
+    "id": "hotel_029",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "What is the Wi-Fi password?",
+    "chinese": "Wi-Fi密码是什么？",
+    "pinyin": "Wi-Fi mìmǎ shì shénme?",
+    "usageNote": "Ask for the Wi-Fi password.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "Wi-Fi密码是什么？",
+    "tags": [
+      "room-request",
+      "wifi"
+    ]
+  },
+  {
+    "id": "hotel_030",
+    "scene": "hotel",
+    "priority": "high",
+    "english": "I have a complaint about my room.",
+    "chinese": "我对我的房间有投诉。",
+    "pinyin": "wǒ duì wǒ de fángjiān yǒu tóusù.",
+    "usageNote": "Express a complaint about the room.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我对我的房间有投诉。",
+    "tags": [
+      "room-request",
+      "complaint"
+    ]
   }
 ]

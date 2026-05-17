@@ -1,0 +1,10 @@
+[
+  {"scene": "airport", "description": "Airport arrival, customs, immigration, luggage, transportation"},
+  {"scene": "train", "description": "Train stations, tickets, platforms, high-speed rail"},
+  {"scene": "hotel", "description": "Hotel check-in, room requests, facilities, checkout"},
+  {"scene": "payment", "description": "WeChat Pay, Alipay, card payment, cash, receipts"},
+  {"scene": "shopping", "description": "Markets, stores, bargaining, returns, sizes"},
+  {"scene": "lostItems", "description": "Lost passport, phone, wallet, bags, reporting to police"},
+  {"scene": "restaurant", "description": "Ordering food, allergies, bill, dietary restrictions"},
+  {"scene": "emergency", "description": "Calling for help, accidents, fire, medical urgency"}
+]

@@ -3,130 +3,491 @@
     "id": "payment_001",
     "scene": "payment",
     "priority": "high",
-    "english": "Can I pay with Alipay?",
-    "chinese": "可以用支付宝付款吗？",
-    "pinyin": "Kěyǐ yòng Zhīfùbǎo fùkuǎn ma?",
-    "usageNote": "Use this before checkout at shops, restaurants, or taxis.",
+    "english": "Do you accept WeChat Pay?",
+    "chinese": "可以用微信支付吗？",
+    "pinyin": "kěyǐ yòng Wēixìn zhīfù ma?",
+    "usageNote": "Ask before attempting to pay with WeChat.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "可以用支付宝付款吗？",
-    "tags": ["payment", "alipay", "checkout"]
+    "audioText": "可以用微信支付吗？",
+    "tags": [
+      "wechat",
+      "payment",
+      "question"
+    ]
   },
   {
     "id": "payment_002",
     "scene": "payment",
     "priority": "high",
-    "english": "Can I pay with WeChat Pay?",
-    "chinese": "可以用微信支付吗？",
-    "pinyin": "Kěyǐ yòng Wēixìn Zhīfù ma?",
-    "usageNote": "Use this when a merchant shows a QR code.",
+    "english": "Can I pay with Alipay?",
+    "chinese": "可以用支付宝吗？",
+    "pinyin": "kěyǐ yòng Zhīfùbǎo ma?",
+    "usageNote": "Inquire about Alipay acceptance.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "可以用微信支付吗？",
-    "tags": ["payment", "wechat", "checkout"]
+    "audioText": "可以用支付宝吗？",
+    "tags": [
+      "alipay",
+      "payment",
+      "question"
+    ]
   },
   {
     "id": "payment_003",
     "scene": "payment",
     "priority": "high",
-    "english": "My payment did not go through.",
-    "chinese": "我的付款没有成功。",
-    "pinyin": "Wǒ de fùkuǎn méiyǒu chénggōng.",
-    "usageNote": "Show this if your app says the transaction failed.",
+    "english": "I'll pay by credit card.",
+    "chinese": "我用信用卡付款。",
+    "pinyin": "wǒ yòng xìnyòngkǎ fùkuǎn.",
+    "usageNote": "Inform the cashier of your payment method.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "我的付款没有成功。",
-    "tags": ["payment", "failed", "checkout"]
+    "audioText": "我用信用卡付款。",
+    "tags": [
+      "card",
+      "payment",
+      "statement"
+    ]
   },
   {
     "id": "payment_004",
     "scene": "payment",
-    "priority": "medium",
-    "english": "Can I pay by international credit card?",
-    "chinese": "可以用国际信用卡付款吗？",
-    "pinyin": "Kěyǐ yòng guójì xìnyòngkǎ fùkuǎn ma?",
-    "usageNote": "Use this in hotels, malls, or larger restaurants.",
+    "priority": "high",
+    "english": "I'll pay with cash.",
+    "chinese": "我用现金付款。",
+    "pinyin": "wǒ yòng xiànjīn fùkuǎn.",
+    "usageNote": "State you will pay with cash.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "可以用国际信用卡付款吗？",
-    "tags": ["payment", "credit-card", "international"]
+    "audioText": "我用现金付款。",
+    "tags": [
+      "cash",
+      "payment",
+      "statement"
+    ]
   },
   {
     "id": "payment_005",
     "scene": "payment",
-    "priority": "medium",
-    "english": "Can I pay in cash?",
-    "chinese": "可以用现金付款吗？",
-    "pinyin": "Kěyǐ yòng xiànjīn fùkuǎn ma?",
-    "usageNote": "Use this if mobile payment is not working.",
+    "priority": "high",
+    "english": "What's the total?",
+    "chinese": "一共多少钱？",
+    "pinyin": "yīgòng duōshǎo qián?",
+    "usageNote": "Ask for the total amount due.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "可以用现金付款吗？",
-    "tags": ["payment", "cash", "checkout"]
+    "audioText": "一共多少钱？",
+    "tags": [
+      "total",
+      "question"
+    ]
   },
   {
     "id": "payment_006",
     "scene": "payment",
-    "priority": "medium",
-    "english": "Please show me the QR code.",
-    "chinese": "请给我看一下付款二维码。",
-    "pinyin": "Qǐng gěi wǒ kàn yīxià fùkuǎn èrwéimǎ.",
-    "usageNote": "Use this when the merchant needs to present a payment code.",
+    "priority": "high",
+    "english": "Please show the QR code.",
+    "chinese": "请出示二维码。",
+    "pinyin": "qǐng chūshì èrwéimǎ.",
+    "usageNote": "Ask the merchant to display their payment QR code.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "请给我看一下付款二维码。",
-    "tags": ["payment", "qr-code", "mobile"]
+    "audioText": "请出示二维码。",
+    "tags": [
+      "qr",
+      "instruction"
+    ]
   },
   {
     "id": "payment_007",
     "scene": "payment",
-    "priority": "medium",
-    "english": "Please scan my QR code.",
+    "priority": "high",
+    "english": "Scan my QR code, please.",
     "chinese": "请扫我的二维码。",
-    "pinyin": "Qǐng sǎo wǒ de èrwéimǎ.",
-    "usageNote": "Use this when your app displays a payment code.",
+    "pinyin": "qǐng sǎo wǒ de èrwéimǎ.",
+    "usageNote": "Offer your own payment QR code for scanning.",
     "showToLocal": true,
     "emergencyRelevant": false,
     "audioText": "请扫我的二维码。",
-    "tags": ["payment", "qr-code", "scan"]
+    "tags": [
+      "qr",
+      "instruction"
+    ]
   },
   {
     "id": "payment_008",
     "scene": "payment",
-    "priority": "low",
-    "english": "Can I have a receipt?",
-    "chinese": "可以给我收据吗？",
-    "pinyin": "Kěyǐ gěi wǒ shōujù ma?",
-    "usageNote": "Ask for this if you need proof of payment.",
+    "priority": "high",
+    "english": "Is my payment successful?",
+    "chinese": "我支付成功了吗？",
+    "pinyin": "wǒ zhīfù chénggōng le ma?",
+    "usageNote": "Confirm if the transaction went through.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "可以给我收据吗？",
-    "tags": ["payment", "receipt", "expense"]
+    "audioText": "我支付成功了吗？",
+    "tags": [
+      "confirm",
+      "question"
+    ]
   },
   {
     "id": "payment_009",
     "scene": "payment",
-    "priority": "low",
-    "english": "The amount seems incorrect.",
-    "chinese": "这个金额好像不对。",
-    "pinyin": "Zhège jīn'é hǎoxiàng bù duì.",
-    "usageNote": "Use this politely if the displayed amount seems wrong.",
+    "priority": "high",
+    "english": "Could I have a receipt, please?",
+    "chinese": "请给我收据。",
+    "pinyin": "qǐng gěi wǒ shōujù.",
+    "usageNote": "Request a receipt after payment.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "这个金额好像不对。",
-    "tags": ["payment", "amount", "checkout"]
+    "audioText": "请给我收据。",
+    "tags": [
+      "receipt",
+      "request"
+    ]
   },
   {
     "id": "payment_010",
     "scene": "payment",
-    "priority": "low",
-    "english": "Please wait while I try another card.",
-    "chinese": "请稍等，我换一张卡试试。",
-    "pinyin": "Qǐng shāo děng, wǒ huàn yī zhāng kǎ shìshi.",
-    "usageNote": "Use this if one linked card fails in a payment app.",
+    "priority": "high",
+    "english": "This payment is for two people.",
+    "chinese": "这是两个人的费用。",
+    "pinyin": "zhè shì liǎng gè rén de fèiyòng.",
+    "usageNote": "Clarify payment covers multiple people.",
     "showToLocal": true,
     "emergencyRelevant": false,
-    "audioText": "请稍等，我换一张卡试试。",
-    "tags": ["payment", "card", "retry"]
+    "audioText": "这是两个人的费用。",
+    "tags": [
+      "clarification",
+      "statement"
+    ]
+  },
+  {
+    "id": "payment_011",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "Does this include tax?",
+    "chinese": "这含税吗？",
+    "pinyin": "zhè hán shuì ma?",
+    "usageNote": "Ask if the price is tax-inclusive.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这含税吗？",
+    "tags": [
+      "tax",
+      "question"
+    ]
+  },
+  {
+    "id": "payment_012",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "Is there a service charge?",
+    "chinese": "有服务费吗？",
+    "pinyin": "yǒu fúwùfèi ma?",
+    "usageNote": "Inquire about additional service fees.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "有服务费吗？",
+    "tags": [
+      "fee",
+      "question"
+    ]
+  },
+  {
+    "id": "payment_013",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "Can I pay separately?",
+    "chinese": "可以分开付吗？",
+    "pinyin": "kěyǐ fēnkāi fù ma?",
+    "usageNote": "Ask about splitting the payment.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "可以分开付吗？",
+    "tags": [
+      "split",
+      "question"
+    ]
+  },
+  {
+    "id": "payment_014",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "Please charge this card.",
+    "chinese": "请刷这张卡。",
+    "pinyin": "qǐng shuā zhè zhāng kǎ.",
+    "usageNote": "Hand over your card for payment.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请刷这张卡。",
+    "tags": [
+      "card",
+      "instruction"
+    ]
+  },
+  {
+    "id": "payment_015",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "Do you have change for 100 yuan?",
+    "chinese": "一百块有零钱找吗？",
+    "pinyin": "yībǎi kuài yǒu língqián zhǎo ma?",
+    "usageNote": "Check if they can break a 100 yuan note.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "一百块有零钱找吗？",
+    "tags": [
+      "cash",
+      "change",
+      "question"
+    ]
+  },
+  {
+    "id": "payment_016",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "Please keep the change.",
+    "chinese": "不用找零了。",
+    "pinyin": "bùyòng zhǎolíng le.",
+    "usageNote": "Politely tell them to keep the change.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "不用找零了。",
+    "tags": [
+      "tip",
+      "change",
+      "statement"
+    ]
+  },
+  {
+    "id": "payment_017",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "Can I get a paper receipt?",
+    "chinese": "可以给纸质发票吗？",
+    "pinyin": "kěyǐ gěi zhǐzhì fāpiào ma?",
+    "usageNote": "Request an official tax invoice (fapiao).",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "可以给纸质发票吗？",
+    "tags": [
+      "invoice",
+      "receipt",
+      "request"
+    ]
+  },
+  {
+    "id": "payment_018",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "My card was declined.",
+    "chinese": "我的卡被拒了。",
+    "pinyin": "wǒ de kǎ bèi jù le.",
+    "usageNote": "Inform about a card payment failure.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我的卡被拒了。",
+    "tags": [
+      "card",
+      "problem"
+    ]
+  },
+  {
+    "id": "payment_019",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "The amount is incorrect.",
+    "chinese": "金额不对。",
+    "pinyin": "jīn'é bú duì.",
+    "usageNote": "Point out a discrepancy in the charged amount.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "金额不对。",
+    "tags": [
+      "error",
+      "problem"
+    ]
+  },
+  {
+    "id": "payment_020",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "Please try again.",
+    "chinese": "请再试一次。",
+    "pinyin": "qǐng zài shì yīcì.",
+    "usageNote": "Request a retry of the transaction.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请再试一次。",
+    "tags": [
+      "instruction",
+      "retry"
+    ]
+  },
+  {
+    "id": "payment_021",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "I need to pay with a foreign card.",
+    "chinese": "我需要用外币卡支付。",
+    "pinyin": "wǒ xūyào yòng wàibì kǎ zhīfù.",
+    "usageNote": "Explain you have an international card.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我需要用外币卡支付。",
+    "tags": [
+      "card",
+      "foreign",
+      "statement"
+    ]
+  },
+  {
+    "id": "payment_022",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "Is there a minimum spend for card payment?",
+    "chinese": "刷卡有最低消费吗？",
+    "pinyin": "shuākǎ yǒu zuìdī xiāofèi ma?",
+    "usageNote": "Ask if there's a minimum amount for card use.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "刷卡有最低消费吗？",
+    "tags": [
+      "card",
+      "minimum",
+      "question"
+    ]
+  },
+  {
+    "id": "payment_023",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "Could you double-check the amount?",
+    "chinese": "麻烦您再核对一下金额。",
+    "pinyin": "máfan nín zài héduì yīxià jīn'é.",
+    "usageNote": "Politely ask for amount verification.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "麻烦您再核对一下金额。",
+    "tags": [
+      "clarify",
+      "request"
+    ]
+  },
+  {
+    "id": "payment_024",
+    "scene": "payment",
+    "priority": "low",
+    "english": "I'll pay for everything.",
+    "chinese": "我来付全部。",
+    "pinyin": "wǒ lái fù quánbù.",
+    "usageNote": "Offer to pay the entire bill.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我来付全部。",
+    "tags": [
+      "offer",
+      "statement"
+    ]
+  },
+  {
+    "id": "payment_025",
+    "scene": "payment",
+    "priority": "low",
+    "english": "Can I split the bill with my friend?",
+    "chinese": "可以和朋友分摊吗？",
+    "pinyin": "kěyǐ hé péngyǒu fēntān ma?",
+    "usageNote": "Ask about splitting with a companion.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "可以和朋友分摊吗？",
+    "tags": [
+      "split",
+      "question"
+    ]
+  },
+  {
+    "id": "payment_026",
+    "scene": "payment",
+    "priority": "low",
+    "english": "Do you offer a discount?",
+    "chinese": "有优惠吗？",
+    "pinyin": "yǒu yōuhuì ma?",
+    "usageNote": "Inquire about available discounts.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "有优惠吗？",
+    "tags": [
+      "discount",
+      "question"
+    ]
+  },
+  {
+    "id": "payment_027",
+    "scene": "payment",
+    "priority": "low",
+    "english": "I have a coupon.",
+    "chinese": "我有优惠券。",
+    "pinyin": "wǒ yǒu yōuhuì quàn.",
+    "usageNote": "Mention you have a coupon to use.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我有优惠券。",
+    "tags": [
+      "coupon",
+      "statement"
+    ]
+  },
+  {
+    "id": "payment_028",
+    "scene": "payment",
+    "priority": "low",
+    "english": "Where do I scan the code?",
+    "chinese": "在哪里扫码？",
+    "pinyin": "zài nǎlǐ sǎo mǎ?",
+    "usageNote": "Ask for the location of the payment scanner.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "在哪里扫码？",
+    "tags": [
+      "qr",
+      "location",
+      "question"
+    ]
+  },
+  {
+    "id": "payment_029",
+    "scene": "payment",
+    "priority": "low",
+    "english": "Is mobile payment accepted here?",
+    "chinese": "这里支持手机支付吗？",
+    "pinyin": "zhèlǐ zhīchí shǒujī zhīfù ma?",
+    "usageNote": "General question about mobile payment support.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这里支持手机支付吗？",
+    "tags": [
+      "mobile",
+      "question"
+    ]
+  },
+  {
+    "id": "payment_030",
+    "scene": "payment",
+    "priority": "low",
+    "english": "Thank you, payment is done.",
+    "chinese": "谢谢，付好了。",
+    "pinyin": "xièxie, fù hǎo le.",
+    "usageNote": "Confirm completion and thank the staff.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "谢谢，付好了。",
+    "tags": [
+      "confirm",
+      "complete",
+      "polite"
+    ]
   }
 ]
