@@ -10,6 +10,11 @@ const TABS: { id: TabId; emoji: string; labelKey: string }[] = [
   { id: 'pay', emoji: '💳', labelKey: 'tabs.pay' },
 ];
 
+const getMobileLabel = (tab: (typeof TABS)[number], label: string) => {
+  if (tab.id === 'pay') return 'China Pay';
+  return label;
+};
+
 interface Props {
   activeTab: TabId;
   onTabChange: (id: TabId) => void;
@@ -41,7 +46,7 @@ export default function TabNav({ activeTab, onTabChange }: Props) {
                 `}
               >
                 <span className="text-base">{tab.emoji}</span>
-                <span>{t(tab.labelKey)}</span>
+                <span>{getMobileLabel(tab, t(tab.labelKey))}</span>
               </button>
             );
           })}

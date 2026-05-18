@@ -18,10 +18,11 @@ interface Props {
   user: User | null;
   userState: UserState | null;
   onAuthClick: () => void;
+  onAskBuddy: () => void;
   onLogout: () => Promise<void>;
 }
 
-export default function Hero({ user, userState, onAuthClick, onLogout }: Props) {
+export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogout }: Props) {
   const { t } = useTranslation();
   const [lang, setLang] = useState(i18n.language.toUpperCase());
   const [langOpen, setLangOpen] = useState(false);
@@ -144,12 +145,19 @@ export default function Hero({ user, userState, onAuthClick, onLogout }: Props) 
             {t('hero.subtitle')}
           </p>
 
-          <div className="absolute left-1/2 bottom-[19vh] z-20 w-[min(17.5rem,calc(100vw-2.5rem))] -translate-x-1/2 md:static md:w-auto md:translate-x-0">
+          <div className="absolute left-1/2 bottom-[17vh] z-20 flex w-[min(17.5rem,calc(100vw-2.5rem))] -translate-x-1/2 flex-col gap-2 md:static md:w-auto md:translate-x-0 md:flex-row">
             <button
               onClick={onAuthClick}
               className="w-full md:w-auto flex items-center justify-center gap-2 bg-[#155e63] text-white font-semibold px-5 py-3.5 md:px-8 md:py-4 rounded-xl hover:bg-[#0e4a4e] transition-all shadow-2xl md:shadow-xl text-sm md:text-base"
             >
-              {t('hero.cta')}
+              <span>{t('hero.cta')}</span>
+              <span className="text-white/60">· No download needed</span>
+            </button>
+            <button
+              onClick={onAskBuddy}
+              className="w-full md:w-auto flex items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/12 px-5 py-3.5 text-sm font-semibold text-white shadow-xl backdrop-blur-sm transition-all hover:bg-white/18 md:px-7 md:py-4 md:text-base"
+            >
+              Ask Buddy
             </button>
           </div>
 

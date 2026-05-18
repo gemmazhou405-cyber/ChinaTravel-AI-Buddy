@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PhraseCardCategorySection from '../PhraseCardCategorySection';
 import { hotelCards } from '../../data/phraseCards';
+import type { UserState } from '../../hooks/useAuth';
+import AskBuddyHint from '../AskBuddyHint';
 
 const HOTEL_PHRASES = [
   { key: 'stay.phrases.reservation', zh: '我有预订', pinyin: 'Wǒ yǒu yùdìng' },
@@ -32,11 +34,13 @@ const TIPS = [
 ];
 
 interface Props {
+  userState: UserState | null;
   showToast: (msg: string) => void;
+  onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
 }
 
-export default function StayTab({ showToast, onUpgradeClick }: Props) {
+export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeClick }: Props) {
   const { t } = useTranslation();
   const [selectedPhrase, setSelectedPhrase] = useState<(typeof HOTEL_PHRASES)[number] | null>(null);
   const [customPhrase, setCustomPhrase] = useState('');
@@ -46,6 +50,8 @@ export default function StayTab({ showToast, onUpgradeClick }: Props) {
     chinese: '请问我最晚几点退房？',
     pinyin: 'Qǐngwèn wǒ zuì wǎn jǐ diǎn tuìfáng?',
   };
+  const isPlanActive = !userState?.planExpiresAt || Date.now() < userState.planExpiresAt;
+  const hasFullAccess = !!userState && isPlanActive && (userState.plan === 'trip' || userState.plan === 'group');
 
   const speakChinese = (text: string) => {
     if ('speechSynthesis' in window) {
@@ -123,12 +129,16 @@ export default function StayTab({ showToast, onUpgradeClick }: Props) {
       </section>
 
       <PhraseCardCategorySection
-        title="Hotel Phrase Cards"
+        title="Hotel Phrases"
         icon={<Building2 className="w-4 h-4 text-[#155e63]" />}
         cards={hotelCards}
         freeLimit={3}
+        isPaidUser={hasFullAccess}
+        showToast={showToast}
         onUpgradeClick={onUpgradeClick}
       />
+
+      <AskBuddyHint onClick={onAskBuddy} />
 
       <div className="bg-[#155e63]/5 border border-[#155e63]/15 rounded-2xl p-4">
         <div className="flex items-start justify-between gap-3">

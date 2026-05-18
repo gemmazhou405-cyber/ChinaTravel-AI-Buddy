@@ -12,8 +12,8 @@
       "line1": "No Chinese.",
       "line2": "No VPN.",
       "line3": "No problem.",
-      "subtitle": "AI travel help that works inside China. Decode menus, pay with your card, communicate effortlessly — all without a VPN.",
-      "cta": "Start Free — No Download Needed",
+      "subtitle": "A practical China travel toolkit for phrases, payments, transport, food, and emergency help — all in one place.",
+      "cta": "Start Free",
       "trust": "Works inside China · No VPN needed · Free to start"
     },
     "tabs": {
@@ -22,7 +22,7 @@
       "food": "Food",
       "transport": "Transport",
       "emergency": "Emergency",
-      "pay": "Pay"
+      "pay": "Pay in China"
     },
     "before": {
       "title": "Pre-Trip Checklist",
@@ -225,7 +225,7 @@
       }
     },
     "pay": {
-      "plansTitle": "Plans",
+      "plansTitle": "Upgrade Your Trip Pass",
       "currentPlan": "Current plan:",
       "aiUsed": "Buddy AI used:",
       "refund": "One-time payment · No auto-renewal · 3-day refund policy",

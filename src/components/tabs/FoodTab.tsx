@@ -2,15 +2,10 @@ import { useState, useRef } from 'react';
 import { Upload, AlertTriangle, MessageSquare, ChevronRight, X, Sparkles, Send } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { COZE_WORKER_URL, COZE_BOT_ID } from '../../firebase-config';
-
-const PHRASE_CARDS = [
-  { labelKey: 'food.phrases.vegetarian', chinese: '我是素食者', pinyin: 'Wǒ shì sùshí zhě' },
-  { labelKey: 'food.phrases.spicy', chinese: '请不要太辣', pinyin: 'Qǐng bùyào tài là' },
-  { labelKey: 'food.phrases.msg', chinese: '请不要放味精', pinyin: 'Qǐng bùyào fàng wèijīng' },
-  { labelKey: 'food.phrases.menu', chinese: '可以给我菜单吗？', pinyin: 'Kěyǐ gěi wǒ càidān ma?' },
-  { labelKey: 'food.phrases.bill', chinese: '买单，谢谢', pinyin: 'Mǎidān, xièxiè' },
-  { labelKey: 'food.phrases.spicyQ', chinese: '这道菜辣吗？', pinyin: 'Zhè dào cài là ma?' },
-];
+import PhraseCardItem from '../PhraseCardItem';
+import { restaurantCards } from '../../data/phraseCards';
+import type { UserState } from '../../hooks/useAuth';
+import AskBuddyHint from '../AskBuddyHint';
 
 interface AllergyCardData {
   name: string;
@@ -100,20 +95,24 @@ function AllergyCard({ card, showToast }: AllergyCardProps) {
 }
 
 interface Props {
+  userState: UserState | null;
   showToast: (msg: string) => void;
+  onAskBuddy: () => void;
 }
 
-export default function FoodTab({ showToast }: Props) {
+export default function FoodTab({ userState, showToast, onAskBuddy }: Props) {
   const { t } = useTranslation();
   const [dragOver, setDragOver] = useState(false);
   const [uploadedFile, setUploadedFile] = useState<string | null>(null);
-  const [selectedPhrase, setSelectedPhrase] = useState<(typeof PHRASE_CARDS)[number] | GeneratedCard | null>(null);
+  const [selectedPhrase, setSelectedPhrase] = useState<GeneratedCard | null>(null);
   const [phraseInput, setPhraseInput] = useState('');
   const [generatedCards, setGeneratedCards] = useState<GeneratedCard[]>([]);
   const [generating, setGenerating] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
   const allergyCards = t('food.allergyCards', { returnObjects: true }) as AllergyCardData[];
   const menuItems = t('food.menuItems', { returnObjects: true }) as MenuItem[];
+  const isPlanActive = !userState?.planExpiresAt || Date.now() < userState.planExpiresAt;
+  const hasFullAccess = !!userState && isPlanActive && (userState.plan === 'trip' || userState.plan === 'group');
 
   const speakChinese = (text: string) => {
     if ('speechSynthesis' in window) {
@@ -181,9 +180,9 @@ export default function FoodTab({ showToast }: Props) {
           <span className="text-xs bg-[#155e63]/10 text-[#155e63] px-2 py-0.5 rounded-full font-medium">{t('food.ai')}</span>
         </div>
         <p className="text-gray-500 text-sm mb-4">{t('food.decoderSub')}</p>
-        <p className="mb-4 rounded-full bg-[#155e63]/8 px-3 py-2 text-xs font-medium text-[#155e63]">
-          Need a custom answer? Ask Buddy can help.
-        </p>
+        <div className="mb-4">
+          <AskBuddyHint onClick={onAskBuddy} text="Need a custom answer? Ask Buddy can help." />
+        </div>
 
         {uploadedFile ? (
           <div className="border-2 border-[#155e63] bg-[#155e63]/5 rounded-2xl p-5 text-center">
@@ -313,31 +312,17 @@ export default function FoodTab({ showToast }: Props) {
 
         {/* 固定短语卡片 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-          {PHRASE_CARDS.map((p) => (
-            <div
-              key={p.labelKey}
-              onClick={() => setSelectedPhrase(p)}
-              className="bg-white border border-gray-100 rounded-2xl p-3.5 shadow-sm hover:shadow-md hover:border-[#155e63]/20 transition-all cursor-pointer group"
-            >
-              <p className="text-gray-500 text-xs mb-1 group-hover:text-[#155e63] transition-colors">{t(p.labelKey)}</p>
-              <p className="text-gray-900 font-medium text-sm">{p.chinese}</p>
-              <p className="text-gray-400 text-xs mt-0.5">{p.pinyin}</p>
-              <div className="flex gap-2 mt-1">
-                <button
-                  onClick={(e) => { e.stopPropagation(); speakChinese(p.chinese); }}
-                  className="text-xs text-[#155e63] flex items-center gap-1"
-                >
-                  🔊 Speak
-                </button>
-                <button
-                  onClick={(e) => { e.stopPropagation(); copyPhrase(p.chinese); }}
-                  className="text-xs text-gray-400"
-                >
-                  📋 Copy
-                </button>
-              </div>
-            </div>
-          ))}
+          {restaurantCards.map((card, index) => {
+            const isLocked = !hasFullAccess && index >= 3;
+            return (
+              <PhraseCardItem
+                key={card.id}
+                card={card}
+                isLocked={isLocked}
+                showToast={showToast}
+              />
+            );
+          })}
         </div>
       </section>
 
@@ -346,9 +331,7 @@ export default function FoodTab({ showToast }: Props) {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50" onClick={() => setSelectedPhrase(null)}>
           <div className="bg-white rounded-3xl p-6 w-full max-w-sm text-center shadow-2xl" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setSelectedPhrase(null)} className="ml-auto mb-4 block text-gray-400 text-xl">✕</button>
-            <p className="text-sm font-semibold text-[#155e63] mb-5">
-              {'labelKey' in selectedPhrase ? t(selectedPhrase.labelKey) : selectedPhrase.english}
-            </p>
+            <p className="text-sm font-semibold text-[#155e63] mb-5">{selectedPhrase.english}</p>
             <p className="text-4xl font-bold text-gray-950 leading-tight mb-4">{selectedPhrase.chinese}</p>
             <p className="text-gray-500 text-base mb-6">{selectedPhrase.pinyin}</p>
             <div className="flex gap-2">

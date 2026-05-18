@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import PhraseCard from './PhraseCard';
+import PhraseCardItem from './PhraseCardItem';
 import type { PhraseCardData } from '../types/phraseCard';
 
 interface Props {
@@ -9,6 +9,7 @@ interface Props {
   freeLimit?: number;
   lockedPreviewLimit?: number;
   isPaidUser?: boolean;
+  showToast: (msg: string) => void;
   onUpgradeClick?: () => void;
 }
 
@@ -19,6 +20,7 @@ export default function PhraseCardCategorySection({
   freeLimit = 3,
   lockedPreviewLimit = 3,
   isPaidUser = false,
+  showToast,
   onUpgradeClick,
 }: Props) {
   const visibleCards = isPaidUser ? cards : cards.slice(0, freeLimit + lockedPreviewLimit);
@@ -30,9 +32,14 @@ export default function PhraseCardCategorySection({
         <h2 className="text-base font-semibold text-gray-900">{title}</h2>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-        {visibleCards.map((card, index) => (
-          <PhraseCard key={card.id} card={card} locked={!isPaidUser && index >= freeLimit} onUpgradeClick={onUpgradeClick} />
-        ))}
+        {visibleCards.map((card, index) => {
+          const isLocked = !isPaidUser && index >= freeLimit;
+          return (
+            <div key={card.id} onClick={isLocked ? onUpgradeClick : undefined} className={isLocked ? 'cursor-pointer' : ''}>
+              <PhraseCardItem card={card} isLocked={isLocked} showToast={showToast} />
+            </div>
+          );
+        })}
       </div>
     </section>
   );

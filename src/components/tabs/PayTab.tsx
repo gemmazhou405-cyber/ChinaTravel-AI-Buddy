@@ -4,9 +4,12 @@ import { useTranslation } from 'react-i18next';
 import PhraseCardCategorySection from '../PhraseCardCategorySection';
 import { paymentCards } from '../../data/phraseCards';
 import PricingPlans from '../PricingPlans';
+import AskBuddyHint from '../AskBuddyHint';
 
 interface Props {
   userState: UserState | null;
+  showToast: (msg: string) => void;
+  onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
 }
 
@@ -19,10 +22,12 @@ interface PaymentMethod {
   icon: string;
 }
 
-export default function PayTab({ userState, onUpgradeClick }: Props) {
+export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClick }: Props) {
   const { t } = useTranslation();
   const assetBase = import.meta.env.BASE_URL;
   const paymentMethods = t('pay.methods', { returnObjects: true }) as PaymentMethod[];
+  const isPlanActive = !userState?.planExpiresAt || Date.now() < userState.planExpiresAt;
+  const hasFullAccess = !!userState && isPlanActive && (userState.plan === 'trip' || userState.plan === 'group');
   const setupSteps = [
     t('pay.setup.step1'),
     t('pay.setup.step2'),
@@ -33,8 +38,11 @@ export default function PayTab({ userState, onUpgradeClick }: Props) {
 
   return (
     <div className="space-y-6">
+      {/* Pricing cards */}
+      <PricingPlans userState={userState} />
+
       {/* Email header banner */}
-      <section>
+      <section aria-label={t('pay.bannerAlt')}>
         <img
           src={`${assetBase}email_header.jpg`}
           alt={t('pay.bannerAlt')}
@@ -46,9 +54,6 @@ export default function PayTab({ userState, onUpgradeClick }: Props) {
           }}
         />
       </section>
-
-      {/* Pricing cards */}
-      <PricingPlans userState={userState} />
 
       {/* Payment methods */}
       <section>
@@ -73,14 +78,6 @@ export default function PayTab({ userState, onUpgradeClick }: Props) {
           ))}
         </div>
       </section>
-
-      <PhraseCardCategorySection
-        title="Payment Phrase Cards"
-        icon={<CreditCard className="w-4 h-4 text-[#155e63]" />}
-        cards={paymentCards}
-        freeLimit={3}
-        onUpgradeClick={onUpgradeClick}
-      />
 
       {/* WeChat Pay setup */}
       <section>
@@ -124,6 +121,18 @@ export default function PayTab({ userState, onUpgradeClick }: Props) {
           {t('pay.open')} <ChevronRight className="w-3 h-3" />
         </button>
       </div>
+
+      <AskBuddyHint onClick={onAskBuddy} text="Need a custom answer? Ask Buddy can help." />
+
+      <PhraseCardCategorySection
+        title="Payment Phrases"
+        icon={<CreditCard className="w-4 h-4 text-[#155e63]" />}
+        cards={paymentCards}
+        freeLimit={3}
+        isPaidUser={hasFullAccess}
+        showToast={showToast}
+        onUpgradeClick={onUpgradeClick}
+      />
     </div>
   );
 }

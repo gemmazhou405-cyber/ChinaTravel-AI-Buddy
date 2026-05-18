@@ -11,3 +11,5 @@ export interface PhraseCardData {
   audioText: string;
   tags: string[];
 }
+
+export type PhraseCard = PhraseCardData;

@@ -2,7 +2,9 @@ import { Phone, FileText, Heart, MapPin, Shield, ChevronRight, Building2, Pill, 
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PhraseCardCategorySection from '../PhraseCardCategorySection';
-import { hospitalCards, pharmacyCards, policeCards } from '../../data/phraseCards';
+import { emergencyCards, hospitalCards, pharmacyCards, policeCards } from '../../data/phraseCards';
+import type { UserState } from '../../hooks/useAuth';
+import AskBuddyHint from '../AskBuddyHint';
 
 const EMERGENCY_NUMBERS = [
   {
@@ -130,12 +132,16 @@ function PhraseCard({ title, icon, en, zh, color, showToast }: { title: string; 
 }
 
 interface Props {
+  userState: UserState | null;
   showToast: (msg: string) => void;
+  onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
 }
 
-export default function EmergencyTab({ showToast, onUpgradeClick }: Props) {
+export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgradeClick }: Props) {
   const { t } = useTranslation();
+  const isPlanActive = !userState?.planExpiresAt || Date.now() < userState.planExpiresAt;
+  const hasFullAccess = !!userState && isPlanActive && (userState.plan === 'trip' || userState.plan === 'group');
 
   const copyLocation = () => {
     const nav = window.navigator;
@@ -180,33 +186,47 @@ export default function EmergencyTab({ showToast, onUpgradeClick }: Props) {
         </div>
       </section>
 
-      {/* Lost passport card */}
-      <PhraseCard
-        title={t('emergency.lostPassport')}
-        icon={<FileText className="w-4 h-4 text-blue-500" />}
-        en={t('emergency.embassyPhrase')}
-        zh="请联系我的大使馆。我是外国公民，需要领事协助。"
-        color="bg-blue-50 border-blue-200"
-        showToast={showToast}
-      />
+      {/* Core action cards */}
+      <section className="space-y-3">
+        <h2 className="text-base font-semibold text-gray-900">Core Emergency Help</h2>
+        <PhraseCard
+          title={t('emergency.lostPassport')}
+          icon={<FileText className="w-4 h-4 text-blue-500" />}
+          en={t('emergency.embassyPhrase')}
+          zh="请联系我的大使馆。我是外国公民，需要领事协助。"
+          color="bg-blue-50 border-blue-200"
+          showToast={showToast}
+        />
+        <PhraseCard
+          title={t('emergency.medical')}
+          icon={<Heart className="w-4 h-4 text-red-500" />}
+          en={t('emergency.medicalPhrase')}
+          zh="请叫救护车。我需要紧急医疗救助。"
+          color="bg-red-50 border-red-200"
+          showToast={showToast}
+        />
+      </section>
 
-      {/* Medical card */}
-      <PhraseCard
-        title={t('emergency.medical')}
-        icon={<Heart className="w-4 h-4 text-red-500" />}
-        en={t('emergency.medicalPhrase')}
-        zh="请叫救护车。我需要紧急医疗救助。"
-        color="bg-red-50 border-red-200"
-        showToast={showToast}
-      />
+      <AskBuddyHint onClick={onAskBuddy} />
 
       <section className="space-y-5">
         <h2 className="text-base font-semibold text-gray-900">Emergency Phrase Cards</h2>
+        <PhraseCardCategorySection
+          title="Emergency Phrases"
+          icon={<Shield className="w-4 h-4 text-[#155e63]" />}
+          cards={emergencyCards}
+          freeLimit={3}
+          isPaidUser={hasFullAccess}
+          showToast={showToast}
+          onUpgradeClick={onUpgradeClick}
+        />
         <PhraseCardCategorySection
           title="Hospital"
           icon={<Building2 className="w-4 h-4 text-[#155e63]" />}
           cards={hospitalCards}
           freeLimit={3}
+          isPaidUser={hasFullAccess}
+          showToast={showToast}
           onUpgradeClick={onUpgradeClick}
         />
         <PhraseCardCategorySection
@@ -214,6 +234,8 @@ export default function EmergencyTab({ showToast, onUpgradeClick }: Props) {
           icon={<Siren className="w-4 h-4 text-[#155e63]" />}
           cards={policeCards}
           freeLimit={3}
+          isPaidUser={hasFullAccess}
+          showToast={showToast}
           onUpgradeClick={onUpgradeClick}
         />
         <PhraseCardCategorySection
@@ -221,6 +243,8 @@ export default function EmergencyTab({ showToast, onUpgradeClick }: Props) {
           icon={<Pill className="w-4 h-4 text-[#155e63]" />}
           cards={pharmacyCards}
           freeLimit={3}
+          isPaidUser={hasFullAccess}
+          showToast={showToast}
           onUpgradeClick={onUpgradeClick}
         />
       </section>

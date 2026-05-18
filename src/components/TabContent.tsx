@@ -11,18 +11,19 @@ interface Props {
   activeTab: TabId;
   userState: UserState | null;
   showToast: (msg: string) => void;
+  onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
 }
 
-export default function TabContent({ activeTab, userState, showToast, onUpgradeClick }: Props) {
+export default function TabContent({ activeTab, userState, showToast, onAskBuddy, onUpgradeClick }: Props) {
   return (
     <main className="max-w-3xl mx-auto px-4 py-6 md:px-6 pb-28">
       {activeTab === 'before' && <BeforeTab />}
-      {activeTab === 'stay' && <StayTab showToast={showToast} onUpgradeClick={onUpgradeClick} />}
-      {activeTab === 'food' && <FoodTab showToast={showToast} />}
-      {activeTab === 'transport' && <TransportTab showToast={showToast} onUpgradeClick={onUpgradeClick} />}
-      {activeTab === 'emergency' && <EmergencyTab showToast={showToast} onUpgradeClick={onUpgradeClick} />}
-      {activeTab === 'pay' && <PayTab userState={userState} onUpgradeClick={onUpgradeClick} />}
+      {activeTab === 'stay' && <StayTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} />}
+      {activeTab === 'food' && <FoodTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} />}
+      {activeTab === 'transport' && <TransportTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} />}
+      {activeTab === 'emergency' && <EmergencyTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} />}
+      {activeTab === 'pay' && <PayTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} />}
     </main>
   );
 }

@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PhraseCardCategorySection from '../PhraseCardCategorySection';
 import { airportCards, taxiCards, trainCards } from '../../data/phraseCards';
+import type { UserState } from '../../hooks/useAuth';
+import AskBuddyHint from '../AskBuddyHint';
 
 const METRO_PHRASES = [
   { key: 'transport.phrases.whereSubway', zh: '地铁站在哪里？', pinyin: 'Dìtiě zhàn zài nǎlǐ?' },
@@ -19,16 +21,20 @@ interface TransportApp {
 }
 
 interface Props {
+  userState: UserState | null;
   showToast: (msg: string) => void;
+  onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
 }
 
-export default function TransportTab({ showToast, onUpgradeClick }: Props) {
+export default function TransportTab({ userState, showToast, onAskBuddy, onUpgradeClick }: Props) {
   const { t } = useTranslation();
   const [selectedPhrase, setSelectedPhrase] = useState<(typeof METRO_PHRASES)[number] | null>(null);
   const [fromCity, setFromCity] = useState('');
   const [toCity, setToCity] = useState('');
   const apps = t('transport.apps', { returnObjects: true }) as TransportApp[];
+  const isPlanActive = !userState?.planExpiresAt || Date.now() < userState.planExpiresAt;
+  const hasFullAccess = !!userState && isPlanActive && (userState.plan === 'trip' || userState.plan === 'group');
 
   const speakChinese = (text: string) => {
     if ('speechSynthesis' in window) {
@@ -121,22 +127,30 @@ export default function TransportTab({ showToast, onUpgradeClick }: Props) {
         icon={<Car className="w-4 h-4 text-[#155e63]" />}
         cards={taxiCards}
         freeLimit={3}
+        isPaidUser={hasFullAccess}
+        showToast={showToast}
         onUpgradeClick={onUpgradeClick}
       />
 
+      <AskBuddyHint onClick={onAskBuddy} text="Need a custom answer? Ask Buddy can help." />
+
       <PhraseCardCategorySection
-        title="Train Phrase Cards"
+        title="Train Phrases"
         icon={<Train className="w-4 h-4 text-[#155e63]" />}
         cards={trainCards}
         freeLimit={3}
+        isPaidUser={hasFullAccess}
+        showToast={showToast}
         onUpgradeClick={onUpgradeClick}
       />
 
       <PhraseCardCategorySection
-        title="Airport Phrase Cards"
+        title="Airport Phrases"
         icon={<Plane className="w-4 h-4 text-[#155e63]" />}
         cards={airportCards}
         freeLimit={3}
+        isPaidUser={hasFullAccess}
+        showToast={showToast}
         onUpgradeClick={onUpgradeClick}
       />
 
