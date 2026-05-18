@@ -17,7 +17,7 @@ export default function App() {
   const [chatOpen, setChatOpen] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
-  const { user, userState, logout, signup, login, incrementAiUsed } = useAuth();
+  const { user, userState, logout, signup, login, incrementAiUsed, resendVerificationEmail } = useAuth();
   const showToast = (msg: string) => setToast(msg);
   const handleUpgradeClick = (message = 'Unlock all phrase cards with Trip Pass.') => {
     setActiveTab('pay');
@@ -59,10 +59,15 @@ export default function App() {
       {chatOpen && (
         <ChatModal
           onClose={() => setChatOpen(false)}
+          user={user}
           userState={userState}
           onNeedAuth={() => {
             setChatOpen(false);
             setAuthOpen(true);
+          }}
+          onResendVerification={async () => {
+            await resendVerificationEmail();
+            showToast('Verification email sent.');
           }}
           onIncrementUsed={incrementAiUsed}
         />
@@ -70,7 +75,11 @@ export default function App() {
       {authOpen && (
         <AuthModal
           onClose={() => setAuthOpen(false)}
-          onSignup={signup}
+          onSignup={async (email, password) => {
+            const result = await signup(email, password);
+            showToast('Please verify your email before using Buddy AI.');
+            return result;
+          }}
           onLogin={login}
         />
       )}

@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { X, Send, Sparkles } from 'lucide-react';
+import { User } from 'firebase/auth';
 import { COZE_WORKER_URL, COZE_BOT_ID } from '../firebase-config';
 import { UserState } from '../hooks/useAuth';
 import { useTranslation } from 'react-i18next';
@@ -14,12 +15,14 @@ const SUGGESTIONS = ['chat.suggestions.s1', 'chat.suggestions.s2', 'chat.suggest
 
 interface Props {
   onClose: () => void;
+  user: User | null;
   userState: UserState | null;
   onNeedAuth: () => void;
+  onResendVerification: () => Promise<void>;
   onIncrementUsed: () => Promise<void>;
 }
 
-export default function ChatModal({ onClose, userState, onNeedAuth, onIncrementUsed }: Props) {
+export default function ChatModal({ onClose, user, userState, onNeedAuth, onResendVerification, onIncrementUsed }: Props) {
   const { t } = useTranslation();
   const [messages, setMessages] = useState<Message[]>([
     { id: 0, role: 'buddy', text: t('chat.welcome') },
@@ -42,6 +45,16 @@ export default function ChatModal({ onClose, userState, onNeedAuth, onIncrementU
 
     if (!userState) {
       onNeedAuth();
+      return;
+    }
+
+    if (user && !user.emailVerified) {
+      const verifyMsg: Message = {
+        id: Date.now(),
+        role: 'buddy',
+        text: 'Please verify your email to use Buddy AI. Check your inbox and refresh after verification.',
+      };
+      setMessages((prev) => [...prev, verifyMsg]);
       return;
     }
 
@@ -184,6 +197,19 @@ export default function ChatModal({ onClose, userState, onNeedAuth, onIncrementU
                 </button>
               ))}
             </div>
+          </div>
+        )}
+
+        {user && !user.emailVerified && (
+          <div className="border-t border-amber-100 bg-amber-50 px-4 py-3">
+            <p className="text-xs font-semibold text-amber-800">Please verify your email to use Buddy AI.</p>
+            <p className="mt-0.5 text-xs text-amber-700">Check your inbox and refresh after verification.</p>
+            <button
+              onClick={onResendVerification}
+              className="mt-2 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[#155e63] shadow-sm hover:bg-amber-100"
+            >
+              Resend verification email
+            </button>
           </div>
         )}
 

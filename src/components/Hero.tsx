@@ -1,4 +1,4 @@
-import { Star, Globe } from 'lucide-react';
+import { Star, Globe, LogOut, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { User } from 'firebase/auth';
 import { UserState } from '../hooks/useAuth';
@@ -26,7 +26,10 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
   const { t } = useTranslation();
   const [lang, setLang] = useState(i18n.language.toUpperCase());
   const [langOpen, setLangOpen] = useState(false);
+  const [accountOpen, setAccountOpen] = useState(false);
+  const [confirmLogoutOpen, setConfirmLogoutOpen] = useState(false);
   const assetBase = import.meta.env.BASE_URL;
+  const planLabel = userState?.plan ? userState.plan.charAt(0).toUpperCase() + userState.plan.slice(1) : 'Free';
 
   useEffect(() => {
     const saved = window.localStorage?.getItem('chinaease-lang');
@@ -107,12 +110,48 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
           </button>
 
           {user ? (
-            <button
-              onClick={onLogout}
-              className="text-xs md:text-sm font-medium bg-white text-[#155e63] px-3 py-1.5 md:px-4 md:py-2 rounded-full hover:bg-[#f7f3ea] transition-all shadow-lg"
-            >
-              {userState?.plan ? t('nav.currentPlan', { plan: userState.plan }) : t('nav.logout')}
-            </button>
+            <div className="relative">
+              <button
+                onClick={() => setAccountOpen((open) => !open)}
+                className="text-xs md:text-sm font-medium bg-white text-[#155e63] px-3 py-1.5 md:px-4 md:py-2 rounded-full hover:bg-[#f7f3ea] transition-all shadow-lg"
+              >
+                {t('nav.currentPlan', { plan: planLabel })}
+              </button>
+              {accountOpen && (
+                <div className="absolute right-0 top-full mt-2 w-72 rounded-2xl bg-white p-4 text-gray-700 shadow-2xl z-50">
+                  <div className="flex items-start justify-between gap-3 border-b border-gray-100 pb-3">
+                    <div className="min-w-0">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-[#155e63]">Account</p>
+                      <p className="mt-1 truncate text-sm font-semibold text-gray-900">{user.email}</p>
+                    </div>
+                    <button onClick={() => setAccountOpen(false)} className="rounded-full p-1 text-gray-400 hover:bg-gray-100">
+                      <X className="h-4 w-4" />
+                    </button>
+                  </div>
+                  <div className="space-y-2 py-3 text-xs">
+                    <div className="flex justify-between gap-3">
+                      <span className="text-gray-500">Current plan</span>
+                      <span className="font-semibold text-[#155e63]">{planLabel}</span>
+                    </div>
+                    <div className="flex justify-between gap-3">
+                      <span className="text-gray-500">Buddy AI quota</span>
+                      <span className="font-semibold text-gray-900">{userState?.buddyAiQuotaUsed ?? 0} / {userState?.buddyAiQuotaTotal ?? 5}</span>
+                    </div>
+                    <div className="flex justify-between gap-3">
+                      <span className="text-gray-500">Menu scan quota</span>
+                      <span className="font-semibold text-gray-900">{userState?.menuScanQuotaUsed ?? 0} / {userState?.menuScanQuotaTotal ?? 3}</span>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => setConfirmLogoutOpen(true)}
+                    className="flex w-full items-center justify-center gap-2 rounded-xl border border-red-100 bg-red-50 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-100"
+                  >
+                    <LogOut className="h-4 w-4" />
+                    Log out
+                  </button>
+                </div>
+              )}
+            </div>
           ) : (
             <button
               onClick={onAuthClick}
@@ -173,6 +212,32 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
           <div className="w-1 h-2 bg-white/60 rounded-full" />
         </div>
       </div>
+      {confirmLogoutOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4" onClick={() => setConfirmLogoutOpen(false)}>
+          <div className="w-full max-w-sm rounded-2xl bg-white p-5 shadow-2xl" onClick={(e) => e.stopPropagation()}>
+            <h3 className="text-lg font-bold text-gray-950">Log out?</h3>
+            <p className="mt-2 text-sm leading-relaxed text-gray-500">Are you sure you want to log out of ChinaEase Buddy?</p>
+            <div className="mt-5 flex gap-2">
+              <button
+                onClick={() => setConfirmLogoutOpen(false)}
+                className="flex-1 rounded-xl border border-gray-200 py-2.5 text-sm font-semibold text-gray-600 hover:bg-gray-50"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={async () => {
+                  setConfirmLogoutOpen(false);
+                  setAccountOpen(false);
+                  await onLogout();
+                }}
+                className="flex-1 rounded-xl bg-red-600 py-2.5 text-sm font-semibold text-white hover:bg-red-700"
+              >
+                Log out
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

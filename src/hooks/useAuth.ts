@@ -4,6 +4,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
+  sendEmailVerification,
   User,
 } from 'firebase/auth';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
@@ -125,6 +126,7 @@ export function useAuth() {
       dailyResetAt: null,
     };
     await setDoc(doc(db, 'users', cred.user.uid), newUser);
+    await sendEmailVerification(cred.user);
     sendWelcomeEmail(email);
     setUserState(newUser);
     return cred.user;
@@ -142,6 +144,11 @@ export function useAuth() {
   const logout = () => {
     setUserState(null);
     return signOut(auth);
+  };
+
+  const resendVerificationEmail = async () => {
+    if (!user) return;
+    await sendEmailVerification(user);
   };
 
   const incrementAiUsed = async () => {
@@ -170,5 +177,5 @@ export function useAuth() {
     setUserState((prev) => (prev ? { ...prev, ...updates } : null));
   };
 
-  return { user, userState, loading, signup, login, logout, incrementAiUsed };
+  return { user, userState, loading, signup, login, logout, incrementAiUsed, resendVerificationEmail };
 }

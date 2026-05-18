@@ -53,9 +53,9 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
 
   const openAppLink = (name: string) => {
     const normalized = name.toLowerCase();
-    if (normalized.includes('didi')) window.open('https://www.didiglobal.com', '_blank');
-    else if (normalized.includes('amap') || normalized.includes('高德')) window.open('https://mobile.amap.com', '_blank');
-    else if (normalized.includes('trip')) window.open('https://www.trip.com', '_blank');
+    if (normalized.includes('didi')) window.open('https://www.didiglobal.com/', '_blank', 'noopener,noreferrer');
+    else if (normalized.includes('amap') || normalized.includes('高德')) window.open('https://www.amap.com/', '_blank', 'noopener,noreferrer');
+    else if (normalized.includes('trip')) window.open('https://www.trip.com/trains/', '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -180,7 +180,7 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
           />
         </div>
         <button
-          onClick={() => window.open('https://www.trip.com/trains/', '_blank')}
+          onClick={() => window.open('https://www.trip.com/trains/', '_blank', 'noopener,noreferrer')}
           className="mt-2 w-full bg-[#155e63] text-white rounded-xl py-2.5 text-sm font-medium hover:bg-[#0e4a4e] transition-colors flex items-center justify-center gap-2"
         >
           <Plane className="w-4 h-4" /> {t('transport.search')}

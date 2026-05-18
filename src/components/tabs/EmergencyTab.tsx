@@ -143,23 +143,38 @@ export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgra
   const { t } = useTranslation();
   const hasFullAccess = isTripOrGroup(userState);
 
+  const copyEmergencyText = async (text: string, successMessage: string) => {
+    try {
+      await window.navigator.clipboard?.writeText(text);
+      showToast(successMessage);
+    } catch {
+      showToast('Could not copy. Please copy the message manually.');
+    }
+  };
+
   const copyLocation = () => {
     const nav = window.navigator;
+    const fallbackText = [
+      'I need help, but my browser could not share my GPS location. Please help me explain my current address to emergency services.',
+      '我需要帮助，但浏览器无法分享我的GPS位置。请帮我向救援人员说明我现在的地址。',
+    ].join('\n');
     if (nav.geolocation) {
       nav.geolocation.getCurrentPosition(
         (pos) => {
-          const text = `我的位置：纬度${pos.coords.latitude.toFixed(4)}，经度${pos.coords.longitude.toFixed(4)}`;
-          nav.clipboard?.writeText(text);
-          alert('Location copied in Chinese!');
+          const text = [
+            `My current location: latitude ${pos.coords.latitude.toFixed(4)}, longitude ${pos.coords.longitude.toFixed(4)}.`,
+            `我的位置：纬度${pos.coords.latitude.toFixed(4)}，经度${pos.coords.longitude.toFixed(4)}。`,
+            'Please help me contact emergency services if needed.',
+            '如有需要，请帮我联系救援人员。',
+          ].join('\n');
+          copyEmergencyText(text, 'Location copied in English and Chinese.');
         },
         () => {
-          nav.clipboard?.writeText('无法获取位置，请告诉救援人员您的地址。');
-          alert('Could not get location. Generic message copied.');
+          copyEmergencyText(fallbackText, 'Location permission was blocked. A backup message was copied.');
         }
       );
     } else {
-      nav.clipboard?.writeText('无法获取位置，请告诉救援人员您的地址。');
-      alert('Could not get location. Generic message copied.');
+      copyEmergencyText(fallbackText, 'Location is unavailable. A backup message was copied.');
     }
   };
 
