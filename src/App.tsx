@@ -18,9 +18,9 @@ export default function App() {
   const [toast, setToast] = useState<string | null>(null);
   const { user, userState, logout, signup, login, incrementAiUsed } = useAuth();
   const showToast = (msg: string) => setToast(msg);
-  const handleUpgradeClick = () => {
+  const handleUpgradeClick = (message = 'Unlock all phrase cards with Trip Pass.') => {
     setActiveTab('pay');
-    showToast('Unlock all phrase cards with Trip Pass.');
+    showToast(message);
     window.setTimeout(() => {
       document.getElementById('plans')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 0);

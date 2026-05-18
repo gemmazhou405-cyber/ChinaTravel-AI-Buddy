@@ -11,7 +11,7 @@ export default function ChatButton({ onClick }: Props) {
   return (
     <button
       onClick={onClick}
-      className="fixed bottom-6 right-5 z-50 flex items-center gap-2 bg-[#155e63] text-white shadow-2xl shadow-[#155e63]/40 pl-4 pr-5 py-3.5 rounded-full hover:bg-[#0e4a4e] active:scale-95 transition-all group"
+      className="fixed bottom-6 right-5 z-50 flex items-center gap-2 bg-[#155e63] text-white shadow-2xl shadow-[#155e63]/40 pl-4 pr-5 py-3.5 rounded-full hover:bg-[#0e4a4e] active:scale-95 transition-all group animate-breathing"
       aria-label={t('chat.askBuddy')}
     >
       <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">

@@ -144,7 +144,7 @@ export default function Hero({ user, userState, onAuthClick, onLogout }: Props) 
             {t('hero.subtitle')}
           </p>
 
-          <div className="absolute right-5 bottom-[20vh] z-20 w-[min(17.5rem,calc(100vw-2.5rem))] md:static md:w-auto">
+          <div className="absolute left-1/2 bottom-[19vh] z-20 w-[min(17.5rem,calc(100vw-2.5rem))] -translate-x-1/2 md:static md:w-auto md:translate-x-0">
             <button
               onClick={onAuthClick}
               className="w-full md:w-auto flex items-center justify-center gap-2 bg-[#155e63] text-white font-semibold px-5 py-3.5 md:px-8 md:py-4 rounded-xl hover:bg-[#0e4a4e] transition-all shadow-2xl md:shadow-xl text-sm md:text-base"

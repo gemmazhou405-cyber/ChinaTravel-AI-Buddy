@@ -26,6 +26,10 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  .animate-breathing {
+    animation: breathing 3.6s ease-in-out infinite;
+  }
 }
 
 @keyframes fade-in {
@@ -36,5 +40,16 @@
   to {
     opacity: 1;
     transform: translate(-50%, 0);
+  }
+}
+
+@keyframes breathing {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 25px 50px -12px rgba(21, 94, 99, 0.40);
+  }
+  50% {
+    transform: scale(1.025);
+    box-shadow: 0 25px 55px -10px rgba(21, 94, 99, 0.50);
   }
 }

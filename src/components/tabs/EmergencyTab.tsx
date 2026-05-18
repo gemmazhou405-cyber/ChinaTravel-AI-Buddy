@@ -131,7 +131,7 @@ function PhraseCard({ title, icon, en, zh, color, showToast }: { title: string; 
 
 interface Props {
   showToast: (msg: string) => void;
-  onUpgradeClick: () => void;
+  onUpgradeClick: (message?: string) => void;
 }
 
 export default function EmergencyTab({ showToast, onUpgradeClick }: Props) {

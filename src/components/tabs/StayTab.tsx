@@ -33,27 +33,18 @@ const TIPS = [
 
 interface Props {
   showToast: (msg: string) => void;
-  onUpgradeClick: () => void;
+  onUpgradeClick: (message?: string) => void;
 }
 
 export default function StayTab({ showToast, onUpgradeClick }: Props) {
   const { t } = useTranslation();
   const [selectedPhrase, setSelectedPhrase] = useState<(typeof HOTEL_PHRASES)[number] | null>(null);
-  const [showModal, setShowModal] = useState(false);
-  const [hotelName, setHotelName] = useState('');
-  const [city, setCity] = useState('Shanghai');
-
-  const cities: Record<string, string> = {
-    Beijing: '北京',
-    Shanghai: '上海',
-    Chengdu: '成都',
-    "Xi'an": '西安',
-    Guangzhou: '广州',
-    Hangzhou: '杭州',
-    Chongqing: '重庆',
-    Shenzhen: '深圳',
-    Guilin: '桂林',
-    Harbin: '哈尔滨',
+  const [customPhrase, setCustomPhrase] = useState('');
+  const [showCustomLocal, setShowCustomLocal] = useState(false);
+  const customPhraseCard = {
+    english: 'What time is the latest checkout?',
+    chinese: '请问我最晚几点退房？',
+    pinyin: 'Qǐngwèn wǒ zuì wǎn jǐ diǎn tuìfáng?',
   };
 
   const speakChinese = (text: string) => {
@@ -139,16 +130,52 @@ export default function StayTab({ showToast, onUpgradeClick }: Props) {
         onUpgradeClick={onUpgradeClick}
       />
 
-      <div className="bg-[#155e63]/5 border border-[#155e63]/15 rounded-2xl p-4 flex items-center justify-between">
-        <div>
-          <p className="font-semibold text-[#155e63] text-sm">{t('stay.addressCard')}</p>
-          <p className="text-gray-500 text-xs mt-0.5">{t('stay.addressSub')}</p>
+      <div className="bg-[#155e63]/5 border border-[#155e63]/15 rounded-2xl p-4">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <p className="font-semibold text-[#155e63] text-sm">Custom Phrase Helper</p>
+            <p className="text-gray-500 text-xs mt-0.5 leading-relaxed">
+              Type what you want to say in English. Buddy can turn it into Chinese you can show or play.
+            </p>
+          </div>
+          <span className="shrink-0 rounded-full bg-[#155e63]/10 px-2.5 py-1 text-[11px] font-semibold text-[#155e63]">
+            Group Pass
+          </span>
         </div>
+        <textarea
+          value={customPhrase}
+          onChange={(e) => setCustomPhrase(e.target.value)}
+          placeholder="What do you want to say?"
+          className="mt-4 min-h-24 w-full resize-none rounded-xl border border-[#155e63]/15 bg-white px-3 py-2.5 text-sm text-gray-700 outline-none transition-all placeholder:text-gray-300 focus:border-[#155e63]/40"
+        />
+        {customPhrase.trim() && (
+          <div className="mt-3 rounded-2xl border border-[#155e63]/15 bg-white p-3.5 shadow-sm">
+            <div className="mb-2 flex items-center justify-between gap-2">
+              <p className="text-xs font-semibold text-[#155e63]">Available with Group Pass</p>
+              <span className="rounded-full bg-[#155e63]/10 px-2 py-0.5 text-[10px] font-semibold text-[#155e63]">Preview</span>
+            </div>
+            <p className="text-gray-500 text-xs mb-1">{customPhraseCard.english}</p>
+            <p className="text-gray-900 font-medium text-sm">{customPhraseCard.chinese}</p>
+            <p className="text-gray-400 text-xs mt-0.5">{customPhraseCard.pinyin}</p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              <button onClick={() => speakChinese(customPhraseCard.chinese)} className="text-xs text-[#155e63] flex items-center gap-1">
+                🔊 Speak
+              </button>
+              <button onClick={() => copyPhrase(customPhraseCard.chinese)} className="text-xs text-gray-400">
+                📋 Copy
+              </button>
+              <button onClick={() => setShowCustomLocal(true)} className="text-xs font-medium text-[#155e63]">
+                Show to local
+              </button>
+            </div>
+          </div>
+        )}
         <button
-          onClick={() => setShowModal(true)}
-          className="bg-[#155e63] text-white text-xs font-medium px-3 py-2 rounded-xl hover:bg-[#0e4a4e] transition-colors flex items-center gap-1"
+          onClick={() => onUpgradeClick('Unlock custom phrase cards with Group Pass.')}
+          disabled={!customPhrase.trim()}
+          className="mt-3 flex w-full items-center justify-center gap-1 rounded-xl bg-[#155e63] px-3 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#0e4a4e] disabled:cursor-not-allowed disabled:opacity-40"
         >
-          {t('stay.generate')} <ChevronRight className="w-3 h-3" />
+          Generate Chinese Card <ChevronRight className="w-3 h-3" />
         </button>
       </div>
 
@@ -167,43 +194,16 @@ export default function StayTab({ showToast, onUpgradeClick }: Props) {
         </div>
       )}
 
-      {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40" onClick={() => setShowModal(false)}>
-          <div className="bg-white rounded-2xl p-6 w-full max-w-sm" onClick={(e) => e.stopPropagation()}>
-            <h3 className="font-bold text-lg mb-4">Address Card Generator</h3>
-            <input
-              placeholder="Hotel name in English"
-              value={hotelName}
-              onChange={(e) => setHotelName(e.target.value)}
-              className="w-full border rounded-xl px-3 py-2 mb-3 text-sm"
-            />
-            <select
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              className="w-full border rounded-xl px-3 py-2 mb-4 text-sm"
-            >
-              {Object.keys(cities).map((c) => (
-                <option key={c} value={c}>{c}</option>
-              ))}
-            </select>
-            {hotelName && (
-              <div className="bg-[#f7f3ea] rounded-xl p-4 mb-4 text-center">
-                <p className="text-2xl font-bold text-[#155e63] mb-1">请带我去{cities[city]}的{hotelName}</p>
-                <p className="text-sm text-gray-500">Please take me to {hotelName} in {city}</p>
-              </div>
-            )}
+      {showCustomLocal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50" onClick={() => setShowCustomLocal(false)}>
+          <div className="bg-white rounded-3xl p-6 w-full max-w-sm text-center shadow-2xl" onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => setShowCustomLocal(false)} className="ml-auto mb-4 block text-gray-400 text-xl">✕</button>
+            <p className="text-sm font-semibold text-[#155e63] mb-5">{customPhraseCard.english}</p>
+            <p className="text-4xl font-bold text-gray-950 leading-tight mb-4">{customPhraseCard.chinese}</p>
+            <p className="text-gray-500 text-base mb-6">{customPhraseCard.pinyin}</p>
             <div className="flex gap-2">
-              <button onClick={() => setShowModal(false)} className="flex-1 border rounded-xl py-2 text-sm">Close</button>
-              <button
-                onClick={() => {
-                  navigator.clipboard?.writeText(`请带我去${cities[city]}的${hotelName}`);
-                  setShowModal(false);
-                  showToast(t('toast.copied'));
-                }}
-                className="flex-1 bg-[#155e63] text-white rounded-xl py-2 text-sm font-medium"
-              >
-                Copy Chinese
-              </button>
+              <button onClick={() => speakChinese(customPhraseCard.chinese)} className="flex-1 bg-[#155e63] text-white rounded-xl py-3 text-sm font-medium">🔊 Speak</button>
+              <button onClick={() => copyPhrase(customPhraseCard.chinese)} className="flex-1 border border-gray-200 rounded-xl py-3 text-sm font-medium text-gray-600">📋 Copy</button>
             </div>
           </div>
         </div>

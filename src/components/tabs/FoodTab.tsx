@@ -181,6 +181,9 @@ export default function FoodTab({ showToast }: Props) {
           <span className="text-xs bg-[#155e63]/10 text-[#155e63] px-2 py-0.5 rounded-full font-medium">{t('food.ai')}</span>
         </div>
         <p className="text-gray-500 text-sm mb-4">{t('food.decoderSub')}</p>
+        <p className="mb-4 rounded-full bg-[#155e63]/8 px-3 py-2 text-xs font-medium text-[#155e63]">
+          Need a custom answer? Ask Buddy can help.
+        </p>
 
         {uploadedFile ? (
           <div className="border-2 border-[#155e63] bg-[#155e63]/5 rounded-2xl p-5 text-center">

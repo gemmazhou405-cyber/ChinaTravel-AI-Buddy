@@ -20,7 +20,7 @@ interface TransportApp {
 
 interface Props {
   showToast: (msg: string) => void;
-  onUpgradeClick: () => void;
+  onUpgradeClick: (message?: string) => void;
 }
 
 export default function TransportTab({ showToast, onUpgradeClick }: Props) {

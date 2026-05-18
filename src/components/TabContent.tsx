@@ -11,7 +11,7 @@ interface Props {
   activeTab: TabId;
   userState: UserState | null;
   showToast: (msg: string) => void;
-  onUpgradeClick: () => void;
+  onUpgradeClick: (message?: string) => void;
 }
 
 export default function TabContent({ activeTab, userState, showToast, onUpgradeClick }: Props) {
