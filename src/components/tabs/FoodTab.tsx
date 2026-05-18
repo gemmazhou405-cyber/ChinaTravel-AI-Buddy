@@ -214,8 +214,9 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
           <AskBuddyHint onClick={onAskBuddy} text="Need a custom answer? Ask Buddy can help." />
         </div>
 
-        {/* Dish Search */}
+        {/* Dish Search — independent local search, no API calls */}
         <div className="mb-4">
+          <p className="text-sm font-medium text-gray-700 mb-2">Search dishes by name</p>
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-300 pointer-events-none" />
             <input
@@ -352,7 +353,7 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
         <h2 className="text-base font-semibold text-gray-900 mb-1">{t('food.phrasesTitle')}</h2>
         <p className="text-gray-400 text-xs mb-3">Type anything in English — AI generates the Chinese phrase card instantly</p>
 
-        {/* AI输入框 */}
+        {/* AI phrase generator — calls Coze API, separate from dish search above */}
         <div className="flex gap-2 mb-4">
           <input
             value={phraseInput}
