@@ -5,6 +5,7 @@ import PhraseCardCategorySection from '../PhraseCardCategorySection';
 import { emergencyCards, hospitalCards, pharmacyCards, policeCards } from '../../data/phraseCards';
 import type { UserState } from '../../hooks/useAuth';
 import AskBuddyHint from '../AskBuddyHint';
+import { isTripOrGroup } from '../../lib/membership';
 
 const EMERGENCY_NUMBERS = [
   {
@@ -140,8 +141,7 @@ interface Props {
 
 export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgradeClick }: Props) {
   const { t } = useTranslation();
-  const isPlanActive = !userState?.planExpiresAt || Date.now() < userState.planExpiresAt;
-  const hasFullAccess = !!userState && isPlanActive && (userState.plan === 'trip' || userState.plan === 'group');
+  const hasFullAccess = isTripOrGroup(userState);
 
   const copyLocation = () => {
     const nav = window.navigator;
@@ -216,6 +216,7 @@ export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgra
           icon={<Shield className="w-4 h-4 text-[#155e63]" />}
           cards={emergencyCards}
           freeLimit={3}
+          lockedPreviewLimit={3}
           isPaidUser={hasFullAccess}
           showToast={showToast}
           onUpgradeClick={onUpgradeClick}
@@ -225,6 +226,7 @@ export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgra
           icon={<Building2 className="w-4 h-4 text-[#155e63]" />}
           cards={hospitalCards}
           freeLimit={3}
+          lockedPreviewLimit={3}
           isPaidUser={hasFullAccess}
           showToast={showToast}
           onUpgradeClick={onUpgradeClick}
@@ -234,6 +236,7 @@ export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgra
           icon={<Siren className="w-4 h-4 text-[#155e63]" />}
           cards={policeCards}
           freeLimit={3}
+          lockedPreviewLimit={3}
           isPaidUser={hasFullAccess}
           showToast={showToast}
           onUpgradeClick={onUpgradeClick}
@@ -243,6 +246,7 @@ export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgra
           icon={<Pill className="w-4 h-4 text-[#155e63]" />}
           cards={pharmacyCards}
           freeLimit={3}
+          lockedPreviewLimit={3}
           isPaidUser={hasFullAccess}
           showToast={showToast}
           onUpgradeClick={onUpgradeClick}

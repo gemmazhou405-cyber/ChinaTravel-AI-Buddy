@@ -5,6 +5,7 @@ import PhraseCardCategorySection from '../PhraseCardCategorySection';
 import { paymentCards } from '../../data/phraseCards';
 import PricingPlans from '../PricingPlans';
 import AskBuddyHint from '../AskBuddyHint';
+import { isTripOrGroup } from '../../lib/membership';
 
 interface Props {
   userState: UserState | null;
@@ -26,8 +27,7 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
   const { t } = useTranslation();
   const assetBase = import.meta.env.BASE_URL;
   const paymentMethods = t('pay.methods', { returnObjects: true }) as PaymentMethod[];
-  const isPlanActive = !userState?.planExpiresAt || Date.now() < userState.planExpiresAt;
-  const hasFullAccess = !!userState && isPlanActive && (userState.plan === 'trip' || userState.plan === 'group');
+  const hasFullAccess = isTripOrGroup(userState);
   const setupSteps = [
     t('pay.setup.step1'),
     t('pay.setup.step2'),
@@ -129,6 +129,7 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
         icon={<CreditCard className="w-4 h-4 text-[#155e63]" />}
         cards={paymentCards}
         freeLimit={3}
+        lockedPreviewLimit={3}
         isPaidUser={hasFullAccess}
         showToast={showToast}
         onUpgradeClick={onUpgradeClick}

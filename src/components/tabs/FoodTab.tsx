@@ -6,6 +6,7 @@ import PhraseCardItem from '../PhraseCardItem';
 import { restaurantCards } from '../../data/phraseCards';
 import type { UserState } from '../../hooks/useAuth';
 import AskBuddyHint from '../AskBuddyHint';
+import { isTripOrGroup } from '../../lib/membership';
 
 interface AllergyCardData {
   name: string;
@@ -98,9 +99,10 @@ interface Props {
   userState: UserState | null;
   showToast: (msg: string) => void;
   onAskBuddy: () => void;
+  onUpgradeClick: (message?: string) => void;
 }
 
-export default function FoodTab({ userState, showToast, onAskBuddy }: Props) {
+export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeClick }: Props) {
   const { t } = useTranslation();
   const [dragOver, setDragOver] = useState(false);
   const [uploadedFile, setUploadedFile] = useState<string | null>(null);
@@ -111,8 +113,7 @@ export default function FoodTab({ userState, showToast, onAskBuddy }: Props) {
   const fileRef = useRef<HTMLInputElement>(null);
   const allergyCards = t('food.allergyCards', { returnObjects: true }) as AllergyCardData[];
   const menuItems = t('food.menuItems', { returnObjects: true }) as MenuItem[];
-  const isPlanActive = !userState?.planExpiresAt || Date.now() < userState.planExpiresAt;
-  const hasFullAccess = !!userState && isPlanActive && (userState.plan === 'trip' || userState.plan === 'group');
+  const hasFullAccess = isTripOrGroup(userState);
 
   const speakChinese = (text: string) => {
     if ('speechSynthesis' in window) {
@@ -312,15 +313,16 @@ export default function FoodTab({ userState, showToast, onAskBuddy }: Props) {
 
         {/* 固定短语卡片 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-          {restaurantCards.map((card, index) => {
+          {(hasFullAccess ? restaurantCards : restaurantCards.slice(0, 6)).map((card, index) => {
             const isLocked = !hasFullAccess && index >= 3;
             return (
-              <PhraseCardItem
-                key={card.id}
-                card={card}
-                isLocked={isLocked}
-                showToast={showToast}
-              />
+              <div key={card.id} onClick={isLocked ? () => onUpgradeClick() : undefined} className={isLocked ? 'cursor-pointer' : ''}>
+                <PhraseCardItem
+                  card={card}
+                  isLocked={isLocked}
+                  showToast={showToast}
+                />
+              </div>
             );
           })}
         </div>

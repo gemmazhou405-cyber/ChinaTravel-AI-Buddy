@@ -20,7 +20,7 @@ export default function TabContent({ activeTab, userState, showToast, onAskBuddy
     <main className="max-w-3xl mx-auto px-4 py-6 md:px-6 pb-28">
       {activeTab === 'before' && <BeforeTab />}
       {activeTab === 'stay' && <StayTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} />}
-      {activeTab === 'food' && <FoodTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} />}
+      {activeTab === 'food' && <FoodTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} />}
       {activeTab === 'transport' && <TransportTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} />}
       {activeTab === 'emergency' && <EmergencyTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} />}
       {activeTab === 'pay' && <PayTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} />}

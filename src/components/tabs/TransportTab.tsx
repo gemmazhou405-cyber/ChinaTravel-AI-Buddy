@@ -5,6 +5,7 @@ import PhraseCardCategorySection from '../PhraseCardCategorySection';
 import { airportCards, taxiCards, trainCards } from '../../data/phraseCards';
 import type { UserState } from '../../hooks/useAuth';
 import AskBuddyHint from '../AskBuddyHint';
+import { isTripOrGroup } from '../../lib/membership';
 
 const METRO_PHRASES = [
   { key: 'transport.phrases.whereSubway', zh: '地铁站在哪里？', pinyin: 'Dìtiě zhàn zài nǎlǐ?' },
@@ -33,8 +34,7 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
   const [fromCity, setFromCity] = useState('');
   const [toCity, setToCity] = useState('');
   const apps = t('transport.apps', { returnObjects: true }) as TransportApp[];
-  const isPlanActive = !userState?.planExpiresAt || Date.now() < userState.planExpiresAt;
-  const hasFullAccess = !!userState && isPlanActive && (userState.plan === 'trip' || userState.plan === 'group');
+  const hasFullAccess = isTripOrGroup(userState);
 
   const speakChinese = (text: string) => {
     if ('speechSynthesis' in window) {
@@ -127,6 +127,7 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
         icon={<Car className="w-4 h-4 text-[#155e63]" />}
         cards={taxiCards}
         freeLimit={3}
+        lockedPreviewLimit={3}
         isPaidUser={hasFullAccess}
         showToast={showToast}
         onUpgradeClick={onUpgradeClick}
@@ -139,6 +140,7 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
         icon={<Train className="w-4 h-4 text-[#155e63]" />}
         cards={trainCards}
         freeLimit={3}
+        lockedPreviewLimit={3}
         isPaidUser={hasFullAccess}
         showToast={showToast}
         onUpgradeClick={onUpgradeClick}
@@ -149,6 +151,7 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
         icon={<Plane className="w-4 h-4 text-[#155e63]" />}
         cards={airportCards}
         freeLimit={3}
+        lockedPreviewLimit={3}
         isPaidUser={hasFullAccess}
         showToast={showToast}
         onUpgradeClick={onUpgradeClick}
