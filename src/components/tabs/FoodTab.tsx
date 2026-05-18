@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Upload, AlertTriangle, MessageSquare, ChevronRight, X, Sparkles, Send } from 'lucide-react';
+import { Upload, AlertTriangle, MessageSquare, ChevronRight, X, Sparkles, Send, Search } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { COZE_WORKER_URL, COZE_BOT_ID } from '../../firebase-config';
 import PhraseCardItem from '../PhraseCardItem';
@@ -7,6 +7,21 @@ import { restaurantCards } from '../../data/phraseCards';
 import type { UserState } from '../../hooks/useAuth';
 import AskBuddyHint from '../AskBuddyHint';
 import { isTripOrGroup } from '../../lib/membership';
+import allDishes from '../../data/dishes/commonChineseDishes.json';
+
+interface Dish {
+  id: string;
+  chineseName: string;
+  englishName: string;
+  pinyin: string;
+  cuisine: string;
+  allergens: string[];
+  spicyLevel: number;
+  vegetarianFriendly: boolean;
+  veganFriendly: boolean;
+  shortDescription: string;
+  orderTip: string;
+}
 
 interface AllergyCardData {
   name: string;
@@ -114,6 +129,20 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
   const allergyCards = t('food.allergyCards', { returnObjects: true }) as AllergyCardData[];
   const menuItems = t('food.menuItems', { returnObjects: true }) as MenuItem[];
   const hasFullAccess = isTripOrGroup(userState);
+  const [dishQuery, setDishQuery] = useState('');
+
+  const dishResults = (() => {
+    const q = dishQuery.trim().toLowerCase();
+    if (!q) return [];
+    return (allDishes as Dish[])
+      .filter(
+        (d) =>
+          d.englishName.toLowerCase().includes(q) ||
+          d.chineseName.includes(dishQuery.trim()) ||
+          d.pinyin.toLowerCase().includes(q),
+      )
+      .slice(0, 8);
+  })();
 
   const speakChinese = (text: string) => {
     if ('speechSynthesis' in window) {
@@ -183,6 +212,72 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
         <p className="text-gray-500 text-sm mb-4">{t('food.decoderSub')}</p>
         <div className="mb-4">
           <AskBuddyHint onClick={onAskBuddy} text="Need a custom answer? Ask Buddy can help." />
+        </div>
+
+        {/* Dish Search */}
+        <div className="mb-4">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-300 pointer-events-none" />
+            <input
+              value={dishQuery}
+              onChange={(e) => setDishQuery(e.target.value)}
+              placeholder="Search dish by name, Chinese, or pinyin…"
+              className="w-full pl-9 pr-3 py-2.5 text-sm bg-white rounded-xl border border-gray-200 outline-none focus:border-[#155e63]/40 transition-all placeholder:text-gray-300"
+            />
+            {dishQuery && (
+              <button onClick={() => setDishQuery('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-300 hover:text-gray-500">
+                <X className="w-3.5 h-3.5" />
+              </button>
+            )}
+          </div>
+
+          {dishResults.length > 0 && (
+            <div className="mt-2 space-y-2">
+              {dishResults.map((dish) => (
+                <div key={dish.id} className="bg-white border border-gray-100 rounded-2xl p-3.5 shadow-sm">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <p className="font-semibold text-gray-900 text-sm">{dish.chineseName}</p>
+                        <p className="text-gray-500 text-xs">{dish.englishName}</p>
+                        {dish.spicyLevel > 0 && (
+                          <span className="text-xs">{'🌶'.repeat(Math.min(dish.spicyLevel, 5))}</span>
+                        )}
+                      </div>
+                      <p className="text-gray-400 text-xs mt-0.5">{dish.pinyin}</p>
+                    </div>
+                    <div className="flex gap-1 shrink-0 mt-0.5">
+                      {dish.veganFriendly && (
+                        <span className="text-[10px] bg-green-100 text-green-700 px-1.5 py-0.5 rounded-full font-medium">Vegan</span>
+                      )}
+                      {!dish.veganFriendly && dish.vegetarianFriendly && (
+                        <span className="text-[10px] bg-emerald-50 text-emerald-600 px-1.5 py-0.5 rounded-full font-medium">Veg</span>
+                      )}
+                    </div>
+                  </div>
+                  <p className="text-gray-500 text-xs mt-1.5 leading-relaxed">{dish.shortDescription}</p>
+                  {dish.allergens.length > 0 && (
+                    <div className="flex flex-wrap gap-1 mt-1.5">
+                      {dish.allergens.map((a) => (
+                        <span key={a} className="text-[10px] bg-amber-50 text-amber-700 border border-amber-100 px-1.5 py-0.5 rounded-full">
+                          ⚠️ {a}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  {dish.orderTip && (
+                    <p className="text-[11px] text-[#155e63] mt-1.5 leading-relaxed">
+                      💬 {dish.orderTip}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+
+          {dishQuery.trim() && dishResults.length === 0 && (
+            <p className="text-xs text-gray-400 mt-2 text-center">No dishes found for "{dishQuery}"</p>
+          )}
         </div>
 
         {uploadedFile ? (
