@@ -1,10 +1,10 @@
 import { Smartphone, DollarSign, Info, ChevronRight, CreditCard } from 'lucide-react';
 import { UserState } from '../../hooks/useAuth';
 import { useTranslation } from 'react-i18next';
-import PhraseCardCategorySection from '../PhraseCardCategorySection';
+import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
+import TabSectionHeader from '../TabSectionHeader';
 import { paymentCards } from '../../data/phraseCards';
 import PricingPlans from '../PricingPlans';
-import AskBuddyHint from '../AskBuddyHint';
 import { isTripOrGroup } from '../../lib/membership';
 
 interface Props {
@@ -38,8 +38,17 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
 
   return (
     <div className="space-y-6">
+      <TabSectionHeader
+        title="Pay in China"
+        subtitle="Understand Alipay, WeChat Pay, cards, and cash."
+        onAskBuddy={onAskBuddy}
+      />
+
       {/* Pricing cards */}
-      <PricingPlans userState={userState} />
+      <section>
+        <h2 className="text-base font-semibold text-gray-900 mb-3">Upgrade Your Trip Pass</h2>
+        <PricingPlans userState={userState} />
+      </section>
 
       {/* Email header banner */}
       <section aria-label={t('pay.bannerAlt')}>
@@ -122,12 +131,16 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
         </button>
       </div>
 
-      <AskBuddyHint onClick={onAskBuddy} text="Need a custom answer? Ask Buddy can help." />
-
-      <PhraseCardCategorySection
-        title="Payment Phrases"
-        icon={<CreditCard className="w-4 h-4 text-[#155e63]" />}
-        cards={paymentCards}
+      <PhraseCategoryAccordion
+        categories={[
+          {
+            id: 'payment',
+            title: 'Payment Phrase Cards',
+            subtitle: `${paymentCards.length} Alipay, WeChat Pay, card, and cash cards`,
+            icon: <CreditCard className="w-4 h-4" />,
+            cards: paymentCards,
+          },
+        ]}
         freeLimit={3}
         lockedPreviewLimit={3}
         isPaidUser={hasFullAccess}
