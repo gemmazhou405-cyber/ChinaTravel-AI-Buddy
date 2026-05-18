@@ -1,0 +1,79 @@
+{
+  "cityId": "beijing",
+  "cityName": "Beijing",
+  "cityNameCN": "北京",
+  "airport": {
+    "name": "Beijing Capital International Airport (PEK)",
+    "iataCode": "PEK",
+    "toCity": "Take Airport Express to Dongzhimen in 25 mins; taxis metered but use Didi app."
+  },
+  "transport": {
+    "metro": "Use Beijing Subway app; signs in English; avoid rush hours 7-9 AM and 5-7 PM.",
+    "taxi": "Hail taxis or use Didi app; ensure meter is running; show destination in Chinese.",
+    "didi": "Download Didi app before arrival; link international card; convenient for city-wide rides.",
+    "tips": [
+      "Buy Yikatong card for metro/bus savings.",
+      "Use Baidu Maps for real-time navigation.",
+      "Avoid unlicensed taxis; use official stands."
+    ]
+  },
+  "payment": {
+    "alipay": "Download Alipay and use Tour Pass for foreign cards; widely accepted in shops.",
+    "wechatPay": "Set up WeChat Pay via WeChat app; scan QR codes to pay easily.",
+    "cash": "Carry small cash for street vendors; ATMs available but less used.",
+    "foreignCard": "Visa/Mastercard at hotels and malls; notify bank before travel to avoid blocks."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Wangfujing for central sights",
+      "Chaoyang for business and shopping"
+    ],
+    "tips": [
+      "Book near metro stations for easy access.",
+      "Check for English-speaking staff assistance."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Peking Duck",
+      "Jiaozi (dumplings)",
+      "Zhajiangmian noodles",
+      "Lamb Hotpot",
+      "Jianbing crepe"
+    ],
+    "foodStreets": [
+      "Wangfujing Snack Street",
+      "Guijie (Ghost Street) for night eats"
+    ],
+    "tips": [
+      "Try local eateries for authentic flavors.",
+      "Use food apps like Meituan for delivery."
+    ]
+  },
+  "commonScams": [
+    "Avoid 'tea ceremony' invites; often overpriced scams.",
+    "Ignore unsolicited tour guide offers in tourist spots.",
+    "Check taxi meters or prefer Didi for transparency."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Keep hotel address in Chinese characters for quick help."
+  },
+  "usefulApps": [
+    "Baidu Maps for navigation",
+    "Didi for rides",
+    "Alipay for payments",
+    "WeChat for communication",
+    "Pleco for translation"
+  ],
+  "bestTimeToVisit": "Spring (April-May) and Autumn (September-October) for mild weather and fewer crowds.",
+  "touristTips": [
+    "Learn basic Mandarin phrases like hello and thank you.",
+    "Respect local customs and queue politely.",
+    "Stay hydrated and use sunscreen in summer.",
+    "Carry a copy of your passport for ID checks.",
+    "Use hotel concierge for booking and advice."
+  ]
+}

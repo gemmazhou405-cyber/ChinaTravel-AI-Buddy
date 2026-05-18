@@ -1,0 +1,80 @@
+{
+  "cityId": "shanghai",
+  "cityName": "Shanghai",
+  "cityNameCN": "上海",
+  "airport": {
+    "name": "Shanghai Pudong International Airport",
+    "iataCode": "PVG",
+    "toCity": "Take Maglev train to Longyang Road, then metro. Use Didi/taxi apps with Chinese address."
+  },
+  "transport": {
+    "metro": "Buy Shanghai Public Transport Card. Download Shanghai Metro app for routes and English support.",
+    "taxi": "Use Didi app for reliable taxis. Ensure meter is running; avoid unofficial cabs.",
+    "didi": "Download Didi, link foreign card. Enter destination in Chinese for clarity.",
+    "tips": [
+      "Use metro cards for cashless travel.",
+      "Avoid rush hours (7-9 AM, 5-7 PM).",
+      "Keep hotel address in Chinese handy."
+    ]
+  },
+  "payment": {
+    "alipay": "Set up Alipay international version with foreign card. Widely accepted for payments.",
+    "wechatPay": "Link foreign card to WeChat Pay for convenient transactions.",
+    "cash": "Carry small cash for street vendors. ATMs available citywide.",
+    "foreignCard": "Visa/Mastercard accepted in hotels and malls. Not all local shops."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "The Bund",
+      "French Concession",
+      "Jing'an Temple"
+    ],
+    "tips": [
+      "Book near metro stations for easy access.",
+      "Check for English-speaking staff at hotels."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Xiaolongbao",
+      "Shengjianbao",
+      "Hairy Crab",
+      "Scallion Oil Noodles",
+      "Red-braised Pork"
+    ],
+    "foodStreets": [
+      "Yunnan Road",
+      "Wujiang Road"
+    ],
+    "tips": [
+      "Try street food but check cleanliness.",
+      "Learn basic food names in Chinese."
+    ]
+  },
+  "commonScams": [
+    "Tea ceremony scams with high bills.",
+    "Overcharging in non-metered taxis.",
+    "Fake goods sold near tourist spots."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Know your hotel's address in Chinese for quick help."
+  },
+  "usefulApps": [
+    "Didi",
+    "Alipay",
+    "Shanghai Metro",
+    "Google Maps (use VPN)",
+    "Pleco"
+  ],
+  "bestTimeToVisit": "Spring (April-May) or Autumn (September-November) for pleasant weather.",
+  "touristTips": [
+    "Learn basic Mandarin phrases.",
+    "Carry a portable charger.",
+    "Respect local customs.",
+    "Use public Wi-Fi cautiously.",
+    "Keep passport copies safe."
+  ]
+}

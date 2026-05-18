@@ -1,0 +1,79 @@
+{
+  "cityId": "chongqing",
+  "cityName": "Chongqing",
+  "cityNameCN": "重庆",
+  "airport": {
+    "name": "Chongqing Jiangbei International Airport",
+    "iataCode": "CKG",
+    "toCity": "Take Metro Line 10 directly to city center, or use airport taxis and buses."
+  },
+  "transport": {
+    "metro": "Metro is efficient for major sites; buy tickets with cash or via apps.",
+    "taxi": "Taxis are cheap; use apps like Didi to avoid language issues.",
+    "didi": "Didi app works like Uber; set up with international payment.",
+    "tips": [
+      "Download offline maps before arrival.",
+      "Metro runs from 6 AM to 11 PM.",
+      "Confirm taxi fare before boarding."
+    ]
+  },
+  "payment": {
+    "alipay": "Alipay supports foreign cards; download and register with passport.",
+    "wechatPay": "WeChat Pay allows international card linking for easy payments.",
+    "cash": "Carry small cash; some street vendors may not accept cards.",
+    "foreignCard": "Visa/Mastercard accepted at hotels, malls; less common elsewhere."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Jiefangbei",
+      "Nan'an District"
+    ],
+    "tips": [
+      "Book early during holidays.",
+      "Check for English-speaking staff at hotels."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Chongqing Hotpot",
+      "Xiaomian Noodles",
+      "Spicy Chicken",
+      "Fuqi Feipian",
+      "Suanla Fen"
+    ],
+    "foodStreets": [
+      "Bayi Road",
+      "Nanbin Road"
+    ],
+    "tips": [
+      "Ask for mild spice if sensitive.",
+      "Choose busy street food stalls for freshness."
+    ]
+  },
+  "commonScams": [
+    "Taxis overcharging tourists.",
+    "Fake goods at attractions.",
+    "Overpriced unsolicited tours."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Watch out for steep slopes and dense fog, especially in winter."
+  },
+  "usefulApps": [
+    "WeChat",
+    "Alipay",
+    "Baidu Maps",
+    "Didi",
+    "Google Translate"
+  ],
+  "bestTimeToVisit": "Spring (April-May) or Autumn (September-October) for comfortable weather.",
+  "touristTips": [
+    "Learn basic Mandarin phrases.",
+    "Use translation apps for signs.",
+    "Carry a power bank.",
+    "Stay hydrated in humid summers.",
+    "Respect local dining customs."
+  ]
+}

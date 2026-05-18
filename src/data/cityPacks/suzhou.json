@@ -1,0 +1,77 @@
+{
+  "cityId": "suzhou",
+  "cityName": "Suzhou",
+  "cityNameCN": "苏州",
+  "airport": {
+    "name": "Sunan Shuofang International Airport",
+    "iataCode": "WUX",
+    "toCity": "Take direct bus or train to Suzhou, about 1-2 hours. Check schedules online."
+  },
+  "transport": {
+    "metro": "Suzhou Metro is efficient; buy tickets at stations or use Alipay for QR codes.",
+    "taxi": "Use metered taxis; recommend Gaode Maps app for navigation and fare estimates.",
+    "didi": "Download Didi app; register with international phone number for ride-hailing.",
+    "tips": [
+      "Carry a metro map in English.",
+      "Avoid rush hours for taxis.",
+      "Use public transport apps for real-time updates."
+    ]
+  },
+  "payment": {
+    "alipay": "Link international credit card to Alipay for easy payments at most stores.",
+    "wechatPay": "Set up WeChat Pay via foreign card or bank transfer for convenience.",
+    "cash": "Carry small cash amounts; some local vendors may not accept cards.",
+    "foreignCard": "Major tourist spots accept Visa/Mastercard, but cash is often preferred elsewhere."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Gusu District for historic sites.",
+      "Suzhou Industrial Park for modern stays."
+    ],
+    "tips": [
+      "Book hotels near metro stations for easy access.",
+      "Check online reviews for cleanliness and service."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Suzhou-style noodles",
+      "Sweet and sour Mandarin fish",
+      "Squirrel-shaped Mandarin fish",
+      "Zongzi (rice dumplings)",
+      "Gao (sweet cakes)"
+    ],
+    "foodStreets": [
+      "Guanqian Street",
+      "Pingjiang Road"
+    ],
+    "tips": [
+      "Try local tea houses for authentic experience.",
+      "Be cautious with spicy dishes if not accustomed."
+    ]
+  },
+  "commonScams": [
+    "Taxi drivers overcharging tourists at night.",
+    "Fake entry tickets sold near tourist sites.",
+    "Unofficial guides demanding high fees upfront."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Learn basic Chinese phrases like 'help' or 'hospital' for emergencies."
+  },
+  "usefulApps": [
+    "Didi for transportation",
+    "Alipay for payments",
+    "Baidu Maps for navigation"
+  ],
+  "bestTimeToVisit": "Spring (April-May) or Autumn (September-October) for mild weather and fewer crowds.",
+  "touristTips": [
+    "Carry a phrasebook or translation app for communication.",
+    "Respect local customs and queue etiquette.",
+    "Stay hydrated and carry water in summer.",
+    "Use sunscreen and hats for sun protection.",
+    "Keep valuables secure in crowded areas."
+  ]
+}

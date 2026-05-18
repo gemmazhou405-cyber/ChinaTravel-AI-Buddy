@@ -1,0 +1,78 @@
+{
+  "cityId": "xian",
+  "cityName": "Xi'an",
+  "cityNameCN": "西安",
+  "airport": {
+    "name": "Xi'an Xianyang International Airport",
+    "iataCode": "XIY",
+    "toCity": "Take metro line 14 to city center; airport shuttle available; taxis use metered fares."
+  },
+  "transport": {
+    "metro": "Get a Xi'an Metro card or use WeChat/Alipay QR codes for easy travel.",
+    "taxi": "Use metered taxis; apps like Didi are reliable; avoid unofficial cabs.",
+    "didi": "Download Didi app; link foreign card or use Alipay; set destination in Chinese.",
+    "tips": [
+      "Metro runs from 6 AM to 11 PM.",
+      "Avoid rush hours 7-9 AM and 5-7 PM.",
+      "Keep small change for buses."
+    ]
+  },
+  "payment": {
+    "alipay": "Register with passport; bind foreign card; use for payments and transport.",
+    "wechatPay": "Link foreign card or use tourist version; scan QR codes widely accepted.",
+    "cash": "Carry some cash; small vendors may not accept cards.",
+    "foreignCard": "Visa/Mastercard accepted in hotels and malls; use cash or mobile pay elsewhere."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Bell Tower area",
+      "Xincheng District"
+    ],
+    "tips": [
+      "Book in advance during peak seasons.",
+      "Check for English-speaking staff."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Biangbiang noodles",
+      "Roujiamo (Chinese hamburger)",
+      "Yangrou paomo",
+      "Persimmon cakes",
+      "Cold noodles"
+    ],
+    "foodStreets": [
+      "Muslim Quarter",
+      "Dongxinjie Night Market"
+    ],
+    "tips": [
+      "Try street food but ensure hygiene.",
+      "Eat where locals eat for authenticity."
+    ]
+  },
+  "commonScams": [
+    "Overpriced tours near tourist sites.",
+    "Fake merchandise in markets.",
+    "Taxi drivers taking longer routes."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Learn basic Chinese phrases for emergencies; keep hotel address in Chinese."
+  },
+  "usefulApps": [
+    "WeChat",
+    "Alipay",
+    "Baidu Maps",
+    "Google Translate (with VPN)"
+  ],
+  "bestTimeToVisit": "Spring (April-May) and autumn (September-October) for mild weather.",
+  "touristTips": [
+    "Carry ID and hotel card at all times.",
+    "Use translation apps for communication.",
+    "Bargain politely in markets.",
+    "Stay hydrated in summer.",
+    "Respect local customs and sites."
+  ]
+}

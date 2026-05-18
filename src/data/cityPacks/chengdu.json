@@ -1,0 +1,80 @@
+{
+  "cityId": "chengdu",
+  "cityName": "Chengdu",
+  "cityNameCN": "成都",
+  "airport": {
+    "name": "Chengdu Shuangliu International Airport",
+    "iataCode": "CTU",
+    "toCity": "Take Metro Line 10 to city center, or use airport buses. Taxis available."
+  },
+  "transport": {
+    "metro": "Use metro apps for maps. Operates 6:30 AM to 10:30 PM.",
+    "taxi": "Use metered taxis. Apps like Didi recommended for convenience.",
+    "didi": "Download Didi app, set to English. Pay via app.",
+    "tips": [
+      "Get a transit card for ease.",
+      "Avoid rush hours: 7-9 AM, 5-7 PM.",
+      "Metro is efficient and affordable."
+    ]
+  },
+  "payment": {
+    "alipay": "Download Alipay international version, link foreign card.",
+    "wechatPay": "Set up WeChat Pay with foreign card verification.",
+    "cash": "Carry small bills, as change may be scarce.",
+    "foreignCard": "Accepted in major hotels and stores, but mobile pay preferred."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Jinli Street area",
+      "Near Taikoo Li",
+      "Close to metro stations"
+    ],
+    "tips": [
+      "Book in advance, especially during festivals.",
+      "Check reviews for cleanliness and location."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Mapo Tofu",
+      "Kung Pao Chicken",
+      "Sichuan Hotpot",
+      "Dan Dan Noodles",
+      "Zhong Dumplings"
+    ],
+    "foodStreets": [
+      "Jinli Ancient Street",
+      "Wide and Narrow Alleys"
+    ],
+    "tips": [
+      "Start with mild spice levels.",
+      "Use translation apps for menus."
+    ]
+  },
+  "commonScams": [
+    "Unlicensed taxis overcharging.",
+    "Fake tourist tours.",
+    "Tea house scams with high prices."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "For medical help, go to major hospitals like West China Hospital."
+  },
+  "usefulApps": [
+    "Didi",
+    "Alipay",
+    "WeChat",
+    "Baidu Maps",
+    "Ctrip"
+  ],
+  "bestTimeToVisit": "Spring (March-May) and autumn (Sept-Nov) for mild weather.",
+  "touristTips": [
+    "Learn basic Mandarin phrases.",
+    "Use metro for easy navigation.",
+    "Try local Sichuan cuisine.",
+    "Carry a portable charger.",
+    "Respect local customs and etiquette."
+  ]
+}

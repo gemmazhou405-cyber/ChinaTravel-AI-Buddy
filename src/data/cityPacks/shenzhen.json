@@ -1,0 +1,78 @@
+{
+  "cityId": "shenzhen",
+  "cityName": "Shenzhen",
+  "cityNameCN": "深圳",
+  "airport": {
+    "name": "Shenzhen Bao'an International Airport",
+    "iataCode": "SZX",
+    "toCity": "Take Metro Line 11 to city center; about 30 minutes. Or use Didi app."
+  },
+  "transport": {
+    "metro": "Download Shenzhen Metro app or use Baidu Maps. Buy tickets or use Shenzhentong card.",
+    "taxi": "Use Didi app for convenience. Taxis accept cash and Alipay.",
+    "didi": "Register with international number; pay via WeChat or Alipay.",
+    "tips": [
+      "Use metro for fast travel.",
+      "Avoid rush hours if possible.",
+      "Keep metro ticket for exit."
+    ]
+  },
+  "payment": {
+    "alipay": "Link foreign credit card; use for payments in stores.",
+    "wechatPay": "Set up with foreign card; scan QR codes.",
+    "cash": "Carry small bills; some places prefer mobile pay.",
+    "foreignCard": "Accepted in malls and hotels; use cash elsewhere."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Futian",
+      "Nanshan"
+    ],
+    "tips": [
+      "Book hotels in advance.",
+      "Use Ctrip or Booking.com for deals."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Dim sum",
+      "Cantonese seafood",
+      "Shenzhen roasted goose",
+      "Tofu pudding",
+      "Stir-fried noodles"
+    ],
+    "foodStreets": [
+      "Dongmen Pedestrian Street",
+      "Coco Park area"
+    ],
+    "tips": [
+      "Try street food for authentic taste.",
+      "Learn basic Chinese food names."
+    ]
+  },
+  "commonScams": [
+    "Fake taxi meters; use official taxis.",
+    "Overcharging in tourist spots; confirm prices.",
+    "Pickpockets in crowded areas; guard belongings."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Download 'Shenzhen Emergency' app for local help."
+  },
+  "usefulApps": [
+    "Baidu Maps for navigation.",
+    "WeChat for communication.",
+    "Didi for rides.",
+    "Ctrip for bookings."
+  ],
+  "bestTimeToVisit": "Visit from October to December for mild weather and fewer crowds.",
+  "touristTips": [
+    "Learn basic Mandarin phrases.",
+    "Use translation apps like Baidu Translate.",
+    "Stay hydrated in summer.",
+    "Respect local customs.",
+    "Keep copies of your passport."
+  ]
+}

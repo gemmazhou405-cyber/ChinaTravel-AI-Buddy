@@ -1,0 +1,78 @@
+{
+  "cityId": "guangzhou",
+  "cityName": "Guangzhou",
+  "cityNameCN": "广州",
+  "airport": {
+    "name": "Guangzhou Baiyun International Airport",
+    "iataCode": "CAN",
+    "toCity": "Take Metro Line 3 or airport express bus. Taxis are available; use metered ones."
+  },
+  "transport": {
+    "metro": "Get a Yangcheng Tong card for easy metro access. Signs are in English and Chinese.",
+    "taxi": "Use metered taxis; apps like Amap or Didi for convenience. Avoid unlicensed cabs.",
+    "didi": "Download Didi app; link international card or use Alipay. Cash payment option available.",
+    "tips": [
+      "Always carry small change for buses.",
+      "Avoid rush hours for comfortable travel.",
+      "Learn basic Chinese phrases for directions."
+    ]
+  },
+  "payment": {
+    "alipay": "Download Alipay app and register with passport. Link international card for top-ups.",
+    "wechatPay": "Set up WeChat Pay via passport verification. Use for payments in most places.",
+    "cash": "Carry small amounts of cash; some small vendors prefer cash.",
+    "foreignCard": "Visa and Mastercard accepted in hotels, upscale restaurants. Inform bank before travel."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Tianhe District",
+      "Yuexiu District"
+    ],
+    "tips": [
+      "Book in advance during peak seasons.",
+      "Check for English-speaking staff at hotels."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Cantonese Dim Sum",
+      "Roast Goose",
+      "Wonton Noodles",
+      "Char Siu",
+      "Congee"
+    ],
+    "foodStreets": [
+      "Shangxiajiu Pedestrian Street",
+      "Beijing Road"
+    ],
+    "tips": [
+      "Try street food but ensure it's freshly cooked.",
+      "Use translation apps for menu items."
+    ]
+  },
+  "commonScams": [
+    "Overcharging by unlicensed taxis.",
+    "Fake goods at tourist spots.",
+    "Tai Chi or tea ceremony scams near attractions."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "In case of emergency, ask locals for help; most are friendly and assist tourists."
+  },
+  "usefulApps": [
+    "Alipay",
+    "WeChat",
+    "Amap (for maps and directions)",
+    "Pleco (for translation)"
+  ],
+  "bestTimeToVisit": "October to December for mild weather and fewer crowds.",
+  "touristTips": [
+    "Learn a few basic Chinese phrases.",
+    "Always have hotel address in Chinese.",
+    "Use hotel cards to get back safely.",
+    "Respect local customs and traditions.",
+    "Stay hydrated and carry a water bottle."
+  ]
+}

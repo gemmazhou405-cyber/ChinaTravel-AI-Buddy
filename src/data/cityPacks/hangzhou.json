@@ -1,0 +1,78 @@
+{
+  "cityId": "hangzhou",
+  "cityName": "Hangzhou",
+  "cityNameCN": "杭州",
+  "airport": {
+    "name": "Hangzhou Xiaoshan International Airport",
+    "iataCode": "HGH",
+    "toCity": "Take Metro Line 1 to city center; use airport shuttle or taxi for convenience."
+  },
+  "transport": {
+    "metro": "Metro covers major tourist spots; buy tickets or use Alipay QR code.",
+    "taxi": "Use metered taxis; avoid unlicensed ones and keep small change.",
+    "didi": "Download Didi app; set up with Alipay or WeChat for easy rides.",
+    "tips": [
+      "Use metro during rush hours to avoid traffic.",
+      "Carry cash for buses.",
+      "Learn basic station names in Mandarin."
+    ]
+  },
+  "payment": {
+    "alipay": "Download Alipay; use 'Tour Pass' to link foreign card.",
+    "wechatPay": "Set up via WeChat; may need local assistance for verification.",
+    "cash": "Always carry some cash; small vendors often don't accept cards.",
+    "foreignCard": "Major hotels accept Visa/Mastercard; but many places prefer mobile payment."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "West Lake area",
+      "Xihu District"
+    ],
+    "tips": [
+      "Book near metro stations for easy access.",
+      "Check online reviews for cleanliness."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "West Lake Fish in Vinegar Sauce",
+      "Dongpo Pork",
+      "Beggar's Chicken",
+      "Longjing Shrimp",
+      "Braised Dongpo Pork"
+    ],
+    "foodStreets": [
+      "Hefang Street",
+      "Shengli River Food Street"
+    ],
+    "tips": [
+      "Try local teahouses for authentic taste.",
+      "Be cautious with spicy dishes if sensitive."
+    ]
+  },
+  "commonScams": [
+    "Fake tour guides near West Lake.",
+    "Overcharging taxis at night.",
+    "Pickpockets in crowded tourist spots."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Dial 110 for police; use translation apps if English is needed."
+  },
+  "usefulApps": [
+    "Didi",
+    "Alipay",
+    "WeChat",
+    "Baidu Maps"
+  ],
+  "bestTimeToVisit": "Spring (April-May) and Autumn (September-October) for pleasant weather.",
+  "touristTips": [
+    "Learn basic Mandarin phrases.",
+    "Carry a portable charger.",
+    "Respect local customs like removing shoes indoors.",
+    "Stay hydrated in summer.",
+    "Use sunscreen and hats for sun protection."
+  ]
+}
