@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { UserState } from '../../hooks/useAuth';
 import { isTripOrGroup } from '../../lib/membership';
+import TabSectionHeader from '../TabSectionHeader';
 
 import shanghaiData from '../../data/cityPacks/shanghai.json';
 import beijingData from '../../data/cityPacks/beijing.json';
@@ -163,10 +164,11 @@ function CityModal({ city, emoji, onClose }: { city: CityPack; emoji: string; on
 
 interface Props {
   userState: UserState | null;
+  onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
 }
 
-export default function BeforeTab({ userState, onUpgradeClick }: Props) {
+export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick }: Props) {
   const { t } = useTranslation();
   const hasFullAccess = isTripOrGroup(userState);
   const [selectedCity, setSelectedCity] = useState<{ city: CityPack; emoji: string } | null>(null);
@@ -197,39 +199,11 @@ export default function BeforeTab({ userState, onUpgradeClick }: Props) {
 
   return (
     <div className="space-y-6">
-      {/* City Survival Guides */}
-      <section>
-        <h2 className="text-base font-semibold text-gray-900 mb-1">City Survival Guides</h2>
-        <p className="text-gray-500 text-sm mb-3">Airport, transport, payment & local tips for each city.</p>
-        <div className="grid grid-cols-3 gap-2">
-          {CITIES.map(({ emoji, data, freeAccess }) => {
-            const locked = !freeAccess && !hasFullAccess;
-            return (
-              <button
-                key={data.cityId}
-                onClick={() => handleCityClick(data, emoji, freeAccess)}
-                className={`relative bg-white border rounded-2xl p-3 text-center shadow-sm transition-all ${
-                  locked
-                    ? 'border-gray-100 opacity-70'
-                    : 'border-gray-100 hover:border-[#155e63]/30 hover:shadow-md'
-                }`}
-              >
-                {locked && (
-                  <div className="absolute top-1.5 right-1.5">
-                    <Lock className="w-3 h-3 text-gray-300" />
-                  </div>
-                )}
-                <div className="text-2xl mb-1">{emoji}</div>
-                <p className="text-xs font-semibold text-gray-800 leading-tight">{data.cityName}</p>
-                <p className="text-[10px] text-gray-400 mt-0.5">{data.cityNameCN}</p>
-                {locked && (
-                  <p className="text-[9px] text-[#155e63] mt-1 font-medium leading-tight">Unlock with Trip Pass</p>
-                )}
-              </button>
-            );
-          })}
-        </div>
-      </section>
+      <TabSectionHeader
+        title="Before You Go"
+        subtitle="Set up the essentials before landing in China."
+        onAskBuddy={onAskBuddy}
+      />
 
       <section>
         <div className="flex items-center justify-between mb-3">
@@ -258,6 +232,40 @@ export default function BeforeTab({ userState, onUpgradeClick }: Props) {
                   <p className="text-gray-400 text-xs mt-0.5 truncate">{t(item.sublabelKey)}</p>
                 </div>
                 <ChevronRight className="w-4 h-4 text-gray-300 flex-shrink-0" />
+              </button>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* City Survival Guides */}
+      <section>
+        <h2 className="text-base font-semibold text-gray-900 mb-1">City Survival Guides</h2>
+        <p className="text-gray-500 text-sm mb-3">Airport, transport, payment & local tips for each city.</p>
+        <div className="grid grid-cols-3 gap-2">
+          {CITIES.map(({ emoji, data, freeAccess }) => {
+            const locked = !freeAccess && !hasFullAccess;
+            return (
+              <button
+                key={data.cityId}
+                onClick={() => handleCityClick(data, emoji, freeAccess)}
+                className={`relative bg-white border rounded-2xl p-3 text-center shadow-sm transition-all ${
+                  locked
+                    ? 'border-gray-100 opacity-70'
+                    : 'border-gray-100 hover:border-[#155e63]/30 hover:shadow-md'
+                }`}
+              >
+                {locked && (
+                  <div className="absolute top-1.5 right-1.5">
+                    <Lock className="w-3 h-3 text-gray-300" />
+                  </div>
+                )}
+                <div className="text-2xl mb-1">{emoji}</div>
+                <p className="text-xs font-semibold text-gray-800 leading-tight">{data.cityName}</p>
+                <p className="text-[10px] text-gray-400 mt-0.5">{data.cityNameCN}</p>
+                {locked && (
+                  <p className="text-[9px] text-[#155e63] mt-1 font-medium leading-tight">Unlock with Trip Pass</p>
+                )}
               </button>
             );
           })}

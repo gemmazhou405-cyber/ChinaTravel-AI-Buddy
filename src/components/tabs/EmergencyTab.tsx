@@ -1,10 +1,10 @@
 import { Phone, FileText, Heart, MapPin, Shield, ChevronRight, Building2, Pill, Siren } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import PhraseCardCategorySection from '../PhraseCardCategorySection';
+import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
+import TabSectionHeader from '../TabSectionHeader';
 import { emergencyCards, hospitalCards, pharmacyCards, policeCards } from '../../data/phraseCards';
 import type { UserState } from '../../hooks/useAuth';
-import AskBuddyHint from '../AskBuddyHint';
 import { isTripOrGroup } from '../../lib/membership';
 
 const EMERGENCY_NUMBERS = [
@@ -180,6 +180,12 @@ export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgra
 
   return (
     <div className="space-y-6">
+      <TabSectionHeader
+        title="Emergency"
+        subtitle="Get urgent help fast."
+        onAskBuddy={onAskBuddy}
+      />
+
       {/* Warning banner */}
       <div className="bg-red-50 border border-red-100 rounded-2xl p-4 flex gap-3">
         <Shield className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
@@ -222,52 +228,6 @@ export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgra
         />
       </section>
 
-      <AskBuddyHint onClick={onAskBuddy} />
-
-      <section className="space-y-5">
-        <h2 className="text-base font-semibold text-gray-900">Emergency Phrase Cards</h2>
-        <PhraseCardCategorySection
-          title="Emergency Phrases"
-          icon={<Shield className="w-4 h-4 text-[#155e63]" />}
-          cards={emergencyCards}
-          freeLimit={3}
-          lockedPreviewLimit={3}
-          isPaidUser={hasFullAccess}
-          showToast={showToast}
-          onUpgradeClick={onUpgradeClick}
-        />
-        <PhraseCardCategorySection
-          title="Hospital"
-          icon={<Building2 className="w-4 h-4 text-[#155e63]" />}
-          cards={hospitalCards}
-          freeLimit={3}
-          lockedPreviewLimit={3}
-          isPaidUser={hasFullAccess}
-          showToast={showToast}
-          onUpgradeClick={onUpgradeClick}
-        />
-        <PhraseCardCategorySection
-          title="Police"
-          icon={<Siren className="w-4 h-4 text-[#155e63]" />}
-          cards={policeCards}
-          freeLimit={3}
-          lockedPreviewLimit={3}
-          isPaidUser={hasFullAccess}
-          showToast={showToast}
-          onUpgradeClick={onUpgradeClick}
-        />
-        <PhraseCardCategorySection
-          title="Pharmacy"
-          icon={<Pill className="w-4 h-4 text-[#155e63]" />}
-          cards={pharmacyCards}
-          freeLimit={3}
-          lockedPreviewLimit={3}
-          isPaidUser={hasFullAccess}
-          showToast={showToast}
-          onUpgradeClick={onUpgradeClick}
-        />
-      </section>
-
       {/* Location share */}
       <div className="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm">
         <div className="flex items-center gap-2 mb-2">
@@ -284,6 +244,44 @@ export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgra
           {t('emergency.locationBtn')}
         </button>
       </div>
+
+      <PhraseCategoryAccordion
+        categories={[
+          {
+            id: 'emergency',
+            title: 'Emergency Phrases',
+            subtitle: `${emergencyCards.length} urgent help cards`,
+            icon: <Shield className="w-4 h-4" />,
+            cards: emergencyCards,
+          },
+          {
+            id: 'hospital',
+            title: 'Hospital',
+            subtitle: `${hospitalCards.length} hospital and medical cards`,
+            icon: <Building2 className="w-4 h-4" />,
+            cards: hospitalCards,
+          },
+          {
+            id: 'police',
+            title: 'Police',
+            subtitle: `${policeCards.length} police report cards`,
+            icon: <Siren className="w-4 h-4" />,
+            cards: policeCards,
+          },
+          {
+            id: 'pharmacy',
+            title: 'Pharmacy',
+            subtitle: `${pharmacyCards.length} medicine and pharmacy cards`,
+            icon: <Pill className="w-4 h-4" />,
+            cards: pharmacyCards,
+          },
+        ]}
+        freeLimit={3}
+        lockedPreviewLimit={3}
+        isPaidUser={hasFullAccess}
+        showToast={showToast}
+        onUpgradeClick={onUpgradeClick}
+      />
     </div>
   );
 }

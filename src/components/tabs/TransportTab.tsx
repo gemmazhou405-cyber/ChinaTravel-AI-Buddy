@@ -1,10 +1,10 @@
 import { Brain as Train, Car, Plane, Navigation, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import PhraseCardCategorySection from '../PhraseCardCategorySection';
+import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
+import TabSectionHeader from '../TabSectionHeader';
 import { airportCards, taxiCards, trainCards } from '../../data/phraseCards';
 import type { UserState } from '../../hooks/useAuth';
-import AskBuddyHint from '../AskBuddyHint';
 import { isTripOrGroup } from '../../lib/membership';
 
 const METRO_PHRASES = [
@@ -60,6 +60,42 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
 
   return (
     <div className="space-y-6">
+      <TabSectionHeader
+        title="Transport"
+        subtitle="Get around China by taxi, metro, train, and airport transfer."
+        onAskBuddy={onAskBuddy}
+      />
+
+      <section className="bg-[#155e63]/5 border border-[#155e63]/15 rounded-2xl p-4">
+        <div className="flex items-center gap-2 mb-2">
+          <Navigation className="w-4 h-4 text-[#155e63]" />
+          <p className="font-semibold text-[#155e63] text-sm">{t('transport.trainTitle')}</p>
+        </div>
+        <p className="text-gray-500 text-xs leading-relaxed mb-3">
+          {t('transport.trainSub')}
+        </p>
+        <div className="flex gap-2">
+          <input
+            value={fromCity}
+            onChange={(e) => setFromCity(e.target.value)}
+            placeholder={t('transport.from')}
+            className="flex-1 min-w-0 bg-white rounded-xl px-3 py-2 text-xs text-gray-700 border border-gray-100 outline-none focus:border-[#155e63]/40 placeholder:text-gray-400"
+          />
+          <input
+            value={toCity}
+            onChange={(e) => setToCity(e.target.value)}
+            placeholder={t('transport.to')}
+            className="flex-1 min-w-0 bg-white rounded-xl px-3 py-2 text-xs text-gray-700 border border-gray-100 outline-none focus:border-[#155e63]/40 placeholder:text-gray-400"
+          />
+        </div>
+        <button
+          onClick={() => window.open('https://www.trip.com/trains/', '_blank', 'noopener,noreferrer')}
+          className="mt-2 w-full bg-[#155e63] text-white rounded-xl py-2.5 text-sm font-medium hover:bg-[#0e4a4e] transition-colors flex items-center justify-center gap-2"
+        >
+          <Plane className="w-4 h-4" /> {t('transport.search')}
+        </button>
+      </section>
+
       <section>
         <h2 className="text-base font-semibold text-gray-900 mb-3">{t('transport.appsTitle')}</h2>
         <div className="space-y-2.5">
@@ -122,70 +158,36 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
         </div>
       </section>
 
-      <PhraseCardCategorySection
-        title={t('transport.taxiTitle')}
-        icon={<Car className="w-4 h-4 text-[#155e63]" />}
-        cards={taxiCards}
+      <PhraseCategoryAccordion
+        categories={[
+          {
+            id: 'taxi',
+            title: t('transport.taxiTitle'),
+            subtitle: `${taxiCards.length} taxi and driver cards`,
+            icon: <Car className="w-4 h-4" />,
+            cards: taxiCards,
+          },
+          {
+            id: 'train',
+            title: 'Train Phrases',
+            subtitle: `${trainCards.length} high-speed rail cards`,
+            icon: <Train className="w-4 h-4" />,
+            cards: trainCards,
+          },
+          {
+            id: 'airport',
+            title: 'Airport Phrases',
+            subtitle: `${airportCards.length} arrival and transfer cards`,
+            icon: <Plane className="w-4 h-4" />,
+            cards: airportCards,
+          },
+        ]}
         freeLimit={3}
         lockedPreviewLimit={3}
         isPaidUser={hasFullAccess}
         showToast={showToast}
         onUpgradeClick={onUpgradeClick}
       />
-
-      <AskBuddyHint onClick={onAskBuddy} text="Need a custom answer? Ask Buddy can help." />
-
-      <PhraseCardCategorySection
-        title="Train Phrases"
-        icon={<Train className="w-4 h-4 text-[#155e63]" />}
-        cards={trainCards}
-        freeLimit={3}
-        lockedPreviewLimit={3}
-        isPaidUser={hasFullAccess}
-        showToast={showToast}
-        onUpgradeClick={onUpgradeClick}
-      />
-
-      <PhraseCardCategorySection
-        title="Airport Phrases"
-        icon={<Plane className="w-4 h-4 text-[#155e63]" />}
-        cards={airportCards}
-        freeLimit={3}
-        lockedPreviewLimit={3}
-        isPaidUser={hasFullAccess}
-        showToast={showToast}
-        onUpgradeClick={onUpgradeClick}
-      />
-
-      <div className="bg-[#155e63]/5 border border-[#155e63]/15 rounded-2xl p-4">
-        <div className="flex items-center gap-2 mb-2">
-          <Navigation className="w-4 h-4 text-[#155e63]" />
-          <p className="font-semibold text-[#155e63] text-sm">{t('transport.trainTitle')}</p>
-        </div>
-        <p className="text-gray-500 text-xs leading-relaxed mb-3">
-          {t('transport.trainSub')}
-        </p>
-        <div className="flex gap-2">
-          <input
-            value={fromCity}
-            onChange={(e) => setFromCity(e.target.value)}
-            placeholder={t('transport.from')}
-            className="flex-1 min-w-0 bg-white rounded-xl px-3 py-2 text-xs text-gray-700 border border-gray-100 outline-none focus:border-[#155e63]/40 placeholder:text-gray-400"
-          />
-          <input
-            value={toCity}
-            onChange={(e) => setToCity(e.target.value)}
-            placeholder={t('transport.to')}
-            className="flex-1 min-w-0 bg-white rounded-xl px-3 py-2 text-xs text-gray-700 border border-gray-100 outline-none focus:border-[#155e63]/40 placeholder:text-gray-400"
-          />
-        </div>
-        <button
-          onClick={() => window.open('https://www.trip.com/trains/', '_blank', 'noopener,noreferrer')}
-          className="mt-2 w-full bg-[#155e63] text-white rounded-xl py-2.5 text-sm font-medium hover:bg-[#0e4a4e] transition-colors flex items-center justify-center gap-2"
-        >
-          <Plane className="w-4 h-4" /> {t('transport.search')}
-        </button>
-      </div>
 
       {selectedPhrase && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50" onClick={() => setSelectedPhrase(null)}>

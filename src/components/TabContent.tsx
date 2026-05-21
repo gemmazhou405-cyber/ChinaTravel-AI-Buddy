@@ -18,7 +18,7 @@ interface Props {
 export default function TabContent({ activeTab, userState, showToast, onAskBuddy, onUpgradeClick }: Props) {
   return (
     <main className="max-w-3xl mx-auto px-4 py-6 md:px-6 pb-28">
-      {activeTab === 'before' && <BeforeTab userState={userState} onUpgradeClick={onUpgradeClick} />}
+      {activeTab === 'before' && <BeforeTab userState={userState} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} />}
       {activeTab === 'stay' && <StayTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} />}
       {activeTab === 'food' && <FoodTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} />}
       {activeTab === 'transport' && <TransportTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} />}
