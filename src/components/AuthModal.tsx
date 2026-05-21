@@ -6,9 +6,10 @@ interface Props {
   onClose: () => void;
   onSignup: (email: string, password: string) => Promise<unknown>;
   onLogin: (email: string, password: string) => Promise<unknown>;
+  onGoogleLogin: () => Promise<unknown>;
 }
 
-export default function AuthModal({ onClose, onSignup, onLogin }: Props) {
+export default function AuthModal({ onClose, onSignup, onLogin, onGoogleLogin }: Props) {
   const { t } = useTranslation();
   const [mode, setMode] = useState<'login' | 'signup'>('signup');
   const [email, setEmail] = useState('');
@@ -33,6 +34,26 @@ export default function AuthModal({ onClose, onSignup, onLogin }: Props) {
         setError('This email already has an account. Please log in instead.');
       } else {
         setError(message || t('auth.error'));
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    setError('');
+    setLoading(true);
+    try {
+      await onGoogleLogin();
+      onClose();
+    } catch (e) {
+      const message = e instanceof Error ? e.message : '';
+      if (message.includes('auth/popup-closed-by-user')) {
+        setError('Google sign-in was closed before it finished.');
+      } else if (message.includes('auth/popup-blocked')) {
+        setError('Your browser blocked the Google sign-in popup. Please allow popups and try again.');
+      } else {
+        setError('Could not sign in with Google. Please try again.');
       }
     } finally {
       setLoading(false);
@@ -69,6 +90,21 @@ export default function AuthModal({ onClose, onSignup, onLogin }: Props) {
                 {m === 'signup' ? t('auth.signup') : t('auth.login')}
               </button>
             ))}
+          </div>
+
+          <button
+            onClick={handleGoogleLogin}
+            disabled={loading}
+            className="mb-4 flex w-full items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white py-3 text-sm font-semibold text-gray-700 shadow-sm transition-colors hover:bg-gray-50 disabled:opacity-50"
+          >
+            <span className="flex h-5 w-5 items-center justify-center rounded-full border border-gray-200 text-xs font-bold text-[#155e63]">G</span>
+            Continue with Google
+          </button>
+
+          <div className="mb-4 flex items-center gap-3">
+            <span className="h-px flex-1 bg-gray-100" />
+            <span className="text-[11px] font-medium uppercase tracking-wide text-gray-300">or</span>
+            <span className="h-px flex-1 bg-gray-100" />
           </div>
 
           <div className="space-y-3">

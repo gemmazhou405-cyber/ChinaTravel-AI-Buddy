@@ -20,9 +20,10 @@ interface Props {
   onAuthClick: () => void;
   onAskBuddy: () => void;
   onLogout: () => Promise<void>;
+  onResendVerification: () => Promise<void>;
 }
 
-export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogout }: Props) {
+export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogout, onResendVerification }: Props) {
   const { t } = useTranslation();
   const [lang, setLang] = useState(i18n.language.toUpperCase());
   const [langOpen, setLangOpen] = useState(false);
@@ -30,6 +31,10 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
   const [confirmLogoutOpen, setConfirmLogoutOpen] = useState(false);
   const assetBase = import.meta.env.BASE_URL;
   const planLabel = userState?.plan ? userState.plan.charAt(0).toUpperCase() + userState.plan.slice(1) : 'Free';
+  const isPasswordUser = user?.providerData.some((provider) => provider.providerId === 'password') ?? false;
+  const isGoogleUser = user?.providerData.some((provider) => provider.providerId === 'google.com') ?? false;
+  const emailVerified = Boolean(user?.emailVerified || isGoogleUser);
+  const showResendVerification = Boolean(user && isPasswordUser && !user.emailVerified);
 
   useEffect(() => {
     const saved = window.localStorage?.getItem('chinaease-lang');
@@ -141,7 +146,23 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
                       <span className="text-gray-500">Menu scan quota</span>
                       <span className="font-semibold text-gray-900">{userState?.menuScanQuotaUsed ?? 0} / {userState?.menuScanQuotaTotal ?? 3}</span>
                     </div>
+                    <div className="flex justify-between gap-3">
+                      <span className="text-gray-500">Email verification</span>
+                      <span className={`font-semibold ${emailVerified ? 'text-[#155e63]' : 'text-amber-600'}`}>
+                        {emailVerified ? 'Verified' : 'Not verified'}
+                      </span>
+                    </div>
                   </div>
+                  {showResendVerification && (
+                    <button
+                      onClick={async () => {
+                        await onResendVerification();
+                      }}
+                      className="mb-2 w-full rounded-xl border border-amber-100 bg-amber-50 py-2.5 text-sm font-semibold text-amber-700 hover:bg-amber-100"
+                    >
+                      Resend verification email
+                    </button>
+                  )}
                   <button
                     onClick={() => setConfirmLogoutOpen(true)}
                     className="flex w-full items-center justify-center gap-2 rounded-xl border border-red-100 bg-red-50 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-100"

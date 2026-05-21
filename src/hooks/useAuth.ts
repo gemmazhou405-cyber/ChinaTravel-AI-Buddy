@@ -5,6 +5,8 @@ import {
   signOut,
   onAuthStateChanged,
   sendEmailVerification,
+  GoogleAuthProvider,
+  signInWithPopup,
   User,
 } from 'firebase/auth';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
@@ -88,6 +90,22 @@ async function sendWelcomeEmail(email: string) {
   }
 }
 
+function createFreeUserState(uid: string, email: string): UserState {
+  return {
+    uid,
+    email,
+    plan: 'free',
+    planExpiresAt: null,
+    buddyAiQuotaTotal: 5,
+    buddyAiQuotaUsed: 0,
+    menuScanQuotaTotal: 3,
+    menuScanQuotaUsed: 0,
+    dailyBuddyAiLimit: 5,
+    dailyBuddyAiUsed: 0,
+    dailyResetAt: null,
+  };
+}
+
 export function useAuth() {
   const [user, setUser] = useState<User | null>(null);
   const [userState, setUserState] = useState<UserState | null>(null);
@@ -112,21 +130,29 @@ export function useAuth() {
 
   const signup = async (email: string, password: string) => {
     const cred = await createUserWithEmailAndPassword(auth, email, password);
-    const newUser: UserState = {
-      uid: cred.user.uid,
-      email,
-      plan: 'free',
-      planExpiresAt: null,
-      buddyAiQuotaTotal: 5,
-      buddyAiQuotaUsed: 0,
-      menuScanQuotaTotal: 3,
-      menuScanQuotaUsed: 0,
-      dailyBuddyAiLimit: 5,
-      dailyBuddyAiUsed: 0,
-      dailyResetAt: null,
-    };
+    const newUser = createFreeUserState(cred.user.uid, email);
     await setDoc(doc(db, 'users', cred.user.uid), newUser);
     await sendEmailVerification(cred.user);
+    sendWelcomeEmail(email);
+    setUserState(newUser);
+    return cred.user;
+  };
+
+  const loginWithGoogle = async () => {
+    const provider = new GoogleAuthProvider();
+    const cred = await signInWithPopup(auth, provider);
+    const email = cred.user.email || '';
+    const userRef = doc(db, 'users', cred.user.uid);
+    const snap = await getDoc(userRef);
+
+    if (snap.exists()) {
+      const normalized = normalizeUserState(snap.data() as StoredUserState, cred.user.uid, email);
+      setUserState(normalized);
+      return cred.user;
+    }
+
+    const newUser = createFreeUserState(cred.user.uid, email);
+    await setDoc(userRef, newUser);
     sendWelcomeEmail(email);
     setUserState(newUser);
     return cred.user;
@@ -177,5 +203,5 @@ export function useAuth() {
     setUserState((prev) => (prev ? { ...prev, ...updates } : null));
   };
 
-  return { user, userState, loading, signup, login, logout, incrementAiUsed, resendVerificationEmail };
+  return { user, userState, loading, signup, login, loginWithGoogle, logout, incrementAiUsed, resendVerificationEmail };
 }

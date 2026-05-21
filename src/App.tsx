@@ -17,7 +17,7 @@ export default function App() {
   const [chatOpen, setChatOpen] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
-  const { user, userState, logout, signup, login, incrementAiUsed, resendVerificationEmail } = useAuth();
+  const { user, userState, logout, signup, login, loginWithGoogle, incrementAiUsed, resendVerificationEmail } = useAuth();
   const showToast = (msg: string) => setToast(msg);
   const handleUpgradeClick = (message = 'Unlock all phrase cards with Trip Pass.') => {
     setActiveTab('pay');
@@ -42,6 +42,10 @@ export default function App() {
         onAuthClick={() => setAuthOpen(true)}
         onAskBuddy={openBuddy}
         onLogout={logout}
+        onResendVerification={async () => {
+          await resendVerificationEmail();
+          showToast('Verification email sent.');
+        }}
       />
       <QuickActions onTabSelect={handleQuickTabSelect} onAskBuddy={openBuddy} />
       <div id="tabs" className="sticky top-0 z-40 bg-white shadow-sm">
@@ -81,6 +85,7 @@ export default function App() {
             return result;
           }}
           onLogin={login}
+          onGoogleLogin={loginWithGoogle}
         />
       )}
       {toast && <Toast message={toast} onDone={() => setToast(null)} />}

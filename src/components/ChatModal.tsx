@@ -31,6 +31,8 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
   const [typing, setTyping] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const isGoogleUser = user?.providerData.some((provider) => provider.providerId === 'google.com') ?? false;
+  const needsEmailVerification = Boolean(user && !user.emailVerified && !isGoogleUser);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -48,7 +50,7 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
       return;
     }
 
-    if (user && !user.emailVerified) {
+    if (needsEmailVerification) {
       const verifyMsg: Message = {
         id: Date.now(),
         role: 'buddy',
@@ -200,7 +202,7 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
           </div>
         )}
 
-        {user && !user.emailVerified && (
+        {needsEmailVerification && (
           <div className="border-t border-amber-100 bg-amber-50 px-4 py-3">
             <p className="text-xs font-semibold text-amber-800">Please verify your email to use Buddy AI.</p>
             <p className="mt-0.5 text-xs text-amber-700">Check your inbox and refresh after verification.</p>
