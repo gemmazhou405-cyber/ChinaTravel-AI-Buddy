@@ -1,0 +1,212 @@
+[
+  {
+    "id": "restaurant_001",
+    "english": "Table for two, please.",
+    "chinese": "两位，有位置吗？",
+    "pinyin": "Liǎng wèi, yǒu wèizhì ma?",
+    "esTranslation": "Mesa para dos, por favor."
+  },
+  {
+    "id": "restaurant_002",
+    "english": "May I see the menu, please?",
+    "chinese": "请给我菜单看看。",
+    "pinyin": "Qǐng gěi wǒ càidān kànkan.",
+    "esTranslation": "¿Puedo ver el menú, por favor?"
+  },
+  {
+    "id": "restaurant_003",
+    "english": "What do you recommend?",
+    "chinese": "有什么推荐的吗？",
+    "pinyin": "Yǒu shénme tuījiàn de ma?",
+    "esTranslation": "¿Qué me recomienda?"
+  },
+  {
+    "id": "restaurant_004",
+    "english": "I would like to order this one.",
+    "chinese": "我要这个。",
+    "pinyin": "Wǒ yào zhège.",
+    "esTranslation": "Me gustaría pedir este."
+  },
+  {
+    "id": "restaurant_005",
+    "english": "We are ready to order.",
+    "chinese": "我们可以点菜了。",
+    "pinyin": "Wǒmen kěyǐ diǎncài le.",
+    "esTranslation": "Estamos listos para pedir."
+  },
+  {
+    "id": "restaurant_006",
+    "english": "I am allergic to peanuts.",
+    "chinese": "我对花生过敏。",
+    "pinyin": "Wǒ duì huāshēng guòmǐn.",
+    "esTranslation": "Soy alérgico a los cacahuetes."
+  },
+  {
+    "id": "restaurant_007",
+    "english": "I am allergic to seafood.",
+    "chinese": "我对海鲜过敏。",
+    "pinyin": "Wǒ duì hǎixiān guòmǐn.",
+    "esTranslation": "Soy alérgico a los mariscos."
+  },
+  {
+    "id": "restaurant_008",
+    "english": "I am allergic to dairy products.",
+    "chinese": "我对牛奶过敏。",
+    "pinyin": "Wǒ duì niúnǎi guòmǐn.",
+    "esTranslation": "Soy alérgico a los productos lácteos."
+  },
+  {
+    "id": "restaurant_009",
+    "english": "I am allergic to eggs.",
+    "chinese": "我对鸡蛋过敏。",
+    "pinyin": "Wǒ duì jīdàn guòmǐn.",
+    "esTranslation": "Soy alérgico a los huevos."
+  },
+  {
+    "id": "restaurant_010",
+    "english": "Does this dish contain nuts?",
+    "chinese": "这个菜里有坚果吗？",
+    "pinyin": "Zhège cài lǐ yǒu jiānguǒ ma?",
+    "esTranslation": "¿Este plato contiene frutos secos?"
+  },
+  {
+    "id": "restaurant_011",
+    "english": "I am vegetarian.",
+    "chinese": "我吃素。",
+    "pinyin": "Wǒ chī sù.",
+    "esTranslation": "Soy vegetariano."
+  },
+  {
+    "id": "restaurant_012",
+    "english": "I do not eat meat.",
+    "chinese": "我不吃肉。",
+    "pinyin": "Wǒ bù chī ròu.",
+    "esTranslation": "No como carne."
+  },
+  {
+    "id": "restaurant_013",
+    "english": "I do not eat pork.",
+    "chinese": "我不吃猪肉。",
+    "pinyin": "Wǒ bù chī zhūròu.",
+    "esTranslation": "No como cerdo."
+  },
+  {
+    "id": "restaurant_014",
+    "english": "I do not eat beef.",
+    "chinese": "我不吃牛肉。",
+    "pinyin": "Wǒ bù chī niúròu.",
+    "esTranslation": "No como carne de res."
+  },
+  {
+    "id": "restaurant_015",
+    "english": "Less spicy, please.",
+    "chinese": "少放点辣，谢谢。",
+    "pinyin": "Shǎo fàng diǎn là, xièxie.",
+    "esTranslation": "Menos picante, por favor."
+  },
+  {
+    "id": "restaurant_016",
+    "english": "No MSG, please.",
+    "chinese": "不要放味精。",
+    "pinyin": "Bùyào fàng wèijīng.",
+    "esTranslation": "Sin glutamato, por favor."
+  },
+  {
+    "id": "restaurant_017",
+    "english": "May I have a glass of water, please?",
+    "chinese": "请给我一杯水。",
+    "pinyin": "Qǐng gěi wǒ yī bēi shuǐ.",
+    "esTranslation": "¿Me puede dar un vaso de agua, por favor?"
+  },
+  {
+    "id": "restaurant_018",
+    "english": "No ice, please.",
+    "chinese": "不要加冰。",
+    "pinyin": "Bùyào jiā bīng.",
+    "esTranslation": "Sin hielo, por favor."
+  },
+  {
+    "id": "restaurant_019",
+    "english": "Can I have the bill, please?",
+    "chinese": "买单，谢谢。",
+    "pinyin": "Mǎidān, xièxie.",
+    "esTranslation": "¿Me puede traer la cuenta, por favor?"
+  },
+  {
+    "id": "restaurant_020",
+    "english": "Can I pay with WeChat Pay?",
+    "chinese": "可以微信支付吗？",
+    "pinyin": "Kěyǐ Wēixìn zhīfù ma?",
+    "esTranslation": "¿Puedo pagar con WeChat Pay?"
+  },
+  {
+    "id": "restaurant_021",
+    "english": "Can I pay with Alipay?",
+    "chinese": "可以支付宝支付吗？",
+    "pinyin": "Kěyǐ Zhīfùbǎo zhīfù ma?",
+    "esTranslation": "¿Es posible pagar con Alipay?"
+  },
+  {
+    "id": "restaurant_022",
+    "english": "Can I pay by credit card?",
+    "chinese": "可以刷卡吗？",
+    "pinyin": "Kěyǐ shuā kǎ ma?",
+    "esTranslation": "¿Se puede pagar con tarjeta de crédito?"
+  },
+  {
+    "id": "restaurant_023",
+    "english": "How much is this?",
+    "chinese": "这个多少钱？",
+    "pinyin": "Zhège duōshao qián?",
+    "esTranslation": "¿Cuánto cuesta esto?"
+  },
+  {
+    "id": "restaurant_024",
+    "english": "This is delicious!",
+    "chinese": "好吃！",
+    "pinyin": "Hǎochī!",
+    "esTranslation": "¡Esto está delicioso!"
+  },
+  {
+    "id": "restaurant_025",
+    "english": "Could you pack this to go?",
+    "chinese": "请帮我打包。",
+    "pinyin": "Qǐng bāng wǒ dǎbāo.",
+    "esTranslation": "¿Podría empaquetar esto para llevar?"
+  },
+  {
+    "id": "restaurant_026",
+    "english": "Where is the restroom?",
+    "chinese": "请问洗手间在哪里？",
+    "pinyin": "Qǐngwèn xǐshǒujiān zài nǎlǐ?",
+    "esTranslation": "¿Dónde está el baño?"
+  },
+  {
+    "id": "restaurant_027",
+    "english": "Can we have more napkins, please?",
+    "chinese": "能再给点纸巾吗？",
+    "pinyin": "Néng zài gěi diǎn zhǐjīn ma?",
+    "esTranslation": "¿Podemos tener más servilletas, por favor?"
+  },
+  {
+    "id": "restaurant_028",
+    "english": "I have a reservation.",
+    "chinese": "我预订了位子。",
+    "pinyin": "Wǒ yùdìng le wèizi.",
+    "esTranslation": "Tengo una reservación."
+  },
+  {
+    "id": "restaurant_029",
+    "english": "What is in this dish?",
+    "chinese": "这个菜里面有什么？",
+    "pinyin": "Zhège cài lǐmiàn yǒu shénme?",
+    "esTranslation": "¿Qué lleva este plato?"
+  },
+  {
+    "id": "restaurant_030",
+    "english": "Thank you, the food was wonderful.",
+    "chinese": "谢谢，菜很好吃。",
+    "pinyin": "Xièxie, cài hěn hǎochī.",
+    "esTranslation": "Gracias, la comida estuvo maravillosa."
+  }
+]

@@ -1,0 +1,212 @@
+[
+  {
+    "id": "train_001",
+    "english": "Where is the ticket office?",
+    "chinese": "请问售票处在哪里？",
+    "pinyin": "Qǐngwèn shòupiàochù zài nǎlǐ?",
+    "jaTranslation": "切符売場はどこですか？"
+  },
+  {
+    "id": "train_002",
+    "english": "I would like to buy one ticket to Beijing.",
+    "chinese": "我想买一张去北京的票。",
+    "pinyin": "Wǒ xiǎng mǎi yī zhāng qù Běijīng de piào.",
+    "jaTranslation": "北京行きの切符を一枚お願いします。"
+  },
+  {
+    "id": "train_003",
+    "english": "What time does the next train depart?",
+    "chinese": "下一班火车几点发车？",
+    "pinyin": "Xià yī bān huǒchē jǐ diǎn fāchē?",
+    "jaTranslation": "次の列車は何時に出発しますか？"
+  },
+  {
+    "id": "train_004",
+    "english": "Is this the platform for the train to Shanghai?",
+    "chinese": "这里是去上海的列车站台吗？",
+    "pinyin": "Zhèlǐ shì qù Shànghǎi de lièchē zhàntái ma?",
+    "jaTranslation": "こちらは上海行きの列車のホームですか？"
+  },
+  {
+    "id": "train_005",
+    "english": "Which platform does my train leave from?",
+    "chinese": "我的火车在哪个站台发车？",
+    "pinyin": "Wǒ de huǒchē zài nǎgè zhàntái fāchē?",
+    "jaTranslation": "私の列車はどのホームから出発しますか？"
+  },
+  {
+    "id": "train_006",
+    "english": "How long is the train ride?",
+    "chinese": "火车要坐多久？",
+    "pinyin": "Huǒchē yào zuò duōjiǔ?",
+    "jaTranslation": "列車の乗車時間はどのくらいですか？"
+  },
+  {
+    "id": "train_007",
+    "english": "Do I need to transfer?",
+    "chinese": "我需要换乘吗？",
+    "pinyin": "Wǒ xūyào huànchéng ma?",
+    "jaTranslation": "乗り換えが必要ですか？"
+  },
+  {
+    "id": "train_008",
+    "english": "Where is my seat?",
+    "chinese": "我的座位在哪里？",
+    "pinyin": "Wǒ de zuòwèi zài nǎlǐ?",
+    "jaTranslation": "私の席はどこですか？"
+  },
+  {
+    "id": "train_009",
+    "english": "Excuse me, is this seat taken?",
+    "chinese": "打扰一下，这个座位有人吗？",
+    "pinyin": "Dǎrǎo yīxià, zhège zuòwèi yǒu rén ma?",
+    "jaTranslation": "すみません、この席は空いていますか？"
+  },
+  {
+    "id": "train_010",
+    "english": "Can I change to a window seat?",
+    "chinese": "我可以换到靠窗的座位吗？",
+    "pinyin": "Wǒ kěyǐ huàn dào kào chuāng de zuòwèi ma?",
+    "jaTranslation": "窓側の席に変更できますか？"
+  },
+  {
+    "id": "train_011",
+    "english": "Is there a dining car on this train?",
+    "chinese": "这列车有餐车吗？",
+    "pinyin": "Zhè lièchē yǒu cānchē ma?",
+    "jaTranslation": "この列車には食堂車がありますか？"
+  },
+  {
+    "id": "train_012",
+    "english": "When does the train arrive in Guangzhou?",
+    "chinese": "火车什么时候到达广州？",
+    "pinyin": "Huǒchē shénme shíhòu dàodá Guǎngzhōu?",
+    "jaTranslation": "この列車は広州に何時到着しますか？"
+  },
+  {
+    "id": "train_013",
+    "english": "Where is the restroom?",
+    "chinese": "洗手间在哪里？",
+    "pinyin": "Xǐshǒujiān zài nǎlǐ?",
+    "jaTranslation": "トイレはどこですか？"
+  },
+  {
+    "id": "train_014",
+    "english": "Is there Wi-Fi on the train?",
+    "chinese": "火车上有Wi-Fi吗？",
+    "pinyin": "Huǒchē shàng yǒu Wi-Fi ma?",
+    "jaTranslation": "電車の中にWi-Fiはありますか？"
+  },
+  {
+    "id": "train_015",
+    "english": "Can I charge my phone here?",
+    "chinese": "这里可以给手机充电吗？",
+    "pinyin": "Zhèlǐ kěyǐ gěi shǒujī chōngdiàn ma?",
+    "jaTranslation": "ここで携帯電話を充電できますか？"
+  },
+  {
+    "id": "train_016",
+    "english": "This is my ticket.",
+    "chinese": "这是我的车票。",
+    "pinyin": "Zhè shì wǒ de chēpiào.",
+    "jaTranslation": "これは私の切符です。"
+  },
+  {
+    "id": "train_017",
+    "english": "My train has been delayed. What should I do?",
+    "chinese": "我的火车晚点了，我该怎么办？",
+    "pinyin": "Wǒ de huǒchē wǎndiǎn le, wǒ gāi zěnme bàn?",
+    "jaTranslation": "私の列車が遅れています。どうすればいいですか？"
+  },
+  {
+    "id": "train_018",
+    "english": "I missed my train. Can I change my ticket?",
+    "chinese": "我错过火车了，可以改签吗？",
+    "pinyin": "Wǒ cuòguò huǒchē le, kěyǐ gǎiqiān ma?",
+    "jaTranslation": "列車を乗り過ごしてしまいました。切符を変更できますか？"
+  },
+  {
+    "id": "train_019",
+    "english": "Can I get a refund for this ticket?",
+    "chinese": "这张票可以退票吗？",
+    "pinyin": "Zhè zhāng piào kěyǐ tuìpiào ma?",
+    "jaTranslation": "この切符の払い戻しはできますか？"
+  },
+  {
+    "id": "train_020",
+    "english": "Help! My luggage is stuck.",
+    "chinese": "帮帮忙！我的行李卡住了。",
+    "pinyin": "Bāng bang máng! Wǒ de xíngli kǎ zhù le.",
+    "jaTranslation": "助けてください！荷物が挟まっています。"
+  },
+  {
+    "id": "train_021",
+    "english": "Where can I store my luggage?",
+    "chinese": "行李可以放在哪里？",
+    "pinyin": "Xíngli kěyǐ fàng zài nǎlǐ?",
+    "jaTranslation": "荷物はどこに預けられますか？"
+  },
+  {
+    "id": "train_022",
+    "english": "I need to get off at the next stop.",
+    "chinese": "我需要在下一站下车。",
+    "pinyin": "Wǒ xūyào zài xià yī zhàn xià chē.",
+    "jaTranslation": "次の駅で降りなくてはなりません。"
+  },
+  {
+    "id": "train_023",
+    "english": "Is this the last stop?",
+    "chinese": "这是终点站吗？",
+    "pinyin": "Zhè shì zhōngdiǎn zhàn ma?",
+    "jaTranslation": "ここは終点ですか？"
+  },
+  {
+    "id": "train_024",
+    "english": "Can I get a receipt for my ticket?",
+    "chinese": "可以给我一张车票的发票吗？",
+    "pinyin": "Kěyǐ gěi wǒ yī zhāng chēpiào de fāpiào ma?",
+    "jaTranslation": "切符の領収書をいただけますか？"
+  },
+  {
+    "id": "train_025",
+    "english": "Where is the lost and found office?",
+    "chinese": "失物招领处在哪里？",
+    "pinyin": "Shīwù zhāolǐng chù zài nǎlǐ?",
+    "jaTranslation": "遺失物取扱所はどこですか？"
+  },
+  {
+    "id": "train_026",
+    "english": "What is the train number?",
+    "chinese": "这趟车的车次是多少？",
+    "pinyin": "Zhè tàng chē de chēcì shì duōshǎo?",
+    "jaTranslation": "この列車の番号は何番ですか？"
+  },
+  {
+    "id": "train_027",
+    "english": "How do I get to the subway from the train station?",
+    "chinese": "从火车站怎么换乘地铁？",
+    "pinyin": "Cóng huǒchē zhàn zěnme huànchéng dìtiě?",
+    "jaTranslation": "駅から地下鉄にはどう行けばいいですか？"
+  },
+  {
+    "id": "train_028",
+    "english": "Please don't smoke here.",
+    "chinese": "请不要在这里吸烟。",
+    "pinyin": "Qǐng bùyào zài zhèlǐ xīyān.",
+    "jaTranslation": "ここで喫煙しないでください。"
+  },
+  {
+    "id": "train_029",
+    "english": "I feel sick. Is there a doctor on the train?",
+    "chinese": "我感觉不舒服，车上有医生吗？",
+    "pinyin": "Wǒ gǎnjué bù shūfu, chē shàng yǒu yīshēng ma?",
+    "jaTranslation": "気分が悪いです。電車に医師はいますか？"
+  },
+  {
+    "id": "train_030",
+    "english": "Thank you for your help.",
+    "chinese": "谢谢您的帮助。",
+    "pinyin": "Xièxie nín de bāngzhù.",
+    "jaTranslation": "お手伝いいただきありがとうございます。"
+  }
+]

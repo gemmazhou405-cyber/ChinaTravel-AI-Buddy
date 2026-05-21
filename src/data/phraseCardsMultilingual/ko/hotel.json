@@ -1,0 +1,212 @@
+[
+  {
+    "id": "hotel_001",
+    "english": "I have a reservation.",
+    "chinese": "我预订了房间。",
+    "pinyin": "wǒ yùdìng le fángjiān.",
+    "koTranslation": "저는 예약을 했습니다."
+  },
+  {
+    "id": "hotel_002",
+    "english": "I'd like to check in.",
+    "chinese": "我想办理入住。",
+    "pinyin": "wǒ xiǎng bànlǐ rùzhù.",
+    "koTranslation": "체크인 하고 싶습니다."
+  },
+  {
+    "id": "hotel_003",
+    "english": "What time is check-in?",
+    "chinese": "入住时间是几点？",
+    "pinyin": "rùzhù shíjiān shì jǐ diǎn?",
+    "koTranslation": "체크인 시간은 몇 시입니까?"
+  },
+  {
+    "id": "hotel_004",
+    "english": "Can I have the key to my room?",
+    "chinese": "能给我房间钥匙吗？",
+    "pinyin": "néng gěi wǒ fángjiān yàoshi ma?",
+    "koTranslation": "방 열쇠를 받을 수 있을까요?"
+  },
+  {
+    "id": "hotel_005",
+    "english": "Is breakfast included?",
+    "chinese": "包含早餐吗？",
+    "pinyin": "bāohán zǎocān ma?",
+    "koTranslation": "아침 식사가 포함되어 있나요?"
+  },
+  {
+    "id": "hotel_006",
+    "english": "Can I have a room with a view?",
+    "chinese": "我能要一个有风景的房间吗？",
+    "pinyin": "wǒ néng yào yīgè yǒu fēngjǐng de fángjiān ma?",
+    "koTranslation": "전망이 좋은 방으로 받을 수 있을까요?"
+  },
+  {
+    "id": "hotel_007",
+    "english": "My room is too noisy.",
+    "chinese": "我的房间太吵了。",
+    "pinyin": "wǒ de fángjiān tài chǎo le.",
+    "koTranslation": "방이 너무 시끄럽습니다."
+  },
+  {
+    "id": "hotel_008",
+    "english": "Can I have extra towels?",
+    "chinese": "能多给我几条毛巾吗？",
+    "pinyin": "néng duō gěi wǒ jǐ tiáo máojīn ma?",
+    "koTranslation": "수건을 더 받을 수 있을까요?"
+  },
+  {
+    "id": "hotel_009",
+    "english": "Is there a safe in the room?",
+    "chinese": "房间里有保险箱吗？",
+    "pinyin": "fángjiān lǐ yǒu bǎoxiǎn xiāng ma?",
+    "koTranslation": "방에 금고가 있나요?"
+  },
+  {
+    "id": "hotel_010",
+    "english": "I need to use the internet.",
+    "chinese": "我需要用网络。",
+    "pinyin": "wǒ xūyào yòng wǎngluò.",
+    "koTranslation": "인터넷을 사용해야 합니다."
+  },
+  {
+    "id": "hotel_011",
+    "english": "Where is the swimming pool?",
+    "chinese": "游泳池在哪里？",
+    "pinyin": "yóuyǒngchí zài nǎlǐ?",
+    "koTranslation": "수영장이 어디에 있어요?"
+  },
+  {
+    "id": "hotel_012",
+    "english": "What time does the restaurant open?",
+    "chinese": "餐厅几点开门？",
+    "pinyin": "cāntīng jǐ diǎn kāimén?",
+    "koTranslation": "식당은 몇 시에 문을 열어요?"
+  },
+  {
+    "id": "hotel_013",
+    "english": "Can I store my luggage here?",
+    "chinese": "我能把行李寄存在这里吗？",
+    "pinyin": "wǒ néng bǎ xínglǐ jìcún zài zhèlǐ ma?",
+    "koTranslation": "여기에 짐을 보관할 수 있나요?"
+  },
+  {
+    "id": "hotel_014",
+    "english": "Is there a gym?",
+    "chinese": "有健身房吗？",
+    "pinyin": "yǒu jiànshēnfáng ma?",
+    "koTranslation": "헬스장이 있나요?"
+  },
+  {
+    "id": "hotel_015",
+    "english": "How do I call the front desk?",
+    "chinese": "怎么打电话给前台？",
+    "pinyin": "zěnme dǎ diànhuà gěi qiántái?",
+    "koTranslation": "프론트 데스크에 어떻게 전화하나요?"
+  },
+  {
+    "id": "hotel_016",
+    "english": "I'd like to check out.",
+    "chinese": "我想退房。",
+    "pinyin": "wǒ xiǎng tuì fáng.",
+    "koTranslation": "체크아웃하고 싶습니다."
+  },
+  {
+    "id": "hotel_017",
+    "english": "Can I have my bill, please?",
+    "chinese": "请给我账单。",
+    "pinyin": "qǐng gěi wǒ zhàngdān.",
+    "koTranslation": "계산서를 주세요."
+  },
+  {
+    "id": "hotel_018",
+    "english": "What time is checkout?",
+    "chinese": "退房时间是几点？",
+    "pinyin": "tuì fáng shíjiān shì jǐ diǎn?",
+    "koTranslation": "체크아웃 시간이 몇 시인가요?"
+  },
+  {
+    "id": "hotel_019",
+    "english": "Can I leave my luggage here after checkout?",
+    "chinese": "退房后我能把行李留在这里吗？",
+    "pinyin": "tuì fáng hòu wǒ néng bǎ xínglǐ liú zài zhèlǐ ma?",
+    "koTranslation": "체크아웃 후에 짐을 여기에 맡길 수 있나요?"
+  },
+  {
+    "id": "hotel_020",
+    "english": "Thank you for your help.",
+    "chinese": "谢谢您的帮助。",
+    "pinyin": "xièxie nín de bāngzhù.",
+    "koTranslation": "도움을 주셔서 감사합니다."
+  },
+  {
+    "id": "hotel_021",
+    "english": "I lost my key.",
+    "chinese": "我丢了钥匙。",
+    "pinyin": "wǒ diū le yàoshi.",
+    "koTranslation": "죄송하지만 열쇠를 잃어버렸습니다."
+  },
+  {
+    "id": "hotel_022",
+    "english": "The air conditioning is not working.",
+    "chinese": "空调不工作了。",
+    "pinyin": "kōngtiáo bù gōngzuò le.",
+    "koTranslation": "에어컨이 작동하지 않습니다."
+  },
+  {
+    "id": "hotel_023",
+    "english": "Can I have a wake-up call?",
+    "chinese": "能给我一个叫醒服务吗？",
+    "pinyin": "néng gěi wǒ yīgè jiào xǐng fúwù ma?",
+    "koTranslation": "모닝콜 서비스를 요청해도 될까요?"
+  },
+  {
+    "id": "hotel_024",
+    "english": "Is there a laundry service?",
+    "chinese": "有洗衣服务吗？",
+    "pinyin": "yǒu xǐ yī fúwù ma?",
+    "koTranslation": "세탁 서비스가 있나요?"
+  },
+  {
+    "id": "hotel_025",
+    "english": "Where can I get a taxi?",
+    "chinese": "我在哪里可以叫到出租车？",
+    "pinyin": "wǒ zài nǎlǐ kěyǐ jiào dào chūzū chē?",
+    "koTranslation": "택시는 어디서 잡을 수 있나요?"
+  },
+  {
+    "id": "hotel_026",
+    "english": "I need to extend my stay.",
+    "chinese": "我需要延长住宿。",
+    "pinyin": "wǒ xūyào yáncháng zhùsù.",
+    "koTranslation": "체류 기간을 연장해야 하는데요."
+  },
+  {
+    "id": "hotel_027",
+    "english": "Can I change my room?",
+    "chinese": "我能换房间吗？",
+    "pinyin": "wǒ néng huàn fángjiān ma?",
+    "koTranslation": "객실을 변경해도 될까요?"
+  },
+  {
+    "id": "hotel_028",
+    "english": "Do you have a map of the city?",
+    "chinese": "有城市地图吗？",
+    "pinyin": "yǒu chéngshì dìtú ma?",
+    "koTranslation": "도시 지도가 있으신가요?"
+  },
+  {
+    "id": "hotel_029",
+    "english": "What is the Wi-Fi password?",
+    "chinese": "Wi-Fi密码是什么？",
+    "pinyin": "Wi-Fi mìmǎ shì shénme?",
+    "koTranslation": "와이파이 비밀번호가 뭔가요?"
+  },
+  {
+    "id": "hotel_030",
+    "english": "I have a complaint about my room.",
+    "chinese": "我对我的房间有投诉。",
+    "pinyin": "wǒ duì wǒ de fángjiān yǒu tóusù.",
+    "koTranslation": "객실에 대해 불만이 있어서요."
+  }
+]

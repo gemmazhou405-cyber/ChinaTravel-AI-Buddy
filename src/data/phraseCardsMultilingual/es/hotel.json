@@ -1,0 +1,212 @@
+[
+  {
+    "id": "hotel_001",
+    "english": "I have a reservation.",
+    "chinese": "我预订了房间。",
+    "pinyin": "wǒ yùdìng le fángjiān.",
+    "esTranslation": "Tengo una reserva."
+  },
+  {
+    "id": "hotel_002",
+    "english": "I'd like to check in.",
+    "chinese": "我想办理入住。",
+    "pinyin": "wǒ xiǎng bànlǐ rùzhù.",
+    "esTranslation": "Me gustaría registrarme."
+  },
+  {
+    "id": "hotel_003",
+    "english": "What time is check-in?",
+    "chinese": "入住时间是几点？",
+    "pinyin": "rùzhù shíjiān shì jǐ diǎn?",
+    "esTranslation": "¿A qué hora es el check-in?"
+  },
+  {
+    "id": "hotel_004",
+    "english": "Can I have the key to my room?",
+    "chinese": "能给我房间钥匙吗？",
+    "pinyin": "néng gěi wǒ fángjiān yàoshi ma?",
+    "esTranslation": "¿Me puede dar la llave de mi habitación?"
+  },
+  {
+    "id": "hotel_005",
+    "english": "Is breakfast included?",
+    "chinese": "包含早餐吗？",
+    "pinyin": "bāohán zǎocān ma?",
+    "esTranslation": "¿El desayuno está incluido?"
+  },
+  {
+    "id": "hotel_006",
+    "english": "Can I have a room with a view?",
+    "chinese": "我能要一个有风景的房间吗？",
+    "pinyin": "wǒ néng yào yīgè yǒu fēngjǐng de fángjiān ma?",
+    "esTranslation": "¿Puedo tener una habitación con vista?"
+  },
+  {
+    "id": "hotel_007",
+    "english": "My room is too noisy.",
+    "chinese": "我的房间太吵了。",
+    "pinyin": "wǒ de fángjiān tài chǎo le.",
+    "esTranslation": "Mi habitación es demasiado ruidosa."
+  },
+  {
+    "id": "hotel_008",
+    "english": "Can I have extra towels?",
+    "chinese": "能多给我几条毛巾吗？",
+    "pinyin": "néng duō gěi wǒ jǐ tiáo máojīn ma?",
+    "esTranslation": "¿Me puede dar toallas adicionales?"
+  },
+  {
+    "id": "hotel_009",
+    "english": "Is there a safe in the room?",
+    "chinese": "房间里有保险箱吗？",
+    "pinyin": "fángjiān lǐ yǒu bǎoxiǎn xiāng ma?",
+    "esTranslation": "¿Hay una caja fuerte en la habitación?"
+  },
+  {
+    "id": "hotel_010",
+    "english": "I need to use the internet.",
+    "chinese": "我需要用网络。",
+    "pinyin": "wǒ xūyào yòng wǎngluò.",
+    "esTranslation": "Necesito usar internet."
+  },
+  {
+    "id": "hotel_011",
+    "english": "Where is the swimming pool?",
+    "chinese": "游泳池在哪里？",
+    "pinyin": "yóuyǒngchí zài nǎlǐ?",
+    "esTranslation": "¿Dónde está la piscina?"
+  },
+  {
+    "id": "hotel_012",
+    "english": "What time does the restaurant open?",
+    "chinese": "餐厅几点开门？",
+    "pinyin": "cāntīng jǐ diǎn kāimén?",
+    "esTranslation": "¿A qué hora abre el restaurante?"
+  },
+  {
+    "id": "hotel_013",
+    "english": "Can I store my luggage here?",
+    "chinese": "我能把行李寄存在这里吗？",
+    "pinyin": "wǒ néng bǎ xínglǐ jìcún zài zhèlǐ ma?",
+    "esTranslation": "¿Puedo dejar mi equipaje aquí?"
+  },
+  {
+    "id": "hotel_014",
+    "english": "Is there a gym?",
+    "chinese": "有健身房吗？",
+    "pinyin": "yǒu jiànshēnfáng ma?",
+    "esTranslation": "¿Hay un gimnasio?"
+  },
+  {
+    "id": "hotel_015",
+    "english": "How do I call the front desk?",
+    "chinese": "怎么打电话给前台？",
+    "pinyin": "zěnme dǎ diànhuà gěi qiántái?",
+    "esTranslation": "¿Cómo puedo llamar a recepción?"
+  },
+  {
+    "id": "hotel_016",
+    "english": "I'd like to check out.",
+    "chinese": "我想退房。",
+    "pinyin": "wǒ xiǎng tuì fáng.",
+    "esTranslation": "Me gustaría hacer el check-out."
+  },
+  {
+    "id": "hotel_017",
+    "english": "Can I have my bill, please?",
+    "chinese": "请给我账单。",
+    "pinyin": "qǐng gěi wǒ zhàngdān.",
+    "esTranslation": "¿Me puede dar la cuenta, por favor?"
+  },
+  {
+    "id": "hotel_018",
+    "english": "What time is checkout?",
+    "chinese": "退房时间是几点？",
+    "pinyin": "tuì fáng shíjiān shì jǐ diǎn?",
+    "esTranslation": "¿A qué hora es el check-out?"
+  },
+  {
+    "id": "hotel_019",
+    "english": "Can I leave my luggage here after checkout?",
+    "chinese": "退房后我能把行李留在这里吗？",
+    "pinyin": "tuì fáng hòu wǒ néng bǎ xínglǐ liú zài zhèlǐ ma?",
+    "esTranslation": "¿Puedo dejar mi equipaje aquí después del check-out?"
+  },
+  {
+    "id": "hotel_020",
+    "english": "Thank you for your help.",
+    "chinese": "谢谢您的帮助。",
+    "pinyin": "xièxie nín de bāngzhù.",
+    "esTranslation": "Gracias por su ayuda."
+  },
+  {
+    "id": "hotel_021",
+    "english": "I lost my key.",
+    "chinese": "我丢了钥匙。",
+    "pinyin": "wǒ diū le yàoshi.",
+    "esTranslation": "Perdí mi llave."
+  },
+  {
+    "id": "hotel_022",
+    "english": "The air conditioning is not working.",
+    "chinese": "空调不工作了。",
+    "pinyin": "kōngtiáo bù gōngzuò le.",
+    "esTranslation": "El aire acondicionado no funciona."
+  },
+  {
+    "id": "hotel_023",
+    "english": "Can I have a wake-up call?",
+    "chinese": "能给我一个叫醒服务吗？",
+    "pinyin": "néng gěi wǒ yīgè jiào xǐng fúwù ma?",
+    "esTranslation": "¿Puedo solicitar un servicio de despertador?"
+  },
+  {
+    "id": "hotel_024",
+    "english": "Is there a laundry service?",
+    "chinese": "有洗衣服务吗？",
+    "pinyin": "yǒu xǐ yī fúwù ma?",
+    "esTranslation": "¿Hay servicio de lavandería?"
+  },
+  {
+    "id": "hotel_025",
+    "english": "Where can I get a taxi?",
+    "chinese": "我在哪里可以叫到出租车？",
+    "pinyin": "wǒ zài nǎlǐ kěyǐ jiào dào chūzū chē?",
+    "esTranslation": "¿Dónde puedo tomar un taxi?"
+  },
+  {
+    "id": "hotel_026",
+    "english": "I need to extend my stay.",
+    "chinese": "我需要延长住宿。",
+    "pinyin": "wǒ xūyào yáncháng zhùsù.",
+    "esTranslation": "Necesito extender mi estancia."
+  },
+  {
+    "id": "hotel_027",
+    "english": "Can I change my room?",
+    "chinese": "我能换房间吗？",
+    "pinyin": "wǒ néng huàn fángjiān ma?",
+    "esTranslation": "¿Puedo cambiar de habitación?"
+  },
+  {
+    "id": "hotel_028",
+    "english": "Do you have a map of the city?",
+    "chinese": "有城市地图吗？",
+    "pinyin": "yǒu chéngshì dìtú ma?",
+    "esTranslation": "¿Tienen un mapa de la ciudad?"
+  },
+  {
+    "id": "hotel_029",
+    "english": "What is the Wi-Fi password?",
+    "chinese": "Wi-Fi密码是什么？",
+    "pinyin": "Wi-Fi mìmǎ shì shénme?",
+    "esTranslation": "¿Cuál es la contraseña del Wi-Fi?"
+  },
+  {
+    "id": "hotel_030",
+    "english": "I have a complaint about my room.",
+    "chinese": "我对我的房间有投诉。",
+    "pinyin": "wǒ duì wǒ de fángjiān yǒu tóusù.",
+    "esTranslation": "Tengo una queja sobre mi habitación."
+  }
+]

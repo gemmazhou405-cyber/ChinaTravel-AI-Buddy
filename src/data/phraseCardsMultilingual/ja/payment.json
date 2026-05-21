@@ -1,0 +1,316 @@
+[
+  {
+    "id": "payment_001",
+    "english": "Do you accept WeChat Pay?",
+    "chinese": "可以用微信支付吗？",
+    "pinyin": "kěyǐ yòng Wēixìn zhīfù ma?",
+    "jaTranslation": "WeChat Payは使えますか？"
+  },
+  {
+    "id": "payment_002",
+    "english": "Can I pay with Alipay?",
+    "chinese": "可以用支付宝吗？",
+    "pinyin": "kěyǐ yòng Zhīfùbǎo ma?",
+    "jaTranslation": "Alipayは使えますか？"
+  },
+  {
+    "id": "payment_003",
+    "english": "I'll pay by credit card.",
+    "chinese": "我用信用卡付款。",
+    "pinyin": "wǒ yòng xìnyòngkǎ fùkuǎn.",
+    "jaTranslation": "クレジットカードで支払います。"
+  },
+  {
+    "id": "payment_004",
+    "english": "I'll pay with cash.",
+    "chinese": "我用现金付款。",
+    "pinyin": "wǒ yòng xiànjīn fùkuǎn.",
+    "jaTranslation": "現金で支払います。"
+  },
+  {
+    "id": "payment_005",
+    "english": "What's the total?",
+    "chinese": "一共多少钱？",
+    "pinyin": "yīgòng duōshǎo qián?",
+    "jaTranslation": "合計はいくらですか？"
+  },
+  {
+    "id": "payment_006",
+    "english": "Please show the QR code.",
+    "chinese": "请出示二维码。",
+    "pinyin": "qǐng chūshì èrwéimǎ.",
+    "jaTranslation": "QRコードを見せてください。"
+  },
+  {
+    "id": "payment_007",
+    "english": "Scan my QR code, please.",
+    "chinese": "请扫我的二维码。",
+    "pinyin": "qǐng sǎo wǒ de èrwéimǎ.",
+    "jaTranslation": "私のQRコードをスキャンしてください。"
+  },
+  {
+    "id": "payment_008",
+    "english": "Is my payment successful?",
+    "chinese": "我支付成功了吗？",
+    "pinyin": "wǒ zhīfù chénggōng le ma?",
+    "jaTranslation": "支払いは成功しましたか？"
+  },
+  {
+    "id": "payment_009",
+    "english": "Could I have a receipt, please?",
+    "chinese": "请给我收据。",
+    "pinyin": "qǐng gěi wǒ shōujù.",
+    "jaTranslation": "領収書をいただけますか？"
+  },
+  {
+    "id": "payment_010",
+    "english": "This payment is for two people.",
+    "chinese": "这是两个人的费用。",
+    "pinyin": "zhè shì liǎng gè rén de fèiyòng.",
+    "jaTranslation": "これは二人の費用です。"
+  },
+  {
+    "id": "payment_011",
+    "english": "Does this include tax?",
+    "chinese": "这含税吗？",
+    "pinyin": "zhè hán shuì ma?",
+    "jaTranslation": "これは税金を含みますか？"
+  },
+  {
+    "id": "payment_012",
+    "english": "Is there a service charge?",
+    "chinese": "有服务费吗？",
+    "pinyin": "yǒu fúwùfèi ma?",
+    "jaTranslation": "サービス料はかかりますか？"
+  },
+  {
+    "id": "payment_013",
+    "english": "Can I pay separately?",
+    "chinese": "可以分开付吗？",
+    "pinyin": "kěyǐ fēnkāi fù ma?",
+    "jaTranslation": "別々に払えますか？"
+  },
+  {
+    "id": "payment_014",
+    "english": "Please charge this card.",
+    "chinese": "请刷这张卡。",
+    "pinyin": "qǐng shuā zhè zhāng kǎ.",
+    "jaTranslation": "このカードでお支払いをお願いします。"
+  },
+  {
+    "id": "payment_015",
+    "english": "Do you have change for 100 yuan?",
+    "chinese": "一百块有零钱找吗？",
+    "pinyin": "yībǎi kuài yǒu língqián zhǎo ma?",
+    "jaTranslation": "100元のおつりはありますか？"
+  },
+  {
+    "id": "payment_016",
+    "english": "Please keep the change.",
+    "chinese": "不用找零了。",
+    "pinyin": "bùyòng zhǎolíng le.",
+    "jaTranslation": "おつりは結構です。"
+  },
+  {
+    "id": "payment_017",
+    "english": "Can I get a paper receipt?",
+    "chinese": "可以给纸质发票吗？",
+    "pinyin": "kěyǐ gěi zhǐzhì fāpiào ma?",
+    "jaTranslation": "紙のレシートをいただけますか？"
+  },
+  {
+    "id": "payment_018",
+    "english": "My card was declined.",
+    "chinese": "我的卡被拒了。",
+    "pinyin": "wǒ de kǎ bèi jù le.",
+    "jaTranslation": "私のカードが拒否されました。"
+  },
+  {
+    "id": "payment_019",
+    "english": "The amount is incorrect.",
+    "chinese": "金额不对。",
+    "pinyin": "jīn'é bú duì.",
+    "jaTranslation": "金額が違います。"
+  },
+  {
+    "id": "payment_020",
+    "english": "Please try again.",
+    "chinese": "请再试一次。",
+    "pinyin": "qǐng zài shì yīcì.",
+    "jaTranslation": "もう一度お試しください。"
+  },
+  {
+    "id": "payment_021",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "I need to pay with a foreign card.",
+    "chinese": "我需要用外币卡支付。",
+    "pinyin": "wǒ xūyào yòng wàibì kǎ zhīfù.",
+    "usageNote": "Explain you have an international card.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我需要用外币卡支付。",
+    "tags": [
+      "card",
+      "foreign",
+      "statement"
+    ],
+    "jaTranslation": "I need to pay with a foreign card."
+  },
+  {
+    "id": "payment_022",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "Is there a minimum spend for card payment?",
+    "chinese": "刷卡有最低消费吗？",
+    "pinyin": "shuākǎ yǒu zuìdī xiāofèi ma?",
+    "usageNote": "Ask if there's a minimum amount for card use.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "刷卡有最低消费吗？",
+    "tags": [
+      "card",
+      "minimum",
+      "question"
+    ],
+    "jaTranslation": "Is there a minimum spend for card payment?"
+  },
+  {
+    "id": "payment_023",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "Could you double-check the amount?",
+    "chinese": "麻烦您再核对一下金额。",
+    "pinyin": "máfan nín zài héduì yīxià jīn'é.",
+    "usageNote": "Politely ask for amount verification.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "麻烦您再核对一下金额。",
+    "tags": [
+      "clarify",
+      "request"
+    ],
+    "jaTranslation": "Could you double-check the amount?"
+  },
+  {
+    "id": "payment_024",
+    "scene": "payment",
+    "priority": "low",
+    "english": "I'll pay for everything.",
+    "chinese": "我来付全部。",
+    "pinyin": "wǒ lái fù quánbù.",
+    "usageNote": "Offer to pay the entire bill.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我来付全部。",
+    "tags": [
+      "offer",
+      "statement"
+    ],
+    "jaTranslation": "I'll pay for everything."
+  },
+  {
+    "id": "payment_025",
+    "scene": "payment",
+    "priority": "low",
+    "english": "Can I split the bill with my friend?",
+    "chinese": "可以和朋友分摊吗？",
+    "pinyin": "kěyǐ hé péngyǒu fēntān ma?",
+    "usageNote": "Ask about splitting with a companion.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "可以和朋友分摊吗？",
+    "tags": [
+      "split",
+      "question"
+    ],
+    "jaTranslation": "Can I split the bill with my friend?"
+  },
+  {
+    "id": "payment_026",
+    "scene": "payment",
+    "priority": "low",
+    "english": "Do you offer a discount?",
+    "chinese": "有优惠吗？",
+    "pinyin": "yǒu yōuhuì ma?",
+    "usageNote": "Inquire about available discounts.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "有优惠吗？",
+    "tags": [
+      "discount",
+      "question"
+    ],
+    "jaTranslation": "Do you offer a discount?"
+  },
+  {
+    "id": "payment_027",
+    "scene": "payment",
+    "priority": "low",
+    "english": "I have a coupon.",
+    "chinese": "我有优惠券。",
+    "pinyin": "wǒ yǒu yōuhuì quàn.",
+    "usageNote": "Mention you have a coupon to use.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我有优惠券。",
+    "tags": [
+      "coupon",
+      "statement"
+    ],
+    "jaTranslation": "I have a coupon."
+  },
+  {
+    "id": "payment_028",
+    "scene": "payment",
+    "priority": "low",
+    "english": "Where do I scan the code?",
+    "chinese": "在哪里扫码？",
+    "pinyin": "zài nǎlǐ sǎo mǎ?",
+    "usageNote": "Ask for the location of the payment scanner.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "在哪里扫码？",
+    "tags": [
+      "qr",
+      "location",
+      "question"
+    ],
+    "jaTranslation": "Where do I scan the code?"
+  },
+  {
+    "id": "payment_029",
+    "scene": "payment",
+    "priority": "low",
+    "english": "Is mobile payment accepted here?",
+    "chinese": "这里支持手机支付吗？",
+    "pinyin": "zhèlǐ zhīchí shǒujī zhīfù ma?",
+    "usageNote": "General question about mobile payment support.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这里支持手机支付吗？",
+    "tags": [
+      "mobile",
+      "question"
+    ],
+    "jaTranslation": "Is mobile payment accepted here?"
+  },
+  {
+    "id": "payment_030",
+    "scene": "payment",
+    "priority": "low",
+    "english": "Thank you, payment is done.",
+    "chinese": "谢谢，付好了。",
+    "pinyin": "xièxie, fù hǎo le.",
+    "usageNote": "Confirm completion and thank the staff.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "谢谢，付好了。",
+    "tags": [
+      "confirm",
+      "complete",
+      "polite"
+    ],
+    "jaTranslation": "Thank you, payment is done."
+  }
+]

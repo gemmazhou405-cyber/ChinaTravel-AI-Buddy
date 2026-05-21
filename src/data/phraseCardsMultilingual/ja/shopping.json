@@ -1,0 +1,212 @@
+[
+  {
+    "id": "shopping_001",
+    "english": "Hello, I need some help.",
+    "chinese": "你好，我需要一些帮助。",
+    "pinyin": "Nǐ hǎo, wǒ xūyào yīxiē bāngzhù.",
+    "jaTranslation": "すみません、助けが必要です。"
+  },
+  {
+    "id": "shopping_002",
+    "english": "How much is this?",
+    "chinese": "这个多少钱？",
+    "pinyin": "Zhège duōshǎo qián?",
+    "jaTranslation": "これはいくらですか？"
+  },
+  {
+    "id": "shopping_003",
+    "english": "Is there a discount?",
+    "chinese": "有折扣吗？",
+    "pinyin": "Yǒu zhékòu ma?",
+    "jaTranslation": "割引はありますか？"
+  },
+  {
+    "id": "shopping_004",
+    "english": "Can you lower the price?",
+    "chinese": "可以便宜一点吗？",
+    "pinyin": "Kěyǐ piányi yīdiǎn ma?",
+    "jaTranslation": "もう少し安くしてもらえますか？"
+  },
+  {
+    "id": "shopping_005",
+    "english": "That's too expensive.",
+    "chinese": "太贵了。",
+    "pinyin": "Tài guì le.",
+    "jaTranslation": "それは高すぎます。"
+  },
+  {
+    "id": "shopping_006",
+    "english": "What sizes do you have?",
+    "chinese": "你们有什么尺码？",
+    "pinyin": "Nǐmen yǒu shénme chǐmǎ?",
+    "jaTranslation": "サイズはどのようなものがありますか？"
+  },
+  {
+    "id": "shopping_007",
+    "english": "Do you have this in medium?",
+    "chinese": "这件有中码吗？",
+    "pinyin": "Zhè jiàn yǒu zhōng mǎ ma?",
+    "jaTranslation": "これはMサイズありますか？"
+  },
+  {
+    "id": "shopping_008",
+    "english": "Can I try this on?",
+    "chinese": "我可以试穿吗？",
+    "pinyin": "Wǒ kěyǐ shì chuān ma?",
+    "jaTranslation": "試着してもいいですか？"
+  },
+  {
+    "id": "shopping_009",
+    "english": "Where is the fitting room?",
+    "chinese": "试衣间在哪里？",
+    "pinyin": "Shì yī jiān zài nǎlǐ?",
+    "jaTranslation": "試着室はどこですか？"
+  },
+  {
+    "id": "shopping_010",
+    "english": "I want to return this item.",
+    "chinese": "我想退货。",
+    "pinyin": "Wǒ xiǎng tuì huò.",
+    "jaTranslation": "この商品を返品したいのですが。"
+  },
+  {
+    "id": "shopping_011",
+    "english": "What is your return policy?",
+    "chinese": "你们的退货政策是什么？",
+    "pinyin": "Nǐmen de tuì huò zhèngcè shì shénme?",
+    "jaTranslation": "返品ポリシーを教えていただけますか？"
+  },
+  {
+    "id": "shopping_012",
+    "english": "Do you accept credit cards?",
+    "chinese": "你们接受信用卡吗？",
+    "pinyin": "Nǐmen jiēshòu xìnyòngkǎ ma?",
+    "jaTranslation": "クレジットカードは使えますか？"
+  },
+  {
+    "id": "shopping_013",
+    "english": "Can I pay with WeChat Pay?",
+    "chinese": "可以用微信支付吗？",
+    "pinyin": "Kěyǐ yòng Wēixìn zhīfù ma?",
+    "jaTranslation": "WeChat Payで支払えますか？"
+  },
+  {
+    "id": "shopping_014",
+    "english": "Do you have this in another color?",
+    "chinese": "这个有其他颜色吗？",
+    "pinyin": "Zhège yǒu qítā yánsè ma?",
+    "jaTranslation": "これに他の色はありますか？"
+  },
+  {
+    "id": "shopping_015",
+    "english": "Is this on sale?",
+    "chinese": "这个打折吗？",
+    "pinyin": "Zhège dǎzhé ma?",
+    "jaTranslation": "これはセール中ですか？"
+  },
+  {
+    "id": "shopping_016",
+    "english": "I'm just looking, thank you.",
+    "chinese": "我只是看看，谢谢。",
+    "pinyin": "Wǒ zhǐ shì kàn kàn, xièxiè.",
+    "jaTranslation": "見ているだけです、ありがとうございます。"
+  },
+  {
+    "id": "shopping_017",
+    "english": "Can you gift wrap this?",
+    "chinese": "可以帮我包装一下吗？",
+    "pinyin": "Kěyǐ bāng wǒ bāozhuāng yīxià ma?",
+    "jaTranslation": "ギフトラッピングをお願いできますか？"
+  },
+  {
+    "id": "shopping_018",
+    "english": "Where is the cashier?",
+    "chinese": "收银台在哪里？",
+    "pinyin": "Shōuyín tái zài nǎlǐ?",
+    "jaTranslation": "レジはどこですか？"
+  },
+  {
+    "id": "shopping_019",
+    "english": "I need a bag.",
+    "chinese": "我需要一个袋子。",
+    "pinyin": "Wǒ xūyào yīgè dàizi.",
+    "jaTranslation": "袋を一つお願いします。"
+  },
+  {
+    "id": "shopping_020",
+    "english": "Is there a warranty?",
+    "chinese": "有保修吗？",
+    "pinyin": "Yǒu bǎoxiū ma?",
+    "jaTranslation": "保証は付いていますか？"
+  },
+  {
+    "id": "shopping_021",
+    "english": "Can I get a receipt?",
+    "chinese": "可以给我收据吗？",
+    "pinyin": "Kěyǐ gěi wǒ shōujù ma?",
+    "jaTranslation": "領収書をいただけますか？"
+  },
+  {
+    "id": "shopping_022",
+    "english": "This is damaged.",
+    "chinese": "这个是坏的。",
+    "pinyin": "Zhège shì huài de.",
+    "jaTranslation": "これは壊れています。"
+  },
+  {
+    "id": "shopping_023",
+    "english": "I want to exchange this.",
+    "chinese": "我想换货。",
+    "pinyin": "Wǒ xiǎng huàn huò.",
+    "jaTranslation": "これを交換したいです。"
+  },
+  {
+    "id": "shopping_024",
+    "english": "What material is this made of?",
+    "chinese": "这个是什么材质的？",
+    "pinyin": "Zhège shì shénme cáizhì de?",
+    "jaTranslation": "これは何でできていますか？"
+  },
+  {
+    "id": "shopping_025",
+    "english": "Can I see that one?",
+    "chinese": "我可以看看那个吗？",
+    "pinyin": "Wǒ kěyǐ kàn kàn nàgè ma?",
+    "jaTranslation": "あれを見せていただけますか？"
+  },
+  {
+    "id": "shopping_026",
+    "english": "Do you have a smaller size?",
+    "chinese": "你们有小一号的吗？",
+    "pinyin": "Nǐmen yǒu xiǎo yī hào de ma?",
+    "jaTranslation": "もう少し小さいサイズはありますか？"
+  },
+  {
+    "id": "shopping_027",
+    "english": "This fits perfectly.",
+    "chinese": "这个很合身。",
+    "pinyin": "Zhège hěn hé shēn.",
+    "jaTranslation": "これはぴったりです。"
+  },
+  {
+    "id": "shopping_028",
+    "english": "I'll take this one.",
+    "chinese": "我要这个。",
+    "pinyin": "Wǒ yào zhège.",
+    "jaTranslation": "これをいただきます。"
+  },
+  {
+    "id": "shopping_029",
+    "english": "Can you deliver this to my hotel?",
+    "chinese": "可以送到我的酒店吗？",
+    "pinyin": "Kěyǐ sòng dào wǒ de jiǔdiàn ma?",
+    "jaTranslation": "これを私のホテルまで届けてもらえますか？"
+  },
+  {
+    "id": "shopping_030",
+    "english": "Thank you for your help.",
+    "chinese": "谢谢你的帮助。",
+    "pinyin": "Xièxiè nǐ de bāngzhù.",
+    "jaTranslation": "お手伝いいただきありがとうございます。"
+  }
+]

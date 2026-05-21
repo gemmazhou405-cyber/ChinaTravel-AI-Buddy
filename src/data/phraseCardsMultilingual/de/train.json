@@ -1,0 +1,212 @@
+[
+  {
+    "id": "train_001",
+    "english": "Where is the ticket office?",
+    "chinese": "请问售票处在哪里？",
+    "pinyin": "Qǐngwèn shòupiàochù zài nǎlǐ?",
+    "deTranslation": "Wo ist der Fahrkartenschalter?"
+  },
+  {
+    "id": "train_002",
+    "english": "I would like to buy one ticket to Beijing.",
+    "chinese": "我想买一张去北京的票。",
+    "pinyin": "Wǒ xiǎng mǎi yī zhāng qù Běijīng de piào.",
+    "deTranslation": "Ich möchte eine Fahrkarte nach Beijing kaufen."
+  },
+  {
+    "id": "train_003",
+    "english": "What time does the next train depart?",
+    "chinese": "下一班火车几点发车？",
+    "pinyin": "Xià yī bān huǒchē jǐ diǎn fāchē?",
+    "deTranslation": "Wann fährt der nächste Zug ab?"
+  },
+  {
+    "id": "train_004",
+    "english": "Is this the platform for the train to Shanghai?",
+    "chinese": "这里是去上海的列车站台吗？",
+    "pinyin": "Zhèlǐ shì qù Shànghǎi de lièchē zhàntái ma?",
+    "deTranslation": "Ist dies der Bahnsteig für den Zug nach Shanghai?"
+  },
+  {
+    "id": "train_005",
+    "english": "Which platform does my train leave from?",
+    "chinese": "我的火车在哪个站台发车？",
+    "pinyin": "Wǒ de huǒchē zài nǎgè zhàntái fāchē?",
+    "deTranslation": "Von welchem Bahnsteig fährt mein Zug ab?"
+  },
+  {
+    "id": "train_006",
+    "english": "How long is the train ride?",
+    "chinese": "火车要坐多久？",
+    "pinyin": "Huǒchē yào zuò duōjiǔ?",
+    "deTranslation": "Wie lange dauert die Zugfahrt?"
+  },
+  {
+    "id": "train_007",
+    "english": "Do I need to transfer?",
+    "chinese": "我需要换乘吗？",
+    "pinyin": "Wǒ xūyào huànchéng ma?",
+    "deTranslation": "Muss ich umsteigen?"
+  },
+  {
+    "id": "train_008",
+    "english": "Where is my seat?",
+    "chinese": "我的座位在哪里？",
+    "pinyin": "Wǒ de zuòwèi zài nǎlǐ?",
+    "deTranslation": "Wo ist mein Sitzplatz?"
+  },
+  {
+    "id": "train_009",
+    "english": "Excuse me, is this seat taken?",
+    "chinese": "打扰一下，这个座位有人吗？",
+    "pinyin": "Dǎrǎo yīxià, zhège zuòwèi yǒu rén ma?",
+    "deTranslation": "Entschuldigung, ist dieser Platz besetzt?"
+  },
+  {
+    "id": "train_010",
+    "english": "Can I change to a window seat?",
+    "chinese": "我可以换到靠窗的座位吗？",
+    "pinyin": "Wǒ kěyǐ huàn dào kào chuāng de zuòwèi ma?",
+    "deTranslation": "Kann ich zu einem Fensterplatz wechseln?"
+  },
+  {
+    "id": "train_011",
+    "english": "Is there a dining car on this train?",
+    "chinese": "这列车有餐车吗？",
+    "pinyin": "Zhè lièchē yǒu cānchē ma?",
+    "deTranslation": "Gibt es einen Speisewagen in diesem Zug?"
+  },
+  {
+    "id": "train_012",
+    "english": "When does the train arrive in Guangzhou?",
+    "chinese": "火车什么时候到达广州？",
+    "pinyin": "Huǒchē shénme shíhòu dàodá Guǎngzhōu?",
+    "deTranslation": "Wann kommt der Zug in Guangzhou an?"
+  },
+  {
+    "id": "train_013",
+    "english": "Where is the restroom?",
+    "chinese": "洗手间在哪里？",
+    "pinyin": "Xǐshǒujiān zài nǎlǐ?",
+    "deTranslation": "Wo ist die Toilette?"
+  },
+  {
+    "id": "train_014",
+    "english": "Is there Wi-Fi on the train?",
+    "chinese": "火车上有Wi-Fi吗？",
+    "pinyin": "Huǒchē shàng yǒu Wi-Fi ma?",
+    "deTranslation": "Gibt es WLAN im Zug?"
+  },
+  {
+    "id": "train_015",
+    "english": "Can I charge my phone here?",
+    "chinese": "这里可以给手机充电吗？",
+    "pinyin": "Zhèlǐ kěyǐ gěi shǒujī chōngdiàn ma?",
+    "deTranslation": "Kann ich hier mein Handy aufladen?"
+  },
+  {
+    "id": "train_016",
+    "english": "This is my ticket.",
+    "chinese": "这是我的车票。",
+    "pinyin": "Zhè shì wǒ de chēpiào.",
+    "deTranslation": "Das ist meine Fahrkarte."
+  },
+  {
+    "id": "train_017",
+    "english": "My train has been delayed. What should I do?",
+    "chinese": "我的火车晚点了，我该怎么办？",
+    "pinyin": "Wǒ de huǒchē wǎndiǎn le, wǒ gāi zěnme bàn?",
+    "deTranslation": "Mein Zug hat Verspätung. Was soll ich tun?"
+  },
+  {
+    "id": "train_018",
+    "english": "I missed my train. Can I change my ticket?",
+    "chinese": "我错过火车了，可以改签吗？",
+    "pinyin": "Wǒ cuòguò huǒchē le, kěyǐ gǎiqiān ma?",
+    "deTranslation": "Ich habe meinen Zug verpasst. Kann ich meine Fahrkarte umbuchen?"
+  },
+  {
+    "id": "train_019",
+    "english": "Can I get a refund for this ticket?",
+    "chinese": "这张票可以退票吗？",
+    "pinyin": "Zhè zhāng piào kěyǐ tuìpiào ma?",
+    "deTranslation": "Kann ich eine Erstattung für diese Fahrkarte bekommen?"
+  },
+  {
+    "id": "train_020",
+    "english": "Help! My luggage is stuck.",
+    "chinese": "帮帮忙！我的行李卡住了。",
+    "pinyin": "Bāng bang máng! Wǒ de xíngli kǎ zhù le.",
+    "deTranslation": "Hilfe! Mein Gepäck steckt fest."
+  },
+  {
+    "id": "train_021",
+    "english": "Where can I store my luggage?",
+    "chinese": "行李可以放在哪里？",
+    "pinyin": "Xíngli kěyǐ fàng zài nǎlǐ?",
+    "deTranslation": "Wo kann ich mein Gepäck aufbewahren?"
+  },
+  {
+    "id": "train_022",
+    "english": "I need to get off at the next stop.",
+    "chinese": "我需要在下一站下车。",
+    "pinyin": "Wǒ xūyào zài xià yī zhàn xià chē.",
+    "deTranslation": "Ich muss an der nächsten Haltestelle aussteigen."
+  },
+  {
+    "id": "train_023",
+    "english": "Is this the last stop?",
+    "chinese": "这是终点站吗？",
+    "pinyin": "Zhè shì zhōngdiǎn zhàn ma?",
+    "deTranslation": "Ist das die Endstation?"
+  },
+  {
+    "id": "train_024",
+    "english": "Can I get a receipt for my ticket?",
+    "chinese": "可以给我一张车票的发票吗？",
+    "pinyin": "Kěyǐ gěi wǒ yī zhāng chēpiào de fāpiào ma?",
+    "deTranslation": "Kann ich eine Quittung für meine Fahrkarte bekommen?"
+  },
+  {
+    "id": "train_025",
+    "english": "Where is the lost and found office?",
+    "chinese": "失物招领处在哪里？",
+    "pinyin": "Shīwù zhāolǐng chù zài nǎlǐ?",
+    "deTranslation": "Wo ist das Fundbüro?"
+  },
+  {
+    "id": "train_026",
+    "english": "What is the train number?",
+    "chinese": "这趟车的车次是多少？",
+    "pinyin": "Zhè tàng chē de chēcì shì duōshǎo?",
+    "deTranslation": "Wie lautet die Zuggarnnummer?"
+  },
+  {
+    "id": "train_027",
+    "english": "How do I get to the subway from the train station?",
+    "chinese": "从火车站怎么换乘地铁？",
+    "pinyin": "Cóng huǒchē zhàn zěnme huànchéng dìtiě?",
+    "deTranslation": "Wie komme ich vom Bahnhof zur U-Bahn?"
+  },
+  {
+    "id": "train_028",
+    "english": "Please don't smoke here.",
+    "chinese": "请不要在这里吸烟。",
+    "pinyin": "Qǐng bùyào zài zhèlǐ xīyān.",
+    "deTranslation": "Bitte rauchen Sie hier nicht."
+  },
+  {
+    "id": "train_029",
+    "english": "I feel sick. Is there a doctor on the train?",
+    "chinese": "我感觉不舒服，车上有医生吗？",
+    "pinyin": "Wǒ gǎnjué bù shūfu, chē shàng yǒu yīshēng ma?",
+    "deTranslation": "Mir ist schlecht. Gibt es einen Arzt im Zug?"
+  },
+  {
+    "id": "train_030",
+    "english": "Thank you for your help.",
+    "chinese": "谢谢您的帮助。",
+    "pinyin": "Xièxie nín de bāngzhù.",
+    "deTranslation": "Vielen Dank für Ihre Hilfe."
+  }
+]

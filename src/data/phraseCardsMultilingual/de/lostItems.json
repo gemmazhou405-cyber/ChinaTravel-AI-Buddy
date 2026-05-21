@@ -1,0 +1,212 @@
+[
+  {
+    "id": "lostItems_001",
+    "english": "I lost my passport.",
+    "chinese": "我的护照不见了。",
+    "pinyin": "Wǒ de hùzhào bùjiàn le.",
+    "deTranslation": "Mein Reisepass ist weg."
+  },
+  {
+    "id": "lostItems_002",
+    "english": "My phone is missing.",
+    "chinese": "我的手机不见了。",
+    "pinyin": "Wǒ de shǒujī bùjiàn le.",
+    "deTranslation": "Mein Handy fehlt."
+  },
+  {
+    "id": "lostItems_003",
+    "english": "I can't find my wallet.",
+    "chinese": "我找不到我的钱包。",
+    "pinyin": "Wǒ zhǎo bù dào wǒ de qiánbāo.",
+    "deTranslation": "Ich kann meine Brieftasche nicht finden."
+  },
+  {
+    "id": "lostItems_004",
+    "english": "My bag was stolen.",
+    "chinese": "我的包被偷了。",
+    "pinyin": "Wǒ de bāo bèi tōu le.",
+    "deTranslation": "Meine Tasche wurde gestohlen."
+  },
+  {
+    "id": "lostItems_005",
+    "english": "I need to report to the police.",
+    "chinese": "我需要报警。",
+    "pinyin": "Wǒ xūyào bàojǐng.",
+    "deTranslation": "Ich muss zur Polizei."
+  },
+  {
+    "id": "lostItems_006",
+    "english": "Where is the police station?",
+    "chinese": "警察局在哪里？",
+    "pinyin": "Jǐngchá jú zài nǎlǐ?",
+    "deTranslation": "Wo ist die Polizeistation?"
+  },
+  {
+    "id": "lostItems_007",
+    "english": "Can you help me find my lost item?",
+    "chinese": "你能帮我找一下丢失的东西吗？",
+    "pinyin": "Nǐ néng bāng wǒ zhǎo yīxià diūshī de dōngxī ma?",
+    "deTranslation": "Können Sie mir helfen, meinen verlorenen Gegenstand zu finden?"
+  },
+  {
+    "id": "lostItems_008",
+    "english": "I lost my belongings.",
+    "chinese": "我丢了东西。",
+    "pinyin": "Wǒ diū le dōngxī.",
+    "deTranslation": "Ich habe meine Sachen verloren."
+  },
+  {
+    "id": "lostItems_009",
+    "english": "Please help me.",
+    "chinese": "请帮帮我。",
+    "pinyin": "Qǐng bāng bāng wǒ.",
+    "deTranslation": "Bitte helfen Sie mir."
+  },
+  {
+    "id": "lostItems_010",
+    "english": "I need to contact the embassy.",
+    "chinese": "我需要联系大使馆。",
+    "pinyin": "Wǒ xūyào liánxì dàshǐguǎn.",
+    "deTranslation": "Ich muss die Botschaft kontaktieren."
+  },
+  {
+    "id": "lostItems_011",
+    "english": "What should I do?",
+    "chinese": "我该怎么办？",
+    "pinyin": "Wǒ gāi zěnme bàn?",
+    "deTranslation": "Was soll ich tun?"
+  },
+  {
+    "id": "lostItems_012",
+    "english": "I lost my ID card.",
+    "chinese": "我丢了身份证。",
+    "pinyin": "Wǒ diū le shēnfènzhèng.",
+    "deTranslation": "Ich habe meinen Personalausweis verloren."
+  },
+  {
+    "id": "lostItems_013",
+    "english": "My bag is gone.",
+    "chinese": "我的包不见了。",
+    "pinyin": "Wǒ de bāo bùjiàn le.",
+    "deTranslation": "Meine Tasche ist weg."
+  },
+  {
+    "id": "lostItems_014",
+    "english": "I think it was pickpocketed.",
+    "chinese": "我觉得是被扒手偷了。",
+    "pinyin": "Wǒ juédé shì bèi pāshǒu tōu le.",
+    "deTranslation": "Ich glaube, es wurde von einem Taschendieb gestohlen."
+  },
+  {
+    "id": "lostItems_015",
+    "english": "Where did you lose it?",
+    "chinese": "您在哪里丢失的？",
+    "pinyin": "Nín zài nǎlǐ diūshī de?",
+    "deTranslation": "Wo haben Sie es verloren?"
+  },
+  {
+    "id": "lostItems_016",
+    "english": "Can I use your phone to call the police?",
+    "chinese": "请问我能用您的手机报警吗？",
+    "pinyin": "Qǐngwèn wǒ néng yòng nín de shǒujī bàojǐng ma?",
+    "deTranslation": "Kann ich Ihr Handy benutzen, um die Polizei anzurufen?"
+  },
+  {
+    "id": "lostItems_017",
+    "english": "I need to cancel my credit cards.",
+    "chinese": "我需要挂失信用卡。",
+    "pinyin": "Wǒ xūyào guàshī xìnyòngkǎ.",
+    "deTranslation": "Ich muss meine Kreditkarten sperren lassen."
+  },
+  {
+    "id": "lostItems_018",
+    "english": "I lost my hotel key.",
+    "chinese": "我丢了酒店房卡。",
+    "pinyin": "Wǒ diū le jiǔdiàn fángkǎ.",
+    "deTranslation": "Ich habe meinen Hotelschlüssel verloren."
+  },
+  {
+    "id": "lostItems_019",
+    "english": "My luggage is missing at the airport.",
+    "chinese": "我的行李在机场不见了。",
+    "pinyin": "Wǒ de xíngli zài jīchǎng bùjiàn le.",
+    "deTranslation": "Mein Gepäck fehlt am Flughafen."
+  },
+  {
+    "id": "lostItems_020",
+    "english": "I need to file a report.",
+    "chinese": "我需要报案。",
+    "pinyin": "Wǒ xūyào bào'àn.",
+    "deTranslation": "Ich muss eine Anzeige erstatten."
+  },
+  {
+    "id": "lostItems_021",
+    "english": "I need to describe what was lost.",
+    "chinese": "我需要描述丢失的物品。",
+    "pinyin": "Wǒ xūyào miáoshù diūshī de wùpǐn.",
+    "deTranslation": "Ich muss das Verlorene beschreiben."
+  },
+  {
+    "id": "lostItems_022",
+    "english": "It was a black backpack.",
+    "chinese": "是一个黑色的背包。",
+    "pinyin": "Shì yīgè hēisè de bēibāo.",
+    "deTranslation": "Es war ein schwarzer Rucksack."
+  },
+  {
+    "id": "lostItems_023",
+    "english": "There was a passport and wallet inside.",
+    "chinese": "里面有护照和钱包。",
+    "pinyin": "Lǐmiàn yǒu hùzhào hé qiánbāo.",
+    "deTranslation": "Es waren ein Reisepass und eine Geldbörse darin."
+  },
+  {
+    "id": "lostItems_024",
+    "english": "I am a tourist and lost my documents.",
+    "chinese": "我是游客，丢了证件。",
+    "pinyin": "Wǒ shì yóukè, diū le zhèngjiàn.",
+    "deTranslation": "Ich bin Tourist und habe meine Dokumente verloren."
+  },
+  {
+    "id": "lostItems_025",
+    "english": "How do I get a replacement passport?",
+    "chinese": "如何补办护照？",
+    "pinyin": "Rúhé bǔbàn hùzhào?",
+    "deTranslation": "Wie bekomme ich einen Ersatzreisepass?"
+  },
+  {
+    "id": "lostItems_026",
+    "english": "I need to inform my bank.",
+    "chinese": "我需要通知银行。",
+    "pinyin": "Wǒ xūyào tōngzhī yínháng.",
+    "deTranslation": "Ich muss meine Bank informieren."
+  },
+  {
+    "id": "lostItems_027",
+    "english": "Can you write down the details?",
+    "chinese": "请帮我写下详细信息。",
+    "pinyin": "Qǐng bāng wǒ xiě xià xiángxì xìnxī.",
+    "deTranslation": "Könnten Sie bitte die Details aufschreiben?"
+  },
+  {
+    "id": "lostItems_028",
+    "english": "I lost my camera.",
+    "chinese": "我丢了相机。",
+    "pinyin": "Wǒ diū le xiàngjī.",
+    "deTranslation": "Ich habe meine Kamera verloren."
+  },
+  {
+    "id": "lostItems_029",
+    "english": "I need to call my hotel.",
+    "chinese": "我需要打电话给酒店。",
+    "pinyin": "Wǒ xūyào dǎ diànhuà gěi jiǔdiàn.",
+    "deTranslation": "Ich muss mein Hotel anrufen."
+  },
+  {
+    "id": "lostItems_030",
+    "english": "I need to make a statement.",
+    "chinese": "我需要做笔录。",
+    "pinyin": "Wǒ xūyào zuò bǐlù.",
+    "deTranslation": "Ich muss eine Aussage machen."
+  }
+]

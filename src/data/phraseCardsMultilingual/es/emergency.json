@@ -1,0 +1,212 @@
+[
+  {
+    "id": "emergency_001",
+    "english": "Help!",
+    "chinese": "救命啊！",
+    "pinyin": "Jiùmìng a!",
+    "esTranslation": "¡Ayuda!"
+  },
+  {
+    "id": "emergency_002",
+    "english": "Please call the police!",
+    "chinese": "请帮我报警！",
+    "pinyin": "Qǐng bāng wǒ bàojǐng!",
+    "esTranslation": "¡Por favor, llame a la policía!"
+  },
+  {
+    "id": "emergency_003",
+    "english": "Please call an ambulance!",
+    "chinese": "请帮我叫救护车！",
+    "pinyin": "Qǐng bāng wǒ jiào jiùhùchē!",
+    "esTranslation": "¡Por favor, llame a una ambulancia!"
+  },
+  {
+    "id": "emergency_004",
+    "english": "There's been an accident!",
+    "chinese": "出事故了！",
+    "pinyin": "Chū shìgù le!",
+    "esTranslation": "¡Ha habido un accidente!"
+  },
+  {
+    "id": "emergency_005",
+    "english": "Please call the fire department!",
+    "chinese": "请帮我叫消防队！",
+    "pinyin": "Qǐng bāng wǒ jiào xiāofángduì!",
+    "esTranslation": "¡Por favor, llame a los bomberos!"
+  },
+  {
+    "id": "emergency_006",
+    "english": "I need help!",
+    "chinese": "我需要帮助！",
+    "pinyin": "Wǒ xūyào bāngzhù!",
+    "esTranslation": "¡Necesito ayuda!"
+  },
+  {
+    "id": "emergency_007",
+    "english": "Where is the nearest hospital?",
+    "chinese": "最近的医院在哪里？",
+    "pinyin": "Zuìjìn de yīyuàn zài nǎlǐ?",
+    "esTranslation": "¿Dónde está el hospital más cercano?"
+  },
+  {
+    "id": "emergency_008",
+    "english": "I'm lost and need help.",
+    "chinese": "我迷路了，需要帮助。",
+    "pinyin": "Wǒ mílù le, xūyào bāngzhù.",
+    "esTranslation": "Estoy perdido y necesito ayuda."
+  },
+  {
+    "id": "emergency_009",
+    "english": "Can you help me?",
+    "chinese": "您能帮帮我吗？",
+    "pinyin": "Nín néng bāng bang wǒ ma?",
+    "esTranslation": "¿Puede ayudarme?"
+  },
+  {
+    "id": "emergency_010",
+    "english": "I have a medical emergency.",
+    "chinese": "我有紧急医疗情况。",
+    "pinyin": "Wǒ yǒu jǐnjí yīliáo qíngkuàng.",
+    "esTranslation": "Tengo una emergencia médica."
+  },
+  {
+    "id": "emergency_011",
+    "english": "Someone is hurt!",
+    "chinese": "有人受伤了！",
+    "pinyin": "Yǒurén shòushāng le!",
+    "esTranslation": "¡Alguien está herido!"
+  },
+  {
+    "id": "emergency_012",
+    "english": "I need to go to the hospital.",
+    "chinese": "我需要去医院。",
+    "pinyin": "Wǒ xūyào qù yīyuàn.",
+    "esTranslation": "Necesito ir al hospital."
+  },
+  {
+    "id": "emergency_013",
+    "english": "Please help me contact my family.",
+    "chinese": "请帮我联系家人。",
+    "pinyin": "Qǐng bāng wǒ liánxì jiārén.",
+    "esTranslation": "Por favor, ayúdeme a contactar a mi familia."
+  },
+  {
+    "id": "emergency_014",
+    "english": "Fire!",
+    "chinese": "着火了！",
+    "pinyin": "Zháohuǒ le!",
+    "esTranslation": "¡Fuego!"
+  },
+  {
+    "id": "emergency_015",
+    "english": "I have difficulty breathing.",
+    "chinese": "我呼吸困难。",
+    "pinyin": "Wǒ hūxī kùnnán.",
+    "esTranslation": "Tengo dificultad para respirar."
+  },
+  {
+    "id": "emergency_016",
+    "english": "I have chest pain.",
+    "chinese": "我胸口疼。",
+    "pinyin": "Wǒ xiōngkǒu téng.",
+    "esTranslation": "Tengo dolor en el pecho."
+  },
+  {
+    "id": "emergency_017",
+    "english": "I'm allergic to certain medications.",
+    "chinese": "我对某些药物过敏。",
+    "pinyin": "Wǒ duì mǒuxiē yàowù guòmǐn.",
+    "esTranslation": "Soy alérgico/a a ciertos medicamentos."
+  },
+  {
+    "id": "emergency_018",
+    "english": "Where is the police station?",
+    "chinese": "派出所在哪里？",
+    "pinyin": "Pàichūsuǒ zài nǎlǐ?",
+    "esTranslation": "¿Dónde está la comisaría de policía?"
+  },
+  {
+    "id": "emergency_019",
+    "english": "My wallet was stolen.",
+    "chinese": "我的钱包被偷了。",
+    "pinyin": "Wǒ de qiánbāo bèi tōu le.",
+    "esTranslation": "Me han robado la cartera."
+  },
+  {
+    "id": "emergency_020",
+    "english": "I've lost my passport.",
+    "chinese": "我的护照丢了。",
+    "pinyin": "Wǒ de hùzhào diū le.",
+    "esTranslation": "He perdido mi pasaporte."
+  },
+  {
+    "id": "emergency_021",
+    "english": "Please take me to the hospital.",
+    "chinese": "请送我去医院。",
+    "pinyin": "Qǐng sòng wǒ qù yīyuàn.",
+    "esTranslation": "Por favor, lléveme al hospital."
+  },
+  {
+    "id": "emergency_022",
+    "english": "I need medicine.",
+    "chinese": "我需要药物。",
+    "pinyin": "Wǒ xūyào yàowù.",
+    "esTranslation": "Necesito medicamentos."
+  },
+  {
+    "id": "emergency_023",
+    "english": "My phone is dead.",
+    "chinese": "我手机没电了。",
+    "pinyin": "Wǒ shǒujī méi diàn le.",
+    "esTranslation": "Mi teléfono se ha quedado sin batería."
+  },
+  {
+    "id": "emergency_024",
+    "english": "I don't speak Chinese.",
+    "chinese": "我不会说中文。",
+    "pinyin": "Wǒ bù huì shuō Zhōngwén.",
+    "esTranslation": "No hablo chino."
+  },
+  {
+    "id": "emergency_025",
+    "english": "Please speak slowly.",
+    "chinese": "请说慢一点。",
+    "pinyin": "Qǐng shuō màn yīdiǎn.",
+    "esTranslation": "Por favor, hable más despacio."
+  },
+  {
+    "id": "emergency_026",
+    "english": "I have travel insurance.",
+    "chinese": "我有旅行保险。",
+    "pinyin": "Wǒ yǒu lǚxíng bǎoxiǎn.",
+    "esTranslation": "Tengo seguro de viaje."
+  },
+  {
+    "id": "emergency_027",
+    "english": "Is there a pharmacy nearby?",
+    "chinese": "附近有药房吗？",
+    "pinyin": "Fùjìn yǒu yàofáng ma?",
+    "esTranslation": "¿Hay una farmacia por aquí?"
+  },
+  {
+    "id": "emergency_028",
+    "english": "I have food allergies.",
+    "chinese": "我对某些食物过敏。",
+    "pinyin": "Wǒ duì mǒuxiē shíwù guòmǐn.",
+    "esTranslation": "Tengo alergias a ciertos alimentos."
+  },
+  {
+    "id": "emergency_029",
+    "english": "Please stay calm.",
+    "chinese": "请保持冷静。",
+    "pinyin": "Qǐng bǎochí lěngjìng.",
+    "esTranslation": "Por favor, mantenga la calma."
+  },
+  {
+    "id": "emergency_030",
+    "english": "Thank you for your help.",
+    "chinese": "谢谢您的帮助。",
+    "pinyin": "Xièxie nín de bāngzhù.",
+    "esTranslation": "Gracias por su ayuda."
+  }
+]

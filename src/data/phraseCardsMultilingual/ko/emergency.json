@@ -1,0 +1,212 @@
+[
+  {
+    "id": "emergency_001",
+    "english": "Help!",
+    "chinese": "救命啊！",
+    "pinyin": "Jiùmìng a!",
+    "koTranslation": "도와주세요!"
+  },
+  {
+    "id": "emergency_002",
+    "english": "Please call the police!",
+    "chinese": "请帮我报警！",
+    "pinyin": "Qǐng bāng wǒ bàojǐng!",
+    "koTranslation": "경찰을 불러주세요!"
+  },
+  {
+    "id": "emergency_003",
+    "english": "Please call an ambulance!",
+    "chinese": "请帮我叫救护车！",
+    "pinyin": "Qǐng bāng wǒ jiào jiùhùchē!",
+    "koTranslation": "구급차를 불러주세요!"
+  },
+  {
+    "id": "emergency_004",
+    "english": "There's been an accident!",
+    "chinese": "出事故了！",
+    "pinyin": "Chū shìgù le!",
+    "koTranslation": "사고가 났어요!"
+  },
+  {
+    "id": "emergency_005",
+    "english": "Please call the fire department!",
+    "chinese": "请帮我叫消防队！",
+    "pinyin": "Qǐng bāng wǒ jiào xiāofángduì!",
+    "koTranslation": "소방서를 불러주세요!"
+  },
+  {
+    "id": "emergency_006",
+    "english": "I need help!",
+    "chinese": "我需要帮助！",
+    "pinyin": "Wǒ xūyào bāngzhù!",
+    "koTranslation": "도움이 필요합니다!"
+  },
+  {
+    "id": "emergency_007",
+    "english": "Where is the nearest hospital?",
+    "chinese": "最近的医院在哪里？",
+    "pinyin": "Zuìjìn de yīyuàn zài nǎlǐ?",
+    "koTranslation": "가장 가까운 병원이 어디에 있나요?"
+  },
+  {
+    "id": "emergency_008",
+    "english": "I'm lost and need help.",
+    "chinese": "我迷路了，需要帮助。",
+    "pinyin": "Wǒ mílù le, xūyào bāngzhù.",
+    "koTranslation": "길을 잃었는데 도움이 필요합니다."
+  },
+  {
+    "id": "emergency_009",
+    "english": "Can you help me?",
+    "chinese": "您能帮帮我吗？",
+    "pinyin": "Nín néng bāng bang wǒ ma?",
+    "koTranslation": "저를 도와주실 수 있나요?"
+  },
+  {
+    "id": "emergency_010",
+    "english": "I have a medical emergency.",
+    "chinese": "我有紧急医疗情况。",
+    "pinyin": "Wǒ yǒu jǐnjí yīliáo qíngkuàng.",
+    "koTranslation": "의료 응급 상황입니다."
+  },
+  {
+    "id": "emergency_011",
+    "english": "Someone is hurt!",
+    "chinese": "有人受伤了！",
+    "pinyin": "Yǒurén shòushāng le!",
+    "koTranslation": "누군가 다쳤어요!"
+  },
+  {
+    "id": "emergency_012",
+    "english": "I need to go to the hospital.",
+    "chinese": "我需要去医院。",
+    "pinyin": "Wǒ xūyào qù yīyuàn.",
+    "koTranslation": "병원에 가야 해요."
+  },
+  {
+    "id": "emergency_013",
+    "english": "Please help me contact my family.",
+    "chinese": "请帮我联系家人。",
+    "pinyin": "Qǐng bāng wǒ liánxì jiārén.",
+    "koTranslation": "가족에게 연락할 수 있게 도와주세요."
+  },
+  {
+    "id": "emergency_014",
+    "english": "Fire!",
+    "chinese": "着火了！",
+    "pinyin": "Zháohuǒ le!",
+    "koTranslation": "불이야!"
+  },
+  {
+    "id": "emergency_015",
+    "english": "I have difficulty breathing.",
+    "chinese": "我呼吸困难。",
+    "pinyin": "Wǒ hūxī kùnnán.",
+    "koTranslation": "호흡이 어려워요."
+  },
+  {
+    "id": "emergency_016",
+    "english": "I have chest pain.",
+    "chinese": "我胸口疼。",
+    "pinyin": "Wǒ xiōngkǒu téng.",
+    "koTranslation": "가슴이 아파요."
+  },
+  {
+    "id": "emergency_017",
+    "english": "I'm allergic to certain medications.",
+    "chinese": "我对某些药物过敏。",
+    "pinyin": "Wǒ duì mǒuxiē yàowù guòmǐn.",
+    "koTranslation": "특정 약물에 알레르기가 있어요."
+  },
+  {
+    "id": "emergency_018",
+    "english": "Where is the police station?",
+    "chinese": "派出所在哪里？",
+    "pinyin": "Pàichūsuǒ zài nǎlǐ?",
+    "koTranslation": "경찰서는 어디에 있나요?"
+  },
+  {
+    "id": "emergency_019",
+    "english": "My wallet was stolen.",
+    "chinese": "我的钱包被偷了。",
+    "pinyin": "Wǒ de qiánbāo bèi tōu le.",
+    "koTranslation": "지갑을 도난당했어요."
+  },
+  {
+    "id": "emergency_020",
+    "english": "I've lost my passport.",
+    "chinese": "我的护照丢了。",
+    "pinyin": "Wǒ de hùzhào diū le.",
+    "koTranslation": "여권을 잃어버렸어요."
+  },
+  {
+    "id": "emergency_021",
+    "english": "Please take me to the hospital.",
+    "chinese": "请送我去医院。",
+    "pinyin": "Qǐng sòng wǒ qù yīyuàn.",
+    "koTranslation": "병원으로 데려가 주세요."
+  },
+  {
+    "id": "emergency_022",
+    "english": "I need medicine.",
+    "chinese": "我需要药物。",
+    "pinyin": "Wǒ xūyào yàowù.",
+    "koTranslation": "약이 필요합니다."
+  },
+  {
+    "id": "emergency_023",
+    "english": "My phone is dead.",
+    "chinese": "我手机没电了。",
+    "pinyin": "Wǒ shǒujī méi diàn le.",
+    "koTranslation": "제 휴대폰 배터리가 다 됐어요."
+  },
+  {
+    "id": "emergency_024",
+    "english": "I don't speak Chinese.",
+    "chinese": "我不会说中文。",
+    "pinyin": "Wǒ bù huì shuō Zhōngwén.",
+    "koTranslation": "저는 중국어를 하지 못합니다."
+  },
+  {
+    "id": "emergency_025",
+    "english": "Please speak slowly.",
+    "chinese": "请说慢一点。",
+    "pinyin": "Qǐng shuō màn yīdiǎn.",
+    "koTranslation": "천천히 말씀해 주세요."
+  },
+  {
+    "id": "emergency_026",
+    "english": "I have travel insurance.",
+    "chinese": "我有旅行保险。",
+    "pinyin": "Wǒ yǒu lǚxíng bǎoxiǎn.",
+    "koTranslation": "저는 여행 보험이 있습니다."
+  },
+  {
+    "id": "emergency_027",
+    "english": "Is there a pharmacy nearby?",
+    "chinese": "附近有药房吗？",
+    "pinyin": "Fùjìn yǒu yàofáng ma?",
+    "koTranslation": "근처에 약국이 있나요?"
+  },
+  {
+    "id": "emergency_028",
+    "english": "I have food allergies.",
+    "chinese": "我对某些食物过敏。",
+    "pinyin": "Wǒ duì mǒuxiē shíwù guòmǐn.",
+    "koTranslation": "저는 음식 알레르기가 있습니다."
+  },
+  {
+    "id": "emergency_029",
+    "english": "Please stay calm.",
+    "chinese": "请保持冷静。",
+    "pinyin": "Qǐng bǎochí lěngjìng.",
+    "koTranslation": "진정해 주세요."
+  },
+  {
+    "id": "emergency_030",
+    "english": "Thank you for your help.",
+    "chinese": "谢谢您的帮助。",
+    "pinyin": "Xièxie nín de bāngzhù.",
+    "koTranslation": "도움을 주셔서 감사합니다."
+  }
+]

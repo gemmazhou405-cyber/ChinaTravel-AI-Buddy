@@ -1,0 +1,212 @@
+[
+  {
+    "id": "payment_001",
+    "english": "Do you accept WeChat Pay?",
+    "chinese": "可以用微信支付吗？",
+    "pinyin": "kěyǐ yòng Wēixìn zhīfù ma?",
+    "frTranslation": "Acceptez-vous WeChat Pay ?"
+  },
+  {
+    "id": "payment_002",
+    "english": "Can I pay with Alipay?",
+    "chinese": "可以用支付宝吗？",
+    "pinyin": "kěyǐ yòng Zhīfùbǎo ma?",
+    "frTranslation": "Puis-je payer avec Alipay ?"
+  },
+  {
+    "id": "payment_003",
+    "english": "I'll pay by credit card.",
+    "chinese": "我用信用卡付款。",
+    "pinyin": "wǒ yòng xìnyòngkǎ fùkuǎn.",
+    "frTranslation": "Je vais payer par carte de crédit."
+  },
+  {
+    "id": "payment_004",
+    "english": "I'll pay with cash.",
+    "chinese": "我用现金付款。",
+    "pinyin": "wǒ yòng xiànjīn fùkuǎn.",
+    "frTranslation": "Je vais payer en espèces."
+  },
+  {
+    "id": "payment_005",
+    "english": "What's the total?",
+    "chinese": "一共多少钱？",
+    "pinyin": "yīgòng duōshǎo qián?",
+    "frTranslation": "C'est combien au total ?"
+  },
+  {
+    "id": "payment_006",
+    "english": "Please show the QR code.",
+    "chinese": "请出示二维码。",
+    "pinyin": "qǐng chūshì èrwéimǎ.",
+    "frTranslation": "Veuillez montrer le code QR, s'il vous plaît."
+  },
+  {
+    "id": "payment_007",
+    "english": "Scan my QR code, please.",
+    "chinese": "请扫我的二维码。",
+    "pinyin": "qǐng sǎo wǒ de èrwéimǎ.",
+    "frTranslation": "Scannez mon code QR, s'il vous plaît."
+  },
+  {
+    "id": "payment_008",
+    "english": "Is my payment successful?",
+    "chinese": "我支付成功了吗？",
+    "pinyin": "wǒ zhīfù chénggōng le ma?",
+    "frTranslation": "Mon paiement a-t-il réussi ?"
+  },
+  {
+    "id": "payment_009",
+    "english": "Could I have a receipt, please?",
+    "chinese": "请给我收据。",
+    "pinyin": "qǐng gěi wǒ shōujù.",
+    "frTranslation": "Pourrais-je avoir un reçu, s'il vous plaît ?"
+  },
+  {
+    "id": "payment_010",
+    "english": "This payment is for two people.",
+    "chinese": "这是两个人的费用。",
+    "pinyin": "zhè shì liǎng gè rén de fèiyòng.",
+    "frTranslation": "Ce paiement est pour deux personnes."
+  },
+  {
+    "id": "payment_011",
+    "english": "Does this include tax?",
+    "chinese": "这含税吗？",
+    "pinyin": "zhè hán shuì ma?",
+    "frTranslation": "Est-ce que ça inclut les taxes ?"
+  },
+  {
+    "id": "payment_012",
+    "english": "Is there a service charge?",
+    "chinese": "有服务费吗？",
+    "pinyin": "yǒu fúwùfèi ma?",
+    "frTranslation": "Y a-t-il des frais de service ?"
+  },
+  {
+    "id": "payment_013",
+    "english": "Can I pay separately?",
+    "chinese": "可以分开付吗？",
+    "pinyin": "kěyǐ fēnkāi fù ma?",
+    "frTranslation": "Puis-je payer séparément ?"
+  },
+  {
+    "id": "payment_014",
+    "english": "Please charge this card.",
+    "chinese": "请刷这张卡。",
+    "pinyin": "qǐng shuā zhè zhāng kǎ.",
+    "frTranslation": "Veuillez charger cette carte."
+  },
+  {
+    "id": "payment_015",
+    "english": "Do you have change for 100 yuan?",
+    "chinese": "一百块有零钱找吗？",
+    "pinyin": "yībǎi kuài yǒu língqián zhǎo ma?",
+    "frTranslation": "Avez-vous de la monnaie pour 100 yuans ?"
+  },
+  {
+    "id": "payment_016",
+    "english": "Please keep the change.",
+    "chinese": "不用找零了。",
+    "pinyin": "bùyòng zhǎolíng le.",
+    "frTranslation": "Gardez la monnaie, s'il vous plaît."
+  },
+  {
+    "id": "payment_017",
+    "english": "Can I get a paper receipt?",
+    "chinese": "可以给纸质发票吗？",
+    "pinyin": "kěyǐ gěi zhǐzhì fāpiào ma?",
+    "frTranslation": "Puis-je avoir un reçu papier ?"
+  },
+  {
+    "id": "payment_018",
+    "english": "My card was declined.",
+    "chinese": "我的卡被拒了。",
+    "pinyin": "wǒ de kǎ bèi jù le.",
+    "frTranslation": "Ma carte a été refusée."
+  },
+  {
+    "id": "payment_019",
+    "english": "The amount is incorrect.",
+    "chinese": "金额不对。",
+    "pinyin": "jīn'é bú duì.",
+    "frTranslation": "Le montant est incorrect."
+  },
+  {
+    "id": "payment_020",
+    "english": "Please try again.",
+    "chinese": "请再试一次。",
+    "pinyin": "qǐng zài shì yīcì.",
+    "frTranslation": "Veuillez réessayer."
+  },
+  {
+    "id": "payment_021",
+    "english": "I need to pay with a foreign card.",
+    "chinese": "我需要用外币卡支付。",
+    "pinyin": "wǒ xūyào yòng wàibì kǎ zhīfù.",
+    "frTranslation": "Je dois payer avec une carte étrangère."
+  },
+  {
+    "id": "payment_022",
+    "english": "Is there a minimum spend for card payment?",
+    "chinese": "刷卡有最低消费吗？",
+    "pinyin": "shuākǎ yǒu zuìdī xiāofèi ma?",
+    "frTranslation": "Y a-t-il un montant minimum pour payer par carte ?"
+  },
+  {
+    "id": "payment_023",
+    "english": "Could you double-check the amount?",
+    "chinese": "麻烦您再核对一下金额。",
+    "pinyin": "máfan nín zài héduì yīxià jīn'é.",
+    "frTranslation": "Pourriez-vous vérifier le montant à nouveau ?"
+  },
+  {
+    "id": "payment_024",
+    "english": "I'll pay for everything.",
+    "chinese": "我来付全部。",
+    "pinyin": "wǒ lái fù quánbù.",
+    "frTranslation": "Je paie tout."
+  },
+  {
+    "id": "payment_025",
+    "english": "Can I split the bill with my friend?",
+    "chinese": "可以和朋友分摊吗？",
+    "pinyin": "kěyǐ hé péngyǒu fēntān ma?",
+    "frTranslation": "Puis-je partager l'addition avec mon ami ?"
+  },
+  {
+    "id": "payment_026",
+    "english": "Do you offer a discount?",
+    "chinese": "有优惠吗？",
+    "pinyin": "yǒu yōuhuì ma?",
+    "frTranslation": "Offrez-vous une réduction ?"
+  },
+  {
+    "id": "payment_027",
+    "english": "I have a coupon.",
+    "chinese": "我有优惠券。",
+    "pinyin": "wǒ yǒu yōuhuì quàn.",
+    "frTranslation": "J'ai un coupon."
+  },
+  {
+    "id": "payment_028",
+    "english": "Where do I scan the code?",
+    "chinese": "在哪里扫码？",
+    "pinyin": "zài nǎlǐ sǎo mǎ?",
+    "frTranslation": "Où scanner le code ?"
+  },
+  {
+    "id": "payment_029",
+    "english": "Is mobile payment accepted here?",
+    "chinese": "这里支持手机支付吗？",
+    "pinyin": "zhèlǐ zhīchí shǒujī zhīfù ma?",
+    "frTranslation": "Le paiement mobile est-il accepté ici ?"
+  },
+  {
+    "id": "payment_030",
+    "english": "Thank you, payment is done.",
+    "chinese": "谢谢，付好了。",
+    "pinyin": "xièxie, fù hǎo le.",
+    "frTranslation": "Merci, le paiement est effectué."
+  }
+]

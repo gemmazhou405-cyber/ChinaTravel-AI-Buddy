@@ -1,0 +1,212 @@
+[
+  {
+    "id": "shopping_001",
+    "english": "Hello, I need some help.",
+    "chinese": "你好，我需要一些帮助。",
+    "pinyin": "Nǐ hǎo, wǒ xūyào yīxiē bāngzhù.",
+    "deTranslation": "Hallo, ich brauche etwas Hilfe."
+  },
+  {
+    "id": "shopping_002",
+    "english": "How much is this?",
+    "chinese": "这个多少钱？",
+    "pinyin": "Zhège duōshǎo qián?",
+    "deTranslation": "Wie viel kostet das?"
+  },
+  {
+    "id": "shopping_003",
+    "english": "Is there a discount?",
+    "chinese": "有折扣吗？",
+    "pinyin": "Yǒu zhékòu ma?",
+    "deTranslation": "Gibt es einen Rabatt?"
+  },
+  {
+    "id": "shopping_004",
+    "english": "Can you lower the price?",
+    "chinese": "可以便宜一点吗？",
+    "pinyin": "Kěyǐ piányi yīdiǎn ma?",
+    "deTranslation": "Können Sie den Preis senken?"
+  },
+  {
+    "id": "shopping_005",
+    "english": "That's too expensive.",
+    "chinese": "太贵了。",
+    "pinyin": "Tài guì le.",
+    "deTranslation": "Das ist zu teuer."
+  },
+  {
+    "id": "shopping_006",
+    "english": "What sizes do you have?",
+    "chinese": "你们有什么尺码？",
+    "pinyin": "Nǐmen yǒu shénme chǐmǎ?",
+    "deTranslation": "Welche Größen haben Sie?"
+  },
+  {
+    "id": "shopping_007",
+    "english": "Do you have this in medium?",
+    "chinese": "这件有中码吗？",
+    "pinyin": "Zhè jiàn yǒu zhōng mǎ ma?",
+    "deTranslation": "Haben Sie das in Größe M?"
+  },
+  {
+    "id": "shopping_008",
+    "english": "Can I try this on?",
+    "chinese": "我可以试穿吗？",
+    "pinyin": "Wǒ kěyǐ shì chuān ma?",
+    "deTranslation": "Kann ich das anprobieren?"
+  },
+  {
+    "id": "shopping_009",
+    "english": "Where is the fitting room?",
+    "chinese": "试衣间在哪里？",
+    "pinyin": "Shì yī jiān zài nǎlǐ?",
+    "deTranslation": "Wo ist die Umkleidekabine?"
+  },
+  {
+    "id": "shopping_010",
+    "english": "I want to return this item.",
+    "chinese": "我想退货。",
+    "pinyin": "Wǒ xiǎng tuì huò.",
+    "deTranslation": "Ich möchte diesen Artikel zurückgeben."
+  },
+  {
+    "id": "shopping_011",
+    "english": "What is your return policy?",
+    "chinese": "你们的退货政策是什么？",
+    "pinyin": "Nǐmen de tuì huò zhèngcè shì shénme?",
+    "deTranslation": "Wie ist Ihre Rückgaberichtlinie?"
+  },
+  {
+    "id": "shopping_012",
+    "english": "Do you accept credit cards?",
+    "chinese": "你们接受信用卡吗？",
+    "pinyin": "Nǐmen jiēshòu xìnyòngkǎ ma?",
+    "deTranslation": "Akzeptieren Sie Kreditkarten?"
+  },
+  {
+    "id": "shopping_013",
+    "english": "Can I pay with WeChat Pay?",
+    "chinese": "可以用微信支付吗？",
+    "pinyin": "Kěyǐ yòng Wēixìn zhīfù ma?",
+    "deTranslation": "Kann ich mit WeChat Pay bezahlen?"
+  },
+  {
+    "id": "shopping_014",
+    "english": "Do you have this in another color?",
+    "chinese": "这个有其他颜色吗？",
+    "pinyin": "Zhège yǒu qítā yánsè ma?",
+    "deTranslation": "Haben Sie das in einer anderen Farbe?"
+  },
+  {
+    "id": "shopping_015",
+    "english": "Is this on sale?",
+    "chinese": "这个打折吗？",
+    "pinyin": "Zhège dǎzhé ma?",
+    "deTranslation": "Ist das im Angebot?"
+  },
+  {
+    "id": "shopping_016",
+    "english": "I'm just looking, thank you.",
+    "chinese": "我只是看看，谢谢。",
+    "pinyin": "Wǒ zhǐ shì kàn kàn, xièxiè.",
+    "deTranslation": "Ich schaue nur, danke."
+  },
+  {
+    "id": "shopping_017",
+    "english": "Can you gift wrap this?",
+    "chinese": "可以帮我包装一下吗？",
+    "pinyin": "Kěyǐ bāng wǒ bāozhuāng yīxià ma?",
+    "deTranslation": "Können Sie das als Geschenk einpacken?"
+  },
+  {
+    "id": "shopping_018",
+    "english": "Where is the cashier?",
+    "chinese": "收银台在哪里？",
+    "pinyin": "Shōuyín tái zài nǎlǐ?",
+    "deTranslation": "Wo ist die Kasse?"
+  },
+  {
+    "id": "shopping_019",
+    "english": "I need a bag.",
+    "chinese": "我需要一个袋子。",
+    "pinyin": "Wǒ xūyào yīgè dàizi.",
+    "deTranslation": "Ich brauche eine Tüte."
+  },
+  {
+    "id": "shopping_020",
+    "english": "Is there a warranty?",
+    "chinese": "有保修吗？",
+    "pinyin": "Yǒu bǎoxiū ma?",
+    "deTranslation": "Gibt es eine Garantie?"
+  },
+  {
+    "id": "shopping_021",
+    "english": "Can I get a receipt?",
+    "chinese": "可以给我收据吗？",
+    "pinyin": "Kěyǐ gěi wǒ shōujù ma?",
+    "deTranslation": "Kann ich eine Quittung bekommen?"
+  },
+  {
+    "id": "shopping_022",
+    "english": "This is damaged.",
+    "chinese": "这个是坏的。",
+    "pinyin": "Zhège shì huài de.",
+    "deTranslation": "Das ist beschädigt."
+  },
+  {
+    "id": "shopping_023",
+    "english": "I want to exchange this.",
+    "chinese": "我想换货。",
+    "pinyin": "Wǒ xiǎng huàn huò.",
+    "deTranslation": "Ich möchte das umtauschen."
+  },
+  {
+    "id": "shopping_024",
+    "english": "What material is this made of?",
+    "chinese": "这个是什么材质的？",
+    "pinyin": "Zhège shì shénme cáizhì de?",
+    "deTranslation": "Aus welchem Material ist das?"
+  },
+  {
+    "id": "shopping_025",
+    "english": "Can I see that one?",
+    "chinese": "我可以看看那个吗？",
+    "pinyin": "Wǒ kěyǐ kàn kàn nàgè ma?",
+    "deTranslation": "Kann ich mir das da ansehen?"
+  },
+  {
+    "id": "shopping_026",
+    "english": "Do you have a smaller size?",
+    "chinese": "你们有小一号的吗？",
+    "pinyin": "Nǐmen yǒu xiǎo yī hào de ma?",
+    "deTranslation": "Haben Sie eine kleinere Größe?"
+  },
+  {
+    "id": "shopping_027",
+    "english": "This fits perfectly.",
+    "chinese": "这个很合身。",
+    "pinyin": "Zhège hěn hé shēn.",
+    "deTranslation": "Das passt perfekt."
+  },
+  {
+    "id": "shopping_028",
+    "english": "I'll take this one.",
+    "chinese": "我要这个。",
+    "pinyin": "Wǒ yào zhège.",
+    "deTranslation": "Ich nehme dieses hier."
+  },
+  {
+    "id": "shopping_029",
+    "english": "Can you deliver this to my hotel?",
+    "chinese": "可以送到我的酒店吗？",
+    "pinyin": "Kěyǐ sòng dào wǒ de jiǔdiàn ma?",
+    "deTranslation": "Können Sie das zu meinem Hotel liefern?"
+  },
+  {
+    "id": "shopping_030",
+    "english": "Thank you for your help.",
+    "chinese": "谢谢你的帮助。",
+    "pinyin": "Xièxiè nǐ de bāngzhù.",
+    "deTranslation": "Vielen Dank für Ihre Hilfe."
+  }
+]

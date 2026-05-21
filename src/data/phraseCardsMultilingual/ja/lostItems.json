@@ -1,0 +1,212 @@
+[
+  {
+    "id": "lostItems_001",
+    "english": "I lost my passport.",
+    "chinese": "我的护照不见了。",
+    "pinyin": "Wǒ de hùzhào bùjiàn le.",
+    "jaTranslation": "パスポートを失くしました。"
+  },
+  {
+    "id": "lostItems_002",
+    "english": "My phone is missing.",
+    "chinese": "我的手机不见了。",
+    "pinyin": "Wǒ de shǒujī bùjiàn le.",
+    "jaTranslation": "携帯電話を失くしました。"
+  },
+  {
+    "id": "lostItems_003",
+    "english": "I can't find my wallet.",
+    "chinese": "我找不到我的钱包。",
+    "pinyin": "Wǒ zhǎo bù dào wǒ de qiánbāo.",
+    "jaTranslation": "財布が見つかりません。"
+  },
+  {
+    "id": "lostItems_004",
+    "english": "My bag was stolen.",
+    "chinese": "我的包被偷了。",
+    "pinyin": "Wǒ de bāo bèi tōu le.",
+    "jaTranslation": "鞄を盗まれました。"
+  },
+  {
+    "id": "lostItems_005",
+    "english": "I need to report to the police.",
+    "chinese": "我需要报警。",
+    "pinyin": "Wǒ xūyào bàojǐng.",
+    "jaTranslation": "警察に届け出る必要があります。"
+  },
+  {
+    "id": "lostItems_006",
+    "english": "Where is the police station?",
+    "chinese": "警察局在哪里？",
+    "pinyin": "Jǐngchá jú zài nǎlǐ?",
+    "jaTranslation": "警察署はどこですか？"
+  },
+  {
+    "id": "lostItems_007",
+    "english": "Can you help me find my lost item?",
+    "chinese": "你能帮我找一下丢失的东西吗？",
+    "pinyin": "Nǐ néng bāng wǒ zhǎo yīxià diūshī de dōngxī ma?",
+    "jaTranslation": "失くしたものを見つけてもらえますか？"
+  },
+  {
+    "id": "lostItems_008",
+    "english": "I lost my belongings.",
+    "chinese": "我丢了东西。",
+    "pinyin": "Wǒ diū le dōngxī.",
+    "jaTranslation": "荷物を失くしました。"
+  },
+  {
+    "id": "lostItems_009",
+    "english": "Please help me.",
+    "chinese": "请帮帮我。",
+    "pinyin": "Qǐng bāng bāng wǒ.",
+    "jaTranslation": "助けてください。"
+  },
+  {
+    "id": "lostItems_010",
+    "english": "I need to contact the embassy.",
+    "chinese": "我需要联系大使馆。",
+    "pinyin": "Wǒ xūyào liánxì dàshǐguǎn.",
+    "jaTranslation": "大使館に連絡する必要があります。"
+  },
+  {
+    "id": "lostItems_011",
+    "english": "What should I do?",
+    "chinese": "我该怎么办？",
+    "pinyin": "Wǒ gāi zěnme bàn?",
+    "jaTranslation": "どうすればいいですか？"
+  },
+  {
+    "id": "lostItems_012",
+    "english": "I lost my ID card.",
+    "chinese": "我丢了身份证。",
+    "pinyin": "Wǒ diū le shēnfènzhèng.",
+    "jaTranslation": "身分証明書を紛失しました。"
+  },
+  {
+    "id": "lostItems_013",
+    "english": "My bag is gone.",
+    "chinese": "我的包不见了。",
+    "pinyin": "Wǒ de bāo bùjiàn le.",
+    "jaTranslation": "バッグがなくなりました。"
+  },
+  {
+    "id": "lostItems_014",
+    "english": "I think it was pickpocketed.",
+    "chinese": "我觉得是被扒手偷了。",
+    "pinyin": "Wǒ juédé shì bèi pāshǒu tōu le.",
+    "jaTranslation": "スリに遭ったと思います。"
+  },
+  {
+    "id": "lostItems_015",
+    "english": "Where did you lose it?",
+    "chinese": "您在哪里丢失的？",
+    "pinyin": "Nín zài nǎlǐ diūshī de?",
+    "jaTranslation": "どこで紛失しましたか？"
+  },
+  {
+    "id": "lostItems_016",
+    "english": "Can I use your phone to call the police?",
+    "chinese": "请问我能用您的手机报警吗？",
+    "pinyin": "Qǐngwèn wǒ néng yòng nín de shǒujī bàojǐng ma?",
+    "jaTranslation": "お電話で警察に通報してもよろしいですか？"
+  },
+  {
+    "id": "lostItems_017",
+    "english": "I need to cancel my credit cards.",
+    "chinese": "我需要挂失信用卡。",
+    "pinyin": "Wǒ xūyào guàshī xìnyòngkǎ.",
+    "jaTranslation": "クレジットカードの利用停止手続きが必要です。"
+  },
+  {
+    "id": "lostItems_018",
+    "english": "I lost my hotel key.",
+    "chinese": "我丢了酒店房卡。",
+    "pinyin": "Wǒ diū le jiǔdiàn fángkǎ.",
+    "jaTranslation": "ホテルの部屋の鍵をなくしてしまいました。"
+  },
+  {
+    "id": "lostItems_019",
+    "english": "My luggage is missing at the airport.",
+    "chinese": "我的行李在机场不见了。",
+    "pinyin": "Wǒ de xíngli zài jīchǎng bùjiàn le.",
+    "jaTranslation": "空港で荷物が見つかりません。"
+  },
+  {
+    "id": "lostItems_020",
+    "english": "I need to file a report.",
+    "chinese": "我需要报案。",
+    "pinyin": "Wǒ xūyào bào'àn.",
+    "jaTranslation": "被害届を出したいのですが。"
+  },
+  {
+    "id": "lostItems_021",
+    "english": "I need to describe what was lost.",
+    "chinese": "我需要描述丢失的物品。",
+    "pinyin": "Wǒ xūyào miáoshù diūshī de wùpǐn.",
+    "jaTranslation": "失われたものを説明する必要があります。"
+  },
+  {
+    "id": "lostItems_022",
+    "english": "It was a black backpack.",
+    "chinese": "是一个黑色的背包。",
+    "pinyin": "Shì yīgè hēisè de bēibāo.",
+    "jaTranslation": "黒いバックパックでした。"
+  },
+  {
+    "id": "lostItems_023",
+    "english": "There was a passport and wallet inside.",
+    "chinese": "里面有护照和钱包。",
+    "pinyin": "Lǐmiàn yǒu hùzhào hé qiánbāo.",
+    "jaTranslation": "中にパスポートと財布がありました。"
+  },
+  {
+    "id": "lostItems_024",
+    "english": "I am a tourist and lost my documents.",
+    "chinese": "我是游客，丢了证件。",
+    "pinyin": "Wǒ shì yóukè, diū le zhèngjiàn.",
+    "jaTranslation": "私は観光客で、書類を失くしました。"
+  },
+  {
+    "id": "lostItems_025",
+    "english": "How do I get a replacement passport?",
+    "chinese": "如何补办护照？",
+    "pinyin": "Rúhé bǔbàn hùzhào?",
+    "jaTranslation": "パスポートの再発行はどうすればいいですか？"
+  },
+  {
+    "id": "lostItems_026",
+    "english": "I need to inform my bank.",
+    "chinese": "我需要通知银行。",
+    "pinyin": "Wǒ xūyào tōngzhī yínháng.",
+    "jaTranslation": "銀行に連絡する必要があります。"
+  },
+  {
+    "id": "lostItems_027",
+    "english": "Can you write down the details?",
+    "chinese": "请帮我写下详细信息。",
+    "pinyin": "Qǐng bāng wǒ xiě xià xiángxì xìnxī.",
+    "jaTranslation": "詳細を書いていただけますか？"
+  },
+  {
+    "id": "lostItems_028",
+    "english": "I lost my camera.",
+    "chinese": "我丢了相机。",
+    "pinyin": "Wǒ diū le xiàngjī.",
+    "jaTranslation": "カメラを失くしました。"
+  },
+  {
+    "id": "lostItems_029",
+    "english": "I need to call my hotel.",
+    "chinese": "我需要打电话给酒店。",
+    "pinyin": "Wǒ xūyào dǎ diànhuà gěi jiǔdiàn.",
+    "jaTranslation": "ホテルに電話する必要があります。"
+  },
+  {
+    "id": "lostItems_030",
+    "english": "I need to make a statement.",
+    "chinese": "我需要做笔录。",
+    "pinyin": "Wǒ xūyào zuò bǐlù.",
+    "jaTranslation": "供述書を作成する必要があります。"
+  }
+]

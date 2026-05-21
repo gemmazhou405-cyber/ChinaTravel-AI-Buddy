@@ -1,0 +1,212 @@
+[
+  {
+    "id": "airport_001",
+    "english": "Excuse me, where is the baggage claim?",
+    "chinese": "你好，请问行李提取处在哪里？",
+    "pinyin": "nǐ hǎo, qǐngwèn xínglǐ tíqǔ chù zài nǎlǐ?",
+    "jaTranslation": "すみません、手荷物受取所はどこですか？"
+  },
+  {
+    "id": "airport_002",
+    "english": "I need to go through immigration.",
+    "chinese": "我需要办理入境手续。",
+    "pinyin": "wǒ xūyào bànlǐ rùjìng shǒuxù.",
+    "jaTranslation": "入国審査を通る必要があります。"
+  },
+  {
+    "id": "airport_003",
+    "english": "Here is my passport and boarding pass.",
+    "chinese": "这是我的护照和登机牌。",
+    "pinyin": "zhè shì wǒ de hùzhào hé dēngjī pái.",
+    "jaTranslation": "私のパスポートと搭乗券です。"
+  },
+  {
+    "id": "airport_004",
+    "english": "I am here on vacation.",
+    "chinese": "我是来度假的。",
+    "pinyin": "wǒ shì lái dùjià de.",
+    "jaTranslation": "休暇で来ました。"
+  },
+  {
+    "id": "airport_005",
+    "english": "I will stay for ten days.",
+    "chinese": "我会停留十天。",
+    "pinyin": "wǒ huì tíngliú shí tiān.",
+    "jaTranslation": "10日間滞在します。"
+  },
+  {
+    "id": "airport_006",
+    "english": "I have nothing to declare.",
+    "chinese": "我没有需要申报的物品。",
+    "pinyin": "wǒ méiyǒu xūyào shēnbào de wùpǐn.",
+    "jaTranslation": "申告するものはありません。"
+  },
+  {
+    "id": "airport_007",
+    "english": "Where is the customs declaration form?",
+    "chinese": "海关申报表在哪里？",
+    "pinyin": "hǎiguān shēnbào biǎo zài nǎlǐ?",
+    "jaTranslation": "税関申告書はどこにありますか？"
+  },
+  {
+    "id": "airport_008",
+    "english": "My luggage has not arrived.",
+    "chinese": "我的行李没有到。",
+    "pinyin": "wǒ de xínglǐ méiyǒu dào.",
+    "jaTranslation": "私の荷物が届いていません。"
+  },
+  {
+    "id": "airport_009",
+    "english": "Can you help me with a luggage cart?",
+    "chinese": "请帮我拿个行李推车，好吗？",
+    "pinyin": "qǐng bāng wǒ ná ge xínglǐ tuīchē, hǎo ma?",
+    "jaTranslation": "手荷物カートを持ってきていただけますか？"
+  },
+  {
+    "id": "airport_010",
+    "english": "Where can I find a taxi?",
+    "chinese": "请问在哪里可以打到出租车？",
+    "pinyin": "qǐngwèn zài nǎlǐ kěyǐ dǎ dào chūzū chē?",
+    "jaTranslation": "タクシー乗り場はどこですか？"
+  },
+  {
+    "id": "airport_011",
+    "english": "Is there an airport shuttle bus?",
+    "chinese": "请问有机场大巴吗？",
+    "pinyin": "qǐngwèn yǒu jīchǎng dàbā ma?",
+    "jaTranslation": "空港シャトルバスはありますか？"
+  },
+  {
+    "id": "airport_012",
+    "english": "Where is the subway station?",
+    "chinese": "请问地铁站在哪里？",
+    "pinyin": "qǐngwèn dìtiě zhàn zài nǎlǐ?",
+    "jaTranslation": "地下鉄の駅はどこですか？"
+  },
+  {
+    "id": "airport_013",
+    "english": "Can you call a taxi for me, please?",
+    "chinese": "可以请你帮我叫一辆出租车吗？",
+    "pinyin": "kěyǐ qǐng nǐ bāng wǒ jiào yī liàng chūzū chē ma?",
+    "jaTranslation": "タクシーを呼んでいただけますか？"
+  },
+  {
+    "id": "airport_014",
+    "english": "How much is the fare to the city center?",
+    "chinese": "到市中心的车费大概是多少？",
+    "pinyin": "dào shì zhōngxīn de chēfèi dàgài shì duōshǎo?",
+    "jaTranslation": "都心までの料金はいくらですか？"
+  },
+  {
+    "id": "airport_015",
+    "english": "Please take me to this address.",
+    "chinese": "请带我去这个地址。",
+    "pinyin": "qǐng dài wǒ qù zhège dìzhǐ.",
+    "jaTranslation": "この住所まで連れて行ってください。"
+  },
+  {
+    "id": "airport_016",
+    "english": "I have a connecting flight.",
+    "chinese": "我要转机。",
+    "pinyin": "wǒ yào zhuǎn jī.",
+    "jaTranslation": "乗り継ぎ便があります。"
+  },
+  {
+    "id": "airport_017",
+    "english": "Which gate is for flight CA123?",
+    "chinese": "CA123航班在哪个登机口？",
+    "pinyin": "CA123 hángbān zài nǎge dēngjī kǒu?",
+    "jaTranslation": "CA123便の搭乗ゲートはどこですか？"
+  },
+  {
+    "id": "airport_018",
+    "english": "Where is the check-in counter for Air China?",
+    "chinese": "中国国际航空的值机柜台在哪里？",
+    "pinyin": "zhōngguó guójì hángkōng de zhí jī guìtái zài nǎlǐ?",
+    "jaTranslation": "エア・チャイナのチェックインカウンターはどこですか？"
+  },
+  {
+    "id": "airport_019",
+    "english": "I would like a window seat, please.",
+    "chinese": "请给我一个靠窗的座位。",
+    "pinyin": "qǐng gěi wǒ yīgè kào chuāng de zuòwèi.",
+    "jaTranslation": "窓側の席をお願いできますか？"
+  },
+  {
+    "id": "airport_020",
+    "english": "How much luggage can I carry on?",
+    "chinese": "我可以随身携带多少行李？",
+    "pinyin": "wǒ kěyǐ suíshēn xiédài duōshǎo xínglǐ?",
+    "jaTranslation": "機内に持ち込める手荷物の量はどのくらいですか？"
+  },
+  {
+    "id": "airport_021",
+    "english": "Is there free Wi-Fi here?",
+    "chinese": "这里有免费的无线网络吗？",
+    "pinyin": "zhèlǐ yǒu miǎnfèi de wúxiàn wǎngluò ma?",
+    "jaTranslation": "ここに無料のWi-Fiはありますか？"
+  },
+  {
+    "id": "airport_022",
+    "english": "Where is the currency exchange?",
+    "chinese": "请问货币兑换处在哪里？",
+    "pinyin": "qǐngwèn huòbì duìhuàn chù zài nǎlǐ?",
+    "jaTranslation": "両替所はどこですか？"
+  },
+  {
+    "id": "airport_023",
+    "english": "Is there a SIM card shop?",
+    "chinese": "请问有卖手机卡的商店吗？",
+    "pinyin": "qǐngwèn yǒu mài shǒujī kǎ de shāngdiàn ma?",
+    "jaTranslation": "SIMカードを売っているお店はありますか？"
+  },
+  {
+    "id": "airport_024",
+    "english": "Where can I find a luggage storage service?",
+    "chinese": "请问行李寄存处在哪里？",
+    "pinyin": "qǐngwèn xínglǐ jìcún chù zài nǎlǐ?",
+    "jaTranslation": "手荷物預かり所はどこですか？"
+  },
+  {
+    "id": "airport_025",
+    "english": "I need to print my boarding pass.",
+    "chinese": "我需要打印我的登机牌。",
+    "pinyin": "wǒ xūyào dǎyìn wǒ de dēngjī pái.",
+    "jaTranslation": "搭乗券を印刷する必要があります。"
+  },
+  {
+    "id": "airport_026",
+    "english": "Is there a smoking area?",
+    "chinese": "请问有吸烟区吗？",
+    "pinyin": "qǐngwèn yǒu xīyān qū ma?",
+    "jaTranslation": "喫煙所はありますか？"
+  },
+  {
+    "id": "airport_027",
+    "english": "Can I have a receipt for my taxi fare?",
+    "chinese": "可以给我一张出租车发票吗？",
+    "pinyin": "kěyǐ gěi wǒ yī zhāng chūzū chē fāpiào ma?",
+    "jaTranslation": "タクシーの領収書をいただけますか？"
+  },
+  {
+    "id": "airport_028",
+    "english": "My flight has been delayed.",
+    "chinese": "我的航班延误了。",
+    "pinyin": "wǒ de hángbān yánwù le.",
+    "jaTranslation": "フライトが遅延しています。"
+  },
+  {
+    "id": "airport_029",
+    "english": "Which baggage belt is for flight MU567?",
+    "chinese": "MU567航班的行李在几号传送带？",
+    "pinyin": "MU567 hángbān de xínglǐ zài jǐ hào chuánsòng dài?",
+    "jaTranslation": "MU567便の手荷物はどのコンベアですか？"
+  },
+  {
+    "id": "airport_030",
+    "english": "I lost my passport at the airport.",
+    "chinese": "我在机场把护照弄丢了。",
+    "pinyin": "wǒ zài jīchǎng bǎ hùzhào nòng diū le.",
+    "jaTranslation": "空港でパスポートを失くしました。"
+  }
+]
