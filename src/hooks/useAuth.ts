@@ -144,17 +144,18 @@ export function useAuth() {
     const email = cred.user.email || '';
     const userRef = doc(db, 'users', cred.user.uid);
     const snap = await getDoc(userRef);
+    let nextUserState: UserState;
 
     if (snap.exists()) {
-      const normalized = normalizeUserState(snap.data() as StoredUserState, cred.user.uid, email);
-      setUserState(normalized);
-      return cred.user;
+      nextUserState = normalizeUserState(snap.data() as StoredUserState, cred.user.uid, email);
+    } else {
+      nextUserState = createFreeUserState(cred.user.uid, email);
+      await setDoc(userRef, nextUserState);
+      sendWelcomeEmail(email);
     }
 
-    const newUser = createFreeUserState(cred.user.uid, email);
-    await setDoc(userRef, newUser);
-    sendWelcomeEmail(email);
-    setUserState(newUser);
+    setUser(cred.user);
+    setUserState(nextUserState);
     return cred.user;
   };
 
