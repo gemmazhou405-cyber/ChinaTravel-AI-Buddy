@@ -1,0 +1,36 @@
+{
+  "id": "beijing-tourist-tips",
+  "title": "Beijing Travel Tips for Foreign Tourists",
+  "metaDescription": "Essential travel tips for visiting Beijing. Learn about local customs, transport, and key attractions for a smooth trip.",
+  "slug": "beijing-tourist-tips",
+  "readingTimeMinutes": 2,
+  "sections": [
+    {
+      "heading": "h1",
+      "content": "Welcome to Beijing! This ancient capital offers incredible history and modern energy. Prepare for your trip with these practical tips to make your visit comfortable and memorable."
+    },
+    {
+      "heading": "h2",
+      "content": "Getting Around & Payment: Beijing's subway is efficient, affordable, and easy to navigate. Always carry some cash, but also set up a mobile payment app like Alipay or WeChat Pay for convenience."
+    },
+    {
+      "heading": "h3",
+      "content": "Cultural Etiquette & Tips: Be respectful at historical sites. Try local foods like Peking Duck. Always have your hotel address written in Chinese for taxi drivers."
+    }
+  ],
+  "keyTakeaways": [
+    "Use Beijing's extensive subway system for efficient travel.",
+    "Set up mobile payment apps before your trip for easy transactions.",
+    "Have your destination address written in Chinese characters handy."
+  ],
+  "relatedPhrases": [
+    "Beijing travel guide",
+    "China tourist tips",
+    "visit Beijing"
+  ],
+  "tags": [
+    "Beijing",
+    "China Travel",
+    "Tourist Guide"
+  ]
+}

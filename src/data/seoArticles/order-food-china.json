@@ -1,0 +1,37 @@
+{
+  "id": "order-food-china",
+  "title": "Order Food in China",
+  "metaDescription": "Helpful guide for tourists on how to order food in China with practical tips and key phrases.",
+  "slug": "order-food-china",
+  "readingTimeMinutes": 2,
+  "sections": [
+    {
+      "heading": "Getting Started",
+      "content": "Download a translation app like Baidu Translate or Google Translate with the camera feature to read Chinese menus. Most restaurants in China use picture menus or digital QR-code menus — scan the code at your table with WeChat or Alipay to browse and order directly. If you have food allergies or dietary restrictions, write them down in Chinese beforehand and show the staff."
+    },
+    {
+      "heading": "Key Tips",
+      "content": "Learn a few basic phrases: 'Wǒ yào zhège' (我要这个 — I want this) while pointing at a menu item works perfectly. Don't be afraid of street food — busy stalls with high turnover usually mean fresh, delicious meals. In many local restaurants, dishes are meant to be shared family-style, so ordering two or three plates per person and eating together is the norm."
+    },
+    {
+      "heading": "What to Remember",
+      "content": "Tipping is not customary in China and may even cause confusion, so there is no need to leave extra. Hot water (kāi shuǐ) is commonly served free with meals — cold drinks are not always available, especially at traditional eateries. Payment is largely cashless; set up WeChat Pay or Alipay before your trip, or carry small bills as a backup since some vendors do not accept foreign cards."
+    }
+  ],
+  "keyTakeaways": [
+    "Use QR-code menus and translation apps to navigate unfamiliar dishes confidently",
+    "Learn the phrase 'Wǒ yàō zhège' and point at items — it's simple and effective",
+    "Set up WeChat Pay or Alipay in advance, as most restaurants in China are cashless"
+  ],
+  "relatedPhrases": [
+    "Chinese food ordering tips",
+    "how to eat like a local in China"
+  ],
+  "tags": [
+    "china",
+    "travel",
+    "tourist",
+    "food",
+    "ordering food"
+  ]
+}

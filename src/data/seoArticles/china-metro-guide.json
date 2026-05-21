@@ -1,0 +1,37 @@
+{
+  "id": "china-metro-guide",
+  "title": "Complete Metro Guide for Foreign Tourists in China",
+  "metaDescription": "Navigate China's subway easily with these tourist tips: buying tickets, using apps, and essential etiquette.",
+  "slug": "china-metro-guide",
+  "readingTimeMinutes": 2,
+  "sections": [
+    {
+      "heading": "h1",
+      "content": "Welcome to China's Metro Systems! They are modern, efficient, and connect you to major attractions. This guide will help you ride like a local, making your exploration smooth and stress-free."
+    },
+    {
+      "heading": "h2",
+      "content": "Purchasing a ticket is simple. Use the self-service machines with an English language option. Select your destination, pay with cash or Alipay/WeChat, and receive a small token or card. Alternatively, buy a tourist day pass for unlimited travel."
+    },
+    {
+      "heading": "h3",
+      "content": "Entering is easy: tap your ticket or scan your QR code at the gate. Stand on the right on escalators and let passengers exit before boarding. Key apps like 'MetroMan' provide offline maps and route planning in English."
+    }
+  ],
+  "keyTakeaways": [
+    "Avoid rush hours (7-9 AM & 5-7 PM) for a comfortable ride.",
+    "Most station signs are in Chinese and Pinyin. Identify your transfer lines by color and number.",
+    "Download a metro app before your trip for offline maps and real-time updates."
+  ],
+  "relatedPhrases": [
+    "subway in China",
+    "using metro apps",
+    "tourist transit pass"
+  ],
+  "tags": [
+    "transport",
+    "metro",
+    "tourist tips",
+    "China travel"
+  ]
+}

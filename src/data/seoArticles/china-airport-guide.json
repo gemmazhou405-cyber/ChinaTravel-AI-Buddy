@@ -1,0 +1,38 @@
+{
+  "id": "china-airport-guide",
+  "title": "China Airport Guide for Tourists",
+  "metaDescription": "Navigate Chinese airports like a pro. Essential tips for transport, payments, and services for a smooth arrival.",
+  "slug": "china-airport-guide",
+  "readingTimeMinutes": 2,
+  "sections": [
+    {
+      "heading": "h1",
+      "content": "Welcome to China's airports! Modern, efficient, and often huge, they are your first taste of Chinese hospitality. This guide covers key services to help you start your journey smoothly after landing."
+    },
+    {
+      "heading": "h2",
+      "content": "Getting connected is easy. Find free Wi-Fi in terminals, often requiring SMS verification. For transport, airports have clear signs to taxis, metro lines, and airport express trains. Always use official taxi queues."
+    },
+    {
+      "heading": "h3",
+      "content": "Grab essentials inside. You'll find convenience stores, local SIM card counters, and currency exchange. Major airports feature great lounges and dining. Remember, WeChat Pay and Alipay are widely accepted for payments."
+    }
+  ],
+  "keyTakeaways": [
+    "Use official airport taxi queues or pre-booked airport transfer services for fair prices.",
+    "Download translation apps and have your hotel address written in Chinese characters handy.",
+    "Learn basic Mandarin phrases like 'xiè xie' (thank you) and 'duō shǎo qián?' (how much?) for a smoother experience."
+  ],
+  "relatedPhrases": [
+    "China travel tips",
+    "airport transportation",
+    "local SIM card",
+    "WeChat Pay tourist"
+  ],
+  "tags": [
+    "travel tips",
+    "airport guide",
+    "China tourism",
+    "first-time visitor"
+  ]
+}

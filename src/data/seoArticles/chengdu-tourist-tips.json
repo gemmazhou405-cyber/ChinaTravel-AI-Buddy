@@ -1,0 +1,36 @@
+{
+  "id": "chengdu-tourist-tips",
+  "title": "Chengdu Travel Guide for Foreign Visitors",
+  "metaDescription": "Discover essential tips for exploring Chengdu, from pandas to spicy cuisine and local neighborhoods.",
+  "slug": "chengdu-tourist-tips",
+  "readingTimeMinutes": 2,
+  "sections": [
+    {
+      "heading": "h1",
+      "content": "Welcome to Chengdu, a city of relaxed charm, giant pandas, and fiery cuisine. Use local apps like Didi for rides and have translation apps ready to navigate the vibrant streets and friendly atmosphere."
+    },
+    {
+      "heading": "h2",
+      "content": "Visit the Chengdu Research Base of Giant Panda Breeding early to see the pandas active. Explore the historic Jinli Ancient Street and the serene Wuhou Shrine for a taste of local culture and history."
+    },
+    {
+      "heading": "h3",
+      "content": "Venture into lively areas like Kuanzhai Alley for tea houses and snacks. Don't miss sampling authentic Sichuan hotpot; start with a mild broth and enjoy the communal dining experience."
+    }
+  ],
+  "keyTakeaways": [
+    "Download essential Chinese apps for payments and transport.",
+    "Embrace the local pace; Chengdu is famous for its laid-back lifestyle.",
+    "Always ask for 'wei la' (mild spice) if you're sensitive to heat."
+  ],
+  "relatedPhrases": [
+    "Chengdu panda base",
+    "Sichuan cuisine",
+    "Wuhou Shrine"
+  ],
+  "tags": [
+    "ChengduTravel",
+    "SichuanTips",
+    "ChinaGuide"
+  ]
+}

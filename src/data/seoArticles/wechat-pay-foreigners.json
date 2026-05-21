@@ -1,0 +1,37 @@
+{
+  "id": "wechat-pay-foreigners",
+  "title": "WeChat Pay for Tourists",
+  "metaDescription": "Learn how to set up and use WeChat Pay as a foreign tourist in China for seamless cashless payments during your trip.",
+  "slug": "wechat-pay-foreigners",
+  "readingTimeMinutes": 2,
+  "sections": [
+    {
+      "heading": "Getting Started",
+      "content": "Download the WeChat app before arriving in China since Google Play is not accessible within the mainland. Register with your home country's mobile number and complete the identity verification by uploading a photo of your passport within the WeChat Pay section. Link an international credit or debit card (Visa, Mastercard, or JCB) directly to your WeChat Wallet — this feature has been expanded for foreign visitors and does not require a Chinese bank account."
+    },
+    {
+      "heading": "Key Tips",
+      "content": "Keep your WeChat Pay balance topped up using your linked card, as some smaller vendors prefer QR code payments over tapping cards. Always ensure your phone is charged and has mobile data or local Wi-Fi, since payments require an internet connection. Save a screenshot of your personal payment QR code for quicker checkout, and familiarize yourself with the scan-to-pay flow — simply scan the merchant's QR code, enter the amount if needed, and confirm with your PIN."
+    },
+    {
+      "heading": "What to Remember",
+      "content": "Transaction limits may apply to foreign cards, typically around a few thousand yuan per transaction and a cumulative monthly cap, so plan accordingly for larger purchases. WeChat Pay operates in Chinese yuan, and your card issuer will handle currency conversion — check your bank's foreign transaction fees in advance. If you encounter issues linking your card, visit a local bank branch or airport service desk, as staff are increasingly trained to assist international tourists with mobile payment setup."
+    }
+  ],
+  "keyTakeaways": [
+    "Set up WeChat Pay and link your international card before arriving in China for a hassle-free experience",
+    "Carry a power bank and ensure mobile data access, since all payments depend on your phone being online",
+    "Be aware of transaction limits and foreign card fees to avoid surprises at checkout"
+  ],
+  "relatedPhrases": [
+    "cashless payments in China",
+    "mobile payment tips for tourists"
+  ],
+  "tags": [
+    "china",
+    "travel",
+    "tourist",
+    "wechat-pay",
+    "cashless-payments"
+  ]
+}
