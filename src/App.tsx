@@ -8,11 +8,13 @@ import ChatModal from './components/ChatModal';
 import Footer from './components/Footer';
 import AuthModal from './components/AuthModal';
 import Toast from './components/Toast';
+import PolicyPage, { getPolicyPageType } from './components/PolicyPage';
 import { useAuth } from './hooks/useAuth';
 
 export type TabId = 'before' | 'stay' | 'food' | 'transport' | 'emergency' | 'pay';
 
 export default function App() {
+  const policyPageType = getPolicyPageType(window.location.pathname);
   const [activeTab, setActiveTab] = useState<TabId>('food');
   const [chatOpen, setChatOpen] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
@@ -33,6 +35,15 @@ export default function App() {
     }, 0);
   };
   const openBuddy = () => setChatOpen(true);
+
+  if (policyPageType) {
+    return (
+      <div className="min-h-screen bg-[#f7f3ea] font-sans">
+        <PolicyPage type={policyPageType} />
+        <Footer onTabChange={setActiveTab} />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#f7f3ea] font-sans">

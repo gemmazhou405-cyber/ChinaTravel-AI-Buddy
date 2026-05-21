@@ -8,8 +8,6 @@ interface Props {
 }
 
 const LEGAL_TEXT = {
-  privacy: 'ChinaEase Buddy collects only your email and usage data to provide AI services. We never sell your data. Stored securely on Google Firebase. Request deletion: gemmazhou405@gmail.com',
-  terms: 'AI responses are for informational purposes only. Not a substitute for professional advice. 3-day refund policy applies to all paid plans.',
   cookies: 'We use essential cookies only: auth session and language preference. No advertising cookies.',
 };
 
@@ -49,7 +47,7 @@ export default function Footer({ onTabChange }: Props) {
             <div className="space-y-2">
               <p className="text-white/80 font-semibold text-xs uppercase tracking-wider mb-3">{t('footer.product')}</p>
               <button onClick={() => goToTab('food')} className="block hover:text-white transition-colors text-left">{t('footer.features')}</button>
-              <button onClick={() => goToTab('pay')} className="block hover:text-white transition-colors text-left">{t('footer.pricing')}</button>
+              <a href="/pricing" className="block hover:text-white transition-colors text-left">{t('footer.pricing')}</a>
               <button onClick={downloadInstructions} className="block hover:text-white transition-colors text-left">{t('footer.download')}</button>
             </div>
             <div className="space-y-2">
@@ -84,8 +82,9 @@ export default function Footer({ onTabChange }: Props) {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 border-t border-white/10">
           <p className="text-white/25 text-xs">{t('footer.rights')}</p>
           <div className="flex items-center gap-4 text-xs">
-            <button onClick={() => setModal('privacy')} className="text-white/30 hover:text-white/60 transition-colors">{t('footer.privacy')}</button>
-            <button onClick={() => setModal('terms')} className="text-white/30 hover:text-white/60 transition-colors">{t('footer.terms')}</button>
+            <a href="/privacy" className="text-white/30 hover:text-white/60 transition-colors">{t('footer.privacy')}</a>
+            <a href="/terms" className="text-white/30 hover:text-white/60 transition-colors">{t('footer.terms')}</a>
+            <a href="/refund" className="text-white/30 hover:text-white/60 transition-colors">Refund Policy</a>
             <button onClick={() => setModal('cookies')} className="text-white/30 hover:text-white/60 transition-colors">{t('footer.cookies')}</button>
           </div>
         </div>
@@ -94,7 +93,7 @@ export default function Footer({ onTabChange }: Props) {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50" onClick={() => setModal(null)}>
           <div className="bg-white text-gray-800 rounded-2xl p-6 w-full max-w-md shadow-2xl" onClick={(e) => e.stopPropagation()}>
             <h3 className="text-lg font-bold mb-3 text-[#155e63]">
-              {modal === 'privacy' ? t('footer.privacy') : modal === 'terms' ? t('footer.terms') : t('footer.cookies')}
+              {t('footer.cookies')}
             </h3>
             <p className="text-sm leading-relaxed text-gray-600">{LEGAL_TEXT[modal]}</p>
             <button onClick={() => setModal(null)} className="mt-5 w-full bg-[#155e63] text-white rounded-xl py-2.5 text-sm font-medium">
