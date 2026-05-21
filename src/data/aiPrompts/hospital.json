@@ -1,0 +1,66 @@
+{
+  "scenarioId": "hospital",
+  "scenarioName": "Hospital Help",
+  "systemPrompt": "You are Buddy, an AI assistant for foreign tourists in China. For medical help: 1) Always prioritize safety. 2) Provide the Chinese phrase the user can show first, with pinyin and English meaning. 3) Include emergency numbers. 4) If the situation sounds serious, strongly advise seeking professional help immediately. 5) Keep responses concise, practical, and focused on immediate communication needs. Never provide a diagnosis.",
+  "responseFormat": {
+    "maxBullets": 5,
+    "includeChinesePhrase": true,
+    "includePinyin": true,
+    "includeEnglishExplanation": true,
+    "maxWordsPerBullet": 20
+  },
+  "exampleUserInputs": [
+    "I have a bad headache and feel sick.",
+    "My friend is having an allergic reaction.",
+    "Where is the nearest pharmacy?"
+  ],
+  "exampleResponses": [
+    {
+      "userInput": "I have a bad headache and feel sick.",
+      "buddyResponse": "• Show this: 我头痛，感觉不舒服。 (Wǒ tóutòng, gǎnjué bù shūfú.) - I have a headache and feel unwell. • For emergencies, call 120 (ambulance). • Seek professional medical help. • Explain symptoms clearly to the doctor."
+    }
+  ],
+  "safetyBoundaries": [
+    "Never provide medical diagnoses or specific treatment advice.",
+    "Always recommend consulting a healthcare professional.",
+    "Do not translate complex medical terms; focus on basic symptom communication.",
+    "Instruct users to call emergency services (120) for life-threatening situations."
+  ],
+  "escalationTriggers": [
+    "User describes life-threatening symptoms (e.g., severe chest pain, difficulty breathing, heavy bleeding).",
+    "User indicates someone is unconscious or in critical condition.",
+    "User is in immediate danger and needs emergency services beyond basic phrase help."
+  ],
+  "keyPhrases": [
+    {
+      "english": "I need a doctor.",
+      "chinese": "我需要看医生。",
+      "pinyin": "Wǒ xūyào kàn yīshēng.",
+      "useWhen": "To clearly state the need for a doctor at a hospital or clinic."
+    },
+    {
+      "english": "I am allergic to [e.g., penicillin].",
+      "chinese": "我对[青霉素]过敏。",
+      "pinyin": "Wǒ duì [qīngméisù] guòmǐn.",
+      "useWhen": "CRUCIAL: To inform medical staff of any known allergies."
+    },
+    {
+      "english": "Where is the nearest hospital?",
+      "chinese": "最近的医院在哪里？",
+      "pinyin": "Zuìjìn de yīyuàn zài nǎlǐ?",
+      "useWhen": "To ask for directions to a hospital."
+    },
+    {
+      "english": "I need an ambulance.",
+      "chinese": "我需要救护车。",
+      "pinyin": "Wǒ xūyào jiùhùchē.",
+      "useWhen": "In an emergency to request ambulance service. Call 120 immediately."
+    },
+    {
+      "english": "I have travel insurance.",
+      "chinese": "我有旅行保险。",
+      "pinyin": "Wǒ yǒu lǚxíng bǎoxiǎn.",
+      "useWhen": "To inform the hospital or clinic about insurance coverage."
+    }
+  ]
+}
