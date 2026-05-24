@@ -1,7 +1,7 @@
 import { mkdir, copyFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
-const pages = ['pricing', 'terms', 'privacy', 'refund'];
+const pages = ['pricing', 'terms', 'privacy', 'refund', 'contact', 'about'];
 const distDir = 'dist';
 const source = join(distDir, 'index.html');
 

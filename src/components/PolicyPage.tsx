@@ -1,6 +1,6 @@
 import { ArrowLeft, Check } from 'lucide-react';
 
-type PageType = 'pricing' | 'terms' | 'privacy' | 'refund';
+type PageType = 'pricing' | 'terms' | 'privacy' | 'refund' | 'contact' | 'about';
 
 interface Props {
   type: PageType;
@@ -123,6 +123,52 @@ const legalCopy = {
       },
     ],
   },
+  contact: {
+    title: 'Contact',
+    intro: 'Contact ChinaEase Buddy for account, refund, privacy, or product support.',
+    sections: [
+      {
+        title: 'Email Support',
+        body: `For all support requests, contact ${contactEmail}.`,
+      },
+      {
+        title: 'What to Include',
+        body:
+          'Please include your account email, the issue you are experiencing, and any relevant purchase or account details. Do not send passwords, passport numbers, or sensitive medical information.',
+      },
+      {
+        title: 'Important Note',
+        body:
+          'ChinaEase Buddy is a web-based digital China travel toolkit. It is not a visa, immigration, medical, financial, legal, hotel booking, flight booking, or travel agency service.',
+      },
+    ],
+  },
+  about: {
+    title: 'About ChinaEase Buddy',
+    intro:
+      'ChinaEase Buddy is a web-based digital China travel toolkit built for international visitors who need practical help inside China.',
+    sections: [
+      {
+        title: 'What It Does',
+        body:
+          'ChinaEase Buddy helps travelers access bilingual phrase cards, city survival guides, payment setup information, local transport tips, menu references, emergency guidance, and Buddy AI travel assistance.',
+      },
+      {
+        title: 'What It Is Not',
+        body:
+          'ChinaEase Buddy is not a visa, immigration, medical, financial, legal, hotel booking, flight booking, or travel agency service. It does not replace local professionals or official authorities.',
+      },
+      {
+        title: 'Traveler Responsibility',
+        body:
+          'Travelers should verify important information independently and contact local professional institutions, emergency services, embassies, consulates, hospitals, police, or payment providers when needed.',
+      },
+      {
+        title: 'Contact',
+        body: `Questions about ChinaEase Buddy can be sent to ${contactEmail}.`,
+      },
+    ],
+  },
 };
 
 function PageShell({ title, intro, children }: { title: string; intro: string; children: React.ReactNode }) {
@@ -187,7 +233,7 @@ function PricingPage() {
   );
 }
 
-function LegalPage({ type }: { type: 'terms' | 'privacy' | 'refund' }) {
+function LegalPage({ type }: { type: 'terms' | 'privacy' | 'refund' | 'contact' | 'about' }) {
   const page = legalCopy[type];
   return (
     <PageShell title={page.title} intro={page.intro}>
@@ -209,6 +255,8 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/terms')) return 'terms';
   if (cleanPath.endsWith('/privacy')) return 'privacy';
   if (cleanPath.endsWith('/refund')) return 'refund';
+  if (cleanPath.endsWith('/contact')) return 'contact';
+  if (cleanPath.endsWith('/about')) return 'about';
   return null;
 }
 

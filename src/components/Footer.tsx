@@ -47,14 +47,15 @@ export default function Footer({ onTabChange }: Props) {
             <div className="space-y-2">
               <p className="text-white/80 font-semibold text-xs uppercase tracking-wider mb-3">{t('footer.product')}</p>
               <button onClick={() => goToTab('food')} className="block hover:text-white transition-colors text-left">{t('footer.features')}</button>
+              <a href="/about" className="block hover:text-white transition-colors text-left">About</a>
               <a href="/pricing" className="block hover:text-white transition-colors text-left">{t('footer.pricing')}</a>
               <button onClick={downloadInstructions} className="block hover:text-white transition-colors text-left">{t('footer.download')}</button>
             </div>
             <div className="space-y-2">
               <p className="text-white/80 font-semibold text-xs uppercase tracking-wider mb-3">{t('footer.support')}</p>
               <button onClick={scrollToTabs} className="block hover:text-white transition-colors text-left">{t('footer.helpCenter')}</button>
-              <a href="mailto:gemmazhou405@gmail.com" className="block hover:text-white transition-colors">{t('footer.contact')}</a>
-              <a href="mailto:gemmazhou405@gmail.com" className="block hover:text-white transition-colors">{t('footer.status')}</a>
+              <a href="/contact" className="block hover:text-white transition-colors">{t('footer.contact')}</a>
+              <a href="/contact" className="block hover:text-white transition-colors">{t('footer.status')}</a>
             </div>
           </div>
         </div>
