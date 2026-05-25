@@ -119,6 +119,8 @@ export function useAuth() {
         const snap = await getDoc(docRef);
         if (snap.exists()) {
           setUserState(normalizeUserState(snap.data() as StoredUserState, u.uid, u.email || ''));
+        } else {
+          setUserState(null);
         }
       } else {
         setUserState(null);
@@ -141,22 +143,24 @@ export function useAuth() {
   const loginWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
     const cred = await signInWithPopup(auth, provider);
-    const email = cred.user.email || '';
-    const userRef = doc(db, 'users', cred.user.uid);
+    const signedInUser = auth.currentUser || cred.user;
+    const email = signedInUser.email || cred.user.email || '';
+    const userRef = doc(db, 'users', signedInUser.uid);
     const snap = await getDoc(userRef);
     let nextUserState: UserState;
 
     if (snap.exists()) {
-      nextUserState = normalizeUserState(snap.data() as StoredUserState, cred.user.uid, email);
+      nextUserState = normalizeUserState(snap.data() as StoredUserState, signedInUser.uid, email);
     } else {
-      nextUserState = createFreeUserState(cred.user.uid, email);
+      nextUserState = createFreeUserState(signedInUser.uid, email);
       await setDoc(userRef, nextUserState);
       sendWelcomeEmail(email);
     }
 
-    setUser(cred.user);
+    setUser(signedInUser);
     setUserState(nextUserState);
-    return cred.user;
+    setLoading(false);
+    return signedInUser;
   };
 
   const login = async (email: string, password: string) => {
