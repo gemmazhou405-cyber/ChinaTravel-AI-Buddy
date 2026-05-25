@@ -1,0 +1,80 @@
+{
+  "cityId": "chengdu",
+  "cityName": "Chengdu",
+  "cityNameCN": "成都",
+  "airport": {
+    "name": "Aéroport international de Chengdu Shuangliu",
+    "iataCode": "CTU",
+    "toCity": "Prenez la ligne 10 du métro pour le centre-ville, ou utilisez les bus de l'aéroport. Des taxis sont disponibles."
+  },
+  "transport": {
+    "metro": "Utilisez les applications de métro pour les cartes. Fonctionne de 6h30 à 22h30.",
+    "taxi": "Utilisez des taxis avec compteur. Des applications comme Didi sont recommandées pour plus de commodité.",
+    "didi": "Téléchargez l'application Didi, réglez-la en anglais. Paiement via l'application.",
+    "tips": [
+      "Procurez-vous une carte de transport pour plus de facilité.",
+      "Évitez les heures de pointe : 7h-9h et 17h-19h.",
+      "Le métro est efficace et abordable."
+    ]
+  },
+  "payment": {
+    "alipay": "Téléchargez la version internationale d'Alipay, liez une carte étrangère.",
+    "wechatPay": "Configurez WeChat Pay avec une vérification de carte étrangère.",
+    "cash": "Ayez des petites coupures sur vous, car la monnaie peut être rare.",
+    "foreignCard": "Acceptée dans les grands hôtels et magasins, mais le paiement mobile est préféré."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Zone de la rue Jinli",
+      "Près de Taikoo Li",
+      "À proximité des stations de métro"
+    ],
+    "tips": [
+      "Réservez à l'avance, surtout pendant les festivals.",
+      "Consultez les avis sur la propreté et l'emplacement."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Tofu Mapo",
+      "Poulet Kung Pao",
+      "Fondue du Sichuan",
+      "Nouilles Dan Dan",
+      "Raviolis Zhong"
+    ],
+    "foodStreets": [
+      "Rue ancienne de Jinli",
+      "Ruelles larges et étroites"
+    ],
+    "tips": [
+      "Commencez par des niveaux d'épices doux.",
+      "Utilisez des applications de traduction pour les menus."
+    ]
+  },
+  "commonScams": [
+    "Taxis sans licence qui surfacturent.",
+    "Faux tours touristiques.",
+    "Arnaques dans les maisons de thé avec des prix élevés."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Pour une aide médicale, rendez-vous dans de grands hôpitaux comme l'Hôpital West China."
+  },
+  "usefulApps": [
+    "Didi",
+    "Alipay",
+    "WeChat",
+    "Baidu Maps",
+    "Ctrip"
+  ],
+  "bestTimeToVisit": "Printemps (mars-mai) et automne (septembre-novembre) pour un temps doux.",
+  "touristTips": [
+    "Apprenez quelques phrases de base en mandarin.",
+    "Utilisez le métro pour une navigation facile.",
+    "Essayez la cuisine locale du Sichuan.",
+    "Emportez une batterie externe.",
+    "Respectez les coutumes et l'étiquette locales."
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "cityId": "suzhou",
+  "cityName": "Suzhou",
+  "cityNameCN": "苏州",
+  "airport": {
+    "name": "Aéroport international Sunan Shuofang",
+    "iataCode": "WUX",
+    "toCity": "Prenez un bus ou un train direct pour Suzhou, environ 1 à 2 heures. Vérifiez les horaires en ligne."
+  },
+  "transport": {
+    "metro": "Le métro de Suzhou est efficace ; achetez des billets aux stations ou utilisez Alipay pour les codes QR.",
+    "taxi": "Utilisez des taxis avec compteur ; l'application Gaode Maps est recommandée pour la navigation et l'estimation des tarifs.",
+    "didi": "Téléchargez l'application Didi ; inscrivez-vous avec un numéro de téléphone international pour les courses.",
+    "tips": [
+      "Emportez un plan du métro en anglais.",
+      "Évitez les heures de pointe pour les taxis.",
+      "Utilisez les applications de transport public pour des mises à jour en temps réel."
+    ]
+  },
+  "payment": {
+    "alipay": "Lieez une carte de crédit internationale à Alipay pour des paiements faciles dans la plupart des magasins.",
+    "wechatPay": "Configurez WeChat Pay via une carte étrangère ou un virement bancaire pour plus de commodité.",
+    "cash": "Emportez de petites quantités d'argent liquide ; certains vendeurs locaux peuvent ne pas accepter les cartes.",
+    "foreignCard": "Les principaux sites touristiques acceptent Visa/Mastercard, mais l'argent liquide est souvent préféré ailleurs."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "District de Gusu pour les sites historiques.",
+      "Parc industriel de Suzhou pour des séjours modernes."
+    ],
+    "tips": [
+      "Réservez des hôtels près des stations de métro pour un accès facile.",
+      "Consultez les avis en ligne pour la propreté et le service."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Nouilles de style Suzhou",
+      "Poisson mandarin aigre-doux",
+      "Poisson mandarin en forme d'écureuil",
+      "Zongzi (boulettes de riz)",
+      "Gao (gâteaux sucrés)"
+    ],
+    "foodStreets": [
+      "Rue Guanqian",
+      "Rue Pingjiang"
+    ],
+    "tips": [
+      "Essayez les maisons de thé locales pour une expérience authentique.",
+      "Soyez prudent avec les plats épicés si vous n'y êtes pas habitué."
+    ]
+  },
+  "commonScams": [
+    "Les chauffeurs de taxi surfacturent les touristes la nuit.",
+    "De faux billets d'entrée vendus près des sites touristiques.",
+    "Des guides non officiels exigeant des frais élevés d'avance."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Apprenez des phrases de base en chinois comme 'aide' ou 'hôpital' en cas d'urgence."
+  },
+  "usefulApps": [
+    "Didi pour les transports",
+    "Alipay pour les paiements",
+    "Baidu Maps pour la navigation"
+  ],
+  "bestTimeToVisit": "Printemps (avril-mai) ou automne (septembre-octobre) pour un temps doux et moins de foules.",
+  "touristTips": [
+    "Emportez un guide de conversation ou une application de traduction pour communiquer.",
+    "Respectez les coutumes locales et l'étiquette de la file d'attente.",
+    "Restez hydraté et emportez de l'eau en été.",
+    "Utilisez de la crème solaire et des chapeaux pour vous protéger du soleil.",
+    "Gardez vos objets de valeur en sécurité dans les zones bondées."
+  ]
+}

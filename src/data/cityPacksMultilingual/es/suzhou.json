@@ -1,0 +1,77 @@
+{
+  "cityId": "suzhou",
+  "cityName": "Suzhou",
+  "cityNameCN": "苏州",
+  "airport": {
+    "name": "Aeropuerto Internacional de Sunan Shuofang",
+    "iataCode": "WUX",
+    "toCity": "Tome un autobús o tren directo a Suzhou, aproximadamente 1-2 horas. Consulte los horarios en línea."
+  },
+  "transport": {
+    "metro": "El metro de Suzhou es eficiente; compre boletos en las estaciones o use Alipay para códigos QR.",
+    "taxi": "Use taxis con taxímetro; se recomienda la aplicación Gaode Maps para la navegación y estimación de tarifas.",
+    "didi": "Descargue la aplicación Didi; regístrese con un número de teléfono internacional para servicios de transporte.",
+    "tips": [
+      "Lleve un mapa del metro en inglés.",
+      "Evite las horas punta para tomar taxis.",
+      "Use aplicaciones de transporte público para actualizaciones en tiempo real."
+    ]
+  },
+  "payment": {
+    "alipay": "Vincule una tarjeta de crédito internacional a Alipay para pagos fáciles en la mayoría de las tiendas.",
+    "wechatPay": "Configure WeChat Pay mediante una tarjeta extranjera o transferencia bancaria para mayor conveniencia.",
+    "cash": "Lleve pequeñas cantidades de efectivo; algunos vendedores locales pueden no aceptar tarjetas.",
+    "foreignCard": "Los principales lugares turísticos aceptan Visa/Mastercard, pero en otros lugares a menudo se prefiere el efectivo."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Distrito de Gusu para sitios históricos.",
+      "Parque Industrial de Suzhou para estancias modernas."
+    ],
+    "tips": [
+      "Reserve hoteles cerca de las estaciones de metro para fácil acceso.",
+      "Consulte reseñas en línea sobre limpieza y servicio."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Fideos al estilo Suzhou",
+      "Pez mandarín agridulce",
+      "Pez mandarín en forma de ardilla",
+      "Zongzi (bolas de arroz)",
+      "Gao (pasteles dulces)"
+    ],
+    "foodStreets": [
+      "Calle Guanqian",
+      "Calle Pingjiang"
+    ],
+    "tips": [
+      "Pruebe las casas de té locales para una experiencia auténtica.",
+      "Tenga cuidado con los platos picantes si no está acostumbrado."
+    ]
+  },
+  "commonScams": [
+    "Taxistas que cobran de más a los turistas por la noche.",
+    "Entradas falsas vendidas cerca de sitios turísticos.",
+    "Guías no oficiales que exigen tarifas altas por adelantado."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Aprenda frases básicas en chino como 'ayuda' u 'hospital' para emergencias."
+  },
+  "usefulApps": [
+    "Didi para transporte",
+    "Alipay para pagos",
+    "Baidu Maps para navegación"
+  ],
+  "bestTimeToVisit": "Primavera (abril-mayo) u otoño (septiembre-octubre) por el clima suave y menos multitudes.",
+  "touristTips": [
+    "Lleve un manual de frases o una aplicación de traducción para comunicarse.",
+    "Respete las costumbres locales y la etiqueta de las filas.",
+    "Manténgase hidratado y lleve agua en verano.",
+    "Use protector solar y sombreros para protección solar.",
+    "Mantenga los objetos de valor seguros en áreas concurridas."
+  ]
+}

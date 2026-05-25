@@ -1,0 +1,79 @@
+{
+  "cityId": "chongqing",
+  "cityName": "Chongqing",
+  "cityNameCN": "重庆",
+  "airport": {
+    "name": "Aeropuerto Internacional de Chongqing Jiangbei",
+    "iataCode": "CKG",
+    "toCity": "Tome la Línea de Metro 10 directamente al centro de la ciudad, o use taxis y autobuses del aeropuerto."
+  },
+  "transport": {
+    "metro": "El metro es eficiente para los sitios principales; compre billetes en efectivo o a través de aplicaciones.",
+    "taxi": "Los taxis son baratos; use aplicaciones como Didi para evitar problemas de idioma.",
+    "didi": "La aplicación Didi funciona como Uber; configúrela con un pago internacional.",
+    "tips": [
+      "Descargue mapas sin conexión antes de llegar.",
+      "El metro funciona desde las 6 AM hasta las 11 PM.",
+      "Confirme la tarifa del taxi antes de abordar."
+    ]
+  },
+  "payment": {
+    "alipay": "Alipay acepta tarjetas extranjeras; descárguela y regístrese con su pasaporte.",
+    "wechatPay": "WeChat Pay permite vincular tarjetas internacionales para pagos fáciles.",
+    "cash": "Lleve efectivo en pequeñas cantidades; algunos vendedores ambulantes pueden no aceptar tarjetas.",
+    "foreignCard": "Visa/Mastercard se aceptan en hoteles y centros comerciales; es menos común en otros lugares."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Jiefangbei",
+      "Distrito de Nan'an"
+    ],
+    "tips": [
+      "Reserve con anticipación durante los días festivos.",
+      "Verifique si el hotel tiene personal que hable inglés."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Hotpot de Chongqing",
+      "Fideos Xiaomian",
+      "Pollo picante",
+      "Fuqi Feipian",
+      "Suanla Fen"
+    ],
+    "foodStreets": [
+      "Calle Bayi",
+      "Calle Nanbin"
+    ],
+    "tips": [
+      "Pida un nivel de picante suave si es sensible.",
+      "Elija puestos de comida callejera concurridos para mayor frescura."
+    ]
+  },
+  "commonScams": [
+    "Taxis que cobran de más a los turistas.",
+    "Productos falsos en las atracciones.",
+    "Tours no solicitados a precios inflados."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Cuidado con las pendientes pronunciadas y la niebla densa, especialmente en invierno."
+  },
+  "usefulApps": [
+    "WeChat",
+    "Alipay",
+    "Baidu Maps",
+    "Didi",
+    "Google Translate"
+  ],
+  "bestTimeToVisit": "Primavera (abril-mayo) u otoño (septiembre-octubre) para un clima agradable.",
+  "touristTips": [
+    "Aprenda frases básicas en mandarín.",
+    "Use aplicaciones de traducción para letreros.",
+    "Lleve una batería portátil.",
+    "Manténgase hidratado en los veranos húmedos.",
+    "Respete las costumbres gastronómicas locales."
+  ]
+}

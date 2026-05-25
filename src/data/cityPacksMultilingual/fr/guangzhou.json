@@ -1,0 +1,78 @@
+{
+  "cityId": "guangzhou",
+  "cityName": "Guangzhou",
+  "cityNameCN": "广州",
+  "airport": {
+    "name": "Aéroport international de Guangzhou Baiyun",
+    "iataCode": "CAN",
+    "toCity": "Prenez la ligne 3 du métro ou le bus express de l'aéroport. Les taxis sont disponibles; utilisez ceux avec compteur."
+  },
+  "transport": {
+    "metro": "Obtenez une carte Yangcheng Tong pour un accès facile au métro. Les panneaux sont en anglais et en chinois.",
+    "taxi": "Utilisez des taxis avec compteur; des applications comme Amap ou Didi pour plus de commodité. Évitez les taxis non autorisés.",
+    "didi": "Téléchargez l'application Didi; liez une carte internationale ou utilisez Alipay. Option de paiement en espèces disponible.",
+    "tips": [
+      "Toujours avoir de la petite monnaie pour les bus.",
+      "Évitez les heures de pointe pour un voyage confortable.",
+      "Apprenez des phrases de base en chinois pour les directions."
+    ]
+  },
+  "payment": {
+    "alipay": "Téléchargez l'application Alipay et inscrivez-vous avec votre passeport. Liez une carte internationale pour les recharges.",
+    "wechatPay": "Configurez WeChat Pay via vérification du passeport. Utilisez-le pour les paiements dans la plupart des endroits.",
+    "cash": "Portez de petites sommes en espèces; certains petits commerçants préfèrent les espèces.",
+    "foreignCard": "Visa et Mastercard acceptés dans les hôtels, les restaurants haut de gamme. Informez votre banque avant le voyage."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "District de Tianhe",
+      "District de Yuexiu"
+    ],
+    "tips": [
+      "Réservez à l'avance pendant les hautes saisons.",
+      "Vérifiez si le personnel parle anglais dans les hôtels."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Dim Sum Cantonais",
+      "Oie rôtie",
+      "Nouilles aux wontons",
+      "Porc laqué",
+      "Bouillie de riz"
+    ],
+    "foodStreets": [
+      "Rue piétonne de Shangxiajiu",
+      "Route de Pékin"
+    ],
+    "tips": [
+      "Essayez la cuisine de rue mais assurez-vous qu'elle est fraîchement cuite.",
+      "Utilisez des applications de traduction pour les éléments du menu."
+    ]
+  },
+  "commonScams": [
+    "Surcharge par les taxis non autorisés.",
+    "Marchandises contrefaites dans les sites touristiques.",
+    "Arnaques au Tai Chi ou à la cérémonie du thé près des attractions."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "En cas d'urgence, demandez de l'aide aux locaux; la plupart sont amicaux et aident les touristes."
+  },
+  "usefulApps": [
+    "Alipay",
+    "WeChat",
+    "Amap (pour les cartes et les directions)",
+    "Pleco (pour la traduction)"
+  ],
+  "bestTimeToVisit": "Octobre à décembre pour un temps doux et moins de foules.",
+  "touristTips": [
+    "Apprenez quelques phrases de base en chinois.",
+    "Ayez toujours l'adresse de l'hôtel en chinois.",
+    "Utilisez les cartes d'hôtel pour revenir en toute sécurité.",
+    "Respectez les coutumes et traditions locales.",
+    "Restez hydraté et portez une bouteille d'eau."
+  ]
+}

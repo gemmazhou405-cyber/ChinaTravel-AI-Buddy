@@ -1,0 +1,78 @@
+{
+  "cityId": "hangzhou",
+  "cityName": "Hangzhou",
+  "cityNameCN": "杭州",
+  "airport": {
+    "name": "Flughafen Hangzhou Xiaoshan International",
+    "iataCode": "HGH",
+    "toCity": "Nehmen Sie die U-Bahn-Linie 1 ins Stadtzentrum; nutzen Sie den Flughafen-Shuttle oder ein Taxi für mehr Komfort."
+  },
+  "transport": {
+    "metro": "Die U-Bahn bedient die wichtigsten Sehenswürdigkeiten; kaufen Sie Tickets oder verwenden Sie den Alipay-QR-Code.",
+    "taxi": "Verwenden Sie Taxis mit Taxameter; meiden Sie lizenzierte Taxis und haben Sie Kleingeld bereit.",
+    "didi": "Laden Sie die Didi-App herunter; richten Sie sie mit Alipay oder WeChat für einfache Fahrten ein.",
+    "tips": [
+      "Nutzen Sie die U-Bahn während der Stoßzeiten, um Staus zu vermeiden.",
+      "Nehmen Sie Bargeld für Busse mit.",
+      "Lernen Sie grundlegende Stationsnamen auf Mandarin."
+    ]
+  },
+  "payment": {
+    "alipay": "Laden Sie Alipay herunter; verwenden Sie 'Tour Pass', um eine ausländische Karte zu verknüpfen.",
+    "wechatPay": "Richten Sie es über WeChat ein; möglicherweise benötigen Sie lokale Hilfe zur Verifizierung.",
+    "cash": "Tragen Sie immer etwas Bargeld bei sich; kleine Akzeptieren oft keine Karten.",
+    "foreignCard": "Große Hotels akzeptieren Visa/Mastercard; aber viele Orte bevorzugen mobile Zahlungen."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Westsee-Gebiet",
+      "Xihu-Distrikt"
+    ],
+    "tips": [
+      "Buchen Sie in der Nähe von U-Bahn-Stationen für einen einfachen Zugang.",
+      "Überprüfen Sie Online-Bewertungen bezüglich Sauberkeit."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Westsee-Fisch in Soßensauce",
+      "Dongpo-Schweinefleisch",
+      "Bettler-Huhn",
+      "Longjing-Garnelen",
+      "Geschmortes Dongpo-Schweinefleisch"
+    ],
+    "foodStreets": [
+      "Hefang-Straße",
+      "Shengli-Fluss-Gaumenmeile"
+    ],
+    "tips": [
+      "Probieren Sie lokale Teehäuser für einen authentischen Geschmack.",
+      "Seien Sie vorsichtig mit scharfen Gerichten, wenn Sie empfindlich sind."
+    ]
+  },
+  "commonScams": [
+    "Gefälschte Touristenführer in der Nähe des Westsees.",
+    "Überteuerte Taxis nachts.",
+    "Taschendiebe an überfüllten Touristenorten."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Wählen Sie 110 für die Polizei; verwenden Sie Übersetzungs-Apps, wenn Englisch benötigt wird."
+  },
+  "usefulApps": [
+    "Didi",
+    "Alipay",
+    "WeChat",
+    "Baidu Maps"
+  ],
+  "bestTimeToVisit": "Frühling (April-Mai) und Herbst (September-Oktober) für angenehmes Wetter.",
+  "touristTips": [
+    "Lernen Sie grundlegende Mandarin-Phrasen.",
+    "Tragen Sie ein tragbares Ladegerät mit sich.",
+    "Respektieren Sie lokale Bräuche wie das Ausziehen der Schuhe indoors.",
+    "Trinken Sie im Sommer ausreichend Wasser.",
+    "Verwenden Sie Sonnencreme und Hüte zum Sonnenschutz."
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "cityId": "hangzhou",
+  "cityName": "Hangzhou",
+  "cityNameCN": "杭州",
+  "airport": {
+    "name": "Aeropuerto Internacional de Hangzhou Xiaoshan",
+    "iataCode": "HGH",
+    "toCity": "Tome la Línea 1 del metro hasta el centro de la ciudad; use el autobús lanzadera del aeropuerto o un taxi para mayor comodidad."
+  },
+  "transport": {
+    "metro": "El metro cubre los principales lugares turísticos; compre boletos o use el código QR de Alipay.",
+    "taxi": "Use taxis con taxímetro; evite los no autorizados y lleve cambio pequeño.",
+    "didi": "Descargue la app Didi; configúrela con Alipay o WeChat para viajes fáciles.",
+    "tips": [
+      "Use el metro durante las horas punta para evitar el tráfico.",
+      "Lleve efectivo para los autobuses.",
+      "Aprenda los nombres básicos de las estaciones en mandarín."
+    ]
+  },
+  "payment": {
+    "alipay": "Descargue Alipay; use 'Tour Pass' para vincular una tarjeta extranjera.",
+    "wechatPay": "Configúrela a través de WeChat; puede que necesite asistencia local para la verificación.",
+    "cash": "Siempre lleve algo de efectivo; los vendedores pequeños a menudo no aceptan tarjetas.",
+    "foreignCard": "Los principales hoteles aceptan Visa/Mastercard; pero muchos lugares prefieren el pago móvil."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Zona del Lago del Oeste",
+      "Distrito de Xihu"
+    ],
+    "tips": [
+      "Reserve cerca de estaciones de metro para un fácil acceso.",
+      "Consulte reseñas en línea sobre la limpieza."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Pez del Lago del Oeste en salsa de vinagre",
+      "Cerdo Dongpo",
+      "Pollo del Mendigo",
+      "Camarones Longjing",
+      "Cerdo Dongpo estofado"
+    ],
+    "foodStreets": [
+      "Calle Hefang",
+      "Calle de la Comida del Río Shengli"
+    ],
+    "tips": [
+      "Pruebe las casas de té locales para un sabor auténtico.",
+      "Tenga cuidado con los platos picantes si es sensible."
+    ]
+  },
+  "commonScams": [
+    "Guías turísticos falsos cerca del Lago del Oeste.",
+    "Taxis que cobran de más por la noche.",
+    "Carteristas en lugares turísticos concurridos."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Marque el 110 para la policía; use aplicaciones de traducción si necesita inglés."
+  },
+  "usefulApps": [
+    "Didi",
+    "Alipay",
+    "WeChat",
+    "Baidu Maps"
+  ],
+  "bestTimeToVisit": "Primavera (abril-mayo) y otoño (septiembre-octubre) para un clima agradable.",
+  "touristTips": [
+    "Aprenda frases básicas en mandarín.",
+    "Lleve un cargador portátil.",
+    "Respete las costumbres locales, como quitarse los zapatos en interiores.",
+    "Manténgase hidratado en verano.",
+    "Use protector solar y sombreros para protección solar."
+  ]
+}

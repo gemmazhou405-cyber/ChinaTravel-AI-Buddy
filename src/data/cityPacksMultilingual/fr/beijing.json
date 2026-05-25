@@ -1,0 +1,79 @@
+{
+  "cityId": "beijing",
+  "cityName": "Beijing",
+  "cityNameCN": "北京",
+  "airport": {
+    "name": "Aéroport international de Pékin-Capitale (PEK)",
+    "iataCode": "PEK",
+    "toCity": "Prendre l'Airport Express jusqu'à Dongzhimen en 25 min ; taxis avec compteur, mais utiliser l'application Didi."
+  },
+  "transport": {
+    "metro": "Utilisez l'application Beijing Subway ; panneaux en anglais ; évitez les heures de pointe de 7h à 9h et de 17h à 19h.",
+    "taxi": "Arrêtez des taxis ou utilisez l'application Didi ; assurez-vous que le compteur fonctionne ; montrez la destination en chinois.",
+    "didi": "Téléchargez l'application Didi avant l'arrivée ; liez une carte internationale ; pratique pour les trajets en ville.",
+    "tips": [
+      "Achetez une carte Yikatong pour économiser sur le métro/bus.",
+      "Utilisez Baidu Maps pour une navigation en temps réel.",
+      "Évitez les taxis sans licence ; utilisez les stations officielles."
+    ]
+  },
+  "payment": {
+    "alipay": "Téléchargez Alipay et utilisez Tour Pass pour les cartes étrangères ; largement accepté dans les magasins.",
+    "wechatPay": "Configurez WeChat Pay via l'application WeChat ; scannez les codes QR pour payer facilement.",
+    "cash": "Ayez du liquide en petites coupures pour les vendeurs ambulants ; distributeurs disponibles mais moins utilisés.",
+    "foreignCard": "Visa/Mastercard acceptés dans les hôtels et centres commerciaux ; prévenez votre banque avant le voyage pour éviter les blocages."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Wangfujing pour les sites centraux",
+      "Chaoyang pour les affaires et le shopping"
+    ],
+    "tips": [
+      "Réservez près des stations de métro pour un accès facile.",
+      "Vérifiez la disponibilité d'un personnel anglophone."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Canard laqué de Pékin",
+      "Jiaozi (raviolis)",
+      "Nouilles Zhajiangmian",
+      "Fondue au mouton",
+      "Crêpe Jianbing"
+    ],
+    "foodStreets": [
+      "Wangfujing Snack Street (rue des collations de Wangfujing)",
+      "Guijie (rue des Fantômes) pour la nourriture nocturne"
+    ],
+    "tips": [
+      "Essayez les restaurants locaux pour des saveurs authentiques.",
+      "Utilisez des applications comme Meituan pour la livraison."
+    ]
+  },
+  "commonScams": [
+    "Évitez les invitations à une « cérémonie du thé » ; souvent des arnaques surtarifées.",
+    "Ignorez les offres de guides touristiques non sollicitées dans les lieux touristiques.",
+    "Vérifiez les compteurs des taxis ou préférez Didi pour plus de transparence."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Gardez l'adresse de votre hôtel en caractères chinois pour une aide rapide."
+  },
+  "usefulApps": [
+    "Baidu Maps pour la navigation",
+    "Didi pour les courses",
+    "Alipay pour les paiements",
+    "WeChat pour la communication",
+    "Pleco pour la traduction"
+  ],
+  "bestTimeToVisit": "Printemps (avril-mai) et automne (septembre-octobre) pour un temps doux et moins de foules.",
+  "touristTips": [
+    "Apprenez des phrases de base en mandarin comme bonjour et merci.",
+    "Respectez les coutumes locales et faites la queue poliment.",
+    "Restez hydraté et utilisez de la crème solaire en été.",
+    "Ayez une copie de votre passeport pour les contrôles d'identité.",
+    "Utilisez le concierge de l'hôtel pour les réservations et les conseils."
+  ]
+}

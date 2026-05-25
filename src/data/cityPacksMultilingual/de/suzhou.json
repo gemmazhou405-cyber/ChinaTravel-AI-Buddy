@@ -1,0 +1,77 @@
+{
+  "cityId": "suzhou",
+  "cityName": "Suzhou",
+  "cityNameCN": "苏州",
+  "airport": {
+    "name": "Sunan Shuofang International Airport",
+    "iataCode": "WUX",
+    "toCity": "Nehmen Sie einen Direktbus oder Zug nach Suzhou, ca. 1-2 Stunden. Überprüfen Sie die Fahrpläne online."
+  },
+  "transport": {
+    "metro": "Die Suzhou Metro ist effizient; kaufen Sie Tickets an den Stationen oder verwenden Sie Alipay für QR-Codes.",
+    "taxi": "Verwenden Sie Taxis mit Taxameter; empfohlen wird die Gaode Maps-App für Navigation und Fahrtkostenschätzungen.",
+    "didi": "Laden Sie die Didi-App herunter; registrieren Sie sich mit einer internationalen Telefonnummer für Fahrdienste.",
+    "tips": [
+      "Führen Sie eine Metro-Karte auf Englisch mit.",
+      "Vermeiden Sie Stoßzeiten für Taxifahrten.",
+      "Nutzen Sie Apps für den öffentlichen Verkehr für Echtzeit-Updates."
+    ]
+  },
+  "payment": {
+    "alipay": "Verknüpfen Sie eine internationale Kreditkarte mit Alipay für einfache Zahlungen in den meisten Geschäften.",
+    "wechatPay": "Richten Sie WeChat Pay über eine ausländische Karte oder Überweisung ein, um bequem zu bezahlen.",
+    "cash": "Führen Sie Bargeld in kleinen Beträgen mit; einige lokale Händler akzeptieren möglicherweise keine Karten.",
+    "foreignCard": "Die wichtigsten Touristenakzeptanzstellen akzeptieren Visa/Mastercard, aber Bargeld wird oft an anderen Orten bevorzugt."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Bezirk Gusu für historische Stätten.",
+      "Suzhou Industrial Park für moderne Unterkünfte."
+    ],
+    "tips": [
+      "Buchen Sie Hotels in der Nähe von Metrostationen für einen einfachen Zugang.",
+      "Prüfen Sie Online-Bewertungen zu Sauberkeit und Service."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Suzhou-Nudeln",
+      "Süß-saurer Mandarinfisch",
+      "Eichhörnchenförmiger Mandarinfisch",
+      "Zongzi (Reisknödel)",
+      "Gao (süße Kuchen)"
+    ],
+    "foodStreets": [
+      "Guanqian-Straße",
+      "Pingjiang-Straße"
+    ],
+    "tips": [
+      "Probieren Sie lokale Teehäuser für ein authentisches Erlebnis.",
+      "Seien Sie bei scharfen Gerichten vorsichtig, wenn Sie nicht daran gewöhnt sind."
+    ]
+  },
+  "commonScams": [
+    "Taxifahrer, die Touristen nachts überteuern.",
+    "Gefälschte Eintrittskarten, die in der Nähe von Touristenattraktionen verkauft werden.",
+    "Inoffizielle Führer, die hohe Gebühren im Voraus verlangen."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Lernen Sie grundlegende chinesische Phrasen wie „Hilfe“ oder „Krankenhaus“ für Notfälle."
+  },
+  "usefulApps": [
+    "Didi für Transport",
+    "Alipay für Zahlungen",
+    "Baidu Maps für Navigation"
+  ],
+  "bestTimeToVisit": "Frühling (April-Mai) oder Herbst (September-Oktober) für mildes Wetter und weniger Menschenmassen.",
+  "touristTips": [
+    "Führen Sie ein Wörterbuch oder eine Übersetzungs-App zur Kommunikation mit.",
+    "Respektieren Sie lokale Bräuche und Schlangen-Etikette.",
+    "Trinken Sie ausreichend Wasser im Sommer und führen Sie Wasser mit.",
+    "Verwenden Sie Sonnencreme und Hüte zum Sonnenschutz.",
+    "Bewahren Sie Wertsachen in überfüllten Bereichen sicher auf."
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "cityId": "beijing",
+  "cityName": "Beijing",
+  "cityNameCN": "北京",
+  "airport": {
+    "name": "Aeropuerto Internacional de Beijing Capital (PEK)",
+    "iataCode": "PEK",
+    "toCity": "Tome el Airport Express a Dongzhimen en 25 minutos; use taxis con taxímetro, pero la app Didi es más práctica."
+  },
+  "transport": {
+    "metro": "Use la app Beijing Subway; las señales están en inglés; evite las horas punta de 7-9 AM y 5-7 PM.",
+    "taxi": "Pare taxis en la calle o use la app Didi; asegúrese de que el taxímetro esté encendido; muestre el destino en chino.",
+    "didi": "Descargue la app Didi antes de llegar; vincule una tarjeta internacional; es conveniente para viajes por toda la ciudad.",
+    "tips": [
+      "Compre la tarjeta Yikatong para ahorrar en metro y autobús.",
+      "Use Baidu Maps para navegación en tiempo real.",
+      "Evite taxis sin licencia; use las paradas oficiales."
+    ]
+  },
+  "payment": {
+    "alipay": "Descargue Alipay y use Tour Pass para tarjetas extranjeras; ampliamente aceptado en tiendas.",
+    "wechatPay": "Configure WeChat Pay a través de la app WeChat; escanee códigos QR para pagar fácilmente.",
+    "cash": "Lleve efectivo en billetes pequeños para vendedores callejeros; hay cajeros automáticos disponibles, pero se usan menos.",
+    "foreignCard": "Visa/Mastercard en hoteles y centros comerciales; notifique a su banco antes de viajar para evitar bloqueos."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Wangfujing por las atracciones céntricas",
+      "Chaoyang por negocios y compras"
+    ],
+    "tips": [
+      "Reserve cerca de estaciones de metro para fácil acceso.",
+      "Compruebe si hay personal que hable inglés para asistencia."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Pato a la pekinesa",
+      "Jiaozi (empanadillas)",
+      "Fideos Zhajiangmian",
+      "Hotpot de cordero",
+      "Crepe Jianbing"
+    ],
+    "foodStreets": [
+      "Calle de aperitivos de Wangfujing",
+      "Guijie (Calle de los Fantasmas) para comida nocturna"
+    ],
+    "tips": [
+      "Pruebe restaurantes locales para sabores auténticos.",
+      "Use apps de comida como Meituan para delivery."
+    ]
+  },
+  "commonScams": [
+    "Evite invitaciones a 'ceremonias de té'; a menudo son estafas sobrevaloradas.",
+    "Ignore ofertas no solicitadas de guías turísticos en lugares turísticos.",
+    "Compruebe los taxímetros o prefiera Didi para transparencia."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Lleve la dirección del hotel en caracteres chinos para una ayuda rápida."
+  },
+  "usefulApps": [
+    "Baidu Maps para navegación",
+    "Didi para viajes",
+    "Alipay para pagos",
+    "WeChat para comunicación",
+    "Pleco para traducción"
+  ],
+  "bestTimeToVisit": "Primavera (abril-mayo) y otoño (septiembre-octubre) por el clima suave y menos aglomeraciones.",
+  "touristTips": [
+    "Aprenda frases básicas en mandarín como hola y gracias.",
+    "Respete las costumbres locales y haga fila cortésmente.",
+    "Manténgase hidratado y use protector solar en verano.",
+    "Lleve una copia de su pasaporte para controles de identidad.",
+    "Use el conserje del hotel para reservas y consejos."
+  ]
+}

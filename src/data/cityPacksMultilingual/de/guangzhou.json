@@ -1,0 +1,78 @@
+{
+  "cityId": "guangzhou",
+  "cityName": "Guangzhou",
+  "cityNameCN": "广州",
+  "airport": {
+    "name": "Guangzhou Baiyun International Airport",
+    "iataCode": "CAN",
+    "toCity": "Nehmen Sie die U-Bahn-Linie 3 oder den Flughafenexpressbus. Taxis sind verfügbar; nutzen Sie solche mit Taxameter."
+  },
+  "transport": {
+    "metro": "Besorgen Sie sich eine Yangcheng Tong-Karte für den einfachen U-Bahn-Zugang. Beschilderung ist auf Englisch und Chinesisch.",
+    "taxi": "Nutzen Sie Taxis mit Taxameter; Apps wie Amap oder Didi bieten Komfort. Vermeiden Sie unlizenzierte Taxis.",
+    "didi": "Laden Sie die Didi-App herunter; verknüpfen Sie eine internationale Karte oder nutzen Sie Alipay. Barzahlung ist möglich.",
+    "tips": [
+      "Tragen Sie immer Kleingeld für Busse mit.",
+      "Vermeiden Sie Stoßzeiten für eine angenehmere Fahrt.",
+      "Lernen Sie grundlegende chinesische Phrasen für Wegbeschreibungen."
+    ]
+  },
+  "payment": {
+    "alipay": "Laden Sie die Alipay-App herunter und registrieren Sie sich mit Reisepass. Verknüpfen Sie eine internationale Karte zum Aufladen.",
+    "wechatPay": "Richten Sie WeChat Pay über Reisepass-Verifizierung ein. Nutzen Sie es für Zahlungen an den meisten Orten.",
+    "cash": "Tragen Sie geringe Bargeldbeträge mit sich; einige kleine Händler bevorzugen Bargeld.",
+    "foreignCard": "Visa und Mastercard werden in Hotels und gehobenen Restaurants akzeptiert. Informieren Sie Ihre Bank vor der Reise."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Bezirk Tianhe",
+      "Bezirk Yuexiu"
+    ],
+    "tips": [
+      "Buchen Sie während der Hochsaison im Voraus.",
+      "Prüfen Sie, ob das Hotel englischsprachiges Personal hat."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Kantonesische Dim Sum",
+      "Bratgans",
+      "Wonton-Nudeln",
+      "Char Siu",
+      "Reisbrei (Congee)"
+    ],
+    "foodStreets": [
+      "Shangxiajiu Fußgängerzone",
+      "Beijing Road"
+    ],
+    "tips": [
+      "Probieren Sie Straßenessen, aber achten Sie darauf, dass es frisch zubereitet ist.",
+      "Nutzen Sie Übersetzungs-Apps für Menüpunkte."
+    ]
+  },
+  "commonScams": [
+    "Überzogene Preise durch unlizenzierte Taxis.",
+    "Gefälschte Waren an Touristenorten.",
+    "Tai Chi- oder Teezeremonie-Betrügereien in der Nähe von Sehenswürdigkeiten."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Im Notfall bitten Sie Einheimische um Hilfe; die meisten sind freundlich und helfen Touristen."
+  },
+  "usefulApps": [
+    "Alipay",
+    "WeChat",
+    "Amap (für Karten und Wegbeschreibungen)",
+    "Pleco (für Übersetzungen)"
+  ],
+  "bestTimeToVisit": "Oktober bis Dezember für mildes Wetter und weniger Menschenmassen.",
+  "touristTips": [
+    "Lernen Sie einige grundlegende chinesische Phrasen.",
+    "Haben Sie die Hoteladresse immer auf Chinesisch dabei.",
+    "Nutzen Sie die Hotelkarte, um sicher zurückzufinden.",
+    "Respektieren Sie lokale Sitten und Traditionen.",
+    "Trinken Sie ausreichend und führen Sie eine Wasserflasche mit sich."
+  ]
+}

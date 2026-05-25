@@ -1,0 +1,78 @@
+{
+  "cityId": "hangzhou",
+  "cityName": "Hangzhou",
+  "cityNameCN": "杭州",
+  "airport": {
+    "name": "Aéroport international de Hangzhou Xiaoshan",
+    "iataCode": "HGH",
+    "toCity": "Prenez la ligne 1 du métro pour le centre-ville ; utilisez la navette aéroport ou un taxi pour plus de commodité."
+  },
+  "transport": {
+    "metro": "Le métro couvre les principaux sites touristiques ; achetez des billets ou utilisez le code QR Alipay.",
+    "taxi": "Utilisez des taxis avec compteur ; évitez ceux sans licence et gardez de la petite monnaie.",
+    "didi": "Téléchargez l'application Didi ; configurez-la avec Alipay ou WeChat pour des trajets faciles.",
+    "tips": [
+      "Utilisez le métro pendant les heures de pointe pour éviter les embouteillages.",
+      "Ayez du liquide pour les bus.",
+      "Apprenez les noms de base des stations en mandarin."
+    ]
+  },
+  "payment": {
+    "alipay": "Téléchargez Alipay ; utilisez 'Tour Pass' pour lier une carte étrangère.",
+    "wechatPay": "Configurez via WeChat ; une assistance locale peut être nécessaire pour la vérification.",
+    "cash": "Ayez toujours un peu de liquide ; les petits vendeurs n'acceptent souvent pas les cartes.",
+    "foreignCard": "Les grands hôtels acceptent Visa/Mastercard ; mais beaucoup d'endroits préfèrent le paiement mobile."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Zone du lac de l'Ouest",
+      "District de Xihu"
+    ],
+    "tips": [
+      "Réservez près des stations de métro pour un accès facile.",
+      "Vérifiez les avis en ligne pour la propreté."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Poisson du lac de l'Ouest à la sauce vinaigrée",
+      "Porc Dongpo",
+      "Poulet du mendiant",
+      "Crevettes au Longjing",
+      "Porc Dongpo braisé"
+    ],
+    "foodStreets": [
+      "Rue Hefang",
+      "Rue de la nourriture de la rivière Shengli"
+    ],
+    "tips": [
+      "Essayez les maisons de thé locales pour une saveur authentique.",
+      "Soyez prudent avec les plats épicés si vous êtes sensible."
+    ]
+  },
+  "commonScams": [
+    "Faux guides touristiques près du lac de l'Ouest.",
+    "Taxis qui surfacturent la nuit.",
+    "Pickpockets dans les sites touristiques bondés."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Composez le 110 pour la police ; utilisez des applications de traduction si vous avez besoin de l'anglais."
+  },
+  "usefulApps": [
+    "Didi",
+    "Alipay",
+    "WeChat",
+    "Baidu Maps"
+  ],
+  "bestTimeToVisit": "Printemps (avril-mai) et automne (septembre-octobre) pour un temps agréable.",
+  "touristTips": [
+    "Apprenez les phrases de base en mandarin.",
+    "Emportez un chargeur portable.",
+    "Respectez les coutumes locales comme enlever ses chaussures à l'intérieur.",
+    "Restez hydraté en été.",
+    "Utilisez de la crème solaire et des chapeaux pour se protéger du soleil."
+  ]
+}

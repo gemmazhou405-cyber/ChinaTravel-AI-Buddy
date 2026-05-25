@@ -1,0 +1,78 @@
+{
+  "cityId": "xian",
+  "cityName": "Xi'an",
+  "cityNameCN": "西安",
+  "airport": {
+    "name": "Aéroport international de Xi'an Xianyang",
+    "iataCode": "XIY",
+    "toCity": "Prenez la ligne 14 du métro pour le centre-ville ; navettes aéroport disponibles ; les taxis utilisent des tarifs taximètres."
+  },
+  "transport": {
+    "metro": "Obtenez une carte de métro de Xi'an ou utilisez les codes QR WeChat/Alipay pour un voyage facile.",
+    "taxi": "Utilisez des taxis taximètres ; des applications comme Didi sont fiables ; évitez les taxis non officiels.",
+    "didi": "Téléchargez l'application Didi ; liez une carte étrangère ou utilisez Alipay ; entrez la destination en chinois.",
+    "tips": [
+      "Le métro fonctionne de 6h à 23h.",
+      "Évitez les heures de pointe de 7h à 9h et de 17h à 19h.",
+      "Gardez de la petite monnaie pour les bus."
+    ]
+  },
+  "payment": {
+    "alipay": "Inscrivez-vous avec passeport ; liez une carte étrangère ; utilisez pour les paiements et le transport.",
+    "wechatPay": "Liez une carte étrangère ou utilisez la version touriste ; les codes QR sont largement acceptés pour les paiements.",
+    "cash": "Emportez de l'argent liquide ; les petits vendeurs peuvent ne pas accepter les cartes.",
+    "foreignCard": "Visa/Mastercard acceptés dans les hôtels et centres commerciaux ; utilisez de l'argent liquide ou le paiement mobile ailleurs."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Tour de la Cloche",
+      "District de Xincheng"
+    ],
+    "tips": [
+      "Réservez à l'avance pendant les saisons de pointe.",
+      "Vérifiez si le personnel parle anglais."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Nouilles Biangbiang",
+      "Roujiamo (hamburger chinois)",
+      "Yangrou paomo",
+      "Gâteaux de kaki",
+      "Nouilles froides"
+    ],
+    "foodStreets": [
+      "Quartier musulman",
+      "Marché de nuit de Dongxinjie"
+    ],
+    "tips": [
+      "Essayez la nourriture de rue mais assurez l'hygiène.",
+      "Mangez là où les locaux mangent pour l'authenticité."
+    ]
+  },
+  "commonScams": [
+    "Visites surévaluées près des sites touristiques.",
+    "Marchandises contrefaites dans les marchés.",
+    "Chauffeurs de taxi prenant des itinéraires plus longs."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Apprenez des phrases de base en chinois pour les urgences ; conservez l'adresse de l'hôtel en chinois."
+  },
+  "usefulApps": [
+    "WeChat",
+    "Alipay",
+    "Baidu Maps",
+    "Google Translate (with VPN)"
+  ],
+  "bestTimeToVisit": "Printemps (avril-mai) et automne (septembre-octobre) pour un temps doux.",
+  "touristTips": [
+    "Emportez toujours votre pièce d'identité et la carte de l'hôtel.",
+    "Utilisez des applications de traduction pour communiquer.",
+    "Marchandez poliment dans les marchés.",
+    "Restez hydraté en été.",
+    "Respectez les coutumes locales et les sites."
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "cityId": "shanghai",
+  "cityName": "Shanghai",
+  "cityNameCN": "上海",
+  "airport": {
+    "name": "Aéroport international de Shanghai-Pudong",
+    "iataCode": "PVG",
+    "toCity": "Prenez le train Maglev jusqu'à la station Longyang Road, puis le métro. Utilisez Didi ou des applications de taxi avec l'adresse en chinois."
+  },
+  "transport": {
+    "metro": "Achetez une carte de transport public de Shanghai. Téléchargez l'application Shanghai Metro pour les itinéraires et le support en anglais.",
+    "taxi": "Utilisez l'application Didi pour des taxis fiables. Assurez-vous que le compteur fonctionne ; évitez les taxis non officiels.",
+    "didi": "Téléchargez Didi, liez une carte étrangère. Entrez la destination en chinois pour plus de clarté.",
+    "tips": [
+      "Utilisez des cartes de métro pour voyager sans espèces.",
+      "Évitez les heures de pointe (7h-9h, 17h-19h).",
+      "Gardez l'adresse de votre hôtel en chinois à portée de main."
+    ]
+  },
+  "payment": {
+    "alipay": "Configurez la version internationale d'Alipay avec une carte étrangère. Largeement accepté pour les paiements.",
+    "wechatPay": "Liez une carte étrangère à WeChat Pay pour des transactions pratiques.",
+    "cash": "Ayez un peu de liquide pour les vendeurs ambulants. Distributeurs automatiques disponibles dans toute la ville.",
+    "foreignCard": "Visa/Mastercard acceptés dans les hôtels et centres commerciaux. Pas dans tous les magasins locaux."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Le Bund",
+      "Concession française",
+      "Temple de Jing'an"
+    ],
+    "tips": [
+      "Réservez près des stations de métro pour un accès facile.",
+      "Vérifiez si le personnel de l'hôtel parle anglais."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Xiaolongbao",
+      "Shengjianbao",
+      "Crabe poilu",
+      "Nouilles à l'huile d'oignon vert",
+      "Porchette braisée rouge"
+    ],
+    "foodStreets": [
+      "Rue Yunnan",
+      "Rue Wujiang"
+    ],
+    "tips": [
+      "Essayez la nourriture de rue mais vérifiez la propreté.",
+      "Apprenez les noms de base de la nourriture en chinois."
+    ]
+  },
+  "commonScams": [
+    "Arnaques aux cérémonies de thé avec des additions élevées.",
+    "Surfacturation dans les taxis sans compteur.",
+    "Fausse marchandise vendue près des sites touristiques."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Connaissez l'adresse de votre hôtel en chinois pour une aide rapide."
+  },
+  "usefulApps": [
+    "Didi",
+    "Alipay",
+    "Shanghai Metro",
+    "Google Maps (utilisez un VPN)",
+    "Pleco"
+  ],
+  "bestTimeToVisit": "Printemps (avril-mai) ou automne (septembre-novembre) pour un temps agréable.",
+  "touristTips": [
+    "Apprenez des phrases de base en mandarin.",
+    "Emportez une batterie externe.",
+    "Respectez les coutumes locales.",
+    "Utilisez le Wi-Fi public avec prudence.",
+    "Gardez des copies de votre passeport en sécurité."
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "cityId": "chongqing",
+  "cityName": "Chongqing",
+  "cityNameCN": "重庆",
+  "airport": {
+    "name": "Chongqing Jiangbei International Airport",
+    "iataCode": "CKG",
+    "toCity": "Nehmen Sie die U-Bahn-Linie 10 direkt ins Stadtzentrum oder nutzen Sie Flughafen-Taxis und Busse."
+  },
+  "transport": {
+    "metro": "Die U-Bahn ist effizient für die wichtigsten Sehenswürdigkeiten; kaufen Sie Tickets bar oder über Apps.",
+    "taxi": "Taxis sind günstig; nutzen Sie Apps wie Didi, um Sprachprobleme zu vermeiden.",
+    "didi": "Die Didi-App funktioniert wie Uber; richten Sie sie mit internationaler Zahlung ein.",
+    "tips": [
+      "Laden Sie Offline-Karten vor der Ankunft herunter.",
+      "Die U-Bahn fährt von 6 Uhr morgens bis 23 Uhr abends.",
+      "Bestätigen Sie den Taxitarif vor der Fahrt."
+    ]
+  },
+  "payment": {
+    "alipay": "Alipay unterstützt ausländische Karten; laden Sie es herunter und registrieren Sie sich mit Ihrem Reisepass.",
+    "wechatPay": "WeChat Pay ermöglicht die Verknüpfung internationaler Karten für einfache Zahlungen.",
+    "cash": "Führen Sie etwas Kleingeld mit; einige Straßenverkäufer akzeptieren möglicherweise keine Karten.",
+    "foreignCard": "Visa/Mastercard werden in Hotels, Einkaufszentren akzeptiert; anderswo weniger verbreitet."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Jiefangbei",
+      "Nan'an District"
+    ],
+    "tips": [
+      "Buchen Sie frühzeitig während der Feiertage.",
+      "Prüfen Sie, ob das Hotel englischsprachiges Personal hat."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Chongqing Feuertopf",
+      "Xiaomian-Nudeln",
+      "Scharfes Hähnchen",
+      "Fuqi Feipian",
+      "Suanla Fen"
+    ],
+    "foodStreets": [
+      "Bayi Road",
+      "Nanbin Road"
+    ],
+    "tips": [
+      "Fragen Sie nach milder Schärfe, wenn Sie empfindlich sind.",
+      "Wählen Sie belebte Garküchen für Frische."
+    ]
+  },
+  "commonScams": [
+    "Taxis, die Touristen überteuern.",
+    "Gefälschte Waren an Sehwürdigkeiten.",
+    "Überteuerte, ungebetene Touren."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Vorsicht vor steilen Hängen und dichtem Nebel, besonders im Winter."
+  },
+  "usefulApps": [
+    "WeChat",
+    "Alipay",
+    "Baidu Maps",
+    "Didi",
+    "Google Translate"
+  ],
+  "bestTimeToVisit": "Frühling (April-Mai) oder Herbst (September-Oktober) für angenehmes Wetter.",
+  "touristTips": [
+    "Lernen Sie grundlegende Mandarin-Phrasen.",
+    "Nutzen Sie Übersetzungs-Apps für Schilder.",
+    "Tragen Sie eine Powerbank mit sich.",
+    "Bleiben Sie in den feuchten Sommern hydriert.",
+    "Respektieren Sie die lokalen Essgewohnheiten."
+  ]
+}
