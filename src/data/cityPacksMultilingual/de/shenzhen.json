@@ -1,0 +1,78 @@
+{
+  "cityId": "shenzhen",
+  "cityName": "Shenzhen",
+  "cityNameCN": "深圳",
+  "airport": {
+    "name": "Flughafen Shenzhen Bao'an International",
+    "iataCode": "SZX",
+    "toCity": "Nehmen Sie die U-Bahn-Linie 11 ins Stadtzentrum; etwa 30 Minuten. Oder verwenden Sie die Didi App."
+  },
+  "transport": {
+    "metro": "Laden Sie die Shenzhen Metro App herunter oder verwenden Sie Baidu Maps. Kaufen Sie Tickets oder verwenden Sie eine Shenzhentong-Karte.",
+    "taxi": "Verwenden Sie die Didi App für Bequemlichkeit. Taxis akzeptieren Bargeld und Alipay.",
+    "didi": "Registrieren Sie sich mit einer internationalen Nummer; bezahlen Sie über WeChat oder Alipay.",
+    "tips": [
+      "Nutzen Sie die U-Bahn für schnelle Fahrten.",
+      "Vermeiden Sie nach Möglichkeit die Stoßzeiten.",
+      "Bewahren Sie Ihr U-Bahn-Ticket für den Ausgang auf."
+    ]
+  },
+  "payment": {
+    "alipay": "Verknüpfen Sie eine ausländische Kreditkarte; verwenden Sie sie für Zahlungen in Geschäften.",
+    "wechatPay": "Richten Sie es mit einer ausländischen Karte ein; scannen Sie QR-Codes.",
+    "cash": "Tragen Sie kleine Scheine bei sich; einige Orte bevorzugen mobiles Bezahlen.",
+    "foreignCard": "Akzeptiert in Einkaufszentren und Hotels; verwenden Sie anderswo Bargeld."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Futian",
+      "Nanshan"
+    ],
+    "tips": [
+      "Buchen Sie Hotels im Voraus.",
+      "Verwenden Sie Ctrip oder Booking.com für Angebote."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Dim Sum",
+      "Kantonesische Meeresfrüchte",
+      "Shenzhen-Bratgans",
+      "Tofupudding",
+      "Gebratene Nudeln"
+    ],
+    "foodStreets": [
+      "Dongmen Fußgängerzone",
+      "Coco Park Bereich"
+    ],
+    "tips": [
+      "Probieren Sie Streetfood für einen authentischen Geschmack.",
+      "Lernen Sie grundlegende chinesische Lebensmittelbezeichnungen."
+    ]
+  },
+  "commonScams": [
+    "Falsche Taxameter; verwenden Sie offizielle Taxis.",
+    "Überhöhte Preise an Touristenorten; bestätigen Sie die Preise.",
+    "Taschendiebe in überfüllten Bereichen; schützen Sie Ihre Wertsachen."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Laden Sie die 'Shenzhen Emergency' App für lokale Hilfe herunter."
+  },
+  "usefulApps": [
+    "Baidu Maps für Navigation.",
+    "WeChat für Kommunikation.",
+    "Didi für Fahrten.",
+    "Ctrip für Buchungen."
+  ],
+  "bestTimeToVisit": "Besuchen Sie die Stadt von Oktober bis Dezember bei mildem Wetter und weniger Menschenmassen.",
+  "touristTips": [
+    "Lernen Sie grundlegende Mandarin-Phrasen.",
+    "Verwenden Sie Übersetzungs-Apps wie Baidu Translate.",
+    "Trinken Sie im Sommer ausreichend.",
+    "Respektieren Sie lokale Bräuche.",
+    "Bewahren Sie Kopien Ihres Reisepasses auf."
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "cityId": "shenzhen",
+  "cityName": "Shenzhen",
+  "cityNameCN": "深圳",
+  "airport": {
+    "name": "Aeropuerto Internacional de Shenzhen Bao'an",
+    "iataCode": "SZX",
+    "toCity": "Tome la Línea 11 del metro hasta el centro de la ciudad; aproximadamente 30 minutos. O use la aplicación Didi."
+  },
+  "transport": {
+    "metro": "Descargue la aplicación Shenzhen Metro o use Baidu Maps. Compre boletos o use la tarjeta Shenzhentong.",
+    "taxi": "Use la aplicación Didi para mayor comodidad. Los taxis aceptan efectivo y Alipay.",
+    "didi": "Regístrese con número internacional; pague mediante WeChat o Alipay.",
+    "tips": [
+      "Use el metro para viajes rápidos.",
+      "Evite las horas punta si es posible.",
+      "Guarde el boleto del metro para salir."
+    ]
+  },
+  "payment": {
+    "alipay": "Vincule una tarjeta de crédito extranjera; úsela para pagos en tiendas.",
+    "wechatPay": "Configúrela con tarjeta extranjera; escanee códigos QR.",
+    "cash": "Lleve billetes pequeños; algunos lugares prefieren pago móvil.",
+    "foreignCard": "Aceptada en centros comerciales y hoteles; use efectivo en otros lugares."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Futian",
+      "Nanshan"
+    ],
+    "tips": [
+      "Reserve hoteles con anticipación.",
+      "Use Ctrip o Booking.com para ofertas."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Dim sum",
+      "Mariscos cantoneses",
+      "Ganso asado de Shenzhen",
+      "Pudín de tofu",
+      "Salteado de fideos"
+    ],
+    "foodStreets": [
+      "Calle peatonal de Dongmen",
+      "Zona de Coco Park"
+    ],
+    "tips": [
+      "Pruebe la comida callejera para un sabor auténtico.",
+      "Aprenda los nombres básicos de comida en chino."
+    ]
+  },
+  "commonScams": [
+    "Taxímetros falsos; use taxis oficiales.",
+    "Sobrecargo en zonas turísticas; confirme precios.",
+    "Carteristas en áreas concurridas; proteja sus pertenencias."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Descargue la aplicación 'Shenzhen Emergency' para ayuda local."
+  },
+  "usefulApps": [
+    "Baidu Maps para navegación.",
+    "WeChat para comunicación.",
+    "Didi para viajes.",
+    "Ctrip para reservas."
+  ],
+  "bestTimeToVisit": "Visite de octubre a diciembre por el clima templado y menos multitudes.",
+  "touristTips": [
+    "Aprenda frases básicas en mandarín.",
+    "Use aplicaciones de traducción como Baidu Translate.",
+    "Manténgase hidratado en verano.",
+    "Respete las costumbres locales.",
+    "Guarde copias de su pasaporte."
+  ]
+}

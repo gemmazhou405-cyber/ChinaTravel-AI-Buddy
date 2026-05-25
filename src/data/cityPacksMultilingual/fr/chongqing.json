@@ -1,0 +1,79 @@
+{
+  "cityId": "chongqing",
+  "cityName": "Chongqing",
+  "cityNameCN": "重庆",
+  "airport": {
+    "name": "Aéroport international de Chongqing Jiangbei",
+    "iataCode": "CKG",
+    "toCity": "Prenez le Métro Ligne 10 directement pour le centre-ville, ou utilisez les taxis et bus de l'aéroport."
+  },
+  "transport": {
+    "metro": "Le métro est efficace pour les sites principaux ; achetez des billets en espèces ou via des applications.",
+    "taxi": "Les taxis sont bon marché ; utilisez des applications comme Didi pour éviter les problèmes de langue.",
+    "didi": "L'application Didi fonctionne comme Uber ; configurez-la avec un paiement international.",
+    "tips": [
+      "Téléchargez des cartes hors ligne avant votre arrivée.",
+      "Le métro fonctionne de 6h à 23h.",
+      "Confirmez le tarif du taxi avant de monter."
+    ]
+  },
+  "payment": {
+    "alipay": "Alipay accepte les cartes étrangères ; téléchargez et inscrivez-vous avec votre passeport.",
+    "wechatPay": "WeChat Pay permet de lier une carte internationale pour des paiements faciles.",
+    "cash": "Ayez de la petite monnaie ; certains vendeurs ambulants n'acceptent peut-être pas les cartes.",
+    "foreignCard": "Visa/Mastercard acceptés dans les hôtels, centres commerciaux ; moins courant ailleurs."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Jiefangbei",
+      "District de Nan'an"
+    ],
+    "tips": [
+      "Réservez tôt pendant les vacances.",
+      "Vérifiez la présence de personnel anglophone dans les hôtels."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Fondue Chongqing",
+      "Nouilles Xiaomian",
+      "Poulet épicé",
+      "Fuqi Feipian",
+      "Suanla Fen"
+    ],
+    "foodStreets": [
+      "Rue Bayi",
+      "Rue Nanbin"
+    ],
+    "tips": [
+      "Demandez une épice douce si vous y êtes sensible.",
+      "Choisissez les stands de rue animés pour la fraîcheur."
+    ]
+  },
+  "commonScams": [
+    "Surcharge des taxis pour les touristes.",
+    "Marchandises contrefaites dans les attractions.",
+    "Visites non sollicitées à prix élevé."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Attention aux pentes abruptes et au brouillard dense, surtout en hiver."
+  },
+  "usefulApps": [
+    "WeChat",
+    "Alipay",
+    "Baidu Maps",
+    "Didi",
+    "Google Translate"
+  ],
+  "bestTimeToVisit": "Printemps (avril-mai) ou automne (septembre-octobre) pour un temps agréable.",
+  "touristTips": [
+    "Apprenez des phrases de base en mandarin.",
+    "Utilisez des applications de traduction pour les panneaux.",
+    "Emportez une batterie externe.",
+    "Restez hydraté pendant les étés humides.",
+    "Respectez les coutumes alimentaires locales."
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "cityId": "chengdu",
+  "cityName": "Chengdu",
+  "cityNameCN": "成都",
+  "airport": {
+    "name": "Chengdu Shuangliu Internationaler Flughafen",
+    "iataCode": "CTU",
+    "toCity": "Nehmen Sie die Metro-Linie 10 ins Stadtzentrum oder nutzen Sie Flughafenbusse. Taxis sind verfügbar."
+  },
+  "transport": {
+    "metro": "Nutzen Sie Metro-Apps für Karten. Betriebszeiten von 6:30 Uhr bis 22:30 Uhr.",
+    "taxi": "Nutzen Sie Taxameter-Taxis. Apps wie Didi werden für die Bequemlichkeit empfohlen.",
+    "didi": "Laden Sie die Didi-App herunter und stellen Sie sie auf Englisch ein. Bezahlung über die App.",
+    "tips": [
+      "Besorgen Sie sich eine Verkehrskarte für mehr Bequemlichkeit.",
+      "Vermeiden Sie Stoßzeiten: 7-9 Uhr und 17-19 Uhr.",
+      "Die Metro ist effizient und erschwinglich."
+    ]
+  },
+  "payment": {
+    "alipay": "Laden Sie die internationale Version von Alipay herunter und verbinden Sie eine ausländische Karte.",
+    "wechatPay": "Richten Sie WeChat Pay mit einer verifizierten ausländischen Karte ein.",
+    "cash": "Führen Sie kleine Scheine mit, da Wechselgeld knapp sein könnte.",
+    "foreignCard": "In großen Hotels und Geschäften akzeptiert, mobiles Bezahlen wird jedoch bevorzugt."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Bereich Jinli-Straße",
+      "In der Nähe von Taikoo Li",
+      "In der Nähe von Metrostationen"
+    ],
+    "tips": [
+      "Buchen Sie im Voraus, besonders während der Festivals.",
+      "Überprüfen Sie Bewertungen bezüglich Sauberkeit und Lage."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Mapo Tofu",
+      "Kung Pao Hähnchen",
+      "Sichuan-Hotpot",
+      "Dan Dan Nudeln",
+      "Zhong-Dumplings"
+    ],
+    "foodStreets": [
+      "Jinli Altstadtstraße",
+      "Breite und Schmale Gassen"
+    ],
+    "tips": [
+      "Beginnen Sie mit milden Schärfegraden.",
+      "Nutzen Sie Übersetzungs-Apps für Speisekarten."
+    ]
+  },
+  "commonScams": [
+    "Unerlaubte Taxis, die zu viel berechnen.",
+    "Gefälschte Touristenführungen.",
+    "Teehaus-Betrügereien mit überhöhten Preisen."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Bei medizinischer Hilfe besuchen Sie große Krankenhäuser wie das Westchina-Krankenhaus."
+  },
+  "usefulApps": [
+    "Didi",
+    "Alipay",
+    "WeChat",
+    "Baidu Maps",
+    "Ctrip"
+  ],
+  "bestTimeToVisit": "Frühling (März-Mai) und Herbst (September-November) für mildes Wetter.",
+  "touristTips": [
+    "Lernen Sie grundlegende Mandarin-Phrasen.",
+    "Nutzen Sie die Metro für eine einfache Navigation.",
+    "Probieren Sie die lokale Sichuan-Küche.",
+    "Tragen Sie ein tragbares Ladegerät bei sich.",
+    "Respektieren Sie lokale Bräuche und Etikette."
+  ]
+}
