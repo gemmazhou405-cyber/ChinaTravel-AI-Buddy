@@ -63,7 +63,7 @@ async function sendWelcomeEmail(email: string) {
         fromName: 'ChinaEase Buddy',
         html: `
           <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
-            <img src="https://gemmazhou405-cyber.github.io/ChinaTravel-AI-Buddy/email_header.jpg" 
+            <img src="https://chinaeasebuddy.com/email_header.jpg" 
                  style="width:100%;border-radius:12px;margin-bottom:24px">
             <h2 style="color:#155e63">Welcome to ChinaEase Buddy!</h2>
             <p>Your China survival kit is ready. Here's what to do next:</p>
@@ -72,7 +72,7 @@ async function sendWelcomeEmail(email: string) {
               <li><strong>Review Arrival Guide</strong> — set up Alipay before landing</li>
               <li><strong>Try Buddy AI</strong> — you have 5 free messages waiting</li>
             </ol>
-            <a href="https://gemmazhou405-cyber.github.io/ChinaTravel-AI-Buddy/"
+            <a href="https://chinaeasebuddy.com/"
                style="display:inline-block;background:#155e63;color:white;
                       padding:12px 24px;border-radius:8px;text-decoration:none;
                       font-weight:bold;margin-top:16px">
