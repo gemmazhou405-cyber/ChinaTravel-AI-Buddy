@@ -3,7 +3,6 @@ import Hero from './components/Hero';
 import TabNav from './components/TabNav';
 import TabContent from './components/TabContent';
 import QuickActions from './components/QuickActions';
-import VisitorTrustSection from './components/VisitorTrustSection';
 import CoreToolkitSection from './components/CoreToolkitSection';
 import ChatButton from './components/ChatButton';
 import ChatModal from './components/ChatModal';
@@ -60,7 +59,6 @@ export default function App() {
           showToast('Verification email sent.');
         }}
       />
-      <VisitorTrustSection />
       <QuickActions onTabSelect={handleQuickTabSelect} onAskBuddy={openBuddy} />
       <CoreToolkitSection />
       <div id="tabs" className="sticky top-0 z-40 bg-white shadow-sm">

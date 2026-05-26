@@ -56,7 +56,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden">
+    <section className="relative min-h-[72svh] md:min-h-screen flex flex-col overflow-hidden">
       <style>{`
         .hero-bg {
           background:
@@ -185,7 +185,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
       </div>
 
       {/* 主内容：badge + slogan + subtitle + 按钮，整体放在画面上半部分 */}
-      <div className="relative z-10 flex-1 flex flex-col justify-start px-6 md:px-10 max-w-7xl mx-auto w-full pt-8 md:pt-16">
+      <div className="relative z-10 flex-1 flex flex-col justify-start px-6 md:px-10 max-w-7xl mx-auto w-full pt-6 md:pt-16">
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 mb-4">
             <Star className="w-3 h-3 text-yellow-300 fill-yellow-300" />
@@ -194,18 +194,17 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
 
           <h1
             className="font-black text-white leading-none tracking-tight mb-4 drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)]"
-            style={{ fontSize: 'clamp(2.8rem, 9vw, 5.5rem)' }}
+            style={{ fontSize: 'clamp(3rem, 9vw, 5.5rem)' }}
           >
-            {t('hero.line1')}<br />
-            {t('hero.line2')}<br />
-            <span className="text-[#7dd3d8]">{t('hero.line3')}</span>
+            No Chinese?<br />
+            <span className="text-[#7dd3d8]">No problem.</span>
           </h1>
 
           <p className="text-white/82 text-sm md:text-lg leading-relaxed mb-6 max-w-lg drop-shadow-[0_2px_10px_rgba(0,0,0,0.45)]">
-            Essential China travel help for phrases, payments, food, transport, hotels, and emergencies — all in one mobile-friendly place.
+            Essential China travel help for taxis, payments, food, hotels, transport, and emergencies.
           </p>
 
-          <div className="absolute left-1/2 bottom-[17vh] z-20 flex w-[min(17.5rem,calc(100vw-2.5rem))] -translate-x-1/2 flex-col gap-2 md:static md:w-auto md:translate-x-0 md:flex-row">
+          <div className="absolute left-1/2 bottom-[7vh] z-20 flex w-[min(17.5rem,calc(100vw-2.5rem))] -translate-x-1/2 flex-col gap-2 md:static md:w-auto md:translate-x-0 md:flex-row">
             <button
               onClick={onAuthClick}
               className="w-full md:w-auto flex items-center justify-center gap-2 bg-[#155e63] text-white font-semibold px-5 py-3.5 md:px-8 md:py-4 rounded-xl hover:bg-[#0e4a4e] transition-all shadow-2xl md:shadow-xl text-sm md:text-base"
@@ -221,13 +220,13 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
           </div>
 
           <p className="text-white/58 text-xs mt-3">
-            No app download · Free to start · Made for travelers in China
+            No app download · Works in China · Free to start
           </p>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 animate-bounce">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden flex-col items-center gap-1 animate-bounce md:flex">
         <div className="w-5 h-8 border-2 border-white/30 rounded-full flex items-start justify-center pt-1.5">
           <div className="w-1 h-2 bg-white/60 rounded-full" />
         </div>
