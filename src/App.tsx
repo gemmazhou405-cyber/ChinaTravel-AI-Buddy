@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import TabNav from './components/TabNav';
 import TabContent from './components/TabContent';
 import QuickActions from './components/QuickActions';
+import VisitorTrustSection from './components/VisitorTrustSection';
 import ChatButton from './components/ChatButton';
 import ChatModal from './components/ChatModal';
 import Footer from './components/Footer';
@@ -59,6 +60,7 @@ export default function App() {
         }}
       />
       <QuickActions onTabSelect={handleQuickTabSelect} onAskBuddy={openBuddy} />
+      <VisitorTrustSection />
       <div id="tabs" className="sticky top-0 z-40 bg-white shadow-sm">
         <TabNav activeTab={activeTab} onTabChange={setActiveTab} />
       </div>

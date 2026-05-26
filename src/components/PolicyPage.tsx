@@ -146,8 +146,13 @@ const legalCopy = {
   about: {
     title: 'About ChinaEase Buddy',
     intro:
-      'ChinaEase Buddy is a web-based digital China travel toolkit built for international visitors who need practical help inside China.',
+      'ChinaEase Buddy is a web-based digital China travel toolkit built for foreign visitors in China.',
     sections: [
+      {
+        title: 'Use ChinaEase Buddy When You Need To',
+        body:
+          'Show useful Chinese phrases to locals; understand food, payment, transport, and hotel situations; get emergency help fast; and ask Buddy when you are stuck.',
+      },
       {
         title: 'What It Does',
         body:
