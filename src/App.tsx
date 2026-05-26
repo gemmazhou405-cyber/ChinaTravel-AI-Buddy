@@ -4,6 +4,7 @@ import TabNav from './components/TabNav';
 import TabContent from './components/TabContent';
 import QuickActions from './components/QuickActions';
 import VisitorTrustSection from './components/VisitorTrustSection';
+import CoreToolkitSection from './components/CoreToolkitSection';
 import ChatButton from './components/ChatButton';
 import ChatModal from './components/ChatModal';
 import Footer from './components/Footer';
@@ -61,6 +62,7 @@ export default function App() {
       />
       <VisitorTrustSection />
       <QuickActions onTabSelect={handleQuickTabSelect} onAskBuddy={openBuddy} />
+      <CoreToolkitSection />
       <div id="tabs" className="sticky top-0 z-40 bg-white shadow-sm">
         <TabNav activeTab={activeTab} onTabChange={setActiveTab} />
       </div>

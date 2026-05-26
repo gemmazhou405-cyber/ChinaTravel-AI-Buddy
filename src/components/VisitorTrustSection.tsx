@@ -1,21 +1,26 @@
 const USE_CASES = [
-  'show useful Chinese phrases to locals',
-  'understand food, payment, transport, and hotel situations',
-  'get emergency help fast',
-  'ask Buddy when you are stuck',
+  'Show phrases to locals',
+  'Decode menus',
+  'Handle payments',
+  'Get transport help',
+  'Emergency phrases',
 ];
 
 export default function VisitorTrustSection() {
   return (
     <section className="border-b border-[#155e63]/10 bg-[#f7f3ea] px-4 py-4">
-      <div className="mx-auto max-w-3xl rounded-3xl border border-[#155e63]/10 bg-white/80 p-4 shadow-sm">
-        <p className="text-xs font-semibold uppercase tracking-wide text-[#155e63]">Built for foreign visitors in China</p>
-        <h2 className="mt-1 text-base font-bold tracking-tight text-gray-950">Use ChinaEase Buddy when you need to:</h2>
-        <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
+      <div className="mx-auto max-w-4xl">
+        <p className="text-center text-sm font-medium leading-relaxed text-gray-700">
+          Built for first-time visitors, business travelers, students, and families visiting China.
+        </p>
+        <div className="mt-3 flex gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:justify-center">
           {USE_CASES.map((item) => (
-            <div key={item} className="rounded-2xl border border-white bg-white px-3.5 py-3 text-sm font-medium text-gray-700 shadow-sm">
+            <span
+              key={item}
+              className="shrink-0 rounded-full border border-[#155e63]/12 bg-white/75 px-3 py-1.5 text-xs font-semibold text-[#155e63]"
+            >
               {item}
-            </div>
+            </span>
           ))}
         </div>
       </div>

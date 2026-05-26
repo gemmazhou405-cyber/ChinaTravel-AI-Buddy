@@ -202,7 +202,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
           </h1>
 
           <p className="text-white/82 text-sm md:text-lg leading-relaxed mb-6 max-w-lg drop-shadow-[0_2px_10px_rgba(0,0,0,0.45)]">
-            {t('hero.subtitle')}
+            A practical China travel toolkit for phrases, payments, transport, food, hotels, and emergency help — all in one mobile-friendly place.
           </p>
 
           <div className="absolute left-1/2 bottom-[17vh] z-20 flex w-[min(17.5rem,calc(100vw-2.5rem))] -translate-x-1/2 flex-col gap-2 md:static md:w-auto md:translate-x-0 md:flex-row">
@@ -210,8 +210,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
               onClick={onAuthClick}
               className="w-full md:w-auto flex items-center justify-center gap-2 bg-[#155e63] text-white font-semibold px-5 py-3.5 md:px-8 md:py-4 rounded-xl hover:bg-[#0e4a4e] transition-all shadow-2xl md:shadow-xl text-sm md:text-base"
             >
-              <span>{t('hero.cta')}</span>
-              <span className="text-white/60">· No download needed</span>
+              <span>Start Free</span>
             </button>
             <button
               onClick={onAskBuddy}
@@ -221,8 +220,8 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
             </button>
           </div>
 
-          <p className="text-white/50 text-xs mt-3">
-            {t('hero.trust')}
+          <p className="text-white/58 text-xs mt-3">
+            Works in China · No app download · Free to start
           </p>
         </div>
       </div>
