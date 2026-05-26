@@ -47,6 +47,22 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
       {/* Pricing cards */}
       <section>
         <h2 className="text-base font-semibold text-gray-900 mb-3">Upgrade Your Trip Pass</h2>
+        <div className="mb-4 rounded-2xl border border-[#155e63]/10 bg-white/70 p-4">
+          <h3 className="text-sm font-bold text-gray-950">Why travelers use ChinaEase Buddy</h3>
+          <ul className="mt-3 grid gap-2 text-sm text-gray-600 sm:grid-cols-2">
+            {[
+              'Show useful Chinese phrases to locals',
+              'Understand food, payment, hotel, and transport situations',
+              'Keep emergency numbers and key phrases in one place',
+              'Ask Buddy when phrase cards are not enough',
+            ].map((item) => (
+              <li key={item} className="flex gap-2">
+                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#155e63]" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
         <PricingPlans userState={userState} />
       </section>
 

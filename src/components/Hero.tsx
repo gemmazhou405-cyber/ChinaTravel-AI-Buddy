@@ -222,6 +222,9 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
           <p className="text-white/58 text-xs mt-3">
             No app download · Works on mobile · Free to start
           </p>
+          <p className="mt-2 max-w-md text-xs font-medium leading-relaxed text-white/70">
+            Built for real moments in China — taxis, food, payments, hotels, and emergencies.
+          </p>
         </div>
       </div>
 

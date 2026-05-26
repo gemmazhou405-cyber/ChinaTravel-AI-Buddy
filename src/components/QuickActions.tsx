@@ -16,6 +16,8 @@ const JOURNEYS: Array<{ id: Journey; label: string }> = [
   { id: 'emergency', label: 'Emergency help' },
 ];
 
+const VALUE_TAGS = ['No app download', 'Show Chinese to locals', 'Ask Buddy when you’re stuck'];
+
 const BEFORE_CATEGORIES: Category[] = [
   { label: '✅ Preparation checklist', note: 'Visas, money, apps', tab: 'before' },
   { label: '📱 Apps to download', note: 'Set up before landing', tab: 'before' },
@@ -83,6 +85,16 @@ export default function QuickActions({ onTabSelect, onAskBuddy }: Props) {
             >
               {item.label}
             </button>
+          ))}
+        </div>
+        <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+          {VALUE_TAGS.map((tag) => (
+            <span
+              key={tag}
+              className="shrink-0 rounded-full border border-[#155e63]/10 bg-white/70 px-3 py-1.5 text-xs font-semibold text-[#155e63]"
+            >
+              {tag}
+            </span>
           ))}
         </div>
 
