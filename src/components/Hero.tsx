@@ -201,7 +201,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
           </h1>
 
           <p className="text-white/82 text-sm md:text-lg leading-relaxed mb-6 max-w-lg drop-shadow-[0_2px_10px_rgba(0,0,0,0.45)]">
-            Prepare before your trip, get around after landing, and handle urgent situations in China.
+            Prepare before your trip, get around after landing, and handle everyday situations in China.
           </p>
 
           <div className="absolute left-1/2 bottom-[7vh] z-20 flex w-[min(17.5rem,calc(100vw-2.5rem))] -translate-x-1/2 flex-col gap-2 md:static md:w-auto md:translate-x-0 md:flex-row">

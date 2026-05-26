@@ -19,10 +19,12 @@ export default function App() {
   const [chatOpen, setChatOpen] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
+  const [toolOpen, setToolOpen] = useState(false);
   const { user, userState, logout, signup, login, loginWithGoogle, incrementAiUsed, resendVerificationEmail } = useAuth();
   const showToast = (msg: string) => setToast(msg);
   const handleUpgradeClick = (message = 'Unlock all phrase cards with Trip Pass.') => {
     setActiveTab('pay');
+    setToolOpen(true);
     showToast(message);
     window.setTimeout(() => {
       document.getElementById('plans')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -30,6 +32,7 @@ export default function App() {
   };
   const handleQuickTabSelect = (tab: TabId) => {
     setActiveTab(tab);
+    setToolOpen(true);
     window.setTimeout(() => {
       document.getElementById('tabs')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 0);
@@ -59,17 +62,26 @@ export default function App() {
         }}
       />
       <QuickActions onTabSelect={handleQuickTabSelect} onAskBuddy={openBuddy} />
-      <div id="tabs" className="sticky top-0 z-40 bg-white shadow-sm">
-        <TabNav activeTab={activeTab} onTabChange={setActiveTab} />
-      </div>
-      <TabContent
-        activeTab={activeTab}
-        userState={userState}
-        showToast={showToast}
-        onAskBuddy={openBuddy}
-        onUpgradeClick={handleUpgradeClick}
+      {toolOpen && (
+        <>
+          <div id="tabs" className="sticky top-0 z-40 bg-white shadow-sm">
+            <TabNav activeTab={activeTab} onTabChange={setActiveTab} />
+          </div>
+          <TabContent
+            activeTab={activeTab}
+            userState={userState}
+            showToast={showToast}
+            onAskBuddy={openBuddy}
+            onUpgradeClick={handleUpgradeClick}
+          />
+        </>
+      )}
+      <Footer
+        onTabChange={(tab) => {
+          setActiveTab(tab);
+          setToolOpen(true);
+        }}
       />
-      <Footer onTabChange={setActiveTab} />
       <ChatButton onClick={openBuddy} />
       {chatOpen && (
         <ChatModal
