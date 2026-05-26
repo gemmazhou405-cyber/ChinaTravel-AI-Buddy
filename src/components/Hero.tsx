@@ -194,14 +194,14 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
 
           <h1
             className="font-black text-white leading-none tracking-tight mb-4 drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)]"
-            style={{ fontSize: 'clamp(3rem, 9vw, 5.5rem)' }}
+            style={{ fontSize: 'clamp(2.8rem, 8vw, 5rem)' }}
           >
-            No Chinese?<br />
-            <span className="text-[#7dd3d8]">No problem.</span>
+            China travel help,<br />
+            <span className="text-[#7dd3d8]">when you need it.</span>
           </h1>
 
           <p className="text-white/82 text-sm md:text-lg leading-relaxed mb-6 max-w-lg drop-shadow-[0_2px_10px_rgba(0,0,0,0.45)]">
-            Essential China travel help for taxis, payments, food, hotels, transport, and emergencies.
+            Prepare before your trip, get around after landing, and handle urgent situations in China.
           </p>
 
           <div className="absolute left-1/2 bottom-[7vh] z-20 flex w-[min(17.5rem,calc(100vw-2.5rem))] -translate-x-1/2 flex-col gap-2 md:static md:w-auto md:translate-x-0 md:flex-row">
@@ -220,7 +220,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
           </div>
 
           <p className="text-white/58 text-xs mt-3">
-            No app download · Works in China · Free to start
+            No app download · Works on mobile · Free to start
           </p>
         </div>
       </div>
