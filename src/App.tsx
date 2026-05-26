@@ -59,8 +59,8 @@ export default function App() {
           showToast('Verification email sent.');
         }}
       />
-      <QuickActions onTabSelect={handleQuickTabSelect} onAskBuddy={openBuddy} />
       <VisitorTrustSection />
+      <QuickActions onTabSelect={handleQuickTabSelect} onAskBuddy={openBuddy} />
       <div id="tabs" className="sticky top-0 z-40 bg-white shadow-sm">
         <TabNav activeTab={activeTab} onTabChange={setActiveTab} />
       </div>
