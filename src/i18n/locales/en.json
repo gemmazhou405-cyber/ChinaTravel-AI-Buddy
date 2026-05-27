@@ -44,7 +44,17 @@
         "maps": "Download offline maps",
         "mapsSub": "Amap (高德) or Baidu Maps work without data",
         "embassy": "Save embassy contact",
-        "embassySub": "In case of passport loss or emergency"
+        "embassySub": "In case of passport loss or emergency",
+        "paySetup": "Set up Alipay or WeChat Pay",
+        "paySetupSub": "Link a card or prepare another way to pay",
+        "appsDownload": "Download maps and ride-hailing apps",
+        "appsDownloadSub": "Amap, Didi, Trip.com, Alipay, WeChat",
+        "emergencyNumbers": "Save emergency numbers",
+        "emergencyNumbersSub": "110 police · 120 ambulance · 119 fire",
+        "hotelAddress": "Keep your hotel address in Chinese",
+        "hotelAddressSub": "Screenshot it for taxi drivers and locals",
+        "offlinePhrases": "Prepare offline translation phrases",
+        "offlinePhrasesSub": "Save key cards before you lose signal"
       },
       "tipsTitle": "Essential Tips",
       "tips": {
@@ -229,7 +239,10 @@
         "ambulanceDesc": "Medical emergencies, injuries, illness",
         "fire": "Fire",
         "fireDesc": "Fire, gas leaks, rescue operations"
-      }
+      },
+      "lostPassportPhone": "Lost passport / lost phone",
+      "lostPhone": "Lost phone",
+      "lostPhonePhrase": "I lost my phone. Please help me contact the police or my hotel."
     },
     "pay": {
       "plansTitle": "Upgrade Your Trip Pass",
@@ -324,6 +337,37 @@
         "step3": "Bind your foreign Visa or Mastercard",
         "step4": "Set daily limit to match your travel budget",
         "step5": "Enable fingerprint or Face ID for payments"
+      },
+      "toolsTitle": "Payment basics for China",
+      "tools": {
+        "mobilePay": "Alipay / WeChat Pay basics",
+        "mobilePayBody": "Most daily payments use QR codes.",
+        "foreignCards": "Foreign cards",
+        "foreignCardsBody": "Useful in hotels and larger stores, limited elsewhere.",
+        "cash": "Cash",
+        "cashBody": "Keep some RMB as a backup.",
+        "failed": "Payment failed phrases",
+        "failedBody": "Show a short Chinese phrase when checkout gets stuck."
+      },
+      "failed": {
+        "title": "Payment failed phrases",
+        "scene": "Payment help",
+        "alipay": {
+          "en": "Can I pay with Alipay?",
+          "note": "Ask before scanning or ordering."
+        },
+        "wechat": {
+          "en": "Can I pay with WeChat Pay?",
+          "note": "Use when Alipay is not accepted."
+        },
+        "cash": {
+          "en": "My card is not working. Can I pay in cash?",
+          "note": "Useful when a foreign card fails."
+        },
+        "qr": {
+          "en": "Can you help me scan this QR code?",
+          "note": "Use when the QR flow is confusing."
+        }
       }
     },
     "chat": {

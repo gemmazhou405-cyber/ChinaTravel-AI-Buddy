@@ -40,11 +40,11 @@ const CITIES: { emoji: string; data: CityPack; freeAccess: boolean }[] = [
 ];
 
 const CHECKLIST = [
-  { id: 1, labelKey: 'before.items.visa', sublabelKey: 'before.items.visaSub', icon: <FileText className="w-4 h-4" /> },
-  { id: 2, labelKey: 'before.items.vpn', sublabelKey: 'before.items.vpnSub', icon: <Wifi className="w-4 h-4" /> },
-  { id: 3, labelKey: 'before.items.wechat', sublabelKey: 'before.items.wechatSub', icon: <CreditCard className="w-4 h-4" /> },
-  { id: 4, labelKey: 'before.items.maps', sublabelKey: 'before.items.mapsSub', icon: <Smartphone className="w-4 h-4" /> },
-  { id: 5, labelKey: 'before.items.embassy', sublabelKey: 'before.items.embassySub', icon: <FileText className="w-4 h-4" /> },
+  { id: 1, labelKey: 'before.items.paySetup', sublabelKey: 'before.items.paySetupSub', icon: <CreditCard className="w-4 h-4" /> },
+  { id: 2, labelKey: 'before.items.appsDownload', sublabelKey: 'before.items.appsDownloadSub', icon: <Smartphone className="w-4 h-4" /> },
+  { id: 3, labelKey: 'before.items.emergencyNumbers', sublabelKey: 'before.items.emergencyNumbersSub', icon: <FileText className="w-4 h-4" /> },
+  { id: 4, labelKey: 'before.items.hotelAddress', sublabelKey: 'before.items.hotelAddressSub', icon: <FileText className="w-4 h-4" /> },
+  { id: 5, labelKey: 'before.items.offlinePhrases', sublabelKey: 'before.items.offlinePhrasesSub', icon: <Wifi className="w-4 h-4" /> },
 ];
 
 const TIPS = [

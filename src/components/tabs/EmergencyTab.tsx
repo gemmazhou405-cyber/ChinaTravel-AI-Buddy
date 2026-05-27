@@ -211,11 +211,19 @@ export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgra
       <section className="space-y-3">
         <h2 className="text-base font-semibold text-gray-900">Core Emergency Help</h2>
         <PhraseCard
-          title={t('emergency.lostPassport')}
+          title={t('emergency.lostPassportPhone')}
           icon={<FileText className="w-4 h-4 text-blue-500" />}
           en={t('emergency.embassyPhrase')}
           zh="请联系我的大使馆。我是外国公民，需要领事协助。"
           color="bg-blue-50 border-blue-200"
+          showToast={showToast}
+        />
+        <PhraseCard
+          title={t('emergency.lostPhone')}
+          icon={<FileText className="w-4 h-4 text-indigo-500" />}
+          en={t('emergency.lostPhonePhrase')}
+          zh="我的手机丢了。请帮我联系警察或酒店。"
+          color="bg-indigo-50 border-indigo-200"
           showToast={showToast}
         />
         <PhraseCard
@@ -229,7 +237,7 @@ export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgra
       </section>
 
       {/* Location share */}
-      <div className="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm">
+      <div className="bg-[#155e63]/5 border border-[#155e63]/15 rounded-2xl p-4 shadow-sm">
         <div className="flex items-center gap-2 mb-2">
           <MapPin className="w-4 h-4 text-[#155e63]" />
           <h3 className="font-semibold text-gray-800 text-sm">{t('emergency.locationTitle')}</h3>

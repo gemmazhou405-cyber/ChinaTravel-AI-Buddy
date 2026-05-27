@@ -44,7 +44,17 @@
         "maps": "Offline-Karten herunterladen",
         "mapsSub": "Amap (高德) oder Baidu Maps funktionieren ohne mobile Daten",
         "embassy": "Botschaftskontakt speichern",
-        "embassySub": "Für Passverlust oder Notfälle"
+        "embassySub": "Für Passverlust oder Notfälle",
+        "paySetup": "Alipay oder WeChat Pay einrichten",
+        "paySetupSub": "Karte verknüpfen oder andere Zahlungsart planen",
+        "appsDownload": "Karten- und Fahrdienst-Apps laden",
+        "appsDownloadSub": "Amap, Didi, Trip.com, Alipay, WeChat",
+        "emergencyNumbers": "Notrufnummern speichern",
+        "emergencyNumbersSub": "110 Polizei · 120 Krankenwagen · 119 Feuerwehr",
+        "hotelAddress": "Hoteladresse auf Chinesisch speichern",
+        "hotelAddressSub": "Screenshot für Taxis und Einheimische",
+        "offlinePhrases": "Offline-Übersetzungsphrasen vorbereiten",
+        "offlinePhrasesSub": "Wichtige Karten vor Funkloch speichern"
       },
       "tipsTitle": "Wichtige Tipps",
       "tips": {
@@ -229,7 +239,10 @@
         "ambulanceDesc": "Urgences médicales, blessures, maladie",
         "fire": "Pompiers",
         "fireDesc": "Incendie, fuite de gaz, opérations de secours"
-      }
+      },
+      "lostPassportPhone": "Pass / Handy verloren",
+      "lostPhone": "Handy verloren",
+      "lostPhonePhrase": "Ich habe mein Handy verloren. Bitte helfen Sie mir, die Polizei oder mein Hotel zu kontaktieren."
     },
     "pay": {
       "plansTitle": "Tarife",
@@ -324,6 +337,37 @@
         "step3": "Ausländische Visa oder Mastercard verknüpfen",
         "step4": "Tageslimit passend zum Reisebudget festlegen",
         "step5": "Fingerabdruck oder Face ID aktivieren"
+      },
+      "toolsTitle": "Zahlungsgrundlagen für China",
+      "tools": {
+        "mobilePay": "Alipay / WeChat Pay Grundlagen",
+        "mobilePayBody": "Die meisten Alltagszahlungen laufen per QR-Code.",
+        "foreignCards": "Ausländische Karten",
+        "foreignCardsBody": "Nützlich in Hotels und größeren Läden, sonst begrenzt.",
+        "cash": "Bargeld",
+        "cashBody": "Etwas RMB als Reserve mitnehmen.",
+        "failed": "Sätze bei Zahlungsproblemen",
+        "failedBody": "Zeige einen kurzen chinesischen Satz, wenn es klemmt."
+      },
+      "failed": {
+        "title": "Sätze bei Zahlungsproblemen",
+        "scene": "Zahlungshilfe",
+        "alipay": {
+          "en": "Kann ich mit Alipay bezahlen?",
+          "note": "Vor dem Scannen oder Bestellen fragen."
+        },
+        "wechat": {
+          "en": "Kann ich mit WeChat Pay bezahlen?",
+          "note": "Wenn Alipay nicht akzeptiert wird."
+        },
+        "cash": {
+          "en": "Meine Karte funktioniert nicht. Kann ich bar bezahlen?",
+          "note": "Nützlich, wenn eine ausländische Karte scheitert."
+        },
+        "qr": {
+          "en": "Können Sie mir helfen, diesen QR-Code zu scannen?",
+          "note": "Wenn der QR-Ablauf unklar ist."
+        }
       }
     },
     "chat": {

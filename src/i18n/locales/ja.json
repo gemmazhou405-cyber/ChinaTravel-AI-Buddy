@@ -44,7 +44,17 @@
         "maps": "オフライン地図をダウンロード",
         "mapsSub": "Amap（高德）またはBaidu Mapsはデータなしでも利用可",
         "embassy": "大使館連絡先を保存",
-        "embassySub": "パスポート紛失や緊急時のため"
+        "embassySub": "パスポート紛失や緊急時のため",
+        "paySetup": "AlipayまたはWeChat Payを設定",
+        "paySetupSub": "カード連携または別の支払い方法を準備",
+        "appsDownload": "地図・配車アプリをダウンロード",
+        "appsDownloadSub": "Amap、Didi、Trip.com、Alipay、WeChat",
+        "emergencyNumbers": "緊急番号を保存",
+        "emergencyNumbersSub": "110 警察 · 120 救急 · 119 消防",
+        "hotelAddress": "ホテル住所を中国語で保存",
+        "hotelAddressSub": "タクシーや現地の人に見せるためスクショ",
+        "offlinePhrases": "オフライン用フレーズを準備",
+        "offlinePhrasesSub": "通信がない時のため重要カードを保存"
       },
       "tipsTitle": "重要なヒント",
       "tips": {
@@ -229,7 +239,10 @@
         "ambulanceDesc": "Urgences médicales, blessures, maladie",
         "fire": "Pompiers",
         "fireDesc": "Incendie, fuite de gaz, opérations de secours"
-      }
+      },
+      "lostPassportPhone": "パスポート / 携帯を紛失",
+      "lostPhone": "携帯を紛失",
+      "lostPhonePhrase": "携帯をなくしました。警察またはホテルに連絡するのを手伝ってください。"
     },
     "pay": {
       "plansTitle": "プラン",
@@ -324,6 +337,37 @@
         "step3": "外国のVisaまたはMastercardを連携",
         "step4": "旅行予算に合わせて1日限度額を設定",
         "step5": "指紋認証またはFace IDを有効化"
+      },
+      "toolsTitle": "中国での支払いの基本",
+      "tools": {
+        "mobilePay": "Alipay / WeChat Payの基本",
+        "mobilePayBody": "日常の支払いはQRコードが中心です。",
+        "foreignCards": "海外カード",
+        "foreignCardsBody": "ホテルや大型店では便利ですが、他では限定的です。",
+        "cash": "現金",
+        "cashBody": "予備として人民元を少し持ちましょう。",
+        "failed": "支払いに困った時のフレーズ",
+        "failedBody": "会計で困ったら短い中国語を見せます。"
+      },
+      "failed": {
+        "title": "支払いに困った時のフレーズ",
+        "scene": "支払いヘルプ",
+        "alipay": {
+          "en": "Alipayで払えますか？",
+          "note": "スキャンや注文前に確認します。"
+        },
+        "wechat": {
+          "en": "WeChat Payで払えますか？",
+          "note": "Alipayが使えない時に便利です。"
+        },
+        "cash": {
+          "en": "カードが使えません。現金で払えますか？",
+          "note": "海外カードが使えない時に便利です。"
+        },
+        "qr": {
+          "en": "このQRコードをスキャンするのを手伝ってもらえますか？",
+          "note": "QRの流れが分かりにくい時に使います。"
+        }
       }
     },
     "chat": {

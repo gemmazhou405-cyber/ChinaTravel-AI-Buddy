@@ -44,7 +44,17 @@
         "maps": "오프라인 지도 다운로드",
         "mapsSub": "Amap(高德) 또는 Baidu Maps는 데이터 없이도 사용 가능",
         "embassy": "대사관 연락처 저장",
-        "embassySub": "여권 분실 또는 긴급 상황 대비"
+        "embassySub": "여권 분실 또는 긴급 상황 대비",
+        "paySetup": "Alipay 또는 WeChat Pay 설정",
+        "paySetupSub": "카드를 연결하거나 다른 결제 방법 준비",
+        "appsDownload": "지도와 차량 호출 앱 다운로드",
+        "appsDownloadSub": "Amap, Didi, Trip.com, Alipay, WeChat",
+        "emergencyNumbers": "긴급 번호 저장",
+        "emergencyNumbersSub": "110 경찰 · 120 구급차 · 119 소방",
+        "hotelAddress": "호텔 주소를 중국어로 저장",
+        "hotelAddressSub": "택시 기사와 현지인에게 보여줄 스크린샷",
+        "offlinePhrases": "오프라인 번역 문구 준비",
+        "offlinePhrasesSub": "신호가 없을 때를 대비해 핵심 카드 저장"
       },
       "tipsTitle": "필수 팁",
       "tips": {
@@ -229,7 +239,10 @@
         "ambulanceDesc": "Urgences médicales, blessures, maladie",
         "fire": "Pompiers",
         "fireDesc": "Incendie, fuite de gaz, opérations de secours"
-      }
+      },
+      "lostPassportPhone": "여권 / 휴대폰 분실",
+      "lostPhone": "휴대폰 분실",
+      "lostPhonePhrase": "휴대폰을 잃어버렸습니다. 경찰이나 호텔에 연락하도록 도와주세요."
     },
     "pay": {
       "plansTitle": "플랜",
@@ -324,6 +337,37 @@
         "step3": "외국 Visa 또는 Mastercard 연결",
         "step4": "여행 예산에 맞게 일일 한도 설정",
         "step5": "지문 또는 Face ID 활성화"
+      },
+      "toolsTitle": "중국 결제 기본",
+      "tools": {
+        "mobilePay": "Alipay / WeChat Pay 기본",
+        "mobilePayBody": "일상 결제는 대부분 QR 코드를 사용합니다.",
+        "foreignCards": "해외 카드",
+        "foreignCardsBody": "호텔과 큰 매장에서는 유용하지만 다른 곳에서는 제한적입니다.",
+        "cash": "현금",
+        "cashBody": "예비로 위안화를 조금 준비하세요.",
+        "failed": "결제 실패 시 문구",
+        "failedBody": "결제가 막힐 때 짧은 중국어 문구를 보여주세요."
+      },
+      "failed": {
+        "title": "결제 실패 시 문구",
+        "scene": "결제 도움",
+        "alipay": {
+          "en": "Alipay로 결제할 수 있나요?",
+          "note": "스캔하거나 주문하기 전에 물어보세요."
+        },
+        "wechat": {
+          "en": "WeChat Pay로 결제할 수 있나요?",
+          "note": "Alipay가 안 될 때 유용합니다."
+        },
+        "cash": {
+          "en": "카드가 작동하지 않습니다. 현금으로 결제할 수 있나요?",
+          "note": "해외 카드가 실패했을 때 유용합니다."
+        },
+        "qr": {
+          "en": "이 QR 코드를 스캔하는 것을 도와주실 수 있나요?",
+          "note": "QR 결제 흐름이 헷갈릴 때 사용하세요."
+        }
       }
     },
     "chat": {

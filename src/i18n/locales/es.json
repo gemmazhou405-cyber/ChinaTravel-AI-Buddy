@@ -44,7 +44,17 @@
         "maps": "Descargar mapas sin conexión",
         "mapsSub": "Amap (高德) o Baidu Maps funcionan sin datos",
         "embassy": "Guardar contacto de la embajada",
-        "embassySub": "Para pérdida de pasaporte o emergencia"
+        "embassySub": "Para pérdida de pasaporte o emergencia",
+        "paySetup": "Configurar Alipay o WeChat Pay",
+        "paySetupSub": "Vincula una tarjeta o prepara otra forma de pago",
+        "appsDownload": "Descargar mapas y apps de transporte",
+        "appsDownloadSub": "Amap, Didi, Trip.com, Alipay, WeChat",
+        "emergencyNumbers": "Guardar números de emergencia",
+        "emergencyNumbersSub": "110 policía · 120 ambulancia · 119 bomberos",
+        "hotelAddress": "Guardar tu hotel en chino",
+        "hotelAddressSub": "Haz captura para taxis y locales",
+        "offlinePhrases": "Preparar frases offline",
+        "offlinePhrasesSub": "Guarda tarjetas clave antes de perder señal"
       },
       "tipsTitle": "Consejos esenciales",
       "tips": {
@@ -229,7 +239,10 @@
         "ambulanceDesc": "Urgences médicales, blessures, maladie",
         "fire": "Pompiers",
         "fireDesc": "Incendie, fuite de gaz, opérations de secours"
-      }
+      },
+      "lostPassportPhone": "Pasaporte / teléfono perdido",
+      "lostPhone": "Teléfono perdido",
+      "lostPhonePhrase": "Perdí mi teléfono. Ayúdeme a contactar a la policía o a mi hotel."
     },
     "pay": {
       "plansTitle": "Planes",
@@ -324,6 +337,37 @@
         "step3": "Vincula tu Visa o Mastercard extranjera",
         "step4": "Ajusta el límite diario a tu presupuesto",
         "step5": "Activa huella digital o Face ID"
+      },
+      "toolsTitle": "Pagos básicos en China",
+      "tools": {
+        "mobilePay": "Alipay / WeChat Pay básicos",
+        "mobilePayBody": "La mayoría de pagos diarios usan códigos QR.",
+        "foreignCards": "Tarjetas extranjeras",
+        "foreignCardsBody": "Útiles en hoteles y tiendas grandes; limitadas en otros lugares.",
+        "cash": "Efectivo",
+        "cashBody": "Lleva algo de RMB como respaldo.",
+        "failed": "Frases si falla el pago",
+        "failedBody": "Muestra una frase china corta si el pago se atasca."
+      },
+      "failed": {
+        "title": "Frases si falla el pago",
+        "scene": "Ayuda de pago",
+        "alipay": {
+          "en": "¿Puedo pagar con Alipay?",
+          "note": "Pregunta antes de escanear o pedir."
+        },
+        "wechat": {
+          "en": "¿Puedo pagar con WeChat Pay?",
+          "note": "Útil si no aceptan Alipay."
+        },
+        "cash": {
+          "en": "Mi tarjeta no funciona. ¿Puedo pagar en efectivo?",
+          "note": "Útil cuando falla una tarjeta extranjera."
+        },
+        "qr": {
+          "en": "¿Puede ayudarme a escanear este código QR?",
+          "note": "Útil si el flujo QR es confuso."
+        }
       }
     },
     "chat": {

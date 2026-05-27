@@ -1,4 +1,4 @@
-import { Smartphone, DollarSign, Info, ChevronRight, CreditCard } from 'lucide-react';
+import { Smartphone, DollarSign, Info, ChevronRight, CreditCard, WalletCards, Banknote, QrCode } from 'lucide-react';
 import { UserState } from '../../hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
@@ -6,6 +6,8 @@ import TabSectionHeader from '../TabSectionHeader';
 import { paymentCards } from '../../data/phraseCards';
 import PricingPlans from '../PricingPlans';
 import { isTripOrGroup } from '../../lib/membership';
+import PhraseCard from '../PhraseCard';
+import type { PhraseCardData } from '../../types/phraseCard';
 
 interface Props {
   userState: UserState | null;
@@ -35,6 +37,60 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
     t('pay.setup.step4'),
     t('pay.setup.step5'),
   ];
+  const paymentFailedCards: PhraseCardData[] = [
+    {
+      id: 'payment_failed_alipay',
+      scene: t('pay.failed.scene'),
+      priority: 'high',
+      english: t('pay.failed.alipay.en'),
+      chinese: '可以用支付宝付款吗？',
+      pinyin: 'Kěyǐ yòng Zhīfùbǎo fùkuǎn ma?',
+      usageNote: t('pay.failed.alipay.note'),
+      showToLocal: true,
+      emergencyRelevant: false,
+      audioText: '可以用支付宝付款吗？',
+      tags: ['payment', 'alipay'],
+    },
+    {
+      id: 'payment_failed_wechat',
+      scene: t('pay.failed.scene'),
+      priority: 'high',
+      english: t('pay.failed.wechat.en'),
+      chinese: '可以用微信支付吗？',
+      pinyin: 'Kěyǐ yòng Wēixìn zhīfù ma?',
+      usageNote: t('pay.failed.wechat.note'),
+      showToLocal: true,
+      emergencyRelevant: false,
+      audioText: '可以用微信支付吗？',
+      tags: ['payment', 'wechat'],
+    },
+    {
+      id: 'payment_failed_cash',
+      scene: t('pay.failed.scene'),
+      priority: 'medium',
+      english: t('pay.failed.cash.en'),
+      chinese: '我的银行卡不能用，可以付现金吗？',
+      pinyin: 'Wǒ de yínhángkǎ bù néng yòng, kěyǐ fù xiànjīn ma?',
+      usageNote: t('pay.failed.cash.note'),
+      showToLocal: true,
+      emergencyRelevant: false,
+      audioText: '我的银行卡不能用，可以付现金吗？',
+      tags: ['payment', 'cash', 'card'],
+    },
+    {
+      id: 'payment_failed_qr',
+      scene: t('pay.failed.scene'),
+      priority: 'medium',
+      english: t('pay.failed.qr.en'),
+      chinese: '你能帮我扫这个二维码吗？',
+      pinyin: 'Nǐ néng bāng wǒ sǎo zhège èrwéimǎ ma?',
+      usageNote: t('pay.failed.qr.note'),
+      showToLocal: true,
+      emergencyRelevant: false,
+      audioText: '你能帮我扫这个二维码吗？',
+      tags: ['payment', 'qr'],
+    },
+  ];
 
   return (
     <div className="space-y-6">
@@ -43,6 +99,35 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
         subtitle="Understand Alipay, WeChat Pay, cards, and cash."
         onAskBuddy={onAskBuddy}
       />
+
+      <section>
+        <h2 className="text-base font-semibold text-gray-900 mb-3">{t('pay.toolsTitle')}</h2>
+        <div className="grid grid-cols-2 gap-2.5">
+          {[
+            { icon: <QrCode className="h-4 w-4" />, title: t('pay.tools.mobilePay'), body: t('pay.tools.mobilePayBody') },
+            { icon: <WalletCards className="h-4 w-4" />, title: t('pay.tools.foreignCards'), body: t('pay.tools.foreignCardsBody') },
+            { icon: <Banknote className="h-4 w-4" />, title: t('pay.tools.cash'), body: t('pay.tools.cashBody') },
+            { icon: <CreditCard className="h-4 w-4" />, title: t('pay.tools.failed'), body: t('pay.tools.failedBody') },
+          ].map((item) => (
+            <div key={item.title} className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm">
+              <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-xl bg-[#155e63]/10 text-[#155e63]">
+                {item.icon}
+              </div>
+              <p className="text-sm font-semibold text-gray-900">{item.title}</p>
+              <p className="mt-1 text-xs leading-relaxed text-gray-500">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-base font-semibold text-gray-900 mb-3">{t('pay.failed.title')}</h2>
+        <div className="grid gap-2.5 sm:grid-cols-2">
+          {paymentFailedCards.map((card) => (
+            <PhraseCard key={card.id} card={card} />
+          ))}
+        </div>
+      </section>
 
       {/* Pricing cards */}
       <section>
