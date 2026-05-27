@@ -489,5 +489,345 @@
       "complete",
       "polite"
     ]
+  },
+  {
+    "id": "payment_031",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "Can I split the payment for one order?",
+    "chinese": "一个订单可以分开付款吗？",
+    "pinyin": "Yī gè dìngdān kěyǐ fēnkāi fùkuǎn ma?",
+    "usageNote": "Use when dining with friends and you want to pay separately on one bill.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "一个订单可以分开付款吗？",
+    "tags": [
+      "WeChat Pay",
+      "Alipay",
+      "split bill"
+    ]
+  },
+  {
+    "id": "payment_032",
+    "scene": "payment",
+    "priority": "low",
+    "english": "I paid the wrong amount. Can you check?",
+    "chinese": "我付错金额了，能帮我查一下吗？",
+    "pinyin": "Wǒ fù cuò jīn'é le, néng bāng wǒ chá yīxià ma?",
+    "usageNote": "For when you suspect you overpaid or underpaid.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我付错金额了，能帮我查一下吗？",
+    "tags": [
+      "error",
+      "refund",
+      "WeChat Pay",
+      "Alipay"
+    ]
+  },
+  {
+    "id": "payment_033",
+    "scene": "payment",
+    "priority": "low",
+    "english": "I need to refund my deposit. Where is the counter?",
+    "chinese": "我要退押金，柜台在哪里？",
+    "pinyin": "Wǒ yào tuì yājīn, guìtái zài nǎlǐ?",
+    "usageNote": "For returning rented items like bikes, power banks, or equipment.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我要退押金，柜台在哪里？",
+    "tags": [
+      "deposit",
+      "refund",
+      "counter"
+    ]
+  },
+  {
+    "id": "payment_034",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "Is the displayed price in CNY?",
+    "chinese": "显示的价格是人民币吗？",
+    "pinyin": "Xiǎnshì de jiàgé shì Rénmínbì ma?",
+    "usageNote": "To confirm currency when prices are shown only with a number or symbol.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "显示的价格是人民币吗？",
+    "tags": [
+      "currency",
+      "CNY",
+      "RMB"
+    ]
+  },
+  {
+    "id": "payment_035",
+    "scene": "payment",
+    "priority": "low",
+    "english": "Can I get a tax refund receipt for this?",
+    "chinese": "这个可以开退税发票吗？",
+    "pinyin": "Zhège kěyǐ kāi tuìshuì fàipiào ma?",
+    "usageNote": "In large stores that may offer tax refunds for tourists.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这个可以开退税发票吗？",
+    "tags": [
+      "tax refund",
+      "receipt",
+      "shopping"
+    ]
+  },
+  {
+    "id": "payment_036",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "My phone has no signal. Can you scan my payment code?",
+    "chinese": "我手机没信号，你能扫我的付款码吗？",
+    "pinyin": "Wǒ shǒujī méi xìnhào, nǐ néng sǎo wǒ de fùkuǎn mǎ ma?",
+    "usageNote": "When your own phone can't initiate the transaction but the code is pre-generated.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我手机没信号，你能扫我的付款码吗？",
+    "tags": [
+      "WeChat Pay",
+      "Alipay",
+      "QR code",
+      "no signal"
+    ]
+  },
+  {
+    "id": "payment_037",
+    "scene": "payment",
+    "priority": "low",
+    "english": "Does this store have a minimum spend for card payment?",
+    "chinese": "这家店刷卡有最低消费吗？",
+    "pinyin": "Zhè jiā diàn shuākǎ yǒu zuìdī xiāofèi ma?",
+    "usageNote": "Useful in small shops or markets that may have card payment restrictions.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这家店刷卡有最低消费吗？",
+    "tags": [
+      "card payment",
+      "minimum spend",
+      "restrictions"
+    ]
+  },
+  {
+    "id": "payment_038",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "I will pay in cash. Do you have change?",
+    "chinese": "我付现金，你们有零钱找吗？",
+    "pinyin": "Wǒ fù xiànjīn, nǐmen yǒu língqián zhǎo ma?",
+    "usageNote": "When using larger bills in a cash transaction.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我付现金，你们有零钱找吗？",
+    "tags": [
+      "cash",
+      "change"
+    ]
+  },
+  {
+    "id": "payment_039",
+    "scene": "payment",
+    "priority": "low",
+    "english": "The payment failed, but the money was deducted. Please check.",
+    "chinese": "付款失败但钱被扣了，请查一下。",
+    "pinyin": "Fùkuǎn shībài dàn qián bèi kòu le, qǐng chá yīxià.",
+    "usageNote": "A common technical issue requiring merchant verification.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "付款失败但钱被扣了，请查一下。",
+    "tags": [
+      "error",
+      "deduction",
+      "WeChat Pay",
+      "Alipay"
+    ]
+  },
+  {
+    "id": "payment_040",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "I need a receipt for the full amount paid by card.",
+    "chinese": "我需要刷卡总金额的发票。",
+    "pinyin": "Wǒ xūyào shuākǎ zǒng jīn'é de fàipiào.",
+    "usageNote": "For expense reporting where a detailed receipt is required.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我需要刷卡总金额的发票。",
+    "tags": [
+      "receipt",
+      "card payment",
+      "invoice"
+    ]
+  },
+  {
+    "id": "payment_041",
+    "scene": "payment",
+    "priority": "low",
+    "english": "Is there a service charge included?",
+    "chinese": "包含服务费了吗？",
+    "pinyin": "Bāohán fúwù fèi le ma?",
+    "usageNote": "To clarify the total bill at restaurants or hotels.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "包含服务费了吗？",
+    "tags": [
+      "service charge",
+      "bill",
+      "restaurant"
+    ]
+  },
+  {
+    "id": "payment_042",
+    "scene": "payment",
+    "priority": "low",
+    "english": "Can you convert the price to my home currency?",
+    "chinese": "你能把价格换成我的本国货币吗？",
+    "pinyin": "Nǐ néng bǎ jiàgé huànchéng wǒ de běnguó huòbì ma?",
+    "usageNote": "When you need a quick mental estimate before paying.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "你能把价格换成我的本国货币吗？",
+    "tags": [
+      "currency exchange",
+      "estimate"
+    ]
+  },
+  {
+    "id": "payment_043",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "I will pay for myself only. Please give me a separate bill.",
+    "chinese": "我只付自己的，请给我单独结账。",
+    "pinyin": "Wǒ zhǐ fù zìjǐ de, qǐng gěi wǒ dāndú jiézhàng.",
+    "usageNote": "Clearly stating you are not covering the entire table.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我只付自己的，请给我单独结账。",
+    "tags": [
+      "split bill",
+      "individual payment"
+    ]
+  },
+  {
+    "id": "payment_044",
+    "scene": "payment",
+    "priority": "low",
+    "english": "Is there a coupon or discount available for this?",
+    "chinese": "这个可以用优惠券或打折吗？",
+    "pinyin": "Zhège kěyǐ yòng yōuhuì quàn huò dǎzhé ma?",
+    "usageNote": "Inquire about promotions before finalizing payment.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这个可以用优惠券或打折吗？",
+    "tags": [
+      "discount",
+      "coupon",
+      "promotion"
+    ]
+  },
+  {
+    "id": "payment_045",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "My payment app is frozen. Let me try restarting it.",
+    "chinese": "我的支付软件卡住了，我重启一下试试。",
+    "pinyin": "Wǒ de zhīfù ruǎnjiàn kǎzhù le, wǒ chóngqǐ yīxià shìshì.",
+    "usageNote": "Informing the cashier you need a moment to troubleshoot your app.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我的支付软件卡住了，我重启一下试试。",
+    "tags": [
+      "WeChat Pay",
+      "Alipay",
+      "error",
+      "app"
+    ]
+  },
+  {
+    "id": "payment_046",
+    "scene": "payment",
+    "priority": "low",
+    "english": "I don't need a plastic bag, thank you.",
+    "chinese": "不用塑料袋，谢谢。",
+    "pinyin": "Bùyòng sùliào dài, xièxiè.",
+    "usageNote": "Relevant for payment as some stores charge for bags.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "不用塑料袋，谢谢。",
+    "tags": [
+      "bag",
+      "surcharge"
+    ]
+  },
+  {
+    "id": "payment_047",
+    "scene": "payment",
+    "priority": "low",
+    "english": "Can I pay later after checking out? I will settle at the front desk.",
+    "chinese": "我能退房后再付吗？我去前台结账。",
+    "pinyin": "Wǒ néng tuìfáng hòu zài fù ma? Wǒ qù qiántái jiézhàng.",
+    "usageNote": "For hotel ancillary charges like minibar or restaurant tabs.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我能退房后再付吗？我去前台结账。",
+    "tags": [
+      "hotel",
+      "defer payment",
+      "front desk"
+    ]
+  },
+  {
+    "id": "payment_048",
+    "scene": "payment",
+    "priority": "medium",
+    "english": "This card is contactless. Can I tap to pay?",
+    "chinese": "这张卡是感应卡，可以拍卡支付吗？",
+    "pinyin": "Zhè zhāng kǎ shì gǎnyìng kǎ, kěyǐ pāi kǎ zhīfù ma?",
+    "usageNote": "To confirm if the terminal supports contactless/NFC payment.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这张卡是感应卡，可以拍卡支付吗？",
+    "tags": [
+      "card payment",
+      "contactless",
+      "NFC",
+      "tap"
+    ]
+  },
+  {
+    "id": "payment_049",
+    "scene": "payment",
+    "priority": "low",
+    "english": "Please write the price on the receipt.",
+    "chinese": "请把价格写在发票上。",
+    "pinyin": "Qǐng bǎ jiàgé xiě zài fàipiào shàng.",
+    "usageNote": "When the receipt provided is blank and you need it filled for records.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请把价格写在发票上。",
+    "tags": [
+      "receipt",
+      "documentation"
+    ]
+  },
+  {
+    "id": "payment_050",
+    "scene": "payment",
+    "priority": "low",
+    "english": "Is the 1% foreign card fee waived here?",
+    "chinese": "这里免收1%的外卡手续费吗？",
+    "pinyin": "Zhèlǐ miǎn shōu 1% de wài kǎ shǒuxù fèi ma?",
+    "usageNote": "Specific to China, some merchants absorb the fee for foreign Visa/Mastercard.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这里免收1%的外卡手续费吗？",
+    "tags": [
+      "card payment",
+      "foreign card",
+      "fee"
+    ]
   }
 ]

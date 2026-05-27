@@ -478,5 +478,345 @@
       "polite",
       "thanks"
     ]
+  },
+  {
+    "id": "train_031",
+    "scene": "train",
+    "priority": 3,
+    "english": "Does this train have a dining car?",
+    "Chinese": "这趟列车有餐车吗？",
+    "pinyin": "zhè tàng lièchē yǒu cānchē ma?",
+    "usageNote": "Useful on long-distance trains when you want to know about onboard dining options.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "这趟列车有餐车吗？",
+    "tags": [
+      "dining",
+      "onboard",
+      "long-distance"
+    ]
+  },
+  {
+    "id": "train_032",
+    "scene": "train",
+    "priority": 3,
+    "english": "Can I get a window seat?",
+    "Chinese": "我可以坐靠窗的位置吗？",
+    "pinyin": "wǒ kěyǐ zuò kào chuāng de wèizhì ma?",
+    "usageNote": "Ask this when purchasing tickets or when boarding to request a window seat.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "我可以坐靠窗的位置吗？",
+    "tags": [
+      "seat",
+      "window",
+      "preference"
+    ]
+  },
+  {
+    "id": "train_033",
+    "scene": "train",
+    "priority": 2,
+    "english": "How long is this train delayed?",
+    "Chinese": "列车晚点多长时间？",
+    "pinyin": "lièchē wǎndiǎn duō cháng shíjiān?",
+    "usageNote": "Use the 交通信息 board or ask staff when departure screens show delays.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "列车晚点多长时间？",
+    "tags": [
+      "delay",
+      "status",
+      "schedule"
+    ]
+  },
+  {
+    "id": "train_034",
+    "scene": "train",
+    "priority": 3,
+    "english": "Which car is the quiet car?",
+    "Chinese": "哪节车厢是静音车厢？",
+    "pinyin": "nǎ jié chēxiāng shì jìngyīn chēxiāng?",
+    "usageNote": "Some high-speed trains offer quiet cars for passengers who prefer silence.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "哪节车厢是静音车厢？",
+    "tags": [
+      "quiet",
+      "car",
+      "comfort"
+    ]
+  },
+  {
+    "id": "train_035",
+    "scene": "train",
+    "priority": 3,
+    "english": "Can you help me put my luggage up?",
+    "Chinese": "您能帮我把行李放上去吗？",
+    "pinyin": "nín néng bāng wǒ bǎ xínglǐ fàng shàngqù ma?",
+    "usageNote": "Polite request to staff or fellow passengers for heavy overhead luggage.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "您能帮我把行李放上去吗？",
+    "tags": [
+      "luggage",
+      "help",
+      "overhead"
+    ]
+  },
+  {
+    "id": "train_036",
+    "scene": "train",
+    "priority": 3,
+    "english": "Does this train have Wi-Fi?",
+    "Chinese": "这趟车有无线网络吗？",
+    "pinyin": "zhè tàng chē yǒu wúxiàn wǎngluò ma?",
+    "usageNote": "Most Chinese high-speed trains now offer free Wi-Fi; ask staff for the network name.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "这趟车有无线网络吗？",
+    "tags": [
+      "wifi",
+      "internet",
+      "connectivity"
+    ]
+  },
+  {
+    "id": "train_037",
+    "scene": "train",
+    "priority": 2,
+    "english": "Can I change to an earlier train?",
+    "Chinese": "我可以改签到更早的车次吗？",
+    "pinyin": "wǒ kěyǐ gǎiqiān dào gèng zǎo de chēcì ma?",
+    "usageNote": "改签 (gǎiqiān) means changing your ticket. Fees may apply depending on ticket type.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "我可以改签到更早的车次吗？",
+    "tags": [
+      "change",
+      "earlier",
+      "ticket"
+    ]
+  },
+  {
+    "id": "train_038",
+    "scene": "train",
+    "priority": 3,
+    "english": "What is the final stop of this train?",
+    "Chinese": "这趟车的终点站是哪里？",
+    "pinyin": "zhè tàng chē de zhōngdiǎn zhàn shì nǎlǐ?",
+    "usageNote": "Useful to confirm you are on the correct train, especially at busy stations.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "这趟车的终点站是哪里？",
+    "tags": [
+      "destination",
+      "final-stop",
+      "confirmation"
+    ]
+  },
+  {
+    "id": "train_039",
+    "scene": "train",
+    "priority": 3,
+    "english": "Can you remind me before my stop?",
+    "Chinese": "到站前您能提醒我一下吗？",
+    "pinyin": "dào zhàn qián nín néng tíxǐng wǒ yīxià ma?",
+    "usageNote": "Ask a fellow passenger or conductor on overnight trains or if you tend to fall asleep.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "到站前您能提醒我一下吗？",
+    "tags": [
+      "reminder",
+      "stop",
+      "sleep"
+    ]
+  },
+  {
+    "id": "train_040",
+    "scene": "train",
+    "priority": 3,
+    "english": "Is there a power outlet at my seat?",
+    "Chinese": "我的座位有充电插座吗？",
+    "pinyin": "wǒ de zuòwèi yǒu chōngdiàn chāzuò ma?",
+    "usageNote": "Most high-speed train seats have outlets; ask the conductor if you can't find yours.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "我的座位有充电插座吗？",
+    "tags": [
+      "power",
+      "outlet",
+      "charging"
+    ]
+  },
+  {
+    "id": "train_041",
+    "scene": "train",
+    "priority": 4,
+    "english": "Excuse me, is this seat taken?",
+    "Chinese": "请问，这个座位有人吗？",
+    "pinyin": "qǐngwèn, zhège zuòwèi yǒu rén ma?",
+    "usageNote": "Polite way to check before sitting, especially in non-reserved seating areas.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "请问，这个座位有人吗？",
+    "tags": [
+      "seat",
+      "taken",
+      "polite"
+    ]
+  },
+  {
+    "id": "train_042",
+    "scene": "train",
+    "priority": 2,
+    "english": "How long does the train stop here?",
+    "Chinese": "列车在这里停多久？",
+    "pinyin": "lièchē zài zhèlǐ tíng duōjiǔ?",
+    "usageNote": "Useful at intermediate stops if you want to step out briefly for fresh air.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "列车在这里停多久？",
+    "tags": [
+      "stop",
+      "duration",
+      "platform"
+    ]
+  },
+  {
+    "id": "train_043",
+    "scene": "train",
+    "priority": 2,
+    "english": "Can I get wheelchair assistance on the platform?",
+    "Chinese": "站台上可以提供轮椅服务吗？",
+    "pinyin": "zhàntái shàng kěyǐ tígōng lúnyī fúwù ma?",
+    "usageNote": "Most major stations offer free wheelchair and boarding assistance for disabled passengers.",
+    "showToLocal": false,
+    "emergencyRelevant": true,
+    "audioText": "站台上可以提供轮椅服务吗？",
+    "tags": [
+      "wheelchair",
+      "assistance",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "train_044",
+    "scene": "train",
+    "priority": 3,
+    "english": "What is the luggage size limit?",
+    "Chinese": "行李尺寸限制是多少？",
+    "pinyin": "xínglǐ chǐcùn xiànzhì shì duōshǎo?",
+    "usageNote": "China's railway has specific size limits for carry-on luggage; oversized items need special handling.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "行李尺寸限制是多少？",
+    "tags": [
+      "luggage",
+      "size",
+      "limit"
+    ]
+  },
+  {
+    "id": "train_045",
+    "scene": "train",
+    "priority": 4,
+    "english": "Which platform does my train depart from?",
+    "Chinese": "我的车在几号站台出发？",
+    "pinyin": "wǒ de chē zài jǐ hào zhàntái chūfā?",
+    "usageNote": "Check the large departure boards or ask staff; platform numbers may change last minute.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "我的车在几号站台出发？",
+    "tags": [
+      "platform",
+      "departure",
+      "direction"
+    ]
+  },
+  {
+    "id": "train_046",
+    "scene": "train",
+    "priority": 3,
+    "english": "Can I order food to my seat?",
+    "Chinese": "可以送餐到座位吗？",
+    "pinyin": "kěyǐ sòng cān dào zuòwèi ma?",
+    "usageNote": "High-speed trains often have a WeChat mini-program or onboard cart for seat delivery.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "可以送餐到座位吗？",
+    "tags": [
+      "food",
+      "delivery",
+      "onboard"
+    ]
+  },
+  {
+    "id": "train_047",
+    "scene": "train",
+    "priority": 3,
+    "english": "Do I need to scan my ticket at the gate?",
+    "Chinese": "进站需要刷身份证吗？",
+    "pinyin": "jìn zhàn xūyào shuā shēnfèn zhèng ma?",
+    "usageNote": "Most stations now use ID card scanning instead of paper tickets; have your passport ready.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "进站需要刷身份证吗？",
+    "tags": [
+      "gate",
+      "scan",
+      "id-check"
+    ]
+  },
+  {
+    "id": "train_048",
+    "scene": "train",
+    "priority": 3,
+    "english": "What is the difference between first class and second class?",
+    "Chinese": "一等座和二等座有什么区别？",
+    "pinyin": "yīděng zuò hé èrděng zuò yǒu shénme qūbié?",
+    "usageNote": "First class offers wider seats and more legroom; business class is the most premium option.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "一等座和二等座有什么区别？",
+    "tags": [
+      "class",
+      "seats",
+      "upgrade"
+    ]
+  },
+  {
+    "id": "train_049",
+    "scene": "train",
+    "priority": 2,
+    "english": "Can I extend my ticket to a further stop?",
+    "Chinese": "我的票可以延长到更远的站吗？",
+    "pinyin": "wǒ de piào kěyǐ yáncháng dào gèng yuǎn de zhàn ma?",
+    "usageNote": "You can usually extend your ticket onboard by paying the fare difference to the conductor.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "我的票可以延长到更远的站吗？",
+    "tags": [
+      "extend",
+      "ticket",
+      "further"
+    ]
+  },
+  {
+    "id": "train_050",
+    "scene": "train",
+    "priority": 3,
+    "english": "How do I transfer to the subway from here?",
+    "Chinese": "从这里怎么换乘地铁？",
+    "pinyin": "cóng zhèlǐ zěnme huànchéng dìtiě?",
+    "usageNote": "Many large train stations are connected directly to metro; follow 地铁 signs or ask staff.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "从这里怎么换乘地铁？",
+    "tags": [
+      "transfer",
+      "subway",
+      "connection"
+    ]
   }
 ]

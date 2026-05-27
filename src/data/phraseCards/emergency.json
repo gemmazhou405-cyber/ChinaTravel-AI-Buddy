@@ -474,5 +474,345 @@
       "thanks",
       "polite"
     ]
+  },
+  {
+    "id": "emergency_031",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "The boat has capsized!",
+    "chinese": "船翻了！",
+    "pinyin": "Chuán fān le!",
+    "usageNote": "Shout this immediately if your boat overturns to alert others nearby.",
+    "showToLocal": false,
+    "emergencyRelevant": true,
+    "audioText": "船翻了！",
+    "tags": [
+      "water",
+      "accident",
+      "call_for_help"
+    ]
+  },
+  {
+    "id": "emergency_032",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "There is a gas leak, do not use fire!",
+    "chinese": "有煤气泄漏，不要用火！",
+    "pinyin": "Yǒu méi qì xiè lòu, bù yào yòng huǒ!",
+    "usageNote": "Use this to warn people in a building or area to prevent explosion.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "有煤气泄漏，不要用火！",
+    "tags": [
+      "gas",
+      "fire_hazard",
+      "warning"
+    ]
+  },
+  {
+    "id": "emergency_033",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "A car hit a pedestrian!",
+    "chinese": "车撞到行人了！",
+    "pinyin": "Chē zhuàng dào xíng rén le!",
+    "usageNote": "To report a traffic accident involving a person to authorities or bystanders.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "车撞到行人了！",
+    "tags": [
+      "traffic",
+      "accident",
+      "report"
+    ]
+  },
+  {
+    "id": "emergency_034",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "Someone is having a severe allergic reaction.",
+    "chinese": "有人严重过敏了。",
+    "pinyin": "Yǒu rén yán zhòng guò mǐn le.",
+    "usageNote": "To quickly describe a serious medical situation to call for help.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "有人严重过敏了。",
+    "tags": [
+      "medical",
+      "allergic_reaction",
+      "help"
+    ]
+  },
+  {
+    "id": "emergency_035",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "The elevator stopped, we are trapped inside!",
+    "chinese": "电梯停了，我们被困在里面！",
+    "pinyin": "Diàn tī tíng le, wǒ men bèi kùn zài lǐ miàn!",
+    "usageNote": "To use the intercom or shout for help when stuck in an elevator.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "电梯停了，我们被困在里面！",
+    "tags": [
+      "entrapment",
+      "elevator",
+      "call_for_help"
+    ]
+  },
+  {
+    "id": "emergency_036",
+    "scene": "emergency",
+    "priority": "medium",
+    "english": "My wallet and passport were stolen!",
+    "chinese": "我的钱包和护照被偷了！",
+    "pinyin": "Wǒ de qián bāo hé hù zhào bèi tōu le!",
+    "usageNote": "To report a theft to police or hotel staff immediately.",
+    "showToLocal": false,
+    "emergencyRelevant": true,
+    "audioText": "我的钱包和护照被偷了！",
+    "tags": [
+      "theft",
+      "crime",
+      "report"
+    ]
+  },
+  {
+    "id": "emergency_037",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "A chemical spill has occurred!",
+    "chinese": "发生化学品泄漏！",
+    "pinyin": "Fā shēng huà xué pǐn xiè lòu!",
+    "usageNote": "To alert authorities or people in an industrial area about a hazardous material release.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "发生化学品泄漏！",
+    "tags": [
+      "hazard",
+      "chemical",
+      "evacuation"
+    ]
+  },
+  {
+    "id": "emergency_038",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "A building is collapsing!",
+    "chinese": "建筑物在坍塌！",
+    "pinyin": "Jiàn zhù wù zài tān tā!",
+    "usageNote": "A critical warning to evacuate the area immediately.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "建筑物在坍塌！",
+    "tags": [
+      "structural",
+      "collapse",
+      "evacuation"
+    ]
+  },
+  {
+    "id": "emergency_039",
+    "scene": "emergency",
+    "priority": "medium",
+    "english": "I am locked out of my hotel room.",
+    "chinese": "我被锁在酒店房间外面了。",
+    "pinyin": "Wǒ bèi suǒ zài jiǔ diàn fáng jiān wài miàn le.",
+    "usageNote": "A common travel issue to ask hotel staff for assistance.",
+    "showToLocal": false,
+    "emergencyRelevant": false,
+    "audioText": "我被锁在酒店房间外面了。",
+    "tags": [
+      "hotel",
+      "access",
+      "assistance"
+    ]
+  },
+  {
+    "id": "emergency_040",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "A power line is down on the road!",
+    "chinese": "路上有电线掉落！",
+    "pinyin": "Lù shàng yǒu diàn xiàn diào luò!",
+    "usageNote": "To warn others of a very dangerous electrocution hazard. Keep distance.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "路上有电线掉落！",
+    "tags": [
+      "hazard",
+      "electrical",
+      "warning"
+    ]
+  },
+  {
+    "id": "emergency_041",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "Someone is having a seizure!",
+    "chinese": "有人在抽搐！",
+    "pinyin": "Yǒu rén zài chōu chù!",
+    "usageNote": "To alert bystanders or medical staff to a specific neurological emergency.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "有人在抽搐！",
+    "tags": [
+      "medical",
+      "seizure",
+      "help"
+    ]
+  },
+  {
+    "id": "emergency_042",
+    "scene": "emergency",
+    "priority": "medium",
+    "english": "I think I have food poisoning.",
+    "chinese": "我好像食物中毒了。",
+    "pinyin": "Wǒ hǎo xiàng shí wù zhòng dú le.",
+    "usageNote": "To communicate a serious health issue to seek medical help or report to a restaurant.",
+    "showToLocal": false,
+    "emergencyRelevant": true,
+    "audioText": "我好像食物中毒了。",
+    "tags": [
+      "medical",
+      "food_safety",
+      "symptoms"
+    ]
+  },
+  {
+    "id": "emergency_043",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "The bridge ahead is broken!",
+    "chinese": "前面的桥断了！",
+    "pinyin": "Qián miàn de qiáo duàn le!",
+    "usageNote": "A critical warning to drivers or pedestrians to stop immediately.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "前面的桥断了！",
+    "tags": [
+      "infrastructure",
+      "hazard",
+      "warning"
+    ]
+  },
+  {
+    "id": "emergency_044",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "There is a shooting!",
+    "chinese": "有枪击！",
+    "pinyin": "Yǒu qiāng jī!",
+    "usageNote": "To warn people to seek immediate shelter and hide. Extremely serious.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "有枪击！",
+    "tags": [
+      "violence",
+      "active_threat",
+      "evacuation"
+    ]
+  },
+  {
+    "id": "emergency_045",
+    "scene": "emergency",
+    "priority": "medium",
+    "english": "I can't find my child!",
+    "chinese": "我的孩子走丢了！",
+    "pinyin": "Wǒ de hái zi zǒu diū le!",
+    "usageNote": "To urgently seek help from police, staff, or the public in a crowded place.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "我的孩子走丢了！",
+    "tags": [
+      "missing_person",
+      "child",
+      "help"
+    ]
+  },
+  {
+    "id": "emergency_046",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "A train is derailing!",
+    "chinese": "火车要脱轨了！",
+    "pinyin": "Huǒ chē yào tuō guǐ le!",
+    "usageNote": "To warn passengers of an imminent catastrophic accident.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "火车要脱轨了！",
+    "tags": [
+      "transport",
+      "accident",
+      "warning"
+    ]
+  },
+  {
+    "id": "emergency_047",
+    "scene": "emergency",
+    "priority": "medium",
+    "english": "My hands are stuck in the machine.",
+    "chinese": "我的手卡在机器里了。",
+    "pinyin": "Wǒ de shǒu kǎ zài jī qì lǐ le.",
+    "usageNote": "To describe a workplace entrapment accident for rescue.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "我的手卡在机器里了。",
+    "tags": [
+      "accident",
+      "entrapment",
+      "workplace"
+    ]
+  },
+  {
+    "id": "emergency_048",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "There is a tsunami warning!",
+    "chinese": "海啸警报！",
+    "pinyin": "Hǎi xiào jǐng bào!",
+    "usageNote": "Critical natural disaster warning. Move to high ground immediately.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "海啸警报！",
+    "tags": [
+      "natural_disaster",
+      "tsunami",
+      "evacuation"
+    ]
+  },
+  {
+    "id": "emergency_049",
+    "scene": "emergency",
+    "priority": "medium",
+    "english": "I am lost in the forest.",
+    "chinese": "我在森林里迷路了。",
+    "pinyin": "Wǒ zài sēn lín lǐ mí lù le.",
+    "usageNote": "To communicate your situation if stranded or lost while hiking.",
+    "showToLocal": false,
+    "emergencyRelevant": true,
+    "audioText": "我在森林里迷路了。",
+    "tags": [
+      "wilderness",
+      "lost",
+      "stranded"
+    ]
+  },
+  {
+    "id": "emergency_050",
+    "scene": "emergency",
+    "priority": "high",
+    "english": "A large crowd is stampeding!",
+    "chinese": "人群在踩踏！",
+    "pinyin": "Rén qún zài cǎi tà!",
+    "usageNote": "A warning of mass panic. Try to move to the side or an exit.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "人群在踩踏！",
+    "tags": [
+      "crowd",
+      "stampede",
+      "panic"
+    ]
   }
 ]

@@ -478,5 +478,345 @@
       "gratitude",
       "polite"
     ]
+  },
+  {
+    "id": "shopping_031",
+    "scene": "shopping",
+    "priority": "medium",
+    "english": "Can I try this on to see how it fits?",
+    "chinese": "我可以试穿一下看看合不合身吗？",
+    "pinyin": "Wǒ kěyǐ shìchuān yīxià kànkan hé bu hé shēn ma?",
+    "usageNote": "Use when you want to test fit before buying, especially for clothing.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我可以试穿一下看看合不合身吗？",
+    "tags": [
+      "clothing",
+      "fitting",
+      "polite"
+    ]
+  },
+  {
+    "id": "shopping_032",
+    "scene": "shopping",
+    "priority": "medium",
+    "english": "Is this the final price, or is there a discount for paying in cash?",
+    "chinese": "这是最终价格吗？用现金付款有折扣吗？",
+    "pinyin": "Zhè shì zuìzhōng jiàgé ma? Yòng xiànjīn fùkuǎn yǒu zhékòu ma?",
+    "usageNote": "Use to inquire about cash payment discounts, common in markets.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这是最终价格吗？用现金付款有折扣吗？",
+    "tags": [
+      "bargaining",
+      "payment",
+      "cash"
+    ]
+  },
+  {
+    "id": "shopping_033",
+    "scene": "shopping",
+    "priority": "medium",
+    "english": "I'm looking for a size larger/smaller than this.",
+    "chinese": "我在找比这个大一号/小一号的尺码。",
+    "pinyin": "Wǒ zài zhǎo bǐ zhège dà yī hào / xiǎo yī hào de chǐmǎ.",
+    "usageNote": "Use to request a different size. Adjust 'dà yī hào' (larger) or 'xiǎo yī hào' (smaller) as needed.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我在找比这个大一号/小一号的尺码。",
+    "tags": [
+      "size",
+      "clothing",
+      "adjustment"
+    ]
+  },
+  {
+    "id": "shopping_034",
+    "scene": "shopping",
+    "priority": "medium",
+    "english": "What is the warranty or return policy for this item?",
+    "chinese": "这件商品的保修或退换货政策是什么？",
+    "pinyin": "Zhè jiàn shāngpǐn de bǎoxiū huò tuìhuàn huò zhèngcè shì shénme?",
+    "usageNote": "Use to understand post-purchase terms, especially for electronics or expensive items.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这件商品的保修或退换货政策是什么？",
+    "tags": [
+      "returns",
+      "warranty",
+      "policy"
+    ]
+  },
+  {
+    "id": "shopping_035",
+    "scene": "shopping",
+    "priority": "low",
+    "english": "Do you have this design in a different color or pattern?",
+    "chinese": "这款有其他颜色或图案的吗？",
+    "pinyin": "Zhè kuǎn yǒu qítā yánsè huò tú'àn de ma?",
+    "usageNote": "Use to explore style variations of a specific item.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这款有其他颜色或图案的吗？",
+    "tags": [
+      "style",
+      "variation",
+      "color"
+    ]
+  },
+  {
+    "id": "shopping_036",
+    "scene": "shopping",
+    "priority": "medium",
+    "english": "Can you check if this is available at another store location?",
+    "chinese": "你能查一下这个在其他分店有货吗？",
+    "pinyin": "Nǐ néng chá yīxià zhège zài qítā fēndiàn yǒu huò ma?",
+    "usageNote": "Use when the item is out of stock at the current location.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "你能查一下这个在其他分店有货吗？",
+    "tags": [
+      "availability",
+      "stock",
+      "store"
+    ]
+  },
+  {
+    "id": "shopping_037",
+    "scene": "shopping",
+    "priority": "medium",
+    "english": "I'm just browsing, thank you. I'll let you know if I need help.",
+    "chinese": "我只是随便看看，谢谢。需要帮助我会叫你的。",
+    "pinyin": "Wǒ zhǐ shì suíbiàn kànkan, xièxie. Xūyào bāngzhù wǒ huì jiào nǐ de.",
+    "usageNote": "Use to politely decline initial assistance from a shopkeeper.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我只是随便看看，谢谢。需要帮助我会叫你的。",
+    "tags": [
+      "browsing",
+      "polite",
+      "decline"
+    ]
+  },
+  {
+    "id": "shopping_038",
+    "scene": "shopping",
+    "priority": "medium",
+    "english": "Does the price include tax, or will it be added at checkout?",
+    "chinese": "这个价格含税吗？还是结账时另加？",
+    "pinyin": "Zhège jiàgé hán shuì ma? Háishì jiézhàng shí lìng jiā?",
+    "usageNote": "Use to clarify the final total, especially in tourist areas.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这个价格含税吗？还是结账时另加？",
+    "tags": [
+      "price",
+      "tax",
+      "checkout"
+    ]
+  },
+  {
+    "id": "shopping_039",
+    "scene": "shopping",
+    "priority": "low",
+    "english": "I'm looking for a gift. Can you recommend something popular?",
+    "chinese": "我想买个礼物。能推荐个受欢迎的吗？",
+    "pinyin": "Wǒ xiǎng mǎi gè lǐwù. Néng tuījiàn gè shòu huānyíng de ma?",
+    "usageNote": "Use when seeking gift ideas from a local vendor.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我想买个礼物。能推荐个受欢迎的吗？",
+    "tags": [
+      "gift",
+      "recommendation",
+      "shopping"
+    ]
+  },
+  {
+    "id": "shopping_040",
+    "scene": "shopping",
+    "priority": "medium",
+    "english": "I noticed a small defect here. Can you lower the price a bit?",
+    "chinese": "我发现这里有个小瑕疵。能便宜一点吗？",
+    "pinyin": "Wǒ fāxiàn zhèlǐ yǒu gè xiǎo xiácī. Néng piányi yīdiǎn ma?",
+    "usageNote": "Use to negotiate a discount by pointing out a minor flaw.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我发现这里有个小瑕疵。能便宜一点吗？",
+    "tags": [
+      "bargaining",
+      "defect",
+      "negotiation"
+    ]
+  },
+  {
+    "id": "shopping_041",
+    "scene": "shopping",
+    "priority": "medium",
+    "english": "Do you offer VAT refund forms for tourists?",
+    "chinese": "你们为游客提供退税单吗？",
+    "pinyin": "Nǐmen wèi yóukè tígōng tuìshuì dān ma?",
+    "usageNote": "Use in eligible stores to request tax refund documentation.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "你们为游客提供退税单吗？",
+    "tags": [
+      "tax",
+      "refund",
+      "tourist"
+    ]
+  },
+  {
+    "id": "shopping_042",
+    "scene": "shopping",
+    "priority": "low",
+    "english": "Can I get a matching set with this? (e.g., earrings for a necklace)",
+    "chinese": "我能配一套和这个搭配的吗？（比如项链配耳环）",
+    "pinyin": "Wǒ néng pèi yī tào hé zhège dāpèi de ma? (Bǐrú xiàngliàn pèi ěrhuán)",
+    "usageNote": "Use to ask for coordinating accessories or items.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我能配一套和这个搭配的吗？（比如项链配耳环）",
+    "tags": [
+      "accessories",
+      "set",
+      "matching"
+    ]
+  },
+  {
+    "id": "shopping_043",
+    "scene": "shopping",
+    "priority": "medium",
+    "english": "I need a receipt that itemizes everything clearly for reimbursement.",
+    "chinese": "我需要一张详细列明所有项目的收据，用于报销。",
+    "pinyin": "Wǒ xūyào yī zhāng xiángxì liè míng suǒyǒu xiàngmù de shōujù, yòng yú bàoxiāo.",
+    "usageNote": "Use when you require a detailed invoice for business expenses.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我需要一张详细列明所有项目的收据，用于报销。",
+    "tags": [
+      "receipt",
+      "invoice",
+      "reimbursement"
+    ]
+  },
+  {
+    "id": "shopping_044",
+    "scene": "shopping",
+    "priority": "medium",
+    "english": "If I buy two, can you give me a better price?",
+    "chinese": "如果我买两个，能给个更优惠的价格吗？",
+    "pinyin": "Rúguǒ wǒ mǎi liǎng gè, néng gěi gè gèng yōuhuì de jiàgé ma?",
+    "usageNote": "Use to negotiate a bundle discount.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "如果我买两个，能给个更优惠的价格吗？",
+    "tags": [
+      "bargaining",
+      "bundle",
+      "discount"
+    ]
+  },
+  {
+    "id": "shopping_045",
+    "scene": "shopping",
+    "priority": "low",
+    "english": "Is this a local specialty or a handmade item?",
+    "chinese": "这是本地特产还是手工制品？",
+    "pinyin": "Zhè shì běndì tèchǎn háishì shǒugōng zhìpǐn?",
+    "usageNote": "Use to inquire about the origin and craftsmanship of a product.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这是本地特产还是手工制品？",
+    "tags": [
+      "origin",
+      "craftsmanship",
+      "specialty"
+    ]
+  },
+  {
+    "id": "shopping_046",
+    "scene": "shopping",
+    "priority": "medium",
+    "english": "I'd like to return this item. Do I need to bring the original packaging?",
+    "chinese": "我想退掉这件商品。需要带原包装吗？",
+    "pinyin": "Wǒ xiǎng tuì diào zhè jiàn shāngpǐn. Xūyào dài yuán bāozhuāng ma?",
+    "usageNote": "Use when initiating a return to clarify requirements.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我想退掉这件商品。需要带原包装吗？",
+    "tags": [
+      "return",
+      "packaging",
+      "policy"
+    ]
+  },
+  {
+    "id": "shopping_047",
+    "scene": "shopping",
+    "priority": "low",
+    "english": "What material is this made of? (e.g., leather, silk, cotton)",
+    "chinese": "这个是什么材质的？（比如真皮、丝绸、棉）",
+    "pinyin": "Zhège shì shénme cáizhì de? (Bǐrú zhēnpí, sīchóu, mián)",
+    "usageNote": "Use to ask about the fabric or material composition of an item.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这个是什么材质的？（比如真皮、丝绸、棉）",
+    "tags": [
+      "material",
+      "quality",
+      "fabric"
+    ]
+  },
+  {
+    "id": "shopping_048",
+    "scene": "shopping",
+    "priority": "medium",
+    "english": "Can you ship this internationally? What's the cost?",
+    "chinese": "你们可以国际邮寄吗？费用是多少？",
+    "pinyin": "Nǐmen kěyǐ guójì yóujì ma? Fèiyòng shì duōshǎo?",
+    "usageNote": "Use to inquire about international delivery options for large purchases.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "你们可以国际邮寄吗？费用是多少？",
+    "tags": [
+      "shipping",
+      "international",
+      "delivery"
+    ]
+  },
+  {
+    "id": "shopping_049",
+    "scene": "shopping",
+    "priority": "medium",
+    "english": "I'm looking for a replacement part for this. Do you have it?",
+    "chinese": "我在找这个的替换零件。你们有吗？",
+    "pinyin": "Wǒ zài zhǎo zhège de tìhuàn língjiàn. Nǐmen yǒu ma?",
+    "usageNote": "Use to find a specific component for repair or replacement.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我在找这个的替换零件。你们有吗？",
+    "tags": [
+      "parts",
+      "repair",
+      "replacement"
+    ]
+  },
+  {
+    "id": "shopping_050",
+    "scene": "shopping",
+    "priority": "low",
+    "english": "Could you gift-wrap this for me, please?",
+    "chinese": "请帮我把这个包装成礼物好吗？",
+    "pinyin": "Qǐng bāng wǒ bǎ zhège bāozhuāng chéng lǐwù hǎo ma?",
+    "usageNote": "Use to request gift wrapping service, often available in nicer stores.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请帮我把这个包装成礼物好吗？",
+    "tags": [
+      "gift",
+      "wrapping",
+      "service"
+    ]
   }
 ]

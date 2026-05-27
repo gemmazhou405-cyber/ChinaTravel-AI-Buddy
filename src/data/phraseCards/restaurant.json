@@ -475,5 +475,345 @@
       "feedback",
       "compliment"
     ]
+  },
+  {
+    "id": "restaurant_031",
+    "scene": "restaurant",
+    "priority": 2,
+    "english": "I would like to order the house specialty, please.",
+    "chinese": "我想点这里的招牌菜。",
+    "pinyin": "Wǒ xiǎng diǎn zhèlǐ de zhāopái cài.",
+    "usageNote": "Use this when you want to try the restaurant's signature or recommended dish.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我想点这里的招牌菜。",
+    "tags": [
+      "ordering",
+      "specialty",
+      "recommendation"
+    ]
+  },
+  {
+    "id": "restaurant_032",
+    "scene": "restaurant",
+    "priority": 3,
+    "english": "Could you describe this dish? Is it very spicy?",
+    "chinese": "能描述一下这道菜吗？辣吗？",
+    "pinyin": "Néng miáoshù yīxià zhè dào cài ma? Là ma?",
+    "usageNote": "Useful for understanding unfamiliar menu items or checking the spice level.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "能描述一下这道菜吗？辣吗？",
+    "tags": [
+      "questions",
+      "spice",
+      "description"
+    ]
+  },
+  {
+    "id": "restaurant_033",
+    "scene": "restaurant",
+    "priority": 2,
+    "english": "We would like a quieter table, if possible.",
+    "chinese": "如果可能，我们想要一个安静点的桌子。",
+    "pinyin": "Rúguǒ kěnéng, wǒmen xiǎng yào yīgè ānjìng diǎn de zhuōzi.",
+    "usageNote": "A polite way to request seating in a less noisy area of the restaurant.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "如果可能，我们想要一个安静点的桌子。",
+    "tags": [
+      "seating",
+      "request",
+      "ambiance"
+    ]
+  },
+  {
+    "id": "restaurant_034",
+    "scene": "restaurant",
+    "priority": 3,
+    "english": "Is this dish made with any nuts or peanut oil?",
+    "chinese": "这道菜里有坚果或花生油吗？",
+    "pinyin": "Zhè dào cài lǐ yǒu jiānguǒ huò huāshēng yóu ma?",
+    "usageNote": "A crucial question for people with nut allergies. Use with caution, as cross-contamination is possible.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "这道菜里有坚果或花生油吗？",
+    "tags": [
+      "allergy",
+      "ingredients",
+      "dietary restriction"
+    ]
+  },
+  {
+    "id": "restaurant_035",
+    "scene": "restaurant",
+    "priority": 2,
+    "english": "I am following a low-sodium diet. Can the chef prepare this without added salt?",
+    "chinese": "我遵循低盐饮食。厨师能做这道菜不加盐吗？",
+    "pinyin": "Wǒ zūnxún dī yán yǐnshí. Chúshī néng zuò zhè dào cài bù jiā yán ma?",
+    "usageNote": "A specific dietary request. Be clear about your needs to the server.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我遵循低盐饮食。厨师能做这道菜不加盐吗？",
+    "tags": [
+      "dietary restriction",
+      "health",
+      "request"
+    ]
+  },
+  {
+    "id": "restaurant_036",
+    "scene": "restaurant",
+    "priority": 2,
+    "english": "Could we get separate checks, please?",
+    "chinese": "请给我们分开结账，好吗？",
+    "pinyin": "Qǐng gěi wǒmen fēnkāi jiézhàng, hǎo ma?",
+    "usageNote": "Use this when dining in a group and each person wants to pay for their own meal.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请给我们分开结账，好吗？",
+    "tags": [
+      "bill",
+      "payment",
+      "group"
+    ]
+  },
+  {
+    "id": "restaurant_037",
+    "scene": "restaurant",
+    "priority": 3,
+    "english": "Is the ice in the drinks made from filtered water?",
+    "chinese": "饮料里的冰是用过滤水做的吗？",
+    "pinyin": "Yǐnliào lǐ de bīng shì yòng guòlǜ shuǐ zuò de ma?",
+    "usageNote": "A practical question in some regions where tap water is not potable.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "饮料里的冰是用过滤水做的吗？",
+    "tags": [
+      "drinks",
+      "water",
+      "hygiene"
+    ]
+  },
+  {
+    "id": "restaurant_038",
+    "scene": "restaurant",
+    "priority": 2,
+    "english": "We would like to share this dish. Could you bring an extra plate?",
+    "chinese": "我们想分享这道菜。能多拿一个盘子吗？",
+    "pinyin": "Wǒmen xiǎng fēnxiǎng zhè dào cài. Néng duō ná yīgè pánzi ma?",
+    "usageNote": "A common request in many Asian dining cultures where dishes are shared family-style.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我们想分享这道菜。能多拿一个盘子吗？",
+    "tags": [
+      "sharing",
+      "request",
+      "utensils"
+    ]
+  },
+  {
+    "id": "restaurant_039",
+    "scene": "restaurant",
+    "priority": 2,
+    "english": "Can I have this dish without MSG?",
+    "chinese": "这道菜能不放味精吗？",
+    "pinyin": "Zhè dào cài néng bù fàng wèijīng ma?",
+    "usageNote": "A specific ingredient request for those sensitive to monosodium glutamate.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这道菜能不放味精吗？",
+    "tags": [
+      "dietary restriction",
+      "ingredients",
+      "request"
+    ]
+  },
+  {
+    "id": "restaurant_040",
+    "scene": "restaurant",
+    "priority": 3,
+    "english": "We are in a bit of a hurry. How long will our order take?",
+    "chinese": "我们有点赶时间。我们的菜大概需要多久？",
+    "pinyin": "Wǒmen yǒudiǎn gǎn shíjiān. Wǒmen de cài dàgài xūyào duōjiǔ?",
+    "usageNote": "Politely inquire about wait times if you have a tight schedule.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "我们有点赶时间。我们的菜大概需要多久？",
+    "tags": [
+      "wait time",
+      "request",
+      "hurry"
+    ]
+  },
+  {
+    "id": "restaurant_041",
+    "scene": "restaurant",
+    "priority": 2,
+    "english": "Could you recommend a local wine or beer that pairs well with this?",
+    "chinese": "能推荐一种和这道菜很配的本地酒或啤酒吗？",
+    "pinyin": "Néng tuījiàn yī zhǒng hé zhè dào cài hěn pèi de běndì jiǔ huò píjiǔ ma?",
+    "usageNote": "A good way to experience local beverages and enhance your meal.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "能推荐一种和这道菜很配的本地酒或啤酒吗？",
+    "tags": [
+      "drinks",
+      "recommendation",
+      "local"
+    ]
+  },
+  {
+    "id": "restaurant_042",
+    "scene": "restaurant",
+    "priority": 3,
+    "english": "Is there a vegetarian version of this dish available?",
+    "chinese": "这道菜有素食版本吗？",
+    "pinyin": "Zhè dào cài yǒu sùshí bǎnběn ma?",
+    "usageNote": "Asks if a menu item can be prepared without meat or animal products.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这道菜有素食版本吗？",
+    "tags": [
+      "dietary restriction",
+      "vegetarian",
+      "request"
+    ]
+  },
+  {
+    "id": "restaurant_043",
+    "scene": "restaurant",
+    "priority": 2,
+    "english": "We'd like to pack the leftovers to go, please.",
+    "chinese": "请帮我们把剩下的打包。",
+    "pinyin": "Qǐng bāng wǒmen bǎ shèng xià de dǎbāo.",
+    "usageNote": "A common request to take uneaten food home. Less common in some high-end restaurants.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "请帮我们把剩下的打包。",
+    "tags": [
+      "takeaway",
+      "request",
+      "leftovers"
+    ]
+  },
+  {
+    "id": "restaurant_044",
+    "scene": "restaurant",
+    "priority": 3,
+    "english": "Does this contain any shellfish or shellfish extract?",
+    "chinese": "这道菜有贝类或贝类提取物吗？",
+    "pinyin": "Zhè dào cài yǒu bèilèi huò bèilèi tíqǔwù ma?",
+    "usageNote": "Important for those with shellfish allergies. Ask clearly about hidden ingredients in sauces.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "这道菜有贝类或贝类提取物吗？",
+    "tags": [
+      "allergy",
+      "ingredients",
+      "seafood"
+    ]
+  },
+  {
+    "id": "restaurant_045",
+    "scene": "restaurant",
+    "priority": 2,
+    "english": "Could we have some hot water for tea, instead of cold water?",
+    "chinese": "能给我们一些热开水泡茶吗，不要冷水？",
+    "pinyin": "Néng gěi wǒmen yīxiē rè kāishuǐ pào chá ma, bùyào lěng shuǐ?",
+    "usageNote": "In many places, especially China, hot water is readily available and often preferred for drinking or tea.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "能给我们一些热开水泡茶吗，不要冷水？",
+    "tags": [
+      "drinks",
+      "request",
+      "custom"
+    ]
+  },
+  {
+    "id": "restaurant_046",
+    "scene": "restaurant",
+    "priority": 2,
+    "english": "What is this condiment? How is it typically used?",
+    "chinese": "这是什么调味料？一般怎么用？",
+    "pinyin": "Zhè shì shénme tiáowèiliào? Yībān zěnme yòng?",
+    "usageNote": "Use when you're unfamiliar with a sauce or condiment on the table. Shows curiosity and helps you enjoy your meal.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "这是什么调味料？一般怎么用？",
+    "tags": [
+      "questions",
+      "condiments",
+      "usage"
+    ]
+  },
+  {
+    "id": "restaurant_047",
+    "scene": "restaurant",
+    "priority": 3,
+    "english": "I'm on a gluten-free diet. Does this sauce contain wheat or soy sauce?",
+    "chinese": "我吃无麸质饮食。这个酱汁里有小麦或酱油吗？",
+    "pinyin": "Wǒ chī wú fūzhì yǐnshí. Zhège jiàngzhī lǐ yǒu xiǎomài huò jiàngyóu ma?",
+    "usageNote": "A specific dietary question. Clarify that soy sauce often contains wheat.",
+    "showToLocal": true,
+    "emergencyRelevant": true,
+    "audioText": "我吃无麸质饮食。这个酱汁里有小麦或酱油吗？",
+    "tags": [
+      "dietary restriction",
+      "gluten",
+      "ingredients"
+    ]
+  },
+  {
+    "id": "restaurant_048",
+    "scene": "restaurant",
+    "priority": 2,
+    "english": "Could you take a group photo for us, please?",
+    "chinese": "麻烦帮我们拍张合影，好吗？",
+    "pinyin": "Máfán bāng wǒmen pāi zhāng héyǐng, hǎo ma?",
+    "usageNote": "A polite request to a waiter or staff member. Often well-received.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "麻烦帮我们拍张合影，好吗？",
+    "tags": [
+      "request",
+      "photo",
+      "service"
+    ]
+  },
+  {
+    "id": "restaurant_049",
+    "scene": "restaurant",
+    "priority": 3,
+    "english": "Is the tipping policy included in the service charge?",
+    "chinese": "小费是包含在服务费里吗？",
+    "pinyin": "Xiǎofèi shì bāohán zài fúwù fèi lǐ ma?",
+    "usageNote": "Important to ask in regions where tipping customs vary. Avoids confusion when paying.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "小费是包含在服务费里吗？",
+    "tags": [
+      "bill",
+      "tipping",
+      "custom"
+    ]
+  },
+  {
+    "id": "restaurant_050",
+    "scene": "restaurant",
+    "priority": 2,
+    "english": "Thank you for the wonderful meal and service.",
+    "chinese": "非常感谢，饭菜和服务都很棒。",
+    "pinyin": "Fēicháng gǎnxiè, fàncài hé fúwù dōu hěn bàng.",
+    "usageNote": "A sincere compliment to the staff upon leaving. A great way to end your dining experience.",
+    "showToLocal": true,
+    "emergencyRelevant": false,
+    "audioText": "非常感谢，饭菜和服务都很棒。",
+    "tags": [
+      "compliment",
+      "feedback",
+      "closing"
+    ]
   }
 ]
