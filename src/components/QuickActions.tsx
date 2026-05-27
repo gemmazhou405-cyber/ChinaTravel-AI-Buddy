@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { TabId } from '../App';
 
 type Journey = 'before' | 'now' | 'emergency';
@@ -9,36 +10,6 @@ type Category = {
   tab?: TabId;
   askBuddy?: boolean;
 };
-
-const JOURNEYS: Array<{ id: Journey; label: string }> = [
-  { id: 'before', label: 'Before your trip' },
-  { id: 'now', label: 'In China now' },
-  { id: 'emergency', label: 'Emergency help' },
-];
-
-const VALUE_TAGS = ['No app download', 'Show Chinese to locals', 'Ask Buddy when you’re stuck'];
-
-const BEFORE_CATEGORIES: Category[] = [
-  { label: '✅ Preparation checklist', note: 'Visas, money, apps', tab: 'before' },
-  { label: '📱 Apps to download', note: 'Set up before landing', tab: 'before' },
-  { label: '💳 China payment & transport basics', note: 'Know what works', tab: 'before' },
-  { label: '📍 City guides', note: 'Pick your first stops', tab: 'stay' },
-];
-
-const NOW_CATEGORIES: Category[] = [
-  { label: '🏨 Stay', note: 'Hotels and check-in', tab: 'stay' },
-  { label: '🍜 Food', note: 'Menus and ordering', tab: 'food' },
-  { label: '🚄 Transport', note: 'Taxi, train, metro', tab: 'transport' },
-  { label: '💳 Pay in China', note: 'Alipay, WeChat, cash', tab: 'pay' },
-  { label: '✨ Ask Buddy', note: 'Custom answer now', askBuddy: true },
-];
-
-const EMERGENCY_CATEGORIES: Category[] = [
-  { label: '🆘 Emergency numbers', note: '110 · 120 · 119', tab: 'emergency' },
-  { label: '🏥 Hospital help', note: 'Medical phrases', tab: 'emergency' },
-  { label: '👮 Police help', note: 'Report and explain', tab: 'emergency' },
-  { label: '🎒 Lost items', note: 'Passport or belongings', tab: 'emergency' },
-];
 
 interface Props {
   onTabSelect: (tab: TabId) => void;
@@ -58,18 +29,48 @@ function CategoryButton({ category, onTabSelect, onAskBuddy }: Props & { categor
 }
 
 export default function QuickActions({ onTabSelect, onAskBuddy }: Props) {
+  const { t } = useTranslation();
   const [journey, setJourney] = useState<Journey>('now');
+  const journeys: Array<{ id: Journey; label: string }> = [
+    { id: 'before', label: t('journey.states.before') },
+    { id: 'now', label: t('journey.states.now') },
+    { id: 'emergency', label: t('journey.states.emergency') },
+  ];
+  const valueTags = [
+    t('journey.badges.noApp'),
+    t('journey.badges.showChinese'),
+    t('journey.badges.askBuddy'),
+  ];
+  const beforeCategories: Category[] = [
+    { label: `✅ ${t('journey.before.checklist')}`, note: t('journey.before.checklistNote'), tab: 'before' },
+    { label: `📱 ${t('journey.before.apps')}`, note: t('journey.before.appsNote'), tab: 'before' },
+    { label: `💳 ${t('journey.before.basics')}`, note: t('journey.before.basicsNote'), tab: 'before' },
+    { label: `📍 ${t('journey.before.cityGuides')}`, note: t('journey.before.cityGuidesNote'), tab: 'stay' },
+  ];
+  const nowCategories: Category[] = [
+    { label: `🏨 ${t('journey.now.stay')}`, note: t('journey.now.stayNote'), tab: 'stay' },
+    { label: `🍜 ${t('journey.now.food')}`, note: t('journey.now.foodNote'), tab: 'food' },
+    { label: `🚄 ${t('journey.now.transport')}`, note: t('journey.now.transportNote'), tab: 'transport' },
+    { label: `💳 ${t('journey.now.pay')}`, note: t('journey.now.payNote'), tab: 'pay' },
+    { label: `✨ ${t('journey.now.askBuddy')}`, note: t('journey.now.askBuddyNote'), askBuddy: true },
+  ];
+  const emergencyCategories: Category[] = [
+    { label: `🆘 ${t('journey.emergency.numbers')}`, note: '110 · 120 · 119', tab: 'emergency' },
+    { label: `🏥 ${t('journey.emergency.hospital')}`, note: t('journey.emergency.hospitalNote'), tab: 'emergency' },
+    { label: `👮 ${t('journey.emergency.police')}`, note: t('journey.emergency.policeNote'), tab: 'emergency' },
+    { label: `🎒 ${t('journey.emergency.lostItems')}`, note: t('journey.emergency.lostItemsNote'), tab: 'emergency' },
+  ];
 
   const title =
-    journey === 'before' ? 'Before your trip' : journey === 'emergency' ? 'Emergency help' : 'In China now';
+    journey === 'before' ? t('journey.before.title') : journey === 'emergency' ? t('journey.emergency.title') : t('journey.now.title');
   const subtitle =
     journey === 'before'
-      ? 'Get ready before arriving in China.'
+      ? t('journey.before.subtitle')
       : journey === 'emergency'
-        ? 'Important words and numbers when something goes wrong.'
-        : 'Quick help for everyday travel moments.';
+        ? t('journey.emergency.subtitle')
+        : t('journey.now.subtitle');
   const categories =
-    journey === 'before' ? BEFORE_CATEGORIES : journey === 'emergency' ? EMERGENCY_CATEGORIES : NOW_CATEGORIES;
+    journey === 'before' ? beforeCategories : journey === 'emergency' ? emergencyCategories : nowCategories;
 
   return (
     <section className="relative overflow-hidden border-b border-[#155e63]/10 bg-[#f7f3ea] px-4 py-6">
@@ -77,7 +78,7 @@ export default function QuickActions({ onTabSelect, onAskBuddy }: Props) {
       <div className="relative mx-auto max-w-4xl">
         <div className="rounded-[2rem] border border-white/55 bg-white/[0.22] p-3 shadow-[0_24px_70px_rgba(11,63,67,0.10)] backdrop-blur-2xl sm:p-4">
           <div className="grid grid-cols-3 gap-1.5 rounded-[1.35rem] border border-white/70 bg-white/[0.42] p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.42),0_16px_42px_rgba(11,63,67,0.10)] backdrop-blur-2xl">
-            {JOURNEYS.map((item) => (
+          {journeys.map((item) => (
               <button
                 key={item.id}
                 onClick={() => setJourney(item.id)}
@@ -92,7 +93,7 @@ export default function QuickActions({ onTabSelect, onAskBuddy }: Props) {
             ))}
           </div>
           <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
-            {VALUE_TAGS.map((tag) => (
+            {valueTags.map((tag) => (
               <span
                 key={tag}
                 className="shrink-0 rounded-full border border-white/70 bg-white/[0.38] px-3 py-1.5 text-xs font-semibold text-[#155e63] shadow-[0_8px_24px_rgba(11,63,67,0.06)] backdrop-blur-xl"
@@ -125,9 +126,9 @@ export default function QuickActions({ onTabSelect, onAskBuddy }: Props) {
           {journey === 'emergency' && (
             <div className="mt-3 grid grid-cols-3 gap-2.5">
               {[
-                ['110', 'Police'],
-                ['120', 'Ambulance'],
-                ['119', 'Fire'],
+                ['110', t('journey.emergency.policeLabel')],
+                ['120', t('journey.emergency.ambulanceLabel')],
+                ['119', t('journey.emergency.fireLabel')],
               ].map(([number, label]) => (
                 <a
                   key={number}
@@ -144,17 +145,17 @@ export default function QuickActions({ onTabSelect, onAskBuddy }: Props) {
           <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
             {journey !== 'now' && (
               <button onClick={() => setJourney('now')} className="rounded-full border border-white/70 bg-white/[0.40] px-3 py-1.5 text-[#155e63] shadow-sm backdrop-blur-xl transition-all hover:bg-white/70">
-                Need daily travel help?
+                {t('journey.switch.daily')}
               </button>
             )}
             {journey !== 'before' && (
               <button onClick={() => setJourney('before')} className="rounded-full border border-white/70 bg-white/[0.40] px-3 py-1.5 text-[#155e63] shadow-sm backdrop-blur-xl transition-all hover:bg-white/70">
-                Planning your trip?
+                {t('journey.switch.planning')}
               </button>
             )}
             {journey !== 'emergency' && (
               <button onClick={() => setJourney('emergency')} className="rounded-full border border-red-100/90 bg-red-50/65 px-3 py-1.5 text-red-700 shadow-sm backdrop-blur-xl transition-all hover:bg-red-50">
-                Need urgent help?
+                {t('journey.switch.urgent')}
               </button>
             )}
           </div>

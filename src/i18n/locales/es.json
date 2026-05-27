@@ -14,7 +14,14 @@
       "line3": "Sin problema.",
       "subtitle": "Ayuda de viaje con IA que funciona dentro de China. Descifra menús, paga con tu tarjeta y comunícate sin esfuerzo — todo sin VPN.",
       "cta": "Empezar gratis — sin descargar",
-      "trust": "Funciona en China · Sin VPN · Gratis para empezar"
+      "trust": "Funciona en China · Sin VPN · Gratis para empezar",
+      "titleLine1": "Ayuda para viajar por China,",
+      "titleLine2": "cuando la necesitas.",
+      "homeSubtitle": "Prepárate antes del viaje, muévete después de aterrizar y resuelve situaciones cotidianas en China.",
+      "startFree": "Empezar gratis",
+      "askBuddy": "Preguntar a Buddy",
+      "mobileTrust": "Sin descargar app · Funciona en móvil · Gratis para empezar",
+      "realMoments": "Creado para momentos reales en China: taxis, comida, pagos, hoteles y emergencias."
     },
     "tabs": {
       "before": "Antes de viajar",
@@ -238,7 +245,7 @@
       "open": "Abrir",
       "secure": "Paiement sécurisé via PayPal",
       "bannerAlt": "Votre aventure en Chine commence maintenant",
-      "paymentSoon": "¡Pago próximamente! Contacta con soporte.",
+      "paymentSoon": "El pago seguro se está configurando. Los usuarios de acceso anticipado pueden solicitar activación manual.",
       "plans": {
         "free": {
           "name": "Gratis",
@@ -255,7 +262,7 @@
         "trip": {
           "name": "Trip Pass",
           "desc": "Válido por 7 días",
-          "cta": "Comprar Trip Pass 9,90 $",
+          "cta": "Solicitar acceso anticipado",
           "features": [
             "50 mensajes de Buddy AI",
             "20 escaneos de menú/foto",
@@ -267,7 +274,7 @@
         "group": {
           "name": "Group Pass",
           "desc": "Válido por 14 días · Hasta 5 viajeros",
-          "cta": "Comprar Group Pass 39,90 $",
+          "cta": "Solicitar acceso anticipado",
           "features": [
             "200 mensajes de Buddy AI",
             "100 escaneos de menú/foto",
@@ -337,7 +344,8 @@
       "connectionIssue": "Problema de conexión. Revisa Internet e inténtalo de nuevo.",
       "askBuddy": "Preguntar a Buddy",
       "planExpired": "Tu pase ha caducado. Actualiza tu plan para seguir usando Buddy AI.",
-      "dailyQuotaExceeded": "Has alcanzado el límite diario de {{limit}} mensajes de Buddy AI. Inténtalo de nuevo mañana."
+      "dailyQuotaExceeded": "Has alcanzado el límite diario de {{limit}} mensajes de Buddy AI. Inténtalo de nuevo mañana.",
+      "needBuddy": "¿No encuentras lo que necesitas? Pregunta a Buddy."
     },
     "auth": {
       "title": "ChinaEase Buddy",
@@ -374,6 +382,72 @@
     "toast": {
       "copied": "¡Copiado!",
       "saved": "¡Guardado!"
+    },
+    "journey": {
+      "states": {
+        "before": "Antes del viaje",
+        "now": "En China ahora",
+        "emergency": "Ayuda de emergencia"
+      },
+      "badges": {
+        "noApp": "Sin descargar app",
+        "showChinese": "Muestra chino a locales",
+        "askBuddy": "Pregunta a Buddy si te atascas"
+      },
+      "before": {
+        "title": "Antes del viaje",
+        "subtitle": "Prepárate antes de llegar a China.",
+        "checklist": "Lista de preparación",
+        "checklistNote": "Visas, dinero, apps",
+        "apps": "Apps para descargar",
+        "appsNote": "Configura antes de aterrizar",
+        "basics": "Conceptos básicos de pago y transporte",
+        "basicsNote": "Saber qué funciona",
+        "cityGuides": "Guías de ciudades",
+        "cityGuidesNote": "Elige tus primeras paradas"
+      },
+      "now": {
+        "title": "En China ahora",
+        "subtitle": "Ayuda rápida para momentos cotidianos del viaje.",
+        "stay": "Hotel",
+        "stayNote": "Hoteles y check-in",
+        "food": "Comida",
+        "foodNote": "Menús y pedidos",
+        "transport": "Transporte",
+        "transportNote": "Taxi, tren, metro",
+        "pay": "Pagar en China",
+        "payNote": "Alipay, WeChat, efectivo",
+        "askBuddy": "Preguntar a Buddy",
+        "askBuddyNote": "Respuesta personalizada"
+      },
+      "emergency": {
+        "title": "Ayuda de emergencia",
+        "subtitle": "Palabras y números importantes cuando algo sale mal.",
+        "numbers": "Números de emergencia",
+        "hospital": "Ayuda médica",
+        "hospitalNote": "Frases médicas",
+        "police": "Ayuda policial",
+        "policeNote": "Reportar y explicar",
+        "lostItems": "Objetos perdidos",
+        "lostItemsNote": "Pasaporte o pertenencias",
+        "policeLabel": "Policía",
+        "ambulanceLabel": "Ambulancia",
+        "fireLabel": "Bomberos"
+      },
+      "switch": {
+        "daily": "¿Necesitas ayuda diaria?",
+        "planning": "¿Preparando tu viaje?",
+        "urgent": "¿Necesitas ayuda urgente?"
+      }
+    },
+    "value": {
+      "whyTitle": "Por qué los viajeros usan ChinaEase Buddy",
+      "points": [
+        "Mostrar frases chinas útiles a locales",
+        "Entender comida, pagos, hotel y transporte",
+        "Tener números de emergencia y frases clave en un solo lugar",
+        "Preguntar a Buddy cuando las tarjetas no alcanzan"
+      ]
     }
   }
 }

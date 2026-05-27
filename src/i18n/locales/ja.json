@@ -14,7 +14,14 @@
       "line3": "問題なし。",
       "subtitle": "中国国内で使えるAI旅行サポート。メニュー解読、カード決済、会話サポートをVPNなしで利用できます。",
       "cta": "無料で始める — ダウンロード不要",
-      "trust": "中国国内で利用可 · VPN不要 · 無料で開始"
+      "trust": "中国国内で利用可 · VPN不要 · 無料で開始",
+      "titleLine1": "中国旅行のヘルプを、",
+      "titleLine2": "必要なときに。",
+      "homeSubtitle": "出発前の準備、到着後の移動、中国での日常シーンをサポートします。",
+      "startFree": "無料で始める",
+      "askBuddy": "Buddyに聞く",
+      "mobileTrust": "アプリ不要 · モバイル対応 · 無料で開始",
+      "realMoments": "中国で実際に起こる場面に対応 — タクシー、食事、支払い、ホテル、緊急時。"
     },
     "tabs": {
       "before": "出発前",
@@ -238,7 +245,7 @@
       "open": "開く",
       "secure": "Paiement sécurisé via PayPal",
       "bannerAlt": "Votre aventure en Chine commence maintenant",
-      "paymentSoon": "支払い機能は準備中です。サポートにお問い合わせください。",
+      "paymentSoon": "安全な決済は準備中です。早期アクセス利用者は手動有効化をリクエストできます。",
       "plans": {
         "free": {
           "name": "無料",
@@ -255,7 +262,7 @@
         "trip": {
           "name": "Trip Pass",
           "desc": "7日間有効",
-          "cta": "Trip Passを9.90ドルで購入",
+          "cta": "早期アクセスをリクエスト",
           "features": [
             "Buddy AIメッセージ50回",
             "メニュー/写真スキャン20回",
@@ -267,7 +274,7 @@
         "group": {
           "name": "Group Pass",
           "desc": "14日間有効 · 最大5名まで",
-          "cta": "Group Passを39.90ドルで購入",
+          "cta": "早期アクセスをリクエスト",
           "features": [
             "Buddy AIメッセージ200回",
             "メニュー/写真スキャン100回",
@@ -337,7 +344,8 @@
       "connectionIssue": "接続に問題があります。インターネットを確認してください。",
       "askBuddy": "Buddyに質問",
       "planExpired": "パスの有効期限が切れています。Buddy AIを続けて使うにはアップグレードしてください。",
-      "dailyQuotaExceeded": "本日のBuddy AIメッセージ上限{{limit}}回に達しました。明日もう一度お試しください。"
+      "dailyQuotaExceeded": "本日のBuddy AIメッセージ上限{{limit}}回に達しました。明日もう一度お試しください。",
+      "needBuddy": "必要なものが見つからない？Buddyに聞いてください。"
     },
     "auth": {
       "title": "ChinaEase Buddy",
@@ -374,6 +382,72 @@
     "toast": {
       "copied": "コピーしました！",
       "saved": "保存しました！"
+    },
+    "journey": {
+      "states": {
+        "before": "出発前",
+        "now": "中国滞在中",
+        "emergency": "緊急ヘルプ"
+      },
+      "badges": {
+        "noApp": "アプリ不要",
+        "showChinese": "中国語を見せる",
+        "askBuddy": "困ったらBuddyに聞く"
+      },
+      "before": {
+        "title": "出発前",
+        "subtitle": "中国到着前に準備しましょう。",
+        "checklist": "準備チェックリスト",
+        "checklistNote": "ビザ、お金、アプリ",
+        "apps": "ダウンロードするアプリ",
+        "appsNote": "到着前に設定",
+        "basics": "中国の支払い・交通の基本",
+        "basicsNote": "使える方法を確認",
+        "cityGuides": "都市ガイド",
+        "cityGuidesNote": "最初の行き先を選ぶ"
+      },
+      "now": {
+        "title": "中国滞在中",
+        "subtitle": "旅行中の日常シーンをすばやくサポート。",
+        "stay": "宿泊",
+        "stayNote": "ホテルとチェックイン",
+        "food": "食事",
+        "foodNote": "メニューと注文",
+        "transport": "交通",
+        "transportNote": "タクシー、鉄道、地下鉄",
+        "pay": "中国で支払う",
+        "payNote": "Alipay、WeChat、現金",
+        "askBuddy": "Buddyに聞く",
+        "askBuddyNote": "個別に回答"
+      },
+      "emergency": {
+        "title": "緊急ヘルプ",
+        "subtitle": "困ったときに必要な言葉と番号。",
+        "numbers": "緊急番号",
+        "hospital": "病院ヘルプ",
+        "hospitalNote": "医療フレーズ",
+        "police": "警察ヘルプ",
+        "policeNote": "通報と説明",
+        "lostItems": "忘れ物・紛失",
+        "lostItemsNote": "パスポートや持ち物",
+        "policeLabel": "警察",
+        "ambulanceLabel": "救急",
+        "fireLabel": "消防"
+      },
+      "switch": {
+        "daily": "日常の旅行ヘルプが必要？",
+        "planning": "旅行を準備中？",
+        "urgent": "緊急ヘルプが必要？"
+      }
+    },
+    "value": {
+      "whyTitle": "旅行者がChinaEase Buddyを使う理由",
+      "points": [
+        "便利な中国語フレーズを現地の人に見せられる",
+        "食事、支払い、ホテル、交通の場面を理解できる",
+        "緊急番号と重要フレーズを一か所に保存",
+        "フレーズカードで足りないときはBuddyに質問"
+      ]
     }
   }
 }

@@ -14,7 +14,14 @@
       "line3": "문제없어요.",
       "subtitle": "중국 안에서 작동하는 AI 여행 도우미. 메뉴를 해석하고, 카드로 결제하고, VPN 없이 편하게 소통하세요.",
       "cta": "무료 시작 — 다운로드 불필요",
-      "trust": "중국 내 사용 가능 · VPN 불필요 · 무료 시작"
+      "trust": "중국 내 사용 가능 · VPN 불필요 · 무료 시작",
+      "titleLine1": "중국 여행 도움을,",
+      "titleLine2": "필요한 순간에.",
+      "homeSubtitle": "여행 전 준비부터 도착 후 이동, 중국에서의 일상 상황까지 도와드립니다.",
+      "startFree": "무료로 시작",
+      "askBuddy": "Buddy에게 묻기",
+      "mobileTrust": "앱 다운로드 없음 · 모바일 지원 · 무료 시작",
+      "realMoments": "중국의 실제 상황을 위해 만들었습니다 — 택시, 음식, 결제, 호텔, 긴급 상황."
     },
     "tabs": {
       "before": "출발 전",
@@ -238,7 +245,7 @@
       "open": "열기",
       "secure": "Paiement sécurisé via PayPal",
       "bannerAlt": "Votre aventure en Chine commence maintenant",
-      "paymentSoon": "결제 기능은 곧 제공됩니다. 지원팀에 문의하세요.",
+      "paymentSoon": "안전한 결제는 설정 중입니다. 얼리 액세스 사용자는 수동 활성화를 요청할 수 있습니다.",
       "plans": {
         "free": {
           "name": "무료",
@@ -255,7 +262,7 @@
         "trip": {
           "name": "Trip Pass",
           "desc": "7일간 유효",
-          "cta": "Trip Pass $9.90 구매",
+          "cta": "얼리 액세스 요청",
           "features": [
             "Buddy AI 메시지 50회",
             "메뉴/사진 스캔 20회",
@@ -267,7 +274,7 @@
         "group": {
           "name": "Group Pass",
           "desc": "14일간 유효 · 최대 5명 여행자",
-          "cta": "Group Pass $39.90 구매",
+          "cta": "얼리 액세스 요청",
           "features": [
             "Buddy AI 메시지 200회",
             "메뉴/사진 스캔 100회",
@@ -337,7 +344,8 @@
       "connectionIssue": "연결 문제가 있습니다. 인터넷을 확인하고 다시 시도하세요.",
       "askBuddy": "Buddy에게 질문",
       "planExpired": "패스가 만료되었습니다. Buddy AI를 계속 사용하려면 업그레이드하세요.",
-      "dailyQuotaExceeded": "오늘의 Buddy AI 메시지 {{limit}}회 한도에 도달했습니다. 내일 다시 시도하세요."
+      "dailyQuotaExceeded": "오늘의 Buddy AI 메시지 {{limit}}회 한도에 도달했습니다. 내일 다시 시도하세요.",
+      "needBuddy": "필요한 것을 못 찾았나요? Buddy에게 물어보세요."
     },
     "auth": {
       "title": "ChinaEase Buddy",
@@ -374,6 +382,72 @@
     "toast": {
       "copied": "복사됨!",
       "saved": "저장됨!"
+    },
+    "journey": {
+      "states": {
+        "before": "여행 전",
+        "now": "지금 중국에서",
+        "emergency": "긴급 도움"
+      },
+      "badges": {
+        "noApp": "앱 다운로드 없음",
+        "showChinese": "중국어 보여주기",
+        "askBuddy": "막히면 Buddy에게 묻기"
+      },
+      "before": {
+        "title": "여행 전",
+        "subtitle": "중국 도착 전에 준비하세요.",
+        "checklist": "준비 체크리스트",
+        "checklistNote": "비자, 돈, 앱",
+        "apps": "다운로드할 앱",
+        "appsNote": "도착 전 설정",
+        "basics": "중국 결제 및 교통 기본",
+        "basicsNote": "무엇이 되는지 확인",
+        "cityGuides": "도시 가이드",
+        "cityGuidesNote": "첫 방문지를 선택"
+      },
+      "now": {
+        "title": "지금 중국에서",
+        "subtitle": "여행 중 일상 순간을 빠르게 도와드립니다.",
+        "stay": "숙박",
+        "stayNote": "호텔과 체크인",
+        "food": "음식",
+        "foodNote": "메뉴와 주문",
+        "transport": "교통",
+        "transportNote": "택시, 기차, 지하철",
+        "pay": "중국에서 결제",
+        "payNote": "Alipay, WeChat, 현금",
+        "askBuddy": "Buddy에게 묻기",
+        "askBuddyNote": "맞춤 답변"
+      },
+      "emergency": {
+        "title": "긴급 도움",
+        "subtitle": "문제가 생겼을 때 필요한 말과 번호.",
+        "numbers": "긴급 번호",
+        "hospital": "병원 도움",
+        "hospitalNote": "의료 문구",
+        "police": "경찰 도움",
+        "policeNote": "신고와 설명",
+        "lostItems": "분실물",
+        "lostItemsNote": "여권 또는 소지품",
+        "policeLabel": "경찰",
+        "ambulanceLabel": "구급차",
+        "fireLabel": "소방"
+      },
+      "switch": {
+        "daily": "일상 여행 도움이 필요하세요?",
+        "planning": "여행을 준비 중인가요?",
+        "urgent": "긴급 도움이 필요하세요?"
+      }
+    },
+    "value": {
+      "whyTitle": "여행자가 ChinaEase Buddy를 쓰는 이유",
+      "points": [
+        "유용한 중국어 문구를 현지인에게 보여주기",
+        "음식, 결제, 호텔, 교통 상황 이해하기",
+        "긴급 번호와 핵심 문구를 한곳에 보관하기",
+        "문구 카드로 부족할 때 Buddy에게 묻기"
+      ]
     }
   }
 }

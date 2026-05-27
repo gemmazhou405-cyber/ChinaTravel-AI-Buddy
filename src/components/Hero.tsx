@@ -196,12 +196,12 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
             className="font-black text-white leading-none tracking-tight mb-4 drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)]"
             style={{ fontSize: 'clamp(2.8rem, 8vw, 5rem)' }}
           >
-            China travel help,<br />
-            <span className="text-[#7dd3d8]">when you need it.</span>
+            {t('hero.titleLine1')}<br />
+            <span className="text-[#7dd3d8]">{t('hero.titleLine2')}</span>
           </h1>
 
-          <p className="text-white/82 text-sm md:text-lg leading-relaxed mb-6 max-w-lg drop-shadow-[0_2px_10px_rgba(0,0,0,0.45)]">
-            Prepare before your trip, get around after landing, and handle everyday situations in China.
+          <p className="text-[#fff7e8]/95 text-sm md:text-lg leading-relaxed mb-6 max-w-lg drop-shadow-[0_2px_14px_rgba(0,0,0,0.62)]">
+            {t('hero.homeSubtitle')}
           </p>
 
           <div className="absolute left-1/2 bottom-[7vh] z-20 flex w-[min(17.5rem,calc(100vw-2.5rem))] -translate-x-1/2 flex-col gap-2 md:static md:w-auto md:translate-x-0 md:flex-row">
@@ -209,21 +209,21 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
               onClick={onAuthClick}
               className="w-full md:w-auto flex items-center justify-center gap-2 bg-[#155e63] text-white font-semibold px-5 py-3.5 md:px-8 md:py-4 rounded-xl hover:bg-[#0e4a4e] transition-all shadow-2xl md:shadow-xl text-sm md:text-base"
             >
-              <span>Start Free</span>
+              <span>{t('hero.startFree')}</span>
             </button>
             <button
               onClick={onAskBuddy}
               className="w-full md:w-auto flex items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/12 px-5 py-3.5 text-sm font-semibold text-white shadow-xl backdrop-blur-sm transition-all hover:bg-white/18 md:px-7 md:py-4 md:text-base"
             >
-              Ask Buddy
+              {t('hero.askBuddy')}
             </button>
           </div>
 
-          <p className="text-white/58 text-xs mt-3">
-            No app download · Works on mobile · Free to start
+          <p className="text-[#fff7e8]/78 text-xs font-medium mt-3 drop-shadow-[0_1px_8px_rgba(0,0,0,0.58)]">
+            {t('hero.mobileTrust')}
           </p>
-          <p className="mt-2 max-w-md text-xs font-medium leading-relaxed text-white/70">
-            Built for real moments in China — taxis, food, payments, hotels, and emergencies.
+          <p className="mt-2 max-w-md text-xs font-medium leading-relaxed text-[#fff7e8]/82 drop-shadow-[0_1px_8px_rgba(0,0,0,0.55)]">
+            {t('hero.realMoments')}
           </p>
         </div>
       </div>
