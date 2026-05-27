@@ -1,0 +1,109 @@
+{
+  "id": "lostDocuments",
+  "items": [
+    {
+      "type": "Passport",
+      "steps": [
+        "Report the loss to the nearest police station (警察局) and obtain a loss report (遗失证明).",
+        "Contact your country's embassy or consulate in China immediately to apply for an emergency travel document.",
+        "Contact your airline and hotel to inform them of the situation and provide any supporting documents.",
+        "Keep digital copies of your passport's main page, visa, and recent entry stamps stored separately."
+      ],
+      "phrases": [
+        {
+          "english": "I have lost my passport.",
+          "chinese": "我的护照丢了。",
+          "pinyin": "Wǒ de hùzhào diū le."
+        },
+        {
+          "english": "Can I get a loss report here?",
+          "chinese": "我可以在这里办理遗失证明吗？",
+          "pinyin": "Wǒ kěyǐ zài zhèlǐ bànlǐ yīshī zhèngmíng ma?"
+        },
+        {
+          "english": "Where is the nearest embassy/consulate?",
+          "chinese": "最近的大使馆/领事馆在哪里？",
+          "pinyin": "Zuìjìn de dàshǐguǎn/lǐngshìguǎn zài nǎlǐ?"
+        }
+      ]
+    },
+    {
+      "type": "Credit Cards",
+      "steps": [
+        "Immediately call your bank's international collect call number to report the loss and freeze your cards.",
+        "File a police report if the cards were stolen, as it may be required for insurance claims.",
+        "Use your backup payment method (second card or cash) while awaiting replacements.",
+        "Monitor your online banking for any unauthorized transactions."
+      ],
+      "phrases": [
+        {
+          "english": "I need to report my credit card lost/stolen.",
+          "chinese": "我需要挂失我的信用卡。",
+          "pinyin": "Wǒ xūyào guàshī wǒ de xìnyòngkǎ."
+        },
+        {
+          "english": "Can I freeze my account now?",
+          "chinese": "我现在可以冻结我的账户吗？",
+          "pinyin": "Wǒ xiànzài kěyǐ dòngjié wǒ de zhànghù ma?"
+        },
+        {
+          "english": "Is there an international hotline?",
+          "chinese": "有国际服务热线吗？",
+          "pinyin": "Yǒu guójì fúwú rèxiàn ma?"
+        }
+      ]
+    },
+    {
+      "type": "Phone",
+      "steps": [
+        "Use a computer or another device to log into your iCloud or Google account to remotely lock, locate, or wipe your phone.",
+        "Contact your mobile carrier to suspend your service and prevent unauthorized use.",
+        "Report to the police if you believe it was stolen, providing the IMEI number if available.",
+        "Use your hotel or local business Wi-Fi to communicate via email or messaging apps on borrowed devices."
+      ],
+      "phrases": [
+        {
+          "english": "I can't find my phone.",
+          "chinese": "我找不到我的手机了。",
+          "pinyin": "Wǒ zhǎo bù dào wǒ de shǒujī le."
+        },
+        {
+          "english": "Can I use your Wi-Fi?",
+          "chinese": "我可以用一下你们的Wi-Fi吗？",
+          "pinyin": "Wǒ kěyǐ yòng yīxià nǐmen de Wi-Fi ma?"
+        },
+        {
+          "english": "What is the IMEI number?",
+          "chinese": "IMEI号是什么？",
+          "pinyin": "IMEI hào shì shénme?"
+        }
+      ]
+    },
+    {
+      "type": "Flight Tickets",
+      "steps": [
+        "Contact the airline directly via their customer service number or airport counter to explain the situation.",
+        "Provide your booking reference, full name, and flight details to locate your reservation.",
+        "Ask about the policy and procedure for reprinting a lost ticket or issuing a boarding pass.",
+        "Arrive at the airport early to allow extra time for resolving the issue at the check-in counter."
+      ],
+      "phrases": [
+        {
+          "english": "I have lost my flight ticket/boarding pass.",
+          "chinese": "我的机票/登机牌丢了。",
+          "pinyin": "Wǒ de jīpiào/dēngjīpái diū le."
+        },
+        {
+          "english": "My booking reference is ABC123.",
+          "chinese": "我的预订号是ABC123。",
+          "pinyin": "Wǒ de yùdìng hào shì ABC123."
+        },
+        {
+          "english": "Can you reprint my boarding pass?",
+          "chinese": "您可以重新打印我的登机牌吗？",
+          "pinyin": "Nín kěyǐ chóngxīn dǎyìn wǒ de dēngjīpái ma?"
+        }
+      ]
+    }
+  ]
+}

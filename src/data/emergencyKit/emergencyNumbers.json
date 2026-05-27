@@ -1,0 +1,56 @@
+{
+  "id": "emergencyNumbers",
+  "national": [
+    {
+      "service": "Police",
+      "number": "110",
+      "chinese": "警察",
+      "notes": "For crimes, accidents, and public safety emergencies. Operators generally speak Mandarin; ask for English assistance if needed."
+    },
+    {
+      "service": "Ambulance",
+      "number": "120",
+      "chinese": "急救 / 救护车",
+      "notes": "Medical emergencies. Alternatively call 999 in some cities. Be prepared to give your exact location in Mandarin or have someone nearby assist."
+    },
+    {
+      "service": "Fire",
+      "number": "119",
+      "chinese": "消防 / 火警",
+      "notes": "Fire and rescue emergencies. Also assists with non-fire rescues (e.g., trapped persons, animal rescue)."
+    },
+    {
+      "service": "Tourist Hotline",
+      "number": "12301",
+      "chinese": "旅游服务热线",
+      "notes": "National tourism complaint and information hotline. Available in English in major tourist cities. For travel-related disputes, lost passports guidance, and tourist services."
+    }
+  ],
+  "cityHotlines": [
+    {
+      "city": "Shanghai",
+      "number": "962020",
+      "notes": "Shanghai Foreign Affairs Service Hotline. English-speaking operators available for foreigners needing assistance with daily life, emergencies, and city services."
+    },
+    {
+      "city": "Beijing",
+      "number": "010-12345",
+      "notes": "Beijing Municipal Government Service Hotline. Multilingual support including English for city services, complaints, and general inquiries."
+    },
+    {
+      "city": "Guangzhou",
+      "number": "12345",
+      "notes": "Guangzhou Government Service Hotline. Offers assistance in English and other languages for public services, complaints, and emergency guidance."
+    },
+    {
+      "city": "Shenzhen",
+      "number": "12345",
+      "notes": "Shenzhen Government Service Hotline. Foreign-language assistance available. Covers city services, emergency referrals, and expatriate support."
+    },
+    {
+      "city": "Chengdu",
+      "number": "12345",
+      "notes": "Chengdu Government Service Hotline. English-language support available for tourists and residents covering city services and emergency information."
+    }
+  ]
+}
