@@ -17,7 +17,7 @@
       "trust": "중국 내 사용 가능 · VPN 불필요 · 무료 시작",
       "titleLine1": "중국 여행 도움을,",
       "titleLine2": "필요한 순간에.",
-      "homeSubtitle": "여행 전 준비부터 도착 후 이동, 중국에서의 일상 상황까지 도와드립니다.",
+      "homeSubtitle": "중국에서 준비하고, 이동하고, 일상 여행 상황을 해결하세요.",
       "startFree": "무료로 시작",
       "askBuddy": "Buddy에게 묻기",
       "mobileTrust": "앱 다운로드 없음 · 모바일 지원 · 무료 시작",
@@ -396,7 +396,7 @@
       },
       "before": {
         "title": "여행 전",
-        "subtitle": "중국 도착 전에 준비하세요.",
+        "subtitle": "도착 전에 준비하세요.",
         "checklist": "준비 체크리스트",
         "checklistNote": "비자, 돈, 앱",
         "apps": "다운로드할 앱",
@@ -408,7 +408,7 @@
       },
       "now": {
         "title": "지금 중국에서",
-        "subtitle": "여행 중 일상 순간을 빠르게 도와드립니다.",
+        "subtitle": "현지에서 매일 쓰는 도움.",
         "stay": "숙박",
         "stayNote": "호텔과 체크인",
         "food": "음식",
@@ -422,7 +422,7 @@
       },
       "emergency": {
         "title": "긴급 도움",
-        "subtitle": "문제가 생겼을 때 필요한 말과 번호.",
+        "subtitle": "긴급 문구와 번호.",
         "numbers": "긴급 번호",
         "hospital": "병원 도움",
         "hospitalNote": "의료 문구",

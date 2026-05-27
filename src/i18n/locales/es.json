@@ -17,7 +17,7 @@
       "trust": "Funciona en China · Sin VPN · Gratis para empezar",
       "titleLine1": "Ayuda para viajar por China,",
       "titleLine2": "cuando la necesitas.",
-      "homeSubtitle": "Prepárate antes del viaje, muévete después de aterrizar y resuelve situaciones cotidianas en China.",
+      "homeSubtitle": "Prepárate, muévete y resuelve momentos diarios de viaje en China.",
       "startFree": "Empezar gratis",
       "askBuddy": "Preguntar a Buddy",
       "mobileTrust": "Sin descargar app · Funciona en móvil · Gratis para empezar",
@@ -396,7 +396,7 @@
       },
       "before": {
         "title": "Antes del viaje",
-        "subtitle": "Prepárate antes de llegar a China.",
+        "subtitle": "Planifica antes de llegar.",
         "checklist": "Lista de preparación",
         "checklistNote": "Visas, dinero, apps",
         "apps": "Apps para descargar",
@@ -408,7 +408,7 @@
       },
       "now": {
         "title": "En China ahora",
-        "subtitle": "Ayuda rápida para momentos cotidianos del viaje.",
+        "subtitle": "Ayuda diaria sobre el terreno.",
         "stay": "Hotel",
         "stayNote": "Hoteles y check-in",
         "food": "Comida",
@@ -422,7 +422,7 @@
       },
       "emergency": {
         "title": "Ayuda de emergencia",
-        "subtitle": "Palabras y números importantes cuando algo sale mal.",
+        "subtitle": "Palabras y números urgentes.",
         "numbers": "Números de emergencia",
         "hospital": "Ayuda médica",
         "hospitalNote": "Frases médicas",

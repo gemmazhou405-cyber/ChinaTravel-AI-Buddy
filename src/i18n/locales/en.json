@@ -17,7 +17,7 @@
       "trust": "Works inside China · No VPN needed · Free to start",
       "titleLine1": "China travel help,",
       "titleLine2": "when you need it.",
-      "homeSubtitle": "Prepare before your trip, get around after landing, and handle everyday situations in China.",
+      "homeSubtitle": "Prepare, get around, and handle daily travel moments in China.",
       "startFree": "Start Free",
       "askBuddy": "Ask Buddy",
       "mobileTrust": "No app download · Works on mobile · Free to start",
@@ -396,7 +396,7 @@
       },
       "before": {
         "title": "Before your trip",
-        "subtitle": "Get ready before arriving in China.",
+        "subtitle": "Plan before you arrive.",
         "checklist": "Preparation checklist",
         "checklistNote": "Visas, money, apps",
         "apps": "Apps to download",
@@ -408,7 +408,7 @@
       },
       "now": {
         "title": "In China now",
-        "subtitle": "Quick help for everyday travel moments.",
+        "subtitle": "Daily help on the ground.",
         "stay": "Stay",
         "stayNote": "Hotels and check-in",
         "food": "Food",
@@ -422,7 +422,7 @@
       },
       "emergency": {
         "title": "Emergency help",
-        "subtitle": "Important words and numbers when something goes wrong.",
+        "subtitle": "Urgent words and numbers.",
         "numbers": "Emergency numbers",
         "hospital": "Hospital help",
         "hospitalNote": "Medical phrases",

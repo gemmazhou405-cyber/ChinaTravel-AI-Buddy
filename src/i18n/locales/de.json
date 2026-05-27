@@ -17,7 +17,7 @@
       "trust": "Funktioniert in China · Kein VPN nötig · Kostenlos starten",
       "titleLine1": "China-Reisehilfe,",
       "titleLine2": "wenn du sie brauchst.",
-      "homeSubtitle": "Bereite deine Reise vor, finde dich nach der Ankunft zurecht und meistere Alltagssituationen in China.",
+      "homeSubtitle": "Vorbereiten, zurechtfinden und tägliche Reisemomente in China meistern.",
       "startFree": "Kostenlos starten",
       "askBuddy": "Buddy fragen",
       "mobileTrust": "Kein App-Download · Funktioniert mobil · Kostenlos starten",
@@ -396,7 +396,7 @@
       },
       "before": {
         "title": "Vor der Reise",
-        "subtitle": "Bereite dich vor, bevor du in China ankommst.",
+        "subtitle": "Plane vor deiner Ankunft.",
         "checklist": "Vorbereitungs-Checkliste",
         "checklistNote": "Visa, Geld, Apps",
         "apps": "Apps herunterladen",
@@ -408,7 +408,7 @@
       },
       "now": {
         "title": "Jetzt in China",
-        "subtitle": "Schnelle Hilfe für tägliche Reisemomente.",
+        "subtitle": "Alltagshilfe vor Ort.",
         "stay": "Unterkunft",
         "stayNote": "Hotels und Check-in",
         "food": "Essen",
@@ -422,7 +422,7 @@
       },
       "emergency": {
         "title": "Notfallhilfe",
-        "subtitle": "Wichtige Wörter und Nummern, wenn etwas schiefgeht.",
+        "subtitle": "Dringende Wörter und Nummern.",
         "numbers": "Notrufnummern",
         "hospital": "Krankenhaus-Hilfe",
         "hospitalNote": "Medizinische Sätze",

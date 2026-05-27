@@ -17,7 +17,7 @@
       "trust": "中国国内で利用可 · VPN不要 · 無料で開始",
       "titleLine1": "中国旅行のヘルプを、",
       "titleLine2": "必要なときに。",
-      "homeSubtitle": "出発前の準備、到着後の移動、中国での日常シーンをサポートします。",
+      "homeSubtitle": "中国での準備、移動、日常の旅行シーンをサポートします。",
       "startFree": "無料で始める",
       "askBuddy": "Buddyに聞く",
       "mobileTrust": "アプリ不要 · モバイル対応 · 無料で開始",
@@ -396,7 +396,7 @@
       },
       "before": {
         "title": "出発前",
-        "subtitle": "中国到着前に準備しましょう。",
+        "subtitle": "到着前に準備しましょう。",
         "checklist": "準備チェックリスト",
         "checklistNote": "ビザ、お金、アプリ",
         "apps": "ダウンロードするアプリ",
@@ -408,7 +408,7 @@
       },
       "now": {
         "title": "中国滞在中",
-        "subtitle": "旅行中の日常シーンをすばやくサポート。",
+        "subtitle": "現地での日常ヘルプ。",
         "stay": "宿泊",
         "stayNote": "ホテルとチェックイン",
         "food": "食事",
@@ -422,7 +422,7 @@
       },
       "emergency": {
         "title": "緊急ヘルプ",
-        "subtitle": "困ったときに必要な言葉と番号。",
+        "subtitle": "緊急時の言葉と番号。",
         "numbers": "緊急番号",
         "hospital": "病院ヘルプ",
         "hospitalNote": "医療フレーズ",

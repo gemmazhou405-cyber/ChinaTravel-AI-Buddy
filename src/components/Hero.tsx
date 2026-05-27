@@ -60,14 +60,14 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
       <style>{`
         .hero-bg {
           background:
-            linear-gradient(to right, rgba(0,0,0,0.70) 0%, rgba(21,94,99,0.45) 50%, rgba(0,0,0,0.20) 100%),
+            linear-gradient(to right, rgba(0,0,0,0.76) 0%, rgba(21,94,99,0.50) 48%, rgba(0,0,0,0.24) 100%),
             url("/hero.jpg") center center/cover no-repeat;
         }
         @media (max-width: 768px) {
           .hero-bg {
             background:
-              linear-gradient(to bottom, rgba(0,0,0,0.22) 0%, rgba(21,94,99,0.12) 38%, rgba(0,0,0,0.34) 76%, rgba(0,0,0,0.52) 100%),
-              linear-gradient(to right, rgba(0,0,0,0.24) 0%, rgba(21,94,99,0.10) 54%, rgba(0,0,0,0.08) 100%),
+              linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, rgba(21,94,99,0.16) 38%, rgba(0,0,0,0.42) 76%, rgba(0,0,0,0.60) 100%),
+              linear-gradient(to right, rgba(0,0,0,0.34) 0%, rgba(21,94,99,0.13) 54%, rgba(0,0,0,0.12) 100%),
               url("/hero-mobile.jpg") 57% 18%/cover no-repeat;
           }
         }
@@ -200,7 +200,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
             <span className="text-[#7dd3d8]">{t('hero.titleLine2')}</span>
           </h1>
 
-          <p className="text-[#fff7e8]/95 text-sm md:text-lg leading-relaxed mb-6 max-w-lg drop-shadow-[0_2px_14px_rgba(0,0,0,0.62)]">
+          <p className="text-[#fff9ed] text-sm md:text-lg leading-relaxed mb-6 max-w-lg drop-shadow-[0_2px_16px_rgba(0,0,0,0.74)]">
             {t('hero.homeSubtitle')}
           </p>
 
@@ -219,7 +219,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
             </button>
           </div>
 
-          <p className="text-[#fff7e8]/78 text-xs font-medium mt-3 drop-shadow-[0_1px_8px_rgba(0,0,0,0.58)]">
+          <p className="text-[#fff7e8]/90 text-xs font-semibold mt-3 drop-shadow-[0_1px_10px_rgba(0,0,0,0.72)]">
             {t('hero.mobileTrust')}
           </p>
           <p className="mt-2 max-w-md text-xs font-medium leading-relaxed text-[#fff7e8]/82 drop-shadow-[0_1px_8px_rgba(0,0,0,0.55)]">
