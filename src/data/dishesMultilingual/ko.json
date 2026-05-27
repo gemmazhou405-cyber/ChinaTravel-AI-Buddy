@@ -1,0 +1,7420 @@
+[
+  {
+    "id": "dish_001",
+    "chineseName": "宫保鸡丁",
+    "englishName": "Kung Pao Chicken",
+    "pinyin": "Gōng bǎo jī dīng",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "chicken",
+      "peanuts",
+      "dried chili",
+      "scallions"
+    ],
+    "allergens": [
+      "peanuts"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "nationwide"
+    ],
+    "shortDescription": "Stir-fried chicken with peanuts and dried chilies.",
+    "orderTip": "Ask for 'wei la' (slightly spicy) if you prefer mild heat.",
+    "avoidIf": [
+      "peanut allergy",
+      "chili sensitivity"
+    ],
+    "koName": "쿵파오 치킨",
+    "koDescription": "땅콩과 건조 고추를 넣고 볶은 닭고기 요리.",
+    "koOrderTip": "순한 맛을 원하시면 '위라'(약간 매운)로 요청하세요."
+  },
+  {
+    "id": "dish_002",
+    "chineseName": "麻婆豆腐",
+    "englishName": "Mapo Tofu",
+    "pinyin": "Má pó dòu fu",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "tofu",
+      "ground pork",
+      "fermented black beans",
+      "chili bean paste"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "nationwide"
+    ],
+    "shortDescription": "Spicy tofu in a fiery, savory sauce.",
+    "orderTip": "Very spicy. Order with rice to balance the heat.",
+    "avoidIf": [
+      "low spice tolerance",
+      "soy allergy"
+    ],
+    "koName": "마파두부",
+    "koDescription": "매운 소스에 두부를 넣어 끓인 요리.",
+    "koOrderTip": "아주 매워요. 밥과 함께 시키면 매운맛을 중화시킬 수 있어요."
+  },
+  {
+    "id": "dish_003",
+    "chineseName": "回锅肉",
+    "englishName": "Twice-Cooked Pork",
+    "pinyin": "Huí guō ròu",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "pork belly",
+      "green peppers",
+      "fermented black beans",
+      "doubanjiang"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan"
+    ],
+    "shortDescription": "Sliced pork belly stir-fried with vegetables.",
+    "orderTip": "Rich and savory. Great with steamed rice.",
+    "avoidIf": [
+      "pork restriction",
+      "soy allergy"
+    ],
+    "koName": "회과육",
+    "koDescription": "채소와 함께 두 번 조리한 삼겹살 볶음.",
+    "koOrderTip": "풍미가 풍부해요. 쌀밥과 잘 어울립니다."
+  },
+  {
+    "id": "dish_004",
+    "chineseName": "水煮牛肉",
+    "englishName": "Boiled Beef in Chili Broth",
+    "pinyin": "Shuǐ zhǔ niú ròu",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "beef",
+      "bean sprouts",
+      "cabbage",
+      "chili oil"
+    ],
+    "allergens": [],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan"
+    ],
+    "shortDescription": "Tender beef in a super spicy, oily broth.",
+    "orderTip": "Extremely spicy. For chili lovers only.",
+    "avoidIf": [
+      "low spice tolerance",
+      "beef restriction"
+    ],
+    "koName": "수유우육",
+    "koDescription": "아주 매운 기름진 국물에 부드러운 쇠고기를 넣은 요리.",
+    "koOrderTip": "매우 매워요. 매운 음식을 즐기는 분만 추천합니다."
+  },
+  {
+    "id": "dish_005",
+    "chineseName": "夫妻肺片",
+    "englishName": "Sliced Beef and Ox Tongue in Chili Sauce",
+    "pinyin": "Fū qī fèi piàn",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "beef",
+      "ox tongue",
+      "tripe",
+      "chili oil",
+      "peanuts"
+    ],
+    "allergens": [
+      "peanuts"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan"
+    ],
+    "shortDescription": "Chilled sliced offal in a spicy, numbing sauce.",
+    "orderTip": "A cold appetizer. Spicy and flavorful.",
+    "avoidIf": [
+      "organ meat aversion",
+      "peanut allergy"
+    ],
+    "koName": "푸츠페이피엔",
+    "koDescription": "매운 소스에 차갑게 즐기는 내장 슬라이스.",
+    "koOrderTip": "차가운 전채요리. 매운맛과 풍미가 강해요."
+  },
+  {
+    "id": "dish_006",
+    "chineseName": "鱼香肉丝",
+    "englishName": "Yu Xiang Shredded Pork",
+    "pinyin": "Yú xiāng ròu sī",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "pork",
+      "wood ear mushrooms",
+      "pickled chili",
+      "garlic"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "nationwide"
+    ],
+    "shortDescription": "Sweet, sour, and spicy shredded pork stir-fry.",
+    "orderTip": "Flavorful, not too spicy. Good for beginners.",
+    "avoidIf": [
+      "pork restriction",
+      "soy allergy"
+    ],
+    "koName": "유샹러우쓰",
+    "koDescription": "달고 신 매운 맛의 돼지고기 채볶음.",
+    "koOrderTip": "풍미가 좋지만 많이 맵지 않아요. 초보자에게 좋아요."
+  },
+  {
+    "id": "dish_007",
+    "chineseName": "辣子鸡",
+    "englishName": "Chongqing Spicy Chicken",
+    "pinyin": "Là zi jī",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "chicken",
+      "dried chili",
+      "Sichuan peppercorn",
+      "garlic"
+    ],
+    "allergens": [],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "Chongqing"
+    ],
+    "shortDescription": "Crispy fried chicken buried in dried chilies.",
+    "orderTip": "Very spicy. Eat around the chilies.",
+    "avoidIf": [
+      "low spice tolerance"
+    ],
+    "koName": "라쯔지",
+    "koDescription": "건조 고추 속에 바삭하게 튀겨낸 닭고기.",
+    "koOrderTip": "아주 매워요. 고추는 피해서 드세요."
+  },
+  {
+    "id": "dish_008",
+    "chineseName": "担担面",
+    "englishName": "Dan Dan Noodles",
+    "pinyin": "Dàn dàn miàn",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "noodles",
+      "ground pork",
+      "sesame paste",
+      "chili oil"
+    ],
+    "allergens": [
+      "gluten",
+      "sesame",
+      "soy"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan"
+    ],
+    "shortDescription": "Noodles in a spicy, savory sesame sauce.",
+    "orderTip": "A classic street food noodle dish. Rich and flavorful.",
+    "avoidIf": [
+      "gluten allergy",
+      "sesame allergy"
+    ],
+    "koName": "단단몐",
+    "koDescription": "매운 참깨 소스를 곁들인 국수.",
+    "koOrderTip": "거리 음식의 대표적인 면 요리. 맛이 진하고 풍부해요."
+  },
+  {
+    "id": "dish_009",
+    "chineseName": "钟水饺",
+    "englishName": "Zhong Dumplings",
+    "pinyin": "Zhōng shuǐ jiǎo",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "pork dumplings",
+      "soy sauce",
+      "garlic",
+      "chili oil"
+    ],
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan"
+    ],
+    "shortDescription": "Pork dumplings in a sweet and spicy sauce.",
+    "orderTip": "A snack or appetizer. Sauce is sweet and spicy.",
+    "avoidIf": [
+      "gluten allergy",
+      "pork restriction"
+    ],
+    "koName": "중수교",
+    "koDescription": "달고 매운 소스를 곁들인 돼지고기 만두.",
+    "koOrderTip": "간식 또는 전채요리. 소스가 달고 매워요."
+  },
+  {
+    "id": "dish_010",
+    "chineseName": "口水鸡",
+    "englishName": "Mouth-Watering Chicken",
+    "pinyin": "Kǒu shuǐ jī",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "poached chicken",
+      "chili oil",
+      "peanuts",
+      "sesame"
+    ],
+    "allergens": [
+      "peanuts",
+      "sesame"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan"
+    ],
+    "shortDescription": "Cold poached chicken in a spicy, tangy sauce.",
+    "orderTip": "A cold appetizer. Sauce is flavorful and spicy.",
+    "avoidIf": [
+      "peanut allergy",
+      "sesame allergy"
+    ],
+    "koName": "커우수이지",
+    "koDescription": "매운 새콤한 소스를 곁들인 차가운 닭고기 냉채.",
+    "koOrderTip": "차가운 전채요리. 소스가 풍미 있고 매워요."
+  },
+  {
+    "id": "dish_011",
+    "chineseName": "毛血旺",
+    "englishName": "Mao Xue Wang (Spicy Duck Blood Curd)",
+    "pinyin": "Máo xuè wàng",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "duck blood",
+      "tripe",
+      "luncheon meat",
+      "bean sprouts"
+    ],
+    "allergens": [],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "Chongqing"
+    ],
+    "shortDescription": "A spicy hotpot-style dish with various meats.",
+    "orderTip": "Very spicy and adventurous. Contains offal.",
+    "avoidIf": [
+      "low spice tolerance",
+      "offal aversion"
+    ],
+    "koName": "Mao Xue Wang (Spicy Duck Blood Curd)",
+    "koDescription": "A spicy hotpot-style dish with various meats.",
+    "koOrderTip": "Very spicy and adventurous. Contains offal."
+  },
+  {
+    "id": "dish_012",
+    "chineseName": "蒜泥白肉",
+    "englishName": "Pork with Garlic Sauce",
+    "pinyin": "Suàn ní bái ròu",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "pork belly",
+      "garlic",
+      "soy sauce",
+      "chili oil"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan"
+    ],
+    "shortDescription": "Sliced pork belly with a strong garlic sauce.",
+    "orderTip": "Garlic-forward. Great cold appetizer.",
+    "avoidIf": [
+      "pork restriction",
+      "garlic sensitivity"
+    ],
+    "koName": "Pork with Garlic Sauce",
+    "koDescription": "Sliced pork belly with a strong garlic sauce.",
+    "koOrderTip": "Garlic-forward. Great cold appetizer."
+  },
+  {
+    "id": "dish_013",
+    "chineseName": "蚂蚁上树",
+    "englishName": "Ants Climbing a Tree",
+    "pinyin": "Mǎ yǐ shàng shù",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "glass noodles",
+      "ground pork",
+      "chili bean paste",
+      "scallions"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "nationwide"
+    ],
+    "shortDescription": "Spicy glass noodles with ground pork.",
+    "orderTip": "Noodle dish. Mildly spicy and savory.",
+    "avoidIf": [
+      "pork restriction",
+      "soy allergy"
+    ],
+    "koName": "Ants Climbing a Tree",
+    "koDescription": "Spicy glass noodles with ground pork.",
+    "koOrderTip": "Noodle dish. Mildly spicy and savory."
+  },
+  {
+    "id": "dish_014",
+    "chineseName": "麻辣香锅",
+    "englishName": "Mala Xiang Guo (Spicy Pot)",
+    "pinyin": "Má là xiāng guō",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "various meats",
+      "vegetables",
+      "dried chili",
+      "Sichuan peppercorn"
+    ],
+    "allergens": [],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "nationwide"
+    ],
+    "shortDescription": "Dry-fried mix of meats and vegetables, very spicy.",
+    "orderTip": "Choose your own ingredients. Customizable spice level.",
+    "avoidIf": [
+      "low spice tolerance"
+    ],
+    "koName": "Mala Xiang Guo (Spicy Pot)",
+    "koDescription": "Dry-fried mix of meats and vegetables, very spicy.",
+    "koOrderTip": "Choose your own ingredients. Customizable spice level."
+  },
+  {
+    "id": "dish_015",
+    "chineseName": "钵钵鸡",
+    "englishName": "Bo Bo Chicken (Skewers in Chili Oil)",
+    "pinyin": "Bō bō jī",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "chicken",
+      "various vegetables",
+      "chili oil",
+      "sesame"
+    ],
+    "allergens": [
+      "sesame"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan"
+    ],
+    "shortDescription": "Cold skewers soaked in spicy chili oil.",
+    "orderTip": "Fun, shareable street food. Pick skewers from a pot.",
+    "avoidIf": [
+      "sesame allergy",
+      "cold food aversion"
+    ],
+    "koName": "Bo Bo Chicken (Skewers in Chili Oil)",
+    "koDescription": "Cold skewers soaked in spicy chili oil.",
+    "koOrderTip": "Fun, shareable street food. Pick skewers from a pot."
+  },
+  {
+    "id": "dish_016",
+    "chineseName": "剁椒鱼头",
+    "englishName": "Steamed Fish Head with Chili",
+    "pinyin": "Duò jiāo yú tóu",
+    "cuisine": "Hunan",
+    "ingredients": [
+      "fish head",
+      "pickled chili",
+      "fermented black beans",
+      "garlic"
+    ],
+    "allergens": [],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Hunan"
+    ],
+    "shortDescription": "Steamed fish head smothered in chopped chili.",
+    "orderTip": "Hunan's signature spicy fish dish. Very spicy.",
+    "avoidIf": [
+      "low spice tolerance",
+      "fish head aversion"
+    ],
+    "koName": "Steamed Fish Head with Chili",
+    "koDescription": "Steamed fish head smothered in chopped chili.",
+    "koOrderTip": "Hunan's signature spicy fish dish. Very spicy."
+  },
+  {
+    "id": "dish_017",
+    "chineseName": "辣椒炒肉",
+    "englishName": "Stir-Fried Pork with Green Chili",
+    "pinyin": "Là jiāo chǎo ròu",
+    "cuisine": "Hunan",
+    "ingredients": [
+      "pork",
+      "green chili",
+      "garlic",
+      "soy sauce"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Hunan"
+    ],
+    "shortDescription": "Simple, classic stir-fried pork with fresh chili.",
+    "orderTip": "Everyday home-style Hunan dish. Fresh chili heat.",
+    "avoidIf": [
+      "pork restriction",
+      "soy allergy"
+    ],
+    "koName": "Stir-Fried Pork with Green Chili",
+    "koDescription": "Simple, classic stir-fried pork with fresh chili.",
+    "koOrderTip": "Everyday home-style Hunan dish. Fresh chili heat."
+  },
+  {
+    "id": "dish_018",
+    "chineseName": "毛氏红烧肉",
+    "englishName": "Mao's Braised Pork Belly",
+    "pinyin": "Máo shì hóng shāo ròu",
+    "cuisine": "Hunan",
+    "ingredients": [
+      "pork belly",
+      "soy sauce",
+      "star anise",
+      "rock sugar"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Hunan"
+    ],
+    "shortDescription": "Sweet and savory braised pork belly, not spicy.",
+    "orderTip": "Rich, fatty, and sweet. A famous local delicacy.",
+    "avoidIf": [
+      "pork restriction",
+      "soy allergy",
+      "fatty food aversion"
+    ],
+    "koName": "Mao's Braised Pork Belly",
+    "koDescription": "Sweet and savory braised pork belly, not spicy.",
+    "koOrderTip": "Rich, fatty, and sweet. A famous local delicacy."
+  },
+  {
+    "id": "dish_019",
+    "chineseName": "口味虾",
+    "englishName": "Changsha Spicy Crayfish",
+    "pinyin": "Kǒu wèi xiā",
+    "cuisine": "Hunan",
+    "ingredients": [
+      "crayfish",
+      "dried chili",
+      "Sichuan peppercorn",
+      "garlic"
+    ],
+    "allergens": [
+      "shellfish"
+    ],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Hunan"
+    ],
+    "shortDescription": "Crayfish stir-fried in a fiery, aromatic sauce.",
+    "orderTip": "Seasonal summer dish. Eaten with hands.",
+    "avoidIf": [
+      "shellfish allergy",
+      "low spice tolerance"
+    ],
+    "koName": "Changsha Spicy Crayfish",
+    "koDescription": "Crayfish stir-fried in a fiery, aromatic sauce.",
+    "koOrderTip": "Seasonal summer dish. Eaten with hands."
+  },
+  {
+    "id": "dish_020",
+    "chineseName": "臭豆腐",
+    "englishName": "Stinky Tofu",
+    "pinyin": "Chòu dòu fu",
+    "cuisine": "Hunan",
+    "ingredients": [
+      "fermented tofu",
+      "chili sauce",
+      "pickled vegetables"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Hunan",
+      "nationwide"
+    ],
+    "shortDescription": "Fermented tofu, deep-fried and served with sauce.",
+    "orderTip": "Strong smell, acquired taste. Try it as a snack.",
+    "avoidIf": [
+      "soy allergy",
+      "fermented food aversion"
+    ],
+    "koName": "Stinky Tofu",
+    "koDescription": "Fermented tofu, deep-fried and served with sauce.",
+    "koOrderTip": "Strong smell, acquired taste. Try it as a snack."
+  },
+  {
+    "id": "dish_021",
+    "chineseName": "湘西土匪鸭",
+    "englishName": "Xiangxi Bandit Duck",
+    "pinyin": "Xiāng xī tǔ fěi yā",
+    "cuisine": "Hunan",
+    "ingredients": [
+      "duck",
+      "dried chili",
+      "Sichuan peppercorn",
+      "garlic"
+    ],
+    "allergens": [],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Hunan"
+    ],
+    "shortDescription": "Spicy, aromatic stir-fried duck pieces.",
+    "orderTip": "Very spicy and savory. A Hunan specialty.",
+    "avoidIf": [
+      "low spice tolerance",
+      "duck restriction"
+    ],
+    "koName": "샹시 토비 오리",
+    "koDescription": "매콤하고 향긋한 오리 볶음 요리.",
+    "koOrderTip": "아주 맵고 감칠맛 나는 후난 지역 특산 요리."
+  },
+  {
+    "id": "dish_022",
+    "chineseName": "湖南小炒肉",
+    "englishName": "Hunan Stir-Fried Pork",
+    "pinyin": "Hú nán xiǎo chǎo ròu",
+    "cuisine": "Hunan",
+    "ingredients": [
+      "pork",
+      "green chili",
+      "pickled chili",
+      "garlic"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Hunan"
+    ],
+    "shortDescription": "A ubiquitous spicy pork stir-fry.",
+    "orderTip": "Common and delicious. Medium spicy.",
+    "avoidIf": [
+      "pork restriction",
+      "soy allergy"
+    ],
+    "koName": "후난 샤오차오로우",
+    "koDescription": "흔히 볼 수 있는 매운 돼지고기 볶음.",
+    "koOrderTip": "흔하고 맛있는 중간 정도 매운맛."
+  },
+  {
+    "id": "dish_023",
+    "chineseName": "永州血鸭",
+    "englishName": "Yongzhou Blood Duck",
+    "pinyin": "Yǒng zhōu xuè yā",
+    "cuisine": "Hunan",
+    "ingredients": [
+      "duck",
+      "duck blood",
+      "chili",
+      "ginger"
+    ],
+    "allergens": [],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Hunan"
+    ],
+    "shortDescription": "Duck cooked with its own coagulated blood.",
+    "orderTip": "Adventurous dish. Very rich and spicy.",
+    "avoidIf": [
+      "blood dish aversion",
+      "low spice tolerance"
+    ],
+    "koName": "융저우 혈오리",
+    "koDescription": "오리의 응고된 피와 함께 조리한 오리 요리.",
+    "koOrderTip": "모험적인 요리. 매우 진하고 매운맛."
+  },
+  {
+    "id": "dish_024",
+    "chineseName": "农家小炒肉",
+    "englishName": "Farmhouse Style Fried Pork",
+    "pinyin": "Nóng jiā xiǎo chǎo ròu",
+    "cuisine": "Hunan",
+    "ingredients": [
+      "pork",
+      "green pepper",
+      "fermented soybean",
+      "garlic"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Hunan"
+    ],
+    "shortDescription": "Rustic, savory stir-fried pork slices.",
+    "orderTip": "Similar to 小炒肉. Flavorful with rice.",
+    "avoidIf": [
+      "pork restriction",
+      "soy allergy"
+    ],
+    "koName": "농가 샤오차오로우",
+    "koDescription": "소박하고 감칠맛 나는 돼지고기 볶음.",
+    "koOrderTip": "샤오차오로우와 비슷. 밥과 잘 어울리는 맛."
+  },
+  {
+    "id": "dish_025",
+    "chineseName": "长沙米粉",
+    "englishName": "Changsha Rice Noodles",
+    "pinyin": "Cháng shā mǐ fěn",
+    "cuisine": "Hunan",
+    "ingredients": [
+      "rice noodles",
+      "beef broth",
+      "chili",
+      "pickled beans"
+    ],
+    "allergens": [],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Hunan"
+    ],
+    "shortDescription": "Breakfast rice noodles in a spicy broth.",
+    "orderTip": "A popular breakfast street food. Add chili to taste.",
+    "avoidIf": [
+      "low spice tolerance"
+    ],
+    "koName": "창샤 미분",
+    "koDescription": "매운 국물에 담긴 아침식사용 쌀국수.",
+    "koOrderTip": "유명한 아침식사 길거리 음식. 기호에 따라 고추를 추가하세요."
+  },
+  {
+    "id": "dish_026",
+    "chineseName": "湘味啤酒鸭",
+    "englishName": "Hunan Beer Duck",
+    "pinyin": "Xiāng wèi pí jiǔ yā",
+    "cuisine": "Hunan",
+    "ingredients": [
+      "duck",
+      "beer",
+      "chili",
+      "soy sauce"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Hunan"
+    ],
+    "shortDescription": "Duck braised in beer with a spicy kick.",
+    "orderTip": "Beer adds a unique flavor. Moderately spicy.",
+    "avoidIf": [
+      "alcohol aversion",
+      "duck restriction"
+    ],
+    "koName": "샹웨이 비어 오리",
+    "koDescription": "맥주에 매콤하게 조린 오리 요리.",
+    "koOrderTip": "맥주가 독특한 맛을 더해줍니다. 보통 매운맛."
+  },
+  {
+    "id": "dish_027",
+    "chineseName": "小鸡炖蘑菇",
+    "englishName": "Stewed Chicken with Mushrooms",
+    "pinyin": "Xiǎo jī dùn mó gu",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "chicken",
+      "mushrooms",
+      "potato noodles",
+      "soy sauce"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Hearty chicken stew with mushrooms and noodles.",
+    "orderTip": "Classic comfort food. Not spicy, very savory.",
+    "avoidIf": [
+      "chicken restriction",
+      "soy allergy"
+    ],
+    "koName": "샤오지 둔 모구",
+    "koDescription": "버섯과 국수를 넣은 든든한 닭고기 스튜.",
+    "koOrderTip": "클래식한 편안한 음식. 맵지 않고 매우 감칠맛 나는."
+  },
+  {
+    "id": "dish_028",
+    "chineseName": "锅包肉",
+    "englishName": "Guo Bao Rou (Sweet & Sour Pork)",
+    "pinyin": "Guō bāo ròu",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "pork",
+      "potato starch",
+      "vinegar",
+      "sugar"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Crispy fried pork in a sweet and sour glaze.",
+    "orderTip": "Sweet, not spicy. A favorite among children.",
+    "avoidIf": [
+      "pork restriction"
+    ],
+    "koName": "궈바오로우",
+    "koDescription": "새콤달콤한 소스에 바삭하게 튀긴 돼지고기.",
+    "koOrderTip": "달콤하고 맵지 않은. 어린이들에게 인기."
+  },
+  {
+    "id": "dish_029",
+    "chineseName": "地三鲜",
+    "englishName": "Di San Xian (Fried Potato, Eggplant & Pepper)",
+    "pinyin": "Dì sān xiān",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "potato",
+      "eggplant",
+      "green pepper",
+      "garlic sauce"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Stir-fried potato, eggplant, and peppers.",
+    "orderTip": "A popular vegetable dish. Not spicy.",
+    "avoidIf": [
+      "soy allergy"
+    ],
+    "koName": "디셴셴",
+    "koDescription": "감자, 가지, 고추를 볶은 요리.",
+    "koOrderTip": "인기 있는 채소 요리. 맵지 않은."
+  },
+  {
+    "id": "dish_030",
+    "chineseName": "东北乱炖",
+    "englishName": "Northeast Stew (Hodgepodge Stew)",
+    "pinyin": "Dōng běi luàn dùn",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "pork",
+      "potato",
+      "cabbage",
+      "green beans",
+      "vermicelli"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "A mixed stew of meat and various vegetables.",
+    "orderTip": "A hearty, all-in-one pot dish. Not spicy.",
+    "avoidIf": [
+      "pork restriction"
+    ],
+    "koName": "동베이 뤤안둔",
+    "koDescription": "고기와 각종 채소를 함께 끓인 혼합 스튜.",
+    "koOrderTip": "든든한 일인분 냄비 요리. 맵지 않은."
+  },
+  {
+    "id": "dish_031",
+    "chineseName": "酸菜白肉",
+    "englishName": "Pickled Cabbage with Pork",
+    "pinyin": "Suān cài bái ròu",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "pork belly",
+      "sauerkraut",
+      "vermicelli",
+      "pork broth"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Pork belly and vermicelli in sour cabbage broth.",
+    "orderTip": "Sour and savory. Great in winter.",
+    "avoidIf": [
+      "pork restriction",
+      "sour food aversion"
+    ],
+    "koName": "김치찜과 돼지고기",
+    "koDescription": "돼지삼겹살과 당면이 신 김치 국물에 조려진 요리.",
+    "koOrderTip": "시고 짭짤한 맛. 겨울에 특히 좋습니다."
+  },
+  {
+    "id": "dish_032",
+    "chineseName": "溜肉段",
+    "englishName": "Fried Pork in Batter with Sauce",
+    "pinyin": "Liū ròu duàn",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "pork",
+      "cornstarch",
+      "soy sauce",
+      "vinegar"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Batter-fried pork pieces in a savory sauce.",
+    "orderTip": "Similar to sweet and sour pork. Crispy.",
+    "avoidIf": [
+      "pork restriction",
+      "soy allergy"
+    ],
+    "koName": "찹쌀 탕수육",
+    "koDescription": "바삭하게 튀긴 돼지고기를 간장 소스에 버무린 요리.",
+    "koOrderTip": "탕수육과 비슷. 바삭한 식감."
+  },
+  {
+    "id": "dish_033",
+    "chineseName": "猪肉炖粉条",
+    "englishName": "Stewed Pork with Vermicelli",
+    "pinyin": "Zhū ròu dùn fěn tiáo",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "pork",
+      "vermicelli",
+      "soy sauce",
+      "scallions"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Simple, homestyle pork and vermicelli stew.",
+    "orderTip": "Hearty and warming. A winter staple.",
+    "avoidIf": [
+      "pork restriction",
+      "soy allergy"
+    ],
+    "koName": "돼지고기 당면찜",
+    "koDescription": "간단하고 집에서 만드는 돼지고기와 당면 조림.",
+    "koOrderTip": "든든하고 따뜻한 요리. 겨울 대표 메뉴."
+  },
+  {
+    "id": "dish_034",
+    "chineseName": "尖椒干豆腐",
+    "englishName": "Dry Tofu with Green Chili",
+    "pinyin": "Jiān jiāo gān dòu fu",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "dried tofu skin",
+      "green chili",
+      "soy sauce",
+      "garlic"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Stir-fried tofu skin strips with chili.",
+    "orderTip": "A common vegetable dish. Slightly spicy.",
+    "avoidIf": [
+      "soy allergy"
+    ],
+    "koName": "청양고추 두부볶음",
+    "koDescription": "건두부를 고추와 함께 볶은 요리.",
+    "koOrderTip": "흔한 채소 반찬. 약간 매운맛."
+  },
+  {
+    "id": "dish_035",
+    "chineseName": "杀猪菜",
+    "englishName": "Kill-the-Pig Stew",
+    "pinyin": "Shā zhū cài",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "pork",
+      "blood sausage",
+      "sauerkraut",
+      "vermicelli"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Traditional stew with pork and blood sausage.",
+    "orderTip": "A festive dish. Contains blood sausage.",
+    "avoidIf": [
+      "blood sausage aversion",
+      "pork restriction"
+    ],
+    "koName": "돼지고기 순대탕",
+    "koDescription": "돼지고기와 순대를 넣고 끓인 전통 탕.",
+    "koOrderTip": "축제용 요리. 순대 포함."
+  },
+  {
+    "id": "dish_036",
+    "chineseName": "得莫利炖鱼",
+    "englishName": "Demoli Stewed Fish",
+    "pinyin": "Dé mò lì dùn yú",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "fish",
+      "tofu",
+      "vermicelli",
+      "soy sauce",
+      "green onion"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Hearty fish stew with tofu and noodles.",
+    "orderTip": "From Heilongjiang. A warming fish dish.",
+    "avoidIf": [
+      "fish allergy",
+      "soy allergy"
+    ],
+    "koName": "더몰리 생선찌개",
+    "koDescription": "두부와 당면을 넣은 든든한 생선찌개.",
+    "koOrderTip": "흑룡강 지방 요리. 따뜻한 생선 요리."
+  },
+  {
+    "id": "dish_037",
+    "chineseName": "东北大拉皮",
+    "englishName": "Northeast Wide Glass Noodle Salad",
+    "pinyin": "Dōng běi dà lā pí",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "glass noodles",
+      "cucumber",
+      "shredded pork",
+      "sesame sauce"
+    ],
+    "allergens": [
+      "sesame",
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Cold noodle salad with sesame sauce.",
+    "orderTip": "A refreshing cold dish. Sauce is nutty.",
+    "avoidIf": [
+      "sesame allergy",
+      "soy allergy"
+    ],
+    "koName": "동북식 냉채",
+    "koDescription": "참깨 소스를 곁들인 차가운 당면 샐러드.",
+    "koOrderTip": "시원한 냉채 요리. 고소한 소스."
+  },
+  {
+    "id": "dish_038",
+    "chineseName": "冷面",
+    "englishName": "Cold Noodles",
+    "pinyin": "Lěng miàn",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "buckwheat noodles",
+      "beef broth",
+      "pickled radish",
+      "boiled egg"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Icy cold buckwheat noodles in tangy broth.",
+    "orderTip": "Perfect summer dish. Broth is sweet and sour.",
+    "avoidIf": [
+      "gluten allergy",
+      "cold food aversion"
+    ],
+    "koName": "냉면",
+    "koDescription": "시큼한 육수에 담근 얼음장 같은 메밀국수.",
+    "koOrderTip": "여름에 완벽한 음식. 새콤달콤한 육수."
+  },
+  {
+    "id": "dish_039",
+    "chineseName": "烤冷面",
+    "englishName": "Grilled Cold Noodle Sheet",
+    "pinyin": "Kǎo lěng miàn",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "cold noodle sheet",
+      "egg",
+      "scallion",
+      "sauce"
+    ],
+    "allergens": [
+      "gluten",
+      "egg"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Grilled noodle sheet with egg and sauce.",
+    "orderTip": "Popular street food snack. Sweet and savory.",
+    "avoidIf": [
+      "gluten allergy",
+      "egg allergy"
+    ],
+    "koName": "구운 냉면",
+    "koDescription": "계란과 소스를 곁들인 구운 냉면 시트.",
+    "koOrderTip": "인기 길거리 간식. 달콤짭짤한 맛."
+  },
+  {
+    "id": "dish_040",
+    "chineseName": "手把肉",
+    "englishName": "Hand-Grabbed Lamb",
+    "pinyin": "Shǒu bǎ ròu",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "lamb",
+      "salt",
+      "caraway seeds"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast",
+      "Inner Mongolia"
+    ],
+    "shortDescription": "Boiled lamb ribs, eaten by hand.",
+    "orderTip": "Simple, pure lamb flavor. Dip in salt.",
+    "avoidIf": [
+      "lamb restriction"
+    ],
+    "koName": "손으로 잡아뜯는 양고기",
+    "koDescription": "손으로 잡아뜯어 먹는 삶은 양갈비.",
+    "koOrderTip": "순수한 양고기 맛. 소금에 찍어 먹음."
+  },
+  {
+    "id": "dish_041",
+    "chineseName": "排骨炖豆角",
+    "englishName": "Stewed Ribs with Green Beans",
+    "koName": "갈비 녹두콩 스튜",
+    "pinyin": "Pái gǔ dùn dòu jiǎo",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "pork ribs",
+      "green beans",
+      "potato",
+      "soy sauce"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Hearty stew of pork ribs and green beans.",
+    "koDescription": "돼지 갈비와 녹두콩을 푹 끓인 든든한 스튜.",
+    "orderTip": "A homestyle, comforting pot dish.",
+    "koOrderTip": "가정식 스타일의 푸근한 냄비 요리.",
+    "avoidIf": [
+      "pork restriction",
+      "soy allergy"
+    ]
+  },
+  {
+    "id": "dish_042",
+    "chineseName": "辣白菜",
+    "englishName": "Spicy Pickled Napa Cabbage",
+    "koName": "매운 배추김치",
+    "pinyin": "Là bái cài",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "napa cabbage",
+      "chili powder",
+      "garlic",
+      "fish sauce"
+    ],
+    "allergens": [
+      "fish"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Kimchi-style spicy fermented cabbage.",
+    "koDescription": "김치 스타일의 매운 발효 배추.",
+    "orderTip": "A common side dish. Spicy and crunchy.",
+    "koOrderTip": "흔한 밑반찬. 매콤하고 아삭함.",
+    "avoidIf": [
+      "fish allergy",
+      "fermented food aversion"
+    ]
+  },
+  {
+    "id": "dish_043",
+    "chineseName": "铁锅炖大鹅",
+    "englishName": "Iron Pot Stewed Goose",
+    "koName": "무쇠솥 거위 스튜",
+    "pinyin": "Tiě guō dùn dà é",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "goose",
+      "potato",
+      "sauerkraut",
+      "vermicelli"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Goose stewed in a large iron pot.",
+    "koDescription": "큰 무쇠 솥에 거위를 푹 끓인 요리.",
+    "orderTip": "Often served communally. Very filling.",
+    "koOrderTip": "주로 나눠 먹는 방식. 매우 든든함.",
+    "avoidIf": [
+      "goose restriction"
+    ]
+  },
+  {
+    "id": "dish_044",
+    "chineseName": "熏肉大饼",
+    "englishName": "Smoked Meat Pancake",
+    "koName": "훈제 고기 빈병",
+    "pinyin": "Xūn ròu dà bǐng",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "smoked pork",
+      "scallion pancake",
+      "sweet bean sauce"
+    ],
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Smoked meat wrapped in a savory pancake.",
+    "koDescription": "훈제 고기를 감칠맛 나는 전병에 싸 먹는 음식.",
+    "orderTip": "A popular handheld meal. Smoky flavor.",
+    "koOrderTip": "인기 있는 간편 식사. 훈제 풍미.",
+    "avoidIf": [
+      "gluten allergy",
+      "pork restriction"
+    ]
+  },
+  {
+    "id": "dish_045",
+    "chineseName": "拉皮",
+    "englishName": "Cold Mung Bean Jelly Salad",
+    "koName": "녹두 전분 젤리 샐러드",
+    "pinyin": "Lā pí",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "mung bean jelly",
+      "cucumber",
+      "carrot",
+      "sesame sauce"
+    ],
+    "allergens": [
+      "sesame"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Cold jelly strips in a savory sesame sauce.",
+    "koDescription": "고소한 참깨 소스에 찬 젤리 면을 버무린 요리.",
+    "orderTip": "A refreshing appetizer. Texture is slippery.",
+    "koOrderTip": "상큼한 전채 요리. 미끄러운 식감.",
+    "avoidIf": [
+      "sesame allergy"
+    ]
+  },
+  {
+    "id": "dish_046",
+    "chineseName": "酱骨架",
+    "englishName": "Braised Pork Spine in Soy Sauce",
+    "koName": "돼지 등뼈 간장 조림",
+    "pinyin": "Jiàng gǔ jià",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "pork spine",
+      "soy sauce",
+      "star anise",
+      "ginger"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Pork spine braised in a savory soy sauce.",
+    "koDescription": "돼지 등뼈를 맛있는 간장 소스에 조린 요리.",
+    "orderTip": "Eat with hands. Fun, casual dining.",
+    "koOrderTip": "손으로 잡고 먹음. 즐겁고 캐주얼한 식사.",
+    "avoidIf": [
+      "pork restriction",
+      "soy allergy"
+    ]
+  },
+  {
+    "id": "dish_047",
+    "chineseName": "酸菜饺子",
+    "englishName": "Sauerkraut Dumplings",
+    "koName": "김치 만두",
+    "pinyin": "Suān cài jiǎo zi",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "pork",
+      "sauerkraut",
+      "flour wrapper",
+      "ginger"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Dumplings filled with sour cabbage and pork.",
+    "koDescription": "새콤한 김치와 돼지고기를 넣은 만두.",
+    "orderTip": "A unique tangy dumpling flavor.",
+    "koOrderTip": "독특한 새콤달콤한 만두 맛.",
+    "avoidIf": [
+      "gluten allergy",
+      "pork restriction"
+    ]
+  },
+  {
+    "id": "dish_048",
+    "chineseName": "白肉血肠",
+    "englishName": "Boiled Pork with Blood Sausage",
+    "koName": "수육과 순대",
+    "pinyin": "Bái ròu xuè cháng",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "pork",
+      "blood sausage",
+      "sauerkraut"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Sliced boiled pork served with blood sausage.",
+    "koDescription": "삶은 돼지고기 편에 순대를 곁들인 요리.",
+    "orderTip": "Part of 杀猪菜. Traditional winter food.",
+    "koOrderTip": "'살저차이'의 일부. 전통적인 겨울 음식.",
+    "avoidIf": [
+      "blood sausage aversion"
+    ]
+  },
+  {
+    "id": "dish_049",
+    "chineseName": "东北皮冻",
+    "englishName": "Pork Skin Aspic",
+    "koName": "돼지껍데기 젤리",
+    "pinyin": "Dōng běi pí dòng",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "pork skin",
+      "soy sauce",
+      "garlic",
+      "vinegar"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Jellied pork skin, sliced and served cold.",
+    "koDescription": "돼지껍데기를 묵으로 굳혀 얇게 썰어 차갑게 내는 음식.",
+    "orderTip": "A cold appetizer. Chewy texture.",
+    "koOrderTip": "찬 전채 요리. 쫄깃한 식감.",
+    "avoidIf": [
+      "pork restriction",
+      "soy allergy"
+    ]
+  },
+  {
+    "id": "dish_050",
+    "chineseName": "东北饺子",
+    "englishName": "Northeast Dumplings",
+    "koName": "동북식 만두",
+    "pinyin": "Dōng běi jiǎo zi",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "pork",
+      "cabbage",
+      "flour wrapper",
+      "chives"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast"
+    ],
+    "shortDescription": "Classic pork and cabbage boiled dumplings.",
+    "koDescription": "돼지고기와 양배추를 넣은 전형적인 삶은 만두.",
+    "orderTip": "A staple food. Dip in vinegar and soy sauce.",
+    "koOrderTip": "주식. 식초와 간장에 찍어 먹음.",
+    "avoidIf": [
+      "gluten allergy",
+      "pork restriction"
+    ]
+  },
+  {
+    "id": "dish_101",
+    "chineseName": "煎饼果子",
+    "englishName": "Savory Crepe",
+    "pinyin": "Jiān bǐng guǒ zi",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "flour",
+      "egg",
+      "green onion",
+      "sweet bean sauce"
+    ],
+    "allergens": [
+      "gluten",
+      "egg",
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Beijing",
+      "nationwide"
+    ],
+    "shortDescription": "Savory crepe with egg and sauce",
+    "orderTip": "Ask for less sauce if too salty",
+    "avoidIf": [
+      "gluten allergy",
+      "egg allergy",
+      "soy allergy"
+    ],
+    "koName": "달콤짭짤한 크레이프",
+    "koDescription": "달걀과 소스를 곁들인 달콤짭짤한 크레이프",
+    "koOrderTip": "너무 짜면 소스를 적게 넣어달라고 요청하세요."
+  },
+  {
+    "id": "dish_102",
+    "chineseName": "油条",
+    "englishName": "Fried Dough Stick",
+    "pinyin": "Yóu tiáo",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "flour",
+      "oil"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Crispy fried dough bread",
+    "orderTip": "Best eaten with soy milk",
+    "avoidIf": [
+      "gluten allergy"
+    ],
+    "koName": "중국식 도넛",
+    "koDescription": "바삭하게 튀긴 빵 반죽",
+    "koOrderTip": "두유와 함께 먹으면 가장 맛있습니다."
+  },
+  {
+    "id": "dish_103",
+    "chineseName": "豆浆",
+    "englishName": "Soy Milk",
+    "pinyin": "Dòu jiāng",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "soybeans"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Hot or cold soy milk drink",
+    "orderTip": "Can be sweet or unsweetened",
+    "avoidIf": [
+      "soy allergy"
+    ],
+    "koName": "두유",
+    "koDescription": "뜨겁거나 차갑게 마시는 두유 음료",
+    "koOrderTip": "단맛을 넣거나 넣지 않은 것으로 선택할 수 있습니다."
+  },
+  {
+    "id": "dish_104",
+    "chineseName": "粥",
+    "englishName": "Congee",
+    "pinyin": "Zhōu",
+    "cuisine": "Cantonese",
+    "ingredients": [
+      "rice",
+      "water"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Cantonese",
+      "nationwide"
+    ],
+    "shortDescription": "Rice porridge, often savory",
+    "orderTip": "Try with preserved egg or lean pork",
+    "avoidIf": [],
+    "koName": "죽",
+    "koDescription": "대개 짭조름한 맛이 나는 쌀 죽",
+    "koOrderTip": "피단이나 저지방 돼지고기를 넣어 먹어보세요."
+  },
+  {
+    "id": "dish_105",
+    "chineseName": "茶叶蛋",
+    "englishName": "Tea Egg",
+    "pinyin": "Chá yè dàn",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "egg",
+      "tea",
+      "soy sauce"
+    ],
+    "allergens": [
+      "egg",
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Eggs boiled in tea and spices",
+    "orderTip": "Peel and eat as a snack",
+    "avoidIf": [
+      "egg allergy"
+    ],
+    "koName": "차 לחלוט 계란",
+    "koDescription": "차와 향신료에 삶은 계란",
+    "koOrderTip": "껍질을 벗겨 간식으로 먹습니다."
+  },
+  {
+    "id": "dish_106",
+    "chineseName": "豆腐脑",
+    "englishName": "Tofu Pudding",
+    "pinyin": "Dòu fǔ nǎo",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "tofu",
+      "syrup or savory sauce"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Beijing",
+      "nationwide"
+    ],
+    "shortDescription": "Soft tofu dessert or savory snack",
+    "orderTip": "Choose sweet or savory version",
+    "avoidIf": [
+      "soy allergy"
+    ],
+    "koName": "두부 푸딩",
+    "koDescription": "부드러운 두부 디저트 또는 짭조름한 간식",
+    "koOrderTip": "단맛 나는 버전 또는 짠 버전을 선택하세요."
+  },
+  {
+    "id": "dish_107",
+    "chineseName": "臭豆腐",
+    "englishName": "Stinky Tofu",
+    "pinyin": "Chòu dòu fǔ",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "tofu",
+      "fermented brine"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Hunan",
+      "nationwide"
+    ],
+    "shortDescription": "Fermented tofu with pungent smell",
+    "orderTip": "Try with chili sauce for extra kick",
+    "avoidIf": [
+      "soy allergy",
+      "fermented food sensitivity"
+    ],
+    "koName": "취두부",
+    "koDescription": "강한 냄새가 나는 발효 두부",
+    "koOrderTip": "매운맛을 더하려면 고추 소스와 함께 드셔보세요."
+  },
+  {
+    "id": "dish_108",
+    "chineseName": "烤串",
+    "englishName": "Grilled Skewers",
+    "pinyin": "Kǎo chuàn",
+    "cuisine": "BBQ",
+    "ingredients": [
+      "meat",
+      "vegetables",
+      "spices"
+    ],
+    "allergens": [],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast",
+      "Xinjiang",
+      "nationwide"
+    ],
+    "shortDescription": "Skewered meat grilled with spices",
+    "orderTip": "Choose from lamb, chicken, or vegetables",
+    "avoidIf": [
+      "meat avoidance",
+      "spicy sensitivity"
+    ],
+    "koName": "구이 꼬치",
+    "koDescription": "향신료를 넣어 구운 꼬치 고기",
+    "koOrderTip": "양고기, 닭고기 또는 야채 중에서 선택하세요."
+  },
+  {
+    "id": "dish_109",
+    "chineseName": "麻辣烫",
+    "englishName": "Spicy Hot Pot Skewers",
+    "pinyin": "Má là tàng",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "vegetables",
+      "meat",
+      "noodles",
+      "spicy broth"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "nationwide"
+    ],
+    "shortDescription": "Self-selected ingredients in spicy broth",
+    "orderTip": "Select your ingredients and adjust spice level",
+    "avoidIf": [
+      "spicy sensitivity",
+      "gluten allergy"
+    ],
+    "koName": "마라탕",
+    "koDescription": "매운 국물에 직접 고른 재료를 넣어 먹는 요리",
+    "koOrderTip": "원하는 재료를 선택하고 매운맛 정도를 조절하세요."
+  },
+  {
+    "id": "dish_110",
+    "chineseName": "糖葫芦",
+    "englishName": "Candied Hawthorn",
+    "pinyin": "Táng hú lu",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "hawthorn",
+      "sugar"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Beijing",
+      "nationwide"
+    ],
+    "shortDescription": "Hawthorn berries coated in sugar",
+    "orderTip": "Sweet and sour treat, best fresh",
+    "avoidIf": [],
+    "koName": "산사탕",
+    "koDescription": "설탕을 입힌 산딸기 열매",
+    "koOrderTip": "새콤달콤한 간식이며, 갓 만든 것이 가장 맛있습니다."
+  },
+  {
+    "id": "dish_111",
+    "chineseName": "春卷",
+    "englishName": "Spring Rolls",
+    "pinyin": "Chūn juǎn",
+    "cuisine": "Cantonese",
+    "ingredients": [
+      "wrapper",
+      "vegetables",
+      "meat"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Cantonese",
+      "nationwide"
+    ],
+    "shortDescription": "Crispy rolls with vegetable filling",
+    "orderTip": "Dip in sweet and sour sauce",
+    "avoidIf": [
+      "gluten allergy"
+    ],
+    "koName": "춘권",
+    "koDescription": "채소 속을 넣은 바삭한 롤",
+    "koOrderTip": "단소스에 찍어 드세요"
+  },
+  {
+    "id": "dish_112",
+    "chineseName": "驴打滚",
+    "englishName": "Rolling Donkey",
+    "pinyin": "Lǘ dǎ gǔn",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "glutinous rice",
+      "red bean paste",
+      "soybean flour"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Beijing"
+    ],
+    "shortDescription": "Sweet rice cake with bean paste",
+    "orderTip": "Soft and chewy, enjoy as a snack",
+    "avoidIf": [
+      "soy allergy"
+    ],
+    "koName": "루다군 (驴打滚)",
+    "koDescription": "팥소를 넣은 찹쌀떡",
+    "koOrderTip": "부드럽고 쫄깃하며 간식으로 즐기세요"
+  },
+  {
+    "id": "dish_113",
+    "chineseName": "担担面",
+    "englishName": "Dan Dan Noodles",
+    "pinyin": "Dān dān miàn",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "noodles",
+      "minced pork",
+      "peanuts",
+      "chili oil"
+    ],
+    "allergens": [
+      "gluten",
+      "peanuts",
+      "soy"
+    ],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan"
+    ],
+    "shortDescription": "Spicy Sichuan noodles with pork",
+    "orderTip": "Very spicy, ask for mild if needed",
+    "avoidIf": [
+      "peanut allergy",
+      "spicy sensitivity"
+    ],
+    "koName": "단단면",
+    "koDescription": "돼지고기를 넣은 매운 쓰촨식 국수",
+    "koOrderTip": "매우 맵습니다. 필요 시 덜 맵게 요청하세요",
+    "koAvoidIf": [
+      "땅콩 알레르기",
+      "매운 음식 민감성"
+    ]
+  },
+  {
+    "id": "dish_114",
+    "chineseName": "兰州拉面",
+    "englishName": "Lanzhou Hand-Pulled Noodles",
+    "pinyin": "Lán zhōu lā miàn",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "noodles",
+      "beef",
+      "radish",
+      "chili oil"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Gansu",
+      "nationwide"
+    ],
+    "shortDescription": "Beef noodle soup with hand-pulled noodles",
+    "orderTip": "Choose noodle thickness: thin, medium, thick",
+    "avoidIf": [
+      "gluten allergy"
+    ],
+    "koName": "란저우 라몐",
+    "koDescription": "직접 늘린 국수가 들어간 쇠고기 국수 수프",
+    "koOrderTip": "국수 두께를 고르세요: 가늘게, 중간, 두껍게",
+    "koAvoidIf": [
+      "글루텐 알레르기"
+    ]
+  },
+  {
+    "id": "dish_115",
+    "chineseName": "炸酱面",
+    "englishName": "Noodles with Soybean Paste",
+    "pinyin": "Zhá jiàng miàn",
+    "cuisine": "Beijing",
+    "ingredients": [
+      "noodles",
+      "soybean paste",
+      "minced pork",
+      "vegetables"
+    ],
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Beijing"
+    ],
+    "shortDescription": "Noodles with savory soybean paste sauce",
+    "orderTip": "Mix well before eating",
+    "avoidIf": [
+      "soy allergy"
+    ],
+    "koName": "자장면",
+    "koDescription": "간장 소스를 곁들인 국수",
+    "koOrderTip": "먹기 전에 잘 비벼 드세요",
+    "koAvoidIf": [
+      "대두 알레르기"
+    ]
+  },
+  {
+    "id": "dish_116",
+    "chineseName": "刀削面",
+    "englishName": "Knife-Cut Noodles",
+    "pinyin": "Dāo xiāo miàn",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "noodles",
+      "meat sauce",
+      "vegetables"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Shanxi",
+      "nationwide"
+    ],
+    "shortDescription": "Thick noodles cut with a knife",
+    "orderTip": "Often served with tomato and egg sauce",
+    "avoidIf": [
+      "gluten allergy"
+    ],
+    "koName": "도도면 (칼로 깎은 국수)",
+    "koDescription": "칼로 깎아 만든 두꺼운 국수",
+    "koOrderTip": "토마토 달걀 소스와 함께 나오는 경우가 많습니다",
+    "koAvoidIf": [
+      "글루텐 알레르기"
+    ]
+  },
+  {
+    "id": "dish_117",
+    "chineseName": "热干面",
+    "englishName": "Hot Dry Noodles",
+    "pinyin": "Rè gān miàn",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "noodles",
+      "sesame paste",
+      "soy sauce",
+      "chili oil"
+    ],
+    "allergens": [
+      "gluten",
+      "sesame",
+      "soy"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Hubei"
+    ],
+    "shortDescription": "Dry noodles with sesame sauce",
+    "orderTip": "Stir well to coat noodles evenly",
+    "avoidIf": [
+      "sesame allergy",
+      "gluten allergy"
+    ],
+    "koName": "러간몐",
+    "koDescription": "참깨 소스를 곁들인 마른 국수",
+    "koOrderTip": "골고루 소스가 묻도록 잘 비벼 드세요",
+    "koAvoidIf": [
+      "참깨 알레르기",
+      "글루텐 알레르기"
+    ]
+  },
+  {
+    "id": "dish_118",
+    "chineseName": "阳春面",
+    "englishName": "Plain Noodles",
+    "pinyin": "Yáng chūn miàn",
+    "cuisine": "Shanghai",
+    "ingredients": [
+      "noodles",
+      "soy sauce",
+      "green onion"
+    ],
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Shanghai"
+    ],
+    "shortDescription": "Simple noodle soup with light seasoning",
+    "orderTip": "A comforting and light meal",
+    "avoidIf": [
+      "gluten allergy"
+    ],
+    "koName": "양춘면",
+    "koDescription": "간단한 양념의 담백한 국수 수프",
+    "koOrderTip": "편안하고 가벼운 식사입니다",
+    "koAvoidIf": [
+      "글루텐 알레르기"
+    ]
+  },
+  {
+    "id": "dish_119",
+    "chineseName": "重庆小面",
+    "englishName": "Chongqing Small Noodles",
+    "pinyin": "Chóng qìng xiǎo miàn",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "noodles",
+      "chili oil",
+      "peanuts",
+      "vegetables"
+    ],
+    "allergens": [
+      "gluten",
+      "peanuts",
+      "soy"
+    ],
+    "spicyLevel": 3,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Chongqing"
+    ],
+    "shortDescription": "Spicy noodles from Chongqing",
+    "orderTip": "Very spicy, adjust to your taste",
+    "avoidIf": [
+      "peanut allergy",
+      "spicy sensitivity"
+    ],
+    "koName": "충칭 샤오몐",
+    "koDescription": "충칭의 매운 국수",
+    "koOrderTip": "매우 맵습니다. 기호에 맞게 조절하세요",
+    "koAvoidIf": [
+      "땅콩 알레르기",
+      "매운 음식 민감성"
+    ]
+  },
+  {
+    "id": "dish_120",
+    "chineseName": "小笼包",
+    "englishName": "Soup Dumplings",
+    "pinyin": "Xiǎo lóng bāo",
+    "cuisine": "Shanghai",
+    "ingredients": [
+      "flour",
+      "pork",
+      "soup"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Shanghai"
+    ],
+    "shortDescription": "Steamed dumplings with hot soup inside",
+    "orderTip": "Bite a small hole and sip the soup first",
+    "avoidIf": [
+      "gluten allergy"
+    ],
+    "koName": "샤오룽바오",
+    "koDescription": "뜨거운 국물이 들어있는 찐 만두",
+    "koOrderTip": "작은 구멍을 내어 먼저 국물을 마신 후 드세요",
+    "koAvoidIf": [
+      "글루텐 알레르기"
+    ]
+  },
+  {
+    "id": "dish_121",
+    "chineseName": "饺子",
+    "englishName": "Dumplings",
+    "pinyin": "Jiǎo zi",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "flour",
+      "meat",
+      "vegetables"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast",
+      "nationwide"
+    ],
+    "shortDescription": "Boiled or steamed dumplings with filling",
+    "orderTip": "Dip in soy sauce or vinegar",
+    "avoidIf": [
+      "gluten allergy"
+    ],
+    "koName": "Dumplings",
+    "koDescription": "Boiled or steamed dumplings with filling",
+    "koOrderTip": "Dip in soy sauce or vinegar"
+  },
+  {
+    "id": "dish_122",
+    "chineseName": "包子",
+    "englishName": "Steamed Buns",
+    "pinyin": "Bāo zi",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "flour",
+      "meat",
+      "vegetables"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Steamed buns with various fillings",
+    "orderTip": "Choose between meat or vegetable fillings",
+    "avoidIf": [
+      "gluten allergy"
+    ],
+    "koName": "Steamed Buns",
+    "koDescription": "Steamed buns with various fillings",
+    "koOrderTip": "Choose between meat or vegetable fillings"
+  },
+  {
+    "id": "dish_123",
+    "chineseName": "锅贴",
+    "englishName": "Pan-Fried Dumplings",
+    "pinyin": "Guō tiē",
+    "cuisine": "Beijing",
+    "ingredients": [
+      "flour",
+      "meat",
+      "vegetables",
+      "oil"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Beijing",
+      "nationwide"
+    ],
+    "shortDescription": "Crispy bottom dumplings pan-fried",
+    "orderTip": "Serve with soy sauce and vinegar",
+    "avoidIf": [
+      "gluten allergy"
+    ],
+    "koName": "Pan-Fried Dumplings",
+    "koDescription": "Crispy bottom dumplings pan-fried",
+    "koOrderTip": "Serve with soy sauce and vinegar"
+  },
+  {
+    "id": "dish_124",
+    "chineseName": "烧卖",
+    "englishName": "Shumai",
+    "pinyin": "Shāo mài",
+    "cuisine": "Cantonese",
+    "ingredients": [
+      "flour wrapper",
+      "pork",
+      "shrimp",
+      "mushrooms"
+    ],
+    "allergens": [
+      "gluten",
+      "shellfish"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Cantonese",
+      "nationwide"
+    ],
+    "shortDescription": "Steamed dumplings with open top",
+    "orderTip": "Often served with soy sauce",
+    "avoidIf": [
+      "shellfish allergy",
+      "gluten allergy"
+    ],
+    "koName": "Shumai",
+    "koDescription": "Steamed dumplings with open top",
+    "koOrderTip": "Often served with soy sauce"
+  },
+  {
+    "id": "dish_125",
+    "chineseName": "叉烧包",
+    "englishName": "BBQ Pork Buns",
+    "pinyin": "Chā shāo bāo",
+    "cuisine": "Cantonese",
+    "ingredients": [
+      "flour",
+      "BBQ pork",
+      "sauce"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Cantonese"
+    ],
+    "shortDescription": "Steamed buns with sweet BBQ pork filling",
+    "orderTip": "Soft and fluffy, enjoy as a snack",
+    "avoidIf": [
+      "gluten allergy"
+    ],
+    "koName": "BBQ Pork Buns",
+    "koDescription": "Steamed buns with sweet BBQ pork filling",
+    "koOrderTip": "Soft and fluffy, enjoy as a snack"
+  },
+  {
+    "id": "dish_151",
+    "chineseName": "羊肉片",
+    "englishName": "Sliced Lamb",
+    "pinyin": "Yáng ròu piàn",
+    "cuisine": "Hotpot",
+    "ingredients": [
+      "lamb"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "North China",
+      "nationwide"
+    ],
+    "shortDescription": "Thinly sliced lamb for hotpot",
+    "orderTip": "Cook in boiling broth until no longer pink",
+    "avoidIf": [],
+    "koName": "Sliced Lamb",
+    "koDescription": "Thinly sliced lamb for hotpot",
+    "koOrderTip": "Cook in boiling broth until no longer pink"
+  },
+  {
+    "id": "dish_152",
+    "chineseName": "毛肚",
+    "englishName": "Beef Tripe",
+    "pinyin": "Máo dǔ",
+    "cuisine": "Hotpot",
+    "ingredients": [
+      "beef tripe"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "nationwide"
+    ],
+    "shortDescription": "Crispy beef tripe for hotpot",
+    "orderTip": "Cook briefly in hot broth for best texture",
+    "avoidIf": [],
+    "koName": "Beef Tripe",
+    "koDescription": "Crispy beef tripe for hotpot",
+    "koOrderTip": "Cook briefly in hot broth for best texture"
+  },
+  {
+    "id": "dish_153",
+    "chineseName": "豆腐泡",
+    "englishName": "Tofu Puffs",
+    "pinyin": "Dòu fǔ pào",
+    "cuisine": "Hotpot",
+    "ingredients": [
+      "tofu",
+      "soy"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Spongy tofu for absorbing hotpot broth",
+    "orderTip": "Soak in broth until soft and flavorful",
+    "avoidIf": [
+      "soy allergy"
+    ],
+    "koName": "Tofu Puffs",
+    "koDescription": "Spongy tofu for absorbing hotpot broth",
+    "koOrderTip": "Soak in broth until soft and flavorful"
+  },
+  {
+    "id": "dish_154",
+    "chineseName": "鱼丸",
+    "englishName": "Fish Balls",
+    "pinyin": "Yú wán",
+    "cuisine": "Hotpot",
+    "ingredients": [
+      "fish",
+      "starch"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Fujian",
+      "nationwide"
+    ],
+    "shortDescription": "Chewy fish balls for hotpot",
+    "orderTip": "Add to broth and cook until floating",
+    "avoidIf": [
+      "fish allergy",
+      "gluten sensitivity"
+    ],
+    "koName": "Fish Balls",
+    "koDescription": "Chewy fish balls for hotpot",
+    "koOrderTip": "Add to broth and cook until floating"
+  },
+  {
+    "id": "dish_155",
+    "chineseName": "金针菇",
+    "englishName": "Enoki Mushrooms",
+    "pinyin": "Jīn zhēn gū",
+    "cuisine": "Hotpot",
+    "ingredients": [
+      "mushrooms"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Thin, long mushrooms for hotpot",
+    "orderTip": "Cook in broth for a few minutes until tender",
+    "avoidIf": [],
+    "koName": "Enoki Mushrooms",
+    "koDescription": "Thin, long mushrooms for hotpot",
+    "koOrderTip": "Cook in broth for a few minutes until tender"
+  },
+  {
+    "id": "dish_156",
+    "chineseName": "白菜",
+    "englishName": "Napa Cabbage",
+    "pinyin": "Bái cài",
+    "cuisine": "Hotpot",
+    "ingredients": [
+      "cabbage"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Leafy vegetable for hotpot",
+    "orderTip": "Add to broth and cook until wilted",
+    "avoidIf": [],
+    "koName": "Napa Cabbage",
+    "koDescription": "Leafy vegetable for hotpot",
+    "koOrderTip": "Add to broth and cook until wilted"
+  },
+  {
+    "id": "dish_157",
+    "chineseName": "藕片",
+    "englishName": "Lotus Root Slices",
+    "pinyin": "Ǒu piàn",
+    "cuisine": "Hotpot",
+    "ingredients": [
+      "lotus root"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Crunchy lotus root for hotpot",
+    "orderTip": "Cook in broth until slightly softened",
+    "avoidIf": [],
+    "koName": "Lotus Root Slices",
+    "koDescription": "Crunchy lotus root for hotpot",
+    "koOrderTip": "Cook in broth until slightly softened"
+  },
+  {
+    "id": "dish_158",
+    "chineseName": "虾滑",
+    "englishName": "Shrimp Paste",
+    "pinyin": "Xiā huá",
+    "cuisine": "Hotpot",
+    "ingredients": [
+      "shrimp",
+      "starch"
+    ],
+    "allergens": [
+      "shellfish",
+      "gluten"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Shrimp paste for hotpot",
+    "orderTip": "Scoop into broth and cook until firm",
+    "avoidIf": [
+      "shellfish allergy",
+      "gluten sensitivity"
+    ],
+    "koName": "Shrimp Paste",
+    "koDescription": "Shrimp paste for hotpot",
+    "koOrderTip": "Scoop into broth and cook until firm"
+  },
+  {
+    "id": "dish_159",
+    "chineseName": "牛肉片",
+    "englishName": "Beef Slices",
+    "pinyin": "Niú ròu piàn",
+    "cuisine": "Hotpot",
+    "ingredients": [
+      "beef"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Thinly sliced beef for hotpot",
+    "orderTip": "Cook in broth until desired doneness",
+    "avoidIf": [],
+    "koName": "Beef Slices",
+    "koDescription": "Thinly sliced beef for hotpot",
+    "koOrderTip": "Cook in broth until desired doneness"
+  },
+  {
+    "id": "dish_160",
+    "chineseName": "豆腐皮",
+    "englishName": "Tofu Skin",
+    "pinyin": "Dòu fǔ pí",
+    "cuisine": "Hotpot",
+    "ingredients": [
+      "tofu",
+      "soy"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Thin tofu sheets for hotpot",
+    "orderTip": "Roll and cook in broth briefly",
+    "avoidIf": [
+      "soy allergy"
+    ],
+    "koName": "Tofu Skin",
+    "koDescription": "Thin tofu sheets for hotpot",
+    "koOrderTip": "Roll and cook in broth briefly"
+  },
+  {
+    "id": "dish_161",
+    "chineseName": "木耳",
+    "englishName": "Wood Ear Mushrooms",
+    "pinyin": "Mù ěr",
+    "cuisine": "Hotpot",
+    "ingredients": [
+      "mushrooms"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Crunchy mushrooms for hotpot",
+    "orderTip": "Soak in broth until rehydrated and tender",
+    "avoidIf": [],
+    "koName": "Wood Ear Mushrooms",
+    "koDescription": "Crunchy mushrooms for hotpot",
+    "koOrderTip": "Soak in broth until rehydrated and tender"
+  },
+  {
+    "id": "dish_162",
+    "chineseName": "竹笋",
+    "englishName": "Bamboo Shoots",
+    "pinyin": "Zhú sǔn",
+    "cuisine": "Hotpot",
+    "ingredients": [
+      "bamboo shoots"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Tender bamboo shoots for hotpot",
+    "orderTip": "Cook in broth for a few minutes",
+    "avoidIf": [],
+    "koName": "Bamboo Shoots",
+    "koDescription": "Tender bamboo shoots for hotpot",
+    "koOrderTip": "Cook in broth for a few minutes"
+  },
+  {
+    "id": "dish_163",
+    "chineseName": "肉丸",
+    "englishName": "Meatballs",
+    "pinyin": "Ròu wán",
+    "cuisine": "Hotpot",
+    "ingredients": [
+      "pork",
+      "beef"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Mixed meatballs for hotpot",
+    "orderTip": "Add to broth and cook until done",
+    "avoidIf": [],
+    "koName": "Meatballs",
+    "koDescription": "Mixed meatballs for hotpot",
+    "koOrderTip": "Add to broth and cook until done"
+  },
+  {
+    "id": "dish_164",
+    "chineseName": "鹌鹑蛋",
+    "englishName": "Quail Eggs",
+    "pinyin": "Ān chún dàn",
+    "cuisine": "Hotpot",
+    "ingredients": [
+      "quail eggs"
+    ],
+    "allergens": [
+      "egg"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Small eggs for hotpot",
+    "orderTip": "Cook in broth until hard-boiled",
+    "avoidIf": [
+      "egg allergy"
+    ],
+    "koName": "Quail Eggs",
+    "koDescription": "Small eggs for hotpot",
+    "koOrderTip": "Cook in broth until hard-boiled"
+  },
+  {
+    "id": "dish_165",
+    "chineseName": "海带",
+    "englishName": "Seaweed",
+    "pinyin": "Hǎi dài",
+    "cuisine": "Hotpot",
+    "ingredients": [
+      "seaweed"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Seaweed strips for hotpot",
+    "orderTip": "Cook in broth for a short time",
+    "avoidIf": [],
+    "koName": "Seaweed",
+    "koDescription": "Seaweed strips for hotpot",
+    "koOrderTip": "Cook in broth for a short time"
+  },
+  {
+    "id": "dish_166",
+    "chineseName": "粉丝",
+    "englishName": "Vermicelli",
+    "pinyin": "Fěn sī",
+    "cuisine": "Hotpot",
+    "ingredients": [
+      "starch"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Thin noodles for hotpot",
+    "orderTip": "Soak in broth until soft and translucent",
+    "avoidIf": [
+      "gluten sensitivity"
+    ],
+    "koName": "Vermicelli",
+    "koDescription": "Thin noodles for hotpot",
+    "koOrderTip": "Soak in broth until soft and translucent"
+  },
+  {
+    "id": "dish_167",
+    "chineseName": "玉米棒",
+    "englishName": "Corn on the Cob",
+    "pinyin": "Yù mǐ bàng",
+    "cuisine": "Hotpot",
+    "ingredients": [
+      "corn"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Corn pieces for hotpot",
+    "orderTip": "Cook in broth until tender",
+    "avoidIf": [],
+    "koName": "Corn on the Cob",
+    "koDescription": "Corn pieces for hotpot",
+    "koOrderTip": "Cook in broth until tender"
+  },
+  {
+    "id": "dish_168",
+    "chineseName": "羊肉串",
+    "englishName": "Lamb Skewers",
+    "pinyin": "Yáng ròu chuàn",
+    "cuisine": "BBQ",
+    "ingredients": [
+      "lamb",
+      "spices"
+    ],
+    "allergens": [],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Xinjiang",
+      "nationwide"
+    ],
+    "shortDescription": "Grilled lamb skewers with spices",
+    "orderTip": "Eat while hot, often with cumin seasoning",
+    "avoidIf": [],
+    "koName": "Lamb Skewers",
+    "koDescription": "Grilled lamb skewers with spices",
+    "koOrderTip": "Eat while hot, often with cumin seasoning"
+  },
+  {
+    "id": "dish_169",
+    "chineseName": "烤鸡翅",
+    "englishName": "Grilled Chicken Wings",
+    "pinyin": "Kǎo jī chì",
+    "cuisine": "BBQ",
+    "ingredients": [
+      "chicken",
+      "sauce"
+    ],
+    "allergens": [],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Grilled chicken wings with sauce",
+    "orderTip": "Ask for mild or spicy sauce as preferred",
+    "avoidIf": [],
+    "koName": "Grilled Chicken Wings",
+    "koDescription": "Grilled chicken wings with sauce",
+    "koOrderTip": "Ask for mild or spicy sauce as preferred"
+  },
+  {
+    "id": "dish_170",
+    "chineseName": "烤玉米",
+    "englishName": "Grilled Corn",
+    "pinyin": "Kǎo yù mǐ",
+    "cuisine": "BBQ",
+    "ingredients": [
+      "corn",
+      "butter"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Grilled corn with butter or spices",
+    "orderTip": "Choose seasoning: sweet or savory",
+    "avoidIf": [
+      "dairy allergy"
+    ],
+    "koName": "Grilled Corn",
+    "koDescription": "Grilled corn with butter or spices",
+    "koOrderTip": "Choose seasoning: sweet or savory"
+  },
+  {
+    "id": "dish_171",
+    "chineseName": "烤生蚝",
+    "englishName": "Grilled Oysters",
+    "pinyin": "Kǎo shēng háo",
+    "cuisine": "BBQ",
+    "ingredients": [
+      "oysters",
+      "garlic",
+      "sauce"
+    ],
+    "allergens": [
+      "shellfish"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "coastal areas",
+      "nationwide"
+    ],
+    "shortDescription": "Grilled oysters with garlic sauce",
+    "orderTip": "Ensure oysters are fully cooked before eating",
+    "avoidIf": [
+      "shellfish allergy"
+    ],
+    "koName": "Grilled Oysters",
+    "koDescription": "Grilled oysters with garlic sauce",
+    "koOrderTip": "Ensure oysters are fully cooked before eating"
+  },
+  {
+    "id": "dish_172",
+    "chineseName": "烤蔬菜串",
+    "englishName": "Skewered Vegetables",
+    "pinyin": "Kǎo shū cài chuàn",
+    "cuisine": "BBQ",
+    "ingredients": [
+      "bell peppers",
+      "zucchini",
+      "onions"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Grilled vegetable skewers",
+    "orderTip": "Cook until slightly charred for best flavor",
+    "avoidIf": [],
+    "koName": "Skewered Vegetables",
+    "koDescription": "Grilled vegetable skewers",
+    "koOrderTip": "Cook until slightly charred for best flavor"
+  },
+  {
+    "id": "dish_173",
+    "chineseName": "烤鱿鱼",
+    "englishName": "Grilled Squid",
+    "pinyin": "Kǎo yóu yú",
+    "cuisine": "BBQ",
+    "ingredients": [
+      "squid",
+      "spices"
+    ],
+    "allergens": [
+      "shellfish"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "coastal areas",
+      "nationwide"
+    ],
+    "shortDescription": "Grilled squid with seasoning",
+    "orderTip": "Eat with chili sauce if desired",
+    "avoidIf": [
+      "shellfish allergy"
+    ],
+    "koName": "Grilled Squid",
+    "koDescription": "Grilled squid with seasoning",
+    "koOrderTip": "Eat with chili sauce if desired"
+  },
+  {
+    "id": "dish_174",
+    "chineseName": "烤虾",
+    "englishName": "Grilled Shrimp",
+    "pinyin": "Kǎo xiā",
+    "cuisine": "BBQ",
+    "ingredients": [
+      "shrimp",
+      "garlic"
+    ],
+    "allergens": [
+      "shellfish"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "coastal areas",
+      "nationwide"
+    ],
+    "shortDescription": "Grilled shrimp with garlic",
+    "orderTip": "Peel and devein before eating if needed",
+    "avoidIf": [
+      "shellfish allergy"
+    ],
+    "koName": "Grilled Shrimp",
+    "koDescription": "Grilled shrimp with garlic",
+    "koOrderTip": "Peel and devein before eating if needed"
+  },
+  {
+    "id": "dish_175",
+    "chineseName": "烤牛肉串",
+    "englishName": "Grilled Beef Skewers",
+    "pinyin": "Kǎo niú ròu chuàn",
+    "cuisine": "BBQ",
+    "ingredients": [
+      "beef",
+      "spices"
+    ],
+    "allergens": [],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Grilled beef skewers with spices",
+    "orderTip": "Choose spice level: mild, medium, or hot",
+    "avoidIf": [],
+    "koName": "Grilled Beef Skewers",
+    "koDescription": "Grilled beef skewers with spices",
+    "koOrderTip": "Choose spice level: mild, medium, or hot"
+  },
+  {
+    "id": "dish_176",
+    "chineseName": "烤五花肉",
+    "englishName": "Grilled Pork Belly",
+    "pinyin": "Kǎo wǔ huā ròu",
+    "cuisine": "BBQ",
+    "ingredients": [
+      "pork belly",
+      "sauce"
+    ],
+    "allergens": [],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "koName": "삼겹살 구이",
+    "koDescription": "구운 삼겹살 슬라이스",
+    "koOrderTip": "바삭하고 황금빛 갈색이 될 때까지 조리하세요",
+    "avoidIf": []
+  },
+  {
+    "id": "dish_177",
+    "chineseName": "烤蘑菇",
+    "englishName": "Grilled Mushrooms",
+    "pinyin": "Kǎo mó gū",
+    "cuisine": "BBQ",
+    "ingredients": [
+      "mushrooms",
+      "oil"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "koName": "버섯 구이",
+    "koDescription": "양념을 곁들인 구운 버섯",
+    "koOrderTip": "부드럽고 육즙이 가득할 때까지 구워주세요",
+    "avoidIf": []
+  },
+  {
+    "id": "dish_178",
+    "chineseName": "烤豆腐",
+    "englishName": "Grilled Tofu",
+    "pinyin": "Kǎo dòu fǔ",
+    "cuisine": "BBQ",
+    "ingredients": [
+      "tofu",
+      "sauce"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "koName": "두부 구이",
+    "koDescription": "소스를 곁들인 구운 두부",
+    "koOrderTip": "간장, 고추, 마늘 소스 중 선택하세요",
+    "avoidIf": [
+      "대두 알레르기"
+    ]
+  },
+  {
+    "id": "dish_179",
+    "chineseName": "烤茄子",
+    "englishName": "Grilled Eggplant",
+    "pinyin": "Kǎo qié zi",
+    "cuisine": "BBQ",
+    "ingredients": [
+      "eggplant",
+      "garlic",
+      "sauce"
+    ],
+    "allergens": [],
+    "spicyLevel": 1,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "koName": "가지 구이",
+    "koDescription": "마늘 소스를 곁들인 구운 가지",
+    "koOrderTip": "부드럽고 풍미가 가득할 때까지 조리하세요",
+    "avoidIf": []
+  },
+  {
+    "id": "dish_180",
+    "chineseName": "烤鸡心",
+    "englishName": "Grilled Chicken Heart",
+    "pinyin": "Kǎo jī xīn",
+    "cuisine": "BBQ",
+    "ingredients": [
+      "chicken heart",
+      "spices"
+    ],
+    "allergens": [],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "koName": "닭심장 구이",
+    "koDescription": "구운 닭심장 꼬치",
+    "koOrderTip": "속이 분홍색이 사라질 때까지 조리하세요",
+    "avoidIf": []
+  },
+  {
+    "id": "dish_181",
+    "chineseName": "烤馕",
+    "englishName": "Grilled Flatbread",
+    "pinyin": "Kǎo náng",
+    "cuisine": "BBQ",
+    "ingredients": [
+      "flour",
+      "sesame"
+    ],
+    "allergens": [
+      "gluten",
+      "sesame"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Xinjiang",
+      "nationwide"
+    ],
+    "koName": "난 빵 구이",
+    "koDescription": "신장식 구운 납작빵",
+    "koOrderTip": "구운 고기나 딥 소스와 함께 드세요",
+    "avoidIf": [
+      "글루텐 과민증",
+      "참깨 알레르기"
+    ]
+  },
+  {
+    "id": "dish_182",
+    "chineseName": "烤大葱",
+    "englishName": "Grilled Scallions",
+    "pinyin": "Kǎo dà cōng",
+    "cuisine": "BBQ",
+    "ingredients": [
+      "scallions",
+      "oil"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "koName": "대파 구이",
+    "koDescription": "반찬으로 제공되는 구운 대파",
+    "koOrderTip": "약간 시들하고 그을릴 때까지 구워주세요",
+    "avoidIf": []
+  },
+  {
+    "id": "dish_183",
+    "chineseName": "烤鸡胗",
+    "englishName": "Grilled Chicken Gizzards",
+    "pinyin": "Kǎo jī zhēn",
+    "cuisine": "BBQ",
+    "ingredients": [
+      "chicken gizzards",
+      "spices"
+    ],
+    "allergens": [],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "koName": "닭근위 구이",
+    "koDescription": "구운 닭근위 꼬치",
+    "koOrderTip": "부드럽고 쫄깃해질 때까지 조리하세요",
+    "avoidIf": []
+  },
+  {
+    "id": "dish_184",
+    "chineseName": "烤猪肉串",
+    "englishName": "Grilled Pork Skewers",
+    "pinyin": "Kǎo zhū ròu chuàn",
+    "cuisine": "BBQ",
+    "ingredients": [
+      "pork",
+      "sauce"
+    ],
+    "allergens": [],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "koName": "돼지고기 꼬치 구이",
+    "koDescription": "소스를 곁들인 구운 돼지고기 꼬치",
+    "koOrderTip": "매운맛과 디핑 소스를 선택하세요",
+    "avoidIf": []
+  },
+  {
+    "id": "dish_185",
+    "chineseName": "臭豆腐",
+    "englishName": "Stinky Tofu",
+    "pinyin": "Chòu dòu fǔ",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "tofu",
+      "fermented sauce"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Hunan",
+      "Shanghai",
+      "nationwide"
+    ],
+    "koName": "취두부",
+    "koDescription": "강한 냄새가 나는 발효 두부",
+    "koOrderTip": "용기가 있으시다면 고추 소스와 함께 드셔보세요",
+    "avoidIf": [
+      "대두 알레르기",
+      "예민한 위장"
+    ]
+  },
+  {
+    "id": "dish_186",
+    "chineseName": "烤鱿鱼串",
+    "englishName": "Grilled Squid Skewers",
+    "pinyin": "Kǎo yóu yú chuàn",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "squid",
+      "spices"
+    ],
+    "allergens": [
+      "shellfish"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "coastal areas",
+      "nationwide"
+    ],
+    "shortDescription": "Grilled squid skewers at night markets",
+    "orderTip": "Eat with sweet chili sauce",
+    "avoidIf": [
+      "shellfish allergy"
+    ],
+    "koName": "구이 오징어 꼬치",
+    "koDescription": "야시장에서 구이 오징어 꼬치",
+    "koOrderTip": "단 고추 소스와 함께 드세요"
+  },
+  {
+    "id": "dish_187",
+    "chineseName": "糖葫芦",
+    "englishName": "Tanghulu",
+    "pinyin": "Táng hú lu",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "hawthorn",
+      "sugar"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Beijing",
+      "nationwide"
+    ],
+    "shortDescription": "Candied fruit skewers, often hawthorn",
+    "orderTip": "Enjoy as a sweet treat, be careful of seeds",
+    "avoidIf": [
+      "sugar sensitivity"
+    ],
+    "koName": "탕후루",
+    "koDescription": "과일 꼬치, 보통 산사나무 열매를 사용",
+    "koOrderTip": "달콤한 간식으로 즐기세요, 씨앗에 주의하세요"
+  },
+  {
+    "id": "dish_188",
+    "chineseName": "煎饼",
+    "englishName": "Jianbing",
+    "pinyin": "Jiān bǐng",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "flour",
+      "eggs",
+      "scallions",
+      "sauce"
+    ],
+    "allergens": [
+      "gluten",
+      "egg"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Chinese crepe with fillings",
+    "orderTip": "Customize with fillings like egg, lettuce, or sauce",
+    "avoidIf": [
+      "gluten sensitivity",
+      "egg allergy"
+    ],
+    "koName": "젠빙",
+    "koDescription": "속을 넣은 중국식 크레이프",
+    "koOrderTip": "달걀, 상추, 소스 등 원하는 속을 선택하세요"
+  },
+  {
+    "id": "dish_189",
+    "chineseName": "油条",
+    "englishName": "Fried Dough Sticks",
+    "pinyin": "Yóu tiáo",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "flour",
+      "oil"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Crispy fried dough sticks",
+    "orderTip": "Dip in soy milk or congee for breakfast",
+    "avoidIf": [
+      "gluten sensitivity"
+    ],
+    "koName": "유조",
+    "koDescription": "바삭한 튀김 빵 막대",
+    "koOrderTip": "아침으로 두유나 죽에 찍어 드세요"
+  },
+  {
+    "id": "dish_190",
+    "chineseName": "葱油饼",
+    "englishName": "Scallion Pancakes",
+    "pinyin": "Cōng yóu bǐng",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "flour",
+      "scallions",
+      "oil"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Flaky pancakes with scallions",
+    "orderTip": "Eat while hot for best crispiness",
+    "avoidIf": [
+      "gluten sensitivity"
+    ],
+    "koName": "파전",
+    "koDescription": "파가 들어간 바삭한 전병",
+    "koOrderTip": "가장 바삭할 때 뜨거울 때 드세요"
+  },
+  {
+    "id": "dish_191",
+    "chineseName": "肠粉",
+    "englishName": "Rice Noodle Rolls",
+    "pinyin": "Cháng fěn",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "rice flour",
+      "fillings",
+      "sauce"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Cantonese",
+      "nationwide"
+    ],
+    "shortDescription": "Steamed rice noodle rolls with fillings",
+    "orderTip": "Choose fillings: shrimp, beef, or vegetables",
+    "avoidIf": [],
+    "koName": "창펀",
+    "koDescription": "속을 넣고 찐 쌀국수 롤",
+    "koOrderTip": "새우, 소고기, 야채 중 원하는 속을 고르세요"
+  },
+  {
+    "id": "dish_192",
+    "chineseName": "包子",
+    "englishName": "Baozi",
+    "pinyin": "Bāo zi",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "flour",
+      "meat",
+      "vegetables"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Steamed buns with various fillings",
+    "orderTip": "Try different fillings: pork, chicken, or veggie",
+    "avoidIf": [
+      "gluten sensitivity"
+    ],
+    "koName": "바오쯔",
+    "koDescription": "다양한 속을 넣은 찐 만두",
+    "koOrderTip": "돼지고기, 닭고기, 야채 등 다양한 속을 맛보세요"
+  },
+  {
+    "id": "dish_193",
+    "chineseName": "饺子",
+    "englishName": "Jiaozi",
+    "pinyin": "Jiǎo zi",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "flour",
+      "meat",
+      "vegetables"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Dumplings boiled or steamed",
+    "orderTip": "Dip in soy sauce or vinegar with ginger",
+    "avoidIf": [
+      "gluten sensitivity"
+    ],
+    "koName": "자오쯔",
+    "koDescription": "삶거나 찐 만두",
+    "koOrderTip": "간장이나 생강을 넣은 식초에 찍어 드세요"
+  },
+  {
+    "id": "dish_194",
+    "chineseName": "茶叶蛋",
+    "englishName": "Tea Eggs",
+    "pinyin": "Chá yè dàn",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "eggs",
+      "tea",
+      "spices"
+    ],
+    "allergens": [
+      "egg"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Eggs boiled in tea and spices",
+    "orderTip": "Peel and eat as a snack",
+    "avoidIf": [
+      "egg allergy"
+    ],
+    "koName": "차잎 달걀",
+    "koDescription": "차와 향신료로 삶은 달걀",
+    "koOrderTip": "껍질을 벗겨 간식으로 드세요"
+  },
+  {
+    "id": "dish_195",
+    "chineseName": "烤肠",
+    "englishName": "Grilled Sausages",
+    "pinyin": "Kǎo cháng",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "sausage",
+      "spices"
+    ],
+    "allergens": [],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Grilled sausage on a stick",
+    "orderTip": "Choose from various flavors like spicy or original",
+    "avoidIf": [],
+    "koName": "구이 소시지",
+    "koDescription": "막대에 꽂아 구운 소시지",
+    "koOrderTip": "매운맛, 오리지널 등 다양한 맛을 선택하세요"
+  },
+  {
+    "id": "dish_196",
+    "chineseName": "炸鸡排",
+    "englishName": "Fried Chicken Cutlets",
+    "pinyin": "Zhá jī pái",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "chicken",
+      "breading",
+      "oil"
+    ],
+    "allergens": [
+      "gluten",
+      "egg"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Crispy fried chicken cutlets",
+    "orderTip": "Eat with chili sauce or ketchup",
+    "avoidIf": [
+      "gluten sensitivity",
+      "egg allergy"
+    ],
+    "koName": "Fried Chicken Cutlets",
+    "koDescription": "Crispy fried chicken cutlets",
+    "koOrderTip": "Eat with chili sauce or ketchup"
+  },
+  {
+    "id": "dish_197",
+    "chineseName": "炸红薯条",
+    "englishName": "Sweet Potato Fries",
+    "pinyin": "Zhá hóng shǔ tiáo",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "sweet potato",
+      "oil"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Fried sweet potato sticks",
+    "orderTip": "Sprinkle with sugar or salt as preferred",
+    "avoidIf": [],
+    "koName": "Sweet Potato Fries",
+    "koDescription": "Fried sweet potato sticks",
+    "koOrderTip": "Sprinkle with sugar or salt as preferred"
+  },
+  {
+    "id": "dish_198",
+    "chineseName": "烤豆腐串",
+    "englishName": "Grilled Tofu Skewers",
+    "pinyin": "Kǎo dòu fǔ chuàn",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "tofu",
+      "sauce"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Grilled tofu skewers with sauce",
+    "orderTip": "Choose sauce: chili, garlic, or soy",
+    "avoidIf": [
+      "soy allergy"
+    ],
+    "koName": "Grilled Tofu Skewers",
+    "koDescription": "Grilled tofu skewers with sauce",
+    "koOrderTip": "Choose sauce: chili, garlic, or soy"
+  },
+  {
+    "id": "dish_199",
+    "chineseName": "冰糖葫芦",
+    "englishName": "Candied Hawthorn",
+    "pinyin": "Bīng táng hú lu",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "hawthorn",
+      "sugar"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Beijing",
+      "nationwide"
+    ],
+    "shortDescription": "Hawthorn berries coated in sugar",
+    "orderTip": "Enjoy as a sweet and tart snack",
+    "avoidIf": [
+      "sugar sensitivity"
+    ],
+    "koName": "Candied Hawthorn",
+    "koDescription": "Hawthorn berries coated in sugar",
+    "koOrderTip": "Enjoy as a sweet and tart snack"
+  },
+  {
+    "id": "dish_200",
+    "chineseName": "烤红薯",
+    "englishName": "Grilled Sweet Potato",
+    "pinyin": "Kǎo hóng shǔ",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "sweet potato"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Grilled sweet potato, soft and sweet",
+    "orderTip": "Eat while hot, peel skin if desired",
+    "avoidIf": [],
+    "koName": "Grilled Sweet Potato",
+    "koDescription": "Grilled sweet potato, soft and sweet",
+    "koOrderTip": "Eat while hot, peel skin if desired"
+  },
+  {
+    "id": "dish_201",
+    "chineseName": "清炒时蔬",
+    "englishName": "Stir-Fried Seasonal Vegetables",
+    "pinyin": "Qīng chǎo shí shū",
+    "cuisine": "Vegetarian",
+    "ingredients": [
+      "mixed seasonal vegetables",
+      "garlic",
+      "oil"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Simple stir-fried fresh seasonal greens.",
+    "orderTip": "Specify no oyster sauce for vegetarian/vegan version.",
+    "avoidIf": [
+      "allium allergy"
+    ],
+    "koName": "Stir-Fried Seasonal Vegetables",
+    "koDescription": "Simple stir-fried fresh seasonal greens.",
+    "koOrderTip": "Specify no oyster sauce for vegetarian/vegan version."
+  },
+  {
+    "id": "dish_202",
+    "chineseName": "地三鲜",
+    "englishName": "Di San Xian (Three Earthly Treasures)",
+    "pinyin": "Dì sān xiān",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "potato",
+      "eggplant",
+      "bell pepper"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Northeast",
+      "nationwide"
+    ],
+    "shortDescription": "Hearty stir-fried potato, eggplant, and pepper.",
+    "orderTip": "Can be oily; request less oil if preferred.",
+    "avoidIf": [
+      "nightshade sensitivity"
+    ],
+    "koName": "Di San Xian (Three Earthly Treasures)",
+    "koDescription": "Hearty stir-fried potato, eggplant, and pepper.",
+    "koOrderTip": "Can be oily; request less oil if preferred."
+  },
+  {
+    "id": "dish_203",
+    "chineseName": "干煸四季豆",
+    "englishName": "Dry-Fried Green Beans",
+    "pinyin": "Gān biān sì jì dòu",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "green beans",
+      "pork mince",
+      "dried chili"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "nationwide"
+    ],
+    "shortDescription": "Crispy fried green beans with savory mince.",
+    "orderTip": "Ask for the vegetarian version without pork.",
+    "avoidIf": [
+      "legume allergy"
+    ],
+    "koName": "Dry-Fried Green Beans",
+    "koDescription": "Crispy fried green beans with savory mince.",
+    "koOrderTip": "Ask for the vegetarian version without pork."
+  },
+  {
+    "id": "dish_204",
+    "chineseName": "蒜蓉炒菠菜",
+    "englishName": "Garlic Spinach",
+    "pinyin": "Suàn róng chǎo bō cài",
+    "cuisine": "Cantonese",
+    "ingredients": [
+      "spinach",
+      "garlic",
+      "oil"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Cantonese",
+      "nationwide"
+    ],
+    "shortDescription": "Lightly sautéed spinach with minced garlic.",
+    "orderTip": "A mild, healthy vegetable side dish.",
+    "avoidIf": [
+      "allium allergy"
+    ],
+    "koName": "Garlic Spinach",
+    "koDescription": "Lightly sautéed spinach with minced garlic.",
+    "koOrderTip": "A mild, healthy vegetable side dish."
+  },
+  {
+    "id": "dish_205",
+    "chineseName": "虎皮青椒",
+    "englishName": "Tiger Skin Green Peppers",
+    "pinyin": "Hǔ pí qīng jiāo",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "green peppers",
+      "soy sauce",
+      "vinegar"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Sichuan",
+      "Hunan"
+    ],
+    "shortDescription": "Blistered green peppers in a savory sauce.",
+    "orderTip": "Peppers can vary in heat; taste first.",
+    "avoidIf": [
+      "pepper allergy"
+    ],
+    "koName": "Tiger Skin Green Peppers",
+    "koDescription": "Blistered green peppers in a savory sauce.",
+    "koOrderTip": "Peppers can vary in heat; taste first."
+  },
+  {
+    "id": "dish_206",
+    "chineseName": "上汤娃娃菜",
+    "englishName": "Baby Cabbage in Superior Broth",
+    "pinyin": "Shàng tāng wá wa cài",
+    "cuisine": "Cantonese",
+    "ingredients": [
+      "baby cabbage",
+      "ham",
+      "broth"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Cantonese",
+      "Shanghai"
+    ],
+    "shortDescription": "Tender baby cabbage simmered in clear, savory broth.",
+    "orderTip": "Contains ham; request vegetable broth for vegetarian.",
+    "avoidIf": [
+      "pork restriction"
+    ],
+    "koName": "상탕 와와채",
+    "koDescription": "맑고 구수한 육수에 부드러운 어린 배추를 끓인 요리.",
+    "koOrderTip": "햄이 포함되어 있음; 채식을 원하면 채소 육수로 요청하세요."
+  },
+  {
+    "id": "dish_207",
+    "chineseName": "麻婆豆腐",
+    "englishName": "Mapo Tofu",
+    "pinyin": "Má pó dòu fu",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "tofu",
+      "ground pork",
+      "fermented bean paste",
+      "Sichuan peppercorn"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "nationwide"
+    ],
+    "shortDescription": "Fiery tofu in a spicy, numbing sauce with minced meat.",
+    "orderTip": "Very spicy; ask for 'wei la' (mild spicy) version.",
+    "avoidIf": [
+      "soy allergy",
+      "extreme spice sensitivity"
+    ],
+    "koName": "마파두부",
+    "koDescription": "매운 소스에 다진 고기를 넣어 얼얼하게 만든 두부 요리.",
+    "koOrderTip": "매우 매움; '웨이라'(순한 맛) 버전을 요청하세요."
+  },
+  {
+    "id": "dish_208",
+    "chineseName": "家常豆腐",
+    "englishName": "Home-Style Tofu",
+    "pinyin": "Jiā cháng dòu fu",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "fried tofu",
+      "pork",
+      "wood ear mushroom",
+      "bell pepper"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "Hunan"
+    ],
+    "shortDescription": "Stir-fried fried tofu with pork and vegetables.",
+    "orderTip": "Confirm if pork can be omitted for a vegetarian version.",
+    "avoidIf": [
+      "soy allergy"
+    ],
+    "koName": "가상두부",
+    "koDescription": "돼지고기와 야채를 넣어 볶은 튀긴 두부 요리.",
+    "koOrderTip": "채식 버전을 위해 돼지고기를 뺄 수 있는지 확인하세요."
+  },
+  {
+    "id": "dish_209",
+    "chineseName": "小葱拌豆腐",
+    "englishName": "Cold Tofu with Scallions",
+    "pinyin": "Xiǎo cōng bàn dòu fu",
+    "cuisine": "Vegetarian",
+    "ingredients": [
+      "soft tofu",
+      "scallions",
+      "soy sauce",
+      "sesame oil"
+    ],
+    "allergens": [
+      "soy",
+      "sesame"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Chilled silken tofu with a simple scallion dressing.",
+    "orderTip": "A refreshing, light starter or side dish.",
+    "avoidIf": [
+      "soy allergy",
+      "sesame allergy"
+    ],
+    "koName": "소총반두부",
+    "koDescription": "차가운 실크 두부에 간단한 파 드레싱을 곁들인 요리.",
+    "koOrderTip": "상큼하고 가벼운 전채 또는 반찬."
+  },
+  {
+    "id": "dish_210",
+    "chineseName": "臭豆腐",
+    "englishName": "Stinky Tofu",
+    "pinyin": "Chòu dòu fu",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "fermented tofu",
+      "chili sauce"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Hunan",
+      "Zhejiang",
+      "nationwide"
+    ],
+    "shortDescription": "Fermented tofu with a pungent aroma, deep-fried or stewed.",
+    "orderTip": "Strong odor; try a small piece first.",
+    "avoidIf": [
+      "fermented food aversion"
+    ],
+    "koName": "취두부",
+    "koDescription": "강한 향을 가진 발효 두부, 튀기거나 조린 요리.",
+    "koOrderTip": "냄새가 강함; 작은 조각부터 시도해 보세요."
+  },
+  {
+    "id": "dish_211",
+    "chineseName": "四川酸辣汤",
+    "englishName": "Sichuan Hot and Sour Soup",
+    "pinyin": "Sì chuān suān là tāng",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "tofu",
+      "wood ear mushroom",
+      "bamboo shoots",
+      "egg",
+      "chili"
+    ],
+    "allergens": [
+      "soy",
+      "egg"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "nationwide"
+    ],
+    "shortDescription": "Spicy, tangy soup with tofu and vegetables.",
+    "orderTip": "Contains egg; specify for vegan if needed.",
+    "avoidIf": [
+      "egg allergy",
+      "spice sensitivity"
+    ],
+    "koName": "사천산라탕",
+    "koDescription": "두부와 야채를 넣어 매콤하고 새콤하게 만든 수프.",
+    "koOrderTip": "달걀 포함; 비건을 원하시면 말씀해 주세요."
+  },
+  {
+    "id": "dish_212",
+    "chineseName": "番茄蛋花汤",
+    "englishName": "Tomato and Egg Drop Soup",
+    "pinyin": "Fān qié dàn huā tāng",
+    "cuisine": "Home-Style",
+    "ingredients": [
+      "tomato",
+      "egg",
+      "scallion"
+    ],
+    "allergens": [
+      "egg"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Light, comforting soup with tomato and swirled egg.",
+    "orderTip": "A safe, mild soup option for all palates.",
+    "avoidIf": [
+      "egg allergy"
+    ],
+    "koName": "토마토 달걀 국물",
+    "koDescription": "토마토와 달걀을 풀어 만든 가볍고 편안한 수프.",
+    "koOrderTip": "모든 입맛에 맞는 순한 수프 옵션."
+  },
+  {
+    "id": "dish_213",
+    "chineseName": "紫菜蛋花汤",
+    "englishName": "Seaweed and Egg Drop Soup",
+    "pinyin": "Zǐ cài dàn huā tāng",
+    "cuisine": "Cantonese",
+    "ingredients": [
+      "seaweed",
+      "egg",
+      "sesame oil"
+    ],
+    "allergens": [
+      "egg",
+      "sesame"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Delicate seaweed soup with egg ribbons.",
+    "orderTip": "Often served as a free appetizer soup.",
+    "avoidIf": [
+      "egg allergy"
+    ],
+    "koName": "김 달걀 국물",
+    "koDescription": "달걀 리본을 넣은 섬세한 미역 수프.",
+    "koOrderTip": "무료 전채 수프로 제공되는 경우가 많음."
+  },
+  {
+    "id": "dish_214",
+    "chineseName": "玉米排骨汤",
+    "englishName": "Corn and Pork Rib Soup",
+    "pinyin": "Yù mǐ pái gǔ tāng",
+    "cuisine": "Cantonese",
+    "ingredients": [
+      "pork ribs",
+      "corn",
+      "carrot"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Cantonese",
+      "Shanghai"
+    ],
+    "shortDescription": "Sweet and nourishing soup with corn and tender ribs.",
+    "orderTip": "A non-spicy, hearty soup for colder days.",
+    "avoidIf": [
+      "pork restriction"
+    ],
+    "koName": "옥수수 갈비탕",
+    "koDescription": "옥수수와 부드러운 갈비를 넣어 달콤하고 영양가 있는 수프.",
+    "koOrderTip": "추운 날에 좋은 순하고 든든한 수프."
+  },
+  {
+    "id": "dish_215",
+    "chineseName": "冬瓜排骨汤",
+    "englishName": "Winter Melon and Pork Rib Soup",
+    "pinyin": "Dōng guā pái gǔ tāng",
+    "cuisine": "Cantonese",
+    "ingredients": [
+      "winter melon",
+      "pork ribs",
+      "goji berries"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Cantonese",
+      "nationwide"
+    ],
+    "shortDescription": "Clear, mild soup with winter melon and pork ribs.",
+    "orderTip": "Considered a cooling, healthy soup.",
+    "avoidIf": [
+      "pork restriction"
+    ],
+    "koName": "동아 갈비탕",
+    "koDescription": "동아와 돼지갈비를 넣어 맑고 순하게 만든 수프.",
+    "koOrderTip": "몸을 식히는 건강한 수프로 여겨짐."
+  },
+  {
+    "id": "dish_216",
+    "chineseName": "酸辣土豆丝汤",
+    "englishName": "Hot and Sour Potato Shred Soup",
+    "pinyin": "Suān là tǔ dòu sī tāng",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "potato",
+      "vinegar",
+      "chili oil"
+    ],
+    "allergens": [],
+    "spicyLevel": 2,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Sichuan",
+      "Hunan"
+    ],
+    "shortDescription": "Tangy and spicy soup with julienned potatoes.",
+    "orderTip": "Unusual texture; potato is shredded, not diced.",
+    "avoidIf": [
+      "spice sensitivity"
+    ],
+    "koName": "Hot and Sour Potato Shred Soup",
+    "koDescription": "Tangy and spicy soup with julienned potatoes.",
+    "koOrderTip": "Unusual texture; potato is shredded, not diced."
+  },
+  {
+    "id": "dish_217",
+    "chineseName": "西湖牛肉羹",
+    "englishName": "West Lake Beef Soup",
+    "pinyin": "Xī hú niú ròu gēng",
+    "cuisine": "Zhejiang",
+    "ingredients": [
+      "beef mince",
+      "tofu",
+      "egg",
+      "cilantro"
+    ],
+    "allergens": [
+      "soy",
+      "egg"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Zhejiang",
+      "Shanghai"
+    ],
+    "shortDescription": "Thick, savory beef and tofu soup with egg swirl.",
+    "orderTip": "A classic Hangzhou dish; silky texture.",
+    "avoidIf": [
+      "egg allergy"
+    ],
+    "koName": "West Lake Beef Soup",
+    "koDescription": "Thick, savory beef and tofu soup with egg swirl.",
+    "koOrderTip": "A classic Hangzhou dish; silky texture."
+  },
+  {
+    "id": "dish_218",
+    "chineseName": "佛跳墙",
+    "englishName": "Buddha Jumps Over the Wall",
+    "pinyin": "Fó tiào qiáng",
+    "cuisine": "Fujian",
+    "ingredients": [
+      "abalone",
+      "shark fin",
+      "sea cucumber",
+      "dried scallops",
+      "chicken"
+    ],
+    "allergens": [
+      "shellfish"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Fujian"
+    ],
+    "shortDescription": "Luxurious stew with many premium seafood and meat ingredients.",
+    "orderTip": "Very expensive; confirm price and ingredients before ordering.",
+    "avoidIf": [
+      "shellfish allergy",
+      "vegetarian/vegan",
+      "budget constraints"
+    ],
+    "koName": "Buddha Jumps Over the Wall",
+    "koDescription": "Luxurious stew with many premium seafood and meat ingredients.",
+    "koOrderTip": "Very expensive; confirm price and ingredients before ordering."
+  },
+  {
+    "id": "dish_219",
+    "chineseName": "清蒸石斑鱼",
+    "englishName": "Steamed Grouper",
+    "pinyin": "Qīng zhēng shí bān yú",
+    "cuisine": "Cantonese",
+    "ingredients": [
+      "grouper",
+      "ginger",
+      "scallion",
+      "soy sauce"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Cantonese",
+      "Fujian"
+    ],
+    "shortDescription": "Fresh whole fish steamed with ginger and scallion.",
+    "orderTip": "Choose your fish from the tank for freshness.",
+    "avoidIf": [
+      "fish allergy"
+    ],
+    "koName": "Steamed Grouper",
+    "koDescription": "Fresh whole fish steamed with ginger and scallion.",
+    "koOrderTip": "Choose your fish from the tank for freshness."
+  },
+  {
+    "id": "dish_220",
+    "chineseName": "红烧鱼",
+    "englishName": "Braised Fish in Soy Sauce",
+    "pinyin": "Hóng shāo yú",
+    "cuisine": "Shanghai",
+    "ingredients": [
+      "whole fish",
+      "soy sauce",
+      "ginger",
+      "sugar"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Shanghai",
+      "Zhejiang",
+      "nationwide"
+    ],
+    "shortDescription": "Fish braised in a sweet and savory soy-based sauce.",
+    "orderTip": "Beware of many small bones in some fish types.",
+    "avoidIf": [
+      "fish allergy"
+    ],
+    "koName": "Braised Fish in Soy Sauce",
+    "koDescription": "Fish braised in a sweet and savory soy-based sauce.",
+    "koOrderTip": "Beware of many small bones in some fish types."
+  },
+  {
+    "id": "dish_221",
+    "chineseName": "糖醋鱼",
+    "englishName": "Sweet and Sour Fish",
+    "pinyin": "Táng cù yú",
+    "cuisine": "Shanghai",
+    "ingredients": [
+      "fish fillet",
+      "pineapple",
+      "bell pepper",
+      "vinegar",
+      "sugar"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Shanghai",
+      "nationwide"
+    ],
+    "shortDescription": "Deep-fried fish fillet in a tangy sweet and sour sauce.",
+    "orderTip": "Sauce is very sweet; may not suit all tastes.",
+    "avoidIf": [
+      "fish allergy",
+      "gluten allergy"
+    ],
+    "koName": "Sweet and Sour Fish",
+    "koDescription": "Deep-fried fish fillet in a tangy sweet and sour sauce.",
+    "koOrderTip": "Sauce is very sweet; may not suit all tastes."
+  },
+  {
+    "id": "dish_222",
+    "chineseName": "椒盐虾",
+    "englishName": "Salt and Pepper Shrimp",
+    "pinyin": "Jiāo yán xiā",
+    "cuisine": "Cantonese",
+    "ingredients": [
+      "shrimp",
+      "salt",
+      "white pepper",
+      "garlic"
+    ],
+    "allergens": [
+      "shellfish"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Cantonese",
+      "nationwide"
+    ],
+    "shortDescription": "Crispy fried shrimp with salt and pepper seasoning.",
+    "orderTip": "Shells are often eaten; peel if desired.",
+    "avoidIf": [
+      "shellfish allergy"
+    ],
+    "koName": "Salt and Pepper Shrimp",
+    "koDescription": "Crispy fried shrimp with salt and pepper seasoning.",
+    "koOrderTip": "Shells are often eaten; peel if desired."
+  },
+  {
+    "id": "dish_223",
+    "chineseName": "白灼虾",
+    "englishName": "Poached Shrimp",
+    "pinyin": "Bái zhuó xiā",
+    "cuisine": "Cantonese",
+    "ingredients": [
+      "fresh shrimp",
+      "ginger",
+      "scallion"
+    ],
+    "allergens": [
+      "shellfish"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Cantonese",
+      "Fujian"
+    ],
+    "shortDescription": "Simply poached fresh shrimp, served with dipping sauce.",
+    "orderTip": "One of the best ways to taste fresh shrimp quality.",
+    "avoidIf": [
+      "shellfish allergy"
+    ],
+    "koName": "Poached Shrimp",
+    "koDescription": "Simply poached fresh shrimp, served with dipping sauce.",
+    "koOrderTip": "One of the best ways to taste fresh shrimp quality."
+  },
+  {
+    "id": "dish_224",
+    "chineseName": "油焖大虾",
+    "englishName": "Braised Prawns in Oil",
+    "pinyin": "Yóu mèn dà xiā",
+    "cuisine": "Shandong",
+    "ingredients": [
+      "large prawns",
+      "soy sauce",
+      "ginger",
+      "sugar"
+    ],
+    "allergens": [
+      "shellfish",
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Shandong",
+      "Beijing"
+    ],
+    "shortDescription": "Large prawns braised in a rich, glossy soy sauce.",
+    "orderTip": "A luxurious prawn dish; finger-licking good.",
+    "avoidIf": [
+      "shellfish allergy"
+    ],
+    "koName": "Braised Prawns in Oil",
+    "koDescription": "Large prawns braised in a rich, glossy soy sauce.",
+    "koOrderTip": "A luxurious prawn dish; finger-licking good."
+  },
+  {
+    "id": "dish_225",
+    "chineseName": "蒜蓉粉丝蒸扇贝",
+    "englishName": "Steamed Scallops with Garlic and Glass Noodles",
+    "pinyin": "Suàn róng fěn sī zhēng shàn bèi",
+    "cuisine": "Cantonese",
+    "ingredients": [
+      "scallops",
+      "glass noodles",
+      "garlic"
+    ],
+    "allergens": [
+      "shellfish"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Cantonese",
+      "nationwide"
+    ],
+    "shortDescription": "Scallops steamed with savory garlic on noodles.",
+    "orderTip": "Check for sand in scallops before eating.",
+    "avoidIf": [
+      "shellfish allergy"
+    ],
+    "koName": "Steamed Scallops with Garlic and Glass Noodles",
+    "koDescription": "Scallops steamed with savory garlic on noodles.",
+    "koOrderTip": "Check for sand in scallops before eating."
+  },
+  {
+    "id": "dish_226",
+    "chineseName": "辣炒花蛤",
+    "englishName": "Spicy Stir-Fried Clams",
+    "pinyin": "Là chǎo huā gé",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "clams",
+      "doubanjiang",
+      "garlic",
+      "ginger"
+    ],
+    "allergens": [
+      "shellfish",
+      "soy"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "Coastal regions"
+    ],
+    "shortDescription": "Clams stir-fried in a spicy bean paste sauce.",
+    "orderTip": "Discard any clams that do not open during cooking.",
+    "avoidIf": [
+      "shellfish allergy"
+    ],
+    "koName": "매운 조개볶음",
+    "koDescription": "매운 된장 소스로 볶은 조개 요리.",
+    "koOrderTip": "조리 중 열리지 않는 조개는 반드시 버리세요."
+  },
+  {
+    "id": "dish_227",
+    "chineseName": "清蒸螃蟹",
+    "englishName": "Steamed Crab",
+    "pinyin": "Qīng zhēng páng xiè",
+    "cuisine": "Shanghai",
+    "ingredients": [
+      "hairy crab",
+      "ginger",
+      "vinegar dip"
+    ],
+    "allergens": [
+      "shellfish"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Shanghai",
+      "Zhejiang",
+      "Fujian"
+    ],
+    "shortDescription": "Fresh whole crab steamed to perfection.",
+    "orderTip": "Seasonal (autumn best); tools provided for cracking.",
+    "avoidIf": [
+      "shellfish allergy"
+    ],
+    "koName": "찐 게",
+    "koDescription": "신선한 통게를 완벽하게 쪄낸 요리.",
+    "koOrderTip": "계절 요리(가을이 최고); 껍질 깨는 도구 제공."
+  },
+  {
+    "id": "dish_228",
+    "chineseName": "蟹黄豆腐",
+    "englishName": "Crab Roe with Tofu",
+    "pinyin": "Xiè huáng dòu fu",
+    "cuisine": "Shanghai",
+    "ingredients": [
+      "crab roe",
+      "soft tofu",
+      "ginger"
+    ],
+    "allergens": [
+      "shellfish",
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Shanghai",
+      "Zhejiang"
+    ],
+    "shortDescription": "Silky tofu in a rich, savory crab roe sauce.",
+    "orderTip": "A seasonal delicacy; can be expensive.",
+    "avoidIf": [
+      "shellfish allergy",
+      "soy allergy"
+    ],
+    "koName": "게알두부",
+    "koDescription": "풍부하고 감칠맛 나는 게알 소스의 부드러운 두부 요리.",
+    "koOrderTip": "계절 별미; 가격이 비쌀 수 있음."
+  },
+  {
+    "id": "dish_229",
+    "chineseName": "海鲜粥",
+    "englishName": "Seafood Congee",
+    "pinyin": "Hǎi xiān zhōu",
+    "cuisine": "Cantonese",
+    "ingredients": [
+      "rice",
+      "shrimp",
+      "squid",
+      "fish slices",
+      "ginger"
+    ],
+    "allergens": [
+      "shellfish"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Cantonese",
+      "Fujian"
+    ],
+    "shortDescription": "Smooth rice porridge cooked with mixed seafood.",
+    "orderTip": "A comforting, easily digestible meal.",
+    "avoidIf": [
+      "shellfish allergy"
+    ],
+    "koName": "해물죽",
+    "koDescription": "다양한 해산물과 함께 끓인 부드러운 죽.",
+    "koOrderTip": "위에 부담 없고 소화가 잘 되는 든든한 식사."
+  },
+  {
+    "id": "dish_230",
+    "chineseName": "干锅牛蛙",
+    "englishName": "Dry Pot Bullfrog",
+    "pinyin": "Gàn guō niú wā",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "bullfrog",
+      "potato",
+      "lotus root",
+      "dried chili",
+      "Sichuan peppercorn"
+    ],
+    "allergens": [],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "Hunan"
+    ],
+    "shortDescription": "Spicy bullfrog and vegetables cooked in a dry pot.",
+    "orderTip": "Very spicy; frog meat is tender, like chicken.",
+    "avoidIf": [
+      "extreme spice sensitivity",
+      "aversion to exotic meats"
+    ],
+    "koName": "마른 양념 개구리",
+    "koDescription": "매운 양념에 개구리와 채소를 건식 냄비에 조리한 요리.",
+    "koOrderTip": "매우 매움; 개구리 고기는 닭고기처럼 부드러움."
+  },
+  {
+    "id": "dish_231",
+    "chineseName": "豆角烧茄子",
+    "englishName": "Braised Green Beans with Eggplant",
+    "pinyin": "Dòu jiǎo shāo qié zi",
+    "cuisine": "Vegetarian",
+    "ingredients": [
+      "green beans",
+      "eggplant",
+      "soy sauce"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Savory braise of green beans and eggplant.",
+    "orderTip": "A hearty, satisfying vegetarian main.",
+    "avoidIf": [
+      "nightshade sensitivity"
+    ],
+    "koName": "풋콩 가지 조림",
+    "koDescription": "풋콩과 가지를 간장 소스에 푹 조린 구수한 요리.",
+    "koOrderTip": "든든하고 만족스러운 채식 메인 요리."
+  },
+  {
+    "id": "dish_232",
+    "chineseName": "香菇青菜",
+    "englishName": "Shiitake Mushrooms with Bok Choy",
+    "pinyin": "Xiāng gū qīng cài",
+    "cuisine": "Cantonese",
+    "ingredients": [
+      "shiitake mushrooms",
+      "bok choy",
+      "oyster sauce"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Cantonese",
+      "Shanghai"
+    ],
+    "shortDescription": "Stir-fried mushrooms and bok choy in oyster sauce.",
+    "orderTip": "Vegetarian if using vegetarian oyster sauce.",
+    "avoidIf": [
+      "mushroom allergy"
+    ],
+    "koName": "표고버섯 청경채 볶음",
+    "koDescription": "굴소스로 볶은 표고버섯과 청경채.",
+    "koOrderTip": "채식용 굴소스 사용 시 채식 가능."
+  },
+  {
+    "id": "dish_233",
+    "chineseName": "凉拌黄瓜",
+    "englishName": "Smashed Cucumber Salad",
+    "pinyin": "Liáng bàn huáng guā",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "cucumber",
+      "garlic",
+      "vinegar",
+      "sesame oil"
+    ],
+    "allergens": [
+      "sesame"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Chilled smashed cucumbers in a garlicky vinaigrette.",
+    "orderTip": "A refreshing side dish or appetizer.",
+    "avoidIf": [
+      "allium allergy"
+    ],
+    "koName": "오이 무침",
+    "koDescription": "마늘 식초 드레싱에 버무린 차가운 으깬 오이 샐러드.",
+    "koOrderTip": "상큼한 밑반찬이나 에피타이저로 좋음."
+  },
+  {
+    "id": "dish_234",
+    "chineseName": "松仁玉米",
+    "englishName": "Stir-Fried Corn with Pine Nuts",
+    "pinyin": "Sōng rén yù mǐ",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "sweet corn",
+      "pine nuts",
+      "carrot",
+      "green beans"
+    ],
+    "allergens": [
+      "tree nuts"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Sweet corn and pine nuts in a light sauce.",
+    "orderTip": "A popular sweet and savory side dish.",
+    "avoidIf": [
+      "tree nut allergy"
+    ],
+    "koName": "옥수수 잣볶음",
+    "koDescription": "가벼운 소스에 볶은 단옥수수와 잣.",
+    "koOrderTip": "달달하고 고소한 인기 사이드 메뉴."
+  },
+  {
+    "id": "dish_235",
+    "chineseName": "烧二冬",
+    "englishName": "Braised Winter Mushrooms and Bamboo Shoots",
+    "pinyin": "Shāo èr dōng",
+    "cuisine": "Shanghai",
+    "ingredients": [
+      "dried winter mushrooms",
+      "bamboo shoots",
+      "soy sauce"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Shanghai",
+      "Zhejiang"
+    ],
+    "shortDescription": "Braised dried mushrooms and bamboo shoots.",
+    "orderTip": "A classic, earthy vegetarian dish.",
+    "avoidIf": [
+      "mushroom allergy"
+    ],
+    "koName": "표고버섯 대나무순 조림",
+    "koDescription": "말린 표고버섯과 대나무순을 간장에 조린 요리.",
+    "koOrderTip": "구수한 풍미의 전통 채식 요리."
+  },
+  {
+    "id": "dish_236",
+    "chineseName": "皮蛋豆腐",
+    "englishName": "Century Egg with Tofu",
+    "pinyin": "Pí dàn dòu fu",
+    "cuisine": "Vegetarian",
+    "ingredients": [
+      "century egg",
+      "soft tofu",
+      "soy sauce",
+      "sesame oil"
+    ],
+    "allergens": [
+      "egg",
+      "soy",
+      "sesame"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Chilled silken tofu topped with sliced century egg.",
+    "orderTip": "Century egg has a strong, acquired taste.",
+    "avoidIf": [
+      "egg allergy",
+      "aversion to preserved eggs"
+    ],
+    "koName": "피단 두부",
+    "koDescription": "잘게 썬 피단(백년란)을 얹은 차가운 순두부.",
+    "koOrderTip": "피단은 강한 풍미와 호불호가 갈리는 맛이 있습니다."
+  },
+  {
+    "id": "dish_237",
+    "chineseName": "毛血旺",
+    "englishName": "Mao Xue Wang (Chongqing Blood Curd Stew)",
+    "pinyin": "Máo xuè wàng",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "duck blood curd",
+      "tripe",
+      "luncheon meat",
+      "bean sprouts",
+      "Sichuan peppercorn"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Chongqing",
+      "Sichuan"
+    ],
+    "shortDescription": "Fiery stew with blood curd and various offal.",
+    "orderTip": "Extremely spicy; not for the faint-hearted.",
+    "avoidIf": [
+      "extreme spice sensitivity",
+      "aversion to offal/blood"
+    ],
+    "koName": "마오쉐왕 (충칭 피 스튜)",
+    "koDescription": "오리 피와 다양한 내장으로 만든 강렬한 매운 스튜.",
+    "koOrderTip": "매우 맵습니다. 매운 음식에 약한 분은 주의하세요."
+  },
+  {
+    "id": "dish_238",
+    "chineseName": "羊肉汤",
+    "englishName": "Lamb Soup",
+    "pinyin": "Yáng ròu tāng",
+    "cuisine": "Beijing",
+    "ingredients": [
+      "lamb",
+      "ginger",
+      "cilantro",
+      "white pepper"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Beijing",
+      "Northwest"
+    ],
+    "shortDescription": "Clear, nourishing lamb soup with ginger.",
+    "orderTip": "A warming winter soup; no strong gamey taste.",
+    "avoidIf": [
+      "lamb allergy"
+    ],
+    "koName": "양고기 수프",
+    "koDescription": "생강을 넣어 맑고 영양가 높은 양고기 수프.",
+    "koOrderTip": "겨울에 몸을 따뜻하게 해주는 수프로, 양고기 특유의 누린내가 약합니다."
+  },
+  {
+    "id": "dish_239",
+    "chineseName": "腌笃鲜",
+    "englishName": "Bamboo Shoot Soup with Pork and Ham",
+    "pinyin": "Yān dǔ xiān",
+    "cuisine": "Shanghai",
+    "ingredients": [
+      "fresh bamboo shoots",
+      "salted pork",
+      "fresh pork",
+      "tofu skin"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Shanghai",
+      "Zhejiang"
+    ],
+    "shortDescription": "Savory soup combining fresh and cured pork with bamboo.",
+    "orderTip": "A signature springtime Shanghainese soup.",
+    "avoidIf": [
+      "pork restriction"
+    ],
+    "koName": "양השקעה鮮 (대나무 죽순 돼지고기 수프)",
+    "koDescription": "신선한 돼지고기와 훈제 돼지고기, 대나무 죽순으로 만든 감칠맛 나는 수프.",
+    "koOrderTip": "상하이의 대표적인 봄 수프입니다."
+  },
+  {
+    "id": "dish_240",
+    "chineseName": "罗宋汤",
+    "englishName": "Shanghai-style Borscht",
+    "pinyin": "Luó sòng tāng",
+    "cuisine": "Shanghai",
+    "ingredients": [
+      "beef",
+      "cabbage",
+      "tomato",
+      "potato",
+      "beet"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Shanghai"
+    ],
+    "shortDescription": "Sweet and sour Russian-influenced beef vegetable soup.",
+    "orderTip": "A unique fusion soup found in Shanghai.",
+    "avoidIf": [
+      "beef allergy"
+    ],
+    "koName": "상하이식 보르시",
+    "koDescription": "러시아 영향을 받은 새콤달콤한 쇠고기 야채 수프.",
+    "koOrderTip": "상하이에서만 맛볼 수 있는 독특한 퓨전 수프입니다."
+  },
+  {
+    "id": "dish_241",
+    "chineseName": "水煮牛肉",
+    "englishName": "Boiled Beef in Chili Sauce",
+    "pinyin": "Shuǐ zhǔ niú ròu",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "beef slices",
+      "bean sprouts",
+      "dried chili",
+      "Sichuan peppercorn"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "nationwide"
+    ],
+    "shortDescription": "Tender beef slices in an extremely spicy, numbing broth.",
+    "orderTip": "As spicy as it looks; proceed with caution.",
+    "avoidIf": [
+      "extreme spice sensitivity",
+      "beef allergy"
+    ],
+    "koName": "수이주 쇠고기 (칠리 소스 쇠고기)",
+    "koDescription": "매우 맵고 얼얼한 국물에 담긴 부드러운 쇠고기 슬라이스.",
+    "koOrderTip": "매운 것이 겉으로 보이는 그대로입니다. 주의하세요."
+  },
+  {
+    "id": "dish_242",
+    "chineseName": "剁椒鱼头",
+    "englishName": "Steamed Fish Head with Chili Peppers",
+    "pinyin": "Duò jiāo yú tóu",
+    "cuisine": "Hunan",
+    "ingredients": [
+      "fish head",
+      "fermented chili peppers",
+      "garlic"
+    ],
+    "allergens": [],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Hunan"
+    ],
+    "shortDescription": "Fish head steamed with spicy pickled chilies.",
+    "orderTip": "A Hunanese specialty; very spicy and bony.",
+    "avoidIf": [
+      "extreme spice sensitivity",
+      "fish allergy"
+    ],
+    "koName": "도우자오 어두 (고추 절임 생선 머리찜)",
+    "koDescription": "매운 절임 고추와 함께 찐 생선 머리.",
+    "koOrderTip": "후난 지방의 별미. 매우 맵고 가시가 많습니다."
+  },
+  {
+    "id": "dish_243",
+    "chineseName": "红烧肉",
+    "englishName": "Red-Braised Pork Belly",
+    "pinyin": "Hóng shāo ròu",
+    "cuisine": "Shanghai",
+    "ingredients": [
+      "pork belly",
+      "soy sauce",
+      "rock sugar",
+      "star anise"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Shanghai",
+      "Zhejiang",
+      "nationwide"
+    ],
+    "shortDescription": "Glistening, melt-in-your-mouth pork belly braised in soy sauce.",
+    "orderTip": "Very rich and fatty; share with a group.",
+    "avoidIf": [
+      "pork restriction",
+      "high-fat diet"
+    ],
+    "koName": "훙샤오 로우 (간장 조림 삼겹살)",
+    "koDescription": "간장으로 조려 윤기 나고 입에서 살살 녹는 삼겹살.",
+    "koOrderTip": "매우 기름지고 맛이 진합니다. 여러 명이 나눠 먹는 것이 좋습니다."
+  },
+  {
+    "id": "dish_244",
+    "chineseName": "回锅肉",
+    "englishName": "Twice-Cooked Pork",
+    "pinyin": "Huí guō ròu",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "pork belly",
+      "fermented black beans",
+      "leek",
+      "doubanjiang"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "nationwide"
+    ],
+    "shortDescription": "Sliced pork belly stir-fried with leeks and spicy bean paste.",
+    "orderTip": "A quintessential Sichuan home-cooking dish.",
+    "avoidIf": [
+      "pork restriction"
+    ],
+    "koName": "훼이궈로우 (두 번 조리한 돼지고기)",
+    "koDescription": "파와 매운 두반장(콩 발효 소스)으로 볶은 삼겹살 슬라이스.",
+    "koOrderTip": "전형적인 쓰촨 가정식 요리입니다."
+  },
+  {
+    "id": "dish_245",
+    "chineseName": "梅菜扣肉",
+    "englishName": "Pork with Preserved Mustard Greens",
+    "pinyin": "Méi cài kòu ròu",
+    "cuisine": "Hakka",
+    "ingredients": [
+      "pork belly",
+      "preserved mustard greens",
+      "soy sauce"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Guangdong",
+      "Fujian",
+      "nationwide"
+    ],
+    "shortDescription": "Steamed pork belly with savory preserved vegetables.",
+    "orderTip": "Pork is extremely soft; a celebratory dish.",
+    "avoidIf": [
+      "pork restriction"
+    ],
+    "koName": "메차이 코우로우 (절임 겨자채 삼겹살)",
+    "koDescription": "감칠맛 나는 절임 채소와 함께 찐 삼겹살.",
+    "koOrderTip": "삼겹살이 매우 부드럽습니다. 축하연회에 나가는 음식입니다."
+  },
+  {
+    "id": "dish_246",
+    "chineseName": "北京烤鸭",
+    "englishName": "Peking Duck",
+    "pinyin": "Běi jīng kǎo yā",
+    "cuisine": "Beijing",
+    "ingredients": [
+      "duck",
+      "pancake",
+      "scallion",
+      "cucumber",
+      "hoisin sauce"
+    ],
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Beijing"
+    ],
+    "shortDescription": "Crispy-skinned roasted duck served with pancakes.",
+    "orderTip": "Book in advance; eat skin first, then meat with pancakes.",
+    "avoidIf": [
+      "gluten allergy",
+      "poultry allergy"
+    ],
+    "koName": "Peking Duck",
+    "koDescription": "Crispy-skinned roasted duck served with pancakes.",
+    "koOrderTip": "Book in advance; eat skin first, then meat with pancakes."
+  },
+  {
+    "id": "dish_247",
+    "chineseName": "叫花鸡",
+    "englishName": "Beggar's Chicken",
+    "pinyin": "Jiào huā jī",
+    "cuisine": "Zhejiang",
+    "ingredients": [
+      "whole chicken",
+      "lotus leaf",
+      "clay",
+      "mushrooms"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Zhejiang",
+      "Jiangsu"
+    ],
+    "shortDescription": "Whole chicken baked in lotus leaf and clay.",
+    "orderTip": "Must pre-order; theatrical presentation when cracked open.",
+    "avoidIf": [
+      "poultry allergy"
+    ],
+    "koName": "Beggar's Chicken",
+    "koDescription": "Whole chicken baked in lotus leaf and clay.",
+    "koOrderTip": "Must pre-order; theatrical presentation when cracked open."
+  },
+  {
+    "id": "dish_248",
+    "chineseName": "铁板牛肉",
+    "englishName": "Sizzling Beef on Iron Plate",
+    "pinyin": "Tiě bǎn niú ròu",
+    "cuisine": "Cantonese",
+    "ingredients": [
+      "beef slices",
+      "onion",
+      "bell pepper",
+      "black pepper sauce"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Cantonese",
+      "nationwide"
+    ],
+    "shortDescription": "Tender beef served sizzling on a hot iron plate.",
+    "orderTip": "Be careful of splatter and hot plate.",
+    "avoidIf": [
+      "beef allergy"
+    ],
+    "koName": "Sizzling Beef on Iron Plate",
+    "koDescription": "Tender beef served sizzling on a hot iron plate.",
+    "koOrderTip": "Be careful of splatter and hot plate."
+  },
+  {
+    "id": "dish_249",
+    "chineseName": "宫保虾仁",
+    "englishName": "Kung Pao Shrimp",
+    "pinyin": "Gōng bǎo xiā rén",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "shrimp",
+      "peanuts",
+      "dried chili",
+      "Sichuan peppercorn"
+    ],
+    "allergens": [
+      "shellfish",
+      "peanuts"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "nationwide"
+    ],
+    "shortDescription": "Shrimp with peanuts and chilies in a sweet and spicy sauce.",
+    "orderTip": "Ask for less spicy if needed.",
+    "avoidIf": [
+      "shellfish allergy",
+      "peanut allergy"
+    ],
+    "koName": "Kung Pao Shrimp",
+    "koDescription": "Shrimp with peanuts and chilies in a sweet and spicy sauce.",
+    "koOrderTip": "Ask for less spicy if needed."
+  },
+  {
+    "id": "dish_250",
+    "chineseName": "香辣蟹",
+    "englishName": "Spicy Crab",
+    "pinyin": "Xiāng là xiè",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "crab",
+      "dried chili",
+      "Sichuan peppercorn",
+      "garlic"
+    ],
+    "allergens": [
+      "shellfish"
+    ],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "Coastal regions"
+    ],
+    "shortDescription": "Whole crab stir-fried in a fiery, fragrant chili sauce.",
+    "orderTip": "Messy to eat; provide wet towels and tools.",
+    "avoidIf": [
+      "shellfish allergy",
+      "extreme spice sensitivity"
+    ],
+    "koName": "Spicy Crab",
+    "koDescription": "Whole crab stir-fried in a fiery, fragrant chili sauce.",
+    "koOrderTip": "Messy to eat; provide wet towels and tools."
+  },
+  {
+    "id": "dish_126",
+    "chineseName": "煎饼果子",
+    "englishName": "Chinese Crepe with Crispy Dough",
+    "pinyin": "Jiān Bǐng Guǒ Zi",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "flour batter",
+      "egg",
+      "crispy dough stick",
+      "scallions",
+      "sweet bean sauce",
+      "chili sauce"
+    ],
+    "allergens": [
+      "wheat",
+      "egg",
+      "soy"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Beijing",
+      "Tianjin",
+      "nationwide"
+    ],
+    "shortDescription": "Crispy egg crepe rolled with fried dough stick",
+    "orderTip": "Ask for extra egg and specify sauce preference",
+    "avoidIf": [
+      "gluten-free diet",
+      "egg allergy"
+    ],
+    "koName": "Chinese Crepe with Crispy Dough",
+    "koDescription": "Crispy egg crepe rolled with fried dough stick",
+    "koOrderTip": "Ask for extra egg and specify sauce preference"
+  },
+  {
+    "id": "dish_127",
+    "chineseName": "豆汁",
+    "englishName": "Fermented Mung Bean Drink",
+    "pinyin": "Dòu Zhī",
+    "cuisine": "Breakfast",
+    "ingredients": [
+      "fermented mung bean juice",
+      "pickled vegetables"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Beijing"
+    ],
+    "shortDescription": "Tangy fermented mung bean breakfast beverage",
+    "orderTip": "Pair with jiaoquan fried rings for authentic taste",
+    "avoidIf": [
+      "sensitive to fermented flavors"
+    ],
+    "koName": "Fermented Mung Bean Drink",
+    "koDescription": "Tangy fermented mung bean breakfast beverage",
+    "koOrderTip": "Pair with jiaoquan fried rings for authentic taste"
+  },
+  {
+    "id": "dish_128",
+    "chineseName": "小笼包",
+    "englishName": "Steamed Soup Dumplings",
+    "pinyin": "Xiǎo Lóng Bāo",
+    "cuisine": "Dumpling",
+    "ingredients": [
+      "flour wrapper",
+      "pork",
+      "aspic jelly",
+      "ginger",
+      "vinegar"
+    ],
+    "allergens": [
+      "wheat",
+      "pork"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Shanghai",
+      "Jiangsu",
+      "Zhejiang"
+    ],
+    "shortDescription": "Delicate steamed buns filled with hot broth",
+    "orderTip": "Bite small hole first, sip broth before eating",
+    "avoidIf": [
+      "pork restriction"
+    ],
+    "koName": "Steamed Soup Dumplings",
+    "koDescription": "Delicate steamed buns filled with hot broth",
+    "koOrderTip": "Bite small hole first, sip broth before eating"
+  },
+  {
+    "id": "dish_129",
+    "chineseName": "兰州牛肉面",
+    "englishName": "Lanzhou Hand-Pulled Beef Noodles",
+    "pinyin": "Lán Zhōu Niú Ròu Miàn",
+    "cuisine": "Noodle",
+    "ingredients": [
+      "hand-pulled noodles",
+      "beef",
+      "radish",
+      "chili oil",
+      "cilantro",
+      "beef broth"
+    ],
+    "allergens": [
+      "wheat",
+      "soy"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Gansu",
+      "Northwest China",
+      "nationwide"
+    ],
+    "shortDescription": "Hand-pulled noodles in clear beef broth",
+    "orderTip": "Choose noodle thickness from thin to extra thick",
+    "avoidIf": [
+      "beef restriction"
+    ],
+    "koName": "Lanzhou Hand-Pulled Beef Noodles",
+    "koDescription": "Hand-pulled noodles in clear beef broth",
+    "koOrderTip": "Choose noodle thickness from thin to extra thick"
+  },
+  {
+    "id": "dish_130",
+    "chineseName": "油条",
+    "englishName": "Chinese Fried Dough Stick",
+    "pinyin": "Yóu Tiáo",
+    "cuisine": "Breakfast",
+    "ingredients": [
+      "flour",
+      "oil"
+    ],
+    "allergens": [
+      "wheat"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Golden crispy deep-fried bread stick",
+    "orderTip": "Best eaten fresh and dipped in warm soy milk",
+    "avoidIf": [
+      "low-fat diet"
+    ],
+    "koName": "Chinese Fried Dough Stick",
+    "koDescription": "Golden crispy deep-fried bread stick",
+    "koOrderTip": "Best eaten fresh and dipped in warm soy milk"
+  },
+  {
+    "id": "dish_131",
+    "chineseName": "鸡蛋灌饼",
+    "englishName": "Egg-Filled Pancake",
+    "pinyin": "Jī Dàn Guàn Bǐng",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "flour",
+      "egg",
+      "scallions",
+      "vegetable oil"
+    ],
+    "allergens": [
+      "wheat",
+      "egg"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Henan",
+      "nationwide"
+    ],
+    "shortDescription": "Flaky pancake stuffed with egg and vegetables",
+    "orderTip": "Add lettuce and sausage for a fuller meal",
+    "avoidIf": [
+      "egg allergy"
+    ],
+    "koName": "Egg-Filled Pancake",
+    "koDescription": "Flaky pancake stuffed with egg and vegetables",
+    "koOrderTip": "Add lettuce and sausage for a fuller meal"
+  },
+  {
+    "id": "dish_132",
+    "chineseName": "热干面",
+    "englishName": "Wuhan Sesame Noodles",
+    "pinyin": "Rè Gān Miàn",
+    "cuisine": "Noodle",
+    "ingredients": [
+      "alkaline noodles",
+      "sesame paste",
+      "soy sauce",
+      "pickled green beans",
+      "chili oil"
+    ],
+    "allergens": [
+      "wheat",
+      "sesame",
+      "soy"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Wuhan",
+      "Hubei"
+    ],
+    "shortDescription": "Noodles tossed in rich sesame paste sauce",
+    "orderTip": "Mix thoroughly before eating to coat every strand",
+    "avoidIf": [
+      "sesame allergy"
+    ],
+    "koName": "Wuhan Sesame Noodles",
+    "koDescription": "Noodles tossed in rich sesame paste sauce",
+    "koOrderTip": "Mix thoroughly before eating to coat every strand"
+  },
+  {
+    "id": "dish_133",
+    "chineseName": "肉夹馍",
+    "englishName": "Chinese Hamburger with Braised Pork",
+    "pinyin": "Ròu Jiā Mó",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "flatbread",
+      "braised pork",
+      "green pepper",
+      "cilantro"
+    ],
+    "allergens": [
+      "wheat",
+      "pork"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Shaanxi",
+      "nationwide"
+    ],
+    "shortDescription": "Crispy flatbread stuffed with shredded braised pork",
+    "orderTip": "Ask for lean or fatty pork mixture to preference",
+    "avoidIf": [
+      "pork restriction"
+    ],
+    "koName": "Chinese Hamburger with Braised Pork",
+    "koDescription": "Crispy flatbread stuffed with shredded braised pork",
+    "koOrderTip": "Ask for lean or fatty pork mixture to preference"
+  },
+  {
+    "id": "dish_134",
+    "chineseName": "酸辣粉",
+    "englishName": "Hot and Sour Sweet Potato Noodles",
+    "pinyin": "Suān Là Fěn",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "sweet potato noodles",
+      "peanuts",
+      "pickled vegetables",
+      "vinegar",
+      "chili oil",
+      "cilantro"
+    ],
+    "allergens": [
+      "peanuts",
+      "soy"
+    ],
+    "spicyLevel": 3,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Chongqing",
+      "Sichuan",
+      "nationwide"
+    ],
+    "shortDescription": "Chewy sweet potato noodles in spicy sour broth",
+    "orderTip": "Specify your preferred spice level when ordering",
+    "avoidIf": [
+      "peanut allergy",
+      "cannot eat spicy food"
+    ],
+    "koName": "Hot and Sour Sweet Potato Noodles",
+    "koDescription": "Chewy sweet potato noodles in spicy sour broth",
+    "koOrderTip": "Specify your preferred spice level when ordering"
+  },
+  {
+    "id": "dish_135",
+    "chineseName": "韭菜盒子",
+    "englishName": "Fried Chive Pockets",
+    "pinyin": "Jiǔ Cài Hé Zi",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "flour wrapper",
+      "chives",
+      "egg",
+      "vermicelli",
+      "dried shrimp"
+    ],
+    "allergens": [
+      "wheat",
+      "egg",
+      "shellfish"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": false,
+    "commonRegion": [
+      "North China",
+      "nationwide"
+    ],
+    "shortDescription": "Pan-fried stuffed pastry filled with chive and egg",
+    "orderTip": "Let cool briefly as filling stays very hot inside",
+    "avoidIf": [
+      "shellfish allergy"
+    ],
+    "koName": "Fried Chive Pockets",
+    "koDescription": "Pan-fried stuffed pastry filled with chive and egg",
+    "koOrderTip": "Let cool briefly as filling stays very hot inside"
+  },
+  {
+    "id": "dish_136",
+    "chineseName": "炸酱面",
+    "englishName": "Beijing Zhajiang Noodles",
+    "pinyin": "Zhá Jiàng Miàn",
+    "cuisine": "Noodle",
+    "ingredients": [
+      "thick wheat noodles",
+      "fermented soybean paste",
+      "ground pork",
+      "cucumber",
+      "bean sprouts"
+    ],
+    "allergens": [
+      "wheat",
+      "soy",
+      "pork"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Beijing",
+      "North China"
+    ],
+    "shortDescription": "Noodles with savory soybean paste and fresh toppings",
+    "orderTip": "Mix the sauce and vegetables into noodles evenly",
+    "avoidIf": [
+      "soy allergy"
+    ],
+    "koName": "Beijing Zhajiang Noodles",
+    "koDescription": "Noodles with savory soybean paste and fresh toppings",
+    "koOrderTip": "Mix the sauce and vegetables into noodles evenly"
+  },
+  {
+    "id": "dish_137",
+    "chineseName": "馄饨",
+    "englishName": "Wonton Soup",
+    "pinyin": "Hún Tun",
+    "cuisine": "Dumpling",
+    "ingredients": [
+      "thin wrapper",
+      "pork",
+      "shrimp",
+      "seaweed",
+      "scallions",
+      "broth"
+    ],
+    "allergens": [
+      "wheat",
+      "pork",
+      "shellfish"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Silky wontons in savory clear broth",
+    "orderTip": "Add vinegar and chili oil to taste at the table",
+    "avoidIf": [
+      "shellfish allergy"
+    ],
+    "koName": "Wonton Soup",
+    "koDescription": "Silky wontons in savory clear broth",
+    "koOrderTip": "Add vinegar and chili oil to taste at the table"
+  },
+  {
+    "id": "dish_138",
+    "chineseName": "锅贴",
+    "englishName": "Potsticker Dumplings",
+    "pinyin": "Guō Tiē",
+    "cuisine": "Dumpling",
+    "ingredients": [
+      "flour wrapper",
+      "pork",
+      "cabbage",
+      "ginger",
+      "soy sauce"
+    ],
+    "allergens": [
+      "wheat",
+      "pork",
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Crispy-bottomed pan-fried dumplings",
+    "orderTip": "Eat with black vinegar and sliced ginger",
+    "avoidIf": [
+      "pork restriction"
+    ],
+    "koName": "Potsticker Dumplings",
+    "koDescription": "Crispy-bottomed pan-fried dumplings",
+    "koOrderTip": "Eat with black vinegar and sliced ginger"
+  },
+  {
+    "id": "dish_139",
+    "chineseName": "肠粉",
+    "englishName": "Cantonese Rice Noodle Roll",
+    "pinyin": "Cháng Fěn",
+    "cuisine": "Breakfast",
+    "ingredients": [
+      "rice flour",
+      "egg",
+      "shrimp",
+      "char siu",
+      "soy sauce"
+    ],
+    "allergens": [
+      "egg",
+      "shellfish"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Guangdong",
+      "Hong Kong"
+    ],
+    "shortDescription": "Silky steamed rice rolls with savory filling",
+    "orderTip": "Choose fillings like shrimp, beef, or char siu pork",
+    "avoidIf": [
+      "rice texture sensitivity"
+    ],
+    "koName": "Cantonese Rice Noodle Roll",
+    "koDescription": "Silky steamed rice rolls with savory filling",
+    "koOrderTip": "Choose fillings like shrimp, beef, or char siu pork"
+  },
+  {
+    "id": "dish_140",
+    "chineseName": "豆腐脑",
+    "englishName": "Savory Tofu Pudding",
+    "pinyin": "Dòu Fu Nǎo",
+    "cuisine": "Breakfast",
+    "ingredients": [
+      "silken tofu",
+      "soy sauce",
+      "pickled vegetables",
+      "scallions",
+      "sesame oil"
+    ],
+    "allergens": [
+      "soy",
+      "sesame"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Soft tofu in savory seasoned broth",
+    "orderTip": "Northern style is savory; southern style may be sweet",
+    "avoidIf": [
+      "soy allergy"
+    ],
+    "koName": "Savory Tofu Pudding",
+    "koDescription": "Soft tofu in savory seasoned broth",
+    "koOrderTip": "Northern style is savory; southern style may be sweet"
+  },
+  {
+    "id": "dish_141",
+    "chineseName": "红油抄手",
+    "englishName": "Spicy Sichuan Wontons in Chili Oil",
+    "pinyin": "Hóng Yóu Chāo Shǒu",
+    "cuisine": "Dumpling",
+    "ingredients": [
+      "wonton wrapper",
+      "pork",
+      "chili oil",
+      "Sichuan pepper",
+      "garlic",
+      "soy sauce"
+    ],
+    "allergens": [
+      "wheat",
+      "pork",
+      "soy",
+      "sesame"
+    ],
+    "spicyLevel": 4,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "Chongqing"
+    ],
+    "shortDescription": "Wontons swimming in fiery red chili oil sauce",
+    "orderTip": "Start with fewer wontons if sensitive to spicy food",
+    "avoidIf": [
+      "low spice tolerance"
+    ],
+    "koName": "Spicy Sichuan Wontons in Chili Oil",
+    "koDescription": "Wontons swimming in fiery red chili oil sauce",
+    "koOrderTip": "Start with fewer wontons if sensitive to spicy food"
+  },
+  {
+    "id": "dish_142",
+    "chineseName": "刀削面",
+    "englishName": "Knife-Shaved Noodles",
+    "pinyin": "Dāo Xiāo Miàn",
+    "cuisine": "Noodle",
+    "ingredients": [
+      "wheat flour noodles",
+      "beef",
+      "tomato",
+      "potato",
+      "soy sauce"
+    ],
+    "allergens": [
+      "wheat",
+      "soy"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Shanxi",
+      "North China"
+    ],
+    "shortDescription": "Thick irregular noodles shaved from dough block",
+    "orderTip": "Enjoy the chewy texture unique to hand-shaved noodles",
+    "avoidIf": [
+      "gluten sensitivity"
+    ],
+    "koName": "Knife-Shaved Noodles",
+    "koDescription": "Thick irregular noodles shaved from dough block",
+    "koOrderTip": "Enjoy the chewy texture unique to hand-shaved noodles"
+  },
+  {
+    "id": "dish_143",
+    "chineseName": "手抓饼",
+    "englishName": "Taiwanese Flaky Scallion Pancake",
+    "pinyin": "Shǒu Zhuā Bǐng",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "flour",
+      "scallions",
+      "oil",
+      "egg"
+    ],
+    "allergens": [
+      "wheat",
+      "egg"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Taiwan",
+      "nationwide"
+    ],
+    "shortDescription": "Flaky layered pan-fried scallion flatbread",
+    "orderTip": "Add egg, ham, cheese, or lettuce for customization",
+    "avoidIf": [
+      "low-carb diet"
+    ],
+    "koName": "Taiwanese Flaky Scallion Pancake",
+    "koDescription": "Flaky layered pan-fried scallion flatbread",
+    "koOrderTip": "Add egg, ham, cheese, or lettuce for customization"
+  },
+  {
+    "id": "dish_144",
+    "chineseName": "粽子",
+    "englishName": "Sticky Rice Wrapped in Bamboo Leaves",
+    "pinyin": "Zòng Zi",
+    "cuisine": "Breakfast",
+    "ingredients": [
+      "glutinous rice",
+      "bamboo leaves",
+      "pork",
+      "salted egg yolk",
+      "red bean"
+    ],
+    "allergens": [
+      "egg"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Dumplings of sticky rice steamed in bamboo leaves",
+    "orderTip": "Savory versions have pork and yolk; sweet ones have red bean",
+    "avoidIf": [
+      "gluten-free diet or sticky rice intolerance"
+    ],
+    "koName": "Sticky Rice Wrapped in Bamboo Leaves",
+    "koDescription": "Dumplings of sticky rice steamed in bamboo leaves",
+    "koOrderTip": "Savory versions have pork and yolk; sweet ones have red bean"
+  },
+  {
+    "id": "dish_145",
+    "chineseName": "担担面",
+    "englishName": "Sichuan Dan Dan Noodles",
+    "pinyin": "Dàn Dàn Miàn",
+    "cuisine": "Noodle",
+    "ingredients": [
+      "thin noodles",
+      "ground pork",
+      "sesame paste",
+      "chili oil",
+      "Sichuan pepper",
+      "peanuts"
+    ],
+    "allergens": [
+      "wheat",
+      "pork",
+      "sesame",
+      "peanuts",
+      "soy"
+    ],
+    "spicyLevel": 4,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "Chongqing"
+    ],
+    "smallDescription": "Spicy numbing noodles with minced pork and sesame",
+    "orderTip": "Stir well so the sauce coats all noodles evenly",
+    "avoidIf": [
+      "peanut allergy",
+      "sesame allergy"
+    ],
+    "koName": "Sichuan Dan Dan Noodles",
+    "koOrderTip": "Stir well so the sauce coats all noodles evenly"
+  },
+  {
+    "id": "dish_146",
+    "chineseName": "生煎包",
+    "englishName": "Pan-Fried Soup Buns",
+    "pinyin": "Shēng Jiān Bāo",
+    "cuisine": "Dumpling",
+    "ingredients": [
+      "flour dough",
+      "pork",
+      "soup jelly",
+      "sesame seeds",
+      "scallions"
+    ],
+    "allergens": [
+      "wheat",
+      "pork",
+      "sesame"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Shanghai",
+      "Jiangsu"
+    ],
+    "shortDescription": "Juicy buns with crispy fried bottoms",
+    "orderTip": "Be careful of hot soup inside when you bite in",
+    "avoidIf": [
+      "pork restriction",
+      "sesame allergy"
+    ],
+    "koName": "Pan-Fried Soup Buns",
+    "koDescription": "Juicy buns with crispy fried bottoms",
+    "koOrderTip": "Be careful of hot soup inside when you bite in"
+  },
+  {
+    "id": "dish_147",
+    "chineseName": "卤煮火烧",
+    "englishName": "Braised Pork Offal Stew with Flatbread",
+    "pinyin": "Lǔ Zhǔ Huǒ Shāo",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "pork intestines",
+      "pork lung",
+      "tofu puffs",
+      "flatbread",
+      "garlic",
+      "cilantro"
+    ],
+    "allergens": [
+      "wheat",
+      "pork"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Beijing"
+    ],
+    "shortDescription": "Rich stewed pork offal soup with bread chunks",
+    "orderTip": "Add garlic and chili to taste for extra flavor",
+    "avoidIf": [
+      "aversion to organ meats"
+    ],
+    "koName": "Braised Pork Offal Stew with Flatbread",
+    "koDescription": "Rich stewed pork offal soup with bread chunks",
+    "koOrderTip": "Add garlic and chili to taste for extra flavor"
+  },
+  {
+    "id": "dish_148",
+    "chineseName": "虾饺",
+    "englishName": "Shrimp Dumplings",
+    "pinyin": "Xiā Jiǎo",
+    "cuisine": "Dumpling",
+    "ingredients": [
+      "wheat starch wrapper",
+      "shrimp",
+      "bamboo shoots",
+      "lard"
+    ],
+    "allergens": [
+      "shellfish",
+      "wheat"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Guangdong",
+      "Hong Kong"
+    ],
+    "shortDescription": "Translucent steamed dumplings with plump shrimp filling",
+    "orderTip": "A hallmark dim sum dish; order with tea for best pairing",
+    "avoidIf": [
+      "shellfish allergy"
+    ],
+    "koName": "Shrimp Dumplings",
+    "koDescription": "Translucent steamed dumplings with plump shrimp filling",
+    "koOrderTip": "A hallmark dim sum dish; order with tea for best pairing"
+  },
+  {
+    "id": "dish_149",
+    "chineseName": "桂林米粉",
+    "englishName": "Guilin Rice Noodles",
+    "pinyin": "Guì Lín Mǐ Fěn",
+    "cuisine": "Noodle",
+    "ingredients": [
+      "rice noodles",
+      "brined vegetables",
+      "peanuts",
+      "chili",
+      "braised meat",
+      "broth"
+    ],
+    "allergens": [
+      "peanuts"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Guangxi"
+    ],
+    "shortDescription": "Silky rice noodles in rich meat broth with toppings",
+    "orderTip": "Choose between soup-style or dry mixed noodles",
+    "avoidIf": [
+      "peanut allergy"
+    ],
+    "koName": "Guilin Rice Noodles",
+    "koDescription": "Silky rice noodles in rich meat broth with toppings",
+    "koOrderTip": "Choose between soup-style or dry mixed noodles"
+  },
+  {
+    "id": "dish_150",
+    "chineseName": "豆沙包",
+    "englishName": "Steamed Red Bean Paste Buns",
+    "pinyin": "Dòu Shā Bāo",
+    "cuisine": "Breakfast",
+    "ingredients": [
+      "flour dough",
+      "red bean paste",
+      "sugar"
+    ],
+    "allergens": [
+      "wheat"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Soft steamed buns filled with sweet red bean paste",
+    "orderTip": "Pair with congee or soy milk for a sweet breakfast",
+    "avoidIf": [
+      "bean allergy"
+    ],
+    "koName": "Steamed Red Bean Paste Buns",
+    "koDescription": "Soft steamed buns filled with sweet red bean paste",
+    "koOrderTip": "Pair with congee or soy milk for a sweet breakfast"
+  },
+  {
+    "id": "dish_126",
+    "chineseName": "豆浆油条",
+    "englishName": "Soy Milk with Fried Dough Sticks",
+    "pinyin": "Dòujiāng Yóutiáo",
+    "cuisine": "Breakfast",
+    "ingredients": [
+      "soy milk",
+      "flour",
+      "oil"
+    ],
+    "allergens": [
+      "soy",
+      "gluten"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Classic breakfast pairing of crispy dough and warm soy milk",
+    "orderTip": "Best enjoyed fresh and hot in the morning",
+    "avoidIf": [
+      "soy allergy",
+      "gluten intolerance"
+    ],
+    "koName": "두유와 꽈배기",
+    "koDescription": "바삭한 꽈배기와 따뜻한 두유의 클래식한 아침 식사 조합",
+    "koOrderTip": "아침에 갓 튀겨서 뜨거울 때 가장 맛있게 즐길 수 있습니다"
+  },
+  {
+    "id": "dish_127",
+    "chineseName": "煎饼果子",
+    "englishName": "Jianbing Chinese Crepe",
+    "pinyin": "Jiānbǐng Guǒzi",
+    "cuisine": "Breakfast",
+    "ingredients": [
+      "mung bean flour",
+      "egg",
+      "scallion",
+      "crispy wonton",
+      "sweet bean sauce"
+    ],
+    "allergens": [
+      "eggs",
+      "gluten",
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Crispy crepe with egg and savory fillings",
+    "orderTip": "Ask for extra sauce or omit cilantro if needed",
+    "avoidIf": [
+      "egg allergy"
+    ],
+    "koName": "지엔빙궈쯔",
+    "koDescription": "달걀과 고소한 속재료가 들어간 바삭한 크레이프",
+    "koOrderTip": "소스를 더 추가하거나 고수를 빼달라고 요청할 수 있습니다"
+  },
+  {
+    "id": "dish_128",
+    "chineseName": "胡辣汤",
+    "englishName": "Spicy Pepper Soup",
+    "pinyin": "Húlà Tāng",
+    "cuisine": "Breakfast",
+    "ingredients": [
+      "beef broth",
+      "pepper",
+      "vermicelli",
+      "tofu skin",
+      "peanuts"
+    ],
+    "allergens": [
+      "soy",
+      "peanuts"
+    ],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Henan",
+      "nationwide"
+    ],
+    "shortDescription": "Hearty spicy morning soup with rich spices",
+    "orderTip": "Pair with steamed buns for a filling breakfast",
+    "avoidIf": [
+      "peanut allergy",
+      "low spice tolerance"
+    ],
+    "koName": "후라탕",
+    "koDescription": "풍부한 향신료로 맛을 낸 든든하고 매운 아침 수프",
+    "koOrderTip": "든든한 아침 식사를 위해 만두와 함께 드시는 것을 추천합니다",
+    "koAvoidIf": [
+      "땅콩 알레르기",
+      "매운 음식에 약한 경우"
+    ]
+  },
+  {
+    "id": "dish_129",
+    "chineseName": "茶叶蛋",
+    "englishName": "Tea Eggs",
+    "pinyin": "Cháyè Dàn",
+    "cuisine": "Breakfast",
+    "ingredients": [
+      "eggs",
+      "tea",
+      "soy sauce",
+      "star anise",
+      "cinnamon"
+    ],
+    "allergens": [
+      "eggs",
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Eggs simmered in spiced tea marinade",
+    "orderTip": "Available at convenience stores and street stalls",
+    "avoidIf": [
+      "egg allergy"
+    ],
+    "koName": "차잎달걀",
+    "koDescription": "향신차 양념장에 천천히 익힌 달걀",
+    "koOrderTip": "편의점과 길거리 가판대에서 구매할 수 있습니다"
+  },
+  {
+    "id": "dish_130",
+    "chineseName": "豆腐脑",
+    "englishName": "Savory Tofu Pudding",
+    "pinyin": "Dòufu Nǎo",
+    "cuisine": "Breakfast",
+    "ingredients": [
+      "silken tofu",
+      "soy sauce",
+      "scallion",
+      "pickled vegetables",
+      "sesame oil"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Soft tofu in savory seasoned broth",
+    "orderTip": "Choose savory or sweet version depending on region",
+    "avoidIf": [
+      "soy allergy"
+    ],
+    "koName": "두부뇌",
+    "koDescription": "간이 배인 국물에 담긴 부드러운 두부",
+    "koOrderTip": "지역에 따라 짭짤한 맛과 단 맛 중 선택할 수 있습니다"
+  },
+  {
+    "id": "dish_131",
+    "chineseName": "烤冷面",
+    "englishName": "Grilled Cold Noodles",
+    "pinyin": "Kǎo Lěngmiàn",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "cold noodle sheet",
+      "egg",
+      "chili sauce",
+      "onion"
+    ],
+    "allergens": [
+      "gluten",
+      "eggs"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": true,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Northeast China",
+      "nationwide"
+    ],
+    "shortDescription": "Grilled noodle sheets with egg and sauce",
+    "orderTip": "Popular late-night snack in northern China",
+    "avoidIf": [
+      "gluten intolerance"
+    ],
+    "koName": "카오렁몐",
+    "koDescription": "달걀과 소스를 곁들여 구운 면 시트",
+    "koOrderTip": "중국 북부 지역에서 인기 있는 야식입니다"
+  },
+  {
+    "id": "dish_132",
+    "chineseName": "臭豆腐",
+    "englishName": "Stinky Tofu",
+    "pinyin": "Chòu Dòufu",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "fermented tofu",
+      "chili sauce",
+      "garlic",
+      "pickled vegetables"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Hunan",
+      "nationwide"
+    ],
+    "shortDescription": "Fermented tofu with strong aroma and crispy texture",
+    "orderTip": "The smell is stronger than the taste",
+    "avoidIf": [
+      "soy allergy",
+      "sensitive to strong odors"
+    ],
+    "koName": "초우더우",
+    "koDescription": "강한 향과 바삭한 식감을 지닌 발효 두부",
+    "koOrderTip": "냄새는 강하지만 맛은 그만큼 자극적이지 않습니다"
+  },
+  {
+    "id": "dish_133",
+    "chineseName": "糖葫芦",
+    "englishName": "Candied Hawthorn Skewer",
+    "pinyin": "Táng Húlu",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "hawthorn",
+      "sugar",
+      "bamboo skewer"
+    ],
+    "allergens": [],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Sweet candied fruit on a stick",
+    "orderTip": "Classic winter street treat, best eaten immediately",
+    "avoidIf": [
+      "sugar intolerance"
+    ],
+    "koName": "탕후루",
+    "koDescription": "꼬치에 꽂은 달콤한 과일 사탕",
+    "koOrderTip": "겨울 대표 길거리 간식으로, 즉시 먹는 것이 가장 좋습니다"
+  },
+  {
+    "id": "dish_134",
+    "chineseName": "鸡蛋灌饼",
+    "englishName": "Egg-filled Pancake",
+    "pinyin": "Jīdàn Guànbǐng",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "flour",
+      "egg",
+      "scallion",
+      "sauce"
+    ],
+    "allergens": [
+      "gluten",
+      "eggs"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Flaky pancake stuffed with egg filling",
+    "orderTip": "Ask for lettuce and sausage as add-ons",
+    "avoidIf": [
+      "egg allergy",
+      "gluten intolerance"
+    ],
+    "koName": "지단관빙",
+    "koDescription": "달걀 속이 가득한 겹겹이 접힌 팬케이크",
+    "koOrderTip": "추가로 상추나 소시지를 넣어달라고 요청할 수 있습니다"
+  },
+  {
+    "id": "dish_135",
+    "chineseName": "烤串",
+    "englishName": "Chinese BBQ Skewers",
+    "pinyin": "Kǎo Chuàn",
+    "cuisine": "Street Food",
+    "ingredients": [
+      "lamb",
+      "cumin",
+      "chili flakes",
+      "sesame seeds"
+    ],
+    "allergens": [
+      "sesame"
+    ],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Xinjiang",
+      "nationwide"
+    ],
+    "shortDescription": "Smoky grilled meat skewers with cumin spice",
+    "orderTip": "Best enjoyed with cold beer at night",
+    "avoidIf": [
+      "lamb allergy",
+      "low spice tolerance"
+    ],
+    "koName": "카오촨",
+    "koDescription": "커민 향신료를 곁들인 훈제 고기 꼬치",
+    "koOrderTip": "밤에 차가운 맥주와 함께 즐기는 것이 가장 좋습니다",
+    "koAvoidIf": [
+      "양고기 알레르기",
+      "매운 음식에 약한 경우"
+    ]
+  },
+  {
+    "id": "dish_136",
+    "chineseName": "兰州拉面",
+    "englishName": "Lanzhou Pulled Noodles",
+    "pinyin": "Lánzhōu Lāmiàn",
+    "cuisine": "Noodles",
+    "ingredients": [
+      "hand-pulled noodles",
+      "beef broth",
+      "beef slices",
+      "radish",
+      "cilantro"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Gansu",
+      "nationwide"
+    ],
+    "shortDescription": "Hand-pulled noodles in clear beef broth",
+    "orderTip": "Choose noodle thickness from thin to wide",
+    "avoidIf": [
+      "gluten intolerance",
+      "cilantro aversion"
+    ],
+    "koName": "Lanzhou Pulled Noodles",
+    "koDescription": "Hand-pulled noodles in clear beef broth",
+    "koOrderTip": "Choose noodle thickness from thin to wide"
+  },
+  {
+    "id": "dish_137",
+    "chineseName": "炸酱面",
+    "englishName": "Zhajiang Noodles",
+    "pinyin": "Zhàjiàng Miàn",
+    "cuisine": "Noodles",
+    "ingredients": [
+      "wheat noodles",
+      "fermented soybean paste",
+      "ground pork",
+      "cucumber",
+      "bean sprouts"
+    ],
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Beijing",
+      "nationwide"
+    ],
+    "shortDescription": "Noodles topped with savory soybean meat sauce",
+    "orderTip": "Mix thoroughly before eating for best flavor",
+    "avoidIf": [
+      "soy allergy",
+      "pork restriction"
+    ],
+    "koName": "Zhajiang Noodles",
+    "koDescription": "Noodles topped with savory soybean meat sauce",
+    "koOrderTip": "Mix thoroughly before eating for best flavor"
+  },
+  {
+    "id": "dish_138",
+    "chineseName": "刀削面",
+    "englishName": "Knife-cut Noodles",
+    "pinyin": "Dāoxiāo Miàn",
+    "cuisine": "Noodles",
+    "ingredients": [
+      "flour",
+      "tomato sauce",
+      "beef",
+      "potato"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Shanxi",
+      "nationwide"
+    ],
+    "shortDescription": "Thick irregular noodles shaved from dough block",
+    "orderTip": "Chewy texture pairs well with rich tomato sauce",
+    "avoidIf": [
+      "gluten intolerance"
+    ],
+    "koName": "Knife-cut Noodles",
+    "koDescription": "Thick irregular noodles shaved from dough block",
+    "koOrderTip": "Chewy texture pairs well with rich tomato sauce"
+  },
+  {
+    "id": "dish_139",
+    "chineseName": "热干面",
+    "englishName": "Hot Dry Noodles",
+    "pinyin": "Rè Gān Miàn",
+    "cuisine": "Noodles",
+    "ingredients": [
+      "alkaline noodles",
+      "sesame paste",
+      "chili oil",
+      "pickled beans",
+      "scallion"
+    ],
+    "allergens": [
+      "gluten",
+      "sesame",
+      "soy"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Wuhan",
+      "Hubei"
+    ],
+    "shortDescription": "Noodles tossed in rich sesame paste sauce",
+    "orderTip": "Mix well and eat quickly before noodles dry",
+    "avoidIf": [
+      "sesame allergy"
+    ],
+    "koName": "Hot Dry Noodles",
+    "koDescription": "Noodles tossed in rich sesame paste sauce",
+    "koOrderTip": "Mix well and eat quickly before noodles dry"
+  },
+  {
+    "id": "dish_140",
+    "chineseName": "酸辣粉",
+    "englishName": "Hot and Sour Sweet Potato Noodles",
+    "pinyin": "Suānlà Fěn",
+    "cuisine": "Noodles",
+    "ingredients": [
+      "sweet potato noodles",
+      "peanuts",
+      "vinegar",
+      "chili oil",
+      "pickled vegetables"
+    ],
+    "allergens": [
+      "peanuts"
+    ],
+    "spicyLevel": 3,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Chongqing",
+      "Sichuan",
+      "nationwide"
+    ],
+    "shortDescription": "Chewy noodles in spicy and sour broth",
+    "orderTip": "Adjust spice level when ordering",
+    "avoidIf": [
+      "peanut allergy",
+      "low spice tolerance"
+    ],
+    "koName": "Hot and Sour Sweet Potato Noodles",
+    "koDescription": "Chewy noodles in spicy and sour broth",
+    "koOrderTip": "Adjust spice level when ordering"
+  },
+  {
+    "id": "dish_141",
+    "chineseName": "阳春面",
+    "englishName": "Plain Noodle Soup",
+    "pinyin": "Yángchūn Miàn",
+    "cuisine": "Noodles",
+    "ingredients": [
+      "thin noodles",
+      "light broth",
+      "scallion",
+      "lard"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Shanghai",
+      "Jiangsu"
+    ],
+    "shortDescription": "Simple noodles in clear savory broth",
+    "orderTip": "Minimal toppings highlight noodle quality",
+    "avoidIf": [
+      "gluten intolerance"
+    ],
+    "koName": "Plain Noodle Soup",
+    "koDescription": "Simple noodles in clear savory broth",
+    "koOrderTip": "Minimal toppings highlight noodle quality"
+  },
+  {
+    "id": "dish_142",
+    "chineseName": "重庆小面",
+    "englishName": "Chongqing Noodles",
+    "pinyin": "Chóngqìng Xiǎomiàn",
+    "cuisine": "Noodles",
+    "ingredients": [
+      "alkaline noodles",
+      "chili oil",
+      "Sichuan peppercorn",
+      "peanuts",
+      "scallion"
+    ],
+    "allergens": [
+      "gluten",
+      "peanuts"
+    ],
+    "spicyLevel": 4,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Chongqing",
+      "Sichuan"
+    ],
+    "shortDescription": "Numbing spicy noodles from Chongqing city",
+    "orderTip": "Order wei la for mild or te la for extra spicy",
+    "avoidIf": [
+      "peanut allergy",
+      "very low spice tolerance"
+    ],
+    "koName": "Chongqing Noodles",
+    "koDescription": "Numbing spicy noodles from Chongqing city",
+    "koOrderTip": "Order wei la for mild or te la for extra spicy"
+  },
+  {
+    "id": "dish_143",
+    "chineseName": "牛肉面",
+    "englishName": "Braised Beef Noodles",
+    "pinyin": "Niúròu Miàn",
+    "cuisine": "Noodles",
+    "ingredients": [
+      "wheat noodles",
+      "braised beef",
+      "beef broth",
+      "star anise",
+      "bok choy"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Taiwan",
+      "Sichuan",
+      "nationwide"
+    ],
+    "shortDescription": "Tender braised beef over noodles in rich broth",
+    "orderTip": "Choose noodle type and beef cut preference",
+    "avoidIf": [
+      "gluten intolerance",
+      "beef restriction"
+    ],
+    "koName": "Braised Beef Noodles",
+    "koDescription": "Tender braised beef over noodles in rich broth",
+    "koOrderTip": "Choose noodle type and beef cut preference"
+  },
+  {
+    "id": "dish_144",
+    "chineseName": "凉皮",
+    "englishName": "Cold Skin Noodles",
+    "pinyin": "Liáng Pí",
+    "cuisine": "Noodles",
+    "ingredients": [
+      "rice flour",
+      "cucumber",
+      "bean sprouts",
+      "sesame paste",
+      "chili oil"
+    ],
+    "allergens": [
+      "sesame",
+      "gluten"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Shaanxi",
+      "nationwide"
+    ],
+    "shortDescription": "Chilled noodle sheets with spicy sesame sauce",
+    "orderTip": "Perfect summer dish, refreshing and flavorful",
+    "avoidIf": [
+      "sesame allergy"
+    ],
+    "koName": "Cold Skin Noodles",
+    "koDescription": "Chilled noodle sheets with spicy sesame sauce",
+    "koOrderTip": "Perfect summer dish, refreshing and flavorful"
+  },
+  {
+    "id": "dish_145",
+    "chineseName": "担担面",
+    "englishName": "Dan Dan Noodles",
+    "pinyin": "Dàndàn Miàn",
+    "cuisine": "Noodles",
+    "ingredients": [
+      "thin noodles",
+      "ground pork",
+      "sesame paste",
+      "chili oil",
+      "Sichuan peppercorn"
+    ],
+    "allergens": [
+      "gluten",
+      "sesame",
+      "soy"
+    ],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Sichuan",
+      "nationwide"
+    ],
+    "shortDescription": "Spicy noodles with minced pork and sesame",
+    "orderTip": "Traditional street version is small bowl",
+    "avoidIf": [
+      "sesame allergy",
+      "pork restriction"
+    ],
+    "koName": "Dan Dan Noodles",
+    "koDescription": "Spicy noodles with minced pork and sesame",
+    "koOrderTip": "Traditional street version is small bowl"
+  },
+  {
+    "id": "dish_146",
+    "chineseName": "小笼包",
+    "englishName": "Xiaolongbao Soup Dumplings",
+    "pinyin": "Xiǎolóng Bāo",
+    "cuisine": "Dumplings",
+    "ingredients": [
+      "flour",
+      "pork",
+      "ginger",
+      "aspic",
+      "soy sauce"
+    ],
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "Shanghai",
+      "Jiangsu",
+      "Zhejiang"
+    ],
+    "shortDescription": "Steamed buns filled with hot savory soup",
+    "orderTip": "Bite a small hole first to sip the soup",
+    "avoidIf": [
+      "pork restriction",
+      "gluten intolerance"
+    ],
+    "koName": "샤오롱바오",
+    "koDescription": "뜨거운 육즙이 가득한 만두",
+    "koOrderTip": "작은 구멍을 내어 육즙부터 마셔요"
+  },
+  {
+    "id": "dish_147",
+    "chineseName": "饺子",
+    "englishName": "Chinese Dumplings",
+    "pinyin": "Jiǎozi",
+    "cuisine": "Dumplings",
+    "ingredients": [
+      "flour",
+      "ground pork",
+      "cabbage",
+      "ginger",
+      "soy sauce"
+    ],
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Boiled dumplings with meat and vegetable filling",
+    "orderTip": "Dip in vinegar with shredded ginger",
+    "avoidIf": [
+      "pork restriction",
+      "gluten intolerance"
+    ],
+    "koName": "중국식 만두",
+    "koDescription": "고기와 야채 소를 넣어 삶은 만두",
+    "koOrderTip": "편강을 넣은 식초에 찍어 먹어요"
+  },
+  {
+    "id": "dish_148",
+    "chineseName": "包子",
+    "englishName": "Steamed Buns",
+    "pinyin": "Bāozi",
+    "cuisine": "Dumplings",
+    "ingredients": [
+      "flour",
+      "pork",
+      "scallion",
+      "soy sauce",
+      "yeast"
+    ],
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Fluffy steamed buns with savory meat filling",
+    "orderTip": "Wait a minute after steaming to avoid burns",
+    "avoidIf": [
+      "pork restriction",
+      "gluten intolerance"
+    ],
+    "koName": "바오쯔",
+    "koDescription": "부드러운 반죽에 고기 소를 넣어 찐 만두",
+    "koOrderTip": "쪄낸 직후 바로 먹으면 뜨거우니 잠시 식혀요"
+  },
+  {
+    "id": "dish_149",
+    "chineseName": "锅贴",
+    "englishName": "Pan-fried Dumplings",
+    "pinyin": "Guōtiē",
+    "cuisine": "Dumplings",
+    "ingredients": [
+      "flour",
+      "ground pork",
+      "cabbage",
+      "sesame oil",
+      "ginger"
+    ],
+    "allergens": [
+      "gluten",
+      "sesame",
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Crispy bottom pan-fried dumplings",
+    "orderTip": "Eat with vinegar dipping sauce on the side",
+    "avoidIf": [
+      "pork restriction",
+      "sesame allergy"
+    ],
+    "koName": "궈톄",
+    "koDescription": "바닥이 바삭하게 구운 만두",
+    "koOrderTip": "곁들여 나오는 식초 양념에 찍어 먹어요"
+  },
+  {
+    "id": "dish_150",
+    "chineseName": "烧麦",
+    "englishName": "Shumai",
+    "pinyin": "Shāomài",
+    "cuisine": "Dumplings",
+    "ingredients": [
+      "flour",
+      "ground pork",
+      "shrimp",
+      "sticky rice",
+      "mushroom"
+    ],
+    "allergens": [
+      "gluten",
+      "shellfish",
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Open-top dumplings filled with meat and rice",
+    "orderTip": "Often served in dim sum with tea",
+    "avoidIf": [
+      "shellfish allergy",
+      "pork restriction"
+    ],
+    "koName": "샤오마이",
+    "koDescription": "고기와 찹쌀을 넣고 윗부분이 열린 만두",
+    "koOrderTip": "보통 딤섬 요리로 차와 함께 나와요"
+  },
+  {
+    "id": "dish_226",
+    "chineseName": "麻婆豆腐",
+    "englishName": "Mapo Tofu",
+    "pinyin": "Má Pó Dòu Fu",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "tofu",
+      "doubanjiang",
+      "fermented black beans",
+      "ground Sichuan pepper",
+      "scallions"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 3,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Spicy tofu in a numbing chili bean sauce.",
+    "orderTip": "Request vegetarian version, confirm if pork is omitted.",
+    "avoidIf": [
+      "spicy food intolerance"
+    ],
+    "koName": "마파두부",
+    "koDescription": "저린 매운 두반장 소스에 조리한 두부",
+    "koOrderTip": "채식 버전을 요청하고, 돼지고기가 빠졌는지 확인해요"
+  },
+  {
+    "id": "dish_227",
+    "chineseName": "干煸四季豆",
+    "englishName": "Dry-Fried Green Beans",
+    "pinyin": "Gān Biān Sì Jì Dòu",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "green beans",
+      "dried chilies",
+      "Sichuan peppercorns",
+      "pickled mustard greens"
+    ],
+    "allergens": [],
+    "spicyLevel": 2,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Crispy green beans stir-fried with savory spices.",
+    "orderTip": "Ensure the dish is cooked without meat.",
+    "avoidIf": [
+      "legume allergy"
+    ],
+    "koName": "건볜쓰지두",
+    "koDescription": "향신료와 함께 볶아 바삭한 녹두",
+    "koOrderTip": "고기 없이 조리되었는지 확인해요"
+  },
+  {
+    "id": "dish_228",
+    "chineseName": "宫保豆腐",
+    "englishName": "Kung Pao Tofu",
+    "pinyin": "Gōng Bǎo Dòu Fu",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "tofu",
+      "roasted peanuts",
+      "dried chilies",
+      "sichuan peppercorns",
+      "soy sauce"
+    ],
+    "allergens": [
+      "soy",
+      "peanuts"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Crispy tofu in a sweet and spicy sauce with peanuts.",
+    "orderTip": "Confirm the sauce does not contain oyster sauce.",
+    "avoidIf": [
+      "peanut allergy",
+      "soy allergy"
+    ],
+    "koName": "궁바오두부",
+    "koDescription": "피넛과 달콤하고 매운 소스에 조리한 바삭한 두부",
+    "koOrderTip": "소스에 굴소스가 포함되지 않았는지 확인해요"
+  },
+  {
+    "id": "dish_229",
+    "chineseName": "地三鲜",
+    "englishName": "Di San Xian (Three Earthly Delights)",
+    "pinyin": "Dì Sān Xiān",
+    "cuisine": "Northeast",
+    "ingredients": [
+      "eggplant",
+      "potato",
+      "green bell pepper",
+      "soy sauce",
+      "garlic"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Fried eggplant, potato, and pepper in savory sauce.",
+    "orderTip": "Ask for light oil if you prefer less greasy.",
+    "avoidIf": [
+      "nightshade sensitivity"
+    ],
+    "koName": "디산셴",
+    "koDescription": "가지, 감자, 피망을 튀겨 간장 소스에 볶은 요리",
+    "koOrderTip": "기름기가 적은 걸 원하면 적은 기름으로 조리해 달라고 요청해요"
+  },
+  {
+    "id": "dish_230",
+    "chineseName": "鱼香茄子",
+    "englishName": "Yu Xiang Eggplant (Fish-Fragrant Eggplant)",
+    "pinyin": "Yú Xiāng Qié Zi",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "eggplant",
+      "doubanjiang",
+      "garlic",
+      "ginger",
+      "soy sauce",
+      "sugar",
+      "vinegar"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Eggplant in a savory, sweet, and spicy garlic sauce.",
+    "orderTip": "Ensure the sauce has no meat-based stock.",
+    "avoidIf": [
+      "spicy food intolerance"
+    ],
+    "koName": "유샹체쯔",
+    "koDescription": "마늘 소스에 조리한 달콤하고 매콤한 가지 요리",
+    "koOrderTip": "소스에 고기 육수가 들어가지 않았는지 확인해요"
+  },
+  {
+    "id": "dish_231",
+    "chineseName": "素春卷",
+    "englishName": "Vegetable Spring Rolls",
+    "pinyin": "Sù Chūn Juǎn",
+    "cuisine": "Cantonese",
+    "ingredients": [
+      "cabbage",
+      "carrots",
+      "bean sprouts",
+      "celery",
+      "glass noodles",
+      "wheat wrapper"
+    ],
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Crispy fried rolls filled with vegetables.",
+    "orderTip": "Check if the wrapper is egg-free for strict vegan.",
+    "avoidIf": [
+      "gluten allergy"
+    ],
+    "koName": "Vegetable Spring Rolls",
+    "koDescription": "Crispy fried rolls filled with vegetables.",
+    "koOrderTip": "Check if the wrapper is egg-free for strict vegan."
+  },
+  {
+    "id": "dish_232",
+    "chineseName": "家常豆腐",
+    "englishName": "Home-Style Tofu",
+    "pinyin": "Jiā Cháng Dòu Fu",
+    "cuisine": "Sichuan",
+    "ingredients": [
+      "fried tofu",
+      "bell peppers",
+      "wood ear mushrooms",
+      "soy sauce",
+      "garlic"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Fried tofu stir-fried with vegetables in savory sauce.",
+    "orderTip": "Ask to omit any non-vegan ingredients like lard.",
+    "avoidIf": [
+      "soy allergy"
+    ],
+    "koName": "Home-Style Tofu",
+    "koDescription": "Fried tofu stir-fried with vegetables in savory sauce.",
+    "koOrderTip": "Ask to omit any non-vegan ingredients like lard."
+  },
+  {
+    "id": "dish_233",
+    "chineseName": "香菇青菜",
+    "englishName": "Mushroom and Bok Choy",
+    "pinyin": "Xiāng Gū Qīng Cài",
+    "cuisine": "Cantonese",
+    "ingredients": [
+      "shiitake mushrooms",
+      "bok choy",
+      "garlic",
+      "ginger",
+      "soy sauce"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Stir-fried mushrooms and greens in light sauce.",
+    "orderTip": "Confirm no oyster sauce is used.",
+    "avoidIf": [
+      "mushroom allergy"
+    ],
+    "koName": "Mushroom and Bok Choy",
+    "koDescription": "Stir-fried mushrooms and greens in light sauce.",
+    "koOrderTip": "Confirm no oyster sauce is used."
+  },
+  {
+    "id": "dish_234",
+    "chineseName": "红烧冬瓜",
+    "englishName": "Braised Winter Melon",
+    "pinyin": "Hóng Shāo Dōng Guā",
+    "cuisine": "Zhejiang",
+    "ingredients": [
+      "winter melon",
+      "soy sauce",
+      "sugar",
+      "ginger",
+      "scallions"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "Eastern China"
+    ],
+    "shortDescription": "Tender winter melon braised in a savory-sweet sauce.",
+    "orderTip": "Great mild option for those avoiding spicy food.",
+    "avoidIf": [],
+    "koName": "Braised Winter Melon",
+    "koDescription": "Tender winter melon braised in a savory-sweet sauce.",
+    "koOrderTip": "Great mild option for those avoiding spicy food."
+  },
+  {
+    "id": "dish_235",
+    "chineseName": "凉拌黄瓜",
+    "englishName": "Smashed Cucumber Salad",
+    "pinyin": "Liáng Bàn Huáng Guā",
+    "cuisine": "Northern",
+    "ingredients": [
+      "cucumber",
+      "garlic",
+      "rice vinegar",
+      "soy sauce",
+      "sesame oil",
+      "chili flakes"
+    ],
+    "allergens": [
+      "soy",
+      "sesame"
+    ],
+    "spicyLevel": 1,
+    "vegetarianFriendly": true,
+    "veganFriendly": true,
+    "commonRegion": [
+      "nationwide"
+    ],
+    "shortDescription": "Chilled cucumbers with garlicky, tangy dressing.",
+    "orderTip": "Can adjust spice level or omit chili.",
+    "avoidIf": [
+      "sesame allergy"
+    ],
+    "koName": "Smashed Cucumber Salad",
+    "koDescription": "Chilled cucumbers with garlicky, tangy dressing.",
+    "koOrderTip": "Can adjust spice level or omit chili."
+  },
+  {
+    "id": "dish_246",
+    "chineseName": "清蒸石斑鱼",
+    "englishName": "Steamed Grouper",
+    "pinyin": "Qīng Zhēng Shí Bān Yú",
+    "cuisine": "粤菜",
+    "ingredients": [
+      "石斑鱼",
+      "姜",
+      "葱",
+      "蒸鱼豉油"
+    ],
+    "allergens": [
+      "鱼"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "广东",
+      "香港"
+    ],
+    "shortDescription": "原汁原味，鱼肉鲜嫩清淡。",
+    "orderTip": "确认鱼的新鲜程度，询问蒸制时间。",
+    "avoidIf": [
+      "不喜欢吃鱼皮",
+      "对酱油敏感"
+    ],
+    "koName": "Steamed Grouper",
+    "koDescription": "原汁原味，鱼肉鲜嫩清淡。",
+    "koOrderTip": "确认鱼的新鲜程度，询问蒸制时间。"
+  },
+  {
+    "id": "dish_247",
+    "chineseName": "油焖大虾",
+    "englishName": "Braised Prawns in Soy Sauce",
+    "pinyin": "Yóu Mèn Dà Xiā",
+    "cuisine": "鲁菜",
+    "ingredients": [
+      "对虾",
+      "葱",
+      "姜",
+      "料酒",
+      "酱油",
+      "糖"
+    ],
+    "allergens": [
+      "甲壳类",
+      "酱油"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "山东",
+      "全国"
+    ],
+    "shortDescription": "色泽红亮，虾肉紧实入味。",
+    "orderTip": "虾的大小和新鲜度是关键。",
+    "avoidIf": [
+      "虾过敏",
+      "不喜欢甜咸口味"
+    ],
+    "koName": "Braised Prawns in Soy Sauce",
+    "koDescription": "色泽红亮，虾肉紧实入味。",
+    "koOrderTip": "虾的大小和新鲜度是关键。"
+  },
+  {
+    "id": "dish_248",
+    "chineseName": "蒜蓉粉丝蒸扇贝",
+    "englishName": "Steamed Scallops with Garlic and Vermicelli",
+    "pinyin": "Suàn Róng Fěn Sī Zhēng Shàn Bèi",
+    "cuisine": "粤菜",
+    "ingredients": [
+      "扇贝",
+      "粉丝",
+      "蒜蓉",
+      "生抽"
+    ],
+    "allergens": [
+      "贝类",
+      "小麦（粉丝）"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "广东",
+      "沿海地区"
+    ],
+    "shortDescription": "蒜香浓郁，粉丝吸收鲜味。",
+    "orderTip": "趁热吃，粉丝口感最佳。",
+    "avoidIf": [
+      "贝类过敏",
+      "蒜味敏感"
+    ],
+    "koName": "Steamed Scallops with Garlic and Vermicelli",
+    "koDescription": "蒜香浓郁，粉丝吸收鲜味。",
+    "koOrderTip": "趁热吃，粉丝口感最佳。"
+  },
+  {
+    "id": "dish_249",
+    "chineseName": "葱姜炒蟹",
+    "englishName": "Stir-fried Crab with Scallion and Ginger",
+    "pinyin": "Cōng Jiāng Chǎo Xiè",
+    "cuisine": "粤菜",
+    "ingredients": [
+      "螃蟹",
+      "姜",
+      "葱",
+      "料酒"
+    ],
+    "allergens": [
+      "甲壳类"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "广东",
+      "福建"
+    ],
+    "shortDescription": "突出蟹的本味，姜葱去腥。",
+    "orderTip": "确认蟹的肥美季节和做法。",
+    "avoidIf": [
+      "蟹过敏",
+      "不喜欢处理蟹壳"
+    ],
+    "koName": "Stir-fried Crab with Scallion and Ginger",
+    "koDescription": "突出蟹的本味，姜葱去腥。",
+    "koOrderTip": "确认蟹的肥美季节和做法。"
+  },
+  {
+    "id": "dish_250",
+    "chineseName": "剁椒鱼头",
+    "englishName": "Fish Head with Diced Hot Red Peppers",
+    "pinyin": "Duò Jiāo Yú Tóu",
+    "cuisine": "湘菜",
+    "ingredients": [
+      "鱼头",
+      "剁椒",
+      "豆豉",
+      "蒜"
+    ],
+    "allergens": [
+      "鱼",
+      "辣椒"
+    ],
+    "spicyLevel": 4,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "湖南",
+      "全国"
+    ],
+    "shortDescription": "鲜辣合一，鱼头肥美多汁。",
+    "orderTip": "要求鱼头新鲜，并告知辣度承受力。",
+    "avoidIf": [
+      "不能吃辣",
+      "对鱼头部位有抵触"
+    ],
+    "koName": "Fish Head with Diced Hot Red Peppers",
+    "koDescription": "鲜辣合一，鱼头肥美多汁。",
+    "koOrderTip": "要求鱼头新鲜，并告知辣度承受力。"
+  },
+  {
+    "id": "dish_251",
+    "chineseName": "白灼虾",
+    "englishName": "Poached Shrimp",
+    "pinyin": "Bái Zhuó Xiā",
+    "cuisine": "粤菜",
+    "ingredients": [
+      "鲜虾",
+      "姜",
+      "葱"
+    ],
+    "allergens": [
+      "甲壳类"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "广东",
+      "全国"
+    ],
+    "shortDescription": "原汁原味，蘸酱食用。",
+    "orderTip": "蘸料（酱油）可按喜好调配。",
+    "avoidIf": [
+      "虾过敏"
+    ],
+    "koName": "삶은새우",
+    "koDescription": "원액의 맛을 살려 양념장과 함께 먹는다.",
+    "koOrderTip": "양념장(간장)은 기호에 맞게 조절할 수 있습니다."
+  },
+  {
+    "id": "dish_252",
+    "chineseName": "松鼠鳜鱼",
+    "englishName": "Squirrel-Shaped Mandarin Fish",
+    "pinyin": "Sōng Shǔ Guì Yú",
+    "cuisine": "苏菜",
+    "ingredients": [
+      "鳜鱼",
+      "番茄酱",
+      "糖",
+      "醋",
+      "松子"
+    ],
+    "allergens": [
+      "鱼",
+      "坚果（松子）"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "江苏",
+      "上海"
+    ],
+    "shortDescription": "造型美观，酸甜开胃。",
+    "orderTip": "制作复杂，可能需要等待较久。",
+    "avoidIf": [
+      "不喜欢甜酸口味",
+      "坚果过敏"
+    ],
+    "koName": "다람쥐 모양 민물농어",
+    "koDescription": "모양이 아름답고 새콤달콤한 맛으로 식욕을 돋운다.",
+    "koOrderTip": "조리가 복잡해 대기 시간이 길 수 있습니다."
+  },
+  {
+    "id": "dish_253",
+    "chineseName": "爆炒花蛤",
+    "englishName": "Stir-fried Clams",
+    "pinyin": "Bào Chǎo Huā Há",
+    "cuisine": "家常菜",
+    "ingredients": [
+      "花蛤",
+      "姜",
+      "蒜",
+      "干辣椒",
+      "料酒"
+    ],
+    "allergens": [
+      "贝类",
+      "辣椒"
+    ],
+    "spicyLevel": 2,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "全国"
+    ],
+    "shortDescription": "锅气十足，鲜美多汁。",
+    "orderTip": "确保花蛤吐沙干净。",
+    "avoidIf": [
+      "贝类过敏",
+      "不喜欢有沙的口感"
+    ],
+    "koName": "바지락볶음",
+    "koDescription": "웍의 맛이 충분하고 신선하며 즙이 많다.",
+    "koOrderTip": "바지락이 모래를 잘 뱉었는지 확인하세요."
+  },
+  {
+    "id": "dish_254",
+    "chineseName": "海鲜豆腐煲",
+    "englishName": "Seafood and Tofu Clay Pot",
+    "pinyin": "Hǎi Xiān Dòu Fu Bāo",
+    "cuisine": "粤菜",
+    "ingredients": [
+      "虾仁",
+      "鱿鱼",
+      "豆腐",
+      "香菇",
+      "蚝油"
+    ],
+    "allergens": [
+      "甲壳类",
+      "软体动物",
+      "大豆"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "广东",
+      "福建"
+    ],
+    "shortDescription": "汤汁鲜美，食材丰富。",
+    "orderTip": "煲仔菜较烫，注意食用温度。",
+    "avoidIf": [
+      "海鲜过敏",
+      "大豆过敏"
+    ],
+    "koName": "해물 두부 전골",
+    "koDescription": "국물이 시원하고 식재료가 풍부하다.",
+    "koOrderTip": "전골 요리는 뜨거울 수 있으니 식사 온도에 주의하세요."
+  },
+  {
+    "id": "dish_255",
+    "chineseName": "清蒸龙虾",
+    "englishName": "Steamed Lobster",
+    "pinyin": "Qīng Zhēng Lóng Xiā",
+    "cuisine": "粤菜",
+    "ingredients": [
+      "龙虾",
+      "姜",
+      "葱"
+    ],
+    "allergens": [
+      "甲壳类"
+    ],
+    "spicyLevel": 0,
+    "vegetarianFriendly": false,
+    "veganFriendly": false,
+    "commonRegion": [
+      "广东",
+      "沿海高档餐厅"
+    ],
+    "shortDescription": "极致鲜味，肉质弹牙。",
+    "orderTip": "确认龙虾重量和时价。",
+    "avoidIf": [
+      "龙虾或甲壳类过敏"
+    ],
+    "koName": "랍스터찜",
+    "koDescription": "극상의 감칠맛과 탄력 있는 살결.",
+    "koOrderTip": "랍스터 무게와 시가를 확인하세요."
+  }
+]
