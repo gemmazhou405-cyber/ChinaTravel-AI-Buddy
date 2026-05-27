@@ -418,7 +418,8 @@
         "pay": "Pay in China",
         "payNote": "Alipay, WeChat, cash",
         "askBuddy": "Ask Buddy",
-        "askBuddyNote": "Custom answer now"
+        "askBuddyNote": "Custom answer now",
+        "askBuddyHint": "Use phrase cards for common situations. Ask Buddy when your situation is specific."
       },
       "emergency": {
         "title": "Emergency help",

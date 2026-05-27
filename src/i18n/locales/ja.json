@@ -418,7 +418,8 @@
         "pay": "中国で支払う",
         "payNote": "Alipay、WeChat、現金",
         "askBuddy": "Buddyに聞く",
-        "askBuddyNote": "個別に回答"
+        "askBuddyNote": "個別に回答",
+        "askBuddyHint": "よくある場面ではフレーズカードを使い、具体的な状況ではBuddyに聞いてください。"
       },
       "emergency": {
         "title": "緊急ヘルプ",

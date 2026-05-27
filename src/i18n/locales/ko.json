@@ -418,7 +418,8 @@
         "pay": "중국에서 결제",
         "payNote": "Alipay, WeChat, 현금",
         "askBuddy": "Buddy에게 묻기",
-        "askBuddyNote": "맞춤 답변"
+        "askBuddyNote": "맞춤 답변",
+        "askBuddyHint": "일반적인 상황은 문구 카드를 쓰고, 구체적인 상황은 Buddy에게 물어보세요."
       },
       "emergency": {
         "title": "긴급 도움",

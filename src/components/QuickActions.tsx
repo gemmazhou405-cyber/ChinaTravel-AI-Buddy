@@ -48,9 +48,9 @@ export default function QuickActions({ onTabSelect, onAskBuddy }: Props) {
     { label: `📍 ${t('journey.before.cityGuides')}`, note: t('journey.before.cityGuidesNote'), tab: 'stay' },
   ];
   const nowCategories: Category[] = [
+    { label: `🚄 ${t('journey.now.transport')}`, note: t('journey.now.transportNote'), tab: 'transport' },
     { label: `🏨 ${t('journey.now.stay')}`, note: t('journey.now.stayNote'), tab: 'stay' },
     { label: `🍜 ${t('journey.now.food')}`, note: t('journey.now.foodNote'), tab: 'food' },
-    { label: `🚄 ${t('journey.now.transport')}`, note: t('journey.now.transportNote'), tab: 'transport' },
     { label: `💳 ${t('journey.now.pay')}`, note: t('journey.now.payNote'), tab: 'pay' },
     { label: `✨ ${t('journey.now.askBuddy')}`, note: t('journey.now.askBuddyNote'), askBuddy: true },
   ];
@@ -121,6 +121,11 @@ export default function QuickActions({ onTabSelect, onAskBuddy }: Props) {
                 />
               ))}
             </div>
+            {journey === 'now' && (
+              <p className="mt-3 text-xs font-medium leading-relaxed text-gray-500">
+                {t('journey.now.askBuddyHint')}
+              </p>
+            )}
           </div>
 
           {journey === 'emergency' && (
