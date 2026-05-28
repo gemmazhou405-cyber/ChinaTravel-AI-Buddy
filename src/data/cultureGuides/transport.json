@@ -1,0 +1,111 @@
+{
+  "id": "transport",
+  "title": "Transport Etiquette in China",
+  "tips": [
+    {
+      "id": "trans_001",
+      "category": "metro",
+      "tip": "Let passengers exit before boarding",
+      "detail": "Stand aside from the marked lines on the platform and wait until all passengers have exited before stepping onto the train.",
+      "do": true
+    },
+    {
+      "id": "trans_002",
+      "category": "metro",
+      "tip": "Have your transit code or card ready before the gate",
+      "detail": "Prepare your QR code or transit card while in line so you don't hold up others at the turnstile. Alipay and WeChat transit QR codes work in most cities.",
+      "do": true
+    },
+    {
+      "id": "trans_003",
+      "category": "priority_seating",
+      "tip": "Give up priority seats for those in need",
+      "detail": "Seats near the doors marked in a different color are reserved for elderly, pregnant, disabled passengers, and those with small children. Vacate them promptly when someone in need boards.",
+      "do": true
+    },
+    {
+      "id": "trans_004",
+      "category": "priority_seating",
+      "tip": "Do not pretend to sleep to avoid giving up your seat",
+      "detail": "Passengers commonly notice and social media in China frequently criticizes this behavior. Offer your seat gracefully when an elderly or pregnant person is standing nearby.",
+      "do": false
+    },
+    {
+      "id": "trans_005",
+      "category": "luggage",
+      "tip": "Keep luggage compact and out of the aisle",
+      "detail": "Place bags between your feet or on your lap. During peak hours, large suitcases should be kept in the luggage area near the train doors and not block pathways.",
+      "do": true
+    },
+    {
+      "id": "trans_006",
+      "category": "eating",
+      "tip": "Avoid eating strong-smelling food on transit",
+      "detail": "Eating on the metro is officially banned in many Chinese cities. Even on long-distance trains, avoid foods with strong odors like instant noodles in enclosed carriages to be considerate.",
+      "do": false
+    },
+    {
+      "id": "trans_007",
+      "category": "phone_calls",
+      "tip": "Keep phone calls quiet or text instead",
+      "detail": "Use earphones for calls and speak softly. On high-speed trains, step to the vestibule area between carriages for longer conversations.",
+      "do": true
+    },
+    {
+      "id": "trans_008",
+      "category": "phone_calls",
+      "tip": "Do not play media on loudspeaker",
+      "detail": "Playing videos, music, or games without earphones is considered very rude on Chinese public transport. Many metro systems now explicitly broadcast reminders against this.",
+      "do": false
+    },
+    {
+      "id": "trans_009",
+      "category": "queue_jumping",
+      "tip": "Respect queues at bus stops and ticket counters",
+      "detail": "While queue culture varies by city, cutting in line is universally frowned upon. Follow the crowd order and use designated lines where marked.",
+      "do": true
+    },
+    {
+      "id": "trans_010",
+      "category": "queue_jumping",
+      "tip": "Do not push or shove when boarding",
+      "detail": "During rush hour in cities like Beijing and Shanghai, crowding is intense. Be patient and avoid aggressive pushing—wait for the next train if this one is full.",
+      "do": false
+    },
+    {
+      "id": "trans_011",
+      "category": "taxi",
+      "tip": "Confirm the meter is running when you enter a taxi",
+      "detail": "Always ensure the driver starts the meter. At airports and train stations, prefer the official taxi queue over touts who approach you in the arrivals hall.",
+      "do": true
+    },
+    {
+      "id": "trans_012",
+      "category": "honking",
+      "tip": "Do not be alarmed by frequent honking",
+      "detail": "Drivers in China often honk as a courtesy warning rather than out of anger. It usually means 'I'm here' or 'coming through.' Stay calm and stay alert when crossing streets.",
+      "do": true
+    },
+    {
+      "id": "trans_013",
+      "category": "seatbelts",
+      "tip": "Always wear a seatbelt in the back seat of taxis",
+      "detail": "Chinese law requires all passengers to wear seatbelts. Rear-seat seatbelts are sometimes tucked into the seat—pull them out and buckle up before departure.",
+      "do": true
+    },
+    {
+      "id": "trans_014",
+      "category": "didi",
+      "tip": "Share your ride details and verify the car before getting in",
+      "detail": "When using DiDi, confirm the license plate, car model, and driver photo in the app matches the vehicle. Use the in-app share feature to send trip details to a trusted contact.",
+      "do": true
+    },
+    {
+      "id": "trans_015",
+      "category": "didi",
+      "tip": "Set your destination in Chinese for better navigation",
+      "detail": "Most DiDi drivers read Chinese only. Type your destination in Chinese characters or drop a pin on the map. Keep the driver's chat window open in case they message you for pickup clarification.",
+      "do": true
+    }
+  ]
+}

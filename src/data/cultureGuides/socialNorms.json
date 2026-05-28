@@ -1,0 +1,111 @@
+{
+  "id": "socialNorms",
+  "title": "Social Norms & Cultural Taboos",
+  "tips": [
+    {
+      "id": "soc_001",
+      "category": "taboo",
+      "tip": "Avoid discussing sensitive political topics",
+      "detail": "Topics like Taiwan, Tibet, Xinjiang, Tiananmen, and government criticism are highly sensitive. Stay neutral or redirect conversation if these arise.",
+      "do": false
+    },
+    {
+      "id": "soc_002",
+      "category": "culture",
+      "tip": "Understand the concept of 'face' (面子 miànzi)",
+      "detail": "Face refers to a person's reputation and dignity. Never publicly embarrass, criticize, or contradict someone. Protecting others' face builds trust and respect.",
+      "do": true
+    },
+    {
+      "id": "soc_003",
+      "category": "culture",
+      "tip": "Avoid causing someone to 'lose face' in public",
+      "detail": "Pointing out mistakes, arguing loudly, or rejecting someone harshly in front of others is deeply offensive. Handle disagreements privately and diplomatically.",
+      "do": false
+    },
+    {
+      "id": "soc_004",
+      "category": "etiquette",
+      "tip": "It is normal to ask about age",
+      "detail": "Unlike in Western cultures, asking someone's age is common in China and considered polite rather than intrusive. People may ask directly to determine proper forms of address.",
+      "do": true
+    },
+    {
+      "id": "soc_005",
+      "category": "etiquette",
+      "tip": "Show respect to elderly people",
+      "detail": "Chinese culture emphasizes filial piety. Offer your seat to older people on public transport, pour tea for elders first, and use respectful language with senior individuals.",
+      "do": true
+    },
+    {
+      "id": "soc_006",
+      "category": "etiquette",
+      "tip": "Expect questions about salary and income",
+      "detail": "Asking about salary, home cost, or financial status is considered normal small talk in China, not rude. You can deflect politely if uncomfortable, but don't take offense.",
+      "do": true
+    },
+    {
+      "id": "soc_007",
+      "category": "culture",
+      "tip": "Bargaining is expected in markets and small shops",
+      "detail": "Prices at markets and street vendors are rarely fixed. Politely negotiate but remain respectful. Start around 30-50% of the asking price and meet in the middle.",
+      "do": true
+    },
+    {
+      "id": "soc_008",
+      "category": "taboo",
+      "tip": "Be cautious when complimenting someone's child",
+      "detail": "Some traditional Chinese believe that excessive praise of a child may attract bad spirits. If you compliment a child, parents may respond with self-deprecating remarks out of superstition.",
+      "do": false
+    },
+    {
+      "id": "soc_009",
+      "category": "taboo",
+      "tip": "Avoid giving clocks, pears, or umbrellas as gifts",
+      "detail": "Clocks (送钟 sòng zhōng) sound like 'attending a funeral.' Pears (梨 lí) symbolize separation. Umbrellas (伞 sǎn) mean 'falling apart.' These are considered unlucky gifts.",
+      "do": false
+    },
+    {
+      "id": "soc_010",
+      "category": "culture",
+      "tip": "Respect local superstitions and beliefs",
+      "detail": "Many Chinese follow feng shui, zodiac beliefs, and auspicious date selection. Don't mock or dismiss these practices even if you don't share them.",
+      "do": true
+    },
+    {
+      "id": "soc_011",
+      "category": "culture",
+      "tip": "Number 8 (八 bā) is extremely lucky",
+      "detail": "The number 8 sounds like 'prosperity' (发 fā). It is highly sought after for phone numbers, addresses, license plates, and wedding dates. Prices with 8s are considered favorable.",
+      "do": true
+    },
+    {
+      "id": "soc_012",
+      "category": "taboo",
+      "tip": "Avoid the number 4 when possible",
+      "detail": "Number 4 (四 sì) sounds like 'death' (死 sǐ). Many buildings skip the 4th floor. Avoid giving gifts in sets of four or using the number in significant contexts.",
+      "do": false
+    },
+    {
+      "id": "soc_013",
+      "category": "etiquette",
+      "tip": "Ask permission before photographing strangers",
+      "detail": "Taking photos of people without consent, especially elderly, ethnic minorities, or rural residents, can be seen as disrespectful. Always ask first or use gestures to seek approval.",
+      "do": false
+    },
+    {
+      "id": "soc_014",
+      "category": "etiquette",
+      "tip": "Personal space norms differ from Western countries",
+      "detail": "Chinese people may stand closer during conversation, bump into you without apologizing, or push in crowds. This is culturally normal and not meant as rudeness.",
+      "do": true
+    },
+    {
+      "id": "soc_015",
+      "category": "etiquette",
+      "tip": "Queuing etiquette may be less formal",
+      "detail": "In busy areas, locals may not form neat lines. Be patient, stay assertive but calm, and protect your position politely. Metro systems and airports generally have orderly queues.",
+      "do": true
+    }
+  ]
+}

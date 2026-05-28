@@ -1,0 +1,111 @@
+{
+  "id": "shopping",
+  "title": "Shopping Culture & Bargaining Tips for Tourists in China",
+  "tips": [
+    {
+      "id": "shop_001",
+      "category": "bargaining",
+      "tip": "Bargain at markets and small shops",
+      "detail": "Bargaining is expected at street markets, souvenir shops, and independent stores. Start at 30-40% of the asking price.",
+      "do": true
+    },
+    {
+      "id": "shop_002",
+      "category": "bargaining",
+      "tip": "Do not bargain in department stores or malls",
+      "detail": "Prices in large shopping malls, supermarkets, and chain stores are fixed. Attempting to bargain may be seen as rude.",
+      "do": false
+    },
+    {
+      "id": "shop_003",
+      "category": "fixed_price",
+      "tip": "Identify fixed-price stores",
+      "detail": "Look for signs stating '不讲价' (bù jiǎng jià) meaning 'no bargaining.' This is common in modern retail and bookstores.",
+      "do": true
+    },
+    {
+      "id": "shop_004",
+      "category": "quality_checking",
+      "tip": "Check products thoroughly before buying",
+      "detail": "Inspect electronics, clothes, and ceramics for defects. Test zippers, buttons, and screen functions where possible.",
+      "do": true
+    },
+    {
+      "id": "shop_005",
+      "category": "receipts",
+      "tip": "Always request an official receipt (fapiao)",
+      "detail": "The official tax receipt (fapiao) is essential for warranty claims, returns, or expense reimbursement. Ask for it proactively.",
+      "do": true
+    },
+    {
+      "id": "shop_006",
+      "category": "returns",
+      "tip": "Understand return policies before purchase",
+      "detail": "Return policies vary. Large malls usually have a 7-30 day return window with receipt. Small shops may refuse returns.",
+      "do": true
+    },
+    {
+      "id": "shop_007",
+      "category": "fake_goods",
+      "tip": "Be cautious of brand-name 'bargains'",
+      "detail": "Extremely cheap electronics, luxury bags, or watches are likely counterfeits. Purchase branded goods only from authorized retailers.",
+      "do": false
+    },
+    {
+      "id": "shop_008",
+      "category": "WeChat_pay",
+      "tip": "Set up WeChat Pay or Alipay if possible",
+      "detail": "Mobile payments are ubiquitous. Many small vendors prefer or only accept these apps. Cash is accepted but increasingly rare.",
+      "do": true
+    },
+    {
+      "id": "shop_009",
+      "category": "WeChat_pay",
+      "tip": "Always carry some cash as a backup",
+      "detail": "Have smaller bills (10, 20, 50 yuan) for markets, taxis, and places where mobile payment may fail due to network issues.",
+      "do": true
+    },
+    {
+      "id": "shop_010",
+      "category": "group_buying",
+      "tip": "Ask locals about 'tuangou' (group buying)",
+      "detail": "Many restaurants and services offer steep discounts via group-buying on apps like Meituan. Ask your hotel staff for help.",
+      "do": true
+    },
+    {
+      "id": "shop_011",
+      "category": "night_markets",
+      "tip": "Bring cash and bargain at night markets",
+      "detail": "Night markets (yè shì) are for food and trinkets. Prices are negotiable, and cash is still widely used for street food.",
+      "do": true
+    },
+    {
+      "id": "shop_012",
+      "category": "night_markets",
+      "tip": "Try food before buying a large quantity",
+      "detail": "You can often sample snacks. Purchase a small portion first to check if you like the taste before buying more.",
+      "do": true
+    },
+    {
+      "id": "shop_013",
+      "category": "duty_free",
+      "tip": "Use duty-free shops for known brands",
+      "detail": "Duty-free shops in airports and specific zones offer genuine luxury goods and cosmetics, often at good prices.",
+      "do": true
+    },
+    {
+      "id": "shop_014",
+      "category": "duty_free",
+      "tip": "Check duty-free allowances for your country",
+      "detail": "Know the import limits for alcohol, tobacco, and total value to avoid taxes when returning home. Keep all receipts.",
+      "do": true
+    },
+    {
+      "id": "shop_015",
+      "category": "bargaining",
+      "tip": "Use a calculator or translation app for numbers",
+      "detail": "Show the price you want to pay on your phone calculator to avoid confusion during price negotiations.",
+      "do": true
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "id": "religion",
+  "title": "Religious Sites & Temple Etiquette in China",
+  "tips": [
+    {
+      "id": "rel_001",
+      "category": "dress",
+      "tip": "Cover shoulders and knees at temples",
+      "detail": "Bring a scarf or light jacket to cover exposed skin at Buddhist and Taoist temples. Avoid short skirts, shorts, and sleeveless tops.",
+      "do": true
+    },
+    {
+      "id": "rel_002",
+      "category": "dress",
+      "tip": "Remove hats when entering main halls",
+      "detail": "Take off hats, caps, and sunglasses when entering the main worship hall as a sign of respect to the deities.",
+      "do": true
+    },
+    {
+      "id": "rel_003",
+      "category": "shoes",
+      "tip": "Remove shoes at the threshold if required",
+      "detail": "Some temples provide shelves for shoes. Look for signs or follow locals. Step over the door frame rather than on it.",
+      "do": true
+    },
+    {
+      "id": "rel_004",
+      "category": "shoes",
+      "tip": "Wear clean socks and easy-to-remove shoes",
+      "detail": "Since you may need to remove shoes frequently, wear presentable socks and slip-on footwear for convenience.",
+      "do": true
+    },
+    {
+      "id": "rel_005",
+      "category": "photography",
+      "tip": "Check for photography restrictions",
+      "detail": "Many temples prohibit photography inside worship halls. Look for signs and always ask permission before photographing monks or worshippers.",
+      "do": false
+    },
+    {
+      "id": "rel_006",
+      "category": "photography",
+      "tip": "Never use flash photography near Buddha statues",
+      "detail": "Flash can damage ancient gilding and paintings. Even where photos are allowed, always disable your flash.",
+      "do": false
+    },
+    {
+      "id": "rel_007",
+      "category": "offerings",
+      "tip": "Bring appropriate offerings",
+      "detail": "Fruit, flowers, and packaged vegetarian snacks are suitable offerings. Never bring meat to a Buddhist temple.",
+      "do": true
+    },
+    {
+      "id": "rel_008",
+      "category": "incense",
+      "tip": "Hold incense properly with both hands",
+      "detail": "Light incense with the temple's candle, never from another person's stick. Hold it upright and bow three times before placing it in the burner.",
+      "do": true
+    },
+    {
+      "id": "rel_009",
+      "category": "incense",
+      "tip": "Do not blow out incense or candles with your mouth",
+      "detail": "Wafer or wave gently to extinguish flames. Blowing is considered disrespectful as the mouth carries impure breath.",
+      "do": false
+    },
+    {
+      "id": "rel_010",
+      "category": "behavior",
+      "tip": "Bow or kneel respectfully when greeting Buddha statues",
+      "detail": "A slight bow with palms together is appropriate. If you wish to pray, kneel on the cushion and bow three times with hands in prayer position.",
+      "do": true
+    },
+    {
+      "id": "rel_011",
+      "category": "monks",
+      "tip": "Address monks and nuns respectfully",
+      "detail": "Use 'Fashi' (法师) for Buddhist monks or 'Shifu' (师傅). Avoid touching monks, especially if you are of a different gender. Do not initiate handshakes.",
+      "do": true
+    },
+    {
+      "id": "rel_012",
+      "category": "sacred",
+      "tip": "Never touch or point at sacred statues or objects",
+      "detail": "Do not touch Buddha statues, religious texts, or ritual objects unless explicitly invited to do so. Pointing with a single finger is rude; use an open hand instead.",
+      "do": false
+    },
+    {
+      "id": "rel_013",
+      "category": "fees",
+      "tip": "Pay entrance fees and donations without complaint",
+      "detail": "Many temples charge an entrance fee that supports preservation. Small donation boxes are also common. Carry small bills and coins.",
+      "do": true
+    },
+    {
+      "id": "rel_014",
+      "category": "quiet",
+      "tip": "Maintain silence and calm demeanor",
+      "detail": "Speak in hushed tones. Do not laugh loudly, run, or make phone calls inside temple grounds. Silence your mobile phone.",
+      "do": true
+    },
+    {
+      "id": "rel_015",
+      "category": "prayer",
+      "tip": "Respect prayer areas and worshippers",
+      "detail": "Do not walk in front of someone who is praying. Wait for them to finish before passing. Do not sit in areas marked for worshippers only.",
+      "do": true
+    }
+  ]
+}

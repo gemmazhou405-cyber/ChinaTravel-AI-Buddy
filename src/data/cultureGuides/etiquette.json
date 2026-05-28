@@ -1,0 +1,146 @@
+{
+  "id": "etiquette",
+  "title": "Chinese Etiquette & Culture Guide",
+  "tips": [
+    {
+      "id": "etq_001",
+      "category": "greetings",
+      "tip": "Nod or bow slightly when greeting",
+      "detail": "Handshakes are common in business and urban settings. A nod and smile is sufficient in casual situations.",
+      "do": true
+    },
+    {
+      "id": "etq_002",
+      "category": "greetings",
+      "tip": "Address people by their title and surname first",
+      "detail": "Use 'Mr./Ms. + Surname' or professional titles (e.g., 'Teacher Wang'). Wait to be invited to use first names.",
+      "do": true
+    },
+    {
+      "id": "etq_003",
+      "category": "gifts",
+      "tip": "Never give clocks as gifts",
+      "detail": "Giving a clock ('song zhong') sounds like 'attending a funeral' and symbolizes death.",
+      "do": false
+    },
+    {
+      "id": "etq_004",
+      "category": "gifts",
+      "tip": "Present and receive gifts with both hands",
+      "detail": "Using both hands shows respect. Gifts are often not opened immediately in front of the giver.",
+      "do": true
+    },
+    {
+      "id": "etq_005",
+      "category": "shoes",
+      "tip": "Remove your shoes before entering someone's home",
+      "detail": "Slippers will usually be provided. This is a sign of respect and cleanliness.",
+      "do": true
+    },
+    {
+      "id": "etq_006",
+      "category": "shoes",
+      "tip": "Wear socks when visiting homes or temples",
+      "detail": "Going barefoot can be seen as impolite or disrespectful.",
+      "do": true
+    },
+    {
+      "id": "etq_007",
+      "category": "chopsticks",
+      "tip": "Never stick chopsticks upright in a rice bowl",
+      "detail": "This resembles incense burned for the dead and is considered very inauspicious.",
+      "do": false
+    },
+    {
+      "id": "etq_008",
+      "category": "chopsticks",
+      "tip": "Use the serving utensils for shared dishes",
+      "detail": "Avoid using your own chopsticks to take food from communal plates unless serving utensils are provided.",
+      "do": true
+    },
+    {
+      "id": "etq_009",
+      "category": "photos",
+      "tip": "Ask permission before taking photos of people",
+      "detail": "Especially in rural areas or of older individuals. Respect refusals gracefully.",
+      "do": true
+    },
+    {
+      "id": "etq_010",
+      "category": "photos",
+      "tip": "Avoid photographing military or government buildings",
+      "detail": "This is often prohibited and can attract unwanted attention.",
+      "do": false
+    },
+    {
+      "id": "etq_011",
+      "category": "pointing",
+      "tip": "Use your whole hand to gesture toward people or places",
+      "detail": "Pointing with a single finger is considered rude. Use an open palm, chin, or head nod to indicate direction.",
+      "do": true
+    },
+    {
+      "id": "etq_012",
+      "category": "numbers",
+      "tip": "Be mindful of number symbolism",
+      "detail": "The number '4' (sì) sounds like 'death' (sǐ) and is avoided. '8' (bā) is considered very lucky.",
+      "do": true
+    },
+    {
+      "id": "etq_013",
+      "category": "colors",
+      "tip": "Understand color symbolism",
+      "detail": "Red is lucky/joyful, used for celebrations and weddings. White and black are associated with mourning and funerals.",
+      "do": true
+    },
+    {
+      "id": "etq_014",
+      "category": "business cards",
+      "tip": "Receive a business card with both hands and study it",
+      "detail": "Take a moment to read the title and company. Never write on it immediately in front of the giver. Place it respectfully in a case.",
+      "do": true
+    },
+    {
+      "id": "etq_015",
+      "category": "queuing",
+      "tip": "Be patient and assertive in queues",
+      "detail": "Queuing culture can be less strict than in some countries. Stay calm, hold your position, and move forward when appropriate.",
+      "do": true
+    },
+    {
+      "id": "etq_016",
+      "category": "noise levels",
+      "tip": "Speak at a moderate volume in public spaces",
+      "detail": "Loud talking, especially on public transport or in restaurants, is often noticed. Keep conversations at a considerate level.",
+      "do": true
+    },
+    {
+      "id": "etq_017",
+      "category": "public behavior",
+      "tip": "Avoid public displays of anger or confrontation",
+      "detail": "Maintaining 'face' (miànzi) is important. Raised voices cause embarrassment and rarely resolve issues.",
+      "do": true
+    },
+    {
+      "id": "etq_018",
+      "category": "public behavior",
+      "tip": "Do not spit, litter, or smoke in non-designated areas",
+      "detail": "These behaviors are increasingly frowned upon and can result in fines in major cities.",
+      "do": false
+    },
+    {
+      "id": "etq_019",
+      "category": "public behavior",
+      "tip": "Offer your seat to the elderly, pregnant, or disabled on public transport",
+      "detail": "This is a deeply respected social norm and showing consideration is highly appreciated.",
+      "do": true
+    },
+    {
+      "id": "etq_020",
+      "category": "numbers",
+      "tip": "Be cautious with gift amounts and bills",
+      "detail": "When gifting money, use new bills and avoid amounts containing the number '4'. Even numbers (except 4) are generally preferred for gifts.",
+      "do": true
+    }
+  ]
+}

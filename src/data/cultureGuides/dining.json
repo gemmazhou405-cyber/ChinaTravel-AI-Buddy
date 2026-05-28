@@ -1,0 +1,146 @@
+{
+  "id": "dining",
+  "title": "Dining Culture & Table Manners in China",
+  "tips": [
+    {
+      "id": "din_001",
+      "category": "shared_dishes",
+      "tip": "Dishes are shared family style",
+      "detail": "Order multiple dishes for the table to share, not individual meals. This communal style is central to Chinese dining culture.",
+      "do": true
+    },
+    {
+      "id": "din_002",
+      "category": "shared_dishes",
+      "tip": "Take modest portions from shared plates",
+      "detail": "Use serving utensils when available. Take small amounts so everyone gets a chance. You can always take more on a second round.",
+      "do": true
+    },
+    {
+      "id": "din_003",
+      "category": "chopstick_etiquette",
+      "tip": "Never stick chopsticks upright in rice",
+      "detail": "Chopsticks standing vertically in a bowl of rice resemble incense offerings to the dead and are considered extremely inauspicious.",
+      "do": false
+    },
+    {
+      "id": "din_004",
+      "category": "chopstick_etiquette",
+      "tip": "Rest chopsticks on the holder or bowl rim",
+      "detail": "When not eating, place your chopsticks neatly on the provided chopstick rest or across the rim of your bowl.",
+      "do": true
+    },
+    {
+      "id": "din_005",
+      "category": "chopstick_etiquette",
+      "tip": "Do not point or wave chopsticks at people",
+      "detail": "Pointing with chopsticks or using them to gesture is considered rude. Keep them down when you are talking.",
+      "do": false
+    },
+    {
+      "id": "din_006",
+      "category": "chopstick_etiquette",
+      "tip": "Do not tap bowls with chopsticks",
+      "detail": "Tapping your bowl with chopsticks is associated with beggars and is considered impolite at the dining table.",
+      "do": false
+    },
+    {
+      "id": "din_007",
+      "category": "pouring_tea",
+      "tip": "Pour tea for others before yourself",
+      "detail": "It is polite to fill the teacups of those around you first. The host or youngest person at the table often handles pouring.",
+      "do": true
+    },
+    {
+      "id": "din_008",
+      "category": "pouring_tea",
+      "tip": "Tap the table to say thank you for tea",
+      "detail": "When someone pours tea for you, lightly tap two fingers on the table as a silent gesture of gratitude. This is a widely recognized custom.",
+      "do": true
+    },
+    {
+      "id": "din_009",
+      "category": "toasting",
+      "tip": "Toast with ganbei but sip if you prefer",
+      "detail": "Ganbei means 'dry glass.' You can join toasts without draining your glass — a small sip is perfectly acceptable, especially with baijiu.",
+      "do": true
+    },
+    {
+      "id": "din_010",
+      "category": "toasting",
+      "tip": "Hold your glass lower when toasting elders or superiors",
+      "detail": "Tilting your glass below the rim of the other person's glass shows respect. This applies especially when toasting hosts, bosses, or elders.",
+      "do": true
+    },
+    {
+      "id": "din_011",
+      "category": "toasting",
+      "tip": "Stand up when toasting senior guests",
+      "detail": "If the host or an important guest offers a toast, it is polite to stand up to show respect and attentiveness.",
+      "do": true
+    },
+    {
+      "id": "din_012",
+      "category": "paying_bill",
+      "tip": "Expect the host to pay the bill",
+      "detail": "The person who invites others to dinner traditionally pays. Offer to pay once as a courtesy, but accept gracefully if the host insists.",
+      "do": true
+    },
+    {
+      "id": "din_013",
+      "category": "paying_bill",
+      "tip": "Do not split the bill equally",
+      "detail": "Going Dutch (AA制) is becoming common among young friends, but at formal meals, arguing over the bill is part of the social ritual — expect one party to treat.",
+      "do": false
+    },
+    {
+      "id": "din_014",
+      "category": "tipping",
+      "tip": "Tipping is not expected in China",
+      "detail": "Unlike many Western countries, tipping is not customary at restaurants in mainland China and may even cause confusion. It is not required.",
+      "do": false
+    },
+    {
+      "id": "din_015",
+      "category": "eating_habits",
+      "tip": "Slurping noodles and soup is acceptable",
+      "detail": "Loud eating sounds like slurping noodles or drinking soup are not considered rude in China and may even signal that you are enjoying the food.",
+      "do": true
+    },
+    {
+      "id": "din_016",
+      "category": "bones_and_scraps",
+      "tip": "Place bones and scraps on the table or side plate",
+      "detail": "It is perfectly normal to place fish bones, chicken bones, and other scraps directly on the table or a designated side plate, not on your rice bowl.",
+      "do": true
+    },
+    {
+      "id": "din_017",
+      "category": "trying_food",
+      "tip": "Try a little of every dish offered to you",
+      "detail": "Refusing food repeatedly can seem impolite. Even if you are unsure about a dish, taking a small taste shows appreciation for the host's generosity.",
+      "do": true
+    },
+    {
+      "id": "din_018",
+      "category": "table_arrangement",
+      "tip": "Learn to use the lazy Susan and round table",
+      "detail": "Most Chinese banquets use round tables with a rotating tray (lazy Susan). Spin it gently to access dishes, and pause it for others to serve themselves.",
+      "do": true
+    },
+    {
+      "id": "din_019",
+      "category": "host_duties",
+      "tip": "The host orders for the table and seats guests first",
+      "detail": "The host typically orders all dishes, ensures guests are seated (seat of honor faces the door), and serves the first portions to honored guests.",
+      "do": true
+    },
+    {
+      "id": "din_020",
+      "category": "host_duties",
+      "tip": "The host fills plates and glasses throughout the meal",
+      "detail": "A good host continuously serves food to guests and refills drinks. As a guest, accepting graciously is the polite response.",
+      "do": true
+    }
+  ]
+}
