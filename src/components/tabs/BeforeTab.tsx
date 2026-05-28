@@ -2,8 +2,10 @@ import { CheckCircle, Circle, Wifi, CreditCard, Smartphone, FileText, ChevronRig
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { UserState } from '../../hooks/useAuth';
+import type { CityPack } from '../../types/cityPack';
 import { isTripOrGroup } from '../../lib/membership';
 import TabSectionHeader from '../TabSectionHeader';
+import CitySurvivalPack from '../CitySurvivalPack';
 
 import shanghaiData from '../../data/cityPacks/shanghai.json';
 import beijingData from '../../data/cityPacks/beijing.json';
@@ -14,18 +16,6 @@ import hangzhouData from '../../data/cityPacks/hangzhou.json';
 import shenzhenData from '../../data/cityPacks/shenzhen.json';
 import suzhouData from '../../data/cityPacks/suzhou.json';
 import xianData from '../../data/cityPacks/xian.json';
-
-interface CityPack {
-  cityId: string;
-  cityName: string;
-  cityNameCN: string;
-  airport: { name: string; iataCode: string; toCity: string };
-  transport: { metro: string; taxi: string; didi: string; tips: string[] };
-  payment: { alipay: string; wechatPay: string; cash: string; foreignCard: string };
-  food: { mustTry: string[]; foodStreets: string[]; tips: string[] };
-  commonScams: string[];
-  touristTips: string[];
-}
 
 const CITIES: { emoji: string; data: CityPack; freeAccess: boolean }[] = [
   { emoji: '🏙️', data: shanghaiData as CityPack, freeAccess: true },
@@ -54,8 +44,6 @@ const TIPS = [
 ];
 
 function CityModal({ city, emoji, onClose }: { city: CityPack; emoji: string; onClose: () => void }) {
-  const { t } = useTranslation();
-
   return (
     <div
       className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/50"
@@ -77,87 +65,8 @@ function CityModal({ city, emoji, onClose }: { city: CityPack; emoji: string; on
           </button>
         </div>
 
-        <div className="p-4 space-y-4">
-          {/* Airport */}
-          <div className="bg-white rounded-2xl p-4 shadow-sm">
-            <p className="text-xs font-semibold text-[#155e63] uppercase tracking-wide mb-2">✈️ {t('before.cityModal.gettingThere')}</p>
-            <p className="text-sm font-medium text-gray-800 mb-1">{city.airport.name} ({city.airport.iataCode})</p>
-            <p className="text-xs text-gray-500 leading-relaxed">{city.airport.toCity}</p>
-          </div>
-
-          {/* Transport */}
-          <div className="bg-white rounded-2xl p-4 shadow-sm">
-            <p className="text-xs font-semibold text-[#155e63] uppercase tracking-wide mb-2">🚇 {t('before.cityModal.gettingAround')}</p>
-            <div className="space-y-2">
-              <div>
-                <p className="text-xs font-medium text-gray-700">{t('before.cityModal.metro')}</p>
-                <p className="text-xs text-gray-500 leading-relaxed">{city.transport.metro}</p>
-              </div>
-              <div>
-                <p className="text-xs font-medium text-gray-700">{t('before.cityModal.taxiDidi')}</p>
-                <p className="text-xs text-gray-500 leading-relaxed">{city.transport.didi}</p>
-              </div>
-              {city.transport.tips.length > 0 && (
-                <ul className="space-y-1 pt-1">
-                  {city.transport.tips.map((tip, i) => (
-                    <li key={i} className="text-xs text-gray-500 flex gap-1.5">
-                      <span className="text-[#155e63] shrink-0">•</span>
-                      {tip}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          </div>
-
-          {/* Payment */}
-          <div className="bg-white rounded-2xl p-4 shadow-sm">
-            <p className="text-xs font-semibold text-[#155e63] uppercase tracking-wide mb-2">💳 {t('before.cityModal.paying')}</p>
-            <div className="space-y-1.5">
-              <p className="text-xs text-gray-500"><span className="font-medium text-gray-700">Alipay: </span>{city.payment.alipay}</p>
-              <p className="text-xs text-gray-500"><span className="font-medium text-gray-700">WeChat Pay: </span>{city.payment.wechatPay}</p>
-              <p className="text-xs text-gray-500"><span className="font-medium text-gray-700">{t('before.cityModal.cash')}: </span>{city.payment.cash}</p>
-              <p className="text-xs text-gray-500"><span className="font-medium text-gray-700">{t('before.cityModal.foreignCard')}: </span>{city.payment.foreignCard}</p>
-            </div>
-          </div>
-
-          {/* Must-try food */}
-          <div className="bg-white rounded-2xl p-4 shadow-sm">
-            <p className="text-xs font-semibold text-[#155e63] uppercase tracking-wide mb-2">🍜 {t('before.cityModal.mustTryFood')}</p>
-            <div className="flex flex-wrap gap-1.5">
-              {city.food.mustTry.map((item, i) => (
-                <span key={i} className="bg-[#155e63]/8 text-[#155e63] text-xs px-2.5 py-1 rounded-full font-medium">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Common scams */}
-          <div className="bg-amber-50 border border-amber-100 rounded-2xl p-4">
-            <p className="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">⚠️ {t('before.cityModal.scamWatch')}</p>
-            <ul className="space-y-1.5">
-              {city.commonScams.map((scam, i) => (
-                <li key={i} className="text-xs text-amber-800 flex gap-1.5">
-                  <span className="shrink-0">•</span>
-                  {scam}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Tourist tips */}
-          <div className="bg-white rounded-2xl p-4 shadow-sm">
-            <p className="text-xs font-semibold text-[#155e63] uppercase tracking-wide mb-2">💡 {t('before.cityModal.touristTips')}</p>
-            <ul className="space-y-1.5">
-              {city.touristTips.map((tip, i) => (
-                <li key={i} className="text-xs text-gray-500 flex gap-1.5">
-                  <span className="text-[#155e63] shrink-0">•</span>
-                  {tip}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="p-4">
+          <CitySurvivalPack city={city} />
         </div>
       </div>
     </div>

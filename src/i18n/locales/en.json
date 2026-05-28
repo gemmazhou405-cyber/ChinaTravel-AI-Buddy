@@ -619,6 +619,84 @@
       "transport": "Taxi, metro, train, and airport help.",
       "emergency": "Get urgent help fast.",
       "pay": "Understand Alipay, WeChat Pay, cards, and cash."
+    },
+    "citySurvival": {
+      "title": "{{city}} Survival Pack",
+      "summary": "Essential local tips for arriving, getting around, paying, eating, and staying safe.",
+      "categories": {
+        "airport": "Airport & arrival",
+        "transport": "Transport",
+        "payment": "Payment",
+        "food": "Food to try",
+        "watch": "Watch out",
+        "phrases": "Useful phrases"
+      },
+      "fallback": {
+        "airport": [
+          "Use official airport transport or Didi.",
+          "Keep your hotel address in Chinese.",
+          "Avoid unofficial taxi offers."
+        ],
+        "transport": [
+          "Metro is usually reliable and low cost.",
+          "Didi is useful when you have luggage or late arrivals.",
+          "Amap works better than Google Maps in China."
+        ],
+        "payment": [
+          "Set up Alipay or WeChat Pay before arrival.",
+          "Keep some RMB cash as a backup.",
+          "Foreign cards are mainly useful in hotels and larger malls."
+        ],
+        "food": [
+          "Try local signature dishes in small portions first.",
+          "Check spice level and allergens before ordering.",
+          "Use menu photos or phrase cards when staff do not speak English."
+        ],
+        "watch": [
+          "Avoid unofficial taxis and unclear prices.",
+          "Be careful with invitations that lead to high bills.",
+          "Confirm prices before services or tours."
+        ],
+        "phrases": [
+          "Please take me to this address.",
+          "Can I pay with Alipay or WeChat Pay?",
+          "Please help me call my hotel."
+        ]
+      },
+      "cities": {
+        "shanghai": {
+          "airport": [
+            "Pudong Airport: use Maglev plus metro, or book Didi with your hotel address.",
+            "Hongqiao is useful for trains and domestic flights.",
+            "Avoid drivers who approach you inside the terminal."
+          ],
+          "transport": [
+            "Metro is efficient for most city trips.",
+            "Didi is helpful after late meals or with luggage.",
+            "Keep the hotel address in Chinese for drivers."
+          ],
+          "payment": [
+            "Alipay is widely used; set it up before arrival.",
+            "WeChat Pay is useful if your card links successfully.",
+            "Carry small RMB cash for backup at small vendors."
+          ],
+          "food": [
+            "Try Xiaolongbao and Shengjianbao in small portions first.",
+            "Ask about crab, pork, peanuts, and spice if you have allergies.",
+            "Use menu photos when local restaurants have no English menu."
+          ],
+          "watch": [
+            "Be careful with high-bill tea ceremony invitations.",
+            "Avoid non-metered taxis around tourist spots.",
+            "Check prices before buying souvenirs near attractions."
+          ],
+          "phrases": [
+            "Please take me to this address.",
+            "Can I pay with Alipay?",
+            "Please help me call my hotel."
+          ]
+        }
+      }
     }
   }
 }

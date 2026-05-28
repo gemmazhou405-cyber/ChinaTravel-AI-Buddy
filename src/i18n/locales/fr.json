@@ -619,6 +619,84 @@
       "transport": "Aide taxi, métro, train et aéroport.",
       "emergency": "Obtenez de l’aide urgente rapidement.",
       "pay": "Comprendre Alipay, WeChat Pay, cartes et espèces."
+    },
+    "citySurvival": {
+      "title": "Pack de survie {{city}}",
+      "summary": "Conseils essentiels pour arriver, se déplacer, payer, manger et rester prudent.",
+      "categories": {
+        "airport": "Aéroport et arrivée",
+        "transport": "Transport",
+        "payment": "Paiement",
+        "food": "À goûter",
+        "watch": "À surveiller",
+        "phrases": "Phrases utiles"
+      },
+      "fallback": {
+        "airport": [
+          "Utilisez le transport officiel de l’aéroport ou Didi.",
+          "Gardez l’adresse de votre hôtel en chinois.",
+          "Évitez les offres de taxi non officielles."
+        ],
+        "transport": [
+          "Le métro est souvent fiable et peu coûteux.",
+          "Didi est utile avec des bagages ou tard le soir.",
+          "Amap fonctionne mieux que Google Maps en Chine."
+        ],
+        "payment": [
+          "Configurez Alipay ou WeChat Pay avant l’arrivée.",
+          "Gardez un peu de RMB en secours.",
+          "Les cartes étrangères servent surtout dans les hôtels et grands centres commerciaux."
+        ],
+        "food": [
+          "Goûtez les spécialités locales en petites portions d’abord.",
+          "Vérifiez le niveau d’épices et les allergènes avant de commander.",
+          "Utilisez les photos de menu ou les cartes de phrases si le personnel ne parle pas anglais."
+        ],
+        "watch": [
+          "Évitez les taxis non officiels et les prix flous.",
+          "Soyez prudent avec les invitations qui peuvent mener à des factures élevées.",
+          "Confirmez les prix avant les services ou visites."
+        ],
+        "phrases": [
+          "Veuillez m’emmener à cette adresse.",
+          "Puis-je payer avec Alipay ou WeChat Pay ?",
+          "Aidez-moi à appeler mon hôtel, s’il vous plaît."
+        ]
+      },
+      "cities": {
+        "shanghai": {
+          "airport": [
+            "Aéroport de Pudong : utilisez Maglev puis métro, ou réservez Didi avec l’adresse de l’hôtel.",
+            "Hongqiao est pratique pour les trains et vols intérieurs.",
+            "Évitez les chauffeurs qui vous abordent dans le terminal."
+          ],
+          "transport": [
+            "Le métro est efficace pour la plupart des trajets en ville.",
+            "Didi est utile après un dîner tardif ou avec des bagages.",
+            "Gardez l’adresse de l’hôtel en chinois pour les chauffeurs."
+          ],
+          "payment": [
+            "Alipay est très utilisé ; configurez-le avant l’arrivée.",
+            "WeChat Pay est utile si votre carte se lie correctement.",
+            "Gardez un peu de RMB pour les petits vendeurs."
+          ],
+          "food": [
+            "Essayez Xiaolongbao et Shengjianbao en petites portions d’abord.",
+            "Demandez pour crabe, porc, arachides et épices si vous avez des allergies.",
+            "Utilisez les photos de menu quand il n’y a pas de menu anglais."
+          ],
+          "watch": [
+            "Attention aux invitations de cérémonie du thé avec facture élevée.",
+            "Évitez les taxis sans compteur près des lieux touristiques.",
+            "Vérifiez les prix avant d’acheter des souvenirs près des attractions."
+          ],
+          "phrases": [
+            "Veuillez m’emmener à cette adresse.",
+            "Puis-je payer avec Alipay ?",
+            "Aidez-moi à appeler mon hôtel, s’il vous plaît."
+          ]
+        }
+      }
     }
   }
 }
