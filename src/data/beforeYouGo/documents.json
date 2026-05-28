@@ -1,0 +1,142 @@
+{
+  "id": "documents",
+  "title": "Documents & Visa Checklist",
+  "description": "Complete before booking flights — a comprehensive checklist for tourists visiting China",
+  "items": [
+    {
+      "id": "doc_001",
+      "task": "Check passport validity (6 months minimum)",
+      "detail": "China requires your passport to be valid for at least 6 months beyond your planned departure date and have at least 2 blank visa pages",
+      "priority": "critical",
+      "category": "passport",
+      "canDoOnline": false,
+      "timeNeeded": "Check now"
+    },
+    {
+      "id": "doc_002",
+      "task": "Apply for China tourist visa (L visa)",
+      "detail": "Most nationalities need a visa. Submit application to the Chinese embassy/consulate or a visa center 4-8 weeks before departure. Requirements include passport photo, itinerary, hotel bookings, and proof of funds",
+      "priority": "critical",
+      "category": "visa",
+      "canDoOnline": true,
+      "timeNeeded": "4-8 weeks before"
+    },
+    {
+      "id": "doc_003",
+      "task": "Check if you qualify for visa-free transit",
+      "detail": "China offers 144-hour visa-free transit in major cities for citizens of 54 countries. Also check the 15-day visa-free entry policy for select nationalities. Verify current policies on the official National Immigration Administration website",
+      "priority": "high",
+      "category": "visa",
+      "canDoOnline": true,
+      "timeNeeded": "6 weeks before"
+    },
+    {
+      "id": "doc_004",
+      "task": "Purchase comprehensive travel insurance",
+      "detail": "Buy a policy covering medical evacuation, hospitalization, trip cancellation, and lost luggage. Ensure coverage is valid in mainland China with a minimum of $100,000 medical coverage",
+      "priority": "critical",
+      "category": "insurance",
+      "canDoOnline": true,
+      "timeNeeded": "3-6 weeks before"
+    },
+    {
+      "id": "doc_005",
+      "task": "Verify insurance covers adventure activities",
+      "detail": "If planning to hike, ski, or participate in adventure sports, confirm your policy explicitly covers these activities in China",
+      "priority": "medium",
+      "category": "insurance",
+      "canDoOnline": true,
+      "timeNeeded": "3-6 weeks before"
+    },
+    {
+      "id": "doc_006",
+      "task": "Register with your country's embassy in China",
+      "detail": "Enroll in your government's traveler enrollment program (e.g., US STEP program, UK LOCATE) so your embassy can contact you in an emergency",
+      "priority": "high",
+      "category": "emergency",
+      "canDoOnline": true,
+      "timeNeeded": "2 weeks before"
+    },
+    {
+      "id": "doc_007",
+      "task": "Compile emergency contact list",
+      "detail": "Write down contacts for your country's embassy/consulate in China, your insurance emergency hotline, your hotel, and personal emergency contacts. Keep both digital and printed copies",
+      "priority": "high",
+      "category": "emergency",
+      "canDoOnline": false,
+      "timeNeeded": "1 week before"
+    },
+    {
+      "id": "doc_008",
+      "task": "Save China emergency numbers",
+      "detail": "Police: 110, Ambulance: 120, Fire: 119, Tourist complaint hotline: 12345. Save these in your phone and on a physical card",
+      "priority": "high",
+      "category": "emergency",
+      "canDoOnline": false,
+      "timeNeeded": "1 week before"
+    },
+    {
+      "id": "doc_009",
+      "task": "Make photocopies and digital scans of all documents",
+      "detail": "Photocopy passport ID page, visa, insurance policy, flight itinerary, hotel confirmations, and driver's license. Store digital copies in secure cloud storage and email a set to yourself",
+      "priority": "high",
+      "category": "copies",
+      "canDoOnline": true,
+      "timeNeeded": "1 week before"
+    },
+    {
+      "id": "doc_010",
+      "task": "Prepare passport-sized photos",
+      "detail": "Bring 4 extra passport-sized photos (48mm x 33mm, white background) in case of lost passport replacement or unexpected administrative needs",
+      "priority": "medium",
+      "category": "copies",
+      "canDoOnline": false,
+      "timeNeeded": "1 week before"
+    },
+    {
+      "id": "doc_011",
+      "task": "Complete China health declaration",
+      "detail": "Fill out the health declaration form via the China Customs app or WeChat mini-program within 24 hours before arrival",
+      "priority": "critical",
+      "category": "entry",
+      "canDoOnline": true,
+      "timeNeeded": "24 hours before"
+    },
+    {
+      "id": "doc_012",
+      "task": "Review China customs declaration rules",
+      "detail": "Declare cash over $5,000 USD (or equivalent). Prohibited items include firearms, narcotics, certain publications, and unauthorized medications. Check limits on electronics, alcohol (1.5L), and cigarettes (400 sticks)",
+      "priority": "high",
+      "category": "customs",
+      "canDoOnline": true,
+      "timeNeeded": "2 weeks before"
+    },
+    {
+      "id": "doc_013",
+      "task": "Verify medication legality and documentation",
+      "detail": "Certain Western medications (including some ADHD and pain medications) are controlled or banned in China. Carry a doctor's prescription letter and original pharmacy packaging. Contact the Chinese embassy if unsure",
+      "priority": "critical",
+      "category": "entry",
+      "canDoOnline": false,
+      "timeNeeded": "3-4 weeks before"
+    },
+    {
+      "id": "doc_014",
+      "task": "Prepare proof of accommodation and return flight",
+      "detail": "Have printed or digital confirmations of hotel bookings and a return/onward flight ticket, as immigration officers may request these at the port of entry",
+      "priority": "high",
+      "category": "entry",
+      "canDoOnline": true,
+      "timeNeeded": "1 week before"
+    },
+    {
+      "id": "doc_015",
+      "task": "Research VPN setup and download before departure",
+      "detail": "Major international websites and apps (Google, WhatsApp, Instagram) are blocked in China. Install and test a reliable VPN on all devices before arriving, as VPN downloads are restricted within China",
+      "priority": "high",
+      "category": "entry",
+      "canDoOnline": true,
+      "timeNeeded": "1 week before"
+    }
+  ]
+}

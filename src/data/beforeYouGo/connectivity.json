@@ -1,0 +1,97 @@
+{
+  "id": "connectivity",
+  "title": "Phone & Internet Checklist",
+  "description": "Stay connected in China",
+  "items": [
+    {
+      "id": "conn_001",
+      "task": "Get China SIM card or international plan",
+      "detail": "Buy at airport, order online, or arrange through your carrier. A local SIM provides the best rates for data and calls within China.",
+      "priority": "high",
+      "category": "sim",
+      "canDoOnline": true,
+      "timeNeeded": "Before or on arrival"
+    },
+    {
+      "id": "conn_002",
+      "task": "Set up VPN for internet access",
+      "detail": "Many international websites and apps are blocked in China. Install and configure a reliable VPN on all devices before arriving to ensure access to global internet.",
+      "priority": "high",
+      "category": "vpn",
+      "canDoOnline": true,
+      "timeNeeded": "Before travel"
+    },
+    {
+      "id": "conn_003",
+      "task": "Download offline maps",
+      "detail": "Use apps like Baidu Maps or Google Maps (with VPN) to download offline maps of areas you'll visit. This helps with navigation without internet.",
+      "priority": "medium",
+      "category": "maps",
+      "canDoOnline": true,
+      "timeNeeded": "Before travel"
+    },
+    {
+      "id": "conn_004",
+      "task": "Set up WeChat account",
+      "detail": "WeChat is essential for communication, payments, and accessing services in China. Create an account and add a payment method if needed.",
+      "priority": "high",
+      "category": "app",
+      "canDoOnline": true,
+      "timeNeeded": "Before travel"
+    },
+    {
+      "id": "conn_005",
+      "task": "Save emergency numbers",
+      "detail": "Store key numbers: police (110), ambulance (120), fire (119), and your country's embassy. Add them to your phone contacts for quick access.",
+      "priority": "high",
+      "category": "safety",
+      "canDoOnline": false,
+      "timeNeeded": "Before travel"
+    },
+    {
+      "id": "conn_006",
+      "task": "Pack a portable charger",
+      "detail": "Bring a power bank to keep devices charged during long days out, as public charging stations may not be readily available.",
+      "priority": "medium",
+      "category": "accessory",
+      "canDoOnline": false,
+      "timeNeeded": "Before travel"
+    },
+    {
+      "id": "conn_007",
+      "task": "Get a power adapter plug",
+      "detail": "China uses Type A, C, and I power outlets. Bring a universal adapter to charge your devices without issues.",
+      "priority": "medium",
+      "category": "accessory",
+      "canDoOnline": false,
+      "timeNeeded": "Before travel"
+    },
+    {
+      "id": "conn_008",
+      "task": "Backup important data to the cloud",
+      "detail": "Use cloud services to back up photos, documents, and contacts. This protects against data loss if your device is lost or stolen.",
+      "priority": "medium",
+      "category": "backup",
+      "canDoOnline": true,
+      "timeNeeded": "Before travel"
+    },
+    {
+      "id": "conn_009",
+      "task": "Set up mobile payment apps",
+      "detail": "Install Alipay or link international cards to WeChat Pay for seamless cashless transactions. Many places only accept mobile payments.",
+      "priority": "high",
+      "category": "payment",
+      "canDoOnline": true,
+      "timeNeeded": "Before or on arrival"
+    },
+    {
+      "id": "conn_010",
+      "task": "Rent or buy a portable Wi-Fi hotspot",
+      "detail": "Consider a portable Wi-Fi device for reliable internet on the go, especially if traveling with multiple devices or in groups.",
+      "priority": "low",
+      "category": "connectivity",
+      "canDoOnline": true,
+      "timeNeeded": "Before or on arrival"
+    }
+  ]
+}

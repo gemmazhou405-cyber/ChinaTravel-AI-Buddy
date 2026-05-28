@@ -1,0 +1,217 @@
+{
+  "id": "apps",
+  "title": "Essential Apps Checklist",
+  "description": "Download before arriving in China",
+  "items": [
+    {
+      "id": "app_001",
+      "app": "Didi",
+      "task": "Download and set up Didi (Chinese Uber)",
+      "detail": "Main ride-hailing app in China. Works with foreign cards",
+      "priority": "high",
+      "category": "transport",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_002",
+      "app": "Alipay",
+      "task": "Download and set up Alipay with international card",
+      "detail": "Essential payment app. Now supports foreign credit cards for tourists",
+      "priority": "high",
+      "category": "payment",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_003",
+      "app": "WeChat",
+      "task": "Download WeChat and enable WeChat Pay",
+      "detail": "All-in-one super app for messaging, payments, and services. Social essential",
+      "priority": "high",
+      "category": "communication",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_004",
+      "app": "Baidu Maps",
+      "task": "Download Baidu Maps for navigation",
+      "detail": "Most accurate mapping in China. Google Maps has limited functionality here",
+      "priority": "high",
+      "category": "navigation",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_005",
+      "app": "Amap (Gaode Maps)",
+      "task": "Download Amap as backup navigation",
+      "detail": "Excellent alternative to Baidu Maps with reliable transit directions",
+      "priority": "medium",
+      "category": "navigation",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_006",
+      "app": "DeepL",
+      "task": "Download DeepL translator with Chinese language pack",
+      "detail": "High-quality translation app. Download offline Chinese pack before arrival",
+      "priority": "high",
+      "category": "translation",
+      "downloadBefore": true,
+      "availableInChina": false,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_007",
+      "app": "Pleco",
+      "task": "Download Pleco Chinese dictionary",
+      "detail": "Best Chinese-English dictionary with camera translation feature",
+      "priority": "medium",
+      "category": "translation",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_008",
+      "app": "ExpressVPN",
+      "task": "Set up and test VPN before entering China",
+      "detail": "Essential for accessing Google, WhatsApp, Instagram. Must download outside China",
+      "priority": "high",
+      "category": "utility",
+      "downloadBefore": true,
+      "availableInChina": false,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_009",
+      "app": "12306",
+      "task": "Register and book train tickets on 12306",
+      "detail": "Official Chinese railway booking app. High-speed trains connect major cities",
+      "priority": "high",
+      "category": "transport",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_010",
+      "app": "Trip.com",
+      "task": "Download Trip.com for travel bookings",
+      "detail": "Best app for booking hotels, flights, and attraction tickets with English support",
+      "priority": "high",
+      "category": "booking",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_011",
+      "app": "Meituan",
+      "task": "Download Meituan for food and local services",
+      "detail": "Top food delivery app plus hotel, attraction, and daily deals",
+      "priority": "medium",
+      "category": "food",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_012",
+      "app": "Eleme",
+      "task": "Download Eleme as backup food delivery",
+      "detail": "Second largest food delivery platform owned by Alibaba",
+      "priority": "low",
+      "category": "food",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_013",
+      "app": "ChinaEase Buddy",
+      "task": "Download ChinaEase Buddy travel assistant",
+      "detail": "Tourist-friendly helper with tips, phrases, and local guidance for foreigners",
+      "priority": "medium",
+      "category": "utility",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_014",
+      "app": "Taobao",
+      "task": "Download Taobao for shopping",
+      "detail": "China largest online marketplace. Great for souvenirs and deals",
+      "priority": "low",
+      "category": "shopping",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_015",
+      "app": "Booking.com",
+      "task": "Download Booking.com for international hotel bookings",
+      "detail": "Useful backup for hotel bookings with familiar interface and customer support",
+      "priority": "medium",
+      "category": "booking",
+      "downloadBefore": true,
+      "availableInChina": false,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    }
+  ]
+}

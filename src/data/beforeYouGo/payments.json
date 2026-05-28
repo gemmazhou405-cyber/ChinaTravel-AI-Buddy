@@ -1,0 +1,127 @@
+{
+  "id": "payments",
+  "title": "Payment Setup Checklist",
+  "description": "Comprehensive payment preparation for tourists visiting China",
+  "items": [
+    {
+      "id": "pay_001",
+      "task": "Set up Alipay International",
+      "detail": "Download Alipay app, link foreign credit/debit card (Visa, Mastercard, JCB, Diners Club, Discover), complete identity verification",
+      "priority": "critical",
+      "category": "mobile-payment",
+      "canDoOnline": true,
+      "timeNeeded": "1-2 hours",
+      "link": "https://intl.alipay.com"
+    },
+    {
+      "id": "pay_002",
+      "task": "Set up WeChat Pay International",
+      "detail": "Download WeChat, activate WeChat Pay, link foreign credit/debit card, complete verification process",
+      "priority": "critical",
+      "category": "mobile-payment",
+      "canDoOnline": true,
+      "timeNeeded": "1-2 hours",
+      "link": "https://pay.weixin.qq.com"
+    },
+    {
+      "id": "pay_003",
+      "task": "Notify your home bank of China travel",
+      "detail": "Inform all card issuers of China travel dates and destinations to prevent fraud blocks",
+      "priority": "high",
+      "category": "banking",
+      "canDoOnline": true,
+      "timeNeeded": "30 minutes",
+      "link": "Contact your bank"
+    },
+    {
+      "id": "pay_004",
+      "task": "Get Chinese Yuan (CNY/RMB) cash",
+      "detail": "Exchange some currency before departure or at airport upon arrival for immediate expenses",
+      "priority": "high",
+      "category": "cash",
+      "canDoOnline": false,
+      "timeNeeded": "1 hour",
+      "link": "Check local exchange rates"
+    },
+    {
+      "id": "pay_005",
+      "task": "Prepare backup payment cards",
+      "detail": "Bring at least 2 different Visa/Mastercard credit cards plus 1 debit card as backups",
+      "priority": "high",
+      "category": "cards",
+      "canDoOnline": true,
+      "timeNeeded": "30 minutes",
+      "link": "Check your wallet"
+    },
+    {
+      "id": "pay_006",
+      "task": "Set up Apple Pay or Google Pay",
+      "detail": "Add foreign cards to digital wallet for contactless payments where accepted",
+      "priority": "medium",
+      "category": "digital-wallet",
+      "canDoOnline": true,
+      "timeNeeded": "20 minutes",
+      "link": "apple.com/apple-pay or pay.google.com"
+    },
+    {
+      "id": "pay_007",
+      "task": "Consider UnionPay card acquisition",
+      "detail": "Apply for UnionPay card if available in home country for widest acceptance in China",
+      "priority": "medium",
+      "category": "cards",
+      "canDoOnline": true,
+      "timeNeeded": "1-2 weeks",
+      "link": "Check with your bank"
+    },
+    {
+      "id": "pay_008",
+      "task": "Download offline payment apps",
+      "detail": "Install apps like China's e-CNY (digital yuan) pilot if available for tourists",
+      "priority": "low",
+      "category": "digital-currency",
+      "canDoOnline": true,
+      "timeNeeded": "30 minutes",
+      "link": "Check official announcements"
+    },
+    {
+      "id": "pay_009",
+      "task": "Prepare merchant contact information",
+      "detail": "Save hotel and major merchant names/addresses in Chinese for payment issues",
+      "priority": "medium",
+      "category": "preparation",
+      "canDoOnline": true,
+      "timeNeeded": "15 minutes",
+      "link": "Google Translate"
+    },
+    {
+      "id": "pay_010",
+      "task": "Set transaction limits and alerts",
+      "detail": "Configure card alerts and adjust spending limits for international use",
+      "priority": "medium",
+      "category": "security",
+      "canDoOnline": true,
+      "timeNeeded": "30 minutes",
+      "link": "Your bank's app"
+    },
+    {
+      "id": "pay_011",
+      "task": "Research payment compatibility",
+      "detail": "Verify which payment methods work at your specific destinations and accommodations",
+      "priority": "medium",
+      "category": "research",
+      "canDoOnline": true,
+      "timeNeeded": "1 hour",
+      "link": "Travel forums and hotel websites"
+    },
+    {
+      "id": "pay_012",
+      "task": "Prepare small cash for emergencies",
+      "detail": "Keep 500-1000 RMB in small denominations for taxis, street vendors, and emergencies",
+      "priority": "medium",
+      "category": "cash",
+      "canDoOnline": false,
+      "timeNeeded": "30 minutes",
+      "link": "Exchange counters"
+    }
+  ]
+}

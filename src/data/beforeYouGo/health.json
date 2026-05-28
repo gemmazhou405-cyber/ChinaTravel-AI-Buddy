@@ -1,0 +1,115 @@
+{
+  "id": "health",
+  "title": "Health & Medicine Checklist",
+  "description": "Prepare your health essentials for visiting China",
+  "items": [
+    {
+      "id": "health_001",
+      "task": "Check vaccination requirements",
+      "detail": "Recommended vaccines: Hepatitis A, Typhoid. Consider Hepatitis B, Japanese Encephalitis, and Rabies based on itinerary",
+      "priority": "high",
+      "category": "vaccination",
+      "timeNeeded": "4-6 weeks before",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_002",
+      "task": "Purchase comprehensive travel insurance",
+      "detail": "Ensure policy includes emergency medical evacuation, hospital stays, and covers China specifically",
+      "priority": "high",
+      "category": "insurance",
+      "timeNeeded": "After booking trip",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_003",
+      "task": "Verify medical coverage details",
+      "detail": "Confirm insurance covers pre-existing conditions, adventure activities if planned, and has 24/7 assistance in China",
+      "priority": "high",
+      "category": "insurance",
+      "timeNeeded": "1-2 weeks before",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_004",
+      "task": "Gather prescription medication documentation",
+      "detail": "Obtain doctor's letter listing all medications, dosages, and medical necessity in English and Chinese",
+      "priority": "high",
+      "category": "medication",
+      "timeNeeded": "2-3 weeks before",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_005",
+      "task": "Pack medications properly",
+      "detail": "Keep medications in original containers, bring extra supply, and pack in carry-on luggage",
+      "priority": "high",
+      "category": "medication",
+      "timeNeeded": "Day before departure",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_006",
+      "task": "Prepare basic first aid kit",
+      "detail": "Include: antiseptic wipes, bandages, pain relievers, anti-diarrhea medicine, rehydration salts, insect repellent",
+      "priority": "medium",
+      "category": "first-aid",
+      "timeNeeded": "1 week before",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_007",
+      "task": "Create allergy information cards",
+      "detail": "Cards in English and Chinese listing food allergies, drug allergies, and emergency treatment instructions",
+      "priority": "medium",
+      "category": "allergy",
+      "timeNeeded": "2 weeks before",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_008",
+      "task": "Prepare blood type card",
+      "detail": "Carry card with blood type, Rh factor, and any special medical conditions in both languages",
+      "priority": "medium",
+      "category": "medical-id",
+      "timeNeeded": "2 weeks before",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_009",
+      "task": "Compile medical history document",
+      "detail": "Summarize chronic conditions, past surgeries, hospitalizations, and current treatments in both languages",
+      "priority": "medium",
+      "category": "medical-history",
+      "timeNeeded": "2 weeks before",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_010",
+      "task": "Create emergency contacts list",
+      "detail": "Include: local embassy, insurance emergency line, family contacts, and China emergency number (120 for ambulance)",
+      "priority": "high",
+      "category": "emergency",
+      "timeNeeded": "1 week before",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_011",
+      "task": "Check air quality forecasts",
+      "detail": "Monitor AQI for destinations, consider packing N95 masks if sensitive or visiting northern industrial cities",
+      "priority": "low",
+      "category": "environment",
+      "timeNeeded": "1 week before",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_012",
+      "task": "Research Traditional Chinese Medicine clinics",
+      "detail": "Note that TCM is widely available; understand it's different from Western medicine; have insurance details ready",
+      "priority": "low",
+      "category": "local-health",
+      "timeNeeded": "While planning",
+      "seeDoctor": false
+    }
+  ]
+}

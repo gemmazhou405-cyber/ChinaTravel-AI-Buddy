@@ -1,0 +1,127 @@
+{
+  "id": "packing",
+  "title": "Smart Packing Checklist",
+  "description": "China-specific packing essentials for international tourists",
+  "items": [
+    {
+      "id": "pack_001",
+      "task": "Pack power adapter (Type A/I)",
+      "detail": "China uses Type A and Type I plugs. Most hotels have universal sockets but carry an adapter for smaller hotels and train stations",
+      "priority": "medium",
+      "category": "electronics",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_002",
+      "task": "Bring a portable WiFi device or buy a local SIM",
+      "detail": "Google, Instagram, WhatsApp are blocked in China. Portable WiFi or local SIM with VPN pre-installed keeps you connected",
+      "priority": "high",
+      "category": "electronics",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_003",
+      "task": "Download offline maps and translation apps",
+      "detail": "Download Baidu Maps or Amap for offline use. Pre-download Google Translate Chinese pack or use Pleco dictionary",
+      "priority": "high",
+      "category": "digital",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_004",
+      "task": "Bring cash (RMB) for small vendors",
+      "detail": "While WeChat Pay and Alipay dominate, street food stalls, taxis in rural areas, and small shops often prefer cash",
+      "priority": "high",
+      "category": "money",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_005",
+      "task": "Set up WeChat Pay or Alipay before arrival",
+      "detail": "Link an international credit card to WeChat Pay or Alipay. Many vendors will not accept foreign cards directly",
+      "priority": "high",
+      "category": "money",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_006",
+      "task": "Pack a small foldable backpack",
+      "detail": "Essential for day trips to temples, hiking sections of the Great Wall, and carrying daily essentials through crowded markets",
+      "priority": "medium",
+      "category": "accessories",
+      "chinaSpecific": false
+    },
+    {
+      "id": "pack_007",
+      "task": "Bring very comfortable walking shoes",
+      "detail": "China sightseeing involves 15,000 to 25,000 steps daily. Cobblestone streets in old towns require sturdy soles",
+      "priority": "high",
+      "category": "clothing",
+      "chinaSpecific": false
+    },
+    {
+      "id": "pack_008",
+      "task": "Carry face masks (N95 or KN95)",
+      "detail": "Useful for smoggy days in northern cities, crowded subways, and seasonal flu prevention. Locals commonly wear masks",
+      "priority": "medium",
+      "category": "health",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_009",
+      "task": "Pack tissues and wet wipes",
+      "detail": "Many public restrooms especially outside major cities do not provide toilet paper. Always carry your own supply",
+      "priority": "high",
+      "category": "health",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_010",
+      "task": "Bring a compact umbrella or rain jacket",
+      "detail": "Southern China has sudden rain showers year-round. Summer monsoons and spring drizzles are common in most tourist cities",
+      "priority": "medium",
+      "category": "accessories",
+      "chinaSpecific": false
+    },
+    {
+      "id": "pack_011",
+      "task": "Print a translation card with hotel address in Chinese",
+      "detail": "Show taxi drivers your hotel name and address written in Chinese characters. Include nearest subway station for backup navigation",
+      "priority": "high",
+      "category": "documents",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_012",
+      "task": "Install a VPN before entering China",
+      "detail": "VPN is needed to access Google, Facebook, Instagram, YouTube, and most Western apps. Download and test it before departure",
+      "priority": "high",
+      "category": "digital",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_013",
+      "task": "Carry photocopies and digital scans of your passport",
+      "detail": "Keep one physical copy in your luggage and photos on your phone. Hotels require passport for check-in and police may ask for ID",
+      "priority": "high",
+      "category": "documents",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_014",
+      "task": "Bring a portable power bank (20000mAh recommended)",
+      "detail": "Long sightseeing days drain batteries fast. Power banks are allowed on planes under 100Wh. Charging stations are rare outside malls",
+      "priority": "medium",
+      "category": "electronics",
+      "chinaSpecific": false
+    },
+    {
+      "id": "pack_015",
+      "task": "Pack stomach medicine and probiotics",
+      "detail": "Chinese cuisine uses heavy spices, oil, and unfamiliar ingredients. Imodium, Pepto-Bismol, and probiotics help prevent stomach issues",
+      "priority": "medium",
+      "category": "health",
+      "chinaSpecific": false
+    }
+  ]
+}
