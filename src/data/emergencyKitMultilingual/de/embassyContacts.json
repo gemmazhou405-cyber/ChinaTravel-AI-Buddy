@@ -1,0 +1,96 @@
+{
+  "id": "embassyContacts",
+  "haftungsausschluss": "Vor Reiseantritt überprüfen",
+  "botschaften": [
+    {
+      "land": "Vereinigte Staaten",
+      "telefon": "+86-10-8531-3000",
+      "notfall": "+86-10-8531-4000",
+      "adresse": "55 An Jia Lou Road, Chaoyang District, Beijing 100600"
+    },
+    {
+      "land": "Vereinigtes Königreich",
+      "telefon": "+86-10-5192-4000",
+      "notfall": "+86-10-5192-4000",
+      "adresse": "11 Guang Hua Lu, Chaoyang District, Beijing 100600"
+    },
+    {
+      "land": "Kanada",
+      "telefon": "+86-10-5139-4000",
+      "notfall": "+86-10-5139-4000",
+      "adresse": "19 Dongzhimenwai Dajie, Chaoyang District, Beijing 100600"
+    },
+    {
+      "land": "Australien",
+      "telefon": "+86-10-5140-4111",
+      "notfall": "+86-10-5140-4111",
+      "adresse": "21 Dongzhimenwai Dajie, Chaoyang District, Beijing 100600"
+    },
+    {
+      "land": "Frankreich",
+      "telefon": "+86-10-8531-2000",
+      "notfall": "+86-10-8531-2000",
+      "adresse": "60 Tianze Lu, Chaoyang District, Beijing 100600"
+    },
+    {
+      "land": "Deutschland",
+      "telefon": "+86-10-8532-9000",
+      "notfall": "+86-10-8532-9000",
+      "adresse": "17 Dongzhimenwai Dajie, Chaoyang District, Beijing 100600"
+    },
+    {
+      "land": "Spanien",
+      "telefon": "+86-10-6532-3622",
+      "notfall": "+86-10-6532-3622",
+      "adresse": "9 Sanlitun Lu, Chaoyang District, Beijing 100600"
+    },
+    {
+      "land": "Italien",
+      "telefon": "+86-10-8532-7600",
+      "notfall": "+86-10-8532-7600",
+      "adresse": "2 Dongerjie, Sanlitun, Chaoyang District, Beijing 100600"
+    },
+    {
+      "land": "Japan",
+      "telefon": "+86-10-8531-9800",
+      "notfall": "+86-10-8531-9800",
+      "adresse": "7 Ritan Lu, Chaoyang District, Beijing 100600"
+    },
+    {
+      "land": "Südkorea",
+      "telefon": "+86-10-8531-0700",
+      "notfall": "+86-10-8531-0700",
+      "adresse": "20 Dongfangdonglu, Chaoyang District, Beijing 100600"
+    },
+    {
+      "land": "Indien",
+      "telefon": "+86-10-6532-1908",
+      "notfall": "+86-10-6532-1908",
+      "adresse": "1 Ritan Donglu, Chaoyang District, Beijing 100600"
+    },
+    {
+      "land": "Brasilien",
+      "telefon": "+86-10-6532-2881",
+      "notfall": "+86-10-6532-2881",
+      "adresse": "27 Guanghua Lu, Chaoyang District, Beijing 100600"
+    },
+    {
+      "land": "Niederlande",
+      "telefon": "+86-10-8532-0200",
+      "notfall": "+86-10-8532-0200",
+      "adresse": "4 Liangmahe Nanlu, Chaoyang District, Beijing 100600"
+    },
+    {
+      "land": "Schweden",
+      "telefon": "+86-10-6532-9790",
+      "notfall": "+86-10-6532-9790",
+      "adresse": "3 Dongzhimenwai Dajie, Chaoyang District, Beijing 100600"
+    },
+    {
+      "land": "Neuseeland",
+      "telefon": "+86-10-8532-4084",
+      "notfall": "+86-10-8532-4084",
+      "adresse": "2 Ritan Dongerjie, Chaoyang District, Beijing 100600"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "id": "embassyContacts",
+  "disclaimer": "旅行前に確認してください",
+  "embassies": [
+    {
+      "country": "アメリカ合衆国",
+      "phone": "+86-10-8531-3000",
+      "emergency": "+86-10-8531-4000",
+      "address": "55 An Jia Lou Road, Chaoyang区, Beijing 100600"
+    },
+    {
+      "country": "イギリス",
+      "phone": "+86-10-5192-4000",
+      "emergency": "+86-10-5192-4000",
+      "address": "11 Guang Hua Lu, Chaoyang区, Beijing 100600"
+    },
+    {
+      "country": "カナダ",
+      "phone": "+86-10-5139-4000",
+      "emergency": "+86-10-5139-4000",
+      "address": "19 Dongzhimenwai Dajie, Chaoyang区, Beijing 100600"
+    },
+    {
+      "country": "オーストラリア",
+      "phone": "+86-10-5140-4111",
+      "emergency": "+86-10-5140-4111",
+      "address": "21 Dongzhimenwai Dajie, Chaoyang区, Beijing 100600"
+    },
+    {
+      "country": "フランス",
+      "phone": "+86-10-8531-2000",
+      "emergency": "+86-10-8531-2000",
+      "address": "60 Tianze Lu, Chaoyang区, Beijing 100600"
+    },
+    {
+      "country": "ドイツ",
+      "phone": "+86-10-8532-9000",
+      "emergency": "+86-10-8532-9000",
+      "address": "17 Dongzhimenwai Dajie, Chaoyang区, Beijing 100600"
+    },
+    {
+      "country": "スペイン",
+      "phone": "+86-10-6532-3622",
+      "emergency": "+86-10-6532-3622",
+      "address": "9 Sanlitun Lu, Chaoyang区, Beijing 100600"
+    },
+    {
+      "country": "イタリア",
+      "phone": "+86-10-8532-7600",
+      "emergency": "+86-10-8532-7600",
+      "address": "2 Dongerjie, Sanlitun, Chaoyang区, Beijing 100600"
+    },
+    {
+      "country": "日本",
+      "phone": "+86-10-8531-9800",
+      "emergency": "+86-10-8531-9800",
+      "address": "7 Ritan Lu, Chaoyang区, Beijing 100600"
+    },
+    {
+      "country": "韓国",
+      "phone": "+86-10-8531-0700",
+      "emergency": "+86-10-8531-0700",
+      "address": "20 Dongfangdonglu, Chaoyang区, Beijing 100600"
+    },
+    {
+      "country": "インド",
+      "phone": "+86-10-6532-1908",
+      "emergency": "+86-10-6532-1908",
+      "address": "1 Ritan Donglu, Chaoyang区, Beijing 100600"
+    },
+    {
+      "country": "ブラジル",
+      "phone": "+86-10-6532-2881",
+      "emergency": "+86-10-6532-2881",
+      "address": "27 Guanghua Lu, Chaoyang区, Beijing 100600"
+    },
+    {
+      "country": "オランダ",
+      "phone": "+86-10-8532-0200",
+      "emergency": "+86-10-8532-0200",
+      "address": "4 Liangmahe Nanlu, Chaoyang区, Beijing 100600"
+    },
+    {
+      "country": "スウェーデン",
+      "phone": "+86-10-6532-9790",
+      "emergency": "+86-10-6532-9790",
+      "address": "3 Dongzhimenwai Dajie, Chaoyang区, Beijing 100600"
+    },
+    {
+      "country": "ニュージーランド",
+      "phone": "+86-10-8532-4084",
+      "emergency": "+86-10-8532-4084",
+      "address": "2 Ritan Dongerjie, Chaoyang区, Beijing 100600"
+    }
+  ]
+}

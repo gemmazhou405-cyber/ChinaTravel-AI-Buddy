@@ -1,0 +1,110 @@
+[
+  {
+    "id": "allergy_001",
+    "allergen": "Peanut",
+    "english": "Soy alérgico/a a los cacahuetes.",
+    "chinese": "我对花生过敏。",
+    "pinyin": "Wǒ duì huāshēng guòmǐn.",
+    "severity": "severe",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_002",
+    "allergen": "Shellfish",
+    "english": "Soy alérgico/a a los mariscos (camarones, cangrejos, langostas, etc.).",
+    "chinese": "我对贝类海鲜过敏（虾、蟹、龙虾等）。",
+    "pinyin": "Wǒ duì bèilèi hǎixiān guòmǐn (xiā, xiè, lóngxiā děng).",
+    "severity": "severe",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_003",
+    "allergen": "Gluten",
+    "english": "Soy alérgico/a al gluten. No puedo comer trigo, cebada o centeno.",
+    "chinese": "我对麸质过敏。不能食用小麦、大麦或黑麦。",
+    "pinyin": "Wǒ duì fūzhì guòmǐn. Bù néng shíyòng xiǎomài, dàmài huò hēimài.",
+    "severity": "severe",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_004",
+    "allergen": "Dairy",
+    "english": "Soy alérgico/a a los productos lácteos (leche, queso, mantequilla).",
+    "chinese": "我对乳制品过敏（牛奶、奶酪、黄油）。",
+    "pinyin": "Wǒ duì rǔzhìpǐn guòmǐn (niúnǎi, nǎilào, huángyóu).",
+    "severity": "severe",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_005",
+    "allergen": "Eggs",
+    "english": "Soy alérgico/a a los huevos.",
+    "chinese": "我对鸡蛋过敏。",
+    "pinyin": "Wǒ duì jīdàn guòmǐn.",
+    "severity": "severe",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_006",
+    "allergen": "Soy",
+    "english": "Soy alérgico/a a la soja. Por favor, evite la salsa de soja, el tofu y los frijoles de soja.",
+    "chinese": "我对大豆过敏。请避免使用酱油、豆腐和大豆。",
+    "pinyin": "Wǒ duì dàdòu guòmǐn. Qǐng bìmiǎn shǐyòng jiàngyóu, dòufu hé dàdòu.",
+    "severity": "severe",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_007",
+    "allergen": "Sesame",
+    "english": "Soy alérgico/a a las semillas de sésamo y al aceite de sésamo.",
+    "chinese": "我对芝麻和芝麻油过敏。",
+    "pinyin": "Wǒ duì zhīma hé zhīma yóu guòmǐn.",
+    "severity": "severe",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_008",
+    "allergen": "Fish",
+    "english": "Soy alérgico/a al pescado.",
+    "chinese": "我对鱼类过敏。",
+    "pinyin": "Wǒ duì yúlèi guòmǐn.",
+    "severity": "severe",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_009",
+    "allergen": "MSG",
+    "english": "No puedo comer glutamato monosódico (MSG). Por favor, no añada ninguno.",
+    "chinese": "我不能食用味精（谷氨酸钠）。请不要添加。",
+    "pinyin": "Wǒ bù néng shíyòng wèijīng (gǔ'ānsuān nà). Qǐng bùyào tiānjiā.",
+    "severity": "intolerance",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_010",
+    "allergen": "Vegetarian",
+    "english": "Soy vegetariano/a. No como carne, aves ni mariscos.",
+    "chinese": "我是素食者。我不吃肉、家禽或海鲜。",
+    "pinyin": "Wǒ shì sùshí zhě. Wǒ bù chī ròu, jiāqín huò hǎixiān.",
+    "severity": "dietary",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_011",
+    "allergen": "Vegan",
+    "english": "Soy vegano/a. No como ningún producto de origen animal, incluidos lácteos, huevos y miel.",
+    "chinese": "我是严格素食者（纯素）。我不吃任何动物制品，包括奶、蛋和蜂蜜。",
+    "pinyin": "Wǒ shì yángé sùshí zhě (chún sù). Wǒ bù chī rènhé dòngwù zhìpǐn, bāokuò nǎi, dàn hé fēngmì.",
+    "severity": "dietary",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_012",
+    "allergen": "Halal",
+    "english": "Requiero comida halal. Sin cerdo, sin alcohol en la cocción y la carne debe estar certificada como halal.",
+    "chinese": "我需要清真食物。不要猪肉，烹饪中不要用酒，肉类必须是清真认证的。",
+    "pinyin": "Wǒ xūyào qīngzhēn shíwù. Bùyào zhūròu, pēngrèn zhōng bùyào yòng jiǔ, ròulèi bìxū shì qīngzhēn rènzhèng de.",
+    "severity": "dietary",
+    "showToRestaurant": true
+  }
+]

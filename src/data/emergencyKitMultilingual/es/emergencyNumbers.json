@@ -1,0 +1,56 @@
+{
+  "id": "emergencyNumbers",
+  "national": [
+    {
+      "service": "Policía",
+      "number": "110",
+      "chinese": "警察",
+      "notes": "Para delitos, accidentes y emergencias de seguridad pública. Los operadores generalmente hablan mandarín; solicite asistencia en inglés si es necesario."
+    },
+    {
+      "service": "Ambulancia",
+      "number": "120",
+      "chinese": "急救 / 救护车",
+      "notes": "Emergencias médicas. Alternativamente, llame al 999 en algunas ciudades. Prepárese para dar su ubicación exacta en mandarín o pida ayuda a alguien cercano."
+    },
+    {
+      "service": "Bomberos",
+      "number": "119",
+      "chinese": "消防 / 火警",
+      "notes": "Emergencias de incendios y rescates. También asiste con rescates no relacionados con incendios (p. ej., personas atrapadas, rescate de animales)."
+    },
+    {
+      "service": "Línea Turística",
+      "number": "12301",
+      "chinese": "旅游服务热线",
+      "notes": "Línea nacional de información y quejas turísticas. Disponible en inglés en las principales ciudades turísticas. Para disputas relacionadas con viajes, orientación sobre pasaportes perdidos y servicios turísticos."
+    }
+  ],
+  "cityHotlines": [
+    {
+      "city": "Shanghai",
+      "number": "962020",
+      "notes": "Línea de Servicio de Asuntos Extranjeros de Shanghái. Operadores de habla inglesa disponibles para extranjeros que necesitan asistencia con la vida diaria, emergencias y servicios de la ciudad."
+    },
+    {
+      "city": "Beijing",
+      "number": "010-12345",
+      "notes": "Línea de Servicios del Gobierno Municipal de Pekín. Soporte multilingüe, incluido inglés, para servicios de la ciudad, quejas e consultas generales."
+    },
+    {
+      "city": "Guangzhou",
+      "number": "12345",
+      "notes": "Línea de Servicios del Gobierno de Guangzhou. Ofrece asistencia en inglés y otros idiomas para servicios públicos, quejas y orientación de emergencia."
+    },
+    {
+      "city": "Shenzhen",
+      "number": "12345",
+      "notes": "Línea de Servicios del Gobierno de Shenzhen. Asistencia en idiomas extranjeros disponible. Cubre servicios de la ciudad, referencias de emergencia y apoyo para expatriados."
+    },
+    {
+      "city": "Chengdu",
+      "number": "12345",
+      "notes": "Línea de Servicios del Gobierno de Chengdu. Soporte en inglés disponible para turistas y residentes, cubriendo servicios de la ciudad e información de emergencia."
+    }
+  ]
+}

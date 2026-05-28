@@ -1,0 +1,56 @@
+{
+  "id": "emergencyNumbers",
+  "national": [
+    {
+      "service": "Police",
+      "number": "110",
+      "chinese": "警察",
+      "notes": "Pour les crimes, accidents et urgences de sécurité publique. Les opérateurs parlent généralement mandarin ; demandez une assistance en anglais si nécessaire."
+    },
+    {
+      "service": "Ambulance",
+      "number": "120",
+      "chinese": "急救 / 救护车",
+      "notes": "Urgences médicales. Vous pouvez également appeler le 999 dans certaines villes. Préparez-vous à donner votre emplacement exact en mandarin ou demandez à quelqu'un à proximité de vous aider."
+    },
+    {
+      "service": "Pompiers",
+      "number": "119",
+      "chinese": "消防 / 火警",
+      "notes": "Urgences incendie et de sauvetage. Assiste également pour les sauvetages non liés aux incendies (par ex., personnes piégées, sauvetage d'animaux)."
+    },
+    {
+      "service": "Ligne d'assistance touristique",
+      "number": "12301",
+      "chinese": "旅游服务热线",
+      "notes": "Ligne nationale d'information et de réclamation touristique. Disponible en anglais dans les grandes villes touristiques. Pour les litiges liés aux voyages, les conseils pour les passeports perdus et les services touristiques."
+    }
+  ],
+  "cityHotlines": [
+    {
+      "city": "Shanghai",
+      "number": "962020",
+      "notes": "Ligne d'assistance des affaires étrangères de Shanghai. Opérateurs anglophones disponibles pour les étrangers ayant besoin d'aide pour la vie quotidienne, les urgences et les services municipaux."
+    },
+    {
+      "city": "Beijing",
+      "number": "010-12345",
+      "notes": "Ligne d'assistance du gouvernement municipal de Pékin. Assistance multilingue, y compris en anglais, pour les services municipaux, les plaintes et les demandes générales."
+    },
+    {
+      "city": "Guangzhou",
+      "number": "12345",
+      "notes": "Ligne d'assistance du gouvernement de Guangzhou. Offre une assistance en anglais et d'autres langues pour les services publics, les plaintes et les conseils d'urgence."
+    },
+    {
+      "city": "Shenzhen",
+      "number": "12345",
+      "notes": "Ligne d'assistance du gouvernement de Shenzhen. Assistance en langues étrangères disponible. Couvre les services municipaux, les recommandations d'urgence et le soutien aux expatriés."
+    },
+    {
+      "city": "Chengdu",
+      "number": "12345",
+      "notes": "Ligne d'assistance du gouvernement de Chengdu. Assistance en anglais disponible pour les touristes et les résidents, couvrant les services municipaux et les informations d'urgence."
+    }
+  ]
+}

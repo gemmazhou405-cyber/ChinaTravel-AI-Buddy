@@ -1,0 +1,96 @@
+{
+  "id": "embassyContacts",
+  "disclaimer": "여행 전 확인하세요",
+  "embassies": [
+    {
+      "country": "미국",
+      "phone": "+86-10-8531-3000",
+      "emergency": "+86-10-8531-4000",
+      "address": "55 An Jia Lou Road, Chaoyang District, Beijing 100600"
+    },
+    {
+      "country": "영국",
+      "phone": "+86-10-5192-4000",
+      "emergency": "+86-10-5192-4000",
+      "address": "11 Guang Hua Lu, Chaoyang District, Beijing 100600"
+    },
+    {
+      "country": "캐나다",
+      "phone": "+86-10-5139-4000",
+      "emergency": "+86-10-5139-4000",
+      "address": "19 Dongzhimenwai Dajie, Chaoyang District, Beijing 100600"
+    },
+    {
+      "country": "호주",
+      "phone": "+86-10-5140-4111",
+      "emergency": "+86-10-5140-4111",
+      "address": "21 Dongzhimenwai Dajie, Chaoyang District, Beijing 100600"
+    },
+    {
+      "country": "프랑스",
+      "phone": "+86-10-8531-2000",
+      "emergency": "+86-10-8531-2000",
+      "address": "60 Tianze Lu, Chaoyang District, Beijing 100600"
+    },
+    {
+      "country": "독일",
+      "phone": "+86-10-8532-9000",
+      "emergency": "+86-10-8532-9000",
+      "address": "17 Dongzhimenwai Dajie, Chaoyang District, Beijing 100600"
+    },
+    {
+      "country": "스페인",
+      "phone": "+86-10-6532-3622",
+      "emergency": "+86-10-6532-3622",
+      "address": "9 Sanlitun Lu, Chaoyang District, Beijing 100600"
+    },
+    {
+      "country": "이탈리아",
+      "phone": "+86-10-8532-7600",
+      "emergency": "+86-10-8532-7600",
+      "address": "2 Dongerjie, Sanlitun, Chaoyang District, Beijing 100600"
+    },
+    {
+      "country": "일본",
+      "phone": "+86-10-8531-9800",
+      "emergency": "+86-10-8531-9800",
+      "address": "7 Ritan Lu, Chaoyang District, Beijing 100600"
+    },
+    {
+      "country": "대한민국",
+      "phone": "+86-10-8531-0700",
+      "emergency": "+86-10-8531-0700",
+      "address": "20 Dongfangdonglu, Chaoyang District, Beijing 100600"
+    },
+    {
+      "country": "인도",
+      "phone": "+86-10-6532-1908",
+      "emergency": "+86-10-6532-1908",
+      "address": "1 Ritan Donglu, Chaoyang District, Beijing 100600"
+    },
+    {
+      "country": "브라질",
+      "phone": "+86-10-6532-2881",
+      "emergency": "+86-10-6532-2881",
+      "address": "27 Guanghua Lu, Chaoyang District, Beijing 100600"
+    },
+    {
+      "country": "네덜란드",
+      "phone": "+86-10-8532-0200",
+      "emergency": "+86-10-8532-0200",
+      "address": "4 Liangmahe Nanlu, Chaoyang District, Beijing 100600"
+    },
+    {
+      "country": "스웨덴",
+      "phone": "+86-10-6532-9790",
+      "emergency": "+86-10-6532-9790",
+      "address": "3 Dongzhimenwai Dajie, Chaoyang District, Beijing 100600"
+    },
+    {
+      "country": "뉴질랜드",
+      "phone": "+86-10-8532-4084",
+      "emergency": "+86-10-8532-4084",
+      "address": "2 Ritan Dongerjie, Chaoyang District, Beijing 100600"
+    }
+  ]
+}

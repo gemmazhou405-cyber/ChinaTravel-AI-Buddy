@@ -1,0 +1,109 @@
+{
+  "id": "lostDocuments",
+  "items": [
+    {
+      "type": "Passeport",
+      "steps": [
+        "Signalez la perte au poste de police le plus proche (警察局) et obtenez un procès-verbal de perte (遗失证明).",
+        "Contactez immédiatement l'ambassade ou le consulat de votre pays en Chine pour demander un document de voyage d'urgence.",
+        "Contactez votre compagnie aérienne et votre hôtel pour les informer de la situation et fournir tout document justificatif.",
+        "Conservez des copies numériques de la page principale de votre passeport, de votre visa et des cachets d'entrée récents, stockées séparément."
+      ],
+      "phrases": [
+        {
+          "english": "J'ai perdu mon passeport.",
+          "chinese": "我的护照丢了。",
+          "pinyin": "Wǒ de hùzhào diū le."
+        },
+        {
+          "english": "Puis-je obtenir un procès-verbal de perte ici ?",
+          "chinese": "我可以在这里办理遗失证明吗？",
+          "pinyin": "Wǒ kěyǐ zài zhèlǐ bànlǐ yīshī zhèngmíng ma?"
+        },
+        {
+          "english": "Où se trouve l'ambassade/le consulat le plus proche ?",
+          "chinese": "最近的大使馆/领事馆在哪里？",
+          "pinyin": "Zuìjìn de dàshǐguǎn/lǐngshìguǎn zài nǎlǐ?"
+        }
+      ]
+    },
+    {
+      "type": "Cartes de crédit",
+      "steps": [
+        "Appelez immédiatement le numéro d'appel en PCV international de votre banque pour signaler la perte et bloquer vos cartes.",
+        "Déposez une plainte auprès de la police si les cartes ont été volées, car cela peut être nécessaire pour les réclamations d'assurance.",
+        "Utilisez votre moyen de paiement de secourse (deuxième carte ou espèces) en attendant les remplacements.",
+        "Surveillez vos comptes bancaires en ligne pour toute transaction non autorisée."
+      ],
+      "phrases": [
+        {
+          "english": "Je dois signaler la perte/vol de ma carte de crédit.",
+          "chinese": "我需要挂失我的信用卡。",
+          "pinyin": "Wǒ xūyào guàshī wǒ de xìnyòngkǎ."
+        },
+        {
+          "english": "Puis-je geler mon compte maintenant ?",
+          "chinese": "我现在可以冻结我的账户吗？",
+          "pinyin": "Wǒ xiànzài kěyǐ dòngjié wǒ de zhànghù ma?"
+        },
+        {
+          "english": "Y a-t-il une ligne d'assistance internationale ?",
+          "chinese": "有国际服务热线吗？",
+          "pinyin": "Yǒu guójì fúwú rèxiàn ma?"
+        }
+      ]
+    },
+    {
+      "type": "Téléphone",
+      "steps": [
+        "Utilisez un ordinateur ou un autre appareil pour vous connecter à votre compte iCloud ou Google pour verrouiller, localiser ou effacer votre téléphone à distance.",
+        "Contactez votre opérateur mobile pour suspendre votre service et empêcher toute utilisation non autorisée.",
+        "Faites un rapport à la police si vous pensez qu'il a été volé, en fournissant le numéro IMEI si disponible.",
+        "Utilisez le Wi-Fi de votre hôtel ou d'un commerce local pour communiquer par e-mail ou applications de messagerie sur des appareils empruntés."
+      ],
+      "phrases": [
+        {
+          "english": "Je ne trouve pas mon téléphone.",
+          "chinese": "我找不到我的手机了。",
+          "pinyin": "Wǒ zhǎo bù dào wǒ de shǒujī le."
+        },
+        {
+          "english": "Puis-je utiliser votre Wi-Fi ?",
+          "chinese": "我可以用一下你们的Wi-Fi吗？",
+          "pinyin": "Wǒ kěyǐ yòng yīxià nǐmen de Wi-Fi ma?"
+        },
+        {
+          "english": "Quel est le numéro IMEI ?",
+          "chinese": "IMEI号是什么？",
+          "pinyin": "IMEI hào shì shénme?"
+        }
+      ]
+    },
+    {
+      "type": "Billets d'avion",
+      "steps": [
+        "Contactez directement la compagnie aérienne via son numéro de service client ou au comptoir de l'aéroport pour expliquer la situation.",
+        "Fournissez votre référence de réservation, votre nom complet et les détails du vol pour localiser votre réservation.",
+        "Renseignez-vous sur la politique et la procédure pour réimprimer un billet perdu ou émettre une carte d'embarquement.",
+        "Arrivez à l'aéroport en avance pour prévoir du temps supplémentaire afin de résoudre le problème au comptoir d'enregistrement."
+      ],
+      "phrases": [
+        {
+          "english": "J'ai perdu mon billet d'avion/carte d'embarquement.",
+          "chinese": "我的机票/登机牌丢了。",
+          "pinyin": "Wǒ de jīpiào/dēngjīpái diū le."
+        },
+        {
+          "english": "Ma référence de réservation est ABC123.",
+          "chinese": "我的预订号是ABC123。",
+          "pinyin": "Wǒ de yùdìng hào shì ABC123."
+        },
+        {
+          "english": "Pouvez-vous réimprimer ma carte d'embarquement ?",
+          "chinese": "您可以重新打印我的登机牌吗？",
+          "pinyin": "Nín kěyǐ chóngxīn dǎyìn wǒ de dēngjīpái ma?"
+        }
+      ]
+    }
+  ]
+}

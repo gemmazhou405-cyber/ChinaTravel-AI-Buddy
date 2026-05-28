@@ -1,0 +1,122 @@
+[
+  {
+    "id": "med_001",
+    "english": "즉시 구급차를 불러주세요.",
+    "chinese": "请立即叫救护车。",
+    "pinyin": "Qǐng lìjí jiào jiùhùchē.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_002",
+    "english": "가슴에 극심한 통증이 있습니다.",
+    "chinese": "我胸口剧痛。",
+    "pinyin": "Wǒ xiōngkǒu jùtòng.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_003",
+    "english": "호흡이 어렵습니다.",
+    "chinese": "我呼吸困难。",
+    "pinyin": "Wǒ hūxī kùnnán.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_004",
+    "english": "[약물/음식]에 알레르기가 있습니다. 확인해 주세요.",
+    "chinese": "我对[药物/食物]过敏，请注意。",
+    "pinyin": "Wǒ duì [yàowù/shíwù] guòmǐn, qǐng zhùyì.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_005",
+    "english": "현재 복용 중인 약물: [약물명을 나열해 주세요].",
+    "chinese": "我正在服用这些药物：[请列出药名]。",
+    "pinyin": "Wǒ zhèngzài fúyòng zhèxiē yàowù: [qǐng lièchū yàomíng].",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_006",
+    "english": "혈액형은 [A/B/AB/O, +/-]형입니다.",
+    "chinese": "我的血型是[A/B/AB/O, +/-]型。",
+    "pinyin": "Wǒ de xuèxíng shì [A/B/AB/O, +/-] xíng.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_007",
+    "english": "그/그녀는 의식을 잃었습니다.",
+    "chinese": "他/她失去了知觉。",
+    "pinyin": "Tā/Tā shīqùle zhījué.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_008",
+    "english": "심장마비가 의심됩니다.",
+    "chinese": "我怀疑是心脏病发作。",
+    "pinyin": "Wǒ huáiyí shì xīnzàngbìng fāzuò.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_009",
+    "english": "복부에 극심한 통증이 있습니다.",
+    "chinese": "我腹部剧痛。",
+    "pinyin": "Wǒ fùbù jùtòng.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_010",
+    "english": "알레르기 반응이 나타났습니다.",
+    "chinese": "我出现了过敏反应。",
+    "pinyin": "Wǒ chūxiànle guòmǐn fǎnyìng.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_011",
+    "english": "제 친구/아이가 목에 음식이 걸렸습니다.",
+    "chinese": "我的朋友/孩子噎住了。",
+    "pinyin": "Wǒ de péngyou/háizi yē zhù le.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_012",
+    "english": "큰 출혈이 있는 심각한 사고가 발생했습니다.",
+    "chinese": "发生了严重事故，有大量出血。",
+    "pinyin": "Fāshēngle yánzhòng shìgù, yǒu dàliàng chūxuè.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_013",
+    "english": "어지럽고 기절할 것 같습니다.",
+    "chinese": "我感到头晕目眩，快要昏倒。",
+    "pinyin": "Wǒ gǎndào tóuyūn mùxuàn, kuàiyào hūndǎo.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_014",
+    "english": "현재 위치는 [호텔명/주소]입니다. 빨리 와 주세요.",
+    "chinese": "我的位置在[酒店名/地址]，请快来。",
+    "pinyin": "Wǒ de wèizhì zài [jiǔdiàn míng/dìzhǐ], qǐng kuài lái.",
+    "priority": "high",
+    "showToDoctor": false
+  },
+  {
+    "id": "med_015",
+    "english": "고열과 오한이 있습니다.",
+    "chinese": "我发高烧，伴有寒战。",
+    "pinyin": "Wǒ fā gāoshāo, bànyǒu hánzhàn.",
+    "priority": "high",
+    "showToDoctor": true
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "hosp_001",
+    "section": "Reception",
+    "english": "医者に診てもらいたいです。",
+    "chinese": "我需要看医生。",
+    "pinyin": "Wǒ xūyào kàn yīshēng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_002",
+    "section": "Reception",
+    "english": "この時間に予約があります。",
+    "chinese": "我这个时间有预约。",
+    "pinyin": "Wǒ zhège shíjiān yǒu yùyuē.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_003",
+    "section": "Reception",
+    "english": "救急室はどこですか？",
+    "chinese": "急诊室在哪里？",
+    "pinyin": "Jízhěnshì zài nǎlǐ?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_004",
+    "section": "Reception",
+    "english": "中国語は話せません。英語の通訳はいますか？",
+    "chinese": "我不会说中文，你们有英文翻译吗？",
+    "pinyin": "Wǒ bú huì shuō zhōngwén, nǐmen yǒu yīngwén fānyì ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_005",
+    "section": "Reception",
+    "english": "この用紙に記入するのを手伝ってもらえますか？",
+    "chinese": "你能帮我填一下这张表格吗？",
+    "pinyin": "Nǐ néng bāng wǒ tián yīxià zhè zhāng biǎogé ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_006",
+    "section": "Symptoms",
+    "english": "頭が痛いです。",
+    "chinese": "我头疼。",
+    "pinyin": "Wǒ tóu téng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_007",
+    "section": "Symptoms",
+    "english": "お腹が痛いです。",
+    "chinese": "我肚子疼。",
+    "pinyin": "Wǒ dùzi téng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_008",
+    "section": "Symptoms",
+    "english": "めまいがします。",
+    "chinese": "我头晕。",
+    "pinyin": "Wǒ tóu yūn.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_009",
+    "section": "Symptoms",
+    "english": "熱があり、喉が痛いです。",
+    "chinese": "我发烧，喉咙痛。",
+    "pinyin": "Wǒ fāshāo, hóulóng tòng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_010",
+    "section": "Symptoms",
+    "english": "ここが痛いです。",
+    "chinese": "我这里疼。",
+    "pinyin": "Wǒ zhèlǐ téng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_011",
+    "section": "Treatment",
+    "english": "ペニシリンアレルギーがあります。",
+    "chinese": "我对青霉素过敏。",
+    "pinyin": "Wǒ duì qīngméisù guòmǐn.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_012",
+    "section": "Treatment",
+    "english": "入院する必要がありますか？",
+    "chinese": "我需要住院吗？",
+    "pinyin": "Wǒ xūyào zhùyuàn ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_013",
+    "section": "Treatment",
+    "english": "治療にはどのくらいかかりますか？",
+    "chinese": "治疗需要多长时间？",
+    "pinyin": "Zhìliáo xūyào duō cháng shíjiān?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_014",
+    "section": "Treatment",
+    "english": "妊娠しています。",
+    "chinese": "我怀孕了。",
+    "pinyin": "Wǒ huáiyùn le.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_015",
+    "section": "Payment",
+    "english": "これはいくらですか？",
+    "chinese": "这要多少钱？",
+    "pinyin": "Zhè yào duōshao qián?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_016",
+    "section": "Payment",
+    "english": "クレジットカードで支払えますか？",
+    "chinese": "可以刷信用卡吗？",
+    "pinyin": "Kěyǐ shuā xìnyòngkǎ ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_017",
+    "section": "Payment",
+    "english": "保険の請求に必要な正式な領収書が必要です。",
+    "chinese": "我需要正式发票来报销保险。",
+    "pinyin": "Wǒ xūyào zhèngshì fāpiào lái bàoxiāo bǎoxiǎn.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_018",
+    "section": "Payment",
+    "english": "旅行保険の適用になりますか？",
+    "chinese": "旅游保险能报销这个吗？",
+    "pinyin": "Lǚyóu bǎoxiǎn néng bàoxiāo zhège ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_019",
+    "section": "Prescription",
+    "english": "調剤薬局はどこですか？",
+    "chinese": "药房在哪里？",
+    "pinyin": "Yàofáng zài nǎlǐ?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_020",
+    "section": "Prescription",
+    "english": "この薬は1日何回服用しますか？",
+    "chinese": "这个药一天吃几次？",
+    "pinyin": "Zhège yào yī tiān chī jǐ cì?",
+    "showToStaff": true
+  }
+]

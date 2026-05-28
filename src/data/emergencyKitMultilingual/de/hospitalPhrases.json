@@ -1,0 +1,162 @@
+[
+  {
+    "id": "hosp_001",
+    "section": "Empfang",
+    "german": "Ich muss einen Arzt aufsuchen.",
+    "chinese": "我需要看医生。",
+    "pinyin": "Wǒ xūyào kàn yīshēng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_002",
+    "section": "Empfang",
+    "german": "Ich habe zu diesem Zeitpunkt einen Termin.",
+    "chinese": "我这个时间有预约。",
+    "pinyin": "Wǒ zhège shíjiān yǒu yùyuē.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_003",
+    "section": "Empfang",
+    "german": "Wo ist die Notaufnahme?",
+    "chinese": "急诊室在哪里？",
+    "pinyin": "Jízhěnshì zài nǎlǐ?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_004",
+    "section": "Empfang",
+    "german": "Ich spreche kein Chinesisch. Haben Sie einen englischen Dolmetscher?",
+    "chinese": "我不会说中文，你们有英文翻译吗？",
+    "pinyin": "Wǒ bú huì shuō zhōngwén, nǐmen yǒu yīngwén fānyì ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_005",
+    "section": "Empfang",
+    "german": "Können Sie mir helfen, dieses Formular auszufüllen?",
+    "chinese": "你能帮我填一下这张表格吗？",
+    "pinyin": "Nǐ néng bāng wǒ tián yīxià zhè zhāng biǎogé ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_006",
+    "section": "Symptome",
+    "german": "Ich habe Kopfschmerzen.",
+    "chinese": "我头疼。",
+    "pinyin": "Wǒ tóu téng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_007",
+    "section": "Symptome",
+    "german": "Ich habe Bauchschmerzen.",
+    "chinese": "我肚子疼。",
+    "pinyin": "Wǒ dùzi téng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_008",
+    "section": "Symptome",
+    "german": "Mir ist schwindelig.",
+    "chinese": "我头晕。",
+    "pinyin": "Wǒ tóu yūn.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_009",
+    "section": "Symptome",
+    "german": "Ich habe Fieber und Halsschmerzen.",
+    "chinese": "我发烧，喉咙痛。",
+    "pinyin": "Wǒ fāshāo, hóulóng tòng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_010",
+    "section": "Symptome",
+    "german": "Ich habe hier Schmerzen.",
+    "chinese": "我这里疼。",
+    "pinyin": "Wǒ zhèlǐ téng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_011",
+    "section": "Behandlung",
+    "german": "Ich bin allergisch gegen Penicillin.",
+    "chinese": "我对青霉素过敏。",
+    "pinyin": "Wǒ duì qīngméisù guòmǐn.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_012",
+    "section": "Behandlung",
+    "german": "Muss ich im Krankenhaus bleiben?",
+    "chinese": "我需要住院吗？",
+    "pinyin": "Wǒ xūyào zhùyuàn ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_013",
+    "section": "Behandlung",
+    "german": "Wie lange wird die Behandlung dauern?",
+    "chinese": "治疗需要多长时间？",
+    "pinyin": "Zhìliáo xūyào duō cháng shíjiān?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_014",
+    "section": "Behandlung",
+    "german": "Ich bin schwanger.",
+    "chinese": "我怀孕了。",
+    "pinyin": "Wǒ huáiyùn le.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_015",
+    "section": "Zahlung",
+    "german": "Wie viel kostet das?",
+    "chinese": "这要多少钱？",
+    "pinyin": "Zhè yào duōshao qián?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_016",
+    "section": "Zahlung",
+    "german": "Kann ich mit Kreditkarte bezahlen?",
+    "chinese": "可以刷信用卡吗？",
+    "pinyin": "Kěyǐ shuā xìnyòngkǎ ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_017",
+    "section": "Zahlung",
+    "german": "Ich brauche eine offizielle Quittung für meine Versicherung.",
+    "chinese": "我需要正式发票来报销保险。",
+    "pinyin": "Wǒ xūyào zhèngshì fāpiào lái bàoxiāo bǎoxiǎn.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_018",
+    "section": "Zahlung",
+    "german": "Wird das von der Reiseversicherung übernommen?",
+    "chinese": "旅游保险能报销这个吗？",
+    "pinyin": "Lǚyóu bǎoxiǎn néng bàoxiāo zhège ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_019",
+    "section": "Rezept",
+    "german": "Wo ist die Apotheke?",
+    "chinese": "药房在哪里？",
+    "pinyin": "Yàofáng zài nǎlǐ?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_020",
+    "section": "Rezept",
+    "german": "Wie oft am Tag soll ich dieses Medikament einnehmen?",
+    "chinese": "这个药一天吃几次？",
+    "pinyin": "Zhège yào yī tiān chī jǐ cì?",
+    "showToStaff": true
+  }
+]

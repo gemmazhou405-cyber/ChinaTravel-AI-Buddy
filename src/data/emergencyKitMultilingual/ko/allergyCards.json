@@ -1,0 +1,110 @@
+[
+  {
+    "id": "allergy_001",
+    "allergen": "땅콩",
+    "english": "저는 땅콩 알레르기가 있습니다.",
+    "chinese": "我对花生过敏。",
+    "pinyin": "Wǒ duì huāshēng guòmǐn.",
+    "severity": "severe",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_002",
+    "allergen": "조개류",
+    "english": "저는 조개류 알레르기가 있습니다 (새우, 게, 랍스터 등).",
+    "chinese": "我对贝类海鲜过敏（虾、蟹、龙虾等）。",
+    "pinyin": "Wǒ duì bèilèi hǎixiān guòmǐn (xiā, xiè, lóngxiā děng).",
+    "severity": "severe",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_003",
+    "allergen": "글루텐",
+    "english": "저는 글루텐 알레르기가 있습니다. 밀, 보리, 호밀을 먹을 수 없습니다.",
+    "chinese": "我对麸质过敏。不能食用小麦、大麦或黑麦。",
+    "pinyin": "Wǒ duì fūzhì guòmǐn. Bù néng shíyòng xiǎomài, dàmài huò hēimài.",
+    "severity": "severe",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_004",
+    "allergen": "유제품",
+    "english": "저는 유제품 알레르기가 있습니다 (우유, 치즈, 버터).",
+    "chinese": "我对乳制品过敏（牛奶、奶酪、黄油）。",
+    "pinyin": "Wǒ duì rǔzhìpǐn guòmǐn (niúnǎi, nǎilào, huángyóu).",
+    "severity": "severe",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_005",
+    "allergen": "달걀",
+    "english": "저는 달걀 알레르기가 있습니다.",
+    "chinese": "我对鸡蛋过敏。",
+    "pinyin": "Wǒ duì jīdàn guòmǐn.",
+    "severity": "severe",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_006",
+    "allergen": "대두",
+    "english": "저는 대두 알레르기가 있습니다. 간장, 두부, 대두를 피해주십시오.",
+    "chinese": "我对大豆过敏。请避免使用酱油、豆腐和大豆。",
+    "pinyin": "Wǒ duì dàdòu guòmǐn. Qǐng bìmiǎn shǐyòng jiàngyóu, dòufu hé dàdòu.",
+    "severity": "severe",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_007",
+    "allergen": "참깨",
+    "english": "저는 참깨와 참기름 알레르기가 있습니다.",
+    "chinese": "我对芝麻和芝麻油过敏。",
+    "pinyin": "Wǒ duì zhīma hé zhīma yóu guòmǐn.",
+    "severity": "severe",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_008",
+    "allergen": "생선",
+    "english": "저는 생선 알레르기가 있습니다.",
+    "chinese": "我对鱼类过敏。",
+    "pinyin": "Wǒ duì yúlèi guòmǐn.",
+    "severity": "severe",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_009",
+    "allergen": "MSG",
+    "english": "저는 MSG(글루타민산나트륨)를 먹을 수 없습니다. 넣지 말아 주십시오.",
+    "chinese": "我不能食用味精（谷氨酸钠）。请不要添加。",
+    "pinyin": "Wǒ bù néng shíyòng wèijīng (gǔ'ānsuān nà). Qǐng bùyào tiānjiā.",
+    "severity": "intolerance",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_010",
+    "allergen": "채식주의",
+    "english": "저는 채식주의자입니다. 고기, 가금류, 해산물을 먹지 않습니다.",
+    "chinese": "我是素食者。我不吃肉、家禽或海鲜。",
+    "pinyin": "Wǒ shì sùshí zhě. Wǒ bù chī ròu, jiāqín huò hǎixiān.",
+    "severity": "dietary",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_011",
+    "allergen": "비건",
+    "english": "저는 비건(순수 채식주의자)입니다. 유제품, 달걀, 꿀을 포함한 어떤 동물성 제품도 먹지 않습니다.",
+    "chinese": "我是严格素食者（纯素）。我不吃任何动物制品，包括奶、蛋和蜂蜜。",
+    "pinyin": "Wǒ shì yángé sùshí zhě (chún sù). Wǒ bù chī rènhé dòngwù zhìpǐn, bāokuò nǎi, dàn hé fēngmì.",
+    "severity": "dietary",
+    "showToRestaurant": true
+  },
+  {
+    "id": "allergy_012",
+    "allergen": "할랄",
+    "english": "저는 할랄 음식이 필요합니다. 돼지고기는 안 되고, 요리에 술을 사용하지 마시며, 고기는 할랄 인증을 받은 것이어야 합니다.",
+    "chinese": "我需要清真食物。不要猪肉，烹饪中不要用酒，肉类必须是清真认证的。",
+    "pinyin": "Wǒ xūyào qīngzhēn shíwù. Bùyào zhūròu, pēngrèn zhōng bùyào yòng jiǔ, ròulèi bìxū shì qīngzhēn rènzhèng de.",
+    "severity": "dietary",
+    "showToRestaurant": true
+  }
+]

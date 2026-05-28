@@ -1,0 +1,162 @@
+[
+  {
+    "id": "hosp_001",
+    "section": "접수",
+    "korean": "의사를 만나야 합니다.",
+    "chinese": "我需要看医生。",
+    "pinyin": "Wǒ xūyào kàn yīshēng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_002",
+    "section": "접수",
+    "korean": "이 시간에 예약이 있습니다.",
+    "chinese": "我这个时间有预约。",
+    "pinyin": "Wǒ zhège shíjiān yǒu yùyuē.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_003",
+    "section": "접수",
+    "korean": "응급실이 어디인가요?",
+    "chinese": "急诊室在哪里？",
+    "pinyin": "Jízhěnshì zài nǎlǐ?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_004",
+    "section": "접수",
+    "korean": "중국어를 할 수 없습니다. 영어 통역사가 있나요?",
+    "chinese": "我不会说中文，你们有英文翻译吗？",
+    "pinyin": "Wǒ bú huì shuō zhōngwén, nǐmen yǒu yīngwén fānyì ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_005",
+    "section": "접수",
+    "korean": "이 양식 작성을 도와주실 수 있나요?",
+    "chinese": "你能帮我填一下这张表格吗？",
+    "pinyin": "Nǐ néng bāng wǒ tián yīxià zhè zhāng biǎogé ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_006",
+    "section": "증상",
+    "korean": "두통이 있습니다.",
+    "chinese": "我头疼。",
+    "pinyin": "Wǒ tóu téng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_007",
+    "section": "증상",
+    "korean": "복통이 있습니다.",
+    "chinese": "我肚子疼。",
+    "pinyin": "Wǒ dùzi téng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_008",
+    "section": "증상",
+    "korean": "어지럽습니다.",
+    "chinese": "我头晕。",
+    "pinyin": "Wǒ tóu yūn.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_009",
+    "section": "증상",
+    "korean": "열이 나고 목이 아픕니다.",
+    "chinese": "我发烧，喉咙痛。",
+    "pinyin": "Wǒ fāshāo, hóulóng tòng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_010",
+    "section": "증상",
+    "korean": "여기가 아픕니다.",
+    "chinese": "我这里疼。",
+    "pinyin": "Wǒ zhèlǐ téng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_011",
+    "section": "치료",
+    "korean": "페니실린 알레르기가 있습니다.",
+    "chinese": "我对青霉素过敏。",
+    "pinyin": "Wǒ duì qīngméisù guòmǐn.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_012",
+    "section": "치료",
+    "korean": "입원해야 하나요?",
+    "chinese": "我需要住院吗？",
+    "pinyin": "Wǒ xūyào zhùyuàn ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_013",
+    "section": "치료",
+    "korean": "치료 기간이 얼마나 걸리나요?",
+    "chinese": "治疗需要多长时间？",
+    "pinyin": "Zhìliáo xūyào duō cháng shíjiān?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_014",
+    "section": "치료",
+    "korean": "임신 중입니다.",
+    "chinese": "我怀孕了。",
+    "pinyin": "Wǒ huáiyùn le.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_015",
+    "section": "결제",
+    "korean": "이게 얼마인가요?",
+    "chinese": "这要多少钱？",
+    "pinyin": "Zhè yào duōshao qián?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_016",
+    "section": "결제",
+    "korean": "신용카드로 결제할 수 있나요?",
+    "chinese": "可以刷信用卡吗？",
+    "pinyin": "Kěyǐ shuā xìnyòngkǎ ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_017",
+    "section": "결제",
+    "korean": "보험 처리를 위해 공식 영수증이 필요합니다.",
+    "chinese": "我需要正式发票来报销保险。",
+    "pinyin": "Wǒ xūyào zhèngshì fāpiào lái bàoxiāo bǎoxiǎn.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_018",
+    "section": "결제",
+    "korean": "여행자 보험으로 보장되나요?",
+    "chinese": "旅游保险能报销这个吗？",
+    "pinyin": "Lǚyóu bǎoxiǎn néng bàoxiāo zhège ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_019",
+    "section": "처방",
+    "korean": "약국이 어디인가요?",
+    "chinese": "药房在哪里？",
+    "pinyin": "Yàofáng zài nǎlǐ?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_020",
+    "section": "처방",
+    "korean": "이 약을 하루에 몇 번 복용해야 하나요?",
+    "chinese": "这个药一天吃几次？",
+    "pinyin": "Zhège yào yī tiān chī jǐ cì?",
+    "showToStaff": true
+  }
+]

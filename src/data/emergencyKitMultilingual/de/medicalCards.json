@@ -1,0 +1,122 @@
+[
+  {
+    "id": "med_001",
+    "english": "Bitte rufen Sie sofort einen Krankenwagen.",
+    "chinese": "请立即叫救护车。",
+    "pinyin": "Qǐng lìjí jiào jiùhùchē.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_002",
+    "english": "Ich habe starke Brustschmerzen.",
+    "chinese": "我胸口剧痛。",
+    "pinyin": "Wǒ xiōngkǒu jùtòng.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_003",
+    "english": "Ich habe Atembeschwerden.",
+    "chinese": "我呼吸困难。",
+    "pinyin": "Wǒ hūxī kùnnán.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_004",
+    "english": "Ich bin allergisch gegen [Medizin/Lebensmittel]. Bitte überprüfen Sie.",
+    "chinese": "我对[药物/食物]过敏，请注意。",
+    "pinyin": "Wǒ duì [yàowù/shíwù] guòmǐn, qǐng zhùyì.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_005",
+    "english": "Ich nehme diese Medikamente ein: [Namen auflisten].",
+    "chinese": "我正在服用这些药物：[请列出药名]。",
+    "pinyin": "Wǒ zhèngzài fúyòng zhèxiē yàowù: [qǐng lièchū yàomíng].",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_006",
+    "english": "Meine Blutgruppe ist [A/B/AB/O, +/-].",
+    "chinese": "我的血型是[A/B/AB/O, +/-]型。",
+    "pinyin": "Wǒ de xuèxíng shì [A/B/AB/O, +/-] xíng.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_007",
+    "english": "Er/Sie ist bewusstlos.",
+    "chinese": "他/她失去了知觉。",
+    "pinyin": "Tā/Tā shīqùle zhījué.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_008",
+    "english": "Ich vermute einen Herzinfarkt.",
+    "chinese": "我怀疑是心脏病发作。",
+    "pinyin": "Wǒ huáiyí shì xīnzàngbìng fāzuò.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_009",
+    "english": "Ich habe starke Bauchschmerzen.",
+    "chinese": "我腹部剧痛。",
+    "pinyin": "Wǒ fùbù jùtòng.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_010",
+    "english": "Ich habe eine allergische Reaktion.",
+    "chinese": "我出现了过敏反应。",
+    "pinyin": "Wǒ chūxiànle guòmǐn fǎnyìng.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_011",
+    "english": "Mein Freund/Mein Kind erstickt.",
+    "chinese": "我的朋友/孩子噎住了。",
+    "pinyin": "Wǒ de péngyou/háizi yē zhù le.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_012",
+    "english": "Es gab einen schweren Unfall mit Blutungen.",
+    "chinese": "发生了严重事故，有大量出血。",
+    "pinyin": "Fāshēngle yánzhòng shìgù, yǒu dàliàng chūxuè.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_013",
+    "english": "Mir ist schwindelig und ich fühle mich ohnmächtig.",
+    "chinese": "我感到头晕目眩，快要昏倒。",
+    "pinyin": "Wǒ gǎndào tóuyūn mùxuàn, kuàiyào hūndǎo.",
+    "priority": "high",
+    "showToDoctor": true
+  },
+  {
+    "id": "med_014",
+    "english": "Mein Standort ist [Hotelname/Adresse]. Bitte beeilen Sie sich.",
+    "chinese": "我的位置在[酒店名/地址]，请快来。",
+    "pinyin": "Wǒ de wèizhì zài [jiǔdiàn míng/dìzhǐ], qǐng kuài lái.",
+    "priority": "high",
+    "showToDoctor": false
+  },
+  {
+    "id": "med_015",
+    "english": "Ich habe hohes Fieber und Schüttelfrost.",
+    "chinese": "我发高烧，伴有寒战。",
+    "pinyin": "Wǒ fā gāoshāo, bànyǒu hánzhàn.",
+    "priority": "high",
+    "showToDoctor": true
+  }
+]

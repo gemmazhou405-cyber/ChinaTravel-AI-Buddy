@@ -1,0 +1,162 @@
+[
+  {
+    "id": "hosp_001",
+    "section": "Recepción",
+    "english": "Necesito ver a un doctor.",
+    "chinese": "我需要看医生。",
+    "pinyin": "Wǒ xūyào kàn yīshēng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_002",
+    "section": "Recepción",
+    "english": "Tengo una cita a esta hora.",
+    "chinese": "我这个时间有预约。",
+    "pinyin": "Wǒ zhège shíjiān yǒu yùyuē.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_003",
+    "section": "Recepción",
+    "english": "¿Dónde está la sala de emergencias?",
+    "chinese": "急诊室在哪里？",
+    "pinyin": "Jízhěnshì zài nǎlǐ?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_004",
+    "section": "Recepción",
+    "english": "No hablo chino. ¿Tienen un intérprete de inglés?",
+    "chinese": "我不会说中文，你们有英文翻译吗？",
+    "pinyin": "Wǒ bú huì shuō zhōngwén, nǐmen yǒu yīngwén fānyì ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_005",
+    "section": "Recepción",
+    "english": "¿Puede ayudarme a llenar este formulario?",
+    "chinese": "你能帮我填一下这张表格吗？",
+    "pinyin": "Nǐ néng bāng wǒ tián yīxià zhè zhāng biǎogé ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_006",
+    "section": "Síntomas",
+    "english": "Tengo dolor de cabeza.",
+    "chinese": "我头疼。",
+    "pinyin": "Wǒ tóu téng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_007",
+    "section": "Síntomas",
+    "english": "Tengo dolor de estómago.",
+    "chinese": "我肚子疼。",
+    "pinyin": "Wǒ dùzi téng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_008",
+    "section": "Síntomas",
+    "english": "Me siento mareado/a.",
+    "chinese": "我头晕。",
+    "pinyin": "Wǒ tóu yūn.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_009",
+    "section": "Síntomas",
+    "english": "Tengo fiebre y dolor de garganta.",
+    "chinese": "我发烧，喉咙痛。",
+    "pinyin": "Wǒ fāshāo, hóulóng tòng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_010",
+    "section": "Síntomas",
+    "english": "Siento dolor aquí.",
+    "chinese": "我这里疼。",
+    "pinyin": "Wǒ zhèlǐ téng.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_011",
+    "section": "Tratamiento",
+    "english": "Soy alérgico/a a la penicilina.",
+    "chinese": "我对青霉素过敏。",
+    "pinyin": "Wǒ duì qīngméisù guòmǐn.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_012",
+    "section": "Tratamiento",
+    "english": "¿Necesito quedarme en el hospital?",
+    "chinese": "我需要住院吗？",
+    "pinyin": "Wǒ xūyào zhùyuàn ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_013",
+    "section": "Tratamiento",
+    "english": "¿Cuánto tiempo durará el tratamiento?",
+    "chinese": "治疗需要多长时间？",
+    "pinyin": "Zhìliáo xūyào duō cháng shíjiān?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_014",
+    "section": "Tratamiento",
+    "english": "Estoy embarazada.",
+    "chinese": "我怀孕了。",
+    "pinyin": "Wǒ huáiyùn le.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_015",
+    "section": "Pago",
+    "english": "¿Cuánto cuesta esto?",
+    "chinese": "这要多少钱？",
+    "pinyin": "Zhè yào duōshao qián?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_016",
+    "section": "Pago",
+    "english": "¿Puedo pagar con tarjeta de crédito?",
+    "chinese": "可以刷信用卡吗？",
+    "pinyin": "Kěyǐ shuā xìnyòngkǎ ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_017",
+    "section": "Pago",
+    "english": "Necesito un recibo oficial para mi seguro.",
+    "chinese": "我需要正式发票来报销保险。",
+    "pinyin": "Wǒ xūyào zhèngshì fāpiào lái bàoxiāo bǎoxiǎn.",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_018",
+    "section": "Pago",
+    "english": "¿Esto está cubierto por el seguro de viaje?",
+    "chinese": "旅游保险能报销这个吗？",
+    "pinyin": "Lǚyóu bǎoxiǎn néng bàoxiāo zhège ma?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_019",
+    "section": "Receta",
+    "english": "¿Dónde está la farmacia?",
+    "chinese": "药房在哪里？",
+    "pinyin": "Yàofáng zài nǎlǐ?",
+    "showToStaff": true
+  },
+  {
+    "id": "hosp_020",
+    "section": "Receta",
+    "english": "¿Cuántas veces al día debo tomar este medicamento?",
+    "chinese": "这个药一天吃几次？",
+    "pinyin": "Zhège yào yī tiān chī jǐ cì?",
+    "showToStaff": true
+  }
+]

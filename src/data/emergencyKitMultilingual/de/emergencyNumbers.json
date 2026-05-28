@@ -1,0 +1,56 @@
+{
+  "id": "emergencyNumbers",
+  "national": [
+    {
+      "service": "Polizei",
+      "number": "110",
+      "chinese": "警察",
+      "notes": "Für Verbrechen, Unfälle und öffentliche Sicherheitsnotfälle. Die Bediener sprechen in der Regel Mandarin; fragen Sie bei Bedarf nach englischer Hilfe."
+    },
+    {
+      "service": "Krankenwagen",
+      "number": "120",
+      "chinese": "急救 / 救护车",
+      "notes": "Medizinische Notfälle. Alternativ rufen Sie in einigen Städten die 999 an. Seien Sie bereit, Ihren genauen Standort auf Mandarin anzugeben oder bitten Sie jemanden in der Nähe um Hilfe."
+    },
+    {
+      "service": "Feuerwehr",
+      "number": "119",
+      "chinese": "消防 / 火警",
+      "notes": "Feuer- und Rettungsnotfälle. Unterstützt auch bei Nicht-Brandrettungen (z. B. eingeklemmte Personen, Tierrettung)."
+    },
+    {
+      "service": "Touristen-Hotline",
+      "number": "12301",
+      "chinese": "旅游服务热线",
+      "notes": "Nationale Tourismusbeschwerde- und Informationshotline. In großen Touristenstädten auf Englisch verfügbar. Für reisebezogene Streitigkeiten, Anleitung bei verlorenen Pässen und Touristendienstleistungen."
+    }
+  ],
+  "cityHotlines": [
+    {
+      "city": "Shanghai",
+      "number": "962020",
+      "notes": "Shanghai Hotline für Auslandsangelegenheiten. Englischsprachige Bediener stehen Ausländern zur Verfügung, die Hilfe bei Alltag, Notfällen und städtischen Dienstleistungen benötigen."
+    },
+    {
+      "city": "Peking",
+      "number": "010-12345",
+      "notes": "Serviceline der Pekinger Stadtregierung. Mehrsprachige Unterstützung, einschließlich Englisch, für städtische Dienstleistungen, Beschwerden und allgemeine Anfragen."
+    },
+    {
+      "city": "Guangzhou",
+      "number": "12345",
+      "notes": "Serviceline der Guangzhouer Stadtregierung. Bietet Hilfe in Englisch und anderen Sprachen für öffentliche Dienste, Beschwerden und Notfallanleitung."
+    },
+    {
+      "city": "Shenzhen",
+      "number": "12345",
+      "notes": "Serviceline der Shenzhen Stadtregierung. Fremdsprachliche Hilfe verfügbar. Umfasst städtische Dienstleistungen, Notfallverweisungen und Unterstützung für Expatriates."
+    },
+    {
+      "city": "Chengdu",
+      "number": "12345",
+      "notes": "Serviceline der Chengdu Stadtregierung. Englischsprachige Unterstützung für Touristen und Einwohner verfügbar, die städtische Dienste und Notfallinformationen abdeckt."
+    }
+  ]
+}
