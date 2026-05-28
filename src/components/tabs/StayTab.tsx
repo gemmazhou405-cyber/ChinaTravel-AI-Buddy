@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
 import TabSectionHeader from '../TabSectionHeader';
+import ToolDisclosure from '../ToolDisclosure';
 import { hotelCards } from '../../data/phraseCards';
 import type { UserState } from '../../hooks/useAuth';
 import { isGroup, isTripOrGroup } from '../../lib/membership';
@@ -67,21 +68,25 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
   return (
     <div className="space-y-6">
       <TabSectionHeader
-        title="Stay"
-        subtitle="Handle hotel check-in, room issues, and front desk conversations."
+        title={t('tabs.stay')}
+        subtitle={t('tabHeaders.stay')}
         onAskBuddy={onAskBuddy}
       />
 
-      <section className="bg-[#155e63]/5 border border-[#155e63]/15 rounded-2xl p-4">
+      <ToolDisclosure
+        title={t('stay.customHelper.title')}
+        subtitle={t('stay.customHelper.subtitle')}
+        icon={<Building2 className="w-4 h-4" />}
+      >
         <div className="flex items-start justify-between gap-3">
           <div>
-            <p className="font-semibold text-[#155e63] text-sm">Custom Phrase Helper</p>
+            <p className="font-semibold text-[#155e63] text-sm">{t('stay.customHelper.title')}</p>
             <p className="text-gray-500 text-xs mt-0.5 leading-relaxed">
-              Create custom Chinese cards for your real travel situations.
+              {t('stay.customHelper.body')}
             </p>
           </div>
           <span className="shrink-0 rounded-full bg-[#155e63]/10 px-2.5 py-1 text-[11px] font-semibold text-[#155e63]">
-            Available with Group Pass
+            {t('stay.customHelper.available')}
           </span>
         </div>
         <textarea
@@ -90,27 +95,27 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
             setCustomPhrase(e.target.value);
             setShowCustomResult(false);
           }}
-          placeholder="What do you want to say?"
+          placeholder={t('stay.customHelper.placeholder')}
           className="mt-4 min-h-24 w-full resize-none rounded-xl border border-[#155e63]/15 bg-white px-3 py-2.5 text-sm text-gray-700 outline-none transition-all placeholder:text-gray-300 focus:border-[#155e63]/40"
         />
         {showCustomResult && customPhrase.trim() && (
           <div className="mt-3 rounded-2xl border border-[#155e63]/15 bg-white p-3.5 shadow-sm">
             <div className="mb-2 flex items-center justify-between gap-2">
-              <p className="text-xs font-semibold text-[#155e63]">Available with Group Pass</p>
-              <span className="rounded-full bg-[#155e63]/10 px-2 py-0.5 text-[10px] font-semibold text-[#155e63]">Preview</span>
+              <p className="text-xs font-semibold text-[#155e63]">{t('stay.customHelper.available')}</p>
+              <span className="rounded-full bg-[#155e63]/10 px-2 py-0.5 text-[10px] font-semibold text-[#155e63]">{t('common.preview')}</span>
             </div>
             <p className="text-gray-500 text-xs mb-1">{customPhraseCard.english}</p>
             <p className="text-gray-900 font-medium text-sm">{customPhraseCard.chinese}</p>
             <p className="text-gray-400 text-xs mt-0.5">{customPhraseCard.pinyin}</p>
             <div className="mt-3 flex flex-wrap gap-2">
               <button onClick={() => speakChinese(customPhraseCard.chinese)} className="text-xs text-[#155e63] flex items-center gap-1">
-                🔊 Speak
+                🔊 {t('common.speak')}
               </button>
               <button onClick={() => copyPhrase(customPhraseCard.chinese)} className="text-xs text-gray-400">
-                📋 Copy
+                📋 {t('common.copy')}
               </button>
               <button onClick={() => setShowCustomLocal(true)} className="text-xs font-medium text-[#155e63]">
-                Show to local
+                {t('common.showToLocal')}
               </button>
             </div>
           </div>
@@ -118,7 +123,7 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
         <button
           onClick={() => {
             if (!canUseCustomPhraseHelper) {
-              onUpgradeClick('Unlock custom phrase cards with Group Pass.');
+              onUpgradeClick(t('stay.customHelper.upgradeToast'));
               return;
             }
             setShowCustomResult(true);
@@ -126,13 +131,13 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
           disabled={!customPhrase.trim()}
           className="mt-3 flex w-full items-center justify-center gap-1 rounded-xl bg-[#155e63] px-3 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#0e4a4e] disabled:cursor-not-allowed disabled:opacity-40"
         >
-          {canUseCustomPhraseHelper ? 'Generate Chinese Card' : 'Upgrade to Group Pass'} <ChevronRight className="w-3 h-3" />
+          {canUseCustomPhraseHelper ? t('stay.customHelper.generate') : t('stay.customHelper.upgrade')} <ChevronRight className="w-3 h-3" />
         </button>
-      </section>
+      </ToolDisclosure>
 
       <section>
-        <h2 className="text-base font-semibold text-gray-900 mb-1">City Guide</h2>
-        <p className="text-gray-500 text-sm mb-3">Pick your city for arrival, transport, payment, food, and safety basics.</p>
+        <h2 className="text-base font-semibold text-gray-900 mb-1">{t('stay.cityGuide.title')}</h2>
+        <p className="text-gray-500 text-sm mb-3">{t('stay.cityGuide.subtitle')}</p>
         <div className="grid grid-cols-3 gap-2.5 mb-4">
           {cityPacks.map((city) => {
             const locked = isCityLocked(city.cityId);
@@ -142,7 +147,7 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
                 key={city.cityId}
                 onClick={() => {
                   if (locked) {
-                    onUpgradeClick('Unlock city survival packs with Trip Pass.');
+                    onUpgradeClick(t('stay.cityGuide.upgradeToast'));
                     return;
                   }
                   setSelectedCityId(city.cityId);
@@ -164,12 +169,12 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
         <div className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm">
           <div className="mb-4 flex items-start justify-between gap-3">
             <div>
-              <h3 className="text-lg font-bold text-gray-950">{selectedCity.cityName} Survival Pack</h3>
-              <p className="text-xs text-gray-500">{selectedCity.cityNameCN} · Best time: {selectedCity.bestTimeToVisit}</p>
+              <h3 className="text-lg font-bold text-gray-950">{t('stay.cityGuide.survivalPack', { city: selectedCity.cityName })}</h3>
+              <p className="text-xs text-gray-500">{selectedCity.cityNameCN} · {t('stay.cityGuide.bestTime', { time: selectedCity.bestTimeToVisit })}</p>
             </div>
             {!hasFullAccess && (
               <span className="rounded-full bg-[#155e63]/10 px-2.5 py-1 text-[11px] font-semibold text-[#155e63]">
-                Shanghai free
+                {t('stay.cityGuide.shanghaiFree')}
               </span>
             )}
           </div>
@@ -177,7 +182,7 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
           <div className="space-y-4">
             <div>
               <div className="mb-1.5 flex items-center gap-2 text-sm font-semibold text-gray-900">
-                <Plane className="h-4 w-4 text-[#155e63]" /> Airport & Getting Around
+                <Plane className="h-4 w-4 text-[#155e63]" /> {t('stay.cityGuide.airportGettingAround')}
               </div>
               <p className="text-sm text-gray-600">{selectedCity.airport.name} ({selectedCity.airport.iataCode})</p>
               <p className="text-xs leading-relaxed text-gray-500">{selectedCity.airport.toCity}</p>
@@ -185,16 +190,16 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
 
             <div>
               <div className="mb-1.5 flex items-center gap-2 text-sm font-semibold text-gray-900">
-                <Car className="h-4 w-4 text-[#155e63]" /> Transport
+                <Car className="h-4 w-4 text-[#155e63]" /> {t('tabs.transport')}
               </div>
-              <p className="text-xs leading-relaxed text-gray-500">Metro: {selectedCity.transport.metro}</p>
-              <p className="text-xs leading-relaxed text-gray-500">Taxi: {selectedCity.transport.taxi}</p>
+              <p className="text-xs leading-relaxed text-gray-500">{t('stay.cityGuide.metro')}: {selectedCity.transport.metro}</p>
+              <p className="text-xs leading-relaxed text-gray-500">{t('stay.cityGuide.taxi')}: {selectedCity.transport.taxi}</p>
               <p className="text-xs leading-relaxed text-gray-500">DiDi: {selectedCity.transport.didi}</p>
             </div>
 
             <div>
               <div className="mb-1.5 flex items-center gap-2 text-sm font-semibold text-gray-900">
-                <CreditCard className="h-4 w-4 text-[#155e63]" /> Payment
+                <CreditCard className="h-4 w-4 text-[#155e63]" /> {t('stay.cityGuide.payment')}
               </div>
               <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                 {Object.entries(selectedCity.payment).map(([key, value]) => (
@@ -208,7 +213,7 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
 
             <div>
               <div className="mb-1.5 flex items-center gap-2 text-sm font-semibold text-gray-900">
-                <Utensils className="h-4 w-4 text-[#155e63]" /> Food Must-Try
+                <Utensils className="h-4 w-4 text-[#155e63]" /> {t('stay.cityGuide.foodMustTry')}
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {selectedCity.food.mustTry.map((item) => (
@@ -219,7 +224,7 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
 
             <div>
               <div className="mb-1.5 flex items-center gap-2 text-sm font-semibold text-gray-900">
-                <AlertTriangle className="h-4 w-4 text-amber-500" /> Watch Out For
+                <AlertTriangle className="h-4 w-4 text-amber-500" /> {t('stay.cityGuide.watchOut')}
               </div>
               <ul className="space-y-1">
                 {selectedCity.commonScams.map((item) => (
@@ -230,7 +235,7 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
 
             <div>
               <div className="mb-1.5 flex items-center gap-2 text-sm font-semibold text-gray-900">
-                <MapPin className="h-4 w-4 text-[#155e63]" /> Tourist Tips
+                <MapPin className="h-4 w-4 text-[#155e63]" /> {t('stay.cityGuide.touristTips')}
               </div>
               <ul className="space-y-1">
                 {selectedCity.touristTips.map((tip) => (
@@ -263,8 +268,8 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
         categories={[
           {
             id: 'hotel',
-            title: 'Hotel Phrase Cards',
-            subtitle: `${hotelCards.length} check-in and front desk cards`,
+            title: t('stay.hotelPhraseCards'),
+            subtitle: t('stay.hotelCardsSubtitle', { count: hotelCards.length }),
             icon: <Building2 className="w-4 h-4" />,
             cards: hotelCards,
           },
@@ -284,8 +289,8 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
             <p className="text-4xl font-bold text-gray-950 leading-tight mb-4">{customPhraseCard.chinese}</p>
             <p className="text-gray-500 text-base mb-6">{customPhraseCard.pinyin}</p>
             <div className="flex gap-2">
-              <button onClick={() => speakChinese(customPhraseCard.chinese)} className="flex-1 bg-[#155e63] text-white rounded-xl py-3 text-sm font-medium">🔊 Speak</button>
-              <button onClick={() => copyPhrase(customPhraseCard.chinese)} className="flex-1 border border-gray-200 rounded-xl py-3 text-sm font-medium text-gray-600">📋 Copy</button>
+              <button onClick={() => speakChinese(customPhraseCard.chinese)} className="flex-1 bg-[#155e63] text-white rounded-xl py-3 text-sm font-medium">🔊 {t('common.speak')}</button>
+              <button onClick={() => copyPhrase(customPhraseCard.chinese)} className="flex-1 border border-gray-200 rounded-xl py-3 text-sm font-medium text-gray-600">📋 {t('common.copy')}</button>
             </div>
           </div>
         </div>

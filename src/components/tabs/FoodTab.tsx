@@ -3,6 +3,7 @@ import { Upload, AlertTriangle, MessageSquare, ChevronRight, X, Search, Utensils
 import { useTranslation } from 'react-i18next';
 import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
 import TabSectionHeader from '../TabSectionHeader';
+import ToolDisclosure from '../ToolDisclosure';
 import { restaurantCards } from '../../data/phraseCards';
 import type { UserState } from '../../hooks/useAuth';
 import { isTripOrGroup } from '../../lib/membership';
@@ -90,11 +91,11 @@ function AllergyCard({ card, showToast }: AllergyCardProps) {
           </div>
           <div className="flex gap-2 mt-2">
             <button onClick={() => speakChinese(card.chinesePhrase)} className="flex-1 text-xs text-[#155e63] flex items-center justify-center gap-1">
-              🔊 Speak
+              🔊 {t('common.speak')}
             </button>
             <button onClick={() => copyPhrase(card.chinesePhrase)} className="flex-1 text-xs text-gray-400 flex items-center justify-center gap-1 hover:text-gray-600 transition-colors">
               <MessageSquare className="w-3 h-3" />
-              📋 Copy
+              📋 {t('common.copy')}
             </button>
           </div>
         </div>
@@ -143,27 +144,29 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
   return (
     <div className="space-y-6">
       <TabSectionHeader
-        title="Food"
-        subtitle="Decode menus, avoid allergens, and order with confidence."
+        title={t('tabs.food')}
+        subtitle={t('tabHeaders.food')}
         onAskBuddy={onAskBuddy}
       />
 
       {/* Section: Menu Decoder */}
-      <section>
-        <div className="flex items-center gap-2 mb-3">
-          <h2 className="text-base font-semibold text-gray-900">{t('food.decoderTitle')}</h2>
+      <ToolDisclosure
+        title={t('food.decoderTitle')}
+        subtitle={t('food.decoderSub')}
+        icon={<Upload className="w-4 h-4" />}
+      >
+        <div className="mb-3">
           <span className="text-xs bg-[#155e63]/10 text-[#155e63] px-2 py-0.5 rounded-full font-medium">{t('food.ai')}</span>
         </div>
-        <p className="text-gray-500 text-sm mb-4">{t('food.decoderSub')}</p>
         {/* Dish Search — independent local search, no API calls */}
         <div className="mb-4">
-          <p className="text-sm font-medium text-gray-700 mb-2">Search dishes by name</p>
+          <p className="text-sm font-medium text-gray-700 mb-2">{t('food.dishSearchTitle')}</p>
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-300 pointer-events-none" />
             <input
               value={dishQuery}
               onChange={(e) => setDishQuery(e.target.value)}
-              placeholder="Search dish by name, Chinese, or pinyin…"
+              placeholder={t('food.dishSearchPlaceholder')}
               className="w-full pl-9 pr-3 py-2.5 text-sm bg-white rounded-xl border border-gray-200 outline-none focus:border-[#155e63]/40 transition-all placeholder:text-gray-300"
             />
             {dishQuery && (
@@ -190,10 +193,10 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
                     </div>
                     <div className="flex gap-1 shrink-0 mt-0.5">
                       {dish.veganFriendly && (
-                        <span className="text-[10px] bg-green-100 text-green-700 px-1.5 py-0.5 rounded-full font-medium">Vegan</span>
+                        <span className="text-[10px] bg-green-100 text-green-700 px-1.5 py-0.5 rounded-full font-medium">{t('food.vegan')}</span>
                       )}
                       {!dish.veganFriendly && dish.vegetarianFriendly && (
-                        <span className="text-[10px] bg-emerald-50 text-emerald-600 px-1.5 py-0.5 rounded-full font-medium">Veg</span>
+                        <span className="text-[10px] bg-emerald-50 text-emerald-600 px-1.5 py-0.5 rounded-full font-medium">{t('food.vegetarianShort')}</span>
                       )}
                     </div>
                   </div>
@@ -218,7 +221,7 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
           )}
 
           {dishQuery.trim() && dishResults.length === 0 && (
-            <p className="text-xs text-gray-400 mt-2 text-center">No dishes found for "{dishQuery}"</p>
+            <p className="text-xs text-gray-400 mt-2 text-center">{t('food.noDishes', { query: dishQuery })}</p>
           )}
         </div>
 
@@ -272,7 +275,7 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
             />
           </div>
         )}
-      </section>
+      </ToolDisclosure>
 
       {/* Section: Allergy Alerts */}
       <section>
@@ -295,7 +298,7 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
           {
             id: 'restaurant',
             title: t('food.phrasesTitle'),
-            subtitle: `${restaurantCards.length} restaurant ordering cards`,
+            subtitle: t('food.restaurantCardsSubtitle', { count: restaurantCards.length }),
             icon: <Utensils className="w-4 h-4" />,
             cards: restaurantCards,
           },

@@ -95,8 +95,8 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
   return (
     <div className="space-y-6">
       <TabSectionHeader
-        title="Pay in China"
-        subtitle="Understand Alipay, WeChat Pay, cards, and cash."
+        title={t('tabs.pay')}
+        subtitle={t('tabHeaders.pay')}
         onAskBuddy={onAskBuddy}
       />
 
@@ -131,7 +131,7 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
 
       {/* Pricing cards */}
       <section>
-        <h2 className="text-base font-semibold text-gray-900 mb-3">Upgrade Your Trip Pass</h2>
+        <h2 className="text-base font-semibold text-gray-900 mb-3">{t('pay.plansTitle')}</h2>
         <div className="mb-4 rounded-2xl border border-[#155e63]/10 bg-white/70 p-4">
           <h3 className="text-sm font-bold text-gray-950">{t('value.whyTitle')}</h3>
           <ul className="mt-3 grid gap-2 text-sm text-gray-600 sm:grid-cols-2">
@@ -231,8 +231,8 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
         categories={[
           {
             id: 'payment',
-            title: 'Payment Phrase Cards',
-            subtitle: `${paymentCards.length} Alipay, WeChat Pay, card, and cash cards`,
+            title: t('pay.paymentPhraseCards'),
+            subtitle: t('pay.paymentCardsSubtitle', { count: paymentCards.length }),
             icon: <CreditCard className="w-4 h-4" />,
             cards: paymentCards,
           },

@@ -73,6 +73,21 @@
           "tag": "お金",
           "body": "小さな店用に¥500〜1000の現金を持ちましょう。多くのモールはVisaタッチ決済に対応しています。"
         }
+      },
+      "cityGuidesTitle": "都市別サバイバルガイド",
+      "cityGuidesSub": "各都市の空港、交通、支払い、現地の注意点。",
+      "cityUnlockToast": "9都市ガイドはTrip Passで解除できます。",
+      "cityModal": {
+        "gettingThere": "行き方",
+        "gettingAround": "移動",
+        "metro": "地下鉄",
+        "taxiDidi": "タクシー / Didi",
+        "paying": "支払い",
+        "mustTryFood": "必食グルメ",
+        "scamWatch": "詐欺注意",
+        "touristTips": "旅行のヒント",
+        "cash": "現金",
+        "foreignCard": "海外カード"
       }
     },
     "stay": {
@@ -103,7 +118,34 @@
       },
       "addressCard": "住所カード生成",
       "addressSub": "タクシー用にホテル住所を中国語で表示",
-      "generate": "生成"
+      "generate": "生成",
+      "customHelper": {
+        "title": "カスタムフレーズヘルパー",
+        "subtitle": "ホテルで具体的な要望がある時に作成。",
+        "body": "実際の旅行状況に合わせた中国語カードを作成します。",
+        "available": "Group Passで利用可能",
+        "placeholder": "何と言いたいですか？",
+        "generate": "中国語カードを作成",
+        "upgrade": "Group Passへアップグレード",
+        "upgradeToast": "カスタムフレーズカードはGroup Passで解除できます。"
+      },
+      "cityGuide": {
+        "title": "都市ガイド",
+        "subtitle": "到着、交通、支払い、食事、安全の基本を都市別に確認。",
+        "upgradeToast": "都市サバイバルパックはTrip Passで解除できます。",
+        "survivalPack": "{{city}} サバイバルパック",
+        "bestTime": "おすすめ時期：{{time}}",
+        "shanghaiFree": "上海は無料",
+        "airportGettingAround": "空港と移動",
+        "metro": "地下鉄",
+        "taxi": "タクシー",
+        "payment": "支払い",
+        "foodMustTry": "必食グルメ",
+        "watchOut": "注意点",
+        "touristTips": "旅行のヒント"
+      },
+      "hotelPhraseCards": "ホテルフレーズカード",
+      "hotelCardsSubtitle": "チェックインとフロント用カード {{count}}枚"
     },
     "food": {
       "decoderTitle": "メニュー解読",
@@ -178,7 +220,13 @@
           "name": "グルテンフリー",
           "phrase": "グルテンを食べられません。小麦、大麦、ライ麦を避けてください。"
         }
-      ]
+      ],
+      "dishSearchTitle": "料理名で検索",
+      "dishSearchPlaceholder": "料理名、中国語、ピンインで検索…",
+      "noDishes": "「{{query}}」の料理は見つかりません",
+      "vegan": "ヴィーガン",
+      "vegetarianShort": "ベジ",
+      "restaurantCardsSubtitle": "レストラン注文カード {{count}}枚"
     },
     "transport": {
       "appsTitle": "おすすめアプリ",
@@ -218,7 +266,16 @@
         "leftRight": "左へ / 右へ曲がってください",
         "stopHere": "ここで停めてください",
         "meter": "メーターを使ってください"
-      }
+      },
+      "trainHelperShort": "主要都市間の高速鉄道。",
+      "appsShort": "旅行前にダウンロード。",
+      "metroTrainPhrases": "地下鉄 / 鉄道フレーズ",
+      "metroTrainPhrasesSub": "駅や乗り換えで使う短いフレーズ。",
+      "taxiCardsSubtitle": "タクシー・運転手用カード {{count}}枚",
+      "trainPhrases": "鉄道フレーズ",
+      "trainCardsSubtitle": "高速鉄道カード {{count}}枚",
+      "airportPhrases": "空港フレーズ",
+      "airportCardsSubtitle": "到着・乗り継ぎカード {{count}}枚"
     },
     "emergency": {
       "bannerTitle": "緊急連絡先",
@@ -242,7 +299,20 @@
       },
       "lostPassportPhone": "パスポート / 携帯を紛失",
       "lostPhone": "携帯を紛失",
-      "lostPhonePhrase": "携帯をなくしました。警察またはホテルに連絡するのを手伝ってください。"
+      "lostPhonePhrase": "携帯をなくしました。警察またはホテルに連絡するのを手伝ってください。",
+      "coreHelp": "基本の緊急ヘルプ",
+      "copyFailed": "コピーできませんでした。手動でコピーしてください。",
+      "locationCopied": "位置情報を英語と中国語でコピーしました。",
+      "locationBlocked": "位置情報の許可がブロックされました。予備メッセージをコピーしました。",
+      "locationUnavailable": "位置情報を利用できません。予備メッセージをコピーしました。",
+      "emergencyPhrases": "緊急フレーズ",
+      "emergencyCardsSubtitle": "緊急ヘルプカード {{count}}枚",
+      "hospital": "病院",
+      "hospitalCardsSubtitle": "病院・医療カード {{count}}枚",
+      "police": "警察",
+      "policeCardsSubtitle": "警察への説明カード {{count}}枚",
+      "pharmacy": "薬局",
+      "pharmacyCardsSubtitle": "薬・薬局カード {{count}}枚"
     },
     "pay": {
       "plansTitle": "プラン",
@@ -368,7 +438,9 @@
           "en": "このQRコードをスキャンするのを手伝ってもらえますか？",
           "note": "QRの流れが分かりにくい時に使います。"
         }
-      }
+      },
+      "paymentPhraseCards": "支払いフレーズカード",
+      "paymentCardsSubtitle": "Alipay、WeChat Pay、カード、現金カード {{count}}枚"
     },
     "chat": {
       "title": "Buddyに質問",
@@ -527,6 +599,26 @@
       "logoutTitle": "ログアウトしますか？",
       "logoutText": "ChinaEase Buddy からログアウトしてもよろしいですか？",
       "cancel": "キャンセル"
+    },
+    "common": {
+      "phraseCards": "フレーズカード",
+      "phraseCardsHint": "まず状況を選び、今必要なフレーズだけ開きます。",
+      "freeCount": "{{count}}枚無料",
+      "cardCount": "{{count}}枚の実用カード",
+      "upgradeToUnlock": "アップグレードして解除",
+      "unlockWithTrip": "Trip Passで解除",
+      "speak": "再生",
+      "copy": "コピー",
+      "showToLocal": "相手に見せる",
+      "preview": "プレビュー"
+    },
+    "tabHeaders": {
+      "before": "中国到着前に必要な準備を整えます。",
+      "stay": "ホテルのチェックイン、部屋の問題、フロント対応をサポート。",
+      "food": "メニューを理解し、アレルゲンを避けて安心して注文。",
+      "transport": "タクシー、地下鉄、鉄道、空港移動をサポート。",
+      "emergency": "緊急時にすぐ使えるヘルプ。",
+      "pay": "Alipay、WeChat Pay、カード、現金を理解。"
     }
   }
 }

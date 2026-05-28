@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Copy, Lock, Volume2, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import type { PhraseCardData } from '../types/phraseCard';
 
 interface Props {
@@ -9,6 +10,7 @@ interface Props {
 }
 
 export default function PhraseCard({ card, locked = false, onUpgradeClick }: Props) {
+  const { t } = useTranslation();
   const [showLocal, setShowLocal] = useState(false);
 
   const handleLockedClick = () => {
@@ -33,7 +35,7 @@ export default function PhraseCard({ card, locked = false, onUpgradeClick }: Pro
     <>
       <div
         onClick={handleLockedClick}
-        className={`relative bg-white border border-gray-100 rounded-2xl p-3.5 shadow-sm transition-all ${locked ? 'opacity-55 cursor-pointer' : 'hover:shadow-md hover:border-[#155e63]/20'}`}
+        className={`relative rounded-2xl border border-white/60 bg-white/[0.58] p-3.5 shadow-[0_12px_34px_rgba(11,63,67,0.07)] backdrop-blur-xl transition-all ${locked ? 'opacity-55 cursor-pointer' : 'hover:shadow-md hover:border-[#155e63]/20'}`}
       >
         {locked && (
           <div className="absolute inset-0 z-10 flex items-center justify-center rounded-2xl bg-white/70 backdrop-blur-[1px]">
@@ -46,7 +48,7 @@ export default function PhraseCard({ card, locked = false, onUpgradeClick }: Pro
               className="flex items-center gap-1.5 rounded-full bg-[#155e63] px-3 py-1.5 text-xs font-semibold text-white shadow-sm"
             >
               <Lock className="h-3 w-3" />
-              Upgrade to unlock
+              {t('common.upgradeToUnlock')}
             </button>
           </div>
         )}
@@ -63,7 +65,7 @@ export default function PhraseCard({ card, locked = false, onUpgradeClick }: Pro
             className="text-xs text-[#155e63] flex items-center gap-1 disabled:cursor-not-allowed"
           >
             <Volume2 className="h-3 w-3" />
-            Speak
+            {t('common.speak')}
           </button>
           <button
             onClick={copyChinese}
@@ -71,7 +73,7 @@ export default function PhraseCard({ card, locked = false, onUpgradeClick }: Pro
             className="text-xs text-gray-400 flex items-center gap-1 disabled:cursor-not-allowed"
           >
             <Copy className="h-3 w-3" />
-            Copy
+            {t('common.copy')}
           </button>
           {card.showToLocal && (
             <button
@@ -79,7 +81,7 @@ export default function PhraseCard({ card, locked = false, onUpgradeClick }: Pro
               disabled={locked}
               className="text-xs text-[#155e63] font-medium disabled:cursor-not-allowed"
             >
-              Show to local
+              {t('common.showToLocal')}
             </button>
           )}
         </div>

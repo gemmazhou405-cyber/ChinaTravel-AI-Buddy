@@ -73,6 +73,21 @@
           "tag": "Money",
           "body": "Carry ¥500–1000 in cash for small vendors. Most malls accept Visa contactless."
         }
+      },
+      "cityGuidesTitle": "City Survival Guides",
+      "cityGuidesSub": "Airport, transport, payment, and local tips for each city.",
+      "cityUnlockToast": "Unlock all 9 city survival guides with Trip Pass.",
+      "cityModal": {
+        "gettingThere": "Getting There",
+        "gettingAround": "Getting Around",
+        "metro": "Metro",
+        "taxiDidi": "Taxi / Didi",
+        "paying": "Paying",
+        "mustTryFood": "Must-Try Food",
+        "scamWatch": "Scam Watch",
+        "touristTips": "Tourist Tips",
+        "cash": "Cash",
+        "foreignCard": "Foreign Card"
       }
     },
     "stay": {
@@ -103,7 +118,34 @@
       },
       "addressCard": "Address Card Generator",
       "addressSub": "Print your hotel address in Chinese for taxi rides",
-      "generate": "Generate"
+      "generate": "Generate",
+      "customHelper": {
+        "title": "Custom Phrase Helper",
+        "subtitle": "Create a phrase when hotel needs get specific.",
+        "body": "Create custom Chinese cards for your real travel situations.",
+        "available": "Available with Group Pass",
+        "placeholder": "What do you want to say?",
+        "generate": "Generate Chinese Card",
+        "upgrade": "Upgrade to Group Pass",
+        "upgradeToast": "Unlock custom phrase cards with Group Pass."
+      },
+      "cityGuide": {
+        "title": "City Guide",
+        "subtitle": "Pick your city for arrival, transport, payment, food, and safety basics.",
+        "upgradeToast": "Unlock city survival packs with Trip Pass.",
+        "survivalPack": "{{city}} Survival Pack",
+        "bestTime": "Best time: {{time}}",
+        "shanghaiFree": "Shanghai free",
+        "airportGettingAround": "Airport & Getting Around",
+        "metro": "Metro",
+        "taxi": "Taxi",
+        "payment": "Payment",
+        "foodMustTry": "Food Must-Try",
+        "watchOut": "Watch Out For",
+        "touristTips": "Tourist Tips"
+      },
+      "hotelPhraseCards": "Hotel Phrase Cards",
+      "hotelCardsSubtitle": "{{count}} check-in and front desk cards"
     },
     "food": {
       "decoderTitle": "Menu Decoder",
@@ -178,7 +220,13 @@
         "menu": "Can I see the menu?",
         "bill": "The bill please",
         "spicyQ": "Is this dish spicy?"
-      }
+      },
+      "dishSearchTitle": "Search dishes by name",
+      "dishSearchPlaceholder": "Search dish by name, Chinese, or pinyin…",
+      "noDishes": "No dishes found for \"{{query}}\"",
+      "vegan": "Vegan",
+      "vegetarianShort": "Veg",
+      "restaurantCardsSubtitle": "{{count}} restaurant ordering cards"
     },
     "transport": {
       "appsTitle": "Recommended Apps",
@@ -218,7 +266,16 @@
         "leftRight": "Turn left / Turn right",
         "stopHere": "Stop here please",
         "meter": "Please use the meter"
-      }
+      },
+      "trainHelperShort": "High-speed trains between major cities.",
+      "appsShort": "Download before your trip.",
+      "metroTrainPhrases": "Metro / train phrases",
+      "metroTrainPhrasesSub": "Quick phrases for stations and transfers.",
+      "taxiCardsSubtitle": "{{count}} taxi and driver cards",
+      "trainPhrases": "Train Phrases",
+      "trainCardsSubtitle": "{{count}} high-speed rail cards",
+      "airportPhrases": "Airport Phrases",
+      "airportCardsSubtitle": "{{count}} arrival and transfer cards"
     },
     "emergency": {
       "bannerTitle": "Emergency contacts",
@@ -242,7 +299,20 @@
       },
       "lostPassportPhone": "Lost passport / lost phone",
       "lostPhone": "Lost phone",
-      "lostPhonePhrase": "I lost my phone. Please help me contact the police or my hotel."
+      "lostPhonePhrase": "I lost my phone. Please help me contact the police or my hotel.",
+      "coreHelp": "Core Emergency Help",
+      "copyFailed": "Could not copy. Please copy the message manually.",
+      "locationCopied": "Location copied in English and Chinese.",
+      "locationBlocked": "Location permission was blocked. A backup message was copied.",
+      "locationUnavailable": "Location is unavailable. A backup message was copied.",
+      "emergencyPhrases": "Emergency Phrases",
+      "emergencyCardsSubtitle": "{{count}} urgent help cards",
+      "hospital": "Hospital",
+      "hospitalCardsSubtitle": "{{count}} hospital and medical cards",
+      "police": "Police",
+      "policeCardsSubtitle": "{{count}} police report cards",
+      "pharmacy": "Pharmacy",
+      "pharmacyCardsSubtitle": "{{count}} medicine and pharmacy cards"
     },
     "pay": {
       "plansTitle": "Upgrade Your Trip Pass",
@@ -368,7 +438,9 @@
           "en": "Can you help me scan this QR code?",
           "note": "Use when the QR flow is confusing."
         }
-      }
+      },
+      "paymentPhraseCards": "Payment Phrase Cards",
+      "paymentCardsSubtitle": "{{count}} Alipay, WeChat Pay, card, and cash cards"
     },
     "chat": {
       "title": "Ask Buddy",
@@ -527,6 +599,26 @@
       "logoutTitle": "Log out?",
       "logoutText": "Are you sure you want to log out of ChinaEase Buddy?",
       "cancel": "Cancel"
+    },
+    "common": {
+      "phraseCards": "Phrase Cards",
+      "phraseCardsHint": "Pick a situation first. Open only the phrases you need right now.",
+      "freeCount": "{{count}} free",
+      "cardCount": "{{count}} practical cards",
+      "upgradeToUnlock": "Upgrade to unlock",
+      "unlockWithTrip": "Unlock with Trip Pass",
+      "speak": "Speak",
+      "copy": "Copy",
+      "showToLocal": "Show to local",
+      "preview": "Preview"
+    },
+    "tabHeaders": {
+      "before": "Set up the essentials before landing in China.",
+      "stay": "Handle hotel check-in, room issues, and front desk conversations.",
+      "food": "Decode menus, avoid allergens, and order with confidence.",
+      "transport": "Taxi, metro, train, and airport help.",
+      "emergency": "Get urgent help fast.",
+      "pay": "Understand Alipay, WeChat Pay, cards, and cash."
     }
   }
 }

@@ -99,7 +99,7 @@ function PhraseCard({ title, icon, en, zh, color, showToast }: { title: string; 
           }}
           className="text-xs text-[#155e63] flex items-center gap-1"
         >
-          🔊 Speak
+          🔊 {t('common.speak')}
         </button>
         <button
           onClick={(e) => {
@@ -108,7 +108,7 @@ function PhraseCard({ title, icon, en, zh, color, showToast }: { title: string; 
           }}
           className="text-xs text-gray-400"
         >
-          📋 Copy
+          📋 {t('common.copy')}
         </button>
       </div>
       {open && (
@@ -122,8 +122,8 @@ function PhraseCard({ title, icon, en, zh, color, showToast }: { title: string; 
             <p className="text-4xl font-bold text-gray-950 leading-tight mb-4">{zh}</p>
             <p className="text-gray-500 text-base mb-6">{en}</p>
             <div className="flex gap-2">
-              <button onClick={() => speakChinese(zh)} className="flex-1 bg-[#155e63] text-white rounded-xl py-3 text-sm font-medium">🔊 Speak</button>
-              <button onClick={handleCopy} className="flex-1 border border-gray-200 rounded-xl py-3 text-sm font-medium text-gray-600">📋 Copy</button>
+              <button onClick={() => speakChinese(zh)} className="flex-1 bg-[#155e63] text-white rounded-xl py-3 text-sm font-medium">🔊 {t('common.speak')}</button>
+              <button onClick={handleCopy} className="flex-1 border border-gray-200 rounded-xl py-3 text-sm font-medium text-gray-600">📋 {t('common.copy')}</button>
             </div>
           </div>
         </div>
@@ -148,7 +148,7 @@ export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgra
       await window.navigator.clipboard?.writeText(text);
       showToast(successMessage);
     } catch {
-      showToast('Could not copy. Please copy the message manually.');
+      showToast(t('emergency.copyFailed'));
     }
   };
 
@@ -167,22 +167,22 @@ export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgra
             'Please help me contact emergency services if needed.',
             '如有需要，请帮我联系救援人员。',
           ].join('\n');
-          copyEmergencyText(text, 'Location copied in English and Chinese.');
+          copyEmergencyText(text, t('emergency.locationCopied'));
         },
         () => {
-          copyEmergencyText(fallbackText, 'Location permission was blocked. A backup message was copied.');
+          copyEmergencyText(fallbackText, t('emergency.locationBlocked'));
         }
       );
     } else {
-      copyEmergencyText(fallbackText, 'Location is unavailable. A backup message was copied.');
+      copyEmergencyText(fallbackText, t('emergency.locationUnavailable'));
     }
   };
 
   return (
     <div className="space-y-6">
       <TabSectionHeader
-        title="Emergency"
-        subtitle="Get urgent help fast."
+        title={t('tabs.emergency')}
+        subtitle={t('tabHeaders.emergency')}
         onAskBuddy={onAskBuddy}
       />
 
@@ -209,7 +209,7 @@ export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgra
 
       {/* Core action cards */}
       <section className="space-y-3">
-        <h2 className="text-base font-semibold text-gray-900">Core Emergency Help</h2>
+        <h2 className="text-base font-semibold text-gray-900">{t('emergency.coreHelp')}</h2>
         <PhraseCard
           title={t('emergency.lostPassportPhone')}
           icon={<FileText className="w-4 h-4 text-blue-500" />}
@@ -257,29 +257,29 @@ export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgra
         categories={[
           {
             id: 'emergency',
-            title: 'Emergency Phrases',
-            subtitle: `${emergencyCards.length} urgent help cards`,
+            title: t('emergency.emergencyPhrases'),
+            subtitle: t('emergency.emergencyCardsSubtitle', { count: emergencyCards.length }),
             icon: <Shield className="w-4 h-4" />,
             cards: emergencyCards,
           },
           {
             id: 'hospital',
-            title: 'Hospital',
-            subtitle: `${hospitalCards.length} hospital and medical cards`,
+            title: t('emergency.hospital'),
+            subtitle: t('emergency.hospitalCardsSubtitle', { count: hospitalCards.length }),
             icon: <Building2 className="w-4 h-4" />,
             cards: hospitalCards,
           },
           {
             id: 'police',
-            title: 'Police',
-            subtitle: `${policeCards.length} police report cards`,
+            title: t('emergency.police'),
+            subtitle: t('emergency.policeCardsSubtitle', { count: policeCards.length }),
             icon: <Siren className="w-4 h-4" />,
             cards: policeCards,
           },
           {
             id: 'pharmacy',
-            title: 'Pharmacy',
-            subtitle: `${pharmacyCards.length} medicine and pharmacy cards`,
+            title: t('emergency.pharmacy'),
+            subtitle: t('emergency.pharmacyCardsSubtitle', { count: pharmacyCards.length }),
             icon: <Pill className="w-4 h-4" />,
             cards: pharmacyCards,
           },

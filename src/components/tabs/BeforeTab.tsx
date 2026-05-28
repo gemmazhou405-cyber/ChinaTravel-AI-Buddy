@@ -54,6 +54,8 @@ const TIPS = [
 ];
 
 function CityModal({ city, emoji, onClose }: { city: CityPack; emoji: string; onClose: () => void }) {
+  const { t } = useTranslation();
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/50"
@@ -78,21 +80,21 @@ function CityModal({ city, emoji, onClose }: { city: CityPack; emoji: string; on
         <div className="p-4 space-y-4">
           {/* Airport */}
           <div className="bg-white rounded-2xl p-4 shadow-sm">
-            <p className="text-xs font-semibold text-[#155e63] uppercase tracking-wide mb-2">✈️ Getting There</p>
+            <p className="text-xs font-semibold text-[#155e63] uppercase tracking-wide mb-2">✈️ {t('before.cityModal.gettingThere')}</p>
             <p className="text-sm font-medium text-gray-800 mb-1">{city.airport.name} ({city.airport.iataCode})</p>
             <p className="text-xs text-gray-500 leading-relaxed">{city.airport.toCity}</p>
           </div>
 
           {/* Transport */}
           <div className="bg-white rounded-2xl p-4 shadow-sm">
-            <p className="text-xs font-semibold text-[#155e63] uppercase tracking-wide mb-2">🚇 Getting Around</p>
+            <p className="text-xs font-semibold text-[#155e63] uppercase tracking-wide mb-2">🚇 {t('before.cityModal.gettingAround')}</p>
             <div className="space-y-2">
               <div>
-                <p className="text-xs font-medium text-gray-700">Metro</p>
+                <p className="text-xs font-medium text-gray-700">{t('before.cityModal.metro')}</p>
                 <p className="text-xs text-gray-500 leading-relaxed">{city.transport.metro}</p>
               </div>
               <div>
-                <p className="text-xs font-medium text-gray-700">Taxi / Didi</p>
+                <p className="text-xs font-medium text-gray-700">{t('before.cityModal.taxiDidi')}</p>
                 <p className="text-xs text-gray-500 leading-relaxed">{city.transport.didi}</p>
               </div>
               {city.transport.tips.length > 0 && (
@@ -110,18 +112,18 @@ function CityModal({ city, emoji, onClose }: { city: CityPack; emoji: string; on
 
           {/* Payment */}
           <div className="bg-white rounded-2xl p-4 shadow-sm">
-            <p className="text-xs font-semibold text-[#155e63] uppercase tracking-wide mb-2">💳 Paying</p>
+            <p className="text-xs font-semibold text-[#155e63] uppercase tracking-wide mb-2">💳 {t('before.cityModal.paying')}</p>
             <div className="space-y-1.5">
               <p className="text-xs text-gray-500"><span className="font-medium text-gray-700">Alipay: </span>{city.payment.alipay}</p>
               <p className="text-xs text-gray-500"><span className="font-medium text-gray-700">WeChat Pay: </span>{city.payment.wechatPay}</p>
-              <p className="text-xs text-gray-500"><span className="font-medium text-gray-700">Cash: </span>{city.payment.cash}</p>
-              <p className="text-xs text-gray-500"><span className="font-medium text-gray-700">Foreign Card: </span>{city.payment.foreignCard}</p>
+              <p className="text-xs text-gray-500"><span className="font-medium text-gray-700">{t('before.cityModal.cash')}: </span>{city.payment.cash}</p>
+              <p className="text-xs text-gray-500"><span className="font-medium text-gray-700">{t('before.cityModal.foreignCard')}: </span>{city.payment.foreignCard}</p>
             </div>
           </div>
 
           {/* Must-try food */}
           <div className="bg-white rounded-2xl p-4 shadow-sm">
-            <p className="text-xs font-semibold text-[#155e63] uppercase tracking-wide mb-2">🍜 Must-Try Food</p>
+            <p className="text-xs font-semibold text-[#155e63] uppercase tracking-wide mb-2">🍜 {t('before.cityModal.mustTryFood')}</p>
             <div className="flex flex-wrap gap-1.5">
               {city.food.mustTry.map((item, i) => (
                 <span key={i} className="bg-[#155e63]/8 text-[#155e63] text-xs px-2.5 py-1 rounded-full font-medium">
@@ -133,7 +135,7 @@ function CityModal({ city, emoji, onClose }: { city: CityPack; emoji: string; on
 
           {/* Common scams */}
           <div className="bg-amber-50 border border-amber-100 rounded-2xl p-4">
-            <p className="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">⚠️ Scam Watch</p>
+            <p className="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">⚠️ {t('before.cityModal.scamWatch')}</p>
             <ul className="space-y-1.5">
               {city.commonScams.map((scam, i) => (
                 <li key={i} className="text-xs text-amber-800 flex gap-1.5">
@@ -146,7 +148,7 @@ function CityModal({ city, emoji, onClose }: { city: CityPack; emoji: string; on
 
           {/* Tourist tips */}
           <div className="bg-white rounded-2xl p-4 shadow-sm">
-            <p className="text-xs font-semibold text-[#155e63] uppercase tracking-wide mb-2">💡 Tourist Tips</p>
+            <p className="text-xs font-semibold text-[#155e63] uppercase tracking-wide mb-2">💡 {t('before.cityModal.touristTips')}</p>
             <ul className="space-y-1.5">
               {city.touristTips.map((tip, i) => (
                 <li key={i} className="text-xs text-gray-500 flex gap-1.5">
@@ -191,7 +193,7 @@ export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick }: Pro
 
   const handleCityClick = (city: CityPack, emoji: string, freeAccess: boolean) => {
     if (!freeAccess && !hasFullAccess) {
-      onUpgradeClick('Unlock all 9 city survival guides with Trip Pass.');
+      onUpgradeClick(t('before.cityUnlockToast'));
       return;
     }
     setSelectedCity({ city, emoji });
@@ -200,8 +202,8 @@ export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick }: Pro
   return (
     <div className="space-y-6">
       <TabSectionHeader
-        title="Before You Go"
-        subtitle="Set up the essentials before landing in China."
+        title={t('tabs.before')}
+        subtitle={t('tabHeaders.before')}
         onAskBuddy={onAskBuddy}
       />
 
@@ -240,8 +242,8 @@ export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick }: Pro
 
       {/* City Survival Guides */}
       <section>
-        <h2 className="text-base font-semibold text-gray-900 mb-1">City Survival Guides</h2>
-        <p className="text-gray-500 text-sm mb-3">Airport, transport, payment & local tips for each city.</p>
+        <h2 className="text-base font-semibold text-gray-900 mb-1">{t('before.cityGuidesTitle')}</h2>
+        <p className="text-gray-500 text-sm mb-3">{t('before.cityGuidesSub')}</p>
         <div className="grid grid-cols-3 gap-2">
           {CITIES.map(({ emoji, data, freeAccess }) => {
             const locked = !freeAccess && !hasFullAccess;
@@ -264,7 +266,7 @@ export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick }: Pro
                 <p className="text-xs font-semibold text-gray-800 leading-tight">{data.cityName}</p>
                 <p className="text-[10px] text-gray-400 mt-0.5">{data.cityNameCN}</p>
                 {locked && (
-                  <p className="text-[9px] text-[#155e63] mt-1 font-medium leading-tight">Unlock with Trip Pass</p>
+                  <p className="text-[9px] text-[#155e63] mt-1 font-medium leading-tight">{t('common.unlockWithTrip')}</p>
                 )}
               </button>
             );

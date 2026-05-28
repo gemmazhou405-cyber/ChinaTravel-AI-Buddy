@@ -73,6 +73,21 @@
           "tag": "Dinero",
           "body": "Lleva ¥500–1000 en efectivo para pequeños comercios. La mayoría de centros comerciales acepta Visa contactless."
         }
+      },
+      "cityGuidesTitle": "Guías de supervivencia por ciudad",
+      "cityGuidesSub": "Aeropuerto, transporte, pagos y consejos locales para cada ciudad.",
+      "cityUnlockToast": "Desbloquea las 9 guías de ciudad con Trip Pass.",
+      "cityModal": {
+        "gettingThere": "Cómo llegar",
+        "gettingAround": "Moverse",
+        "metro": "Metro",
+        "taxiDidi": "Taxi / Didi",
+        "paying": "Pagar",
+        "mustTryFood": "Comida imprescindible",
+        "scamWatch": "Estafas a evitar",
+        "touristTips": "Consejos de viaje",
+        "cash": "Efectivo",
+        "foreignCard": "Tarjeta extranjera"
       }
     },
     "stay": {
@@ -103,7 +118,34 @@
       },
       "addressCard": "Generador de tarjeta de dirección",
       "addressSub": "Muestra la dirección de tu hotel en chino para taxis",
-      "generate": "Generar"
+      "generate": "Generar",
+      "customHelper": {
+        "title": "Ayudante de frase personalizada",
+        "subtitle": "Crea una frase cuando tu situación de hotel es específica.",
+        "body": "Crea tarjetas chinas personalizadas para situaciones reales de viaje.",
+        "available": "Disponible con Group Pass",
+        "placeholder": "¿Qué quieres decir?",
+        "generate": "Crear tarjeta china",
+        "upgrade": "Mejorar a Group Pass",
+        "upgradeToast": "Desbloquea frases personalizadas con Group Pass."
+      },
+      "cityGuide": {
+        "title": "Guía de ciudad",
+        "subtitle": "Elige tu ciudad para llegada, transporte, pagos, comida y seguridad.",
+        "upgradeToast": "Desbloquea packs de supervivencia de ciudad con Trip Pass.",
+        "survivalPack": "Pack de supervivencia de {{city}}",
+        "bestTime": "Mejor época: {{time}}",
+        "shanghaiFree": "Shanghái gratis",
+        "airportGettingAround": "Aeropuerto y transporte",
+        "metro": "Metro",
+        "taxi": "Taxi",
+        "payment": "Pago",
+        "foodMustTry": "Comida imprescindible",
+        "watchOut": "Cuidado con",
+        "touristTips": "Consejos de viaje"
+      },
+      "hotelPhraseCards": "Tarjetas de frases de hotel",
+      "hotelCardsSubtitle": "{{count}} tarjetas de check-in y recepción"
     },
     "food": {
       "decoderTitle": "Decodificador de menús",
@@ -178,7 +220,13 @@
           "name": "Sin gluten",
           "phrase": "No puedo comer gluten. Evite trigo, cebada y centeno en mi comida."
         }
-      ]
+      ],
+      "dishSearchTitle": "Buscar platos por nombre",
+      "dishSearchPlaceholder": "Busca plato, chino o pinyin…",
+      "noDishes": "No se encontraron platos para “{{query}}”",
+      "vegan": "Vegano",
+      "vegetarianShort": "Veg",
+      "restaurantCardsSubtitle": "{{count}} tarjetas para pedir en restaurante"
     },
     "transport": {
       "appsTitle": "Apps recomendadas",
@@ -218,7 +266,16 @@
         "leftRight": "Gire a la izquierda / derecha",
         "stopHere": "Pare aquí, por favor",
         "meter": "Use el taxímetro, por favor"
-      }
+      },
+      "trainHelperShort": "Trenes de alta velocidad entre ciudades grandes.",
+      "appsShort": "Descarga antes del viaje.",
+      "metroTrainPhrases": "Frases de metro / tren",
+      "metroTrainPhrasesSub": "Frases rápidas para estaciones y transbordos.",
+      "taxiCardsSubtitle": "{{count}} tarjetas de taxi y conductor",
+      "trainPhrases": "Frases de tren",
+      "trainCardsSubtitle": "{{count}} tarjetas de tren de alta velocidad",
+      "airportPhrases": "Frases de aeropuerto",
+      "airportCardsSubtitle": "{{count}} tarjetas de llegada y traslado"
     },
     "emergency": {
       "bannerTitle": "Contactos de emergencia",
@@ -242,7 +299,20 @@
       },
       "lostPassportPhone": "Pasaporte / teléfono perdido",
       "lostPhone": "Teléfono perdido",
-      "lostPhonePhrase": "Perdí mi teléfono. Ayúdeme a contactar a la policía o a mi hotel."
+      "lostPhonePhrase": "Perdí mi teléfono. Ayúdeme a contactar a la policía o a mi hotel.",
+      "coreHelp": "Ayuda de emergencia esencial",
+      "copyFailed": "No se pudo copiar. Copia el mensaje manualmente.",
+      "locationCopied": "Ubicación copiada en inglés y chino.",
+      "locationBlocked": "Permiso de ubicación bloqueado. Mensaje de respaldo copiado.",
+      "locationUnavailable": "Ubicación no disponible. Mensaje de respaldo copiado.",
+      "emergencyPhrases": "Frases de emergencia",
+      "emergencyCardsSubtitle": "{{count}} tarjetas de ayuda urgente",
+      "hospital": "Hospital",
+      "hospitalCardsSubtitle": "{{count}} tarjetas de hospital y medicina",
+      "police": "Policía",
+      "policeCardsSubtitle": "{{count}} tarjetas para reporte policial",
+      "pharmacy": "Farmacia",
+      "pharmacyCardsSubtitle": "{{count}} tarjetas de medicamentos y farmacia"
     },
     "pay": {
       "plansTitle": "Planes",
@@ -368,7 +438,9 @@
           "en": "¿Puede ayudarme a escanear este código QR?",
           "note": "Útil si el flujo QR es confuso."
         }
-      }
+      },
+      "paymentPhraseCards": "Tarjetas de frases de pago",
+      "paymentCardsSubtitle": "{{count}} tarjetas de Alipay, WeChat Pay, tarjeta y efectivo"
     },
     "chat": {
       "title": "Preguntar a Buddy",
@@ -527,6 +599,26 @@
       "logoutTitle": "¿Cerrar sesión?",
       "logoutText": "¿Seguro que quieres cerrar sesión en ChinaEase Buddy?",
       "cancel": "Cancelar"
+    },
+    "common": {
+      "phraseCards": "Tarjetas de frases",
+      "phraseCardsHint": "Elige primero una situación. Abre solo las frases que necesitas ahora.",
+      "freeCount": "{{count}} gratis",
+      "cardCount": "{{count}} tarjetas prácticas",
+      "upgradeToUnlock": "Mejora para desbloquear",
+      "unlockWithTrip": "Desbloquear con Trip Pass",
+      "speak": "Reproducir",
+      "copy": "Copiar",
+      "showToLocal": "Mostrar a un local",
+      "preview": "Vista previa"
+    },
+    "tabHeaders": {
+      "before": "Configura lo esencial antes de aterrizar en China.",
+      "stay": "Gestiona check-in, problemas de habitación y recepción.",
+      "food": "Descifra menús, evita alérgenos y pide con confianza.",
+      "transport": "Ayuda con taxi, metro, tren y aeropuerto.",
+      "emergency": "Consigue ayuda urgente rápido.",
+      "pay": "Entiende Alipay, WeChat Pay, tarjetas y efectivo."
     }
   }
 }

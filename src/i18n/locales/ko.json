@@ -73,6 +73,21 @@
           "tag": "돈",
           "body": "소규모 상점용으로 ¥500–1000 현금을 준비하세요. 대부분 쇼핑몰은 Visa 비접촉 결제를 받습니다."
         }
+      },
+      "cityGuidesTitle": "도시별 생존 가이드",
+      "cityGuidesSub": "도시별 공항, 교통, 결제, 현지 팁.",
+      "cityUnlockToast": "9개 도시 가이드는 Trip Pass로 잠금 해제됩니다.",
+      "cityModal": {
+        "gettingThere": "가는 방법",
+        "gettingAround": "이동하기",
+        "metro": "지하철",
+        "taxiDidi": "택시 / Didi",
+        "paying": "결제",
+        "mustTryFood": "꼭 먹어볼 음식",
+        "scamWatch": "사기 주의",
+        "touristTips": "여행 팁",
+        "cash": "현금",
+        "foreignCard": "해외 카드"
       }
     },
     "stay": {
@@ -103,7 +118,34 @@
       },
       "addressCard": "주소 카드 생성기",
       "addressSub": "택시용 호텔 주소를 중국어로 표시",
-      "generate": "생성"
+      "generate": "생성",
+      "customHelper": {
+        "title": "맞춤 문장 도우미",
+        "subtitle": "호텔 상황이 구체적일 때 문장을 만드세요.",
+        "body": "실제 여행 상황에 맞는 중국어 카드를 만듭니다.",
+        "available": "Group Pass에서 사용 가능",
+        "placeholder": "무엇이라고 말하고 싶나요?",
+        "generate": "중국어 카드 만들기",
+        "upgrade": "Group Pass로 업그레이드",
+        "upgradeToast": "맞춤 문장 카드는 Group Pass로 잠금 해제됩니다."
+      },
+      "cityGuide": {
+        "title": "도시 가이드",
+        "subtitle": "도착, 교통, 결제, 음식, 안전 기본 정보를 도시별로 확인하세요.",
+        "upgradeToast": "도시 생존 팩은 Trip Pass로 잠금 해제됩니다.",
+        "survivalPack": "{{city}} 생존 팩",
+        "bestTime": "추천 시기: {{time}}",
+        "shanghaiFree": "상하이 무료",
+        "airportGettingAround": "공항 및 이동",
+        "metro": "지하철",
+        "taxi": "택시",
+        "payment": "결제",
+        "foodMustTry": "꼭 먹어볼 음식",
+        "watchOut": "주의할 점",
+        "touristTips": "여행 팁"
+      },
+      "hotelPhraseCards": "호텔 문장 카드",
+      "hotelCardsSubtitle": "체크인 및 프런트 카드 {{count}}개"
     },
     "food": {
       "decoderTitle": "메뉴 디코더",
@@ -178,7 +220,13 @@
           "name": "글루텐 프리",
           "phrase": "저는 글루텐을 먹을 수 없습니다. 밀, 보리, 호밀을 피해주세요."
         }
-      ]
+      ],
+      "dishSearchTitle": "음식 이름으로 검색",
+      "dishSearchPlaceholder": "음식명, 중국어, 병음 검색…",
+      "noDishes": "“{{query}}”에 대한 음식을 찾을 수 없습니다",
+      "vegan": "비건",
+      "vegetarianShort": "채식",
+      "restaurantCardsSubtitle": "식당 주문 카드 {{count}}개"
     },
     "transport": {
       "appsTitle": "추천 앱",
@@ -218,7 +266,16 @@
         "leftRight": "좌회전 / 우회전",
         "stopHere": "여기서 세워주세요",
         "meter": "미터기를 사용해 주세요"
-      }
+      },
+      "trainHelperShort": "주요 도시 간 고속철도.",
+      "appsShort": "여행 전에 다운로드하세요.",
+      "metroTrainPhrases": "지하철 / 기차 문장",
+      "metroTrainPhrasesSub": "역과 환승에서 쓰는 짧은 문장.",
+      "taxiCardsSubtitle": "택시 및 기사 카드 {{count}}개",
+      "trainPhrases": "기차 문장",
+      "trainCardsSubtitle": "고속철도 카드 {{count}}개",
+      "airportPhrases": "공항 문장",
+      "airportCardsSubtitle": "도착 및 환승 카드 {{count}}개"
     },
     "emergency": {
       "bannerTitle": "긴급 연락처",
@@ -242,7 +299,20 @@
       },
       "lostPassportPhone": "여권 / 휴대폰 분실",
       "lostPhone": "휴대폰 분실",
-      "lostPhonePhrase": "휴대폰을 잃어버렸습니다. 경찰이나 호텔에 연락하도록 도와주세요."
+      "lostPhonePhrase": "휴대폰을 잃어버렸습니다. 경찰이나 호텔에 연락하도록 도와주세요.",
+      "coreHelp": "핵심 긴급 도움",
+      "copyFailed": "복사할 수 없습니다. 메시지를 직접 복사해 주세요.",
+      "locationCopied": "위치를 영어와 중국어로 복사했습니다.",
+      "locationBlocked": "위치 권한이 차단되었습니다. 대체 메시지를 복사했습니다.",
+      "locationUnavailable": "위치를 사용할 수 없습니다. 대체 메시지를 복사했습니다.",
+      "emergencyPhrases": "긴급 문장",
+      "emergencyCardsSubtitle": "긴급 도움 카드 {{count}}개",
+      "hospital": "병원",
+      "hospitalCardsSubtitle": "병원 및 의료 카드 {{count}}개",
+      "police": "경찰",
+      "policeCardsSubtitle": "경찰 신고 카드 {{count}}개",
+      "pharmacy": "약국",
+      "pharmacyCardsSubtitle": "약 및 약국 카드 {{count}}개"
     },
     "pay": {
       "plansTitle": "플랜",
@@ -368,7 +438,9 @@
           "en": "이 QR 코드를 스캔하는 것을 도와주실 수 있나요?",
           "note": "QR 결제 흐름이 헷갈릴 때 사용하세요."
         }
-      }
+      },
+      "paymentPhraseCards": "결제 문장 카드",
+      "paymentCardsSubtitle": "Alipay, WeChat Pay, 카드, 현금 카드 {{count}}개"
     },
     "chat": {
       "title": "Buddy에게 질문",
@@ -527,6 +599,26 @@
       "logoutTitle": "로그아웃할까요?",
       "logoutText": "ChinaEase Buddy에서 로그아웃하시겠어요?",
       "cancel": "취소"
+    },
+    "common": {
+      "phraseCards": "문장 카드",
+      "phraseCardsHint": "먼저 상황을 고르고 지금 필요한 문장만 열어보세요.",
+      "freeCount": "{{count}}개 무료",
+      "cardCount": "실용 카드 {{count}}개",
+      "upgradeToUnlock": "업그레이드하여 잠금 해제",
+      "unlockWithTrip": "Trip Pass로 잠금 해제",
+      "speak": "재생",
+      "copy": "복사",
+      "showToLocal": "현지인에게 보여주기",
+      "preview": "미리보기"
+    },
+    "tabHeaders": {
+      "before": "중국 도착 전 필수 준비를 완료하세요.",
+      "stay": "호텔 체크인, 객실 문제, 프런트 대화를 도와줍니다.",
+      "food": "메뉴를 이해하고 알레르기를 피하며 자신 있게 주문하세요.",
+      "transport": "택시, 지하철, 기차, 공항 이동 도움.",
+      "emergency": "긴급 상황에서 빠르게 도움받기.",
+      "pay": "Alipay, WeChat Pay, 카드, 현금을 이해하기."
     }
   }
 }

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
 import TabSectionHeader from '../TabSectionHeader';
+import ToolDisclosure from '../ToolDisclosure';
 import { airportCards, taxiCards, trainCards } from '../../data/phraseCards';
 import type { UserState } from '../../hooks/useAuth';
 import { isTripOrGroup } from '../../lib/membership';
@@ -61,16 +62,16 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
   return (
     <div className="space-y-6">
       <TabSectionHeader
-        title="Transport"
-        subtitle="Get around China by taxi, metro, train, and airport transfer."
+        title={t('tabs.transport')}
+        subtitle={t('tabHeaders.transport')}
         onAskBuddy={onAskBuddy}
       />
 
-      <section className="bg-[#155e63]/5 border border-[#155e63]/15 rounded-2xl p-4">
-        <div className="flex items-center gap-2 mb-2">
-          <Navigation className="w-4 h-4 text-[#155e63]" />
-          <p className="font-semibold text-[#155e63] text-sm">{t('transport.trainTitle')}</p>
-        </div>
+      <ToolDisclosure
+        title={t('transport.trainTitle')}
+        subtitle={t('transport.trainHelperShort')}
+        icon={<Navigation className="w-4 h-4" />}
+      >
         <p className="text-gray-500 text-xs leading-relaxed mb-3">
           {t('transport.trainSub')}
         </p>
@@ -94,16 +95,19 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
         >
           <Plane className="w-4 h-4" /> {t('transport.search')}
         </button>
-      </section>
+      </ToolDisclosure>
 
-      <section>
-        <h2 className="text-base font-semibold text-gray-900 mb-3">{t('transport.appsTitle')}</h2>
+      <ToolDisclosure
+        title={t('transport.appsTitle')}
+        subtitle={t('transport.appsShort')}
+        icon={<Car className="w-4 h-4" />}
+      >
         <div className="space-y-2.5">
           {apps.map((app) => (
             <button
               key={app.name}
               onClick={() => openAppLink(app.name)}
-              className={`w-full text-left border rounded-2xl p-4 flex items-center justify-between ${app.color}`}
+              className={`min-h-[4.7rem] w-full rounded-2xl border p-4 text-left shadow-[0_12px_34px_rgba(11,63,67,0.06)] transition-all hover:-translate-y-0.5 hover:shadow-[0_18px_42px_rgba(11,63,67,0.10)] ${app.color}`}
             >
               <div>
                 <div className="flex items-center gap-2">
@@ -116,9 +120,13 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
             </button>
           ))}
         </div>
-      </section>
+      </ToolDisclosure>
 
-      <section>
+      <ToolDisclosure
+        title={t('transport.metroTrainPhrases')}
+        subtitle={t('transport.metroTrainPhrasesSub')}
+        icon={<Train className="w-4 h-4" />}
+      >
         <div className="flex items-center gap-2 mb-3">
           <Train className="w-4 h-4 text-[#155e63]" />
           <h2 className="text-base font-semibold text-gray-900">{t('transport.metroTitle')}</h2>
@@ -128,7 +136,7 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
             <div
               key={p.key}
               onClick={() => setSelectedPhrase(p)}
-              className="text-left bg-white border border-gray-100 rounded-2xl p-3.5 shadow-sm hover:shadow-md hover:border-[#155e63]/20 transition-all group"
+                className="rounded-2xl border border-white/60 bg-white/[0.58] p-3.5 text-left shadow-[0_12px_34px_rgba(11,63,67,0.07)] backdrop-blur-xl transition-all hover:border-[#155e63]/20 hover:shadow-md group"
             >
               <p className="text-gray-500 text-xs group-hover:text-[#155e63] mb-1 transition-colors">{t(p.key)}</p>
               <p className="text-gray-900 font-medium text-sm">{p.zh}</p>
@@ -141,7 +149,7 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
                   }}
                   className="text-xs text-[#155e63] flex items-center gap-1"
                 >
-                  🔊 Speak
+                  🔊 {t('common.speak')}
                 </button>
                 <button
                   onClick={(e) => {
@@ -150,34 +158,34 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
                   }}
                   className="text-xs text-gray-400"
                 >
-                  📋 Copy
+                  📋 {t('common.copy')}
                 </button>
               </div>
             </div>
           ))}
         </div>
-      </section>
+      </ToolDisclosure>
 
       <PhraseCategoryAccordion
         categories={[
           {
             id: 'taxi',
             title: t('transport.taxiTitle'),
-            subtitle: `${taxiCards.length} taxi and driver cards`,
+            subtitle: t('transport.taxiCardsSubtitle', { count: taxiCards.length }),
             icon: <Car className="w-4 h-4" />,
             cards: taxiCards,
           },
           {
             id: 'train',
-            title: 'Train Phrases',
-            subtitle: `${trainCards.length} high-speed rail cards`,
+            title: t('transport.trainPhrases'),
+            subtitle: t('transport.trainCardsSubtitle', { count: trainCards.length }),
             icon: <Train className="w-4 h-4" />,
             cards: trainCards,
           },
           {
             id: 'airport',
-            title: 'Airport Phrases',
-            subtitle: `${airportCards.length} arrival and transfer cards`,
+            title: t('transport.airportPhrases'),
+            subtitle: t('transport.airportCardsSubtitle', { count: airportCards.length }),
             icon: <Plane className="w-4 h-4" />,
             cards: airportCards,
           },
@@ -197,8 +205,8 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
             <p className="text-4xl font-bold text-gray-950 leading-tight mb-4">{selectedPhrase.zh}</p>
             <p className="text-gray-500 text-base mb-6">{selectedPhrase.pinyin}</p>
             <div className="flex gap-2">
-              <button onClick={() => speakChinese(selectedPhrase.zh)} className="flex-1 bg-[#155e63] text-white rounded-xl py-3 text-sm font-medium">🔊 Speak</button>
-              <button onClick={() => copyPhrase(selectedPhrase.zh)} className="flex-1 border border-gray-200 rounded-xl py-3 text-sm font-medium text-gray-600">📋 Copy</button>
+              <button onClick={() => speakChinese(selectedPhrase.zh)} className="flex-1 bg-[#155e63] text-white rounded-xl py-3 text-sm font-medium">🔊 {t('common.speak')}</button>
+              <button onClick={() => copyPhrase(selectedPhrase.zh)} className="flex-1 border border-gray-200 rounded-xl py-3 text-sm font-medium text-gray-600">📋 {t('common.copy')}</button>
             </div>
           </div>
         </div>
