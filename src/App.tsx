@@ -43,7 +43,7 @@ export default function App() {
 
   if (policyPageType) {
     return (
-      <div className="min-h-screen bg-[#f7f3ea] font-sans">
+      <div className="min-h-screen bg-[#f7f3ea] pb-[env(safe-area-inset-bottom)] font-sans">
         <PolicyPage type={policyPageType} />
         <Footer onTabChange={setActiveTab} />
       </div>
@@ -51,7 +51,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f7f3ea] font-sans">
+    <div className="min-h-screen bg-[#f7f3ea] pb-[env(safe-area-inset-bottom)] font-sans">
       <Hero
         user={user}
         userState={userState}

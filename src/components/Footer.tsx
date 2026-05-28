@@ -27,7 +27,7 @@ export default function Footer({ onTabChange }: Props) {
 
   return (
     <footer className="bg-[#0a2829] text-white/60">
-      <div className="max-w-3xl mx-auto px-4 md:px-6 py-10">
+      <div className="max-w-3xl mx-auto px-4 md:px-6 pt-10 pb-[calc(6rem+env(safe-area-inset-bottom))] md:py-10">
         {/* Top section */}
         <div className="flex flex-col sm:flex-row items-start justify-between gap-6 mb-8 pb-8 border-b border-white/10">
           <div>
@@ -78,7 +78,7 @@ export default function Footer({ onTabChange }: Props) {
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 border-t border-white/10">
           <p className="text-white/25 text-xs">{t('footer.rights')}</p>
-          <div className="flex items-center gap-4 text-xs">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs">
             <a href="/privacy" className="text-white/30 hover:text-white/60 transition-colors">{t('footer.privacy')}</a>
             <a href="/terms" className="text-white/30 hover:text-white/60 transition-colors">{t('footer.terms')}</a>
             <a href="/refund" className="text-white/30 hover:text-white/60 transition-colors">{t('footer.refundPolicy')}</a>

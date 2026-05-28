@@ -57,7 +57,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
   };
 
   return (
-    <section className="relative min-h-[72svh] md:min-h-screen flex flex-col overflow-hidden">
+    <section className="relative h-[78svh] min-h-[34rem] max-h-[82svh] md:h-auto md:min-h-screen md:max-h-none flex flex-col overflow-hidden">
       <style>{`
         .hero-bg {
           background:
@@ -67,8 +67,8 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
         @media (max-width: 768px) {
           .hero-bg {
             background:
-              linear-gradient(to bottom, rgba(0,0,0,0.32) 0%, rgba(21,94,99,0.18) 38%, rgba(0,0,0,0.48) 76%, rgba(0,0,0,0.66) 100%),
-              linear-gradient(to right, rgba(0,0,0,0.38) 0%, rgba(21,94,99,0.16) 54%, rgba(0,0,0,0.15) 100%),
+              linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, rgba(21,94,99,0.14) 36%, rgba(0,0,0,0.46) 76%, rgba(0,0,0,0.64) 100%),
+              linear-gradient(to right, rgba(0,0,0,0.34) 0%, rgba(21,94,99,0.12) 54%, rgba(0,0,0,0.12) 100%),
               url("/hero-mobile.jpg") 57% 18%/cover no-repeat;
           }
         }
@@ -77,16 +77,16 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
       <div className="hero-bg absolute inset-0" />
 
       {/* Nav bar */}
-      <div className="relative z-20 flex items-center justify-between px-4 py-3 md:px-10 md:py-5">
-        <div className="flex items-center gap-2">
-          <img src={`${assetBase}logo.png`} width="28" height="28" alt="ChinaEase Buddy" style={{ borderRadius: '6px' }} />
-          <span className="text-white font-semibold text-sm tracking-tight">ChinaEase Buddy</span>
+      <div className="relative z-20 flex items-center justify-between px-3 py-2.5 md:px-10 md:py-5">
+        <div className="flex min-w-0 items-center gap-2">
+          <img src={`${assetBase}logo.png`} width="28" height="28" alt="ChinaEase Buddy" className="h-7 w-7 shrink-0 rounded-md" />
+          <span className="truncate text-xs font-semibold tracking-tight text-white sm:text-sm">ChinaEase Buddy</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-1.5 md:gap-2">
           <div className="relative">
             <button
               onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-1 text-white/80 text-xs hover:text-white transition-colors bg-white/10 backdrop-blur-sm px-2 py-1 rounded-full border border-white/20"
+              className="flex items-center gap-1 text-white/85 text-[11px] hover:text-white transition-colors bg-white/10 backdrop-blur-sm px-2 py-1 rounded-full border border-white/20 md:text-xs"
             >
               <Globe className="w-3 h-3" />
               <span>{lang}</span>
@@ -119,7 +119,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
             <div className="relative">
               <button
                 onClick={() => setAccountOpen((open) => !open)}
-                className="text-xs md:text-sm font-medium bg-white text-[#155e63] px-3 py-1.5 md:px-4 md:py-2 rounded-full hover:bg-[#f7f3ea] transition-all shadow-lg"
+                className="max-w-[8.2rem] truncate text-[11px] md:text-sm font-medium bg-white text-[#155e63] px-2.5 py-1.5 md:px-4 md:py-2 rounded-full hover:bg-[#f7f3ea] transition-all shadow-lg"
               >
                 {t('nav.currentPlan', { plan: planLabel })}
               </button>
@@ -177,7 +177,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
           ) : (
             <button
               onClick={onAuthClick}
-              className="text-xs md:text-sm font-medium bg-white text-[#155e63] px-3 py-1.5 md:px-4 md:py-2 rounded-full hover:bg-[#f7f3ea] transition-all shadow-lg"
+              className="text-[11px] md:text-sm font-medium bg-white text-[#155e63] px-2.5 py-1.5 md:px-4 md:py-2 rounded-full hover:bg-[#f7f3ea] transition-all shadow-lg"
             >
               {t('nav.startFree')}
             </button>
@@ -186,44 +186,44 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
       </div>
 
       {/* 主内容：badge + slogan + subtitle + 按钮，整体放在画面上半部分 */}
-      <div className="relative z-10 flex-1 flex flex-col justify-start px-6 md:px-10 max-w-7xl mx-auto w-full pt-6 md:pt-16">
+      <div className="relative z-10 flex-1 flex flex-col justify-start px-4 md:px-10 max-w-7xl mx-auto w-full pt-4 md:pt-16">
         <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 mb-4">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/15 px-2.5 py-1 backdrop-blur-sm md:mb-4 md:px-3">
             <Star className="w-3 h-3 text-yellow-300 fill-yellow-300" />
-            <span className="text-white/90 text-xs font-medium">{t('hero.badge')}</span>
+            <span className="text-white/90 text-[11px] font-medium md:text-xs">{t('hero.badge')}</span>
           </div>
 
           <h1
-            className="font-black text-white leading-none tracking-tight mb-4 drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)]"
-            style={{ fontSize: 'clamp(2.8rem, 8vw, 5rem)' }}
+            className="mb-3 font-black leading-none tracking-tight text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)] md:mb-4"
+            style={{ fontSize: 'clamp(2.15rem, 10vw, 5rem)' }}
           >
             {t('hero.titleLine1')}<br />
             <span className="text-[#7dd3d8]">{t('hero.titleLine2')}</span>
           </h1>
 
-          <p className="text-[#fffdf4] text-sm md:text-lg leading-relaxed mb-6 max-w-lg drop-shadow-[0_2px_18px_rgba(0,0,0,0.82)]">
+          <p className="mb-4 max-w-[18rem] text-xs font-medium leading-relaxed text-[#fffdf4] drop-shadow-[0_2px_18px_rgba(0,0,0,0.82)] sm:max-w-lg sm:text-sm md:mb-6 md:text-lg">
             {t('hero.homeSubtitle')}
           </p>
 
-          <div className="absolute left-1/2 bottom-[7vh] z-20 flex w-[min(17.5rem,calc(100vw-2.5rem))] -translate-x-1/2 flex-col gap-2 md:static md:w-auto md:translate-x-0 md:flex-row">
+          <div className="absolute left-1/2 bottom-[5.5vh] z-20 flex w-[min(15.75rem,calc(100vw-3rem))] -translate-x-1/2 flex-col gap-1.5 md:static md:w-auto md:translate-x-0 md:flex-row md:gap-2">
             <button
               onClick={onAuthClick}
-              className="w-full md:w-auto flex items-center justify-center gap-2 bg-[#155e63] text-white font-semibold px-5 py-3.5 md:px-8 md:py-4 rounded-xl hover:bg-[#0e4a4e] transition-all shadow-2xl md:shadow-xl text-sm md:text-base"
+              className="w-full md:w-auto flex items-center justify-center gap-2 bg-[#155e63] text-white font-semibold px-4 py-2.5 md:px-8 md:py-4 rounded-xl hover:bg-[#0e4a4e] transition-all shadow-2xl md:shadow-xl text-xs md:text-base"
             >
               <span>{t('hero.startFree')}</span>
             </button>
             <button
               onClick={onAskBuddy}
-              className="w-full md:w-auto flex items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/12 px-5 py-3.5 text-sm font-semibold text-white shadow-xl backdrop-blur-sm transition-all hover:bg-white/18 md:px-7 md:py-4 md:text-base"
+              className="w-full md:w-auto flex items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/12 px-4 py-2.5 text-xs font-semibold text-white shadow-xl backdrop-blur-sm transition-all hover:bg-white/18 md:px-7 md:py-4 md:text-base"
             >
               {t('hero.askBuddy')}
             </button>
           </div>
 
-          <p className="text-[#fffaf0]/95 text-xs font-semibold mt-3 drop-shadow-[0_1px_12px_rgba(0,0,0,0.82)]">
+          <p className="mt-2 max-w-[17rem] text-[11px] font-semibold text-[#fffaf0]/95 drop-shadow-[0_1px_12px_rgba(0,0,0,0.82)] md:mt-3 md:max-w-none md:text-xs">
             {t('hero.mobileTrust')}
           </p>
-          <p className="mt-2 max-w-md text-xs font-medium leading-relaxed text-[#fff7e8]/90 drop-shadow-[0_1px_10px_rgba(0,0,0,0.68)]">
+          <p className="mt-2 hidden max-w-md text-xs font-medium leading-relaxed text-[#fff7e8]/90 drop-shadow-[0_1px_10px_rgba(0,0,0,0.68)] md:block">
             {t('hero.realMoments')}
           </p>
         </div>
