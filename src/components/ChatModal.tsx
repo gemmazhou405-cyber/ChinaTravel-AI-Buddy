@@ -54,7 +54,7 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
       const verifyMsg: Message = {
         id: Date.now(),
         role: 'buddy',
-        text: 'Please verify your email to use Buddy AI. Check your inbox and refresh after verification.',
+        text: `${t('chat.verifyEmail')} ${t('chat.verifyEmailHint')}`,
       };
       setMessages((prev) => [...prev, verifyMsg]);
       return;
@@ -204,13 +204,13 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
 
         {needsEmailVerification && (
           <div className="border-t border-amber-100 bg-amber-50 px-4 py-3">
-            <p className="text-xs font-semibold text-amber-800">Please verify your email to use Buddy AI.</p>
-            <p className="mt-0.5 text-xs text-amber-700">Check your inbox and refresh after verification.</p>
+            <p className="text-xs font-semibold text-amber-800">{t('chat.verifyEmail')}</p>
+            <p className="mt-0.5 text-xs text-amber-700">{t('chat.verifyEmailHint')}</p>
             <button
               onClick={onResendVerification}
               className="mt-2 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[#155e63] shadow-sm hover:bg-amber-100"
             >
-              Resend verification email
+              {t('auth.resendVerification')}
             </button>
           </div>
         )}

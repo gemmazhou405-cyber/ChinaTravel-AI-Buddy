@@ -389,7 +389,9 @@
       "askBuddy": "Ask Buddy",
       "planExpired": "Your pass has expired. Please upgrade to continue using Buddy AI.",
       "dailyQuotaExceeded": "You have reached today's limit of {{limit}} Buddy AI messages. Please try again tomorrow.",
-      "needBuddy": "Can't find what you need? Ask Buddy."
+      "needBuddy": "Can't find what you need? Ask Buddy.",
+      "verifyEmail": "Please verify your email to use Buddy AI.",
+      "verifyEmailHint": "Check your inbox and refresh after verification."
     },
     "auth": {
       "title": "ChinaEase Buddy",
@@ -402,7 +404,20 @@
       "loginBtn": "Log In",
       "loading": "Please wait...",
       "error": "Something went wrong",
-      "freeNote": "Free plan includes 5 Buddy AI messages and 3 menu/photo scans. No credit card needed."
+      "freeNote": "Free plan includes 5 Buddy AI messages and 3 menu/photo scans. No credit card needed.",
+      "continueWithGoogle": "Continue with Google",
+      "or": "or",
+      "forgotPassword": "Forgot password?",
+      "enterEmailFirst": "Please enter your email first.",
+      "passwordResetSent": "Password reset email sent. Please check your inbox.",
+      "passwordResetError": "Could not send password reset email. Please check the email and try again.",
+      "emailInUse": "This email already has an account. Please log in instead.",
+      "googlePopupClosed": "Google sign-in was closed before it finished.",
+      "googlePopupBlocked": "Your browser blocked the Google sign-in popup. Please allow popups and try again.",
+      "googleError": "Could not sign in with Google. Please try again.",
+      "verificationSent": "Verification email sent.",
+      "verifyBeforeBuddy": "Please verify your email before using Buddy AI.",
+      "resendVerification": "Resend verification email"
     },
     "footer": {
       "tagline": "AI travel companion for foreign tourists visiting China. Decode menus, navigate transit, handle emergencies.",

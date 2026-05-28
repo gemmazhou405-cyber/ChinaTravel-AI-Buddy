@@ -389,7 +389,9 @@
       "askBuddy": "Demander à Buddy",
       "planExpired": "Votre pass a expiré. Veuillez mettre à niveau pour continuer à utiliser Buddy AI.",
       "dailyQuotaExceeded": "Vous avez atteint la limite quotidienne de {{limit}} messages Buddy AI. Réessayez demain.",
-      "needBuddy": "Vous ne trouvez pas ce qu’il vous faut ? Demandez à Buddy."
+      "needBuddy": "Vous ne trouvez pas ce qu’il vous faut ? Demandez à Buddy.",
+      "verifyEmail": "Veuillez vérifier votre e-mail pour utiliser Buddy AI.",
+      "verifyEmailHint": "Vérifiez votre boîte de réception puis actualisez après vérification."
     },
     "auth": {
       "title": "ChinaEase Buddy",
@@ -402,7 +404,20 @@
       "loginBtn": "Connexion",
       "loading": "Veuillez patienter...",
       "error": "Une erreur est survenue",
-      "freeNote": "Le forfait gratuit inclut 5 messages Buddy AI et 3 scans menu/photo. Aucune carte bancaire requise."
+      "freeNote": "Le forfait gratuit inclut 5 messages Buddy AI et 3 scans menu/photo. Aucune carte bancaire requise.",
+      "continueWithGoogle": "Continuer avec Google",
+      "or": "ou",
+      "forgotPassword": "Mot de passe oublié ?",
+      "enterEmailFirst": "Veuillez d’abord saisir votre e-mail.",
+      "passwordResetSent": "E-mail de réinitialisation envoyé. Vérifiez votre boîte de réception.",
+      "passwordResetError": "Impossible d’envoyer l’e-mail de réinitialisation. Vérifiez l’adresse et réessayez.",
+      "emailInUse": "Cette adresse e-mail possède déjà un compte. Veuillez vous connecter.",
+      "googlePopupClosed": "La connexion Google a été fermée avant la fin.",
+      "googlePopupBlocked": "Votre navigateur a bloqué la fenêtre Google. Autorisez les pop-ups puis réessayez.",
+      "googleError": "Impossible de se connecter avec Google. Veuillez réessayer.",
+      "verificationSent": "E-mail de vérification envoyé.",
+      "verifyBeforeBuddy": "Veuillez vérifier votre e-mail avant d’utiliser Buddy AI.",
+      "resendVerification": "Renvoyer l’e-mail de vérification"
     },
     "footer": {
       "tagline": "Compagnon IA pour les voyageurs étrangers en Chine. Décodez les menus, naviguez, gérez les urgences.",

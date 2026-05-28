@@ -389,7 +389,9 @@
       "askBuddy": "Preguntar a Buddy",
       "planExpired": "Tu pase ha caducado. Actualiza tu plan para seguir usando Buddy AI.",
       "dailyQuotaExceeded": "Has alcanzado el límite diario de {{limit}} mensajes de Buddy AI. Inténtalo de nuevo mañana.",
-      "needBuddy": "¿No encuentras lo que necesitas? Pregunta a Buddy."
+      "needBuddy": "¿No encuentras lo que necesitas? Pregunta a Buddy.",
+      "verifyEmail": "Verifica tu email para usar Buddy AI.",
+      "verifyEmailHint": "Revisa tu bandeja de entrada y actualiza después de verificar."
     },
     "auth": {
       "title": "ChinaEase Buddy",
@@ -402,7 +404,20 @@
       "loginBtn": "Iniciar sesión",
       "loading": "Espera un momento...",
       "error": "Algo salió mal",
-      "freeNote": "El plan gratuito incluye 5 mensajes de Buddy AI y 3 escaneos de menú/foto. No necesitas tarjeta."
+      "freeNote": "El plan gratuito incluye 5 mensajes de Buddy AI y 3 escaneos de menú/foto. No necesitas tarjeta.",
+      "continueWithGoogle": "Continuar con Google",
+      "or": "o",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "enterEmailFirst": "Introduce tu email primero.",
+      "passwordResetSent": "Email de restablecimiento enviado. Revisa tu bandeja de entrada.",
+      "passwordResetError": "No se pudo enviar el email de restablecimiento. Revisa el email e inténtalo de nuevo.",
+      "emailInUse": "Este email ya tiene una cuenta. Inicia sesión.",
+      "googlePopupClosed": "El inicio de sesión con Google se cerró antes de terminar.",
+      "googlePopupBlocked": "Tu navegador bloqueó la ventana de Google. Permite ventanas emergentes e inténtalo de nuevo.",
+      "googleError": "No se pudo iniciar sesión con Google. Inténtalo de nuevo.",
+      "verificationSent": "Email de verificación enviado.",
+      "verifyBeforeBuddy": "Verifica tu email antes de usar Buddy AI.",
+      "resendVerification": "Reenviar email de verificación"
     },
     "footer": {
       "tagline": "Compañero de viaje con IA para turistas extranjeros en China. Descifra menús, navega el transporte y gestiona emergencias.",

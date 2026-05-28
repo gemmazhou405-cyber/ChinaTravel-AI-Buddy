@@ -389,7 +389,9 @@
       "askBuddy": "Buddy에게 질문",
       "planExpired": "패스가 만료되었습니다. Buddy AI를 계속 사용하려면 업그레이드하세요.",
       "dailyQuotaExceeded": "오늘의 Buddy AI 메시지 {{limit}}회 한도에 도달했습니다. 내일 다시 시도하세요.",
-      "needBuddy": "필요한 것을 못 찾았나요? Buddy에게 물어보세요."
+      "needBuddy": "필요한 것을 못 찾았나요? Buddy에게 물어보세요.",
+      "verifyEmail": "Buddy AI를 사용하려면 이메일 인증이 필요합니다.",
+      "verifyEmailHint": "받은편지함을 확인하고 인증 후 새로고침해 주세요."
     },
     "auth": {
       "title": "ChinaEase Buddy",
@@ -402,7 +404,20 @@
       "loginBtn": "로그인",
       "loading": "잠시만 기다려 주세요...",
       "error": "문제가 발생했습니다",
-      "freeNote": "무료 플랜에는 Buddy AI 메시지 5회와 메뉴/사진 스캔 3회가 포함됩니다. 신용카드가 필요 없습니다."
+      "freeNote": "무료 플랜에는 Buddy AI 메시지 5회와 메뉴/사진 스캔 3회가 포함됩니다. 신용카드가 필요 없습니다.",
+      "continueWithGoogle": "Google로 계속하기",
+      "or": "또는",
+      "forgotPassword": "비밀번호를 잊으셨나요?",
+      "enterEmailFirst": "먼저 이메일을 입력해 주세요.",
+      "passwordResetSent": "비밀번호 재설정 이메일을 보냈습니다. 받은편지함을 확인해 주세요.",
+      "passwordResetError": "비밀번호 재설정 이메일을 보낼 수 없습니다. 이메일을 확인하고 다시 시도해 주세요.",
+      "emailInUse": "이미 계정이 있는 이메일입니다. 로그인해 주세요.",
+      "googlePopupClosed": "Google 로그인이 완료되기 전에 닫혔습니다.",
+      "googlePopupBlocked": "브라우저가 Google 로그인 팝업을 차단했습니다. 팝업을 허용한 뒤 다시 시도해 주세요.",
+      "googleError": "Google로 로그인할 수 없습니다. 다시 시도해 주세요.",
+      "verificationSent": "인증 이메일을 보냈습니다.",
+      "verifyBeforeBuddy": "Buddy AI를 사용하기 전에 이메일을 인증해 주세요.",
+      "resendVerification": "인증 이메일 다시 보내기"
     },
     "footer": {
       "tagline": "중국을 방문하는 외국인 관광객을 위한 AI 여행 동반자. 메뉴 해석, 교통 안내, 긴급 상황 대응.",

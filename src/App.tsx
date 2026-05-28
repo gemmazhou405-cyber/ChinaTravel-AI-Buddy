@@ -10,17 +10,19 @@ import AuthModal from './components/AuthModal';
 import Toast from './components/Toast';
 import PolicyPage, { getPolicyPageType } from './components/PolicyPage';
 import { useAuth } from './hooks/useAuth';
+import { useTranslation } from 'react-i18next';
 
 export type TabId = 'before' | 'stay' | 'food' | 'transport' | 'emergency' | 'pay';
 
 export default function App() {
+  const { t } = useTranslation();
   const policyPageType = getPolicyPageType(window.location.pathname);
   const [activeTab, setActiveTab] = useState<TabId>('food');
   const [chatOpen, setChatOpen] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const [toolOpen, setToolOpen] = useState(false);
-  const { user, userState, logout, signup, login, loginWithGoogle, incrementAiUsed, resendVerificationEmail } = useAuth();
+  const { user, userState, logout, signup, login, loginWithGoogle, incrementAiUsed, resendVerificationEmail, resetPassword } = useAuth();
   const showToast = (msg: string) => setToast(msg);
   const handleUpgradeClick = (message = 'Unlock all phrase cards with Trip Pass.') => {
     setActiveTab('pay');
@@ -58,7 +60,7 @@ export default function App() {
         onLogout={logout}
         onResendVerification={async () => {
           await resendVerificationEmail();
-          showToast('Verification email sent.');
+          showToast(t('auth.verificationSent'));
         }}
       />
       <QuickActions onTabSelect={handleQuickTabSelect} onAskBuddy={openBuddy} />
@@ -94,7 +96,7 @@ export default function App() {
           }}
           onResendVerification={async () => {
             await resendVerificationEmail();
-            showToast('Verification email sent.');
+            showToast(t('auth.verificationSent'));
           }}
           onIncrementUsed={incrementAiUsed}
         />
@@ -104,11 +106,12 @@ export default function App() {
           onClose={() => setAuthOpen(false)}
           onSignup={async (email, password) => {
             const result = await signup(email, password);
-            showToast('Please verify your email before using Buddy AI.');
+            showToast(t('auth.verifyBeforeBuddy'));
             return result;
           }}
           onLogin={login}
           onGoogleLogin={loginWithGoogle}
+          onPasswordReset={resetPassword}
         />
       )}
       {toast && <Toast message={toast} onDone={() => setToast(null)} />}

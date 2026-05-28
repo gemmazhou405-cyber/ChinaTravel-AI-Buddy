@@ -389,7 +389,9 @@
       "askBuddy": "Buddy fragen",
       "planExpired": "Ihr Pass ist abgelaufen. Bitte upgraden Sie, um Buddy AI weiter zu nutzen.",
       "dailyQuotaExceeded": "Sie haben das heutige Limit von {{limit}} Buddy-AI-Nachrichten erreicht. Bitte versuchen Sie es morgen erneut.",
-      "needBuddy": "Findest du nicht, was du brauchst? Frag Buddy."
+      "needBuddy": "Findest du nicht, was du brauchst? Frag Buddy.",
+      "verifyEmail": "Bitte bestätige deine E-Mail, um Buddy AI zu nutzen.",
+      "verifyEmailHint": "Prüfe deinen Posteingang und aktualisiere nach der Bestätigung."
     },
     "auth": {
       "title": "ChinaEase Buddy",
@@ -402,7 +404,20 @@
       "loginBtn": "Einloggen",
       "loading": "Bitte warten...",
       "error": "Etwas ist schiefgelaufen",
-      "freeNote": "Der kostenlose Tarif enthält 5 Buddy-AI-Nachrichten und 3 Menü-/Foto-Scans. Keine Kreditkarte erforderlich."
+      "freeNote": "Der kostenlose Tarif enthält 5 Buddy-AI-Nachrichten und 3 Menü-/Foto-Scans. Keine Kreditkarte erforderlich.",
+      "continueWithGoogle": "Mit Google fortfahren",
+      "or": "oder",
+      "forgotPassword": "Passwort vergessen?",
+      "enterEmailFirst": "Bitte gib zuerst deine E-Mail-Adresse ein.",
+      "passwordResetSent": "E-Mail zum Zurücksetzen gesendet. Bitte prüfe deinen Posteingang.",
+      "passwordResetError": "Die E-Mail zum Zurücksetzen konnte nicht gesendet werden. Prüfe die Adresse und versuche es erneut.",
+      "emailInUse": "Für diese E-Mail gibt es bereits ein Konto. Bitte melde dich an.",
+      "googlePopupClosed": "Die Google-Anmeldung wurde vor Abschluss geschlossen.",
+      "googlePopupBlocked": "Dein Browser hat das Google-Popup blockiert. Erlaube Pop-ups und versuche es erneut.",
+      "googleError": "Anmeldung mit Google nicht möglich. Bitte versuche es erneut.",
+      "verificationSent": "Verifizierungs-E-Mail gesendet.",
+      "verifyBeforeBuddy": "Bitte bestätige deine E-Mail, bevor du Buddy AI nutzt.",
+      "resendVerification": "Verifizierungs-E-Mail erneut senden"
     },
     "footer": {
       "tagline": "KI-Reisebegleiter für ausländische Reisende in China. Menüs entschlüsseln, Verkehr verstehen, Notfälle bewältigen.",

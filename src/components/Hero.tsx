@@ -61,14 +61,14 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
       <style>{`
         .hero-bg {
           background:
-            linear-gradient(to right, rgba(0,0,0,0.76) 0%, rgba(21,94,99,0.50) 48%, rgba(0,0,0,0.24) 100%),
+            linear-gradient(to right, rgba(0,0,0,0.80) 0%, rgba(21,94,99,0.54) 48%, rgba(0,0,0,0.28) 100%),
             url("/hero.jpg") center center/cover no-repeat;
         }
         @media (max-width: 768px) {
           .hero-bg {
             background:
-              linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, rgba(21,94,99,0.16) 38%, rgba(0,0,0,0.42) 76%, rgba(0,0,0,0.60) 100%),
-              linear-gradient(to right, rgba(0,0,0,0.34) 0%, rgba(21,94,99,0.13) 54%, rgba(0,0,0,0.12) 100%),
+              linear-gradient(to bottom, rgba(0,0,0,0.32) 0%, rgba(21,94,99,0.18) 38%, rgba(0,0,0,0.48) 76%, rgba(0,0,0,0.66) 100%),
+              linear-gradient(to right, rgba(0,0,0,0.38) 0%, rgba(21,94,99,0.16) 54%, rgba(0,0,0,0.15) 100%),
               url("/hero-mobile.jpg") 57% 18%/cover no-repeat;
           }
         }
@@ -201,7 +201,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
             <span className="text-[#7dd3d8]">{t('hero.titleLine2')}</span>
           </h1>
 
-          <p className="text-[#fff9ed] text-sm md:text-lg leading-relaxed mb-6 max-w-lg drop-shadow-[0_2px_16px_rgba(0,0,0,0.74)]">
+          <p className="text-[#fffdf4] text-sm md:text-lg leading-relaxed mb-6 max-w-lg drop-shadow-[0_2px_18px_rgba(0,0,0,0.82)]">
             {t('hero.homeSubtitle')}
           </p>
 
@@ -220,10 +220,10 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
             </button>
           </div>
 
-          <p className="text-[#fff7e8]/90 text-xs font-semibold mt-3 drop-shadow-[0_1px_10px_rgba(0,0,0,0.72)]">
+          <p className="text-[#fffaf0]/95 text-xs font-semibold mt-3 drop-shadow-[0_1px_12px_rgba(0,0,0,0.82)]">
             {t('hero.mobileTrust')}
           </p>
-          <p className="mt-2 max-w-md text-xs font-medium leading-relaxed text-[#fff7e8]/82 drop-shadow-[0_1px_8px_rgba(0,0,0,0.55)]">
+          <p className="mt-2 max-w-md text-xs font-medium leading-relaxed text-[#fff7e8]/90 drop-shadow-[0_1px_10px_rgba(0,0,0,0.68)]">
             {t('hero.realMoments')}
           </p>
         </div>

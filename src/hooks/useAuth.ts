@@ -5,6 +5,7 @@ import {
   signOut,
   onAuthStateChanged,
   sendEmailVerification,
+  sendPasswordResetEmail,
   GoogleAuthProvider,
   signInWithPopup,
   User,
@@ -182,6 +183,10 @@ export function useAuth() {
     await sendEmailVerification(user);
   };
 
+  const resetPassword = (email: string) => {
+    return sendPasswordResetEmail(auth, email);
+  };
+
   const incrementAiUsed = async () => {
     if (!user || !userState) return;
 
@@ -208,5 +213,5 @@ export function useAuth() {
     setUserState((prev) => (prev ? { ...prev, ...updates } : null));
   };
 
-  return { user, userState, loading, signup, login, loginWithGoogle, logout, incrementAiUsed, resendVerificationEmail };
+  return { user, userState, loading, signup, login, loginWithGoogle, logout, incrementAiUsed, resendVerificationEmail, resetPassword };
 }

@@ -7,9 +7,10 @@ interface Props {
   onSignup: (email: string, password: string) => Promise<unknown>;
   onLogin: (email: string, password: string) => Promise<unknown>;
   onGoogleLogin: () => Promise<unknown>;
+  onPasswordReset: (email: string) => Promise<unknown>;
 }
 
-export default function AuthModal({ onClose, onSignup, onLogin, onGoogleLogin }: Props) {
+export default function AuthModal({ onClose, onSignup, onLogin, onGoogleLogin, onPasswordReset }: Props) {
   const { t } = useTranslation();
   const [mode, setMode] = useState<'login' | 'signup'>('signup');
   const [email, setEmail] = useState('');
@@ -31,7 +32,7 @@ export default function AuthModal({ onClose, onSignup, onLogin, onGoogleLogin }:
       const message = e instanceof Error ? e.message : '';
       if (mode === 'signup' && message.includes('auth/email-already-in-use')) {
         setMode('login');
-        setError('This email already has an account. Please log in instead.');
+        setError(t('auth.emailInUse'));
       } else {
         setError(message || t('auth.error'));
       }
@@ -49,12 +50,30 @@ export default function AuthModal({ onClose, onSignup, onLogin, onGoogleLogin }:
     } catch (e) {
       const message = e instanceof Error ? e.message : '';
       if (message.includes('auth/popup-closed-by-user')) {
-        setError('Google sign-in was closed before it finished.');
+        setError(t('auth.googlePopupClosed'));
       } else if (message.includes('auth/popup-blocked')) {
-        setError('Your browser blocked the Google sign-in popup. Please allow popups and try again.');
+        setError(t('auth.googlePopupBlocked'));
       } else {
-        setError('Could not sign in with Google. Please try again.');
+        setError(t('auth.googleError'));
       }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handlePasswordReset = async () => {
+    const trimmedEmail = email.trim();
+    setError('');
+    if (!trimmedEmail) {
+      setError(t('auth.enterEmailFirst'));
+      return;
+    }
+    setLoading(true);
+    try {
+      await onPasswordReset(trimmedEmail);
+      setError(t('auth.passwordResetSent'));
+    } catch {
+      setError(t('auth.passwordResetError'));
     } finally {
       setLoading(false);
     }
@@ -98,12 +117,12 @@ export default function AuthModal({ onClose, onSignup, onLogin, onGoogleLogin }:
             className="mb-4 flex w-full items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white py-3 text-sm font-semibold text-gray-700 shadow-sm transition-colors hover:bg-gray-50 disabled:opacity-50"
           >
             <span className="flex h-5 w-5 items-center justify-center rounded-full border border-gray-200 text-xs font-bold text-[#155e63]">G</span>
-            Continue with Google
+            {t('auth.continueWithGoogle')}
           </button>
 
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px flex-1 bg-gray-100" />
-            <span className="text-[11px] font-medium uppercase tracking-wide text-gray-300">or</span>
+            <span className="text-[11px] font-medium uppercase tracking-wide text-gray-300">{t('auth.or')}</span>
             <span className="h-px flex-1 bg-gray-100" />
           </div>
 
@@ -130,6 +149,16 @@ export default function AuthModal({ onClose, onSignup, onLogin, onGoogleLogin }:
               />
             </div>
           </div>
+
+          {mode === 'login' && (
+            <button
+              onClick={handlePasswordReset}
+              disabled={loading}
+              className="mt-2 text-xs font-semibold text-[#155e63] hover:text-[#0e4a4e] disabled:opacity-50"
+            >
+              {t('auth.forgotPassword')}
+            </button>
+          )}
 
           {error && <p className="text-red-500 text-xs mt-2 text-center">{error}</p>}
 
