@@ -421,7 +421,12 @@
       "rights": "© 2026 ChinaEase Buddy. Tous droits réservés.",
       "privacy": "Politique de confidentialité",
       "terms": "Conditions d’utilisation",
-      "cookies": "Politique cookies"
+      "cookies": "Politique cookies",
+      "about": "À propos",
+      "refundPolicy": "Politique de remboursement",
+      "cookiesBody": "Nous utilisons uniquement des cookies essentiels : session de connexion et préférence de langue. Aucun cookie publicitaire.",
+      "downloadInstructions": "Ouvrez ce site dans le navigateur de votre mobile, puis touchez Partager → Ajouter à l’écran d’accueil",
+      "close": "Fermer"
     },
     "toast": {
       "copied": "Copié !",
@@ -493,6 +498,20 @@
         "Garder les numéros d’urgence et phrases clés au même endroit",
         "Demander à Buddy quand les cartes de phrases ne suffisent pas"
       ]
+    },
+    "account": {
+      "title": "Compte",
+      "currentPlan": "Forfait actuel",
+      "buddyQuota": "Quota Buddy AI",
+      "menuQuota": "Quota scan menu",
+      "emailVerification": "Vérification e-mail",
+      "verified": "Vérifié",
+      "notVerified": "Non vérifié",
+      "resendVerification": "Renvoyer l’e-mail de vérification",
+      "logout": "Se déconnecter",
+      "logoutTitle": "Se déconnecter ?",
+      "logoutText": "Voulez-vous vraiment vous déconnecter de ChinaEase Buddy ?",
+      "cancel": "Annuler"
     }
   }
 }

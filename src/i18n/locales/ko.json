@@ -421,7 +421,12 @@
       "rights": "© 2026 ChinaEase Buddy. 모든 권리 보유.",
       "privacy": "개인정보 처리방침",
       "terms": "서비스 약관",
-      "cookies": "쿠키 정책"
+      "cookies": "쿠키 정책",
+      "about": "소개",
+      "refundPolicy": "환불 정책",
+      "cookiesBody": "필수 쿠키만 사용합니다: 로그인 세션과 언어 설정. 광고 쿠키는 사용하지 않습니다.",
+      "downloadInstructions": "모바일 브라우저에서 이 사이트를 열고 공유 → 홈 화면에 추가를 누르세요",
+      "close": "닫기"
     },
     "toast": {
       "copied": "복사됨!",
@@ -493,6 +498,20 @@
         "긴급 번호와 핵심 문구를 한곳에 보관하기",
         "문구 카드로 부족할 때 Buddy에게 묻기"
       ]
+    },
+    "account": {
+      "title": "계정",
+      "currentPlan": "현재 플랜",
+      "buddyQuota": "Buddy AI 이용량",
+      "menuQuota": "메뉴 스캔 이용량",
+      "emailVerification": "이메일 인증",
+      "verified": "인증됨",
+      "notVerified": "미인증",
+      "resendVerification": "인증 이메일 다시 보내기",
+      "logout": "로그아웃",
+      "logoutTitle": "로그아웃할까요?",
+      "logoutText": "ChinaEase Buddy에서 로그아웃하시겠어요?",
+      "cancel": "취소"
     }
   }
 }

@@ -421,7 +421,12 @@
       "rights": "© 2026 ChinaEase Buddy. 無断転載を禁じます。",
       "privacy": "プライバシー",
       "terms": "利用規約",
-      "cookies": "Cookieポリシー"
+      "cookies": "Cookieポリシー",
+      "about": "概要",
+      "refundPolicy": "返金ポリシー",
+      "cookiesBody": "ログイン状態と言語設定のために必要な Cookie のみを使用します。広告 Cookie は使用しません。",
+      "downloadInstructions": "スマートフォンのブラウザでこのサイトを開き、共有 → ホーム画面に追加 をタップしてください",
+      "close": "閉じる"
     },
     "toast": {
       "copied": "コピーしました！",
@@ -493,6 +498,20 @@
         "緊急番号と重要フレーズを一か所に保存",
         "フレーズカードで足りないときはBuddyに質問"
       ]
+    },
+    "account": {
+      "title": "アカウント",
+      "currentPlan": "現在のプラン",
+      "buddyQuota": "Buddy AI 利用枠",
+      "menuQuota": "メニュー読み取り枠",
+      "emailVerification": "メール認証",
+      "verified": "認証済み",
+      "notVerified": "未認証",
+      "resendVerification": "認証メールを再送信",
+      "logout": "ログアウト",
+      "logoutTitle": "ログアウトしますか？",
+      "logoutText": "ChinaEase Buddy からログアウトしてもよろしいですか？",
+      "cancel": "キャンセル"
     }
   }
 }

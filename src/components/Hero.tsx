@@ -7,11 +7,11 @@ import i18n from '../i18n';
 
 const LANGS = [
   { code: 'en', label: 'English' },
-  { code: 'fr', label: 'Francais' },
+  { code: 'fr', label: 'Français' },
   { code: 'de', label: 'Deutsch' },
-  { code: 'es', label: 'Espanol' },
-  { code: 'ja', label: 'Japanese' },
-  { code: 'ko', label: 'Korean' },
+  { code: 'es', label: 'Español' },
+  { code: 'ja', label: '日本語' },
+  { code: 'ko', label: '한국어' },
 ];
 
 interface Props {
@@ -30,7 +30,8 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
   const [accountOpen, setAccountOpen] = useState(false);
   const [confirmLogoutOpen, setConfirmLogoutOpen] = useState(false);
   const assetBase = import.meta.env.BASE_URL;
-  const planLabel = userState?.plan ? userState.plan.charAt(0).toUpperCase() + userState.plan.slice(1) : 'Free';
+  const currentPlan = userState?.plan ?? 'free';
+  const planLabel = t(`pay.plans.${currentPlan}.name`);
   const isPasswordUser = user?.providerData.some((provider) => provider.providerId === 'password') ?? false;
   const isGoogleUser = user?.providerData.some((provider) => provider.providerId === 'google.com') ?? false;
   const emailVerified = Boolean(user?.emailVerified || isGoogleUser);
@@ -126,7 +127,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
                 <div className="absolute right-0 top-full mt-2 w-72 rounded-2xl bg-white p-4 text-gray-700 shadow-2xl z-50">
                   <div className="flex items-start justify-between gap-3 border-b border-gray-100 pb-3">
                     <div className="min-w-0">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-[#155e63]">Account</p>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-[#155e63]">{t('account.title')}</p>
                       <p className="mt-1 truncate text-sm font-semibold text-gray-900">{user.email}</p>
                     </div>
                     <button onClick={() => setAccountOpen(false)} className="rounded-full p-1 text-gray-400 hover:bg-gray-100">
@@ -135,21 +136,21 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
                   </div>
                   <div className="space-y-2 py-3 text-xs">
                     <div className="flex justify-between gap-3">
-                      <span className="text-gray-500">Current plan</span>
+                      <span className="text-gray-500">{t('account.currentPlan')}</span>
                       <span className="font-semibold text-[#155e63]">{planLabel}</span>
                     </div>
                     <div className="flex justify-between gap-3">
-                      <span className="text-gray-500">Buddy AI quota</span>
+                      <span className="text-gray-500">{t('account.buddyQuota')}</span>
                       <span className="font-semibold text-gray-900">{userState?.buddyAiQuotaUsed ?? 0} / {userState?.buddyAiQuotaTotal ?? 5}</span>
                     </div>
                     <div className="flex justify-between gap-3">
-                      <span className="text-gray-500">Menu scan quota</span>
+                      <span className="text-gray-500">{t('account.menuQuota')}</span>
                       <span className="font-semibold text-gray-900">{userState?.menuScanQuotaUsed ?? 0} / {userState?.menuScanQuotaTotal ?? 3}</span>
                     </div>
                     <div className="flex justify-between gap-3">
-                      <span className="text-gray-500">Email verification</span>
+                      <span className="text-gray-500">{t('account.emailVerification')}</span>
                       <span className={`font-semibold ${emailVerified ? 'text-[#155e63]' : 'text-amber-600'}`}>
-                        {emailVerified ? 'Verified' : 'Not verified'}
+                        {emailVerified ? t('account.verified') : t('account.notVerified')}
                       </span>
                     </div>
                   </div>
@@ -160,7 +161,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
                       }}
                       className="mb-2 w-full rounded-xl border border-amber-100 bg-amber-50 py-2.5 text-sm font-semibold text-amber-700 hover:bg-amber-100"
                     >
-                      Resend verification email
+                      {t('account.resendVerification')}
                     </button>
                   )}
                   <button
@@ -168,7 +169,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
                     className="flex w-full items-center justify-center gap-2 rounded-xl border border-red-100 bg-red-50 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-100"
                   >
                     <LogOut className="h-4 w-4" />
-                    Log out
+                    {t('account.logout')}
                   </button>
                 </div>
               )}
@@ -237,14 +238,14 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
       {confirmLogoutOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4" onClick={() => setConfirmLogoutOpen(false)}>
           <div className="w-full max-w-sm rounded-2xl bg-white p-5 shadow-2xl" onClick={(e) => e.stopPropagation()}>
-            <h3 className="text-lg font-bold text-gray-950">Log out?</h3>
-            <p className="mt-2 text-sm leading-relaxed text-gray-500">Are you sure you want to log out of ChinaEase Buddy?</p>
+            <h3 className="text-lg font-bold text-gray-950">{t('account.logoutTitle')}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-gray-500">{t('account.logoutText')}</p>
             <div className="mt-5 flex gap-2">
               <button
                 onClick={() => setConfirmLogoutOpen(false)}
                 className="flex-1 rounded-xl border border-gray-200 py-2.5 text-sm font-semibold text-gray-600 hover:bg-gray-50"
               >
-                Cancel
+                {t('account.cancel')}
               </button>
               <button
                 onClick={async () => {
@@ -254,7 +255,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
                 }}
                 className="flex-1 rounded-xl bg-red-600 py-2.5 text-sm font-semibold text-white hover:bg-red-700"
               >
-                Log out
+                {t('account.logout')}
               </button>
             </div>
           </div>

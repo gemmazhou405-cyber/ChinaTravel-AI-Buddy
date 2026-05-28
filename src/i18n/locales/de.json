@@ -421,7 +421,12 @@
       "rights": "© 2026 ChinaEase Buddy. Alle Rechte vorbehalten.",
       "privacy": "Datenschutz",
       "terms": "Nutzungsbedingungen",
-      "cookies": "Cookie-Richtlinie"
+      "cookies": "Cookie-Richtlinie",
+      "about": "Über uns",
+      "refundPolicy": "Rückerstattung",
+      "cookiesBody": "Wir verwenden nur notwendige Cookies: Anmeldesitzung und Spracheinstellung. Keine Werbe-Cookies.",
+      "downloadInstructions": "Öffne diese Website im mobilen Browser und tippe auf Teilen → Zum Home-Bildschirm hinzufügen",
+      "close": "Schließen"
     },
     "toast": {
       "copied": "Kopiert!",
@@ -493,6 +498,20 @@
         "Notrufnummern und wichtige Sätze an einem Ort behalten",
         "Buddy fragen, wenn Phrase Cards nicht ausreichen"
       ]
+    },
+    "account": {
+      "title": "Konto",
+      "currentPlan": "Aktueller Plan",
+      "buddyQuota": "Buddy-AI-Kontingent",
+      "menuQuota": "Menüscan-Kontingent",
+      "emailVerification": "E-Mail-Verifizierung",
+      "verified": "Verifiziert",
+      "notVerified": "Nicht verifiziert",
+      "resendVerification": "Verifizierungs-E-Mail erneut senden",
+      "logout": "Abmelden",
+      "logoutTitle": "Abmelden?",
+      "logoutText": "Möchtest du dich wirklich von ChinaEase Buddy abmelden?",
+      "cancel": "Abbrechen"
     }
   }
 }

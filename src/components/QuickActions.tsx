@@ -78,7 +78,7 @@ export default function QuickActions({ onTabSelect, onAskBuddy }: Props) {
       <div className="relative mx-auto max-w-4xl">
         <div className="rounded-[2rem] border border-white/55 bg-white/[0.22] p-3 shadow-[0_24px_70px_rgba(11,63,67,0.10)] backdrop-blur-2xl sm:p-4">
           <div className="grid grid-cols-3 gap-1.5 rounded-[1.35rem] border border-white/70 bg-white/[0.42] p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.42),0_16px_42px_rgba(11,63,67,0.10)] backdrop-blur-2xl">
-          {journeys.map((item) => (
+            {journeys.map((item) => (
               <button
                 key={item.id}
                 onClick={() => setJourney(item.id)}

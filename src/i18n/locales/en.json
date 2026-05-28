@@ -421,7 +421,12 @@
       "rights": "© 2026 ChinaEase Buddy. All rights reserved.",
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
-      "cookies": "Cookie Policy"
+      "cookies": "Cookie Policy",
+      "about": "About",
+      "refundPolicy": "Refund Policy",
+      "cookiesBody": "We use essential cookies only: auth session and language preference. No advertising cookies.",
+      "downloadInstructions": "Open this site in your mobile browser and tap Share → Add to Home Screen",
+      "close": "Close"
     },
     "toast": {
       "copied": "Copied!",
@@ -493,6 +498,20 @@
         "Keep emergency numbers and key phrases in one place",
         "Ask Buddy when phrase cards are not enough"
       ]
+    },
+    "account": {
+      "title": "Account",
+      "currentPlan": "Current plan",
+      "buddyQuota": "Buddy AI quota",
+      "menuQuota": "Menu scan quota",
+      "emailVerification": "Email verification",
+      "verified": "Verified",
+      "notVerified": "Not verified",
+      "resendVerification": "Resend verification email",
+      "logout": "Log out",
+      "logoutTitle": "Log out?",
+      "logoutText": "Are you sure you want to log out of ChinaEase Buddy?",
+      "cancel": "Cancel"
     }
   }
 }

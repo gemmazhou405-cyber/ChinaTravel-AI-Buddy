@@ -7,13 +7,9 @@ interface Props {
   onTabChange: (tab: TabId) => void;
 }
 
-const LEGAL_TEXT = {
-  cookies: 'We use essential cookies only: auth session and language preference. No advertising cookies.',
-};
-
 export default function Footer({ onTabChange }: Props) {
   const { t } = useTranslation();
-  const [modal, setModal] = useState<keyof typeof LEGAL_TEXT | null>(null);
+  const [modal, setModal] = useState<'cookies' | null>(null);
   const assetBase = import.meta.env.BASE_URL;
 
   const scrollToTabs = () => {
@@ -26,7 +22,7 @@ export default function Footer({ onTabChange }: Props) {
   };
 
   const downloadInstructions = () => {
-    alert('Open this site in your mobile browser and tap Share → Add to Home Screen');
+    alert(t('footer.downloadInstructions'));
   };
 
   return (
@@ -47,7 +43,7 @@ export default function Footer({ onTabChange }: Props) {
             <div className="space-y-2">
               <p className="text-white/80 font-semibold text-xs uppercase tracking-wider mb-3">{t('footer.product')}</p>
               <button onClick={() => goToTab('food')} className="block hover:text-white transition-colors text-left">{t('footer.features')}</button>
-              <a href="/about" className="block hover:text-white transition-colors text-left">About</a>
+              <a href="/about" className="block hover:text-white transition-colors text-left">{t('footer.about')}</a>
               <a href="/pricing" className="block hover:text-white transition-colors text-left">{t('footer.pricing')}</a>
               <button onClick={downloadInstructions} className="block hover:text-white transition-colors text-left">{t('footer.download')}</button>
             </div>
@@ -85,7 +81,7 @@ export default function Footer({ onTabChange }: Props) {
           <div className="flex items-center gap-4 text-xs">
             <a href="/privacy" className="text-white/30 hover:text-white/60 transition-colors">{t('footer.privacy')}</a>
             <a href="/terms" className="text-white/30 hover:text-white/60 transition-colors">{t('footer.terms')}</a>
-            <a href="/refund" className="text-white/30 hover:text-white/60 transition-colors">Refund Policy</a>
+            <a href="/refund" className="text-white/30 hover:text-white/60 transition-colors">{t('footer.refundPolicy')}</a>
             <button onClick={() => setModal('cookies')} className="text-white/30 hover:text-white/60 transition-colors">{t('footer.cookies')}</button>
           </div>
         </div>
@@ -96,9 +92,9 @@ export default function Footer({ onTabChange }: Props) {
             <h3 className="text-lg font-bold mb-3 text-[#155e63]">
               {t('footer.cookies')}
             </h3>
-            <p className="text-sm leading-relaxed text-gray-600">{LEGAL_TEXT[modal]}</p>
+            <p className="text-sm leading-relaxed text-gray-600">{t('footer.cookiesBody')}</p>
             <button onClick={() => setModal(null)} className="mt-5 w-full bg-[#155e63] text-white rounded-xl py-2.5 text-sm font-medium">
-              Close
+              {t('footer.close')}
             </button>
           </div>
         </div>
