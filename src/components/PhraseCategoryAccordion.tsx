@@ -1,5 +1,5 @@
 import { ChevronDown, Lock } from 'lucide-react';
-import { ReactNode, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PhraseCardCategorySection from './PhraseCardCategorySection';
 import type { PhraseCardData } from '../types/phraseCard';
@@ -19,6 +19,7 @@ interface Props {
   isPaidUser?: boolean;
   showToast: (msg: string) => void;
   onUpgradeClick?: () => void;
+  initialOpenId?: string | null;
 }
 
 export default function PhraseCategoryAccordion({
@@ -28,9 +29,14 @@ export default function PhraseCategoryAccordion({
   isPaidUser = false,
   showToast,
   onUpgradeClick,
+  initialOpenId = null,
 }: Props) {
   const { t } = useTranslation();
-  const [openId, setOpenId] = useState<string | null>(null);
+  const [openId, setOpenId] = useState<string | null>(initialOpenId);
+
+  useEffect(() => {
+    if (initialOpenId) setOpenId(initialOpenId);
+  }, [initialOpenId]);
 
   return (
     <section className="space-y-3">

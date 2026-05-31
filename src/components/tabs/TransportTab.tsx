@@ -27,9 +27,10 @@ interface Props {
   showToast: (msg: string) => void;
   onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
+  deepTool?: string | null;
 }
 
-export default function TransportTab({ userState, showToast, onAskBuddy, onUpgradeClick }: Props) {
+export default function TransportTab({ userState, showToast, onAskBuddy, onUpgradeClick, deepTool }: Props) {
   const { t } = useTranslation();
   const [selectedPhrase, setSelectedPhrase] = useState<(typeof METRO_PHRASES)[number] | null>(null);
   const [fromCity, setFromCity] = useState('');
@@ -71,6 +72,7 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
         title={t('transport.trainTitle')}
         subtitle={t('transport.trainHelperShort')}
         icon={<Navigation className="w-4 h-4" />}
+        defaultOpen={deepTool === 'train'}
       >
         <p className="text-gray-500 text-xs leading-relaxed mb-3">
           {t('transport.trainSub')}
@@ -101,6 +103,7 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
         title={t('transport.appsTitle')}
         subtitle={t('transport.appsShort')}
         icon={<Car className="w-4 h-4" />}
+        defaultOpen={deepTool === 'apps'}
       >
         <div className="space-y-2.5">
           {apps.map((app) => (
@@ -126,6 +129,7 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
         title={t('transport.metroTrainPhrases')}
         subtitle={t('transport.metroTrainPhrasesSub')}
         icon={<Train className="w-4 h-4" />}
+        defaultOpen={deepTool === 'metro'}
       >
         <div className="flex items-center gap-2 mb-3">
           <Train className="w-4 h-4 text-[#155e63]" />
@@ -195,6 +199,7 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
         isPaidUser={hasFullAccess}
         showToast={showToast}
         onUpgradeClick={onUpgradeClick}
+        initialOpenId={deepTool === 'transport' || deepTool === 'taxi' ? 'taxi' : deepTool === 'airport' ? 'airport' : deepTool === 'trainPhrases' ? 'train' : null}
       />
 
       {selectedPhrase && (

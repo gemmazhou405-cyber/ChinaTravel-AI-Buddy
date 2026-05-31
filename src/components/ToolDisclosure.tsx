@@ -1,5 +1,5 @@
 import { ChevronDown } from 'lucide-react';
-import { ReactNode, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 interface Props {
   title: string;
@@ -11,6 +11,10 @@ interface Props {
 
 export default function ToolDisclosure({ title, subtitle, icon, children, defaultOpen = false }: Props) {
   const [open, setOpen] = useState(defaultOpen);
+
+  useEffect(() => {
+    if (defaultOpen) setOpen(true);
+  }, [defaultOpen]);
 
   return (
     <section className="overflow-hidden rounded-[1.65rem] border border-white/60 bg-white/[0.48] shadow-[0_18px_46px_rgba(11,63,67,0.08)] backdrop-blur-2xl">

@@ -90,6 +90,52 @@
         "touristTips": "Tourist Tips",
         "cash": "Cash",
         "foreignCard": "Foreign Card"
+      },
+      "essentialApps": {
+        "badge": "Essential",
+        "items": [
+          {
+            "name": "Alipay",
+            "purpose": "For payments, taxis, metro, shops, and restaurants.",
+            "tip": "Try setting it up before arrival."
+          },
+          {
+            "name": "WeChat",
+            "purpose": "Messaging, payments, mini programs, and local contacts.",
+            "tip": "Useful for daily communication in China."
+          },
+          {
+            "name": "Amap",
+            "purpose": "Better than Google Maps for local navigation in China.",
+            "tip": "Save key addresses in Chinese."
+          },
+          {
+            "name": "Didi",
+            "purpose": "Ride-hailing for taxis and private cars.",
+            "tip": "Useful after landing or with luggage."
+          },
+          {
+            "name": "Trip.com",
+            "purpose": "Useful for trains, flights, and hotels.",
+            "tip": "Keep your passport name consistent when booking."
+          }
+        ]
+      },
+      "paymentBasics": {
+        "items": [
+          "Set up Alipay or WeChat Pay before arrival if possible.",
+          "Keep a small amount of RMB cash as backup.",
+          "Foreign cards work mainly in hotels, malls, and larger stores.",
+          "Payment can fail sometimes; keep a phrase card ready."
+        ]
+      },
+      "transportBasics": {
+        "items": [
+          "Use Didi or official taxi queues when arriving with luggage.",
+          "Amap is usually more useful than Google Maps inside China.",
+          "High-speed trains are booked with your passport name.",
+          "Keep your hotel address in Chinese for drivers and station staff."
+        ]
       }
     },
     "stay": {
@@ -566,8 +612,12 @@
         "appsNote": "Set up before landing",
         "basics": "China payment & transport basics",
         "basicsNote": "Know what works",
-        "cityGuides": "City guides",
-        "cityGuidesNote": "Pick your first stops"
+        "cityGuides": "City Survival Packs",
+        "cityGuidesNote": "Local survival tips",
+        "payment": "China payment basics",
+        "paymentNote": "Alipay, WeChat, cash",
+        "transport": "Transport basics",
+        "transportNote": "Taxi, maps, trains"
       },
       "now": {
         "title": "In China now",

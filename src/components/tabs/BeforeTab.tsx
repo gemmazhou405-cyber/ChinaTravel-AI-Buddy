@@ -1,4 +1,4 @@
-import { CheckCircle, Circle, Wifi, CreditCard, Smartphone, FileText, ChevronRight, Lock, X } from 'lucide-react';
+import { CheckCircle, Circle, Wifi, CreditCard, Smartphone, FileText, ChevronRight, Lock, X, MapPin, Train } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { UserState } from '../../hooks/useAuth';
@@ -6,6 +6,7 @@ import type { CityPack } from '../../types/cityPack';
 import { isTripOrGroup } from '../../lib/membership';
 import TabSectionHeader from '../TabSectionHeader';
 import CitySurvivalPack from '../CitySurvivalPack';
+import ToolDisclosure from '../ToolDisclosure';
 
 import shanghaiData from '../../data/cityPacks/shanghai.json';
 import beijingData from '../../data/cityPacks/beijing.json';
@@ -37,11 +38,11 @@ const CHECKLIST = [
   { id: 5, labelKey: 'before.items.offlinePhrases', sublabelKey: 'before.items.offlinePhrasesSub', icon: <Wifi className="w-4 h-4" /> },
 ];
 
-const TIPS = [
-  { titleKey: 'before.tips.sim.title', bodyKey: 'before.tips.sim.body', tagKey: 'before.tips.sim.tag' },
-  { titleKey: 'before.tips.apps.title', bodyKey: 'before.tips.apps.body', tagKey: 'before.tips.apps.tag' },
-  { titleKey: 'before.tips.cash.title', bodyKey: 'before.tips.cash.body', tagKey: 'before.tips.cash.tag' },
-];
+interface EssentialApp {
+  name: string;
+  purpose: string;
+  tip: string;
+}
 
 function CityModal({ city, emoji, onClose }: { city: CityPack; emoji: string; onClose: () => void }) {
   return (
@@ -77,12 +78,14 @@ interface Props {
   userState: UserState | null;
   onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
+  deepTool?: string | null;
 }
 
-export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick }: Props) {
+export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick, deepTool }: Props) {
   const { t } = useTranslation();
   const hasFullAccess = isTripOrGroup(userState);
   const [selectedCity, setSelectedCity] = useState<{ city: CityPack; emoji: string } | null>(null);
+  const essentialApps = t('before.essentialApps.items', { returnObjects: true }) as EssentialApp[];
   const [checked, setChecked] = useState<number[]>(() => {
     try {
       const saved = localStorage.getItem('chinaease-checklist');
@@ -116,12 +119,16 @@ export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick }: Pro
         onAskBuddy={onAskBuddy}
       />
 
-      <section>
-        <div className="flex items-center justify-between mb-3">
-          <h2 className="text-base font-semibold text-gray-900">{t('before.title')}</h2>
+      <ToolDisclosure
+        title={t('journey.before.checklist')}
+        subtitle={t('journey.before.checklistNote')}
+        icon={<CheckCircle className="w-4 h-4" />}
+        defaultOpen={deepTool === 'checklist'}
+      >
+        <div className="mb-3 flex items-center justify-between">
+          <h2 className="text-sm font-semibold text-gray-900">{t('before.title')}</h2>
           <span className="text-xs text-gray-400">{checked.length}/{CHECKLIST.length} {t('before.done')}</span>
         </div>
-
         <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
           {CHECKLIST.map((item, i) => {
             const done = checked.includes(item.id);
@@ -147,12 +154,67 @@ export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick }: Pro
             );
           })}
         </div>
-      </section>
+      </ToolDisclosure>
+
+      <ToolDisclosure
+        title={t('journey.before.apps')}
+        subtitle={t('journey.before.appsNote')}
+        icon={<Smartphone className="w-4 h-4" />}
+        defaultOpen={deepTool === 'apps'}
+      >
+        <div className="space-y-2.5">
+          {essentialApps.map((app) => (
+            <div key={app.name} className="rounded-2xl border border-white/70 bg-white/70 p-3.5 shadow-sm">
+              <div className="flex items-start justify-between gap-3">
+                <p className="text-sm font-bold text-gray-950">{app.name}</p>
+                <span className="rounded-full bg-[#155e63]/10 px-2 py-0.5 text-[10px] font-semibold text-[#155e63]">
+                  {t('before.essentialApps.badge')}
+                </span>
+              </div>
+              <p className="mt-1 text-xs font-medium leading-relaxed text-gray-600">{app.purpose}</p>
+              <p className="mt-1.5 text-[11px] leading-relaxed text-gray-400">{app.tip}</p>
+            </div>
+          ))}
+        </div>
+      </ToolDisclosure>
+
+      <ToolDisclosure
+        title={t('journey.before.payment')}
+        subtitle={t('journey.before.paymentNote')}
+        icon={<CreditCard className="w-4 h-4" />}
+        defaultOpen={deepTool === 'payment'}
+      >
+        <div className="grid gap-2.5 sm:grid-cols-2">
+          {(t('before.paymentBasics.items', { returnObjects: true }) as string[]).map((item) => (
+            <div key={item} className="rounded-2xl border border-white/70 bg-white/70 p-3 text-xs font-medium leading-relaxed text-gray-600 shadow-sm">
+              {item}
+            </div>
+          ))}
+        </div>
+      </ToolDisclosure>
+
+      <ToolDisclosure
+        title={t('journey.before.transport')}
+        subtitle={t('journey.before.transportNote')}
+        icon={<Train className="w-4 h-4" />}
+        defaultOpen={deepTool === 'transport'}
+      >
+        <div className="grid gap-2.5 sm:grid-cols-2">
+          {(t('before.transportBasics.items', { returnObjects: true }) as string[]).map((item) => (
+            <div key={item} className="rounded-2xl border border-white/70 bg-white/70 p-3 text-xs font-medium leading-relaxed text-gray-600 shadow-sm">
+              {item}
+            </div>
+          ))}
+        </div>
+      </ToolDisclosure>
 
       {/* City Survival Guides */}
-      <section>
-        <h2 className="text-base font-semibold text-gray-900 mb-1">{t('before.cityGuidesTitle')}</h2>
-        <p className="text-gray-500 text-sm mb-3">{t('before.cityGuidesSub')}</p>
+      <ToolDisclosure
+        title={t('journey.before.cityGuides')}
+        subtitle={t('journey.before.cityGuidesNote')}
+        icon={<MapPin className="w-4 h-4" />}
+        defaultOpen={deepTool === 'city'}
+      >
         <div className="grid grid-cols-3 gap-2">
           {CITIES.map(({ emoji, data, freeAccess }) => {
             const locked = !freeAccess && !hasFullAccess;
@@ -181,22 +243,7 @@ export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick }: Pro
             );
           })}
         </div>
-      </section>
-
-      <section>
-        <h2 className="text-base font-semibold text-gray-900 mb-3">{t('before.tipsTitle')}</h2>
-        <div className="space-y-3">
-          {TIPS.map((tip) => (
-            <div key={tip.titleKey} className="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm">
-              <div className="flex items-center gap-2 mb-1.5">
-                <span className="text-xs bg-[#155e63]/10 text-[#155e63] px-2 py-0.5 rounded-full font-medium">{t(tip.tagKey)}</span>
-                <h3 className="font-semibold text-gray-800 text-sm">{t(tip.titleKey)}</h3>
-              </div>
-              <p className="text-gray-500 text-sm leading-relaxed">{t(tip.bodyKey)}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      </ToolDisclosure>
 
       {selectedCity && (
         <CityModal

@@ -33,9 +33,10 @@ interface Props {
   showToast: (msg: string) => void;
   onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
+  deepTool?: string | null;
 }
 
-export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeClick }: Props) {
+export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeClick, deepTool }: Props) {
   const { t } = useTranslation();
   const [customPhrase, setCustomPhrase] = useState('');
   const [showCustomResult, setShowCustomResult] = useState(false);
@@ -78,6 +79,7 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
         title={t('stay.customHelper.title')}
         subtitle={t('stay.customHelper.subtitle')}
         icon={<Building2 className="w-4 h-4" />}
+        defaultOpen={deepTool === 'custom'}
       >
         <div className="flex items-start justify-between gap-3">
           <div>
@@ -202,6 +204,7 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
         isPaidUser={hasFullAccess}
         showToast={showToast}
         onUpgradeClick={onUpgradeClick}
+        initialOpenId={deepTool === 'stay' || deepTool === 'hotel' ? 'hotel' : null}
       />
 
       {showCustomLocal && (

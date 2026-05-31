@@ -15,6 +15,7 @@ interface Props {
   showToast: (msg: string) => void;
   onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
+  deepTool?: string | null;
 }
 
 interface PaymentMethod {
@@ -26,7 +27,7 @@ interface PaymentMethod {
   icon: string;
 }
 
-export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClick }: Props) {
+export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClick, deepTool }: Props) {
   const { t } = useTranslation();
   const assetBase = import.meta.env.BASE_URL;
   const paymentMethods = t('pay.methods', { returnObjects: true }) as PaymentMethod[];
@@ -125,6 +126,7 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
         title={t('pay.failed.title')}
         subtitle={t('pay.tools.failedBody')}
         icon={<CreditCard className="h-4 w-4" />}
+        defaultOpen={deepTool === 'failed'}
       >
         <div className="grid gap-2.5 sm:grid-cols-2">
           {paymentFailedCards.map((card) => (
@@ -169,6 +171,7 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
         title={t('pay.paymentTitle')}
         subtitle={t('pay.tools.mobilePayBody')}
         icon={<WalletCards className="h-4 w-4" />}
+        defaultOpen={deepTool === 'pay'}
       >
         <div className="space-y-2.5">
           {paymentMethods.map((m) => (
@@ -196,6 +199,7 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
         title={t('pay.wechatSetup')}
         subtitle={t('pay.setupShort')}
         icon={<Smartphone className="h-4 w-4" />}
+        defaultOpen={deepTool === 'wechat'}
       >
         <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
           {setupSteps.map((stepText, i) => (
@@ -249,6 +253,7 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
         isPaidUser={hasFullAccess}
         showToast={showToast}
         onUpgradeClick={onUpgradeClick}
+        initialOpenId={deepTool === 'phrases' ? 'payment' : null}
       />
     </div>
   );

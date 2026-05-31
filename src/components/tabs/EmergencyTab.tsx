@@ -137,9 +137,10 @@ interface Props {
   showToast: (msg: string) => void;
   onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
+  deepTool?: string | null;
 }
 
-export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgradeClick }: Props) {
+export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgradeClick, deepTool }: Props) {
   const { t } = useTranslation();
   const hasFullAccess = isTripOrGroup(userState);
 
@@ -289,6 +290,7 @@ export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgra
         isPaidUser={hasFullAccess}
         showToast={showToast}
         onUpgradeClick={onUpgradeClick}
+        initialOpenId={deepTool === 'hospital' ? 'hospital' : deepTool === 'police' ? 'police' : deepTool === 'lost' ? 'emergency' : null}
       />
     </div>
   );

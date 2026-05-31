@@ -1,25 +1,25 @@
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import type { TabId } from '../App';
-
-type Journey = 'before' | 'now' | 'emergency';
+import type { JourneyId, TabId } from '../App';
 
 type Category = {
   label: string;
   note: string;
   tab?: TabId;
+  tool?: string;
   askBuddy?: boolean;
 };
 
 interface Props {
-  onTabSelect: (tab: TabId) => void;
+  journey: JourneyId;
+  onJourneyChange: (journey: JourneyId) => void;
+  onTabSelect: (tab: TabId, tool?: string) => void;
   onAskBuddy: () => void;
 }
 
-function CategoryButton({ category, onTabSelect, onAskBuddy }: Props & { category: Category }) {
+function CategoryButton({ category, onTabSelect, onAskBuddy }: Pick<Props, 'onTabSelect' | 'onAskBuddy'> & { category: Category }) {
   return (
     <button
-      onClick={() => (category.askBuddy ? onAskBuddy() : category.tab && onTabSelect(category.tab))}
+      onClick={() => (category.askBuddy ? onAskBuddy() : category.tab && onTabSelect(category.tab, category.tool))}
       className="min-h-[4.3rem] rounded-[1.15rem] border border-white/60 bg-white/[0.52] px-3 py-3 text-left shadow-[0_16px_42px_rgba(11,63,67,0.09)] backdrop-blur-2xl transition-all duration-200 hover:-translate-y-0.5 hover:border-[#155e63]/30 hover:bg-white/[0.74] hover:shadow-[0_22px_52px_rgba(11,63,67,0.14)] active:scale-[0.98] min-[391px]:min-h-[4.75rem] md:min-h-[5.35rem] md:rounded-[1.35rem] md:px-4 md:py-3.5"
     >
       <span className="block truncate text-sm font-bold tracking-tight text-gray-950">{category.label}</span>
@@ -28,10 +28,9 @@ function CategoryButton({ category, onTabSelect, onAskBuddy }: Props & { categor
   );
 }
 
-export default function QuickActions({ onTabSelect, onAskBuddy }: Props) {
+export default function QuickActions({ journey, onJourneyChange, onTabSelect, onAskBuddy }: Props) {
   const { t } = useTranslation();
-  const [journey, setJourney] = useState<Journey>('now');
-  const journeys: Array<{ id: Journey; label: string; shortLabel: string }> = [
+  const journeys: Array<{ id: JourneyId; label: string; shortLabel: string }> = [
     { id: 'before', label: t('journey.states.before'), shortLabel: t('journey.statesShort.before') },
     { id: 'now', label: t('journey.states.now'), shortLabel: t('journey.statesShort.now') },
     { id: 'emergency', label: t('journey.states.emergency'), shortLabel: t('journey.statesShort.emergency') },
@@ -42,23 +41,24 @@ export default function QuickActions({ onTabSelect, onAskBuddy }: Props) {
     t('journey.badges.askBuddy'),
   ];
   const beforeCategories: Category[] = [
-    { label: `✅ ${t('journey.before.checklist')}`, note: t('journey.before.checklistNote'), tab: 'before' },
-    { label: `📱 ${t('journey.before.apps')}`, note: t('journey.before.appsNote'), tab: 'before' },
-    { label: `💳 ${t('journey.before.basics')}`, note: t('journey.before.basicsNote'), tab: 'before' },
-    { label: `📍 ${t('journey.before.cityGuides')}`, note: t('journey.before.cityGuidesNote'), tab: 'stay' },
+    { label: `✅ ${t('journey.before.checklist')}`, note: t('journey.before.checklistNote'), tab: 'before', tool: 'checklist' },
+    { label: `📱 ${t('journey.before.apps')}`, note: t('journey.before.appsNote'), tab: 'before', tool: 'apps' },
+    { label: `💳 ${t('journey.before.payment')}`, note: t('journey.before.paymentNote'), tab: 'before', tool: 'payment' },
+    { label: `🚄 ${t('journey.before.transport')}`, note: t('journey.before.transportNote'), tab: 'before', tool: 'transport' },
+    { label: `📍 ${t('journey.before.cityGuides')}`, note: t('journey.before.cityGuidesNote'), tab: 'before', tool: 'city' },
   ];
   const nowCategories: Category[] = [
-    { label: `🚄 ${t('journey.now.transport')}`, note: t('journey.now.transportNote'), tab: 'transport' },
-    { label: `🏨 ${t('journey.now.stay')}`, note: t('journey.now.stayNote'), tab: 'stay' },
-    { label: `🍜 ${t('journey.now.food')}`, note: t('journey.now.foodNote'), tab: 'food' },
-    { label: `💳 ${t('journey.now.pay')}`, note: t('journey.now.payNote'), tab: 'pay' },
+    { label: `🚄 ${t('journey.now.transport')}`, note: t('journey.now.transportNote'), tab: 'transport', tool: 'transport' },
+    { label: `🏨 ${t('journey.now.stay')}`, note: t('journey.now.stayNote'), tab: 'stay', tool: 'stay' },
+    { label: `🍜 ${t('journey.now.food')}`, note: t('journey.now.foodNote'), tab: 'food', tool: 'food' },
+    { label: `💳 ${t('journey.now.pay')}`, note: t('journey.now.payNote'), tab: 'pay', tool: 'pay' },
     { label: `✨ ${t('journey.now.askBuddy')}`, note: t('journey.now.askBuddyNote'), askBuddy: true },
   ];
   const emergencyCategories: Category[] = [
-    { label: `🆘 ${t('journey.emergency.numbers')}`, note: '110 · 120 · 119', tab: 'emergency' },
-    { label: `🏥 ${t('journey.emergency.hospital')}`, note: t('journey.emergency.hospitalNote'), tab: 'emergency' },
-    { label: `👮 ${t('journey.emergency.police')}`, note: t('journey.emergency.policeNote'), tab: 'emergency' },
-    { label: `🎒 ${t('journey.emergency.lostItems')}`, note: t('journey.emergency.lostItemsNote'), tab: 'emergency' },
+    { label: `🆘 ${t('journey.emergency.numbers')}`, note: '110 · 120 · 119', tab: 'emergency', tool: 'numbers' },
+    { label: `🏥 ${t('journey.emergency.hospital')}`, note: t('journey.emergency.hospitalNote'), tab: 'emergency', tool: 'hospital' },
+    { label: `👮 ${t('journey.emergency.police')}`, note: t('journey.emergency.policeNote'), tab: 'emergency', tool: 'police' },
+    { label: `🎒 ${t('journey.emergency.lostItems')}`, note: t('journey.emergency.lostItemsNote'), tab: 'emergency', tool: 'lost' },
   ];
 
   const title =
@@ -81,7 +81,7 @@ export default function QuickActions({ onTabSelect, onAskBuddy }: Props) {
             {journeys.map((item) => (
               <button
                 key={item.id}
-                onClick={() => setJourney(item.id)}
+                onClick={() => onJourneyChange(item.id)}
                 className={`min-h-[2.55rem] rounded-[0.95rem] px-1.5 py-2 text-[11px] font-bold leading-tight transition-all duration-200 sm:text-xs md:rounded-2xl md:px-2 md:py-2.5 md:text-sm ${
                   journey === item.id
                     ? 'bg-gradient-to-br from-[#176f75] via-[#155e63] to-[#0b3f43] text-white shadow-[0_10px_26px_rgba(11,63,67,0.30)]'
@@ -150,17 +150,17 @@ export default function QuickActions({ onTabSelect, onAskBuddy }: Props) {
 
           <div className="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold md:text-xs">
             {journey !== 'now' && (
-              <button onClick={() => setJourney('now')} className="rounded-full border border-white/70 bg-white/[0.40] px-3 py-1.5 text-[#155e63] shadow-sm backdrop-blur-xl transition-all hover:bg-white/70">
+              <button onClick={() => onJourneyChange('now')} className="rounded-full border border-white/70 bg-white/[0.40] px-3 py-1.5 text-[#155e63] shadow-sm backdrop-blur-xl transition-all hover:bg-white/70">
                 {t('journey.switch.daily')}
               </button>
             )}
             {journey !== 'before' && (
-              <button onClick={() => setJourney('before')} className="rounded-full border border-white/70 bg-white/[0.40] px-3 py-1.5 text-[#155e63] shadow-sm backdrop-blur-xl transition-all hover:bg-white/70">
+              <button onClick={() => onJourneyChange('before')} className="rounded-full border border-white/70 bg-white/[0.40] px-3 py-1.5 text-[#155e63] shadow-sm backdrop-blur-xl transition-all hover:bg-white/70">
                 {t('journey.switch.planning')}
               </button>
             )}
             {journey !== 'emergency' && (
-              <button onClick={() => setJourney('emergency')} className="rounded-full border border-red-100/90 bg-red-50/65 px-3 py-1.5 text-red-700 shadow-sm backdrop-blur-xl transition-all hover:bg-red-50">
+              <button onClick={() => onJourneyChange('emergency')} className="rounded-full border border-red-100/90 bg-red-50/65 px-3 py-1.5 text-red-700 shadow-sm backdrop-blur-xl transition-all hover:bg-red-50">
                 {t('journey.switch.urgent')}
               </button>
             )}
