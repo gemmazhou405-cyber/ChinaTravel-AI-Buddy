@@ -39,13 +39,20 @@ export default function Footer({ onTabChange }: Props) {
               {t('footer.tagline')}
             </p>
           </div>
-          <div className="flex gap-6 text-xs">
+          <div className="flex flex-wrap gap-6 text-xs">
             <div className="space-y-2">
               <p className="text-white/80 font-semibold text-xs uppercase tracking-wider mb-3">{t('footer.product')}</p>
               <button onClick={() => goToTab('food')} className="block hover:text-white transition-colors text-left">{t('footer.features')}</button>
               <a href="/about" className="block hover:text-white transition-colors text-left">{t('footer.about')}</a>
               <a href="/pricing" className="block hover:text-white transition-colors text-left">{t('footer.pricing')}</a>
               <button onClick={downloadInstructions} className="block hover:text-white transition-colors text-left">{t('footer.download')}</button>
+            </div>
+            <div className="space-y-2">
+              <p className="text-white/80 font-semibold text-xs uppercase tracking-wider mb-3">{t('footer.guides')}</p>
+              <a href="/china-travel-apps" className="block hover:text-white transition-colors">{t('footer.travelApps')}</a>
+              <a href="/china-payment-guide" className="block hover:text-white transition-colors">{t('footer.paymentGuide')}</a>
+              <a href="/china-emergency-numbers" className="block hover:text-white transition-colors">{t('footer.emergencyGuide')}</a>
+              <a href="/faq" className="block hover:text-white transition-colors">{t('footer.faq')}</a>
             </div>
             <div className="space-y-2">
               <p className="text-white/80 font-semibold text-xs uppercase tracking-wider mb-3">{t('footer.support')}</p>
