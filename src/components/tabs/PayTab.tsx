@@ -3,6 +3,7 @@ import { UserState } from '../../hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
 import TabSectionHeader from '../TabSectionHeader';
+import ToolDisclosure from '../ToolDisclosure';
 import { paymentCards } from '../../data/phraseCards';
 import PricingPlans from '../PricingPlans';
 import { isTripOrGroup } from '../../lib/membership';
@@ -120,14 +121,17 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
         </div>
       </section>
 
-      <section>
-        <h2 className="text-base font-semibold text-gray-900 mb-3">{t('pay.failed.title')}</h2>
+      <ToolDisclosure
+        title={t('pay.failed.title')}
+        subtitle={t('pay.tools.failedBody')}
+        icon={<CreditCard className="h-4 w-4" />}
+      >
         <div className="grid gap-2.5 sm:grid-cols-2">
           {paymentFailedCards.map((card) => (
             <PhraseCard key={card.id} card={card} />
           ))}
         </div>
-      </section>
+      </ToolDisclosure>
 
       {/* Pricing cards */}
       <section>
@@ -143,7 +147,7 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
             ))}
           </ul>
         </div>
-        <PricingPlans userState={userState} />
+        <PricingPlans userState={userState} showToast={showToast} />
       </section>
 
       {/* Email header banner */}
@@ -161,8 +165,11 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
       </section>
 
       {/* Payment methods */}
-      <section>
-        <h2 className="text-base font-semibold text-gray-900 mb-3">{t('pay.paymentTitle')}</h2>
+      <ToolDisclosure
+        title={t('pay.paymentTitle')}
+        subtitle={t('pay.tools.mobilePayBody')}
+        icon={<WalletCards className="h-4 w-4" />}
+      >
         <div className="space-y-2.5">
           {paymentMethods.map((m) => (
             <div key={m.name} className="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm">
@@ -182,14 +189,14 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
             </div>
           ))}
         </div>
-      </section>
+      </ToolDisclosure>
 
       {/* WeChat Pay setup */}
-      <section>
-        <div className="flex items-center gap-2 mb-3">
-          <Smartphone className="w-4 h-4 text-[#155e63]" />
-          <h2 className="text-base font-semibold text-gray-900">{t('pay.wechatSetup')}</h2>
-        </div>
+      <ToolDisclosure
+        title={t('pay.wechatSetup')}
+        subtitle={t('pay.setupShort')}
+        icon={<Smartphone className="h-4 w-4" />}
+      >
         <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
           {setupSteps.map((stepText, i) => (
             <div
@@ -203,7 +210,7 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
             </div>
           ))}
         </div>
-      </section>
+      </ToolDisclosure>
 
       <div className="bg-amber-50 border border-amber-100 rounded-2xl p-4 flex gap-3">
         <Info className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />

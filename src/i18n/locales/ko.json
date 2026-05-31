@@ -21,7 +21,9 @@
       "startFree": "무료로 시작",
       "askBuddy": "Buddy에게 묻기",
       "mobileTrust": "앱 다운로드 없음 · 모바일 지원 · 무료 시작",
-      "realMoments": "중국의 실제 상황을 위해 만들었습니다 — 택시, 음식, 결제, 호텔, 긴급 상황."
+      "realMoments": "중국의 실제 상황을 위해 만들었습니다 — 택시, 음식, 결제, 호텔, 긴급 상황.",
+      "mobileSubtitle": "중국에서 실제로 필요한 순간을 위한 여행 도움.",
+      "mobileTrustShort": "앱 설치 없음 · 모바일 최적화 · 무료 시작"
     },
     "tabs": {
       "before": "출발 전",
@@ -326,9 +328,9 @@
       "currency": "환율 계산기",
       "currencyLive": "USD · EUR · GBP · AUD → RMB en direct",
       "open": "열기",
-      "secure": "Paiement sécurisé via PayPal",
+      "secure": "수동 얼리 액세스",
       "bannerAlt": "Votre aventure en Chine commence maintenant",
-      "paymentSoon": "안전한 결제는 설정 중입니다. 얼리 액세스 사용자는 수동 활성화를 요청할 수 있습니다.",
+      "paymentSoon": "자동 결제를 준비하는 동안 수동 얼리 액세스를 이용할 수 있습니다.",
       "plans": {
         "free": {
           "name": "무료",
@@ -440,7 +442,29 @@
         }
       },
       "paymentPhraseCards": "결제 문장 카드",
-      "paymentCardsSubtitle": "Alipay, WeChat Pay, 카드, 현금 카드 {{count}}개"
+      "paymentCardsSubtitle": "Alipay, WeChat Pay, 카드, 현금 카드 {{count}}개",
+      "setupShort": "도착 전에 카드를 연결하세요.",
+      "earlyAccess": {
+        "title": "수동 얼리 액세스",
+        "body": "자동 체크아웃을 준비 중입니다. 현재 Trip Pass와 Group Pass는 결제 확인 후 수동으로 활성화됩니다.",
+        "options": "사용 가능한 수동 결제 옵션은 이메일로 안내됩니다.",
+        "safety": "ChinaEase Buddy는 이 웹사이트에서 카드 정보를 직접 수집하지 않습니다.",
+        "modalTitle": "얼리 액세스 요청",
+        "modalSubtitle": "자동 체크아웃을 준비 중입니다. 요청을 제출하면 사용 가능한 수동 결제 옵션을 이메일로 안내해 드립니다.",
+        "email": "이메일 주소",
+        "plan": "플랜 선택",
+        "travelDate": "여행 날짜 선택 사항",
+        "message": "메시지 선택 사항",
+        "messagePlaceholder": "여행에 대해 알려주실 내용이 있나요?",
+        "submit": "요청 제출",
+        "contactEmail": "이메일로 문의",
+        "confirmation": "수동 결제 옵션을 이메일로 안내하고 결제 확인 후 플랜을 활성화합니다.",
+        "noCard": "이 웹사이트에서는 카드 정보를 수집하지 않습니다.",
+        "sameEmail": "ChinaEase Buddy 계정에 사용하는 동일한 이메일을 사용해 주세요.",
+        "createAccount": "더 빠른 활성화를 위해 먼저 무료 계정을 만드세요.",
+        "emailRequired": "먼저 이메일을 입력해 주세요.",
+        "mailReady": "요청 이메일이 준비되었습니다. 계속하려면 이메일을 보내 주세요."
+      }
     },
     "chat": {
       "title": "Buddy에게 질문",
@@ -489,7 +513,10 @@
       "googleError": "Google로 로그인할 수 없습니다. 다시 시도해 주세요.",
       "verificationSent": "인증 이메일을 보냈습니다.",
       "verifyBeforeBuddy": "Buddy AI를 사용하기 전에 이메일을 인증해 주세요.",
-      "resendVerification": "인증 이메일 다시 보내기"
+      "resendVerification": "인증 이메일 다시 보내기",
+      "inAppBrowserNotice": "이 앱 내 브라우저에서는 Google 로그인이 작동하지 않을 수 있습니다. Safari 또는 Chrome에서 ChinaEase Buddy를 열어 계속하세요.",
+      "inAppBrowserNoticeZh": "当前 App 内置浏览器可能无法使用 Google 登录。请用 Safari 或 Chrome 打开 chinaeasebuddy.com 后继续。",
+      "emailAlternative": "이메일로도 로그인할 수 있습니다."
     },
     "footer": {
       "tagline": "중국을 방문하는 외국인 관광객을 위한 AI 여행 동반자. 메뉴 해석, 교통 안내, 긴급 상황 대응.",
@@ -575,6 +602,11 @@
         "daily": "일상 여행 도움이 필요하세요?",
         "planning": "여행을 준비 중인가요?",
         "urgent": "긴급 도움이 필요하세요?"
+      },
+      "statesShort": {
+        "before": "출발 전",
+        "now": "중국 현지",
+        "emergency": "긴급"
       }
     },
     "value": {

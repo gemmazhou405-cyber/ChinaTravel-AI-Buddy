@@ -21,7 +21,9 @@
       "startFree": "Start Free",
       "askBuddy": "Ask Buddy",
       "mobileTrust": "No app download · Works on mobile · Free to start",
-      "realMoments": "Built for real moments in China — taxis, food, payments, hotels, and emergencies."
+      "realMoments": "Built for real moments in China — taxis, food, payments, hotels, and emergencies.",
+      "mobileSubtitle": "Travel help for real moments in China.",
+      "mobileTrustShort": "No app · Mobile friendly · Free to start"
     },
     "tabs": {
       "before": "Before You Go",
@@ -326,9 +328,9 @@
       "currency": "Currency Converter",
       "currencyLive": "Live USD · EUR · GBP · AUD → RMB",
       "open": "Open",
-      "secure": "Secure payment via PayPal",
+      "secure": "Manual early access",
       "bannerAlt": "Your China adventure starts now",
-      "paymentSoon": "Secure checkout is being set up. Early access users can request manual activation.",
+      "paymentSoon": "Manual early access is available while checkout is being set up.",
       "plans": {
         "free": {
           "name": "Free",
@@ -440,7 +442,29 @@
         }
       },
       "paymentPhraseCards": "Payment Phrase Cards",
-      "paymentCardsSubtitle": "{{count}} Alipay, WeChat Pay, card, and cash cards"
+      "paymentCardsSubtitle": "{{count}} Alipay, WeChat Pay, card, and cash cards",
+      "setupShort": "Link a card before arrival.",
+      "earlyAccess": {
+        "title": "Manual early access",
+        "body": "Automatic checkout is being set up. For now, Trip Pass and Group Pass are activated manually after payment confirmation.",
+        "options": "Available manual payment options will be shared by email.",
+        "safety": "ChinaEase Buddy does not collect card details directly on this website.",
+        "modalTitle": "Request Early Access",
+        "modalSubtitle": "Automatic checkout is being set up. Submit a request and we’ll reply by email with available manual payment options.",
+        "email": "Email address",
+        "plan": "Plan selection",
+        "travelDate": "Travel date optional",
+        "message": "Message optional",
+        "messagePlaceholder": "Anything we should know about your trip?",
+        "submit": "Submit request",
+        "contactEmail": "Contact us by email",
+        "confirmation": "We’ll email you with manual payment options and activate your plan after payment confirmation.",
+        "noCard": "No card details are collected on this website.",
+        "sameEmail": "Please use the same email you use for your ChinaEase Buddy account.",
+        "createAccount": "Create a free account first for faster activation.",
+        "emailRequired": "Please enter your email first.",
+        "mailReady": "Your request is ready. Please send the email to continue."
+      }
     },
     "chat": {
       "title": "Ask Buddy",
@@ -489,7 +513,10 @@
       "googleError": "Could not sign in with Google. Please try again.",
       "verificationSent": "Verification email sent.",
       "verifyBeforeBuddy": "Please verify your email before using Buddy AI.",
-      "resendVerification": "Resend verification email"
+      "resendVerification": "Resend verification email",
+      "inAppBrowserNotice": "Google sign-in may not work inside this app browser. Please open ChinaEase Buddy in Safari or Chrome to continue.",
+      "inAppBrowserNoticeZh": "当前 App 内置浏览器可能无法使用 Google 登录。请用 Safari 或 Chrome 打开 chinaeasebuddy.com 后继续。",
+      "emailAlternative": "You can also sign in with email."
     },
     "footer": {
       "tagline": "AI travel companion for foreign tourists visiting China. Decode menus, navigate transit, handle emergencies.",
@@ -575,6 +602,11 @@
         "daily": "Need daily travel help?",
         "planning": "Planning your trip?",
         "urgent": "Need urgent help?"
+      },
+      "statesShort": {
+        "before": "Before",
+        "now": "In China",
+        "emergency": "Emergency"
       }
     },
     "value": {

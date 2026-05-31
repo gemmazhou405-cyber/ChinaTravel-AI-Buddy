@@ -17,6 +17,33 @@ export default function AuthModal({ onClose, onSignup, onLogin, onGoogleLogin, o
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [inAppWarning, setInAppWarning] = useState(false);
+
+  const isInAppBrowser = () => {
+    const ua = window.navigator.userAgent || '';
+    const lower = ua.toLowerCase();
+    const patterns = [
+      /micromessenger/i,
+      /wechat/i,
+      /xiaohongshu/i,
+      /xhs/i,
+      /instagram/i,
+      /fban|fbav|fb_iab|facebook/i,
+      /tiktok|musically|bytedance/i,
+      / line\//i,
+      /wv\)/i,
+      /; wv/i,
+      /webview/i,
+      /crosswalk/i,
+    ];
+    const iosEmbedded = /iphone|ipad|ipod/i.test(lower) && !/safari/i.test(lower);
+    return patterns.some((pattern) => pattern.test(ua)) || iosEmbedded;
+  };
+
+  const inAppBrowserMessage = () => {
+    const lang = window.navigator.language?.toLowerCase() || '';
+    return lang.startsWith('zh') ? t('auth.inAppBrowserNoticeZh') : t('auth.inAppBrowserNotice');
+  };
 
   const handleSubmit = async () => {
     setError('');
@@ -43,6 +70,11 @@ export default function AuthModal({ onClose, onSignup, onLogin, onGoogleLogin, o
 
   const handleGoogleLogin = async () => {
     setError('');
+    if (isInAppBrowser()) {
+      setInAppWarning(true);
+      setError(inAppBrowserMessage());
+      return;
+    }
     setLoading(true);
     try {
       await onGoogleLogin();
@@ -119,6 +151,12 @@ export default function AuthModal({ onClose, onSignup, onLogin, onGoogleLogin, o
             <span className="flex h-5 w-5 items-center justify-center rounded-full border border-gray-200 text-xs font-bold text-[#155e63]">G</span>
             {t('auth.continueWithGoogle')}
           </button>
+          {(inAppWarning || isInAppBrowser()) && (
+            <div className="mb-4 rounded-xl border border-amber-100 bg-amber-50 px-3 py-2.5">
+              <p className="text-xs font-medium leading-relaxed text-amber-800">{inAppBrowserMessage()}</p>
+              <p className="mt-1 text-xs text-amber-700">{t('auth.emailAlternative')}</p>
+            </div>
+          )}
 
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px flex-1 bg-gray-100" />

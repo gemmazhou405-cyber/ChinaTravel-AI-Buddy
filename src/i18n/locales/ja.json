@@ -21,7 +21,9 @@
       "startFree": "無料で始める",
       "askBuddy": "Buddyに聞く",
       "mobileTrust": "アプリ不要 · モバイル対応 · 無料で開始",
-      "realMoments": "中国で実際に起こる場面に対応 — タクシー、食事、支払い、ホテル、緊急時。"
+      "realMoments": "中国で実際に起こる場面に対応 — タクシー、食事、支払い、ホテル、緊急時。",
+      "mobileSubtitle": "中国で本当に困る場面のための旅行ヘルプ。",
+      "mobileTrustShort": "アプリ不要 · モバイル対応 · 無料で開始"
     },
     "tabs": {
       "before": "出発前",
@@ -326,9 +328,9 @@
       "currency": "通貨換算",
       "currencyLive": "USD · EUR · GBP · AUD → RMB en direct",
       "open": "開く",
-      "secure": "Paiement sécurisé via PayPal",
+      "secure": "手動早期アクセス",
       "bannerAlt": "Votre aventure en Chine commence maintenant",
-      "paymentSoon": "安全な決済は準備中です。早期アクセス利用者は手動有効化をリクエストできます。",
+      "paymentSoon": "自動決済の準備中は、手動の早期アクセスを利用できます。",
       "plans": {
         "free": {
           "name": "無料",
@@ -440,7 +442,29 @@
         }
       },
       "paymentPhraseCards": "支払いフレーズカード",
-      "paymentCardsSubtitle": "Alipay、WeChat Pay、カード、現金カード {{count}}枚"
+      "paymentCardsSubtitle": "Alipay、WeChat Pay、カード、現金カード {{count}}枚",
+      "setupShort": "到着前にカードを連携してください。",
+      "earlyAccess": {
+        "title": "手動早期アクセス",
+        "body": "自動チェックアウトを準備中です。現在、Trip Pass と Group Pass は支払い確認後に手動で有効化されます。",
+        "options": "利用可能な手動支払い方法はメールでお知らせします。",
+        "safety": "ChinaEase Buddy はこのサイト上でカード情報を直接収集しません。",
+        "modalTitle": "早期アクセスをリクエスト",
+        "modalSubtitle": "自動チェックアウトを準備中です。リクエストを送信すると、利用可能な手動支払い方法をメールでご案内します。",
+        "email": "メールアドレス",
+        "plan": "プラン選択",
+        "travelDate": "旅行日（任意）",
+        "message": "メッセージ（任意）",
+        "messagePlaceholder": "旅行について伝えておきたいことはありますか？",
+        "submit": "リクエストを送信",
+        "contactEmail": "メールで問い合わせる",
+        "confirmation": "手動支払い方法をメールでご案内し、支払い確認後にプランを有効化します。",
+        "noCard": "このサイトではカード情報を収集しません。",
+        "sameEmail": "ChinaEase Buddy アカウントと同じメールを使用してください。",
+        "createAccount": "より早い有効化のため、先に無料アカウントを作成してください。",
+        "emailRequired": "先にメールアドレスを入力してください。",
+        "mailReady": "リクエストのメールを準備しました。続行するにはメールを送信してください。"
+      }
     },
     "chat": {
       "title": "Buddyに質問",
@@ -489,7 +513,10 @@
       "googleError": "Googleでログインできませんでした。もう一度お試しください。",
       "verificationSent": "認証メールを送信しました。",
       "verifyBeforeBuddy": "Buddy AIを使用する前にメールを認証してください。",
-      "resendVerification": "認証メールを再送信"
+      "resendVerification": "認証メールを再送信",
+      "inAppBrowserNotice": "このアプリ内ブラウザでは Google ログインが使えない場合があります。Safari または Chrome で ChinaEase Buddy を開いて続行してください。",
+      "inAppBrowserNoticeZh": "当前 App 内置浏览器可能无法使用 Google 登录。请用 Safari 或 Chrome 打开 chinaeasebuddy.com 后继续。",
+      "emailAlternative": "メールでもログインできます。"
     },
     "footer": {
       "tagline": "中国を訪れる外国人旅行者向けAI旅行コンパニオン。メニュー解読、交通案内、緊急対応をサポート。",
@@ -575,6 +602,11 @@
         "daily": "日常の旅行ヘルプが必要？",
         "planning": "旅行を準備中？",
         "urgent": "緊急ヘルプが必要？"
+      },
+      "statesShort": {
+        "before": "出発前",
+        "now": "中国滞在",
+        "emergency": "緊急"
       }
     },
     "value": {

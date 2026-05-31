@@ -21,7 +21,9 @@
       "startFree": "Commencer gratuitement",
       "askBuddy": "Demander à Buddy",
       "mobileTrust": "Aucune app à installer · Fonctionne sur mobile · Gratuit pour commencer",
-      "realMoments": "Conçu pour les vrais moments en Chine — taxis, repas, paiements, hôtels et urgences."
+      "realMoments": "Conçu pour les vrais moments en Chine — taxis, repas, paiements, hôtels et urgences.",
+      "mobileSubtitle": "Aide de voyage pour les moments réels en Chine.",
+      "mobileTrustShort": "Pas d’app · Mobile · Départ gratuit"
     },
     "tabs": {
       "before": "Avant le départ",
@@ -318,7 +320,7 @@
       "plansTitle": "Forfaits",
       "currentPlan": "Forfait actuel :",
       "aiUsed": "Buddy AI utilisé :",
-      "refund": "Paiement unique · Sans renouvellement automatique · Remboursement sous 3 jours",
+      "refund": "Paiement unique · Pas de renouvellement automatique · Remboursement sous 3 jours",
       "paymentTitle": "Moyens de paiement en Chine",
       "wechatSetup": "Configuration de WeChat Pay",
       "exchangeTip": "Conseil de change",
@@ -326,9 +328,9 @@
       "currency": "Convertisseur de devises",
       "currencyLive": "USD · EUR · GBP · AUD → RMB en direct",
       "open": "Ouvrir",
-      "secure": "Paiement sécurisé via PayPal",
+      "secure": "Accès anticipé manuel",
       "bannerAlt": "Votre aventure en Chine commence maintenant",
-      "paymentSoon": "Le paiement sécurisé est en cours de configuration. Les utilisateurs en accès anticipé peuvent demander une activation manuelle.",
+      "paymentSoon": "L’accès anticipé manuel est disponible pendant la mise en place du paiement automatique.",
       "plans": {
         "free": {
           "name": "Gratuit",
@@ -440,7 +442,29 @@
         }
       },
       "paymentPhraseCards": "Cartes de phrases paiement",
-      "paymentCardsSubtitle": "{{count}} cartes Alipay, WeChat Pay, carte et espèces"
+      "paymentCardsSubtitle": "{{count}} cartes Alipay, WeChat Pay, carte et espèces",
+      "setupShort": "Liez une carte avant l’arrivée.",
+      "earlyAccess": {
+        "title": "Accès anticipé manuel",
+        "body": "Le paiement automatique est en cours de configuration. Pour l’instant, Trip Pass et Group Pass sont activés manuellement après confirmation du paiement.",
+        "options": "Les options de paiement manuel disponibles seront envoyées par e-mail.",
+        "safety": "ChinaEase Buddy ne collecte pas les données de carte directement sur ce site.",
+        "modalTitle": "Demander l’accès anticipé",
+        "modalSubtitle": "Le paiement automatique est en cours de configuration. Envoyez une demande et nous répondrons par e-mail avec les options de paiement manuel disponibles.",
+        "email": "Adresse e-mail",
+        "plan": "Choix du forfait",
+        "travelDate": "Date de voyage facultative",
+        "message": "Message facultatif",
+        "messagePlaceholder": "Quelque chose à savoir sur votre voyage ?",
+        "submit": "Envoyer la demande",
+        "contactEmail": "Nous contacter par e-mail",
+        "confirmation": "Nous vous enverrons les options de paiement manuel par e-mail et activerons votre forfait après confirmation du paiement.",
+        "noCard": "Aucune donnée de carte n’est collectée sur ce site.",
+        "sameEmail": "Utilisez la même adresse e-mail que celle de votre compte ChinaEase Buddy.",
+        "createAccount": "Créez d’abord un compte gratuit pour une activation plus rapide.",
+        "emailRequired": "Veuillez d’abord saisir votre e-mail.",
+        "mailReady": "Votre demande est prête. Envoyez l’e-mail pour continuer."
+      }
     },
     "chat": {
       "title": "Demander à Buddy",
@@ -489,7 +513,10 @@
       "googleError": "Impossible de se connecter avec Google. Veuillez réessayer.",
       "verificationSent": "E-mail de vérification envoyé.",
       "verifyBeforeBuddy": "Veuillez vérifier votre e-mail avant d’utiliser Buddy AI.",
-      "resendVerification": "Renvoyer l’e-mail de vérification"
+      "resendVerification": "Renvoyer l’e-mail de vérification",
+      "inAppBrowserNotice": "La connexion Google peut ne pas fonctionner dans le navigateur intégré de cette app. Ouvrez ChinaEase Buddy dans Safari ou Chrome pour continuer.",
+      "inAppBrowserNoticeZh": "当前 App 内置浏览器可能无法使用 Google 登录。请用 Safari 或 Chrome 打开 chinaeasebuddy.com 后继续。",
+      "emailAlternative": "Vous pouvez aussi vous connecter par e-mail."
     },
     "footer": {
       "tagline": "Compagnon IA pour les voyageurs étrangers en Chine. Décodez les menus, naviguez, gérez les urgences.",
@@ -575,6 +602,11 @@
         "daily": "Besoin d’aide au quotidien ?",
         "planning": "Vous préparez votre voyage ?",
         "urgent": "Besoin d’aide urgente ?"
+      },
+      "statesShort": {
+        "before": "Avant",
+        "now": "En Chine",
+        "emergency": "Urgence"
       }
     },
     "value": {

@@ -21,7 +21,9 @@
       "startFree": "Empezar gratis",
       "askBuddy": "Preguntar a Buddy",
       "mobileTrust": "Sin descargar app · Funciona en móvil · Gratis para empezar",
-      "realMoments": "Creado para momentos reales en China: taxis, comida, pagos, hoteles y emergencias."
+      "realMoments": "Creado para momentos reales en China: taxis, comida, pagos, hoteles y emergencias.",
+      "mobileSubtitle": "Ayuda de viaje para momentos reales en China.",
+      "mobileTrustShort": "Sin app · Móvil · Gratis para empezar"
     },
     "tabs": {
       "before": "Antes de viajar",
@@ -326,9 +328,9 @@
       "currency": "Conversor de divisas",
       "currencyLive": "USD · EUR · GBP · AUD → RMB en direct",
       "open": "Abrir",
-      "secure": "Paiement sécurisé via PayPal",
+      "secure": "Acceso anticipado manual",
       "bannerAlt": "Votre aventure en Chine commence maintenant",
-      "paymentSoon": "El pago seguro se está configurando. Los usuarios de acceso anticipado pueden solicitar activación manual.",
+      "paymentSoon": "El acceso anticipado manual está disponible mientras se configura el pago automático.",
       "plans": {
         "free": {
           "name": "Gratis",
@@ -440,7 +442,29 @@
         }
       },
       "paymentPhraseCards": "Tarjetas de frases de pago",
-      "paymentCardsSubtitle": "{{count}} tarjetas de Alipay, WeChat Pay, tarjeta y efectivo"
+      "paymentCardsSubtitle": "{{count}} tarjetas de Alipay, WeChat Pay, tarjeta y efectivo",
+      "setupShort": "Vincula una tarjeta antes de llegar.",
+      "earlyAccess": {
+        "title": "Acceso anticipado manual",
+        "body": "El pago automático se está configurando. Por ahora, Trip Pass y Group Pass se activan manualmente tras confirmar el pago.",
+        "options": "Las opciones de pago manual disponibles se compartirán por email.",
+        "safety": "ChinaEase Buddy no recopila datos de tarjeta directamente en este sitio.",
+        "modalTitle": "Solicitar acceso anticipado",
+        "modalSubtitle": "El pago automático se está configurando. Envía una solicitud y responderemos por email con las opciones de pago manual disponibles.",
+        "email": "Dirección de email",
+        "plan": "Selección de plan",
+        "travelDate": "Fecha de viaje opcional",
+        "message": "Mensaje opcional",
+        "messagePlaceholder": "¿Algo que debamos saber sobre tu viaje?",
+        "submit": "Enviar solicitud",
+        "contactEmail": "Contactarnos por email",
+        "confirmation": "Te enviaremos opciones de pago manual por email y activaremos tu plan tras confirmar el pago.",
+        "noCard": "No se recopilan datos de tarjeta en este sitio.",
+        "sameEmail": "Usa el mismo email que utilizas para tu cuenta de ChinaEase Buddy.",
+        "createAccount": "Crea primero una cuenta gratuita para una activación más rápida.",
+        "emailRequired": "Introduce tu email primero.",
+        "mailReady": "Tu solicitud está lista. Envía el email para continuar."
+      }
     },
     "chat": {
       "title": "Preguntar a Buddy",
@@ -489,7 +513,10 @@
       "googleError": "No se pudo iniciar sesión con Google. Inténtalo de nuevo.",
       "verificationSent": "Email de verificación enviado.",
       "verifyBeforeBuddy": "Verifica tu email antes de usar Buddy AI.",
-      "resendVerification": "Reenviar email de verificación"
+      "resendVerification": "Reenviar email de verificación",
+      "inAppBrowserNotice": "Es posible que el inicio de sesión con Google no funcione dentro del navegador de esta app. Abre ChinaEase Buddy en Safari o Chrome para continuar.",
+      "inAppBrowserNoticeZh": "当前 App 内置浏览器可能无法使用 Google 登录。请用 Safari 或 Chrome 打开 chinaeasebuddy.com 后继续。",
+      "emailAlternative": "También puedes iniciar sesión con email."
     },
     "footer": {
       "tagline": "Compañero de viaje con IA para turistas extranjeros en China. Descifra menús, navega el transporte y gestiona emergencias.",
@@ -575,6 +602,11 @@
         "daily": "¿Necesitas ayuda diaria?",
         "planning": "¿Preparando tu viaje?",
         "urgent": "¿Necesitas ayuda urgente?"
+      },
+      "statesShort": {
+        "before": "Antes",
+        "now": "En China",
+        "emergency": "Emergencia"
       }
     },
     "value": {

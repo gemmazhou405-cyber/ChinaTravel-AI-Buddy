@@ -31,10 +31,10 @@ function CategoryButton({ category, onTabSelect, onAskBuddy }: Props & { categor
 export default function QuickActions({ onTabSelect, onAskBuddy }: Props) {
   const { t } = useTranslation();
   const [journey, setJourney] = useState<Journey>('now');
-  const journeys: Array<{ id: Journey; label: string }> = [
-    { id: 'before', label: t('journey.states.before') },
-    { id: 'now', label: t('journey.states.now') },
-    { id: 'emergency', label: t('journey.states.emergency') },
+  const journeys: Array<{ id: Journey; label: string; shortLabel: string }> = [
+    { id: 'before', label: t('journey.states.before'), shortLabel: t('journey.statesShort.before') },
+    { id: 'now', label: t('journey.states.now'), shortLabel: t('journey.statesShort.now') },
+    { id: 'emergency', label: t('journey.states.emergency'), shortLabel: t('journey.statesShort.emergency') },
   ];
   const valueTags = [
     t('journey.badges.noApp'),
@@ -88,15 +88,16 @@ export default function QuickActions({ onTabSelect, onAskBuddy }: Props) {
                     : 'text-gray-600 hover:bg-white/55 hover:text-[#155e63]'
                 }`}
               >
-                {item.label}
+                <span className="md:hidden">{item.shortLabel}</span>
+                <span className="hidden md:inline">{item.label}</span>
               </button>
             ))}
           </div>
-          <div className="-mx-1 mt-2 flex gap-1.5 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mt-3 md:gap-2">
-            {valueTags.map((tag) => (
+          <div className="mt-2 grid grid-cols-2 gap-1.5 md:flex md:gap-2 md:overflow-x-visible md:pb-1">
+            {valueTags.map((tag, index) => (
               <span
                 key={tag}
-                className="shrink-0 rounded-full border border-white/70 bg-white/[0.38] px-2.5 py-1 text-[11px] font-semibold text-[#155e63] shadow-[0_8px_24px_rgba(11,63,67,0.06)] backdrop-blur-xl md:px-3 md:py-1.5 md:text-xs"
+                className={`flex min-h-8 min-w-0 items-center justify-center rounded-full border border-white/70 bg-white/[0.38] px-2 py-1 text-center text-[10.5px] font-semibold leading-tight text-[#155e63] shadow-[0_8px_24px_rgba(11,63,67,0.06)] backdrop-blur-xl md:min-h-0 md:shrink-0 md:px-3 md:py-1.5 md:text-left md:text-xs ${index > 1 ? 'hidden md:inline-flex' : ''}`}
               >
                 {tag}
               </span>
