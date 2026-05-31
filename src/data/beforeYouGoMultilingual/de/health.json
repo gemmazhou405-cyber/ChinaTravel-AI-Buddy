@@ -1,0 +1,115 @@
+{
+  "id": "health",
+  "title": "Gesundheits- und Medizin-Checkliste",
+  "description": "Bereiten Sie Ihre Gesundheitsgrundlagen für die Reise nach China vor",
+  "items": [
+    {
+      "id": "health_001",
+      "task": "Impfvoraussetzungen prüfen",
+      "detail": "Empfohlene Impfungen: Hepatitis A, Typhus. Hepatitis B, Japanische Enzephalitis und Tollwut je nach Reiseroute in Betracht ziehen",
+      "priority": "hoch",
+      "category": "Impfung",
+      "timeNeeded": "4-6 Wochen vorher",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_002",
+      "task": "Umfassende Reiseversicherung abschließen",
+      "detail": "Stellen Sie sicher, dass die Police medizinische Notfallevakuierung, Krankenhausaufenthalte abdeckt und speziell China einschließt",
+      "priority": "hoch",
+      "category": "Versicherung",
+      "timeNeeded": "Nach Buchung der Reise",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_003",
+      "task": "Medizinische Deckungsdetails überprüfen",
+      "detail": "Bestätigen Sie, dass die Versicherung Vorerkrankungen, geplante Abenteueraktivitäten abdeckt und 24/7-Hilfe in China bietet",
+      "priority": "hoch",
+      "category": "Versicherung",
+      "timeNeeded": "1-2 Wochen vorher",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_004",
+      "task": "Dokumente für verschreibungspflichtige Medikamente zusammenstellen",
+      "detail": "Arztbrief mit allen Medikamenten, Dosierungen und medizinischer Notwendigkeit in Englisch und Chinesisch besorgen",
+      "priority": "hoch",
+      "category": "Medikamente",
+      "timeNeeded": "2-3 Wochen vorher",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_005",
+      "task": "Medikamente richtig verpacken",
+      "detail": "Medikamente in Originalbehältern aufbewahren, zusätzlichen Vorrat mitnehmen und im Handgepäck verstauen",
+      "priority": "hoch",
+      "category": "Medikamente",
+      "timeNeeded": "Tag vor der Abreise",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_006",
+      "task": "Grundlegende Erste-Hilfe-Ausrüstung vorbereiten",
+      "detail": "Enthalten: antiseptische Tücher, Verbände, Schmerzmittel, Mittel gegen Durchfall, Rehydrationssalze, Insektenschutzmittel",
+      "priority": "mittel",
+      "category": "Erste Hilfe",
+      "timeNeeded": "1 Woche vorher",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_007",
+      "task": "Allergie-Informationskarten erstellen",
+      "detail": "Karten in Englisch und Chinesisch mit Nahrungsmittelallergien, Medikamentenallergien und Notfallbehandlungsanweisungen",
+      "priority": "mittel",
+      "category": "Allergie",
+      "timeNeeded": "2 Wochen vorher",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_008",
+      "task": "Blutgruppenausweis vorbereiten",
+      "detail": "Karte mit Blutgruppe, Rh-Faktor und besonderen medizinischen Zuständen in beiden Sprachen mitführen",
+      "priority": "mittel",
+      "category": "medizinischer Ausweis",
+      "timeNeeded": "2 Wochen vorher",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_009",
+      "task": "Dokument zur Krankengeschichte zusammenstellen",
+      "detail": "Chronische Erkrankungen, vergangene Operationen, Krankenhausaufenthalte und aktuelle Behandlungen in beiden Sprachen zusammenfassen",
+      "priority": "mittel",
+      "category": "Krankengeschichte",
+      "timeNeeded": "2 Wochen vorher",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_010",
+      "task": "Notfallkontaktliste erstellen",
+      "detail": "Enthalten: Botschaft vor Ort, Notfallnummer der Versicherung, Familienkontakte und chinesische Notrufnummer (120 für Krankenwagen)",
+      "priority": "hoch",
+      "category": "Notfall",
+      "timeNeeded": "1 Woche vorher",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_011",
+      "task": "Luftqualitätsvorhersagen prüfen",
+      "detail": "AQI für Reiseziele überwachen, bei Empfindlichkeit oder Besuch nördlicher Industriestädte N95-Masken einpacken",
+      "priority": "niedrig",
+      "category": "Umwelt",
+      "timeNeeded": "1 Woche vorher",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_012",
+      "task": "Kliniken für Traditionelle Chinesische Medizin recherchieren",
+      "detail": "Beachten Sie, dass TCM weit verbreitet ist; sie unterscheidet sich von westlicher Medizin; halten Sie Versicherungsdetails bereit",
+      "priority": "niedrig",
+      "category": "lokale Gesundheit",
+      "timeNeeded": "Während der Planung",
+      "seeDoctor": false
+    }
+  ]
+}

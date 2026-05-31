@@ -1,0 +1,97 @@
+{
+  "id": "connectivity",
+  "title": "전화 및 인터넷 체크리스트",
+  "description": "중국에서 연결 상태를 유지하세요",
+  "items": [
+    {
+      "id": "conn_001",
+      "task": "중국 SIM 카드 또는 국제 요금제 확보",
+      "detail": "공항에서 구매하거나, 온라인으로 주문하거나, 통신사를 통해 준비하세요. 현지 SIM 카드는 중국 내 데이터와 통화 시 최적의 요금을 제공합니다.",
+      "priority": "높음",
+      "category": "sim",
+      "canDoOnline": true,
+      "timeNeeded": "도착 전 또는 도착 시"
+    },
+    {
+      "id": "conn_002",
+      "task": "인터넷 접속을 위한 VPN 설정",
+      "detail": "많은 국제 웹사이트와 앱이 중국에서 차단됩니다. 도착 전 모든 기기에 신뢰할 수 있는 VPN을 설치하고 설정하여 글로벌 인터넷에 접속할 수 있도록 하세요.",
+      "priority": "높음",
+      "category": "vpn",
+      "canDoOnline": true,
+      "timeNeeded": "여행 전"
+    },
+    {
+      "id": "conn_003",
+      "task": "오프라인 지도 다운로드",
+      "detail": "바이두 맵이나 구글 맵(VPN 사용)과 같은 앱을 사용하여 방문할 지역의 오프라인 지도를 다운로드하세요. 인터넷 없이도 내비게이션에 도움이 됩니다.",
+      "priority": "중간",
+      "category": "maps",
+      "canDoOnline": true,
+      "timeNeeded": "여행 전"
+    },
+    {
+      "id": "conn_004",
+      "task": "위챗 계정 설정",
+      "detail": "위챗은 중국에서 소통, 결제 및 서비스 이용에 필수적입니다. 계정을 만들고 필요한 경우 결제 수단을 추가하세요.",
+      "priority": "높음",
+      "category": "app",
+      "canDoOnline": true,
+      "timeNeeded": "여행 전"
+    },
+    {
+      "id": "conn_005",
+      "task": "긴급 전화번호 저장",
+      "detail": "주요 번호를 저장하세요: 경찰(110), 구급차(120), 소방(119), 그리고 자국 대사관 번호. 빠른 접근을 위해 휴대전화 연락처에 추가하세요.",
+      "priority": "높음",
+      "category": "safety",
+      "canDoOnline": false,
+      "timeNeeded": "여행 전"
+    },
+    {
+      "id": "conn_006",
+      "task": "휴대용 충전기 지참",
+      "detail": "공공 충전소가 쉽게 이용 가능한 곳이 아닐 수 있으므로, 장시간 외출 시 기기를 충전 상태로 유지하기 위해 보조 배터리를 가져오세요.",
+      "priority": "중간",
+      "category": "accessory",
+      "canDoOnline": false,
+      "timeNeeded": "여행 전"
+    },
+    {
+      "id": "conn_007",
+      "task": "전원 어댑터 플러그 준비",
+      "detail": "중국은 A, C, I형 전원 콘센트를 사용합니다. 문제없이 기기를 충전할 수 있도록 범용 어댑터를 가져오세요.",
+      "priority": "중간",
+      "category": "accessory",
+      "canDoOnline": false,
+      "timeNeeded": "여행 전"
+    },
+    {
+      "id": "conn_008",
+      "task": "중요 데이터를 클라우드에 백업",
+      "detail": "클라우드 서비스를 사용하여 사진, 문서 및 연락처를 백업하세요. 기기를 분실하거나 도난당한 경우 데이터 손실을 방지합니다.",
+      "priority": "중간",
+      "category": "backup",
+      "canDoOnline": true,
+      "timeNeeded": "여행 전"
+    },
+    {
+      "id": "conn_009",
+      "task": "모바일 결제 앱 설정",
+      "detail": "알리페이를 설치하거나 위챗페이에 국제 카드를 연결하여 원활한 현금 없는 거래를 준비하세요. 많은 곳에서 모바일 결제만 받습니다.",
+      "priority": "높음",
+      "category": "payment",
+      "canDoOnline": true,
+      "timeNeeded": "도착 전 또는 도착 시"
+    },
+    {
+      "id": "conn_010",
+      "task": "휴대용 Wi-Fi 핫스팟 대여 또는 구매",
+      "detail": "여러 기기를 사용하거나 단체로 여행하는 경우 특히, 이동 중 안정적인 인터넷을 위해 휴대용 Wi-Fi 기기를 고려해보세요.",
+      "priority": "낮음",
+      "category": "connectivity",
+      "canDoOnline": true,
+      "timeNeeded": "도착 전 또는 도착 시"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "id": "health",
+  "title": "健康・医療チェックリスト",
+  "description": "中国旅行のための健康必需品を準備しましょう",
+  "items": [
+    {
+      "id": "health_001",
+      "task": "予防接種の要件を確認する",
+      "detail": "推奨ワクチン：A型肝炎、腸チフス。旅程に応じてB型肝炎、日本脳炎、狂犬病も検討してください",
+      "priority": "high",
+      "category": "vaccination",
+      "timeNeeded": "4〜6週間前",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_002",
+      "task": "包括的な旅行保険に加入する",
+      "detail": "緊急医療搬送、入院が補償対象であること、および中国を具体的にカバーしていることを確認してください",
+      "priority": "high",
+      "category": "insurance",
+      "timeNeeded": "旅行予約後",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_003",
+      "task": "医療補償の詳細を確認する",
+      "detail": "既往症、予定がある場合はアドベンチャーアクティビティへの補償、および中国での24時間対応サポートがあることを確認してください",
+      "priority": "high",
+      "category": "insurance",
+      "timeNeeded": "1〜2週間前",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_004",
+      "task": "処方薬の書類を準備する",
+      "detail": "すべての薬の名称、用量、医療上の必要性を記載した医師の証明書を英語と中国語で入手してください",
+      "priority": "high",
+      "category": "medication",
+      "timeNeeded": "2〜3週間前",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_005",
+      "task": "薬を適切に梱包する",
+      "detail": "薬は元の容器に入れ、余分に持ち、機内持込手荷物に入れてください",
+      "priority": "high",
+      "category": "medication",
+      "timeNeeded": "出発前日",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_006",
+      "task": "基本的な救急用品を準備する",
+      "detail": "含めるもの：消毒シート、包帯、鎮痛剤、下痢止め、経口補水塩、虫除け",
+      "priority": "medium",
+      "category": "first-aid",
+      "timeNeeded": "1週間前",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_007",
+      "task": "アレルギー情報カードを作成する",
+      "detail": "食物アレルギー、薬物アレルギー、緊急時の治療手順を英語と中国語で記載したカード",
+      "priority": "medium",
+      "category": "allergy",
+      "timeNeeded": "2週間前",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_008",
+      "task": "血液型カードを準備する",
+      "detail": "血液型、Rh因子、特別な医療状態を両言語で記載したカードを持参してください",
+      "priority": "medium",
+      "category": "medical-id",
+      "timeNeeded": "2週間前",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_009",
+      "task": "病歴書類を作成する",
+      "detail": "慢性疾患、過去の手術、入院歴、現在の治療内容を両言語で要約してください",
+      "priority": "medium",
+      "category": "medical-history",
+      "timeNeeded": "2週間前",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_010",
+      "task": "緊急連絡先リストを作成する",
+      "detail": "含めるもの：現地大使館、保険会社の緊急連絡先、家族の連絡先、中国の緊急番号（救急車：120）",
+      "priority": "high",
+      "category": "emergency",
+      "timeNeeded": "1週間前",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_011",
+      "task": "大気質の予報を確認する",
+      "detail": "目的地のAQI（大気質指数）を確認し、敏感な方や北部の工業都市を訪れる場合はN95マスクの携帯を検討してください",
+      "priority": "low",
+      "category": "environment",
+      "timeNeeded": "1週間前",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_012",
+      "task": "漢方医院について調べる",
+      "detail": "漢方医学（TCM）は広く利用できることを知っておきましょう。西洋医学とは異なることを理解し、保険情報を準備しておきましょう",
+      "priority": "low",
+      "category": "local-health",
+      "timeNeeded": "計画中",
+      "seeDoctor": false
+    }
+  ]
+}

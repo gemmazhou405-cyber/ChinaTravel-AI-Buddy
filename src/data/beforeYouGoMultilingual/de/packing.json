@@ -1,0 +1,127 @@
+{
+  "id": "packing",
+  "title": "Intelligente Packliste",
+  "description": "China-spezifische Packgrundlagen für internationale Touristen",
+  "items": [
+    {
+      "id": "pack_001",
+      "task": "Netzadapter einpacken (Typ A/I)",
+      "detail": "China verwendet Typ-A- und Typ-I-Stecker. Die meisten Hotels haben Universalsteckdosen, aber nehmen Sie einen Adapter für kleinere Hotels und Bahnhöfe mit",
+      "priority": "medium",
+      "category": "electronics",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_002",
+      "task": "Ein tragbares WLAN-Gerät mitbringen oder eine lokale SIM kaufen",
+      "detail": "Google, Instagram und WhatsApp sind in China gesperrt. Ein tragbares WLAN oder eine lokale SIM mit vorinstalliertem VPN hält Sie verbunden",
+      "priority": "high",
+      "category": "electronics",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_003",
+      "task": "Offline-Karten und Übersetzungs-Apps herunterladen",
+      "detail": "Baidu Maps oder Amap für die Offline-Nutzung herunterladen. Google Translate Chinesisch-Paket vorher herunterladen oder Pleco-Wörterbuch verwenden",
+      "priority": "high",
+      "category": "digital",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_004",
+      "task": "Bargeld (RMB) für kleine Händler mitbringen",
+      "detail": "Obwohl WeChat Pay und Alipay dominieren, bevorzugen Straßenimbisse, Taxis in ländlichen Gebieten und kleine Geschäfte oft Bargeld",
+      "priority": "high",
+      "category": "money",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_005",
+      "task": "WeChat Pay oder Alipay vor der Ankunft einrichten",
+      "detail": "Verknüpfen Sie eine internationale Kreditkarte mit WeChat Pay oder Alipay. Viele Händler akzeptieren keine ausländischen Karten direkt",
+      "priority": "high",
+      "category": "money",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_006",
+      "task": "Einen kleinen faltbaren Rucksack einpacken",
+      "detail": "Unverzichtbar für Tagesausflüge zu Tempeln, Wanderungen auf der Großen Mauer und zum Mitführen täglicher Bedürfnisse durch überfüllte Märkte",
+      "priority": "medium",
+      "category": "accessories",
+      "chinaSpecific": false
+    },
+    {
+      "id": "pack_007",
+      "task": "Sehr bequeme Wanderschuhe mitbringen",
+      "detail": "Das Sightseeing in China erfordert täglich 15.000 bis 25.000 Schritte. Kopfsteinpflaster in Altstädten erfordert robuste Sohlen",
+      "priority": "high",
+      "category": "clothing",
+      "chinaSpecific": false
+    },
+    {
+      "id": "pack_008",
+      "task": "Atemschutzmasken (N95 oder KN95) mitbringen",
+      "detail": "Nützlich an smogbelasteten Tagen in nordchinesischen Städten, in überfüllten U-Bahnen und zur Vorbeugung gegen saisonale Grippe. Einheimische tragen häufig Masken",
+      "priority": "medium",
+      "category": "health",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_009",
+      "task": "Taschentücher und Feuchttücher einpacken",
+      "detail": "Viele öffentliche Toiletten, insbesondere außerhalb großer Städte, stellen kein Toilettenpapier bereit. Tragen Sie immer einen eigenen Vorrat bei sich",
+      "priority": "high",
+      "category": "health",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_010",
+      "task": "Einen kompakten Regenschirm oder eine Regenjacke mitbringen",
+      "detail": "Im Süden Chinas gibt es das ganze Jahr über plötzliche Regenschauer. Sommermonsune und Frühlingsregen sind in den meisten Touristenstädten üblich",
+      "priority": "medium",
+      "category": "accessories",
+      "chinaSpecific": false
+    },
+    {
+      "id": "pack_011",
+      "task": "Eine Übersetzungskarte mit Hoteladresse auf Chinesisch ausdrucken",
+      "detail": "Zeigen Sie Taxifahrern Ihren Hotelnamen und die Adresse in chinesischen Schriftzeichen. Fügen Sie die nächste U-Bahn-Station als Navigationshilfe hinzu",
+      "priority": "high",
+      "category": "documents",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_012",
+      "task": "Ein VPN vor der Einreise nach China installieren",
+      "detail": "Ein VPN ist erforderlich, um auf Google, Facebook, Instagram, YouTube und die meisten westlichen Apps zuzugreifen. Laden Sie es vor der Abreise herunter und testen Sie es",
+      "priority": "high",
+      "category": "digital",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_013",
+      "task": "Fotokopien und digitale Scans Ihres Reisepasses mitführen",
+      "detail": "Bewahren Sie eine physische Kopie in Ihrem Gepäck und Fotos auf Ihrem Handy auf. Hotels verlangen den Reisepass beim Check-in, und die Polizei kann einen Ausweis verlangen",
+      "priority": "high",
+      "category": "documents",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_014",
+      "task": "Eine tragbare Powerbank mitbringen (20000 mAh empfohlen)",
+      "detail": "Lange Sightseeing-Tage entladen Akkus schnell. Powerbanks unter 100 Wh sind im Flugzeug erlaubt. Ladestationen sind außerhalb von Einkaufszentren selten",
+      "priority": "medium",
+      "category": "electronics",
+      "chinaSpecific": false
+    },
+    {
+      "id": "pack_015",
+      "task": "Magenmedikamente und Probiotika einpacken",
+      "detail": "Die chinesische Küche verwendet viele Gewürze, Öl und ungewohnte Zutaten. Imodium, Pepto-Bismol und Probiotika helfen, Magenprobleme zu vermeiden",
+      "priority": "medium",
+      "category": "health",
+      "chinaSpecific": false
+    }
+  ]
+}

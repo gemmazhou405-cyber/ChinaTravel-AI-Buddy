@@ -1,0 +1,127 @@
+{
+  "id": "payments",
+  "title": "Lista de verificación de configuración de pagos",
+  "description": "Preparación integral de pagos para turistas que visitan China",
+  "items": [
+    {
+      "id": "pay_001",
+      "task": "Configurar Alipay Internacional",
+      "detail": "Descargar la aplicación Alipay, vincular tarjeta de crédito/débito extranjera (Visa, Mastercard, JCB, Diners Club, Discover), completar la verificación de identidad",
+      "priority": "critical",
+      "category": "mobile-payment",
+      "canDoOnline": true,
+      "timeNeeded": "1-2 horas",
+      "link": "https://intl.alipay.com"
+    },
+    {
+      "id": "pay_002",
+      "task": "Configurar WeChat Pay Internacional",
+      "detail": "Descargar WeChat, activar WeChat Pay, vincular tarjeta de crédito/débito extranjera, completar el proceso de verificación",
+      "priority": "critical",
+      "category": "mobile-payment",
+      "canDoOnline": true,
+      "timeNeeded": "1-2 horas",
+      "link": "https://pay.weixin.qq.com"
+    },
+    {
+      "id": "pay_003",
+      "task": "Notificar a tu banco sobre el viaje a China",
+      "detail": "Informar a todos los emisores de tarjetas sobre las fechas y destinos del viaje a China para prevenir bloqueos por fraude",
+      "priority": "high",
+      "category": "banking",
+      "canDoOnline": true,
+      "timeNeeded": "30 minutos",
+      "link": "Contacta a tu banco"
+    },
+    {
+      "id": "pay_004",
+      "task": "Obtener efectivo en yuanes chinos (CNY/RMB)",
+      "detail": "Cambia algo de moneda antes de la salida o en el aeropuerto al llegar para gastos inmediatos",
+      "priority": "high",
+      "category": "cash",
+      "canDoOnline": false,
+      "timeNeeded": "1 hora",
+      "link": "Consulta los tipos de cambio locales"
+    },
+    {
+      "id": "pay_005",
+      "task": "Preparar tarjetas de pago de respaldo",
+      "detail": "Traer al menos 2 tarjetas de crédito Visa/Mastercard diferentes más 1 tarjeta de débito como respaldo",
+      "priority": "high",
+      "category": "cards",
+      "canDoOnline": true,
+      "timeNeeded": "30 minutos",
+      "link": "Revisa tu billetera"
+    },
+    {
+      "id": "pay_006",
+      "task": "Configurar Apple Pay o Google Pay",
+      "detail": "Agregar tarjetas extranjeras a la billetera digital para pagos sin contacto donde se acepten",
+      "priority": "medium",
+      "category": "digital-wallet",
+      "canDoOnline": true,
+      "timeNeeded": "20 minutos",
+      "link": "apple.com/apple-pay o pay.google.com"
+    },
+    {
+      "id": "pay_007",
+      "task": "Considerar la obtención de una tarjeta UnionPay",
+      "detail": "Solicitar una tarjeta UnionPay si está disponible en tu país de origen para la mayor aceptación en China",
+      "priority": "medium",
+      "category": "cards",
+      "canDoOnline": true,
+      "timeNeeded": "1-2 semanas",
+      "link": "Consulta con tu banco"
+    },
+    {
+      "id": "pay_008",
+      "task": "Descargar aplicaciones de pago sin conexión",
+      "detail": "Instalar aplicaciones como el e-CNY (yuan digital) piloto de China si está disponible para turistas",
+      "priority": "low",
+      "category": "digital-currency",
+      "canDoOnline": true,
+      "timeNeeded": "30 minutos",
+      "link": "Consulta los anuncios oficiales"
+    },
+    {
+      "id": "pay_009",
+      "task": "Preparar información de contacto de comercios",
+      "detail": "Guardar nombres/direcciones del hotel y comercios principales en chino para problemas de pago",
+      "priority": "medium",
+      "category": "preparation",
+      "canDoOnline": true,
+      "timeNeeded": "15 minutos",
+      "link": "Google Translate"
+    },
+    {
+      "id": "pay_010",
+      "task": "Configurar límites de transacción y alertas",
+      "detail": "Configurar alertas de tarjeta y ajustar límites de gasto para uso internacional",
+      "priority": "medium",
+      "category": "security",
+      "canDoOnline": true,
+      "timeNeeded": "30 minutos",
+      "link": "La aplicación de tu banco"
+    },
+    {
+      "id": "pay_011",
+      "task": "Investigar compatibilidad de pagos",
+      "detail": "Verificar qué métodos de pago funcionan en tus destinos y alojamientos específicos",
+      "priority": "medium",
+      "category": "research",
+      "canDoOnline": true,
+      "timeNeeded": "1 hora",
+      "link": "Foros de viajes y sitios web de hoteles"
+    },
+    {
+      "id": "pay_012",
+      "task": "Preparar efectivo pequeño para emergencias",
+      "detail": "Mantener 500-1000 RMB en denominaciones pequeñas para taxis, vendedores ambulantes y emergencias",
+      "priority": "medium",
+      "category": "cash",
+      "canDoOnline": false,
+      "timeNeeded": "30 minutos",
+      "link": "Casas de cambio"
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "id": "apps",
+  "title": "必須アプリチェックリスト",
+  "description": "中国到着前にダウンロードしてください",
+  "items": [
+    {
+      "id": "app_001",
+      "app": "Didi",
+      "task": "Didi（中国版Uber）をダウンロードしてセットアップする",
+      "detail": "中国の主要ライドシェアリングアプリ。海外のカードが使えます",
+      "priority": "高",
+      "category": "交通",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_002",
+      "app": "Alipay",
+      "task": "Alipayを国際カードでダウンロードしてセットアップする",
+      "detail": "必須の決済アプリ。観光客向けに海外のクレジットカードがサポートされるようになりました",
+      "priority": "高",
+      "category": "決済",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_003",
+      "app": "WeChat",
+      "task": "WeChatをダウンロードし、WeChat Payを有効にする",
+      "detail": "メッセージ、決済、各種サービスのオールインワンスーパーアプリ。ソーシャルの必需品",
+      "priority": "高",
+      "category": "コミュニケーション",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_004",
+      "app": "百度地図",
+      "task": "百度地図をナビゲーション用にダウンロードする",
+      "detail": "中国で最も正確な地図。Googleマップはここで機能が制限されています",
+      "priority": "高",
+      "category": "ナビゲーション",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_005",
+      "app": "Amap (高德地図)",
+      "task": "バックアップナビゲーションとしてAmapをダウンロードする",
+      "detail": "信頼性の高い交通ルート案内を備えた百度地図の優れた代替品",
+      "priority": "中",
+      "category": "ナビゲーション",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_006",
+      "app": "DeepL",
+      "task": "中国語言語パック付きDeepL翻訳者をダウンロードする",
+      "detail": "高品質の翻訳アプリ。到着前にオフラインの中国語パックをダウンロードしてください",
+      "priority": "高",
+      "category": "翻訳",
+      "downloadBefore": true,
+      "availableInChina": false,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_007",
+      "app": "Pleco",
+      "task": "Pleco中国語辞書をダウンロードする",
+      "detail": "カメラ翻訳機能を備えた最高の中国語-英語辞書",
+      "priority": "中",
+      "category": "翻訳",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_008",
+      "app": "ExpressVPN",
+      "task": "中国入国前にVPNをセットアップしてテストする",
+      "detail": "Google、WhatsApp、Instagramにアクセスするために必須。中国国外でダウンロードする必要があります",
+      "priority": "高",
+      "category": "ユーティリティ",
+      "downloadBefore": true,
+      "availableInChina": false,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_009",
+      "app": "12306",
+      "task": "12306で登録し、列車のチケットを予約する",
+      "detail": "中国鉄道公式予約アプリ。高速鉄道が主要都市を接続しています",
+      "priority": "高",
+      "category": "交通",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_010",
+      "app": "Trip.com",
+      "task": "旅行予約用にTrip.comをダウンロードする",
+      "detail": "英語対応でホテル、フライト、アトラクションチケットの予約に最適なアプリ",
+      "priority": "高",
+      "category": "予約",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_011",
+      "app": "美团",
+      "task": "食べ物とローカルサービス用に美团をダウンロードする",
+      "detail": "トップのフードデリバリーアプリに加え、ホテル、アトラクション、日用品のディールも提供",
+      "priority": "中",
+      "category": "フード",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_012",
+      "app": "餓了麼",
+      "task": "バックアップフードデリバリーとして餓了麼をダウンロードする",
+      "detail": "アリババが所有する第2位のフードデリバリー平台",
+      "priority": "低",
+      "category": "フード",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_013",
+      "app": "ChinaEase Buddy",
+      "task": "ChinaEase Buddy旅行アシスタントをダウンロードする",
+      "detail": "外国人向けのヒント、フレーズ、ローカルガイダンスを備えた観光客向けのヘルパー",
+      "priority": "中",
+      "category": "ユーティリティ",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_014",
+      "app": "タオバオ",
+      "task": "買い物用にタオバオをダウンロードする",
+      "detail": "中国最大のオンラインマーケットプレイス。お土産やディールに最適",
+      "priority": "低",
+      "category": "ショッピング",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_015",
+      "app": "Booking.com",
+      "task": "国際ホテル予約用にBooking.comをダウンロードする",
+      "detail": "使い慣れたインターフェースとカスタマーサポートでホテル予約に役立つバックアップ",
+      "priority": "中",
+      "category": "予約",
+      "downloadBefore": true,
+      "availableInChina": false,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    }
+  ]
+}

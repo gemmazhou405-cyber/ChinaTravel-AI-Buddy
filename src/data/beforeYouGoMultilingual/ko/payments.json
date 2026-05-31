@@ -1,0 +1,127 @@
+{
+  "id": "payments",
+  "title": "결제 설정 체크리스트",
+  "description": "중국 방문 관광객을 위한 종합 결제 준비",
+  "items": [
+    {
+      "id": "pay_001",
+      "task": "알리페이 인터내셔널 설정",
+      "detail": "알리페이 앱 다운로드, 해외 신용/직불 카드 연결(비자, 마스터카드, JCB, 다이너스클럽, 디스커버), 신원 확인 완료",
+      "priority": "중요",
+      "category": "모바일 결제",
+      "canDoOnline": true,
+      "timeNeeded": "1-2시간",
+      "link": "https://intl.alipay.com"
+    },
+    {
+      "id": "pay_002",
+      "task": "위챗 페이 인터내셔널 설정",
+      "detail": "위챗 다운로드, 위챗 페이 활성화, 해외 신용/직불 카드 연결, 인증 절차 완료",
+      "priority": "중요",
+      "category": "모바일 결제",
+      "canDoOnline": true,
+      "timeNeeded": "1-2시간",
+      "link": "https://pay.weixin.qq.com"
+    },
+    {
+      "id": "pay_003",
+      "task": "본국 은행에 중국 여행 통보",
+      "detail": "사기 차단 방지를 위해 모든 카드 발급사에 중국 여행 날짜와 목적지를 알리기",
+      "priority": "높음",
+      "category": "은행",
+      "canDoOnline": true,
+      "timeNeeded": "30분",
+      "link": "은행에 문의"
+    },
+    {
+      "id": "pay_004",
+      "task": "중국 위안화(CNY/RMB) 현금 준비",
+      "detail": "출발 전 또는 도착 시 공항에서 일부 환전하여 즉시 경비에 사용",
+      "priority": "높음",
+      "category": "현금",
+      "canDoOnline": false,
+      "timeNeeded": "1시간",
+      "link": "현지 환율 확인"
+    },
+    {
+      "id": "pay_005",
+      "task": "백업 결제 카드 준비",
+      "detail": "백업으로 최소 2장의 다른 비자/마스터카드 신용 카드와 1장의 직불 카드 지참",
+      "priority": "높음",
+      "category": "카드",
+      "canDoOnline": true,
+      "timeNeeded": "30분",
+      "link": "지갑 확인"
+    },
+    {
+      "id": "pay_006",
+      "task": "Apple Pay 또는 Google Pay 설정",
+      "detail": "수용 가능한 곳에서 비접촉 결제를 위해 디지털 지갑에 해외 카드 추가",
+      "priority": "중간",
+      "category": "디지털 지갑",
+      "canDoOnline": true,
+      "timeNeeded": "20분",
+      "link": "apple.com/apple-pay 또는 pay.google.com"
+    },
+    {
+      "id": "pay_007",
+      "task": "유니온페이 카드 발급 고려",
+      "detail": "중국에서 가장 넓은 수용 범위를 위해 본국에서 유니온페이 카드 발급 가능 여부 확인 및 신청",
+      "priority": "중간",
+      "category": "카드",
+      "canDoOnline": true,
+      "timeNeeded": "1-2주",
+      "link": "은행에 문의"
+    },
+    {
+      "id": "pay_008",
+      "task": "오프라인 결제 앱 다운로드",
+      "detail": "관광객용 중국의 e-CNY(디지털 위안) 파일럿 등 가능 시 앱 설치",
+      "priority": "낮음",
+      "category": "디지털 통화",
+      "canDoOnline": true,
+      "timeNeeded": "30분",
+      "link": "공식 공지 확인"
+    },
+    {
+      "id": "pay_009",
+      "task": "판매자 연락처 정보 준비",
+      "detail": "결제 문제 발생 시를 대비해 호텔 및 주요 판매자 이름/주소를 중국어로 저장",
+      "priority": "중간",
+      "category": "준비",
+      "canDoOnline": true,
+      "timeNeeded": "15분",
+      "link": "Google 번역"
+    },
+    {
+      "id": "pay_010",
+      "task": "거래 한도 및 알림 설정",
+      "detail": "해외 사용을 위해 카드 알림을 설정하고 지출 한도 조정",
+      "priority": "중간",
+      "category": "보안",
+      "canDoOnline": true,
+      "timeNeeded": "30분",
+      "link": "은행 앱"
+    },
+    {
+      "id": "pay_011",
+      "task": "결제 호환성 조사",
+      "detail": "구체적인 목적지와 숙소에서 어떤 결제 수단이 작동하는지 확인",
+      "priority": "중간",
+      "category": "조사",
+      "canDoOnline": true,
+      "timeNeeded": "1시간",
+      "link": "여행 포럼 및 호텔 웹사이트"
+    },
+    {
+      "id": "pay_012",
+      "task": "비상용 소액 현금 준비",
+      "detail": "택시, 노점상, 비상 시를 위해 소액 단위의 500-1000 RMB 보관",
+      "priority": "중간",
+      "category": "현금",
+      "canDoOnline": false,
+      "timeNeeded": "30분",
+      "link": "환전 카운터"
+    }
+  ]
+}

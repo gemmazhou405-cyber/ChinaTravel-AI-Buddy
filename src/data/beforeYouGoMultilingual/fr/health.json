@@ -1,0 +1,115 @@
+{
+  "id": "health",
+  "title": "Liste de contrôle Santé & Médecine",
+  "description": "Préparez vos essentiels de santé pour votre visite en Chine",
+  "items": [
+    {
+      "id": "health_001",
+      "task": "Vérifier les exigences de vaccination",
+      "detail": "Vaccins recommandés : Hépatite A, Typhoïde. Envisager Hépatite B, Encéphalite japonaise et Rage selon l'itinéraire",
+      "priority": "high",
+      "category": "vaccination",
+      "timeNeeded": "4 à 6 semaines avant",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_002",
+      "task": "Souscrire une assurance voyage complète",
+      "detail": "S'assurer que la police couvre l'évacuation médicale d'urgence, les séjours hospitaliers et couvre spécifiquement la Chine",
+      "priority": "high",
+      "category": "insurance",
+      "timeNeeded": "Après la réservation du voyage",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_003",
+      "task": "Vérifier les détails de la couverture médicale",
+      "detail": "Confirmer que l'assurance couvre les conditions préexistantes, les activités d'aventure si prévues, et dispose d'une assistance 24h/24, 7j/7 en Chine",
+      "priority": "high",
+      "category": "insurance",
+      "timeNeeded": "1 à 2 semaines avant",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_004",
+      "task": "Rassembler la documentation des médicaments sur ordonnance",
+      "detail": "Obtenir une lettre du médecin listant tous les médicaments, les dosages et la nécessité médicale en anglais et en chinois",
+      "priority": "high",
+      "category": "medication",
+      "timeNeeded": "2 à 3 semaines avant",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_005",
+      "task": "Emballer les médicaments correctement",
+      "detail": "Garder les médicaments dans leurs conteneurs d'origine, apporter une quantité supplémentaire et les ranger dans les bagages cabine",
+      "priority": "high",
+      "category": "medication",
+      "timeNeeded": "La veille du départ",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_006",
+      "task": "Préparer une trousse de premiers soins de base",
+      "detail": "Inclure : lingettes antiseptiques, pansements, antidouleurs, antidiarrhéiques, sels de réhydratation, répulsif contre les insectes",
+      "priority": "medium",
+      "category": "first-aid",
+      "timeNeeded": "1 semaine avant",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_007",
+      "task": "Créer des cartes d'information sur les allergies",
+      "detail": "Cartes en anglais et en chinois listant les allergies alimentaires, les allergies médicamenteuses et les instructions de traitement d'urgence",
+      "priority": "medium",
+      "category": "allergy",
+      "timeNeeded": "2 semaines avant",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_008",
+      "task": "Préparer une carte de groupe sanguin",
+      "detail": "Porter une carte avec le groupe sanguin, le facteur Rh et toute condition médicale spéciale dans les deux langues",
+      "priority": "medium",
+      "category": "medical-id",
+      "timeNeeded": "2 semaines avant",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_009",
+      "task": "Compiler un document d'antécédents médicaux",
+      "detail": "Résumer les maladies chroniques, les opérations passées, les hospitalisations et les traitements en cours dans les deux langues",
+      "priority": "medium",
+      "category": "medical-history",
+      "timeNeeded": "2 semaines avant",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_010",
+      "task": "Créer une liste de contacts d'urgence",
+      "detail": "Inclure : ambassade locale, ligne d'urgence de l'assurance, contacts familiaux et numéro d'urgence chinois (120 pour les ambulances)",
+      "priority": "high",
+      "category": "emergency",
+      "timeNeeded": "1 semaine avant",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_011",
+      "task": "Vérifier les prévisions de qualité de l'air",
+      "detail": "Surveiller l'IQA des destinations, envisager d'emporter des masques N95 en cas de sensibilité ou de visite de villes industrielles du nord",
+      "priority": "low",
+      "category": "environment",
+      "timeNeeded": "1 semaine avant",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_012",
+      "task": "Rechercher des cliniques de médecine traditionnelle chinoise",
+      "detail": "Noter que la MTC est largement disponible ; comprendre qu'elle diffère de la médecine occidentale ; avoir les détails de l'assurance prêts",
+      "priority": "low",
+      "category": "local-health",
+      "timeNeeded": "Lors de la planification",
+      "seeDoctor": false
+    }
+  ]
+}

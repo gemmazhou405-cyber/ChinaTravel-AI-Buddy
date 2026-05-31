@@ -1,0 +1,97 @@
+{
+  "id": "connectivity",
+  "title": "Telefon & Internet Checkliste",
+  "description": "Verbunden bleiben in China",
+  "items": [
+    {
+      "id": "conn_001",
+      "task": "China-SIM-Karte oder internationalen Tarif besorgen",
+      "detail": "Am Flughafen kaufen, online bestellen oder über Ihren Mobilfunkanbieter arrangieren. Eine lokale SIM-Karte bietet die besten Tarife für Daten und Anrufe innerhalb Chinas.",
+      "priority": "high",
+      "category": "sim",
+      "canDoOnline": true,
+      "timeNeeded": "Vor oder bei der Ankunft"
+    },
+    {
+      "id": "conn_002",
+      "task": "VPN für Internetzugang einrichten",
+      "detail": "Viele internationale Websites und Apps sind in China gesperrt. Installieren und konfigurieren Sie ein zuverlässiges VPN auf allen Geräten vor der Ankunft, um den Zugang zum globalen Internet sicherzustellen.",
+      "priority": "high",
+      "category": "vpn",
+      "canDoOnline": true,
+      "timeNeeded": "Vor der Reise"
+    },
+    {
+      "id": "conn_003",
+      "task": "Offline-Karten herunterladen",
+      "detail": "Verwenden Sie Apps wie Baidu Maps oder Google Maps (mit VPN), um Offline-Karten der Gebiete herunterzuladen, die Sie besuchen werden. Dies hilft bei der Navigation ohne Internet.",
+      "priority": "medium",
+      "category": "maps",
+      "canDoOnline": true,
+      "timeNeeded": "Vor der Reise"
+    },
+    {
+      "id": "conn_004",
+      "task": "WeChat-Konto einrichten",
+      "detail": "WeChat ist unverzichtbar für Kommunikation, Zahlungen und den Zugang zu Diensten in China. Erstellen Sie ein Konto und fügen Sie bei Bedarf eine Zahlungsmethode hinzu.",
+      "priority": "high",
+      "category": "app",
+      "canDoOnline": true,
+      "timeNeeded": "Vor der Reise"
+    },
+    {
+      "id": "conn_005",
+      "task": "Notrufnummern speichern",
+      "detail": "Wichtige Nummern speichern: Polizei (110), Krankenwagen (120), Feuerwehr (119) und die Botschaft Ihres Landes. Fügen Sie sie zu Ihren Telefonkontakten hinzu für schnellen Zugriff.",
+      "priority": "high",
+      "category": "safety",
+      "canDoOnline": false,
+      "timeNeeded": "Vor der Reise"
+    },
+    {
+      "id": "conn_006",
+      "task": "Einen tragbaren Akku einpacken",
+      "detail": "Bringen Sie eine Powerbank mit, um Geräte während langer Tage unterwegs geladen zu halten, da öffentliche Ladestationen möglicherweise nicht leicht verfügbar sind.",
+      "priority": "medium",
+      "category": "accessory",
+      "canDoOnline": false,
+      "timeNeeded": "Vor der Reise"
+    },
+    {
+      "id": "conn_007",
+      "task": "Einen Netzstecker-Adapter besorgen",
+      "detail": "China verwendet Netzsteckdosen der Typen A, C und I. Bringen Sie einen Universaladapter mit, um Ihre Geräte problemlos aufzuladen.",
+      "priority": "medium",
+      "category": "accessory",
+      "canDoOnline": false,
+      "timeNeeded": "Vor der Reise"
+    },
+    {
+      "id": "conn_008",
+      "task": "Wichtige Daten in die Cloud sichern",
+      "detail": "Verwenden Sie Cloud-Dienste, um Fotos, Dokumente und Kontakte zu sichern. Dies schützt vor Datenverlust, falls Ihr Gerät verloren geht oder gestohlen wird.",
+      "priority": "medium",
+      "category": "backup",
+      "canDoOnline": true,
+      "timeNeeded": "Vor der Reise"
+    },
+    {
+      "id": "conn_009",
+      "task": "Mobile Zahlungs-Apps einrichten",
+      "detail": "Installieren Sie Alipay oder verknüpfen Sie internationale Karten mit WeChat Pay für nahtlose bargeldlose Transaktionen. Viele Orten akzeptieren nur mobile Zahlungen.",
+      "priority": "high",
+      "category": "payment",
+      "canDoOnline": true,
+      "timeNeeded": "Vor oder bei der Ankunft"
+    },
+    {
+      "id": "conn_010",
+      "task": "Ein tragbares WLAN-Hotspot-Gerät mieten oder kaufen",
+      "detail": "Erwägen Sie ein tragbares WLAN-Gerät für zuverlässiges Internet unterwegs, besonders wenn Sie mit mehreren Geräten oder in Gruppen reisen.",
+      "priority": "low",
+      "category": "connectivity",
+      "canDoOnline": true,
+      "timeNeeded": "Vor oder bei der Ankunft"
+    }
+  ]
+}

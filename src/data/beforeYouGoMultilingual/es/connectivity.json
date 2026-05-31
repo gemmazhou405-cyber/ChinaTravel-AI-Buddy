@@ -1,0 +1,97 @@
+{
+  "id": "connectivity",
+  "title": "Lista de verificación de teléfono e internet",
+  "description": "Mantente conectado en China",
+  "items": [
+    {
+      "id": "conn_001",
+      "task": "Obtener una tarjeta SIM de China o un plan internacional",
+      "detail": "Cómprala en el aeropuerto, encárgala en línea o coordínala con tu operador. Una SIM local ofrece las mejores tarifas para datos y llamadas dentro de China.",
+      "priority": "high",
+      "category": "sim",
+      "canDoOnline": true,
+      "timeNeeded": "Antes o al llegar"
+    },
+    {
+      "id": "conn_002",
+      "task": "Configurar una VPN para acceder a internet",
+      "detail": "Muchos sitios web y aplicaciones internacionales están bloqueados en China. Instala y configura una VPN confiable en todos los dispositivos antes de llegar para garantizar el acceso a internet global.",
+      "priority": "high",
+      "category": "vpn",
+      "canDoOnline": true,
+      "timeNeeded": "Antes del viaje"
+    },
+    {
+      "id": "conn_003",
+      "task": "Descargar mapas sin conexión",
+      "detail": "Usa aplicaciones como Baidu Maps o Google Maps (con VPN) para descargar mapas sin conexión de las zonas que visitarás. Esto facilita la navegación sin necesidad de internet.",
+      "priority": "medium",
+      "category": "maps",
+      "canDoOnline": true,
+      "timeNeeded": "Antes del viaje"
+    },
+    {
+      "id": "conn_004",
+      "task": "Configurar una cuenta de WeChat",
+      "detail": "WeChat es esencial para la comunicación, los pagos y el acceso a servicios en China. Crea una cuenta y añade un método de pago si es necesario.",
+      "priority": "high",
+      "category": "app",
+      "canDoOnline": true,
+      "timeNeeded": "Antes del viaje"
+    },
+    {
+      "id": "conn_005",
+      "task": "Guardar números de emergencia",
+      "detail": "Almacena los números clave: policía (110), ambulancia (120), bomberos (119) y la embajada de tu país. Añádelos a los contactos de tu teléfono para acceso rápido.",
+      "priority": "high",
+      "category": "safety",
+      "canDoOnline": false,
+      "timeNeeded": "Antes del viaje"
+    },
+    {
+      "id": "conn_006",
+      "task": "Llevar un cargador portátil",
+      "detail": "Lleva una batería externa para mantener los dispositivos cargados durante los largos días fuera, ya que es posible que las estaciones de carga públicas no estén fácilmente disponibles.",
+      "priority": "medium",
+      "category": "accessory",
+      "canDoOnline": false,
+      "timeNeeded": "Antes del viaje"
+    },
+    {
+      "id": "conn_007",
+      "task": "Obtener un adaptador de enchufe",
+      "detail": "China utiliza enchufes de tipo A, C e I. Lleva un adaptador universal para cargar tus dispositivos sin problemas.",
+      "priority": "medium",
+      "category": "accessory",
+      "canDoOnline": false,
+      "timeNeeded": "Antes del viaje"
+    },
+    {
+      "id": "conn_008",
+      "task": "Respaldar datos importantes en la nube",
+      "detail": "Usa servicios en la nube para respaldar fotos, documentos y contactos. Esto protege contra la pérdida de datos en caso de que tu dispositivo se pierda o sea robado.",
+      "priority": "medium",
+      "category": "backup",
+      "canDoOnline": true,
+      "timeNeeded": "Antes del viaje"
+    },
+    {
+      "id": "conn_009",
+      "task": "Configurar aplicaciones de pago móvil",
+      "detail": "Instala Alipay o vincula tarjetas internacionales a WeChat Pay para realizar transacciones sin efectivo de manera fluida. Muchos lugares solo aceptan pagos móviles.",
+      "priority": "high",
+      "category": "payment",
+      "canDoOnline": true,
+      "timeNeeded": "Antes o al llegar"
+    },
+    {
+      "id": "conn_010",
+      "task": "Alquilar o comprar un hotspot Wi-Fi portátil",
+      "detail": "Considera un dispositivo Wi-Fi portátil para tener internet confiable en movimiento, especialmente si viajas con varios dispositivos o en grupo.",
+      "priority": "low",
+      "category": "connectivity",
+      "canDoOnline": true,
+      "timeNeeded": "Antes o al llegar"
+    }
+  ]
+}

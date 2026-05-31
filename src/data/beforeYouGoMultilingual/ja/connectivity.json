@@ -1,0 +1,97 @@
+{
+  "id": "connectivity",
+  "title": "電話・インターネットチェックリスト",
+  "description": "中国で接続を保つ",
+  "items": [
+    {
+      "id": "conn_001",
+      "task": "中国用SIMカードまたは国際プランを用意する",
+      "detail": "空港で購入、オンラインで注文、または携帯キャリアに手配する。現地SIMカードは中国国内でのデータ通信や通話に最適な料金を提供します。",
+      "priority": "high",
+      "category": "sim",
+      "canDoOnline": true,
+      "timeNeeded": "到着前または到着時"
+    },
+    {
+      "id": "conn_002",
+      "task": "インターネットアクセス用VPNを設定する",
+      "detail": "多くの国際ウェブサイトやアプリは中国ではブロックされています。到着前にすべてのデバイスに信頼性の高いVPNをインストール・設定し、グローバルインターネットへのアクセスを確保してください。",
+      "priority": "high",
+      "category": "vpn",
+      "canDoOnline": true,
+      "timeNeeded": "渡航前"
+    },
+    {
+      "id": "conn_003",
+      "task": "オフラインマップをダウンロードする",
+      "detail": "百度地図やGoogleマップ（VPN使用）などのアプリを使用して、訪問予定の地域のオフラインマップをダウンロードします。これにより、インターネットなしでもナビゲーションが可能です。",
+      "priority": "medium",
+      "category": "maps",
+      "canDoOnline": true,
+      "timeNeeded": "渡航前"
+    },
+    {
+      "id": "conn_004",
+      "task": "WeChatアカウントを設定する",
+      "detail": "WeChatは中国でのコミュニケーション、支払い、サービス利用に不可欠です。アカウントを作成し、必要に応じて支払い方法を追加してください。",
+      "priority": "high",
+      "category": "app",
+      "canDoOnline": true,
+      "timeNeeded": "渡航前"
+    },
+    {
+      "id": "conn_005",
+      "task": "緊急連絡先を保存する",
+      "detail": "重要な番号を保存：警察（110）、救急（120）、消防（119）、および自国の大使館。迅速にアクセスできるよう、電話の連絡先に追加してください。",
+      "priority": "high",
+      "category": "safety",
+      "canDoOnline": false,
+      "timeNeeded": "渡航前"
+    },
+    {
+      "id": "conn_006",
+      "task": "携帯用充電器を準備する",
+      "detail": "外出時の長時間の使用に備え、モバイルバッテリーを持参してください。公共の充電ステーションがすぐに利用できない場合があります。",
+      "priority": "medium",
+      "category": "accessory",
+      "canDoOnline": false,
+      "timeNeeded": "渡航前"
+    },
+    {
+      "id": "conn_007",
+      "task": "電源アダプタープラグを入手する",
+      "detail": "中国はA、C、Iタイプの電源コンセントを使用します。ユニバーサルアダプターを持参して、デバイスの充電を問題なく行えるようにしてください。",
+      "priority": "medium",
+      "category": "accessory",
+      "canDoOnline": false,
+      "timeNeeded": "渡航前"
+    },
+    {
+      "id": "conn_008",
+      "task": "重要なデータをクラウドにバックアップする",
+      "detail": "クラウドサービスを使用して、写真、ドキュメント、連絡先をバックアップします。デバイスを紛失したり盗まれたりした場合のデータ損失を防ぎます。",
+      "priority": "medium",
+      "category": "backup",
+      "canDoOnline": true,
+      "timeNeeded": "渡航前"
+    },
+    {
+      "id": "conn_009",
+      "task": "モバイル決済アプリを設定する",
+      "detail": "Alipayをインストールするか、WeChat Payに国際カードをリンクして、シームレスなキャッシュレス取引を行えるようにしてください。多くの場所ではモバイル決済のみ受け付けています。",
+      "priority": "high",
+      "category": "payment",
+      "canDoOnline": true,
+      "timeNeeded": "到着前または到着時"
+    },
+    {
+      "id": "conn_010",
+      "task": "携帯用Wi-Fiホットスポットをレンタルまたは購入する",
+      "detail": "特に複数のデバイスを使用する場合やグループで旅行する場合は、外出先で信頼性の高いインターネット接続が得られる携帯用Wi-Fiデバイスの利用を検討してください。",
+      "priority": "low",
+      "category": "connectivity",
+      "canDoOnline": true,
+      "timeNeeded": "到着前または到着時"
+    }
+  ]
+}

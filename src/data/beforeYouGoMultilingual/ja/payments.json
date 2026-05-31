@@ -1,0 +1,127 @@
+{
+  "id": "payments",
+  "title": "支払い設定チェックリスト",
+  "description": "中国を訪れる観光客向けの包括的な支払い準備",
+  "items": [
+    {
+      "id": "pay_001",
+      "task": "国際版Alipayをセットアップ",
+      "detail": "Alipayアプリをダウンロードし、海外クレジット/デビットカード（Visa、Mastercard、JCB、Diners Club、Discover）をリンクし、本人確認を完了する",
+      "priority": "最重要",
+      "category": "モバイル決済",
+      "canDoOnline": true,
+      "timeNeeded": "1〜2時間",
+      "link": "https://intl.alipay.com"
+    },
+    {
+      "id": "pay_002",
+      "task": "国際版WeChat Payをセットアップ",
+      "detail": "WeChatをダウンロードし、WeChat Payを有効化し、海外クレジット/デビットカードをリンクし、認証プロセスを完了する",
+      "priority": "最重要",
+      "category": "モバイル決済",
+      "canDoOnline": true,
+      "timeNeeded": "1〜2時間",
+      "link": "https://pay.weixin.qq.com"
+    },
+    {
+      "id": "pay_003",
+      "task": "自国の銀行に中国旅行を通知する",
+      "detail": "不正ブロックを防ぐため、すべてのカード発行会社に中国旅行の日程と目的地を通知する",
+      "priority": "高",
+      "category": "銀行",
+      "canDoOnline": true,
+      "timeNeeded": "30分",
+      "link": "銀行に連絡"
+    },
+    {
+      "id": "pay_004",
+      "task": "人民元（CNY/RMB）現金を用意する",
+      "detail": "出発前または到着時に空港で、即座に使うための一部通貨を両替する",
+      "priority": "高",
+      "category": "現金",
+      "canDoOnline": false,
+      "timeNeeded": "1時間",
+      "link": "現地の為替レートを確認"
+    },
+    {
+      "id": "pay_005",
+      "task": "バックアップ決済カードを用意する",
+      "detail": "バックアップとして少なくとも2枚の異なるVisa/Mastercardクレジットカードと1枚のデビットカードを持参する",
+      "priority": "高",
+      "category": "カード",
+      "canDoOnline": true,
+      "timeNeeded": "30分",
+      "link": "ウォレットを確認"
+    },
+    {
+      "id": "pay_006",
+      "task": "Apple PayまたはGoogle Payをセットアップする",
+      "detail": "利用可能な場所で非接触決済のためにデジタルウォレットに海外カードを追加する",
+      "priority": "中",
+      "category": "デジタルウォレット",
+      "canDoOnline": true,
+      "timeNeeded": "20分",
+      "link": "apple.com/apple-pay または pay.google.com"
+    },
+    {
+      "id": "pay_007",
+      "task": "UnionPayカードの取得を検討する",
+      "detail": "自国で入手可能な場合、中国で最も幅広く受け入れられるUnionPayカードを申請する",
+      "priority": "中",
+      "category": "カード",
+      "canDoOnline": true,
+      "timeNeeded": "1〜2週間",
+      "link": "銀行に確認"
+    },
+    {
+      "id": "pay_008",
+      "task": "オフライン決済アプリをダウンロードする",
+      "detail": "観光客向けに利用可能な場合、中国のe-CNY（デジタル人民元）パイロットなどのアプリをインストールする",
+      "priority": "低",
+      "category": "デジタル通貨",
+      "canDoOnline": true,
+      "timeNeeded": "30分",
+      "link": "公式発表を確認"
+    },
+    {
+      "id": "pay_009",
+      "task": "加盟店の連絡先情報を準備する",
+      "detail": "決済問題に備えて、ホテルや主要加盟店の名前・住所を中国語で保存する",
+      "priority": "中",
+      "category": "準備",
+      "canDoOnline": true,
+      "timeNeeded": "15分",
+      "link": "Google Translate"
+    },
+    {
+      "id": "pay_010",
+      "task": "取引限度額とアラートを設定する",
+      "detail": "カードアラートを設定し、海外利用に合わせて支出限度額を調整する",
+      "priority": "中",
+      "category": "セキュリティ",
+      "canDoOnline": true,
+      "timeNeeded": "30分",
+      "link": "銀行のアプリ"
+    },
+    {
+      "id": "pay_011",
+      "task": "決済互換性を調査する",
+      "detail": "特定の目的地や宿泊先でどの決済方法が利用可能かを確認する",
+      "priority": "中",
+      "category": "調査",
+      "canDoOnline": true,
+      "timeNeeded": "1時間",
+      "link": "旅行フォーラムとホテルのウェブサイト"
+    },
+    {
+      "id": "pay_012",
+      "task": "緊急用の小額現金を用意する",
+      "detail": "タクシー、屋台、緊急時に備えて小額紙幣で500〜1000人民元を用意する",
+      "priority": "中",
+      "category": "現金",
+      "canDoOnline": false,
+      "timeNeeded": "30分",
+      "link": "両替カウンター"
+    }
+  ]
+}

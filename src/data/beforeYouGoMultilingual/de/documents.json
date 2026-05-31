@@ -1,0 +1,142 @@
+{
+  "id": "documents",
+  "title": "Dokumente & Visum-Checkliste",
+  "description": "Vor der Buchung von Flügen erledigen — eine umfassende Checkliste für Touristen, die China besuchen",
+  "items": [
+    {
+      "id": "doc_001",
+      "task": "Gültigkeit des Reisepasses prüfen (mindestens 6 Monate)",
+      "detail": "China verlangt, dass Ihr Reisepass mindestens 6 Monate über Ihr geplantes Abreisedatum hinaus gültig ist und mindestens 2 freie Visumseiten enthält",
+      "priority": "critical",
+      "category": "passport",
+      "canDoOnline": false,
+      "timeNeeded": "Jetzt prüfen"
+    },
+    {
+      "id": "doc_002",
+      "task": "Chinesisches Touristenvisum beantragen (L-Visum)",
+      "detail": "Die meisten Nationalitäten benötigen ein Visum. Stellen Sie den Antrag 4–8 Wochen vor der Abreise bei der chinesischen Botschaft/dem Konsulat oder einem Visumzentrum. Zu den Anforderungen gehören Passfoto, Reiseplan, Hotelbuchungen und Einkommensnachweise",
+      "priority": "critical",
+      "category": "visa",
+      "canDoOnline": true,
+      "timeNeeded": "4–8 Wochen vorher"
+    },
+    {
+      "id": "doc_003",
+      "task": "Prüfen, ob Sie Anspruch auf visumfreie Durchreise haben",
+      "detail": "China bietet eine 144-stündige visumfreie Durchreise in großen Städten für Bürger von 54 Ländern an. Prüfen Sie auch die Regelung zur visumfreien Einreise für 15 Tage für ausgewählte Nationalitäten. Überprüfen Sie die aktuellen Bestimmungen auf der offiziellen Website der Nationalen Einwanderungsbehörde",
+      "priority": "high",
+      "category": "visa",
+      "canDoOnline": true,
+      "timeNeeded": "6 Wochen vorher"
+    },
+    {
+      "id": "doc_004",
+      "task": "Umfassende Reiseversicherung abschließen",
+      "detail": "Schließen Sie eine Versicherung ab, die medizinische Rückholung, Krankenhausaufenthalt, Reiseannullierung und Gepäckverlust abdeckt. Stellen Sie sicher, dass der Versicherungsschutz für das chinesische Festland gilt und mindestens 100.000 USD medizinische Deckung umfasst",
+      "priority": "critical",
+      "category": "insurance",
+      "canDoOnline": true,
+      "timeNeeded": "3–6 Wochen vorher"
+    },
+    {
+      "id": "doc_005",
+      "task": "Überprüfen, ob die Versicherung Abenteueraktivitäten abdeckt",
+      "detail": "Wenn Sie wandern, Ski fahren oder an Abenteuersportarten teilnehmen möchten, bestätigen Sie, dass Ihre Versicherung diese Aktivitäten in China ausdrücklich abdeckt",
+      "priority": "medium",
+      "category": "insurance",
+      "canDoOnline": true,
+      "timeNeeded": "3–6 Wochen vorher"
+    },
+    {
+      "id": "doc_006",
+      "task": "Sich bei der Botschaft Ihres Landes in China registrieren",
+      "detail": "Tragen Sie sich in das Reiseanmeldeprogramm Ihrer Regierung ein (z. B. das US-STEP-Programm, UK LOCATE), damit Ihre Botschaft Sie im Notfall kontaktieren kann",
+      "priority": "high",
+      "category": "emergency",
+      "canDoOnline": true,
+      "timeNeeded": "2 Wochen vorher"
+    },
+    {
+      "id": "doc_007",
+      "task": "Notfall-Kontaktliste zusammenstellen",
+      "detail": "Notieren Sie die Kontaktdaten der Botschaft/des Konsulats Ihres Landes in China, die Notfall-Hotline Ihrer Versicherung, Ihres Hotels und persönlicher Notfallkontakte. Bewahren Sie sowohl digitale als auch ausgedruckte Kopien auf",
+      "priority": "high",
+      "category": "emergency",
+      "canDoOnline": false,
+      "timeNeeded": "1 Woche vorher"
+    },
+    {
+      "id": "doc_008",
+      "task": "Chinesische Notrufnummern speichern",
+      "detail": "Polizei: 110, Krankenwagen: 120, Feuerwehr: 119, Touristen-Beschwerdehotline: 12345. Speichern Sie diese in Ihrem Handy und auf einer physischen Karte",
+      "priority": "high",
+      "category": "emergency",
+      "canDoOnline": false,
+      "timeNeeded": "1 Woche vorher"
+    },
+    {
+      "id": "doc_009",
+      "task": "Fotokopien und digitale Scans aller Dokumente erstellen",
+      "detail": "Kopieren Sie die Pass-ID-Seite, das Visum, die Versicherungspolice, den Flugplan, die Hotelbestätigungen und den Führerschein. Speichern Sie digitale Kopien in einem sicheren Cloud-Speicher und senden Sie sich ein Set per E-Mail",
+      "priority": "high",
+      "category": "copies",
+      "canDoOnline": true,
+      "timeNeeded": "1 Woche vorher"
+    },
+    {
+      "id": "doc_010",
+      "task": "Passfotos vorbereiten",
+      "detail": "Nehmen Sie 4 zusätzliche Passfotos mit (48 mm x 33 mm, weißer Hintergrund) für den Fall eines verlorenen Reisepasses oder unerwarteter behördlicher Anforderungen",
+      "priority": "medium",
+      "category": "copies",
+      "canDoOnline": false,
+      "timeNeeded": "1 Woche vorher"
+    },
+    {
+      "id": "doc_011",
+      "task": "Gesundheitserklärung für China ausfüllen",
+      "detail": "Füllen Sie das Gesundheitserklärungsformular über die China-Customs-App oder das WeChat-Mini-Programm innerhalb von 24 Stunden vor der Ankunft aus",
+      "priority": "critical",
+      "category": "entry",
+      "canDoOnline": true,
+      "timeNeeded": "24 Stunden vorher"
+    },
+    {
+      "id": "doc_012",
+      "task": "Zoll-Erklärungsvorschriften für China prüfen",
+      "detail": "Erklären Sie Bargeld über 5.000 USD (oder Gegenwert). Verbotene Gegenstände umfassen Schusswaffen, Betäubungsmittel, bestimmte Publikationen und nicht zugelassene Medikamente. Prüfen Sie die Grenzen für Elektronik, Alkohol (1,5 l) und Zigaretten (400 Stangen)",
+      "priority": "high",
+      "category": "customs",
+      "canDoOnline": true,
+      "timeNeeded": "2 Wochen vorher"
+    },
+    {
+      "id": "doc_013",
+      "task": "Legalität und Dokumentation von Medikamenten überprüfen",
+      "detail": "Bestimmte westliche Medikamente (einschließlich einiger ADHS- und Schmerzmittel) sind in China kontrolliert oder verboten. Führen Sie ein ärztliches Rezept und die Originalverpackung der Apotheke mit. Kontaktieren Sie die chinesische Botschaft, wenn Sie unsicher sind",
+      "priority": "critical",
+      "category": "entry",
+      "canDoOnline": false,
+      "timeNeeded": "3–4 Wochen vorher"
+    },
+    {
+      "id": "doc_014",
+      "task": "Nachweis der Unterkunft und des Rückflugs vorbereiten",
+      "detail": "Halten Sie gedruckte oder digitale Bestätigungen der Hotelbuchungen und eine Rückflug-/Weiterflugticket bereit, da Einwanderungsbeamte diese am Einreiseort anfordern können",
+      "priority": "high",
+      "category": "entry",
+      "canDoOnline": true,
+      "timeNeeded": "1 Woche vorher"
+    },
+    {
+      "id": "doc_015",
+      "task": "VPN-Einrichtung recherchieren und vor der Abreise herunterladen",
+      "detail": "Große internationale Websites und Apps (Google, WhatsApp, Instagram) sind in China gesperrt. Installieren und testen Sie ein zuverlässiges VPN auf allen Geräten vor der Ankunft, da VPN-Downloads innerhalb Chinas eingeschränkt sind",
+      "priority": "high",
+      "category": "entry",
+      "canDoOnline": true,
+      "timeNeeded": "1 Woche vorher"
+    }
+  ]
+}

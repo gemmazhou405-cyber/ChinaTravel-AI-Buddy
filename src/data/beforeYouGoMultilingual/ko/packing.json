@@ -1,0 +1,127 @@
+{
+  "id": "packing",
+  "title": "스마트 패킹 체크리스트",
+  "description": "국제 여행객을 위한 중국 특화 필수품",
+  "items": [
+    {
+      "id": "pack_001",
+      "task": "어댑터(Type A/I)를 준비하세요",
+      "detail": "중국은 Type A와 Type I 플러그를 사용합니다. 대부분의 호텔에는 만능 콘센트가 있지만, 소규모 호텔과 기차역을 위해 어댑터를 챙기세요",
+      "priority": "medium",
+      "category": "electronics",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_002",
+      "task": "포터블 WiFi 기기를 가져오거나 현지 SIM을 구매하세요",
+      "detail": "중국에서는 Google, Instagram, WhatsApp이 차단됩니다. VPN이 사전 설치된 포터블 WiFi 또는 현지 SIM을 사용하면 연결을 유지할 수 있습니다",
+      "priority": "high",
+      "category": "electronics",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_003",
+      "task": "오프라인 지도와 번역 앱을 다운로드하세요",
+      "detail": "오프라인 사용을 위해 Baidu 지도 또는 Amap을 다운로드하세요. Google 번역 중국어 팩을 사전 다운로드하거나 Pleco 사전을 사용하세요",
+      "priority": "high",
+      "category": "digital",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_004",
+      "task": "소액 결제를 위한 현금(RMB)을 가져오세요",
+      "detail": "WeChat Pay와 Alipay가 지배적이지만, 길거리 음식점, 시골 지역 택시, 소규모 상점에서는 현금을 선호하는 경우가 많습니다",
+      "priority": "high",
+      "category": "money",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_005",
+      "task": "도착 전 WeChat Pay 또는 Alipay를 설정하세요",
+      "detail": "국제 신용카드를 WeChat Pay 또는 Alipay에 연결하세요. 많은 상점에서 외국 카드를 직접 받지 않습니다",
+      "priority": "high",
+      "category": "money",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_006",
+      "task": "접이식 소형 백팩을 준비하세요",
+      "detail": "사원, 만리장성 하이킹 구간, 붐비는 시장을 통과하며 일상 필수품을 운반할 때 필수입니다",
+      "priority": "medium",
+      "category": "accessories",
+      "chinaSpecific": false
+    },
+    {
+      "id": "pack_007",
+      "task": "매우 편한 걷기용 신발을 가져오세요",
+      "detail": "중국 관광에는 매일 15,000에서 25,000보가 소요됩니다. 오래된 마을의 조약돌 거리는 튼튼한 밑창을 요구합니다",
+      "priority": "high",
+      "category": "clothing",
+      "chinaSpecific": false
+    },
+    {
+      "id": "pack_008",
+      "task": "마스크(N95 또는 KN95)를 휴대하세요",
+      "detail": "북부 도시의 스모그 날, 붐비는 지하철, 계절성 독감 예방에 유용합니다. 현지인들도 흔히 마스크를 착용합니다",
+      "priority": "medium",
+      "category": "health",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_009",
+      "task": "휴지와 물티슈를 준비하세요",
+      "detail": "대도시 외 지역의 많은 공중 화장실에는 화장지가 비치되어 있지 않습니다. 항상 자체적으로 휴대하세요",
+      "priority": "high",
+      "category": "health",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_010",
+      "task": "소형 접이식 우산 또는 우의를 가져오세요",
+      "detail": "남부 중국은 연중 갑작스러운 소나기가 내립니다. 대부분의 관광 도시에서는 여름 몬순과 봄 이슬비가 흔합니다",
+      "priority": "medium",
+      "category": "accessories",
+      "chinaSpecific": false
+    },
+    {
+      "id": "pack_011",
+      "task": "중국어로 된 호텔 주소가 있는 번역 카드를 출력하세요",
+      "detail": "택시 기사에게 중국어로 쓴 호텔 이름과 주소를 보여주세요. 대체 내비게이션을 위해 가장 가까운 지하철역도 포함하세요",
+      "priority": "high",
+      "category": "documents",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_012",
+      "task": "중국 입국 전 VPN을 설치하세요",
+      "detail": "Google, Facebook, Instagram, YouTube 및 대부분의 서양 앱에 접속하려면 VPN이 필요합니다. 출발 전 다운로드하고 테스트하세요",
+      "priority": "high",
+      "category": "digital",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_013",
+      "task": "여권 사본과 디지털 스캔본을 소지하세요",
+      "detail": "짐에 실물 사본을 보관하고 휴대전화에 사진을 저장하세요. 호텔 체크인 시 여권이 필요하며 경찰이 신분 확인을 요청할 수 있습니다",
+      "priority": "high",
+      "category": "documents",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_014",
+      "task": "휴대용 보조 배터리(20000mAh 권장)를 가져오세요",
+      "detail": "장시간 관광은 배터리를 빠르게 소모시킵니다. 비행기에는 100Wh 이하의 보조 배터리 휴대가 허용됩니다. 쇼핑몰 외 충전소는 드뭅니다",
+      "priority": "medium",
+      "category": "electronics",
+      "chinaSpecific": false
+    },
+    {
+      "id": "pack_015",
+      "task": "위장약과 유산균을 준비하세요",
+      "detail": "중국 요리는 강한 향신료, 기름, 익숙하지 않은 재료를 사용합니다. Imodium, Pepto-Bismol, 유산균은 위장 문제 예방에 도움이 됩니다",
+      "priority": "medium",
+      "category": "health",
+      "chinaSpecific": false
+    }
+  ]
+}

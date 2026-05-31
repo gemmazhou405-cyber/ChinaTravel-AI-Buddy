@@ -1,0 +1,127 @@
+{
+  "id": "packing",
+  "title": "スマートパッキングチェックリスト",
+  "description": "海外旅行者向け中国特化の荷物準備 essentials",
+  "items": [
+    {
+      "id": "pack_001",
+      "task": "電源アダプター（A/Iタイプ）を用意する",
+      "detail": "中国ではAタイプとIタイプのプラグが使われています。ほとんどのホテルにはユニバーサルソケットがありますが、小さなホテルや駅のためにアダプターを持参しましょう",
+      "priority": "medium",
+      "category": "電子機器",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_002",
+      "task": "携帯WiFi端末を持参するか現地SIMを購入する",
+      "detail": "中国ではGoogle、Instagram、WhatsAppがブロックされています。携帯WiFiまたはVPNがプリインストールされた現地SIMで接続を維持しましょう",
+      "priority": "high",
+      "category": "電子機器",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_003",
+      "task": "オフラインマップと翻訳アプリをダウンロードする",
+      "detail": "百度地図や高徳地図をオフライン用にダウンロードしましょう。Google翻訳の中国語パックを事前にダウンロードするか、Pleco辞書を使用してください",
+      "priority": "high",
+      "category": "デジタル",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_004",
+      "task": "小規模店舗用に現金（人民元）を持参する",
+      "detail": "WeChat PayとAlipayが主流ですが、露店、農村部のタクシー、小さな店では現金が好まれることが多いです",
+      "priority": "high",
+      "category": "お金",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_005",
+      "task": "到着前にWeChat PayまたはAlipayを設定する",
+      "detail": "国際クレジットカードをWeChat PayまたはAlipayにリンクしましょう。多くの店舗では海外カードを直接受け付けません",
+      "priority": "high",
+      "category": "お金",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_006",
+      "task": "折りたたみ可能な小さなリュックを用意する",
+      "detail": "寺院への日帰り旅行、万里の城のハイキング区間、混雑した市場での日用品の携帯に必需品です",
+      "priority": "medium",
+      "category": "アクセサリー",
+      "chinaSpecific": false
+    },
+    {
+      "id": "pack_007",
+      "task": "とても歩きやすい靴を持参する",
+      "detail": "中国の観光では毎日15,000〜25,000歩歩きます。古い街の石畳の通りには頑丈なソールが必要です",
+      "priority": "high",
+      "category": "衣類",
+      "chinaSpecific": false
+    },
+    {
+      "id": "pack_008",
+      "task": "マスク（N95またはKN95）を持参する",
+      "detail": "北部都市のスモッグの多い日、混雑した地下鉄、季節性インフルエンザの予防に役立ちます。現地の人も日常的にマスクを着用しています",
+      "priority": "medium",
+      "category": "健康",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_009",
+      "task": "ティッシュとウェットティッシュを用意する",
+      "detail": "主要都市以外の多くの公衆トイレにはトイレットペーパーが備え付けられていません。常に自分の分を持ち歩きましょう",
+      "priority": "high",
+      "category": "健康",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_010",
+      "task": "コンパクトな傘またはレインジャケットを持参する",
+      "detail": "中国南部では年間を通じて突然の豪雨があります。夏のモンスーンと春の小雨はほとんどの観光都市で一般的です",
+      "priority": "medium",
+      "category": "アクセサリー",
+      "chinaSpecific": false
+    },
+    {
+      "id": "pack_011",
+      "task": "ホテルの住所を中国語で記載した翻訳カードを印刷する",
+      "detail": "タクシードライバーにホテル名と中国語で書かれた住所を見せましょう。最寄りの地下鉄駅もバックアップ用に記載してください",
+      "priority": "high",
+      "category": "書類",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_012",
+      "task": "中国入国前にVPNをインストールする",
+      "detail": "Google、Facebook、Instagram、YouTube、およびほとんどの西洋のアプリにアクセスするにはVPNが必要です。出発前にダウンロードしてテストしましょう",
+      "priority": "high",
+      "category": "デジタル",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_013",
+      "task": "パスポートのコピーとデジタルスキャンを持参する",
+      "detail": "荷物に物理的なコピーを1部、スマホに写真を保存しておきましょう。ホテルのチェックインにパスポートが必要で、警察が身分証を求める場合もあります",
+      "priority": "high",
+      "category": "書類",
+      "chinaSpecific": true
+    },
+    {
+      "id": "pack_014",
+      "task": "携帯用バッテリー（20000mAh推奨）を持参する",
+      "detail": "長時間の観光でバッテリーがすぐに切れます。バッテリーは100Wh以下であれば機内持ち込み可能です。モール以外に充電ステーションはほとんどありません",
+      "priority": "medium",
+      "category": "電子機器",
+      "chinaSpecific": false
+    },
+    {
+      "id": "pack_015",
+      "task": "胃腸薬とプロバイオティクスを用意する",
+      "detail": "中国料理は香辛料、油、見慣れない食材を多く使います。ロペラミド、スマクトa、プロバイオティクスで胃腸の問題を予防しましょう",
+      "priority": "medium",
+      "category": "健康",
+      "chinaSpecific": false
+    }
+  ]
+}

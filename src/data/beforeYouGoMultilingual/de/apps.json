@@ -1,0 +1,217 @@
+{
+  "id": "apps",
+  "title": "Checkliste: Wichtige Apps",
+  "description": "Vor der Ankunft in China herunterladen",
+  "items": [
+    {
+      "id": "app_001",
+      "app": "Didi",
+      "task": "Didi herunterladen und einrichten (chinesisches Uber)",
+      "detail": "Wichtigste App für Fahrdienste in China. Funktioniert mit ausländischen Karten",
+      "priority": "high",
+      "category": "transport",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_002",
+      "app": "Alipay",
+      "task": "Alipay mit internationaler Karte herunterladen und einrichten",
+      "detail": "Unverzichtbare Zahlungs-App. Unterstützt inzwischen ausländische Kreditkarten für Touristen",
+      "priority": "high",
+      "category": "payment",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_003",
+      "app": "WeChat",
+      "task": "WeChat herunterladen und WeChat Pay aktivieren",
+      "detail": "All-in-One-Super-App für Messaging, Zahlungen und Dienste. Soziales Muss",
+      "priority": "high",
+      "category": "communication",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_004",
+      "app": "Baidu Maps",
+      "task": "Baidu Maps für die Navigation herunterladen",
+      "detail": "Genaueste Kartierung in China. Google Maps hat hier eingeschränkte Funktionalität",
+      "priority": "high",
+      "category": "navigation",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_005",
+      "app": "Amap (Gaode Maps)",
+      "task": "Amap als Navigations-Alternative herunterladen",
+      "detail": "Hervorragende Alternative zu Baidu Maps mit zuverlässigen ÖPNV-Routen",
+      "priority": "medium",
+      "category": "navigation",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_006",
+      "app": "DeepL",
+      "task": "DeepL-Übersetzer mit chinesischem Sprachpaket herunterladen",
+      "detail": "Hochwertige Übersetzungs-App. Offline-Chinesisch-Paket vor der Ankunft herunterladen",
+      "priority": "high",
+      "category": "translation",
+      "downloadBefore": true,
+      "availableInChina": false,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_007",
+      "app": "Pleco",
+      "task": "Pleco-Chinesischwörterbuch herunterladen",
+      "detail": "Bestes Chinesisch-Englisch-Wörterbuch mit Kameraübersetzungsfunktion",
+      "priority": "medium",
+      "category": "translation",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_008",
+      "app": "ExpressVPN",
+      "task": "VPN vor der Einreise nach China einrichten und testen",
+      "detail": "Unverzichtbar für den Zugang zu Google, WhatsApp, Instagram. Muss außerhalb Chinas heruntergeladen werden",
+      "priority": "high",
+      "category": "utility",
+      "downloadBefore": true,
+      "availableInChina": false,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_009",
+      "app": "12306",
+      "task": "Registrieren und Zugtickets auf 12306 buchen",
+      "detail": "Offizielle chinesische Bahnbuchungs-App. Hochgeschwindigkeitszüge verbinden große Städte",
+      "priority": "high",
+      "category": "transport",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_010",
+      "app": "Trip.com",
+      "task": "Trip.com für Reisebuchungen herunterladen",
+      "detail": "Beste App zur Buchung von Hotels, Flügen und Eintrittskarten mit englischer Unterstützung",
+      "priority": "high",
+      "category": "booking",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_011",
+      "app": "Meituan",
+      "task": "Meituan für Essen und lokale Dienstleistungen herunterladen",
+      "detail": "Top-Liefer-App plus Hotels, Sehenswürdigkeiten und Tagesangebote",
+      "priority": "medium",
+      "category": "food",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_012",
+      "app": "Eleme",
+      "task": "Eleme als alternative Liefer-App herunterladen",
+      "detail": "Zweitgrößte Lieferplattform, gehört zu Alibaba",
+      "priority": "low",
+      "category": "food",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_013",
+      "app": "ChinaEase Buddy",
+      "task": "ChinaEase Buddy Reiseassistent herunterladen",
+      "detail": "Touristenfreundlicher Helfer mit Tipps, Redewendungen und lokaler Orientierung für Ausländer",
+      "priority": "medium",
+      "category": "utility",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_014",
+      "app": "Taobao",
+      "task": "Taobao für Einkaufen herunterladen",
+      "detail": "Chinas größter Online-Marktplatz. Ideal für Souvenirs und Schnäppchen",
+      "priority": "low",
+      "category": "shopping",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_015",
+      "app": "Booking.com",
+      "task": "Booking.com für internationale Hotelbuchungen herunterladen",
+      "detail": "Nützliche Alternative für Hotelbuchungen mit vertrauter Benutzeroberfläche und Kundensupport",
+      "priority": "medium",
+      "category": "booking",
+      "downloadBefore": true,
+      "availableInChina": false,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    }
+  ]
+}

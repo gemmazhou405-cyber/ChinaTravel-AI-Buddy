@@ -1,0 +1,115 @@
+{
+  "id": "health",
+  "title": "건강 및 의료 체크리스트",
+  "description": "중국 방문을 위한 건강 필수품 준비하기",
+  "items": [
+    {
+      "id": "health_001",
+      "task": "예방 접종 요건 확인하기",
+      "detail": "권장 백신: A형 간염, 장티푸스. 일정에 따라 B형 간염, 일본뇌광대열, 광병을 고려하세요.",
+      "priority": "높음",
+      "category": "예방 접종",
+      "timeNeeded": "출발 4-6주 전",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_002",
+      "task": "포괄적인 여행 보험 구입하기",
+      "detail": "보험에 응급 의료 후송, 입원, 중국 특별 보장이 포함되어 있는지 확인하세요.",
+      "priority": "높음",
+      "category": "보험",
+      "timeNeeded": "여행 예약 후",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_003",
+      "task": "의료 보장 상세 내용 확인하기",
+      "detail": "보험에 기존 질환, 계획된 경우 모험 활동 포함, 중국 내 24시간 지원 서비스가 있는지 확인하세요.",
+      "priority": "높음",
+      "category": "보험",
+      "timeNeeded": "출발 1-2주 전",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_004",
+      "task": "처방약 관련 문서 준비하기",
+      "detail": "모든 약물, 용량 및 의료 필요성에 대한 의사의 영문·중문 서한을 확보하세요.",
+      "priority": "높음",
+      "category": "약물",
+      "timeNeeded": "출발 2-3주 전",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_005",
+      "task": "약물 적절하게 포장하기",
+      "detail": "약물은 원래 용기에 보관하고, 추가 분량을 가져오며, 기내 수하물에 포장하세요.",
+      "priority": "높음",
+      "category": "약물",
+      "timeNeeded": "출발 전날",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_006",
+      "task": "기본 구급 상자 준비하기",
+      "detail": "포함 항목: 소독용 물티슈, 붕대, 진통제, 설사약, 경구용 수분 보충염, 해충 기피제.",
+      "priority": "보통",
+      "category": "구급 상자",
+      "timeNeeded": "출발 1주 전",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_007",
+      "task": "알레르기 정보 카드 만들기",
+      "detail": "음식 알레르기, 약물 알레르기 및 응급 치료 지침을 영문과 중문으로 표기한 카드.",
+      "priority": "보통",
+      "category": "알레르기",
+      "timeNeeded": "출발 2주 전",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_008",
+      "task": "혈액형 카드 준비하기",
+      "detail": "혈액형, Rh 인자 및 기타 특수 의료 상태를 두 언어로 기록한 카드를 소지하세요.",
+      "priority": "보통",
+      "category": "의료 신분증",
+      "timeNeeded": "출발 2주 전",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_009",
+      "task": "의료 이력 문서 작성하기",
+      "detail": "만성 질환, 과거 수술, 입원 이력 및 현재 치료 상황을 두 언어로 요약하세요.",
+      "priority": "보통",
+      "category": "의료 이력",
+      "timeNeeded": "출발 2주 전",
+      "seeDoctor": true
+    },
+    {
+      "id": "health_010",
+      "task": "비상 연락처 목록 작성하기",
+      "detail": "포함 항목: 현지 대사관, 보험사 긴급 전화, 가족 연락처, 중국 비상 전화번호 (구급차: 120).",
+      "priority": "높음",
+      "category": "비상 연락처",
+      "timeNeeded": "출발 1주 전",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_011",
+      "task": "대기질 예보 확인하기",
+      "detail": "목적지의 AQI를 모니터링하고, 민감하거나 북부 산업 도시 방문 시 N95 마스크를 가져갈 것을 고려하세요.",
+      "priority": "낮음",
+      "category": "환경",
+      "timeNeeded": "출발 1주 전",
+      "seeDoctor": false
+    },
+    {
+      "id": "health_012",
+      "task": "전통 중국 의학 병원 조사하기",
+      "detail": "전통 중국 의학이 널리 이용 가능함을 인지하고, 서양 의학과 다름을 이해하며, 보험 정보를 준비하세요.",
+      "priority": "낮음",
+      "category": "현지 의료",
+      "timeNeeded": "계획 수립 중",
+      "seeDoctor": false
+    }
+  ]
+}

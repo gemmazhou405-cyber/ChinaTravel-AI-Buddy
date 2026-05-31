@@ -1,0 +1,217 @@
+{
+  "id": "apps",
+  "title": "필수 앱 체크리스트",
+  "description": "중국 도착 전 다운로드",
+  "items": [
+    {
+      "id": "app_001",
+      "app": "디디",
+      "task": "중국판 우버인 디디를 다운로드하고 설정하세요",
+      "detail": "중국의 주요 차량 호출 앱. 해외 카드 사용 가능",
+      "priority": "높음",
+      "category": "교통",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_002",
+      "app": "알리페이",
+      "task": "국제 카드로 알리페이를 다운로드하고 설정하세요",
+      "detail": "필수 결제 앱. 이제 관광객을 위한 해외 신용카드 지원",
+      "priority": "높음",
+      "category": "결제",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_003",
+      "app": "위챗",
+      "task": "위챗을 다운로드하고 위챗페이를 활성화하세요",
+      "detail": "메시지, 결제, 서비스를 위한 올인원 슈퍼 앱. 소셜 필수 앱",
+      "priority": "높음",
+      "category": "커뮤니케이션",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_004",
+      "app": "바이두 지도",
+      "task": "내비게이션을 위해 바이두 지도를 다운로드하세요",
+      "detail": "중국에서 가장 정확한 지도. 구글 지도는 여기서 기능이 제한됨",
+      "priority": "높음",
+      "category": "내비게이션",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_005",
+      "app": "아맵 (가오더 지도)",
+      "task": "백업 내비게이션으로 아맵을 다운로드하세요",
+      "detail": "신뢰할 수 있는 대중교통 경로를 제공하는 훌륭한 바이두 지도 대안",
+      "priority": "보통",
+      "category": "내비게이션",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_006",
+      "app": "DeepL",
+      "task": "중국어 언어 팩과 함께 DeepL 번역기를 다운로드하세요",
+      "detail": "고품질 번역 앱. 오기 전에 오프라인 중국어 팩을 다운로드하세요",
+      "priority": "높음",
+      "category": "번역",
+      "downloadBefore": true,
+      "availableInChina": false,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_007",
+      "app": "플레코",
+      "task": "플레코 중국어 사전을 다운로드하세요",
+      "detail": "카메라 번역 기능이 있는 최고의 중영 사전",
+      "priority": "보통",
+      "category": "번역",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_008",
+      "app": "ExpressVPN",
+      "task": "중국 입국 전에 VPN을 설정하고 테스트하세요",
+      "detail": "구글, WhatsApp, 인스타그램 접속에 필수. 중국 밖에서 반드시 다운로드해야 함",
+      "priority": "높음",
+      "category": "유틸리티",
+      "downloadBefore": true,
+      "availableInChina": false,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_009",
+      "app": "12306",
+      "task": "12306에 가입하고 기차표를 예매하세요",
+      "detail": "중국 공식 철도 예매 앱. 고속 열차가 주요 도시를 연결함",
+      "priority": "높음",
+      "category": "교통",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_010",
+      "app": "트립닷컴",
+      "task": "여행 예약을 위해 트립닷컴을 다운로드하세요",
+      "detail": "영어 지원이 되는 호텔, 항공편, 명소 티켓 예약 최고의 앱",
+      "priority": "높음",
+      "category": "예약",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_011",
+      "app": "메이퇀",
+      "task": "음식 및 현지 서비스를 위해 메이퇀을 다운로드하세요",
+      "detail": "최고의 음식 배달 앱 플러스 호텔, 명소, 일일 특가 상품",
+      "priority": "보통",
+      "category": "음식",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_012",
+      "app": "어러머",
+      "task": "백업 음식 배달을 위해 어러머를 다운로드하세요",
+      "detail": "알리바바가 소유한 두 번째로 큰 음식 배달 플랫폼",
+      "priority": "낮음",
+      "category": "음식",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_013",
+      "app": "차이나이즈 버디",
+      "task": "차이나이즈 버디 여행 어시스턴트를 다운로드하세요",
+      "detail": "외국인을 위한 팁, 구문, 현지 안내가 포함된 관광객 친화적 도우미",
+      "priority": "보통",
+      "category": "유틸리티",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_014",
+      "app": "타오바오",
+      "task": "쇼핑을 위해 타오바오를 다운로드하세요",
+      "detail": "중국 최대 온라인 마켓플레이스. 기념품과 특가 상품에 좋음",
+      "priority": "낮음",
+      "category": "쇼핑",
+      "downloadBefore": true,
+      "availableInChina": true,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    },
+    {
+      "id": "app_015",
+      "app": "Booking.com",
+      "task": "국제 호텔 예약을 위해 Booking.com을 다운로드하세요",
+      "detail": "익숙한 인터페이스와 고객 지원으로 호텔 예약 시 유용한 백업",
+      "priority": "보통",
+      "category": "예약",
+      "downloadBefore": true,
+      "availableInChina": false,
+      "platform": [
+        "iOS",
+        "Android"
+      ]
+    }
+  ]
+}

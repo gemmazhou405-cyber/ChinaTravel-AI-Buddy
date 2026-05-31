@@ -1,0 +1,142 @@
+{
+  "id": "documents",
+  "title": "서류 및 비자 체크리스트",
+  "description": "항공권 예약 전 완료하세요 — 중국을 방문하는 관광객을 위한 종합 체크리스트",
+  "items": [
+    {
+      "id": "doc_001",
+      "task": "여권 유효기간 확인 (최소 6개월)",
+      "detail": "중국은 출국 예정일로부터 최소 6개월 이상의 여권 유효기간과 최소 2장의 빈 비자 페이지를 요구합니다",
+      "priority": "critical",
+      "category": "passport",
+      "canDoOnline": false,
+      "timeNeeded": "지금 확인하세요"
+    },
+    {
+      "id": "doc_002",
+      "task": "중국 관광비자(L 비자) 신청",
+      "detail": "대부분의 국적은 비자가 필요합니다. 출발 4~8주 전에 중국 대사관/영사관 또는 비자 센터에 신청서를 제출하세요. 요구 서류에는 여권 사진, 일정표, 호텔 예약 확인서, 자금 증명서가 포함됩니다",
+      "priority": "critical",
+      "category": "visa",
+      "canDoOnline": true,
+      "timeNeeded": "출발 4~8주 전"
+    },
+    {
+      "id": "doc_003",
+      "task": "무비자 환승 자격 확인",
+      "detail": "중국은 54개국 시민에게 주요 도시에서 144시간 무비자 환승을 제공합니다. 또한 일부 국적 대상 15일 무비자 입국 정책도 확인하세요. 국가이민관리국 공식 웹사이트에서 현재 정책을 확인하세요",
+      "priority": "high",
+      "category": "visa",
+      "canDoOnline": true,
+      "timeNeeded": "출발 6주 전"
+    },
+    {
+      "id": "doc_004",
+      "task": "종합 여행자 보험 가입",
+      "detail": "의료 후송, 입원 치료, 여행 취소, 수하물 분실을 보장하는 보험에 가입하세요. 중국 본토에서 유효하고 최소 10만 달러의 의료 보장이 포함되어 있는지 확인하세요",
+      "priority": "critical",
+      "category": "insurance",
+      "canDoOnline": true,
+      "timeNeeded": "출발 3~6주 전"
+    },
+    {
+      "id": "doc_005",
+      "task": "보험의 모험 활동 보장 여부 확인",
+      "detail": "하이킹, 스키, 모험 스포츠를 계획하고 있다면, 보험 약관에서 중국 내 이러한 활동을 명시적으로 보장하는지 확인하세요",
+      "priority": "medium",
+      "category": "insurance",
+      "canDoOnline": true,
+      "timeNeeded": "출발 3~6주 전"
+    },
+    {
+      "id": "doc_006",
+      "task": "자국 대사관에 여행자 등록",
+      "detail": "자국 정부의 여행자 등록 프로그램(예: 미국 STEP 프로그램, 영국 LOCATE)에 등록하여 비상 시 대사관에서 연락할 수 있도록 하세요",
+      "priority": "high",
+      "category": "emergency",
+      "canDoOnline": true,
+      "timeNeeded": "출발 2주 전"
+    },
+    {
+      "id": "doc_007",
+      "task": "비상 연락처 목록 작성",
+      "detail": "자국 대사관/영사관 연락처, 보험사 비상 핫라인, 호텔, 개인 비상 연락처를 기록하세요. 디지털 사본과 인쇄 사본을 모두 보관하세요",
+      "priority": "high",
+      "category": "emergency",
+      "canDoOnline": false,
+      "timeNeeded": "출발 1주 전"
+    },
+    {
+      "id": "doc_008",
+      "task": "중국 비상 전화번호 저장",
+      "detail": "경찰: 110, 구급차: 120, 소방: 119, 관광 불만 핫라인: 12345. 이 번호들을 휴대폰과 실물 카드에 저장하세요",
+      "priority": "high",
+      "category": "emergency",
+      "canDoOnline": false,
+      "timeNeeded": "출발 1주 전"
+    },
+    {
+      "id": "doc_009",
+      "task": "모든 서류의 복사본 및 디지털 스캔본 만들기",
+      "detail": "여권 신원 정보 페이지, 비자, 보험 증권, 항공 일정표, 호텔 확인서, 운전면허증을 복사하세요. 디지털 사본은 안전한 클라우드 저장소에 보관하고 이메일로도 발송하세요",
+      "priority": "high",
+      "category": "copies",
+      "canDoOnline": true,
+      "timeNeeded": "출발 1주 전"
+    },
+    {
+      "id": "doc_010",
+      "task": "여권용 사진 준비",
+      "detail": "여권 분실 시 재발급 또는 예상치 못한 행정 처리를 위해 여권용 사진(48mm × 33mm, 흰색 배경) 4장을 추가로 지참하세요",
+      "priority": "medium",
+      "category": "copies",
+      "canDoOnline": false,
+      "timeNeeded": "출발 1주 전"
+    },
+    {
+      "id": "doc_011",
+      "task": "중국 건강 신고서 작성",
+      "detail": "도착 24시간 전까지 중국 세관 앱 또는 위챗 미니프로그램을 통해 건강 신고서를 작성하세요",
+      "priority": "critical",
+      "category": "entry",
+      "canDoOnline": true,
+      "timeNeeded": "도착 24시간 전"
+    },
+    {
+      "id": "doc_012",
+      "task": "중국 세관 신고 규정 확인",
+      "detail": "5,000달러(또는 이에 상당하는 금액) 이상의 현금은 신고하세요. 금지 물품에는 총기, 마약, 특정 출판물, 비허가 의약품이 포함됩니다. 전자기기, 주류(1.5L), 담배(400갑)의 반입 한도를 확인하세요",
+      "priority": "high",
+      "category": "customs",
+      "canDoOnline": true,
+      "timeNeeded": "출발 2주 전"
+    },
+    {
+      "id": "doc_013",
+      "task": "약물 합법성 및 서류 확인",
+      "detail": "일부 서양 의약품(ADHD 약물 및 진통제 포함)은 중국에서 규제되거나 금지되어 있습니다. 의사 처방전과 약국 원래 포장을 지참하세요. 확실하지 않으면 중국 대사관에 문의하세요",
+      "priority": "critical",
+      "category": "entry",
+      "canDoOnline": false,
+      "timeNeeded": "출발 3~4주 전"
+    },
+    {
+      "id": "doc_014",
+      "task": "숙소 증빙 및 귀국 항공권 준비",
+      "detail": "호텔 예약 확인서와 귀국/경유 항공권의 인쇄본 또는 디지털 사본을 준비하세요. 입국 심사 시 출입국 관리관이 이를 요구할 수 있습니다",
+      "priority": "high",
+      "category": "entry",
+      "canDoOnline": true,
+      "timeNeeded": "출발 1주 전"
+    },
+    {
+      "id": "doc_015",
+      "task": "출발 전 VPN 설정 조사 및 다운로드",
+      "detail": "주요 국제 웹사이트 및 앱(구글, 왓츠앱, 인스타그램)은 중국에서 차단됩니다. 중국 내에서는 VPN 다운로드가 제한되므로, 입국 전 모든 기기에 신뢰할 수 있는 VPN을 설치하고 테스트하세요",
+      "priority": "high",
+      "category": "entry",
+      "canDoOnline": true,
+      "timeNeeded": "출발 1주 전"
+    }
+  ]
+}
