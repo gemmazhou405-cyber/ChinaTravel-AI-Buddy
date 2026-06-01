@@ -1,0 +1,77 @@
+{
+  "cityId": "sanya",
+  "cityName": "Sanya",
+  "cityNameCN": "三亚",
+  "airport": {
+    "name": "Sanya Phoenix International Airport",
+    "iataCode": "SYX",
+    "toCity": "Take a taxi, airport shuttle, or bus to city center."
+  },
+  "transport": {
+    "metro": "Light rail available in some areas; check routes for tourist spots.",
+    "taxi": "Taxis are metered; ensure driver uses it or agree on fare.",
+    "didi": "Didi app works well; download before arriving for easy rides.",
+    "tips": [
+      "Use official taxi stands to avoid scams.",
+      "Negotiate prices for non-metered rides beforehand.",
+      "Public buses are cheap but can be crowded."
+    ]
+  },
+  "payment": {
+    "alipay": "Widely accepted; set up with a foreign card if possible.",
+    "wechatPay": "Common payment method; link a card or use cash top-up.",
+    "cash": "Carry small yuan bills for street vendors and taxis.",
+    "foreignCard": "Accepted at major hotels and shops; use ATMs for cash."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Yalong Bay for luxury resorts and private beaches.",
+      "Dadonghai for budget stays near the beach and nightlife."
+    ],
+    "tips": [
+      "Book in advance during peak season for best rates.",
+      "Check recent reviews for cleanliness and service quality."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Fresh seafood grilled at night markets.",
+      "Hainanese chicken rice, a local staple.",
+      "Coconut milk desserts and drinks.",
+      "Tropical fruit smoothies and juices.",
+      "Local barbecue skewers with spices."
+    ],
+    "foodStreets": [
+      "Sanya First Market for fresh seafood dishes.",
+      "Jiefang Road Food Street with various options."
+    ],
+    "tips": [
+      "Eat at busy stalls for fresher seafood.",
+      "Try local fruits from street vendors for authenticity."
+    ]
+  },
+  "commonScams": [
+    "Avoid unlicensed tour operators with hidden fees.",
+    "Be cautious of overly cheap seafood offers that may be stale.",
+    "Verify prices and services before agreeing to avoid overcharging."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Ask hotel staff for help in emergencies or translations."
+  },
+  "usefulApps": [
+    "WeChat for communication, payments, and local services.",
+    "Baidu Maps for navigation and finding attractions.",
+    "Didi for ride-hailing with English interface."
+  ],
+  "bestTimeToVisit": "November to April for pleasant weather and fewer crowds.",
+  "touristTips": [
+    "Stay hydrated and use sunscreen in the tropical climate.",
+    "Respect local customs and dress modestly at temples.",
+    "Keep valuables secure in crowded tourist areas.",
+    "Learn basic Mandarin phrases for easier interactions.",
+    "Wear comfortable shoes for exploring beaches and markets."
+  ]
+}

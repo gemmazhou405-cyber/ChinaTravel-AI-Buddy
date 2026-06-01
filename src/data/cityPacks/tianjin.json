@@ -1,0 +1,77 @@
+{
+  "cityId": "tianjin",
+  "cityName": "Tianjin",
+  "cityNameCN": "天津",
+  "airport": {
+    "name": "Tianjin Binhai International Airport",
+    "iataCode": "TSN",
+    "toCity": "Take metro line 2 or airport shuttle bus to city center."
+  },
+  "transport": {
+    "metro": "Efficient metro system covering key tourist areas.",
+    "taxi": "Taxis available; ensure meters are used.",
+    "didi": "Ride-hailing app; set destination clearly.",
+    "tips": [
+      "Use metro for affordable travel.",
+      "Avoid peak hours for less crowding.",
+      "Carry cash for taxi payments."
+    ]
+  },
+  "payment": {
+    "alipay": "Widely accepted; link international card for setup.",
+    "wechatPay": "Common payment method; similar to Alipay.",
+    "cash": "Useful for small vendors and markets.",
+    "foreignCard": "Accepted at hotels and large stores."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Heping District",
+      "Nankai District"
+    ],
+    "tips": [
+      "Book in advance for better availability.",
+      "Choose places near metro stations."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Goubuli Baozi",
+      "Jianbing",
+      "Erduo Yan Zhagao",
+      "Tanghulu",
+      "Seafood dishes"
+    ],
+    "foodStreets": [
+      "Nanshi Food Street",
+      "Tianjin Ancient Culture Street"
+    ],
+    "tips": [
+      "Try local street food for authenticity.",
+      "Check hygiene at food stalls."
+    ]
+  },
+  "commonScams": [
+    "Taxi overcharging; use official taxis.",
+    "Fake tour guides; book through hotels.",
+    "Scams near attractions; stay vigilant."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Show hotel address in Chinese for directions."
+  },
+  "usefulApps": [
+    "Didi for transportation",
+    "Alipay for payments",
+    "Baidu Translate for language help"
+  ],
+  "bestTimeToVisit": "Spring (April-May) or Autumn (September-October) for mild weather.",
+  "touristTips": [
+    "Learn basic Mandarin phrases.",
+    "Keep passport copies in safe place.",
+    "Use local SIM for internet access.",
+    "Respect local customs and traditions.",
+    "Carry an umbrella for sudden rain."
+  ]
+}

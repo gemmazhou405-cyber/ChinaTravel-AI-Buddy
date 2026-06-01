@@ -1,0 +1,80 @@
+{
+  "cityId": "wuhan",
+  "cityName": "Wuhan",
+  "cityNameCN": "武汉",
+  "airport": {
+    "name": "Wuhan Tianhe International Airport",
+    "iataCode": "WUH",
+    "toCity": "Metro Line 2, taxi, or airport shuttle."
+  },
+  "transport": {
+    "metro": "Extensive network with 8 lines, covers major areas and attractions.",
+    "taxi": "Use official taxis with meters; agree on fare beforehand if needed.",
+    "didi": "Didi app for reliable ride-hailing; similar to Uber.",
+    "tips": [
+      "Use metro during rush hours to avoid traffic congestion.",
+      "Have destinations written in Chinese for taxi drivers.",
+      "Purchase a metro card for convenient travel."
+    ]
+  },
+  "payment": {
+    "alipay": "Widely accepted; download app and link foreign credit card.",
+    "wechatPay": "Common payment; set up with local phone number if possible.",
+    "cash": "Still accepted but less convenient; small denominations useful.",
+    "foreignCard": "Visa and Mastercard accepted in tourist areas, not always."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Hankou",
+      "Wuchang"
+    ],
+    "tips": [
+      "Book near metro stations for easy exploration.",
+      "Check reviews and ratings before booking."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Hot dry noodles",
+      "Doupi",
+      "Wuhan duck neck",
+      "Mianwo",
+      "Bean skin"
+    ],
+    "foodStreets": [
+      "Hubu Street",
+      "Jiqing Street"
+    ],
+    "tips": [
+      "Try local breakfast specialties like hot dry noodles.",
+      "Eat at street stalls for authentic flavors.",
+      "Be mindful of food allergies and spice levels."
+    ]
+  },
+  "commonScams": [
+    "Taxi drivers not using meters or overcharging fares.",
+    "Fake tour guides offering overpriced or misleading tours.",
+    "Pickpocketing in crowded tourist spots."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Keep your hotel address in Chinese for quick directions."
+  },
+  "usefulApps": [
+    "Didi",
+    "Alipay",
+    "WeChat",
+    "Metro Wuhan",
+    "Baidu Maps"
+  ],
+  "bestTimeToVisit": "Spring (March-May) or Autumn (September-November) for pleasant weather.",
+  "touristTips": [
+    "Learn basic Mandarin phrases for better communication.",
+    "Use mobile payment apps where possible.",
+    "Carry sunscreen and water in summer.",
+    "Respect local customs and queue lines.",
+    "Keep valuables secure in crowded areas."
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "cityId": "kunming",
+  "cityName": "Kunming",
+  "cityNameCN": "昆明",
+  "airport": {
+    "name": "Kunming Changshui International Airport",
+    "iataCode": "KMG",
+    "toCity": "Take Metro Line 6, taxi, or airport bus to city center."
+  },
+  "transport": {
+    "metro": "Kunming Metro with multiple lines; covers major tourist spots.",
+    "taxi": "Metered taxis; ensure meter is used to avoid overcharging.",
+    "didi": "Didi Chuxing app for convenient ride-hailing services.",
+    "tips": [
+      "Use metro for efficient travel during peak hours.",
+      "Have hotel address written in Chinese for taxi drivers.",
+      "Avoid unofficial taxis at tourist spots."
+    ]
+  },
+  "payment": {
+    "alipay": "Alipay is widely accepted; set up with international card if possible.",
+    "wechatPay": "WeChat Pay is common; link to international bank account.",
+    "cash": "Cash is accepted everywhere; carry small denominations.",
+    "foreignCard": "Foreign cards accepted in some hotels and shops; not always reliable."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Kunming City Center",
+      "Near Green Lake",
+      "Dianchi Lake Area"
+    ],
+    "tips": [
+      "Book in advance during peak tourist seasons.",
+      "Choose accommodation near metro stations for easy access."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Crossing-the-bridge noodles",
+      "Wild mushroom hotpot",
+      "Yunnan rice noodles",
+      "Erkuai (rice cakes)",
+      "Rose flower cakes"
+    ],
+    "foodStreets": [
+      "Nanping Pedestrian Street",
+      "Guandu Ancient Town food area"
+    ],
+    "tips": [
+      "Try local street food for authentic flavors.",
+      "Be cautious with spicy dishes if sensitive stomach."
+    ]
+  },
+  "commonScams": [
+    "Taxi drivers not using meters",
+    "Fake goods at tourist markets",
+    "Overcharging at unlicensed shops"
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Emergency services are efficient; keep hotel address handy."
+  },
+  "usefulApps": [
+    "Baidu Maps",
+    "WeChat",
+    "Meituan"
+  ],
+  "bestTimeToVisit": "Spring (March to May) or autumn (September to November) for mild weather.",
+  "touristTips": [
+    "Learn basic Mandarin phrases for easier communication.",
+    "Use public transport to avoid traffic congestion.",
+    "Respect local customs and traditions.",
+    "Stay hydrated, especially in summer.",
+    "Keep valuables secure in crowded areas."
+  ]
+}

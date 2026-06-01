@@ -1,0 +1,77 @@
+{
+  "cityId": "nanjing",
+  "cityName": "Nanjing",
+  "cityNameCN": "南京",
+  "airport": {
+    "name": "Nanjing Lukou International Airport",
+    "iataCode": "NKG",
+    "toCity": "Metro Line S1 to city center; buses and taxis available."
+  },
+  "transport": {
+    "metro": "Efficient system covering major tourist spots; operates 6am-11pm.",
+    "taxi": "Common; ensure driver uses meter; avoid unmarked cars.",
+    "didi": "Ride-hailing app; use for convenience, especially at night.",
+    "tips": [
+      "Download metro map app for easy navigation.",
+      "Taxis accept cash and mobile payments.",
+      "Avoid rush hours for less crowding."
+    ]
+  },
+  "payment": {
+    "alipay": "Widely used; tourists can link international cards.",
+    "wechatPay": "Essential for mobile payments; set up with international number.",
+    "cash": "Always carry some; smaller vendors may prefer cash.",
+    "foreignCard": "Visa/Mastercard accepted in hotels; carry cash for small shops."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Xuanwu District near Xuanwu Lake",
+      "Gulou District central location"
+    ],
+    "tips": [
+      "Choose hotels near metro stations for easy access.",
+      "Book directly with hotels for better rates."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Salted duck (Yan Shui Ya)",
+      "Duck blood soup (Ya Xue Tang)",
+      "Tangbao (soup dumplings)",
+      "Nanjing sausage",
+      "Goubuli baozi (steamed buns)"
+    ],
+    "foodStreets": [
+      "Confucius Temple (Fuzimiao) food street",
+      "Shiziqiao food street"
+    ],
+    "tips": [
+      "Try street food for authentic local flavors.",
+      "Use food apps to find popular spots."
+    ]
+  },
+  "commonScams": [
+    "Overcharging in taxis; insist on using meter.",
+    "Fake goods at tourist spots; buy from reputable shops.",
+    "Unofficial tour guides; book through licensed agencies."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Keep embassy contact info handy; learn basic emergency phrases."
+  },
+  "usefulApps": [
+    "WeChat for communication and payments",
+    "Alipay for transactions",
+    "Metro Man Nanjing for schedules"
+  ],
+  "bestTimeToVisit": "Spring (March-May) and Autumn (September-November) for mild weather.",
+  "touristTips": [
+    "Learn basic Mandarin phrases for better interaction.",
+    "Respect local customs, especially at temples.",
+    "Carry a portable charger for your phone.",
+    "Use public transport to avoid traffic.",
+    "Stay hydrated and wear comfortable shoes."
+  ]
+}

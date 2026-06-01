@@ -1,0 +1,78 @@
+{
+  "cityId": "qingdao",
+  "cityName": "Qingdao",
+  "cityNameCN": "青岛",
+  "airport": {
+    "name": "Qingdao Jiaodong International Airport",
+    "iataCode": "TAO",
+    "toCity": "Shuttle buses and taxis available, about 1 hour to city center."
+  },
+  "transport": {
+    "metro": "Qingdao Metro covers main tourist and business areas.",
+    "taxi": "Taxis are metered; insist on using the meter.",
+    "didi": "Use Didi app for rides; pay via Alipay or WeChat.",
+    "tips": [
+      "Metro is efficient; avoid rush hours for comfort.",
+      "Have destinations written in Chinese for taxi drivers.",
+      "Carry small cash for transport and quick purchases."
+    ]
+  },
+  "payment": {
+    "alipay": "Set up with international card for seamless payments.",
+    "wechatPay": "Widely accepted; download app and add card.",
+    "cash": "Carry some for markets and small eateries.",
+    "foreignCard": "Visa/Mastercard in hotels and malls; less common elsewhere."
+  },
+  "accommodation": {
+    "recommendedAreas": [
+      "Shinan District for beaches and city center access.",
+      "Laoshan District for nature and quieter stays."
+    ],
+    "tips": [
+      "Book in advance during summer and holidays.",
+      "Look for hotels with English-speaking staff."
+    ]
+  },
+  "food": {
+    "mustTry": [
+      "Tsingtao Beer, local brewery favorite.",
+      "Fresh seafood like grilled squid and shrimp.",
+      "Shandong-style Lu cuisine dishes.",
+      "Jiaozi (dumplings) with assorted fillings.",
+      "Baozi (steamed buns) for breakfast."
+    ],
+    "foodStreets": [
+      "Taidong Walking Street for diverse street food.",
+      "Zhanqiao area for seafood restaurants."
+    ],
+    "tips": [
+      "Choose busy spots for fresh and safe food.",
+      "Learn key food terms in Chinese to order."
+    ]
+  },
+  "commonScams": [
+    "Taxi drivers not using meters.",
+    "Unlicensed guides at tourist attractions.",
+    "Scalpers selling overpriced tickets or souvenirs."
+  ],
+  "emergency": {
+    "police": "110",
+    "ambulance": "120",
+    "fire": "119",
+    "localTip": "Keep hotel address in Chinese for emergency help."
+  },
+  "usefulApps": [
+    "Alipay for payments and local services.",
+    "WeChat for messaging and transactions.",
+    "Google Translate for language assistance.",
+    "Baidu Maps for navigation and directions."
+  ],
+  "bestTimeToVisit": "April-May or September-October for mild weather and fewer crowds.",
+  "touristTips": [
+    "Learn basic Mandarin phrases for daily use.",
+    "Respect queues and local customs.",
+    "Keep valuables safe in crowded areas.",
+    "Use sunscreen and drink water in summer.",
+    "Explore local neighborhoods for authentic experiences."
+  ]
+}
