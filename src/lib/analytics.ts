@@ -21,6 +21,7 @@ const FIRST_TOUCH_KEY = 'chinaease:firstTouchAttribution';
 const SESSION_ATTR_KEY = 'chinaease:sessionAttribution';
 const ANON_SESSION_KEY = 'chinaease:anonymousSessionId';
 const ONCE_PREFIX = 'chinaease:analyticsOnce:';
+const isDev = import.meta.env.DEV;
 
 const utmKeys: UtmKey[] = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
 
@@ -142,20 +143,38 @@ export function markTrackedOnce(key: string) {
 }
 
 export async function trackEvent(eventName: string, payload: AnalyticsPayload = {}, userId?: string | null) {
-  try {
-    const context = getAttributionContext();
-    const event = {
+  const context = getAttributionContext();
+  const event = {
+    eventName,
+    ...cleanPayload(context),
+    ...cleanPayload(payload),
+    path: payload.path || `${window.location.pathname}${window.location.search}`,
+    timestamp: Date.now(),
+    createdAt: serverTimestamp(),
+    ...(userId ? { userId } : {}),
+  };
+
+  if (isDev) {
+    console.log('[ChinaEase analytics] event queued', {
       eventName,
-      ...cleanPayload(context),
-      ...cleanPayload(payload),
-      path: payload.path || `${window.location.pathname}${window.location.search}`,
-      timestamp: Date.now(),
-      createdAt: serverTimestamp(),
-      ...(userId ? { userId } : {}),
-    };
+      payload: event,
+    });
+  }
+
+  try {
     await addDoc(collection(db, 'analyticsEvents'), event);
+    if (isDev) {
+      console.log('[ChinaEase analytics] Firestore write succeeded', {
+        eventName,
+      });
+    }
   } catch (error) {
-    console.debug('analytics skipped', error);
+    if (isDev) {
+      console.warn('Analytics write failed, but app continues.', {
+        eventName,
+        error,
+      });
+    }
   }
 }
 
