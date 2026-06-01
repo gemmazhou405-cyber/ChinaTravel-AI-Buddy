@@ -1,0 +1,111 @@
+{
+  "id": "shopping",
+  "title": "Einkaufskultur und Feilschen-Tipps für Touristen in China",
+  "tips": [
+    {
+      "id": "shop_001",
+      "category": "bargaining",
+      "tip": "Feilschen Sie auf Märkten und in kleinen Geschäften",
+      "detail": "Auf Straßenmärkten, Souvenirgeschäften und unabhängigen Läden wird Feilschen erwartet. Beginnen Sie bei 30–40% des geforderten Preises.",
+      "do": true
+    },
+    {
+      "id": "shop_002",
+      "category": "bargaining",
+      "tip": "Feilschen Sie nicht in Kaufhäusern oder Einkaufszentren",
+      "detail": "Die Preise in großen Einkaufszentren, Supermärkten und Filialgeschäften sind fest. Versuche zu feilschen können als unhöflich empfunden werden.",
+      "do": false
+    },
+    {
+      "id": "shop_003",
+      "category": "fixed_price",
+      "tip": "Erkennen Sie Geschäfte mit Festpreisen",
+      "detail": "Achten Sie auf Schilder mit der Aufschrift '不讲价' (bù jiǎng jià), was 'kein Feilschen' bedeutet. Dies ist im modernen Einzelhandel und in Buchhandlungen üblich.",
+      "do": true
+    },
+    {
+      "id": "shop_004",
+      "category": "quality_checking",
+      "tip": "Überprüfen Sie Produkte vor dem Kauf gründlich",
+      "detail": "Untersuchen Sie Elektronik, Kleidung und Keramik auf Mängel. Testen Sie Reißverschlüsse, Knöpfe und Bildschirmfunktionen, wo immer möglich.",
+      "do": true
+    },
+    {
+      "id": "shop_005",
+      "category": "receipts",
+      "tip": "Verlangen Sie immer eine offizielle Quittung (Fapiao)",
+      "detail": "Die offizielle Steuerquittung (Fapiao) ist unerlässlich für Garantieansprüche, Rückgaben oder Spesenabrechnungen. Fordern Sie sie proaktiv ein.",
+      "do": true
+    },
+    {
+      "id": "shop_006",
+      "category": "returns",
+      "tip": "Informieren Sie sich vor dem Kauf über die Rückgaberichtlinien",
+      "detail": "Die Rückgaberichtlinien variieren. Große Einkaufszentren bieten in der Regel eine Rückgabefrist von 7–30 Tagen mit Quittung. Kleine Geschäfte können Rückgaben ablehnen.",
+      "do": true
+    },
+    {
+      "id": "shop_007",
+      "category": "fake_goods",
+      "tip": "Seien Sie vorsichtig bei Marken-'Schnäppchen'",
+      "detail": "Extrem günstige Elektronik, Luxustaschen oder Uhren sind wahrscheinlich Fälschungen. Kaufen Sie Markenware nur bei autorisierten Händlern.",
+      "do": false
+    },
+    {
+      "id": "shop_008",
+      "category": "WeChat_pay",
+      "tip": "Richten Sie nach Möglichkeit WeChat Pay oder Alipay ein",
+      "detail": "Mobile Zahlungen sind allgegenwärtig. Viele kleine Händler bevorzugen oder akzeptieren ausschließlich diese Apps. Bargeld wird akzeptiert, wird aber immer seltener.",
+      "do": true
+    },
+    {
+      "id": "shop_009",
+      "category": "WeChat_pay",
+      "tip": "Tragen Sie immer etwas Bargeld als Reserve bei sich",
+      "detail": "Halten Sie kleinere Scheine (10, 20, 50 Yuan) für Märkte, Taxis und Orte bereit, an denen die mobile Zahlung aufgrund von Netzwerkproblemen fehlschlagen könnte.",
+      "do": true
+    },
+    {
+      "id": "shop_010",
+      "category": "group_buying",
+      "tip": "Fragen Sie Einheimische nach 'Tuangou' (Gruppeneinkauf)",
+      "detail": "Viele Restaurants und Dienstleistungen bieten über Gruppeneinkäufe in Apps wie Meituan erhebliche Rabatte. Fragen Sie das Hotelpersonal um Hilfe.",
+      "do": true
+    },
+    {
+      "id": "shop_011",
+      "category": "night_markets",
+      "tip": "Bringen Sie Bargeld mit und feilschen Sie auf Nachtmärkten",
+      "detail": "Nachtmärkte (Yè Shì) sind für Essen und Kleinigkeiten gedacht. Die Preise sind verhandelbar, und Bargeld wird für Streetfood noch weit verbreitet verwendet.",
+      "do": true
+    },
+    {
+      "id": "shop_012",
+      "category": "night_markets",
+      "tip": "Probieren Sie Speisen, bevor Sie große Mengen kaufen",
+      "detail": "Sie können Häufig Snacks probieren. Kaufen Sie zuerst eine kleine Portion, um zu prüfen, ob Ihnen der Geschmack gefällt, bevor Sie mehr kaufen.",
+      "do": true
+    },
+    {
+      "id": "shop_013",
+      "category": "duty_free",
+      "tip": "Nutzen Sie Duty-Free-Shops für bekannte Marken",
+      "detail": "Duty-Free-Shops in Flughäfen und bestimmten Zonen bieten echte Luxusgüter und Kosmetik oft zu guten Preisen an.",
+      "do": true
+    },
+    {
+      "id": "shop_014",
+      "category": "duty_free",
+      "tip": "Prüfen Sie die zollfreien Freimengen für Ihr Land",
+      "detail": "Kennen Sie die Einfuhrgrenzen für Alkohol, Tabak und den Gesamtwert, um bei der Rückkehr Steuern zu vermeiden. Bewahren Sie alle Quittungen auf.",
+      "do": true
+    },
+    {
+      "id": "shop_015",
+      "category": "bargaining",
+      "tip": "Verwenden Sie einen Taschenrechner oder eine Übersetzungs-App für Zahlen",
+      "detail": "Zeigen Sie den gewünschten Preis auf dem Taschenrechner Ihres Telefons, um Missverständnisse bei Preisverhandlungen zu vermeiden.",
+      "do": true
+    }
+  ]
+}

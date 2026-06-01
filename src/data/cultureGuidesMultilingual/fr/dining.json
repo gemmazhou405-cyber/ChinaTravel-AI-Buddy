@@ -1,0 +1,146 @@
+{
+  "id": "dining",
+  "title": "Culture du repas et savoir-vivre à table en Chine",
+  "tips": [
+    {
+      "id": "din_001",
+      "category": "plats_partages",
+      "tip": "Les plats sont partagés à la manière familiale",
+      "detail": "Commandez plusieurs plats à partager pour toute la table, pas des repas individuels. Ce style convivial est au cœur de la culture alimentaire chinoise.",
+      "do": true
+    },
+    {
+      "id": "din_002",
+      "category": "plats_partages",
+      "tip": "Prenez des portions modestes dans les plats partagés",
+      "detail": "Utilisez les ustensiles de service quand ils sont disponibles. Prenez de petites quantités pour que tout le monde puisse en profiter. Vous pourrez toujours vous resservir.",
+      "do": true
+    },
+    {
+      "id": "din_003",
+      "category": "etiquette_des_baguettes",
+      "tip": "Ne plantez jamais les baguettes à la verticale dans le riz",
+      "detail": "Des baguettes plantées verticalement dans un bol de riz évoquent des offrandes d'encens aux défunts et sont considérées comme extrêmement maléfiques.",
+      "do": false
+    },
+    {
+      "id": "din_004",
+      "category": "etiquette_des_baguettes",
+      "tip": "Posez les baguettes sur le repose-baguettes ou sur le bord du bol",
+      "detail": "Quand vous ne mangez pas, placez vos baguettes proprement sur le repose-baguettes fourni ou en travers du bord de votre bol.",
+      "do": true
+    },
+    {
+      "id": "din_005",
+      "category": "etiquette_des_baguettes",
+      "tip": "Ne pointez pas les baguettes vers les personnes et ne les agitez pas",
+      "detail": "Pointer avec des baguettes ou s'en servir pour gesticuler est considéré comme grossier. Gardez-les baissées lorsque vous parlez.",
+      "do": false
+    },
+    {
+      "id": "din_006",
+      "category": "etiquette_des_baguettes",
+      "tip": "Ne tapotez pas les bols avec les baguettes",
+      "detail": "Taper sur votre bol avec des baguettes est associé aux mendiants et est considéré comme impoli à table.",
+      "do": false
+    },
+    {
+      "id": "din_007",
+      "category": "service_du_the",
+      "tip": "Versez le thé aux autres avant de vous servir",
+      "detail": "Il est poli de remplir les tasses de thé de ceux qui vous entourent en premier. L'hôte ou la personne la plus jeune à table s'occupe souvent du service.",
+      "do": true
+    },
+    {
+      "id": "din_008",
+      "category": "service_du_the",
+      "tip": "Tapez sur la table pour remercier pour le thé",
+      "detail": "Quand quelqu'un vous verse du thé, tapotez légèrement la table avec deux doigts comme geste silencieux de gratitude. C'est une coutume largement reconnue.",
+      "do": true
+    },
+    {
+      "id": "din_009",
+      "category": "toasts",
+      "tip": "Trinquez avec « ganbei » mais sirotez si vous préférez",
+      "detail": "Ganbei signifie « videz le verre ». Vous pouvez participer aux toasts sans vider votre verre — une petite gorgée est tout à fait acceptable, surtout avec le baijiu.",
+      "do": true
+    },
+    {
+      "id": "din_010",
+      "category": "toasts",
+      "tip": "Tenez votre verre plus bas en trinquant avec les aînés ou les supérieurs",
+      "detail": "Incliner votre verre sous le rebord du verre de l'autre personne témoigne du respect. Cela s'applique particulièrement lors des toasts avec les hôtes, les patrons ou les aînés.",
+      "do": true
+    },
+    {
+      "id": "din_011",
+      "category": "toasts",
+      "tip": "Levez-vous pour trinquer avec les invités d'honneur",
+      "detail": "Si l'hôte ou un invité important propose un toast, il est poli de se lever pour montrer du respect et de l'attention.",
+      "do": true
+    },
+    {
+      "id": "din_012",
+      "category": "addition",
+      "tip": "Attendez-vous à ce que l'hôte paie l'addition",
+      "detail": "La personne qui invite les autres au dîner paie traditionnellement. Proposez de payer une fois par courtoisie, mais acceptez avec grâce si l'hôte insiste.",
+      "do": true
+    },
+    {
+      "id": "din_013",
+      "category": "addition",
+      "tip": "Ne partagez pas l'addition de manière égale",
+      "detail": "Le système « chacun paie sa part » (AA制) se répand parmi les jeunes amis, mais lors des repas formels, se disputer l'addition fait partie du rituel social — attendez-vous à ce qu'une partie invite.",
+      "do": false
+    },
+    {
+      "id": "din_014",
+      "category": "pourboires",
+      "tip": "Le pourboire n'est pas attendu en Chine",
+      "detail": "Contrairement à de nombreux pays occidentaux, le pourboire n'est pas coutumier dans les restaurants en Chine continentale et peut même susciter la confusion. Il n'est pas obligatoire.",
+      "do": false
+    },
+    {
+      "id": "din_015",
+      "category": "habitudes_alimentaires",
+      "tip": "Aspirer les nouilles et la soupe est acceptable",
+      "detail": "Les bruits forts en mangeant, comme aspirer les nouilles ou boire la soupe, ne sont pas considérés comme grossiers en Chine et peuvent même signifier que vous appréciez la nourriture.",
+      "do": true
+    },
+    {
+      "id": "din_016",
+      "category": "os_et_dechets",
+      "tip": "Posez les os et les restes sur la table ou une assiette à côté",
+      "detail": "Il est tout à fait normal de poser les arêtes de poisson, les os de poulet et autres restes directement sur la table ou une assiette à côté prévue à cet effet, et non dans votre bol de riz.",
+      "do": true
+    },
+    {
+      "id": "din_017",
+      "category": "goutter_les_plats",
+      "tip": "Goûtez un peu de chaque plat qui vous est proposé",
+      "detail": "Refuser de la nourriture de manière répétée peut sembler impoli. Même si vous n'êtes pas sûr d'un plat, prendre une petite bouchée montre votre appréciation pour la générosité de l'hôte.",
+      "do": true
+    },
+    {
+      "id": "din_018",
+      "category": "agencement_de_table",
+      "tip": "Apprenez à utiliser le plateau tournant et la table ronde",
+      "detail": "La plupart des banquets chinois utilisent des tables rondes avec un plateau tournant (lazy Susan). Faites-le tourner doucement pour accéder aux plats et arrêtez-le pour que les autres puissent se servir.",
+      "do": true
+    },
+    {
+      "id": "din_019",
+      "category": "devoirs_de_l_hote",
+      "tip": "L'hôte commande pour la table et installe les invités en premier",
+      "detail": "L'hôte commande généralement tous les plats, veille à ce que les invités soient installés (la place d'honneur fait face à la porte) et sert les premières portions aux invités d'honneur.",
+      "do": true
+    },
+    {
+      "id": "din_020",
+      "category": "devoirs_de_l_hote",
+      "tip": "L'hôte remplit les assiettes et les verres tout au long du repas",
+      "detail": "Un bon hôte sert continuellement de la nourriture aux invités et re remplit leurs verres. En tant qu'invité, accepter avec grâce est la réponse polie.",
+      "do": true
+    }
+  ]
+}

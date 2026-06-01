@@ -1,0 +1,111 @@
+{
+  "id": "religion",
+  "title": "Sitios Religiosos y Etiqueta en Templos de China",
+  "tips": [
+    {
+      "id": "rel_001",
+      "category": "dress",
+      "tip": "Cubre hombros y rodillas en los templos",
+      "detail": "Lleva una bufanda o chaqueta ligera para cubrir la piel expuesta en templos budistas y taoístas. Evita faldas cortas, pantalones cortos y tops sin mangas.",
+      "do": true
+    },
+    {
+      "id": "rel_002",
+      "category": "dress",
+      "tip": "Quítate el sombrero al entrar en las salas principales",
+      "detail": "Retira sombreros, gorras y gafas de sol al entrar en la sala principal de culto como señal de respeto hacia las deidades.",
+      "do": true
+    },
+    {
+      "id": "rel_003",
+      "category": "shoes",
+      "tip": "Quítate los zapatos en el umbral si es necesario",
+      "detail": "Algunos templos proporcionan estantes para los zapatos. Busca señalizaciones o sigue el ejemplo de los locales. Pasa por encima del marco de la puerta, nunca encima de él.",
+      "do": true
+    },
+    {
+      "id": "rel_004",
+      "category": "shoes",
+      "tip": "Usa calcetines limpios y zapatos fáciles de quitar",
+      "detail": "Como puede que necesites quitarte los zapatos con frecuencia, usa calcetines presentables y calzado de fácil puesta y quita para mayor comodidad.",
+      "do": true
+    },
+    {
+      "id": "rel_005",
+      "category": "photography",
+      "tip": "Verifica las restricciones de fotografía",
+      "detail": "Muchos templos prohíben la fotografía en las salas de culto. Busca señalizaciones y siempre pide permiso antes de fotografiar a monjes o fieles.",
+      "do": false
+    },
+    {
+      "id": "rel_006",
+      "category": "photography",
+      "tip": "Nunca uses flash cerca de estatuas de Buda",
+      "detail": "El flash puede dañar el dorado antiguo y las pinturas. Incluso donde se permitan fotos, siempre desactiva el flash.",
+      "do": false
+    },
+    {
+      "id": "rel_007",
+      "category": "offerings",
+      "tip": "Trae ofrendas apropiadas",
+      "detail": "Frutas, flores y aperitivos vegetarianos envasados son ofrendas adecuadas. Nunca lleves carne a un templo budista.",
+      "do": true
+    },
+    {
+      "id": "rel_008",
+      "category": "incense",
+      "tip": "Sostén el incienso correctamente con ambas manos",
+      "detail": "Enciende el incienso con la vela del templo, nunca con el palillo de otra persona. Sosténlo en posición vertical e inclínate tres veces antes de colocarlo en el incensario.",
+      "do": true
+    },
+    {
+      "id": "rel_009",
+      "category": "incense",
+      "tip": "No apagues el incienso ni las velas con la boca",
+      "detail": "Agita suavemente para apagar las llamas. Soplar se considera irrespetuoso ya que la boca lleva aliento impuro.",
+      "do": false
+    },
+    {
+      "id": "rel_010",
+      "category": "behavior",
+      "tip": "Inclínate o arrodíllate respetuosamente al saludar las estatuas de Buda",
+      "detail": "Una leve inclinación con las palmas juntas es apropiada. Si deseas arrodíllate en el cojín e inclínate tres veces con las manos en posición de oración.",
+      "do": true
+    },
+    {
+      "id": "rel_011",
+      "category": "monks",
+      "tip": "Trata a los monjes y monjas con respeto",
+      "detail": "Usa 'Fashi' (法师) para monjes budistas o 'Shifu' (师傅). Evita tocar a los monjes, especialmente si eres de otro género. No inicies la mano para saludar.",
+      "do": true
+    },
+    {
+      "id": "rel_012",
+      "category": "sacred",
+      "tip": "Nunca toques ni señales con el dedo estatuas u objetos sagrados",
+      "detail": "No toques estatuas de Buda, textos religiosos ni objetos rituales a menos que se te invite explícitamente a hacerlo. Señalar con un solo dedo es grosero; usa la mano abierta en su lugar.",
+      "do": false
+    },
+    {
+      "id": "rel_013",
+      "category": "fees",
+      "tip": "Paga las entradas y donaciones sin quejarte",
+      "detail": "Muchos templos cobran una entrada que contribuye a su conservación. Las pequeñas cajas de donaciones también son comunes. Lleva billetes pequeños y monedas.",
+      "do": true
+    },
+    {
+      "id": "rel_014",
+      "category": "quiet",
+      "tip": "Mantén el silencio y una actitud tranquila",
+      "detail": "Habla en voz baja. No rías en voz alta, corras ni hagas llamadas telefónicas dentro del recinto del templo. Silencia tu teléfono móvil.",
+      "do": true
+    },
+    {
+      "id": "rel_015",
+      "category": "prayer",
+      "tip": "Respeta las áreas de oración y a los fieles",
+      "detail": "No pases por delante de alguien que esté rezando. Espera a que termine antes de pasar. No te sientes en áreas reservadas exclusivamente para los fieles.",
+      "do": true
+    }
+  ]
+}

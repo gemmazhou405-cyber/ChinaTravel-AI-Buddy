@@ -1,0 +1,111 @@
+{
+  "id": "transport",
+  "title": "Etiqueta de Transporte en China",
+  "tips": [
+    {
+      "id": "trans_001",
+      "category": "metro",
+      "tip": "Deja que los pasajeros bajen antes de subir",
+      "detail": "Párate fuera de las líneas marcadas en el andén y espera hasta que todos los pasajeros hayan bajado antes de subir al tren.",
+      "do": true
+    },
+    {
+      "id": "trans_002",
+      "category": "metro",
+      "tip": "Ten tu código de transporte o tarjeta listo antes de la puerta de acceso",
+      "detail": "Prepara tu código QR o tarjeta de transporte mientras haces fila para no retrasar a otros en el torniquete. Los códigos QR de transporte de Alipay y WeChat funcionan en la mayoría de las ciudades.",
+      "do": true
+    },
+    {
+      "id": "trans_003",
+      "category": "priority_seating",
+      "tip": "Cede los asientos prioritarios a quienes los necesiten",
+      "detail": "Los asientos cerca de las puertas marcados con un color diferente están reservados para personas mayores, embarazadas, pasajeros con discapacidad y personas con niños pequeños. Desocúpalos rápidamente cuando alguien que los necesite suba al transporte.",
+      "do": true
+    },
+    {
+      "id": "trans_004",
+      "category": "priority_seating",
+      "tip": "No finjas dormir para evitar ceder tu asiento",
+      "detail": "Los pasajeros suelen darse cuenta y las redes sociales en China critican frecuentemente este comportamiento. Ofrece tu asiento con amabilidad cuando una persona mayor o embarazada esté de pie cerca.",
+      "do": false
+    },
+    {
+      "id": "trans_005",
+      "category": "luggage",
+      "tip": "Mantén el equipaje compacto y fuera del pasillo",
+      "detail": "Coloca las bolsas entre tus pies o en tu regazo. Durante las horas punta, las maletas grandes deben colocarse en el área de equipaje cerca de las puertas del tren sin bloquear los pasillos.",
+      "do": true
+    },
+    {
+      "id": "trans_006",
+      "category": "eating",
+      "tip": "Evita comer alimentos con olor fuerte en el transporte",
+      "detail": "Comer en el metro está oficialmente prohibido en muchas ciudades chinas. Incluso en trenes de larga distancia, evita alimentos con olores fuertes como los fideos instantáneos en los vagones cerrados por cortesía.",
+      "do": false
+    },
+    {
+      "id": "trans_007",
+      "category": "phone_calls",
+      "tip": "Mantén las llamadas telefónicas en tono bajo o envía mensajes en su lugar",
+      "detail": "Usa auriculares para las llamadas y habla en voz baja. En trenes de alta velocidad, ve al área del vestíbulo entre vagones para conversaciones más largas.",
+      "do": true
+    },
+    {
+      "id": "trans_008",
+      "category": "phone_calls",
+      "tip": "No reproduzcas contenido multimedia por el altavoz",
+      "detail": "Reproducir videos, música o juegos sin auriculares se considera muy grosero en el transporte público chino. Muchos sistemas de metro ahora emiten recordatorios explícitos en contra de esta práctica.",
+      "do": false
+    },
+    {
+      "id": "trans_009",
+      "category": "queue_jumping",
+      "tip": "Respeta las filas en las paradas de autobús y taquillas",
+      "detail": "Aunque la cultura de hacer fila varía según la ciudad, colarse es universalmente mal visto. Sigue el orden de la multitud y usa las líneas designadas donde estén marcadas.",
+      "do": true
+    },
+    {
+      "id": "trans_010",
+      "category": "queue_jumping",
+      "tip": "No empujes al subir",
+      "detail": "Durante la hora punta en ciudades como Pekín y Shanghái, el hacinamiento es intenso. Sé paciente y evita empujar agresivamente: espera al siguiente tren si este está lleno.",
+      "do": false
+    },
+    {
+      "id": "trans_011",
+      "category": "taxi",
+      "tip": "Confirma que el taxímetro esté en marcha al subir a un taxi",
+      "detail": "Asegúrate siempre de que el conductor active el taxímetro. En aeropuertos y estaciones de tren, prefiere la fila oficial de taxis en lugar de los ofrecedores informales que te abordan en la sala de llegadas.",
+      "do": true
+    },
+    {
+      "id": "trans_012",
+      "category": "honking",
+      "tip": "No te alarmes por el claxon frecuente",
+      "detail": "Los conductores en China suelen tocar el claxon como advertencia de cortesía más que por enojo. Generalmente significa 'aquí estoy' o 'voy a pasar'. Mantén la calma y estate alerta al cruzar las calles.",
+      "do": true
+    },
+    {
+      "id": "trans_013",
+      "category": "seatbelts",
+      "tip": "Siempre usa el cinturón de seguridad en el asiento trasero de los taxis",
+      "detail": "La ley china exige que todos los pasajeros usen cinturón de seguridad. Los cinturones traseros a veces están escondidos dentro del asiento: sácalos y abróchalos antes de partir.",
+      "do": true
+    },
+    {
+      "id": "trans_014",
+      "category": "didi",
+      "tip": "Comparte los detalles de tu viaje y verifica el vehículo antes de subir",
+      "detail": "Al usar DiDi, confirma que la placa, el modelo del vehículo y la foto del conductor en la aplicación coincidan con el vehículo. Usa la función de compartir dentro de la app para enviar los detalles del viaje a un contacto de confianza.",
+      "do": true
+    },
+    {
+      "id": "trans_015",
+      "category": "didi",
+      "tip": "Establece tu destino en chino para una mejor navegación",
+      "detail": "La mayoría de los conductores de DiDi solo leen chino. Escribe tu destino en caracteres chinos o marca un punto en el mapa. Mantén la ventana de chat del conductor abierta por si te envía un mensaje para aclarar el punto de recogida.",
+      "do": true
+    }
+  ]
+}

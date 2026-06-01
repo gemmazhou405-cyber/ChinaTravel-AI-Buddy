@@ -1,0 +1,111 @@
+{
+  "id": "religion",
+  "title": "Sites religieux & étiquette dans les temples en Chine",
+  "tips": [
+    {
+      "id": "rel_001",
+      "category": "dress",
+      "tip": "Couvrir les épaules et les genoux dans les temples",
+      "detail": "Apportez une écharpe ou une veste légère pour couvrir la peau exposée dans les temples bouddhistes et taoïstes. Évitez les jupes courtes, les shorts et les hauts sans manches.",
+      "do": true
+    },
+    {
+      "id": "rel_002",
+      "category": "dress",
+      "tip": "Retirer son chapeau en entrant dans les halls principaux",
+      "detail": "Retirez vos chapeaux, casquettes et lunettes de soleil en entrant dans le principal hall de culte, par respect pour les divinités.",
+      "do": true
+    },
+    {
+      "id": "rel_003",
+      "category": "shoes",
+      "tip": "Retirer ses chaussures au seuil si demandé",
+      "detail": "Certains temples fournissent des étagères pour les chaussures. Repérez les panneaux ou suivez les locaux. Enjambez le cadre de porte plutôt que de marcher dessus.",
+      "do": true
+    },
+    {
+      "id": "rel_004",
+      "category": "shoes",
+      "tip": "Porter des chaussettes propres et des chaussures faciles à retirer",
+      "detail": "Comme vous devrez peut-être retirer vos chaussures fréquemment, portez des chaussettes présentables et des chaussures à enfiler pour plus de commodité.",
+      "do": true
+    },
+    {
+      "id": "rel_005",
+      "category": "photography",
+      "tip": "Vérifier les restrictions sur la photographie",
+      "detail": "De nombreux temples interdisent la photographie à l'intérieur des halls de culte. Repérez les panneaux et demandez toujours la permission avant de photographier des moines ou des fidèles.",
+      "do": false
+    },
+    {
+      "id": "rel_006",
+      "category": "photography",
+      "tip": "Ne jamais utiliser le flash près des statues de Bouddha",
+      "detail": "Le flash peut endommager la dorure et les peintures anciennes. Même là où les photos sont autorisées, désactivez toujours votre flash.",
+      "do": false
+    },
+    {
+      "id": "rel_007",
+      "category": "offerings",
+      "tip": "Apporter des offrandes appropriées",
+      "detail": "Les fruits, les fleurs et les en-cas végétariens emballés conviennent. N'apportez jamais de viande dans un temple bouddhiste.",
+      "do": true
+    },
+    {
+      "id": "rel_008",
+      "category": "incense",
+      "tip": "Tenir l'encens correctement à deux mains",
+      "detail": "Allumez l'encens avec la bougie du temple, jamais avec celui d'une autre personne. Tenez-le droit et inclinez-vous trois fois avant de le placer dans l'encensoir.",
+      "do": true
+    },
+    {
+      "id": "rel_009",
+      "category": "incense",
+      "tip": "Ne pas souffler sur l'encens ou les bougies",
+      "detail": "Agitez doucement ou laissez couler pour éteindre les flammes. Souffler est considéré irrespectueux car la bouche porte un souffle impur.",
+      "do": false
+    },
+    {
+      "id": "rel_010",
+      "category": "behavior",
+      "tip": "S'incliner ou s'agenouiller respectueusement devant les statues de Bouddha",
+      "detail": "Une légère inclinaison avec les paumes jointes est appropriée. Si vous souhaitez prier, agenouillez-vous sur le coussin et inclinez-vous trois fois, les mains en position de prière.",
+      "do": true
+    },
+    {
+      "id": "rel_011",
+      "category": "monks",
+      "tip": "S'adresser aux moines et nonnes avec respect",
+      "detail": "Utilisez « Fashi » (法师) pour les moines bouddhistes ou « Shifu » (师傅). Évitez de toucher les moines, surtout si vous êtes d'un sexe différent. Ne serrez pas la main en premier.",
+      "do": true
+    },
+    {
+      "id": "rel_012",
+      "category": "sacred",
+      "tip": "Ne jamais toucher ou pointer du doigt les statues ou objets sacrés",
+      "detail": "Ne touchez pas les statues de Bouddha, les textes religieux ou les objets rituels sauf si vous y êtes explicitement invité. Pointer du doigt est impoli ; utilisez une main ouverte à la place.",
+      "do": false
+    },
+    {
+      "id": "rel_013",
+      "category": "fees",
+      "tip": "Payer les droits d'entrée et les dons sans se plaindre",
+      "detail": "De nombreux temples facturent des droits d'entrée pour soutenir leur conservation. Des boîtes à dons sont également courantes. Ayez des petites coupures et des pièces.",
+      "do": true
+    },
+    {
+      "id": "rel_014",
+      "category": "quiet",
+      "tip": "Maintenir le silence et un comportement calme",
+      "detail": "Parlez à voix basse. Ne riez pas bruyamment, ne courez pas et ne passez pas d'appels téléphoniques à l'intérieur de l'enceinte du temple. Mettez votre téléphone portable en silencieux.",
+      "do": true
+    },
+    {
+      "id": "rel_015",
+      "category": "prayer",
+      "tip": "Respecter les zones de prière et les fidèles",
+      "detail": "Ne passez pas devant quelqu'un qui prie. Attendez qu'il ait fini pour passer. Ne vous asseyez pas dans les zones réservées aux fidèles.",
+      "do": true
+    }
+  ]
+}

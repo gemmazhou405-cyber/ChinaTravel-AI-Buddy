@@ -1,0 +1,111 @@
+{
+  "id": "religion",
+  "title": "Religiöse Stätten & Tempel-Etikette in China",
+  "tips": [
+    {
+      "id": "rel_001",
+      "category": "dress",
+      "tip": "Schultern und Knie in Tempeln bedecken",
+      "detail": "Bringen Sie einen Schal oder eine leichte Jacke mit, um freie Hautstellen in buddhistischen und daoistischen Tempeln zu bedecken. Vermeiden Sie kurze Röcke, Shorts und ärmellose Oberteile.",
+      "do": true
+    },
+    {
+      "id": "rel_002",
+      "category": "dress",
+      "tip": "Beim Betreten der Haupthallen den Hut abnehmen",
+      "detail": "Nehmen Sie Hüte, Mützen und Sonnenbrillen ab, wenn Sie den Haupthandlungsraum betreten, als Zeichen des Respekts vor den Gottheiten.",
+      "do": true
+    },
+    {
+      "id": "rel_003",
+      "category": "shoes",
+      "tip": "Bei Bedarf die Schuhe an der Schwelle ausziehen",
+      "detail": "Einige Tempel bieten Regale für Schuhe an. Achten Sie auf Schilder oder folgen Sie den Einheimischen. Treten Sie über die Türschwelle, nicht darauf.",
+      "do": true
+    },
+    {
+      "id": "rel_004",
+      "category": "shoes",
+      "tip": "Saubere Socken und leicht ausziehbare Schuhe tragen",
+      "detail": "Da Sie möglicherweise häufig die Schuhe ausziehen müssen, tragen Sie gepflegte Socken und Slipper für mehr Bequemlichkeit.",
+      "do": true
+    },
+    {
+      "id": "rel_005",
+      "category": "photography",
+      "tip": "Auf Fotografierbeschränkungen achten",
+      "detail": "Viele Tempel verbieten Fotografien in den Handlungshallen. Achten Sie auf Schilder und fragen Sie immer um Erlaubnis, bevor Sie Mönche oder Gläubige fotografieren.",
+      "do": false
+    },
+    {
+      "id": "rel_006",
+      "category": "photography",
+      "tip": "In der Nähe von Buddha-Statuen niemals mit Blitzlicht fotografieren",
+      "detail": "Blitzlicht kann alte Vergoldungen und Gemälde beschädigen. Auch wo Fotos erlaubt sind, sollten Sie den Blitz immer deaktivieren.",
+      "do": false
+    },
+    {
+      "id": "rel_007",
+      "category": "offerings",
+      "tip": "Angemessene Opfergaben mitbringen",
+      "detail": "Früchte, Blumen und verpackte vegetarische Snacks sind geeignete Opfergaben. Bringen Sie niemals Fleisch in einen buddhistischen Tempel mit.",
+      "do": true
+    },
+    {
+      "id": "rel_008",
+      "category": "incense",
+      "tip": "Räucherstäbchen mit beiden Händen richtig halten",
+      "detail": "Zünden Sie Räucherstäbchen mit der Tempelkerze an, niemals an einem Stäbchen einer anderen Person. Halten Sie es aufrecht und verbeugen Sie sich dreimal, bevor Sie es in den Brenner legen.",
+      "do": true
+    },
+    {
+      "id": "rel_009",
+      "category": "incense",
+      "tip": "Räucherstäbchen oder Kerzen nicht mit dem Mund auspusten",
+      "detail": "Fächeln oder wedeln Sie sanft, um Flammen zu löschen. Pusten gilt als respektlos, da der Mund unreinen Atem trägt.",
+      "do": false
+    },
+    {
+      "id": "rel_010",
+      "category": "behavior",
+      "tip": "Bei der Begrüßung von Buddha-Statuen respektvoll verbeugen oder knien",
+      "detail": "Eine leichte Verbeugung mit zusammengelegten Handflächen ist angemessen. Wenn Sie beten möchten, knien Sie auf das Kissen und verbeugen Sie sich dreimal mit gefalteten Händen.",
+      "do": true
+    },
+    {
+      "id": "rel_011",
+      "category": "monks",
+      "tip": "Mönche und Nonnen respektvoll ansprechen",
+      "detail": "Verwenden Sie 'Fashi' (法师) für buddhistische Mönche oder 'Shifu' (师傅). Vermeiden Sie es, Mönche zu berühren, insbesondere wenn Sie ein anderes Geschlecht haben. Initiieren Sie keine Handschläge.",
+      "do": true
+    },
+    {
+      "id": "rel_012",
+      "category": "sacred",
+      "tip": "Heilige Statuen oder Gegenstände niemals berühren oder darauf zeigen",
+      "detail": "Berühren Sie keine Buddha-Statuen, religiösen Texte oder rituellen Gegenstände, es sei denn, Sie wurden ausdrücklich dazu eingeladen. Mit einem einzelnen Finger zu zeigen ist unhöflich; verwenden Sie stattdessen eine offene Hand.",
+      "do": false
+    },
+    {
+      "id": "rel_013",
+      "category": "fees",
+      "tip": "Eintrittsgebühren und Spenden ohne Beschwerde bezahlen",
+      "detail": "Viele Tempel erheben eine Eintrittsgebühr zur Unterstützung der Erhaltung. Kleine Spendenboxen sind ebenfalls üblich. Nehmen Sie kleine Scheine und Münzen mit.",
+      "do": true
+    },
+    {
+      "id": "rel_014",
+      "category": "quiet",
+      "tip": "Ruhe und eine ruhige Haltung bewahren",
+      "detail": "Sprechen Sie leise. Lachen Sie nicht laut, rennen Sie nicht und führen Sie keine Telefongespräche auf dem Tempelgelände. Schalten Sie Ihr Mobiltelefon auf lautlos.",
+      "do": true
+    },
+    {
+      "id": "rel_015",
+      "category": "prayer",
+      "tip": "Gebetsbereiche und Gläubige respektieren",
+      "detail": "Gehen Sie nicht vor jemandem, der betet, hindurch. Warten Sie, bis er fertig ist, bevor Sie vorbeigehen. Setzen Sie sich nicht in Bereiche, die nur für Gläubige bestimmt sind.",
+      "do": true
+    }
+  ]
+}

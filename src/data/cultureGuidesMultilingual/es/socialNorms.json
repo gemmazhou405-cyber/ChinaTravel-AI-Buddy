@@ -1,0 +1,111 @@
+{
+  "id": "socialNorms",
+  "title": "Normas Sociales y Tabúes Culturales",
+  "tips": [
+    {
+      "id": "soc_001",
+      "category": "taboo",
+      "tip": "Evite discutir temas políticos sensibles",
+      "detail": "Temas como Taiwán, Tíbet, Sinkiang, Tiananmén y las críticas al gobierno son altamente sensibles. Manténgase neutral o redirija la conversación si surgen.",
+      "do": false
+    },
+    {
+      "id": "soc_002",
+      "category": "culture",
+      "tip": "Comprenda el concepto de 'cara' (面子 miànzi)",
+      "detail": "La cara se refiere a la reputación y dignidad de una persona. Nunca avergüence, critique o contradiga públicamente a alguien. Proteger la cara de los demás genera confianza y respeto.",
+      "do": true
+    },
+    {
+      "id": "soc_003",
+      "category": "culture",
+      "tip": "Evite hacer que alguien 'pierda la cara' en público",
+      "detail": "Señalar errores, discutir en voz alta o rechazar a alguien de manera brusca frente a otros es profundamente ofensivo. Maneje los desacuerdos de forma privada y diplomática.",
+      "do": false
+    },
+    {
+      "id": "soc_004",
+      "category": "etiquette",
+      "tip": "Es normal preguntar por la edad",
+      "detail": "A diferencia de las culturas occidentales, preguntar la edad de alguien es común en China y se considera cortés en lugar de entrometido. Las personas pueden preguntar directamente para determinar las formas de tratamiento adecuadas.",
+      "do": true
+    },
+    {
+      "id": "soc_005",
+      "category": "etiquette",
+      "tip": "Muestre respeto a las personas mayores",
+      "detail": "La cultura china enfatiza la piedad filial. Ofrezca su asiento a personas mayores en el transporte público, sirva el té primero a los mayores y use un lenguaje respetuoso con las personas de edad avanzada.",
+      "do": true
+    },
+    {
+      "id": "soc_006",
+      "category": "etiquette",
+      "tip": "Espere preguntas sobre el salario e ingresos",
+      "detail": "Preguntar sobre el salario, el costo de la vivienda o la situación financiera se considera una conversación casual normal en China, no descortés. Puede desviar cortésmente si se siente incómodo, pero no se lo tome a mal.",
+      "do": true
+    },
+    {
+      "id": "soc_007",
+      "category": "culture",
+      "tip": "Se espera regatear en mercados y tiendas pequeñas",
+      "detail": "Los precios en mercados y vendedores ambulantes rara vez son fijos. Negocie cortésmente pero manténgase respetuoso. Comience alrededor del 30-50% del precio pedido y lleguen a un punto medio.",
+      "do": true
+    },
+    {
+      "id": "soc_008",
+      "category": "taboo",
+      "tip": "Tenga cuidado al elogiar al hijo de alguien",
+      "detail": "Algunos chinos tradicionales creen que el elogio excesivo de un niño puede atraer malos espíritus. Si elogia a un niño, los padres pueden responder con comentarios autodespectivos por superstición.",
+      "do": false
+    },
+    {
+      "id": "soc_009",
+      "category": "taboo",
+      "tip": "Evite regalar relojes, peras o paraguas",
+      "detail": "Los relojes (送钟 sòng zhōng) suenan como 'asistir a un funeral'. Las peras (梨 lí) simbolizan la separación. Los paraguas (伞 sǎn) significan 'romperse'. Se consideran regalos de mala suerte.",
+      "do": false
+    },
+    {
+      "id": "soc_010",
+      "category": "culture",
+      "tip": "Respete las supersticiones y creencias locales",
+      "detail": "Muchos chinos siguen el feng shui, las creencias del zodíaco y la selección de fechas auspiciosas. No se burle ni desestime estas prácticas, incluso si no las comparte.",
+      "do": true
+    },
+    {
+      "id": "soc_011",
+      "category": "culture",
+      "tip": "El número 8 (八 bā) es extremadamente afortunado",
+      "detail": "El número 8 suena como 'prosperidad' (发 fā). Es muy buscado para números de teléfono, direcciones, placas de matrícula y fechas de boda. Los precios con 8 se consideran favorables.",
+      "do": true
+    },
+    {
+      "id": "soc_012",
+      "category": "taboo",
+      "tip": "Evite el número 4 cuando sea posible",
+      "detail": "El número 4 (四 sì) suena como 'muerte' (死 sǐ). Muchos edificios omiten el cuarto piso. Evite dar regalos en conjuntos de cuatro o usar el número en contextos importantes.",
+      "do": false
+    },
+    {
+      "id": "soc_013",
+      "category": "etiquette",
+      "tip": "Pida permiso antes de fotografiar a desconocidos",
+      "detail": "Tomar fotos de personas sin su consentimiento, especialmente a personas mayores, minorías étnicas o residentes rurales, puede verse como irrespetuoso. Siempre pida primero o use gestos para buscar aprobación.",
+      "do": false
+    },
+    {
+      "id": "soc_014",
+      "category": "etiquette",
+      "tip": "Las normas de espacio personal difieren de los países occidentales",
+      "detail": "Las personas chinas pueden pararse más cerca durante una conversación, chocar con usted sin disculparse o empujar en multitudes. Esto es culturalmente normal y no se considera una falta de educación.",
+      "do": true
+    },
+    {
+      "id": "soc_015",
+      "category": "etiquette",
+      "tip": "La etiqueta para hacer fila puede ser menos formal",
+      "detail": "En áreas concurridas, los locales pueden no formar filas ordenadas. Tenga paciencia, manténgase asertivo pero tranquilo, y proteja su posición cortésmente. Los sistemas de metro y aeropuertos generalmente tienen filas ordenadas.",
+      "do": true
+    }
+  ]
+}

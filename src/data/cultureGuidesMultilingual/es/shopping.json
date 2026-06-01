@@ -1,0 +1,111 @@
+{
+  "id": "shopping",
+  "title": "Cultura de Compras y Consejos para Regatear para Turistas en China",
+  "tips": [
+    {
+      "id": "shop_001",
+      "category": "bargaining",
+      "tip": "Regatear en mercados y tiendas pequeñas",
+      "detail": "Se espera regatear en mercados callejeros, tiendas de souvenirs y tiendas independientes. Comienza entre el 30-40% del precio solicitado.",
+      "do": true
+    },
+    {
+      "id": "shop_002",
+      "category": "bargaining",
+      "tip": "No regatear en grandes almacenes o centros comerciales",
+      "detail": "Los precios en grandes centros comerciales, supermercados y tiendas de cadena son fijos. Intentar regatear puede considerarse de mala educación.",
+      "do": false
+    },
+    {
+      "id": "shop_003",
+      "category": "fixed_price",
+      "tip": "Identificar tiendas de precio fijo",
+      "detail": "Busca letreros que digan '不讲价' (bù jiǎng jià), que significa 'sin regatear'. Esto es común en comercios modernos y librerías.",
+      "do": true
+    },
+    {
+      "id": "shop_004",
+      "category": "quality_checking",
+      "tip": "Revisar los productos minuciosamente antes de comprar",
+      "detail": "Inspecciona electrónicos, ropa y cerámica en busca de defectos. Prueba cremalleras, botones y funciones de pantalla cuando sea posible.",
+      "do": true
+    },
+    {
+      "id": "shop_005",
+      "category": "receipts",
+      "tip": "Siempre solicitar un recibo oficial (fapiao)",
+      "detail": "El recibo fiscal oficial (fapiao) es esencial para reclamaciones de garantía, devoluciones o reembolsos de gastos. Solicítalo de forma proactiva.",
+      "do": true
+    },
+    {
+      "id": "shop_006",
+      "category": "returns",
+      "tip": "Comprender las políticas de devolución antes de comprar",
+      "detail": "Las políticas de devolución varían. Los grandes centros comerciales suelen tener un plazo de 7 a 30 días con recibo. Las tiendas pequeñas pueden rechazar devoluciones.",
+      "do": true
+    },
+    {
+      "id": "shop_007",
+      "category": "fake_goods",
+      "tip": "Tener cuidado con las 'ganga' de marcas famosas",
+      "detail": "Los electrónicos extremadamente baratos, bolsos de lujo o relojes probablemente sean falsificaciones. Compra productos de marca solo en tiendas autorizadas.",
+      "do": false
+    },
+    {
+      "id": "shop_008",
+      "category": "WeChat_pay",
+      "tip": "Configurar WeChat Pay o Alipay si es posible",
+      "detail": "Los pagos móviles están en todas partes. Muchos vendedores pequeños prefieren o solo aceptan estas aplicaciones. Se acepta efectivo pero es cada vez más raro.",
+      "do": true
+    },
+    {
+      "id": "shop_009",
+      "category": "WeChat_pay",
+      "tip": "Siempre llevar algo de efectivo como respaldo",
+      "detail": "Ten billetes pequeños (10, 20, 50 yuanes) para mercados, taxis y lugares donde el pago móvil pueda fallar por problemas de red.",
+      "do": true
+    },
+    {
+      "id": "shop_010",
+      "category": "group_buying",
+      "tip": "Preguntar a los locales sobre 'tuangou' (compra grupal)",
+      "detail": "Muchos restaurantes y servicios ofrecen grandes descuentos a través de compras grupales en aplicaciones como Meituan. Pide ayuda al personal de tu hotel.",
+      "do": true
+    },
+    {
+      "id": "shop_011",
+      "category": "night_markets",
+      "tip": "Llevar efectivo y regatear en los mercados nocturnos",
+      "detail": "Los mercados nocturnos (yè shì) son para comida y baratillas. Los precios son negociables y el efectivo se sigue usando ampliamente para comida callejera.",
+      "do": true
+    },
+    {
+      "id": "shop_012",
+      "category": "night_markets",
+      "tip": "Probar la comida antes de comprar una gran cantidad",
+      "detail": "A menudo puedes probar bocadillos. Compra una porción pequeña primero para verificar si te gusta el sabor antes de comprar más.",
+      "do": true
+    },
+    {
+      "id": "shop_013",
+      "category": "duty_free",
+      "tip": "Usar tiendas libres de impuestos para marcas conocidas",
+      "detail": "Las tiendas libres de impuestos en aeropuertos y zonas específicas ofrecen productos de lujo y cosméticos auténticos, a menudo a buenos precios.",
+      "do": true
+    },
+    {
+      "id": "shop_014",
+      "category": "duty_free",
+      "tip": "Verificar las exenciones de impuestos de tu país",
+      "detail": "Conoce los límites de importación para alcohol, tabaco y valor total para evitar impuestos al regresar a casa. Guarda todos los recibos.",
+      "do": true
+    },
+    {
+      "id": "shop_015",
+      "category": "bargaining",
+      "tip": "Usar una calculadora o aplicación de traducción para números",
+      "detail": "Muestra el precio que deseas pagar en la calculadora de tu teléfono para evitar confusiones durante las negociaciones de precios.",
+      "do": true
+    }
+  ]
+}

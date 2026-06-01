@@ -1,0 +1,111 @@
+{
+  "id": "transport",
+  "title": "Transport-Etikette in China",
+  "tips": [
+    {
+      "id": "trans_001",
+      "category": "metro",
+      "tip": "Lassen Sie Fahrgäste aussteigen, bevor Sie einsteigen",
+      "detail": "Stellen Sie sich außerhalb der markierten Linien auf dem Bahnsteig auf und warten Sie, bis alle Fahrgäste ausgestiegen sind, bevor Sie in den Zug einsteigen.",
+      "do": true
+    },
+    {
+      "id": "trans_002",
+      "category": "metro",
+      "tip": "Halten Sie Ihren Transcode oder Ihre Karte bereit, bevor Sie die Schranke passieren",
+      "detail": "Bereiten Sie Ihren QR-Code oder Ihre Fahrkarte bereits in der Schlange vor, damit Sie andere an der Drehsperre nicht aufhalten. Alipay- und WeChat-Transit-QR-Codes funktionieren in den meisten Städten.",
+      "do": true
+    },
+    {
+      "id": "trans_003",
+      "category": "priority_seating",
+      "tip": "Räumen Sie Vorrangplätze für Bedürftige",
+      "detail": "Plätze in der Nähe der Türen, die in einer anderen Farbe markiert sind, sind für ältere Menschen, Schwangere, behinderte Fahrgäste und Personen mit kleinen Kindern reserviert. Räumen Sie diese umgehend, wenn eine bedürftige Person einsteigt.",
+      "do": true
+    },
+    {
+      "id": "trans_004",
+      "category": "priority_seating",
+      "tip": "Stellen Sie sich nicht schlafend, um Ihren Sitzplatz nicht aufgeben zu müssen",
+      "detail": "Fahrgäste bemerken dies häufig und soziale Medien in China kritisieren dieses Verhalten regelmäßig. Bieten Sie Ihren Sitzplatz würdevoll an, wenn eine ältere oder schwangere Person in der Nähe steht.",
+      "do": false
+    },
+    {
+      "id": "trans_005",
+      "category": "luggage",
+      "tip": "Halten Sie Gepäck kompakt und außerhalb des Gangs",
+      "detail": "Stellen Sie Taschen zwischen Ihre Füße oder auf Ihren Schoß. Stoßzeiten sollten große Koffer im Gepäckbereich in der Nähe der Zugtüren aufbewahrt werden und keine Wege blockieren.",
+      "do": true
+    },
+    {
+      "id": "trans_006",
+      "category": "eating",
+      "tip": "Vermeiden Sie stark riechende Speisen im öffentlichen Nahverkehr",
+      "detail": "Das Essen in der U-Bahn ist in vielen chinesischen Städten offiziell verboten. Auch in Langstreckenzügen sollten Sie Lebensmittel mit starkem Geruch wie Instantnudeln in geschlossenen Wagen vermeiden, um Rücksicht zu nehmen.",
+      "do": false
+    },
+    {
+      "id": "trans_007",
+      "category": "phone_calls",
+      "tip": "Führen Sie Telefongespräche leise oder schreiben Sie stattdessen",
+      "detail": "Verwenden Sie Kopfhörer für Gespräche und sprechen Sie leise. In Hochgeschwindigkeitszügen können Sie für längere Gespräche in den Bereich zwischen den Wagen gehen.",
+      "do": true
+    },
+    {
+      "id": "trans_008",
+      "category": "phone_calls",
+      "tip": "Spielen Sie Medien nicht über den Lautsprecher ab",
+      "detail": "Das Abspielen von Videos, Musik oder Spielen ohne Kopfhörer gilt im chinesischen öffentlichen Nahverkehr als sehr unhöflich. Viele U-Bahn-Systeme senden mittlerweile ausdrückliche Durchsagen dagegen.",
+      "do": false
+    },
+    {
+      "id": "trans_009",
+      "category": "queue_jumping",
+      "tip": "Halten Sie sich an Schlangen an Bushaltestellen und Fahrkartenschaltern",
+      "detail": "Obwohl die Schlangenkultur je nach Stadt variiert, wird das Drängeln überall missbilligt. Folgen Sie der Reihenfolge und benutzen Sie ausgewiesene Schlangen, wo markiert.",
+      "do": true
+    },
+    {
+      "id": "trans_010",
+      "category": "queue_jumping",
+      "tip": "Drängen oder Schieben Sie nicht beim Einsteigen",
+      "detail": "Während der Stoßzeiten in Städten wie Peking und Shanghai ist der Andrang groß. Seien Sie geduldig und vermeiden Sie aggressives Drängeln – warten Sie auf den nächsten Zug, wenn dieser voll ist.",
+      "do": false
+    },
+    {
+      "id": "trans_011",
+      "category": "taxi",
+      "tip": "Überprüfen Sie beim Einsteigen in ein Taxi, ob der Taxameter läuft",
+      "detail": "Stellen Sie sicher, dass der Fahrer den Taxameter einschaltet. An Flughäfen und Bahnhöfen bevorzugen Sie die offizielle Taxischlange gegenüber Lockrufen von Vermittlern in der Ankunftshalle.",
+      "do": true
+    },
+    {
+      "id": "trans_012",
+      "category": "honking",
+      "tip": "Lassen Sie sich nicht von häufigem Hupen beunruhigen",
+      "detail": "Fahrer in China hupen oft als Höflichkeitswarnung aus Ärger. Es bedeutet in der Regel ‚Ich bin hier' oder ‚Ich komme durch'. Bleiben Sie ruhig und aufmerksam, wenn Sie Straßen überqueren.",
+      "do": true
+    },
+    {
+      "id": "trans_013",
+      "category": "seatbelts",
+      "tip": "Tragen Sie immer einen Sicherheitsgurt auf dem Rücksitz von Taxis",
+      "detail": "Das chinesische Gesetz verlangt, dass alle Fahrgäste Sicherheitsgurte tragen. Die Gurte auf der Rückbank sind manchmal im Sitz verstaut – ziehen Sie sie heraus und schnallen Sie sich vor der Abfahrt an.",
+      "do": true
+    },
+    {
+      "id": "trans_014",
+      "category": "didi",
+      "tip": "Teilen Sie Ihre Fahrtangaben und überprüfen Sie das Fahrzeug vor dem Einsteigen",
+      "detail": "Wenn Sie DiDi nutzen, vergewissern Sie sich, dass das Kennzeichen, das Fahrzeugmodell und das Fahrerfoto in der App mit dem Fahrzeug übereinstimmen. Verwenden Sie die In-App-Teilen-Funktion, um Fahrtangaben an einen vertrauenswürdigen Kontakt zu senden.",
+      "do": true
+    },
+    {
+      "id": "trans_015",
+      "category": "didi",
+      "tip": "Geben Sie Ihr Ziel auf Chinesisch ein für eine bessere Navigation",
+      "detail": "Die meisten DiDi-Fahrer lesen nur Chinesisch. Geben Sie Ihr Ziel in chinesischen Schriftzeichen ein oder setzen Sie eine Markierung auf der Karte. Halten Sie das Chatfenster des Fahrers offen, falls er Ihnen wegen der Abholort-Klärung schreibt.",
+      "do": true
+    }
+  ]
+}

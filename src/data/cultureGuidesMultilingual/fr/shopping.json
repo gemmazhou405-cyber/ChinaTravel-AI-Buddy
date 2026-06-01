@@ -1,0 +1,111 @@
+{
+  "id": "shopping",
+  "title": "Culture des Achats et Conseils de Négociation pour les Touristes en Chine",
+  "tips": [
+    {
+      "id": "shop_001",
+      "category": "negociation",
+      "tip": "Négocier dans les marchés et petites boutiques",
+      "detail": "La négociation est attendue dans les marchés de rue, les boutiques de souvenirs et les magasins indépendants. Commencez à 30-40% du prix demandé.",
+      "do": true
+    },
+    {
+      "id": "shop_002",
+      "category": "negociation",
+      "tip": "Ne pas négocier dans les grands magasins ou centres commerciaux",
+      "detail": "Les prix dans les grands centres commerciaux, supermarchés et chaînes de magasins sont fixes. Tenter de négocier peut être perçu comme impoli.",
+      "do": false
+    },
+    {
+      "id": "shop_003",
+      "category": "prix_fixe",
+      "tip": "Identifier les magasins à prix fixe",
+      "detail": "Cherchez des panneaux indiquant '不讲价' (bù jiǎng jià) signifiant 'pas de négociation'. C'est courant dans la grande distribution et les librairies.",
+      "do": true
+    },
+    {
+      "id": "shop_004",
+      "category": "verification_qualite",
+      "tip": "Vérifier les produits soigneusement avant l'achat",
+      "detail": "Inspectez les appareils électroniques, les vêtements et la céramique pour détecter les défauts. Testez les fermetures éclair, boutons et fonctions d'écran si possible.",
+      "do": true
+    },
+    {
+      "id": "shop_005",
+      "category": "reçus",
+      "tip": "Toujours demander un reçu officiel (fapiao)",
+      "detail": "Le reçu fiscal officiel (fapiao) est essentiel pour les réclamations de garantie, les retours ou le remboursement des frais. Demandez-le de manière proactive.",
+      "do": true
+    },
+    {
+      "id": "shop_006",
+      "category": "retours",
+      "tip": "Comprendre les politiques de retour avant l'achat",
+      "detail": "Les politiques de retour varient. Les grands centres commerciaux ont généralement une fenêtre de retour de 7 à 30 jours avec reçu. Les petites boutiques peuvent refuser les retours.",
+      "do": true
+    },
+    {
+      "id": "shop_007",
+      "category": "produits_contrefaits",
+      "tip": "Méfier des 'bonnes affaires' de marques",
+      "detail": "Les appareils électroniques, sacs de luxe ou montres extrêmement bon marché sont probablement des contrefaçons. Achetez les produits de marque uniquement chez les détaillants agréés.",
+      "do": false
+    },
+    {
+      "id": "shop_008",
+      "category": "paiement_WeChat",
+      "tip": "Configurer WeChat Pay ou Alipay si possible",
+      "detail": "Les paiements mobiles sont omniprésents. De nombreux petits vendeurs préfèrent ou n'acceptent que ces applications. L'argent liquide est accepté mais de plus en plus rare.",
+      "do": true
+    },
+    {
+      "id": "shop_009",
+      "category": "paiement_WeChat",
+      "tip": "Toujours avoir un peu d'argent liquide en secours",
+      "detail": "Ayez des petits billets (10, 20, 50 yuans) pour les marchés, les taxis et les endroits où le paiement mobile peut échouer en raison de problèmes de réseau.",
+      "do": true
+    },
+    {
+      "id": "shop_010",
+      "category": "achats_de_groupe",
+      "tip": "Demander aux locaux concernant le 'tuangou' (achat groupé)",
+      "detail": "De nombreux restaurants et services offrent des réductions importantes via l'achat groupé sur des applications comme Meituan. Demandez de l'aide au personnel de votre hôtel.",
+      "do": true
+    },
+    {
+      "id": "shop_011",
+      "category": "marchés_de_nuit",
+      "tip": "Apporter de l'argent liquide et négocier aux marchés de nuit",
+      "detail": "Les marchés de nuit (yè shì) sont pour la nourriture et les bibelots. Les prix sont négociables et l'argent liquide est encore largement utilisé pour la nourriture de rue.",
+      "do": true
+    },
+    {
+      "id": "shop_012",
+      "category": "marchés_de_nuit",
+      "tip": "Goûter la nourriture avant d'en acheter en grande quantité",
+      "detail": "Vous pouvez souvent goûter des en-cas. Achetez d'abord une petite portion pour vérifier si le goût vous plaît avant d'en acheter plus.",
+      "do": true
+    },
+    {
+      "id": "shop_013",
+      "category": "hors_taxe",
+      "tip": "Utiliser les boutiques hors taxe pour les marques connues",
+      "detail": "Les boutiques hors taxe dans les aéroports et zones spécifiques offrent des articles de luxe et cosmétiques authentiques, souvent à de bons prix.",
+      "do": true
+    },
+    {
+      "id": "shop_014",
+      "category": "hors_taxe",
+      "tip": "Vérifier les franchises hors taxe pour votre pays",
+      "detail": "Connaître les limites d'importation pour l'alcool, le tabac et la valeur totale pour éviter les taxes lors du retour. Conservez tous les reçus.",
+      "do": true
+    },
+    {
+      "id": "shop_015",
+      "category": "negociation",
+      "tip": "Utiliser une calculatrice ou une application de traduction pour les chiffres",
+      "detail": "Montrez le prix que vous souhaitez payer sur la calculatrice de votre téléphone pour éviter toute confusion lors des négociations de prix.",
+      "do": true
+    }
+  ]
+}

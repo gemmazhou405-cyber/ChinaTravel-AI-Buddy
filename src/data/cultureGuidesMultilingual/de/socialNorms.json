@@ -1,0 +1,111 @@
+{
+  "id": "socialNorms",
+  "title": "Soziale Normen & Kulturelle Tabus",
+  "tips": [
+    {
+      "id": "soc_001",
+      "category": "taboo",
+      "tip": "Vermeiden Sie die Diskussion sensibler politischer Themen",
+      "detail": "Themen wie Taiwan, Tibet, Xinjiang, Tiananmen und Regierungskritik sind äußerst heikel. Bleiben Sie neutral oder lenken Sie das Gespräch um, falls diese aufkommen.",
+      "do": false
+    },
+    {
+      "id": "soc_002",
+      "category": "culture",
+      "tip": "Verstehen Sie das Konzept des 'Gesichts' (面子 miànzi)",
+      "detail": "'Gesicht' bezieht sich auf den Ruf und die Würde einer Person. Bloßstellen, kritisieren oder öffentlich widersprechen Sie jemandem niemals. Das Schützen des Gesichts anderer schafft Vertrauen und Respekt.",
+      "do": true
+    },
+    {
+      "id": "soc_003",
+      "category": "culture",
+      "tip": "Vermeiden Sie es, jemandem öffentlich das 'Gesicht zu nehmen'",
+      "detail": "Fehler aufzuzeigen, laut zu streiten oder jemanden vor anderen scharf abzuweisen, ist zutiefst beleidigend. Behandeln Sie Meinungsverschiedenheiten privat und diplomatisch.",
+      "do": false
+    },
+    {
+      "id": "soc_004",
+      "category": "etiquette",
+      "tip": "Es ist normal, nach dem Alter zu fragen",
+      "detail": "Im Gegensatz zu westlichen Kulturen ist es in China üblich und gilt als höflich, jemanden nach dem Alter zu fragen. Menschen fragen direkt, um die richtige Anredeform zu bestimmen.",
+      "do": true
+    },
+    {
+      "id": "soc_005",
+      "category": "etiquette",
+      "tip": "Zeigen Sie Respekt gegenüber älteren Menschen",
+      "detail": "Die chinesische Kultur legt großen Wert auf kindliche Pietät. Bieten Sie älteren Menschen Ihren Sitzplatz im öffentlichen Verkehr an, gießen Sie zuerst Tee für die Ältesten ein und verwenden Sie respektvolle Sprache gegenüber Senioren.",
+      "do": true
+    },
+    {
+      "id": "soc_006",
+      "category": "etiquette",
+      "tip": "Erwarten Sie Fragen über Gehalt und Einkommen",
+      "detail": "Fragen über Gehalt, Wohnungskosten oder finanzielle Situation gelten in China als normaler Smalltalk, nicht als unhöflich. Sie können höflich ausweichen, wenn es Ihnen unangenehm ist, aber nehmen Sie es nicht übel.",
+      "do": true
+    },
+    {
+      "id": "soc_007",
+      "category": "culture",
+      "tip": "Feilschen wird auf Märkten und in kleinen Geschäften erwartet",
+      "detail": "Die Preise auf Märkten und bei Straßenhändlern sind selten festgelegt. Verhandeln Sie höflich, aber respektvoll. Beginnen Sie bei ca. 30-50 % des verlangten Preises und einigen Sie sich in der Mitte.",
+      "do": true
+    },
+    {
+      "id": "soc_008",
+      "category": "taboo",
+      "tip": "Seien Sie vorsichtig, wenn Sie das Kind von jemandem loben",
+      "detail": "Einige traditionelle Chinesen glauben, dass übermäßiges Lob eines Kindes böse Geister anziehen könnte. Wenn Sie ein Kind loben, reagieren die Eltern möglicherweise aus Aberglaube mit abwertenden Bemerkungen.",
+      "do": false
+    },
+    {
+      "id": "soc_009",
+      "category": "taboo",
+      "tip": "Vermeiden Sie es, Uhren, Birnen oder Regenschirme als Geschenke zu geben",
+      "detail": "Uhren (送钟 sòng zhōng) klingen wie 'an einer Beerdigung teilnehmen'. Birnen (梨 lí) symbolisieren Trennung. Regenschirme (伞 sǎn) bedeuten 'auseinanderfallen'. Diese gelten als unglückbringende Geschenke.",
+      "do": false
+    },
+    {
+      "id": "soc_010",
+      "category": "culture",
+      "tip": "Respektieren Sie lokale Aberglauben und Überzeugungen",
+      "detail": "Viele Chinesen folgen Feng-Shui, Tierkreisgläubigkeiten und der Wahl glückverheißender Daten. Verspotten oder verwerfen Sie diese Praktiken nicht, selbst wenn Sie sie nicht teilen.",
+      "do": true
+    },
+    {
+      "id": "soc_011",
+      "category": "culture",
+      "tip": "Die Zahl 8 (八 bā) ist äußerst glückbringend",
+      "detail": "Die Zahl 8 klingt wie 'Wohlstand' (发 fā). Sie ist für Telefonnummern, Adressen, Kennzeichen und Hochzeitstermine sehr begehrt. Preise mit der 8 gelten als günstig.",
+      "do": true
+    },
+    {
+      "id": "soc_012",
+      "category": "taboo",
+      "tip": "Vermeiden Sie nach Möglichkeit die Zahl 4",
+      "detail": "Die Zahl 4 (四 sì) klingt wie 'Tod' (死 sǐ). Viele Gebäude überspringen den 4. Stock. Vermeiden Sie es, Geschenke in Viererpacks zu geben oder die Zahl in bedeutungsvollen Zusammenhängen zu verwenden.",
+      "do": false
+    },
+    {
+      "id": "soc_013",
+      "category": "etiquette",
+      "tip": "Fragen Sie vor dem Fotografieren von Fremden um Erlaubnis",
+      "detail": "Menschen ohne Zustimmung zu fotografieren, insbesondere Ältere, ethnische Minderheiten oder Bewohner ländlicher Gebiete, kann als respektlos empfunden werden. Fragen Sie immer zuerst oder nutzen Sie Gesten, um um Erlaubnis zu bitten.",
+      "do": false
+    },
+    {
+      "id": "soc_014",
+      "category": "etiquette",
+      "tip": "Die Normen für persönlichen Raum unterscheiden sich von westlichen Ländern",
+      "detail": "Chinesen stehen möglicherweise beim Gespräch näher, stoßen sich ohne Entschuldigung an oder drängen sich in Menschenmengen. Das ist kulturell normal und nicht als Unhöflichkeit gemeint.",
+      "do": true
+    },
+    {
+      "id": "soc_015",
+      "category": "etiquette",
+      "tip": "Die Schlangenbildung-Etikette kann weniger formell sein",
+      "detail": "In belebten Bereichen bilden Einheimische möglicherweise keine ordentlichen Schlangen. Seien Sie geduldig, bleiben Sie bestimmt, aber ruhig, und sichern Sie Ihre Position höflich. In U-Bahn-Systemen und Flughäfen gibt es in der Regel geordnete Schlangen.",
+      "do": true
+    }
+  ]
+}

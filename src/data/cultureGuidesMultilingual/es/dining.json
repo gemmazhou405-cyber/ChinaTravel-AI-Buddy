@@ -1,0 +1,146 @@
+{
+  "id": "dining",
+  "title": "Cultura gastronómica y modales en la mesa en China",
+  "tips": [
+    {
+      "id": "din_001",
+      "category": "platos_compartidos",
+      "tip": "Los platos se comparten al estilo familiar",
+      "detail": "Pide varios platos para que toda la mesa comparta, no comidas individuales. Este estilo comunal es fundamental en la cultura gastronómica china.",
+      "do": true
+    },
+    {
+      "id": "din_002",
+      "category": "platos_compartidos",
+      "tip": "Toma porciones moderadas de los platos compartidos",
+      "detail": "Usa utensilios de servir cuando estén disponibles. Toma pequeñas cantidades para que todos tengan la oportunidad de servirse. Siempre puedes tomar más en una segunda ronda.",
+      "do": true
+    },
+    {
+      "id": "din_003",
+      "category": "etiqueta_con_palillos",
+      "tip": "Nunca claves los palillos verticalmente en el arroz",
+      "detail": "Los palillos de pie verticalmente en un cuenco de arroz se asemejan a ofrendas de incienso para los difuntos y se consideran extremadamente infaustos.",
+      "do": false
+    },
+    {
+      "id": "din_004",
+      "category": "etiqueta_con_palillos",
+      "tip": "Apoya los palillos en el portapalillos o en el borde del cuenco",
+      "detail": "Cuando no estés comiendo, coloca tus palillos ordenadamente sobre el portapalillos proporcionado o a través del borde de tu cuenco.",
+      "do": true
+    },
+    {
+      "id": "din_005",
+      "category": "etiqueta_con_palillos",
+      "tip": "No señales ni agites los palillos hacia las personas",
+      "detail": "Señalar con palillos o usarlos para gesticular se considera grosero. Manténlos bajos cuando estés hablando.",
+      "do": false
+    },
+    {
+      "id": "din_006",
+      "category": "etiqueta_con_palillos",
+      "tip": "No golpees los cuencos con los palillos",
+      "detail": "Golpear tu cuenco con los palillos se asocia con los mendigos y se considera descortés en la mesa.",
+      "do": false
+    },
+    {
+      "id": "din_007",
+      "category": "servir_te",
+      "tip": "Sirve el té a los demás antes que a ti mismo",
+      "detail": "Es educado llenar las tazas de té de quienes te rodean primero. El anfitrión o la persona más joven en la mesa suele encargarse de servir.",
+      "do": true
+    },
+    {
+      "id": "din_008",
+      "category": "servir_te",
+      "tip": "Golpea la mesa para dar las gracias por el té",
+      "detail": "Cuando alguien te sirve té, golpea suavemente dos dedos sobre la mesa como gesto silencioso de gratitud. Esta es una costumbre ampliamente reconocida.",
+      "do": true
+    },
+    {
+      "id": "din_009",
+      "category": "brindis",
+      "tip": "Brinda con ganbei, pero sorbe si lo prefieres",
+      "detail": "Ganbei significa 'vaso seco'. Puedes unirte a los brindis sin terminar tu vaso: un pequeño sorbo es perfectamente aceptable, especialmente con baijiu.",
+      "do": true
+    },
+    {
+      "id": "din_010",
+      "category": "brindis",
+      "tip": "Sostén tu vaso más bajo al brindar con mayores o superiores",
+      "detail": "Inclinar tu vaso por debajo del borde del vaso de la otra persona muestra respeto. Esto se aplica especialmente al brindar con anfitriones, jefes o mayores.",
+      "do": true
+    },
+    {
+      "id": "din_011",
+      "category": "brindis",
+      "tip": "Ponte de pie al brindar con invitados de mayor rango",
+      "detail": "Si el anfitrión o un invitado importante ofrece un brindis, es educado ponerse de pie para mostrar respeto y atención.",
+      "do": true
+    },
+    {
+      "id": "din_012",
+      "category": "pagar_cuenta",
+      "tip": "Espera que el anfitrión pague la cuenta",
+      "detail": "La persona que invita a otros a cenar tradicionalmente paga. Ofrece pagar una vez como cortesía, pero acepta con elegancia si el anfitrión insiste.",
+      "do": true
+    },
+    {
+      "id": "din_013",
+      "category": "pagar_cuenta",
+      "tip": "No dividan la cuenta por igual",
+      "detail": "Pagar a escote (AA制) se está volviendo común entre amigos jóvenes, pero en comidas formales, discutir por la cuenta es parte del ritual social: espera que una parte invite.",
+      "do": false
+    },
+    {
+      "id": "din_014",
+      "category": "propinas",
+      "tip": "No se espera propina en China",
+      "detail": "A diferencia de muchos países occidentales, dejar propina no es habitual en los restaurantes de la China continental e incluso puede causar confusión. No es obligatorio.",
+      "do": false
+    },
+    {
+      "id": "din_015",
+      "category": "habitos_alimenticios",
+      "tip": "Sorber fideos y sopa es aceptable",
+      "detail": "Los ruidos fuertes al comer, como sorber fideos o beber sopa, no se consideran groseros en China e incluso pueden indicar que estás disfrutando la comida.",
+      "do": true
+    },
+    {
+      "id": "din_016",
+      "category": "huesos_y_restos",
+      "tip": "Coloca los huesos y restos en la mesa o en un plato aparte",
+      "detail": "Es perfectamente normal colocar espinas de pescado, huesos de pollo y otros restos directamente sobre la mesa o en un plato aparte designado, no en tu cuenco de arroz.",
+      "do": true
+    },
+    {
+      "id": "din_017",
+      "category": "probar_comida",
+      "tip": "Prueba un poco de cada plato que te ofrezcan",
+      "detail": "Rechazar comida repetidamente puede parecer descortés. Incluso si no estás seguro de un plato, tomar un pequeño bocado muestra apreciación por la generosidad del anfitrión.",
+      "do": true
+    },
+    {
+      "id": "din_018",
+      "category": "disposicion_mesa",
+      "tip": "Aprende a usar el tornamesa y la mesa redonda",
+      "detail": "La mayoría de los banquetes chinos usan mesas redondas con una bandeja giratoria (tornamesa). Gírala suavemente para acceder a los platos y detenla para que otros se sirvan.",
+      "do": true
+    },
+    {
+      "id": "din_019",
+      "category": "deberes_anfitrion",
+      "tip": "El anfitrión pide los platos para la mesa y sienta a los invitados primero",
+      "detail": "El anfitrión normalmente pide todos los platos, se asegura de que los invitados estén sentados (el asiento de honor da a la puerta) y sirve las primeras porciones a los invitados de honor.",
+      "do": true
+    },
+    {
+      "id": "din_020",
+      "category": "deberes_anfitrion",
+      "tip": "El anfitrión llena platos y vasos durante toda la comida",
+      "detail": "Un buen anfitrión sirve continuamente comida a los invitados y rellena las bebidas. Como invitado, aceptar con agrado es la respuesta educada.",
+      "do": true
+    }
+  ]
+}

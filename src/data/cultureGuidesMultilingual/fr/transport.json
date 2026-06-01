@@ -1,0 +1,111 @@
+{
+  "id": "transport",
+  "title": "Étiquette des transports en Chine",
+  "tips": [
+    {
+      "id": "trans_001",
+      "category": "métro",
+      "tip": "Laissez les passagers sortir avant de monter",
+      "detail": "Tenez-vous à l'écart des lignes marquées sur le quai et attendez que tous les passagers soient sortis avant de monter dans le train.",
+      "do": true
+    },
+    {
+      "id": "trans_002",
+      "category": "métro",
+      "tip": "Préparez votre code de transport ou votre carte avant le portique",
+      "detail": "Préparez votre code QR ou votre carte de transport pendant la file d'attente afin de ne pas retarder les autres aux portiques. Les codes QR de transport Alipay et WeChat fonctionnent dans la plupart des villes.",
+      "do": true
+    },
+    {
+      "id": "trans_003",
+      "category": "sièges_prioritaires",
+      "tip": "Cédez les sièges prioritaires aux personnes dans le besoin",
+      "detail": "Les sièges près des portes, marqués d'une couleur différente, sont réservés aux personnes âgées, aux femmes enceintes, aux passagers handicapés et aux personnes avec de jeunes enfants. Libérez-les rapidement lorsqu'une personne dans le besoin monte à bord.",
+      "do": true
+    },
+    {
+      "id": "trans_004",
+      "category": "sièges_prioritaires",
+      "tip": "Ne faites pas semblant de dormir pour éviter de céder votre place",
+      "detail": "Les passagers le remarquent souvent et les réseaux sociaux en Chine critiquent fréquemment ce comportement. Offrez votre place avec grâce lorsqu'une personne âgée ou enceinte se tient debout à proximité.",
+      "do": false
+    },
+    {
+      "id": "trans_005",
+      "category": "bagages",
+      "tip": "Gardez vos bagages compacts et hors du couloir",
+      "detail": "Placez vos sacs entre vos pieds ou sur vos genoux. Pendant les heures de pointe, les grandes valises doivent être placées dans la zone à bagages près des portes du train et ne pas bloquer les passages.",
+      "do": true
+    },
+    {
+      "id": "trans_006",
+      "category": "alimentation",
+      "tip": "Évitez de manger des aliments à forte odeur dans les transports",
+      "detail": "Manger dans le métro est officiellement interdit dans de nombreuses villes chinoises. Même dans les trains longue distance, évitez les aliments à forte odeur comme les nouilles instantanées dans les voitures fermées par courtoisie.",
+      "do": false
+    },
+    {
+      "id": "trans_007",
+      "category": "appels_téléphoniques",
+      "tip": "Gardez les appels téléphoniques discrets ou envoyez des SMS",
+      "detail": "Utilisez des écouteurs pour les appels et parlez doucement. Dans les trains à grande vitesse, déplacez-vous vers la zone du vestibule entre les voitures pour les conversations plus longues.",
+      "do": true
+    },
+    {
+      "id": "trans_008",
+      "category": "appels_téléphoniques",
+      "tip": "Ne diffusez pas de médias sur le haut-parleur",
+      "detail": "Lire des vidéos, de la musique ou des jeux sans écouteurs est considéré comme très impoli dans les transports publics chinois. De nombreux systèmes de métro diffusent désormais explicitement des rappels contre ce comportement.",
+      "do": false
+    },
+    {
+      "id": "trans_009",
+      "category": "honor_de_file",
+      "tip": "Respectez les files d'attente aux arrêts de bus et aux guichets",
+      "detail": "Bien que la culture de la file d'attente varie selon la ville, couper la file est universellement mal vu. Suivez l'ordre de la foule et utilisez les lignes désignées là où elles sont marquées.",
+      "do": true
+    },
+    {
+      "id": "trans_010",
+      "category": "honor_de_file",
+      "tip": "Ne poussez pas en montant à bord",
+      "detail": "Pendant les heures de pointe dans des villes comme Pékin et Shanghai, la foule est intense. Soyez patient et évitez de pousser de manière agressive—attendez le prochain train si celui-ci est plein.",
+      "do": false
+    },
+    {
+      "id": "trans_011",
+      "category": "taxi",
+      "tip": "Vérifiez que le compteur est en marche lorsque vous montez dans un taxi",
+      "detail": "Assurez-vous toujours que le chauffeur démarre le compteur. Aux aéroports et aux gares, préférez la file officielle de taxis plutôt que les solliciteurs qui vous abordent dans la salle des arrivées.",
+      "do": true
+    },
+    {
+      "id": "trans_012",
+      "category": "klaxon",
+      "tip": "Ne vous alarmez pas des klaxons fréquents",
+      "detail": "Les chauffeurs en Chine klaxonnent souvent comme avertissement de courtoisie plutôt que par colère. Cela signifie généralement « je suis là » ou « j'arrive ». Restez calme et soyez vigilant lorsque vous traversez la rue.",
+      "do": true
+    },
+    {
+      "id": "trans_013",
+      "category": "ceintures_de_sécurité",
+      "tip": "Portez toujours une ceinture de sécurité sur la banquette arrière des taxis",
+      "detail": "La loi chinoise exige que tous les passagers portent la ceinture de sécurité. Les ceintures de sécurité arrière sont parfois enfoncées dans le siège—tirez-les et attachez-vous avant le départ.",
+      "do": true
+    },
+    {
+      "id": "trans_014",
+      "category": "didi",
+      "tip": "Partagez les détails de votre trajet et vérifiez le véhicule avant de monter",
+      "detail": "Lorsque vous utilisez DiDi, confirmez que la plaque d'immatriculation, le modèle de voiture et la photo du chauffeur dans l'application correspondent au véhicule. Utilisez la fonction de partage intégrée à l'application pour envoyer les détails du trajet à un contact de confiance.",
+      "do": true
+    },
+    {
+      "id": "trans_015",
+      "category": "didi",
+      "tip": "Entrez votre destination en chinois pour une meilleure navigation",
+      "detail": "La plupart des chauffeurs DiDi ne lisent que le chinois. Entrez votre destination en caractères chinois ou placez un repère sur la carte. Gardez la fenêtre de chat du chauffeur ouverte au cas où il vous enverrait un message pour clarifier le point de rendez-vous.",
+      "do": true
+    }
+  ]
+}

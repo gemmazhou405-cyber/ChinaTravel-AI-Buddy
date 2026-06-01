@@ -1,0 +1,146 @@
+{
+  "id": "etiquette",
+  "title": "Guía de Etiqueta y Cultura China",
+  "tips": [
+    {
+      "id": "etq_001",
+      "category": "saludos",
+      "tip": "Asiente con la cabeza o inclínate ligeramente al saludar",
+      "detail": "Los apretones de manos son comunes en entornos empresariales y urbanos. Un gesto de asentimiento y una sonrisa son suficientes en situaciones informales.",
+      "do": true
+    },
+    {
+      "id": "etq_002",
+      "category": "saludos",
+      "tip": "Trata a las personas por su título y apellido primero",
+      "detail": "Usa 'Sr./Sra. + Apellido' o títulos profesionales (por ejemplo, 'Profesor Wang'). Espera a que te inviten a usar los nombres de pila.",
+      "do": true
+    },
+    {
+      "id": "etq_003",
+      "category": "regalos",
+      "tip": "Nunca regales relojes",
+      "detail": "Regalar un reloj ('song zhong') suena como 'asistir a un funeral' y simboliza la muerte.",
+      "do": false
+    },
+    {
+      "id": "etq_004",
+      "category": "regalos",
+      "tip": "Presenta y recibe regalos con ambas manos",
+      "detail": "Usar ambas manos demuestra respeto. Los regalos a menudo no se abren inmediatamente frente a quien los da.",
+      "do": true
+    },
+    {
+      "id": "etq_005",
+      "category": "calzado",
+      "tip": "Quítate los zapatos antes de entrar en la casa de alguien",
+      "detail": "Normalmente se proporcionan pantuflas. Esto es una señal de respeto y limpieza.",
+      "do": true
+    },
+    {
+      "id": "etq_006",
+      "category": "calzado",
+      "tip": "Usa calcetines al visitar hogares o templos",
+      "detail": "Ir descalzo puede considerarse descortés o irrespetuoso.",
+      "do": true
+    },
+    {
+      "id": "etq_007",
+      "category": "palillos",
+      "tip": "Nunca claves los palillos en posición vertical en un tazón de arroz",
+      "detail": "Esto se asemeja al incienso que se quema por los muertos y se considera muy inauspicioso.",
+      "do": false
+    },
+    {
+      "id": "etq_008",
+      "category": "palillos",
+      "tip": "Usa los utensilios de servir para los platos compartidos",
+      "detail": "Evita usar tus propios palillos para tomar comida de platos comunitarios, a menos que se proporcionen utensilios de servir.",
+      "do": true
+    },
+    {
+      "id": "etq_009",
+      "category": "fotografías",
+      "tip": "Pide permiso antes de fotografiar a personas",
+      "detail": "Especialmente en áreas rurales o con personas mayores. Acepta los rechazos con elegancia.",
+      "do": true
+    },
+    {
+      "id": "etq_010",
+      "category": "fotografías",
+      "tip": "Evita fotografiar edificios militares o gubernamentales",
+      "detail": "Esto suele estar prohibido y puede atraer atención no deseada.",
+      "do": false
+    },
+    {
+      "id": "etq_011",
+      "category": "señalar",
+      "tip": "Usa toda la mano para señalar hacia personas o lugares",
+      "detail": "Señalar con un solo dedo se considera grosero. Usa la palma abierta, la barbón o un gesto con la cabeza para indicar la dirección.",
+      "do": true
+    },
+    {
+      "id": "etq_012",
+      "category": "números",
+      "tip": "Ten en cuenta el simbolismo de los números",
+      "detail": "El número '4' (sì) suena como 'muerte' (sǐ) y se evita. El '8' (bā) se considera muy afortunado.",
+      "do": true
+    },
+    {
+      "id": "etq_013",
+      "category": "colores",
+      "tip": "Comprende el simbolismo de los colores",
+      "detail": "El rojo es afortunado/alegre, se usa para celebraciones y bodas. El blanco y el negro están asociados con el luto y los funerales.",
+      "do": true
+    },
+    {
+      "id": "etq_014",
+      "category": "tarjetas de presentación",
+      "tip": "Recibe una tarjeta de presentación con ambas manos y estúdiala",
+      "detail": "Tómate un momento para leer el título y la empresa. Nunca escribas en ella inmediatamente frente a quien la da. Guárdala respetuosamente en un estuche.",
+      "do": true
+    },
+    {
+      "id": "etq_015",
+      "category": "filas",
+      "tip": "Sé paciente y asertivo en las filas",
+      "detail": "La cultura de hacer fila puede ser menos estricta que en algunos países. Mantén la calma, conserva tu posición y avanza cuando sea apropiado.",
+      "do": true
+    },
+    {
+      "id": "etq_016",
+      "category": "nivel de ruido",
+      "tip": "Habla a un volumen moderado en espacios públicos",
+      "detail": "Hablar en voz alta, especialmente en el transporte público o en restaurantes, suele ser notado. Mantén las conversaciones a un nivel considerado.",
+      "do": true
+    },
+    {
+      "id": "etq_017",
+      "category": "comportamiento público",
+      "tip": "Evita mostrar públicamente ira o confrontación",
+      "detail": "Mantener la 'cara' (miànzi) es importante. Las voces altas causan vergüenza y rara vez resuelven los problemas.",
+      "do": true
+    },
+    {
+      "id": "etq_018",
+      "category": "comportamiento público",
+      "tip": "No escupas, tires basura ni fumes en áreas no designadas",
+      "detail": "Estas conductas son cada vez más censuradas y pueden resultar en multas en las grandes ciudades.",
+      "do": false
+    },
+    {
+      "id": "etq_019",
+      "category": "comportamiento público",
+      "tip": "Ofrece tu asiento a personas mayores, embarazadas o con discapacidad en el transporte público",
+      "detail": "Esta es una norma social profundamente respetada y mostrar consideración es muy apreciado.",
+      "do": true
+    },
+    {
+      "id": "etq_020",
+      "category": "números",
+      "tip": "Ten cuidado con las cantidades de los regalos y los billetes",
+      "detail": "Al regalar dinero, usa billetes nuevos y evita cantidades que contengan el número '4'. Los números pares (excepto el 4) se prefieren generalmente para los regalos.",
+      "do": true
+    }
+  ]
+}

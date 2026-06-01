@@ -1,0 +1,146 @@
+{
+  "id": "dining",
+  "title": "Esskultur und Tischmanieren in China",
+  "tips": [
+    {
+      "id": "din_001",
+      "category": "shared_dishes",
+      "tip": "Gerichte werden gemeinsam geteilt",
+      "detail": "Bestellen Sie mehrere Gerichte für den gesamten Tisch, keine einzelnen Mahlzeiten. Diese gemeinschaftliche Art ist zentral für die chinesische Esskultur.",
+      "do": true
+    },
+    {
+      "id": "din_002",
+      "category": "shared_dishes",
+      "tip": "Nehmen Sie bescheidene Portionen von den gemeinsamen Tellern",
+      "detail": "Verwenden Sie nach Möglichkeit Servierbesteck. Nehmen Sie kleine Mengen, damit jeder die Gelegenheit bekommt. Sie können bei einer zweiten Runde immer mehr nehmen.",
+      "do": true
+    },
+    {
+      "id": "din_003",
+      "category": "chopstick_etiquette",
+      "tip": "Stecken Sie Essstäbchen nie aufrecht in Reis",
+      "detail": "Essstäbchen, die vertikal in einer Schüssel Reis stehen, ähneln Weihrauchopfern für die Verstorbenen und gelten als äußerst ungünstig.",
+      "do": false
+    },
+    {
+      "id": "din_004",
+      "category": "chopstick_etiquette",
+      "tip": "Legen Sie Essstäbchen auf den Halter oder den Schüsselrand",
+      "detail": "Wenn Sie gerade nicht essen, legen Sie Ihre Essstäbchen ordentlich auf den bereitgestellten Essstäbchenhalter oder quer über den Rand Ihrer Schüssel.",
+      "do": true
+    },
+    {
+      "id": "din_005",
+      "category": "chopstick_etiquette",
+      "tip": "Zeigen Sie nicht mit Essstäbchen auf Menschen oder winken Sie damit",
+      "detail": "Auf Personen zeigen oder Essstäbchen als Gestikulationshilfe verwenden gilt als unhöflich. Halten Sie sie unten, wenn Sie sprechen.",
+      "do": false
+    },
+    {
+      "id": "din_006",
+      "category": "chopstick_etiquette",
+      "tip": "Klopfen Sie nicht mit Essstäbchen auf Schüsseln",
+      "detail": "Das Klopfen auf Ihre Schüssel mit Essstäbchen wird mit Bettlern assoziiert und gilt am Esstisch als unhöflich.",
+      "do": false
+    },
+    {
+      "id": "din_007",
+      "category": "pouring_tea",
+      "tip": "Schenken Sie zuerst anderen Tee ein, bevor Sie sich selbst einschenken",
+      "detail": "Es ist höflich, zuerst die Tassen der Personen um Sie herum zu füllen. Der Gastgeber oder die jüngste Person am Tisch übernimmt oft das Einschenken.",
+      "do": true
+    },
+    {
+      "id": "din_008",
+      "category": "pouring_tea",
+      "tip": "Klopfen Sie auf den Tisch, um sich für den Tee zu bedanken",
+      "detail": "Wenn Ihnen jemand Tee einschenkt, tippen Sie leicht mit zwei Fingern auf den Tisch als stilles Zeichen der Dankbarkeit. Dies ist ein weithin anerkannter Brauch.",
+      "do": true
+    },
+    {
+      "id": "din_009",
+      "category": "toasting",
+      "tip": "Stoßen Sie mit Ganbei an, aber nippen Sie, wenn Sie es bevorzugen",
+      "detail": "Ganbei bedeutet ‚leeres Glas'. Sie können an Trinksprüchen teilnehmen, ohne Ihr Glas zu leeren – ein kleiner Schluck ist absolut akzeptabel, besonders bei Baijiu.",
+      "do": true
+    },
+    {
+      "id": "din_010",
+      "category": "toasting",
+      "tip": "Halten Sie Ihr Glas tieher, wenn Sie auf Ältere oder Vorgesetzte anstoßen",
+      "detail": "Ihr Glas unter den Rand des Glases der anderen Person zu neigen, zeigt Respekt. Dies gilt besonders beim Anstoßen mit Gastgebern, Vorgesetzten oder Älteren.",
+      "do": true
+    },
+    {
+      "id": "din_011",
+      "category": "toasting",
+      "tip": "Stehen Sie auf, wenn Sie auf ältere Gäste anstoßen",
+      "detail": "Wenn der Gastgeber oder ein wichtiger Gast einen Trinkspruch ausbringt, ist es höflich, aufzustehen, um Respekt und Aufmerksamkeit zu zeigen.",
+      "do": true
+    },
+    {
+      "id": "din_012",
+      "category": "paying_bill",
+      "tip": "Erwarten Sie, dass der Gastgeber die Rechnung bezahlt",
+      "detail": "Die Person, die andere zum Essen einlädt, bezahlt traditionell. Bieten Sie einmal aus Höflichkeit an zu bezahlen, aber akzeptieren Sie es elegant, wenn der Gastgeber darauf besteht.",
+      "do": true
+    },
+    {
+      "id": "din_013",
+      "category": "paying_bill",
+      "tip": "Teilen Sie die Rechnung nicht gleichmäßig",
+      "detail": "Getrennt zahlen (AA制) wird unter jungen Freunden immer üblicher, aber bei formellen Mahlzeiten gehört das Diskutieren über die Rechnung zum sozialen Ritual – erwarten Sie, dass eine Partei einlädt.",
+      "do": false
+    },
+    {
+      "id": "din_014",
+      "category": "tipping",
+      "tip": "Trinkgeld ist in China nicht erwartet",
+      "detail": "Im Gegensatz zu vielen westlichen Ländern ist Trinkgeld in Restaurants im chinesischen Festland nicht üblich und kann sogar Verwirrung stiften. Es ist nicht erforderlich.",
+      "do": false
+    },
+    {
+      "id": "din_015",
+      "category": "eating_habits",
+      "tip": "Schlürfen von Nudeln und Suppe ist akzeptabel",
+      "detail": "Laute Essgeräusche wie das Schlürfen von Nudeln oder das Trinken von Suppe gelten in China nicht als unhöflich und können sogar signalisieren, dass Ihnen das Essen schmeckt.",
+      "do": true
+    },
+    {
+      "id": "din_016",
+      "category": "bones_and_scraps",
+      "tip": "Legen Sie Knochen und Speisereste auf den Tisch oder den Nebenteller",
+      "detail": "Es ist völlig normal, Fischgräten, Hühnerknochen und andere Speisereste direkt auf den Tisch oder einen dafür vorgesehenen Nebenteller zu legen, nicht in Ihre Reisschüssel.",
+      "do": true
+    },
+    {
+      "id": "din_017",
+      "category": "trying_food",
+      "tip": "Probieren Sie von jedem angebotenen Gericht ein wenig",
+      "detail": "Das wiederholte Ablehnen von Speisen kann unhöflich wirken. Auch wenn Sie sich bei einem Gericht unsicher sind, zeigt eine kleine Kostprobe Wertschätzung für die Großzügigkeit des Gastgebers.",
+      "do": true
+    },
+    {
+      "id": "din_018",
+      "category": "table_arrangement",
+      "tip": "Lernen Sie, die Lazy Susan und den runden Tisch zu benutzen",
+      "detail": "Die meisten chinesischen Bankette verwenden runde Tische mit einer drehbaren Platte (Lazy Susan). Drehen Sie sie sanft, um an die Gerichte zu gelangen, und halten Sie sie an, damit andere sich selbst bedienen können.",
+      "do": true
+    },
+    {
+      "id": "din_019",
+      "category": "host_duties",
+      "tip": "Der Gastgeber bestellt für den Tisch und setzt Gäste zuerst",
+      "detail": "Der Gastgeber bestellt in der Regel alle Gerichte, sorgt dafür, dass die Gäste Platz nehmen (der Ehrenplatz zeigt zur Tür) und bedient zuerst die Ehrengäste.",
+      "do": true
+    },
+    {
+      "id": "din_020",
+      "category": "host_duties",
+      "tip": "Der Gastgeber füllt Teller und Gläser während der gesamten Mahlzeit nach",
+      "detail": "Ein guter Gastgeber bedient kontinuierlich die Gäste mit Speisen und füllt Getränke nach. Als Gast ist es die höfliche Reaktion, dies gnädig anzunehmen.",
+      "do": true
+    }
+  ]
+}

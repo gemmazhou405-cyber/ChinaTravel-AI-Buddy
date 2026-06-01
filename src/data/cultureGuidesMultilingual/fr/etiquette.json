@@ -1,0 +1,146 @@
+{
+  "id": "etiquette",
+  "title": "Guide de l'étiquette et de la culture chinoises",
+  "tips": [
+    {
+      "id": "etq_001",
+      "category": "salutations",
+      "tip": "Hochez la tête ou inclinez-vous légèrement lors des salutations",
+      "detail": "Les poignées de main sont courantes dans le monde des affaires et en milieu urbain. Un hochement de tête et un sourire suffisent dans les situations décontractées.",
+      "do": true
+    },
+    {
+      "id": "etq_002",
+      "category": "salutations",
+      "tip": "Adressez-vous aux gens d'abord par leur titre et leur nom de famille",
+      "detail": "Utilisez « M./Mme + Nom de famille » ou les titres professionnels (par ex., « Professeur Wang »). Attendez d'être invité à utiliser les prénoms.",
+      "do": true
+    },
+    {
+      "id": "etq_003",
+      "category": "cadeaux",
+      "tip": "Ne donnez jamais d'horloges en cadeau",
+      "detail": "Offrir une horloge (« song zhong ») ressemble à « assister à un enterrement » et symbolise la mort.",
+      "do": false
+    },
+    {
+      "id": "etq_004",
+      "category": "cadeaux",
+      "tip": "Présentez et recevez les cadeaux des deux mains",
+      "detail": "Utiliser les deux mains montre du respect. Les cadeaux ne sont souvent pas ouverts immédiatement devant la personne qui les offre.",
+      "do": true
+    },
+    {
+      "id": "etq_005",
+      "category": "chaussures",
+      "tip": "Retirez vos chaussures avant d'entrer chez quelqu'un",
+      "detail": "Des chaussons vous seront généralement fournis. C'est un signe de respect et de propreté.",
+      "do": true
+    },
+    {
+      "id": "etq_006",
+      "category": "chaussures",
+      "tip": "Portez des chaussettes lorsque vous visitez des foyers ou des temples",
+      "detail": "Être pieds nus peut être considéré comme impoli ou irrespectueux.",
+      "do": true
+    },
+    {
+      "id": "etq_007",
+      "category": "baguettes",
+      "tip": "Ne plantez jamais les baguettes verticalement dans un bol de riz",
+      "detail": "Cela ressemble à de l'encens brûlé pour les morts et est considéré comme très inauspicieux.",
+      "do": false
+    },
+    {
+      "id": "etq_008",
+      "category": "baguettes",
+      "tip": "Utilisez les ustensiles de service pour les plats partagés",
+      "detail": "Évitez d'utiliser vos propres baguettes pour prendre de la nourriture dans les plats communs, sauf si des ustensiles de service sont fournis.",
+      "do": true
+    },
+    {
+      "id": "etq_009",
+      "category": "photos",
+      "tip": "Demandez la permission avant de prendre des photos de personnes",
+      "detail": "Surtout dans les zones rurales ou avec les personnes âgées. Respectez les refus avec tact.",
+      "do": true
+    },
+    {
+      "id": "etq_010",
+      "category": "photos",
+      "tip": "Évitez de photographier les bâtiments militaires ou gouvernementaux",
+      "detail": "C'est souvent interdit et peut attirer une attention indésirable.",
+      "do": false
+    },
+    {
+      "id": "etq_011",
+      "category": "gestes",
+      "tip": "Utilisez toute votre main pour indiquer des personnes ou des endroits",
+      "detail": "Montrer du doigt avec un seul doigt est considéré comme grossier. Utilisez une paume ouverte, le menton ou un hochement de tête pour indiquer une direction.",
+      "do": true
+    },
+    {
+      "id": "etq_012",
+      "category": "nombres",
+      "tip": "Soyez attentif à la symbolique des nombres",
+      "detail": "Le chiffre « 4 » (sì) ressemble à « mort » (sǐ) et est évité. Le « 8 » (bā) est considéré comme très chanceux.",
+      "do": true
+    },
+    {
+      "id": "etq_013",
+      "category": "couleurs",
+      "tip": "Comprenez la symbolique des couleurs",
+      "detail": "Le rouge est chanceux/joyeux, utilisé pour les célébrations et les mariages. Le blanc et le noir sont associés au deuil et aux funérailles.",
+      "do": true
+    },
+    {
+      "id": "etq_014",
+      "category": "cartes de visite",
+      "tip": "Recevez une carte de visite des deux mains et examinez-la",
+      "detail": "Prenez un moment pour lire le titre et l'entreprise. Ne jamais écrire dessus immédiatement devant la personne qui l'a donnée. Rangez-la respectueusement dans un étui.",
+      "do": true
+    },
+    {
+      "id": "etq_015",
+      "category": "files d'attente",
+      "tip": "Soyez patient et affirmé dans les files d'attente",
+      "detail": "La culture de la file d'attente peut être moins stricte que dans certains pays. Restez calme, maintenez votre position et avancez quand c'est approprié.",
+      "do": true
+    },
+    {
+      "id": "etq_016",
+      "category": "niveaux de bruit",
+      "tip": "Parlez à un volume modéré dans les espaces publics",
+      "detail": "Parler fort, surtout dans les transports en commun ou les restaurants, est souvent remarqué. Gardez vos conversations à un niveau respectueux.",
+      "do": true
+    },
+    {
+      "id": "etq_017",
+      "category": "comportement public",
+      "tip": "Évitez les manifestations publiques de colère ou de confrontation",
+      "detail": "Préserver la « face » (miànzi) est important. Élever la voix provoque de la gêne et résout rarement les problèmes.",
+      "do": true
+    },
+    {
+      "id": "etq_018",
+      "category": "comportement public",
+      "tip": "Ne crachez pas, ne jetez pas d'ordures et ne fumez pas dans les zones non autorisées",
+      "detail": "Ces comportements sont de plus en plus mal vus et peuvent entraîner des amendes dans les grandes villes.",
+      "do": false
+    },
+    {
+      "id": "etq_019",
+      "category": "comportement public",
+      "tip": "Cédez votre place aux personnes âgées, aux femmes enceintes ou aux personnes handicapées dans les transports en commun",
+      "detail": "C'est une norme sociale profondément respectée et faire preuve de considération est très apprécié.",
+      "do": true
+    },
+    {
+      "id": "etq_020",
+      "category": "nombres",
+      "tip": "Soyez prudent avec les montants des cadeaux et des billets",
+      "detail": "Lorsque vous offrez de l'argent, utilisez des billets neufs et évitez les montants contenant le chiffre « 4 ». Les nombres pairs (sauf 4) sont généralement préférés pour les cadeaux.",
+      "do": true
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "id": "etiquette",
+  "title": "Chinesische Etikette & Kulturführer",
+  "tips": [
+    {
+      "id": "etq_001",
+      "category": "Begrüßungen",
+      "tip": "Nicken oder leicht verbeugen bei der Begrüßung",
+      "detail": "Handshakes sind in geschäftlichen und städtischen Umfeldern üblich. Ein Nicken und Lächeln reicht in ungezwungenen Situationen aus.",
+      "do": true
+    },
+    {
+      "id": "etq_002",
+      "category": "Begrüßungen",
+      "tip": "Personen zuerst mit Titel und Nachnamen ansprechen",
+      "detail": "Verwenden Sie 'Herr/Frau + Nachname' oder berufliche Titel (z.B. 'Lehrer Wang'). Warten Sie, bis Sie eingeladen werden, den Vornamen zu verwenden.",
+      "do": true
+    },
+    {
+      "id": "etq_003",
+      "category": "Geschenke",
+      "tip": "Verschenken Sie niemals Uhren",
+      "detail": "Eine Uhr zu schenken ('song zhong') klingt wie 'an einer Beerdigung teilnehmen' und symbolisiert den Tod.",
+      "do": false
+    },
+    {
+      "id": "etq_004",
+      "category": "Geschenke",
+      "tip": "Geschenke mit beiden Händen übergeben und empfangen",
+      "detail": "Die Verwendung beider Hände zeigt Respekt. Geschenke werden oft nicht sofort vor dem Schenkenden geöffnet.",
+      "do": true
+    },
+    {
+      "id": "etq_005",
+      "category": "Schuhe",
+      "tip": "Ziehen Sie Ihre Schuhe aus, bevor Sie ein Zuhause betreten",
+      "detail": "Hausschuhe werden in der Regel bereitgestellt. Dies ist ein Zeichen von Respekt und Sauberkeit.",
+      "do": true
+    },
+    {
+      "id": "etq_006",
+      "category": "Schuhe",
+      "tip": "Tragen Sie Socken beim Besuch von Häusern oder Tempeln",
+      "detail": "Barfuß zu gehen kann als unhöflich oder respektlos angesehen werden.",
+      "do": true
+    },
+    {
+      "id": "etq_007",
+      "category": "Essstäbchen",
+      "tip": "Stecken Sie Essstäbchen niemals aufrecht in eine Reisschüssel",
+      "detail": "Dies ähnelt dem Räucherwerk, das für die Toten verbrannt wird, und gilt als sehr ungünstig.",
+      "do": false
+    },
+    {
+      "id": "etq_008",
+      "category": "Essstäbchen",
+      "tip": "Verwenden Sie Servierbesteck für gemeinsame Gerichte",
+      "detail": "Vermeiden Sie es, Ihre eigenen Essstäbchen zu verwenden, um Essen von gemeinsamen Tellern zu nehmen, es sei denn, es wird Servierbesteck bereitgestellt.",
+      "do": true
+    },
+    {
+      "id": "etq_009",
+      "category": "Fotos",
+      "tip": "Fragen Sie vor dem Fotografieren von Personen um Erlaubnis",
+      "detail": "Besonders in ländlichen Gebieten oder bei älteren Menschen. Lehnt jemand ab, respektieren Sie dies mit Anstand.",
+      "do": true
+    },
+    {
+      "id": "etq_010",
+      "category": "Fotos",
+      "tip": "Vermeiden Sie es, militärische oder Regierungsgebäude zu fotografieren",
+      "detail": "Dies ist oft verboten und kann unerwünschte Aufmerksamkeit auf sich ziehen.",
+      "do": false
+    },
+    {
+      "id": "etq_011",
+      "category": "Zeigen",
+      "tip": "Verwenden Sie die ganze Hand, um auf Personen oder Orte zu zeigen",
+      "detail": "Mit einem einzelnen Finger zu zeigen gilt als unhöflich. Verwenden Sie eine offene Handfläche, das Kinn oder ein Kopfnicken, um eine Richtung anzudeuten.",
+      "do": true
+    },
+    {
+      "id": "etq_012",
+      "category": "Zahlen",
+      "tip": "Seien Sie sich der Zahlen-Symbolik bewusst",
+      "detail": "Die Zahl '4' (sì) klingt wie 'Tod' (sǐ) und wird gemieden. '8' (bā) gilt als sehr glückbringend.",
+      "do": true
+    },
+    {
+      "id": "etq_013",
+      "category": "Farben",
+      "tip": "Verstehen Sie die Farbsymbolik",
+      "detail": "Rot steht für Glück/Freude und wird für Feiern und Hochzeiten verwendet. Weiß und Schwarz sind mit Trauer und Beerdigungen verbunden.",
+      "do": true
+    },
+    {
+      "id": "etq_014",
+      "category": "Geschäftskarten",
+      "tip": "Empfangen Sie eine Geschäftskarte mit beiden Händen und betrachten Sie sie",
+      "detail": "Nehmen Sie sich einen Moment, um Titel und Unternehmen zu lesen. Schreiben Sie nie sofort darauf vor dem Übergebenden. Legen Sie sie respektvoll in ein Etui.",
+      "do": true
+    },
+    {
+      "id": "etq_015",
+      "category": "Schlangestehen",
+      "tip": "Seien Sie geduldig und bestimmt in Schlangen",
+      "detail": "Die Kultur des Schlangenstehens kann weniger streng sein als in einigen Ländern. Bleiben Sie ruhig, halten Sie Ihre Position und rücken Sie vor, wenn es angemessen ist.",
+      "do": true
+    },
+    {
+      "id": "etq_016",
+      "category": "Lautstärke",
+      "tip": "Sprechen Sie in öffentlichen Räumen in mäßiger Lautstärke",
+      "detail": "Laut reden, besonders in öffentlichen Verkehrsmitteln oder Restaurants, wird oft bemerkt. Führen Sie Gespräche auf einer rücksichtsvollen Lautstärke.",
+      "do": true
+    },
+    {
+      "id": "etq_017",
+      "category": "Öffentliches Verhalten",
+      "tip": "Vermeiden Sie öffentliche Wutausbrüche oder Konfrontationen",
+      "detail": "Die Wahrung des 'Gesichts' (miànzi) ist wichtig. Lautes Reden verursacht Verlegenheit und löst selten Probleme.",
+      "do": true
+    },
+    {
+      "id": "etq_018",
+      "category": "Öffentliches Verhalten",
+      "tip": "Spucken Sie nicht, werfen Sie keinen Müll auf die Straße und rauchen Sie nicht an nicht dafür vorgesehenen Orten",
+      "detail": "Diese Verhaltensweisen werden zunehmend missbilligt und können in Großstädten zu Geldstrafen führen.",
+      "do": false
+    },
+    {
+      "id": "etq_019",
+      "category": "Öffentliches Verhalten",
+      "tip": "Bieten Sie älteren Menschen, Schwangeren oder Behinderten Ihren Sitzplatz im öffentlichen Verkehr an",
+      "detail": "Dies ist eine tief respektierte soziale Norm, und Rücksichtnahme wird sehr geschätzt.",
+      "do": true
+    },
+    {
+      "id": "etq_020",
+      "category": "Zahlen",
+      "tip": "Seien Sie vorsichtig bei Geldbeträgen und Scheinen als Geschenk",
+      "detail": "Wenn Sie Geld schenken, verwenden Sie neue Scheine und vermeiden Sie Beträge mit der Zahl '4'. Gerade Zahlen (außer 4) werden für Geschenke im Allgemeinen bevorzugt.",
+      "do": true
+    }
+  ]
+}
