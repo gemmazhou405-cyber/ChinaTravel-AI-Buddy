@@ -110,9 +110,10 @@ interface Props {
   onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
   deepTool?: string | null;
+  onToolOpened?: (category: string) => void;
 }
 
-export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeClick, deepTool }: Props) {
+export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
   const { t } = useTranslation();
   const [dragOver, setDragOver] = useState(false);
   const [uploadedFile, setUploadedFile] = useState<string | null>(null);
@@ -156,6 +157,7 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
         subtitle={t('food.decoderSub')}
         icon={<Upload className="w-4 h-4" />}
         defaultOpen={deepTool === 'food' || deepTool === 'menu'}
+        onOpen={() => onToolOpened?.('menu')}
       >
         <div className="mb-3">
           <span className="text-xs bg-[#155e63]/10 text-[#155e63] px-2 py-0.5 rounded-full font-medium">{t('food.ai')}</span>
@@ -311,6 +313,7 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
         showToast={showToast}
         onUpgradeClick={onUpgradeClick}
         initialOpenId={deepTool === 'phrases' ? 'restaurant' : null}
+        onCategoryOpen={(category) => onToolOpened?.(category)}
       />
     </div>
   );

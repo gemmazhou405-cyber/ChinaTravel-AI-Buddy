@@ -79,9 +79,10 @@ interface Props {
   onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
   deepTool?: string | null;
+  onToolOpened?: (category: string) => void;
 }
 
-export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick, deepTool }: Props) {
+export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
   const { t } = useTranslation();
   const hasFullAccess = isTripOrGroup(userState);
   const [selectedCity, setSelectedCity] = useState<{ city: CityPack; emoji: string } | null>(null);
@@ -124,6 +125,7 @@ export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick, deepT
         subtitle={t('journey.before.checklistNote')}
         icon={<CheckCircle className="w-4 h-4" />}
         defaultOpen={deepTool === 'checklist'}
+        onOpen={() => onToolOpened?.('checklist')}
       >
         <div className="mb-3 flex items-center justify-between">
           <h2 className="text-sm font-semibold text-gray-900">{t('before.title')}</h2>
@@ -161,6 +163,7 @@ export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick, deepT
         subtitle={t('journey.before.appsNote')}
         icon={<Smartphone className="w-4 h-4" />}
         defaultOpen={deepTool === 'apps'}
+        onOpen={() => onToolOpened?.('apps')}
       >
         <div className="space-y-2.5">
           {essentialApps.map((app) => (
@@ -183,6 +186,7 @@ export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick, deepT
         subtitle={t('journey.before.paymentNote')}
         icon={<CreditCard className="w-4 h-4" />}
         defaultOpen={deepTool === 'payment'}
+        onOpen={() => onToolOpened?.('payment')}
       >
         <div className="grid gap-2.5 sm:grid-cols-2">
           {(t('before.paymentBasics.items', { returnObjects: true }) as string[]).map((item) => (
@@ -198,6 +202,7 @@ export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick, deepT
         subtitle={t('journey.before.transportNote')}
         icon={<Train className="w-4 h-4" />}
         defaultOpen={deepTool === 'transport'}
+        onOpen={() => onToolOpened?.('transport')}
       >
         <div className="grid gap-2.5 sm:grid-cols-2">
           {(t('before.transportBasics.items', { returnObjects: true }) as string[]).map((item) => (
@@ -214,6 +219,7 @@ export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick, deepT
         subtitle={t('journey.before.cityGuidesNote')}
         icon={<MapPin className="w-4 h-4" />}
         defaultOpen={deepTool === 'city'}
+        onOpen={() => onToolOpened?.('city')}
       >
         <div className="grid grid-cols-3 gap-2">
           {CITIES.map(({ emoji, data, freeAccess }) => {

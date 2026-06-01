@@ -1,5 +1,6 @@
 import { useEffect, type ReactNode } from 'react';
 import { ArrowLeft, Check } from 'lucide-react';
+import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
 
 type LegalPageType = 'terms' | 'privacy' | 'refund' | 'contact' | 'about';
 type GuidePageType =
@@ -13,6 +14,7 @@ type PageType = 'pricing' | LegalPageType | GuidePageType;
 
 interface Props {
   type: PageType;
+  userId?: string | null;
 }
 
 interface GuidePageData {
@@ -787,9 +789,22 @@ function LegalPage({ type }: { type: LegalPageType }) {
   );
 }
 
-function GuidePage({ type }: { type: GuidePageType }) {
+function GuidePage({ type, userId }: { type: GuidePageType; userId?: string | null }) {
   const page = guidePages[type];
   useGuideSeo(page);
+
+  useEffect(() => {
+    initAttribution();
+    trackEventOnce(
+      `guide:${type}:${window.location.search}`,
+      'guide_page_viewed',
+      {
+        pageType: type,
+        path: `${window.location.pathname}${window.location.search}`,
+      },
+      userId,
+    );
+  }, [type, userId]);
 
   return (
     <PageShell title={page.title} intro={page.intro}>
@@ -799,6 +814,13 @@ function GuidePage({ type }: { type: GuidePageType }) {
           <p className="mt-2 text-sm leading-relaxed text-gray-700 md:text-base">{page.quickAnswer}</p>
           <a
             href={page.ctaHref}
+            onClick={() => {
+              void trackEvent('cta_clicked', {
+                ctaName: page.ctaLabel,
+                destination: page.ctaHref,
+                tool: type,
+              }, userId);
+            }}
             className="mt-4 inline-flex rounded-full bg-[#155e63] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#0e4a4e]"
           >
             {page.ctaLabel}
@@ -891,8 +913,8 @@ export function getPolicyPageType(pathname: string): PageType | null {
   return null;
 }
 
-export default function PolicyPage({ type }: Props) {
+export default function PolicyPage({ type, userId }: Props) {
   if (type === 'pricing') return <PricingPage />;
-  if (type in guidePages) return <GuidePage type={type as GuidePageType} />;
+  if (type in guidePages) return <GuidePage type={type as GuidePageType} userId={userId} />;
   return <LegalPage type={type as LegalPageType} />;
 }

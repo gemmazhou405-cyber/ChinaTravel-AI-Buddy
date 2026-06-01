@@ -1,5 +1,5 @@
 import { ChevronDown } from 'lucide-react';
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 
 interface Props {
   title: string;
@@ -7,20 +7,34 @@ interface Props {
   icon: ReactNode;
   children: ReactNode;
   defaultOpen?: boolean;
+  onOpen?: () => void;
 }
 
-export default function ToolDisclosure({ title, subtitle, icon, children, defaultOpen = false }: Props) {
+export default function ToolDisclosure({ title, subtitle, icon, children, defaultOpen = false, onOpen }: Props) {
   const [open, setOpen] = useState(defaultOpen);
+  const trackedDefaultOpen = useRef(false);
 
   useEffect(() => {
-    if (defaultOpen) setOpen(true);
-  }, [defaultOpen]);
+    if (defaultOpen) {
+      setOpen(true);
+      if (!trackedDefaultOpen.current) {
+        trackedDefaultOpen.current = true;
+        onOpen?.();
+      }
+    }
+  }, [defaultOpen, onOpen]);
 
   return (
     <section className="overflow-hidden rounded-[1.65rem] border border-white/60 bg-white/[0.48] shadow-[0_18px_46px_rgba(11,63,67,0.08)] backdrop-blur-2xl">
       <button
         type="button"
-        onClick={() => setOpen((value) => !value)}
+        onClick={() => {
+          setOpen((value) => {
+            const next = !value;
+            if (next) onOpen?.();
+            return next;
+          });
+        }}
         className="flex w-full items-center gap-3 px-4 py-4 text-left transition-all hover:bg-white/45"
       >
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#155e63]/10 text-[#155e63]">

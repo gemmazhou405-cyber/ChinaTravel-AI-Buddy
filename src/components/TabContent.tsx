@@ -14,17 +14,18 @@ interface Props {
   onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
   deepTool?: string | null;
+  onToolOpened?: (category: string) => void;
 }
 
-export default function TabContent({ activeTab, userState, showToast, onAskBuddy, onUpgradeClick, deepTool }: Props) {
+export default function TabContent({ activeTab, userState, showToast, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
   return (
     <main className="max-w-3xl mx-auto px-4 py-6 md:px-6 pb-[calc(7rem+env(safe-area-inset-bottom))] md:pb-28">
-      {activeTab === 'before' && <BeforeTab userState={userState} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} deepTool={deepTool} />}
-      {activeTab === 'stay' && <StayTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} deepTool={deepTool} />}
-      {activeTab === 'food' && <FoodTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} deepTool={deepTool} />}
-      {activeTab === 'transport' && <TransportTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} deepTool={deepTool} />}
-      {activeTab === 'emergency' && <EmergencyTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} deepTool={deepTool} />}
-      {activeTab === 'pay' && <PayTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} deepTool={deepTool} />}
+      {activeTab === 'before' && <BeforeTab userState={userState} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} deepTool={deepTool} onToolOpened={onToolOpened} />}
+      {activeTab === 'stay' && <StayTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} deepTool={deepTool} onToolOpened={onToolOpened} />}
+      {activeTab === 'food' && <FoodTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} deepTool={deepTool} onToolOpened={onToolOpened} />}
+      {activeTab === 'transport' && <TransportTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} deepTool={deepTool} onToolOpened={onToolOpened} />}
+      {activeTab === 'emergency' && <EmergencyTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} deepTool={deepTool} onToolOpened={onToolOpened} />}
+      {activeTab === 'pay' && <PayTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} deepTool={deepTool} onToolOpened={onToolOpened} />}
     </main>
   );
 }

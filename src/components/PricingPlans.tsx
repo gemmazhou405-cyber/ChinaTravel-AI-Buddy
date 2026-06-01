@@ -2,6 +2,7 @@ import { Check, Mail, ShieldCheck, X, Zap } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { UserState } from '../hooks/useAuth';
+import { trackEvent } from '../lib/analytics';
 
 const PLANS = [
   {
@@ -30,9 +31,10 @@ const PLANS = [
 interface Props {
   userState: UserState | null;
   showToast: (msg: string) => void;
+  onCtaClick?: (plan: string) => void;
 }
 
-export default function PricingPlans({ userState, showToast }: Props) {
+export default function PricingPlans({ userState, showToast, onCtaClick }: Props) {
   const { t } = useTranslation();
   const [modalPlan, setModalPlan] = useState<'trip' | 'group' | null>(null);
   const [email, setEmail] = useState(userState?.email ?? '');
@@ -41,6 +43,13 @@ export default function PricingPlans({ userState, showToast }: Props) {
   const [error, setError] = useState('');
 
   const openRequestModal = (plan: string) => {
+    onCtaClick?.(plan);
+    void trackEvent('cta_clicked', {
+      ctaName: plan === 'free' ? 'Start Free' : 'Request Early Access',
+      destination: plan === 'free' ? 'free-plan' : 'early-access-modal',
+      tool: 'pay',
+      plan,
+    }, userState?.uid);
     if (plan === 'free') {
       window.location.reload();
       return;

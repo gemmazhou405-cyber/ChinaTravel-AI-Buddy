@@ -34,9 +34,10 @@ interface Props {
   onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
   deepTool?: string | null;
+  onToolOpened?: (category: string) => void;
 }
 
-export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeClick, deepTool }: Props) {
+export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
   const { t } = useTranslation();
   const [customPhrase, setCustomPhrase] = useState('');
   const [showCustomResult, setShowCustomResult] = useState(false);
@@ -80,6 +81,7 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
         subtitle={t('stay.customHelper.subtitle')}
         icon={<Building2 className="w-4 h-4" />}
         defaultOpen={deepTool === 'custom'}
+        onOpen={() => onToolOpened?.('custom')}
       >
         <div className="flex items-start justify-between gap-3">
           <div>
@@ -154,6 +156,7 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
                     return;
                   }
                   setSelectedCityId(city.cityId);
+                  onToolOpened?.('city');
                 }}
                 className={`relative min-h-16 rounded-2xl border px-2 py-2 text-center text-xs font-semibold shadow-sm transition-all ${
                   active
@@ -205,6 +208,7 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
         showToast={showToast}
         onUpgradeClick={onUpgradeClick}
         initialOpenId={deepTool === 'stay' || deepTool === 'hotel' ? 'hotel' : null}
+        onCategoryOpen={(category) => onToolOpened?.(category)}
       />
 
       {showCustomLocal && (

@@ -16,6 +16,7 @@ interface Props {
   onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
   deepTool?: string | null;
+  onToolOpened?: (category: string) => void;
 }
 
 interface PaymentMethod {
@@ -27,7 +28,7 @@ interface PaymentMethod {
   icon: string;
 }
 
-export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClick, deepTool }: Props) {
+export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
   const { t } = useTranslation();
   const assetBase = import.meta.env.BASE_URL;
   const paymentMethods = t('pay.methods', { returnObjects: true }) as PaymentMethod[];
@@ -127,6 +128,7 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
         subtitle={t('pay.tools.failedBody')}
         icon={<CreditCard className="h-4 w-4" />}
         defaultOpen={deepTool === 'failed'}
+        onOpen={() => onToolOpened?.('failed')}
       >
         <div className="grid gap-2.5 sm:grid-cols-2">
           {paymentFailedCards.map((card) => (
@@ -149,7 +151,7 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
             ))}
           </ul>
         </div>
-        <PricingPlans userState={userState} showToast={showToast} />
+        <PricingPlans userState={userState} showToast={showToast} onCtaClick={(plan) => onToolOpened?.(`early-access-${plan}`)} />
       </section>
 
       {/* Email header banner */}
@@ -172,6 +174,7 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
         subtitle={t('pay.tools.mobilePayBody')}
         icon={<WalletCards className="h-4 w-4" />}
         defaultOpen={deepTool === 'pay'}
+        onOpen={() => onToolOpened?.('pay')}
       >
         <div className="space-y-2.5">
           {paymentMethods.map((m) => (
@@ -200,6 +203,7 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
         subtitle={t('pay.setupShort')}
         icon={<Smartphone className="h-4 w-4" />}
         defaultOpen={deepTool === 'wechat'}
+        onOpen={() => onToolOpened?.('wechat')}
       >
         <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
           {setupSteps.map((stepText, i) => (
@@ -254,6 +258,7 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
         showToast={showToast}
         onUpgradeClick={onUpgradeClick}
         initialOpenId={deepTool === 'phrases' ? 'payment' : null}
+        onCategoryOpen={(category) => onToolOpened?.(category)}
       />
     </div>
   );

@@ -11,6 +11,7 @@ import Toast from './components/Toast';
 import PolicyPage, { getPolicyPageType } from './components/PolicyPage';
 import { useAuth } from './hooks/useAuth';
 import { useTranslation } from 'react-i18next';
+import { initAttribution, trackEvent, trackEventOnce } from './lib/analytics';
 
 export type TabId = 'before' | 'stay' | 'food' | 'transport' | 'emergency' | 'pay';
 export type JourneyId = 'before' | 'now' | 'emergency';
@@ -43,6 +44,10 @@ function parseLandingParams(): { journey: JourneyId; tab: TabId | null; tool: st
   return { journey: 'now', tab: null, tool: null };
 }
 
+function analyticsJourney(journey: JourneyId) {
+  return journey === 'now' ? 'china' : journey;
+}
+
 export default function App() {
   const { t } = useTranslation();
   const policyPageType = getPolicyPageType(window.location.pathname);
@@ -65,6 +70,30 @@ export default function App() {
     }, 0);
   };
   useEffect(() => {
+    initAttribution();
+  }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const journeyParam = params.get('journey');
+    const toolParam = params.get('tool');
+    if (journeyParam || toolParam) {
+      trackEventOnce(
+        `landing:${window.location.pathname}${window.location.search}`,
+        'landing_deeplink_loaded',
+        {
+          journey: journeyParam || analyticsJourney(landing.journey),
+          tool: toolParam || landing.tool || '',
+          path: `${window.location.pathname}${window.location.search}`,
+        },
+        user?.uid,
+      );
+    }
+  // Initial landing event only. User id may be absent for anonymous visitors.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     if (landing.tab) {
       window.setTimeout(() => {
         document.getElementById('tabs')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -78,16 +107,37 @@ export default function App() {
     setActiveTab(tab);
     setToolOpen(true);
     setDeepTool(tool ?? null);
+    void trackEvent('tool_category_opened', {
+      journey: analyticsJourney(journey),
+      tool: tool ?? tab,
+      category: tool ?? tab,
+    }, user?.uid);
     window.setTimeout(() => {
       document.getElementById('tabs')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 0);
   };
-  const openBuddy = () => setChatOpen(true);
+  const handleJourneyChange = (nextJourney: JourneyId) => {
+    const previousJourney = journey;
+    setJourney(nextJourney);
+    void trackEvent('journey_selected', {
+      selectedJourney: analyticsJourney(nextJourney),
+      previousJourney: analyticsJourney(previousJourney),
+    }, user?.uid);
+  };
+  const openBuddy = () => {
+    void trackEvent('cta_clicked', {
+      ctaName: 'Ask Buddy',
+      destination: 'chat',
+      journey: analyticsJourney(journey),
+      tool: deepTool || activeTab,
+    }, user?.uid);
+    setChatOpen(true);
+  };
 
   if (policyPageType) {
     return (
       <div className="min-h-screen bg-[#f7f3ea] pb-[env(safe-area-inset-bottom)] font-sans">
-        <PolicyPage type={policyPageType} />
+        <PolicyPage type={policyPageType} userId={user?.uid} />
         <Footer onTabChange={setActiveTab} />
       </div>
     );
@@ -98,7 +148,14 @@ export default function App() {
       <Hero
         user={user}
         userState={userState}
-        onAuthClick={() => setAuthOpen(true)}
+        onAuthClick={() => {
+          void trackEvent('cta_clicked', {
+            ctaName: 'Start Free',
+            destination: 'auth',
+            journey: analyticsJourney(journey),
+          }, user?.uid);
+          setAuthOpen(true);
+        }}
         onAskBuddy={openBuddy}
         onLogout={logout}
         onResendVerification={async () => {
@@ -106,7 +163,7 @@ export default function App() {
           showToast(t('auth.verificationSent'));
         }}
       />
-      <QuickActions journey={journey} onJourneyChange={setJourney} onTabSelect={handleQuickTabSelect} onAskBuddy={openBuddy} />
+      <QuickActions journey={journey} onJourneyChange={handleJourneyChange} onTabSelect={handleQuickTabSelect} onAskBuddy={openBuddy} />
       {toolOpen && (
         <>
           <div id="tabs" className="sticky top-0 z-40 bg-white shadow-sm">
@@ -119,6 +176,13 @@ export default function App() {
             onAskBuddy={openBuddy}
             onUpgradeClick={handleUpgradeClick}
             deepTool={deepTool}
+            onToolOpened={(category) => {
+              void trackEvent('tool_category_opened', {
+                journey: analyticsJourney(journey),
+                tool: deepTool || activeTab,
+                category,
+              }, user?.uid);
+            }}
           />
         </>
       )}
@@ -127,6 +191,11 @@ export default function App() {
           setActiveTab(tab);
           setToolOpen(true);
           setDeepTool(null);
+          void trackEvent('tool_category_opened', {
+            journey: tab === 'before' || tab === 'emergency' ? tab : 'china',
+            tool: tab,
+            category: tab,
+          }, user?.uid);
         }}
       />
       <ChatButton onClick={openBuddy} />

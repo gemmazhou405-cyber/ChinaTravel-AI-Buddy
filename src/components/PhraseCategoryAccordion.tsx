@@ -1,5 +1,5 @@
 import { ChevronDown, Lock } from 'lucide-react';
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PhraseCardCategorySection from './PhraseCardCategorySection';
 import type { PhraseCardData } from '../types/phraseCard';
@@ -20,6 +20,7 @@ interface Props {
   showToast: (msg: string) => void;
   onUpgradeClick?: () => void;
   initialOpenId?: string | null;
+  onCategoryOpen?: (categoryId: string) => void;
 }
 
 export default function PhraseCategoryAccordion({
@@ -30,13 +31,21 @@ export default function PhraseCategoryAccordion({
   showToast,
   onUpgradeClick,
   initialOpenId = null,
+  onCategoryOpen,
 }: Props) {
   const { t } = useTranslation();
   const [openId, setOpenId] = useState<string | null>(initialOpenId);
+  const trackedInitialOpenId = useRef<string | null>(null);
 
   useEffect(() => {
-    if (initialOpenId) setOpenId(initialOpenId);
-  }, [initialOpenId]);
+    if (initialOpenId) {
+      setOpenId(initialOpenId);
+      if (trackedInitialOpenId.current !== initialOpenId) {
+        trackedInitialOpenId.current = initialOpenId;
+        onCategoryOpen?.(initialOpenId);
+      }
+    }
+  }, [initialOpenId, onCategoryOpen]);
 
   return (
     <section className="space-y-3">
@@ -55,7 +64,11 @@ export default function PhraseCategoryAccordion({
             <div key={category.id} className="overflow-hidden rounded-[1.35rem] border border-white/60 bg-white/[0.52] shadow-[0_16px_42px_rgba(11,63,67,0.08)] backdrop-blur-2xl">
               <button
                 type="button"
-                onClick={() => setOpenId(open ? null : category.id)}
+                onClick={() => {
+                  const next = open ? null : category.id;
+                  setOpenId(next);
+                  if (next) onCategoryOpen?.(next);
+                }}
                 className="flex w-full items-center gap-3 px-4 py-3.5 text-left transition-colors hover:bg-white/60"
               >
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#155e63]/8 text-[#155e63]">
