@@ -657,6 +657,16 @@ function useGuideSeo(page: GuidePageData) {
     setMetaContent('meta[property="og:title"]', 'content', page.metaTitle);
     setMetaContent('meta[property="og:description"]', 'content', page.metaDescription);
     setMetaContent('meta[property="og:url"]', 'content', `${siteUrl}${page.path}`);
+    setMetaContent('meta[name="twitter:title"]', 'content', page.metaTitle);
+    setMetaContent('meta[name="twitter:description"]', 'content', page.metaDescription);
+
+    let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = `${siteUrl}${page.path}`;
 
     document.getElementById('chinaease-guide-schema')?.remove();
     const schema = document.createElement('script');
