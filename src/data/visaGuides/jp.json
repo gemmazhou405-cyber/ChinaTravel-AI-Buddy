@@ -1,0 +1,81 @@
+{
+  "id": "jp",
+  "country": "Japan",
+  "disclaimer": "Information may change. Always verify with official Chinese embassy or consulate before travel.",
+  "visaRequired": true,
+  "visaFreeNote": "Check current policy as visa-free entry may be available for certain durations or purposes. Verify with official sources.",
+  "applicationSteps": [
+    {
+      "step": 1,
+      "title": "Check current requirements",
+      "detail": "Visit the official Chinese Embassy in Japan website for the latest visa policies and forms."
+    },
+    {
+      "step": 2,
+      "title": "Gather required documents",
+      "detail": "Collect all necessary documents, ensuring they meet the specified criteria."
+    },
+    {
+      "step": 3,
+      "title": "Complete application form",
+      "detail": "Fill out the visa application form accurately and completely."
+    },
+    {
+      "step": 4,
+      "title": "Submit application",
+      "detail": "Submit your application in person at the embassy/consulate or through an authorized visa agency."
+    },
+    {
+      "step": 5,
+      "title": "Receive visa",
+      "detail": "Wait for processing and collect your passport with the visa, or arrange for delivery if available."
+    }
+  ],
+  "requiredDocuments": [
+    "Valid passport with at least 6 months remaining validity and blank pages.",
+    "Completed China visa application form, signed and dated.",
+    "Recent passport-sized photo meeting embassy specifications.",
+    "Proof of accommodation (e.g., hotel booking or invitation letter from a host in China).",
+    "Round-trip flight itinerary showing entry and exit dates.",
+    "Bank statement from the past 3 months to demonstrate financial stability."
+  ],
+  "processingTime": "Standard processing takes 4-7 business days; express services may be available for faster processing at an additional cost.",
+  "entryPorts": [
+    "Beijing Capital International Airport (PEK)",
+    "Shanghai Pudong International Airport (PVG)",
+    "Guangzhou Baiyun International Airport (CAN)",
+    "Shenzhen Bao'an International Airport (SZX)",
+    "Major land border crossings like those with Hong Kong or Macau"
+  ],
+  "customsRules": [
+    {
+      "item": "Cash declaration",
+      "limit": "Must declare if carrying more than $5,000 USD or equivalent in foreign currency."
+    },
+    {
+      "item": "Prohibited items",
+      "limit": "Strictly no illegal drugs, weapons, explosives, or counterfeit goods."
+    },
+    {
+      "item": "Restricted items",
+      "limit": "Limits on items like cigarettes (e.g., 400 cigarettes duty-free), alcohol (e.g., 1.5 liters), and certain electronics may apply."
+    },
+    {
+      "item": "Personal belongings",
+      "limit": "Generally allowed for personal use; high-value items may need declaration."
+    }
+  ],
+  "arrivalTips": [
+    "Fill out the arrival/departure card provided on the plane before landing to save time at immigration.",
+    "Have your hotel address and contact information written in Chinese characters to show to immigration officials if needed.",
+    "Keep your passport, visa, and boarding pass easily accessible for inspection at immigration.",
+    "Be prepared to answer basic questions about your travel purpose, accommodation, and return plans.",
+    "Declare any items that exceed customs allowances at the red channel to avoid penalties."
+  ],
+  "usefulLinks": [
+    {
+      "title": "Chinese Embassy in Japan Official Website",
+      "url": "http://www.china-embassy.or.jp/eng/"
+    }
+  ]
+}

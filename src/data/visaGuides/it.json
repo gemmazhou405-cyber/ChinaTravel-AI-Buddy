@@ -1,0 +1,99 @@
+{
+  "id": "it",
+  "country": "Italy",
+  "disclaimer": "This is a general guide for informational purposes only. Visa policies and entry requirements are subject to change without notice. Travelers must verify the latest and official information directly with the Embassy or Consulate General of the People's Republic of China in Italy before making any travel arrangements.",
+  "visaRequired": true,
+  "visaTypes": [
+    "Tourist (L)",
+    "Business (M)",
+    "Work (Z)",
+    "Transit (G)",
+    "Crew (C)"
+  ],
+  "applicationSteps": [
+    {
+      "step": 1,
+      "title": "Determine Visa Type & Check Policy",
+      "detail": "Identify the correct visa category for your travel purpose (e.g., tourist L visa). Visit the official website of the Chinese Embassy in Rome or Consulates in Milan/Florence to review the latest requirements, forms, and any special notices (e.g., recent visa-free transit policies)."
+    },
+    {
+      "step": 2,
+      "title": "Prepare Required Documents",
+      "detail": "Gather all necessary documents as per the specific visa type. Ensure your passport has at least 6 months of validity and blank pages. Complete the visa application form (Form V.2013) online or handwritten, and prepare the supporting materials listed below."
+    },
+    {
+      "step": 3,
+      "title": "Submit Application",
+      "detail": "Submit your application in person or through an authorized visa service agency at the Chinese Embassy/Consulate jurisdiction of your residence. Some locations may require an appointment. Be prepared to provide biometrics if requested."
+    },
+    {
+      "step": 4,
+      "title": "Pay Fees and Await Processing",
+      "detail": "Pay the applicable visa fee. Standard processing usually takes 4-7 business days. Express services (2-3 business days) and rush services (1 business day) are often available for an additional fee."
+    },
+    {
+      "step": 5,
+      "title": "Collect Passport and Visa",
+      "detail": "Collect your passport with the visa sticker. Verify all details (name, dates, visa type) are correct before departure."
+    }
+  ],
+  "requiredDocuments": [
+    "Valid Italian passport with at least 6 months validity from the date of entry and blank visa pages.",
+    "One completed Visa Application Form (Form V.2013) with a recent passport-sized photo attached.",
+    "Proof of round-trip flight itinerary and hotel reservations for the entire stay.",
+    "For business visas: An invitation letter from a Chinese company or organization.",
+    "Recent bank statements (last 3-6 months) demonstrating sufficient funds for the stay.",
+    "For applicants who are not Italian citizens: Valid Italian residence permit (Permesso di Soggiorno)."
+  ],
+  "processingTime": {
+    "standard": "4-7 business days",
+    "express": "2-3 business days (extra fee)",
+    "rush": "1 business day (extra fee, subject to approval)"
+  },
+  "entryPorts": [
+    "Beijing Capital International Airport (PEK)",
+    "Shanghai Pudong International Airport (PVG)",
+    "Guzhou Baiyun International Airport (CAN)",
+    "Major international airports in Chengdu, Xi'an, etc.",
+    "Land borders with Vietnam, Laos, Myanmar (with valid visa)."
+  ],
+  "customsRules": [
+    {
+      "item": "Currency Declaration",
+      "limit": "Cash or traveler's checks exceeding CNY 20,000 or USD 5,000 equivalent must be declared to customs upon arrival."
+    },
+    {
+      "item": "Personal Electronics",
+      "limit": "Reasonable quantities of laptops, cameras, and phones for personal use are generally permitted. Large commercial quantities may be subject to duty."
+    },
+    {
+      "item": "Medication",
+      "limit": "Carry a doctor's prescription for personal medication. Strictly prohibited drugs (including some common Western medications) must be declared and verified."
+    },
+    {
+      "item": "Prohibited Items",
+      "limit": "Weapons, explosives, narcotics, and obscene materials are strictly prohibited. Certain books, publications, and media may be subject to inspection."
+    }
+  ],
+  "arrivalTips": [
+    "Complete the arrival/departure card distributed on your flight accurately before landing.",
+    "Have the name, address, and phone number of your first hotel written in Chinese characters ready for immigration.",
+    "Keep your passport, completed arrival card, and a copy of your flight ticket easily accessible in your hand luggage.",
+    "Proceed to the 'Foreigner' queue at immigration and wait to be called.",
+    "After collecting luggage, check the customs declaration channels. Use the 'Nothing to Declare' (green) channel if you have no items requiring declaration."
+  ],
+  "usefulLinks": [
+    {
+      "title": "Embassy of the People's Republic of China in Italy (Consular Section)",
+      "url": "http://it.china-embassy.gov.cn/it/"
+    },
+    {
+      "title": "China National Tourism Administration",
+      "url": "http://www.travelchina.gov.cn/"
+    },
+    {
+      "title": "Official Visa Application Service Center (for form & appointment)",
+      "url": "Check the embassy website for the authorized service center link."
+    }
+  ]
+}

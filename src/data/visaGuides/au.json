@@ -1,0 +1,91 @@
+{
+  "id": "au",
+  "country": "Australia",
+  "disclaimer": "Information is a general guide only and may change. Always verify the latest requirements directly with the official Chinese Embassy or Consulate in Australia before applying or traveling. No specific legal advice is provided.",
+  "visaRequired": true,
+  "visaFreeNote": "Australian passport holders typically require a visa to enter mainland China. Exceptions may exist for short-term transit under certain conditions (e.g., 240-hour visa-free transit via specific ports). Verify eligibility for any transit policies before travel.",
+  "applicationSteps": [
+    {
+      "step": 1,
+      "title": "Determine Visa Type & Check Requirements",
+      "detail": "Visit the official website of the Chinese Embassy or Consulate in Australia. Identify the correct visa type (e.g., L for tourism, M for business) for your travel purpose and review the latest, detailed requirements."
+    },
+    {
+      "step": 2,
+      "title": "Prepare Supporting Documents",
+      "detail": "Gather all required documents according to the checklist for your specific visa type. Ensure your passport meets validity requirements and all forms are completed accurately."
+    },
+    {
+      "step": 3,
+      "title": "Submit Application",
+      "detail": "Applications are typically submitted in person or via an authorized visa application service center (like the Chinese Visa Application Service Center). You may need to book an appointment. All biometrics are usually collected at submission."
+    },
+    {
+      "step": 4,
+      "title": "Pay Fees & Track Processing",
+      "detail": "Pay the visa fee at the time of submission. Processing times vary; standard processing is usually 4-7 business days. Express and rush services may be available for an additional fee. You can track the application status online via the service center."
+    },
+    {
+      "step": 5,
+      "title": "Collect Your Passport & Visa",
+      "detail": "Collect your passport with the visa sticker from the service center or have it mailed back to you. Double-check all visa details (name, dates, visa type) for accuracy before travel."
+    }
+  ],
+  "requiredDocuments": [
+    "Valid Australian passport with at least 6 months' validity and blank visa pages.",
+    "One completed Visa Application Form (Form V.2013), filled out online or by hand, with a recent passport-sized photo attached.",
+    "Recent passport-sized photograph (white background, 48mm x 33mm).",
+    "Proof of return travel (flight itinerary) and proof of accommodation in China (hotel booking or invitation letter from a host).",
+    "Proof of financial means (e.g., recent bank statement) for the duration of stay.",
+    "For business visas (M/F): An invitation letter from a Chinese company or organization. For study visas (X): Admission documents from the Chinese institution."
+  ],
+  "processingTime": "Standard processing is typically 4-7 business days. Express service (2-3 business days) and rush service (1 business day, subject to approval) may be available for additional fees.",
+  "entryPorts": [
+    "Major international airports (e.g., Beijing Capital PEK, Shanghai Pudong PVG, Guangzhou Baiyun CAN).",
+    "Designated land border crossings (e.g., with Hong Kong SAR, Vietnam, etc.).",
+    "Specific seaports designated for international entry."
+  ],
+  "customsRules": [
+    {
+      "item": "Currency (Cash)",
+      "limit": "You must declare to Customs if carrying more than 20,000 CNY (Chinese Yuan) in cash, or more than the equivalent of 5,000 USD in any foreign currency."
+    },
+    {
+      "item": "Duty-Free Allowances",
+      "limit": "For personal use: generally up to 500 cigarettes, 1.5 liters of alcohol, and reasonable quantities of perfume. Items exceeding allowances are subject to duty."
+    },
+    {
+      "item": "Prohibited & Restricted Items",
+      "limit": "Strict prohibitions on drugs, weapons, counterfeit currency, and certain printed materials. Restrictions apply to products of endangered species, certain agricultural products, and some electronic communications equipment."
+    },
+    {
+      "item": "Items Requiring Declaration",
+      "limit": "Declare all items of high value (e.g., professional equipment, cameras, laptops intended for business use) on the Customs declaration form to avoid issues upon departure."
+    }
+  ],
+  "arrivalTips": [
+    "Complete the 'Arrival Card' provided by the airline before landing or at immigration counters. Have your hotel address in Chinese characters readily available.",
+    "Ensure your passport and completed arrival card are easily accessible for the immigration officer. The officer may ask about your purpose of stay and accommodation.",
+    "Keep the bottom half of the immigration form (the departure card) safely in your passport; you will need it when you leave China.",
+    "Withdraw Chinese Yuan (CNY) from ATMs at the airport or exchange money at licensed counters. Major credit cards are accepted in larger hotels and cities, but cash is essential elsewhere.",
+    "Upon exiting, allow ample time for airport security and exit immigration. Your original entry documents may be checked again."
+  ],
+  "usefulLinks": [
+    {
+      "title": "Chinese Embassy in Australia (Canberra)",
+      "url": "http://au.china-embassy.gov.cn/eng/"
+    },
+    {
+      "title": "Chinese Visa Application Service Center (CVASC) for Australia",
+      "url": "http://www.visaforchina.org/ (Select 'Australia')"
+    },
+    {
+      "title": "China Customs Official Website",
+      "url": "http://english.customs.gov.cn/"
+    },
+    {
+      "title": "Smartraveller.gov.au (Australian Government Travel Advice for China)",
+      "url": "https://www.smartraveller.gov.cn/destinations/asia/china"
+    }
+  ]
+}

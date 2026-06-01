@@ -1,0 +1,112 @@
+{
+  "id": "es",
+  "country": "Spain",
+  "nationality": "Spanish",
+  "disclaimer": "This guide is for informational purposes only. Visa policies and entry requirements change frequently. Always verify current requirements with the official Chinese Embassy or Consulate in Spain before making travel arrangements. This is not legal advice.",
+  "visaRequired": true,
+  "visaFreeNote": "Spain is part of the EU Schengen area. China has periodically offered visa-free transit arrangements (72/144-hour) for certain nationalities at specific ports. Check current policy as rules change frequently.",
+  "applicationSteps": [
+    {
+      "step": 1,
+      "title": "Determine visa type",
+      "detail": "Identify the correct visa category for your trip purpose (tourism L, business M, work Z, student X, transit G). Each has different requirements."
+    },
+    {
+      "step": 2,
+      "title": "Gather required documents",
+      "detail": "Prepare all required documentation including passport, photos, application form, and supporting materials specific to your visa type."
+    },
+    {
+      "step": 3,
+      "title": "Complete application form",
+      "detail": "Fill out the Chinese Visa Application Form (Form V.2013) online or on paper. Ensure all information matches your passport exactly."
+    },
+    {
+      "step": 4,
+      "title": "Submit application",
+      "detail": "Apply in person at the Chinese Embassy in Madrid, Consulate in Barcelona, or through the Chinese Visa Application Service Center (CVASC). Appointment may be required."
+    },
+    {
+      "step": 5,
+      "title": "Collect visa",
+      "detail": "Pick up your passport with the visa stamp on the specified date. Verify all details are correct before leaving."
+    }
+  ],
+  "requiredDocuments": [
+    "Valid Spanish passport with at least 6 months validity and 2 blank pages",
+    "Completed Chinese Visa Application Form (V.2013)",
+    "Recent passport-size color photo (48mm x 33mm, white background)",
+    "Flight itinerary showing round-trip entry and exit dates",
+    "Hotel reservation or invitation letter from host in China",
+    "Proof of financial means (bank statements from last 3 months)"
+  ],
+  "processingTime": {
+    "standard": "4-7 business days",
+    "express": "2-3 business days (additional fee)",
+    "rush": "1 business day (additional fee, subject to approval)"
+  },
+  "fees": {
+    "note": "Fees vary by visa type and processing speed. Spanish citizens may pay different rates than some other EU nationals.",
+    "standard": "Approximately €60-140 depending on visa type",
+    "serviceCenter": "CVASC charges an additional service fee"
+  },
+  "embassyInfo": {
+    "embassy": "Embassy of the People's Republic of China in Madrid",
+    "consulate": "Consulate General in Barcelona",
+    "serviceCenter": "Chinese Visa Application Service Center (CVASC) locations in Madrid and Barcelona"
+  },
+  "entryPorts": [
+    "Beijing Capital International Airport (PEK)",
+    "Shanghai Pudong International Airport (PVG)",
+    "Guangzhou Baiyun International Airport (CAN)",
+    "Most international airports with customs facilities",
+    "Major land border crossings (subject to change)"
+  ],
+  "customsRules": [
+    {
+      "item": "Currency",
+      "limit": "Amounts exceeding 20,000 CNY or $5,000 USD equivalent must be declared upon entry and exit"
+    },
+    {
+      "item": "Electronics",
+      "limit": "Personal electronics for tourist use generally allowed; items for commercial use may require declaration"
+    },
+    {
+      "item": "Medications",
+      "limit": "Bring prescription medications with doctor's note; some substances are prohibited in China"
+    },
+    {
+      "item": "Duty-free goods",
+      "limit": "Tobacco: 400 cigarettes, Alcohol: 1.5 liters. Gifts up to 5,000 CNY value duty-free"
+    }
+  ],
+  "arrivalTips": [
+    "Fill out the Arrival/Departure Card (usually distributed on your flight) before landing",
+    "Have your hotel address written in Chinese characters to show taxi drivers or immigration",
+    "Keep your passport accessible as you will need it at immigration and at many hotels",
+    "Consider downloading a VPN before arrival if you need access to services blocked in mainland China",
+    "WeChat and Alipay are widely used; set up mobile payment before or upon arrival if possible"
+  ],
+  "healthRequirements": {
+    "note": "Health requirements may change. Check current entry health requirements before departure.",
+    "insurance": "Travel health insurance covering China is strongly recommended"
+  },
+  "usefulLinks": [
+    {
+      "title": "Chinese Embassy in Madrid",
+      "url": "http://es.china-embassy.gov.cn/"
+    },
+    {
+      "title": "Chinese Visa Application Service Center",
+      "url": "http://www.visaforchina.org/"
+    },
+    {
+      "title": "China National Tourism Administration",
+      "url": "http://www.travelchina.gov.cn/"
+    },
+    {
+      "title": "Spanish Ministry of Foreign Affairs Travel Advisories",
+      "url": "https://www.exteriores.gob.es/"
+    }
+  ]
+}

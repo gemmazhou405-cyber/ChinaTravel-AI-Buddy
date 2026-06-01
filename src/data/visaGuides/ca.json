@@ -1,0 +1,83 @@
+{
+  "id": "ca",
+  "country": "Canada",
+  "disclaimer": "Information may change. Always verify current requirements with official Chinese embassy or consulate before travel. This guide is for general reference only and does not constitute specific legal advice.",
+  "visaRequired": true,
+  "visaFreeNote": "Check current policy as rules may change; some short-term visits may be visa-free under specific agreements.",
+  "applicationSteps": [
+    {
+      "step": 1,
+      "title": "Check current requirements",
+      "detail": "Visit the official website of the Chinese Embassy or Consulate in Canada for the latest visa policies and updates."
+    },
+    {
+      "step": 2,
+      "title": "Prepare required documents",
+      "detail": "Gather all necessary documents, ensuring your passport is valid for at least 6 months beyond your planned stay."
+    },
+    {
+      "step": 3,
+      "title": "Complete the application form",
+      "detail": "Fill out the China visa application form accurately, either online or on paper, and attach a recent passport photo."
+    },
+    {
+      "step": 4,
+      "title": "Submit application and pay fees",
+      "detail": "Submit your application in person or via an authorized service center, and pay the applicable visa fees."
+    },
+    {
+      "step": 5,
+      "title": "Track and collect visa",
+      "detail": "Monitor the application status and collect your visa once approved, or receive it by mail if available."
+    }
+  ],
+  "requiredDocuments": [
+    "Valid Canadian passport with at least 6 months of remaining validity",
+    "Completed China visa application form",
+    "Recent passport-sized photo (white background)",
+    "Proof of accommodation in China (e.g., hotel booking or invitation letter)",
+    "Return flight ticket or itinerary",
+    "Bank statement showing sufficient funds for the trip"
+  ],
+  "processingTime": "4-7 business days typical, with express processing available for an additional fee.",
+  "entryPorts": [
+    "Major international airports (e.g., Beijing, Shanghai, Guangzhou)",
+    "Designated land border crossings",
+    "Some seaports for cruise or ferry arrivals"
+  ],
+  "customsRules": [
+    {
+      "item": "Cash",
+      "limit": "Declare if carrying more than $5,000 USD (or equivalent in other currencies) upon entry or exit."
+    },
+    {
+      "item": "Electronics",
+      "limit": "Personal-use devices like laptops and phones are generally allowed, but high-value items may require declaration."
+    },
+    {
+      "item": "Alcohol",
+      "limit": "Up to 1.5 liters of alcohol per adult may be brought in duty-free; larger quantities are subject to duties."
+    },
+    {
+      "item": "Tobacco",
+      "limit": "Up to 400 cigarettes or 100 cigars per adult; excess quantities require declaration and payment of duties."
+    }
+  ],
+  "arrivalTips": [
+    "Fill out the arrival card provided on the plane before landing.",
+    "Have your hotel address written in Chinese to show immigration officers.",
+    "Keep your passport easily accessible during immigration checks.",
+    "Learn basic Chinese phrases like 'hello' and 'thank you' for smoother interactions.",
+    "Have some local currency (Chinese Yuan, CNY) ready for immediate expenses upon arrival."
+  ],
+  "usefulLinks": [
+    {
+      "title": "Chinese Embassy in Canada website",
+      "url": "http://ca.china-embassy.gov.cn/eng/"
+    },
+    {
+      "title": "China National Immigration Administration",
+      "url": "https://www.nia.gov.cn/"
+    }
+  ]
+}

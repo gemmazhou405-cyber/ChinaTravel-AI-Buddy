@@ -1,0 +1,87 @@
+{
+  "id": "kr",
+  "country": "South Korea",
+  "disclaimer": "Visa policies and entry rules are subject to change. This guide is for informational purposes only. You MUST verify all information directly with the official Chinese Embassy or Consulate in the Republic of Korea before applying.",
+  "visaRequired": true,
+  "visaFreeNote": "South Korean citizens may qualify for visa-free transit under specific conditions (e.g., 144-hour transit via certain ports). Always confirm your eligibility and latest policies with official sources before travel.",
+  "applicationSteps": [
+    {
+      "step": 1,
+      "title": "Determine Visa Type & Check Requirements",
+      "detail": "Identify the correct visa category (Tourist L, Business M, etc.) for your visit. Visit the official website of the Chinese Embassy in Seoul or the Consulate in Busan for the most up-to-date requirements and application forms."
+    },
+    {
+      "step": 2,
+      "title": "Gather Required Documents",
+      "detail": "Compile all necessary documents as specified for your visa type. Ensure your passport has at least 6 months of validity remaining and blank visa pages."
+    },
+    {
+      "step": 3,
+      "title": "Complete Visa Application Form",
+      "detail": "Fill out the Visa Application Form of the People's Republic of China (Form V.2013) completely and accurately. The form is available on the embassy/consulate website."
+    },
+    {
+      "step": 4,
+      "title": "Submit Application",
+      "detail": "Submit your application, passport, completed form, photo, and all supporting documents in person at the Chinese Visa Application Service Center (CVASC) in Seoul or Busan, or as directed by the embassy/consulate."
+    },
+    {
+      "step": 5,
+      "title": "Pay Fees and Collect Passport",
+      "detail": "Pay the applicable visa fee (standard processing ~4-7 business days). You may also inquire about express service if available. Collect your passport with the visa once notified."
+    }
+  ],
+  "requiredDocuments": [
+    "Original Passport with at least 6 months validity from the date of entry into China and blank visa pages.",
+    "One completed Visa Application Form (V.2013) with a recent passport-style color photo attached.",
+    "Proof of accommodation in China (hotel booking confirmation or invitation letter from a host in China).",
+    "Round-trip flight itinerary or a detailed travel plan.",
+    "Recent bank statement (last 3 months) as proof of sufficient financial means.",
+    "For Tourist (L) Visa: Detailed travel itinerary in China. For Business (M) Visa: An invitation letter from a Chinese company or organization."
+  ],
+  "processingTime": "Standard processing typically takes 4 to 7 business days after submission. Express (2-3 business days) or rush (1 business day) services may be available for an additional fee.",
+  "entryPorts": [
+    "International airports with immigration facilities (e.g., Beijing Capital, Shanghai Pudong, Guangzhou Baiyun, Chengdu Tianfu).",
+    "Designated land border crossings open to foreigners (e.g., some crossings with Vietnam, Laos, Myanmar, and certain crossings with Russia).",
+    "Designated sea ports (e.g., Shanghai, Tianjin, Guangzhou)."
+  ],
+  "customsRules": [
+    {
+      "item": "Currency",
+      "limit": "If carrying more than 20,000 CNY or $5,000 USD (or equivalent in other foreign currencies) in cash, you MUST declare it to customs upon arrival."
+    },
+    {
+      "item": "Duty-Free Allowances",
+      "limit": "Visitors may bring in a reasonable quantity of personal articles for their own use. For items like cigarettes and alcohol, there are specific duty-free limits (e.g., 400 cigarettes, 1.5 liters of alcohol)."
+    },
+    {
+      "item": "Prohibited & Restricted Items",
+      "limit": "Strictly prohibited: weapons, ammunition, explosives, counterfeits, drugs, and materials harmful to China's politics, economy, culture, or morality. Restrictions apply to plants, animals, and certain publications."
+    },
+    {
+      "item": "Electronics & Valuables",
+      "limit": "Items like laptops and cameras for personal use are generally permitted. For high-value goods, having proof of purchase can facilitate re-export. Certain types of communication equipment may be restricted."
+    }
+  ],
+  "arrivalTips": [
+    "Ensure you have filled out the Arrival/Departure Card completely before landing. Have a pen handy on the plane.",
+    "Keep your hotel address and contact number written in Chinese characters (Simplified) to show immigration officials or taxi drivers.",
+    "Have your passport, visa, and completed arrival card readily accessible in your hand luggage for the immigration queue.",
+    "After immigration, retrieve your luggage and proceed to Customs. Use the 'Nothing to Declare' channel (Green Channel) if you have no items requiring declaration.",
+    "Consider getting a local SIM card or activating international roaming upon arrival at the airport for communication and map access."
+  ],
+  "usefulLinks": [
+    {
+      "title": "Embassy of the People's Republic of China in the Republic of Korea",
+      "url": "http://kr.china-embassy.gov.cn/eng/"
+    },
+    {
+      "title": "Chinese Visa Application Service Center (Seoul)",
+      "url": "http://www.visaforchina.org/SEL_EN/"
+    },
+    {
+      "title": "National Immigration Administration of China (Official Info)",
+      "url": "https://www.nia.gov.cn/n741435/n741542/index.html"
+    }
+  ]
+}

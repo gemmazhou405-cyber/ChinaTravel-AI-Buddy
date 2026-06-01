@@ -1,0 +1,95 @@
+{
+  "id": "us",
+  "country": "United States",
+  "disclaimer": "This information is for general guidance only. Visa policies and entry requirements are subject to change. United States passport holders must verify all current rules, forms, and fees directly with the Chinese Embassy, Consulate, or authorized visa application service center before applying or traveling.",
+  "visaRequired": true,
+  "visaFreeNote": "Some regions (like Hainan) or short-term stays under specific bilateral agreements may have different rules. Always check the latest official policy for your specific itinerary.",
+  "applicationSteps": [
+    {
+      "step": 1,
+      "title": "Determine Visa Type",
+      "detail": "Identify the correct visa category for your purpose of travel (e.g., Tourist L, Business M, Transit G, etc.). Visit the Chinese Embassy or Consulate website in your jurisdiction for definitions."
+    },
+    {
+      "step": 2,
+      "title": "Prepare Required Documents",
+      "detail": "Gather all necessary documents as per the checklist for your visa type. Ensure your passport has at least 6 months of validity remaining and blank visa pages."
+    },
+    {
+      "step": 3,
+      "title": "Complete the Application Form",
+      "detail": "Fill out the Visa Application Form of the People's Republic of China (Form V.2013) accurately and completely. The form is typically available for download on embassy/consulate websites or through authorized service centers."
+    },
+    {
+      "step": 4,
+      "title": "Submit Application",
+      "detail": "Submit your application and supporting documents in person (or via an authorized agent/visa service center) at the Chinese Embassy, Consulate-General, or China Visa Application Service Center that serves your state of residence."
+    },
+    {
+      "step": 5,
+      "title": "Pay Fees and Collect Passport",
+      "detail": "Pay the visa fee. After processing, collect your passport with the visa sticker. Verify all details on the visa are correct before leaving."
+    }
+  ],
+  "requiredDocuments": [
+    "Original U.S. passport with at least 6 months validity and two blank visa pages.",
+    "One completed Visa Application Form (V.2013) with a recently-taken passport photo (48mm x 33mm) attached.",
+    "Proof of round-trip air ticket booking and hotel reservation, or an invitation letter from a Chinese host (for business/family visits).",
+    "For employed applicants: A letter from your employer stating your position, salary, and purpose of travel.",
+    "For students: A letter from your school confirming your enrollment and status.",
+    "For self-employed/business owners: A copy of your business license or proof of business ownership."
+  ],
+  "processingTime": "Standard processing typically takes 4-7 business days. Express (2-3 business days) and rush (next-day) services are available for additional fees, subject to approval.",
+  "entryPorts": [
+    "All international airports with customs and immigration (e.g., Beijing PEK, Shanghai PVG, Guangzhou CAN, Chengdu CTU).",
+    "Designated land border crossings (e.g., Hong Kong-Zhuhai-Macau Bridge, Luohu/Lo Wu crossing with Hong Kong).",
+    "Some international seaports (for cruise ship passengers)."
+  ],
+  "customsRules": [
+    {
+      "item": "Currency",
+      "limit": "You must declare if carrying cash (including traveler's checks and other monetary instruments) totaling more than 20,000 CNY (approx. $3,000 USD) or $5,000 USD equivalent in foreign currency."
+    },
+    {
+      "item": "Duty-Free Allowances",
+      "limit": "Typically, 400 cigarettes and 1.5 liters of alcohol for visitors over 16. Limits for gifts and personal items exist; high-value items may require declaration."
+    },
+    {
+      "item": "Prohibited & Restricted Items",
+      "limit": "Strict bans on weapons, ammunition, explosives, drugs, and products made from endangered species. Restrictions apply to certain foods, plants, animals, and publications."
+    },
+    {
+      "item": "Electronics & Media",
+      "limit": "Personal devices are allowed, but content on phones, laptops, and storage media may be subject to inspection. Large quantities of the same item may be considered commercial goods."
+    }
+  ],
+  "arrivalTips": [
+    "Fill out the Arrival Card completely and accurately before landing. Have your hotel name and address in Chinese characters readily available.",
+    "At immigration, have your passport, completed arrival card, and flight details handy. Be prepared for possible questions about your stay.",
+    "Purchase a local SIM card or ensure your phone plan has international roaming upon arrival for connectivity.",
+    "Download essential apps like WeChat (for payments/communication), Alipay (tourist version), and a VPN service for accessing foreign websites before arrival.",
+    "Familiarize yourself with basic Chinese phrases and your destinations. Keep your hotel's contact information and address with you at all times."
+  ],
+  "usefulLinks": [
+    {
+      "title": "Chinese Embassy in the United States",
+      "url": "http://www.chinaembassy.org/eng/"
+    },
+    {
+      "title": "Chinese Consulate Generals (Multiple Locations)",
+      "url": "Visit the specific consulate website for your jurisdiction (e.g., New York, Chicago, Los Angeles, San Francisco, Houston)."
+    },
+    {
+      "title": "China Visa Application Service Center",
+      "url": "https://www.visaforchina.org/ (Official service provider for many consulates)"
+    },
+    {
+      "title": "General Administration of Customs of China",
+      "url": "http://english.customs.gov.cn/"
+    },
+    {
+      "title": "National Immigration Administration of China",
+      "url": "https://www.nia.gov.cn/n741440/n741542/index.html (For entry/exit policies)"
+    }
+  ]
+}

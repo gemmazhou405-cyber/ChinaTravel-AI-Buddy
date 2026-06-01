@@ -1,0 +1,97 @@
+{
+  "id": "uk",
+  "country": "United Kingdom",
+  "disclaimer": "This information is provided for guidance only and is subject to change. Visa and entry policies can be updated at short notice. UK passport holders must verify all current requirements, application procedures, and entry rules directly with the Embassy of the People's Republic of China or the relevant Consulate General in the United Kingdom before making any travel arrangements or submitting an application.",
+  "visaRequired": true,
+  "visaFreeNote": "UK citizens generally require a visa to enter mainland China. As of current knowledge, there is no broad visa-free arrangement. Always check the very latest policy, as specific transit or regional exemptions may apply and are subject to change.",
+  "applicationSteps": [
+    {
+      "step": 1,
+      "title": "Determine Visa Type & Verify Eligibility",
+      "detail": "Identify the correct visa category for your trip (e.g., Tourist (L), Business (M), Transit (G)). Visit the official website of the Chinese Embassy in the UK (London) or Consulate General (Edinburgh, Manchester, Belfast) to confirm your eligibility and the specific requirements for that visa type."
+    },
+    {
+      "step": 2,
+      "title": "Gather Required Documents",
+      "detail": "Prepare all mandatory documents as listed by the embassy/consulate for your chosen visa type. This typically includes a completed application form, passport, photo, and supporting materials like flight bookings and accommodation proofs."
+    },
+    {
+      "step": 3,
+      "title": "Submit Application & Biometrics",
+      "detail": "Applications must be submitted in person or via a designated visa application centre (e.g., Chinese Visa Application Service Centre). You will likely need to book an appointment and provide biometric data (fingerprints). Some applicants may be eligible for mail-in services."
+    },
+    {
+      "step": 4,
+      "title": "Pay Fees & Await Processing",
+      "detail": "Pay the applicable visa fee. Standard processing typically takes about 4-7 working days. Express (2-3 days) or rush (1 day) services are usually available for an additional fee. Processing times can vary."
+    },
+    {
+      "step": 5,
+      "title": "Collect Visa & Review Details",
+      "detail": "Collect your passport with the visa sticker. Carefully verify all details on the visa (name, dates, visa type, number of entries) are correct. Contact the issuing authority immediately if you find any errors."
+    }
+  ],
+  "requiredDocuments": [
+    "Original passport with at least 6 months validity remaining and blank visa pages.",
+    "Completed Visa Application Form (Form V.2013) with one recent, bare-headed, full-face passport photo (48mm x 33mm) attached.",
+    "Proof of legal residency status in the UK (if you are not a UK national).",
+    "Detailed itinerary including round-trip flight bookings and confirmed hotel reservations for the entire stay.",
+    "Recent bank statements (last 3-6 months) demonstrating sufficient funds for the trip.",
+    "For business visas: An invitation letter from a Chinese company or authorized unit."
+  ],
+  "processingTime": {
+    "standard": "4-7 business days",
+    "express": "2-3 business days (additional fee)",
+    "rush": "1 business day (additional fee, subject to approval)",
+    "note": "Processing times are estimates and can vary by consulate and season."
+  },
+  "entryPorts": [
+    "All major international airports with customs and immigration facilities (e.g., Beijing Capital, Shanghai Pudong, Guangzhou Baiyun).",
+    "Designated land border crossings (e.g., with Hong Kong SAR, Vietnam, Russia).",
+    "Some international seaports.",
+    "Note: Your visa must be valid and you must enter before the 'Enter Before' date."
+  ],
+  "customsRules": [
+    {
+      "item": "Currency Declaration",
+      "limit": "You must declare to customs if you are carrying cash, traveler's cheques, or promissory notes exceeding 20,000 CNY (or foreign currency equivalent to over 5,000 USD)."
+    },
+    {
+      "item": "Prohibited & Restricted Items",
+      "limit": "Strict prohibitions on weapons, illegal drugs, and materials deemed to endanger national security. Restrictions apply to items like certain publications, biological materials, and protected animal/plant products."
+    },
+    {
+      "item": "Medication",
+      "limit": "Carry prescription medication in its original packaging with a doctor's note or copy of the prescription. Some common UK medicines are controlled in China; verify before travel."
+    },
+    {
+      "item": "Electronics & Valuables",
+      "limit": "Items for personal use are generally allowed. High-value electronics or professional equipment may need to be declared on entry to ensure smooth re-export."
+    }
+  ],
+  "arrivalTips": [
+    "Complete the Arrival Card distributed on your flight or at the immigration hall. Have your hotel address written in Chinese characters to present to immigration officers.",
+    "At immigration, have your passport and completed card ready. Be prepared for questions about your itinerary and purpose of visit.",
+    "Purchase a local SIM card or eSIM for mobile data upon arrival (available at airports). Apps like WeChat and Alipay are ubiquitous for payments; linking a foreign card can sometimes be tricky.",
+    "Download and set up essential apps before departure: a translation app (like Google Translate with offline Chinese pack), a map app (like Baidu Maps), and a VPN if needed for accessing certain international websites/services.",
+    "Keep your passport, visa, and entry stamp safe. You may need to present your passport when checking into hotels, purchasing train tickets, or dealing with authorities."
+  ],
+  "usefulLinks": [
+    {
+      "title": "Embassy of the People's Republic of China in the UK",
+      "url": "http://www.chinese-embassy.org.uk/eng/"
+    },
+    {
+      "title": "Chinese Visa Application Service Centre (UK)",
+      "url": "http://www.visaforchina.org/UK_EN/"
+    },
+    {
+      "title": "General Administration of Customs of the People's Republic of China",
+      "url": "http://english.customs.gov.cn/"
+    },
+    {
+      "title": "National Immigration Administration of China (for policy updates)",
+      "url": "http://www.nia.gov.cn/n741440/n741542/index.html"
+    }
+  ]
+}

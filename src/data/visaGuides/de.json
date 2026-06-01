@@ -1,0 +1,91 @@
+{
+  "id": "de",
+  "country": "Germany",
+  "disclaimer": "IMPORTANT DISCLAIMER: This guide is for informational purposes only. Visa policies and entry requirements change frequently. All travelers MUST verify the current, official requirements directly with the Chinese Embassy or Consulate in Germany before application and travel. No specific legal advice is provided.",
+  "visaRequired": true,
+  "visaFreeNote": "German citizens are typically required to obtain a visa before traveling to China. Short-term visa-free transit (24/72/144-hour) may be available at specific entry points under strict conditions; verify eligibility with official sources.",
+  "applicationSteps": [
+    {
+      "step": 1,
+      "title": "Verify Current Requirements & Visa Type",
+      "detail": "Visit the official website of the Chinese Embassy or Consulate-General in Germany to determine the correct visa type (e.g., tourist L, business M, transit G) based on your purpose of travel and review the latest requirements."
+    },
+    {
+      "step": 2,
+      "title": "Complete Application & Gather Documents",
+      "detail": "Download and accurately fill out the Visa Application Form of the PRC (Form V.2013). Prepare all required supporting documents as listed by the embassy."
+    },
+    {
+      "step": 3,
+      "title": "Book an Appointment (if required)",
+      "detail": "Schedule a visa application submission appointment through the official online portal designated by the Chinese Embassy/Consulate, if this is mandatory for your jurisdiction."
+    },
+    {
+      "step": 4,
+      "title": "Submit Application",
+      "detail": "Submit your application, passport, form, photos, and all supporting documents in person at the designated Chinese Visa Application Service Center (CVASC) or Embassy/Consulate."
+    },
+    {
+      "step": 5,
+      "title": "Pay Fee & Collect Passport",
+      "detail": "Pay the visa application fee. Track the application status online if possible. Collect your passport with the visa upon processing completion."
+    }
+  ],
+  "requiredDocuments": [
+    "Original passport with at least 6 months validity and blank visa pages.",
+    "One completed Visa Application Form (V.2013) with a recent passport photo affixed.",
+    "One recent, passport-sized color photo against a white background.",
+    "Proof of round-trip flight booking and accommodation (hotel reservation or invitation letter from a Chinese host).",
+    "For business visas, an invitation letter from a Chinese entity may be required.",
+    "Recent bank statement (last 3 months) to prove sufficient funds for the trip."
+  ],
+  "processingTime": "Standard processing is typically 4-7 business days. Express (2-3 business days) and rush (1 business day) services may be available for an additional fee.",
+  "entryPorts": [
+    "International airports with direct flights (e.g., Beijing Capital, Shanghai Pudong, Guangzhou Baiyun)",
+    "Major international land border crossings (e.g., with Vietnam, Laos, Myanmar)",
+    "Designated ports for visa-free transit"
+  ],
+  "customsRules": [
+    {
+      "item": "Cash Declaration",
+      "limit": "Declaration is required for cash, traveler's checks, or other monetary instruments exceeding the equivalent of 5,000 USD (or 20,000 USD for foreign visitors in some cases)."
+    },
+    {
+      "item": "Prohibited & Restricted Items",
+      "limit": "Strict prohibitions on drugs, weapons, explosives, counterfeit currency, and politically sensitive materials. Restrictions apply to live animals, plants, and certain publications."
+    },
+    {
+      "item": "Duty-Free Allowances",
+      "limit": "Generally, 400 cigarettes, 1.5 liters of alcohol, and reasonable quantities of perfume for personal use. Goods for personal use within a reasonable value are typically exempt."
+    },
+    {
+      "item": "Medication",
+      "limit": "Carry prescription medications with a doctor's note. Some controlled substances require prior approval from Chinese customs."
+    }
+  ],
+  "arrivalTips": [
+    "Complete the Arrival Card distributed on the aircraft before landing.",
+    "Have the name, address, and phone number of your first hotel written in Chinese characters readily available for immigration.",
+    "Keep your passport and completed arrival card accessible as you approach the immigration counter.",
+    "After immigration, collect your baggage and proceed to the customs channel (Red for goods to declare, Green for nothing to declare).",
+    "At the airport, consider purchasing a local SIM card or arranging portable Wi-Fi for connectivity."
+  ],
+  "usefulLinks": [
+    {
+      "title": "Chinese Embassy in Germany",
+      "url": "http://de.china-embassy.gov.cn/ger/ (Always verify the official URL)"
+    },
+    {
+      "title": "Chinese Visa Application Service Center (CVASC)",
+      "url": "Check for the CVASC covering your region in Germany."
+    },
+    {
+      "title": "China's Official Immigration Website",
+      "url": "http://www.nia.gov.cn/ (National Immigration Administration)"
+    },
+    {
+      "title": "China Customs Website",
+      "url": "http://www.customs.gov.cn/ (For detailed customs regulations)"
+    }
+  ]
+}

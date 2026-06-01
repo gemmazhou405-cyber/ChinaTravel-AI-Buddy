@@ -1,0 +1,93 @@
+{
+  "id": "fr",
+  "country": "France",
+  "disclaimer": "This is a general guide only. Visa policies and entry requirements for China change frequently. You MUST verify all current information, requirements, and procedures directly with the official Chinese Embassy or Consulate General in France before applying for a visa or traveling.",
+  "visaRequired": true,
+  "visaFreeNote": "French citizens may be eligible for 15-day visa-free transit under the 24/72/144-hour transit policies in specific cities/regions. Eligibility and routes are strict. Check the latest official policy to confirm if your itinerary qualifies.",
+  "applicationSteps": [
+    {
+      "step": 1,
+      "title": "Determine Visa Type & Verify Eligibility",
+      "detail": "Visit the official website of the Chinese Embassy in France to determine the correct visa category (e.g., Tourist L, Business M, Transit G) and confirm the latest eligibility criteria for your nationality."
+    },
+    {
+      "step": 2,
+      "title": "Prepare Application Documents",
+      "detail": "Gather all required original documents and copies according to the official checklist for your specific visa type. Ensure your passport meets validity requirements."
+    },
+    {
+      "step": 3,
+      "title": "Complete the Application Form",
+      "detail": "Fill out the online or PDF visa application form (Form V.2013) accurately and completely. The form must be typed and then printed, signed, and dated."
+    },
+    {
+      "step": 4,
+      "title": "Submit Application In Person or By Agent",
+      "detail": "Submit your application, passport, and supporting documents to the Chinese Visa Application Service Center (CVASC) in Paris. An appointment may be required. An authorized agent can also submit on your behalf."
+    },
+    {
+      "step": 5,
+      "title": "Pay Fees & Collect Visa",
+      "detail": "Pay the visa application fee at the time of submission. After processing (typically 4-7 working days for regular service), collect your passport with the issued visa. Verify all details (dates, entries) upon collection."
+    }
+  ],
+  "requiredDocuments": [
+    "Original passport with at least 6 months validity beyond intended stay and at least one blank visa page.",
+    "One completed, printed, and signed China Visa Application Form (Form V.2013).",
+    "One recent passport-style color photograph (48mm x 33mm) taken within the last 6 months.",
+    "Proof of accommodation for your entire stay (hotel bookings or invitation letter from a host in China).",
+    "Round-trip flight itinerary or a detailed travel plan for a Tourist Visa.",
+    "Proof of sufficient financial means (e.g., recent bank statements) for the duration of your visit."
+  ],
+  "processingTime": "Standard processing: 4-7 business days. Express processing (3 business days) and Rush processing (2 business days) services are available for an additional fee.",
+  "entryPorts": [
+    "Major International Airports: Beijing Capital (PEK), Shanghai Pudong (PVG), Guangzhou Baiyun (CAN), Chengdu Tianfu (TFU), etc.",
+    "Designated Land Borders: e.g., Alataw Pass (Kazakhstan), Hekou (Vietnam), Mohan (Laos).",
+    "Some cruise ports may also be eligible for group transit without visa."
+  ],
+  "customsRules": [
+    {
+      "item": "Currency",
+      "limit": "You must declare if carrying cash or other negotiable instruments exceeding the equivalent of 5,000 USD or 20,000 CNY."
+    },
+    {
+      "item": "Prohibited & Restricted Goods",
+      "limit": "Strict prohibition on importing firearms, ammunition, explosives, counterfeit currency, and illicit drugs. Restrictions apply to certain publications, audio-visual materials, and biological products."
+    },
+    {
+      "item": "Duty-Free Allowances",
+      "limit": "Travelers over 18 may bring in 1.5 liters of alcohol and 400 cigarettes duty-free. Quantities exceeding personal use are subject to declaration and duty."
+    },
+    {
+      "item": "Electronics & Gifts",
+      "limit": "Personal electronic devices for personal use are generally allowed. Gifts for personal use within reasonable value are permitted, but items for commercial use must be declared."
+    }
+  ],
+  "arrivalTips": [
+    "Complete the Arrival Card (if provided by the airline) before landing to save time at immigration.",
+    "Have the full address and phone number of your first hotel or host written down, preferably in Chinese characters, for the immigration officer.",
+    "Keep your passport, completed arrival card, and Chinese visa easily accessible in your carry-on luggage.",
+    "After clearing immigration and collecting luggage, proceed through Customs. Choose the 'Nothing to Declare' channel unless you have items requiring declaration.",
+    "Consider getting a local SIM card or activating an eSIM upon arrival at the airport for easy navigation and communication."
+  ],
+  "usefulLinks": [
+    {
+      "title": "Chinese Embassy in France - Visa Section",
+      "url": "http://www.amb-chine.fr/eng/lsfw/lszj/"
+    },
+    {
+      "title": "Chinese Visa Application Service Center (CVASC) in Paris",
+      "url": "http://www.visaforchina.org/"
+    },
+    {
+      "title": "National Immigration Administration of China (Official Info)",
+      "url": "http://www.nia.gov.cn/"
+    }
+  ],
+  "helpfulHints": {
+    "translation": "Having a translation app on your phone can be extremely helpful for reading signs, menus, and communicating.",
+    "payments": "While major credit cards are accepted in many places, having some Chinese Yuan (CNY) cash is advisable for smaller shops, taxis, and rural areas. Mobile payments (WeChat Pay, Alipay) are ubiquitous.",
+    "connectivity": "Many foreign websites and apps are not directly accessible in mainland China. Consider preparing a VPN before arrival if you need constant access to such services.",
+    "officialReminder": "This guide is for informational purposes only. It is NOT legal advice. The only authoritative source for visa and entry requirements is the Chinese Embassy or Consulate."
+  }
+}
