@@ -1,9 +1,102 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    function analyticsData() {
+      return request.resource.data;
+    }
+
+    function optionalString(field, maxLength) {
+      return !(field in analyticsData())
+             || (analyticsData()[field] is string
+                 && analyticsData()[field].size() <= maxLength);
+    }
+
+    function optionalNumber(field) {
+      return !(field in analyticsData()) || analyticsData()[field] is number;
+    }
+
+    function validAnalyticsEventName() {
+      return analyticsData().eventName in [
+        'landing_deeplink_loaded',
+        'guide_page_viewed',
+        'journey_selected',
+        'tool_category_opened',
+        'cta_clicked'
+      ];
+    }
+
+    function validAnalyticsEvent() {
+      return analyticsData().keys().hasAll([
+               'eventName',
+               'anonymousSessionId',
+               'path',
+               'timestamp',
+               'createdAt'
+             ])
+             && analyticsData().keys().hasOnly([
+               'eventName',
+               'anonymousSessionId',
+               'userId',
+               'path',
+               'referrer',
+               'landingPath',
+               'landingJourney',
+               'landingTool',
+               'firstVisitTimestamp',
+               'utm_source',
+               'utm_medium',
+               'utm_campaign',
+               'utm_content',
+               'timestamp',
+               'createdAt',
+               'journey',
+               'tool',
+               'category',
+               'selectedJourney',
+               'previousJourney',
+               'ctaName',
+               'destination',
+               'pageType',
+               'plan'
+             ])
+             && validAnalyticsEventName()
+             && analyticsData().eventName is string
+             && analyticsData().eventName.size() <= 64
+             && analyticsData().anonymousSessionId is string
+             && analyticsData().anonymousSessionId.size() <= 80
+             && analyticsData().path is string
+             && analyticsData().path.size() <= 500
+             && analyticsData().timestamp is number
+             && analyticsData().createdAt == request.time
+             && optionalString('userId', 128)
+             && optionalString('referrer', 500)
+             && optionalString('landingPath', 500)
+             && optionalString('landingJourney', 32)
+             && optionalString('landingTool', 64)
+             && optionalNumber('firstVisitTimestamp')
+             && optionalString('utm_source', 80)
+             && optionalString('utm_medium', 80)
+             && optionalString('utm_campaign', 120)
+             && optionalString('utm_content', 120)
+             && optionalString('journey', 32)
+             && optionalString('tool', 64)
+             && optionalString('category', 80)
+             && optionalString('selectedJourney', 32)
+             && optionalString('previousJourney', 32)
+             && optionalString('ctaName', 120)
+             && optionalString('destination', 160)
+             && optionalString('pageType', 80)
+             && optionalString('plan', 32);
+    }
+
     match /users/{userId} {
       allow read, write: if request.auth != null 
                          && request.auth.uid == userId;
+    }
+
+    match /analyticsEvents/{eventId} {
+      allow create: if validAnalyticsEvent();
+      allow read, update, delete: if false;
     }
   }
 }
