@@ -48,6 +48,41 @@ function analyticsJourney(journey: JourneyId) {
   return journey === 'now' ? 'china' : journey;
 }
 
+function deepLinkTargetId(landing: { journey: JourneyId; tab: TabId | null; tool: string | null }) {
+  if (landing.journey === 'before') {
+    const beforeTargets: Record<string, string> = {
+      checklist: 'tool-checklist',
+      apps: 'tool-apps',
+      payment: 'tool-payment',
+      transport: 'tool-transport',
+      city: 'tool-city',
+    };
+    return landing.tool ? beforeTargets[landing.tool] : null;
+  }
+  if (landing.journey === 'now') {
+    const nowTargets: Record<string, string> = {
+      transport: 'phrase-category-taxi',
+      stay: 'phrase-category-hotel',
+      food: 'tool-food',
+      pay: 'tool-pay',
+    };
+    return landing.tool ? nowTargets[landing.tool] : null;
+  }
+  if (landing.journey === 'emergency') return 'tool-emergency-numbers';
+  return null;
+}
+
+function scrollToElementId(id: string) {
+  const element = document.getElementById(id);
+  if (!element) return false;
+  const top = Math.max(element.getBoundingClientRect().top + window.scrollY - 76, 0);
+  const scrollOptions: ScrollToOptions = { top, behavior: 'auto' };
+  window.scrollTo(scrollOptions);
+  document.documentElement.scrollTo(scrollOptions);
+  document.body.scrollTo(scrollOptions);
+  return true;
+}
+
 export default function App() {
   const { t } = useTranslation();
   const policyPageType = getPolicyPageType(window.location.pathname);
@@ -95,9 +130,12 @@ export default function App() {
 
   useEffect(() => {
     if (landing.tab) {
-      window.setTimeout(() => {
-        document.getElementById('tabs')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 250);
+      const targetId = deepLinkTargetId(landing);
+      const scrollTarget = () => {
+        if (targetId && scrollToElementId(targetId)) return;
+        scrollToElementId('tabs');
+      };
+      [250, 650, 1100, 1800, 2600].forEach((delay) => window.setTimeout(scrollTarget, delay));
     }
   // Run only for initial URL landing.
   // eslint-disable-next-line react-hooks/exhaustive-deps

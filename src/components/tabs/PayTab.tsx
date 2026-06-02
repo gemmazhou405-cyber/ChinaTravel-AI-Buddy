@@ -124,6 +124,7 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
       </section>
 
       <ToolDisclosure
+        id="tool-failed"
         title={t('pay.failed.title')}
         subtitle={t('pay.tools.failedBody')}
         icon={<CreditCard className="h-4 w-4" />}
@@ -170,6 +171,7 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
 
       {/* Payment methods */}
       <ToolDisclosure
+        id="tool-pay"
         title={t('pay.paymentTitle')}
         subtitle={t('pay.tools.mobilePayBody')}
         icon={<WalletCards className="h-4 w-4" />}
@@ -199,6 +201,7 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
 
       {/* WeChat Pay setup */}
       <ToolDisclosure
+        id="tool-wechat"
         title={t('pay.wechatSetup')}
         subtitle={t('pay.setupShort')}
         icon={<Smartphone className="h-4 w-4" />}

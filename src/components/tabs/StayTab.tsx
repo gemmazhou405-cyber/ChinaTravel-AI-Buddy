@@ -77,6 +77,7 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
       />
 
       <ToolDisclosure
+        id="tool-custom"
         title={t('stay.customHelper.title')}
         subtitle={t('stay.customHelper.subtitle')}
         icon={<Building2 className="w-4 h-4" />}

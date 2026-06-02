@@ -200,7 +200,7 @@ export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgra
       </div>
 
       {/* Call buttons */}
-      <section>
+      <section id="tool-emergency-numbers" className="scroll-mt-20">
         <h2 className="text-base font-semibold text-gray-900 mb-3">{t('emergency.callTitle')}</h2>
         <div className="space-y-3">
           {EMERGENCY_NUMBERS.map((n) => (

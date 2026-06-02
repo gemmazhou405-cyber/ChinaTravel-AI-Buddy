@@ -8,9 +8,10 @@ interface Props {
   children: ReactNode;
   defaultOpen?: boolean;
   onOpen?: () => void;
+  id?: string;
 }
 
-export default function ToolDisclosure({ title, subtitle, icon, children, defaultOpen = false, onOpen }: Props) {
+export default function ToolDisclosure({ title, subtitle, icon, children, defaultOpen = false, onOpen, id }: Props) {
   const [open, setOpen] = useState(defaultOpen);
   const trackedDefaultOpen = useRef(false);
 
@@ -20,12 +21,20 @@ export default function ToolDisclosure({ title, subtitle, icon, children, defaul
       if (!trackedDefaultOpen.current) {
         trackedDefaultOpen.current = true;
         onOpen?.();
+        if (id) {
+          window.setTimeout(() => {
+            const element = document.getElementById(id);
+            if (!element) return;
+            const top = Math.max(element.getBoundingClientRect().top + window.scrollY - 76, 0);
+            window.scrollTo({ top, behavior: 'auto' });
+          }, 450);
+        }
       }
     }
-  }, [defaultOpen, onOpen]);
+  }, [defaultOpen, id, onOpen]);
 
   return (
-    <section className="overflow-hidden rounded-[1.65rem] border border-white/60 bg-white/[0.48] shadow-[0_18px_46px_rgba(11,63,67,0.08)] backdrop-blur-2xl">
+    <section id={id} className="scroll-mt-20 overflow-hidden rounded-[1.65rem] border border-white/60 bg-white/[0.48] shadow-[0_18px_46px_rgba(11,63,67,0.08)] backdrop-blur-2xl">
       <button
         type="button"
         onClick={() => {

@@ -43,6 +43,12 @@ export default function PhraseCategoryAccordion({
       if (trackedInitialOpenId.current !== initialOpenId) {
         trackedInitialOpenId.current = initialOpenId;
         onCategoryOpen?.(initialOpenId);
+        window.setTimeout(() => {
+          const element = document.getElementById(`phrase-category-${initialOpenId}`);
+          if (!element) return;
+          const top = Math.max(element.getBoundingClientRect().top + window.scrollY - 76, 0);
+          window.scrollTo({ top, behavior: 'auto' });
+        }, 450);
       }
     }
   }, [initialOpenId, onCategoryOpen]);
@@ -61,7 +67,7 @@ export default function PhraseCategoryAccordion({
           const open = openId === category.id;
           const lockedCount = Math.max(category.cards.length - freeLimit, 0);
           return (
-            <div key={category.id} className="overflow-hidden rounded-[1.35rem] border border-white/60 bg-white/[0.52] shadow-[0_16px_42px_rgba(11,63,67,0.08)] backdrop-blur-2xl">
+            <div id={`phrase-category-${category.id}`} key={category.id} className="scroll-mt-20 overflow-hidden rounded-[1.35rem] border border-white/60 bg-white/[0.52] shadow-[0_16px_42px_rgba(11,63,67,0.08)] backdrop-blur-2xl">
               <button
                 type="button"
                 onClick={() => {

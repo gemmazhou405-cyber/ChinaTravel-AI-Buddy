@@ -121,6 +121,7 @@ export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick, deepT
       />
 
       <ToolDisclosure
+        id="tool-checklist"
         title={t('journey.before.checklist')}
         subtitle={t('journey.before.checklistNote')}
         icon={<CheckCircle className="w-4 h-4" />}
@@ -159,6 +160,7 @@ export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick, deepT
       </ToolDisclosure>
 
       <ToolDisclosure
+        id="tool-apps"
         title={t('journey.before.apps')}
         subtitle={t('journey.before.appsNote')}
         icon={<Smartphone className="w-4 h-4" />}
@@ -182,6 +184,7 @@ export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick, deepT
       </ToolDisclosure>
 
       <ToolDisclosure
+        id="tool-payment"
         title={t('journey.before.payment')}
         subtitle={t('journey.before.paymentNote')}
         icon={<CreditCard className="w-4 h-4" />}
@@ -198,6 +201,7 @@ export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick, deepT
       </ToolDisclosure>
 
       <ToolDisclosure
+        id="tool-transport"
         title={t('journey.before.transport')}
         subtitle={t('journey.before.transportNote')}
         icon={<Train className="w-4 h-4" />}
@@ -215,6 +219,7 @@ export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick, deepT
 
       {/* City Survival Guides */}
       <ToolDisclosure
+        id="tool-city"
         title={t('journey.before.cityGuides')}
         subtitle={t('journey.before.cityGuidesNote')}
         icon={<MapPin className="w-4 h-4" />}

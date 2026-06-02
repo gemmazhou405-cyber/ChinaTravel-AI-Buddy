@@ -70,6 +70,7 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
       />
 
       <ToolDisclosure
+        id="tool-train"
         title={t('transport.trainTitle')}
         subtitle={t('transport.trainHelperShort')}
         icon={<Navigation className="w-4 h-4" />}
@@ -102,6 +103,7 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
       </ToolDisclosure>
 
       <ToolDisclosure
+        id="tool-apps"
         title={t('transport.appsTitle')}
         subtitle={t('transport.appsShort')}
         icon={<Car className="w-4 h-4" />}
@@ -129,6 +131,7 @@ export default function TransportTab({ userState, showToast, onAskBuddy, onUpgra
       </ToolDisclosure>
 
       <ToolDisclosure
+        id="tool-metro"
         title={t('transport.metroTrainPhrases')}
         subtitle={t('transport.metroTrainPhrasesSub')}
         icon={<Train className="w-4 h-4" />}

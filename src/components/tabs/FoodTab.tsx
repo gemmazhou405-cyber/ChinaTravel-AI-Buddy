@@ -153,6 +153,7 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
 
       {/* Section: Menu Decoder */}
       <ToolDisclosure
+        id="tool-food"
         title={t('food.decoderTitle')}
         subtitle={t('food.decoderSub')}
         icon={<Upload className="w-4 h-4" />}
