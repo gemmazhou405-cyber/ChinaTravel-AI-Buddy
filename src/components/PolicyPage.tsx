@@ -42,6 +42,10 @@ interface GuidePageData {
 
 const contactEmail = 'gemmazhou405@gmail.com';
 const siteUrl = 'https://chinaeasebuddy.com';
+const paypalLinks = {
+  trip: 'https://www.paypal.com/ncp/payment/863ZKSY6RJ64J',
+  group: 'https://www.paypal.com/ncp/payment/CL8J5WJVK3TAJ',
+} as const;
 const standardDisclaimer =
   'ChinaEase Buddy is a digital travel toolkit. It is not an official travel authority, visa service, immigration service, medical service, legal service, financial service, hotel booking service, or flight booking service. Always confirm important travel, payment, health, and entry information with official sources or service providers.';
 
@@ -49,21 +53,30 @@ const pricingPlans = [
   {
     name: 'Free',
     price: '$0',
-    note: 'Essential travel toolkit access',
-    features: ['Basic phrase cards', 'Static travel guides', 'Limited Buddy AI quota'],
+    note: 'Basic China travel toolkit',
+    features: ['Apps, payments, taxis, food, hotels, and emergency help', 'Free toolkit access', 'No payment required'],
+    cta: 'Start Free',
+    href: '/',
+    plan: 'free',
   },
   {
     name: 'Trip Pass',
     price: '$9.90',
     note: 'One-time payment',
-    features: ['50 Buddy AI messages', '20 menu/photo scans', 'Unlocked travel phrase cards'],
+    features: ['Extra travel help for one traveler during a China trip', 'PayPal manual payment link', 'Manual activation after payment'],
+    cta: 'Get Trip Pass',
+    href: paypalLinks.trip,
+    plan: 'trip_pass',
     featured: true,
   },
   {
     name: 'Group Pass',
-    price: '$39.90',
+    price: '$29.90',
     note: 'One-time payment',
-    features: ['200 Buddy AI messages', '100 menu/photo scans', 'Custom phrase helper access'],
+    features: ['Extra travel help for couples, families, or small groups', 'PayPal manual payment link', 'Manual activation after payment'],
+    cta: 'Get Group Pass',
+    href: paypalLinks.group,
+    plan: 'group_pass',
   },
 ];
 
@@ -742,7 +755,7 @@ function PricingPage() {
   return (
     <PageShell
       title="Pricing"
-      intro="ChinaEase Buddy offers one free plan and two one-time digital travel passes. No subscriptions, no auto-renewal."
+      intro="ChinaEase Buddy starts with a free toolkit. Paid passes are optional and currently use manual PayPal payment links."
     >
       <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
         {pricingPlans.map((plan) => (
@@ -763,11 +776,32 @@ function PricingPage() {
                 </li>
               ))}
             </ul>
+            <a
+              href={plan.href}
+              target={plan.plan === 'free' ? undefined : '_blank'}
+              rel={plan.plan === 'free' ? undefined : 'noopener noreferrer'}
+              onClick={() => {
+                void trackEvent('cta_clicked', {
+                  ctaName: plan.cta,
+                  destination: plan.plan === 'trip_pass' ? 'PayPal Trip Pass' : plan.plan === 'group_pass' ? 'PayPal Group Pass' : 'free-toolkit',
+                  tool: 'pricing',
+                  plan: plan.plan,
+                });
+              }}
+              className={`mt-5 inline-flex w-full justify-center rounded-xl px-4 py-2.5 text-sm font-semibold transition ${
+                plan.featured ? 'bg-white text-[#155e63] hover:bg-gray-50' : 'border border-[#155e63]/15 bg-[#155e63]/5 text-[#155e63] hover:bg-[#155e63]/10'
+              }`}
+            >
+              {plan.cta}
+            </a>
           </div>
         ))}
       </div>
       <div className="mt-5 rounded-2xl border border-[#155e63]/10 bg-[#155e63]/5 p-4">
         <p className="text-sm font-semibold text-[#155e63]">One-time payment, no auto-renewal, 3-day refund policy.</p>
+        <p className="mt-2 text-xs leading-relaxed text-gray-600">
+          Payments are processed by PayPal. Access is currently activated manually after payment. Please use the same email as your ChinaEase Buddy account or include your account email during checkout.
+        </p>
       </div>
     </PageShell>
   );

@@ -374,44 +374,38 @@
       "currency": "Convertisseur de devises",
       "currencyLive": "USD · EUR · GBP · AUD → RMB en direct",
       "open": "Ouvrir",
-      "secure": "Accès anticipé manuel",
+      "secure": "Paiement PayPal manuel",
       "bannerAlt": "Votre aventure en Chine commence maintenant",
-      "paymentSoon": "L’accès anticipé manuel est disponible pendant la mise en place du paiement automatique.",
+      "paymentSoon": "Les forfaits payants utilisent des liens de paiement PayPal manuels. L’accès est activé manuellement après paiement.",
       "plans": {
         "free": {
           "name": "Gratuit",
-          "desc": "Outils essentiels pour chaque voyage",
+          "desc": "Boîte à outils de base pour voyager en Chine",
           "cta": "Commencer gratuitement",
           "features": [
-            "5 messages Buddy AI",
-            "3 scans menu/photo",
-            "Cartes d’urgence hors ligne essentielles",
-            "Cartes de phrases de base",
-            "Liste de préparation avant le vol"
+            "Apps, paiements, taxis, nourriture, hôtels et aide d’urgence",
+            "Accès gratuit à la boîte à outils",
+            "Aucun paiement requis"
           ]
         },
         "trip": {
           "name": "Trip Pass",
-          "desc": "Valable 7 jours",
-          "cta": "Demander un accès anticipé",
+          "desc": "Aide de voyage supplémentaire pour une personne pendant un séjour en Chine",
+          "cta": "Obtenir Trip Pass",
           "features": [
-            "50 messages Buddy AI",
-            "20 scans menu/photo",
-            "Kit d’urgence hors ligne complet",
-            "Guides paiement et transport",
-            "9 packs de survie par ville"
+            "9,90 $ paiement unique",
+            "Aide supplémentaire pour une personne",
+            "Activation manuelle après paiement"
           ]
         },
         "group": {
           "name": "Group Pass",
-          "desc": "Valable 14 jours · Jusqu’à 5 voyageurs",
-          "cta": "Demander un accès anticipé",
+          "desc": "Aide supplémentaire pour couples, familles ou petits groupes visitant la Chine ensemble",
+          "cta": "Obtenir Group Pass",
           "features": [
-            "200 messages Buddy AI",
-            "100 scans menu/photo",
-            "5 profils voyageurs",
-            "Cartes médicales et aide hôpital",
-            "Cartes d’urgence partagées"
+            "29,90 $ paiement unique",
+            "Aide supplémentaire pour petits groupes",
+            "Activation manuelle après paiement"
           ]
         }
       },
@@ -491,25 +485,33 @@
       "paymentCardsSubtitle": "{{count}} cartes Alipay, WeChat Pay, carte et espèces",
       "setupShort": "Liez une carte avant l’arrivée.",
       "earlyAccess": {
-        "title": "Accès anticipé manuel",
-        "body": "Le paiement automatique est en cours de configuration. Pour l’instant, Trip Pass et Group Pass sont activés manuellement après confirmation du paiement.",
-        "options": "Les options de paiement manuel disponibles seront envoyées par e-mail.",
+        "title": "Paiement PayPal manuel",
+        "body": "Trip Pass et Group Pass utilisent des liens de paiement PayPal. L’accès est activé manuellement après confirmation du paiement.",
+        "options": "Utilisez la même adresse e-mail que votre compte ChinaEase Buddy ou indiquez-la lors du paiement.",
         "safety": "ChinaEase Buddy ne collecte pas les données de carte directement sur ce site.",
-        "modalTitle": "Demander l’accès anticipé",
-        "modalSubtitle": "Le paiement automatique est en cours de configuration. Envoyez une demande et nous répondrons par e-mail avec les options de paiement manuel disponibles.",
+        "modalTitle": "Paiement manuel",
+        "modalSubtitle": "Utilisez le lien de paiement PayPal du forfait choisi. L’accès est activé manuellement après confirmation du paiement.",
         "email": "Adresse e-mail",
         "plan": "Choix du forfait",
         "travelDate": "Date de voyage facultative",
         "message": "Message facultatif",
         "messagePlaceholder": "Quelque chose à savoir sur votre voyage ?",
-        "submit": "Envoyer la demande",
+        "submit": "Continuer",
         "contactEmail": "Nous contacter par e-mail",
-        "confirmation": "Nous vous enverrons les options de paiement manuel par e-mail et activerons votre forfait après confirmation du paiement.",
+        "confirmation": "L’accès est activé manuellement après confirmation du paiement.",
         "noCard": "Aucune donnée de carte n’est collectée sur ce site.",
         "sameEmail": "Utilisez la même adresse e-mail que celle de votre compte ChinaEase Buddy.",
         "createAccount": "Créez d’abord un compte gratuit pour une activation plus rapide.",
         "emailRequired": "Veuillez d’abord saisir votre e-mail.",
-        "mailReady": "Votre demande est prête. Envoyez l’e-mail pour continuer."
+        "mailReady": "Veuillez continuer avec le lien de paiement."
+      },
+      "freeToolkitReady": "La boîte à outils gratuite est prête. Aucun paiement nécessaire.",
+      "manualPayment": {
+        "title": "La boîte à outils gratuite d’abord. Les forfaits payants sont optionnels.",
+        "body": "Trip Pass et Group Pass utilisent pour l’instant des liens de paiement PayPal manuels. L’accès est activé manuellement après confirmation du paiement.",
+        "note": "Les paiements sont traités par PayPal. Utilisez la même adresse e-mail que votre compte ChinaEase Buddy ou indiquez-la lors du paiement.",
+        "safety": "ChinaEase Buddy ne collecte pas les données de carte directement sur ce site.",
+        "paidNote": "Ouvre PayPal dans un nouvel onglet. Activation manuelle après paiement."
       }
     },
     "chat": {
@@ -524,7 +526,7 @@
         "s4": "Peut-on boire l’eau du robinet ?"
       },
       "welcome": "Bonjour ! Je suis Buddy, votre compagnon IA pour la Chine. Posez-moi vos questions sur les transports, les repas, les paiements ou les urgences.",
-      "quotaExceeded": "Vous avez utilisé les {{limit}} messages Buddy AI de votre forfait {{plan}}. Passez au Trip Pass (9,90 $) pour 50 messages Buddy AI, ou au Group Pass (39,90 $) pour 200.",
+      "quotaExceeded": "Vous avez utilisé les {{limit}} messages Buddy AI de votre forfait {{plan}}. Passez au Trip Pass (9,90 $) pour 50 messages Buddy AI, ou au Group Pass (29,90 $) pour 200.",
       "notLoggedIn": "Connectez-vous pour utiliser le chat IA.",
       "trouble": "J’ai eu un problème. Veuillez réessayer.",
       "connectionIssue": "Problème de connexion. Vérifiez Internet et réessayez.",

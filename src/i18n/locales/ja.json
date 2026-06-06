@@ -374,44 +374,38 @@
       "currency": "通貨換算",
       "currencyLive": "USD · EUR · GBP · AUD → RMB en direct",
       "open": "開く",
-      "secure": "手動早期アクセス",
+      "secure": "手動PayPal支払い",
       "bannerAlt": "Votre aventure en Chine commence maintenant",
-      "paymentSoon": "自動決済の準備中は、手動の早期アクセスを利用できます。",
+      "paymentSoon": "有料パスは手動のPayPal支払いリンクを使用します。支払い後、アクセスは手動で有効化されます。",
       "plans": {
         "free": {
           "name": "無料",
-          "desc": "旅行に必要な基本ツール",
+          "desc": "中国旅行の基本ツールキット",
           "cta": "無料で始める",
           "features": [
-            "Buddy AIメッセージ5回",
-            "メニュー/写真スキャン3回",
-            "基本のオフライン緊急カード",
-            "基本フレーズカード",
-            "出発前チェックリスト"
+            "アプリ、支払い、タクシー、食事、ホテル、緊急時のサポート",
+            "無料ツールキットへのアクセス",
+            "支払い不要"
           ]
         },
         "trip": {
           "name": "Trip Pass",
-          "desc": "7日間有効",
-          "cta": "早期アクセスをリクエスト",
+          "desc": "中国旅行中の1名向け追加トラベルサポート",
+          "cta": "Trip Passを取得",
           "features": [
-            "Buddy AIメッセージ50回",
-            "メニュー/写真スキャン20回",
-            "完全版オフライン緊急キット",
-            "決済・交通ガイド",
-            "9都市サバイバルパック"
+            "$9.90 一回払い",
+            "1名向け追加サポート",
+            "支払い確認後に手動で有効化"
           ]
         },
         "group": {
           "name": "Group Pass",
-          "desc": "14日間有効 · 最大5名まで",
-          "cta": "早期アクセスをリクエスト",
+          "desc": "カップル、家族、小グループで中国を訪れる方向けの追加トラベルサポート",
+          "cta": "Group Passを取得",
           "features": [
-            "Buddy AIメッセージ200回",
-            "メニュー/写真スキャン100回",
-            "旅行者プロフィール5名分",
-            "医療フレーズカード＆病院ヘルパー",
-            "共有緊急カード"
+            "$29.90 一回払い",
+            "小グループ向け追加サポート",
+            "支払い確認後に手動で有効化"
           ]
         }
       },
@@ -491,25 +485,33 @@
       "paymentCardsSubtitle": "Alipay、WeChat Pay、カード、現金カード {{count}}枚",
       "setupShort": "到着前にカードを連携してください。",
       "earlyAccess": {
-        "title": "手動早期アクセス",
-        "body": "自動チェックアウトを準備中です。現在、Trip Pass と Group Pass は支払い確認後に手動で有効化されます。",
-        "options": "利用可能な手動支払い方法はメールでお知らせします。",
+        "title": "手動PayPal支払い",
+        "body": "Trip Pass と Group Pass は PayPal 支払いリンクを使用します。支払い確認後、アクセスは手動で有効化されます。",
+        "options": "ChinaEase Buddy アカウントと同じメール、またはチェックアウト時にアカウントのメールを入力してください。",
         "safety": "ChinaEase Buddy はこのサイト上でカード情報を直接収集しません。",
-        "modalTitle": "早期アクセスをリクエスト",
-        "modalSubtitle": "自動チェックアウトを準備中です。リクエストを送信すると、利用可能な手動支払い方法をメールでご案内します。",
+        "modalTitle": "手動支払い",
+        "modalSubtitle": "選択したパスの PayPal 支払いリンクを使用してください。支払い確認後、アクセスは手動で有効化されます。",
         "email": "メールアドレス",
         "plan": "プラン選択",
         "travelDate": "旅行日（任意）",
         "message": "メッセージ（任意）",
         "messagePlaceholder": "旅行について伝えておきたいことはありますか？",
-        "submit": "リクエストを送信",
+        "submit": "続行",
         "contactEmail": "メールで問い合わせる",
-        "confirmation": "手動支払い方法をメールでご案内し、支払い確認後にプランを有効化します。",
+        "confirmation": "支払い確認後、アクセスは手動で有効化されます。",
         "noCard": "このサイトではカード情報を収集しません。",
         "sameEmail": "ChinaEase Buddy アカウントと同じメールを使用してください。",
         "createAccount": "より早い有効化のため、先に無料アカウントを作成してください。",
         "emailRequired": "先にメールアドレスを入力してください。",
-        "mailReady": "リクエストのメールを準備しました。続行するにはメールを送信してください。"
+        "mailReady": "支払いリンクに進んでください。"
+      },
+      "freeToolkitReady": "無料ツールキットを利用できます。支払いは不要です。",
+      "manualPayment": {
+        "title": "まずは無料ツールキット。 有料パスは任意です。",
+        "body": "Trip Pass と Group Pass は現在、PayPal の手動支払いリンクを使用します。支払い確認後、アクセスは手動で有効化されます。",
+        "note": "支払いは PayPal により処理されます。ChinaEase Buddy アカウントと同じメール、またはチェックアウト時にアカウントのメールを入力してください。",
+        "safety": "ChinaEase Buddy はこのサイト上でカード情報を直接収集しません。",
+        "paidNote": "PayPal を新しいタブで開きます。支払い後に手動で有効化されます。"
       }
     },
     "chat": {
@@ -524,7 +526,7 @@
         "s4": "Peut-on boire l’eau du robinet ?"
       },
       "welcome": "こんにちは！私はBuddy、中国旅行のAIコンパニオンです。交通、安全な食事、支払い、緊急時のことを何でも聞いてください。",
-      "quotaExceeded": "{{plan}}プランのBuddy AIメッセージ{{limit}}回をすべて使用しました。Trip Pass（$9.90）で50回、Group Pass（$39.90）で200回にアップグレードできます。",
+      "quotaExceeded": "{{plan}}プランのBuddy AIメッセージ{{limit}}回をすべて使用しました。Trip Pass（$9.90）で50回、Group Pass（$29.90）で200回にアップグレードできます。",
       "notLoggedIn": "AIチャットを使うにはサインインしてください。",
       "trouble": "問題が発生しました。もう一度お試しください。",
       "connectionIssue": "接続に問題があります。インターネットを確認してください。",

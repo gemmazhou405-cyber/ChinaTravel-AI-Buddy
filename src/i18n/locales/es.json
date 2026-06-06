@@ -374,44 +374,38 @@
       "currency": "Conversor de divisas",
       "currencyLive": "USD · EUR · GBP · AUD → RMB en direct",
       "open": "Abrir",
-      "secure": "Acceso anticipado manual",
+      "secure": "Pago manual con PayPal",
       "bannerAlt": "Votre aventure en Chine commence maintenant",
-      "paymentSoon": "El acceso anticipado manual está disponible mientras se configura el pago automático.",
+      "paymentSoon": "Los pases de pago usan enlaces manuales de PayPal. El acceso se activa manualmente tras el pago.",
       "plans": {
         "free": {
           "name": "Gratis",
-          "desc": "Herramientas esenciales para cualquier viaje",
+          "desc": "Kit básico de viaje para China",
           "cta": "Empezar gratis",
           "features": [
-            "5 mensajes de Buddy AI",
-            "3 escaneos de menú/foto",
-            "Tarjetas esenciales de emergencia offline",
-            "Tarjetas básicas de frases",
-            "Lista previa al vuelo"
+            "Apps, pagos, taxis, comida, hoteles y ayuda de emergencia",
+            "Acceso gratuito al kit",
+            "No requiere pago"
           ]
         },
         "trip": {
           "name": "Trip Pass",
-          "desc": "Válido por 7 días",
-          "cta": "Solicitar acceso anticipado",
+          "desc": "Ayuda extra para un viajero durante un viaje por China",
+          "cta": "Obtener Trip Pass",
           "features": [
-            "50 mensajes de Buddy AI",
-            "20 escaneos de menú/foto",
-            "Kit completo de emergencia offline",
-            "Guías de pago y transporte",
-            "9 packs de supervivencia por ciudad"
+            "9,90 $ pago único",
+            "Ayuda extra para un viajero",
+            "Activación manual tras el pago"
           ]
         },
         "group": {
           "name": "Group Pass",
-          "desc": "Válido por 14 días · Hasta 5 viajeros",
-          "cta": "Solicitar acceso anticipado",
+          "desc": "Ayuda extra para parejas, familias o pequeños grupos que visitan China juntos",
+          "cta": "Obtener Group Pass",
           "features": [
-            "200 mensajes de Buddy AI",
-            "100 escaneos de menú/foto",
-            "5 perfiles de viajeros",
-            "Tarjetas médicas y ayuda hospitalaria",
-            "Tarjetas de emergencia compartidas"
+            "29,90 $ pago único",
+            "Ayuda extra para pequeños grupos",
+            "Activación manual tras el pago"
           ]
         }
       },
@@ -491,25 +485,33 @@
       "paymentCardsSubtitle": "{{count}} tarjetas de Alipay, WeChat Pay, tarjeta y efectivo",
       "setupShort": "Vincula una tarjeta antes de llegar.",
       "earlyAccess": {
-        "title": "Acceso anticipado manual",
-        "body": "El pago automático se está configurando. Por ahora, Trip Pass y Group Pass se activan manualmente tras confirmar el pago.",
-        "options": "Las opciones de pago manual disponibles se compartirán por email.",
+        "title": "Pago manual con PayPal",
+        "body": "Trip Pass y Group Pass usan enlaces de pago de PayPal. El acceso se activa manualmente tras confirmar el pago.",
+        "options": "Usa el mismo email que tu cuenta de ChinaEase Buddy o incluye tu email de cuenta durante el pago.",
         "safety": "ChinaEase Buddy no recopila datos de tarjeta directamente en este sitio.",
-        "modalTitle": "Solicitar acceso anticipado",
-        "modalSubtitle": "El pago automático se está configurando. Envía una solicitud y responderemos por email con las opciones de pago manual disponibles.",
+        "modalTitle": "Pago manual",
+        "modalSubtitle": "Usa el enlace de PayPal del pase elegido. El acceso se activa manualmente tras confirmar el pago.",
         "email": "Dirección de email",
         "plan": "Selección de plan",
         "travelDate": "Fecha de viaje opcional",
         "message": "Mensaje opcional",
         "messagePlaceholder": "¿Algo que debamos saber sobre tu viaje?",
-        "submit": "Enviar solicitud",
+        "submit": "Continuar",
         "contactEmail": "Contactarnos por email",
-        "confirmation": "Te enviaremos opciones de pago manual por email y activaremos tu plan tras confirmar el pago.",
+        "confirmation": "El acceso se activa manualmente tras confirmar el pago.",
         "noCard": "No se recopilan datos de tarjeta en este sitio.",
         "sameEmail": "Usa el mismo email que utilizas para tu cuenta de ChinaEase Buddy.",
         "createAccount": "Crea primero una cuenta gratuita para una activación más rápida.",
         "emailRequired": "Introduce tu email primero.",
-        "mailReady": "Tu solicitud está lista. Envía el email para continuar."
+        "mailReady": "Continúa con el enlace de pago."
+      },
+      "freeToolkitReady": "El kit gratuito está listo. No hace falta pagar.",
+      "manualPayment": {
+        "title": "Primero el kit gratuito. Los pases de pago son opcionales.",
+        "body": "Trip Pass y Group Pass usan por ahora enlaces manuales de pago de PayPal. El acceso se activa manualmente tras confirmar el pago.",
+        "note": "Los pagos los procesa PayPal. Usa el mismo email que tu cuenta de ChinaEase Buddy o incluye tu email de cuenta durante el pago.",
+        "safety": "ChinaEase Buddy no recopila datos de tarjeta directamente en este sitio.",
+        "paidNote": "Abre PayPal en una pestaña nueva. Activación manual tras el pago."
       }
     },
     "chat": {
@@ -524,7 +526,7 @@
         "s4": "Peut-on boire l’eau du robinet ?"
       },
       "welcome": "¡Hola! Soy Buddy, tu compañero de viaje con IA para China. Pregúntame sobre transporte, comida segura, pagos o emergencias.",
-      "quotaExceeded": "Has usado los {{limit}} mensajes de Buddy AI de tu plan {{plan}}. Actualiza a Trip Pass (9,90 $) para 50 mensajes de Buddy AI, o a Group Pass (39,90 $) para 200.",
+      "quotaExceeded": "Has usado los {{limit}} mensajes de Buddy AI de tu plan {{plan}}. Actualiza a Trip Pass (9,90 $) para 50 mensajes de Buddy AI, o a Group Pass (29,90 $) para 200.",
       "notLoggedIn": "Inicia sesión para usar el chat de IA.",
       "trouble": "Hubo un problema. Inténtalo de nuevo.",
       "connectionIssue": "Problema de conexión. Revisa Internet e inténtalo de nuevo.",

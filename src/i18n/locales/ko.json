@@ -374,44 +374,38 @@
       "currency": "환율 계산기",
       "currencyLive": "USD · EUR · GBP · AUD → RMB en direct",
       "open": "열기",
-      "secure": "수동 얼리 액세스",
+      "secure": "수동 PayPal 결제",
       "bannerAlt": "Votre aventure en Chine commence maintenant",
-      "paymentSoon": "자동 결제를 준비하는 동안 수동 얼리 액세스를 이용할 수 있습니다.",
+      "paymentSoon": "유료 패스는 수동 PayPal 결제 링크를 사용합니다. 결제 후 액세스가 수동으로 활성화됩니다.",
       "plans": {
         "free": {
           "name": "무료",
-          "desc": "여행에 필요한 기본 도구",
+          "desc": "중국 여행 기본 도구 키트",
           "cta": "무료 시작",
           "features": [
-            "Buddy AI 메시지 5회",
-            "메뉴/사진 스캔 3회",
-            "기본 오프라인 긴급 카드",
-            "기본 문구 카드",
-            "출발 전 체크리스트"
+            "앱, 결제, 택시, 음식, 호텔, 긴급 도움",
+            "무료 도구 키트 이용",
+            "결제 필요 없음"
           ]
         },
         "trip": {
           "name": "Trip Pass",
-          "desc": "7일간 유효",
-          "cta": "얼리 액세스 요청",
+          "desc": "중국 여행 중 1명을 위한 추가 여행 도움",
+          "cta": "Trip Pass 받기",
           "features": [
-            "Buddy AI 메시지 50회",
-            "메뉴/사진 스캔 20회",
-            "전체 오프라인 긴급 키트",
-            "결제 및 교통 가이드",
-            "9개 도시 생존 팩"
+            "$9.90 일회성 결제",
+            "1명을 위한 추가 여행 지원",
+            "결제 확인 후 수동 활성화"
           ]
         },
         "group": {
           "name": "Group Pass",
-          "desc": "14일간 유효 · 최대 5명 여행자",
-          "cta": "얼리 액세스 요청",
+          "desc": "커플, 가족 또는 소규모 그룹이 함께 중국을 방문할 때 필요한 추가 여행 도움",
+          "cta": "Group Pass 받기",
           "features": [
-            "Buddy AI 메시지 200회",
-            "메뉴/사진 스캔 100회",
-            "여행자 프로필 5개",
-            "의료 문구 카드 및 병원 도우미",
-            "공유 긴급 카드"
+            "$29.90 일회성 결제",
+            "소규모 그룹을 위한 추가 여행 지원",
+            "결제 확인 후 수동 활성화"
           ]
         }
       },
@@ -491,25 +485,33 @@
       "paymentCardsSubtitle": "Alipay, WeChat Pay, 카드, 현금 카드 {{count}}개",
       "setupShort": "도착 전에 카드를 연결하세요.",
       "earlyAccess": {
-        "title": "수동 얼리 액세스",
-        "body": "자동 체크아웃을 준비 중입니다. 현재 Trip Pass와 Group Pass는 결제 확인 후 수동으로 활성화됩니다.",
-        "options": "사용 가능한 수동 결제 옵션은 이메일로 안내됩니다.",
+        "title": "수동 PayPal 결제",
+        "body": "Trip Pass와 Group Pass는 PayPal 결제 링크를 사용합니다. 결제 확인 후 액세스가 수동으로 활성화됩니다.",
+        "options": "ChinaEase Buddy 계정과 같은 이메일을 사용하거나 결제 중 계정 이메일을 입력해 주세요.",
         "safety": "ChinaEase Buddy는 이 웹사이트에서 카드 정보를 직접 수집하지 않습니다.",
-        "modalTitle": "얼리 액세스 요청",
-        "modalSubtitle": "자동 체크아웃을 준비 중입니다. 요청을 제출하면 사용 가능한 수동 결제 옵션을 이메일로 안내해 드립니다.",
+        "modalTitle": "수동 결제",
+        "modalSubtitle": "선택한 패스의 PayPal 결제 링크를 사용하세요. 결제 확인 후 액세스가 수동으로 활성화됩니다.",
         "email": "이메일 주소",
         "plan": "플랜 선택",
         "travelDate": "여행 날짜 선택 사항",
         "message": "메시지 선택 사항",
         "messagePlaceholder": "여행에 대해 알려주실 내용이 있나요?",
-        "submit": "요청 제출",
+        "submit": "계속",
         "contactEmail": "이메일로 문의",
-        "confirmation": "수동 결제 옵션을 이메일로 안내하고 결제 확인 후 플랜을 활성화합니다.",
+        "confirmation": "결제 확인 후 액세스가 수동으로 활성화됩니다.",
         "noCard": "이 웹사이트에서는 카드 정보를 수집하지 않습니다.",
         "sameEmail": "ChinaEase Buddy 계정에 사용하는 동일한 이메일을 사용해 주세요.",
         "createAccount": "더 빠른 활성화를 위해 먼저 무료 계정을 만드세요.",
         "emailRequired": "먼저 이메일을 입력해 주세요.",
-        "mailReady": "요청 이메일이 준비되었습니다. 계속하려면 이메일을 보내 주세요."
+        "mailReady": "결제 링크로 계속 진행해 주세요."
+      },
+      "freeToolkitReady": "무료 도구 키트를 사용할 수 있습니다. 결제는 필요 없습니다.",
+      "manualPayment": {
+        "title": "무료 도구 키트가 우선입니다. 유료 패스는 선택 사항입니다.",
+        "body": "Trip Pass와 Group Pass는 현재 PayPal 수동 결제 링크를 사용합니다. 결제 확인 후 액세스가 수동으로 활성화됩니다.",
+        "note": "결제는 PayPal에서 처리됩니다. ChinaEase Buddy 계정과 같은 이메일을 사용하거나 결제 중 계정 이메일을 입력해 주세요.",
+        "safety": "ChinaEase Buddy는 이 웹사이트에서 카드 정보를 직접 수집하지 않습니다.",
+        "paidNote": "PayPal이 새 탭에서 열립니다. 결제 후 수동으로 활성화됩니다."
       }
     },
     "chat": {
@@ -524,7 +526,7 @@
         "s4": "Peut-on boire l’eau du robinet ?"
       },
       "welcome": "안녕하세요! 저는 중국 여행 AI 동반자 Buddy입니다. 교통, 안전한 식사, 결제, 긴급 상황을 무엇이든 물어보세요.",
-      "quotaExceeded": "{{plan}} 플랜의 Buddy AI 메시지 {{limit}}회를 모두 사용했습니다. Trip Pass($9.90)로 업그레이드하면 50회, Group Pass($39.90)는 200회를 사용할 수 있습니다.",
+      "quotaExceeded": "{{plan}} 플랜의 Buddy AI 메시지 {{limit}}회를 모두 사용했습니다. Trip Pass($9.90)로 업그레이드하면 50회, Group Pass($29.90)는 200회를 사용할 수 있습니다.",
       "notLoggedIn": "AI 채팅을 사용하려면 로그인하세요.",
       "trouble": "문제가 발생했습니다. 다시 시도해 주세요.",
       "connectionIssue": "연결 문제가 있습니다. 인터넷을 확인하고 다시 시도하세요.",

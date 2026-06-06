@@ -363,7 +363,7 @@
       "pharmacyCardsSubtitle": "{{count}} medicine and pharmacy cards"
     },
     "pay": {
-      "plansTitle": "Upgrade Your Trip Pass",
+      "plansTitle": "Plans",
       "currentPlan": "Current plan:",
       "aiUsed": "Buddy AI used:",
       "refund": "One-time payment · No auto-renewal · 3-day refund policy",
@@ -374,44 +374,38 @@
       "currency": "Currency Converter",
       "currencyLive": "Live USD · EUR · GBP · AUD → RMB",
       "open": "Open",
-      "secure": "Manual early access",
+      "secure": "Manual PayPal payment",
       "bannerAlt": "Your China adventure starts now",
-      "paymentSoon": "Manual early access is available while checkout is being set up.",
+      "paymentSoon": "Paid passes use manual PayPal payment links. Access is activated manually after payment.",
       "plans": {
         "free": {
           "name": "Free",
-          "desc": "Essential tools for any trip",
+          "desc": "Basic China travel toolkit",
           "cta": "Start Free",
           "features": [
-            "5 Buddy AI messages",
-            "3 menu/photo scans",
-            "Core offline emergency cards",
-            "Basic phrase cards",
-            "Pre-flight checklist"
+            "Apps, payments, taxis, food, hotels, and emergency help",
+            "Free toolkit access",
+            "No payment required"
           ]
         },
         "trip": {
           "name": "Trip Pass",
-          "desc": "Valid for 7 days",
-          "cta": "Request Early Access",
+          "desc": "Extra travel help for one traveler during a China trip",
+          "cta": "Get Trip Pass",
           "features": [
-            "50 Buddy AI messages",
-            "20 menu/photo scans",
-            "Full offline emergency kit",
-            "Payment and transport guides",
-            "9 city survival packs"
+            "$9.90 one-time",
+            "Extra travel support for one traveler",
+            "Manual activation after payment"
           ]
         },
         "group": {
           "name": "Group Pass",
-          "desc": "Valid for 14 days · Up to 5 travelers",
-          "cta": "Request Early Access",
+          "desc": "Extra travel help for couples, families, or small groups visiting China together",
+          "cta": "Get Group Pass",
           "features": [
-            "200 Buddy AI messages",
-            "100 menu/photo scans",
-            "5 traveler profiles",
-            "Medical phrase cards & hospital helper",
-            "Shared emergency cards"
+            "$29.90 one-time",
+            "Extra travel support for small groups",
+            "Manual activation after payment"
           ]
         }
       },
@@ -491,25 +485,33 @@
       "paymentCardsSubtitle": "{{count}} Alipay, WeChat Pay, card, and cash cards",
       "setupShort": "Link a card before arrival.",
       "earlyAccess": {
-        "title": "Manual early access",
-        "body": "Automatic checkout is being set up. For now, Trip Pass and Group Pass are activated manually after payment confirmation.",
-        "options": "Available manual payment options will be shared by email.",
+        "title": "Manual PayPal payment",
+        "body": "Trip Pass and Group Pass use PayPal payment links. Access is activated manually after payment confirmation.",
+        "options": "Please use the same email as your ChinaEase Buddy account or include your account email during checkout.",
         "safety": "ChinaEase Buddy does not collect card details directly on this website.",
-        "modalTitle": "Request Early Access",
-        "modalSubtitle": "Automatic checkout is being set up. Submit a request and we’ll reply by email with available manual payment options.",
+        "modalTitle": "Manual payment",
+        "modalSubtitle": "Use the PayPal payment link for your selected pass. Access is activated manually after payment confirmation.",
         "email": "Email address",
         "plan": "Plan selection",
         "travelDate": "Travel date optional",
         "message": "Message optional",
         "messagePlaceholder": "Anything we should know about your trip?",
-        "submit": "Submit request",
+        "submit": "Continue",
         "contactEmail": "Contact us by email",
-        "confirmation": "We’ll email you with manual payment options and activate your plan after payment confirmation.",
+        "confirmation": "Access is activated manually after payment confirmation.",
         "noCard": "No card details are collected on this website.",
         "sameEmail": "Please use the same email you use for your ChinaEase Buddy account.",
         "createAccount": "Create a free account first for faster activation.",
         "emailRequired": "Please enter your email first.",
-        "mailReady": "Your request is ready. Please send the email to continue."
+        "mailReady": "Please continue with the payment link."
+      },
+      "freeToolkitReady": "Free toolkit is ready. No payment needed.",
+      "manualPayment": {
+        "title": "Free toolkit first. Paid passes are optional.",
+        "body": "Trip Pass and Group Pass use manual PayPal payment links for now. Access is activated manually after payment confirmation.",
+        "note": "Payments are processed by PayPal. Please use the same email as your ChinaEase Buddy account or include your account email during checkout.",
+        "safety": "ChinaEase Buddy does not collect card details directly on this website.",
+        "paidNote": "Opens PayPal in a new tab. Manual activation after payment."
       }
     },
     "chat": {
@@ -524,7 +526,7 @@
         "s4": "Is it safe to drink tap water?"
       },
       "welcome": "Hi! I'm Buddy, your AI travel companion for China. Ask me anything about getting around, eating safely, payments, or emergencies.",
-      "quotaExceeded": "You have used all {{limit}} Buddy AI messages on your {{plan}} plan. Upgrade to Trip Pass ($9.90) for 50 Buddy AI messages, or Group Pass ($39.90) for 200.",
+      "quotaExceeded": "You have used all {{limit}} Buddy AI messages on your {{plan}} plan. Upgrade to Trip Pass ($9.90) for 50 Buddy AI messages, or Group Pass ($29.90) for 200.",
       "notLoggedIn": "Please sign in to use AI chat.",
       "trouble": "I had trouble with that. Please try again.",
       "connectionIssue": "Connection issue. Please check your internet and try again.",
