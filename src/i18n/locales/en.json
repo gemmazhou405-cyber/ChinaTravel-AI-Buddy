@@ -106,7 +106,7 @@
           },
           {
             "name": "Amap",
-            "purpose": "Better than Google Maps for local navigation in China.",
+            "purpose": "Useful for local navigation in China.",
             "tip": "Save key addresses in Chinese."
           },
           {
@@ -132,7 +132,7 @@
       "transportBasics": {
         "items": [
           "Use Didi or official taxi queues when arriving with luggage.",
-          "Amap is usually more useful than Google Maps inside China.",
+          "Amap can be useful for local navigation in China.",
           "High-speed trains are booked with your passport name.",
           "Keep your hotel address in Chinese for drivers and station staff."
         ]
@@ -509,7 +509,7 @@
       "manualPayment": {
         "title": "Free toolkit first. Paid passes are optional.",
         "body": "Trip Pass and Group Pass use manual PayPal payment links for now. Access is activated manually after payment confirmation.",
-        "note": "Payments are processed by PayPal. Please use the same email as your ChinaEase Buddy account or include your account email during checkout.",
+        "note": "Payments are processed by PayPal. Access is currently activated manually after payment. Please use the same email as your ChinaEase Buddy account or include your account email during checkout.",
         "safety": "ChinaEase Buddy does not collect card details directly on this website.",
         "paidNote": "Opens PayPal in a new tab. Manual activation after payment."
       }
@@ -729,7 +729,7 @@
         "transport": [
           "Metro is usually reliable and low cost.",
           "Didi is useful when you have luggage or late arrivals.",
-          "Amap works better than Google Maps in China."
+          "Amap can be useful for local navigation in China."
         ],
         "payment": [
           "Set up Alipay or WeChat Pay before arrival.",

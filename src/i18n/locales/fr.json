@@ -106,7 +106,7 @@
           },
           {
             "name": "Amap",
-            "purpose": "Plus utile que Google Maps pour la navigation locale en Chine.",
+            "purpose": "Utile pour la navigation locale en Chine.",
             "tip": "Enregistrez les adresses importantes en chinois."
           },
           {
@@ -132,7 +132,7 @@
       "transportBasics": {
         "items": [
           "Utilisez Didi ou les files de taxi officielles avec des bagages.",
-          "Amap est généralement plus utile que Google Maps en Chine.",
+          "Amap peut être utile pour la navigation locale en Chine.",
           "Les trains à grande vitesse se réservent avec le nom du passeport.",
           "Gardez l’adresse de votre hôtel en chinois pour les chauffeurs et le personnel en gare."
         ]
@@ -729,7 +729,7 @@
         "transport": [
           "Le métro est souvent fiable et peu coûteux.",
           "Didi est utile avec des bagages ou tard le soir.",
-          "Amap fonctionne mieux que Google Maps en Chine."
+          "Amap peut être utile pour la navigation locale en Chine."
         ],
         "payment": [
           "Configurez Alipay ou WeChat Pay avant l’arrivée.",

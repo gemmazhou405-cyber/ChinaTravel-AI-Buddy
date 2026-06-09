@@ -601,6 +601,11 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'ChinaEase Buddy has a free starting plan with core tools and limited Buddy AI usage. Paid passes may unlock additional digital access, but checkout availability can vary during early access.',
       },
       {
+        question: 'How do paid passes work?',
+        answer:
+          'Paid passes are currently processed through PayPal payment links. Access is activated manually after payment confirmation.',
+      },
+      {
         question: 'Is ChinaEase Buddy an official travel service?',
         answer:
           'No. ChinaEase Buddy is not an official travel authority or government service. It is a digital travel toolkit for convenience.',
