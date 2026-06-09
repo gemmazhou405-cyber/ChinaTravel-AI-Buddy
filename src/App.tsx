@@ -176,7 +176,7 @@ export default function App() {
     return (
       <div className="min-h-screen bg-[#f7f3ea] pb-[env(safe-area-inset-bottom)] font-sans">
         <PolicyPage type={policyPageType} userId={user?.uid} />
-        <Footer onTabChange={setActiveTab} />
+        <Footer onTabChange={setActiveTab} onAskBuddy={openBuddy} />
       </div>
     );
   }
@@ -225,6 +225,7 @@ export default function App() {
         </>
       )}
       <Footer
+        onAskBuddy={openBuddy}
         onTabChange={(tab) => {
           setActiveTab(tab);
           setToolOpen(true);

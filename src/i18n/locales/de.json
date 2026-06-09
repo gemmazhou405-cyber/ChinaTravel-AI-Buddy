@@ -5,10 +5,17 @@
       "startFree": "Kostenlos starten",
       "login": "Einloggen",
       "logout": "Ausloggen",
-      "currentPlan": "{{plan}}-Tarif"
+      "currentPlan": "{{plan}}-Tarif",
+      "guides": "Guides",
+      "destinations": "Reiseziele",
+      "tools": "Tools",
+      "services": "Services",
+      "aboutUs": "Über uns",
+      "contact": "Kontakt",
+      "getHelpNow": "Jetzt Hilfe bekommen"
     },
     "hero": {
-      "badge": "KI-gestützt · Offline nutzbar",
+      "badge": "IHRE REISE, UNSERE HILFE.",
       "line1": "Kein Chinesisch.",
       "line2": "Kein VPN.",
       "line3": "Kein Problem.",
@@ -16,14 +23,17 @@
       "cta": "Kostenlos starten — kein Download nötig",
       "trust": "Funktioniert in China · Kein VPN nötig · Kostenlos starten",
       "titleLine1": "China-Reisehilfe,",
-      "titleLine2": "wenn du sie brauchst.",
-      "homeSubtitle": "Vorbereiten, zurechtfinden und tägliche Reisemomente in China meistern.",
-      "startFree": "Kostenlos starten",
+      "titleLine2": "elegant vereinfacht.",
+      "homeSubtitle": "Ihr KI-Reisebegleiter für eine ruhigere, sicherere und lohnendere Erfahrung in China.",
+      "startFree": "Jetzt Hilfe bekommen",
       "askBuddy": "Buddy fragen",
-      "mobileTrust": "Kein App-Download · Funktioniert mobil · Kostenlos starten",
+      "mobileTrust": "Von Reisenden genutzt · 24/7 Hilfe · Ihre Sicherheit zählt",
       "realMoments": "Gemacht für echte Momente in China — Taxis, Essen, Zahlungen, Hotels und Notfälle.",
-      "mobileSubtitle": "Reisehilfe für echte Situationen in China.",
-      "mobileTrustShort": "Keine App · Mobilfreundlich · Kostenlos starten"
+      "mobileSubtitle": "KI-Reisehilfe für China, einfach und elegant.",
+      "mobileTrustShort": "Keine App · Mobilfreundlich · Gratis starten",
+      "trustTrusted": "Von Reisenden genutzt",
+      "trustSupport": "24/7 Hilfe",
+      "trustSafety": "Ihre Sicherheit zählt"
     },
     "tabs": {
       "before": "Vor der Reise",
@@ -567,7 +577,7 @@
       "emailAlternative": "Du kannst dich auch per E-Mail anmelden."
     },
     "footer": {
-      "tagline": "KI-Reisebegleiter für ausländische Reisende in China. Menüs entschlüsseln, Verkehr verstehen, Notfälle bewältigen.",
+      "tagline": "KI-Reisebegleiter für ausländische Besucher. Damit Ihre China-Reise einfacher, sicherer und lohnender wird.",
       "product": "Produkt",
       "support": "Support",
       "features": "Funktionen",
@@ -593,7 +603,23 @@
       "refundPolicy": "Rückerstattung",
       "cookiesBody": "Wir verwenden nur notwendige Cookies: Anmeldesitzung und Spracheinstellung. Keine Werbe-Cookies.",
       "downloadInstructions": "Öffne diese Website im mobilen Browser und tippe auf Teilen → Zum Home-Bildschirm hinzufügen",
-      "close": "Schließen"
+      "close": "Schließen",
+      "tools": "Tools",
+      "askBuddy": "Buddy fragen",
+      "destinations": "Reiseziele",
+      "contactUs": "Kontakt",
+      "emergencyHelp": "Notfallhilfe",
+      "feedback": "Feedback",
+      "company": "Unternehmen",
+      "aboutUs": "Über uns",
+      "careers": "Karriere",
+      "press": "Presse",
+      "partnerships": "Partnerschaften",
+      "legalColumn": "Rechtliches",
+      "stayInKnow": "Auf dem Laufenden bleiben",
+      "emailPlaceholder": "E-Mail-Adresse",
+      "subscribe": "Abonnieren",
+      "subscribeThanks": "Danke. Wir halten Sie auf dem Laufenden."
     },
     "toast": {
       "copied": "Kopiert!",
@@ -664,6 +690,67 @@
         "before": "Vorher",
         "now": "In China",
         "emergency": "Notfall"
+      },
+      "selector": {
+        "beforeSubtitle": "Sicher planen",
+        "beforeKeywords": "Routen · Visa · Zahlungen · Packen",
+        "nowSubtitle": "Einfach unterwegs",
+        "nowKeywords": "Transport · Karten · Essen · Unterkunft",
+        "emergencySubtitle": "Wir sind 24/7 da",
+        "emergencyKeywords": "Medizin · Fundbüro · Sicherheit"
+      },
+      "cards": {
+        "kicker": "Reise-Toolkit",
+        "title": "Alles Wichtige an einem Ort",
+        "apps": "Apps herunterladen",
+        "appsNote": "Wichtige Apps für eine reibungslosere Reise",
+        "payments": "Zahlungen",
+        "paymentsNote": "Mobile Payment, Karten und Bargeld",
+        "food": "Essenshilfe",
+        "foodNote": "Lokal essen, mit mehr Sicherheit",
+        "transport": "Transport",
+        "transportNote": "Züge, Metro, Taxis und mehr",
+        "stay": "Unterkunft",
+        "stayNote": "Hotels, Homestays und Check-in",
+        "askBuddy": "Buddy fragen",
+        "askBuddyNote": "Echte Antworten. Schnell."
+      },
+      "trust": {
+        "ai": {
+          "title": "KI-gestützte Hilfe",
+          "body": "Nützliche Antworten für ausländische Besucher in China."
+        },
+        "mobile": {
+          "title": "Funktioniert mobil",
+          "body": "Jederzeit und überall unterwegs nutzen."
+        },
+        "firstTimers": {
+          "title": "Ideal für Erstbesucher",
+          "body": "Klare Orientierung für die erste China-Reise."
+        },
+        "practical": {
+          "title": "Praktisch und verlässlich",
+          "body": "Information und Unterstützung, wenn Sie sie brauchen."
+        }
+      },
+      "guides": {
+        "title": "Kuratierte Hilfe für Ihre China-Reise",
+        "firstTime": {
+          "title": "Zum ersten Mal in China",
+          "body": "Was Sie wissen sollten"
+        },
+        "destinations": {
+          "title": "Top-Reiseziele",
+          "body": "Ausgewählte Orte zum Entdecken"
+        },
+        "culture": {
+          "title": "Kulturelle Grundlagen",
+          "body": "Bräuche, Etikette und mehr"
+        },
+        "tips": {
+          "title": "Expertentipps",
+          "body": "Ratschläge von lokalen Kennern"
+        }
       }
     },
     "value": {

@@ -1,4 +1,4 @@
-import { Star, Globe, LogOut, X } from 'lucide-react';
+import { ChevronDown, Globe, LogOut, ShieldCheck, Sparkles, Star, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { User } from 'firebase/auth';
 import { UserState } from '../hooks/useAuth';
@@ -36,6 +36,14 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
   const isGoogleUser = user?.providerData.some((provider) => provider.providerId === 'google.com') ?? false;
   const emailVerified = Boolean(user?.emailVerified || isGoogleUser);
   const showResendVerification = Boolean(user && isPasswordUser && !user.emailVerified);
+  const navLinks = [
+    { label: t('nav.guides'), href: '/china-travel-apps' },
+    { label: t('nav.destinations'), href: '/china-travel-checklist' },
+    { label: t('nav.tools'), href: '#journey-tools' },
+    { label: t('nav.services'), href: '/pricing' },
+    { label: t('nav.aboutUs'), href: '/about' },
+    { label: t('nav.contact'), href: '/contact' },
+  ];
 
   useEffect(() => {
     const saved = window.localStorage?.getItem('chinaease-lang');
@@ -57,39 +65,61 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
   };
 
   return (
-    <section className="relative h-[68svh] min-h-[29rem] max-h-[70svh] md:h-auto md:min-h-screen md:max-h-none flex flex-col overflow-hidden">
+    <section className="relative h-[70svh] min-h-[32rem] max-h-[44rem] md:h-auto md:min-h-[92vh] md:max-h-none flex flex-col overflow-hidden bg-[#061e1f]">
       <style>{`
         .hero-bg {
           background:
-            linear-gradient(to right, rgba(0,0,0,0.80) 0%, rgba(21,94,99,0.54) 48%, rgba(0,0,0,0.28) 100%),
-            url("/hero.jpg") center center/cover no-repeat;
+            radial-gradient(circle at 76% 26%, rgba(232,194,122,0.22), transparent 31%),
+            linear-gradient(110deg, rgba(2,10,11,0.92) 0%, rgba(6,30,31,0.76) 42%, rgba(6,30,31,0.30) 72%, rgba(2,10,11,0.88) 100%),
+            linear-gradient(to bottom, rgba(2,10,11,0.22), rgba(2,10,11,0.84)),
+            url("/china-landscape.svg") center center/cover no-repeat;
         }
         @media (max-width: 768px) {
           .hero-bg {
             background:
-              linear-gradient(to bottom, rgba(0,0,0,0.30) 0%, rgba(21,94,99,0.14) 34%, rgba(0,0,0,0.42) 72%, rgba(0,0,0,0.60) 100%),
-              linear-gradient(to right, rgba(0,0,0,0.34) 0%, rgba(21,94,99,0.12) 54%, rgba(0,0,0,0.12) 100%),
-              url("/hero-mobile.jpg") 57% 18%/cover no-repeat;
+              radial-gradient(circle at 72% 24%, rgba(232,194,122,0.20), transparent 34%),
+              linear-gradient(to bottom, rgba(2,10,11,0.52) 0%, rgba(6,30,31,0.36) 42%, rgba(2,10,11,0.82) 100%),
+              url("/china-landscape.svg") 57% center/cover no-repeat;
           }
         }
       `}</style>
 
       <div className="hero-bg absolute inset-0" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),transparent_18%,rgba(0,0,0,0.28)_82%,#061e1f_100%)]" />
 
       {/* Nav bar */}
-      <div className="relative z-20 flex items-center justify-between px-3 py-2.5 md:px-10 md:py-5">
+      <div className="relative z-20 px-3 py-3 md:px-8 md:py-5">
+        <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/12 bg-[#061e1f]/42 px-3 py-2 shadow-[0_18px_60px_rgba(0,0,0,0.22)] backdrop-blur-2xl md:px-5 md:py-3">
         <div className="flex min-w-0 items-center gap-2">
-          <img src={`${assetBase}logo.png`} width="28" height="28" alt="ChinaEase Buddy" className="h-7 w-7 shrink-0 rounded-md" />
-          <span className="truncate text-xs font-semibold tracking-tight text-white sm:text-sm">ChinaEase Buddy</span>
+          <img src={`${assetBase}logo.png`} width="34" height="34" alt="ChinaEase Buddy" className="h-8 w-8 shrink-0 rounded-lg ring-1 ring-white/20 md:h-9 md:w-9" />
+          <span className="truncate text-sm font-semibold tracking-tight text-white md:text-base">ChinaEase Buddy</span>
         </div>
+        <nav className="hidden items-center gap-5 text-sm font-medium text-white/72 lg:flex">
+          {navLinks.map((link) => (
+            link.href.startsWith('#') ? (
+              <button
+                key={link.label}
+                onClick={() => document.getElementById('journey-tools')?.scrollIntoView({ behavior: 'smooth' })}
+                className="transition-colors hover:text-[#e8c27a]"
+              >
+                {link.label}
+              </button>
+            ) : (
+              <a key={link.label} href={link.href} className="transition-colors hover:text-[#e8c27a]">
+                {link.label}
+              </a>
+            )
+          ))}
+        </nav>
         <div className="flex shrink-0 items-center gap-1.5 md:gap-2">
           <div className="relative">
             <button
               onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-1 text-white/85 text-[11px] hover:text-white transition-colors bg-white/10 backdrop-blur-sm px-2 py-1 rounded-full border border-white/20 md:text-xs"
+              className="flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-2.5 py-1.5 text-[11px] text-white/86 backdrop-blur-sm transition-colors hover:text-white md:text-xs"
             >
               <Globe className="w-3 h-3" />
               <span>{lang}</span>
+              <ChevronDown className="h-3 w-3 opacity-70" />
             </button>
             {langOpen && (
               <div className="absolute right-0 top-full mt-1 bg-white rounded-xl shadow-xl overflow-hidden z-50 min-w-[100px]">
@@ -110,7 +140,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
 
           <button
             onClick={scrollToTabs}
-            className="hidden md:block text-white/80 text-sm hover:text-white transition-colors"
+            className="hidden text-sm text-white/80 transition-colors hover:text-[#e8c27a] lg:hidden"
           >
             {t('nav.howItWorks')}
           </button>
@@ -119,7 +149,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
             <div className="relative">
               <button
                 onClick={() => setAccountOpen((open) => !open)}
-                className="hidden max-w-[8.2rem] truncate text-[11px] font-medium bg-white text-[#155e63] px-2.5 py-1.5 rounded-full shadow-lg transition-all hover:bg-[#f7f3ea] md:block md:px-4 md:py-2 md:text-sm"
+                className="hidden max-w-[9rem] truncate rounded-full bg-[#e8c27a] px-4 py-2 text-sm font-bold text-[#061e1f] shadow-[0_14px_34px_rgba(232,194,122,0.24)] transition-all hover:bg-[#f4d78f] md:block"
               >
                 {t('nav.currentPlan', { plan: planLabel })}
               </button>
@@ -177,57 +207,57 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
           ) : (
             <button
               onClick={onAuthClick}
-              className="hidden text-[11px] font-medium bg-white text-[#155e63] px-2.5 py-1.5 rounded-full shadow-lg transition-all hover:bg-[#f7f3ea] md:block md:px-4 md:py-2 md:text-sm"
+              className="hidden rounded-full bg-[#e8c27a] px-4 py-2 text-sm font-bold text-[#061e1f] shadow-[0_14px_34px_rgba(232,194,122,0.24)] transition-all hover:bg-[#f4d78f] md:block"
             >
-              {t('nav.startFree')}
+              {t('nav.getHelpNow')}
             </button>
           )}
         </div>
       </div>
+      </div>
 
       {/* 主内容：badge + slogan + subtitle + 按钮，整体放在画面上半部分 */}
-      <div className="relative z-10 flex-1 flex flex-col justify-start px-4 md:px-10 max-w-7xl mx-auto w-full pt-3 md:pt-16">
-        <div className="max-w-2xl">
-          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/15 px-2.5 py-1 backdrop-blur-sm md:mb-4 md:px-3">
-            <Star className="w-3 h-3 text-yellow-300 fill-yellow-300" />
-            <span className="text-white/90 text-[11px] font-medium md:text-xs">{t('hero.badge')}</span>
+      <div className="relative z-10 flex w-full flex-1 flex-col justify-center px-4 pb-14 pt-3 md:mx-auto md:max-w-7xl md:px-10 md:pb-24">
+        <div className="max-w-3xl">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#e8c27a]/35 bg-[#e8c27a]/12 px-3 py-1.5 backdrop-blur-sm md:mb-5">
+            <Star className="h-3.5 w-3.5 fill-[#e8c27a] text-[#e8c27a]" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#f6ddb0] md:text-xs">{t('hero.badge')}</span>
           </div>
 
           <h1
-            className="mb-2 font-black leading-none tracking-tight text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)] md:mb-4"
-            style={{ fontSize: 'clamp(1.9rem, 9.5vw, 5rem)' }}
+            className="mb-4 leading-[0.95] tracking-[-0.035em] text-[#fffaf0] drop-shadow-[0_6px_34px_rgba(0,0,0,0.42)] md:mb-6"
+            style={{ fontFamily: 'Cormorant Garamond, Playfair Display, Georgia, serif', fontSize: 'clamp(2.65rem, 10.5vw, 6.6rem)' }}
           >
             {t('hero.titleLine1')}<br />
-            <span className="text-[#7dd3d8]">{t('hero.titleLine2')}</span>
+            <span className="text-[#e8c27a]">{t('hero.titleLine2')}</span>
           </h1>
 
-          <p className="mb-3 max-w-[17rem] text-xs font-medium leading-relaxed text-[#fffdf4] drop-shadow-[0_2px_18px_rgba(0,0,0,0.82)] sm:max-w-lg sm:text-sm md:mb-6 md:text-lg">
+          <p className="mb-5 max-w-xl text-sm font-medium leading-relaxed text-[#f7f2e8]/92 drop-shadow-[0_2px_18px_rgba(0,0,0,0.70)] md:mb-7 md:text-xl">
             <span className="md:hidden">{t('hero.mobileSubtitle')}</span>
             <span className="hidden md:inline">{t('hero.homeSubtitle')}</span>
           </p>
 
-          <div className="absolute left-1/2 bottom-[4vh] z-20 flex w-[min(17.5rem,calc(100vw-2rem))] -translate-x-1/2 flex-col gap-2 md:static md:w-auto md:translate-x-0 md:flex-row md:gap-2">
+          <div className="flex w-[min(18rem,100%)] flex-col gap-2 md:w-auto md:flex-row md:gap-3">
             <button
               onClick={onAuthClick}
-              className="flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-[#155e63] px-4 text-xs font-semibold text-white shadow-2xl transition-all hover:bg-[#0e4a4e] md:h-auto md:w-auto md:px-8 md:py-4 md:text-base md:shadow-xl"
+              className="flex h-11 w-full items-center justify-center gap-2 rounded-full bg-[#e8c27a] px-5 text-sm font-bold text-[#061e1f] shadow-[0_18px_44px_rgba(232,194,122,0.25)] transition-all hover:-translate-y-0.5 hover:bg-[#f4d78f] md:h-auto md:w-auto md:px-8 md:py-4 md:text-base"
             >
               <span>{t('hero.startFree')}</span>
             </button>
             <button
               onClick={onAskBuddy}
-              className="flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/12 px-4 text-xs font-semibold text-white shadow-xl backdrop-blur-sm transition-all hover:bg-white/18 md:h-auto md:w-auto md:px-7 md:py-4 md:text-base"
+              className="flex h-11 w-full items-center justify-center gap-2 rounded-full border border-white/22 bg-white/10 px-5 text-sm font-bold text-white shadow-xl backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/16 md:h-auto md:w-auto md:px-7 md:py-4 md:text-base"
             >
               {t('hero.askBuddy')}
             </button>
           </div>
 
-          <p className="mt-1 max-w-[17rem] text-[11px] font-semibold text-[#fffaf0]/95 drop-shadow-[0_1px_12px_rgba(0,0,0,0.82)] md:mt-3 md:max-w-none md:text-xs">
+          <div className="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold text-[#fffaf0]/92 drop-shadow-[0_1px_12px_rgba(0,0,0,0.70)] md:mt-6 md:text-xs">
             <span className="md:hidden">{t('hero.mobileTrustShort')}</span>
-            <span className="hidden md:inline">{t('hero.mobileTrust')}</span>
-          </p>
-          <p className="mt-2 hidden max-w-md text-xs font-medium leading-relaxed text-[#fff7e8]/90 drop-shadow-[0_1px_10px_rgba(0,0,0,0.68)] md:block">
-            {t('hero.realMoments')}
-          </p>
+            <span className="hidden items-center gap-2 md:inline-flex"><ShieldCheck className="h-4 w-4 text-[#e8c27a]" />{t('hero.trustTrusted')}</span>
+            <span className="hidden items-center gap-2 md:inline-flex"><Sparkles className="h-4 w-4 text-[#e8c27a]" />{t('hero.trustSupport')}</span>
+            <span className="hidden items-center gap-2 md:inline-flex"><ShieldCheck className="h-4 w-4 text-[#e8c27a]" />{t('hero.trustSafety')}</span>
+          </div>
         </div>
       </div>
 

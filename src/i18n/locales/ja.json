@@ -5,25 +5,35 @@
       "startFree": "無料で始める",
       "login": "ログイン",
       "logout": "ログアウト",
-      "currentPlan": "{{plan}}プラン"
+      "currentPlan": "{{plan}}プラン",
+      "guides": "ガイド",
+      "destinations": "目的地",
+      "tools": "ツール",
+      "services": "サービス",
+      "aboutUs": "会社情報",
+      "contact": "お問い合わせ",
+      "getHelpNow": "今すぐヘルプ"
     },
     "hero": {
-      "badge": "AI搭載 · オフライン対応",
+      "badge": "旅のそばに、安心のサポート。",
       "line1": "中国語不要。",
       "line2": "VPN不要。",
       "line3": "問題なし。",
       "subtitle": "中国国内で使えるAI旅行サポート。メニュー解読、カード決済、会話サポートをVPNなしで利用できます。",
       "cta": "無料で始める — ダウンロード不要",
       "trust": "中国国内で利用可 · VPN不要 · 無料で開始",
-      "titleLine1": "中国旅行のヘルプを、",
-      "titleLine2": "必要なときに。",
-      "homeSubtitle": "中国での準備、移動、日常の旅行シーンをサポートします。",
-      "startFree": "無料で始める",
+      "titleLine1": "中国旅行のサポートを、",
+      "titleLine2": "美しくシンプルに。",
+      "homeSubtitle": "中国での旅をよりスムーズで安心、充実したものにするAI旅行コンパニオンです。",
+      "startFree": "今すぐヘルプ",
       "askBuddy": "Buddyに聞く",
-      "mobileTrust": "アプリ不要 · モバイル対応 · 無料で開始",
+      "mobileTrust": "旅行者に選ばれる · 24時間サポート · 安心を大切に",
       "realMoments": "中国で実際に起こる場面に対応 — タクシー、食事、支払い、ホテル、緊急時。",
-      "mobileSubtitle": "中国で本当に困る場面のための旅行ヘルプ。",
-      "mobileTrustShort": "アプリ不要 · モバイル対応 · 無料で開始"
+      "mobileSubtitle": "中国旅行のAIヘルプを、シンプルに。",
+      "mobileTrustShort": "アプリ不要 · モバイル対応 · 無料で開始",
+      "trustTrusted": "旅行者に選ばれる",
+      "trustSupport": "24時間サポート",
+      "trustSafety": "安心を大切に"
     },
     "tabs": {
       "before": "出発前",
@@ -567,7 +577,7 @@
       "emailAlternative": "メールでもログインできます。"
     },
     "footer": {
-      "tagline": "中国を訪れる外国人旅行者向けAI旅行コンパニオン。メニュー解読、交通案内、緊急対応をサポート。",
+      "tagline": "外国人旅行者向けのAI旅行コンパニオン。中国の旅をより簡単に、安心して、充実したものにします。",
       "product": "製品",
       "support": "サポート",
       "features": "機能",
@@ -593,7 +603,23 @@
       "refundPolicy": "返金ポリシー",
       "cookiesBody": "ログイン状態と言語設定のために必要な Cookie のみを使用します。広告 Cookie は使用しません。",
       "downloadInstructions": "スマートフォンのブラウザでこのサイトを開き、共有 → ホーム画面に追加 をタップしてください",
-      "close": "閉じる"
+      "close": "閉じる",
+      "tools": "ツール",
+      "askBuddy": "Buddyに聞く",
+      "destinations": "目的地",
+      "contactUs": "お問い合わせ",
+      "emergencyHelp": "緊急ヘルプ",
+      "feedback": "フィードバック",
+      "company": "会社",
+      "aboutUs": "会社情報",
+      "careers": "採用",
+      "press": "プレス",
+      "partnerships": "提携",
+      "legalColumn": "法務",
+      "stayInKnow": "最新情報を受け取る",
+      "emailPlaceholder": "メールアドレス",
+      "subscribe": "登録",
+      "subscribeThanks": "ありがとうございます。最新情報をお送りします。"
     },
     "toast": {
       "copied": "コピーしました！",
@@ -662,8 +688,69 @@
       },
       "statesShort": {
         "before": "出発前",
-        "now": "中国滞在",
+        "now": "中国",
         "emergency": "緊急"
+      },
+      "selector": {
+        "beforeSubtitle": "安心して準備",
+        "beforeKeywords": "旅程 · ビザ · 支払い · 持ち物",
+        "nowSubtitle": "スムーズに移動",
+        "nowKeywords": "交通 · 地図 · 食事 · 宿泊",
+        "emergencySubtitle": "24時間サポート",
+        "emergencyKeywords": "医療 · 紛失物 · 安全"
+      },
+      "cards": {
+        "kicker": "旅行ツールキット",
+        "title": "必要なものを、ひとつに",
+        "apps": "入れておくアプリ",
+        "appsNote": "旅をスムーズにする必須アプリ",
+        "payments": "支払い",
+        "paymentsNote": "モバイル決済、カード、現金のヒント",
+        "food": "食事ヘルプ",
+        "foodNote": "安心してローカル料理を楽しむ",
+        "transport": "交通",
+        "transportNote": "鉄道、地下鉄、タクシーなど",
+        "stay": "宿泊",
+        "stayNote": "ホテル、民泊、チェックイン",
+        "askBuddy": "Buddyに聞く",
+        "askBuddyNote": "必要な答えをすばやく。"
+      },
+      "trust": {
+        "ai": {
+          "title": "AIヘルプ",
+          "body": "中国を訪れる外国人向けに整理された回答。"
+        },
+        "mobile": {
+          "title": "モバイル対応",
+          "body": "移動中でも、いつでもどこでもアクセス。"
+        },
+        "firstTimers": {
+          "title": "初めての中国に最適",
+          "body": "初めての中国旅行にわかりやすい案内。"
+        },
+        "practical": {
+          "title": "実用的で頼れる",
+          "body": "必要なときに使える情報とサポート。"
+        }
+      },
+      "guides": {
+        "title": "中国の旅のために厳選",
+        "firstTime": {
+          "title": "初めての中国",
+          "body": "知っておきたい基本"
+        },
+        "destinations": {
+          "title": "人気の目的地",
+          "body": "おすすめの場所を紹介"
+        },
+        "culture": {
+          "title": "文化の基本",
+          "body": "習慣、マナーなど"
+        },
+        "tips": {
+          "title": "専門家のヒント",
+          "body": "現地に詳しい人のアドバイス"
+        }
       }
     },
     "value": {

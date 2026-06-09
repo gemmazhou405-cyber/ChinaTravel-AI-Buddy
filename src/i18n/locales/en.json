@@ -5,10 +5,17 @@
       "startFree": "Start Free",
       "login": "Log in",
       "logout": "Log out",
-      "currentPlan": "{{plan}} plan"
+      "currentPlan": "{{plan}} plan",
+      "guides": "Guides",
+      "destinations": "Destinations",
+      "tools": "Tools",
+      "services": "Services",
+      "aboutUs": "About Us",
+      "contact": "Contact",
+      "getHelpNow": "Get Help Now"
     },
     "hero": {
-      "badge": "AI-powered · Works offline",
+      "badge": "YOUR JOURNEY, OUR SUPPORT.",
       "line1": "No Chinese.",
       "line2": "No VPN.",
       "line3": "No problem.",
@@ -16,14 +23,17 @@
       "cta": "Start Free",
       "trust": "Works inside China · No VPN needed · Free to start",
       "titleLine1": "China travel help,",
-      "titleLine2": "when you need it.",
-      "homeSubtitle": "Prepare, get around, and handle daily travel moments in China.",
-      "startFree": "Start Free",
+      "titleLine2": "beautifully simplified.",
+      "homeSubtitle": "Your AI-powered travel companion for a smoother, safer, and more rewarding experience in China.",
+      "startFree": "Get Help Now",
       "askBuddy": "Ask Buddy",
-      "mobileTrust": "No app download · Works on mobile · Free to start",
+      "mobileTrust": "Trusted by travelers · 24/7 support · Your safety, our priority",
       "realMoments": "Built for real moments in China — taxis, food, payments, hotels, and emergencies.",
-      "mobileSubtitle": "Travel help for real moments in China.",
-      "mobileTrustShort": "No app · Mobile friendly · Free to start"
+      "mobileSubtitle": "AI travel help for China, beautifully simplified.",
+      "mobileTrustShort": "No app · Mobile friendly · Free to start",
+      "trustTrusted": "Trusted by travelers",
+      "trustSupport": "24/7 support",
+      "trustSafety": "Your safety, our priority"
     },
     "tabs": {
       "before": "Before You Go",
@@ -567,7 +577,7 @@
       "emailAlternative": "You can also sign in with email."
     },
     "footer": {
-      "tagline": "AI travel companion for foreign tourists visiting China. Decode menus, navigate transit, handle emergencies.",
+      "tagline": "AI travel companion for foreign visitors. Here to make your China journey easier, safer, and more rewarding.",
       "product": "Product",
       "support": "Support",
       "features": "Features",
@@ -593,7 +603,23 @@
       "refundPolicy": "Refund Policy",
       "cookiesBody": "We use essential cookies only: auth session and language preference. No advertising cookies.",
       "downloadInstructions": "Open this site in your mobile browser and tap Share → Add to Home Screen",
-      "close": "Close"
+      "close": "Close",
+      "tools": "Tools",
+      "askBuddy": "Ask Buddy",
+      "destinations": "Destinations",
+      "contactUs": "Contact Us",
+      "emergencyHelp": "Emergency Help",
+      "feedback": "Feedback",
+      "company": "Company",
+      "aboutUs": "About Us",
+      "careers": "Careers",
+      "press": "Press",
+      "partnerships": "Partnerships",
+      "legalColumn": "Legal",
+      "stayInKnow": "Stay in the know",
+      "emailPlaceholder": "Email address",
+      "subscribe": "Subscribe",
+      "subscribeThanks": "Thanks. We’ll keep you posted."
     },
     "toast": {
       "copied": "Copied!",
@@ -601,9 +627,9 @@
     },
     "journey": {
       "states": {
-        "before": "Before your trip",
-        "now": "In China now",
-        "emergency": "Emergency help"
+        "before": "Before You Go",
+        "now": "In China Now",
+        "emergency": "Emergency Help"
       },
       "badges": {
         "noApp": "No app download",
@@ -664,6 +690,67 @@
         "before": "Before",
         "now": "In China",
         "emergency": "Emergency"
+      },
+      "selector": {
+        "beforeSubtitle": "Plan with confidence",
+        "beforeKeywords": "Itineraries · Visas · Payments · Packing",
+        "nowSubtitle": "Get around with ease",
+        "nowKeywords": "Transport · Maps · Food · Stay",
+        "emergencySubtitle": "We’re here 24/7",
+        "emergencyKeywords": "Medical · Lost & found · Safety"
+      },
+      "cards": {
+        "kicker": "Travel toolkit",
+        "title": "Everything you need, in one place",
+        "apps": "Apps to Download",
+        "appsNote": "Essential apps for a smoother trip",
+        "payments": "Payments",
+        "paymentsNote": "Mobile payments, cards & cash tips",
+        "food": "Food Help",
+        "foodNote": "Eat like a local, with confidence",
+        "transport": "Transport",
+        "transportNote": "Trains, metro, taxis and more",
+        "stay": "Stay",
+        "stayNote": "Hotels, homestays & check-in help",
+        "askBuddy": "Ask Buddy",
+        "askBuddyNote": "Real answers. Real quick."
+      },
+      "trust": {
+        "ai": {
+          "title": "AI-Powered Help",
+          "body": "Smart answers, curated for foreign visitors to China."
+        },
+        "mobile": {
+          "title": "Works on Mobile",
+          "body": "Access anytime, anywhere. On the go, at your fingertips."
+        },
+        "firstTimers": {
+          "title": "Perfect for First-Timers",
+          "body": "Clear guidance for your first trip to China."
+        },
+        "practical": {
+          "title": "Practical & Reliable",
+          "body": "Real-time info and support when you need it most."
+        }
+      },
+      "guides": {
+        "title": "Curated for your China journey",
+        "firstTime": {
+          "title": "First Time in China",
+          "body": "Everything you should know"
+        },
+        "destinations": {
+          "title": "Top Destinations",
+          "body": "Handpicked places to explore"
+        },
+        "culture": {
+          "title": "Cultural Essentials",
+          "body": "Customs, etiquette & more"
+        },
+        "tips": {
+          "title": "Expert Tips",
+          "body": "Advice from local experts"
+        }
       }
     },
     "value": {

@@ -5,10 +5,17 @@
       "startFree": "Empezar gratis",
       "login": "Iniciar sesión",
       "logout": "Cerrar sesión",
-      "currentPlan": "Plan {{plan}}"
+      "currentPlan": "Plan {{plan}}",
+      "guides": "Guías",
+      "destinations": "Destinos",
+      "tools": "Herramientas",
+      "services": "Servicios",
+      "aboutUs": "Sobre nosotros",
+      "contact": "Contacto",
+      "getHelpNow": "Obtener ayuda"
     },
     "hero": {
-      "badge": "Con IA · Funciona sin conexión",
+      "badge": "TU VIAJE, NUESTRO APOYO.",
       "line1": "Sin chino.",
       "line2": "Sin VPN.",
       "line3": "Sin problema.",
@@ -16,14 +23,17 @@
       "cta": "Empezar gratis — sin descargar",
       "trust": "Funciona en China · Sin VPN · Gratis para empezar",
       "titleLine1": "Ayuda para viajar por China,",
-      "titleLine2": "cuando la necesitas.",
-      "homeSubtitle": "Prepárate, muévete y resuelve momentos diarios de viaje en China.",
-      "startFree": "Empezar gratis",
+      "titleLine2": "bellamente simplificada.",
+      "homeSubtitle": "Tu compañero de viaje con IA para una experiencia más fluida, segura y enriquecedora en China.",
+      "startFree": "Obtener ayuda",
       "askBuddy": "Preguntar a Buddy",
-      "mobileTrust": "Sin descargar app · Funciona en móvil · Gratis para empezar",
+      "mobileTrust": "Usado por viajeros · Soporte 24/7 · Tu seguridad importa",
       "realMoments": "Creado para momentos reales en China: taxis, comida, pagos, hoteles y emergencias.",
-      "mobileSubtitle": "Ayuda de viaje para momentos reales en China.",
-      "mobileTrustShort": "Sin app · Móvil · Gratis para empezar"
+      "mobileSubtitle": "Ayuda con IA para China, simple y elegante.",
+      "mobileTrustShort": "Sin app · Móvil · Gratis para empezar",
+      "trustTrusted": "Usado por viajeros",
+      "trustSupport": "Soporte 24/7",
+      "trustSafety": "Tu seguridad importa"
     },
     "tabs": {
       "before": "Antes de viajar",
@@ -567,7 +577,7 @@
       "emailAlternative": "También puedes iniciar sesión con email."
     },
     "footer": {
-      "tagline": "Compañero de viaje con IA para turistas extranjeros en China. Descifra menús, navega el transporte y gestiona emergencias.",
+      "tagline": "Compañero de viaje con IA para visitantes extranjeros. Para que tu viaje a China sea más fácil, seguro y gratificante.",
       "product": "Producto",
       "support": "Soporte",
       "features": "Funciones",
@@ -593,7 +603,23 @@
       "refundPolicy": "Política de reembolso",
       "cookiesBody": "Solo usamos cookies esenciales: sesión de autenticación y preferencia de idioma. No usamos cookies publicitarias.",
       "downloadInstructions": "Abre este sitio en el navegador de tu móvil y toca Compartir → Añadir a la pantalla de inicio",
-      "close": "Cerrar"
+      "close": "Cerrar",
+      "tools": "Herramientas",
+      "askBuddy": "Preguntar a Buddy",
+      "destinations": "Destinos",
+      "contactUs": "Contáctanos",
+      "emergencyHelp": "Ayuda de emergencia",
+      "feedback": "Comentarios",
+      "company": "Empresa",
+      "aboutUs": "Sobre nosotros",
+      "careers": "Empleo",
+      "press": "Prensa",
+      "partnerships": "Alianzas",
+      "legalColumn": "Legal",
+      "stayInKnow": "Mantente al día",
+      "emailPlaceholder": "Correo electrónico",
+      "subscribe": "Suscribirse",
+      "subscribeThanks": "Gracias. Te mantendremos informado."
     },
     "toast": {
       "copied": "¡Copiado!",
@@ -601,8 +627,8 @@
     },
     "journey": {
       "states": {
-        "before": "Antes del viaje",
-        "now": "En China ahora",
+        "before": "Antes de viajar",
+        "now": "Ahora en China",
         "emergency": "Ayuda de emergencia"
       },
       "badges": {
@@ -664,6 +690,67 @@
         "before": "Antes",
         "now": "En China",
         "emergency": "Emergencia"
+      },
+      "selector": {
+        "beforeSubtitle": "Planifica con confianza",
+        "beforeKeywords": "Itinerarios · Visas · Pagos · Equipaje",
+        "nowSubtitle": "Muévete con facilidad",
+        "nowKeywords": "Transporte · Mapas · Comida · Estancia",
+        "emergencySubtitle": "Estamos aquí 24/7",
+        "emergencyKeywords": "Médico · Objetos perdidos · Seguridad"
+      },
+      "cards": {
+        "kicker": "Kit de viaje",
+        "title": "Todo lo que necesitas, en un solo lugar",
+        "apps": "Apps para descargar",
+        "appsNote": "Apps esenciales para un viaje más fluido",
+        "payments": "Pagos",
+        "paymentsNote": "Pagos móviles, tarjetas y efectivo",
+        "food": "Ayuda con comida",
+        "foodNote": "Come como local con confianza",
+        "transport": "Transporte",
+        "transportNote": "Trenes, metro, taxis y más",
+        "stay": "Estancia",
+        "stayNote": "Hoteles, alojamientos y check-in",
+        "askBuddy": "Preguntar a Buddy",
+        "askBuddyNote": "Respuestas reales. Rápidas."
+      },
+      "trust": {
+        "ai": {
+          "title": "Ayuda con IA",
+          "body": "Respuestas útiles para visitantes extranjeros en China."
+        },
+        "mobile": {
+          "title": "Funciona en móvil",
+          "body": "Acceso en cualquier momento, estés donde estés."
+        },
+        "firstTimers": {
+          "title": "Perfecto para primerizos",
+          "body": "Guía clara para tu primer viaje a China."
+        },
+        "practical": {
+          "title": "Práctico y confiable",
+          "body": "Información y apoyo cuando lo necesitas."
+        }
+      },
+      "guides": {
+        "title": "Curado para tu viaje a China",
+        "firstTime": {
+          "title": "Primera vez en China",
+          "body": "Todo lo que debes saber"
+        },
+        "destinations": {
+          "title": "Destinos destacados",
+          "body": "Lugares elegidos para explorar"
+        },
+        "culture": {
+          "title": "Esenciales culturales",
+          "body": "Costumbres, etiqueta y más"
+        },
+        "tips": {
+          "title": "Consejos expertos",
+          "body": "Recomendaciones de expertos locales"
+        }
       }
     },
     "value": {

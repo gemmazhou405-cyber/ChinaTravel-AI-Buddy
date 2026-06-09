@@ -5,25 +5,35 @@
       "startFree": "Commencer gratuitement",
       "login": "Connexion",
       "logout": "Déconnexion",
-      "currentPlan": "Forfait {{plan}}"
+      "currentPlan": "Forfait {{plan}}",
+      "guides": "Guides",
+      "destinations": "Destinations",
+      "tools": "Outils",
+      "services": "Services",
+      "aboutUs": "À propos",
+      "contact": "Contact",
+      "getHelpNow": "Obtenir de l’aide"
     },
     "hero": {
-      "badge": "Propulsé par l’IA · Fonctionne hors ligne",
+      "badge": "VOTRE VOYAGE, NOTRE SOUTIEN.",
       "line1": "Pas de chinois.",
       "line2": "Pas de VPN.",
       "line3": "Aucun problème.",
       "subtitle": "Une aide de voyage IA qui fonctionne en Chine. Décodez les menus, payez avec votre carte et communiquez facilement — sans VPN.",
       "cta": "Commencer gratuitement — aucun téléchargement",
       "trust": "Fonctionne en Chine · Aucun VPN requis · Gratuit pour commencer",
-      "titleLine1": "Aide voyage Chine,",
-      "titleLine2": "quand vous en avez besoin.",
-      "homeSubtitle": "Préparez, déplacez-vous et gérez les moments du voyage quotidien en Chine.",
-      "startFree": "Commencer gratuitement",
+      "titleLine1": "Aide voyage en Chine,",
+      "titleLine2": "magnifiquement simplifiée.",
+      "homeSubtitle": "Votre compagnon de voyage IA pour une expérience plus fluide, plus sûre et plus enrichissante en Chine.",
+      "startFree": "Obtenir de l’aide",
       "askBuddy": "Demander à Buddy",
-      "mobileTrust": "Aucune app à installer · Fonctionne sur mobile · Gratuit pour commencer",
+      "mobileTrust": "Approuvé par les voyageurs · Support 24/7 · Votre sécurité compte",
       "realMoments": "Conçu pour les vrais moments en Chine — taxis, repas, paiements, hôtels et urgences.",
-      "mobileSubtitle": "Aide de voyage pour les moments réels en Chine.",
-      "mobileTrustShort": "Pas d’app · Mobile · Départ gratuit"
+      "mobileSubtitle": "Aide IA pour voyager en Chine, simplement.",
+      "mobileTrustShort": "Sans app · Mobile · Gratuit au départ",
+      "trustTrusted": "Approuvé par les voyageurs",
+      "trustSupport": "Support 24/7",
+      "trustSafety": "Votre sécurité compte"
     },
     "tabs": {
       "before": "Avant le départ",
@@ -567,7 +577,7 @@
       "emailAlternative": "Vous pouvez aussi vous connecter par e-mail."
     },
     "footer": {
-      "tagline": "Compagnon IA pour les voyageurs étrangers en Chine. Décodez les menus, naviguez, gérez les urgences.",
+      "tagline": "Compagnon de voyage IA pour les visiteurs étrangers. Là pour rendre votre voyage en Chine plus simple, plus sûr et plus enrichissant.",
       "product": "Produit",
       "support": "Support",
       "features": "Fonctionnalités",
@@ -593,7 +603,23 @@
       "refundPolicy": "Politique de remboursement",
       "cookiesBody": "Nous utilisons uniquement des cookies essentiels : session de connexion et préférence de langue. Aucun cookie publicitaire.",
       "downloadInstructions": "Ouvrez ce site dans le navigateur de votre mobile, puis touchez Partager → Ajouter à l’écran d’accueil",
-      "close": "Fermer"
+      "close": "Fermer",
+      "tools": "Outils",
+      "askBuddy": "Demander à Buddy",
+      "destinations": "Destinations",
+      "contactUs": "Nous contacter",
+      "emergencyHelp": "Aide d’urgence",
+      "feedback": "Avis",
+      "company": "Entreprise",
+      "aboutUs": "À propos",
+      "careers": "Carrières",
+      "press": "Presse",
+      "partnerships": "Partenariats",
+      "legalColumn": "Légal",
+      "stayInKnow": "Restez informé",
+      "emailPlaceholder": "Adresse e-mail",
+      "subscribe": "S’abonner",
+      "subscribeThanks": "Merci. Nous vous tiendrons informé."
     },
     "toast": {
       "copied": "Copié !",
@@ -601,7 +627,7 @@
     },
     "journey": {
       "states": {
-        "before": "Avant le voyage",
+        "before": "Avant le départ",
         "now": "En Chine maintenant",
         "emergency": "Aide d’urgence"
       },
@@ -664,6 +690,67 @@
         "before": "Avant",
         "now": "En Chine",
         "emergency": "Urgence"
+      },
+      "selector": {
+        "beforeSubtitle": "Préparez-vous sereinement",
+        "beforeKeywords": "Itinéraires · Visas · Paiements · Bagages",
+        "nowSubtitle": "Déplacez-vous facilement",
+        "nowKeywords": "Transport · Cartes · Repas · Séjour",
+        "emergencySubtitle": "Nous sommes là 24/7",
+        "emergencyKeywords": "Médical · Objets perdus · Sécurité"
+      },
+      "cards": {
+        "kicker": "Boîte à outils voyage",
+        "title": "Tout ce dont vous avez besoin, au même endroit",
+        "apps": "Apps à télécharger",
+        "appsNote": "Apps essentielles pour un voyage plus fluide",
+        "payments": "Paiements",
+        "paymentsNote": "Paiement mobile, cartes et espèces",
+        "food": "Aide repas",
+        "foodNote": "Manger local avec confiance",
+        "transport": "Transport",
+        "transportNote": "Trains, métro, taxis et plus",
+        "stay": "Séjour",
+        "stayNote": "Hôtels, logements et check-in",
+        "askBuddy": "Demander à Buddy",
+        "askBuddyNote": "Des réponses utiles, rapidement."
+      },
+      "trust": {
+        "ai": {
+          "title": "Aide IA",
+          "body": "Réponses utiles, pensées pour les visiteurs étrangers en Chine."
+        },
+        "mobile": {
+          "title": "Fonctionne sur mobile",
+          "body": "Accès partout, à tout moment, en déplacement."
+        },
+        "firstTimers": {
+          "title": "Idéal pour une première visite",
+          "body": "Des repères clairs pour votre premier voyage en Chine."
+        },
+        "practical": {
+          "title": "Pratique et fiable",
+          "body": "Infos et soutien quand vous en avez besoin."
+        }
+      },
+      "guides": {
+        "title": "Sélectionné pour votre voyage en Chine",
+        "firstTime": {
+          "title": "Première fois en Chine",
+          "body": "L’essentiel à connaître"
+        },
+        "destinations": {
+          "title": "Destinations clés",
+          "body": "Lieux choisis à explorer"
+        },
+        "culture": {
+          "title": "Essentiels culturels",
+          "body": "Usages, étiquette et plus"
+        },
+        "tips": {
+          "title": "Conseils d’experts",
+          "body": "Conseils de connaisseurs locaux"
+        }
       }
     },
     "value": {
