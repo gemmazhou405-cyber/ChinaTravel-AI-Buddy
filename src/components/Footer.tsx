@@ -24,7 +24,7 @@ export default function Footer({ onTabChange, onAskBuddy }: Props) {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-[#061e1f] text-white/62">
+    <footer className="relative overflow-hidden bg-[#061e1f] text-white/72">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_8%,rgba(214,168,90,0.13),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(18,123,120,0.22),transparent_32%)]" />
       <div className="relative mx-auto max-w-6xl px-4 pb-[calc(6rem+env(safe-area-inset-bottom))] pt-12 md:px-6 md:py-14">
         <div className="grid gap-8 border-b border-white/10 pb-10 lg:grid-cols-[1.3fr_2fr_1fr]">
@@ -33,7 +33,7 @@ export default function Footer({ onTabChange, onAskBuddy }: Props) {
               <img src={`${assetBase}logo.png`} width="40" height="40" alt="ChinaEase Buddy" className="h-10 w-10 rounded-xl ring-1 ring-white/15" />
               <span className="text-lg font-semibold tracking-tight text-white">ChinaEase Buddy</span>
             </div>
-            <p className="max-w-sm text-sm leading-relaxed text-white/48">
+            <p className="max-w-sm text-sm leading-relaxed text-white/68">
               {t('footer.tagline')}
             </p>
           </div>
@@ -102,7 +102,7 @@ export default function Footer({ onTabChange, onAskBuddy }: Props) {
             <Shield className="w-3.5 h-3.5 text-white/40" />
             <p className="text-white/50 text-xs font-semibold uppercase tracking-wider">{t('footer.legalTitle')}</p>
           </div>
-          <p className="text-white/30 text-xs leading-relaxed">
+          <p className="text-white/52 text-xs leading-relaxed">
             {t('footer.legalBody')}
           </p>
         </div>
@@ -110,19 +110,19 @@ export default function Footer({ onTabChange, onAskBuddy }: Props) {
         {/* Refund policy */}
         <div className="mb-8">
           <p className="text-white/50 text-xs font-semibold uppercase tracking-wider mb-2">{t('footer.refundTitle')}</p>
-          <p className="text-white/30 text-xs leading-relaxed">
+          <p className="text-white/52 text-xs leading-relaxed">
             {t('footer.refundBody')}
           </p>
         </div>
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 border-t border-white/10">
-          <p className="text-white/25 text-xs">{t('footer.rights')}</p>
+          <p className="text-white/42 text-xs">{t('footer.rights')}</p>
           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs">
-            <a href="/privacy" className="text-white/30 hover:text-white/60 transition-colors">{t('footer.privacy')}</a>
-            <a href="/terms" className="text-white/30 hover:text-white/60 transition-colors">{t('footer.terms')}</a>
-            <a href="/refund" className="text-white/30 hover:text-white/60 transition-colors">{t('footer.refundPolicy')}</a>
-            <button onClick={() => setModal('cookies')} className="text-white/30 hover:text-white/60 transition-colors">{t('footer.cookies')}</button>
+            <a href="/privacy" className="text-white/50 hover:text-white/75 transition-colors">{t('footer.privacy')}</a>
+            <a href="/terms" className="text-white/50 hover:text-white/75 transition-colors">{t('footer.terms')}</a>
+            <a href="/refund" className="text-white/50 hover:text-white/75 transition-colors">{t('footer.refundPolicy')}</a>
+            <button onClick={() => setModal('cookies')} className="text-white/50 hover:text-white/75 transition-colors">{t('footer.cookies')}</button>
           </div>
         </div>
       </div>

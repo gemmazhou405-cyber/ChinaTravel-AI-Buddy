@@ -65,7 +65,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
   };
 
   return (
-    <section className="relative h-[70svh] min-h-[32rem] max-h-[44rem] md:h-auto md:min-h-[92vh] md:max-h-none flex flex-col overflow-hidden bg-[#061e1f]">
+    <section className="relative h-[68svh] min-h-[29rem] max-h-[34rem] md:h-auto md:min-h-[92vh] md:max-h-none flex flex-col overflow-hidden bg-[#061e1f]">
       <style>{`
         .hero-bg {
           background:
@@ -89,7 +89,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
 
       {/* Nav bar */}
       <div className="relative z-20 px-3 py-3 md:px-8 md:py-5">
-        <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/12 bg-[#061e1f]/42 px-3 py-2 shadow-[0_18px_60px_rgba(0,0,0,0.22)] backdrop-blur-2xl md:px-5 md:py-3">
+        <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/12 bg-[#061e1f]/55 px-3 py-2 shadow-[0_18px_60px_rgba(0,0,0,0.22)] backdrop-blur-2xl md:bg-[#061e1f]/42 md:px-5 md:py-3">
         <div className="flex min-w-0 items-center gap-2">
           <img src={`${assetBase}logo.png`} width="34" height="34" alt="ChinaEase Buddy" className="h-8 w-8 shrink-0 rounded-lg ring-1 ring-white/20 md:h-9 md:w-9" />
           <span className="truncate text-sm font-semibold tracking-tight text-white md:text-base">ChinaEase Buddy</span>
@@ -217,27 +217,27 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
       </div>
 
       {/* 主内容：badge + slogan + subtitle + 按钮，整体放在画面上半部分 */}
-      <div className="relative z-10 flex w-full flex-1 flex-col justify-center px-4 pb-14 pt-3 md:mx-auto md:max-w-7xl md:px-10 md:pb-24">
+      <div className="relative z-10 flex w-full flex-1 flex-col justify-center px-4 pb-8 pt-1 md:mx-auto md:max-w-7xl md:px-10 md:pb-24 md:pt-3">
         <div className="max-w-3xl">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#e8c27a]/35 bg-[#e8c27a]/12 px-3 py-1.5 backdrop-blur-sm md:mb-5">
+          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-[#e8c27a]/35 bg-[#e8c27a]/12 px-3 py-1.5 backdrop-blur-sm md:mb-5">
             <Star className="h-3.5 w-3.5 fill-[#e8c27a] text-[#e8c27a]" />
             <span className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#f6ddb0] md:text-xs">{t('hero.badge')}</span>
           </div>
 
           <h1
-            className="mb-4 leading-[0.95] tracking-[-0.035em] text-[#fffaf0] drop-shadow-[0_6px_34px_rgba(0,0,0,0.42)] md:mb-6"
-            style={{ fontFamily: 'Cormorant Garamond, Playfair Display, Georgia, serif', fontSize: 'clamp(2.65rem, 10.5vw, 6.6rem)' }}
+            className="mb-3 leading-[0.96] tracking-[-0.035em] text-[#fffaf0] drop-shadow-[0_6px_34px_rgba(0,0,0,0.52)] md:mb-6"
+            style={{ fontFamily: 'Cormorant Garamond, Playfair Display, Georgia, serif', fontSize: 'clamp(2.55rem, 11vw, 6.6rem)' }}
           >
             {t('hero.titleLine1')}<br />
             <span className="text-[#e8c27a]">{t('hero.titleLine2')}</span>
           </h1>
 
-          <p className="mb-5 max-w-xl text-sm font-medium leading-relaxed text-[#f7f2e8]/92 drop-shadow-[0_2px_18px_rgba(0,0,0,0.70)] md:mb-7 md:text-xl">
+          <p className="mb-4 max-w-[20rem] text-sm font-semibold leading-relaxed text-[#fffaf0]/95 drop-shadow-[0_2px_18px_rgba(0,0,0,0.78)] md:mb-7 md:max-w-xl md:text-xl md:font-medium md:text-[#f7f2e8]/92">
             <span className="md:hidden">{t('hero.mobileSubtitle')}</span>
             <span className="hidden md:inline">{t('hero.homeSubtitle')}</span>
           </p>
 
-          <div className="flex w-[min(18rem,100%)] flex-col gap-2 md:w-auto md:flex-row md:gap-3">
+          <div className="flex w-[min(17rem,100%)] flex-col gap-2 min-[420px]:w-[18rem] md:w-auto md:flex-row md:gap-3">
             <button
               onClick={onAuthClick}
               className="flex h-11 w-full items-center justify-center gap-2 rounded-full bg-[#e8c27a] px-5 text-sm font-bold text-[#061e1f] shadow-[0_18px_44px_rgba(232,194,122,0.25)] transition-all hover:-translate-y-0.5 hover:bg-[#f4d78f] md:h-auto md:w-auto md:px-8 md:py-4 md:text-base"
@@ -246,13 +246,13 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
             </button>
             <button
               onClick={onAskBuddy}
-              className="flex h-11 w-full items-center justify-center gap-2 rounded-full border border-white/22 bg-white/10 px-5 text-sm font-bold text-white shadow-xl backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/16 md:h-auto md:w-auto md:px-7 md:py-4 md:text-base"
+              className="flex h-11 w-full items-center justify-center gap-2 rounded-full border border-white/26 bg-white/14 px-5 text-sm font-bold text-white shadow-xl backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/18 md:h-auto md:w-auto md:px-7 md:py-4 md:text-base"
             >
               {t('hero.askBuddy')}
             </button>
           </div>
 
-          <div className="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold text-[#fffaf0]/92 drop-shadow-[0_1px_12px_rgba(0,0,0,0.70)] md:mt-6 md:text-xs">
+          <div className="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold text-[#fffaf0]/94 drop-shadow-[0_1px_12px_rgba(0,0,0,0.76)] md:mt-6 md:text-xs">
             <span className="md:hidden">{t('hero.mobileTrustShort')}</span>
             <span className="hidden items-center gap-2 md:inline-flex"><ShieldCheck className="h-4 w-4 text-[#e8c27a]" />{t('hero.trustTrusted')}</span>
             <span className="hidden items-center gap-2 md:inline-flex"><Sparkles className="h-4 w-4 text-[#e8c27a]" />{t('hero.trustSupport')}</span>
