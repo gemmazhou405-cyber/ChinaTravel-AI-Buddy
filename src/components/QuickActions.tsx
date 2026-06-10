@@ -40,7 +40,7 @@ function CategoryButton({ category, onTabSelect, onAskBuddy }: Pick<Props, 'onTa
   return (
     <button
       onClick={() => (category.askBuddy ? onAskBuddy() : category.tab && onTabSelect(category.tab, category.tool))}
-      className="group min-h-[5.45rem] rounded-[1.2rem] border border-[#e8dcc6] bg-[#fffdf8] p-3.5 text-left shadow-[0_18px_46px_rgba(8,37,38,0.08)] transition-all duration-200 hover:-translate-y-1 hover:border-[#d6a85a]/60 hover:shadow-[0_24px_58px_rgba(8,37,38,0.14)] active:scale-[0.985] md:min-h-[7.2rem] md:rounded-[1.35rem] md:p-5"
+      className="group min-h-[5.45rem] rounded-[1.2rem] border border-[#e8dcc6] bg-[#fffdf8] p-3.5 text-left shadow-[0_18px_46px_rgba(8,37,38,0.08)] transition-all duration-200 hover:-translate-y-1 hover:border-[#d6a85a]/60 hover:shadow-[0_24px_58px_rgba(8,37,38,0.14)] active:scale-[0.985] md:min-h-[7.2rem] md:rounded-[1.35rem] md:p-5 lg:min-h-[9rem] lg:p-4"
     >
       <div className="flex h-full flex-col justify-between gap-4">
         <div>
@@ -119,7 +119,7 @@ export default function QuickActions({ journey, onJourneyChange, onTabSelect, on
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_8%,rgba(214,168,90,0.16),transparent_28%),radial-gradient(circle_at_92%_18%,rgba(18,123,120,0.28),transparent_32%),linear-gradient(180deg,#061e1f,#0b2a2a_38%,#f8f3ea_38%,#f8f3ea)] md:bg-[radial-gradient(circle_at_12%_8%,rgba(214,168,90,0.16),transparent_28%),radial-gradient(circle_at_92%_18%,rgba(18,123,120,0.28),transparent_32%),linear-gradient(180deg,#061e1f,#0b2a2a_44%,#f8f3ea_44%,#f8f3ea)]" />
 
       <div className="relative mx-auto max-w-6xl">
-        <div className="grid grid-cols-3 gap-1.5 rounded-[1.35rem] border border-white/12 bg-white/[0.07] p-1.5 shadow-[0_28px_90px_rgba(0,0,0,0.24)] backdrop-blur-2xl md:gap-3 md:rounded-[2rem] md:p-3">
+        <div className="grid grid-cols-3 gap-1.5 rounded-[1.35rem] border border-white/[0.12] bg-white/[0.07] p-1.5 shadow-[0_28px_90px_rgba(0,0,0,0.24)] backdrop-blur-2xl md:gap-3 md:rounded-[2rem] md:p-3">
           {journeys.map((item) => (
             <button
               key={item.id}
@@ -127,7 +127,7 @@ export default function QuickActions({ journey, onJourneyChange, onTabSelect, on
               className={`group min-h-[5.4rem] rounded-[1rem] border px-2 py-2.5 text-left transition-all duration-200 md:min-h-0 md:rounded-[1.25rem] md:p-5 ${
                 journey === item.id
                   ? 'border-[#d6a85a]/50 bg-gradient-to-br from-[#0f6f6c]/92 to-[#061e1f]/92 text-white shadow-[0_20px_54px_rgba(0,0,0,0.25)]'
-                  : 'border-white/10 bg-white/[0.06] text-white/70 hover:border-[#d6a85a]/28 hover:bg-white/[0.10] hover:text-white'
+                  : 'border-white/10 bg-white/[0.06] text-white/70 hover:border-[#d6a85a]/[0.28] hover:bg-white/[0.10] hover:text-white'
               }`}
             >
               <div className="hidden items-start justify-between gap-3 md:flex">
@@ -140,8 +140,8 @@ export default function QuickActions({ journey, onJourneyChange, onTabSelect, on
                 <span className="md:hidden">{item.shortLabel}</span>
                 <span className="hidden md:inline">{item.label}</span>
               </h2>
-              <p className={`mt-1 line-clamp-2 text-center text-[10.5px] font-medium leading-snug md:text-left md:text-sm ${journey === item.id ? 'text-white/82' : 'text-white/60'}`}>{item.subtitle}</p>
-              <p className={`mt-3 hidden text-[11px] font-semibold uppercase tracking-[0.16em] md:block ${journey === item.id ? 'text-[#f6ddb0]' : 'text-white/42'}`}>{item.keywords}</p>
+              <p className={`mt-1 line-clamp-2 text-center text-[10.5px] font-medium leading-snug md:text-left md:text-sm ${journey === item.id ? 'text-white/80' : 'text-white/60'}`}>{item.subtitle}</p>
+              <p className={`mt-3 hidden text-[11px] font-semibold uppercase tracking-[0.16em] md:block ${journey === item.id ? 'text-[#f6ddb0]' : 'text-white/40'}`}>{item.keywords}</p>
             </button>
           ))}
         </div>
@@ -150,7 +150,7 @@ export default function QuickActions({ journey, onJourneyChange, onTabSelect, on
           {[t('journey.badges.noApp'), t('journey.badges.showChinese'), t('journey.badges.askBuddy')].map((tag, index) => (
             <span
               key={tag}
-              className={`rounded-full border border-white/12 bg-white/[0.10] px-3 py-1.5 text-[11px] font-semibold text-[#f7f2e8]/86 backdrop-blur-xl md:text-xs ${index > 1 ? 'hidden md:inline-flex' : ''}`}
+              className={`rounded-full border border-white/[0.12] bg-white/[0.10] px-3 py-1.5 text-[11px] font-semibold text-[#f7f2e8]/90 backdrop-blur-xl md:text-xs ${index > 1 ? 'hidden md:inline-flex' : ''}`}
             >
               {tag}
             </span>
@@ -175,7 +175,7 @@ export default function QuickActions({ journey, onJourneyChange, onTabSelect, on
             )}
           </div>
 
-          <div className="grid grid-cols-1 gap-2.5 min-[420px]:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-2.5 min-[420px]:grid-cols-2 lg:grid-cols-6">
             {categories.map((category) => (
               <CategoryButton
                 key={`${category.label}-${category.tool ?? 'buddy'}`}
@@ -213,10 +213,10 @@ export default function QuickActions({ journey, onJourneyChange, onTabSelect, on
             ['firstTimers', t('journey.trust.firstTimers.title'), t('journey.trust.firstTimers.body')],
             ['practical', t('journey.trust.practical.title'), t('journey.trust.practical.body')],
           ].map(([key, title, body]) => (
-            <div key={key} className="rounded-[1.25rem] border border-white/14 bg-white/[0.10] p-4 text-[#f7f2e8] backdrop-blur-xl md:rounded-[1.4rem]">
+            <div key={key} className="rounded-[1.25rem] border border-white/[0.14] bg-white/[0.10] p-4 text-[#f7f2e8] backdrop-blur-xl md:rounded-[1.4rem]">
               <Sparkles className="mb-3 h-4 w-4 text-[#e8c27a]" />
               <h3 className="text-sm font-bold">{title}</h3>
-              <p className="mt-1 text-xs leading-relaxed text-white/76 md:text-white/62">{body}</p>
+              <p className="mt-1 text-xs leading-relaxed text-white/80 md:text-white/60">{body}</p>
             </div>
           ))}
         </div>
@@ -244,7 +244,7 @@ export default function QuickActions({ journey, onJourneyChange, onTabSelect, on
                 <div className="relative flex h-full flex-col justify-end">
                   <div>
                     <h3 className="text-base font-bold">{t(`journey.guides.${key}.title`)}</h3>
-                    <p className="mt-1 text-xs font-medium text-white/68">{t(`journey.guides.${key}.body`)}</p>
+                    <p className="mt-1 text-xs font-medium text-white/70">{t(`journey.guides.${key}.body`)}</p>
                     <ArrowRight className="mt-3 h-4 w-4 text-[#e8c27a] transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
@@ -255,12 +255,12 @@ export default function QuickActions({ journey, onJourneyChange, onTabSelect, on
 
         <div className="mt-6 flex flex-wrap gap-2 text-xs font-semibold">
           {journey !== 'now' && (
-            <button onClick={() => onJourneyChange('now')} className="rounded-full border border-white/14 bg-white/[0.08] px-3 py-1.5 text-[#f7f2e8]/78 backdrop-blur-xl transition-all hover:bg-white/[0.13]">
+            <button onClick={() => onJourneyChange('now')} className="rounded-full border border-white/[0.14] bg-white/[0.08] px-3 py-1.5 text-[#f7f2e8]/80 backdrop-blur-xl transition-all hover:bg-white/[0.13]">
               {t('journey.switch.daily')}
             </button>
           )}
           {journey !== 'before' && (
-            <button onClick={() => onJourneyChange('before')} className="rounded-full border border-white/14 bg-white/[0.08] px-3 py-1.5 text-[#f7f2e8]/78 backdrop-blur-xl transition-all hover:bg-white/[0.13]">
+            <button onClick={() => onJourneyChange('before')} className="rounded-full border border-white/[0.14] bg-white/[0.08] px-3 py-1.5 text-[#f7f2e8]/80 backdrop-blur-xl transition-all hover:bg-white/[0.13]">
               {t('journey.switch.planning')}
             </button>
           )}

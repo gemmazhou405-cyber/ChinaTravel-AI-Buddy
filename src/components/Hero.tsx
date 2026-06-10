@@ -65,21 +65,22 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
   };
 
   return (
-    <section className="relative h-[68svh] min-h-[29rem] max-h-[34rem] md:h-auto md:min-h-[92vh] md:max-h-none flex flex-col overflow-hidden bg-[#061e1f]">
+    <section className="relative h-[64svh] min-h-[27rem] max-h-[31rem] md:h-auto md:min-h-[720px] md:max-h-[860px] flex flex-col overflow-hidden bg-[#061e1f]">
       <style>{`
         .hero-bg {
           background:
             radial-gradient(circle at 76% 26%, rgba(232,194,122,0.22), transparent 31%),
-            linear-gradient(110deg, rgba(2,10,11,0.92) 0%, rgba(6,30,31,0.76) 42%, rgba(6,30,31,0.30) 72%, rgba(2,10,11,0.88) 100%),
-            linear-gradient(to bottom, rgba(2,10,11,0.22), rgba(2,10,11,0.84)),
-            url("/china-landscape.svg") center center/cover no-repeat;
+            linear-gradient(100deg, rgba(2,10,11,0.90) 0%, rgba(6,30,31,0.72) 39%, rgba(6,30,31,0.20) 70%, rgba(2,10,11,0.48) 100%),
+            linear-gradient(to bottom, rgba(2,10,11,0.10), rgba(2,10,11,0.76)),
+            url("/images/hero-china-landscape.jpg") center center/cover no-repeat;
         }
         @media (max-width: 768px) {
           .hero-bg {
             background:
               radial-gradient(circle at 72% 24%, rgba(232,194,122,0.20), transparent 34%),
-              linear-gradient(to bottom, rgba(2,10,11,0.52) 0%, rgba(6,30,31,0.36) 42%, rgba(2,10,11,0.82) 100%),
-              url("/china-landscape.svg") 57% center/cover no-repeat;
+              linear-gradient(to bottom, rgba(2,10,11,0.42) 0%, rgba(6,30,31,0.44) 45%, rgba(2,10,11,0.86) 100%),
+              linear-gradient(to right, rgba(2,10,11,0.68), rgba(2,10,11,0.16)),
+              url("/images/hero-china-landscape.jpg") 50% center/cover no-repeat;
           }
         }
       `}</style>
@@ -89,12 +90,12 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
 
       {/* Nav bar */}
       <div className="relative z-20 px-3 py-3 md:px-8 md:py-5">
-        <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/12 bg-[#061e1f]/55 px-3 py-2 shadow-[0_18px_60px_rgba(0,0,0,0.22)] backdrop-blur-2xl md:bg-[#061e1f]/42 md:px-5 md:py-3">
+        <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/[0.12] bg-[#061e1f]/55 px-3 py-2 shadow-[0_18px_60px_rgba(0,0,0,0.22)] backdrop-blur-2xl md:bg-[#061e1f]/40 md:px-5 md:py-3">
         <div className="flex min-w-0 items-center gap-2">
           <img src={`${assetBase}logo.png`} width="34" height="34" alt="ChinaEase Buddy" className="h-8 w-8 shrink-0 rounded-lg ring-1 ring-white/20 md:h-9 md:w-9" />
           <span className="truncate text-sm font-semibold tracking-tight text-white md:text-base">ChinaEase Buddy</span>
         </div>
-        <nav className="hidden items-center gap-5 text-sm font-medium text-white/72 lg:flex">
+        <nav className="hidden items-center gap-5 text-sm font-medium text-[#f8f3ea] lg:flex">
           {navLinks.map((link) => (
             link.href.startsWith('#') ? (
               <button
@@ -115,7 +116,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
           <div className="relative">
             <button
               onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-2.5 py-1.5 text-[11px] text-white/86 backdrop-blur-sm transition-colors hover:text-white md:text-xs"
+              className="flex items-center gap-1.5 rounded-full border border-white/[0.15] bg-white/10 px-2.5 py-1.5 text-[11px] text-[#f8f3ea] backdrop-blur-sm transition-colors hover:text-white md:text-xs"
             >
               <Globe className="w-3 h-3" />
               <span>{lang}</span>
@@ -151,7 +152,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
                 onClick={() => setAccountOpen((open) => !open)}
                 className="hidden max-w-[9rem] truncate rounded-full bg-[#e8c27a] px-4 py-2 text-sm font-bold text-[#061e1f] shadow-[0_14px_34px_rgba(232,194,122,0.24)] transition-all hover:bg-[#f4d78f] md:block"
               >
-                {t('nav.currentPlan', { plan: planLabel })}
+                {t('nav.getHelpNow')}
               </button>
               {accountOpen && (
                 <div className="absolute right-0 top-full mt-2 w-72 rounded-2xl bg-white p-4 text-gray-700 shadow-2xl z-50">
@@ -226,13 +227,13 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
 
           <h1
             className="mb-3 leading-[0.96] tracking-[-0.035em] text-[#fffaf0] drop-shadow-[0_6px_34px_rgba(0,0,0,0.52)] md:mb-6"
-            style={{ fontFamily: 'Cormorant Garamond, Playfair Display, Georgia, serif', fontSize: 'clamp(2.55rem, 11vw, 6.6rem)' }}
+            style={{ fontFamily: 'Cormorant Garamond, Playfair Display, Georgia, serif', fontSize: 'clamp(2.55rem, 6vw, 4.9rem)' }}
           >
             {t('hero.titleLine1')}<br />
             <span className="text-[#e8c27a]">{t('hero.titleLine2')}</span>
           </h1>
 
-          <p className="mb-4 max-w-[20rem] text-sm font-semibold leading-relaxed text-[#fffaf0]/95 drop-shadow-[0_2px_18px_rgba(0,0,0,0.78)] md:mb-7 md:max-w-xl md:text-xl md:font-medium md:text-[#f7f2e8]/92">
+          <p className="mb-4 max-w-[20rem] text-sm font-semibold leading-relaxed text-[#fffaf0]/95 drop-shadow-[0_2px_18px_rgba(0,0,0,0.78)] md:mb-7 md:max-w-xl md:text-xl md:font-medium md:text-[#f7f2e8]/90">
             <span className="md:hidden">{t('hero.mobileSubtitle')}</span>
             <span className="hidden md:inline">{t('hero.homeSubtitle')}</span>
           </p>
@@ -246,13 +247,13 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
             </button>
             <button
               onClick={onAskBuddy}
-              className="flex h-11 w-full items-center justify-center gap-2 rounded-full border border-white/26 bg-white/14 px-5 text-sm font-bold text-white shadow-xl backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/18 md:h-auto md:w-auto md:px-7 md:py-4 md:text-base"
+              className="flex h-11 w-full items-center justify-center gap-2 rounded-full border border-white/[0.26] bg-white/[0.14] px-5 text-sm font-bold text-white shadow-xl backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/[0.18] md:h-auto md:w-auto md:px-7 md:py-4 md:text-base"
             >
               {t('hero.askBuddy')}
             </button>
           </div>
 
-          <div className="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold text-[#fffaf0]/94 drop-shadow-[0_1px_12px_rgba(0,0,0,0.76)] md:mt-6 md:text-xs">
+          <div className="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold text-[#fffaf0]/95 drop-shadow-[0_1px_12px_rgba(0,0,0,0.76)] md:mt-6 md:text-xs">
             <span className="md:hidden">{t('hero.mobileTrustShort')}</span>
             <span className="hidden items-center gap-2 md:inline-flex"><ShieldCheck className="h-4 w-4 text-[#e8c27a]" />{t('hero.trustTrusted')}</span>
             <span className="hidden items-center gap-2 md:inline-flex"><Sparkles className="h-4 w-4 text-[#e8c27a]" />{t('hero.trustSupport')}</span>

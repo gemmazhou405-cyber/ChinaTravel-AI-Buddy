@@ -24,7 +24,7 @@ export default function Footer({ onTabChange, onAskBuddy }: Props) {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-[#061e1f] text-white/72">
+    <footer className="relative overflow-hidden bg-[#061e1f] text-white/80">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_8%,rgba(214,168,90,0.13),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(18,123,120,0.22),transparent_32%)]" />
       <div className="relative mx-auto max-w-6xl px-4 pb-[calc(6rem+env(safe-area-inset-bottom))] pt-12 md:px-6 md:py-14">
         <div className="grid gap-8 border-b border-white/10 pb-10 lg:grid-cols-[1.3fr_2fr_1fr]">
@@ -33,7 +33,7 @@ export default function Footer({ onTabChange, onAskBuddy }: Props) {
               <img src={`${assetBase}logo.png`} width="40" height="40" alt="ChinaEase Buddy" className="h-10 w-10 rounded-xl ring-1 ring-white/15" />
               <span className="text-lg font-semibold tracking-tight text-white">ChinaEase Buddy</span>
             </div>
-            <p className="max-w-sm text-sm leading-relaxed text-white/68">
+            <p className="max-w-sm text-sm leading-relaxed text-white/70">
               {t('footer.tagline')}
             </p>
           </div>
@@ -79,14 +79,14 @@ export default function Footer({ onTabChange, onAskBuddy }: Props) {
                 setEmail('');
               }}
             >
-              <label className="flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.07] px-3 py-2.5 text-sm text-white/72 backdrop-blur-xl">
+              <label className="flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.07] px-3 py-2.5 text-sm text-white/80 backdrop-blur-xl">
                 <Mail className="h-4 w-4 text-[#e8c27a]" />
                 <input
                   type="email"
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
                   placeholder={t('footer.emailPlaceholder')}
-                  className="min-w-0 flex-1 bg-transparent text-white placeholder:text-white/34 focus:outline-none"
+                  className="min-w-0 flex-1 bg-transparent text-white placeholder:text-white/30 focus:outline-none"
                 />
               </label>
               <button className="w-full rounded-full bg-[#e8c27a] px-4 py-2.5 text-sm font-bold text-[#061e1f] transition-colors hover:bg-[#f4d78f]">
@@ -102,7 +102,7 @@ export default function Footer({ onTabChange, onAskBuddy }: Props) {
             <Shield className="w-3.5 h-3.5 text-white/40" />
             <p className="text-white/50 text-xs font-semibold uppercase tracking-wider">{t('footer.legalTitle')}</p>
           </div>
-          <p className="text-white/52 text-xs leading-relaxed">
+          <p className="text-white/50 text-xs leading-relaxed">
             {t('footer.legalBody')}
           </p>
         </div>
@@ -110,14 +110,14 @@ export default function Footer({ onTabChange, onAskBuddy }: Props) {
         {/* Refund policy */}
         <div className="mb-8">
           <p className="text-white/50 text-xs font-semibold uppercase tracking-wider mb-2">{t('footer.refundTitle')}</p>
-          <p className="text-white/52 text-xs leading-relaxed">
+          <p className="text-white/50 text-xs leading-relaxed">
             {t('footer.refundBody')}
           </p>
         </div>
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 border-t border-white/10">
-          <p className="text-white/42 text-xs">{t('footer.rights')}</p>
+          <p className="text-white/40 text-xs">{t('footer.rights')}</p>
           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs">
             <a href="/privacy" className="text-white/50 hover:text-white/75 transition-colors">{t('footer.privacy')}</a>
             <a href="/terms" className="text-white/50 hover:text-white/75 transition-colors">{t('footer.terms')}</a>
