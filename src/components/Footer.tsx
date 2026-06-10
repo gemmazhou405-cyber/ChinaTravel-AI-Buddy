@@ -11,7 +11,6 @@ interface Props {
 export default function Footer({ onTabChange, onAskBuddy }: Props) {
   const { t } = useTranslation();
   const [modal, setModal] = useState<'cookies' | null>(null);
-  const [email, setEmail] = useState('');
   const assetBase = import.meta.env.BASE_URL;
 
   const scrollToTabs = () => {
@@ -71,27 +70,24 @@ export default function Footer({ onTabChange, onAskBuddy }: Props) {
 
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#e8c27a]">{t('footer.stayInKnow')}</p>
-            <form
-              className="mt-4 space-y-2"
-              onSubmit={(event) => {
-                event.preventDefault();
-                alert(t('footer.subscribeThanks'));
-                setEmail('');
-              }}
-            >
+            <form className="mt-4 space-y-2" onSubmit={(event) => event.preventDefault()}>
               <label className="flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.07] px-3 py-2.5 text-sm text-white/80 backdrop-blur-xl">
                 <Mail className="h-4 w-4 text-[#e8c27a]" />
                 <input
                   type="email"
-                  value={email}
-                  onChange={(event) => setEmail(event.target.value)}
+                  disabled
                   placeholder={t('footer.emailPlaceholder')}
-                  className="min-w-0 flex-1 bg-transparent text-white placeholder:text-white/30 focus:outline-none"
+                  className="min-w-0 flex-1 cursor-not-allowed bg-transparent text-white placeholder:text-white/30 opacity-70 focus:outline-none"
                 />
               </label>
-              <button className="w-full rounded-full bg-[#e8c27a] px-4 py-2.5 text-sm font-bold text-[#061e1f] transition-colors hover:bg-[#f4d78f]">
-                {t('footer.subscribe')}
+              <button
+                type="button"
+                disabled
+                className="w-full cursor-not-allowed rounded-full bg-[#e8c27a]/70 px-4 py-2.5 text-sm font-bold text-[#061e1f]/80"
+              >
+                {t('footer.comingSoon')}
               </button>
+              <p className="text-xs leading-relaxed text-white/50">{t('footer.subscribeComingSoon')}</p>
             </form>
           </div>
         </div>

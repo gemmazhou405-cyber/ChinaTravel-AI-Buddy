@@ -80,8 +80,7 @@ export default function PricingPlans({ userState, showToast, onCtaClick }: Props
           <p className="text-sm font-bold text-gray-950">{t('pay.manualPayment.title')}</p>
         </div>
         <p className="text-xs font-medium leading-relaxed text-gray-600">{t('pay.manualPayment.body')}</p>
-        <p className="mt-2 text-xs leading-relaxed text-gray-500">{t('pay.manualPayment.note')}</p>
-        <p className="mt-2 text-xs font-semibold text-[#155e63]">{t('pay.manualPayment.safety')}</p>
+        <p className="mt-2 text-xs font-semibold leading-relaxed text-[#155e63]">{t('pay.manualPayment.note')}</p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         {PLANS.map((plan) => (
@@ -121,11 +120,6 @@ export default function PricingPlans({ userState, showToast, onCtaClick }: Props
             >
               {t(`pay.plans.${plan.key}.cta`)}
             </button>
-            {plan.key !== 'free' && (
-              <p className={`mt-3 text-[11px] leading-relaxed ${plan.highlighted ? 'text-white/70' : 'text-gray-400'}`}>
-                {t('pay.manualPayment.paidNote')}
-              </p>
-            )}
           </div>
         ))}
       </div>

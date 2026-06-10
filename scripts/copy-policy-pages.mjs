@@ -87,6 +87,7 @@ const pageMeta = {
     faqs: [
       ['What is ChinaEase Buddy?', 'ChinaEase Buddy is a web-based digital China travel toolkit for foreign visitors. It helps with phrase cards, payments, food, transport, hotels, emergency references, and Buddy AI travel questions.'],
       ['Is ChinaEase Buddy free?', 'ChinaEase Buddy has a free starting plan with core tools and limited Buddy AI usage. Paid passes may unlock additional digital access, but checkout availability can vary during early access.'],
+      ['How do paid passes work?', 'Paid passes are currently processed through PayPal payment links. Access is activated manually after payment confirmation. Please use the same email as your ChinaEase Buddy account or include your account email during checkout.'],
       ['What emergency numbers should travelers know in China?', 'Travelers should know 110 for police, 120 for ambulance, and 119 for fire. In urgent situations, contact local emergency services directly.'],
     ],
   },
@@ -96,6 +97,86 @@ const pages = Object.keys(pageMeta);
 
 function escapeAttr(value) {
   return value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+}
+
+function escapeHtml(value) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+const staticCtas = {
+  pricing: ['View travel passes', '/pricing'],
+  terms: ['Read the terms', '/terms'],
+  privacy: ['Read the privacy policy', '/privacy'],
+  refund: ['Read the refund policy', '/refund'],
+  contact: ['Contact support', '/contact'],
+  about: ['Learn about ChinaEase Buddy', '/about'],
+  'china-travel-apps': ['Open the app checklist', '/?journey=before&tool=apps'],
+  'alipay-for-foreigners': ['Open payment setup tools', '/?journey=before&tool=payment'],
+  'china-payment-guide': ['Open payment phrases', '/?journey=china&tool=pay'],
+  'china-travel-checklist': ['View the trip checklist', '/?journey=before&tool=checklist'],
+  'china-emergency-numbers': ['View emergency help', '/?journey=emergency'],
+  faq: ['Open the free toolkit', '/'],
+};
+
+const relatedLinks = [
+  ['China travel apps', '/china-travel-apps'],
+  ['China payment guide', '/china-payment-guide'],
+  ['China travel checklist', '/china-travel-checklist'],
+  ['China emergency numbers', '/china-emergency-numbers'],
+  ['FAQ', '/faq'],
+];
+
+const standardDisclaimer =
+  'ChinaEase Buddy is a digital travel toolkit. It is not an official travel authority, visa service, immigration service, medical service, legal service, financial service, hotel booking service, or flight booking service. Always confirm important travel, payment, health, and entry information with official sources or service providers.';
+
+function staticPageContent(page, meta) {
+  const heading = meta.title.split('|')[0].trim();
+  const [ctaLabel, ctaHref] = staticCtas[page] || ['Open ChinaEase Buddy', '/'];
+  const faqItems = meta.faqs || [
+    ['What is this page about?', meta.description],
+    ['How can ChinaEase Buddy help?', 'Use the free toolkit to find practical China travel help for apps, payments, food, transport, hotels, and emergency situations.'],
+  ];
+
+  return `
+    <main id="static-seo-content" style="max-width: 960px; margin: 0 auto; padding: 48px 20px; color: #122022; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+      <p style="margin: 0 0 10px; color: #155e63; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;">ChinaEase Buddy</p>
+      <h1 style="margin: 0 0 18px; font-size: clamp(2rem, 6vw, 3.75rem); line-height: 1.05; letter-spacing: -0.03em;">${escapeHtml(heading)}</h1>
+      <section aria-labelledby="quick-answer" style="margin: 0 0 24px; padding: 22px; border: 1px solid rgba(21, 94, 99, 0.14); border-radius: 22px; background: #fffdf8;">
+        <h2 id="quick-answer" style="margin: 0 0 10px; font-size: 1.25rem;">Quick answer</h2>
+        <p style="margin: 0; color: #536365; line-height: 1.7;">${escapeHtml(meta.description)}</p>
+      </section>
+      <section aria-labelledby="practical-tips" style="margin: 0 0 24px;">
+        <h2 id="practical-tips" style="margin: 0 0 12px; font-size: 1.25rem;">Practical tips</h2>
+        <ul style="margin: 0; padding-left: 20px; color: #536365; line-height: 1.8;">
+          <li>Prepare core China travel tools before arrival when possible.</li>
+          <li>Keep backup options for payments, transport, and communication.</li>
+          <li>Use bilingual phrases when you need to show clear Chinese text to local staff.</li>
+        </ul>
+      </section>
+      <p style="margin: 0 0 28px;"><a href="${escapeAttr(ctaHref)}" style="display: inline-flex; border-radius: 999px; background: #155e63; color: #fffdf8; padding: 12px 18px; font-weight: 700; text-decoration: none;">${escapeHtml(ctaLabel)}</a></p>
+      <section aria-labelledby="faq" style="margin: 0 0 24px;">
+        <h2 id="faq" style="margin: 0 0 12px; font-size: 1.25rem;">FAQ</h2>
+        ${faqItems.map(([question, answer]) => `
+          <article style="margin: 0 0 14px; padding: 18px; border: 1px solid rgba(21, 94, 99, 0.12); border-radius: 18px; background: rgba(248, 243, 234, 0.72);">
+            <h3 style="margin: 0 0 8px; font-size: 1rem;">${escapeHtml(question)}</h3>
+            <p style="margin: 0; color: #536365; line-height: 1.7;">${escapeHtml(answer)}</p>
+          </article>
+        `).join('')}
+      </section>
+      <nav aria-label="Related China travel guides" style="margin: 0 0 24px;">
+        <h2 style="margin: 0 0 12px; font-size: 1.25rem;">Related guides</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          ${relatedLinks.map(([label, href]) => `<a href="${escapeAttr(href)}" style="border: 1px solid rgba(21, 94, 99, 0.18); border-radius: 999px; color: #155e63; padding: 9px 12px; text-decoration: none;">${escapeHtml(label)}</a>`).join('')}
+        </div>
+      </nav>
+      <p style="margin: 0; color: #6b7678; font-size: 0.9rem; line-height: 1.7;">${escapeHtml(standardDisclaimer)}</p>
+    </main>
+  `;
 }
 
 function schemaFor(page, meta) {
@@ -148,6 +229,7 @@ function withPageMeta(html, page, meta) {
   if (schema) {
     next = next.replace('</head>', `    ${schema}\n  </head>`);
   }
+  next = next.replace('<div id="root"></div>', `<div id="root">${staticPageContent(page, meta)}</div>`);
   return next;
 }
 

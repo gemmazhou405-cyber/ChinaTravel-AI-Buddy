@@ -53,8 +53,13 @@ const pricingPlans = [
   {
     name: 'Free',
     price: '$0',
-    note: 'Basic China travel toolkit',
-    features: ['Apps, payments, taxis, food, hotels, and emergency help', 'Free toolkit access', 'No payment required'],
+    note: 'Basic China travel toolkit for common travel situations',
+    features: [
+      'Essential apps, payments, transport, food, hotel, and emergency help',
+      'Basic phrase cards and travel guides',
+      'Limited Buddy AI access',
+      'No payment required',
+    ],
     cta: 'Start Free',
     href: '/',
     plan: 'free',
@@ -63,7 +68,12 @@ const pricingPlans = [
     name: 'Trip Pass',
     price: '$9.90',
     note: 'One-time payment',
-    features: ['Extra travel help for one traveler during a China trip', 'PayPal manual payment link', 'Manual activation after payment'],
+    features: [
+      'More Buddy AI help for your China trip',
+      'Extra support for apps, payments, taxis, food, hotels, and emergency situations',
+      'Access activated after PayPal payment confirmation',
+      'Best for solo travelers and first-time visitors',
+    ],
     cta: 'Get Trip Pass',
     href: paypalLinks.trip,
     plan: 'trip_pass',
@@ -73,7 +83,12 @@ const pricingPlans = [
     name: 'Group Pass',
     price: '$29.90',
     note: 'One-time payment',
-    features: ['Extra travel help for couples, families, or small groups', 'PayPal manual payment link', 'Manual activation after payment'],
+    features: [
+      'More Buddy AI help for a small travel group',
+      'Useful for couples, families, and friends traveling together',
+      'Extra support for shared travel situations',
+      'Access activated after PayPal payment confirmation',
+    ],
     cta: 'Get Group Pass',
     href: paypalLinks.group,
     plan: 'group_pass',
@@ -803,9 +818,12 @@ function PricingPage() {
         ))}
       </div>
       <div className="mt-5 rounded-2xl border border-[#155e63]/10 bg-[#155e63]/5 p-4">
-        <p className="text-sm font-semibold text-[#155e63]">One-time payment, no auto-renewal, 3-day refund policy.</p>
+        <p className="text-sm font-semibold text-[#155e63]">One-time payment · No auto-renewal · Manual activation after payment.</p>
         <p className="mt-2 text-xs leading-relaxed text-gray-600">
           Payments are processed by PayPal. Access is currently activated manually after payment. Please use the same email as your ChinaEase Buddy account or include your account email during checkout.
+        </p>
+        <p className="mt-2 text-xs font-semibold leading-relaxed text-[#155e63]">
+          ChinaEase Buddy does not collect card details directly. PayPal handles the payment securely.
         </p>
       </div>
     </PageShell>

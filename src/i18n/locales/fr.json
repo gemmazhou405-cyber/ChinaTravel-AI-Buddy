@@ -405,7 +405,7 @@
       "oneTime": "paiement unique",
       "currentPlan": "Forfait actuel :",
       "aiUsed": "Buddy AI utilisé :",
-      "refund": "Paiement unique · Pas de renouvellement automatique · Remboursement sous 3 jours",
+      "refund": "Paiement unique · Pas de renouvellement automatique · Activation manuelle après paiement",
       "paymentTitle": "Moyens de paiement en Chine",
       "wechatSetup": "Configuration de WeChat Pay",
       "exchangeTip": "Conseil de change",
@@ -419,11 +419,12 @@
       "plans": {
         "free": {
           "name": "Gratuit",
-          "desc": "Boîte à outils de base pour voyager en Chine",
+          "desc": "Boîte à outils de base pour les situations courantes en Chine.",
           "cta": "Commencer gratuitement",
           "features": [
-            "Apps, paiements, taxis, nourriture, hôtels et aide d’urgence",
-            "Accès gratuit à la boîte à outils",
+            "Aide essentielle pour apps, paiements, transport, repas, hôtel et urgences",
+            "Cartes de phrases et guides de voyage de base",
+            "Accès limité à Buddy AI",
             "Aucun paiement requis"
           ]
         },
@@ -432,9 +433,10 @@
           "desc": "Aide de voyage supplémentaire pour une personne pendant un séjour en Chine",
           "cta": "Obtenir Trip Pass",
           "features": [
-            "9,90 $ paiement unique",
-            "Aide supplémentaire pour une personne",
-            "Activation manuelle après paiement"
+            "Plus d’aide Buddy AI pour votre voyage en Chine",
+            "Aide supplémentaire pour apps, paiements, taxis, repas, hôtels et urgences",
+            "Accès activé après confirmation du paiement PayPal",
+            "Idéal pour les voyageurs seuls et les premières visites"
           ]
         },
         "group": {
@@ -442,9 +444,10 @@
           "desc": "Aide supplémentaire pour couples, familles ou petits groupes visitant la Chine ensemble",
           "cta": "Obtenir Group Pass",
           "features": [
-            "29,90 $ paiement unique",
-            "Aide supplémentaire pour petits groupes",
-            "Activation manuelle après paiement"
+            "Plus d’aide Buddy AI pour un petit groupe",
+            "Utile pour couples, familles et amis voyageant ensemble",
+            "Aide supplémentaire pour les situations de voyage partagées",
+            "Accès activé après confirmation du paiement PayPal"
           ]
         }
       },
@@ -546,11 +549,11 @@
       },
       "freeToolkitReady": "La boîte à outils gratuite est prête. Aucun paiement nécessaire.",
       "manualPayment": {
-        "title": "La boîte à outils gratuite d’abord. Les forfaits payants sont optionnels.",
-        "body": "Trip Pass et Group Pass utilisent pour l’instant des liens de paiement PayPal manuels. L’accès est activé manuellement après confirmation du paiement.",
-        "note": "Les paiements sont traités par PayPal. Utilisez la même adresse e-mail que votre compte ChinaEase Buddy ou indiquez-la lors du paiement.",
-        "safety": "ChinaEase Buddy ne collecte pas les données de carte directement sur ce site.",
-        "paidNote": "Ouvre PayPal dans un nouvel onglet. Activation manuelle après paiement."
+        "title": "Les pass payants sont optionnels.",
+        "body": "Les pass payants sont optionnels. Les paiements sont traités par PayPal. L’accès est activé manuellement après confirmation du paiement. Utilisez la même adresse e-mail que votre compte ChinaEase Buddy ou indiquez-la lors du paiement.",
+        "note": "ChinaEase Buddy ne collecte pas directement les données de carte. PayPal traite le paiement de manière sécurisée.",
+        "safety": "",
+        "paidNote": ""
       }
     },
     "chat": {
@@ -623,7 +626,7 @@
       "legalTitle": "Mentions légales",
       "legalBody": "ChinaEase Buddy fournit des informations générales de voyage et des traductions assistées par IA à titre pratique uniquement. Il ne remplace pas un avis juridique, médical ou financier professionnel. Les numéros et phrases d’urgence sont fournis comme référence — vérifiez toujours auprès des autorités locales. ChinaEase ne garantit pas l’exactitude des traductions, le traitement des paiements ou la disponibilité des services tiers. Les utilisateurs sont responsables du respect des lois et réglementations locales.",
       "refundTitle": "Politique de remboursement",
-      "refundBody": "Remboursement complet sous 3 jours si aucun message Buddy AI n’a été utilisé. Remboursement partiel selon le quota non utilisé. Contactez le support pour demander.",
+      "refundBody": "Les demandes de remboursement sont traitées selon la Politique de remboursement. Contactez le support avec votre e-mail de paiement et votre reçu.",
       "rights": "© 2026 ChinaEase Buddy. Tous droits réservés.",
       "privacy": "Politique de confidentialité",
       "terms": "Conditions d’utilisation",
@@ -648,7 +651,9 @@
       "stayInKnow": "Restez informé",
       "emailPlaceholder": "Adresse e-mail",
       "subscribe": "S’abonner",
-      "subscribeThanks": "Merci. Nous vous tiendrons informé."
+      "subscribeThanks": "Merci. Nous vous tiendrons informé.",
+      "comingSoon": "Bientôt disponible",
+      "subscribeComingSoon": "Les mises à jour par e-mail arrivent bientôt. Pour l’instant, contactez-nous directement pour les nouvelles du lancement."
     },
     "toast": {
       "copied": "Copié !",
