@@ -65,32 +65,32 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
   };
 
   return (
-    <section className="relative h-[64svh] min-h-[27rem] max-h-[31rem] md:h-auto md:min-h-[720px] md:max-h-[860px] flex flex-col overflow-hidden bg-[#061e1f]">
+    <section className="relative h-[64svh] min-h-[27rem] max-h-[31rem] md:h-auto md:min-h-[690px] md:max-h-[800px] flex flex-col overflow-hidden bg-[#061e1f]">
       <style>{`
         .hero-bg {
           background:
-            radial-gradient(circle at 76% 26%, rgba(232,194,122,0.22), transparent 31%),
-            linear-gradient(100deg, rgba(2,10,11,0.90) 0%, rgba(6,30,31,0.72) 39%, rgba(6,30,31,0.20) 70%, rgba(2,10,11,0.48) 100%),
-            linear-gradient(to bottom, rgba(2,10,11,0.10), rgba(2,10,11,0.76)),
-            url("/images/hero-china-landscape.jpg") center center/cover no-repeat;
+            radial-gradient(circle at 84% 18%, rgba(232,194,122,0.34), transparent 28%),
+            linear-gradient(100deg, rgba(2,10,11,0.94) 0%, rgba(6,30,31,0.82) 33%, rgba(6,30,31,0.25) 68%, rgba(2,10,11,0.42) 100%),
+            linear-gradient(to bottom, rgba(2,10,11,0.08), rgba(2,10,11,0.82)),
+            url("/images/hero-china-landscape.jpg") center 45%/cover no-repeat;
         }
         @media (max-width: 768px) {
           .hero-bg {
             background:
-              radial-gradient(circle at 72% 24%, rgba(232,194,122,0.20), transparent 34%),
-              linear-gradient(to bottom, rgba(2,10,11,0.42) 0%, rgba(6,30,31,0.44) 45%, rgba(2,10,11,0.86) 100%),
-              linear-gradient(to right, rgba(2,10,11,0.68), rgba(2,10,11,0.16)),
-              url("/images/hero-china-landscape.jpg") 50% center/cover no-repeat;
+              radial-gradient(circle at 82% 18%, rgba(232,194,122,0.26), transparent 34%),
+              linear-gradient(to bottom, rgba(2,10,11,0.52) 0%, rgba(6,30,31,0.44) 40%, rgba(2,10,11,0.88) 100%),
+              linear-gradient(to right, rgba(2,10,11,0.74), rgba(2,10,11,0.22)),
+              url("/images/hero-china-landscape.jpg") 49% center/cover no-repeat;
           }
         }
       `}</style>
 
       <div className="hero-bg absolute inset-0" />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),transparent_18%,rgba(0,0,0,0.28)_82%,#061e1f_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),transparent_16%,rgba(0,0,0,0.24)_78%,#061e1f_100%)]" />
 
       {/* Nav bar */}
       <div className="relative z-20 px-3 py-3 md:px-8 md:py-5">
-        <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/[0.12] bg-[#061e1f]/55 px-3 py-2 shadow-[0_18px_60px_rgba(0,0,0,0.22)] backdrop-blur-2xl md:bg-[#061e1f]/40 md:px-5 md:py-3">
+        <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/[0.16] bg-[#061e1f]/45 px-3 py-2 shadow-[0_18px_60px_rgba(0,0,0,0.24)] backdrop-blur-2xl md:bg-[#061e1f]/30 md:px-5 md:py-3">
         <div className="flex min-w-0 items-center gap-2">
           <img src={`${assetBase}logo.png`} width="34" height="34" alt="ChinaEase Buddy" className="h-8 w-8 shrink-0 rounded-lg ring-1 ring-white/20 md:h-9 md:w-9" />
           <span className="truncate text-sm font-semibold tracking-tight text-white md:text-base">ChinaEase Buddy</span>
@@ -218,7 +218,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
       </div>
 
       {/* 主内容：badge + slogan + subtitle + 按钮，整体放在画面上半部分 */}
-      <div className="relative z-10 flex w-full flex-1 flex-col justify-center px-4 pb-8 pt-1 md:mx-auto md:max-w-7xl md:px-10 md:pb-24 md:pt-3">
+      <div className="relative z-10 flex w-full flex-1 flex-col justify-center px-4 pb-8 pt-1 md:mx-auto md:max-w-7xl md:px-10 md:pb-20 md:pt-1">
         <div className="max-w-3xl">
           <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-[#e8c27a]/35 bg-[#e8c27a]/12 px-3 py-1.5 backdrop-blur-sm md:mb-5">
             <Star className="h-3.5 w-3.5 fill-[#e8c27a] text-[#e8c27a]" />
@@ -227,7 +227,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
 
           <h1
             className="mb-3 leading-[0.96] tracking-[-0.035em] text-[#fffaf0] drop-shadow-[0_6px_34px_rgba(0,0,0,0.52)] md:mb-6"
-            style={{ fontFamily: 'Cormorant Garamond, Playfair Display, Georgia, serif', fontSize: 'clamp(2.55rem, 6vw, 4.9rem)' }}
+            style={{ fontFamily: 'Cormorant Garamond, Playfair Display, Georgia, serif', fontSize: 'clamp(2.55rem, 5.1vw, 4.55rem)' }}
           >
             {t('hero.titleLine1')}<br />
             <span className="text-[#e8c27a]">{t('hero.titleLine2')}</span>

@@ -735,6 +735,7 @@
       },
       "guides": {
         "title": "中国の旅のために厳選",
+        "exploreAll": "すべてのガイドを見る",
         "firstTime": {
           "title": "初めての中国",
           "body": "知っておきたい基本"

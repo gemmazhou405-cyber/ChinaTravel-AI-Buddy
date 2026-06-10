@@ -40,14 +40,14 @@ function CategoryButton({ category, onTabSelect, onAskBuddy }: Pick<Props, 'onTa
   return (
     <button
       onClick={() => (category.askBuddy ? onAskBuddy() : category.tab && onTabSelect(category.tab, category.tool))}
-      className="group min-h-[5.45rem] rounded-[1.2rem] border border-[#e8dcc6] bg-[#fffdf8] p-3.5 text-left shadow-[0_18px_46px_rgba(8,37,38,0.08)] transition-all duration-200 hover:-translate-y-1 hover:border-[#d6a85a]/60 hover:shadow-[0_24px_58px_rgba(8,37,38,0.14)] active:scale-[0.985] md:min-h-[7.2rem] md:rounded-[1.35rem] md:p-5 lg:min-h-[9rem] lg:p-4"
+      className="group min-h-[5.45rem] rounded-[1.2rem] border border-[#e8dcc6] bg-[#fffdf8] p-3.5 text-left shadow-[0_18px_46px_rgba(8,37,38,0.08)] transition-all duration-200 hover:-translate-y-1 hover:border-[#d6a85a]/60 hover:shadow-[0_24px_58px_rgba(8,37,38,0.14)] active:scale-[0.985] md:min-h-[7rem] md:rounded-[1.35rem] md:p-4 lg:min-h-[7.4rem]"
     >
       <div className="flex h-full flex-col justify-between gap-4">
         <div>
-          <div className="mb-2.5 flex h-9 w-9 items-center justify-center rounded-2xl bg-[#0f6f6c]/10 text-[#0f6f6c] ring-1 ring-[#0f6f6c]/10 md:mb-3 md:h-10 md:w-10">
+          <div className="mb-2.5 flex h-9 w-9 items-center justify-center rounded-2xl bg-[#0f6f6c]/10 text-[#0f6f6c] ring-1 ring-[#0f6f6c]/10 md:mb-3 md:h-10 md:w-10 lg:h-9 lg:w-9">
             {category.icon}
           </div>
-          <span className="block truncate text-sm font-bold tracking-tight text-[#122022] md:text-lg">{category.label}</span>
+          <span className="block truncate text-sm font-bold tracking-tight text-[#122022] md:text-base lg:text-[15px]">{category.label}</span>
           <span className="mt-1 block truncate text-xs font-medium leading-snug text-[#536365] md:text-sm">{category.note}</span>
         </div>
         <ArrowRight className="h-4 w-4 text-[#d6a85a] transition-transform group-hover:translate-x-1" />
@@ -113,12 +113,18 @@ export default function QuickActions({ journey, onJourneyChange, onTabSelect, on
   ];
 
   const categories = journey === 'before' ? beforeCategories : journey === 'emergency' ? emergencyCategories : nowCategories;
+  const guideCards = [
+    ['firstTime', '/china-travel-checklist', 'url("/hero.jpg")'],
+    ['destinations', '/china-travel-checklist', 'url("/images/hero-china-landscape.jpg")'],
+    ['culture', '/faq', 'url("/hero-mobile.jpg")'],
+    ['tips', '/china-travel-apps', 'url("/email_header.jpg")'],
+  ] as const;
 
   return (
-    <section id="journey-tools" className="relative overflow-hidden bg-[#061e1f] px-3 py-6 md:px-6 md:py-12">
+    <section id="journey-tools" className="relative overflow-hidden bg-[#061e1f] px-3 py-5 md:px-6 md:py-10">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_8%,rgba(214,168,90,0.16),transparent_28%),radial-gradient(circle_at_92%_18%,rgba(18,123,120,0.28),transparent_32%),linear-gradient(180deg,#061e1f,#0b2a2a_38%,#f8f3ea_38%,#f8f3ea)] md:bg-[radial-gradient(circle_at_12%_8%,rgba(214,168,90,0.16),transparent_28%),radial-gradient(circle_at_92%_18%,rgba(18,123,120,0.28),transparent_32%),linear-gradient(180deg,#061e1f,#0b2a2a_44%,#f8f3ea_44%,#f8f3ea)]" />
 
-      <div className="relative mx-auto max-w-6xl">
+      <div className="relative mx-auto max-w-7xl">
         <div className="grid grid-cols-3 gap-1.5 rounded-[1.35rem] border border-white/[0.12] bg-white/[0.07] p-1.5 shadow-[0_28px_90px_rgba(0,0,0,0.24)] backdrop-blur-2xl md:gap-3 md:rounded-[2rem] md:p-3">
           {journeys.map((item) => (
             <button
@@ -157,12 +163,12 @@ export default function QuickActions({ journey, onJourneyChange, onTabSelect, on
           ))}
         </div>
 
-        <div className="mt-7 rounded-[1.6rem] bg-[#f8f3ea] p-3.5 shadow-[0_28px_90px_rgba(0,0,0,0.18)] md:mt-12 md:rounded-[2rem] md:p-8">
-          <div className="mb-4 flex flex-col gap-2 md:mb-7 md:flex-row md:items-end md:justify-between">
+        <div className="mt-5 rounded-[1.6rem] bg-[#f8f3ea] p-3.5 shadow-[0_28px_90px_rgba(0,0,0,0.18)] md:mt-7 md:rounded-[1.5rem] md:p-4">
+          <div className="mb-4 flex flex-col gap-2 md:mb-4 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#d6a85a]">{t('journey.cards.kicker')}</p>
               <h2
-                className="mt-1.5 text-2xl font-semibold tracking-tight text-[#122022] md:mt-2 md:text-5xl"
+                className="mt-1.5 text-2xl font-semibold tracking-tight text-[#122022] md:mt-1 md:text-2xl"
                 style={{ fontFamily: 'Cormorant Garamond, Playfair Display, Georgia, serif' }}
               >
                 {t('journey.cards.title')}
@@ -206,14 +212,14 @@ export default function QuickActions({ journey, onJourneyChange, onTabSelect, on
           )}
         </div>
 
-        <div className="mt-7 grid gap-3 md:mt-8 md:grid-cols-4">
+        <div className="mt-4 grid gap-3 md:mt-5 md:grid-cols-4">
           {[
             ['ai', t('journey.trust.ai.title'), t('journey.trust.ai.body')],
             ['mobile', t('journey.trust.mobile.title'), t('journey.trust.mobile.body')],
             ['firstTimers', t('journey.trust.firstTimers.title'), t('journey.trust.firstTimers.body')],
             ['practical', t('journey.trust.practical.title'), t('journey.trust.practical.body')],
           ].map(([key, title, body]) => (
-            <div key={key} className="rounded-[1.25rem] border border-white/[0.14] bg-white/[0.10] p-4 text-[#f7f2e8] backdrop-blur-xl md:rounded-[1.4rem]">
+            <div key={key} className="rounded-[1.25rem] border border-white/[0.14] bg-white/[0.10] p-4 text-[#f7f2e8] backdrop-blur-xl md:rounded-[1.1rem]">
               <Sparkles className="mb-3 h-4 w-4 text-[#e8c27a]" />
               <h3 className="text-sm font-bold">{title}</h3>
               <p className="mt-1 text-xs leading-relaxed text-white/80 md:text-white/60">{body}</p>
@@ -221,26 +227,27 @@ export default function QuickActions({ journey, onJourneyChange, onTabSelect, on
           ))}
         </div>
 
-        <div className="mt-9 md:mt-10">
-          <h2
-            className="text-3xl font-semibold tracking-tight text-[#fffaf0] md:text-5xl"
-            style={{ fontFamily: 'Cormorant Garamond, Playfair Display, Georgia, serif' }}
-          >
-            {t('journey.guides.title')}
-          </h2>
-          <div className="mt-5 grid gap-3 md:grid-cols-4">
-            {[
-              ['firstTime', '/china-travel-checklist', 'from-[#0b2a2a] via-[#123f3c] to-[#d6a85a]'],
-              ['destinations', '/china-travel-checklist', 'from-[#0f4b47] via-[#0b2a2a] to-[#061e1f]'],
-              ['culture', '/faq', 'from-[#2b1f16] via-[#0b2a2a] to-[#d6a85a]'],
-              ['tips', '/china-travel-apps', 'from-[#123f3c] via-[#0f6f6c] to-[#d6a85a]'],
-            ].map(([key, href, gradient]) => (
+        <div className="mt-7 md:mt-8">
+          <div className="flex items-center justify-between gap-4">
+            <h2
+              className="text-2xl font-semibold tracking-tight text-[#fffaf0] md:text-2xl"
+              style={{ fontFamily: 'Cormorant Garamond, Playfair Display, Georgia, serif' }}
+            >
+              {t('journey.guides.title')}
+            </h2>
+            <a href="/china-travel-apps" className="hidden items-center gap-2 text-xs font-semibold text-[#f6ddb0] transition-colors hover:text-[#fffaf0] md:inline-flex">
+              {t('journey.guides.exploreAll')} <ArrowRight className="h-3.5 w-3.5" />
+            </a>
+          </div>
+          <div className="mt-3 grid gap-3 md:grid-cols-4">
+            {guideCards.map(([key, href, image]) => (
               <a
                 key={key}
                 href={href}
-                className={`group relative min-h-[10rem] overflow-hidden rounded-[1.4rem] bg-gradient-to-br ${gradient} p-4 text-white shadow-[0_20px_54px_rgba(0,0,0,0.18)] transition-all hover:-translate-y-1`}
+                className="group relative min-h-[10rem] overflow-hidden rounded-[1.25rem] bg-cover bg-center p-4 text-white shadow-[0_20px_54px_rgba(0,0,0,0.18)] transition-all hover:-translate-y-1 md:min-h-[8.5rem]"
+                style={{ backgroundImage: image }}
               >
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.28),transparent_24%),linear-gradient(135deg,rgba(255,255,255,0.16),transparent_42%)]" />
+                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(6,30,31,0.10),rgba(6,30,31,0.82)),radial-gradient(circle_at_78%_18%,rgba(232,194,122,0.24),transparent_28%)]" />
                 <div className="relative flex h-full flex-col justify-end">
                   <div>
                     <h3 className="text-base font-bold">{t(`journey.guides.${key}.title`)}</h3>

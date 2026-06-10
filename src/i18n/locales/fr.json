@@ -735,6 +735,7 @@
       },
       "guides": {
         "title": "Sélectionné pour votre voyage en Chine",
+        "exploreAll": "Voir tous les guides",
         "firstTime": {
           "title": "Première fois en Chine",
           "body": "L’essentiel à connaître"

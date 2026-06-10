@@ -735,6 +735,7 @@
       },
       "guides": {
         "title": "Curated for your China journey",
+        "exploreAll": "Explore all guides",
         "firstTime": {
           "title": "First Time in China",
           "body": "Everything you should know"

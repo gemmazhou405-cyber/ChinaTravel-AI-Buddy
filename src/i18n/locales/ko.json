@@ -735,6 +735,7 @@
       },
       "guides": {
         "title": "중국 여행을 위해 엄선",
+        "exploreAll": "모든 가이드 보기",
         "firstTime": {
           "title": "중국이 처음이라면",
           "body": "알아두면 좋은 기본 정보"
