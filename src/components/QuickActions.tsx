@@ -122,7 +122,7 @@ export default function QuickActions({ journey, onJourneyChange, onTabSelect, on
 
   return (
     <section id="journey-tools" className="relative overflow-hidden bg-[#061e1f] px-3 py-5 md:px-6 md:py-10">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_8%,rgba(214,168,90,0.16),transparent_28%),radial-gradient(circle_at_92%_18%,rgba(18,123,120,0.28),transparent_32%),linear-gradient(180deg,#061e1f,#0b2a2a_38%,#f8f3ea_38%,#f8f3ea)] md:bg-[radial-gradient(circle_at_12%_8%,rgba(214,168,90,0.16),transparent_28%),radial-gradient(circle_at_92%_18%,rgba(18,123,120,0.28),transparent_32%),linear-gradient(180deg,#061e1f,#0b2a2a_44%,#f8f3ea_44%,#f8f3ea)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_8%,rgba(214,168,90,0.18),transparent_28%),radial-gradient(circle_at_92%_18%,rgba(18,123,120,0.30),transparent_32%),linear-gradient(180deg,#061e1f_0%,#0b2a2a_48%,#061e1f_100%)]" />
 
       <div className="relative mx-auto max-w-7xl">
         <div className="grid grid-cols-3 gap-1.5 rounded-[1.35rem] border border-white/[0.12] bg-white/[0.07] p-1.5 shadow-[0_28px_90px_rgba(0,0,0,0.24)] backdrop-blur-2xl md:gap-3 md:rounded-[2rem] md:p-3">
@@ -212,14 +212,14 @@ export default function QuickActions({ journey, onJourneyChange, onTabSelect, on
           )}
         </div>
 
-        <div className="mt-4 grid gap-3 md:mt-5 md:grid-cols-4">
+        <div className="mt-4 grid gap-3 rounded-[1.45rem] border border-white/[0.10] bg-[#071a1c]/70 p-3 shadow-[0_24px_70px_rgba(0,0,0,0.20)] backdrop-blur-xl md:mt-5 md:grid-cols-4 md:rounded-[1.6rem] md:p-3">
           {[
             ['ai', t('journey.trust.ai.title'), t('journey.trust.ai.body')],
             ['mobile', t('journey.trust.mobile.title'), t('journey.trust.mobile.body')],
             ['firstTimers', t('journey.trust.firstTimers.title'), t('journey.trust.firstTimers.body')],
             ['practical', t('journey.trust.practical.title'), t('journey.trust.practical.body')],
           ].map(([key, title, body]) => (
-            <div key={key} className="rounded-[1.25rem] border border-white/[0.14] bg-white/[0.10] p-4 text-[#f7f2e8] backdrop-blur-xl md:rounded-[1.1rem]">
+            <div key={key} className="rounded-[1.25rem] border border-white/[0.14] bg-white/[0.08] p-4 text-[#f7f2e8] backdrop-blur-xl md:rounded-[1.1rem]">
               <Sparkles className="mb-3 h-4 w-4 text-[#e8c27a]" />
               <h3 className="text-sm font-bold">{title}</h3>
               <p className="mt-1 text-xs leading-relaxed text-white/80 md:text-white/60">{body}</p>
