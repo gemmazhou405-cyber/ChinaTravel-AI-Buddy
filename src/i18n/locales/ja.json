@@ -9,10 +9,38 @@
       "guides": "ガイド",
       "destinations": "目的地",
       "tools": "ツール",
+      "travelPasses": "トラベルパス",
+      "faq": "FAQ",
       "services": "サービス",
       "aboutUs": "会社情報",
       "contact": "お問い合わせ",
       "getHelpNow": "今すぐヘルプ"
+    },
+    "homepage": {
+      "how": {
+        "kicker": "シンプルな流れ",
+        "title": "ChinaEase Buddy の使い方",
+        "subtitle": "初めての方でも数秒で必要なサポートを見つけられます。",
+        "steps": {
+          "moment": {
+            "title": "旅行中の状況を選ぶ",
+            "body": "出発前、中国滞在中、または緊急時。"
+          },
+          "tool": {
+            "title": "適切なツールを開く",
+            "body": "アプリ、支払い、タクシー、食事、ホテル、緊急フレーズ。"
+          },
+          "buddy": {
+            "title": "困ったら Buddy に質問",
+            "body": "今の状況に合わせた実用的なヘルプを得られます。"
+          }
+        }
+      },
+      "passes": {
+        "kicker": "任意のアップグレード",
+        "title": "トラベルパス",
+        "subtitle": "まずは無料ツールキット。追加サポートが必要な場合のみ Trip Pass を利用できます。"
+      }
     },
     "hero": {
       "badge": "旅のそばに、安心のサポート。",
@@ -373,7 +401,8 @@
       "pharmacyCardsSubtitle": "薬・薬局カード {{count}}枚"
     },
     "pay": {
-      "plansTitle": "プラン",
+      "plansTitle": "トラベルパス",
+      "oneTime": "一回払い",
       "currentPlan": "現在のプラン：",
       "aiUsed": "Buddy AI使用数：",
       "refund": "一回払い · 自動更新なし · 3日間返金ポリシー",

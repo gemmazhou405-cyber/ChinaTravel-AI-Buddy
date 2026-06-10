@@ -186,13 +186,13 @@ export default function App() {
       <Hero
         user={user}
         userState={userState}
-        onAuthClick={() => {
+        onGetHelpNow={() => {
           void trackEvent('cta_clicked', {
-            ctaName: 'Start Free',
-            destination: 'auth',
+            ctaName: 'Get Help Now',
+            destination: 'Tools',
             journey: analyticsJourney(journey),
           }, user?.uid);
-          setAuthOpen(true);
+          document.getElementById('journey-tools')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }}
         onAskBuddy={openBuddy}
         onLogout={logout}
@@ -201,7 +201,14 @@ export default function App() {
           showToast(t('auth.verificationSent'));
         }}
       />
-      <QuickActions journey={journey} onJourneyChange={handleJourneyChange} onTabSelect={handleQuickTabSelect} onAskBuddy={openBuddy} />
+      <QuickActions
+        journey={journey}
+        userState={userState}
+        showToast={showToast}
+        onJourneyChange={handleJourneyChange}
+        onTabSelect={handleQuickTabSelect}
+        onAskBuddy={openBuddy}
+      />
       {toolOpen && (
         <>
           <div id="tabs" className="sticky top-0 z-40 bg-white shadow-sm">

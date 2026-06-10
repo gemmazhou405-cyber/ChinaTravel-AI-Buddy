@@ -4,6 +4,7 @@ import { User } from 'firebase/auth';
 import { UserState } from '../hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
+import { trackEvent } from '../lib/analytics';
 
 const LANGS = [
   { code: 'en', label: 'English' },
@@ -17,13 +18,13 @@ const LANGS = [
 interface Props {
   user: User | null;
   userState: UserState | null;
-  onAuthClick: () => void;
+  onGetHelpNow: () => void;
   onAskBuddy: () => void;
   onLogout: () => Promise<void>;
   onResendVerification: () => Promise<void>;
 }
 
-export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogout, onResendVerification }: Props) {
+export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogout, onResendVerification }: Props) {
   const { t } = useTranslation();
   const [lang, setLang] = useState(i18n.language.toUpperCase());
   const [langOpen, setLangOpen] = useState(false);
@@ -37,11 +38,11 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
   const emailVerified = Boolean(user?.emailVerified || isGoogleUser);
   const showResendVerification = Boolean(user && isPasswordUser && !user.emailVerified);
   const navLinks = [
-    { label: t('nav.guides'), href: '/china-travel-apps' },
-    { label: t('nav.destinations'), href: '/china-travel-checklist' },
     { label: t('nav.tools'), href: '#journey-tools' },
-    { label: t('nav.services'), href: '/pricing' },
-    { label: t('nav.aboutUs'), href: '/about' },
+    { label: t('nav.guides'), href: '#guides' },
+    { label: t('nav.travelPasses'), href: '#travel-passes' },
+    { label: t('nav.howItWorks'), href: '#how-it-works' },
+    { label: t('nav.faq'), href: '/faq' },
     { label: t('nav.contact'), href: '/contact' },
   ];
 
@@ -62,6 +63,18 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
 
   const scrollToTabs = () => {
     document.getElementById('tabs')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleNavClick = (label: string, href: string) => {
+    void trackEvent('cta_clicked', {
+      ctaName: label,
+      destination: href,
+    }, user?.uid);
+
+    if (href.startsWith('#')) {
+      const target = document.getElementById(href.slice(1));
+      target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   return (
@@ -100,7 +113,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
             link.href.startsWith('#') ? (
               <button
                 key={link.label}
-                onClick={() => document.getElementById('journey-tools')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => handleNavClick(link.label, link.href)}
                 className="transition-colors hover:text-[#e8c27a]"
               >
                 {link.label}
@@ -207,7 +220,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
             </div>
           ) : (
             <button
-              onClick={onAuthClick}
+              onClick={onGetHelpNow}
               className="hidden rounded-full bg-[#e8c27a] px-4 py-2 text-sm font-bold text-[#061e1f] shadow-[0_14px_34px_rgba(232,194,122,0.24)] transition-all hover:bg-[#f4d78f] md:block"
             >
               {t('nav.getHelpNow')}
@@ -240,7 +253,7 @@ export default function Hero({ user, userState, onAuthClick, onAskBuddy, onLogou
 
           <div className="flex w-[min(17rem,100%)] flex-col gap-2 min-[420px]:w-[18rem] md:w-auto md:flex-row md:gap-3">
             <button
-              onClick={onAuthClick}
+              onClick={onGetHelpNow}
               className="flex h-11 w-full items-center justify-center gap-2 rounded-full bg-[#e8c27a] px-5 text-sm font-bold text-[#061e1f] shadow-[0_18px_44px_rgba(232,194,122,0.25)] transition-all hover:-translate-y-0.5 hover:bg-[#f4d78f] md:h-auto md:w-auto md:px-8 md:py-4 md:text-base"
             >
               <span>{t('hero.startFree')}</span>

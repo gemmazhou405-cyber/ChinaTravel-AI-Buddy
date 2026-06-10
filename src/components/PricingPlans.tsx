@@ -12,21 +12,21 @@ const PLANS = [
   {
     key: 'free',
     price: '$0',
-    period: '',
+    periodKey: '',
     ctaStyle: 'bg-white border-2 border-gray-200 text-gray-700 hover:bg-gray-50',
     highlighted: false,
   },
   {
     key: 'trip',
     price: '$9.90',
-    period: '',
+    periodKey: 'pay.oneTime',
     ctaStyle: 'bg-white text-[#155e63] hover:bg-gray-50 font-bold',
     highlighted: true,
   },
   {
     key: 'group',
     price: '$29.90',
-    period: '',
+    periodKey: 'pay.oneTime',
     ctaStyle: 'bg-white border-2 border-gray-200 text-gray-700 hover:bg-gray-50',
     highlighted: false,
   },
@@ -100,8 +100,8 @@ export default function PricingPlans({ userState, showToast, onCtaClick }: Props
               <span className={`text-2xl font-bold ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
                 {plan.price}
               </span>
-              {plan.period && (
-                <span className={plan.highlighted ? 'text-white/60' : 'text-gray-400'}>{plan.period}</span>
+              {plan.periodKey && (
+                <span className={plan.highlighted ? 'text-white/60' : 'text-gray-400'}> {t(plan.periodKey)}</span>
               )}
             </div>
             <p className={`text-xs mb-4 ${plan.highlighted ? 'text-white/70' : 'text-gray-500'}`}>

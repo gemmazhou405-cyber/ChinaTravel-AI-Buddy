@@ -9,10 +9,38 @@
       "guides": "가이드",
       "destinations": "여행지",
       "tools": "도구",
+      "travelPasses": "여행 패스",
+      "faq": "FAQ",
       "services": "서비스",
       "aboutUs": "회사 소개",
       "contact": "문의",
       "getHelpNow": "지금 도움 받기"
+    },
+    "homepage": {
+      "how": {
+        "kicker": "간단한 흐름",
+        "title": "ChinaEase Buddy 사용 방법",
+        "subtitle": "처음 방문하는 사람도 몇 초 안에 필요한 도움을 찾을 수 있습니다.",
+        "steps": {
+          "moment": {
+            "title": "여행 상황 선택",
+            "body": "출발 전, 중국 현지, 또는 긴급 상황."
+          },
+          "tool": {
+            "title": "맞는 도구 열기",
+            "body": "앱, 결제, 택시, 음식, 호텔, 긴급 문구."
+          },
+          "buddy": {
+            "title": "막히면 Buddy에게 질문",
+            "body": "현재 상황에 맞는 실용적인 도움을 받으세요."
+          }
+        }
+      },
+      "passes": {
+        "kicker": "선택 업그레이드",
+        "title": "여행 패스",
+        "subtitle": "무료 도구 키트가 먼저입니다. Trip Pass는 추가 여행 도움을 위한 선택 옵션입니다."
+      }
     },
     "hero": {
       "badge": "당신의 여정, 우리의 지원.",
@@ -373,7 +401,8 @@
       "pharmacyCardsSubtitle": "약 및 약국 카드 {{count}}개"
     },
     "pay": {
-      "plansTitle": "플랜",
+      "plansTitle": "여행 패스",
+      "oneTime": "일회 결제",
       "currentPlan": "현재 플랜:",
       "aiUsed": "Buddy AI 사용:",
       "refund": "일회성 결제 · 자동 갱신 없음 · 3일 환불 정책",

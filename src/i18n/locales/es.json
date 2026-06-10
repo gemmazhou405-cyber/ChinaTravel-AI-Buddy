@@ -9,10 +9,38 @@
       "guides": "Guías",
       "destinations": "Destinos",
       "tools": "Herramientas",
+      "travelPasses": "Pases de viaje",
+      "faq": "FAQ",
       "services": "Servicios",
       "aboutUs": "Sobre nosotros",
       "contact": "Contacto",
       "getHelpNow": "Obtener ayuda"
+    },
+    "homepage": {
+      "how": {
+        "kicker": "Flujo simple",
+        "title": "Cómo funciona ChinaEase Buddy",
+        "subtitle": "Un visitante primerizo puede encontrar ayuda en segundos.",
+        "steps": {
+          "moment": {
+            "title": "Elige tu momento de viaje",
+            "body": "Antes del viaje, ya en China o ayuda de emergencia."
+          },
+          "tool": {
+            "title": "Abre la herramienta correcta",
+            "body": "Apps, pagos, taxis, comida, hoteles o frases de emergencia."
+          },
+          "buddy": {
+            "title": "Pregunta a Buddy si te atascas",
+            "body": "Obtén ayuda práctica para tu situación."
+          }
+        }
+      },
+      "passes": {
+        "kicker": "Mejoras opcionales",
+        "title": "Pases de viaje",
+        "subtitle": "Primero el kit gratuito. Trip Pass es opcional para ayuda adicional."
+      }
     },
     "hero": {
       "badge": "TU VIAJE, NUESTRO APOYO.",
@@ -373,7 +401,8 @@
       "pharmacyCardsSubtitle": "{{count}} tarjetas de medicamentos y farmacia"
     },
     "pay": {
-      "plansTitle": "Planes",
+      "plansTitle": "Pases de viaje",
+      "oneTime": "pago único",
       "currentPlan": "Plan actual:",
       "aiUsed": "Buddy AI usado:",
       "refund": "Pago único · Sin renovación automática · Reembolso de 3 días",

@@ -19,6 +19,9 @@ import {
 import { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { JourneyId, TabId } from '../App';
+import type { UserState } from '../hooks/useAuth';
+import { trackEvent } from '../lib/analytics';
+import PricingPlans from './PricingPlans';
 
 type Category = {
   label: string;
@@ -31,6 +34,8 @@ type Category = {
 
 interface Props {
   journey: JourneyId;
+  userState: UserState | null;
+  showToast: (msg: string) => void;
   onJourneyChange: (journey: JourneyId) => void;
   onTabSelect: (tab: TabId, tool?: string) => void;
   onAskBuddy: () => void;
@@ -56,7 +61,7 @@ function CategoryButton({ category, onTabSelect, onAskBuddy }: Pick<Props, 'onTa
   );
 }
 
-export default function QuickActions({ journey, onJourneyChange, onTabSelect, onAskBuddy }: Props) {
+export default function QuickActions({ journey, userState, showToast, onJourneyChange, onTabSelect, onAskBuddy }: Props) {
   const { t } = useTranslation();
 
   const journeys: Array<{ id: JourneyId; label: string; shortLabel: string; subtitle: string; keywords: string; icon: ReactNode }> = [
@@ -118,6 +123,11 @@ export default function QuickActions({ journey, onJourneyChange, onTabSelect, on
     ['destinations', '/china-travel-checklist', 'url("/images/hero-china-landscape.jpg")'],
     ['culture', '/faq', 'url("/hero-mobile.jpg")'],
     ['tips', '/china-travel-apps', 'url("/email_header.jpg")'],
+  ] as const;
+  const howSteps = [
+    ['moment', <MapPinned className="h-5 w-5" />],
+    ['tool', <Smartphone className="h-5 w-5" />],
+    ['buddy', <MessageCircle className="h-5 w-5" />],
   ] as const;
 
   return (
@@ -227,7 +237,58 @@ export default function QuickActions({ journey, onJourneyChange, onTabSelect, on
           ))}
         </div>
 
-        <div className="mt-7 md:mt-8">
+        <section id="how-it-works" className="scroll-mt-24 mt-7 rounded-[1.45rem] border border-white/[0.12] bg-white/[0.08] p-4 shadow-[0_24px_70px_rgba(0,0,0,0.18)] backdrop-blur-xl md:mt-8 md:rounded-[1.6rem] md:p-5">
+          <div className="mb-4 flex flex-col gap-1 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#e8c27a]">{t('homepage.how.kicker')}</p>
+              <h2
+                className="mt-1 text-2xl font-semibold tracking-tight text-[#fffaf0] md:text-3xl"
+                style={{ fontFamily: 'Cormorant Garamond, Playfair Display, Georgia, serif' }}
+              >
+                {t('homepage.how.title')}
+              </h2>
+            </div>
+            <p className="max-w-sm text-xs font-medium leading-relaxed text-[#f7f2e8]/70 md:text-sm">{t('homepage.how.subtitle')}</p>
+          </div>
+          <div className="grid gap-3 md:grid-cols-3">
+            {howSteps.map(([key, icon], index) => (
+              <div key={key} className="rounded-[1.2rem] border border-white/[0.14] bg-[#061e1f]/45 p-4 text-[#f7f2e8]">
+                <div className="mb-3 flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#e8c27a] text-[#061e1f]">{icon}</div>
+                  <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#e8c27a]">0{index + 1}</span>
+                </div>
+                <h3 className="text-sm font-bold">{t(`homepage.how.steps.${key}.title`)}</h3>
+                <p className="mt-1 text-xs leading-relaxed text-[#f7f2e8]/70">{t(`homepage.how.steps.${key}.body`)}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="travel-passes" className="scroll-mt-24 mt-7 rounded-[1.6rem] bg-[#f8f3ea] p-4 shadow-[0_28px_90px_rgba(0,0,0,0.18)] md:mt-8 md:rounded-[1.8rem] md:p-6">
+          <div className="mb-5 max-w-2xl">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#d6a85a]">{t('homepage.passes.kicker')}</p>
+            <h2
+              className="mt-1 text-3xl font-semibold tracking-tight text-[#122022] md:text-4xl"
+              style={{ fontFamily: 'Cormorant Garamond, Playfair Display, Georgia, serif' }}
+            >
+              {t('homepage.passes.title')}
+            </h2>
+            <p className="mt-2 text-sm font-medium leading-relaxed text-[#536365]">{t('homepage.passes.subtitle')}</p>
+          </div>
+          <PricingPlans
+            userState={userState}
+            showToast={showToast}
+            onCtaClick={(plan) => {
+              if (plan === 'free') {
+                window.setTimeout(() => {
+                  document.getElementById('journey-tools')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 0);
+              }
+            }}
+          />
+        </section>
+
+        <div id="guides" className="scroll-mt-24 mt-7 md:mt-8">
           <div className="flex items-center justify-between gap-4">
             <h2
               className="text-2xl font-semibold tracking-tight text-[#fffaf0] md:text-2xl"
@@ -244,6 +305,13 @@ export default function QuickActions({ journey, onJourneyChange, onTabSelect, on
               <a
                 key={key}
                 href={href}
+                onClick={() => {
+                  void trackEvent('cta_clicked', {
+                    ctaName: 'View Guides',
+                    destination: href,
+                    journey: journey === 'now' ? 'china' : journey,
+                  }, userState?.uid);
+                }}
                 className="group relative min-h-[10rem] overflow-hidden rounded-[1.25rem] bg-cover bg-center p-4 text-white shadow-[0_20px_54px_rgba(0,0,0,0.18)] transition-all hover:-translate-y-1 md:min-h-[8.5rem]"
                 style={{ backgroundImage: image }}
               >
