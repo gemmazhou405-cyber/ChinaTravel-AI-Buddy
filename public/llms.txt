@@ -1,0 +1,51 @@
+# ChinaEase Buddy
+
+> ChinaEase Buddy is a web-based China travel toolkit for foreign visitors.
+> It provides practical help before a trip and while traveling in China,
+> including guidance for apps, payments, transport, food, hotels,
+> emergency situations, bilingual traveler-to-local communication, and Buddy AI travel questions.
+
+## Core tools
+
+- Travel preparation and essential app guidance
+- Payment guidance for foreign visitors
+- Transport, taxi, metro, train, and airport help
+- Food, restaurant, and common dish references
+- Hotel and stay-related phrase support
+- Emergency numbers and bilingual phrase cards
+- Buddy AI travel assistance, subject to the current account allowance
+
+## Plans
+
+- Free: basic travel toolkit, 5 Buddy AI messages, and 3 menu/photo scans
+- Trip Pass: USD 9.90 one-time, 50 Buddy AI messages, and 20 menu/photo scans
+- Group Pass: USD 29.90 one-time, 200 Buddy AI messages, and 100 menu/photo scans
+- Paid access is currently activated manually after PayPal payment confirmation
+- No auto-renewal
+
+## Key pages
+
+- [Home](https://chinaeasebuddy.com/)
+- [Guides](https://chinaeasebuddy.com/guides)
+- [China travel apps](https://chinaeasebuddy.com/china-travel-apps)
+- [Alipay for foreign visitors](https://chinaeasebuddy.com/alipay-for-foreigners)
+- [China payment guide](https://chinaeasebuddy.com/china-payment-guide)
+- [China travel checklist](https://chinaeasebuddy.com/china-travel-checklist)
+- [Emergency numbers](https://chinaeasebuddy.com/china-emergency-numbers)
+- [FAQ](https://chinaeasebuddy.com/faq)
+
+## Audience
+
+Foreign visitors preparing for or traveling in China, including tourists,
+business travelers, students, families, and first-time visitors.
+
+## Important limitations
+
+ChinaEase Buddy is not an official government, visa, immigration, medical,
+legal, financial, hotel booking, flight booking, or travel agency service.
+Important travel, entry, health, and payment information should be confirmed
+with official sources or service providers.
+
+The toolkit provides practical references and AI-assisted travel information
+for convenience. It does not guarantee payment acceptance, transport availability,
+translation accuracy, emergency outcomes, or official policy status.

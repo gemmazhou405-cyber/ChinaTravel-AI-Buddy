@@ -42,7 +42,7 @@ export default function Footer({ onTabChange, onAskBuddy }: Props) {
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#e8c27a]">{t('footer.product')}</p>
               <button onClick={scrollToTabs} className="block text-left transition-colors hover:text-white">{t('footer.tools')}</button>
               <button onClick={onAskBuddy ?? (() => goToTab('food'))} className="block text-left transition-colors hover:text-white">{t('footer.askBuddy')}</button>
-              <a href="/china-travel-apps" className="block transition-colors hover:text-white">{t('footer.guides')}</a>
+              <a href="/guides" className="block transition-colors hover:text-white">{t('footer.guides')}</a>
               <a href="/china-travel-checklist" className="block transition-colors hover:text-white">{t('footer.destinations')}</a>
             </div>
             <div className="space-y-2.5">

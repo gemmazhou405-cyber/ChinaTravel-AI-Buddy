@@ -4,6 +4,7 @@ import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
 
 type LegalPageType = 'terms' | 'privacy' | 'refund' | 'contact' | 'about';
 type GuidePageType =
+  | 'guides'
   | 'china-travel-apps'
   | 'alipay-for-foreigners'
   | 'china-payment-guide'
@@ -242,6 +243,51 @@ const legalCopy = {
 };
 
 const guidePages: Record<GuidePageType, GuidePageData> = {
+  guides: {
+    path: '/guides',
+    title: 'China Travel Guides',
+    intro: 'Practical guide pages for foreign visitors preparing for or traveling in China.',
+    metaTitle: 'China Travel Guides | ChinaEase Buddy',
+    metaDescription:
+      'Practical China travel guides for foreign visitors: essential apps, Alipay, payments, checklists, emergency numbers, and frequently asked questions.',
+    quickAnswer:
+      'Start with the guide that matches your immediate travel question: apps before arrival, Alipay setup, payments in China, first-time checklist, emergency numbers, or common FAQ.',
+    ctaLabel: 'Open the free toolkit',
+    ctaHref: '/',
+    sections: [
+      {
+        title: 'Current guide pages',
+        items: [
+          'China Travel Apps: prepare Alipay, WeChat, Amap, Didi, and Trip.com.',
+          'Alipay for Foreigners: understand setup reminders and backup options.',
+          'China Payment Guide: practical notes for Alipay, WeChat Pay, cards, and cash.',
+          'China Travel Checklist: first-time visitor preparation before arrival.',
+          'China Emergency Numbers: 110, 120, 119, and simple emergency phrases.',
+          'FAQ: concise answers about ChinaEase Buddy and service limitations.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What guide should I read first?',
+        answer:
+          'If you are preparing before arrival, start with China Travel Apps and China Travel Checklist. If you are already in China, open the payment guide or emergency numbers page based on your situation.',
+      },
+      {
+        question: 'Are these official travel instructions?',
+        answer:
+          'No. These guides are practical travel references from ChinaEase Buddy. Confirm important entry, health, payment, and travel requirements with official sources or service providers.',
+      },
+    ],
+    related: [
+      { label: 'China travel apps', href: '/china-travel-apps' },
+      { label: 'Alipay for foreigners', href: '/alipay-for-foreigners' },
+      { label: 'China payment guide', href: '/china-payment-guide' },
+      { label: 'China travel checklist', href: '/china-travel-checklist' },
+      { label: 'Emergency numbers in China', href: '/china-emergency-numbers' },
+      { label: 'FAQ', href: '/faq' },
+    ],
+  },
   'china-travel-apps': {
     path: '/china-travel-apps',
     title: '5 Essential Apps to Download Before Visiting China',
@@ -869,6 +915,7 @@ function GuidePage({ type, userId }: { type: GuidePageType; userId?: string | nu
         <section className="rounded-2xl border border-[#155e63]/15 bg-[#155e63]/5 p-4 md:p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-[#155e63]">Quick answer</p>
           <p className="mt-2 text-sm leading-relaxed text-gray-700 md:text-base">{page.quickAnswer}</p>
+          <p className="mt-3 text-xs font-semibold text-gray-500">Last reviewed: June 12, 2026</p>
           <a
             href={page.ctaHref}
             onClick={() => {
@@ -944,6 +991,20 @@ function GuidePage({ type, userId }: { type: GuidePageType; userId?: string | nu
           </div>
         </section>
 
+        <section className="rounded-2xl border border-gray-100 bg-white/70 p-4">
+          <h2 className="text-base font-bold text-gray-950">Official or primary sources to verify</h2>
+          <ul className="mt-3 space-y-2">
+            <li className="flex gap-2 text-sm leading-relaxed text-gray-600">
+              <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#155e63]" />
+              <span>Official app instructions from Alipay, WeChat, Didi, Amap, and Trip.com.</span>
+            </li>
+            <li className="flex gap-2 text-sm leading-relaxed text-gray-600">
+              <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#155e63]" />
+              <span>Your airline, hotel, card issuer, embassy, consulate, or relevant official authority for time-sensitive requirements.</span>
+            </li>
+          </ul>
+        </section>
+
         <section className="rounded-2xl border border-amber-200/70 bg-amber-50/80 p-4">
           <h2 className="text-sm font-bold text-amber-900">Conservative travel note</h2>
           <p className="mt-2 text-xs leading-relaxed text-amber-900/80">{standardDisclaimer}</p>
@@ -956,6 +1017,7 @@ function GuidePage({ type, userId }: { type: GuidePageType; userId?: string | nu
 export function getPolicyPageType(pathname: string): PageType | null {
   const cleanPath = pathname.replace(/\/+$/, '');
   if (cleanPath.endsWith('/pricing')) return 'pricing';
+  if (cleanPath.endsWith('/guides')) return 'guides';
   if (cleanPath.endsWith('/terms')) return 'terms';
   if (cleanPath.endsWith('/privacy')) return 'privacy';
   if (cleanPath.endsWith('/refund')) return 'refund';

@@ -304,7 +304,7 @@ export default function QuickActions({ journey, user, userState, showToast, onNe
             >
               {t('journey.guides.title')}
             </h2>
-            <a href="/china-travel-apps" className="hidden items-center gap-2 text-xs font-semibold text-[#f6ddb0] transition-colors hover:text-[#fffaf0] md:inline-flex">
+            <a href="/guides" className="hidden items-center gap-2 text-xs font-semibold text-[#f6ddb0] transition-colors hover:text-[#fffaf0] md:inline-flex">
               {t('journey.guides.exploreAll')} <ArrowRight className="h-3.5 w-3.5" />
             </a>
           </div>

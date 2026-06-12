@@ -6,6 +6,19 @@ const distDir = 'dist';
 const source = join(distDir, 'index.html');
 
 const pageMeta = {
+  guides: {
+    title: 'China Travel Guides | ChinaEase Buddy',
+    description:
+      'Practical China travel guides for foreign visitors: essential apps, Alipay, payments, checklists, emergency numbers, and frequently asked questions.',
+    sections: [
+      ['China Travel Apps', 'Prepare Alipay, WeChat, Amap, Didi, and Trip.com before arrival.', '/china-travel-apps'],
+      ['Alipay for Foreigners', 'What foreign visitors should know before trying Alipay in China.', '/alipay-for-foreigners'],
+      ['China Payment Guide', 'Practical payment reminders for Alipay, WeChat Pay, cards, and cash backup.', '/china-payment-guide'],
+      ['China Travel Checklist', 'A first-time visitor checklist for apps, payments, hotels, phrases, and emergency basics.', '/china-travel-checklist'],
+      ['Emergency Numbers in China', 'Know 110, 120, and 119, plus simple phrases for urgent situations.', '/china-emergency-numbers'],
+      ['FAQ', 'Short answers about ChinaEase Buddy, paid passes, travel tools, and service limits.', '/faq'],
+    ],
+  },
   pricing: {
     title: 'Pricing | ChinaEase Buddy',
     description: 'ChinaEase Buddy pricing: Free, Trip Pass, and Group Pass for digital China travel tools.',
@@ -109,6 +122,7 @@ function escapeHtml(value) {
 }
 
 const staticCtas = {
+  guides: ['Open the free toolkit', '/'],
   pricing: ['View travel passes', '/pricing'],
   terms: ['Read the terms', '/terms'],
   privacy: ['Read the privacy policy', '/privacy'],
@@ -124,6 +138,7 @@ const staticCtas = {
 };
 
 const relatedLinks = [
+  ['All guides', '/guides'],
   ['China travel apps', '/china-travel-apps'],
   ['China payment guide', '/china-payment-guide'],
   ['China travel checklist', '/china-travel-checklist'],
@@ -150,6 +165,20 @@ function staticPageContent(page, meta) {
         <h2 id="quick-answer" style="margin: 0 0 10px; font-size: 1.25rem;">Quick answer</h2>
         <p style="margin: 0; color: #536365; line-height: 1.7;">${escapeHtml(meta.description)}</p>
       </section>
+      <p style="margin: 0 0 20px; color: #6b7678; font-size: 0.9rem;">Last reviewed: June 12, 2026</p>
+      ${meta.sections ? `
+        <section aria-labelledby="guide-list" style="margin: 0 0 24px;">
+          <h2 id="guide-list" style="margin: 0 0 12px; font-size: 1.25rem;">Available guides</h2>
+          <div style="display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+            ${meta.sections.map(([title, summary, href]) => `
+              <a href="${escapeAttr(href)}" style="display: block; min-height: 120px; border: 1px solid rgba(21, 94, 99, 0.14); border-radius: 20px; background: #fffdf8; padding: 18px; text-decoration: none;">
+                <h3 style="margin: 0 0 8px; color: #122022; font-size: 1rem;">${escapeHtml(title)}</h3>
+                <p style="margin: 0; color: #536365; line-height: 1.6; font-size: 0.92rem;">${escapeHtml(summary)}</p>
+              </a>
+            `).join('')}
+          </div>
+        </section>
+      ` : ''}
       <section aria-labelledby="practical-tips" style="margin: 0 0 24px;">
         <h2 id="practical-tips" style="margin: 0 0 12px; font-size: 1.25rem;">Practical tips</h2>
         <ul style="margin: 0; padding-left: 20px; color: #536365; line-height: 1.8;">
@@ -174,42 +203,54 @@ function staticPageContent(page, meta) {
           ${relatedLinks.map(([label, href]) => `<a href="${escapeAttr(href)}" style="border: 1px solid rgba(21, 94, 99, 0.18); border-radius: 999px; color: #155e63; padding: 9px 12px; text-decoration: none;">${escapeHtml(label)}</a>`).join('')}
         </div>
       </nav>
+      <section aria-labelledby="sources" style="margin: 0 0 24px;">
+        <h2 id="sources" style="margin: 0 0 12px; font-size: 1.25rem;">Official or primary sources to verify</h2>
+        <ul style="margin: 0; padding-left: 20px; color: #536365; line-height: 1.8;">
+          <li>Official app instructions from Alipay, WeChat, Didi, Amap, and Trip.com.</li>
+          <li>Your airline, hotel, card issuer, embassy, consulate, or relevant official authority for time-sensitive requirements.</li>
+        </ul>
+      </section>
       <p style="margin: 0; color: #6b7678; font-size: 0.9rem; line-height: 1.7;">${escapeHtml(standardDisclaimer)}</p>
     </main>
   `;
 }
 
 function schemaFor(page, meta) {
-  if (!meta.faqs) return '';
+  if (!meta.faqs && page !== 'guides') return '';
+
+  const graph = [
+    {
+      '@type': 'WebPage',
+      '@id': `${siteUrl}/${page}#webpage`,
+      url: `${siteUrl}/${page}`,
+      name: meta.title,
+      description: meta.description,
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'ChinaEase Buddy',
+        url: siteUrl,
+      },
+    },
+  ];
+
+  if (meta.faqs) {
+    graph.push({
+      '@type': 'FAQPage',
+      '@id': `${siteUrl}/${page}#faq`,
+      mainEntity: meta.faqs.map(([question, answer]) => ({
+        '@type': 'Question',
+        name: question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: answer,
+        },
+      })),
+    });
+  }
 
   return `<script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'WebPage',
-        '@id': `${siteUrl}/${page}#webpage`,
-        url: `${siteUrl}/${page}`,
-        name: meta.title,
-        description: meta.description,
-        isPartOf: {
-          '@type': 'WebSite',
-          name: 'ChinaEase Buddy',
-          url: siteUrl,
-        },
-      },
-      {
-        '@type': 'FAQPage',
-        '@id': `${siteUrl}/${page}#faq`,
-        mainEntity: meta.faqs.map(([question, answer]) => ({
-          '@type': 'Question',
-          name: question,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: answer,
-          },
-        })),
-      },
-    ],
+    '@graph': graph,
   })}</script>`;
 }
 
@@ -243,4 +284,16 @@ await Promise.all(
   }),
 );
 
+const sitemapPages = [''].concat(pages);
+const lastmod = '2026-06-12';
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapPages.map((page) => `  <url>
+    <loc>${siteUrl}${page ? `/${page}` : '/'}</loc>
+    <lastmod>${lastmod}</lastmod>
+  </url>`).join('\n')}
+</urlset>
+`;
+
+await writeFile(join(distDir, 'sitemap.xml'), sitemap);
 await copyFile(source, join(distDir, '404.html'));
