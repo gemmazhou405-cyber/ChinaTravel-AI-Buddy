@@ -5,6 +5,10 @@ service cloud.firestore {
       return request.resource.data;
     }
 
+    function paymentClaimData() {
+      return request.resource.data;
+    }
+
     function optionalString(field, maxLength) {
       return !(field in analyticsData())
              || (analyticsData()[field] is string
@@ -96,6 +100,46 @@ service cloud.firestore {
 
     match /analyticsEvents/{eventId} {
       allow create: if validAnalyticsEvent();
+      allow read, update, delete: if false;
+    }
+
+    match /paymentClaims/{claimId} {
+      allow create: if request.auth != null
+                    && paymentClaimData().keys().hasAll([
+                         'userId',
+                         'accountEmail',
+                         'plan',
+                         'paypalTransactionId',
+                         'sourcePath',
+                         'createdAt',
+                         'status'
+                       ])
+                    && paymentClaimData().keys().hasOnly([
+                         'userId',
+                         'accountEmail',
+                         'plan',
+                         'paypalTransactionId',
+                         'paypalEmail',
+                         'sourcePath',
+                         'createdAt',
+                         'status'
+                       ])
+                    && paymentClaimData().userId == request.auth.uid
+                    && paymentClaimData().userId is string
+                    && paymentClaimData().userId.size() <= 128
+                    && paymentClaimData().accountEmail is string
+                    && paymentClaimData().accountEmail.size() <= 160
+                    && paymentClaimData().plan in ['trip', 'group']
+                    && paymentClaimData().paypalTransactionId is string
+                    && paymentClaimData().paypalTransactionId.size() >= 4
+                    && paymentClaimData().paypalTransactionId.size() <= 120
+                    && (!('paypalEmail' in paymentClaimData())
+                        || (paymentClaimData().paypalEmail is string
+                            && paymentClaimData().paypalEmail.size() <= 160))
+                    && paymentClaimData().sourcePath is string
+                    && paymentClaimData().sourcePath.size() <= 500
+                    && paymentClaimData().status == 'pending'
+                    && paymentClaimData().createdAt == request.time;
       allow read, update, delete: if false;
     }
   }

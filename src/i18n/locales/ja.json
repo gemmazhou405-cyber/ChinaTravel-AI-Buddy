@@ -14,7 +14,8 @@
       "services": "サービス",
       "aboutUs": "会社情報",
       "contact": "お問い合わせ",
-      "getHelpNow": "今すぐヘルプ"
+      "getHelpNow": "今すぐヘルプ",
+      "menu": "メニュー"
     },
     "homepage": {
       "how": {
@@ -52,16 +53,17 @@
       "trust": "中国国内で利用可 · VPN不要 · 無料で開始",
       "titleLine1": "中国旅行のサポートを、",
       "titleLine2": "美しくシンプルに。",
-      "homeSubtitle": "中国での旅をよりスムーズで安心、充実したものにするAI旅行コンパニオンです。",
+      "homeSubtitle": "中国を訪れる外国人向けのアプリ、支払い、交通、食事、緊急時サポート。",
       "startFree": "今すぐヘルプ",
       "askBuddy": "Buddyに聞く",
       "mobileTrust": "旅行者に選ばれる · 24時間サポート · 安心を大切に",
       "realMoments": "中国で実際に起こる場面に対応 — タクシー、食事、支払い、ホテル、緊急時。",
-      "mobileSubtitle": "中国旅行のAIヘルプを、シンプルに。",
+      "mobileSubtitle": "中国でのアプリ、支払い、交通、食事、緊急時サポート。",
       "mobileTrustShort": "アプリ不要 · モバイル対応 · 無料で開始",
       "trustTrusted": "旅行者に選ばれる",
       "trustSupport": "24時間サポート",
-      "trustSafety": "安心を大切に"
+      "trustSafety": "安心を大切に",
+      "openFreeToolkit": "無料ツールを開く"
     },
     "tabs": {
       "before": "出発前",
@@ -422,9 +424,9 @@
           "desc": "中国旅行のよくある場面に使える基本ツールキット。",
           "cta": "無料で始める",
           "features": [
-            "アプリ、支払い、交通、食事、ホテル、緊急時の基本サポート",
+            "アプリ、支払い、交通、食事、ホテル、緊急時の基本ツール",
             "基本のフレーズカードと旅行ガイド",
-            "Buddy AI の限定利用",
+            "Buddy AI 5メッセージ、メニュー/写真スキャン3回",
             "支払い不要"
           ]
         },
@@ -433,10 +435,10 @@
           "desc": "中国旅行中の1名向け追加トラベルサポート",
           "cta": "Trip Passを取得",
           "features": [
-            "中国旅行中により多くの Buddy AI サポート",
-            "アプリ、支払い、タクシー、食事、ホテル、緊急時の追加サポート",
-            "PayPal 支払い確認後にアクセスを手動で有効化",
-            "一人旅や初めての中国旅行におすすめ"
+            "Buddy AI 50メッセージ、メニュー/写真スキャン20回",
+            "1人の旅行者向け追加サポート",
+            "一回払い",
+            "支払い確認後に手動で有効化"
           ]
         },
         "group": {
@@ -444,10 +446,10 @@
           "desc": "カップル、家族、小グループで中国を訪れる方向けの追加トラベルサポート",
           "cta": "Group Passを取得",
           "features": [
-            "少人数グループ向けにより多くの Buddy AI サポート",
-            "カップル、家族、友人との旅行に便利",
-            "共有の旅行シーンに使える追加サポート",
-            "PayPal 支払い確認後にアクセスを手動で有効化"
+            "Buddy AI 200メッセージ、メニュー/写真スキャン100回",
+            "カップル、家族、小さな旅行グループ向け追加サポート",
+            "一回払い",
+            "支払い確認後に手動で有効化"
           ]
         }
       },
@@ -529,7 +531,7 @@
       "earlyAccess": {
         "title": "手動PayPal支払い",
         "body": "Trip Pass と Group Pass は PayPal 支払いリンクを使用します。支払い確認後、アクセスは手動で有効化されます。",
-        "options": "ChinaEase Buddy アカウントと同じメール、またはチェックアウト時にアカウントのメールを入力してください。",
+        "options": "ChinaEase Buddy アカウントと同じメールを使用してください。",
         "safety": "ChinaEase Buddy はこのサイト上でカード情報を直接収集しません。",
         "modalTitle": "手動支払い",
         "modalSubtitle": "選択したパスの PayPal 支払いリンクを使用してください。支払い確認後、アクセスは手動で有効化されます。",
@@ -550,10 +552,30 @@
       "freeToolkitReady": "無料ツールキットを利用できます。支払いは不要です。",
       "manualPayment": {
         "title": "有料パスは任意です。",
-        "body": "有料パスは任意です。支払いは PayPal により処理されます。支払い確認後、アクセスは手動で有効化されます。ChinaEase Buddy アカウントと同じメール、またはチェックアウト時にアカウントのメールを入力してください。",
-        "note": "ChinaEase Buddy はカード情報を直接収集しません。支払いは PayPal が安全に処理します。",
+        "body": "支払いは PayPal により処理されます。支払い確認後、アクセスは手動で有効化されます。ChinaEase Buddy アカウントと同じメールを使用してください。",
+        "note": "ChinaEase Buddy はカード情報を直接収集しません。支払いは PayPal が処理します。",
         "safety": "",
         "paidNote": ""
+      },
+      "claim": {
+        "signInFirst": "パスをアカウントに適用するため、先にサインインしてください。",
+        "kicker": "手動有効化",
+        "title": "{{plan}} の支払い",
+        "accountLabel": "ChinaEase Buddy アカウント",
+        "accountHelp": "支払い確認後、このアカウントにアクセスを適用します。",
+        "openPaypal": "PayPal 支払いを開く",
+        "requestActivation": "支払い済み — 有効化を申請",
+        "afterPaymentHelp": "支払い後、PayPal 取引IDを送信してください。確認後、手動でパスを有効化します。",
+        "transactionId": "PayPal 取引ID",
+        "transactionPlaceholder": "例: 1AB23456CD789012E",
+        "paypalEmail": "PayPal 支払いメール（任意）",
+        "paypalEmailPlaceholder": "アカウントのメールと異なる場合",
+        "transactionRequired": "PayPal 取引IDを入力してください。",
+        "submit": "有効化申請を送信",
+        "submitting": "送信中...",
+        "submitted": "有効化申請を送信しました。手動で確認します。",
+        "submitError": "申請を送信できませんでした。再試行するかサポートへ連絡してください。",
+        "noCards": "カード番号や機密性の高い支払い情報は入力しないでください。"
       }
     },
     "chat": {

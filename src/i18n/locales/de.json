@@ -14,7 +14,8 @@
       "services": "Services",
       "aboutUs": "Über uns",
       "contact": "Kontakt",
-      "getHelpNow": "Jetzt Hilfe bekommen"
+      "getHelpNow": "Jetzt Hilfe bekommen",
+      "menu": "Menü"
     },
     "homepage": {
       "how": {
@@ -52,16 +53,17 @@
       "trust": "Funktioniert in China · Kein VPN nötig · Kostenlos starten",
       "titleLine1": "China-Reisehilfe,",
       "titleLine2": "elegant vereinfacht.",
-      "homeSubtitle": "Ihr KI-Reisebegleiter für eine ruhigere, sicherere und lohnendere Erfahrung in China.",
+      "homeSubtitle": "Apps, Zahlungen, Transport, Essen und Notfallhilfe für ausländische Besucher in China.",
       "startFree": "Jetzt Hilfe bekommen",
       "askBuddy": "Buddy fragen",
       "mobileTrust": "Von Reisenden genutzt · 24/7 Hilfe · Ihre Sicherheit zählt",
       "realMoments": "Gemacht für echte Momente in China — Taxis, Essen, Zahlungen, Hotels und Notfälle.",
-      "mobileSubtitle": "KI-Reisehilfe für China, einfach und elegant.",
+      "mobileSubtitle": "Apps, Zahlungen, Transport, Essen und Notfallhilfe in China.",
       "mobileTrustShort": "Keine App · Mobilfreundlich · Gratis starten",
       "trustTrusted": "Von Reisenden genutzt",
       "trustSupport": "24/7 Hilfe",
-      "trustSafety": "Ihre Sicherheit zählt"
+      "trustSafety": "Ihre Sicherheit zählt",
+      "openFreeToolkit": "Gratis-Toolkit öffnen"
     },
     "tabs": {
       "before": "Vor der Reise",
@@ -422,9 +424,9 @@
           "desc": "Basis-Toolkit für typische Reisesituationen in China.",
           "cta": "Kostenlos starten",
           "features": [
-            "Wichtige Hilfe für Apps, Zahlungen, Transport, Essen, Hotel und Notfälle",
+            "Wichtige Tools für Apps, Zahlungen, Transport, Essen, Hotel und Notfälle",
             "Basis-Phrasecards und Reiseführer",
-            "Begrenzter Buddy-AI-Zugang",
+            "5 Buddy-AI-Nachrichten und 3 Menü-/Foto-Scans",
             "Keine Zahlung erforderlich"
           ]
         },
@@ -433,10 +435,10 @@
           "desc": "Zusätzliche Reisehilfe für eine Person während einer China-Reise",
           "cta": "Trip Pass erhalten",
           "features": [
-            "Mehr Buddy-AI-Hilfe für deine Chinareise",
-            "Zusätzliche Hilfe für Apps, Zahlungen, Taxis, Essen, Hotels und Notfälle",
-            "Zugang wird nach PayPal-Zahlungsbestätigung aktiviert",
-            "Ideal für Alleinreisende und Erstbesucher"
+            "50 Buddy-AI-Nachrichten und 20 Menü-/Foto-Scans",
+            "Zusätzliche Reisehilfe für eine Person",
+            "Einmalzahlung",
+            "Manuelle Aktivierung nach Zahlungsbestätigung"
           ]
         },
         "group": {
@@ -444,10 +446,10 @@
           "desc": "Zusätzliche Reisehilfe für Paare, Familien oder kleine Gruppen, die gemeinsam China besuchen",
           "cta": "Group Pass erhalten",
           "features": [
-            "Mehr Buddy-AI-Hilfe für eine kleine Reisegruppe",
-            "Nützlich für Paare, Familien und gemeinsam reisende Freunde",
-            "Zusätzliche Hilfe für gemeinsame Reisesituationen",
-            "Zugang wird nach PayPal-Zahlungsbestätigung aktiviert"
+            "200 Buddy-AI-Nachrichten und 100 Menü-/Foto-Scans",
+            "Zusätzliche Reisehilfe für Paare, Familien oder kleine Gruppen",
+            "Einmalzahlung",
+            "Manuelle Aktivierung nach Zahlungsbestätigung"
           ]
         }
       },
@@ -529,7 +531,7 @@
       "earlyAccess": {
         "title": "Manuelle PayPal-Zahlung",
         "body": "Trip Pass und Group Pass nutzen PayPal-Zahlungslinks. Der Zugang wird nach Zahlungsbestätigung manuell aktiviert.",
-        "options": "Bitte nutze dieselbe E-Mail wie für dein ChinaEase Buddy Konto oder gib deine Konto-E-Mail beim Checkout an.",
+        "options": "Bitte nutze dieselbe E-Mail wie für dein ChinaEase Buddy Konto.",
         "safety": "ChinaEase Buddy sammelt auf dieser Website keine Kartendaten direkt.",
         "modalTitle": "Manuelle Zahlung",
         "modalSubtitle": "Nutze den PayPal-Zahlungslink für deinen gewählten Pass. Der Zugang wird nach Zahlungsbestätigung manuell aktiviert.",
@@ -550,10 +552,30 @@
       "freeToolkitReady": "Das kostenlose Toolkit ist bereit. Keine Zahlung nötig.",
       "manualPayment": {
         "title": "Bezahlte Pässe sind optional.",
-        "body": "Bezahlte Pässe sind optional. Zahlungen werden über PayPal verarbeitet. Der Zugang wird nach Zahlungsbestätigung manuell aktiviert. Bitte nutze dieselbe E-Mail wie für dein ChinaEase Buddy Konto oder gib deine Konto-E-Mail beim Checkout an.",
-        "note": "ChinaEase Buddy erfasst keine Kartendaten direkt. PayPal verarbeitet die Zahlung sicher.",
+        "body": "Zahlungen werden über PayPal verarbeitet. Der Zugang wird nach Zahlungsbestätigung manuell aktiviert. Bitte nutze dieselbe E-Mail wie für dein ChinaEase Buddy Konto.",
+        "note": "ChinaEase Buddy erfasst deine Kartendaten nicht direkt. Die Zahlung wird über PayPal abgewickelt.",
         "safety": "",
         "paidNote": ""
+      },
+      "claim": {
+        "signInFirst": "Bitte melde dich zuerst an, damit wir den Pass deinem Konto zuordnen können.",
+        "kicker": "Manuelle Aktivierung",
+        "title": "{{plan}} Zahlung",
+        "accountLabel": "ChinaEase Buddy Konto",
+        "accountHelp": "Der Zugang wird nach Zahlungsbestätigung diesem Konto zugeordnet.",
+        "openPaypal": "PayPal-Zahlung öffnen",
+        "requestActivation": "Ich habe bezahlt — Aktivierung anfordern",
+        "afterPaymentHelp": "Sende nach der Zahlung die PayPal-Transaktions-ID, damit wir deinen Pass prüfen und manuell aktivieren können.",
+        "transactionId": "PayPal-Transaktions-ID",
+        "transactionPlaceholder": "Beispiel: 1AB23456CD789012E",
+        "paypalEmail": "PayPal-Zahlungs-E-Mail (optional)",
+        "paypalEmailPlaceholder": "Falls anders als deine Konto-E-Mail",
+        "transactionRequired": "Bitte gib deine PayPal-Transaktions-ID ein.",
+        "submit": "Aktivierungsanfrage senden",
+        "submitting": "Wird gesendet...",
+        "submitted": "Aktivierungsanfrage gesendet. Wir prüfen sie manuell.",
+        "submitError": "Die Anfrage konnte nicht gesendet werden. Bitte versuche es erneut oder kontaktiere den Support.",
+        "noCards": "Gib keine Kartennummern oder sensiblen Zahlungsdaten ein."
       }
     },
     "chat": {

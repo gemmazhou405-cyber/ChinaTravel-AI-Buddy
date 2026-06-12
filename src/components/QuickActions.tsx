@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
+import type { User } from 'firebase/auth';
 import type { JourneyId, TabId } from '../App';
 import type { UserState } from '../hooks/useAuth';
 import { trackEvent } from '../lib/analytics';
@@ -34,8 +35,10 @@ type Category = {
 
 interface Props {
   journey: JourneyId;
+  user: User | null;
   userState: UserState | null;
   showToast: (msg: string) => void;
+  onNeedAuth: () => void;
   onJourneyChange: (journey: JourneyId) => void;
   onTabSelect: (tab: TabId, tool?: string) => void;
   onAskBuddy: () => void;
@@ -45,23 +48,23 @@ function CategoryButton({ category, onTabSelect, onAskBuddy }: Pick<Props, 'onTa
   return (
     <button
       onClick={() => (category.askBuddy ? onAskBuddy() : category.tab && onTabSelect(category.tab, category.tool))}
-      className="group min-h-[5.45rem] rounded-[1.2rem] border border-[#e8dcc6] bg-[#fffdf8] p-3.5 text-left shadow-[0_18px_46px_rgba(8,37,38,0.08)] transition-all duration-200 hover:-translate-y-1 hover:border-[#d6a85a]/60 hover:shadow-[0_24px_58px_rgba(8,37,38,0.14)] active:scale-[0.985] md:min-h-[7rem] md:rounded-[1.35rem] md:p-4 lg:min-h-[7.4rem]"
+      className="group min-h-[4.6rem] rounded-[1.05rem] border border-[#e8dcc6] bg-[#fffdf8] p-2.5 text-left shadow-[0_14px_34px_rgba(8,37,38,0.08)] transition-all duration-200 hover:-translate-y-1 hover:border-[#d6a85a]/60 hover:shadow-[0_24px_58px_rgba(8,37,38,0.14)] active:scale-[0.985] md:min-h-[7rem] md:rounded-[1.35rem] md:p-4 lg:min-h-[7.4rem]"
     >
-      <div className="flex h-full flex-col justify-between gap-4">
+      <div className="flex h-full flex-col justify-between gap-2 md:gap-4">
         <div>
-          <div className="mb-2.5 flex h-9 w-9 items-center justify-center rounded-2xl bg-[#0f6f6c]/10 text-[#0f6f6c] ring-1 ring-[#0f6f6c]/10 md:mb-3 md:h-10 md:w-10 lg:h-9 lg:w-9">
+          <div className="mb-1.5 flex h-7 w-7 items-center justify-center rounded-xl bg-[#0f6f6c]/10 text-[#0f6f6c] ring-1 ring-[#0f6f6c]/10 md:mb-3 md:h-10 md:w-10 md:rounded-2xl lg:h-9 lg:w-9">
             {category.icon}
           </div>
           <span className="block truncate text-sm font-bold tracking-tight text-[#122022] md:text-base lg:text-[15px]">{category.label}</span>
-          <span className="mt-1 block truncate text-xs font-medium leading-snug text-[#536365] md:text-sm">{category.note}</span>
+          <span className="mt-0.5 block truncate text-[11px] font-medium leading-snug text-[#536365] md:mt-1 md:text-sm">{category.note}</span>
         </div>
-        <ArrowRight className="h-4 w-4 text-[#d6a85a] transition-transform group-hover:translate-x-1" />
+        <ArrowRight className="h-3.5 w-3.5 text-[#d6a85a] transition-transform group-hover:translate-x-1 md:h-4 md:w-4" />
       </div>
     </button>
   );
 }
 
-export default function QuickActions({ journey, userState, showToast, onJourneyChange, onTabSelect, onAskBuddy }: Props) {
+export default function QuickActions({ journey, user, userState, showToast, onNeedAuth, onJourneyChange, onTabSelect, onAskBuddy }: Props) {
   const { t } = useTranslation();
 
   const journeys: Array<{ id: JourneyId; label: string; shortLabel: string; subtitle: string; keywords: string; icon: ReactNode }> = [
@@ -191,7 +194,7 @@ export default function QuickActions({ journey, userState, showToast, onJourneyC
             )}
           </div>
 
-          <div className="grid grid-cols-1 gap-2.5 min-[420px]:grid-cols-2 lg:grid-cols-6">
+          <div className="grid grid-cols-2 gap-2.5 lg:grid-cols-6">
             {categories.map((category) => (
               <CategoryButton
                 key={`${category.label}-${category.tool ?? 'buddy'}`}
@@ -222,17 +225,17 @@ export default function QuickActions({ journey, userState, showToast, onJourneyC
           )}
         </div>
 
-        <div className="mt-4 grid gap-3 rounded-[1.45rem] border border-white/[0.10] bg-[#071a1c]/70 p-3 shadow-[0_24px_70px_rgba(0,0,0,0.20)] backdrop-blur-xl md:mt-5 md:grid-cols-4 md:rounded-[1.6rem] md:p-3">
+        <div className="mt-4 grid grid-cols-2 gap-2.5 rounded-[1.45rem] border border-white/[0.10] bg-[#071a1c]/70 p-3 shadow-[0_24px_70px_rgba(0,0,0,0.20)] backdrop-blur-xl md:mt-5 md:grid-cols-4 md:rounded-[1.6rem] md:p-3">
           {[
             ['ai', t('journey.trust.ai.title'), t('journey.trust.ai.body')],
             ['mobile', t('journey.trust.mobile.title'), t('journey.trust.mobile.body')],
             ['firstTimers', t('journey.trust.firstTimers.title'), t('journey.trust.firstTimers.body')],
             ['practical', t('journey.trust.practical.title'), t('journey.trust.practical.body')],
           ].map(([key, title, body]) => (
-            <div key={key} className="rounded-[1.25rem] border border-white/[0.14] bg-white/[0.08] p-4 text-[#f7f2e8] backdrop-blur-xl md:rounded-[1.1rem]">
-              <Sparkles className="mb-3 h-4 w-4 text-[#e8c27a]" />
-              <h3 className="text-sm font-bold">{title}</h3>
-              <p className="mt-1 text-xs leading-relaxed text-white/80 md:text-white/60">{body}</p>
+            <div key={key} className="rounded-[1.1rem] border border-white/[0.14] bg-white/[0.08] p-3 text-[#f7f2e8] backdrop-blur-xl md:rounded-[1.1rem] md:p-4">
+              <Sparkles className="mb-2 h-3.5 w-3.5 text-[#e8c27a] md:mb-3 md:h-4 md:w-4" />
+              <h3 className="text-xs font-bold md:text-sm">{title}</h3>
+              <p className="mt-1 line-clamp-2 text-[11px] leading-relaxed text-white/80 md:text-xs md:text-white/60">{body}</p>
             </div>
           ))}
         </div>
@@ -250,15 +253,18 @@ export default function QuickActions({ journey, userState, showToast, onJourneyC
             </div>
             <p className="max-w-sm text-xs font-medium leading-relaxed text-[#f7f2e8]/70 md:text-sm">{t('homepage.how.subtitle')}</p>
           </div>
-          <div className="grid gap-3 md:grid-cols-3">
+          <div className="grid gap-2.5 md:grid-cols-3 md:gap-3">
             {howSteps.map(([key, icon], index) => (
-              <div key={key} className="rounded-[1.2rem] border border-white/[0.14] bg-[#061e1f]/45 p-4 text-[#f7f2e8]">
-                <div className="mb-3 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#e8c27a] text-[#061e1f]">{icon}</div>
-                  <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#e8c27a]">0{index + 1}</span>
+              <div key={key} className="flex items-start gap-3 rounded-[1.1rem] border border-white/[0.14] bg-[#061e1f]/45 p-3 text-[#f7f2e8] md:block md:rounded-[1.2rem] md:p-4">
+                <div className="flex shrink-0 items-center gap-3 md:mb-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#e8c27a] text-[#061e1f] md:h-10 md:w-10">{icon}</div>
+                  <span className="hidden text-xs font-bold uppercase tracking-[0.18em] text-[#e8c27a] md:inline">0{index + 1}</span>
                 </div>
-                <h3 className="text-sm font-bold">{t(`homepage.how.steps.${key}.title`)}</h3>
-                <p className="mt-1 text-xs leading-relaxed text-[#f7f2e8]/70">{t(`homepage.how.steps.${key}.body`)}</p>
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#e8c27a] md:hidden">0{index + 1}</span>
+                  <h3 className="text-sm font-bold">{t(`homepage.how.steps.${key}.title`)}</h3>
+                  <p className="mt-1 text-xs leading-relaxed text-[#f7f2e8]/70">{t(`homepage.how.steps.${key}.body`)}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -276,8 +282,10 @@ export default function QuickActions({ journey, userState, showToast, onJourneyC
             <p className="mt-2 text-sm font-medium leading-relaxed text-[#536365]">{t('homepage.passes.subtitle')}</p>
           </div>
           <PricingPlans
+            user={user}
             userState={userState}
             showToast={showToast}
+            onNeedAuth={onNeedAuth}
             onCtaClick={(plan) => {
               if (plan === 'free') {
                 window.setTimeout(() => {

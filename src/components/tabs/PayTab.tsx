@@ -1,4 +1,5 @@
 import { Smartphone, DollarSign, Info, ChevronRight, CreditCard, WalletCards, Banknote, QrCode } from 'lucide-react';
+import type { User } from 'firebase/auth';
 import { UserState } from '../../hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
@@ -11,8 +12,10 @@ import PhraseCard from '../PhraseCard';
 import type { PhraseCardData } from '../../types/phraseCard';
 
 interface Props {
+  user: User | null;
   userState: UserState | null;
   showToast: (msg: string) => void;
+  onNeedAuth: () => void;
   onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
   deepTool?: string | null;
@@ -28,7 +31,7 @@ interface PaymentMethod {
   icon: string;
 }
 
-export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
+export default function PayTab({ user, userState, showToast, onNeedAuth, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
   const { t } = useTranslation();
   const assetBase = import.meta.env.BASE_URL;
   const paymentMethods = t('pay.methods', { returnObjects: true }) as PaymentMethod[];
@@ -152,7 +155,7 @@ export default function PayTab({ userState, showToast, onAskBuddy, onUpgradeClic
             ))}
           </ul>
         </div>
-        <PricingPlans userState={userState} showToast={showToast} onCtaClick={(plan) => onToolOpened?.(`early-access-${plan}`)} />
+        <PricingPlans user={user} userState={userState} showToast={showToast} onNeedAuth={onNeedAuth} onCtaClick={(plan) => onToolOpened?.(`early-access-${plan}`)} />
       </section>
 
       {/* Email header banner */}

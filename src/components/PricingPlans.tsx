@@ -1,7 +1,11 @@
-import { Check, ShieldCheck, Zap } from 'lucide-react';
+import { Check, ShieldCheck, X, Zap } from 'lucide-react';
+import type { User } from 'firebase/auth';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 import type { UserState } from '../hooks/useAuth';
 import { trackEvent } from '../lib/analytics';
+import { db } from '../firebase-config';
 
 const PAYPAL_LINKS = {
   trip: 'https://www.paypal.com/ncp/payment/863ZKSY6RJ64J',
@@ -33,13 +37,27 @@ const PLANS = [
 ];
 
 interface Props {
+  user?: User | null;
   userState: UserState | null;
   showToast: (msg: string) => void;
   onCtaClick?: (plan: string) => void;
+  onNeedAuth?: () => void;
 }
 
-export default function PricingPlans({ userState, showToast, onCtaClick }: Props) {
+type PaidPlan = 'trip' | 'group';
+
+export default function PricingPlans({ user, userState, showToast, onCtaClick, onNeedAuth }: Props) {
   const { t } = useTranslation();
+  const [selectedPlan, setSelectedPlan] = useState<PaidPlan | null>(null);
+  const [claimOpen, setClaimOpen] = useState(false);
+  const [paypalTransactionId, setPaypalTransactionId] = useState('');
+  const [paypalEmail, setPaypalEmail] = useState('');
+  const [claimLoading, setClaimLoading] = useState(false);
+  const [claimError, setClaimError] = useState('');
+
+  const openPaypal = (plan: PaidPlan) => {
+    window.open(plan === 'trip' ? PAYPAL_LINKS.trip : PAYPAL_LINKS.group, '_blank', 'noopener,noreferrer');
+  };
 
   const handlePlanCta = (plan: string) => {
     onCtaClick?.(plan);
@@ -59,7 +77,59 @@ export default function PricingPlans({ userState, showToast, onCtaClick }: Props
       return;
     }
 
-    window.open(isTrip ? PAYPAL_LINKS.trip : PAYPAL_LINKS.group, '_blank', 'noopener,noreferrer');
+    if (!user) {
+      showToast(t('pay.claim.signInFirst'));
+      onNeedAuth?.();
+      return;
+    }
+
+    setSelectedPlan(isTrip ? 'trip' : 'group');
+    setClaimOpen(false);
+    setClaimError('');
+    setPaypalTransactionId('');
+    setPaypalEmail('');
+  };
+
+  const handleSubmitClaim = async () => {
+    if (!user || !selectedPlan) return;
+    const tx = paypalTransactionId.trim();
+    const email = paypalEmail.trim();
+
+    setClaimError('');
+    if (tx.length < 4) {
+      setClaimError(t('pay.claim.transactionRequired'));
+      return;
+    }
+
+    setClaimLoading(true);
+    void trackEvent('cta_clicked', {
+      ctaName: "I've paid — request activation",
+      destination: 'paymentClaims',
+      tool: 'pay',
+      plan: selectedPlan === 'trip' ? 'trip_pass' : 'group_pass',
+    }, user.uid);
+
+    try {
+      await addDoc(collection(db, 'paymentClaims'), {
+        userId: user.uid,
+        accountEmail: user.email || '',
+        plan: selectedPlan,
+        paypalTransactionId: tx.slice(0, 120),
+        ...(email ? { paypalEmail: email.slice(0, 160) } : {}),
+        sourcePath: `${window.location.pathname}${window.location.search}`.slice(0, 500),
+        createdAt: serverTimestamp(),
+        status: 'pending',
+      });
+      showToast(t('pay.claim.submitted'));
+      setClaimOpen(false);
+      setSelectedPlan(null);
+      setPaypalTransactionId('');
+      setPaypalEmail('');
+    } catch {
+      setClaimError(t('pay.claim.submitError'));
+    } finally {
+      setClaimLoading(false);
+    }
   };
 
   return (
@@ -126,6 +196,80 @@ export default function PricingPlans({ userState, showToast, onCtaClick }: Props
       <p className="text-center text-gray-400 text-xs mt-3">
         {t('pay.refund')}
       </p>
+      {selectedPlan && user && (
+        <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/45 p-0 backdrop-blur-sm sm:items-center sm:p-4" onClick={() => setSelectedPlan(null)}>
+          <div className="max-h-[92svh] w-full overflow-y-auto rounded-t-3xl bg-[#fffdf8] p-5 shadow-2xl sm:max-w-md sm:rounded-3xl" onClick={(event) => event.stopPropagation()}>
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#d6a85a]">{t('pay.claim.kicker')}</p>
+                <h3 className="mt-1 text-xl font-bold text-gray-950">
+                  {t('pay.claim.title', { plan: t(`pay.plans.${selectedPlan}.name`) })}
+                </h3>
+              </div>
+              <button onClick={() => setSelectedPlan(null)} className="rounded-full p-1.5 text-gray-400 hover:bg-gray-100">
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            <div className="mt-4 rounded-2xl border border-[#155e63]/12 bg-[#155e63]/5 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#155e63]">{t('pay.claim.accountLabel')}</p>
+              <p className="mt-1 break-words text-sm font-bold text-gray-950">{user.email}</p>
+              <p className="mt-2 text-xs leading-relaxed text-gray-600">{t('pay.claim.accountHelp')}</p>
+            </div>
+
+            <div className="mt-4 grid gap-2 sm:grid-cols-2">
+              <button
+                onClick={() => openPaypal(selectedPlan)}
+                className="rounded-xl bg-[#155e63] px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-[#0e4a4e]"
+              >
+                {t('pay.claim.openPaypal')}
+              </button>
+              <button
+                onClick={() => setClaimOpen((open) => !open)}
+                className="rounded-xl border border-[#155e63]/15 bg-white px-4 py-3 text-sm font-bold text-[#155e63] transition-colors hover:bg-[#155e63]/5"
+              >
+                {t('pay.claim.requestActivation')}
+              </button>
+            </div>
+
+            <p className="mt-3 text-xs leading-relaxed text-gray-500">{t('pay.claim.afterPaymentHelp')}</p>
+
+            {claimOpen && (
+              <div className="mt-4 space-y-3 rounded-2xl border border-gray-100 bg-white p-4">
+                <div>
+                  <label className="text-xs font-semibold text-gray-600">{t('pay.claim.transactionId')}</label>
+                  <input
+                    value={paypalTransactionId}
+                    onChange={(event) => setPaypalTransactionId(event.target.value)}
+                    className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm outline-none focus:border-[#155e63]/40"
+                    placeholder={t('pay.claim.transactionPlaceholder')}
+                    maxLength={120}
+                  />
+                </div>
+                <div>
+                  <label className="text-xs font-semibold text-gray-600">{t('pay.claim.paypalEmail')}</label>
+                  <input
+                    value={paypalEmail}
+                    onChange={(event) => setPaypalEmail(event.target.value)}
+                    className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm outline-none focus:border-[#155e63]/40"
+                    placeholder={t('pay.claim.paypalEmailPlaceholder')}
+                    maxLength={160}
+                  />
+                </div>
+                {claimError && <p className="text-xs font-semibold text-red-600">{claimError}</p>}
+                <button
+                  onClick={handleSubmitClaim}
+                  disabled={claimLoading}
+                  className="w-full rounded-xl bg-[#e8c27a] px-4 py-3 text-sm font-bold text-[#061e1f] transition-colors hover:bg-[#f4d78f] disabled:opacity-60"
+                >
+                  {claimLoading ? t('pay.claim.submitting') : t('pay.claim.submit')}
+                </button>
+                <p className="text-[11px] leading-relaxed text-gray-400">{t('pay.claim.noCards')}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </section>
   );
 }

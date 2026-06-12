@@ -14,7 +14,8 @@
       "services": "Services",
       "aboutUs": "About Us",
       "contact": "Contact",
-      "getHelpNow": "Get Help Now"
+      "getHelpNow": "Get Help Now",
+      "menu": "Menu"
     },
     "homepage": {
       "how": {
@@ -52,16 +53,17 @@
       "trust": "Works inside China · No VPN needed · Free to start",
       "titleLine1": "China travel help,",
       "titleLine2": "beautifully simplified.",
-      "homeSubtitle": "Your AI-powered travel companion for a smoother, safer, and more rewarding experience in China.",
+      "homeSubtitle": "Apps, payments, transport, food and emergency help for foreign visitors in China.",
       "startFree": "Get Help Now",
       "askBuddy": "Ask Buddy",
       "mobileTrust": "Trusted by travelers · 24/7 support · Your safety, our priority",
       "realMoments": "Built for real moments in China — taxis, food, payments, hotels, and emergencies.",
-      "mobileSubtitle": "AI travel help for China, beautifully simplified.",
+      "mobileSubtitle": "Apps, payments, transport, food and emergency help in China.",
       "mobileTrustShort": "No app · Mobile friendly · Free to start",
       "trustTrusted": "Trusted by travelers",
       "trustSupport": "24/7 support",
-      "trustSafety": "Your safety, our priority"
+      "trustSafety": "Your safety, our priority",
+      "openFreeToolkit": "Open Free Toolkit"
     },
     "tabs": {
       "before": "Before You Go",
@@ -422,9 +424,9 @@
           "desc": "Basic China travel toolkit for common travel situations.",
           "cta": "Start Free",
           "features": [
-            "Essential apps, payments, transport, food, hotel, and emergency help",
+            "Essential apps, payments, transport, food, hotel and emergency tools",
             "Basic phrase cards and travel guides",
-            "Limited Buddy AI access",
+            "5 Buddy AI messages and 3 menu/photo scans",
             "No payment required"
           ]
         },
@@ -433,10 +435,10 @@
           "desc": "Extra travel help for one traveler during a China trip",
           "cta": "Get Trip Pass",
           "features": [
-            "More Buddy AI help for your China trip",
-            "Extra support for apps, payments, taxis, food, hotels, and emergency situations",
-            "Access activated after PayPal payment confirmation",
-            "Best for solo travelers and first-time visitors"
+            "50 Buddy AI messages and 20 menu/photo scans",
+            "Extra travel help for one traveler",
+            "One-time payment",
+            "Manual activation after payment confirmation"
           ]
         },
         "group": {
@@ -444,10 +446,10 @@
           "desc": "Extra travel help for couples, families, or small groups visiting China together",
           "cta": "Get Group Pass",
           "features": [
-            "More Buddy AI help for a small travel group",
-            "Useful for couples, families, and friends traveling together",
-            "Extra support for shared travel situations",
-            "Access activated after PayPal payment confirmation"
+            "200 Buddy AI messages and 100 menu/photo scans",
+            "Extra travel help for couples, families or small travel groups",
+            "One-time payment",
+            "Manual activation after payment confirmation"
           ]
         }
       },
@@ -529,7 +531,7 @@
       "earlyAccess": {
         "title": "Manual PayPal payment",
         "body": "Trip Pass and Group Pass use PayPal payment links. Access is activated manually after payment confirmation.",
-        "options": "Please use the same email as your ChinaEase Buddy account or include your account email during checkout.",
+        "options": "Please use the same email as your ChinaEase Buddy account.",
         "safety": "ChinaEase Buddy does not collect card details directly on this website.",
         "modalTitle": "Manual payment",
         "modalSubtitle": "Use the PayPal payment link for your selected pass. Access is activated manually after payment confirmation.",
@@ -550,10 +552,30 @@
       "freeToolkitReady": "Free toolkit is ready. No payment needed.",
       "manualPayment": {
         "title": "Paid passes are optional.",
-        "body": "Paid passes are optional. Payments are processed by PayPal. Access is activated manually after payment confirmation. Please use the same email as your ChinaEase Buddy account or include your account email during checkout.",
-        "note": "ChinaEase Buddy does not collect card details directly. PayPal handles the payment securely.",
+        "body": "Payments are processed by PayPal. Access is activated manually after payment confirmation. Please use the same email as your ChinaEase Buddy account.",
+        "note": "ChinaEase Buddy does not collect your card details directly. Payment is handled by PayPal.",
         "safety": "",
         "paidNote": ""
+      },
+      "claim": {
+        "signInFirst": "Please sign in first so we can apply the pass to your account.",
+        "kicker": "Manual activation",
+        "title": "{{plan}} payment",
+        "accountLabel": "ChinaEase Buddy account",
+        "accountHelp": "Access will be applied to this account after payment confirmation.",
+        "openPaypal": "Open PayPal payment",
+        "requestActivation": "I’ve paid — request activation",
+        "afterPaymentHelp": "After paying, submit the PayPal transaction ID so we can review and activate your pass manually.",
+        "transactionId": "PayPal transaction ID",
+        "transactionPlaceholder": "Example: 1AB23456CD789012E",
+        "paypalEmail": "PayPal payment email (optional)",
+        "paypalEmailPlaceholder": "If different from your account email",
+        "transactionRequired": "Please enter your PayPal transaction ID.",
+        "submit": "Submit activation request",
+        "submitting": "Submitting...",
+        "submitted": "Activation request submitted. We’ll review it manually.",
+        "submitError": "Could not submit the request. Please try again or contact support.",
+        "noCards": "Do not enter card numbers or sensitive payment details."
       }
     },
     "chat": {

@@ -203,8 +203,10 @@ export default function App() {
       />
       <QuickActions
         journey={journey}
+        user={user}
         userState={userState}
         showToast={showToast}
+        onNeedAuth={() => setAuthOpen(true)}
         onJourneyChange={handleJourneyChange}
         onTabSelect={handleQuickTabSelect}
         onAskBuddy={openBuddy}
@@ -216,8 +218,10 @@ export default function App() {
           </div>
           <TabContent
             activeTab={activeTab}
+            user={user}
             userState={userState}
             showToast={showToast}
+            onNeedAuth={() => setAuthOpen(true)}
             onAskBuddy={openBuddy}
             onUpgradeClick={handleUpgradeClick}
             deepTool={deepTool}

@@ -55,9 +55,9 @@ const pricingPlans = [
     price: '$0',
     note: 'Basic China travel toolkit for common travel situations',
     features: [
-      'Essential apps, payments, transport, food, hotel, and emergency help',
+      'Essential apps, payments, transport, food, hotel and emergency tools',
       'Basic phrase cards and travel guides',
-      'Limited Buddy AI access',
+      '5 Buddy AI messages and 3 menu/photo scans',
       'No payment required',
     ],
     cta: 'Start Free',
@@ -69,10 +69,10 @@ const pricingPlans = [
     price: '$9.90',
     note: 'One-time payment',
     features: [
-      'More Buddy AI help for your China trip',
-      'Extra support for apps, payments, taxis, food, hotels, and emergency situations',
-      'Access activated after PayPal payment confirmation',
-      'Best for solo travelers and first-time visitors',
+      '50 Buddy AI messages and 20 menu/photo scans',
+      'Extra travel help for one traveler',
+      'One-time payment',
+      'Manual activation after payment confirmation',
     ],
     cta: 'Get Trip Pass',
     href: paypalLinks.trip,
@@ -84,10 +84,10 @@ const pricingPlans = [
     price: '$29.90',
     note: 'One-time payment',
     features: [
-      'More Buddy AI help for a small travel group',
-      'Useful for couples, families, and friends traveling together',
-      'Extra support for shared travel situations',
-      'Access activated after PayPal payment confirmation',
+      '200 Buddy AI messages and 100 menu/photo scans',
+      'Extra travel help for couples, families or small travel groups',
+      'One-time payment',
+      'Manual activation after payment confirmation',
     ],
     cta: 'Get Group Pass',
     href: paypalLinks.group,
@@ -820,7 +820,7 @@ function PricingPage() {
       <div className="mt-5 rounded-2xl border border-[#155e63]/10 bg-[#155e63]/5 p-4">
         <p className="text-sm font-semibold text-[#155e63]">One-time payment · No auto-renewal · Manual activation after payment.</p>
         <p className="mt-2 text-xs leading-relaxed text-gray-600">
-          Payments are processed by PayPal. Access is currently activated manually after payment. Please use the same email as your ChinaEase Buddy account or include your account email during checkout.
+          Payments are processed by PayPal. Access is currently activated manually after payment. Please use the same email as your ChinaEase Buddy account.
         </p>
         <p className="mt-2 text-xs font-semibold leading-relaxed text-[#155e63]">
           ChinaEase Buddy does not collect card details directly. PayPal handles the payment securely.

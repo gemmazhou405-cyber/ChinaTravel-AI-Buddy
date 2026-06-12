@@ -1,4 +1,4 @@
-import { ChevronDown, Globe, LogOut, ShieldCheck, Sparkles, Star, X } from 'lucide-react';
+import { ChevronDown, Globe, LogOut, Menu, ShieldCheck, Sparkles, Star, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { User } from 'firebase/auth';
 import { UserState } from '../hooks/useAuth';
@@ -30,6 +30,7 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
   const [langOpen, setLangOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
   const [confirmLogoutOpen, setConfirmLogoutOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const assetBase = import.meta.env.BASE_URL;
   const currentPlan = userState?.plan ?? 'free';
   const planLabel = t(`pay.plans.${currentPlan}.name`);
@@ -75,6 +76,7 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
       const target = document.getElementById(href.slice(1));
       target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -147,6 +149,35 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
                   >
                     {l.label}
                   </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div className="relative md:hidden">
+            <button
+              onClick={() => setMobileMenuOpen((open) => !open)}
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-white/[0.15] bg-white/10 text-[#f8f3ea] backdrop-blur-sm"
+              aria-label={t('nav.menu')}
+            >
+              {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            </button>
+            {mobileMenuOpen && (
+              <div className="absolute right-0 top-full z-50 mt-2 w-48 rounded-2xl border border-white/10 bg-[#061e1f]/95 p-2 text-sm text-[#f8f3ea] shadow-2xl backdrop-blur-xl">
+                {navLinks.map((link) => (
+                  link.href.startsWith('#') ? (
+                    <button
+                      key={link.label}
+                      onClick={() => handleNavClick(link.label, link.href)}
+                      className="block w-full rounded-xl px-3 py-2.5 text-left font-semibold hover:bg-white/10"
+                    >
+                      {link.label}
+                    </button>
+                  ) : (
+                    <a key={link.label} href={link.href} className="block rounded-xl px-3 py-2.5 font-semibold hover:bg-white/10">
+                      {link.label}
+                    </a>
+                  )
                 ))}
               </div>
             )}
@@ -256,7 +287,8 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
               onClick={onGetHelpNow}
               className="flex h-11 w-full items-center justify-center gap-2 rounded-full bg-[#e8c27a] px-5 text-sm font-bold text-[#061e1f] shadow-[0_18px_44px_rgba(232,194,122,0.25)] transition-all hover:-translate-y-0.5 hover:bg-[#f4d78f] md:h-auto md:w-auto md:px-8 md:py-4 md:text-base"
             >
-              <span>{t('hero.startFree')}</span>
+              <span className="md:hidden">{t('hero.openFreeToolkit')}</span>
+              <span className="hidden md:inline">{t('hero.startFree')}</span>
             </button>
             <button
               onClick={onAskBuddy}

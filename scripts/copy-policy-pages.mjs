@@ -87,7 +87,7 @@ const pageMeta = {
     faqs: [
       ['What is ChinaEase Buddy?', 'ChinaEase Buddy is a web-based digital China travel toolkit for foreign visitors. It helps with phrase cards, payments, food, transport, hotels, emergency references, and Buddy AI travel questions.'],
       ['Is ChinaEase Buddy free?', 'ChinaEase Buddy has a free starting plan with core tools and limited Buddy AI usage. Paid passes may unlock additional digital access, but checkout availability can vary during early access.'],
-      ['How do paid passes work?', 'Paid passes are currently processed through PayPal payment links. Access is activated manually after payment confirmation. Please use the same email as your ChinaEase Buddy account or include your account email during checkout.'],
+      ['How do paid passes work?', 'Paid passes are currently processed through PayPal payment links. Access is activated manually after payment confirmation. Please use the same email as your ChinaEase Buddy account.'],
       ['What emergency numbers should travelers know in China?', 'Travelers should know 110 for police, 120 for ambulance, and 119 for fire. In urgent situations, contact local emergency services directly.'],
     ],
   },

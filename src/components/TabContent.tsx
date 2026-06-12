@@ -6,18 +6,21 @@ import StayTab from './tabs/StayTab';
 import TransportTab from './tabs/TransportTab';
 import PayTab from './tabs/PayTab';
 import { UserState } from '../hooks/useAuth';
+import type { User } from 'firebase/auth';
 
 interface Props {
   activeTab: TabId;
+  user: User | null;
   userState: UserState | null;
   showToast: (msg: string) => void;
+  onNeedAuth: () => void;
   onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
   deepTool?: string | null;
   onToolOpened?: (category: string) => void;
 }
 
-export default function TabContent({ activeTab, userState, showToast, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
+export default function TabContent({ activeTab, user, userState, showToast, onNeedAuth, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
   return (
     <main className="max-w-3xl mx-auto px-4 py-6 md:px-6 pb-[calc(7rem+env(safe-area-inset-bottom))] md:pb-28">
       {activeTab === 'before' && <BeforeTab userState={userState} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} deepTool={deepTool} onToolOpened={onToolOpened} />}
@@ -25,7 +28,7 @@ export default function TabContent({ activeTab, userState, showToast, onAskBuddy
       {activeTab === 'food' && <FoodTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} deepTool={deepTool} onToolOpened={onToolOpened} />}
       {activeTab === 'transport' && <TransportTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} deepTool={deepTool} onToolOpened={onToolOpened} />}
       {activeTab === 'emergency' && <EmergencyTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} deepTool={deepTool} onToolOpened={onToolOpened} />}
-      {activeTab === 'pay' && <PayTab userState={userState} showToast={showToast} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} deepTool={deepTool} onToolOpened={onToolOpened} />}
+      {activeTab === 'pay' && <PayTab user={user} userState={userState} showToast={showToast} onNeedAuth={onNeedAuth} onAskBuddy={onAskBuddy} onUpgradeClick={onUpgradeClick} deepTool={deepTool} onToolOpened={onToolOpened} />}
     </main>
   );
 }

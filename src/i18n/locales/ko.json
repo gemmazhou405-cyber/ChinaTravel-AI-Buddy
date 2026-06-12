@@ -14,7 +14,8 @@
       "services": "서비스",
       "aboutUs": "회사 소개",
       "contact": "문의",
-      "getHelpNow": "지금 도움 받기"
+      "getHelpNow": "지금 도움 받기",
+      "menu": "메뉴"
     },
     "homepage": {
       "how": {
@@ -52,16 +53,17 @@
       "trust": "중국 내 사용 가능 · VPN 불필요 · 무료 시작",
       "titleLine1": "중국 여행 도움을,",
       "titleLine2": "아름답게 단순하게.",
-      "homeSubtitle": "중국에서 더 부드럽고 안전하며 만족스러운 경험을 위한 AI 여행 동반자입니다.",
+      "homeSubtitle": "중국을 방문하는 외국인을 위한 앱, 결제, 교통, 음식, 긴급 도움.",
       "startFree": "지금 도움 받기",
       "askBuddy": "Buddy에게 묻기",
       "mobileTrust": "여행자들이 이용 · 24/7 지원 · 안전을 우선",
       "realMoments": "중국의 실제 상황을 위해 만들었습니다 — 택시, 음식, 결제, 호텔, 긴급 상황.",
-      "mobileSubtitle": "중국 여행 AI 도움을 간단하게.",
+      "mobileSubtitle": "중국에서 앱, 결제, 교통, 음식, 긴급 도움.",
       "mobileTrustShort": "앱 불필요 · 모바일 친화적 · 무료 시작",
       "trustTrusted": "여행자들이 이용",
       "trustSupport": "24/7 지원",
-      "trustSafety": "안전을 우선"
+      "trustSafety": "안전을 우선",
+      "openFreeToolkit": "무료 툴킷 열기"
     },
     "tabs": {
       "before": "출발 전",
@@ -422,9 +424,9 @@
           "desc": "중국 여행의 일반적인 상황을 위한 기본 툴킷.",
           "cta": "무료 시작",
           "features": [
-            "앱, 결제, 교통, 음식, 호텔, 긴급 상황 기본 도움",
+            "앱, 결제, 교통, 음식, 호텔, 긴급 상황 기본 도구",
             "기본 문장 카드와 여행 가이드",
-            "제한된 Buddy AI 이용",
+            "Buddy AI 메시지 5개 및 메뉴/사진 스캔 3회",
             "결제 필요 없음"
           ]
         },
@@ -433,10 +435,10 @@
           "desc": "중국 여행 중 1명을 위한 추가 여행 도움",
           "cta": "Trip Pass 받기",
           "features": [
-            "중국 여행을 위한 더 많은 Buddy AI 도움",
-            "앱, 결제, 택시, 음식, 호텔, 긴급 상황 추가 지원",
-            "PayPal 결제 확인 후 액세스 수동 활성화",
-            "혼자 여행하거나 처음 방문하는 분에게 적합"
+            "Buddy AI 메시지 50개 및 메뉴/사진 스캔 20회",
+            "여행자 1명을 위한 추가 여행 도움",
+            "일회성 결제",
+            "결제 확인 후 수동 활성화"
           ]
         },
         "group": {
@@ -444,10 +446,10 @@
           "desc": "커플, 가족 또는 소규모 그룹이 함께 중국을 방문할 때 필요한 추가 여행 도움",
           "cta": "Group Pass 받기",
           "features": [
-            "소규모 여행 그룹을 위한 더 많은 Buddy AI 도움",
-            "커플, 가족, 친구와 함께 여행할 때 유용",
-            "함께 겪는 여행 상황에 대한 추가 지원",
-            "PayPal 결제 확인 후 액세스 수동 활성화"
+            "Buddy AI 메시지 200개 및 메뉴/사진 스캔 100회",
+            "커플, 가족 또는 소규모 여행 그룹을 위한 추가 도움",
+            "일회성 결제",
+            "결제 확인 후 수동 활성화"
           ]
         }
       },
@@ -529,7 +531,7 @@
       "earlyAccess": {
         "title": "수동 PayPal 결제",
         "body": "Trip Pass와 Group Pass는 PayPal 결제 링크를 사용합니다. 결제 확인 후 액세스가 수동으로 활성화됩니다.",
-        "options": "ChinaEase Buddy 계정과 같은 이메일을 사용하거나 결제 중 계정 이메일을 입력해 주세요.",
+        "options": "ChinaEase Buddy 계정과 같은 이메일을 사용해 주세요.",
         "safety": "ChinaEase Buddy는 이 웹사이트에서 카드 정보를 직접 수집하지 않습니다.",
         "modalTitle": "수동 결제",
         "modalSubtitle": "선택한 패스의 PayPal 결제 링크를 사용하세요. 결제 확인 후 액세스가 수동으로 활성화됩니다.",
@@ -550,10 +552,30 @@
       "freeToolkitReady": "무료 도구 키트를 사용할 수 있습니다. 결제는 필요 없습니다.",
       "manualPayment": {
         "title": "유료 패스는 선택 사항입니다.",
-        "body": "유료 패스는 선택 사항입니다. 결제는 PayPal에서 처리됩니다. 결제 확인 후 액세스가 수동으로 활성화됩니다. ChinaEase Buddy 계정과 같은 이메일을 사용하거나 결제 중 계정 이메일을 입력해 주세요.",
-        "note": "ChinaEase Buddy는 카드 정보를 직접 수집하지 않습니다. PayPal이 결제를 안전하게 처리합니다.",
+        "body": "결제는 PayPal에서 처리됩니다. 결제 확인 후 액세스가 수동으로 활성화됩니다. ChinaEase Buddy 계정과 같은 이메일을 사용해 주세요.",
+        "note": "ChinaEase Buddy는 카드 정보를 직접 수집하지 않습니다. 결제는 PayPal에서 처리됩니다.",
         "safety": "",
         "paidNote": ""
+      },
+      "claim": {
+        "signInFirst": "패스를 계정에 적용하려면 먼저 로그인해 주세요.",
+        "kicker": "수동 활성화",
+        "title": "{{plan}} 결제",
+        "accountLabel": "ChinaEase Buddy 계정",
+        "accountHelp": "결제 확인 후 이 계정에 액세스가 적용됩니다.",
+        "openPaypal": "PayPal 결제 열기",
+        "requestActivation": "결제했습니다 — 활성화 요청",
+        "afterPaymentHelp": "결제 후 PayPal 거래 ID를 제출하면 검토 후 수동으로 패스를 활성화합니다.",
+        "transactionId": "PayPal 거래 ID",
+        "transactionPlaceholder": "예: 1AB23456CD789012E",
+        "paypalEmail": "PayPal 결제 이메일(선택)",
+        "paypalEmailPlaceholder": "계정 이메일과 다른 경우",
+        "transactionRequired": "PayPal 거래 ID를 입력해 주세요.",
+        "submit": "활성화 요청 제출",
+        "submitting": "제출 중...",
+        "submitted": "활성화 요청이 제출되었습니다. 수동으로 검토하겠습니다.",
+        "submitError": "요청을 제출할 수 없습니다. 다시 시도하거나 지원팀에 문의해 주세요.",
+        "noCards": "카드 번호나 민감한 결제 정보는 입력하지 마세요."
       }
     },
     "chat": {

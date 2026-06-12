@@ -55,9 +55,7 @@ export default function Footer({ onTabChange, onAskBuddy }: Props) {
             <div className="space-y-2.5">
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#e8c27a]">{t('footer.company')}</p>
               <a href="/about" className="block transition-colors hover:text-white">{t('footer.aboutUs')}</a>
-              <a href="/contact" className="block transition-colors hover:text-white">{t('footer.careers')}</a>
-              <a href="/contact" className="block transition-colors hover:text-white">{t('footer.press')}</a>
-              <a href="/contact" className="block transition-colors hover:text-white">{t('footer.partnerships')}</a>
+              <a href="/contact" className="block transition-colors hover:text-white">{t('footer.contactUs')}</a>
             </div>
             <div className="space-y-2.5">
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#e8c27a]">{t('footer.legalColumn')}</p>
