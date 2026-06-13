@@ -1,7 +1,10 @@
 import { Mail, Shield } from 'lucide-react';
+import type { FormEvent } from 'react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { TabId } from '../App';
+import { subscribeNewsletter } from '../lib/newsletter';
+import { trackEvent } from '../lib/analytics';
 
 interface Props {
   onTabChange: (tab: TabId) => void;
@@ -11,7 +14,31 @@ interface Props {
 export default function Footer({ onTabChange, onAskBuddy }: Props) {
   const { t } = useTranslation();
   const [modal, setModal] = useState<'cookies' | null>(null);
+  const [email, setEmail] = useState('');
+  const [honeypot, setHoneypot] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'duplicate' | 'error' | 'invalid'>('idle');
   const assetBase = import.meta.env.BASE_URL;
+
+  const handleSubscribe = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const trimmed = email.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
+      setStatus('invalid');
+      return;
+    }
+    setStatus('loading');
+    void trackEvent('cta_clicked', {
+      ctaName: 'Subscribe',
+      destination: 'newsletter',
+    });
+    try {
+      const result = await subscribeNewsletter(trimmed, document.documentElement.lang || 'en', honeypot);
+      setStatus(result === 'already_subscribed' ? 'duplicate' : 'success');
+      setEmail('');
+    } catch {
+      setStatus('error');
+    }
+  };
 
   const scrollToTabs = () => {
     document.getElementById('tabs')?.scrollIntoView({ behavior: 'smooth' });
@@ -68,24 +95,42 @@ export default function Footer({ onTabChange, onAskBuddy }: Props) {
 
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#e8c27a]">{t('footer.stayInKnow')}</p>
-            <form className="mt-4 space-y-2" onSubmit={(event) => event.preventDefault()}>
+            <form className="mt-4 space-y-2" onSubmit={handleSubscribe}>
+              <label className="sr-only" htmlFor="newsletter-email">{t('footer.emailPlaceholder')}</label>
               <label className="flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.07] px-3 py-2.5 text-sm text-white/80 backdrop-blur-xl">
                 <Mail className="h-4 w-4 text-[#e8c27a]" />
                 <input
+                  id="newsletter-email"
                   type="email"
-                  disabled
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
                   placeholder={t('footer.emailPlaceholder')}
-                  className="min-w-0 flex-1 cursor-not-allowed bg-transparent text-white placeholder:text-white/30 opacity-70 focus:outline-none"
+                  autoComplete="email"
+                  className="min-w-0 flex-1 bg-transparent text-white placeholder:text-white/30 focus:outline-none"
                 />
               </label>
+              <input
+                type="text"
+                value={honeypot}
+                onChange={(event) => setHoneypot(event.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+                aria-hidden="true"
+              />
               <button
-                type="button"
-                disabled
-                className="w-full cursor-not-allowed rounded-full bg-[#e8c27a]/70 px-4 py-2.5 text-sm font-bold text-[#061e1f]/80"
+                type="submit"
+                disabled={status === 'loading'}
+                className="w-full rounded-full bg-[#e8c27a] px-4 py-2.5 text-sm font-bold text-[#061e1f] transition-colors hover:bg-[#f4d78f] disabled:opacity-60"
               >
-                {t('footer.comingSoon')}
+                {status === 'loading' ? t('footer.subscribing') : t('footer.subscribe')}
               </button>
-              <p className="text-xs leading-relaxed text-white/50">{t('footer.subscribeComingSoon')}</p>
+              <p className="text-xs leading-relaxed text-white/50">{t('footer.subscribeConsent')}</p>
+              {status !== 'idle' && status !== 'loading' && (
+                <p className={`text-xs font-semibold ${status === 'success' || status === 'duplicate' ? 'text-[#e8c27a]' : 'text-red-200'}`} aria-live="polite">
+                  {t(`footer.newsletterStatus.${status}`)}
+                </p>
+              )}
             </form>
           </div>
         </div>

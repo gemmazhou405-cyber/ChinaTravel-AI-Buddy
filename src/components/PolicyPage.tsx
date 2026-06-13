@@ -1,8 +1,9 @@
-import { useEffect, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { ArrowLeft, Check } from 'lucide-react';
 import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
+import { unsubscribeNewsletter } from '../lib/newsletter';
 
-type LegalPageType = 'terms' | 'privacy' | 'refund' | 'contact' | 'about';
+type LegalPageType = 'terms' | 'privacy' | 'refund' | 'contact' | 'about' | 'unsubscribe';
 type GuidePageType =
   | 'guides'
   | 'china-travel-apps'
@@ -71,9 +72,10 @@ const pricingPlans = [
     note: 'One-time payment',
     features: [
       '50 Buddy AI messages and 20 menu/photo scans',
+      'Valid for 7 days',
       'Extra travel help for one traveler',
       'One-time payment',
-      'Manual activation after payment confirmation',
+      'Access after verified PayPal payment confirmation',
     ],
     cta: 'Get Trip Pass',
     href: paypalLinks.trip,
@@ -86,9 +88,10 @@ const pricingPlans = [
     note: 'One-time payment',
     features: [
       '200 Buddy AI messages and 100 menu/photo scans',
-      'Extra travel help for couples, families or small travel groups',
+      'Valid for 14 days',
+      'One account and one shared allowance for couples, families or small travel groups',
       'One-time payment',
-      'Manual activation after payment confirmation',
+      'Access after verified PayPal payment confirmation',
     ],
     cta: 'Get Group Pass',
     href: paypalLinks.group,
@@ -120,7 +123,7 @@ const legalCopy = {
       {
         title: 'Refunds',
         body:
-          'Paid passes are covered by a 3-day refund policy. Refund eligibility may depend on usage of digital credits and service access.',
+          'ChinaEase Buddy passes are one-time payments with no auto-renewal. We do not offer a voluntary three-day refund guarantee. This does not affect any statutory rights you may have under applicable consumer law.',
       },
       {
         title: 'Contact',
@@ -136,7 +139,7 @@ const legalCopy = {
       {
         title: 'Information We Collect',
         body:
-          'We may collect your email address, account plan, usage quota, basic app usage data, and information required to operate Buddy AI conversations and menu assistance.',
+          'We may collect your email address, account plan, entitlement status, usage quotas, basic app usage data, anonymous session ID, UTM attribution, newsletter email, and information required to operate Buddy AI conversations and menu/photo assistance.',
       },
       {
         title: 'Authentication and Storage',
@@ -146,7 +149,22 @@ const legalCopy = {
       {
         title: 'Buddy AI Conversations',
         body:
-          'Buddy AI conversation content may be processed to provide the requested travel assistance, maintain service quality, and troubleshoot the service.',
+          'Buddy AI conversation content and uploaded menu/photo information may be processed by ChinaEase Buddy service providers, including Coze, Cloudflare, Firebase, and Firestore, to provide the requested travel assistance, maintain service quality, and troubleshoot the service.',
+      },
+      {
+        title: 'Payments and Entitlements',
+        body:
+          'For paid passes, we may store PayPal order identifiers, capture identifiers, payer email if returned by PayPal, plan, expiry, quota, and payment status. We do not collect card details directly on this website.',
+      },
+      {
+        title: 'Newsletter',
+        body:
+          'If you subscribe to travel updates, we store your email address, consent version, source path, UTM attribution, subscription status, and unsubscribe information. You can unsubscribe at any time.',
+      },
+      {
+        title: 'Retention and Deletion',
+        body:
+          'We keep account, entitlement, payment, support, analytics, and newsletter records as needed to operate the service, investigate issues, meet legal obligations, and handle support requests. Contact us to request account deletion or privacy assistance.',
       },
       {
         title: 'No Sale of Data',
@@ -164,19 +182,19 @@ const legalCopy = {
     intro: 'ChinaEase Buddy sells one-time digital travel passes for visitors traveling in China.',
     sections: [
       {
-        title: 'Eligibility',
+        title: 'Refund Approach',
         body:
-          'Paid passes are eligible for a refund within 3 days of purchase. Refunds are only available if the pass has not been heavily used.',
+          'We do not offer a voluntary three-day refund guarantee. This does not affect any statutory rights you may have under applicable consumer law.',
       },
       {
-        title: 'Usage-Based Review',
+        title: 'When to Contact Support',
         body:
-          'If a user has used a large portion of Buddy AI messages, menu scans, or custom phrase generation credits, the refund may be declined.',
+          'Please contact support if the service was not provided, was materially different from its description, or you experienced a payment problem.',
       },
       {
         title: 'Payment Method',
         body:
-          'Refunds are processed back to the original payment method. Processing times may depend on the payment provider.',
+          'If a refund is required under applicable law or after support review, processing times and method may depend on the payment provider.',
       },
       {
         title: 'No Auto-Renewal',
@@ -185,7 +203,7 @@ const legalCopy = {
       },
       {
         title: 'Contact',
-        body: `To request a refund, contact ${contactEmail}.`,
+        body: `For payment problems or refund questions, contact ${contactEmail}. Final legal wording should be reviewed by the owner before live payment launch.`,
       },
     ],
   },
@@ -237,6 +255,17 @@ const legalCopy = {
       {
         title: 'Contact',
         body: `Questions about ChinaEase Buddy can be sent to ${contactEmail}.`,
+      },
+    ],
+  },
+  unsubscribe: {
+    title: 'Unsubscribe',
+    intro: 'Stop receiving occasional China travel updates from ChinaEase Buddy.',
+    sections: [
+      {
+        title: 'Newsletter',
+        body:
+          'Enter the email address you used for newsletter updates. This does not delete your ChinaEase Buddy account.',
       },
     ],
   },
@@ -864,9 +893,9 @@ function PricingPage() {
         ))}
       </div>
       <div className="mt-5 rounded-2xl border border-[#155e63]/10 bg-[#155e63]/5 p-4">
-        <p className="text-sm font-semibold text-[#155e63]">One-time payment · No auto-renewal · Manual activation after payment.</p>
+        <p className="text-sm font-semibold text-[#155e63]">One-time payment · No auto-renewal.</p>
         <p className="mt-2 text-xs leading-relaxed text-gray-600">
-          Payments are processed by PayPal. Access is currently activated manually after payment. Please use the same email as your ChinaEase Buddy account.
+          PayPal Sandbox checkout and automatic activation are being tested. Live checkout will not be enabled until owner approval.
         </p>
         <p className="mt-2 text-xs font-semibold leading-relaxed text-[#155e63]">
           ChinaEase Buddy does not collect card details directly. PayPal handles the payment securely.
@@ -878,8 +907,45 @@ function PricingPage() {
 
 function LegalPage({ type }: { type: LegalPageType }) {
   const page = legalCopy[type];
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleUnsubscribe = async () => {
+    const trimmed = email.trim();
+    if (!trimmed) return;
+    setStatus('loading');
+    try {
+      await unsubscribeNewsletter(trimmed, new URLSearchParams(window.location.search).get('token'));
+      setStatus('success');
+    } catch {
+      setStatus('error');
+    }
+  };
+
   return (
     <PageShell title={page.title} intro={page.intro}>
+      {type === 'unsubscribe' && (
+        <section className="mb-6 rounded-2xl border border-[#155e63]/15 bg-white p-5 shadow-sm">
+          <label htmlFor="unsubscribe-email" className="text-sm font-bold text-gray-900">Email address</label>
+          <input
+            id="unsubscribe-email"
+            type="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            className="mt-2 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm outline-none focus:border-[#155e63]/40"
+            placeholder="you@example.com"
+          />
+          <button
+            onClick={handleUnsubscribe}
+            disabled={status === 'loading'}
+            className="mt-3 rounded-full bg-[#155e63] px-5 py-2.5 text-sm font-bold text-white disabled:opacity-60"
+          >
+            {status === 'loading' ? 'Unsubscribing...' : 'Unsubscribe'}
+          </button>
+          {status === 'success' && <p className="mt-3 text-sm font-semibold text-[#155e63]">You have been unsubscribed.</p>}
+          {status === 'error' && <p className="mt-3 text-sm font-semibold text-red-600">Could not unsubscribe. Please contact support.</p>}
+        </section>
+      )}
       <div className="space-y-4">
         {page.sections.map((section) => (
           <section key={section.title} className="rounded-2xl border border-gray-100 bg-white p-4">
@@ -1023,6 +1089,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/refund')) return 'refund';
   if (cleanPath.endsWith('/contact')) return 'contact';
   if (cleanPath.endsWith('/about')) return 'about';
+  if (cleanPath.endsWith('/unsubscribe')) return 'unsubscribe';
   if (cleanPath.endsWith('/china-travel-apps')) return 'china-travel-apps';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
   if (cleanPath.endsWith('/china-payment-guide')) return 'china-payment-guide';

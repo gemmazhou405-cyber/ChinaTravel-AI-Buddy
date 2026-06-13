@@ -33,7 +33,7 @@ const pageMeta = {
   },
   refund: {
     title: 'Refund Policy | ChinaEase Buddy',
-    description: 'Refund Policy for ChinaEase Buddy one-time digital travel passes.',
+    description: 'Refund and payment-problem information for ChinaEase Buddy one-time digital travel passes.',
   },
   contact: {
     title: 'Contact | ChinaEase Buddy',
@@ -42,6 +42,10 @@ const pageMeta = {
   about: {
     title: 'About ChinaEase Buddy',
     description: 'Learn about ChinaEase Buddy, a web-based digital China travel toolkit for foreign visitors.',
+  },
+  unsubscribe: {
+    title: 'Unsubscribe | ChinaEase Buddy',
+    description: 'Unsubscribe from occasional ChinaEase Buddy travel updates.',
   },
   'china-travel-apps': {
     title: '5 Essential Apps to Download Before Visiting China | ChinaEase Buddy',
@@ -100,7 +104,7 @@ const pageMeta = {
     faqs: [
       ['What is ChinaEase Buddy?', 'ChinaEase Buddy is a web-based digital China travel toolkit for foreign visitors. It helps with phrase cards, payments, food, transport, hotels, emergency references, and Buddy AI travel questions.'],
       ['Is ChinaEase Buddy free?', 'ChinaEase Buddy has a free starting plan with core tools and limited Buddy AI usage. Paid passes may unlock additional digital access, but checkout availability can vary during early access.'],
-      ['How do paid passes work?', 'Paid passes are currently processed through PayPal payment links. Access is activated manually after payment confirmation. Please use the same email as your ChinaEase Buddy account.'],
+      ['How do paid passes work?', 'Paid passes are one-time digital travel passes. Sandbox automatic checkout is being tested, and live checkout will not be enabled until approved. Access is granted after verified payment confirmation.'],
       ['What emergency numbers should travelers know in China?', 'Travelers should know 110 for police, 120 for ambulance, and 119 for fire. In urgent situations, contact local emergency services directly.'],
     ],
   },
@@ -129,6 +133,7 @@ const staticCtas = {
   refund: ['Read the refund policy', '/refund'],
   contact: ['Contact support', '/contact'],
   about: ['Learn about ChinaEase Buddy', '/about'],
+  unsubscribe: ['Contact support', '/contact'],
   'china-travel-apps': ['Open the app checklist', '/?journey=before&tool=apps'],
   'alipay-for-foreigners': ['Open payment setup tools', '/?journey=before&tool=payment'],
   'china-payment-guide': ['Open payment phrases', '/?journey=china&tool=pay'],
@@ -285,7 +290,7 @@ await Promise.all(
 );
 
 const sitemapPages = [''].concat(pages);
-const lastmod = '2026-06-12';
+const lastmod = '2026-06-13';
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemapPages.map((page) => `  <url>
