@@ -12,6 +12,7 @@ import PolicyPage, { getPolicyPageType } from './components/PolicyPage';
 import { useAuth } from './hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 import { initAttribution, trackEvent, trackEventOnce } from './lib/analytics';
+import { captureCheckoutOrder } from './lib/payment';
 
 export type TabId = 'before' | 'stay' | 'food' | 'transport' | 'emergency' | 'pay';
 export type JourneyId = 'before' | 'now' | 'emergency';
@@ -94,7 +95,7 @@ export default function App() {
   const [toolOpen, setToolOpen] = useState(Boolean(landing.tab));
   const [journey, setJourney] = useState<JourneyId>(landing.journey);
   const [deepTool, setDeepTool] = useState<string | null>(landing.tool);
-  const { user, userState, logout, signup, login, loginWithGoogle, incrementAiUsed, resendVerificationEmail, resetPassword } = useAuth();
+  const { user, userState, logout, signup, login, loginWithGoogle, incrementAiUsed, resendVerificationEmail, resetPassword, refreshUserState } = useAuth();
   const showToast = (msg: string) => setToast(msg);
   const handleUpgradeClick = (message = 'Unlock all phrase cards with Trip Pass.') => {
     setActiveTab('pay');
@@ -140,6 +141,33 @@ export default function App() {
   // Run only for initial URL landing.
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const payment = params.get('payment');
+    const orderId = params.get('order');
+    if (payment !== 'paypal-return' || !orderId || !user) return;
+
+    let cancelled = false;
+    (async () => {
+      try {
+        const result = await captureCheckoutOrder(user, orderId);
+        if (cancelled) return;
+        if (result.status === 'completed') {
+          await refreshUserState();
+          showToast(t('pay.checkout.success'));
+        } else {
+          showToast(t('pay.checkout.pending'));
+        }
+        window.history.replaceState({}, '', window.location.pathname);
+      } catch {
+        if (!cancelled) showToast(t('pay.checkout.captureError'));
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [refreshUserState, t, user]);
 
   const handleQuickTabSelect = (tab: TabId, tool?: string) => {
     setActiveTab(tab);
@@ -207,6 +235,7 @@ export default function App() {
         userState={userState}
         showToast={showToast}
         onNeedAuth={() => setAuthOpen(true)}
+        onRefreshUserState={refreshUserState}
         onJourneyChange={handleJourneyChange}
         onTabSelect={handleQuickTabSelect}
         onAskBuddy={openBuddy}
@@ -224,6 +253,7 @@ export default function App() {
             onNeedAuth={() => setAuthOpen(true)}
             onAskBuddy={openBuddy}
             onUpgradeClick={handleUpgradeClick}
+            onRefreshUserState={refreshUserState}
             deepTool={deepTool}
             onToolOpened={(category) => {
               void trackEvent('tool_category_opened', {

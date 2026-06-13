@@ -187,6 +187,23 @@ export function useAuth() {
     return sendPasswordResetEmail(auth, email);
   };
 
+  const refreshUserState = async () => {
+    const current = auth.currentUser;
+    if (!current) {
+      setUserState(null);
+      return null;
+    }
+    const snap = await getDoc(doc(db, 'users', current.uid));
+    if (!snap.exists()) {
+      setUserState(null);
+      return null;
+    }
+    const next = normalizeUserState(snap.data() as StoredUserState, current.uid, current.email || '');
+    setUser(current);
+    setUserState(next);
+    return next;
+  };
+
   const incrementAiUsed = async () => {
     if (!user || !userState) return;
 
@@ -213,5 +230,5 @@ export function useAuth() {
     setUserState((prev) => (prev ? { ...prev, ...updates } : null));
   };
 
-  return { user, userState, loading, signup, login, loginWithGoogle, logout, incrementAiUsed, resendVerificationEmail, resetPassword };
+  return { user, userState, loading, signup, login, loginWithGoogle, logout, incrementAiUsed, resendVerificationEmail, resetPassword, refreshUserState };
 }

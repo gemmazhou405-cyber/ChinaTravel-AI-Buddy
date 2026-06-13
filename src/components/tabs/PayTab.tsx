@@ -18,6 +18,7 @@ interface Props {
   onNeedAuth: () => void;
   onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
+  onRefreshUserState?: () => Promise<UserState | null>;
   deepTool?: string | null;
   onToolOpened?: (category: string) => void;
 }
@@ -31,7 +32,7 @@ interface PaymentMethod {
   icon: string;
 }
 
-export default function PayTab({ user, userState, showToast, onNeedAuth, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
+export default function PayTab({ user, userState, showToast, onNeedAuth, onAskBuddy, onUpgradeClick, onRefreshUserState, deepTool, onToolOpened }: Props) {
   const { t } = useTranslation();
   const assetBase = import.meta.env.BASE_URL;
   const paymentMethods = t('pay.methods', { returnObjects: true }) as PaymentMethod[];
@@ -155,7 +156,7 @@ export default function PayTab({ user, userState, showToast, onNeedAuth, onAskBu
             ))}
           </ul>
         </div>
-        <PricingPlans user={user} userState={userState} showToast={showToast} onNeedAuth={onNeedAuth} onCtaClick={(plan) => onToolOpened?.(`early-access-${plan}`)} />
+        <PricingPlans user={user} userState={userState} showToast={showToast} onNeedAuth={onNeedAuth} onRefreshUserState={onRefreshUserState} onCtaClick={(plan) => onToolOpened?.(`early-access-${plan}`)} />
       </section>
 
       {/* Email header banner */}

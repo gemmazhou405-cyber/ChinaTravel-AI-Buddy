@@ -39,6 +39,7 @@ interface Props {
   userState: UserState | null;
   showToast: (msg: string) => void;
   onNeedAuth: () => void;
+  onRefreshUserState?: () => Promise<UserState | null>;
   onJourneyChange: (journey: JourneyId) => void;
   onTabSelect: (tab: TabId, tool?: string) => void;
   onAskBuddy: () => void;
@@ -64,7 +65,7 @@ function CategoryButton({ category, onTabSelect, onAskBuddy }: Pick<Props, 'onTa
   );
 }
 
-export default function QuickActions({ journey, user, userState, showToast, onNeedAuth, onJourneyChange, onTabSelect, onAskBuddy }: Props) {
+export default function QuickActions({ journey, user, userState, showToast, onNeedAuth, onRefreshUserState, onJourneyChange, onTabSelect, onAskBuddy }: Props) {
   const { t } = useTranslation();
 
   const journeys: Array<{ id: JourneyId; label: string; shortLabel: string; subtitle: string; keywords: string; icon: ReactNode }> = [
@@ -286,6 +287,7 @@ export default function QuickActions({ journey, user, userState, showToast, onNe
             userState={userState}
             showToast={showToast}
             onNeedAuth={onNeedAuth}
+            onRefreshUserState={onRefreshUserState}
             onCtaClick={(plan) => {
               if (plan === 'free') {
                 window.setTimeout(() => {

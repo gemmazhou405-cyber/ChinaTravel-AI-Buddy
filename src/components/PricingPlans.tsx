@@ -6,6 +6,7 @@ import { useState } from 'react';
 import type { UserState } from '../hooks/useAuth';
 import { trackEvent } from '../lib/analytics';
 import { db } from '../firebase-config';
+import { captureCheckoutOrder, createCheckoutOrder, paymentMode } from '../lib/payment';
 
 const PAYPAL_LINKS = {
   trip: 'https://www.paypal.com/ncp/payment/863ZKSY6RJ64J',
@@ -42,13 +43,20 @@ interface Props {
   showToast: (msg: string) => void;
   onCtaClick?: (plan: string) => void;
   onNeedAuth?: () => void;
+  onRefreshUserState?: () => Promise<UserState | null>;
 }
 
 type PaidPlan = 'trip' | 'group';
 
-export default function PricingPlans({ user, userState, showToast, onCtaClick, onNeedAuth }: Props) {
+export default function PricingPlans({ user, userState, showToast, onCtaClick, onNeedAuth, onRefreshUserState }: Props) {
   const { t } = useTranslation();
   const [selectedPlan, setSelectedPlan] = useState<PaidPlan | null>(null);
+  const [checkoutPlan, setCheckoutPlan] = useState<PaidPlan | null>(null);
+  const [acknowledged, setAcknowledged] = useState(false);
+  const [checkoutLoading, setCheckoutLoading] = useState(false);
+  const [checkoutError, setCheckoutError] = useState('');
+  const [checkoutOrderId, setCheckoutOrderId] = useState('');
+  const [checkoutApprovalUrl, setCheckoutApprovalUrl] = useState('');
   const [claimOpen, setClaimOpen] = useState(false);
   const [paypalTransactionId, setPaypalTransactionId] = useState('');
   const [paypalEmail, setPaypalEmail] = useState('');
@@ -59,6 +67,16 @@ export default function PricingPlans({ user, userState, showToast, onCtaClick, o
     window.open(plan === 'trip' ? PAYPAL_LINKS.trip : PAYPAL_LINKS.group, '_blank', 'noopener,noreferrer');
   };
 
+  const hasActivePaidPass = Boolean(
+    userState
+      && (userState.plan === 'trip' || userState.plan === 'group')
+      && (!userState.planExpiresAt || userState.planExpiresAt > Date.now()),
+  );
+
+  const currentPlanExpires = userState?.planExpiresAt
+    ? new Intl.DateTimeFormat(undefined, { dateStyle: 'medium' }).format(new Date(userState.planExpiresAt))
+    : null;
+
   const handlePlanCta = (plan: string) => {
     onCtaClick?.(plan);
     const isTrip = plan === 'trip';
@@ -67,7 +85,7 @@ export default function PricingPlans({ user, userState, showToast, onCtaClick, o
 
     void trackEvent('cta_clicked', {
       ctaName: isTrip ? 'Get Trip Pass' : isGroup ? 'Get Group Pass' : 'Start Free',
-      destination: isTrip ? 'PayPal Trip Pass' : isGroup ? 'PayPal Group Pass' : 'free-toolkit',
+      destination: isPaid ? 'PayPal Checkout' : 'free-toolkit',
       tool: 'pay',
       plan: isTrip ? 'trip_pass' : isGroup ? 'group_pass' : 'free',
     }, userState?.uid);
@@ -83,11 +101,64 @@ export default function PricingPlans({ user, userState, showToast, onCtaClick, o
       return;
     }
 
+    if (hasActivePaidPass) {
+      showToast(t('pay.checkout.activePass'));
+      return;
+    }
+
+    if (paymentMode === 'sandbox' || paymentMode === 'live') {
+      setCheckoutPlan(isTrip ? 'trip' : 'group');
+      setCheckoutError('');
+      setCheckoutLoading(false);
+      setCheckoutOrderId('');
+      setCheckoutApprovalUrl('');
+      setAcknowledged(false);
+      return;
+    }
+
     setSelectedPlan(isTrip ? 'trip' : 'group');
     setClaimOpen(false);
     setClaimError('');
     setPaypalTransactionId('');
     setPaypalEmail('');
+  };
+
+  const handleCreateCheckout = async () => {
+    if (!user || !checkoutPlan || !acknowledged) return;
+    setCheckoutLoading(true);
+    setCheckoutError('');
+    try {
+      const order = await createCheckoutOrder(user, checkoutPlan);
+      setCheckoutOrderId(order.orderId);
+      setCheckoutApprovalUrl(order.approvalUrl);
+      window.open(order.approvalUrl, '_blank', 'noopener,noreferrer');
+    } catch (error) {
+      setCheckoutError(error instanceof Error ? error.message : t('pay.checkout.createError'));
+    } finally {
+      setCheckoutLoading(false);
+    }
+  };
+
+  const handleCaptureCheckout = async () => {
+    if (!user || !checkoutOrderId) return;
+    setCheckoutLoading(true);
+    setCheckoutError('');
+    try {
+      const result = await captureCheckoutOrder(user, checkoutOrderId);
+      if (result.status === 'completed') {
+        await onRefreshUserState?.();
+        showToast(t('pay.checkout.success'));
+        setCheckoutPlan(null);
+        setCheckoutOrderId('');
+        setCheckoutApprovalUrl('');
+        return;
+      }
+      showToast(t('pay.checkout.pending'));
+    } catch (error) {
+      setCheckoutError(error instanceof Error ? error.message : t('pay.checkout.captureError'));
+    } finally {
+      setCheckoutLoading(false);
+    }
   };
 
   const handleSubmitClaim = async () => {
@@ -142,7 +213,18 @@ export default function PricingPlans({ user, userState, showToast, onCtaClick, o
         <p className="text-xs text-gray-500 mb-3">
           {t('pay.currentPlan')} <span className="font-semibold text-[#155e63]">{userState.plan}</span> · {t('pay.aiUsed')}{' '}
           <span className="font-semibold text-[#155e63]">{userState.buddyAiQuotaUsed}/{userState.buddyAiQuotaTotal}</span>
+          {hasActivePaidPass && currentPlanExpires ? (
+            <span> · {t('pay.checkout.expires', { date: currentPlanExpires })}</span>
+          ) : null}
         </p>
+      )}
+      {(paymentMode === 'sandbox' || paymentMode === 'live') && (
+        <div className="mb-4 rounded-[1.35rem] border border-[#d6a85a]/30 bg-[#fff7e6] p-4 shadow-[0_14px_34px_rgba(214,168,90,0.08)]">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#9a6a1c]">
+            {paymentMode === 'sandbox' ? t('pay.checkout.sandboxBadge') : t('pay.checkout.secureCheckout')}
+          </p>
+          <p className="mt-1 text-xs font-medium leading-relaxed text-[#6b4b20]">{t('pay.checkout.modeHelp')}</p>
+        </div>
       )}
       <div className="mb-4 rounded-[1.35rem] border border-[#155e63]/15 bg-white/60 p-4 shadow-[0_14px_34px_rgba(11,63,67,0.06)] backdrop-blur-xl">
         <div className="mb-2 flex items-center gap-2">
@@ -186,9 +268,10 @@ export default function PricingPlans({ user, userState, showToast, onCtaClick, o
             </ul>
             <button
               onClick={() => handlePlanCta(plan.key)}
+              disabled={plan.key !== 'free' && hasActivePaidPass}
               className={`w-full py-2.5 rounded-xl text-sm font-semibold transition-all active:scale-95 ${plan.ctaStyle}`}
             >
-              {t(`pay.plans.${plan.key}.cta`)}
+              {plan.key !== 'free' && hasActivePaidPass ? t('pay.checkout.activeButton') : t(`pay.plans.${plan.key}.cta`)}
             </button>
           </div>
         ))}
@@ -267,6 +350,101 @@ export default function PricingPlans({ user, userState, showToast, onCtaClick, o
                 <p className="text-[11px] leading-relaxed text-gray-400">{t('pay.claim.noCards')}</p>
               </div>
             )}
+          </div>
+        </div>
+      )}
+      {checkoutPlan && user && (
+        <div
+          className="fixed inset-0 z-50 flex items-end justify-center bg-black/45 p-0 backdrop-blur-sm sm:items-center sm:p-4"
+          onClick={() => !checkoutLoading && setCheckoutPlan(null)}
+        >
+          <div
+            className="max-h-[92svh] w-full overflow-y-auto rounded-t-3xl bg-[#fffdf8] p-5 shadow-2xl sm:max-w-lg sm:rounded-3xl"
+            onClick={(event) => event.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="checkout-title"
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#d6a85a]">
+                  {paymentMode === 'sandbox' ? t('pay.checkout.sandboxBadge') : t('pay.checkout.secureCheckout')}
+                </p>
+                <h3 id="checkout-title" className="mt-1 text-xl font-bold text-gray-950">
+                  {t('pay.checkout.title', { plan: t(`pay.plans.${checkoutPlan}.name`) })}
+                </h3>
+              </div>
+              <button
+                onClick={() => !checkoutLoading && setCheckoutPlan(null)}
+                className="rounded-full p-1.5 text-gray-400 hover:bg-gray-100 disabled:opacity-40"
+                disabled={checkoutLoading}
+                aria-label={t('footer.close')}
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            <div className="mt-4 rounded-2xl border border-[#155e63]/12 bg-[#155e63]/5 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#155e63]">{t('pay.claim.accountLabel')}</p>
+              <p className="mt-1 break-words text-sm font-bold text-gray-950">{user.email}</p>
+              <p className="mt-2 text-xs leading-relaxed text-gray-600">{t('pay.checkout.accountHelp')}</p>
+            </div>
+
+            <div className="mt-4 grid gap-3 rounded-2xl border border-gray-100 bg-white p-4">
+              <div className="flex items-end justify-between gap-3">
+                <div>
+                  <p className="text-sm font-bold text-gray-950">{t(`pay.plans.${checkoutPlan}.name`)}</p>
+                  <p className="text-xs text-gray-500">{checkoutPlan === 'trip' ? t('pay.checkout.tripValidity') : t('pay.checkout.groupValidity')}</p>
+                </div>
+                <p className="text-xl font-black text-[#155e63]">{checkoutPlan === 'trip' ? '$9.90' : '$29.90'}</p>
+              </div>
+              <ul className="space-y-2">
+                {(t(`pay.checkout.${checkoutPlan}.features`, { returnObjects: true }) as string[]).map((feature) => (
+                  <li key={feature} className="flex items-start gap-2 text-xs font-medium text-gray-600">
+                    <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#155e63]" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <label className="flex items-start gap-2 rounded-xl bg-[#f7f3ea] p-3 text-xs font-medium leading-relaxed text-gray-600">
+                <input
+                  type="checkbox"
+                  checked={acknowledged}
+                  onChange={(event) => setAcknowledged(event.target.checked)}
+                  className="mt-0.5 h-4 w-4 rounded border-gray-300 text-[#155e63]"
+                />
+                <span>{t('pay.checkout.acknowledgement')}</span>
+              </label>
+            </div>
+
+            {checkoutError && <p className="mt-3 text-sm font-semibold text-red-600" aria-live="polite">{checkoutError}</p>}
+            <div className="mt-4 grid gap-2 sm:grid-cols-2" aria-live="polite">
+              <button
+                onClick={handleCreateCheckout}
+                disabled={!acknowledged || checkoutLoading}
+                className="rounded-xl bg-[#155e63] px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-[#0e4a4e] disabled:opacity-50"
+              >
+                {checkoutLoading && !checkoutOrderId ? t('pay.checkout.creating') : t('pay.checkout.openPaypal')}
+              </button>
+              <button
+                onClick={handleCaptureCheckout}
+                disabled={!checkoutOrderId || checkoutLoading}
+                className="rounded-xl border border-[#155e63]/15 bg-white px-4 py-3 text-sm font-bold text-[#155e63] transition-colors hover:bg-[#155e63]/5 disabled:opacity-50"
+              >
+                {checkoutLoading && checkoutOrderId ? t('pay.checkout.capturing') : t('pay.checkout.confirmPayment')}
+              </button>
+            </div>
+            {checkoutApprovalUrl && (
+              <a href={checkoutApprovalUrl} target="_blank" rel="noreferrer" className="mt-3 block text-center text-xs font-bold text-[#155e63] underline">
+                {t('pay.checkout.reopenPaypal')}
+              </a>
+            )}
+            <p className="mt-4 text-xs leading-relaxed text-gray-500">{t('pay.checkout.legalLinks')}</p>
+            <div className="mt-2 flex gap-3 text-xs font-semibold text-[#155e63]">
+              <a href="/terms" target="_blank" rel="noreferrer">{t('footer.terms')}</a>
+              <a href="/privacy" target="_blank" rel="noreferrer">{t('footer.privacy')}</a>
+              <a href="/refund" target="_blank" rel="noreferrer">{t('footer.refundPolicy')}</a>
+            </div>
           </div>
         </div>
       )}

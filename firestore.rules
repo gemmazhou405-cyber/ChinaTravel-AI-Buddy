@@ -9,6 +9,10 @@ service cloud.firestore {
       return request.resource.data;
     }
 
+    function userData() {
+      return request.resource.data;
+    }
+
     function optionalString(field, maxLength) {
       return !(field in analyticsData())
              || (analyticsData()[field] is string
@@ -94,8 +98,99 @@ service cloud.firestore {
     }
 
     match /users/{userId} {
-      allow read, write: if request.auth != null 
-                         && request.auth.uid == userId;
+      function isOwner() {
+        return request.auth != null && request.auth.uid == userId;
+      }
+
+      function validFreeUserCreate() {
+        return userData().keys().hasAll([
+                 'uid',
+                 'email',
+                 'plan',
+                 'planExpiresAt',
+                 'buddyAiQuotaTotal',
+                 'buddyAiQuotaUsed',
+                 'menuScanQuotaTotal',
+                 'menuScanQuotaUsed',
+                 'dailyBuddyAiLimit',
+                 'dailyBuddyAiUsed',
+                 'dailyResetAt'
+               ])
+               && userData().keys().hasOnly([
+                 'uid',
+                 'email',
+                 'plan',
+                 'planExpiresAt',
+                 'buddyAiQuotaTotal',
+                 'buddyAiQuotaUsed',
+                 'menuScanQuotaTotal',
+                 'menuScanQuotaUsed',
+                 'dailyBuddyAiLimit',
+                 'dailyBuddyAiUsed',
+                 'dailyResetAt'
+               ])
+               && userData().uid == userId
+               && userData().email is string
+               && userData().email.size() <= 160
+               && userData().plan == 'free'
+               && userData().planExpiresAt == null
+               && userData().buddyAiQuotaTotal == 5
+               && userData().buddyAiQuotaUsed == 0
+               && userData().menuScanQuotaTotal == 3
+               && userData().menuScanQuotaUsed == 0
+               && userData().dailyBuddyAiLimit == 5
+               && userData().dailyBuddyAiUsed == 0
+               && userData().dailyResetAt == null;
+      }
+
+      function usageOnlyUpdate() {
+        return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+                 'buddyAiQuotaUsed',
+                 'dailyBuddyAiUsed',
+                 'dailyResetAt',
+                 'menuScanQuotaUsed'
+               ])
+               && request.resource.data.plan == resource.data.plan
+               && request.resource.data.planExpiresAt == resource.data.planExpiresAt
+               && request.resource.data.buddyAiQuotaTotal == resource.data.buddyAiQuotaTotal
+               && request.resource.data.menuScanQuotaTotal == resource.data.menuScanQuotaTotal
+               && request.resource.data.dailyBuddyAiLimit == resource.data.dailyBuddyAiLimit
+               && request.resource.data.buddyAiQuotaUsed is number
+               && request.resource.data.buddyAiQuotaUsed >= resource.data.buddyAiQuotaUsed
+               && request.resource.data.buddyAiQuotaUsed <= resource.data.buddyAiQuotaTotal
+               && request.resource.data.dailyBuddyAiUsed is number
+               && request.resource.data.dailyBuddyAiUsed >= 0
+               && request.resource.data.dailyBuddyAiUsed <= resource.data.dailyBuddyAiLimit
+               && request.resource.data.menuScanQuotaUsed is number
+               && request.resource.data.menuScanQuotaUsed >= resource.data.menuScanQuotaUsed
+               && request.resource.data.menuScanQuotaUsed <= resource.data.menuScanQuotaTotal
+               && (!('dailyResetAt' in request.resource.data)
+                   || request.resource.data.dailyResetAt == null
+                   || request.resource.data.dailyResetAt is number);
+      }
+
+      allow read: if isOwner();
+      allow create: if isOwner() && validFreeUserCreate();
+      allow update: if isOwner() && usageOnlyUpdate();
+      allow delete: if false;
+    }
+
+    match /orders/{orderId} {
+      allow read: if request.auth != null && resource.data.userId == request.auth.uid;
+      allow create, update, delete: if false;
+    }
+
+    match /entitlements/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create, update, delete: if false;
+    }
+
+    match /paypalWebhookEvents/{eventId} {
+      allow read, create, update, delete: if false;
+    }
+
+    match /newsletterLeads/{leadId} {
+      allow read, create, update, delete: if false;
     }
 
     match /analyticsEvents/{eventId} {
