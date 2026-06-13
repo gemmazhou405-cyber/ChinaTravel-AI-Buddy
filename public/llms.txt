@@ -18,9 +18,10 @@
 ## Plans
 
 - Free: basic travel toolkit, 5 Buddy AI messages, and 3 menu/photo scans
-- Trip Pass: USD 9.90 one-time, 50 Buddy AI messages, and 20 menu/photo scans
-- Group Pass: USD 29.90 one-time, 200 Buddy AI messages, and 100 menu/photo scans
-- Paid access is currently activated manually after PayPal payment confirmation
+- Trip Pass: USD 9.90 one-time, 50 Buddy AI messages, 20 menu/photo scans, valid for 7 days
+- Group Pass: USD 29.90 one-time, 200 Buddy AI messages, 100 menu/photo scans, valid for 14 days
+- Group Pass uses one ChinaEase Buddy account and one shared allowance for couples, families, or small travel groups
+- PayPal Sandbox checkout and automatic entitlement activation are in development; live checkout is not enabled until owner approval
 - No auto-renewal
 
 ## Key pages
@@ -49,3 +50,7 @@ with official sources or service providers.
 The toolkit provides practical references and AI-assisted travel information
 for convenience. It does not guarantee payment acceptance, transport availability,
 translation accuracy, emergency outcomes, or official policy status.
+
+Menu and dish tools may help identify possible ingredients and common allergens
+from menu information. Travelers should always confirm directly with restaurant
+staff, especially for severe allergies.

@@ -314,7 +314,9 @@
       "noDishes": "Keine Gerichte für „{{query}}“ gefunden",
       "vegan": "Vegan",
       "vegetarianShort": "Veg",
-      "restaurantCardsSubtitle": "{{count}} Karten zum Bestellen im Restaurant"
+      "restaurantCardsSubtitle": "{{count}} Karten zum Bestellen im Restaurant",
+      "allergenDisclaimer": "Hilft, mögliche Zutaten und häufige Allergene aus Menüinformationen zu erkennen. Bestätige dies immer direkt beim Restaurantpersonal.",
+      "allergenResultWarning": "Dieses Tool kann Zutaten oder Allergene übersehen. Verlasse dich besonders bei schweren Allergien nicht als einzige Sicherheitsprüfung darauf."
     },
     "transport": {
       "appsTitle": "Empfohlene Apps",
@@ -407,7 +409,7 @@
       "oneTime": "einmalig",
       "currentPlan": "Aktueller Tarif:",
       "aiUsed": "Buddy AI genutzt:",
-      "refund": "Einmalzahlung · Keine automatische Verlängerung · Manuelle Aktivierung nach Zahlung",
+      "refund": "Einmalzahlung · Keine automatische Verlängerung",
       "paymentTitle": "Zahlungsmethoden in China",
       "wechatSetup": "WeChat Pay einrichten",
       "exchangeTip": "Wechselkurs-Tipp",
@@ -417,7 +419,7 @@
       "open": "Öffnen",
       "secure": "Manuelle PayPal-Zahlung",
       "bannerAlt": "Votre aventure en Chine commence maintenant",
-      "paymentSoon": "Bezahlte Pässe nutzen manuelle PayPal-Zahlungslinks. Der Zugang wird nach Zahlung manuell aktiviert.",
+      "paymentSoon": "Bezahlte Pässe sind einmalige digitale Travel Pässe. PayPal Sandbox Checkout wird vor dem Live-Start getestet.",
       "plans": {
         "free": {
           "name": "Kostenlos",
@@ -436,20 +438,20 @@
           "cta": "Trip Pass erhalten",
           "features": [
             "50 Buddy-AI-Nachrichten und 20 Menü-/Foto-Scans",
+            "7 Tage gültig",
             "Zusätzliche Reisehilfe für eine Person",
-            "Einmalzahlung",
-            "Manuelle Aktivierung nach Zahlungsbestätigung"
+            "Einmalzahlung · keine automatische Verlängerung"
           ]
         },
         "group": {
           "name": "Group Pass",
-          "desc": "Zusätzliche Reisehilfe für Paare, Familien oder kleine Gruppen, die gemeinsam China besuchen",
+          "desc": "Zusätzliche Reisehilfe für Paare, Familien oder kleine Gruppen mit einem geteilten Konto",
           "cta": "Group Pass erhalten",
           "features": [
             "200 Buddy-AI-Nachrichten und 100 Menü-/Foto-Scans",
-            "Zusätzliche Reisehilfe für Paare, Familien oder kleine Gruppen",
-            "Einmalzahlung",
-            "Manuelle Aktivierung nach Zahlungsbestätigung"
+            "14 Tage gültig",
+            "Ein Konto und ein geteiltes Kontingent",
+            "Einmalzahlung · keine automatische Verlängerung"
           ]
         }
       },
@@ -576,6 +578,45 @@
         "submitted": "Aktivierungsanfrage gesendet. Wir prüfen sie manuell.",
         "submitError": "Die Anfrage konnte nicht gesendet werden. Bitte versuche es erneut oder kontaktiere den Support.",
         "noCards": "Gib keine Kartennummern oder sensiblen Zahlungsdaten ein."
+      },
+      "checkout": {
+        "sandboxBadge": "Sandbox-Zahlung — es wird kein echtes Geld berechnet.",
+        "secureCheckout": "Sicherer PayPal-Checkout",
+        "modeHelp": "Automatischer PayPal-Checkout wird in der Sandbox getestet. Live-Zahlungen bleiben bis zur Freigabe deaktiviert.",
+        "activePass": "Du hast bereits einen aktiven Travel Pass.",
+        "activeButton": "Aktiver Pass",
+        "expires": "Läuft ab am {{date}}",
+        "title": "{{plan}} Checkout",
+        "accountHelp": "Der Zugang wird nach verifizierter Zahlung diesem ChinaEase Buddy Konto zugeordnet.",
+        "tripValidity": "50 Buddy-AI-Nachrichten · 20 Menü-/Foto-Scans · 7 Tage",
+        "groupValidity": "200 Buddy-AI-Nachrichten · 100 Menü-/Foto-Scans · 14 Tage · ein geteiltes Konto",
+        "acknowledgement": "Ich verstehe, dass dies ein einmaliger digitaler Travel Pass ist, der an mein aktuelles ChinaEase Buddy Konto gebunden ist, und dass der Zugang nach erfolgreicher Zahlung beginnt.",
+        "openPaypal": "PayPal-Checkout öffnen",
+        "creating": "Bestellung wird erstellt...",
+        "confirmPayment": "Zahlung genehmigt — bestätigen",
+        "capturing": "Zahlung wird bestätigt...",
+        "reopenPaypal": "PayPal-Fenster erneut öffnen",
+        "success": "Zahlung bestätigt. Dein Travel Pass ist aktiv.",
+        "pending": "Wir bestätigen deine Zahlung. Bitte zahle nicht erneut.",
+        "createError": "PayPal-Bestellung konnte nicht erstellt werden.",
+        "captureError": "Zahlung konnte nicht bestätigt werden.",
+        "legalLinks": "Lies vor der Zahlung die Bedingungen, die Datenschutzrichtlinie und die Rückerstattungsinformationen.",
+        "trip": {
+          "features": [
+            "50 Buddy-AI-Nachrichten",
+            "20 Menü-/Foto-Scans",
+            "7 Tage gültig",
+            "Ein Konto · keine automatische Verlängerung"
+          ]
+        },
+        "group": {
+          "features": [
+            "200 Buddy-AI-Nachrichten",
+            "100 Menü-/Foto-Scans",
+            "14 Tage gültig",
+            "Ein geteiltes Konto für eine kleine Reisegruppe"
+          ]
+        }
       }
     },
     "chat": {
@@ -648,7 +689,7 @@
       "legalTitle": "Rechtlicher Hinweis",
       "legalBody": "ChinaEase Buddy bietet allgemeine Reiseinformationen und KI-gestützte Übersetzungen nur als praktische Hilfe. Es ersetzt keine professionelle rechtliche, medizinische oder finanzielle Beratung. Notrufnummern und Phrasen dienen als Referenz — prüfen Sie sie immer bei lokalen Behörden. ChinaEase garantiert nicht die Genauigkeit von Übersetzungen, Zahlungsabwicklung oder Verfügbarkeit von Drittanbietern. Nutzer sind selbst für die Einhaltung lokaler Gesetze verantwortlich.",
       "refundTitle": "Rückerstattungsrichtlinie",
-      "refundBody": "Rückerstattungsanfragen werden gemäß der Rückerstattungsrichtlinie bearbeitet. Kontaktiere den Support mit deiner Zahlungs-E-Mail und dem Beleg.",
+      "refundBody": "Wir bieten keine freiwillige Drei-Tage-Rückerstattungsgarantie an. Gesetzliche Verbraucherrechte können weiterhin gelten; kontaktiere den Support bei Zahlungsproblemen.",
       "rights": "© 2026 ChinaEase Buddy. Alle Rechte vorbehalten.",
       "privacy": "Datenschutz",
       "terms": "Nutzungsbedingungen",
@@ -675,7 +716,15 @@
       "subscribe": "Abonnieren",
       "subscribeThanks": "Danke. Wir halten Sie auf dem Laufenden.",
       "comingSoon": "Demnächst",
-      "subscribeComingSoon": "E-Mail-Updates kommen bald. Bis dahin kontaktiere uns direkt für Launch-Neuigkeiten."
+      "subscribeComingSoon": "E-Mail-Updates kommen bald. Bis dahin kontaktiere uns direkt für Launch-Neuigkeiten.",
+      "subscribing": "Wird abonniert...",
+      "subscribeConsent": "Mit dem Abonnieren erklärst du dich einverstanden, gelegentliche China-Reiseupdates zu erhalten. Du kannst dich jederzeit abmelden.",
+      "newsletterStatus": {
+        "success": "Du bist angemeldet. Danke.",
+        "duplicate": "Du bist bereits angemeldet.",
+        "invalid": "Bitte gib eine gültige E-Mail-Adresse ein.",
+        "error": "Anmeldung fehlgeschlagen. Bitte versuche es erneut."
+      }
     },
     "toast": {
       "copied": "Kopiert!",

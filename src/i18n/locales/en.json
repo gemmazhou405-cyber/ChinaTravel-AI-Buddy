@@ -311,6 +311,8 @@
       },
       "dishSearchTitle": "Search dishes by name",
       "dishSearchPlaceholder": "Search dish by name, Chinese, or pinyin…",
+      "allergenDisclaimer": "Helps identify possible ingredients and common allergens from menu information. Always confirm directly with restaurant staff.",
+      "allergenResultWarning": "This tool may miss ingredients or allergens. Do not rely on it as your only safety check, especially for severe allergies.",
       "noDishes": "No dishes found for \"{{query}}\"",
       "vegan": "Vegan",
       "vegetarianShort": "Veg",
@@ -407,7 +409,7 @@
       "oneTime": "one-time",
       "currentPlan": "Current plan:",
       "aiUsed": "Buddy AI used:",
-      "refund": "One-time payment · No auto-renewal · Manual activation after payment",
+      "refund": "One-time payment · No auto-renewal",
       "paymentTitle": "Payment Methods in China",
       "wechatSetup": "WeChat Pay Setup",
       "exchangeTip": "Exchange Rate Tip",
@@ -417,7 +419,7 @@
       "open": "Open",
       "secure": "Manual PayPal payment",
       "bannerAlt": "Your China adventure starts now",
-      "paymentSoon": "Paid passes use manual PayPal payment links. Access is activated manually after payment.",
+      "paymentSoon": "Paid passes are one-time digital travel passes. PayPal Sandbox checkout is being tested before live launch.",
       "plans": {
         "free": {
           "name": "Free",
@@ -436,20 +438,20 @@
           "cta": "Get Trip Pass",
           "features": [
             "50 Buddy AI messages and 20 menu/photo scans",
+            "Valid for 7 days",
             "Extra travel help for one traveler",
-            "One-time payment",
-            "Manual activation after payment confirmation"
+            "One-time payment · no auto-renewal"
           ]
         },
         "group": {
           "name": "Group Pass",
-          "desc": "Extra travel help for couples, families, or small groups visiting China together",
+          "desc": "Extra travel help for couples, families, or small groups using one shared account",
           "cta": "Get Group Pass",
           "features": [
             "200 Buddy AI messages and 100 menu/photo scans",
-            "Extra travel help for couples, families or small travel groups",
-            "One-time payment",
-            "Manual activation after payment confirmation"
+            "Valid for 14 days",
+            "One account and one shared allowance",
+            "One-time payment · no auto-renewal"
           ]
         }
       },
@@ -576,6 +578,45 @@
         "submitted": "Activation request submitted. We’ll review it manually.",
         "submitError": "Could not submit the request. Please try again or contact support.",
         "noCards": "Do not enter card numbers or sensitive payment details."
+      },
+      "checkout": {
+        "sandboxBadge": "Sandbox payment — no real money will be charged.",
+        "secureCheckout": "Secure PayPal checkout",
+        "modeHelp": "Automatic PayPal checkout is being tested in Sandbox. Live payments stay disabled until owner approval.",
+        "activePass": "You already have an active travel pass.",
+        "activeButton": "Active pass",
+        "expires": "Expires {{date}}",
+        "title": "{{plan}} checkout",
+        "accountHelp": "Access will be applied to this ChinaEase Buddy account after verified payment capture.",
+        "tripValidity": "50 Buddy AI messages · 20 menu/photo scans · 7 days",
+        "groupValidity": "200 Buddy AI messages · 100 menu/photo scans · 14 days · one shared account",
+        "acknowledgement": "I understand this is a one-time digital travel pass tied to my current ChinaEase Buddy account and that access begins after successful payment.",
+        "openPaypal": "Open PayPal checkout",
+        "creating": "Creating order...",
+        "confirmPayment": "I approved payment — confirm",
+        "capturing": "Confirming payment...",
+        "reopenPaypal": "Reopen PayPal approval window",
+        "success": "Payment confirmed. Your travel pass is active.",
+        "pending": "We are confirming your payment. Please do not pay again.",
+        "createError": "Could not create PayPal order.",
+        "captureError": "Could not confirm payment.",
+        "legalLinks": "Review the Terms, Privacy Policy, and Refund information before payment.",
+        "trip": {
+          "features": [
+            "50 Buddy AI messages",
+            "20 menu/photo scans",
+            "Valid for 7 days",
+            "One account · no auto-renewal"
+          ]
+        },
+        "group": {
+          "features": [
+            "200 Buddy AI messages",
+            "100 menu/photo scans",
+            "Valid for 14 days",
+            "One shared account for a small travel group"
+          ]
+        }
       }
     },
     "chat": {
@@ -648,7 +689,7 @@
       "legalTitle": "Legal Disclaimer",
       "legalBody": "ChinaEase Buddy provides general travel information and AI-assisted translations for convenience only. It is not a substitute for professional legal, medical, or financial advice. Emergency numbers and phrases are provided as reference — always verify with local authorities. ChinaEase does not guarantee the accuracy of translations, payment processing, or third-party service availability. Users are responsible for ensuring compliance with local laws and regulations.",
       "refundTitle": "Refund Policy",
-      "refundBody": "Refund requests are handled according to the Refund Policy. Contact support with your payment email and receipt.",
+      "refundBody": "We do not offer a voluntary three-day refund guarantee. Statutory consumer rights may still apply; contact support for payment problems.",
       "rights": "© 2026 ChinaEase Buddy. All rights reserved.",
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
@@ -673,7 +714,15 @@
       "stayInKnow": "Stay in the know",
       "emailPlaceholder": "Email address",
       "subscribe": "Subscribe",
+      "subscribing": "Subscribing...",
+      "subscribeConsent": "By subscribing, you agree to receive occasional China travel updates. You can unsubscribe at any time.",
       "subscribeThanks": "Thanks. We’ll keep you posted.",
+      "newsletterStatus": {
+        "success": "You're subscribed. Thank you.",
+        "duplicate": "You're already subscribed.",
+        "invalid": "Please enter a valid email.",
+        "error": "Subscription failed. Please try again."
+      },
       "comingSoon": "Coming soon",
       "subscribeComingSoon": "Email updates are coming soon. For now, contact us directly for launch updates."
     },

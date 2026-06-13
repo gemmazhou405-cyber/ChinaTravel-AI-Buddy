@@ -314,7 +314,9 @@
       "noDishes": "“{{query}}”에 대한 음식을 찾을 수 없습니다",
       "vegan": "비건",
       "vegetarianShort": "채식",
-      "restaurantCardsSubtitle": "식당 주문 카드 {{count}}개"
+      "restaurantCardsSubtitle": "식당 주문 카드 {{count}}개",
+      "allergenDisclaimer": "메뉴 정보에서 가능한 재료와 일반적인 알레르기 유발 성분을 확인하는 데 도움을 줍니다. 항상 식당 직원에게 직접 확인하세요.",
+      "allergenResultWarning": "이 도구는 재료나 알레르기 유발 성분을 놓칠 수 있습니다. 특히 심한 알레르기가 있는 경우 유일한 안전 확인 수단으로 의존하지 마세요."
     },
     "transport": {
       "appsTitle": "추천 앱",
@@ -407,7 +409,7 @@
       "oneTime": "일회 결제",
       "currentPlan": "현재 플랜:",
       "aiUsed": "Buddy AI 사용:",
-      "refund": "일회성 결제 · 자동 갱신 없음 · 결제 후 수동 활성화",
+      "refund": "일회성 결제 · 자동 갱신 없음",
       "paymentTitle": "중국 결제 방법",
       "wechatSetup": "WeChat Pay 설정",
       "exchangeTip": "환율 팁",
@@ -417,7 +419,7 @@
       "open": "열기",
       "secure": "수동 PayPal 결제",
       "bannerAlt": "Votre aventure en Chine commence maintenant",
-      "paymentSoon": "유료 패스는 수동 PayPal 결제 링크를 사용합니다. 결제 후 액세스가 수동으로 활성화됩니다.",
+      "paymentSoon": "유료 패스는 일회성 디지털 여행 패스입니다. 실제 출시 전 PayPal Sandbox 결제를 테스트 중입니다.",
       "plans": {
         "free": {
           "name": "무료",
@@ -435,21 +437,21 @@
           "desc": "중국 여행 중 1명을 위한 추가 여행 도움",
           "cta": "Trip Pass 받기",
           "features": [
-            "Buddy AI 메시지 50개 및 메뉴/사진 스캔 20회",
-            "여행자 1명을 위한 추가 여행 도움",
-            "일회성 결제",
-            "결제 확인 후 수동 활성화"
+            "Buddy AI 메시지 50개와 메뉴/사진 스캔 20회",
+            "7일간 유효",
+            "여행자 1명을 위한 추가 도움",
+            "일회성 결제 · 자동 갱신 없음"
           ]
         },
         "group": {
           "name": "Group Pass",
-          "desc": "커플, 가족 또는 소규모 그룹이 함께 중국을 방문할 때 필요한 추가 여행 도움",
+          "desc": "하나의 공유 계정을 사용하는 커플, 가족 또는 소규모 그룹을 위한 추가 여행 도움",
           "cta": "Group Pass 받기",
           "features": [
-            "Buddy AI 메시지 200개 및 메뉴/사진 스캔 100회",
-            "커플, 가족 또는 소규모 여행 그룹을 위한 추가 도움",
-            "일회성 결제",
-            "결제 확인 후 수동 활성화"
+            "Buddy AI 메시지 200개와 메뉴/사진 스캔 100회",
+            "14일간 유효",
+            "계정 1개와 공유 한도",
+            "일회성 결제 · 자동 갱신 없음"
           ]
         }
       },
@@ -576,6 +578,45 @@
         "submitted": "활성화 요청이 제출되었습니다. 수동으로 검토하겠습니다.",
         "submitError": "요청을 제출할 수 없습니다. 다시 시도하거나 지원팀에 문의해 주세요.",
         "noCards": "카드 번호나 민감한 결제 정보는 입력하지 마세요."
+      },
+      "checkout": {
+        "sandboxBadge": "Sandbox 결제 — 실제 금액은 청구되지 않습니다.",
+        "secureCheckout": "안전한 PayPal 결제",
+        "modeHelp": "PayPal 자동 결제는 Sandbox에서 테스트 중입니다. 실제 결제는 소유자 승인 전까지 비활성화됩니다.",
+        "activePass": "이미 활성화된 여행 패스가 있습니다.",
+        "activeButton": "활성 패스",
+        "expires": "{{date}} 만료",
+        "title": "{{plan}} 결제",
+        "accountHelp": "결제 확인 후 이 ChinaEase Buddy 계정에 이용 권한이 적용됩니다.",
+        "tripValidity": "Buddy AI 메시지 50개 · 메뉴/사진 스캔 20회 · 7일",
+        "groupValidity": "Buddy AI 메시지 200개 · 메뉴/사진 스캔 100회 · 14일 · 공유 계정 1개",
+        "acknowledgement": "이것은 현재 ChinaEase Buddy 계정에 연결되는 일회성 디지털 여행 패스이며 결제 성공 후 이용이 시작된다는 점을 이해합니다.",
+        "openPaypal": "PayPal 결제 열기",
+        "creating": "주문 생성 중...",
+        "confirmPayment": "결제 승인 완료 — 확인",
+        "capturing": "결제 확인 중...",
+        "reopenPaypal": "PayPal 창 다시 열기",
+        "success": "결제가 확인되었습니다. 여행 패스가 활성화되었습니다.",
+        "pending": "결제를 확인 중입니다. 다시 결제하지 마세요.",
+        "createError": "PayPal 주문을 만들 수 없습니다.",
+        "captureError": "결제를 확인할 수 없습니다.",
+        "legalLinks": "결제 전 약관, 개인정보 처리방침, 환불 정보를 확인하세요.",
+        "trip": {
+          "features": [
+            "Buddy AI 메시지 50개",
+            "메뉴/사진 스캔 20회",
+            "7일간 유효",
+            "계정 1개 · 자동 갱신 없음"
+          ]
+        },
+        "group": {
+          "features": [
+            "Buddy AI 메시지 200개",
+            "메뉴/사진 스캔 100회",
+            "14일간 유효",
+            "소규모 여행 그룹용 공유 계정 1개"
+          ]
+        }
       }
     },
     "chat": {
@@ -648,7 +689,7 @@
       "legalTitle": "법적 고지",
       "legalBody": "ChinaEase Buddy는 편의를 위한 일반 여행 정보와 AI 번역을 제공합니다. 법률, 의료, 금융 전문가의 조언을 대체하지 않습니다. 긴급 번호와 문구는 참고용이며 현지 당국에 항상 확인하세요. 번역 정확성, 결제 처리 또는 제3자 서비스 가용성을 보장하지 않습니다.",
       "refundTitle": "환불 정책",
-      "refundBody": "환불 요청은 환불 정책에 따라 처리됩니다. 결제 이메일과 영수증을 포함해 지원팀에 문의해 주세요.",
+      "refundBody": "자발적인 3일 환불 보장은 제공하지 않습니다. 관련 소비자 법적 권리는 적용될 수 있으므로 결제 문제가 있으면 지원팀에 문의하세요.",
       "rights": "© 2026 ChinaEase Buddy. 모든 권리 보유.",
       "privacy": "개인정보 처리방침",
       "terms": "서비스 약관",
@@ -675,7 +716,15 @@
       "subscribe": "구독",
       "subscribeThanks": "감사합니다. 소식을 전해드릴게요.",
       "comingSoon": "곧 제공 예정",
-      "subscribeComingSoon": "이메일 업데이트는 곧 제공됩니다. 지금은 출시 소식을 위해 직접 문의해 주세요."
+      "subscribeComingSoon": "이메일 업데이트는 곧 제공됩니다. 지금은 출시 소식을 위해 직접 문의해 주세요.",
+      "subscribing": "구독 중...",
+      "subscribeConsent": "구독하면 ChinaEase Buddy의 중국 여행 업데이트를 가끔 받는 데 동의하는 것입니다. 언제든지 구독 해지할 수 있습니다.",
+      "newsletterStatus": {
+        "success": "구독되었습니다. 감사합니다.",
+        "duplicate": "이미 구독 중입니다.",
+        "invalid": "유효한 이메일 주소를 입력하세요.",
+        "error": "구독에 실패했습니다. 다시 시도해 주세요."
+      }
     },
     "toast": {
       "copied": "복사됨!",

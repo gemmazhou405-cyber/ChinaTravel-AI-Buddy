@@ -162,6 +162,9 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
       >
         <div className="mb-3">
           <span className="text-xs bg-[#155e63]/10 text-[#155e63] px-2 py-0.5 rounded-full font-medium">{t('food.ai')}</span>
+          <p className="mt-2 rounded-xl border border-amber-100 bg-amber-50 px-3 py-2 text-xs font-medium leading-relaxed text-amber-800">
+            {t('food.allergenDisclaimer')}
+          </p>
         </div>
         {/* Dish Search — independent local search, no API calls */}
         <div className="mb-4">
@@ -207,13 +210,16 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
                   </div>
                   <p className="text-gray-500 text-xs mt-1.5 leading-relaxed">{dish.shortDescription}</p>
                   {dish.allergens.length > 0 && (
-                    <div className="flex flex-wrap gap-1 mt-1.5">
-                      {dish.allergens.map((a) => (
-                        <span key={a} className="text-[10px] bg-amber-50 text-amber-700 border border-amber-100 px-1.5 py-0.5 rounded-full">
-                          ⚠️ {a}
-                        </span>
-                      ))}
-                    </div>
+                    <>
+                      <div className="flex flex-wrap gap-1 mt-1.5">
+                        {dish.allergens.map((a) => (
+                          <span key={a} className="text-[10px] bg-amber-50 text-amber-700 border border-amber-100 px-1.5 py-0.5 rounded-full">
+                            ⚠️ {a}
+                          </span>
+                        ))}
+                      </div>
+                      <p className="mt-1.5 text-[11px] leading-relaxed text-amber-700">{t('food.allergenResultWarning')}</p>
+                    </>
                   )}
                   {dish.orderTip && (
                     <p className="text-[11px] text-[#155e63] mt-1.5 leading-relaxed">
