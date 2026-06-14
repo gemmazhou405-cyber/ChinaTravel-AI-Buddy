@@ -87,7 +87,7 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
             radial-gradient(circle at 84% 18%, rgba(232,194,122,0.34), transparent 28%),
             linear-gradient(100deg, rgba(2,10,11,0.94) 0%, rgba(6,30,31,0.82) 33%, rgba(6,30,31,0.25) 68%, rgba(2,10,11,0.42) 100%),
             linear-gradient(to bottom, rgba(2,10,11,0.08), rgba(2,10,11,0.82)),
-            url("/images/hero-china-landscape.jpg") center 45%/cover no-repeat;
+            url("/images/hero-china-landscape-1400.jpg") center 45%/cover no-repeat;
         }
         @media (max-width: 768px) {
           .hero-bg {
@@ -95,7 +95,7 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
               radial-gradient(circle at 82% 18%, rgba(232,194,122,0.26), transparent 34%),
               linear-gradient(to bottom, rgba(2,10,11,0.52) 0%, rgba(6,30,31,0.44) 40%, rgba(2,10,11,0.88) 100%),
               linear-gradient(to right, rgba(2,10,11,0.74), rgba(2,10,11,0.22)),
-              url("/images/hero-china-landscape.jpg") 49% center/cover no-repeat;
+              url("/images/hero-china-landscape-900.jpg") 49% center/cover no-repeat;
           }
         }
       `}</style>

@@ -130,6 +130,8 @@ service cloud.firestore {
                  'dailyResetAt'
                ])
                && userData().uid == userId
+               && request.auth.token.email is string
+               && userData().email == request.auth.token.email
                && userData().email is string
                && userData().email.size() <= 160
                && userData().plan == 'free'
@@ -141,6 +143,26 @@ service cloud.firestore {
                && userData().dailyBuddyAiLimit == 5
                && userData().dailyBuddyAiUsed == 0
                && userData().dailyResetAt == null;
+      }
+
+      function currentMillis() {
+        return request.time.toMillis();
+      }
+
+      function dailyCounterUnchangedOrValidIncrement() {
+        return (
+                 request.resource.data.dailyResetAt == resource.data.dailyResetAt
+                 && request.resource.data.dailyBuddyAiUsed >= resource.data.dailyBuddyAiUsed
+               )
+               || (
+                 ((resource.data.dailyResetAt == null
+                   && resource.data.dailyBuddyAiUsed == 0)
+                  || resource.data.dailyResetAt <= currentMillis() - 86400000)
+                 && request.resource.data.dailyResetAt is number
+                 && request.resource.data.dailyResetAt <= currentMillis()
+                 && request.resource.data.dailyResetAt >= currentMillis() - 300000
+                 && request.resource.data.dailyBuddyAiUsed == 1
+               );
       }
 
       function usageOnlyUpdate() {
@@ -159,13 +181,12 @@ service cloud.firestore {
                && request.resource.data.buddyAiQuotaUsed >= resource.data.buddyAiQuotaUsed
                && request.resource.data.buddyAiQuotaUsed <= resource.data.buddyAiQuotaTotal
                && request.resource.data.dailyBuddyAiUsed is number
-               && request.resource.data.dailyBuddyAiUsed >= 0
                && request.resource.data.dailyBuddyAiUsed <= resource.data.dailyBuddyAiLimit
+               && dailyCounterUnchangedOrValidIncrement()
                && request.resource.data.menuScanQuotaUsed is number
                && request.resource.data.menuScanQuotaUsed >= resource.data.menuScanQuotaUsed
                && request.resource.data.menuScanQuotaUsed <= resource.data.menuScanQuotaTotal
-               && (!('dailyResetAt' in request.resource.data)
-                   || request.resource.data.dailyResetAt == null
+               && (request.resource.data.dailyResetAt == null
                    || request.resource.data.dailyResetAt is number);
       }
 
@@ -224,7 +245,7 @@ service cloud.firestore {
                     && paymentClaimData().userId.size() <= 128
                     && paymentClaimData().accountEmail is string
                     && paymentClaimData().accountEmail.size() <= 160
-                    && paymentClaimData().plan in ['trip', 'group']
+                    && paymentClaimData().plan in ['trip_pass', 'group_pass']
                     && paymentClaimData().paypalTransactionId is string
                     && paymentClaimData().paypalTransactionId.size() >= 4
                     && paymentClaimData().paypalTransactionId.size() <= 120

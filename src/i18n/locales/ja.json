@@ -377,15 +377,15 @@
       "locationTitle": "現在地を共有",
       "locationSub": "GPS座標を中国語で緊急サービスやホテルへ送れます。",
       "locationBtn": "中国語で現在地をコピー",
-      "embassyPhrase": "Veuillez contacter mon ambassade. Je suis ressortissant étranger et j’ai besoin d’une assistance consulaire.",
-      "medicalPhrase": "Veuillez appeler une ambulance. J’ai besoin d’une aide médicale urgente.",
+      "embassyPhrase": "大使館に連絡してください。私は外国籍で、領事支援が必要です。",
+      "medicalPhrase": "救急車を呼んでください。緊急の医療支援が必要です。",
       "numbers": {
-        "police": "Police",
-        "policeDesc": "Vol, agression, objets perdus, menaces à la sécurité",
-        "ambulance": "Ambulance",
-        "ambulanceDesc": "Urgences médicales, blessures, maladie",
+        "police": "警察",
+        "policeDesc": "盗難、暴行、紛失物、安全上の脅威",
+        "ambulance": "救急",
+        "ambulanceDesc": "医療上の緊急事態、けが、病気",
         "fire": "Pompiers",
-        "fireDesc": "Incendie, fuite de gaz, opérations de secours"
+        "fireDesc": "火災、ガス漏れ、救助活動"
       },
       "lostPassportPhone": "パスポート / 携帯を紛失",
       "lostPhone": "携帯を紛失",
@@ -418,7 +418,7 @@
       "currencyLive": "USD · EUR · GBP · AUD → RMB en direct",
       "open": "開く",
       "secure": "手動PayPal支払い",
-      "bannerAlt": "Votre aventure en Chine commence maintenant",
+      "bannerAlt": "中国での旅がここから始まります",
       "paymentSoon": "有料パスは1回払いのデジタルトラベルパスです。ライブ公開前にPayPal Sandbox決済をテストしています。",
       "plans": {
         "free": {
@@ -625,9 +625,9 @@
       "placeholder": "中国旅行について何でも質問...",
       "suggested": "おすすめ質問",
       "suggestions": {
-        "s1": "Comment aller de l’aéroport de Shanghai au centre-ville ?",
+        "s1": "上海の空港から市内中心部へ行くには？",
         "s2": "Que faire si je perds mon passeport ?",
-        "s3": "Comment commander sans parler chinois ?",
+        "s3": "中国語を話せない場合、どう注文すればいいですか？",
         "s4": "Peut-on boire l’eau du robinet ?"
       },
       "welcome": "こんにちは！私はBuddy、中国旅行のAIコンパニオンです。交通、安全な食事、支払い、緊急時のことを何でも聞いてください。",

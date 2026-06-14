@@ -377,15 +377,15 @@
       "locationTitle": "위치 공유",
       "locationSub": "GPS 좌표를 중국어로 응급 서비스나 호텔 컨시어지에게 보내세요.",
       "locationBtn": "중국어로 위치 복사",
-      "embassyPhrase": "Veuillez contacter mon ambassade. Je suis ressortissant étranger et j’ai besoin d’une assistance consulaire.",
-      "medicalPhrase": "Veuillez appeler une ambulance. J’ai besoin d’une aide médicale urgente.",
+      "embassyPhrase": "제 대사관에 연락해 주세요. 저는 외국 국적자이며 영사 지원이 필요합니다.",
+      "medicalPhrase": "구급차를 불러 주세요. 긴급 의료 도움이 필요합니다.",
       "numbers": {
-        "police": "Police",
-        "policeDesc": "Vol, agression, objets perdus, menaces à la sécurité",
-        "ambulance": "Ambulance",
-        "ambulanceDesc": "Urgences médicales, blessures, maladie",
+        "police": "경찰",
+        "policeDesc": "도난, 폭행, 분실물, 안전 위협",
+        "ambulance": "구급",
+        "ambulanceDesc": "응급 상황, 부상, 질병",
         "fire": "Pompiers",
-        "fireDesc": "Incendie, fuite de gaz, opérations de secours"
+        "fireDesc": "화재, 가스 누출, 구조 상황"
       },
       "lostPassportPhone": "여권 / 휴대폰 분실",
       "lostPhone": "휴대폰 분실",
@@ -418,7 +418,7 @@
       "currencyLive": "USD · EUR · GBP · AUD → RMB en direct",
       "open": "열기",
       "secure": "수동 PayPal 결제",
-      "bannerAlt": "Votre aventure en Chine commence maintenant",
+      "bannerAlt": "중국 여행이 지금 시작됩니다",
       "paymentSoon": "유료 패스는 일회성 디지털 여행 패스입니다. 실제 출시 전 PayPal Sandbox 결제를 테스트 중입니다.",
       "plans": {
         "free": {
@@ -625,9 +625,9 @@
       "placeholder": "중국 여행에 대해 무엇이든 물어보세요...",
       "suggested": "추천 질문",
       "suggestions": {
-        "s1": "Comment aller de l’aéroport de Shanghai au centre-ville ?",
+        "s1": "상하이 공항에서 시내까지 어떻게 가나요?",
         "s2": "Que faire si je perds mon passeport ?",
-        "s3": "Comment commander sans parler chinois ?",
+        "s3": "중국어를 못할 때 어떻게 주문하나요?",
         "s4": "Peut-on boire l’eau du robinet ?"
       },
       "welcome": "안녕하세요! 저는 중국 여행 AI 동반자 Buddy입니다. 교통, 안전한 식사, 결제, 긴급 상황을 무엇이든 물어보세요.",

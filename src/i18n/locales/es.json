@@ -380,9 +380,9 @@
       "embassyPhrase": "Veuillez contacter mon ambassade. Je suis ressortissant étranger et j’ai besoin d’une assistance consulaire.",
       "medicalPhrase": "Veuillez appeler une ambulance. J’ai besoin d’une aide médicale urgente.",
       "numbers": {
-        "police": "Police",
+        "police": "Policía",
         "policeDesc": "Vol, agression, objets perdus, menaces à la sécurité",
-        "ambulance": "Ambulance",
+        "ambulance": "Ambulancia",
         "ambulanceDesc": "Urgences médicales, blessures, maladie",
         "fire": "Pompiers",
         "fireDesc": "Incendie, fuite de gaz, opérations de secours"

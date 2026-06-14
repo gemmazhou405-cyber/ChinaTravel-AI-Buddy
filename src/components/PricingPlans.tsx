@@ -184,7 +184,7 @@ export default function PricingPlans({ user, userState, showToast, onCtaClick, o
       await addDoc(collection(db, 'paymentClaims'), {
         userId: user.uid,
         accountEmail: user.email || '',
-        plan: selectedPlan,
+        plan: selectedPlan === 'trip' ? 'trip_pass' : 'group_pass',
         paypalTransactionId: tx.slice(0, 120),
         ...(email ? { paypalEmail: email.slice(0, 160) } : {}),
         sourcePath: `${window.location.pathname}${window.location.search}`.slice(0, 500),

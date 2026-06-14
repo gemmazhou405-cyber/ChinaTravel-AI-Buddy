@@ -123,9 +123,9 @@ export default function QuickActions({ journey, user, userState, showToast, onNe
 
   const categories = journey === 'before' ? beforeCategories : journey === 'emergency' ? emergencyCategories : nowCategories;
   const guideCards = [
-    ['firstTime', '/china-travel-checklist', 'url("/hero.jpg")'],
-    ['destinations', '/china-travel-checklist', 'url("/images/hero-china-landscape.jpg")'],
-    ['culture', '/faq', 'url("/hero-mobile.jpg")'],
+    ['firstTime', '/china-travel-checklist', 'url("/screenshot_phrases.jpg")'],
+    ['destinations', '/china-travel-checklist', 'url("/images/hero-china-landscape-900.jpg")'],
+    ['culture', '/faq', 'url("/screenshot_emergency.jpg")'],
     ['tips', '/china-travel-apps', 'url("/email_header.jpg")'],
   ] as const;
   const howSteps = [
