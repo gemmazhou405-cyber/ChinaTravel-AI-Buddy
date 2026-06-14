@@ -22,6 +22,16 @@ const pageMeta = {
   pricing: {
     title: 'Pricing | ChinaEase Buddy',
     description: 'ChinaEase Buddy pricing: Free, Trip Pass, and Group Pass for digital China travel tools.',
+    sections: [
+      ['Free', 'Basic toolkit for apps, payments, transport, food, hotels, emergency help, and limited Buddy AI access.', '/?journey=china&tool=food'],
+      ['Trip Pass', 'USD 9.90 one-time travel pass with 50 Buddy AI messages and 20 menu/photo scans for 7 days.', '/pricing'],
+      ['Group Pass', 'USD 29.90 one-time travel pass with 200 Buddy AI messages and 100 menu/photo scans for 14 days on one shared account.', '/pricing'],
+    ],
+    faqs: [
+      ['How do paid passes work?', 'Paid passes are one-time digital travel passes. Sandbox automatic checkout is being tested, and live checkout will not be enabled until approved. Access is granted after verified payment confirmation.'],
+      ['Are payments handled by PayPal?', 'PayPal is used for payment processing. ChinaEase Buddy does not collect card details directly on the website.'],
+      ['Is there auto-renewal?', 'No. ChinaEase Buddy passes are one-time travel passes with no auto-renewal.'],
+    ],
   },
   terms: {
     title: 'Terms of Service | ChinaEase Buddy',
@@ -151,6 +161,21 @@ const relatedLinks = [
   ['FAQ', '/faq'],
 ];
 
+const pageRelatedLinks = {
+  'china-payment-guide': [
+    ['Open payment phrases', '/?journey=china&tool=pay'],
+    ['Alipay for Foreigners', '/alipay-for-foreigners'],
+    ['China travel apps', '/china-travel-apps'],
+    ['FAQ', '/faq'],
+  ],
+  pricing: [
+    ['Home', '/'],
+    ['Terms of Service', '/terms'],
+    ['Privacy Policy', '/privacy'],
+    ['Refund information', '/refund'],
+  ],
+};
+
 const standardDisclaimer =
   'ChinaEase Buddy is a digital travel toolkit. It is not an official travel authority, visa service, immigration service, medical service, legal service, financial service, hotel booking service, or flight booking service. Always confirm important travel, payment, health, and entry information with official sources or service providers.';
 
@@ -205,7 +230,7 @@ function staticPageContent(page, meta) {
       <nav aria-label="Related China travel guides" style="margin: 0 0 24px;">
         <h2 style="margin: 0 0 12px; font-size: 1.25rem;">Related guides</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-          ${relatedLinks.map(([label, href]) => `<a href="${escapeAttr(href)}" style="border: 1px solid rgba(21, 94, 99, 0.18); border-radius: 999px; color: #155e63; padding: 9px 12px; text-decoration: none;">${escapeHtml(label)}</a>`).join('')}
+          ${(pageRelatedLinks[page] || relatedLinks).map(([label, href]) => `<a href="${escapeAttr(href)}" style="border: 1px solid rgba(21, 94, 99, 0.18); border-radius: 999px; color: #155e63; padding: 9px 12px; text-decoration: none;">${escapeHtml(label)}</a>`).join('')}
         </div>
       </nav>
       <section aria-labelledby="sources" style="margin: 0 0 24px;">
@@ -275,7 +300,10 @@ function withPageMeta(html, page, meta) {
   if (schema) {
     next = next.replace('</head>', `    ${schema}\n  </head>`);
   }
-  next = next.replace('<div id="root"></div>', `<div id="root">${staticPageContent(page, meta)}</div>`);
+  next = next.replace(
+    /<div id="root">[\s\S]*<\/div>\s*<\/body>/,
+    `<div id="root">${staticPageContent(page, meta)}</div>\n  </body>`,
+  );
   return next;
 }
 

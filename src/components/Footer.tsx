@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { TabId } from '../App';
 import { subscribeNewsletter } from '../lib/newsletter';
-import { trackEvent } from '../lib/analytics';
+import { trackAppError, trackEvent, trackEventOnce } from '../lib/analytics';
 
 interface Props {
   onTabChange: (tab: TabId) => void;
@@ -34,8 +34,18 @@ export default function Footer({ onTabChange, onAskBuddy }: Props) {
     try {
       const result = await subscribeNewsletter(trimmed, document.documentElement.lang || 'en', honeypot);
       setStatus(result === 'already_subscribed' ? 'duplicate' : 'success');
+      if (result !== 'already_subscribed') {
+        trackEventOnce(`newsletter:${trimmed.toLowerCase()}`, 'newsletter_subscribed', {
+          destination: 'newsletter',
+          status: 'success',
+        });
+      }
       setEmail('');
     } catch {
+      trackAppError('newsletter_error', {
+        destination: 'newsletter',
+        context: 'footer_subscribe',
+      });
       setStatus('error');
     }
   };

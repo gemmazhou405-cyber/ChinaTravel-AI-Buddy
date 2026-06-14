@@ -8,6 +8,7 @@ import { restaurantCards } from '../../data/phraseCards';
 import type { UserState } from '../../hooks/useAuth';
 import { isTripOrGroup } from '../../lib/membership';
 import allDishes from '../../data/dishes/commonChineseDishes.json';
+import { trackAppError, trackEventOnce } from '../../lib/analytics';
 
 interface Dish {
   id: string;
@@ -45,6 +46,9 @@ interface AllergyCardProps {
   card: AllergyCardData;
   showToast: (msg: string) => void;
 }
+
+const ALLOWED_MENU_IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
+const MAX_MENU_IMAGE_BYTES = 8 * 1024 * 1024;
 
 function AllergyCard({ card, showToast }: AllergyCardProps) {
   const { t } = useTranslation();
@@ -123,6 +127,31 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
   const hasFullAccess = isTripOrGroup(userState);
   const [dishQuery, setDishQuery] = useState('');
 
+  const acceptMenuFile = (file: File) => {
+    if (!ALLOWED_MENU_IMAGE_TYPES.includes(file.type)) {
+      showToast(t('food.imageInvalid'));
+      trackAppError('image_invalid', {
+        tool: 'menu_scan',
+        context: file.type || 'unknown_type',
+      }, userState?.uid);
+      return false;
+    }
+    if (file.size > MAX_MENU_IMAGE_BYTES) {
+      showToast(t('food.imageTooLarge'));
+      trackAppError('image_too_large', {
+        tool: 'menu_scan',
+        context: 'file_size',
+      }, userState?.uid);
+      return false;
+    }
+    setUploadedFile(file.name);
+    trackEventOnce(`menu:first-success:${userState?.uid || 'anonymous'}`, 'menu_scan_first_success', {
+      tool: 'menu_scan',
+      status: 'mock_upload_accepted',
+    }, userState?.uid);
+    return true;
+  };
+
   const dishResults = (() => {
     const q = dishQuery.trim().toLowerCase();
     if (!q) return [];
@@ -140,7 +169,7 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
     e.preventDefault();
     setDragOver(false);
     const file = e.dataTransfer.files[0];
-    if (file) setUploadedFile(file.name);
+    if (file) acceptMenuFile(file);
   };
 
   return (
@@ -281,7 +310,7 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
               className="hidden"
               onChange={(e) => {
                 const file = e.target.files?.[0];
-                if (file) setUploadedFile(file.name);
+                if (file) acceptMenuFile(file);
               }}
             />
           </div>

@@ -16,6 +16,17 @@ type Attribution = {
 };
 
 type AnalyticsPayload = Record<string, string | number | boolean | null | undefined>;
+export type AppErrorType =
+  | 'auth_error'
+  | 'ai_connection_error'
+  | 'ai_timeout'
+  | 'quota_exhausted'
+  | 'image_invalid'
+  | 'image_too_large'
+  | 'scan_failed'
+  | 'firestore_permission_error'
+  | 'newsletter_error'
+  | 'checkout_error';
 
 const FIRST_TOUCH_KEY = 'chinaease:firstTouchAttribution';
 const SESSION_ATTR_KEY = 'chinaease:sessionAttribution';
@@ -181,4 +192,11 @@ export async function trackEvent(eventName: string, payload: AnalyticsPayload = 
 export function trackEventOnce(key: string, eventName: string, payload: AnalyticsPayload = {}, userId?: string | null) {
   if (!markTrackedOnce(key)) return;
   void trackEvent(eventName, payload, userId);
+}
+
+export function trackAppError(errorType: AppErrorType, payload: AnalyticsPayload = {}, userId?: string | null) {
+  void trackEvent('app_error', {
+    errorType,
+    ...payload,
+  }, userId);
 }

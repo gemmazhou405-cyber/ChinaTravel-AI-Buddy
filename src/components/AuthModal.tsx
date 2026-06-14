@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { X, Mail, Lock, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { trackAppError, trackEvent } from '../lib/analytics';
 
 interface Props {
   onClose: () => void;
@@ -50,7 +51,9 @@ export default function AuthModal({ onClose, onSignup, onLogin, onGoogleLogin, o
     setLoading(true);
     try {
       if (mode === 'signup') {
+        void trackEvent('signup_started', { method: 'email' });
         await onSignup(email, password);
+        void trackEvent('signup_completed', { method: 'email' });
       } else {
         await onLogin(email, password);
       }
@@ -63,6 +66,10 @@ export default function AuthModal({ onClose, onSignup, onLogin, onGoogleLogin, o
       } else {
         setError(message || t('auth.error'));
       }
+      trackAppError('auth_error', {
+        method: mode === 'signup' ? 'email_signup' : 'email_login',
+        errorCode: message.slice(0, 80),
+      });
     } finally {
       setLoading(false);
     }
@@ -77,7 +84,9 @@ export default function AuthModal({ onClose, onSignup, onLogin, onGoogleLogin, o
     }
     setLoading(true);
     try {
+      void trackEvent('signup_started', { method: 'google' });
       await onGoogleLogin();
+      void trackEvent('signup_completed', { method: 'google' });
       onClose();
     } catch (e) {
       const message = e instanceof Error ? e.message : '';
@@ -88,6 +97,10 @@ export default function AuthModal({ onClose, onSignup, onLogin, onGoogleLogin, o
       } else {
         setError(t('auth.googleError'));
       }
+      trackAppError('auth_error', {
+        method: 'google',
+        errorCode: message.slice(0, 80),
+      });
     } finally {
       setLoading(false);
     }

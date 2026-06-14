@@ -4,7 +4,7 @@ import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import type { UserState } from '../hooks/useAuth';
-import { trackEvent } from '../lib/analytics';
+import { trackAppError, trackEvent } from '../lib/analytics';
 import { db } from '../firebase-config';
 import { captureCheckoutOrder, createCheckoutOrder, paymentMode } from '../lib/payment';
 
@@ -131,8 +131,19 @@ export default function PricingPlans({ user, userState, showToast, onCtaClick, o
       const order = await createCheckoutOrder(user, checkoutPlan);
       setCheckoutOrderId(order.orderId);
       setCheckoutApprovalUrl(order.approvalUrl);
+      void trackEvent('checkout_created', {
+        tool: 'pay',
+        plan: checkoutPlan === 'trip' ? 'trip_pass' : 'group_pass',
+        status: order.status,
+      }, user.uid);
       window.open(order.approvalUrl, '_blank', 'noopener,noreferrer');
     } catch (error) {
+      trackAppError('checkout_error', {
+        tool: 'pay',
+        plan: checkoutPlan === 'trip' ? 'trip_pass' : 'group_pass',
+        context: 'create_order',
+        errorCode: error instanceof Error ? error.message.slice(0, 80) : 'create_order_failed',
+      }, user.uid);
       setCheckoutError(error instanceof Error ? error.message : t('pay.checkout.createError'));
     } finally {
       setCheckoutLoading(false);
@@ -146,6 +157,11 @@ export default function PricingPlans({ user, userState, showToast, onCtaClick, o
     try {
       const result = await captureCheckoutOrder(user, checkoutOrderId);
       if (result.status === 'completed') {
+        void trackEvent('payment_completed', {
+          tool: 'pay',
+          plan: checkoutPlan === 'trip' ? 'trip_pass' : 'group_pass',
+          status: 'completed',
+        }, user.uid);
         await onRefreshUserState?.();
         showToast(t('pay.checkout.success'));
         setCheckoutPlan(null);
@@ -155,6 +171,12 @@ export default function PricingPlans({ user, userState, showToast, onCtaClick, o
       }
       showToast(t('pay.checkout.pending'));
     } catch (error) {
+      trackAppError('checkout_error', {
+        tool: 'pay',
+        plan: checkoutPlan === 'trip' ? 'trip_pass' : 'group_pass',
+        context: 'capture_order',
+        errorCode: error instanceof Error ? error.message.slice(0, 80) : 'capture_order_failed',
+      }, user.uid);
       setCheckoutError(error instanceof Error ? error.message : t('pay.checkout.captureError'));
     } finally {
       setCheckoutLoading(false);

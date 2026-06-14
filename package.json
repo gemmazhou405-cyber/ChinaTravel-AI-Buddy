@@ -8,7 +8,8 @@
     "build": "node scripts/check-i18n-parity.mjs && vite build && node scripts/copy-policy-pages.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
-    "typecheck": "node scripts/check-i18n-parity.mjs && tsc --noEmit -p tsconfig.app.json"
+    "typecheck": "node scripts/check-i18n-parity.mjs && tsc --noEmit -p tsconfig.app.json",
+    "audit:public-html": "node scripts/audit-public-html.mjs"
   },
   "dependencies": {
     "firebase": "^12.13.0",

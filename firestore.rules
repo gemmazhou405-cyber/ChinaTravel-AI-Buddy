@@ -29,7 +29,16 @@ service cloud.firestore {
         'guide_page_viewed',
         'journey_selected',
         'tool_category_opened',
-        'cta_clicked'
+        'cta_clicked',
+        'signup_started',
+        'signup_completed',
+        'buddy_first_success',
+        'menu_scan_first_success',
+        'quota_exhausted',
+        'checkout_created',
+        'payment_completed',
+        'newsletter_subscribed',
+        'app_error'
       ];
     }
 
@@ -65,7 +74,13 @@ service cloud.firestore {
                'ctaName',
                'destination',
                'pageType',
-               'plan'
+               'plan',
+               'method',
+               'quotaType',
+               'errorType',
+               'errorCode',
+               'status',
+               'context'
              ])
              && validAnalyticsEventName()
              && analyticsData().eventName is string
@@ -94,7 +109,13 @@ service cloud.firestore {
              && optionalString('ctaName', 120)
              && optionalString('destination', 160)
              && optionalString('pageType', 80)
-             && optionalString('plan', 32);
+             && optionalString('plan', 32)
+             && optionalString('method', 32)
+             && optionalString('quotaType', 32)
+             && optionalString('errorType', 80)
+             && optionalString('errorCode', 80)
+             && optionalString('status', 80)
+             && optionalString('context', 120);
     }
 
     match /users/{userId} {

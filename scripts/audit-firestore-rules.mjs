@@ -83,6 +83,24 @@ const checks = [
       && rules.includes('allow read, update, delete: if false;'),
   ],
   [
+    'analytics launch funnel events allowed',
+    [
+      'signup_started',
+      'signup_completed',
+      'buddy_first_success',
+      'menu_scan_first_success',
+      'quota_exhausted',
+      'checkout_created',
+      'payment_completed',
+      'newsletter_subscribed',
+      'app_error',
+    ].every((eventName) => rules.includes(`'${eventName}'`))
+      && rules.includes("'errorType'")
+      && rules.includes("'quotaType'")
+      && rules.includes("'method'")
+      && rules.includes("'status'"),
+  ],
+  [
     'paymentClaims use canonical pass plan IDs',
     rules.includes("paymentClaimData().plan in ['trip_pass', 'group_pass']")
       && !rules.includes("paymentClaimData().plan in ['trip', 'group']"),

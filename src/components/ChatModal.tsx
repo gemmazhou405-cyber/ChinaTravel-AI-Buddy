@@ -4,6 +4,7 @@ import { User } from 'firebase/auth';
 import { COZE_WORKER_URL, COZE_BOT_ID } from '../firebase-config';
 import { UserState } from '../hooks/useAuth';
 import { useTranslation } from 'react-i18next';
+import { trackAppError, trackEvent, trackEventOnce } from '../lib/analytics';
 
 interface Message {
   id: number;
@@ -44,6 +45,7 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
 
   const send = async (text: string) => {
     if (!text.trim()) return;
+    if (typing) return;
 
     if (!userState) {
       onNeedAuth();
@@ -63,6 +65,11 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
     const now = Date.now();
 
     if (userState.planExpiresAt && now > userState.planExpiresAt) {
+      void trackEvent('quota_exhausted', {
+        tool: 'buddy',
+        quotaType: 'expired',
+        plan: userState.plan,
+      }, userState.uid);
       const expiredMsg: Message = {
         id: Date.now(),
         role: 'buddy',
@@ -76,6 +83,11 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
     const dailyReset = !userState.dailyResetAt || now - userState.dailyResetAt > oneDayMs;
     const currentDailyUsed = dailyReset ? 0 : userState.dailyBuddyAiUsed;
     if (currentDailyUsed >= userState.dailyBuddyAiLimit) {
+      void trackEvent('quota_exhausted', {
+        tool: 'buddy',
+        quotaType: 'daily',
+        plan: userState.plan,
+      }, userState.uid);
       const dailyLimitMsg: Message = {
         id: Date.now(),
         role: 'buddy',
@@ -86,6 +98,11 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
     }
 
     if (userState.buddyAiQuotaUsed >= userState.buddyAiQuotaTotal) {
+      void trackEvent('quota_exhausted', {
+        tool: 'buddy',
+        quotaType: 'total',
+        plan: userState.plan,
+      }, userState.uid);
       const limitMsg: Message = {
         id: Date.now(),
         role: 'buddy',
@@ -116,7 +133,15 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
       const reply: Message = { id: Date.now() + 1, role: 'buddy', text: replyText };
       setMessages((prev) => [...prev, reply]);
       await onIncrementUsed();
+      trackEventOnce(`buddy:first-success:${userState.uid}`, 'buddy_first_success', {
+        tool: 'buddy',
+        plan: userState.plan,
+      }, userState.uid);
     } catch {
+      trackAppError('ai_connection_error', {
+        tool: 'buddy',
+        context: 'chat_send',
+      }, userState.uid);
       const errMsg: Message = {
         id: Date.now() + 1,
         role: 'buddy',
@@ -193,6 +218,7 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
                 <button
                   key={s}
                   onClick={() => send(t(s))}
+                  disabled={typing}
                   className="flex-shrink-0 text-xs bg-[#155e63]/8 text-[#155e63] px-3 py-1.5 rounded-full hover:bg-[#155e63]/15 transition-colors whitespace-nowrap"
                 >
                   {t(s)}
@@ -227,7 +253,7 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
           />
           <button
             onClick={() => send(input)}
-            disabled={!input.trim()}
+            disabled={!input.trim() || typing}
             className="w-10 h-10 bg-[#155e63] rounded-xl flex items-center justify-center disabled:opacity-30 hover:bg-[#0e4a4e] active:scale-95 transition-all"
           >
             <Send className="w-4 h-4 text-white" />
