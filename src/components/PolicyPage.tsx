@@ -1,9 +1,11 @@
-import { useEffect, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { ArrowLeft, Check } from 'lucide-react';
 import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
+import { unsubscribeNewsletter } from '../lib/newsletter';
 
-type LegalPageType = 'terms' | 'privacy' | 'refund' | 'contact' | 'about';
+type LegalPageType = 'terms' | 'privacy' | 'refund' | 'contact' | 'about' | 'unsubscribe';
 type GuidePageType =
+  | 'guides'
   | 'china-travel-apps'
   | 'alipay-for-foreigners'
   | 'china-payment-guide'
@@ -42,6 +44,10 @@ interface GuidePageData {
 
 const contactEmail = 'gemmazhou405@gmail.com';
 const siteUrl = 'https://chinaeasebuddy.com';
+const paypalLinks = {
+  trip: 'https://www.paypal.com/ncp/payment/863ZKSY6RJ64J',
+  group: 'https://www.paypal.com/ncp/payment/CL8J5WJVK3TAJ',
+} as const;
 const standardDisclaimer =
   'ChinaEase Buddy is a digital travel toolkit. It is not an official travel authority, visa service, immigration service, medical service, legal service, financial service, hotel booking service, or flight booking service. Always confirm important travel, payment, health, and entry information with official sources or service providers.';
 
@@ -49,21 +55,47 @@ const pricingPlans = [
   {
     name: 'Free',
     price: '$0',
-    note: 'Essential travel toolkit access',
-    features: ['Basic phrase cards', 'Static travel guides', 'Limited Buddy AI quota'],
+    note: 'Basic China travel toolkit for common travel situations',
+    features: [
+      'Essential apps, payments, transport, food, hotel and emergency tools',
+      'Basic phrase cards and travel guides',
+      '5 Buddy AI messages',
+      'No payment required',
+    ],
+    cta: 'Start Free',
+    href: '/',
+    plan: 'free',
   },
   {
     name: 'Trip Pass',
     price: '$9.90',
     note: 'One-time payment',
-    features: ['50 Buddy AI messages', '20 menu/photo scans', 'Unlocked travel phrase cards'],
+    features: [
+      '50 Buddy AI messages',
+      'Valid for 7 days',
+      'Extra travel help for one traveler',
+      'One-time payment',
+      'Access after verified PayPal payment confirmation',
+    ],
+    cta: 'Get Trip Pass',
+    href: paypalLinks.trip,
+    plan: 'trip_pass',
     featured: true,
   },
   {
     name: 'Group Pass',
-    price: '$39.90',
+    price: '$29.90',
     note: 'One-time payment',
-    features: ['200 Buddy AI messages', '100 menu/photo scans', 'Custom phrase helper access'],
+    features: [
+      '200 Buddy AI messages',
+      'Valid for 14 days',
+      'One account and one shared allowance for couples, families or small travel groups',
+      'One-time payment',
+      'Access after verified PayPal payment confirmation',
+    ],
+    cta: 'Get Group Pass',
+    href: paypalLinks.group,
+    plan: 'group_pass',
   },
 ];
 
@@ -91,7 +123,7 @@ const legalCopy = {
       {
         title: 'Refunds',
         body:
-          'Paid passes are covered by a 3-day refund policy. Refund eligibility may depend on usage of digital credits and service access.',
+          'ChinaEase Buddy passes are one-time payments with no auto-renewal. We do not offer a voluntary three-day refund guarantee. This does not affect any statutory rights you may have under applicable consumer law.',
       },
       {
         title: 'Contact',
@@ -107,7 +139,7 @@ const legalCopy = {
       {
         title: 'Information We Collect',
         body:
-          'We may collect your email address, account plan, usage quota, basic app usage data, and information required to operate Buddy AI conversations and menu assistance.',
+          'We may collect your email address, account plan, entitlement status, usage quotas, basic app usage data, anonymous session ID, UTM attribution, newsletter email, and information required to operate Buddy AI conversations and food reference tools.',
       },
       {
         title: 'Authentication and Storage',
@@ -117,7 +149,22 @@ const legalCopy = {
       {
         title: 'Buddy AI Conversations',
         body:
-          'Buddy AI conversation content may be processed to provide the requested travel assistance, maintain service quality, and troubleshoot the service.',
+          'Buddy AI conversation content may be processed by ChinaEase Buddy service providers, including Coze, Cloudflare, Firebase, and Firestore, to provide the requested travel assistance, maintain service quality, and troubleshoot the service. Menu photo help is in private testing and is not sold as an active entitlement.',
+      },
+      {
+        title: 'Payments and Entitlements',
+        body:
+          'For paid passes, we may store PayPal order identifiers, capture identifiers, payer email if returned by PayPal, plan, expiry, quota, and payment status. We do not collect card details directly on this website.',
+      },
+      {
+        title: 'Newsletter',
+        body:
+          'If you subscribe to travel updates, we store your email address, consent version, source path, UTM attribution, subscription status, and unsubscribe information. You can unsubscribe at any time.',
+      },
+      {
+        title: 'Retention and Deletion',
+        body:
+          'We keep account, entitlement, payment, support, analytics, and newsletter records as needed to operate the service, investigate issues, meet legal obligations, and handle support requests. Contact us to request account deletion or privacy assistance.',
       },
       {
         title: 'No Sale of Data',
@@ -135,19 +182,19 @@ const legalCopy = {
     intro: 'ChinaEase Buddy sells one-time digital travel passes for visitors traveling in China.',
     sections: [
       {
-        title: 'Eligibility',
+        title: 'Refund Approach',
         body:
-          'Paid passes are eligible for a refund within 3 days of purchase. Refunds are only available if the pass has not been heavily used.',
+          'We do not offer a voluntary three-day refund guarantee. This does not affect any statutory rights you may have under applicable consumer law.',
       },
       {
-        title: 'Usage-Based Review',
+        title: 'When to Contact Support',
         body:
-          'If a user has used a large portion of Buddy AI messages, menu scans, or custom phrase generation credits, the refund may be declined.',
+          'Please contact support if the service was not provided, was materially different from its description, or you experienced a payment problem.',
       },
       {
         title: 'Payment Method',
         body:
-          'Refunds are processed back to the original payment method. Processing times may depend on the payment provider.',
+          'If a refund is required under applicable law or after support review, processing times and method may depend on the payment provider.',
       },
       {
         title: 'No Auto-Renewal',
@@ -156,7 +203,7 @@ const legalCopy = {
       },
       {
         title: 'Contact',
-        body: `To request a refund, contact ${contactEmail}.`,
+        body: `For payment problems or refund questions, contact ${contactEmail}. Final legal wording should be reviewed by the owner before live payment launch.`,
       },
     ],
   },
@@ -211,9 +258,65 @@ const legalCopy = {
       },
     ],
   },
+  unsubscribe: {
+    title: 'Unsubscribe',
+    intro: 'Stop receiving occasional China travel updates from ChinaEase Buddy.',
+    sections: [
+      {
+        title: 'Newsletter',
+        body:
+          'Enter the email address you used for newsletter updates. This does not delete your ChinaEase Buddy account.',
+      },
+    ],
+  },
 };
 
 const guidePages: Record<GuidePageType, GuidePageData> = {
+  guides: {
+    path: '/guides',
+    title: 'China Travel Guides',
+    intro: 'Practical guide pages for foreign visitors preparing for or traveling in China.',
+    metaTitle: 'China Travel Guides | ChinaEase Buddy',
+    metaDescription:
+      'Practical China travel guides for foreign visitors: essential apps, Alipay, payments, checklists, emergency numbers, and frequently asked questions.',
+    quickAnswer:
+      'Start with the guide that matches your immediate travel question: apps before arrival, Alipay setup, payments in China, first-time checklist, emergency numbers, or common FAQ.',
+    ctaLabel: 'Open the free toolkit',
+    ctaHref: '/',
+    sections: [
+      {
+        title: 'Current guide pages',
+        items: [
+          'China Travel Apps: prepare Alipay, WeChat, Amap, Didi, and Trip.com.',
+          'Alipay for Foreigners: understand setup reminders and backup options.',
+          'China Payment Guide: practical notes for Alipay, WeChat Pay, cards, and cash.',
+          'China Travel Checklist: first-time visitor preparation before arrival.',
+          'China Emergency Numbers: 110, 120, 119, and simple emergency phrases.',
+          'FAQ: concise answers about ChinaEase Buddy and service limitations.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What guide should I read first?',
+        answer:
+          'If you are preparing before arrival, start with China Travel Apps and China Travel Checklist. If you are already in China, open the payment guide or emergency numbers page based on your situation.',
+      },
+      {
+        question: 'Are these official travel instructions?',
+        answer:
+          'No. These guides are practical travel references from ChinaEase Buddy. Confirm important entry, health, payment, and travel requirements with official sources or service providers.',
+      },
+    ],
+    related: [
+      { label: 'China travel apps', href: '/china-travel-apps' },
+      { label: 'Alipay for foreigners', href: '/alipay-for-foreigners' },
+      { label: 'China payment guide', href: '/china-payment-guide' },
+      { label: 'China travel checklist', href: '/china-travel-checklist' },
+      { label: 'Emergency numbers in China', href: '/china-emergency-numbers' },
+      { label: 'FAQ', href: '/faq' },
+    ],
+  },
   'china-travel-apps': {
     path: '/china-travel-apps',
     title: '5 Essential Apps to Download Before Visiting China',
@@ -588,6 +691,11 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'ChinaEase Buddy has a free starting plan with core tools and limited Buddy AI usage. Paid passes may unlock additional digital access, but checkout availability can vary during early access.',
       },
       {
+        question: 'How do paid passes work?',
+        answer:
+          'Paid passes are currently processed through PayPal payment links. Access is activated manually after payment confirmation.',
+      },
+      {
         question: 'Is ChinaEase Buddy an official travel service?',
         answer:
           'No. ChinaEase Buddy is not an official travel authority or government service. It is a digital travel toolkit for convenience.',
@@ -742,7 +850,7 @@ function PricingPage() {
   return (
     <PageShell
       title="Pricing"
-      intro="ChinaEase Buddy offers one free plan and two one-time digital travel passes. No subscriptions, no auto-renewal."
+      intro="ChinaEase Buddy starts with a free toolkit. Paid passes are optional and currently use manual PayPal payment links."
     >
       <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
         {pricingPlans.map((plan) => (
@@ -763,11 +871,35 @@ function PricingPage() {
                 </li>
               ))}
             </ul>
+            <a
+              href={plan.href}
+              target={plan.plan === 'free' ? undefined : '_blank'}
+              rel={plan.plan === 'free' ? undefined : 'noopener noreferrer'}
+              onClick={() => {
+                void trackEvent('cta_clicked', {
+                  ctaName: plan.cta,
+                  destination: plan.plan === 'trip_pass' ? 'PayPal Trip Pass' : plan.plan === 'group_pass' ? 'PayPal Group Pass' : 'free-toolkit',
+                  tool: 'pricing',
+                  plan: plan.plan,
+                });
+              }}
+              className={`mt-5 inline-flex w-full justify-center rounded-xl px-4 py-2.5 text-sm font-semibold transition ${
+                plan.featured ? 'bg-white text-[#155e63] hover:bg-gray-50' : 'border border-[#155e63]/15 bg-[#155e63]/5 text-[#155e63] hover:bg-[#155e63]/10'
+              }`}
+            >
+              {plan.cta}
+            </a>
           </div>
         ))}
       </div>
       <div className="mt-5 rounded-2xl border border-[#155e63]/10 bg-[#155e63]/5 p-4">
-        <p className="text-sm font-semibold text-[#155e63]">One-time payment, no auto-renewal, 3-day refund policy.</p>
+        <p className="text-sm font-semibold text-[#155e63]">One-time payment · No auto-renewal.</p>
+        <p className="mt-2 text-xs leading-relaxed text-gray-600">
+          PayPal Sandbox checkout and automatic activation are being tested. Live checkout will not be enabled until owner approval.
+        </p>
+        <p className="mt-2 text-xs font-semibold leading-relaxed text-[#155e63]">
+          ChinaEase Buddy does not collect card details directly. PayPal handles the payment securely.
+        </p>
       </div>
     </PageShell>
   );
@@ -775,8 +907,45 @@ function PricingPage() {
 
 function LegalPage({ type }: { type: LegalPageType }) {
   const page = legalCopy[type];
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleUnsubscribe = async () => {
+    const trimmed = email.trim();
+    if (!trimmed) return;
+    setStatus('loading');
+    try {
+      await unsubscribeNewsletter(trimmed, new URLSearchParams(window.location.search).get('token'));
+      setStatus('success');
+    } catch {
+      setStatus('error');
+    }
+  };
+
   return (
     <PageShell title={page.title} intro={page.intro}>
+      {type === 'unsubscribe' && (
+        <section className="mb-6 rounded-2xl border border-[#155e63]/15 bg-white p-5 shadow-sm">
+          <label htmlFor="unsubscribe-email" className="text-sm font-bold text-gray-900">Email address</label>
+          <input
+            id="unsubscribe-email"
+            type="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            className="mt-2 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm outline-none focus:border-[#155e63]/40"
+            placeholder="you@example.com"
+          />
+          <button
+            onClick={handleUnsubscribe}
+            disabled={status === 'loading'}
+            className="mt-3 rounded-full bg-[#155e63] px-5 py-2.5 text-sm font-bold text-white disabled:opacity-60"
+          >
+            {status === 'loading' ? 'Unsubscribing...' : 'Unsubscribe'}
+          </button>
+          {status === 'success' && <p className="mt-3 text-sm font-semibold text-[#155e63]">You have been unsubscribed.</p>}
+          {status === 'error' && <p className="mt-3 text-sm font-semibold text-red-600">Could not unsubscribe. Please contact support.</p>}
+        </section>
+      )}
       <div className="space-y-4">
         {page.sections.map((section) => (
           <section key={section.title} className="rounded-2xl border border-gray-100 bg-white p-4">
@@ -812,6 +981,7 @@ function GuidePage({ type, userId }: { type: GuidePageType; userId?: string | nu
         <section className="rounded-2xl border border-[#155e63]/15 bg-[#155e63]/5 p-4 md:p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-[#155e63]">Quick answer</p>
           <p className="mt-2 text-sm leading-relaxed text-gray-700 md:text-base">{page.quickAnswer}</p>
+          <p className="mt-3 text-xs font-semibold text-gray-500">Last reviewed: June 12, 2026</p>
           <a
             href={page.ctaHref}
             onClick={() => {
@@ -887,6 +1057,20 @@ function GuidePage({ type, userId }: { type: GuidePageType; userId?: string | nu
           </div>
         </section>
 
+        <section className="rounded-2xl border border-gray-100 bg-white/70 p-4">
+          <h2 className="text-base font-bold text-gray-950">Official or primary sources to verify</h2>
+          <ul className="mt-3 space-y-2">
+            <li className="flex gap-2 text-sm leading-relaxed text-gray-600">
+              <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#155e63]" />
+              <span>Official app instructions from Alipay, WeChat, Didi, Amap, and Trip.com.</span>
+            </li>
+            <li className="flex gap-2 text-sm leading-relaxed text-gray-600">
+              <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#155e63]" />
+              <span>Your airline, hotel, card issuer, embassy, consulate, or relevant official authority for time-sensitive requirements.</span>
+            </li>
+          </ul>
+        </section>
+
         <section className="rounded-2xl border border-amber-200/70 bg-amber-50/80 p-4">
           <h2 className="text-sm font-bold text-amber-900">Conservative travel note</h2>
           <p className="mt-2 text-xs leading-relaxed text-amber-900/80">{standardDisclaimer}</p>
@@ -899,11 +1083,13 @@ function GuidePage({ type, userId }: { type: GuidePageType; userId?: string | nu
 export function getPolicyPageType(pathname: string): PageType | null {
   const cleanPath = pathname.replace(/\/+$/, '');
   if (cleanPath.endsWith('/pricing')) return 'pricing';
+  if (cleanPath.endsWith('/guides')) return 'guides';
   if (cleanPath.endsWith('/terms')) return 'terms';
   if (cleanPath.endsWith('/privacy')) return 'privacy';
   if (cleanPath.endsWith('/refund')) return 'refund';
   if (cleanPath.endsWith('/contact')) return 'contact';
   if (cleanPath.endsWith('/about')) return 'about';
+  if (cleanPath.endsWith('/unsubscribe')) return 'unsubscribe';
   if (cleanPath.endsWith('/china-travel-apps')) return 'china-travel-apps';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
   if (cleanPath.endsWith('/china-payment-guide')) return 'china-payment-guide';

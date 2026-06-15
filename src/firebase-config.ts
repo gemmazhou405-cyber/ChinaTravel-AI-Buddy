@@ -21,6 +21,4 @@ export const PLAN_LIMITS = {
   group: { buddyAi: 200, menuScan: 100, dailyBuddyAi: 50, durationDays: 14 },
 } as const;
 
-export const COZE_WORKER_URL = 'https://chinaease-proxy.gemmazhou405.workers.dev';
-export const COZE_BOT_ID = '7635204351933497390';
 export const PAYPAL_USERNAME = '';

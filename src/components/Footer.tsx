@@ -1,16 +1,54 @@
-import { Shield } from 'lucide-react';
+import { Mail, Shield } from 'lucide-react';
+import type { FormEvent } from 'react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { TabId } from '../App';
+import { subscribeNewsletter } from '../lib/newsletter';
+import { trackAppError, trackEvent, trackEventOnce } from '../lib/analytics';
 
 interface Props {
   onTabChange: (tab: TabId) => void;
+  onAskBuddy?: () => void;
 }
 
-export default function Footer({ onTabChange }: Props) {
+export default function Footer({ onTabChange, onAskBuddy }: Props) {
   const { t } = useTranslation();
   const [modal, setModal] = useState<'cookies' | null>(null);
+  const [email, setEmail] = useState('');
+  const [honeypot, setHoneypot] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'duplicate' | 'error' | 'invalid'>('idle');
   const assetBase = import.meta.env.BASE_URL;
+
+  const handleSubscribe = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const trimmed = email.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
+      setStatus('invalid');
+      return;
+    }
+    setStatus('loading');
+    void trackEvent('cta_clicked', {
+      ctaName: 'Subscribe',
+      destination: 'newsletter',
+    });
+    try {
+      const result = await subscribeNewsletter(trimmed, document.documentElement.lang || 'en', honeypot);
+      setStatus(result === 'already_subscribed' ? 'duplicate' : 'success');
+      if (result !== 'already_subscribed') {
+        trackEventOnce(`newsletter:${trimmed.toLowerCase()}`, 'newsletter_subscribed', {
+          destination: 'newsletter',
+          status: 'success',
+        });
+      }
+      setEmail('');
+    } catch {
+      trackAppError('newsletter_error', {
+        destination: 'newsletter',
+        context: 'footer_subscribe',
+      });
+      setStatus('error');
+    }
+  };
 
   const scrollToTabs = () => {
     document.getElementById('tabs')?.scrollIntoView({ behavior: 'smooth' });
@@ -21,55 +59,99 @@ export default function Footer({ onTabChange }: Props) {
     window.setTimeout(scrollToTabs, 0);
   };
 
-  const downloadInstructions = () => {
-    alert(t('footer.downloadInstructions'));
-  };
-
   return (
-    <footer className="bg-[#0a2829] text-white/60">
-      <div className="max-w-3xl mx-auto px-4 md:px-6 pt-10 pb-[calc(6rem+env(safe-area-inset-bottom))] md:py-10">
-        {/* Top section */}
-        <div className="flex flex-col sm:flex-row items-start justify-between gap-6 mb-8 pb-8 border-b border-white/10">
+    <footer className="relative overflow-hidden bg-[#061e1f] text-white/80">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_8%,rgba(214,168,90,0.13),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(18,123,120,0.22),transparent_32%)]" />
+      <div className="relative mx-auto max-w-6xl px-4 pb-[calc(6rem+env(safe-area-inset-bottom))] pt-12 md:px-6 md:py-14">
+        <div className="grid gap-8 border-b border-white/10 pb-10 lg:grid-cols-[1.3fr_2fr_1fr]">
           <div>
-            <div className="flex items-center gap-2 mb-2">
-              <img src={`${assetBase}logo.png`} width="32" height="32" alt="ChinaEase Buddy" style={{ borderRadius: '6px' }} />
-              <span className="text-white font-semibold text-base tracking-tight">ChinaEase Buddy</span>
+            <div className="mb-4 flex items-center gap-3">
+              <img src={`${assetBase}logo.png`} width="40" height="40" alt="ChinaEase Buddy" className="h-10 w-10 rounded-xl ring-1 ring-white/15" />
+              <span className="text-lg font-semibold tracking-tight text-white">ChinaEase Buddy</span>
             </div>
-            <p className="text-white/40 text-xs leading-relaxed max-w-xs">
+            <p className="max-w-sm text-sm leading-relaxed text-white/70">
               {t('footer.tagline')}
             </p>
           </div>
-          <div className="flex flex-wrap gap-6 text-xs">
-            <div className="space-y-2">
-              <p className="text-white/80 font-semibold text-xs uppercase tracking-wider mb-3">{t('footer.product')}</p>
-              <button onClick={() => goToTab('food')} className="block hover:text-white transition-colors text-left">{t('footer.features')}</button>
-              <a href="/about" className="block hover:text-white transition-colors text-left">{t('footer.about')}</a>
-              <a href="/pricing" className="block hover:text-white transition-colors text-left">{t('footer.pricing')}</a>
-              <button onClick={downloadInstructions} className="block hover:text-white transition-colors text-left">{t('footer.download')}</button>
+
+          <div className="grid grid-cols-2 gap-6 text-sm md:grid-cols-4">
+            <div className="space-y-2.5">
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#e8c27a]">{t('footer.product')}</p>
+              <button onClick={scrollToTabs} className="block text-left transition-colors hover:text-white">{t('footer.tools')}</button>
+              <button onClick={onAskBuddy ?? (() => goToTab('food'))} className="block text-left transition-colors hover:text-white">{t('footer.askBuddy')}</button>
+              <a href="/guides" className="block transition-colors hover:text-white">{t('footer.guides')}</a>
+              <a href="/china-travel-checklist" className="block transition-colors hover:text-white">{t('footer.destinations')}</a>
             </div>
-            <div className="space-y-2">
-              <p className="text-white/80 font-semibold text-xs uppercase tracking-wider mb-3">{t('footer.guides')}</p>
-              <a href="/china-travel-apps" className="block hover:text-white transition-colors">{t('footer.travelApps')}</a>
-              <a href="/china-payment-guide" className="block hover:text-white transition-colors">{t('footer.paymentGuide')}</a>
-              <a href="/china-emergency-numbers" className="block hover:text-white transition-colors">{t('footer.emergencyGuide')}</a>
-              <a href="/faq" className="block hover:text-white transition-colors">{t('footer.faq')}</a>
+            <div className="space-y-2.5">
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#e8c27a]">{t('footer.support')}</p>
+              <button onClick={scrollToTabs} className="block text-left transition-colors hover:text-white">{t('footer.helpCenter')}</button>
+              <a href="/contact" className="block transition-colors hover:text-white">{t('footer.contactUs')}</a>
+              <button onClick={() => goToTab('emergency')} className="block text-left transition-colors hover:text-white">{t('footer.emergencyHelp')}</button>
+              <a href="/contact" className="block transition-colors hover:text-white">{t('footer.feedback')}</a>
             </div>
-            <div className="space-y-2">
-              <p className="text-white/80 font-semibold text-xs uppercase tracking-wider mb-3">{t('footer.support')}</p>
-              <button onClick={scrollToTabs} className="block hover:text-white transition-colors text-left">{t('footer.helpCenter')}</button>
-              <a href="/contact" className="block hover:text-white transition-colors">{t('footer.contact')}</a>
-              <a href="/contact" className="block hover:text-white transition-colors">{t('footer.status')}</a>
+            <div className="space-y-2.5">
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#e8c27a]">{t('footer.company')}</p>
+              <a href="/about" className="block transition-colors hover:text-white">{t('footer.aboutUs')}</a>
+              <a href="/contact" className="block transition-colors hover:text-white">{t('footer.contactUs')}</a>
             </div>
+            <div className="space-y-2.5">
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#e8c27a]">{t('footer.legalColumn')}</p>
+              <a href="/terms" className="block transition-colors hover:text-white">{t('footer.terms')}</a>
+              <a href="/privacy" className="block transition-colors hover:text-white">{t('footer.privacy')}</a>
+              <a href="/refund" className="block transition-colors hover:text-white">{t('footer.refundPolicy')}</a>
+              <button onClick={() => setModal('cookies')} className="block text-left transition-colors hover:text-white">{t('footer.cookies')}</button>
+            </div>
+          </div>
+
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#e8c27a]">{t('footer.stayInKnow')}</p>
+            <form className="mt-4 space-y-2" onSubmit={handleSubscribe}>
+              <label className="sr-only" htmlFor="newsletter-email">{t('footer.emailPlaceholder')}</label>
+              <label className="flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.07] px-3 py-2.5 text-sm text-white/80 backdrop-blur-xl">
+                <Mail className="h-4 w-4 text-[#e8c27a]" />
+                <input
+                  id="newsletter-email"
+                  type="email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  placeholder={t('footer.emailPlaceholder')}
+                  autoComplete="email"
+                  className="min-w-0 flex-1 bg-transparent text-white placeholder:text-white/30 focus:outline-none"
+                />
+              </label>
+              <input
+                type="text"
+                value={honeypot}
+                onChange={(event) => setHoneypot(event.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+                aria-hidden="true"
+              />
+              <button
+                type="submit"
+                disabled={status === 'loading'}
+                className="w-full rounded-full bg-[#e8c27a] px-4 py-2.5 text-sm font-bold text-[#061e1f] transition-colors hover:bg-[#f4d78f] disabled:opacity-60"
+              >
+                {status === 'loading' ? t('footer.subscribing') : t('footer.subscribe')}
+              </button>
+              <p className="text-xs leading-relaxed text-white/50">{t('footer.subscribeConsent')}</p>
+              {status !== 'idle' && status !== 'loading' && (
+                <p className={`text-xs font-semibold ${status === 'success' || status === 'duplicate' ? 'text-[#e8c27a]' : 'text-red-200'}`} aria-live="polite">
+                  {t(`footer.newsletterStatus.${status}`)}
+                </p>
+              )}
+            </form>
           </div>
         </div>
 
         {/* Legal disclaimer */}
-        <div className="mb-6">
+        <div className="mb-6 mt-8">
           <div className="flex items-center gap-2 mb-2">
             <Shield className="w-3.5 h-3.5 text-white/40" />
             <p className="text-white/50 text-xs font-semibold uppercase tracking-wider">{t('footer.legalTitle')}</p>
           </div>
-          <p className="text-white/30 text-xs leading-relaxed">
+          <p className="text-white/50 text-xs leading-relaxed">
             {t('footer.legalBody')}
           </p>
         </div>
@@ -77,19 +159,19 @@ export default function Footer({ onTabChange }: Props) {
         {/* Refund policy */}
         <div className="mb-8">
           <p className="text-white/50 text-xs font-semibold uppercase tracking-wider mb-2">{t('footer.refundTitle')}</p>
-          <p className="text-white/30 text-xs leading-relaxed">
+          <p className="text-white/50 text-xs leading-relaxed">
             {t('footer.refundBody')}
           </p>
         </div>
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 border-t border-white/10">
-          <p className="text-white/25 text-xs">{t('footer.rights')}</p>
+          <p className="text-white/40 text-xs">{t('footer.rights')}</p>
           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs">
-            <a href="/privacy" className="text-white/30 hover:text-white/60 transition-colors">{t('footer.privacy')}</a>
-            <a href="/terms" className="text-white/30 hover:text-white/60 transition-colors">{t('footer.terms')}</a>
-            <a href="/refund" className="text-white/30 hover:text-white/60 transition-colors">{t('footer.refundPolicy')}</a>
-            <button onClick={() => setModal('cookies')} className="text-white/30 hover:text-white/60 transition-colors">{t('footer.cookies')}</button>
+            <a href="/privacy" className="text-white/50 hover:text-white/75 transition-colors">{t('footer.privacy')}</a>
+            <a href="/terms" className="text-white/50 hover:text-white/75 transition-colors">{t('footer.terms')}</a>
+            <a href="/refund" className="text-white/50 hover:text-white/75 transition-colors">{t('footer.refundPolicy')}</a>
+            <button onClick={() => setModal('cookies')} className="text-white/50 hover:text-white/75 transition-colors">{t('footer.cookies')}</button>
           </div>
         </div>
       </div>

@@ -1,9 +1,243 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    function analyticsData() {
+      return request.resource.data;
+    }
+
+    function paymentClaimData() {
+      return request.resource.data;
+    }
+
+    function userData() {
+      return request.resource.data;
+    }
+
+    function optionalString(field, maxLength) {
+      return !(field in analyticsData())
+             || (analyticsData()[field] is string
+                 && analyticsData()[field].size() <= maxLength);
+    }
+
+    function optionalNumber(field) {
+      return !(field in analyticsData()) || analyticsData()[field] is number;
+    }
+
+    function validAnalyticsEventName() {
+      return analyticsData().eventName in [
+        'landing_deeplink_loaded',
+        'guide_page_viewed',
+        'journey_selected',
+        'tool_category_opened',
+        'cta_clicked',
+        'signup_started',
+        'signup_completed',
+        'buddy_first_success',
+        'menu_scan_first_success',
+        'quota_exhausted',
+        'checkout_created',
+        'payment_completed',
+        'newsletter_subscribed',
+        'app_error'
+      ];
+    }
+
+    function validAnalyticsEvent() {
+      return analyticsData().keys().hasAll([
+               'eventName',
+               'anonymousSessionId',
+               'path',
+               'timestamp',
+               'createdAt'
+             ])
+             && analyticsData().keys().hasOnly([
+               'eventName',
+               'anonymousSessionId',
+               'userId',
+               'path',
+               'referrer',
+               'landingPath',
+               'landingJourney',
+               'landingTool',
+               'firstVisitTimestamp',
+               'utm_source',
+               'utm_medium',
+               'utm_campaign',
+               'utm_content',
+               'timestamp',
+               'createdAt',
+               'journey',
+               'tool',
+               'category',
+               'selectedJourney',
+               'previousJourney',
+               'ctaName',
+               'destination',
+               'pageType',
+               'plan',
+               'method',
+               'quotaType',
+               'errorType',
+               'errorCode',
+               'status',
+               'context'
+             ])
+             && validAnalyticsEventName()
+             && analyticsData().eventName is string
+             && analyticsData().eventName.size() <= 64
+             && analyticsData().anonymousSessionId is string
+             && analyticsData().anonymousSessionId.size() <= 80
+             && analyticsData().path is string
+             && analyticsData().path.size() <= 500
+             && analyticsData().timestamp is number
+             && analyticsData().createdAt == request.time
+             && optionalString('userId', 128)
+             && optionalString('referrer', 500)
+             && optionalString('landingPath', 500)
+             && optionalString('landingJourney', 32)
+             && optionalString('landingTool', 64)
+             && optionalNumber('firstVisitTimestamp')
+             && optionalString('utm_source', 80)
+             && optionalString('utm_medium', 80)
+             && optionalString('utm_campaign', 120)
+             && optionalString('utm_content', 120)
+             && optionalString('journey', 32)
+             && optionalString('tool', 64)
+             && optionalString('category', 80)
+             && optionalString('selectedJourney', 32)
+             && optionalString('previousJourney', 32)
+             && optionalString('ctaName', 120)
+             && optionalString('destination', 160)
+             && optionalString('pageType', 80)
+             && optionalString('plan', 32)
+             && optionalString('method', 32)
+             && optionalString('quotaType', 32)
+             && optionalString('errorType', 80)
+             && optionalString('errorCode', 80)
+             && optionalString('status', 80)
+             && optionalString('context', 120);
+    }
+
     match /users/{userId} {
-      allow read, write: if request.auth != null 
-                         && request.auth.uid == userId;
+      function isOwner() {
+        return request.auth != null && request.auth.uid == userId;
+      }
+
+      function validFreeUserCreate() {
+        return userData().keys().hasAll([
+                 'uid',
+                 'email',
+                 'plan',
+                 'planExpiresAt',
+                 'buddyAiQuotaTotal',
+                 'buddyAiQuotaUsed',
+                 'menuScanQuotaTotal',
+                 'menuScanQuotaUsed',
+                 'dailyBuddyAiLimit',
+                 'dailyBuddyAiUsed',
+                 'dailyResetAt'
+               ])
+               && userData().keys().hasOnly([
+                 'uid',
+                 'email',
+                 'plan',
+                 'planExpiresAt',
+                 'buddyAiQuotaTotal',
+                 'buddyAiQuotaUsed',
+                 'menuScanQuotaTotal',
+                 'menuScanQuotaUsed',
+                 'dailyBuddyAiLimit',
+                 'dailyBuddyAiUsed',
+                 'dailyResetAt'
+               ])
+               && userData().uid == userId
+               && request.auth.token.email is string
+               && userData().email == request.auth.token.email
+               && userData().email is string
+               && userData().email.size() <= 160
+               && userData().plan == 'free'
+               && userData().planExpiresAt == null
+               && userData().buddyAiQuotaTotal == 5
+               && userData().buddyAiQuotaUsed == 0
+               && userData().menuScanQuotaTotal == 3
+               && userData().menuScanQuotaUsed == 0
+               && userData().dailyBuddyAiLimit == 5
+               && userData().dailyBuddyAiUsed == 0
+               && userData().dailyResetAt == null;
+      }
+
+      allow read: if isOwner();
+      allow create: if isOwner() && validFreeUserCreate();
+      allow update: if false;
+      allow delete: if false;
+    }
+
+    match /usageRequests/{requestId} {
+      allow read: if request.auth != null && resource.data.userId == request.auth.uid;
+      allow create, update, delete: if false;
+    }
+
+    match /orders/{orderId} {
+      allow read: if request.auth != null && resource.data.userId == request.auth.uid;
+      allow create, update, delete: if false;
+    }
+
+    match /entitlements/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create, update, delete: if false;
+    }
+
+    match /paypalWebhookEvents/{eventId} {
+      allow read, create, update, delete: if false;
+    }
+
+    match /newsletterLeads/{leadId} {
+      allow read, create, update, delete: if false;
+    }
+
+    match /analyticsEvents/{eventId} {
+      allow create: if validAnalyticsEvent();
+      allow read, update, delete: if false;
+    }
+
+    match /paymentClaims/{claimId} {
+      allow create: if request.auth != null
+                    && paymentClaimData().keys().hasAll([
+                         'userId',
+                         'accountEmail',
+                         'plan',
+                         'paypalTransactionId',
+                         'sourcePath',
+                         'createdAt',
+                         'status'
+                       ])
+                    && paymentClaimData().keys().hasOnly([
+                         'userId',
+                         'accountEmail',
+                         'plan',
+                         'paypalTransactionId',
+                         'paypalEmail',
+                         'sourcePath',
+                         'createdAt',
+                         'status'
+                       ])
+                    && paymentClaimData().userId == request.auth.uid
+                    && paymentClaimData().userId is string
+                    && paymentClaimData().userId.size() <= 128
+                    && paymentClaimData().accountEmail is string
+                    && paymentClaimData().accountEmail.size() <= 160
+                    && paymentClaimData().plan in ['trip_pass', 'group_pass']
+                    && paymentClaimData().paypalTransactionId is string
+                    && paymentClaimData().paypalTransactionId.size() >= 4
+                    && paymentClaimData().paypalTransactionId.size() <= 120
+                    && (!('paypalEmail' in paymentClaimData())
+                        || (paymentClaimData().paypalEmail is string
+                            && paymentClaimData().paypalEmail.size() <= 160))
+                    && paymentClaimData().sourcePath is string
+                    && paymentClaimData().sourcePath.size() <= 500
+                    && paymentClaimData().status == 'pending'
+                    && paymentClaimData().createdAt == request.time;
+      allow read, update, delete: if false;
     }
   }
 }

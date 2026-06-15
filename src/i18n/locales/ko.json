@@ -5,10 +5,46 @@
       "startFree": "무료 시작",
       "login": "로그인",
       "logout": "로그아웃",
-      "currentPlan": "{{plan}} 플랜"
+      "currentPlan": "{{plan}} 플랜",
+      "guides": "가이드",
+      "destinations": "여행지",
+      "tools": "도구",
+      "travelPasses": "여행 패스",
+      "faq": "FAQ",
+      "services": "서비스",
+      "aboutUs": "회사 소개",
+      "contact": "문의",
+      "getHelpNow": "지금 도움 받기",
+      "menu": "메뉴"
+    },
+    "homepage": {
+      "how": {
+        "kicker": "간단한 흐름",
+        "title": "ChinaEase Buddy 사용 방법",
+        "subtitle": "처음 방문하는 사람도 몇 초 안에 필요한 도움을 찾을 수 있습니다.",
+        "steps": {
+          "moment": {
+            "title": "여행 상황 선택",
+            "body": "출발 전, 중국 현지, 또는 긴급 상황."
+          },
+          "tool": {
+            "title": "맞는 도구 열기",
+            "body": "앱, 결제, 택시, 음식, 호텔, 긴급 문구."
+          },
+          "buddy": {
+            "title": "막히면 Buddy에게 질문",
+            "body": "현재 상황에 맞는 실용적인 도움을 받으세요."
+          }
+        }
+      },
+      "passes": {
+        "kicker": "선택 업그레이드",
+        "title": "여행 패스",
+        "subtitle": "무료 도구 키트가 먼저입니다. Trip Pass는 추가 여행 도움을 위한 선택 옵션입니다."
+      }
     },
     "hero": {
-      "badge": "AI 기반 · 오프라인 사용 가능",
+      "badge": "당신의 여정, 우리의 지원.",
       "line1": "중국어 몰라도.",
       "line2": "VPN 없어도.",
       "line3": "문제없어요.",
@@ -16,14 +52,18 @@
       "cta": "무료 시작 — 다운로드 불필요",
       "trust": "중국 내 사용 가능 · VPN 불필요 · 무료 시작",
       "titleLine1": "중국 여행 도움을,",
-      "titleLine2": "필요한 순간에.",
-      "homeSubtitle": "중국에서 준비하고, 이동하고, 일상 여행 상황을 해결하세요.",
-      "startFree": "무료로 시작",
+      "titleLine2": "아름답게 단순하게.",
+      "homeSubtitle": "중국을 방문하는 외국인을 위한 앱, 결제, 교통, 음식, 긴급 도움.",
+      "startFree": "지금 도움 받기",
       "askBuddy": "Buddy에게 묻기",
-      "mobileTrust": "앱 다운로드 없음 · 모바일 지원 · 무료 시작",
+      "mobileTrust": "여행자들이 이용 · 24/7 지원 · 안전을 우선",
       "realMoments": "중국의 실제 상황을 위해 만들었습니다 — 택시, 음식, 결제, 호텔, 긴급 상황.",
-      "mobileSubtitle": "중국에서 실제로 필요한 순간을 위한 여행 도움.",
-      "mobileTrustShort": "앱 설치 없음 · 모바일 최적화 · 무료 시작"
+      "mobileSubtitle": "중국에서 앱, 결제, 교통, 음식, 긴급 도움.",
+      "mobileTrustShort": "앱 불필요 · 모바일 친화적 · 무료 시작",
+      "trustTrusted": "여행자들이 이용",
+      "trustSupport": "24/7 지원",
+      "trustSafety": "안전을 우선",
+      "openFreeToolkit": "무료 툴킷 열기"
     },
     "tabs": {
       "before": "출발 전",
@@ -106,7 +146,7 @@
           },
           {
             "name": "Amap",
-            "purpose": "중국 현지 길찾기에는 Google Maps보다 유용한 경우가 많습니다.",
+            "purpose": "중국 현지 길찾기에 유용합니다.",
             "tip": "중요한 주소를 중국어로 저장하세요."
           },
           {
@@ -132,7 +172,7 @@
       "transportBasics": {
         "items": [
           "짐이 있는 도착 상황에서는 Didi나 공식 택시 줄을 이용하세요.",
-          "중국에서는 Amap이 Google Maps보다 더 유용한 경우가 많습니다.",
+          "Amap은 중국 현지 길찾기에 유용할 수 있습니다.",
           "고속철도는 여권 이름으로 예약합니다.",
           "운전기사와 역 직원에게 보여줄 호텔 주소를 중국어로 저장하세요."
         ]
@@ -196,11 +236,13 @@
       "hotelCardsSubtitle": "체크인 및 프런트 카드 {{count}}개"
     },
     "food": {
-      "decoderTitle": "메뉴 디코더",
-      "decoderSub": "중국어 메뉴를 촬영하거나 업로드하면 설명과 함께 즉시 번역됩니다.",
-      "dropZone": "메뉴 사진을 여기에 놓기",
-      "dropZoneSub": "또는 탭하여 선택 · JPG, PNG, HEIC",
-      "analyzing": "메뉴 분석 중...",
+      "decoderTitle": "메뉴 도움",
+      "decoderSub": "자주 보는 음식을 검색하고 식당에서 쓸 문구를 준비하세요. 메뉴 사진 도움 기능은 비공개 테스트 중입니다.",
+      "dropZone": "메뉴 사진 도움 기능은 비공개 테스트 중입니다.",
+      "dropZoneSub": "현재는 음식 검색과 문구 카드를 사용하세요.",
+      "imageInvalid": "JPG, PNG 또는 WebP 메뉴 사진을 업로드하세요.",
+      "imageTooLarge": "8MB보다 작은 이미지를 업로드하세요.",
+      "analyzing": "비공개 테스트",
       "clear": "지우기",
       "allergyTitle": "알레르기 알림",
       "customize": "맞춤 설정",
@@ -274,7 +316,11 @@
       "noDishes": "“{{query}}”에 대한 음식을 찾을 수 없습니다",
       "vegan": "비건",
       "vegetarianShort": "채식",
-      "restaurantCardsSubtitle": "식당 주문 카드 {{count}}개"
+      "restaurantCardsSubtitle": "식당 주문 카드 {{count}}개",
+      "allergenDisclaimer": "메뉴 정보에서 가능한 재료와 일반적인 알레르기 유발 성분을 확인하는 데 도움을 줍니다. 항상 식당 직원에게 직접 확인하세요.",
+      "allergenResultWarning": "이 도구는 재료나 알레르기 유발 성분을 놓칠 수 있습니다. 특히 심한 알레르기가 있는 경우 유일한 안전 확인 수단으로 의존하지 마세요.",
+      "privateTestingTitle": "메뉴 사진 도움 기능은 비공개 테스트 중입니다.",
+      "privateTestingBody": "현재는 아래의 현지 음식 참고 자료와 식당 문구 카드를 사용하세요. 특히 심한 알레르기가 있다면 이 앱만으로 확인하지 마세요."
     },
     "transport": {
       "appsTitle": "추천 앱",
@@ -335,15 +381,15 @@
       "locationTitle": "위치 공유",
       "locationSub": "GPS 좌표를 중국어로 응급 서비스나 호텔 컨시어지에게 보내세요.",
       "locationBtn": "중국어로 위치 복사",
-      "embassyPhrase": "Veuillez contacter mon ambassade. Je suis ressortissant étranger et j’ai besoin d’une assistance consulaire.",
-      "medicalPhrase": "Veuillez appeler une ambulance. J’ai besoin d’une aide médicale urgente.",
+      "embassyPhrase": "제 대사관에 연락해 주세요. 저는 외국 국적자이며 영사 지원이 필요합니다.",
+      "medicalPhrase": "구급차를 불러 주세요. 긴급 의료 도움이 필요합니다.",
       "numbers": {
-        "police": "Police",
-        "policeDesc": "Vol, agression, objets perdus, menaces à la sécurité",
-        "ambulance": "Ambulance",
-        "ambulanceDesc": "Urgences médicales, blessures, maladie",
+        "police": "경찰",
+        "policeDesc": "도난, 폭행, 분실물, 안전 위협",
+        "ambulance": "구급",
+        "ambulanceDesc": "응급 상황, 부상, 질병",
         "fire": "Pompiers",
-        "fireDesc": "Incendie, fuite de gaz, opérations de secours"
+        "fireDesc": "화재, 가스 누출, 구조 상황"
       },
       "lostPassportPhone": "여권 / 휴대폰 분실",
       "lostPhone": "휴대폰 분실",
@@ -363,10 +409,11 @@
       "pharmacyCardsSubtitle": "약 및 약국 카드 {{count}}개"
     },
     "pay": {
-      "plansTitle": "플랜",
+      "plansTitle": "여행 패스",
+      "oneTime": "일회 결제",
       "currentPlan": "현재 플랜:",
       "aiUsed": "Buddy AI 사용:",
-      "refund": "일회성 결제 · 자동 갱신 없음 · 3일 환불 정책",
+      "refund": "일회성 결제 · 자동 갱신 없음",
       "paymentTitle": "중국 결제 방법",
       "wechatSetup": "WeChat Pay 설정",
       "exchangeTip": "환율 팁",
@@ -374,44 +421,41 @@
       "currency": "환율 계산기",
       "currencyLive": "USD · EUR · GBP · AUD → RMB en direct",
       "open": "열기",
-      "secure": "수동 얼리 액세스",
-      "bannerAlt": "Votre aventure en Chine commence maintenant",
-      "paymentSoon": "자동 결제를 준비하는 동안 수동 얼리 액세스를 이용할 수 있습니다.",
+      "secure": "수동 PayPal 결제",
+      "bannerAlt": "중국 여행이 지금 시작됩니다",
+      "paymentSoon": "유료 패스는 일회성 디지털 여행 패스입니다. 실제 출시 전 PayPal Sandbox 결제를 테스트 중입니다.",
       "plans": {
         "free": {
           "name": "무료",
-          "desc": "여행에 필요한 기본 도구",
+          "desc": "중국 여행의 일반적인 상황을 위한 기본 툴킷.",
           "cta": "무료 시작",
           "features": [
-            "Buddy AI 메시지 5회",
-            "메뉴/사진 스캔 3회",
-            "기본 오프라인 긴급 카드",
-            "기본 문구 카드",
-            "출발 전 체크리스트"
+            "앱, 결제, 교통, 음식, 호텔, 긴급 상황 기본 도구",
+            "기본 문장 카드와 여행 가이드",
+            "Buddy AI 메시지 5개",
+            "결제 필요 없음"
           ]
         },
         "trip": {
           "name": "Trip Pass",
-          "desc": "7일간 유효",
-          "cta": "얼리 액세스 요청",
+          "desc": "중국 여행 중 1명을 위한 추가 여행 도움",
+          "cta": "Trip Pass 받기",
           "features": [
-            "Buddy AI 메시지 50회",
-            "메뉴/사진 스캔 20회",
-            "전체 오프라인 긴급 키트",
-            "결제 및 교통 가이드",
-            "9개 도시 생존 팩"
+            "Buddy AI 메시지 50개",
+            "7일간 유효",
+            "여행자 1명을 위한 추가 도움",
+            "일회성 결제 · 자동 갱신 없음"
           ]
         },
         "group": {
           "name": "Group Pass",
-          "desc": "14일간 유효 · 최대 5명 여행자",
-          "cta": "얼리 액세스 요청",
+          "desc": "하나의 공유 계정을 사용하는 커플, 가족 또는 소규모 그룹을 위한 추가 여행 도움",
+          "cta": "Group Pass 받기",
           "features": [
-            "Buddy AI 메시지 200회",
-            "메뉴/사진 스캔 100회",
-            "여행자 프로필 5개",
-            "의료 문구 카드 및 병원 도우미",
-            "공유 긴급 카드"
+            "Buddy AI 메시지 200개",
+            "14일간 유효",
+            "계정 1개와 공유 한도",
+            "일회성 결제 · 자동 갱신 없음"
           ]
         }
       },
@@ -491,25 +535,92 @@
       "paymentCardsSubtitle": "Alipay, WeChat Pay, 카드, 현금 카드 {{count}}개",
       "setupShort": "도착 전에 카드를 연결하세요.",
       "earlyAccess": {
-        "title": "수동 얼리 액세스",
-        "body": "자동 체크아웃을 준비 중입니다. 현재 Trip Pass와 Group Pass는 결제 확인 후 수동으로 활성화됩니다.",
-        "options": "사용 가능한 수동 결제 옵션은 이메일로 안내됩니다.",
+        "title": "수동 PayPal 결제",
+        "body": "Trip Pass와 Group Pass는 PayPal 결제 링크를 사용합니다. 결제 확인 후 액세스가 수동으로 활성화됩니다.",
+        "options": "ChinaEase Buddy 계정과 같은 이메일을 사용해 주세요.",
         "safety": "ChinaEase Buddy는 이 웹사이트에서 카드 정보를 직접 수집하지 않습니다.",
-        "modalTitle": "얼리 액세스 요청",
-        "modalSubtitle": "자동 체크아웃을 준비 중입니다. 요청을 제출하면 사용 가능한 수동 결제 옵션을 이메일로 안내해 드립니다.",
+        "modalTitle": "수동 결제",
+        "modalSubtitle": "선택한 패스의 PayPal 결제 링크를 사용하세요. 결제 확인 후 액세스가 수동으로 활성화됩니다.",
         "email": "이메일 주소",
         "plan": "플랜 선택",
         "travelDate": "여행 날짜 선택 사항",
         "message": "메시지 선택 사항",
         "messagePlaceholder": "여행에 대해 알려주실 내용이 있나요?",
-        "submit": "요청 제출",
+        "submit": "계속",
         "contactEmail": "이메일로 문의",
-        "confirmation": "수동 결제 옵션을 이메일로 안내하고 결제 확인 후 플랜을 활성화합니다.",
+        "confirmation": "결제 확인 후 액세스가 수동으로 활성화됩니다.",
         "noCard": "이 웹사이트에서는 카드 정보를 수집하지 않습니다.",
         "sameEmail": "ChinaEase Buddy 계정에 사용하는 동일한 이메일을 사용해 주세요.",
         "createAccount": "더 빠른 활성화를 위해 먼저 무료 계정을 만드세요.",
         "emailRequired": "먼저 이메일을 입력해 주세요.",
-        "mailReady": "요청 이메일이 준비되었습니다. 계속하려면 이메일을 보내 주세요."
+        "mailReady": "결제 링크로 계속 진행해 주세요."
+      },
+      "freeToolkitReady": "무료 도구 키트를 사용할 수 있습니다. 결제는 필요 없습니다.",
+      "manualPayment": {
+        "title": "유료 패스는 선택 사항입니다.",
+        "body": "결제는 PayPal에서 처리됩니다. 결제 확인 후 액세스가 수동으로 활성화됩니다. ChinaEase Buddy 계정과 같은 이메일을 사용해 주세요.",
+        "note": "ChinaEase Buddy는 카드 정보를 직접 수집하지 않습니다. 결제는 PayPal에서 처리됩니다.",
+        "safety": "",
+        "paidNote": ""
+      },
+      "claim": {
+        "signInFirst": "패스를 계정에 적용하려면 먼저 로그인해 주세요.",
+        "kicker": "수동 활성화",
+        "title": "{{plan}} 결제",
+        "accountLabel": "ChinaEase Buddy 계정",
+        "accountHelp": "결제 확인 후 이 계정에 액세스가 적용됩니다.",
+        "openPaypal": "PayPal 결제 열기",
+        "requestActivation": "결제했습니다 — 활성화 요청",
+        "afterPaymentHelp": "결제 후 PayPal 거래 ID를 제출하면 검토 후 수동으로 패스를 활성화합니다.",
+        "transactionId": "PayPal 거래 ID",
+        "transactionPlaceholder": "예: 1AB23456CD789012E",
+        "paypalEmail": "PayPal 결제 이메일(선택)",
+        "paypalEmailPlaceholder": "계정 이메일과 다른 경우",
+        "transactionRequired": "PayPal 거래 ID를 입력해 주세요.",
+        "submit": "활성화 요청 제출",
+        "submitting": "제출 중...",
+        "submitted": "활성화 요청이 제출되었습니다. 수동으로 검토하겠습니다.",
+        "submitError": "요청을 제출할 수 없습니다. 다시 시도하거나 지원팀에 문의해 주세요.",
+        "noCards": "카드 번호나 민감한 결제 정보는 입력하지 마세요."
+      },
+      "checkout": {
+        "sandboxBadge": "Sandbox 결제 — 실제 금액은 청구되지 않습니다.",
+        "secureCheckout": "안전한 PayPal 결제",
+        "modeHelp": "PayPal 자동 결제는 Sandbox에서 테스트 중입니다. 실제 결제는 소유자 승인 전까지 비활성화됩니다.",
+        "activePass": "이미 활성화된 여행 패스가 있습니다.",
+        "activeButton": "활성 패스",
+        "expires": "{{date}} 만료",
+        "title": "{{plan}} 결제",
+        "accountHelp": "결제 확인 후 이 ChinaEase Buddy 계정에 이용 권한이 적용됩니다.",
+        "tripValidity": "Buddy AI 메시지 50개 · 7일",
+        "groupValidity": "Buddy AI 메시지 200개 · 14일 · 공유 계정 1개",
+        "acknowledgement": "이것은 현재 ChinaEase Buddy 계정에 연결되는 일회성 디지털 여행 패스이며 결제 성공 후 이용이 시작된다는 점을 이해합니다.",
+        "openPaypal": "PayPal 결제 열기",
+        "creating": "주문 생성 중...",
+        "confirmPayment": "결제 승인 완료 — 확인",
+        "capturing": "결제 확인 중...",
+        "reopenPaypal": "PayPal 창 다시 열기",
+        "success": "결제가 확인되었습니다. 여행 패스가 활성화되었습니다.",
+        "pending": "결제를 확인 중입니다. 다시 결제하지 마세요.",
+        "createError": "PayPal 주문을 만들 수 없습니다.",
+        "captureError": "결제를 확인할 수 없습니다.",
+        "legalLinks": "결제 전 약관, 개인정보 처리방침, 환불 정보를 확인하세요.",
+        "trip": {
+          "features": [
+            "Buddy AI 메시지 50개",
+            "메뉴/사진 스캔 20회",
+            "7일간 유효",
+            "계정 1개 · 자동 갱신 없음"
+          ]
+        },
+        "group": {
+          "features": [
+            "Buddy AI 메시지 200개",
+            "메뉴/사진 스캔 100회",
+            "14일간 유효",
+            "소규모 여행 그룹용 공유 계정 1개"
+          ]
+        }
       }
     },
     "chat": {
@@ -518,13 +629,13 @@
       "placeholder": "중국 여행에 대해 무엇이든 물어보세요...",
       "suggested": "추천 질문",
       "suggestions": {
-        "s1": "Comment aller de l’aéroport de Shanghai au centre-ville ?",
+        "s1": "상하이 공항에서 시내까지 어떻게 가나요?",
         "s2": "Que faire si je perds mon passeport ?",
-        "s3": "Comment commander sans parler chinois ?",
+        "s3": "중국어를 못할 때 어떻게 주문하나요?",
         "s4": "Peut-on boire l’eau du robinet ?"
       },
       "welcome": "안녕하세요! 저는 중국 여행 AI 동반자 Buddy입니다. 교통, 안전한 식사, 결제, 긴급 상황을 무엇이든 물어보세요.",
-      "quotaExceeded": "{{plan}} 플랜의 Buddy AI 메시지 {{limit}}회를 모두 사용했습니다. Trip Pass($9.90)로 업그레이드하면 50회, Group Pass($39.90)는 200회를 사용할 수 있습니다.",
+      "quotaExceeded": "{{plan}} 플랜의 Buddy AI 메시지 {{limit}}회를 모두 사용했습니다. Trip Pass($9.90)로 업그레이드하면 50회, Group Pass($29.90)는 200회를 사용할 수 있습니다.",
       "notLoggedIn": "AI 채팅을 사용하려면 로그인하세요.",
       "trouble": "문제가 발생했습니다. 다시 시도해 주세요.",
       "connectionIssue": "연결 문제가 있습니다. 인터넷을 확인하고 다시 시도하세요.",
@@ -533,7 +644,8 @@
       "dailyQuotaExceeded": "오늘의 Buddy AI 메시지 {{limit}}회 한도에 도달했습니다. 내일 다시 시도하세요.",
       "needBuddy": "필요한 것을 못 찾았나요? Buddy에게 물어보세요.",
       "verifyEmail": "Buddy AI를 사용하려면 이메일 인증이 필요합니다.",
-      "verifyEmailHint": "받은편지함을 확인하고 인증 후 새로고침해 주세요."
+      "verifyEmailHint": "받은편지함을 확인하고 인증 후 새로고침해 주세요.",
+      "rateLimited": "다음 메시지를 보내기 전에 잠시 기다려 주세요."
     },
     "auth": {
       "title": "ChinaEase Buddy",
@@ -546,7 +658,7 @@
       "loginBtn": "로그인",
       "loading": "잠시만 기다려 주세요...",
       "error": "문제가 발생했습니다",
-      "freeNote": "무료 플랜에는 Buddy AI 메시지 5회와 메뉴/사진 스캔 3회가 포함됩니다. 신용카드가 필요 없습니다.",
+      "freeNote": "무료 플랜에는 Buddy AI 메시지 5개가 포함됩니다. 카드 등록은 필요 없습니다.",
       "continueWithGoogle": "Google로 계속하기",
       "or": "또는",
       "forgotPassword": "비밀번호를 잊으셨나요?",
@@ -565,7 +677,7 @@
       "emailAlternative": "이메일로도 로그인할 수 있습니다."
     },
     "footer": {
-      "tagline": "중국을 방문하는 외국인 관광객을 위한 AI 여행 동반자. 메뉴 해석, 교통 안내, 긴급 상황 대응.",
+      "tagline": "외국인 방문객을 위한 AI 여행 동반자. 중국 여행을 더 쉽고 안전하며 보람 있게 도와드립니다.",
       "product": "제품",
       "support": "지원",
       "features": "기능",
@@ -582,7 +694,7 @@
       "legalTitle": "법적 고지",
       "legalBody": "ChinaEase Buddy는 편의를 위한 일반 여행 정보와 AI 번역을 제공합니다. 법률, 의료, 금융 전문가의 조언을 대체하지 않습니다. 긴급 번호와 문구는 참고용이며 현지 당국에 항상 확인하세요. 번역 정확성, 결제 처리 또는 제3자 서비스 가용성을 보장하지 않습니다.",
       "refundTitle": "환불 정책",
-      "refundBody": "Buddy AI 메시지를 사용하지 않은 경우 3일 이내 전액 환불. 미사용 할당량에 따라 부분 환불됩니다. 지원팀에 문의하세요.",
+      "refundBody": "자발적인 3일 환불 보장은 제공하지 않습니다. 관련 소비자 법적 권리는 적용될 수 있으므로 결제 문제가 있으면 지원팀에 문의하세요.",
       "rights": "© 2026 ChinaEase Buddy. 모든 권리 보유.",
       "privacy": "개인정보 처리방침",
       "terms": "서비스 약관",
@@ -591,7 +703,33 @@
       "refundPolicy": "환불 정책",
       "cookiesBody": "필수 쿠키만 사용합니다: 로그인 세션과 언어 설정. 광고 쿠키는 사용하지 않습니다.",
       "downloadInstructions": "모바일 브라우저에서 이 사이트를 열고 공유 → 홈 화면에 추가를 누르세요",
-      "close": "닫기"
+      "close": "닫기",
+      "tools": "도구",
+      "askBuddy": "Buddy에게 묻기",
+      "destinations": "여행지",
+      "contactUs": "문의하기",
+      "emergencyHelp": "긴급 도움",
+      "feedback": "피드백",
+      "company": "회사",
+      "aboutUs": "회사 소개",
+      "careers": "채용",
+      "press": "보도자료",
+      "partnerships": "파트너십",
+      "legalColumn": "법률",
+      "stayInKnow": "소식 받기",
+      "emailPlaceholder": "이메일 주소",
+      "subscribe": "구독",
+      "subscribeThanks": "감사합니다. 소식을 전해드릴게요.",
+      "comingSoon": "곧 제공 예정",
+      "subscribeComingSoon": "이메일 업데이트는 곧 제공됩니다. 지금은 출시 소식을 위해 직접 문의해 주세요.",
+      "subscribing": "구독 중...",
+      "subscribeConsent": "구독하면 ChinaEase Buddy의 중국 여행 업데이트를 가끔 받는 데 동의하는 것입니다. 언제든지 구독 해지할 수 있습니다.",
+      "newsletterStatus": {
+        "success": "구독되었습니다. 감사합니다.",
+        "duplicate": "이미 구독 중입니다.",
+        "invalid": "유효한 이메일 주소를 입력하세요.",
+        "error": "구독에 실패했습니다. 다시 시도해 주세요."
+      }
     },
     "toast": {
       "copied": "복사됨!",
@@ -599,8 +737,8 @@
     },
     "journey": {
       "states": {
-        "before": "여행 전",
-        "now": "지금 중국에서",
+        "before": "출발 전",
+        "now": "중국에 있는 중",
         "emergency": "긴급 도움"
       },
       "badges": {
@@ -660,8 +798,70 @@
       },
       "statesShort": {
         "before": "출발 전",
-        "now": "중국 현지",
+        "now": "중국",
         "emergency": "긴급"
+      },
+      "selector": {
+        "beforeSubtitle": "안심하고 준비",
+        "beforeKeywords": "일정 · 비자 · 결제 · 짐싸기",
+        "nowSubtitle": "편하게 이동",
+        "nowKeywords": "교통 · 지도 · 음식 · 숙소",
+        "emergencySubtitle": "24시간 함께합니다",
+        "emergencyKeywords": "의료 · 분실물 · 안전"
+      },
+      "cards": {
+        "kicker": "여행 툴킷",
+        "title": "필요한 것을 한곳에",
+        "apps": "다운로드할 앱",
+        "appsNote": "더 매끄러운 여행을 위한 필수 앱",
+        "payments": "결제",
+        "paymentsNote": "모바일 결제, 카드와 현금 팁",
+        "food": "음식 도움",
+        "foodNote": "현지 음식을 더 자신 있게",
+        "transport": "교통",
+        "transportNote": "기차, 지하철, 택시 등",
+        "stay": "숙박",
+        "stayNote": "호텔, 숙소, 체크인 도움",
+        "askBuddy": "Buddy에게 묻기",
+        "askBuddyNote": "필요한 답을 빠르게."
+      },
+      "trust": {
+        "ai": {
+          "title": "AI 기반 도움",
+          "body": "중국 방문 외국인을 위해 정리된 답변."
+        },
+        "mobile": {
+          "title": "모바일에서 사용",
+          "body": "이동 중 언제 어디서나 접근."
+        },
+        "firstTimers": {
+          "title": "첫 중국 여행에 적합",
+          "body": "첫 중국 여행자를 위한 명확한 안내."
+        },
+        "practical": {
+          "title": "실용적이고 믿을 수 있음",
+          "body": "필요할 때 사용할 수 있는 정보와 지원."
+        }
+      },
+      "guides": {
+        "title": "중국 여행을 위해 엄선",
+        "exploreAll": "모든 가이드 보기",
+        "firstTime": {
+          "title": "중국이 처음이라면",
+          "body": "알아두면 좋은 기본 정보"
+        },
+        "destinations": {
+          "title": "추천 여행지",
+          "body": "둘러볼 만한 곳"
+        },
+        "culture": {
+          "title": "문화 기본",
+          "body": "관습, 예절 등"
+        },
+        "tips": {
+          "title": "전문가 팁",
+          "body": "현지 전문가의 조언"
+        }
       }
     },
     "value": {
@@ -727,7 +927,7 @@
         "transport": [
           "지하철은 대체로 안정적이고 저렴합니다.",
           "짐이 있거나 늦은 시간에는 Didi가 유용합니다.",
-          "중국에서는 Google Maps보다 Amap이 더 잘 맞습니다."
+          "Amap은 중국 현지 길찾기에 유용할 수 있습니다."
         ],
         "payment": [
           "도착 전에 Alipay 또는 WeChat Pay를 설정하세요.",

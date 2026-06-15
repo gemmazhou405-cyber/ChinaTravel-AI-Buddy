@@ -12,6 +12,7 @@ import PolicyPage, { getPolicyPageType } from './components/PolicyPage';
 import { useAuth } from './hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 import { initAttribution, trackEvent, trackEventOnce } from './lib/analytics';
+import { captureCheckoutOrder } from './lib/payment';
 
 export type TabId = 'before' | 'stay' | 'food' | 'transport' | 'emergency' | 'pay';
 export type JourneyId = 'before' | 'now' | 'emergency';
@@ -94,7 +95,7 @@ export default function App() {
   const [toolOpen, setToolOpen] = useState(Boolean(landing.tab));
   const [journey, setJourney] = useState<JourneyId>(landing.journey);
   const [deepTool, setDeepTool] = useState<string | null>(landing.tool);
-  const { user, userState, logout, signup, login, loginWithGoogle, incrementAiUsed, resendVerificationEmail, resetPassword } = useAuth();
+  const { user, userState, logout, signup, login, loginWithGoogle, resendVerificationEmail, resetPassword, refreshUserState } = useAuth();
   const showToast = (msg: string) => setToast(msg);
   const handleUpgradeClick = (message = 'Unlock all phrase cards with Trip Pass.') => {
     setActiveTab('pay');
@@ -141,6 +142,33 @@ export default function App() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const payment = params.get('payment');
+    const orderId = params.get('order');
+    if (payment !== 'paypal-return' || !orderId || !user) return;
+
+    let cancelled = false;
+    (async () => {
+      try {
+        const result = await captureCheckoutOrder(user, orderId);
+        if (cancelled) return;
+        if (result.status === 'completed') {
+          await refreshUserState();
+          showToast(t('pay.checkout.success'));
+        } else {
+          showToast(t('pay.checkout.pending'));
+        }
+        window.history.replaceState({}, '', window.location.pathname);
+      } catch {
+        if (!cancelled) showToast(t('pay.checkout.captureError'));
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [refreshUserState, t, user]);
+
   const handleQuickTabSelect = (tab: TabId, tool?: string) => {
     setActiveTab(tab);
     setToolOpen(true);
@@ -176,7 +204,7 @@ export default function App() {
     return (
       <div className="min-h-screen bg-[#f7f3ea] pb-[env(safe-area-inset-bottom)] font-sans">
         <PolicyPage type={policyPageType} userId={user?.uid} />
-        <Footer onTabChange={setActiveTab} />
+        <Footer onTabChange={setActiveTab} onAskBuddy={openBuddy} />
       </div>
     );
   }
@@ -186,13 +214,13 @@ export default function App() {
       <Hero
         user={user}
         userState={userState}
-        onAuthClick={() => {
+        onGetHelpNow={() => {
           void trackEvent('cta_clicked', {
-            ctaName: 'Start Free',
-            destination: 'auth',
+            ctaName: 'Get Help Now',
+            destination: 'Tools',
             journey: analyticsJourney(journey),
           }, user?.uid);
-          setAuthOpen(true);
+          document.getElementById('journey-tools')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }}
         onAskBuddy={openBuddy}
         onLogout={logout}
@@ -201,7 +229,17 @@ export default function App() {
           showToast(t('auth.verificationSent'));
         }}
       />
-      <QuickActions journey={journey} onJourneyChange={handleJourneyChange} onTabSelect={handleQuickTabSelect} onAskBuddy={openBuddy} />
+      <QuickActions
+        journey={journey}
+        user={user}
+        userState={userState}
+        showToast={showToast}
+        onNeedAuth={() => setAuthOpen(true)}
+        onRefreshUserState={refreshUserState}
+        onJourneyChange={handleJourneyChange}
+        onTabSelect={handleQuickTabSelect}
+        onAskBuddy={openBuddy}
+      />
       {toolOpen && (
         <>
           <div id="tabs" className="sticky top-0 z-40 bg-white shadow-sm">
@@ -209,10 +247,13 @@ export default function App() {
           </div>
           <TabContent
             activeTab={activeTab}
+            user={user}
             userState={userState}
             showToast={showToast}
+            onNeedAuth={() => setAuthOpen(true)}
             onAskBuddy={openBuddy}
             onUpgradeClick={handleUpgradeClick}
+            onRefreshUserState={refreshUserState}
             deepTool={deepTool}
             onToolOpened={(category) => {
               void trackEvent('tool_category_opened', {
@@ -225,6 +266,7 @@ export default function App() {
         </>
       )}
       <Footer
+        onAskBuddy={openBuddy}
         onTabChange={(tab) => {
           setActiveTab(tab);
           setToolOpen(true);
@@ -250,7 +292,7 @@ export default function App() {
             await resendVerificationEmail();
             showToast(t('auth.verificationSent'));
           }}
-          onIncrementUsed={incrementAiUsed}
+          onRefreshUserState={refreshUserState}
         />
       )}
       {authOpen && (

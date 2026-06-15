@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
 import { X, Send, Sparkles } from 'lucide-react';
 import { User } from 'firebase/auth';
-import { COZE_WORKER_URL, COZE_BOT_ID } from '../firebase-config';
 import { UserState } from '../hooks/useAuth';
 import { useTranslation } from 'react-i18next';
+import { trackAppError, trackEvent, trackEventOnce } from '../lib/analytics';
 
 interface Message {
   id: number;
@@ -19,10 +19,10 @@ interface Props {
   userState: UserState | null;
   onNeedAuth: () => void;
   onResendVerification: () => Promise<void>;
-  onIncrementUsed: () => Promise<void>;
+  onRefreshUserState: () => Promise<UserState | null>;
 }
 
-export default function ChatModal({ onClose, user, userState, onNeedAuth, onResendVerification, onIncrementUsed }: Props) {
+export default function ChatModal({ onClose, user, userState, onNeedAuth, onResendVerification, onRefreshUserState }: Props) {
   const { t } = useTranslation();
   const [messages, setMessages] = useState<Message[]>([
     { id: 0, role: 'buddy', text: t('chat.welcome') },
@@ -44,6 +44,7 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
 
   const send = async (text: string) => {
     if (!text.trim()) return;
+    if (typing) return;
 
     if (!userState) {
       onNeedAuth();
@@ -60,63 +61,89 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
       return;
     }
 
-    const now = Date.now();
-
-    if (userState.planExpiresAt && now > userState.planExpiresAt) {
-      const expiredMsg: Message = {
-        id: Date.now(),
-        role: 'buddy',
-        text: t('chat.planExpired'),
-      };
-      setMessages((prev) => [...prev, expiredMsg]);
-      return;
-    }
-
-    const oneDayMs = 24 * 60 * 60 * 1000;
-    const dailyReset = !userState.dailyResetAt || now - userState.dailyResetAt > oneDayMs;
-    const currentDailyUsed = dailyReset ? 0 : userState.dailyBuddyAiUsed;
-    if (currentDailyUsed >= userState.dailyBuddyAiLimit) {
-      const dailyLimitMsg: Message = {
-        id: Date.now(),
-        role: 'buddy',
-        text: t('chat.dailyQuotaExceeded', { limit: userState.dailyBuddyAiLimit }),
-      };
-      setMessages((prev) => [...prev, dailyLimitMsg]);
-      return;
-    }
-
-    if (userState.buddyAiQuotaUsed >= userState.buddyAiQuotaTotal) {
-      const limitMsg: Message = {
-        id: Date.now(),
-        role: 'buddy',
-        text: t('chat.quotaExceeded', { limit: userState.buddyAiQuotaTotal, plan: userState.plan }),
-      };
-      setMessages((prev) => [...prev, limitMsg]);
-      return;
-    }
-
     const userMsg: Message = { id: Date.now(), role: 'user', text: text.trim() };
     setMessages((prev) => [...prev, userMsg]);
     setInput('');
     setTyping(true);
 
     try {
-      const response = await fetch(COZE_WORKER_URL, {
+      const token = await user?.getIdToken();
+      if (!token) {
+        onNeedAuth();
+        return;
+      }
+
+      const requestId = crypto.randomUUID();
+      const response = await fetch('/api/buddy/chat', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
         body: JSON.stringify({
-          message: text,
-          botId: COZE_BOT_ID,
-          userId: userState.uid,
+          requestId,
+          message: text.trim(),
+          context: [],
         }),
       });
       const data = await response.json();
-      const replyText = data.reply || data.answer || t('chat.trouble');
+
+      if (!response.ok) {
+        if (data?.error === 'quota_exhausted') {
+          void trackEvent('quota_exhausted', {
+            tool: 'buddy',
+            quotaType: data.quotaType || 'total',
+            plan: data.plan || userState.plan,
+          }, userState.uid);
+          const limitMsg: Message = {
+            id: Date.now() + 1,
+            role: 'buddy',
+            text: data.quotaType === 'daily'
+              ? t('chat.dailyQuotaExceeded', { limit: data.limit || userState.dailyBuddyAiLimit })
+              : t('chat.quotaExceeded', { limit: data.limit || userState.buddyAiQuotaTotal, plan: data.plan || userState.plan }),
+          };
+          setMessages((prev) => [...prev, limitMsg]);
+          return;
+        }
+
+        if (data?.error === 'email_verification_required') {
+          const verifyMsg: Message = {
+            id: Date.now() + 1,
+            role: 'buddy',
+            text: `${t('chat.verifyEmail')} ${t('chat.verifyEmailHint')}`,
+          };
+          setMessages((prev) => [...prev, verifyMsg]);
+          return;
+        }
+
+        if (data?.error === 'rate_limited') {
+          const rateMsg: Message = {
+            id: Date.now() + 1,
+            role: 'buddy',
+            text: t('chat.rateLimited'),
+          };
+          setMessages((prev) => [...prev, rateMsg]);
+          return;
+        }
+
+        throw new Error(data?.error || 'buddy_request_failed');
+      }
+
+      const replyText = data.reply || data.message || t('chat.trouble');
 
       const reply: Message = { id: Date.now() + 1, role: 'buddy', text: replyText };
       setMessages((prev) => [...prev, reply]);
-      await onIncrementUsed();
-    } catch {
+      await onRefreshUserState();
+      trackEventOnce(`buddy:first-success:${userState.uid}`, 'buddy_first_success', {
+        tool: 'buddy',
+        plan: userState.plan,
+      }, userState.uid);
+    } catch (error) {
+      trackAppError('ai_connection_error', {
+        tool: 'buddy',
+        context: 'chat_send',
+        errorCode: error instanceof Error ? error.message.slice(0, 80) : 'buddy_request_failed',
+      }, userState.uid);
       const errMsg: Message = {
         id: Date.now() + 1,
         role: 'buddy',
@@ -193,6 +220,7 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
                 <button
                   key={s}
                   onClick={() => send(t(s))}
+                  disabled={typing}
                   className="flex-shrink-0 text-xs bg-[#155e63]/8 text-[#155e63] px-3 py-1.5 rounded-full hover:bg-[#155e63]/15 transition-colors whitespace-nowrap"
                 >
                   {t(s)}
@@ -227,7 +255,7 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
           />
           <button
             onClick={() => send(input)}
-            disabled={!input.trim()}
+            disabled={!input.trim() || typing}
             className="w-10 h-10 bg-[#155e63] rounded-xl flex items-center justify-center disabled:opacity-30 hover:bg-[#0e4a4e] active:scale-95 transition-all"
           >
             <Send className="w-4 h-4 text-white" />

@@ -5,10 +5,46 @@
       "startFree": "Kostenlos starten",
       "login": "Einloggen",
       "logout": "Ausloggen",
-      "currentPlan": "{{plan}}-Tarif"
+      "currentPlan": "{{plan}}-Tarif",
+      "guides": "Guides",
+      "destinations": "Reiseziele",
+      "tools": "Tools",
+      "travelPasses": "Reisepässe",
+      "faq": "FAQ",
+      "services": "Services",
+      "aboutUs": "Über uns",
+      "contact": "Kontakt",
+      "getHelpNow": "Jetzt Hilfe bekommen",
+      "menu": "Menü"
+    },
+    "homepage": {
+      "how": {
+        "kicker": "Einfacher Ablauf",
+        "title": "So funktioniert ChinaEase Buddy",
+        "subtitle": "Erstbesucher finden in Sekunden die passende Hilfe.",
+        "steps": {
+          "moment": {
+            "title": "Reisemoment wählen",
+            "body": "Vor der Reise, jetzt in China oder im Notfall."
+          },
+          "tool": {
+            "title": "Passendes Tool öffnen",
+            "body": "Apps, Zahlungen, Taxis, Essen, Hotels oder Notfallphrasen."
+          },
+          "buddy": {
+            "title": "Buddy fragen, wenn Sie feststecken",
+            "body": "Praktische Hilfe für Ihre konkrete Situation."
+          }
+        }
+      },
+      "passes": {
+        "kicker": "Optionale Upgrades",
+        "title": "Reisepässe",
+        "subtitle": "Kostenloses Toolkit zuerst. Der Trip Pass ist optional für zusätzliche Reisehilfe."
+      }
     },
     "hero": {
-      "badge": "KI-gestützt · Offline nutzbar",
+      "badge": "IHRE REISE, UNSERE HILFE.",
       "line1": "Kein Chinesisch.",
       "line2": "Kein VPN.",
       "line3": "Kein Problem.",
@@ -16,14 +52,18 @@
       "cta": "Kostenlos starten — kein Download nötig",
       "trust": "Funktioniert in China · Kein VPN nötig · Kostenlos starten",
       "titleLine1": "China-Reisehilfe,",
-      "titleLine2": "wenn du sie brauchst.",
-      "homeSubtitle": "Vorbereiten, zurechtfinden und tägliche Reisemomente in China meistern.",
-      "startFree": "Kostenlos starten",
+      "titleLine2": "elegant vereinfacht.",
+      "homeSubtitle": "Apps, Zahlungen, Transport, Essen und Notfallhilfe für ausländische Besucher in China.",
+      "startFree": "Jetzt Hilfe bekommen",
       "askBuddy": "Buddy fragen",
-      "mobileTrust": "Kein App-Download · Funktioniert mobil · Kostenlos starten",
+      "mobileTrust": "Von Reisenden genutzt · 24/7 Hilfe · Ihre Sicherheit zählt",
       "realMoments": "Gemacht für echte Momente in China — Taxis, Essen, Zahlungen, Hotels und Notfälle.",
-      "mobileSubtitle": "Reisehilfe für echte Situationen in China.",
-      "mobileTrustShort": "Keine App · Mobilfreundlich · Kostenlos starten"
+      "mobileSubtitle": "Apps, Zahlungen, Transport, Essen und Notfallhilfe in China.",
+      "mobileTrustShort": "Keine App · Mobilfreundlich · Gratis starten",
+      "trustTrusted": "Von Reisenden genutzt",
+      "trustSupport": "24/7 Hilfe",
+      "trustSafety": "Ihre Sicherheit zählt",
+      "openFreeToolkit": "Gratis-Toolkit öffnen"
     },
     "tabs": {
       "before": "Vor der Reise",
@@ -106,7 +146,7 @@
           },
           {
             "name": "Amap",
-            "purpose": "Für lokale Navigation in China besser als Google Maps.",
+            "purpose": "Nützlich für lokale Navigation in China.",
             "tip": "Speichere wichtige Adressen auf Chinesisch."
           },
           {
@@ -132,7 +172,7 @@
       "transportBasics": {
         "items": [
           "Nutze Didi oder offizielle Taxi-Warteschlangen bei Ankunft mit Gepäck.",
-          "Amap ist in China meist nützlicher als Google Maps.",
+          "Amap kann für lokale Navigation in China nützlich sein.",
           "Hochgeschwindigkeitszüge werden mit deinem Passnamen gebucht.",
           "Halte die Hoteladresse auf Chinesisch für Fahrer und Bahnhofspersonal bereit."
         ]
@@ -196,11 +236,13 @@
       "hotelCardsSubtitle": "{{count}} Karten für Check-in und Rezeption"
     },
     "food": {
-      "decoderTitle": "Menü-Decoder",
-      "decoderSub": "Laden Sie ein Foto eines chinesischen Menüs hoch oder fotografieren Sie es — sofortige Übersetzungen mit Erklärungen.",
-      "dropZone": "Menüfoto hier ablegen",
-      "dropZoneSub": "oder tippen zum Auswählen · JPG, PNG, HEIC",
-      "analyzing": "Menü wird analysiert...",
+      "decoderTitle": "Menühilfe",
+      "decoderSub": "Suche häufige Gerichte und halte nützliche Restaurant-Sätze bereit. Menüfoto-Hilfe ist im privaten Test.",
+      "dropZone": "Menüfoto-Hilfe ist im privaten Test.",
+      "dropZoneSub": "Nutze vorerst die Gerichtsuche und Phrase-Cards.",
+      "imageInvalid": "Bitte lade ein Menüfoto als JPG, PNG oder WebP hoch.",
+      "imageTooLarge": "Bitte lade ein Bild unter 8 MB hoch.",
+      "analyzing": "Privater Test",
       "clear": "Löschen",
       "allergyTitle": "Allergiehinweise",
       "customize": "Anpassen",
@@ -274,7 +316,11 @@
       "noDishes": "Keine Gerichte für „{{query}}“ gefunden",
       "vegan": "Vegan",
       "vegetarianShort": "Veg",
-      "restaurantCardsSubtitle": "{{count}} Karten zum Bestellen im Restaurant"
+      "restaurantCardsSubtitle": "{{count}} Karten zum Bestellen im Restaurant",
+      "allergenDisclaimer": "Hilft, mögliche Zutaten und häufige Allergene aus Menüinformationen zu erkennen. Bestätige dies immer direkt beim Restaurantpersonal.",
+      "allergenResultWarning": "Dieses Tool kann Zutaten oder Allergene übersehen. Verlasse dich besonders bei schweren Allergien nicht als einzige Sicherheitsprüfung darauf.",
+      "privateTestingTitle": "Menüfoto-Hilfe ist im privaten Test.",
+      "privateTestingBody": "Nutze vorerst die lokale Gerichtreferenz und die Restaurant-Phrase-Cards unten. Verlasse dich bei Allergien nicht ausschließlich auf diese App."
     },
     "transport": {
       "appsTitle": "Empfohlene Apps",
@@ -338,9 +384,9 @@
       "embassyPhrase": "Veuillez contacter mon ambassade. Je suis ressortissant étranger et j’ai besoin d’une assistance consulaire.",
       "medicalPhrase": "Veuillez appeler une ambulance. J’ai besoin d’une aide médicale urgente.",
       "numbers": {
-        "police": "Police",
+        "police": "Polizei",
         "policeDesc": "Vol, agression, objets perdus, menaces à la sécurité",
-        "ambulance": "Ambulance",
+        "ambulance": "Rettungsdienst",
         "ambulanceDesc": "Urgences médicales, blessures, maladie",
         "fire": "Pompiers",
         "fireDesc": "Incendie, fuite de gaz, opérations de secours"
@@ -363,10 +409,11 @@
       "pharmacyCardsSubtitle": "{{count}} Medizin- und Apothekenkarten"
     },
     "pay": {
-      "plansTitle": "Tarife",
+      "plansTitle": "Reisepässe",
+      "oneTime": "einmalig",
       "currentPlan": "Aktueller Tarif:",
       "aiUsed": "Buddy AI genutzt:",
-      "refund": "Einmalzahlung · Keine automatische Verlängerung · 3 Tage Rückerstattung",
+      "refund": "Einmalzahlung · Keine automatische Verlängerung",
       "paymentTitle": "Zahlungsmethoden in China",
       "wechatSetup": "WeChat Pay einrichten",
       "exchangeTip": "Wechselkurs-Tipp",
@@ -374,44 +421,41 @@
       "currency": "Währungsrechner",
       "currencyLive": "USD · EUR · GBP · AUD → RMB en direct",
       "open": "Öffnen",
-      "secure": "Manueller Early Access",
+      "secure": "Manuelle PayPal-Zahlung",
       "bannerAlt": "Votre aventure en Chine commence maintenant",
-      "paymentSoon": "Manueller Early Access ist verfügbar, während die automatische Zahlung eingerichtet wird.",
+      "paymentSoon": "Bezahlte Pässe sind einmalige digitale Travel Pässe. PayPal Sandbox Checkout wird vor dem Live-Start getestet.",
       "plans": {
         "free": {
           "name": "Kostenlos",
-          "desc": "Wichtige Tools für jede Reise",
+          "desc": "Basis-Toolkit für typische Reisesituationen in China.",
           "cta": "Kostenlos starten",
           "features": [
+            "Wichtige Tools für Apps, Zahlungen, Transport, Essen, Hotel und Notfälle",
+            "Basis-Phrasecards und Reiseführer",
             "5 Buddy-AI-Nachrichten",
-            "3 Menü-/Foto-Scans",
-            "Wichtige Offline-Notfallkarten",
-            "Basis-Satzkarten",
-            "Checkliste vor dem Flug"
+            "Keine Zahlung erforderlich"
           ]
         },
         "trip": {
           "name": "Trip Pass",
-          "desc": "7 Tage gültig",
-          "cta": "Early Access anfragen",
+          "desc": "Zusätzliche Reisehilfe für eine Person während einer China-Reise",
+          "cta": "Trip Pass erhalten",
           "features": [
             "50 Buddy-AI-Nachrichten",
-            "20 Menü-/Foto-Scans",
-            "Vollständiges Offline-Notfallkit",
-            "Zahlungs- und Verkehrsführer",
-            "9 City-Survival-Packs"
+            "7 Tage gültig",
+            "Zusätzliche Reisehilfe für eine Person",
+            "Einmalzahlung · keine automatische Verlängerung"
           ]
         },
         "group": {
           "name": "Group Pass",
-          "desc": "14 Tage gültig · Bis zu 5 Reisende",
-          "cta": "Early Access anfragen",
+          "desc": "Zusätzliche Reisehilfe für Paare, Familien oder kleine Gruppen mit einem geteilten Konto",
+          "cta": "Group Pass erhalten",
           "features": [
             "200 Buddy-AI-Nachrichten",
-            "100 Menü-/Foto-Scans",
-            "5 Reisendenprofile",
-            "Medizinische Satzkarten & Krankenhaushelfer",
-            "Geteilte Notfallkarten"
+            "14 Tage gültig",
+            "Ein Konto und ein geteiltes Kontingent",
+            "Einmalzahlung · keine automatische Verlängerung"
           ]
         }
       },
@@ -491,25 +535,90 @@
       "paymentCardsSubtitle": "{{count}} Karten für Alipay, WeChat Pay, Karte und Bargeld",
       "setupShort": "Verknüpfe vor der Ankunft eine Karte.",
       "earlyAccess": {
-        "title": "Manueller Early Access",
-        "body": "Automatischer Checkout wird eingerichtet. Aktuell werden Trip Pass und Group Pass nach Zahlungsbestätigung manuell aktiviert.",
-        "options": "Verfügbare manuelle Zahlungsoptionen teilen wir per E-Mail mit.",
+        "title": "Manuelle PayPal-Zahlung",
+        "body": "Trip Pass und Group Pass nutzen PayPal-Zahlungslinks. Der Zugang wird nach Zahlungsbestätigung manuell aktiviert.",
+        "options": "Bitte nutze dieselbe E-Mail wie für dein ChinaEase Buddy Konto.",
         "safety": "ChinaEase Buddy sammelt auf dieser Website keine Kartendaten direkt.",
-        "modalTitle": "Early Access anfragen",
-        "modalSubtitle": "Automatischer Checkout wird eingerichtet. Sende eine Anfrage und wir antworten per E-Mail mit verfügbaren manuellen Zahlungsoptionen.",
+        "modalTitle": "Manuelle Zahlung",
+        "modalSubtitle": "Nutze den PayPal-Zahlungslink für deinen gewählten Pass. Der Zugang wird nach Zahlungsbestätigung manuell aktiviert.",
         "email": "E-Mail-Adresse",
         "plan": "Plan auswählen",
         "travelDate": "Reisedatum optional",
         "message": "Nachricht optional",
         "messagePlaceholder": "Gibt es etwas, das wir über deine Reise wissen sollten?",
-        "submit": "Anfrage senden",
+        "submit": "Fortfahren",
         "contactEmail": "Per E-Mail kontaktieren",
-        "confirmation": "Wir senden dir manuelle Zahlungsoptionen per E-Mail und aktivieren deinen Plan nach Zahlungsbestätigung.",
+        "confirmation": "Der Zugang wird nach Zahlungsbestätigung manuell aktiviert.",
         "noCard": "Auf dieser Website werden keine Kartendaten erfasst.",
         "sameEmail": "Bitte nutze dieselbe E-Mail wie für dein ChinaEase Buddy Konto.",
         "createAccount": "Erstelle zuerst ein kostenloses Konto für eine schnellere Aktivierung.",
         "emailRequired": "Bitte gib zuerst deine E-Mail ein.",
-        "mailReady": "Deine Anfrage ist vorbereitet. Bitte sende die E-Mail, um fortzufahren."
+        "mailReady": "Bitte fahre mit dem Zahlungslink fort."
+      },
+      "freeToolkitReady": "Das kostenlose Toolkit ist bereit. Keine Zahlung nötig.",
+      "manualPayment": {
+        "title": "Bezahlte Pässe sind optional.",
+        "body": "Zahlungen werden über PayPal verarbeitet. Der Zugang wird nach Zahlungsbestätigung manuell aktiviert. Bitte nutze dieselbe E-Mail wie für dein ChinaEase Buddy Konto.",
+        "note": "ChinaEase Buddy erfasst deine Kartendaten nicht direkt. Die Zahlung wird über PayPal abgewickelt.",
+        "safety": "",
+        "paidNote": ""
+      },
+      "claim": {
+        "signInFirst": "Bitte melde dich zuerst an, damit wir den Pass deinem Konto zuordnen können.",
+        "kicker": "Manuelle Aktivierung",
+        "title": "{{plan}} Zahlung",
+        "accountLabel": "ChinaEase Buddy Konto",
+        "accountHelp": "Der Zugang wird nach Zahlungsbestätigung diesem Konto zugeordnet.",
+        "openPaypal": "PayPal-Zahlung öffnen",
+        "requestActivation": "Ich habe bezahlt — Aktivierung anfordern",
+        "afterPaymentHelp": "Sende nach der Zahlung die PayPal-Transaktions-ID, damit wir deinen Pass prüfen und manuell aktivieren können.",
+        "transactionId": "PayPal-Transaktions-ID",
+        "transactionPlaceholder": "Beispiel: 1AB23456CD789012E",
+        "paypalEmail": "PayPal-Zahlungs-E-Mail (optional)",
+        "paypalEmailPlaceholder": "Falls anders als deine Konto-E-Mail",
+        "transactionRequired": "Bitte gib deine PayPal-Transaktions-ID ein.",
+        "submit": "Aktivierungsanfrage senden",
+        "submitting": "Wird gesendet...",
+        "submitted": "Aktivierungsanfrage gesendet. Wir prüfen sie manuell.",
+        "submitError": "Die Anfrage konnte nicht gesendet werden. Bitte versuche es erneut oder kontaktiere den Support.",
+        "noCards": "Gib keine Kartennummern oder sensiblen Zahlungsdaten ein."
+      },
+      "checkout": {
+        "sandboxBadge": "Sandbox-Zahlung — es wird kein echtes Geld berechnet.",
+        "secureCheckout": "Sicherer PayPal-Checkout",
+        "modeHelp": "Automatischer PayPal-Checkout wird in der Sandbox getestet. Live-Zahlungen bleiben bis zur Freigabe deaktiviert.",
+        "activePass": "Du hast bereits einen aktiven Travel Pass.",
+        "activeButton": "Aktiver Pass",
+        "expires": "Läuft ab am {{date}}",
+        "title": "{{plan}} Checkout",
+        "accountHelp": "Der Zugang wird nach verifizierter Zahlung diesem ChinaEase Buddy Konto zugeordnet.",
+        "tripValidity": "50 Buddy-AI-Nachrichten · 7 Tage",
+        "groupValidity": "200 Buddy-AI-Nachrichten · 14 Tage · ein gemeinsames Konto",
+        "acknowledgement": "Ich verstehe, dass dies ein einmaliger digitaler Travel Pass ist, der an mein aktuelles ChinaEase Buddy Konto gebunden ist, und dass der Zugang nach erfolgreicher Zahlung beginnt.",
+        "openPaypal": "PayPal-Checkout öffnen",
+        "creating": "Bestellung wird erstellt...",
+        "confirmPayment": "Zahlung genehmigt — bestätigen",
+        "capturing": "Zahlung wird bestätigt...",
+        "reopenPaypal": "PayPal-Fenster erneut öffnen",
+        "success": "Zahlung bestätigt. Dein Travel Pass ist aktiv.",
+        "pending": "Wir bestätigen deine Zahlung. Bitte zahle nicht erneut.",
+        "createError": "PayPal-Bestellung konnte nicht erstellt werden.",
+        "captureError": "Zahlung konnte nicht bestätigt werden.",
+        "legalLinks": "Lies vor der Zahlung die Bedingungen, die Datenschutzrichtlinie und die Rückerstattungsinformationen.",
+        "trip": {
+          "features": [
+            "50 Buddy-AI-Nachrichten",
+            "7 Tage gültig",
+            "Ein Konto · keine automatische Verlängerung"
+          ]
+        },
+        "group": {
+          "features": [
+            "200 Buddy-AI-Nachrichten",
+            "14 Tage gültig",
+            "Ein geteiltes Konto für eine kleine Reisegruppe"
+          ]
+        }
       }
     },
     "chat": {
@@ -524,7 +633,7 @@
         "s4": "Peut-on boire l’eau du robinet ?"
       },
       "welcome": "Hallo! Ich bin Buddy, Ihr KI-Reisebegleiter für China. Fragen Sie mich zu Verkehr, sicherem Essen, Zahlungen oder Notfällen.",
-      "quotaExceeded": "Sie haben alle {{limit}} Buddy-AI-Nachrichten Ihres {{plan}}-Tarifs genutzt. Upgraden Sie auf Trip Pass (9,90 $) für 50 Buddy-AI-Nachrichten oder Group Pass (39,90 $) für 200.",
+      "quotaExceeded": "Sie haben alle {{limit}} Buddy-AI-Nachrichten Ihres {{plan}}-Tarifs genutzt. Upgraden Sie auf Trip Pass (9,90 $) für 50 Buddy-AI-Nachrichten oder Group Pass (29,90 $) für 200.",
       "notLoggedIn": "Bitte melden Sie sich an, um den KI-Chat zu nutzen.",
       "trouble": "Dabei gab es ein Problem. Bitte versuchen Sie es erneut.",
       "connectionIssue": "Verbindungsproblem. Prüfen Sie Ihr Internet und versuchen Sie es erneut.",
@@ -533,7 +642,8 @@
       "dailyQuotaExceeded": "Sie haben das heutige Limit von {{limit}} Buddy-AI-Nachrichten erreicht. Bitte versuchen Sie es morgen erneut.",
       "needBuddy": "Findest du nicht, was du brauchst? Frag Buddy.",
       "verifyEmail": "Bitte bestätige deine E-Mail, um Buddy AI zu nutzen.",
-      "verifyEmailHint": "Prüfe deinen Posteingang und aktualisiere nach der Bestätigung."
+      "verifyEmailHint": "Prüfe deinen Posteingang und aktualisiere nach der Bestätigung.",
+      "rateLimited": "Bitte warte einen Moment, bevor du eine weitere Nachricht sendest."
     },
     "auth": {
       "title": "ChinaEase Buddy",
@@ -546,7 +656,7 @@
       "loginBtn": "Einloggen",
       "loading": "Bitte warten...",
       "error": "Etwas ist schiefgelaufen",
-      "freeNote": "Der kostenlose Tarif enthält 5 Buddy-AI-Nachrichten und 3 Menü-/Foto-Scans. Keine Kreditkarte erforderlich.",
+      "freeNote": "Der kostenlose Plan enthält 5 Buddy-AI-Nachrichten. Keine Kreditkarte erforderlich.",
       "continueWithGoogle": "Mit Google fortfahren",
       "or": "oder",
       "forgotPassword": "Passwort vergessen?",
@@ -565,7 +675,7 @@
       "emailAlternative": "Du kannst dich auch per E-Mail anmelden."
     },
     "footer": {
-      "tagline": "KI-Reisebegleiter für ausländische Reisende in China. Menüs entschlüsseln, Verkehr verstehen, Notfälle bewältigen.",
+      "tagline": "KI-Reisebegleiter für ausländische Besucher. Damit Ihre China-Reise einfacher, sicherer und lohnender wird.",
       "product": "Produkt",
       "support": "Support",
       "features": "Funktionen",
@@ -582,7 +692,7 @@
       "legalTitle": "Rechtlicher Hinweis",
       "legalBody": "ChinaEase Buddy bietet allgemeine Reiseinformationen und KI-gestützte Übersetzungen nur als praktische Hilfe. Es ersetzt keine professionelle rechtliche, medizinische oder finanzielle Beratung. Notrufnummern und Phrasen dienen als Referenz — prüfen Sie sie immer bei lokalen Behörden. ChinaEase garantiert nicht die Genauigkeit von Übersetzungen, Zahlungsabwicklung oder Verfügbarkeit von Drittanbietern. Nutzer sind selbst für die Einhaltung lokaler Gesetze verantwortlich.",
       "refundTitle": "Rückerstattungsrichtlinie",
-      "refundBody": "Vollständige Rückerstattung innerhalb von 3 Tagen, wenn keine Buddy-AI-Nachrichten genutzt wurden. Teilweise Rückerstattung nach ungenutztem Kontingent. Kontaktieren Sie den Support zur Anfrage.",
+      "refundBody": "Wir bieten keine freiwillige Drei-Tage-Rückerstattungsgarantie an. Gesetzliche Verbraucherrechte können weiterhin gelten; kontaktiere den Support bei Zahlungsproblemen.",
       "rights": "© 2026 ChinaEase Buddy. Alle Rechte vorbehalten.",
       "privacy": "Datenschutz",
       "terms": "Nutzungsbedingungen",
@@ -591,7 +701,33 @@
       "refundPolicy": "Rückerstattung",
       "cookiesBody": "Wir verwenden nur notwendige Cookies: Anmeldesitzung und Spracheinstellung. Keine Werbe-Cookies.",
       "downloadInstructions": "Öffne diese Website im mobilen Browser und tippe auf Teilen → Zum Home-Bildschirm hinzufügen",
-      "close": "Schließen"
+      "close": "Schließen",
+      "tools": "Tools",
+      "askBuddy": "Buddy fragen",
+      "destinations": "Reiseziele",
+      "contactUs": "Kontakt",
+      "emergencyHelp": "Notfallhilfe",
+      "feedback": "Feedback",
+      "company": "Unternehmen",
+      "aboutUs": "Über uns",
+      "careers": "Karriere",
+      "press": "Presse",
+      "partnerships": "Partnerschaften",
+      "legalColumn": "Rechtliches",
+      "stayInKnow": "Auf dem Laufenden bleiben",
+      "emailPlaceholder": "E-Mail-Adresse",
+      "subscribe": "Abonnieren",
+      "subscribeThanks": "Danke. Wir halten Sie auf dem Laufenden.",
+      "comingSoon": "Demnächst",
+      "subscribeComingSoon": "E-Mail-Updates kommen bald. Bis dahin kontaktiere uns direkt für Launch-Neuigkeiten.",
+      "subscribing": "Wird abonniert...",
+      "subscribeConsent": "Mit dem Abonnieren erklärst du dich einverstanden, gelegentliche China-Reiseupdates zu erhalten. Du kannst dich jederzeit abmelden.",
+      "newsletterStatus": {
+        "success": "Du bist angemeldet. Danke.",
+        "duplicate": "Du bist bereits angemeldet.",
+        "invalid": "Bitte gib eine gültige E-Mail-Adresse ein.",
+        "error": "Anmeldung fehlgeschlagen. Bitte versuche es erneut."
+      }
     },
     "toast": {
       "copied": "Kopiert!",
@@ -662,6 +798,68 @@
         "before": "Vorher",
         "now": "In China",
         "emergency": "Notfall"
+      },
+      "selector": {
+        "beforeSubtitle": "Sicher planen",
+        "beforeKeywords": "Routen · Visa · Zahlungen · Packen",
+        "nowSubtitle": "Einfach unterwegs",
+        "nowKeywords": "Transport · Karten · Essen · Unterkunft",
+        "emergencySubtitle": "Wir sind 24/7 da",
+        "emergencyKeywords": "Medizin · Fundbüro · Sicherheit"
+      },
+      "cards": {
+        "kicker": "Reise-Toolkit",
+        "title": "Alles Wichtige an einem Ort",
+        "apps": "Apps herunterladen",
+        "appsNote": "Wichtige Apps für eine reibungslosere Reise",
+        "payments": "Zahlungen",
+        "paymentsNote": "Mobile Payment, Karten und Bargeld",
+        "food": "Essenshilfe",
+        "foodNote": "Lokal essen, mit mehr Sicherheit",
+        "transport": "Transport",
+        "transportNote": "Züge, Metro, Taxis und mehr",
+        "stay": "Unterkunft",
+        "stayNote": "Hotels, Homestays und Check-in",
+        "askBuddy": "Buddy fragen",
+        "askBuddyNote": "Echte Antworten. Schnell."
+      },
+      "trust": {
+        "ai": {
+          "title": "KI-gestützte Hilfe",
+          "body": "Nützliche Antworten für ausländische Besucher in China."
+        },
+        "mobile": {
+          "title": "Funktioniert mobil",
+          "body": "Jederzeit und überall unterwegs nutzen."
+        },
+        "firstTimers": {
+          "title": "Ideal für Erstbesucher",
+          "body": "Klare Orientierung für die erste China-Reise."
+        },
+        "practical": {
+          "title": "Praktisch und verlässlich",
+          "body": "Information und Unterstützung, wenn Sie sie brauchen."
+        }
+      },
+      "guides": {
+        "title": "Kuratierte Hilfe für Ihre China-Reise",
+        "exploreAll": "Alle Guides ansehen",
+        "firstTime": {
+          "title": "Zum ersten Mal in China",
+          "body": "Was Sie wissen sollten"
+        },
+        "destinations": {
+          "title": "Top-Reiseziele",
+          "body": "Ausgewählte Orte zum Entdecken"
+        },
+        "culture": {
+          "title": "Kulturelle Grundlagen",
+          "body": "Bräuche, Etikette und mehr"
+        },
+        "tips": {
+          "title": "Expertentipps",
+          "body": "Ratschläge von lokalen Kennern"
+        }
       }
     },
     "value": {
@@ -727,7 +925,7 @@
         "transport": [
           "Die Metro ist meist zuverlässig und günstig.",
           "Didi hilft mit Gepäck oder spät abends.",
-          "Amap funktioniert in China besser als Google Maps."
+          "Amap kann für lokale Navigation in China nützlich sein."
         ],
         "payment": [
           "Richte Alipay oder WeChat Pay vor der Ankunft ein.",

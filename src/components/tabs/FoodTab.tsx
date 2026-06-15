@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Upload, AlertTriangle, MessageSquare, ChevronRight, X, Search, Utensils } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
@@ -32,13 +32,6 @@ interface AllergyCardData {
   color: string;
   iconColor: string;
   badge: string;
-}
-
-interface MenuItem {
-  cn: string;
-  en: string;
-  desc: string;
-  alert: string;
 }
 
 interface AllergyCardProps {
@@ -115,11 +108,7 @@ interface Props {
 
 export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
   const { t } = useTranslation();
-  const [dragOver, setDragOver] = useState(false);
-  const [uploadedFile, setUploadedFile] = useState<string | null>(null);
-  const fileRef = useRef<HTMLInputElement>(null);
   const allergyCards = t('food.allergyCards', { returnObjects: true }) as AllergyCardData[];
-  const menuItems = t('food.menuItems', { returnObjects: true }) as MenuItem[];
   const hasFullAccess = isTripOrGroup(userState);
   const [dishQuery, setDishQuery] = useState('');
 
@@ -135,13 +124,6 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
       )
       .slice(0, 8);
   })();
-
-  const handleDrop = (e: React.DragEvent) => {
-    e.preventDefault();
-    setDragOver(false);
-    const file = e.dataTransfer.files[0];
-    if (file) setUploadedFile(file.name);
-  };
 
   return (
     <div className="space-y-6">
@@ -160,8 +142,12 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
         defaultOpen={deepTool === 'food' || deepTool === 'menu'}
         onOpen={() => onToolOpened?.('menu')}
       >
-        <div className="mb-3">
+        <div className="mb-4">
           <span className="text-xs bg-[#155e63]/10 text-[#155e63] px-2 py-0.5 rounded-full font-medium">{t('food.ai')}</span>
+          <div className="mt-3 rounded-2xl border border-[#155e63]/15 bg-[#155e63]/5 p-4">
+            <p className="text-sm font-semibold text-gray-900">{t('food.privateTestingTitle')}</p>
+            <p className="mt-1 text-xs leading-relaxed text-gray-600">{t('food.privateTestingBody')}</p>
+          </div>
         </div>
         {/* Dish Search — independent local search, no API calls */}
         <div className="mb-4">
@@ -207,13 +193,16 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
                   </div>
                   <p className="text-gray-500 text-xs mt-1.5 leading-relaxed">{dish.shortDescription}</p>
                   {dish.allergens.length > 0 && (
-                    <div className="flex flex-wrap gap-1 mt-1.5">
-                      {dish.allergens.map((a) => (
-                        <span key={a} className="text-[10px] bg-amber-50 text-amber-700 border border-amber-100 px-1.5 py-0.5 rounded-full">
-                          ⚠️ {a}
-                        </span>
-                      ))}
-                    </div>
+                    <>
+                      <div className="flex flex-wrap gap-1 mt-1.5">
+                        {dish.allergens.map((a) => (
+                          <span key={a} className="text-[10px] bg-amber-50 text-amber-700 border border-amber-100 px-1.5 py-0.5 rounded-full">
+                            ⚠️ {a}
+                          </span>
+                        ))}
+                      </div>
+                      <p className="mt-1.5 text-[11px] leading-relaxed text-amber-700">{t('food.allergenResultWarning')}</p>
+                    </>
                   )}
                   {dish.orderTip && (
                     <p className="text-[11px] text-[#155e63] mt-1.5 leading-relaxed">
@@ -230,56 +219,6 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
           )}
         </div>
 
-        {uploadedFile ? (
-          <div className="border-2 border-[#155e63] bg-[#155e63]/5 rounded-2xl p-5 text-center">
-            <div className="text-sm text-[#155e63] font-medium mb-1">{t('food.analyzing')}</div>
-            <p className="text-xs text-gray-400 mb-3">{uploadedFile}</p>
-            <div className="space-y-2 text-left">
-              {menuItems.map((item, i) => (
-                <div key={i} className="bg-white rounded-xl px-3 py-2.5 flex items-center justify-between shadow-sm">
-                  <div>
-                    <span className="text-gray-800 font-medium text-sm">{item.cn}</span>
-                    <span className="text-gray-400 text-xs ml-2">{item.en}</span>
-                    <p className="text-gray-400 text-xs">{item.desc}</p>
-                  </div>
-                  {item.alert && <span className="text-lg">{item.alert}</span>}
-                </div>
-              ))}
-            </div>
-            <button
-              onClick={() => setUploadedFile(null)}
-              className="mt-3 text-xs text-gray-400 flex items-center gap-1 mx-auto hover:text-gray-600"
-            >
-              <X className="w-3 h-3" /> {t('food.clear')}
-            </button>
-          </div>
-        ) : (
-          <div
-            onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
-            onDragLeave={() => setDragOver(false)}
-            onDrop={handleDrop}
-            onClick={() => fileRef.current?.click()}
-            className={`border-2 border-dashed rounded-2xl p-8 text-center cursor-pointer transition-all ${
-              dragOver ? 'border-[#155e63] bg-[#155e63]/5' : 'border-gray-200 hover:border-[#155e63]/50 bg-white'
-            }`}
-          >
-            <div className="w-12 h-12 bg-[#155e63]/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
-              <Upload className="w-5 h-5 text-[#155e63]" />
-            </div>
-            <p className="font-medium text-gray-700 text-sm">{t('food.dropZone')}</p>
-            <p className="text-gray-400 text-xs mt-1">{t('food.dropZoneSub')}</p>
-            <input
-              ref={fileRef}
-              type="file"
-              accept="image/*"
-              className="hidden"
-              onChange={(e) => {
-                const file = e.target.files?.[0];
-                if (file) setUploadedFile(file.name);
-              }}
-            />
-          </div>
-        )}
       </ToolDisclosure>
 
       {/* Section: Allergy Alerts */}

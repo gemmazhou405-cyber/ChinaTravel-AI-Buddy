@@ -1,41 +1,59 @@
-# ChinaEase Buddy — AI Travel Companion for China
-> https://chinaeasebuddy.com
+# ChinaEase Buddy
 
-ChinaEase Buddy is a web-based AI travel companion for foreigners visiting China. It provides practical tools to navigate common travel challenges: reading Chinese menus, setting up mobile payments, communicating without Chinese language skills, and handling emergencies.
+> ChinaEase Buddy is a web-based China travel toolkit for foreign visitors.
+> It provides practical help before a trip and while traveling in China,
+> including guidance for apps, payments, transport, food, hotels,
+> emergency situations, bilingual traveler-to-local communication, and Buddy AI travel questions.
 
-## What it does
+## Core tools
 
-- **Menu translation + allergen alerts**: Snap a photo of any Chinese menu for instant translation and food allergen identification (peanuts, shellfish, gluten, etc.)
-- **Payment setup**: Step-by-step help setting up Alipay and WeChat Pay as a foreign visitor
-- **Bilingual phrase cards**: Ready-to-show Chinese phrases for taxis, hotels, restaurants, and emergencies
-- **Buddy AI**: Ask travel questions and get practical, China-specific answers
-- **City survival guides**: Practical tips for 9 major Chinese cities (Shanghai, Beijing, Xi'an, Chengdu, Guangzhou, Shenzhen, Hangzhou, Suzhou, Guilin)
-- **Emergency toolkit**: Emergency numbers (110 police, 120 ambulance, 119 fire), embassy contacts, lost-document steps, medical phrase cards
+- Travel preparation and essential app guidance
+- Payment guidance for foreign visitors
+- Transport, taxi, metro, train, and airport help
+- Food, restaurant, and common dish references
+- Hotel and stay-related phrase support
+- Emergency numbers and bilingual phrase cards
+- Buddy AI travel assistance, subject to the current account allowance
 
-## Pricing (no auto-renewal)
+## Plans
 
-- **Free**: 5 Buddy AI uses · basic China toolkit (apps, payments, taxis, emergency phrases)
-- **Trip Pass — $9.90 one-time**: Unlimited Buddy AI · menu translation + allergen alerts · all premium guides
-- **Group Pass — $29.90 one-time**: Everything in Trip Pass · shared across up to 4 travelers
-
-Payments via PayPal. 3-day refund policy. No subscription, no auto-renewal.
-
-## Who it's for
-
-Foreign tourists, business travelers, and expats visiting mainland China who do not speak or read Chinese. Particularly useful for travelers with food allergies, first-time visitors, and those setting up mobile payments.
+- Free: basic travel toolkit and 5 Buddy AI messages
+- Trip Pass: USD 9.90 one-time, 50 Buddy AI messages, valid for 7 days
+- Group Pass: USD 29.90 one-time, 200 Buddy AI messages, valid for 14 days
+- Group Pass uses one ChinaEase Buddy account and one shared allowance for couples, families, or small travel groups
+- PayPal Sandbox checkout and automatic entitlement activation are in development; live checkout is not enabled until owner approval
+- No auto-renewal
+- Menu photo help is in private testing and is not sold as an active entitlement.
 
 ## Key pages
 
-- Homepage / app: https://chinaeasebuddy.com/
-- China payment guide: https://chinaeasebuddy.com/china-payment-guide
-- Alipay for foreigners: https://chinaeasebuddy.com/alipay-for-foreigners
-- China travel apps: https://chinaeasebuddy.com/china-travel-apps
-- China travel checklist: https://chinaeasebuddy.com/china-travel-checklist
-- China emergency numbers: https://chinaeasebuddy.com/china-emergency-numbers
-- FAQ: https://chinaeasebuddy.com/faq
-- Pricing: https://chinaeasebuddy.com/pricing
-- About: https://chinaeasebuddy.com/about
+- [Home](https://chinaeasebuddy.com/)
+- [Guides](https://chinaeasebuddy.com/guides)
+- [China travel apps](https://chinaeasebuddy.com/china-travel-apps)
+- [Alipay for foreign visitors](https://chinaeasebuddy.com/alipay-for-foreigners)
+- [China payment guide](https://chinaeasebuddy.com/china-payment-guide)
+- [China travel checklist](https://chinaeasebuddy.com/china-travel-checklist)
+- [Emergency numbers](https://chinaeasebuddy.com/china-emergency-numbers)
+- [FAQ](https://chinaeasebuddy.com/faq)
+- [Pricing](https://chinaeasebuddy.com/pricing)
+- [About](https://chinaeasebuddy.com/about)
 
-## Disclaimer
+## Audience
 
-ChinaEase Buddy is not an official travel authority, government service, or licensed medical/legal/financial advisor. Information is provided for general travel convenience only. Always verify critical information (visa requirements, emergency procedures, medical advice) with official sources.
+Foreign visitors preparing for or traveling in China, including tourists,
+business travelers, students, families, and first-time visitors.
+
+## Important limitations
+
+ChinaEase Buddy is not an official government, visa, immigration, medical,
+legal, financial, hotel booking, flight booking, or travel agency service.
+Important travel, entry, health, and payment information should be confirmed
+with official sources or service providers.
+
+The toolkit provides practical references and AI-assisted travel information
+for convenience. It does not guarantee payment acceptance, transport availability,
+translation accuracy, emergency outcomes, or official policy status.
+
+Dish reference tools may help identify possible ingredients and common allergens
+from local menu information. Travelers should always confirm directly with
+restaurant staff, especially for severe allergies.
