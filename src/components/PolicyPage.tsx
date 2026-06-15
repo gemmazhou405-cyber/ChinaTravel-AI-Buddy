@@ -59,7 +59,7 @@ const pricingPlans = [
     features: [
       'Essential apps, payments, transport, food, hotel and emergency tools',
       'Basic phrase cards and travel guides',
-      '5 Buddy AI messages and 3 menu/photo scans',
+      '5 Buddy AI messages',
       'No payment required',
     ],
     cta: 'Start Free',
@@ -71,7 +71,7 @@ const pricingPlans = [
     price: '$9.90',
     note: 'One-time payment',
     features: [
-      '50 Buddy AI messages and 20 menu/photo scans',
+      '50 Buddy AI messages',
       'Valid for 7 days',
       'Extra travel help for one traveler',
       'One-time payment',
@@ -87,7 +87,7 @@ const pricingPlans = [
     price: '$29.90',
     note: 'One-time payment',
     features: [
-      '200 Buddy AI messages and 100 menu/photo scans',
+      '200 Buddy AI messages',
       'Valid for 14 days',
       'One account and one shared allowance for couples, families or small travel groups',
       'One-time payment',
@@ -139,7 +139,7 @@ const legalCopy = {
       {
         title: 'Information We Collect',
         body:
-          'We may collect your email address, account plan, entitlement status, usage quotas, basic app usage data, anonymous session ID, UTM attribution, newsletter email, and information required to operate Buddy AI conversations and menu/photo assistance.',
+          'We may collect your email address, account plan, entitlement status, usage quotas, basic app usage data, anonymous session ID, UTM attribution, newsletter email, and information required to operate Buddy AI conversations and food reference tools.',
       },
       {
         title: 'Authentication and Storage',
@@ -149,7 +149,7 @@ const legalCopy = {
       {
         title: 'Buddy AI Conversations',
         body:
-          'Buddy AI conversation content and uploaded menu/photo information may be processed by ChinaEase Buddy service providers, including Coze, Cloudflare, Firebase, and Firestore, to provide the requested travel assistance, maintain service quality, and troubleshoot the service.',
+          'Buddy AI conversation content may be processed by ChinaEase Buddy service providers, including Coze, Cloudflare, Firebase, and Firestore, to provide the requested travel assistance, maintain service quality, and troubleshoot the service. Menu photo help is in private testing and is not sold as an active entitlement.',
       },
       {
         title: 'Payments and Entitlements',

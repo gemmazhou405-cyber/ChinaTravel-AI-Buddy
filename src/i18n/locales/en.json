@@ -236,13 +236,13 @@
       "hotelCardsSubtitle": "{{count}} check-in and front desk cards"
     },
     "food": {
-      "decoderTitle": "Menu Decoder",
-      "decoderSub": "Upload or snap a photo of any Chinese menu — get instant translations with descriptions.",
-      "dropZone": "Drop a menu photo here",
-      "dropZoneSub": "or tap to browse · JPG, PNG, WebP · max 8 MB",
+      "decoderTitle": "Menu Help",
+      "decoderSub": "Search common dishes and keep useful restaurant phrases ready. Menu photo help is in private testing.",
+      "dropZone": "Menu photo help is in private testing.",
+      "dropZoneSub": "Use dish search and phrase cards for now.",
       "imageInvalid": "Please upload a JPG, PNG, or WebP menu photo.",
       "imageTooLarge": "Please upload an image smaller than 8 MB.",
-      "analyzing": "Analyzing menu...",
+      "analyzing": "Private testing",
       "clear": "Clear",
       "allergyTitle": "Allergy Alerts",
       "customize": "Customize",
@@ -318,7 +318,9 @@
       "noDishes": "No dishes found for \"{{query}}\"",
       "vegan": "Vegan",
       "vegetarianShort": "Veg",
-      "restaurantCardsSubtitle": "{{count}} restaurant ordering cards"
+      "restaurantCardsSubtitle": "{{count}} restaurant ordering cards",
+      "privateTestingTitle": "Menu photo help is in private testing.",
+      "privateTestingBody": "For now, use the local dish reference and restaurant phrase cards below. Do not rely on this app as your only allergy safety check."
     },
     "transport": {
       "appsTitle": "Recommended Apps",
@@ -430,7 +432,7 @@
           "features": [
             "Essential apps, payments, transport, food, hotel and emergency tools",
             "Basic phrase cards and travel guides",
-            "5 Buddy AI messages and 3 menu/photo scans",
+            "5 Buddy AI messages",
             "No payment required"
           ]
         },
@@ -439,7 +441,7 @@
           "desc": "Extra travel help for one traveler during a China trip",
           "cta": "Get Trip Pass",
           "features": [
-            "50 Buddy AI messages and 20 menu/photo scans",
+            "50 Buddy AI messages",
             "Valid for 7 days",
             "Extra travel help for one traveler",
             "One-time payment · no auto-renewal"
@@ -450,7 +452,7 @@
           "desc": "Extra travel help for couples, families, or small groups using one shared account",
           "cta": "Get Group Pass",
           "features": [
-            "200 Buddy AI messages and 100 menu/photo scans",
+            "200 Buddy AI messages",
             "Valid for 14 days",
             "One account and one shared allowance",
             "One-time payment · no auto-renewal"
@@ -590,8 +592,8 @@
         "expires": "Expires {{date}}",
         "title": "{{plan}} checkout",
         "accountHelp": "Access will be applied to this ChinaEase Buddy account after verified payment capture.",
-        "tripValidity": "50 Buddy AI messages · 20 menu/photo scans · 7 days",
-        "groupValidity": "200 Buddy AI messages · 100 menu/photo scans · 14 days · one shared account",
+        "tripValidity": "50 Buddy AI messages · 7 days",
+        "groupValidity": "200 Buddy AI messages · 14 days · one shared account",
         "acknowledgement": "I understand this is a one-time digital travel pass tied to my current ChinaEase Buddy account and that access begins after successful payment.",
         "openPaypal": "Open PayPal checkout",
         "creating": "Creating order...",
@@ -606,7 +608,6 @@
         "trip": {
           "features": [
             "50 Buddy AI messages",
-            "20 menu/photo scans",
             "Valid for 7 days",
             "One account · no auto-renewal"
           ]
@@ -614,7 +615,6 @@
         "group": {
           "features": [
             "200 Buddy AI messages",
-            "100 menu/photo scans",
             "Valid for 14 days",
             "One shared account for a small travel group"
           ]
@@ -642,7 +642,8 @@
       "dailyQuotaExceeded": "You have reached today's limit of {{limit}} Buddy AI messages. Please try again tomorrow.",
       "needBuddy": "Can't find what you need? Ask Buddy.",
       "verifyEmail": "Please verify your email to use Buddy AI.",
-      "verifyEmailHint": "Check your inbox and refresh after verification."
+      "verifyEmailHint": "Check your inbox and refresh after verification.",
+      "rateLimited": "Please wait a moment before sending another message."
     },
     "auth": {
       "title": "ChinaEase Buddy",
@@ -655,7 +656,7 @@
       "loginBtn": "Log In",
       "loading": "Please wait...",
       "error": "Something went wrong",
-      "freeNote": "Free plan includes 5 Buddy AI messages and 3 menu/photo scans. No credit card needed.",
+      "freeNote": "Free plan includes 5 Buddy AI messages. No credit card needed.",
       "continueWithGoogle": "Continue with Google",
       "or": "or",
       "forgotPassword": "Forgot password?",

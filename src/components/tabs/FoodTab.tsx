@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Upload, AlertTriangle, MessageSquare, ChevronRight, X, Search, Utensils } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
@@ -8,7 +8,6 @@ import { restaurantCards } from '../../data/phraseCards';
 import type { UserState } from '../../hooks/useAuth';
 import { isTripOrGroup } from '../../lib/membership';
 import allDishes from '../../data/dishes/commonChineseDishes.json';
-import { trackAppError, trackEventOnce } from '../../lib/analytics';
 
 interface Dish {
   id: string;
@@ -35,20 +34,10 @@ interface AllergyCardData {
   badge: string;
 }
 
-interface MenuItem {
-  cn: string;
-  en: string;
-  desc: string;
-  alert: string;
-}
-
 interface AllergyCardProps {
   card: AllergyCardData;
   showToast: (msg: string) => void;
 }
-
-const ALLOWED_MENU_IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
-const MAX_MENU_IMAGE_BYTES = 8 * 1024 * 1024;
 
 function AllergyCard({ card, showToast }: AllergyCardProps) {
   const { t } = useTranslation();
@@ -119,38 +108,9 @@ interface Props {
 
 export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
   const { t } = useTranslation();
-  const [dragOver, setDragOver] = useState(false);
-  const [uploadedFile, setUploadedFile] = useState<string | null>(null);
-  const fileRef = useRef<HTMLInputElement>(null);
   const allergyCards = t('food.allergyCards', { returnObjects: true }) as AllergyCardData[];
-  const menuItems = t('food.menuItems', { returnObjects: true }) as MenuItem[];
   const hasFullAccess = isTripOrGroup(userState);
   const [dishQuery, setDishQuery] = useState('');
-
-  const acceptMenuFile = (file: File) => {
-    if (!ALLOWED_MENU_IMAGE_TYPES.includes(file.type)) {
-      showToast(t('food.imageInvalid'));
-      trackAppError('image_invalid', {
-        tool: 'menu_scan',
-        context: file.type || 'unknown_type',
-      }, userState?.uid);
-      return false;
-    }
-    if (file.size > MAX_MENU_IMAGE_BYTES) {
-      showToast(t('food.imageTooLarge'));
-      trackAppError('image_too_large', {
-        tool: 'menu_scan',
-        context: 'file_size',
-      }, userState?.uid);
-      return false;
-    }
-    setUploadedFile(file.name);
-    trackEventOnce(`menu:first-success:${userState?.uid || 'anonymous'}`, 'menu_scan_first_success', {
-      tool: 'menu_scan',
-      status: 'mock_upload_accepted',
-    }, userState?.uid);
-    return true;
-  };
 
   const dishResults = (() => {
     const q = dishQuery.trim().toLowerCase();
@@ -164,13 +124,6 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
       )
       .slice(0, 8);
   })();
-
-  const handleDrop = (e: React.DragEvent) => {
-    e.preventDefault();
-    setDragOver(false);
-    const file = e.dataTransfer.files[0];
-    if (file) acceptMenuFile(file);
-  };
 
   return (
     <div className="space-y-6">
@@ -189,11 +142,12 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
         defaultOpen={deepTool === 'food' || deepTool === 'menu'}
         onOpen={() => onToolOpened?.('menu')}
       >
-        <div className="mb-3">
+        <div className="mb-4">
           <span className="text-xs bg-[#155e63]/10 text-[#155e63] px-2 py-0.5 rounded-full font-medium">{t('food.ai')}</span>
-          <p className="mt-2 rounded-xl border border-amber-100 bg-amber-50 px-3 py-2 text-xs font-medium leading-relaxed text-amber-800">
-            {t('food.allergenDisclaimer')}
-          </p>
+          <div className="mt-3 rounded-2xl border border-[#155e63]/15 bg-[#155e63]/5 p-4">
+            <p className="text-sm font-semibold text-gray-900">{t('food.privateTestingTitle')}</p>
+            <p className="mt-1 text-xs leading-relaxed text-gray-600">{t('food.privateTestingBody')}</p>
+          </div>
         </div>
         {/* Dish Search — independent local search, no API calls */}
         <div className="mb-4">
@@ -265,56 +219,6 @@ export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeCli
           )}
         </div>
 
-        {uploadedFile ? (
-          <div className="border-2 border-[#155e63] bg-[#155e63]/5 rounded-2xl p-5 text-center">
-            <div className="text-sm text-[#155e63] font-medium mb-1">{t('food.analyzing')}</div>
-            <p className="text-xs text-gray-400 mb-3">{uploadedFile}</p>
-            <div className="space-y-2 text-left">
-              {menuItems.map((item, i) => (
-                <div key={i} className="bg-white rounded-xl px-3 py-2.5 flex items-center justify-between shadow-sm">
-                  <div>
-                    <span className="text-gray-800 font-medium text-sm">{item.cn}</span>
-                    <span className="text-gray-400 text-xs ml-2">{item.en}</span>
-                    <p className="text-gray-400 text-xs">{item.desc}</p>
-                  </div>
-                  {item.alert && <span className="text-lg">{item.alert}</span>}
-                </div>
-              ))}
-            </div>
-            <button
-              onClick={() => setUploadedFile(null)}
-              className="mt-3 text-xs text-gray-400 flex items-center gap-1 mx-auto hover:text-gray-600"
-            >
-              <X className="w-3 h-3" /> {t('food.clear')}
-            </button>
-          </div>
-        ) : (
-          <div
-            onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
-            onDragLeave={() => setDragOver(false)}
-            onDrop={handleDrop}
-            onClick={() => fileRef.current?.click()}
-            className={`border-2 border-dashed rounded-2xl p-8 text-center cursor-pointer transition-all ${
-              dragOver ? 'border-[#155e63] bg-[#155e63]/5' : 'border-gray-200 hover:border-[#155e63]/50 bg-white'
-            }`}
-          >
-            <div className="w-12 h-12 bg-[#155e63]/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
-              <Upload className="w-5 h-5 text-[#155e63]" />
-            </div>
-            <p className="font-medium text-gray-700 text-sm">{t('food.dropZone')}</p>
-            <p className="text-gray-400 text-xs mt-1">{t('food.dropZoneSub')}</p>
-            <input
-              ref={fileRef}
-              type="file"
-              accept="image/*"
-              className="hidden"
-              onChange={(e) => {
-                const file = e.target.files?.[0];
-                if (file) acceptMenuFile(file);
-              }}
-            />
-          </div>
-        )}
       </ToolDisclosure>
 
       {/* Section: Allergy Alerts */}

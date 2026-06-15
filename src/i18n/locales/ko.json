@@ -236,13 +236,13 @@
       "hotelCardsSubtitle": "체크인 및 프런트 카드 {{count}}개"
     },
     "food": {
-      "decoderTitle": "메뉴 디코더",
-      "decoderSub": "중국어 메뉴를 촬영하거나 업로드하면 설명과 함께 즉시 번역됩니다.",
-      "dropZone": "메뉴 사진을 여기에 놓기",
-      "dropZoneSub": "또는 탭하여 선택 · JPG, PNG, WebP · 최대 8MB",
+      "decoderTitle": "메뉴 도움",
+      "decoderSub": "자주 보는 음식을 검색하고 식당에서 쓸 문구를 준비하세요. 메뉴 사진 도움 기능은 비공개 테스트 중입니다.",
+      "dropZone": "메뉴 사진 도움 기능은 비공개 테스트 중입니다.",
+      "dropZoneSub": "현재는 음식 검색과 문구 카드를 사용하세요.",
       "imageInvalid": "JPG, PNG 또는 WebP 메뉴 사진을 업로드하세요.",
       "imageTooLarge": "8MB보다 작은 이미지를 업로드하세요.",
-      "analyzing": "메뉴 분석 중...",
+      "analyzing": "비공개 테스트",
       "clear": "지우기",
       "allergyTitle": "알레르기 알림",
       "customize": "맞춤 설정",
@@ -318,7 +318,9 @@
       "vegetarianShort": "채식",
       "restaurantCardsSubtitle": "식당 주문 카드 {{count}}개",
       "allergenDisclaimer": "메뉴 정보에서 가능한 재료와 일반적인 알레르기 유발 성분을 확인하는 데 도움을 줍니다. 항상 식당 직원에게 직접 확인하세요.",
-      "allergenResultWarning": "이 도구는 재료나 알레르기 유발 성분을 놓칠 수 있습니다. 특히 심한 알레르기가 있는 경우 유일한 안전 확인 수단으로 의존하지 마세요."
+      "allergenResultWarning": "이 도구는 재료나 알레르기 유발 성분을 놓칠 수 있습니다. 특히 심한 알레르기가 있는 경우 유일한 안전 확인 수단으로 의존하지 마세요.",
+      "privateTestingTitle": "메뉴 사진 도움 기능은 비공개 테스트 중입니다.",
+      "privateTestingBody": "현재는 아래의 현지 음식 참고 자료와 식당 문구 카드를 사용하세요. 특히 심한 알레르기가 있다면 이 앱만으로 확인하지 마세요."
     },
     "transport": {
       "appsTitle": "추천 앱",
@@ -430,7 +432,7 @@
           "features": [
             "앱, 결제, 교통, 음식, 호텔, 긴급 상황 기본 도구",
             "기본 문장 카드와 여행 가이드",
-            "Buddy AI 메시지 5개 및 메뉴/사진 스캔 3회",
+            "Buddy AI 메시지 5개",
             "결제 필요 없음"
           ]
         },
@@ -439,7 +441,7 @@
           "desc": "중국 여행 중 1명을 위한 추가 여행 도움",
           "cta": "Trip Pass 받기",
           "features": [
-            "Buddy AI 메시지 50개와 메뉴/사진 스캔 20회",
+            "Buddy AI 메시지 50개",
             "7일간 유효",
             "여행자 1명을 위한 추가 도움",
             "일회성 결제 · 자동 갱신 없음"
@@ -450,7 +452,7 @@
           "desc": "하나의 공유 계정을 사용하는 커플, 가족 또는 소규모 그룹을 위한 추가 여행 도움",
           "cta": "Group Pass 받기",
           "features": [
-            "Buddy AI 메시지 200개와 메뉴/사진 스캔 100회",
+            "Buddy AI 메시지 200개",
             "14일간 유효",
             "계정 1개와 공유 한도",
             "일회성 결제 · 자동 갱신 없음"
@@ -590,8 +592,8 @@
         "expires": "{{date}} 만료",
         "title": "{{plan}} 결제",
         "accountHelp": "결제 확인 후 이 ChinaEase Buddy 계정에 이용 권한이 적용됩니다.",
-        "tripValidity": "Buddy AI 메시지 50개 · 메뉴/사진 스캔 20회 · 7일",
-        "groupValidity": "Buddy AI 메시지 200개 · 메뉴/사진 스캔 100회 · 14일 · 공유 계정 1개",
+        "tripValidity": "Buddy AI 메시지 50개 · 7일",
+        "groupValidity": "Buddy AI 메시지 200개 · 14일 · 공유 계정 1개",
         "acknowledgement": "이것은 현재 ChinaEase Buddy 계정에 연결되는 일회성 디지털 여행 패스이며 결제 성공 후 이용이 시작된다는 점을 이해합니다.",
         "openPaypal": "PayPal 결제 열기",
         "creating": "주문 생성 중...",
@@ -642,7 +644,8 @@
       "dailyQuotaExceeded": "오늘의 Buddy AI 메시지 {{limit}}회 한도에 도달했습니다. 내일 다시 시도하세요.",
       "needBuddy": "필요한 것을 못 찾았나요? Buddy에게 물어보세요.",
       "verifyEmail": "Buddy AI를 사용하려면 이메일 인증이 필요합니다.",
-      "verifyEmailHint": "받은편지함을 확인하고 인증 후 새로고침해 주세요."
+      "verifyEmailHint": "받은편지함을 확인하고 인증 후 새로고침해 주세요.",
+      "rateLimited": "다음 메시지를 보내기 전에 잠시 기다려 주세요."
     },
     "auth": {
       "title": "ChinaEase Buddy",
@@ -655,7 +658,7 @@
       "loginBtn": "로그인",
       "loading": "잠시만 기다려 주세요...",
       "error": "문제가 발생했습니다",
-      "freeNote": "무료 플랜에는 Buddy AI 메시지 5회와 메뉴/사진 스캔 3회가 포함됩니다. 신용카드가 필요 없습니다.",
+      "freeNote": "무료 플랜에는 Buddy AI 메시지 5개가 포함됩니다. 카드 등록은 필요 없습니다.",
       "continueWithGoogle": "Google로 계속하기",
       "or": "또는",
       "forgotPassword": "비밀번호를 잊으셨나요?",

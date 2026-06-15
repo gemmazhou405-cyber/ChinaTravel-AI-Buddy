@@ -236,13 +236,13 @@
       "hotelCardsSubtitle": "{{count}} tarjetas de check-in y recepción"
     },
     "food": {
-      "decoderTitle": "Decodificador de menús",
-      "decoderSub": "Sube o toma una foto de cualquier menú chino — traducciones instantáneas con descripciones.",
-      "dropZone": "Suelta una foto del menú aquí",
-      "dropZoneSub": "o toca para buscar · JPG, PNG, WebP · máx. 8 MB",
+      "decoderTitle": "Ayuda con menús",
+      "decoderSub": "Busca platos comunes y ten a mano frases útiles para restaurantes. La ayuda con fotos de menús está en prueba privada.",
+      "dropZone": "La ayuda con fotos de menús está en prueba privada.",
+      "dropZoneSub": "Usa por ahora la búsqueda de platos y las frases.",
       "imageInvalid": "Sube una foto del menú en JPG, PNG o WebP.",
       "imageTooLarge": "Sube una imagen de menos de 8 MB.",
-      "analyzing": "Analizando menú...",
+      "analyzing": "Prueba privada",
       "clear": "Borrar",
       "allergyTitle": "Alertas de alergia",
       "customize": "Personalizar",
@@ -318,7 +318,9 @@
       "vegetarianShort": "Veg",
       "restaurantCardsSubtitle": "{{count}} tarjetas para pedir en restaurante",
       "allergenDisclaimer": "Ayuda a identificar posibles ingredientes y alérgenos comunes a partir de la información del menú. Confirma siempre directamente con el personal del restaurante.",
-      "allergenResultWarning": "Esta herramienta puede omitir ingredientes o alérgenos. No la uses como tu única comprobación de seguridad, especialmente si tienes alergias graves."
+      "allergenResultWarning": "Esta herramienta puede omitir ingredientes o alérgenos. No la uses como tu única comprobación de seguridad, especialmente si tienes alergias graves.",
+      "privateTestingTitle": "La ayuda con fotos de menús está en prueba privada.",
+      "privateTestingBody": "Por ahora, usa la referencia local de platos y las tarjetas de frases de restaurante de abajo. No dependas solo de esta app para comprobar alergias."
     },
     "transport": {
       "appsTitle": "Apps recomendadas",
@@ -430,7 +432,7 @@
           "features": [
             "Herramientas esenciales para apps, pagos, transporte, comida, hotel y emergencias",
             "Tarjetas de frases y guías básicas",
-            "5 mensajes de Buddy AI y 3 escaneos de menú/foto",
+            "5 mensajes de Buddy AI",
             "No requiere pago"
           ]
         },
@@ -439,7 +441,7 @@
           "desc": "Ayuda extra para un viajero durante un viaje por China",
           "cta": "Obtener Trip Pass",
           "features": [
-            "50 mensajes de Buddy AI y 20 escaneos de menú/foto",
+            "50 mensajes de Buddy AI",
             "Válido por 7 días",
             "Ayuda extra para un viajero",
             "Pago único · sin renovación automática"
@@ -450,7 +452,7 @@
           "desc": "Ayuda extra para parejas, familias o grupos pequeños que usan una cuenta compartida",
           "cta": "Obtener Group Pass",
           "features": [
-            "200 mensajes de Buddy AI y 100 escaneos de menú/foto",
+            "200 mensajes de Buddy AI",
             "Válido por 14 días",
             "Una cuenta y una asignación compartida",
             "Pago único · sin renovación automática"
@@ -590,8 +592,8 @@
         "expires": "Vence el {{date}}",
         "title": "Checkout de {{plan}}",
         "accountHelp": "El acceso se aplicará a esta cuenta de ChinaEase Buddy después de verificar el pago.",
-        "tripValidity": "50 mensajes de Buddy AI · 20 escaneos de menú/foto · 7 días",
-        "groupValidity": "200 mensajes de Buddy AI · 100 escaneos de menú/foto · 14 días · una cuenta compartida",
+        "tripValidity": "50 mensajes de Buddy AI · 7 días",
+        "groupValidity": "200 mensajes de Buddy AI · 14 días · una cuenta compartida",
         "acknowledgement": "Entiendo que este es un pase de viaje digital de pago único vinculado a mi cuenta actual de ChinaEase Buddy y que el acceso comienza después del pago correcto.",
         "openPaypal": "Abrir checkout de PayPal",
         "creating": "Creando pedido...",
@@ -606,7 +608,6 @@
         "trip": {
           "features": [
             "50 mensajes de Buddy AI",
-            "20 escaneos de menú/foto",
             "Válido por 7 días",
             "Una cuenta · sin renovación automática"
           ]
@@ -614,7 +615,6 @@
         "group": {
           "features": [
             "200 mensajes de Buddy AI",
-            "100 escaneos de menú/foto",
             "Válido por 14 días",
             "Una cuenta compartida para un pequeño grupo"
           ]
@@ -642,7 +642,8 @@
       "dailyQuotaExceeded": "Has alcanzado el límite diario de {{limit}} mensajes de Buddy AI. Inténtalo de nuevo mañana.",
       "needBuddy": "¿No encuentras lo que necesitas? Pregunta a Buddy.",
       "verifyEmail": "Verifica tu email para usar Buddy AI.",
-      "verifyEmailHint": "Revisa tu bandeja de entrada y actualiza después de verificar."
+      "verifyEmailHint": "Revisa tu bandeja de entrada y actualiza después de verificar.",
+      "rateLimited": "Espera un momento antes de enviar otro mensaje."
     },
     "auth": {
       "title": "ChinaEase Buddy",
@@ -655,7 +656,7 @@
       "loginBtn": "Iniciar sesión",
       "loading": "Espera un momento...",
       "error": "Algo salió mal",
-      "freeNote": "El plan gratuito incluye 5 mensajes de Buddy AI y 3 escaneos de menú/foto. No necesitas tarjeta.",
+      "freeNote": "El plan gratuito incluye 5 mensajes de Buddy AI. No se necesita tarjeta bancaria.",
       "continueWithGoogle": "Continuar con Google",
       "or": "o",
       "forgotPassword": "¿Olvidaste tu contraseña?",

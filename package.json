@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "node scripts/check-i18n-parity.mjs && tsc --noEmit -p tsconfig.app.json",
-    "audit:public-html": "node scripts/audit-public-html.mjs"
+    "audit:public-html": "node scripts/audit-public-html.mjs",
+    "audit:p0-buddy-menu": "node scripts/audit-p0-buddy-menu.mjs"
   },
   "dependencies": {
     "firebase": "^12.13.0",

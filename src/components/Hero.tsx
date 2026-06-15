@@ -219,10 +219,6 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
                       <span className="font-semibold text-gray-900">{userState?.buddyAiQuotaUsed ?? 0} / {userState?.buddyAiQuotaTotal ?? 5}</span>
                     </div>
                     <div className="flex justify-between gap-3">
-                      <span className="text-gray-500">{t('account.menuQuota')}</span>
-                      <span className="font-semibold text-gray-900">{userState?.menuScanQuotaUsed ?? 0} / {userState?.menuScanQuotaTotal ?? 3}</span>
-                    </div>
-                    <div className="flex justify-between gap-3">
                       <span className="text-gray-500">{t('account.emailVerification')}</span>
                       <span className={`font-semibold ${emailVerified ? 'text-[#155e63]' : 'text-amber-600'}`}>
                         {emailVerified ? t('account.verified') : t('account.notVerified')}

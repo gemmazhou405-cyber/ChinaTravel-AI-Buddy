@@ -24,8 +24,8 @@ const pageMeta = {
     description: 'ChinaEase Buddy pricing: Free, Trip Pass, and Group Pass for digital China travel tools.',
     sections: [
       ['Free', 'Basic toolkit for apps, payments, transport, food, hotels, emergency help, and limited Buddy AI access.', '/?journey=china&tool=food'],
-      ['Trip Pass', 'USD 9.90 one-time travel pass with 50 Buddy AI messages and 20 menu/photo scans for 7 days.', '/pricing'],
-      ['Group Pass', 'USD 29.90 one-time travel pass with 200 Buddy AI messages and 100 menu/photo scans for 14 days on one shared account.', '/pricing'],
+      ['Trip Pass', 'USD 9.90 one-time travel pass with 50 Buddy AI messages for 7 days.', '/pricing'],
+      ['Group Pass', 'USD 29.90 one-time travel pass with 200 Buddy AI messages for 14 days on one shared account.', '/pricing'],
     ],
     faqs: [
       ['How do paid passes work?', 'Paid passes are one-time digital travel passes. Sandbox automatic checkout is being tested, and live checkout will not be enabled until approved. Access is granted after verified payment confirmation.'],

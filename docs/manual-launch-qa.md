@@ -26,19 +26,15 @@ Use this checklist on real devices before live launch. Record actual results, sc
 | Log out / log in | Use Buddy, log out, log back in. | Quota state is the same account state. |  |  |  |
 | Failed request quota | Force upstream/network failure and compare quota before/after. | Failed request should not increase Buddy AI use. |  |  |  |
 
-## C. 菜单扫描
+## C. 菜单/菜品参考
 
 | Test | Steps | Expected result | Actual result | PASS / FAIL | Screenshot / notes |
 | --- | --- | --- | --- | --- | --- |
-| Clear menu | Upload a clear JPG/PNG/WebP menu image under 8 MB. | Image is accepted and local menu helper content appears. |  |  |  |
-| Blurry menu | Upload a blurry menu image under 8 MB. | Image is accepted; user should still confirm ingredients with staff. |  |  |  |
-| Tilted menu | Upload a tilted menu image under 8 MB. | Image is accepted; no accuracy guarantee is shown. |  |  |  |
-| Handwritten menu | Upload a handwritten menu image. | Image is accepted only if file type/size are valid; results are not guaranteed. |  |  |  |
-| Non-menu image | Upload a valid image that is not a menu. | Current mock accepts the image; note that real scan accuracy must be tested later. |  |  |  |
-| Oversized image | Upload an image larger than 8 MB. | Image is rejected before analysis and does not count as a scan. |  |  |  |
-| Unsupported format | Upload HEIC, PDF, GIF, or another unsupported file. | File is rejected with a friendly message and does not count as a scan. |  |  |  |
-| Recognition failure | Simulate future OCR/AI failure when real scan exists. | Failure should show a friendly error and should not double-count retries. |  |  |  |
-| Failed request quota | Compare menu scan quota before/after invalid or failed uploads. | Invalid files and failed uploads should not increase scan usage. |  |  |  |
+| Private testing notice | Open Food → Menu Help. | Upload is not available to public users; page clearly says menu photo help is in private testing. |  |  |  |
+| Dish search | Search for a common dish in English, pinyin, and Chinese. | Local dish reference cards appear without API calls or quota changes. |  |  |  |
+| Allergen warning | Open dish cards with listed allergens. | Conservative warning is visible: always confirm directly with restaurant staff. |  |  |  |
+| No scan quota display | Check Pricing and Account Menu. | No menu/photo scan quota or scan allowance is advertised publicly. |  |  |  |
+| Future scan regression | If real OCR/AI scan is later enabled, retest file format, size, timeout, retry, and quota rollback before launch. | Real scan must not use mock output or unsupported allergen claims. |  |  |  |
 
 ## D. Newsletter
 
@@ -57,7 +53,7 @@ Use this checklist on real devices before live launch. Record actual results, sc
 | Homepage | Open `https://chinaeasebuddy.com/` on China mobile data and Wi-Fi. | Page loads without horizontal overflow and core tools are visible. |  |  |  |
 | Login | Test email login and Google login where available. | Email login works; Google may depend on local browser/network conditions. |  |  |  |
 | Buddy AI | Ask a normal Buddy question on China mobile data and Wi-Fi. | If reachable, Buddy answers; errors are friendly and tracked. |  |  |  |
-| Image upload | Upload a valid JPG/PNG/WebP under 8 MB. | Upload UI works and invalid files are rejected locally. |  |  |  |
+| Food reference | Open Food → Menu Help and search a dish. | Local food reference loads; photo scanning remains private testing. |  |  |  |
 | Cloudflare API | Test newsletter and sandbox-safe API routes. | Routes return expected responses, not Cloudflare challenge pages. |  |  |  |
 | Guide pages | Open `/guides`, `/china-travel-apps`, `/china-payment-guide`, `/faq`. | Pages return content and are readable. |  |  |  |
 | Mobile network and Wi-Fi | Repeat homepage, tools, newsletter, and guide checks on both networks. | No critical timeout or blocked asset issue. |  |  |  |
