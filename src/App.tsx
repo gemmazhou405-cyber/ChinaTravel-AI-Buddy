@@ -95,7 +95,7 @@ export default function App() {
   const [toolOpen, setToolOpen] = useState(Boolean(landing.tab));
   const [journey, setJourney] = useState<JourneyId>(landing.journey);
   const [deepTool, setDeepTool] = useState<string | null>(landing.tool);
-  const { user, userState, logout, signup, login, loginWithGoogle, incrementAiUsed, resendVerificationEmail, resetPassword, refreshUserState } = useAuth();
+  const { user, userState, logout, signup, login, loginWithGoogle, resendVerificationEmail, resetPassword, refreshUserState } = useAuth();
   const showToast = (msg: string) => setToast(msg);
   const handleUpgradeClick = (message = 'Unlock all phrase cards with Trip Pass.') => {
     setActiveTab('pay');
@@ -292,7 +292,7 @@ export default function App() {
             await resendVerificationEmail();
             showToast(t('auth.verificationSent'));
           }}
-          onIncrementUsed={incrementAiUsed}
+          onRefreshUserState={refreshUserState}
         />
       )}
       {authOpen && (

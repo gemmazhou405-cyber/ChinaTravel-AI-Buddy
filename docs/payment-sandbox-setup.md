@@ -16,8 +16,11 @@ Add these as Cloudflare Pages environment variables or secrets:
 - `FIREBASE_CLIENT_EMAIL`
 - `FIREBASE_PRIVATE_KEY`
 - `ALLOWED_ORIGINS`
+- `COZE_WORKER_URL`
+- `COZE_BOT_ID`
+- `COZE_INTERNAL_SECRET`
 
-Use Cloudflare secrets for `PAYPAL_CLIENT_SECRET`, `FIREBASE_CLIENT_EMAIL`, and `FIREBASE_PRIVATE_KEY`.
+Use Cloudflare secrets for `PAYPAL_CLIENT_SECRET`, `FIREBASE_CLIENT_EMAIL`, `FIREBASE_PRIVATE_KEY`, and `COZE_INTERNAL_SECRET`. The Coze Worker should reject direct anonymous calls and require the same internal token header used by `/api/buddy/chat`.
 
 ## Sandbox webhook
 

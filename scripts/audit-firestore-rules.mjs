@@ -20,39 +20,20 @@ const checks = [
       && rules.includes('userData().menuScanQuotaTotal == 3'),
   ],
   [
-    'usage updates limited to counters',
-    rules.includes('affectedKeys().hasOnly([')
-      && rules.includes("'buddyAiQuotaUsed'")
-      && rules.includes("'dailyBuddyAiUsed'")
-      && rules.includes("'dailyResetAt'")
-      && rules.includes("'menuScanQuotaUsed'"),
+    'users client updates denied',
+    /match \/users\/\{userId\}[\s\S]*?allow update: if false;/.test(rules),
   ],
   [
-    'buddy AI total use cannot decrease',
-    rules.includes('request.resource.data.buddyAiQuotaUsed >= resource.data.buddyAiQuotaUsed'),
+    'usageRequests server-write only and own reads only',
+    rules.includes('match /usageRequests/{requestId}')
+      && rules.includes('resource.data.userId == request.auth.uid')
+      && rules.includes('allow create, update, delete: if false;'),
   ],
   [
-    'menu scan use cannot decrease',
-    rules.includes('request.resource.data.menuScanQuotaUsed >= resource.data.menuScanQuotaUsed'),
-  ],
-  [
-    'daily AI cannot decrease within same reset window',
-    rules.includes('request.resource.data.dailyResetAt == resource.data.dailyResetAt')
-      && rules.includes('request.resource.data.dailyBuddyAiUsed >= resource.data.dailyBuddyAiUsed'),
-  ],
-  [
-    'daily reset requires initial unused day or old reset older than 24h',
-    rules.includes('resource.data.dailyResetAt <= currentMillis() - 86400000')
-      && rules.includes('resource.data.dailyBuddyAiUsed == 0')
-      && rules.includes('request.resource.data.dailyResetAt >= currentMillis() - 300000')
-      && rules.includes('request.resource.data.dailyBuddyAiUsed == 1'),
-  ],
-  [
-    'plan and quota totals remain unchanged on update',
-    rules.includes('request.resource.data.plan == resource.data.plan')
-      && rules.includes('request.resource.data.buddyAiQuotaTotal == resource.data.buddyAiQuotaTotal')
-      && rules.includes('request.resource.data.menuScanQuotaTotal == resource.data.menuScanQuotaTotal')
-      && rules.includes('request.resource.data.planExpiresAt == resource.data.planExpiresAt'),
+    'client cannot directly edit sensitive user counters or entitlements',
+    !rules.includes('request.resource.data.buddyAiQuotaUsed >= resource.data.buddyAiQuotaUsed')
+      && !rules.includes('request.resource.data.menuScanQuotaUsed >= resource.data.menuScanQuotaUsed')
+      && !rules.includes('request.resource.data.dailyBuddyAiUsed >= resource.data.dailyBuddyAiUsed'),
   ],
   [
     'orders client writes denied and own reads only',

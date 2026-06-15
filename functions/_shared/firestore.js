@@ -110,6 +110,14 @@ async function firestoreFetch(env, path, init = {}) {
   return res.json();
 }
 
+function databaseRoot(env) {
+  return `projects/${env.FIREBASE_PROJECT_ID}/databases/(default)/documents`;
+}
+
+export function docName(env, path) {
+  return `${databaseRoot(env)}/${path}`;
+}
+
 export async function getDoc(env, path) {
   const doc = await firestoreFetch(env, path);
   return fromFirestoreDocument(doc);
@@ -146,6 +154,72 @@ export async function commitWrites(env, writes) {
   if (!res.ok) {
     const text = await res.text();
     throw new Error(`firestore_commit_error:${res.status}:${text.slice(0, 240)}`);
+  }
+  return res.json();
+}
+
+export async function beginTransaction(env) {
+  const token = await serviceAccountToken(env);
+  const res = await fetch(`https://firestore.googleapis.com/v1/projects/${env.FIREBASE_PROJECT_ID}/databases/(default)/documents:beginTransaction`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ options: { readWrite: {} } }),
+  });
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`firestore_begin_transaction_error:${res.status}:${text.slice(0, 240)}`);
+  }
+  const body = await res.json();
+  return body.transaction;
+}
+
+export async function batchGetDocs(env, paths, transaction) {
+  const token = await serviceAccountToken(env);
+  const body = {
+    documents: paths.map((path) => docName(env, path)),
+    ...(transaction ? { transaction } : {}),
+  };
+  const res = await fetch(`https://firestore.googleapis.com/v1/projects/${env.FIREBASE_PROJECT_ID}/databases/(default)/documents:batchGet`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`firestore_batch_get_error:${res.status}:${text.slice(0, 240)}`);
+  }
+  const rows = await res.json();
+  const docs = new Map();
+  for (const row of rows) {
+    const found = row.found;
+    if (found?.name) {
+      docs.set(found.name.replace(`${databaseRoot(env)}/`, ''), fromFirestoreDocument(found));
+    } else if (row.missing) {
+      docs.set(row.missing.replace(`${databaseRoot(env)}/`, ''), null);
+    }
+  }
+  return docs;
+}
+
+export async function commitTransaction(env, transaction, writes) {
+  const token = await serviceAccountToken(env);
+  const res = await fetch(`https://firestore.googleapis.com/v1/projects/${env.FIREBASE_PROJECT_ID}/databases/(default)/documents:commit`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ transaction, writes }),
+  });
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`firestore_transaction_commit_error:${res.status}:${text.slice(0, 240)}`);
   }
   return res.json();
 }

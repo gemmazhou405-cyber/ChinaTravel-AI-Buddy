@@ -52,43 +52,8 @@ function normalizeUserState(data: StoredUserState, uid: string, email: string): 
 }
 
 async function sendWelcomeEmail(email: string) {
-  try {
-    await fetch('https://chinaease-proxy.gemmazhou405.workers.dev/email', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        to: email,
-        subject: 'Welcome to ChinaEase Buddy! Your China survival kit is inside',
-        apiUser: 'sc_r79xzc_test_ukEDGD',
-        from: 'noreply@r79xzc.sendcloud.org',
-        fromName: 'ChinaEase Buddy',
-        html: `
-          <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
-            <img src="https://chinaeasebuddy.com/email_header.jpg" 
-                 style="width:100%;border-radius:12px;margin-bottom:24px">
-            <h2 style="color:#155e63">Welcome to ChinaEase Buddy!</h2>
-            <p>Your China survival kit is ready. Here's what to do next:</p>
-            <ol>
-              <li><strong>Add to home screen</strong> — save the app for offline use</li>
-              <li><strong>Review Arrival Guide</strong> — set up Alipay before landing</li>
-              <li><strong>Try Buddy AI</strong> — you have 5 free messages waiting</li>
-            </ol>
-            <a href="https://chinaeasebuddy.com/"
-               style="display:inline-block;background:#155e63;color:white;
-                      padding:12px 24px;border-radius:8px;text-decoration:none;
-                      font-weight:bold;margin-top:16px">
-              Open ChinaEase Buddy
-            </a>
-            <p style="color:#888;font-size:12px;margin-top:32px">
-              ChinaEase Buddy · AI Travel Companion for China
-            </p>
-          </div>
-        `,
-      }),
-    });
-  } catch (e) {
-    console.log('Email send skip:', e);
-  }
+  void email;
+  // Welcome email delivery should run through a server endpoint, not a public client-side worker URL.
 }
 
 function createFreeUserState(uid: string, email: string): UserState {
@@ -204,31 +169,5 @@ export function useAuth() {
     return next;
   };
 
-  const incrementAiUsed = async () => {
-    if (!user || !userState) return;
-
-    const now = Date.now();
-
-    if (userState.planExpiresAt && now > userState.planExpiresAt) {
-      return;
-    }
-
-    const oneDayMs = 24 * 60 * 60 * 1000;
-    const shouldResetDaily = !userState.dailyResetAt || now - userState.dailyResetAt > oneDayMs;
-
-    const newDailyUsed = shouldResetDaily ? 1 : userState.dailyBuddyAiUsed + 1;
-    const newDailyResetAt = shouldResetDaily ? now : userState.dailyResetAt;
-    const newTotalUsed = userState.buddyAiQuotaUsed + 1;
-
-    const updates = {
-      buddyAiQuotaUsed: newTotalUsed,
-      dailyBuddyAiUsed: newDailyUsed,
-      dailyResetAt: newDailyResetAt,
-    };
-
-    await setDoc(doc(db, 'users', user.uid), updates, { merge: true });
-    setUserState((prev) => (prev ? { ...prev, ...updates } : null));
-  };
-
-  return { user, userState, loading, signup, login, loginWithGoogle, logout, incrementAiUsed, resendVerificationEmail, resetPassword, refreshUserState };
+  return { user, userState, loading, signup, login, loginWithGoogle, logout, resendVerificationEmail, resetPassword, refreshUserState };
 }

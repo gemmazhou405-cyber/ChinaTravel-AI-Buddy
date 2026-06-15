@@ -166,55 +166,15 @@ service cloud.firestore {
                && userData().dailyResetAt == null;
       }
 
-      function currentMillis() {
-        return request.time.toMillis();
-      }
-
-      function dailyCounterUnchangedOrValidIncrement() {
-        return (
-                 request.resource.data.dailyResetAt == resource.data.dailyResetAt
-                 && request.resource.data.dailyBuddyAiUsed >= resource.data.dailyBuddyAiUsed
-               )
-               || (
-                 ((resource.data.dailyResetAt == null
-                   && resource.data.dailyBuddyAiUsed == 0)
-                  || resource.data.dailyResetAt <= currentMillis() - 86400000)
-                 && request.resource.data.dailyResetAt is number
-                 && request.resource.data.dailyResetAt <= currentMillis()
-                 && request.resource.data.dailyResetAt >= currentMillis() - 300000
-                 && request.resource.data.dailyBuddyAiUsed == 1
-               );
-      }
-
-      function usageOnlyUpdate() {
-        return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
-                 'buddyAiQuotaUsed',
-                 'dailyBuddyAiUsed',
-                 'dailyResetAt',
-                 'menuScanQuotaUsed'
-               ])
-               && request.resource.data.plan == resource.data.plan
-               && request.resource.data.planExpiresAt == resource.data.planExpiresAt
-               && request.resource.data.buddyAiQuotaTotal == resource.data.buddyAiQuotaTotal
-               && request.resource.data.menuScanQuotaTotal == resource.data.menuScanQuotaTotal
-               && request.resource.data.dailyBuddyAiLimit == resource.data.dailyBuddyAiLimit
-               && request.resource.data.buddyAiQuotaUsed is number
-               && request.resource.data.buddyAiQuotaUsed >= resource.data.buddyAiQuotaUsed
-               && request.resource.data.buddyAiQuotaUsed <= resource.data.buddyAiQuotaTotal
-               && request.resource.data.dailyBuddyAiUsed is number
-               && request.resource.data.dailyBuddyAiUsed <= resource.data.dailyBuddyAiLimit
-               && dailyCounterUnchangedOrValidIncrement()
-               && request.resource.data.menuScanQuotaUsed is number
-               && request.resource.data.menuScanQuotaUsed >= resource.data.menuScanQuotaUsed
-               && request.resource.data.menuScanQuotaUsed <= resource.data.menuScanQuotaTotal
-               && (request.resource.data.dailyResetAt == null
-                   || request.resource.data.dailyResetAt is number);
-      }
-
       allow read: if isOwner();
       allow create: if isOwner() && validFreeUserCreate();
-      allow update: if isOwner() && usageOnlyUpdate();
+      allow update: if false;
       allow delete: if false;
+    }
+
+    match /usageRequests/{requestId} {
+      allow read: if request.auth != null && resource.data.userId == request.auth.uid;
+      allow create, update, delete: if false;
     }
 
     match /orders/{orderId} {
