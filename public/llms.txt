@@ -1,0 +1,41 @@
+# ChinaEase Buddy — AI Travel Companion for China
+> https://chinaeasebuddy.com
+
+ChinaEase Buddy is a web-based AI travel companion for foreigners visiting China. It provides practical tools to navigate common travel challenges: reading Chinese menus, setting up mobile payments, communicating without Chinese language skills, and handling emergencies.
+
+## What it does
+
+- **Menu translation + allergen alerts**: Snap a photo of any Chinese menu for instant translation and food allergen identification (peanuts, shellfish, gluten, etc.)
+- **Payment setup**: Step-by-step help setting up Alipay and WeChat Pay as a foreign visitor
+- **Bilingual phrase cards**: Ready-to-show Chinese phrases for taxis, hotels, restaurants, and emergencies
+- **Buddy AI**: Ask travel questions and get practical, China-specific answers
+- **City survival guides**: Practical tips for 9 major Chinese cities (Shanghai, Beijing, Xi'an, Chengdu, Guangzhou, Shenzhen, Hangzhou, Suzhou, Guilin)
+- **Emergency toolkit**: Emergency numbers (110 police, 120 ambulance, 119 fire), embassy contacts, lost-document steps, medical phrase cards
+
+## Pricing (no auto-renewal)
+
+- **Free**: 5 Buddy AI uses · basic China toolkit (apps, payments, taxis, emergency phrases)
+- **Trip Pass — $9.90 one-time**: Unlimited Buddy AI · menu translation + allergen alerts · all premium guides
+- **Group Pass — $29.90 one-time**: Everything in Trip Pass · shared across up to 4 travelers
+
+Payments via PayPal. 3-day refund policy. No subscription, no auto-renewal.
+
+## Who it's for
+
+Foreign tourists, business travelers, and expats visiting mainland China who do not speak or read Chinese. Particularly useful for travelers with food allergies, first-time visitors, and those setting up mobile payments.
+
+## Key pages
+
+- Homepage / app: https://chinaeasebuddy.com/
+- China payment guide: https://chinaeasebuddy.com/china-payment-guide
+- Alipay for foreigners: https://chinaeasebuddy.com/alipay-for-foreigners
+- China travel apps: https://chinaeasebuddy.com/china-travel-apps
+- China travel checklist: https://chinaeasebuddy.com/china-travel-checklist
+- China emergency numbers: https://chinaeasebuddy.com/china-emergency-numbers
+- FAQ: https://chinaeasebuddy.com/faq
+- Pricing: https://chinaeasebuddy.com/pricing
+- About: https://chinaeasebuddy.com/about
+
+## Disclaimer
+
+ChinaEase Buddy is not an official travel authority, government service, or licensed medical/legal/financial advisor. Information is provided for general travel convenience only. Always verify critical information (visa requirements, emergency procedures, medical advice) with official sources.
