@@ -80,6 +80,7 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
   };
 
   return (
+    <>
     <section className="relative h-[64svh] min-h-[27rem] max-h-[31rem] md:h-auto md:min-h-[690px] md:max-h-[800px] flex flex-col overflow-hidden bg-[#061e1f]">
       <style>{`
         .hero-bg {
@@ -294,6 +295,9 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
             </button>
           </div>
 
+          {/* TODO: owner to supply menu-translation demo image/GIF */}
+          {/* <img src="/images/menu-translation-demo.gif" alt="Snap a Chinese menu to translate it and flag allergens" className="mt-6 hidden md:block w-full max-w-sm rounded-2xl shadow-2xl ring-1 ring-white/20" /> */}
+
           <div className="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold text-[#fffaf0]/95 drop-shadow-[0_1px_12px_rgba(0,0,0,0.76)] md:mt-6 md:text-xs">
             <span className="md:hidden">{t('hero.mobileTrustShort')}</span>
             <span className="hidden items-center gap-2 md:inline-flex"><ShieldCheck className="h-4 w-4 text-[#e8c27a]" />{t('hero.trustTrusted')}</span>
@@ -336,5 +340,26 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
         </div>
       )}
     </section>
+
+    {/* Feature strip */}
+    <div className="relative z-0 border-b border-gray-100 bg-white/90 shadow-sm backdrop-blur-sm">
+      <div className="mx-auto max-w-7xl px-4 py-3 md:py-4">
+        <div className="grid grid-cols-3 gap-2 text-center md:gap-6">
+          <div className="flex flex-col items-center gap-1 text-[10px] font-semibold text-gray-700 md:flex-row md:justify-center md:gap-2 md:text-sm">
+            <span className="text-base">📸</span>
+            <span>Menu translation + allergen alerts</span>
+          </div>
+          <div className="flex flex-col items-center gap-1 text-[10px] font-semibold text-gray-700 md:flex-row md:justify-center md:gap-2 md:text-sm">
+            <span className="text-base">💳</span>
+            <span>Set up Alipay in minutes</span>
+          </div>
+          <div className="flex flex-col items-center gap-1 text-[10px] font-semibold text-gray-700 md:flex-row md:justify-center md:gap-2 md:text-sm">
+            <span className="text-base">🚕</span>
+            <span>Talk to taxis &amp; hotels, no Chinese</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </>
   );
 }
