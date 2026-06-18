@@ -30,7 +30,12 @@ interface GuidePageData {
   ctaHref: string;
   sections: Array<{
     title: string;
-    items: string[];
+    items?: string[];
+    ordered?: boolean;
+    table?: {
+      headers: string[];
+      rows: string[][];
+    };
   }>;
   faqs: Array<{
     question: string;
@@ -319,65 +324,124 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'china-travel-apps': {
     path: '/china-travel-apps',
-    title: '5 Essential Apps to Download Before Visiting China',
-    intro: 'A practical app checklist for first-time visitors preparing for daily travel in China.',
-    metaTitle: '5 Essential Apps to Download Before Visiting China | ChinaEase Buddy',
+    title: 'Essential Apps for Foreign Tourists in China (2026)',
+    intro:
+      'A category-by-category guide to the apps that actually work in China — payments, maps, rides, trains, translation, and what to do about blocked services.',
+    metaTitle: 'Essential Apps for Foreign Tourists in China 2026 | ChinaEase Buddy',
     metaDescription:
-      'Download and prepare Alipay, WeChat, Amap, Didi, and Trip.com before visiting China. Practical app tips for foreign travelers.',
+      'Which apps do foreign tourists need in China in 2026? Alipay, WeChat Pay, Amap, DiDi, Trip.com, translation tools — plus what to know about VPNs and Google Maps.',
     quickAnswer:
-      'Before visiting China, most travelers should prepare Alipay, WeChat, Amap, Didi, and Trip.com. Set them up before arrival when possible, keep backup payment options, and save your hotel address in Chinese.',
-    ctaLabel: 'View the app checklist',
+      'Install before you land: Alipay (payments — link your card at home), Amap or Apple Maps (navigation — Google Maps is unreliable in China), DiDi (ride-hailing), and Trip.com (trains and hotels). Some overseas apps are not directly accessible in China; travelers commonly prepare a VPN or international eSIM before arriving. Do all setup at home while you have your regular SIM and unblocked internet.',
+    ctaLabel: 'Open the app checklist',
     ctaHref: '/?journey=before&tool=apps',
     sections: [
       {
-        title: 'Essential apps',
+        title: 'Which apps should I install before landing?',
         items: [
-          'Alipay: payments, taxis, metro, shops, and restaurants. Try setting it up before arrival.',
-          'WeChat: messaging, payments, mini programs, and local contacts.',
-          'Amap: local navigation in China where Google Maps may be limited.',
-          'Didi: ride-hailing for taxis and private cars.',
-          'Trip.com: useful for trains, flights, and hotels.',
+          'Alipay — link your Visa or Mastercard before you fly. Needed for QR payments at shops, restaurants, metro, and taxis.',
+          'WeChat — messaging and payments. Many locals will want to add you on WeChat; it also works as a backup payment method.',
+          'Amap (高德地图 / Gaode) — the most reliable map for China. Download the offline map pack for your destination before arriving.',
+          'DiDi — ride-hailing app for taxis and private cars across China, with an English in-app option.',
+          'Trip.com — English-language booking for trains, flights, and hotels in China.',
+          'Your VPN app of choice — install before arrival; VPN provider sites may also not be accessible in China.',
         ],
       },
       {
-        title: 'What to prepare before arrival',
+        title: 'Payments: Alipay and WeChat Pay',
         items: [
-          'Use the same passport name across travel and payment accounts when possible.',
-          'Save your hotel name and address in Chinese.',
-          'Keep screenshots of key phrases and emergency numbers.',
-          'Carry a small cash backup for places where digital payment is difficult.',
+          'Alipay accepts foreign Visa, Mastercard, JCB, Discover, and Diners Club cards. Link yours before flying — you need your home SIM to receive the bank SMS verification.',
+          'WeChat Pay also supports foreign cards and uses the same QR-code scan system. Set up Alipay first as your primary; add WeChat Pay as a backup.',
+          'Cash is rarely used in Chinese cities. Small restaurants, market stalls, and local shops expect Alipay or WeChat QR codes — not foreign cards directly.',
+          'Full setup walkthrough: see the China Payment Guide.',
         ],
       },
       {
-        title: 'Common mistakes',
+        title: 'Maps and navigation: what actually works?',
         items: [
-          'Waiting until landing to install every app.',
-          'Relying only on foreign cards for small shops or restaurants.',
-          'Assuming every map, chat, or translation app works the same way in China.',
-          'Not saving offline phrases before losing mobile data.',
+          'Google Maps — do not rely on it in China. Map data is intentionally offset due to government coordinate-system requirements, and Google services are blocked without a VPN. Street and satellite data can appear shifted by hundreds of metres.',
+          'Amap (高德地图 / Gaode) — the standard navigation app used across China. Accurate roads, real-time traffic, and public transit directions. The interface is primarily in Chinese; foreign visitors often find Apple Maps easier for English navigation.',
+          'Apple Maps — uses AutoNavi (Amap) data for mainland China. Walking and driving directions are reliable; transit routing is available but less consistent — double-check metro and bus routes locally.',
+          'Save your hotel address in Chinese characters before leaving home and paste it directly into Amap or DiDi when you arrive.',
         ],
+      },
+      {
+        title: 'Ride-hailing: DiDi',
+        items: [
+          'DiDi is the dominant ride-hailing app in China, covering most cities large and small.',
+          'DiDi has an English-language option available in the app settings.',
+          'Payment in DiDi is made via Alipay or WeChat Pay linked inside the app.',
+          'Always check the car plate and driver photo in the app before getting in — drivers in China rarely speak English.',
+          'Save your destination in Chinese characters and show it to the driver if needed; paste from your notes app.',
+        ],
+      },
+      {
+        title: 'Trains and travel booking: Trip.com and 12306',
+        items: [
+          'Trip.com (formerly Ctrip) is the easiest option for foreign tourists: full English interface, accepts foreign Visa and Mastercard, and covers trains, flights, and hotels across China.',
+          '12306 is the official China Railway ticketing app and website. It is primarily in Chinese and requires registration with a foreign passport — many tourists use Trip.com instead as it draws from the same inventory and is simpler to navigate.',
+          'Book popular routes (Beijing–Shanghai, Beijing–Xi\'an, Chengdu–Lhasa) several days in advance; during national holidays (Golden Week, Spring Festival), book weeks ahead.',
+          'You must show your passport at the station gate or ticket window — the name must match the booking exactly.',
+        ],
+      },
+      {
+        title: 'Translation and menus',
+        items: [
+          'Google Translate — camera translation is very useful for menus and signs, but requires a VPN to work in China.',
+          'Translation app availability in China can be inconsistent; a tool that works offline or is built for China travel is more dependable.',
+          'ChinaEase Buddy — photograph a Chinese menu and get a translation with allergen alerts highlighted. No VPN needed. Also covers payment phrases, transport, emergency numbers, and the Buddy AI for travel questions.',
+          'Offline tip: download the Chinese language pack inside any translation app before leaving home — camera translation then works without any internet connection.',
+        ],
+      },
+      {
+        title: 'VPN and eSIM: accessing blocked apps',
+        items: [
+          'Some overseas apps and websites aren\'t directly accessible in China — Google services, WhatsApp, Instagram, Facebook, and X are among those commonly affected.',
+          'Travelers commonly prepare a VPN or an international eSIM before arriving.',
+          'Some travelers use an international eSIM or roaming plan to access apps that may be restricted, but reliability varies — don\'t rely on it as your only option.',
+        ],
+      },
+      {
+        title: 'App comparison at a glance',
+        table: {
+          headers: ['App', 'Category', 'English interface', 'Key use'],
+          rows: [
+            ['Alipay', 'Payments', 'Yes', 'QR payments everywhere'],
+            ['WeChat / WeChat Pay', 'Payments + messaging', 'Partial (Pay flows)', 'Payments, local contacts'],
+            ['Amap (Gaode)', 'Maps', 'Primarily Chinese', 'Navigation, transit, offline maps'],
+            ['Apple Maps', 'Maps', 'Yes', 'Navigation using Amap data'],
+            ['DiDi', 'Ride-hailing', 'Yes (in-app setting)', 'Taxis and private cars'],
+            ['Trip.com', 'Booking', 'Yes', 'Trains, flights, hotels'],
+            ['12306', 'Rail tickets', 'Primarily Chinese', 'Official train booking'],
+            ['ChinaEase Buddy', 'Translation + tools', 'Yes', 'Menu translation, allergen alerts, phrases'],
+          ],
+        },
       },
     ],
     faqs: [
       {
-        question: 'What apps should I download before visiting China?',
+        question: 'Does Google Maps work in China?',
         answer:
-          'Most first-time visitors should prepare Alipay, WeChat, Amap, Didi, and Trip.com before arrival. Availability and setup requirements can change, so verify details inside each app.',
+          'Not reliably. Map data in China is intentionally offset due to government coordinate-system requirements, and Google services are blocked without a VPN. Use Amap (Gaode) or Apple Maps instead.',
       },
       {
-        question: 'Should I set up Alipay before arriving in China?',
+        question: 'Do I need a VPN in China?',
         answer:
-          'It is usually helpful to try setting up Alipay before arrival, especially if you plan to use taxis, shops, restaurants, or metro systems. Keep backup payment options in case setup or card verification fails.',
+          'If you want to use Google, WhatsApp, Instagram, or other services that may not be directly accessible in China, yes. If you only need maps and payments, local apps work without one.',
       },
       {
-        question: 'Does Google Maps work well in China?',
+        question: 'Can I book China train tickets without a Chinese account?',
         answer:
-          'Google services may be limited in mainland China. Amap is often more practical for local navigation, public transport routes, and Chinese addresses.',
+          'Yes — Trip.com lets you book in English with a foreign card and passport. The official 12306 app works but is primarily in Chinese and requires a foreign-passport registration that some travelers find unreliable.',
       },
       {
-        question: 'Can I use Didi without speaking Chinese?',
+        question: 'Which translation app works in China without a VPN?',
         answer:
-          'Didi can reduce language friction, but you should still save your pickup point, destination, and hotel address in Chinese in case a driver needs clarification.',
+          'Google Translate requires a VPN in China. Translation app availability can be inconsistent; a tool that works offline or is built for China travel is more dependable. ChinaEase Buddy works without a VPN and is specifically built for menu translation and travel phrase situations.',
+      },
+      {
+        question: 'Should I set these apps up before or after arriving?',
+        answer:
+          'Before. Alipay card linking needs your home SIM for bank SMS verification. Some apps and their download sites may not be accessible once you arrive. Downloading offline map packs is also much faster on home Wi-Fi.',
       },
     ],
     related: [
@@ -463,63 +527,98 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   'china-payment-guide': {
     path: '/china-payment-guide',
     title: 'How to Pay in China as a Foreigner',
-    intro: 'A simple payment survival guide for visitors using Alipay, WeChat Pay, cards, and cash backup.',
+    intro:
+      'A quick-answer guide to paying in China with a foreign card, Alipay, and WeChat Pay — no Chinese bank account required.',
     metaTitle: 'How to Pay in China as a Foreigner | ChinaEase Buddy',
     metaDescription:
-      'Practical guide to paying in China as a foreign visitor: Alipay, WeChat Pay, foreign cards, cash backup, and payment failure phrases.',
+      'Learn how foreigners can pay in China using Alipay or WeChat Pay with an international Visa, Mastercard, or JCB card — no Chinese bank account needed.',
     quickAnswer:
-      'Foreign visitors in China usually need a mix of mobile payment tools, card awareness, and a small cash backup. Alipay and WeChat Pay are common, while foreign cards are more limited outside hotels and large malls.',
+      "Yes — foreigners can pay almost everywhere in China without a Chinese bank account. Since 2023 you can link an international Visa, Mastercard, JCB, Discover, or Diners Club card directly to Alipay or WeChat Pay and pay by scanning QR codes. Set it up before you fly, keep a little cash as backup, and tell your bank you'll be using your card in China so the verification charge isn't blocked.",
     ctaLabel: 'Open payment phrases',
     ctaHref: '/?journey=china&tool=pay',
     sections: [
       {
-        title: 'Main payment options',
+        title: 'Do I need a Chinese bank account or phone number?',
         items: [
-          'Alipay: widely used for QR payments and daily travel situations.',
-          'WeChat Pay: useful for merchants, mini programs, and local contacts.',
-          'Foreign cards: more likely to work at hotels, malls, and larger merchants.',
-          'Cash backup: useful for small vendors, taxis, or when apps fail.',
+          'No to both.',
+          'Since 2023, the Chinese bank account requirement was removed for foreign visitors.',
+          'You can register Alipay with your home-country mobile number — the SMS verification code goes to that number.',
+          'A Chinese SIM is optional, not required.',
         ],
       },
       {
-        title: 'What to say when payment fails',
+        title: 'Which cards work?',
         items: [
-          'Can I pay with Alipay? / 可以用支付宝付款吗？',
-          'Can I pay with WeChat Pay? / 可以用微信支付吗？',
-          'My card is not working. Can I pay in cash? / 我的卡刷不了，可以付现金吗？',
-          'Can you help me scan this QR code? / 你可以帮我扫这个二维码吗？',
+          'Visa, Mastercard, JCB, Discover, Diners Club, and Maestro are supported.',
+          'American Express works inconsistently (lower limits, patchy acceptance) — bring a Visa or Mastercard as your main card.',
+          'Cards with no foreign-transaction fee (such as Wise, Revolut, or travel credit cards) save you money over a longer trip.',
         ],
       },
       {
-        title: 'Practical reminders',
+        title: 'How to set up Alipay before your trip',
+        ordered: true,
         items: [
-          'Set up payment apps before arrival when possible.',
-          'Keep your hotel address and payment phrases saved offline.',
-          'Do not share card details with strangers.',
-          'Confirm prices before services such as taxis, tours, or small shops.',
+          'Download the standard Alipay app from the App Store or Google Play — not "Alipay HK" or other regional versions.',
+          'Register with your home mobile number and enter the SMS code.',
+          'Go to identity verification and upload your passport photo page (make sure the machine-readable strip at the bottom is clear). Verification is mostly automated and usually finishes in minutes.',
+          "Add your card under Account → Bank Cards. You may be redirected to your bank's 3D-Secure (OTP) page.",
+          'Alipay sends a small verification charge (usually under $1) — confirm it in the app to activate.',
+        ],
+      },
+      {
+        title: 'Alipay vs WeChat Pay — which should I use?',
+        table: {
+          headers: ['', 'Alipay', 'WeChat Pay'],
+          rows: [
+            ['Foreign card support', 'Strong, well-documented', 'Works, but setup varies more'],
+            ['English interface', 'Full English', 'Partial'],
+            ['Best for tourists', 'Recommended primary', 'Good as backup'],
+            ['Also used for', 'Taxis, metro, shops, tickets', 'Same, plus messaging'],
+          ],
+        },
+        items: [
+          'Recommendation: set up Alipay first as your main payment method, and add WeChat Pay as a backup if you have time.',
+        ],
+      },
+      {
+        title: 'Fees and limits',
+        items: [
+          'Payments of ¥200 or less are usually fee-free; above that, expect roughly a 3% fee.',
+          'Your own bank may also add a foreign-transaction fee.',
+          'Alipay applies per-transaction and annual spending limits for foreign cards — check the current limit shown inside the Alipay app when you link your card.',
+        ],
+      },
+      {
+        title: 'What if my payment fails?',
+        items: [
+          "Call your bank before the trip and tell them you'll use the card in China; ask them to whitelist Alipay/China charges.",
+          'Turn your VPN off while linking the card.',
+          'Try a Mastercard if Visa fails, or vice versa.',
+          'Last resort: cash top-up counters in the international arrival halls at major airports (Beijing, Shanghai, Guangzhou, Shenzhen, Chengdu, Hangzhou, and others) — show your passport, hand over RMB cash, and staff credit your Alipay balance.',
+        ],
+      },
+      {
+        title: 'Can I get a refund to my foreign card?',
+        items: [
+          'Yes. Refunds go back to the original card, typically within 3–10 business days.',
+          "They're issued in RMB, so the final amount may differ slightly due to exchange-rate movement.",
         ],
       },
     ],
     faqs: [
       {
-        question: 'What is the best way for foreigners to pay in China?',
+        question: 'Is China really cashless?',
         answer:
-          'There is no single best method for every traveler. Many visitors prepare Alipay or WeChat Pay, keep a foreign card, and carry a small cash backup.',
+          'Mostly — in big cities the vast majority of payments are by QR code. Carry a small amount of cash for rural areas and edge cases.',
       },
       {
-        question: 'Can tourists use WeChat Pay in China?',
+        question: 'Can I use Apple Pay or my foreign card directly?',
         answer:
-          'Some tourists may be able to use WeChat Pay with supported cards and verification. Setup and availability may vary, so prepare alternatives.',
+          'At big hotels and malls sometimes; small shops and restaurants usually only take Alipay or WeChat QR codes.',
       },
       {
-        question: 'Are foreign credit cards accepted in China?',
-        answer:
-          'Foreign cards are more commonly accepted at hotels, large malls, and some international merchants. Smaller shops and restaurants may prefer QR payments or cash.',
-      },
-      {
-        question: 'What should I do if payment fails?',
-        answer:
-          'Stay calm, ask about another payment method, and show a short Chinese phrase. Keep a small cash backup and contact your card issuer if needed.',
+        question: 'Should I set up Alipay before or after arriving?',
+        answer: "Before — you need your home SIM to receive your bank's verification SMS.",
       },
     ],
     related: [
@@ -1016,17 +1115,49 @@ function GuidePage({ type, userId }: { type: GuidePageType; userId?: string | nu
             <section
               id={section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}
               key={section.title}
-              className="rounded-2xl border border-gray-100 bg-white/80 p-4 shadow-sm"
+              className={`rounded-2xl border border-gray-100 bg-white/80 p-4 shadow-sm${section.table ? ' md:col-span-2' : ''}`}
             >
               <h2 className="text-lg font-bold text-gray-950">{section.title}</h2>
-              <ul className="mt-3 space-y-2">
-                {section.items.map((item) => (
-                  <li key={item} className="flex gap-2 text-sm leading-relaxed text-gray-600">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#155e63]" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+              {section.table && (
+                <div className="mt-3 overflow-x-auto">
+                  <table className="w-full text-sm text-left">
+                    <thead>
+                      <tr className="border-b border-gray-100">
+                        {section.table.headers.map((h) => (
+                          <th key={h} className="pb-2 pr-4 font-semibold text-gray-950 first:w-1/4">{h}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {section.table.rows.map((row) => (
+                        <tr key={row[0]} className="border-b border-gray-50 last:border-0">
+                          {row.map((cell, i) => (
+                            <td key={i} className={`py-2 pr-4 leading-relaxed text-gray-600${i === 0 ? ' font-semibold text-gray-800' : ''}`}>{cell}</td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+              {section.items && section.items.length > 0 && (
+                section.ordered ? (
+                  <ol className="mt-3 list-decimal list-outside space-y-2 pl-5">
+                    {section.items.map((item) => (
+                      <li key={item} className="pl-1 text-sm leading-relaxed text-gray-600">{item}</li>
+                    ))}
+                  </ol>
+                ) : (
+                  <ul className={`space-y-2 ${section.table ? 'mt-4 border-t border-gray-100 pt-4' : 'mt-3'}`}>
+                    {section.items.map((item) => (
+                      <li key={item} className="flex gap-2 text-sm leading-relaxed text-gray-600">
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#155e63]" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )
+              )}
             </section>
           ))}
         </div>

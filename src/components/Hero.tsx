@@ -295,8 +295,11 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
             </button>
           </div>
 
-          {/* TODO: owner to supply menu-translation demo image/GIF */}
-          {/* <img src="/images/menu-translation-demo.gif" alt="Snap a Chinese menu to translate it and flag allergens" className="mt-6 hidden md:block w-full max-w-sm rounded-2xl shadow-2xl ring-1 ring-white/20" /> */}
+          <img
+            src={`${assetBase}hero-demo.png`}
+            alt="ChinaEase Buddy translating a Chinese menu into English with allergen alerts including hidden pork and shellfish"
+            className="mt-4 w-full max-w-[260px] rounded-2xl shadow-2xl ring-1 ring-white/20 md:mt-6 md:max-w-sm"
+          />
 
           <div className="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold text-[#fffaf0]/95 drop-shadow-[0_1px_12px_rgba(0,0,0,0.76)] md:mt-6 md:text-xs">
             <span className="md:hidden">{t('hero.mobileTrustShort')}</span>
