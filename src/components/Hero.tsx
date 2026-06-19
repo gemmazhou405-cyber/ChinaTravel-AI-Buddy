@@ -258,9 +258,11 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
       </div>
       </div>
 
-      {/* 主内容：badge + slogan + subtitle + 按钮，整体放在画面上半部分 */}
-      <div className="relative z-10 flex w-full flex-1 flex-col justify-center px-4 pb-8 pt-1 md:mx-auto md:max-w-7xl md:px-10 md:pb-20 md:pt-1">
-        <div className="max-w-3xl">
+      {/* 主内容：两栏布局（桌面）/ 单栏（移动） */}
+      <div className="relative z-10 flex w-full flex-1 flex-col justify-center px-4 pb-8 pt-1 md:mx-auto md:max-w-7xl md:flex-row md:items-center md:gap-16 md:px-10 md:pb-16 md:pt-4">
+
+        {/* Left column: text content */}
+        <div className="md:flex-1">
           <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-[#e8c27a]/35 bg-[#e8c27a]/12 px-3 py-1.5 backdrop-blur-sm md:mb-5">
             <Star className="h-3.5 w-3.5 fill-[#e8c27a] text-[#e8c27a]" />
             <span className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#f6ddb0] md:text-xs">{t('hero.badge')}</span>
@@ -284,8 +286,7 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
               onClick={onGetHelpNow}
               className="flex h-11 w-full items-center justify-center gap-2 rounded-full bg-[#e8c27a] px-5 text-sm font-bold text-[#061e1f] shadow-[0_18px_44px_rgba(232,194,122,0.25)] transition-all hover:-translate-y-0.5 hover:bg-[#f4d78f] md:h-auto md:w-auto md:px-8 md:py-4 md:text-base"
             >
-              <span className="md:hidden">{t('hero.openFreeToolkit')}</span>
-              <span className="hidden md:inline">{t('hero.startFree')}</span>
+              {t('hero.openFreeToolkit')}
             </button>
             <button
               onClick={onAskBuddy}
@@ -295,12 +296,6 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
             </button>
           </div>
 
-          <img
-            src={`${assetBase}hero-demo.png`}
-            alt="ChinaEase Buddy translating a Chinese menu into English with allergen alerts including hidden pork and shellfish"
-            className="mt-4 w-full max-w-[260px] rounded-2xl shadow-2xl ring-1 ring-white/20 md:mt-6 md:max-w-sm"
-          />
-
           <div className="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold text-[#fffaf0]/95 drop-shadow-[0_1px_12px_rgba(0,0,0,0.76)] md:mt-6 md:text-xs">
             <span className="md:hidden">{t('hero.mobileTrustShort')}</span>
             <span className="hidden items-center gap-2 md:inline-flex"><ShieldCheck className="h-4 w-4 text-[#e8c27a]" />{t('hero.trustTrusted')}</span>
@@ -308,6 +303,16 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
             <span className="hidden items-center gap-2 md:inline-flex"><ShieldCheck className="h-4 w-4 text-[#e8c27a]" />{t('hero.trustSafety')}</span>
           </div>
         </div>
+
+        {/* Right column: demo image — desktop only */}
+        <div className="hidden md:flex md:flex-1 md:items-center md:justify-center">
+          <img
+            src={`${assetBase}hero-demo.png`}
+            alt="ChinaEase Buddy translating a Chinese menu into English with allergen alerts including hidden pork and shellfish"
+            className="w-full max-w-[520px] rounded-3xl shadow-2xl ring-1 ring-white/20"
+          />
+        </div>
+
       </div>
 
       {/* Scroll indicator */}
@@ -343,6 +348,15 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
         </div>
       )}
     </section>
+
+    {/* Mobile-only hero demo image — rendered outside the overflow-hidden section so the full image (incl. allergen labels at bottom) is never clipped */}
+    <div className="md:hidden bg-[#061e1f] px-6 pb-6">
+      <img
+        src={`${assetBase}hero-demo.png`}
+        alt="ChinaEase Buddy translating a Chinese menu into English with allergen alerts including hidden pork and shellfish"
+        className="mx-auto w-full max-w-[280px] rounded-2xl shadow-xl ring-1 ring-white/10"
+      />
+    </div>
 
     {/* Feature strip */}
     <div className="relative z-0 border-b border-gray-100 bg-white/90 shadow-sm backdrop-blur-sm">
