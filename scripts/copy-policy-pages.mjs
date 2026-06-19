@@ -43,7 +43,7 @@ const pageMeta = {
   },
   refund: {
     title: 'Refund Policy | ChinaEase Buddy',
-    description: 'Refund and payment-problem information for ChinaEase Buddy one-time digital travel passes.',
+    description: 'ChinaEase Buddy passes are one-time purchases and are generally non-refundable once access is activated. This does not affect statutory consumer rights under your local laws.',
   },
   contact: {
     title: 'Contact | ChinaEase Buddy',
@@ -318,7 +318,7 @@ await Promise.all(
 );
 
 const sitemapPages = [''].concat(pages);
-const lastmod = '2026-06-13';
+const lastmod = '2026-06-20';
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemapPages.map((page) => `  <url>
