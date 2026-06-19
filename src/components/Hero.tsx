@@ -361,10 +361,14 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
     {/* Feature strip */}
     <div className="relative z-0 border-b border-gray-100 bg-white/90 shadow-sm backdrop-blur-sm">
       <div className="mx-auto max-w-7xl px-4 py-3 md:py-4">
-        <div className="grid grid-cols-3 gap-2 text-center md:gap-6">
+        <div className="grid grid-cols-2 gap-2 text-center [&>*:last-child]:col-span-2 md:grid-cols-5 md:gap-6 md:[&>*:last-child]:col-span-1">
           <div className="flex flex-col items-center gap-1 text-[10px] font-semibold text-gray-700 md:flex-row md:justify-center md:gap-2 md:text-sm">
             <span className="text-base">📸</span>
             <span>Menu translation + allergen alerts</span>
+          </div>
+          <div className="flex flex-col items-center gap-1 text-[10px] font-semibold text-gray-700 md:flex-row md:justify-center md:gap-2 md:text-sm">
+            <span className="text-base">🔊</span>
+            <span>Speak without speaking — Buddy says it in Chinese for locals</span>
           </div>
           <div className="flex flex-col items-center gap-1 text-[10px] font-semibold text-gray-700 md:flex-row md:justify-center md:gap-2 md:text-sm">
             <span className="text-base">💳</span>
@@ -373,6 +377,10 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
           <div className="flex flex-col items-center gap-1 text-[10px] font-semibold text-gray-700 md:flex-row md:justify-center md:gap-2 md:text-sm">
             <span className="text-base">🚕</span>
             <span>Talk to taxis &amp; hotels, no Chinese</span>
+          </div>
+          <div className="flex flex-col items-center gap-1 text-[10px] font-semibold text-gray-700 md:flex-row md:justify-center md:gap-2 md:text-sm">
+            <span className="text-base">📥</span>
+            <span>Offline phrase cards for when you have no signal</span>
           </div>
         </div>
       </div>

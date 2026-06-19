@@ -128,7 +128,7 @@ const legalCopy = {
       {
         title: 'Refunds',
         body:
-          'ChinaEase Buddy passes are one-time payments with no auto-renewal. We do not offer a voluntary three-day refund guarantee. This does not affect any statutory rights you may have under applicable consumer law.',
+          'ChinaEase Buddy passes are one-time purchases and are generally non-refundable once access is activated. This does not affect any statutory consumer rights you may have under your local laws.',
       },
       {
         title: 'Contact',
@@ -189,7 +189,7 @@ const legalCopy = {
       {
         title: 'Refund Approach',
         body:
-          'We do not offer a voluntary three-day refund guarantee. This does not affect any statutory rights you may have under applicable consumer law.',
+          'All passes are one-time purchases and are generally non-refundable once access is activated. This does not affect any statutory consumer rights you may have under your local laws.',
       },
       {
         title: 'When to Contact Support',
@@ -208,7 +208,7 @@ const legalCopy = {
       },
       {
         title: 'Contact',
-        body: `For payment problems or refund questions, contact ${contactEmail}. Final legal wording should be reviewed by the owner before live payment launch.`,
+        body: `For payment problems or questions about your pass, contact ${contactEmail}.`,
       },
     ],
   },
