@@ -8,9 +8,9 @@ import { trackAppError, trackEvent } from '../lib/analytics';
 import { db } from '../firebase-config';
 import { captureCheckoutOrder, createCheckoutOrder, paymentMode } from '../lib/payment';
 
-const PAYPAL_LINKS = {
-  trip: 'https://www.paypal.com/ncp/payment/863ZKSY6RJ64J',
-  group: 'https://www.paypal.com/ncp/payment/CL8J5WJVK3TAJ',
+const GUMROAD_LINKS = {
+  trip: 'https://gemmazhou.gumroad.com/l/oentc',
+  group: 'https://gemmazhou.gumroad.com/l/mbgkxz',
 } as const;
 
 const PLANS = [
@@ -63,8 +63,8 @@ export default function PricingPlans({ user, userState, showToast, onCtaClick, o
   const [claimLoading, setClaimLoading] = useState(false);
   const [claimError, setClaimError] = useState('');
 
-  const openPaypal = (plan: PaidPlan) => {
-    window.open(plan === 'trip' ? PAYPAL_LINKS.trip : PAYPAL_LINKS.group, '_blank', 'noopener,noreferrer');
+  const openGumroad = (plan: PaidPlan) => {
+    window.open(plan === 'trip' ? GUMROAD_LINKS.trip : GUMROAD_LINKS.group, '_blank', 'noopener,noreferrer');
   };
 
   const hasActivePaidPass = Boolean(
@@ -85,7 +85,7 @@ export default function PricingPlans({ user, userState, showToast, onCtaClick, o
 
     void trackEvent('cta_clicked', {
       ctaName: isTrip ? 'Get Trip Pass' : isGroup ? 'Get Group Pass' : 'Start Free',
-      destination: isPaid ? 'PayPal Checkout' : 'free-toolkit',
+      destination: isPaid ? 'Gumroad Checkout' : 'free-toolkit',
       tool: 'pay',
       plan: isTrip ? 'trip_pass' : isGroup ? 'group_pass' : 'free',
     }, userState?.uid);
@@ -106,21 +106,7 @@ export default function PricingPlans({ user, userState, showToast, onCtaClick, o
       return;
     }
 
-    if (paymentMode === 'sandbox' || paymentMode === 'live') {
-      setCheckoutPlan(isTrip ? 'trip' : 'group');
-      setCheckoutError('');
-      setCheckoutLoading(false);
-      setCheckoutOrderId('');
-      setCheckoutApprovalUrl('');
-      setAcknowledged(false);
-      return;
-    }
-
-    setSelectedPlan(isTrip ? 'trip' : 'group');
-    setClaimOpen(false);
-    setClaimError('');
-    setPaypalTransactionId('');
-    setPaypalEmail('');
+    openGumroad(isTrip ? 'trip' : 'group');
   };
 
   const handleCreateCheckout = async () => {
@@ -240,14 +226,7 @@ export default function PricingPlans({ user, userState, showToast, onCtaClick, o
           ) : null}
         </p>
       )}
-      {(paymentMode === 'sandbox' || paymentMode === 'live') && (
-        <div className="mb-4 rounded-[1.35rem] border border-[#d6a85a]/30 bg-[#fff7e6] p-4 shadow-[0_14px_34px_rgba(214,168,90,0.08)]">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#9a6a1c]">
-            {paymentMode === 'sandbox' ? t('pay.checkout.sandboxBadge') : t('pay.checkout.secureCheckout')}
-          </p>
-          <p className="mt-1 text-xs font-medium leading-relaxed text-[#6b4b20]">{t('pay.checkout.modeHelp')}</p>
-        </div>
-      )}
+
       <div className="mb-4 rounded-[1.35rem] border border-[#155e63]/15 bg-white/60 p-4 shadow-[0_14px_34px_rgba(11,63,67,0.06)] backdrop-blur-xl">
         <div className="mb-2 flex items-center gap-2">
           <ShieldCheck className="h-4 w-4 text-[#155e63]" />
@@ -324,7 +303,7 @@ export default function PricingPlans({ user, userState, showToast, onCtaClick, o
 
             <div className="mt-4 grid gap-2 sm:grid-cols-2">
               <button
-                onClick={() => openPaypal(selectedPlan)}
+                onClick={() => openGumroad(selectedPlan)}
                 className="rounded-xl bg-[#155e63] px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-[#0e4a4e]"
               >
                 {t('pay.claim.openPaypal')}

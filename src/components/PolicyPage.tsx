@@ -49,9 +49,9 @@ interface GuidePageData {
 
 const contactEmail = 'gemmazhou405@gmail.com';
 const siteUrl = 'https://chinaeasebuddy.com';
-const paypalLinks = {
-  trip: 'https://www.paypal.com/ncp/payment/863ZKSY6RJ64J',
-  group: 'https://www.paypal.com/ncp/payment/CL8J5WJVK3TAJ',
+const gumroadLinks = {
+  trip: 'https://gemmazhou.gumroad.com/l/oentc',
+  group: 'https://gemmazhou.gumroad.com/l/mbgkxz',
 } as const;
 const standardDisclaimer =
   'ChinaEase Buddy is a digital travel toolkit. It is not an official travel authority, visa service, immigration service, medical service, legal service, financial service, hotel booking service, or flight booking service. Always confirm important travel, payment, health, and entry information with official sources or service providers.';
@@ -80,10 +80,10 @@ const pricingPlans = [
       'Valid for 7 days',
       'Extra travel help for one traveler',
       'One-time payment',
-      'Access after verified PayPal payment confirmation',
+      'Instant access after Gumroad checkout',
     ],
     cta: 'Get Trip Pass',
-    href: paypalLinks.trip,
+    href: gumroadLinks.trip,
     plan: 'trip_pass',
     featured: true,
   },
@@ -96,10 +96,10 @@ const pricingPlans = [
       'Valid for 14 days',
       'One account and one shared allowance for couples, families or small travel groups',
       'One-time payment',
-      'Access after verified PayPal payment confirmation',
+      'Instant access after Gumroad checkout',
     ],
     cta: 'Get Group Pass',
-    href: paypalLinks.group,
+    href: gumroadLinks.group,
     plan: 'group_pass',
   },
 ];
@@ -977,7 +977,7 @@ function PricingPage() {
               onClick={() => {
                 void trackEvent('cta_clicked', {
                   ctaName: plan.cta,
-                  destination: plan.plan === 'trip_pass' ? 'PayPal Trip Pass' : plan.plan === 'group_pass' ? 'PayPal Group Pass' : 'free-toolkit',
+                  destination: plan.plan === 'trip_pass' ? 'Gumroad Trip Pass' : plan.plan === 'group_pass' ? 'Gumroad Group Pass' : 'free-toolkit',
                   tool: 'pricing',
                   plan: plan.plan,
                 });
