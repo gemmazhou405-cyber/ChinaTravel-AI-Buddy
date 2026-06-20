@@ -56,6 +56,21 @@ async function sendWelcomeEmail(email: string) {
   // Welcome email delivery should run through a server endpoint, not a public client-side worker URL.
 }
 
+async function checkGumroadClaim(user: User): Promise<boolean> {
+  try {
+    const token = await user.getIdToken();
+    const res = await fetch('/api/gumroad/claim', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    if (!res.ok) return false;
+    const body = await res.json().catch(() => ({})) as { granted?: boolean };
+    return body.granted === true;
+  } catch {
+    return false;
+  }
+}
+
 function createFreeUserState(uid: string, email: string): UserState {
   return {
     uid,
@@ -103,6 +118,8 @@ export function useAuth() {
     await sendEmailVerification(cred.user);
     sendWelcomeEmail(email);
     setUserState(newUser);
+    // Non-blocking: grant any pending Gumroad purchase made before account creation
+    void checkGumroadClaim(cred.user).then((granted) => { if (granted) void refreshUserState(); });
     return cred.user;
   };
 
@@ -126,6 +143,8 @@ export function useAuth() {
     setUser(signedInUser);
     setUserState(nextUserState);
     setLoading(false);
+    // Non-blocking: grant any pending Gumroad purchase
+    void checkGumroadClaim(signedInUser).then((granted) => { if (granted) void refreshUserState(); });
     return signedInUser;
   };
 
@@ -135,6 +154,8 @@ export function useAuth() {
     if (snap.exists()) {
       setUserState(normalizeUserState(snap.data() as StoredUserState, cred.user.uid, cred.user.email || email));
     }
+    // Non-blocking: grant any pending Gumroad purchase
+    void checkGumroadClaim(cred.user).then((granted) => { if (granted) void refreshUserState(); });
     return cred.user;
   };
 

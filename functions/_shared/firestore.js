@@ -252,3 +252,39 @@ export function setWrite(env, path, data) {
     },
   };
 }
+
+export async function queryCollection(env, collectionId, field, value, limit = 10) {
+  const token = await serviceAccountToken(env);
+  const body = {
+    structuredQuery: {
+      from: [{ collectionId }],
+      where: {
+        fieldFilter: {
+          field: { fieldPath: field },
+          op: 'EQUAL',
+          value: firestoreValue(value),
+        },
+      },
+      limit,
+    },
+  };
+  const res = await fetch(
+    `https://firestore.googleapis.com/v1/projects/${env.FIREBASE_PROJECT_ID}/databases/(default)/documents:runQuery`,
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    },
+  );
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`firestore_query_error:${res.status}:${text.slice(0, 240)}`);
+  }
+  const rows = await res.json();
+  return rows
+    .filter((row) => row.document?.fields)
+    .map((row) => fromFirestoreDocument(row.document));
+}
