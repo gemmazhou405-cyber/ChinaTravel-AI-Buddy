@@ -1,6 +1,12 @@
 import { grantGumroadEntitlement } from '../../_shared/entitlements.js';
 import { createDoc, getDoc, patchDoc, queryCollection } from '../../_shared/firestore.js';
 
+// GET requests to this endpoint come from browsers landing here after a redirect
+// (e.g. Firebase OAuth fallback). Send them home.
+export function onRequestGet() {
+  return Response.redirect('/', 302);
+}
+
 export async function onRequestPost({ request, env }) {
   // Verify the secret token Gumroad includes in the webhook URL
   const url = new URL(request.url);

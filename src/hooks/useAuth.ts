@@ -8,6 +8,7 @@ import {
   sendPasswordResetEmail,
   GoogleAuthProvider,
   signInWithPopup,
+  getRedirectResult,
   User,
 } from 'firebase/auth';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
@@ -93,6 +94,34 @@ export function useAuth() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Handle redirect-based Google auth (fallback when popup is blocked).
+    // Must be called before onAuthStateChanged so the result is available.
+    getRedirectResult(auth).then(async (result) => {
+      if (!result) return;
+      const signedInUser = result.user;
+      const email = signedInUser.email || '';
+      const userRef = doc(db, 'users', signedInUser.uid);
+      const snap = await getDoc(userRef);
+      let nextUserState: UserState;
+      if (snap.exists()) {
+        nextUserState = normalizeUserState(snap.data() as StoredUserState, signedInUser.uid, email);
+      } else {
+        nextUserState = createFreeUserState(signedInUser.uid, email);
+        await setDoc(userRef, nextUserState);
+        sendWelcomeEmail(email);
+      }
+      setUser(signedInUser);
+      setUserState(nextUserState);
+      setLoading(false);
+      void checkGumroadClaim(signedInUser).then((granted) => { if (granted) void refreshUserState(); });
+      // After redirect auth, ensure the browser URL is the homepage, not an API path.
+      if (window.location.pathname !== '/' && window.location.pathname !== '') {
+        window.history.replaceState({}, '', '/');
+      }
+    }).catch(() => {
+      // Ignore errors — onAuthStateChanged handles the normal auth state.
+    });
+
     const unsub = onAuthStateChanged(auth, async (u) => {
       setUser(u);
       if (u) {
