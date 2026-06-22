@@ -222,6 +222,7 @@ export default function App() {
           }, user?.uid);
           document.getElementById('journey-tools')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }}
+        onNeedAuth={() => setAuthOpen(true)}
         onAskBuddy={openBuddy}
         onLogout={logout}
         onResendVerification={async () => {

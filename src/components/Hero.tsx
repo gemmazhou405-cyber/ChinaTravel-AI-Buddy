@@ -19,12 +19,13 @@ interface Props {
   user: User | null;
   userState: UserState | null;
   onGetHelpNow: () => void;
+  onNeedAuth: () => void;
   onAskBuddy: () => void;
   onLogout: () => Promise<void>;
   onResendVerification: () => Promise<void>;
 }
 
-export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogout, onResendVerification }: Props) {
+export default function Hero({ user, userState, onGetHelpNow, onNeedAuth, onAskBuddy, onLogout, onResendVerification }: Props) {
   const { t } = useTranslation();
   const [lang, setLang] = useState(i18n.language.toUpperCase());
   const [langOpen, setLangOpen] = useState(false);
@@ -180,6 +181,14 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
                     </a>
                   )
                 ))}
+                {!user && (
+                  <button
+                    onClick={() => { setMobileMenuOpen(false); onNeedAuth(); }}
+                    className="block w-full rounded-xl px-3 py-2.5 text-left font-semibold text-[#e8c27a] hover:bg-white/10"
+                  >
+                    {t('nav.login')}
+                  </button>
+                )}
               </div>
             )}
           </div>
@@ -247,12 +256,20 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
               )}
             </div>
           ) : (
-            <button
-              onClick={onGetHelpNow}
-              className="hidden rounded-full bg-[#e8c27a] px-4 py-2 text-sm font-bold text-[#061e1f] shadow-[0_14px_34px_rgba(232,194,122,0.24)] transition-all hover:bg-[#f4d78f] md:block"
-            >
-              {t('nav.getHelpNow')}
-            </button>
+            <div className="hidden items-center gap-2 md:flex">
+              <button
+                onClick={onNeedAuth}
+                className="text-sm font-semibold text-[#f8f3ea]/80 transition-colors hover:text-[#e8c27a]"
+              >
+                {t('nav.login')}
+              </button>
+              <button
+                onClick={onNeedAuth}
+                className="rounded-full bg-[#e8c27a] px-4 py-2 text-sm font-bold text-[#061e1f] shadow-[0_14px_34px_rgba(232,194,122,0.24)] transition-all hover:bg-[#f4d78f]"
+              >
+                {t('nav.getHelpNow')}
+              </button>
+            </div>
           )}
         </div>
       </div>
@@ -283,7 +300,7 @@ export default function Hero({ user, userState, onGetHelpNow, onAskBuddy, onLogo
 
           <div className="flex w-[min(17rem,100%)] flex-col gap-2 min-[420px]:w-[18rem] md:w-auto md:flex-row md:gap-3">
             <button
-              onClick={onGetHelpNow}
+              onClick={user ? onGetHelpNow : onNeedAuth}
               className="flex h-11 w-full items-center justify-center gap-2 rounded-full bg-[#e8c27a] px-5 text-sm font-bold text-[#061e1f] shadow-[0_18px_44px_rgba(232,194,122,0.25)] transition-all hover:-translate-y-0.5 hover:bg-[#f4d78f] md:h-auto md:w-auto md:px-8 md:py-4 md:text-base"
             >
               {t('hero.openFreeToolkit')}
