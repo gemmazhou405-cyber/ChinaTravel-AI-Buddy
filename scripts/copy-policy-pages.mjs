@@ -28,8 +28,8 @@ const pageMeta = {
       ['Group Pass', 'USD 29.90 one-time travel pass with 200 Buddy AI messages for 14 days on one shared account.', '/pricing'],
     ],
     faqs: [
-      ['How do paid passes work?', 'Paid passes are one-time digital travel passes. Sandbox automatic checkout is being tested, and live checkout will not be enabled until approved. Access is granted after verified payment confirmation.'],
-      ['Are payments handled by PayPal?', 'PayPal is used for payment processing. ChinaEase Buddy does not collect card details directly on the website.'],
+      ['How do paid passes work?', 'Paid passes are one-time digital travel passes purchased securely through Gumroad, our checkout provider. Access is granted to your account after payment — usually within minutes.'],
+      ['How is payment processed?', 'Payments are processed securely by Gumroad, our checkout provider. ChinaEase Buddy never sees or stores your card details.'],
       ['Is there auto-renewal?', 'No. ChinaEase Buddy passes are one-time travel passes with no auto-renewal.'],
     ],
   },
@@ -114,7 +114,7 @@ const pageMeta = {
     faqs: [
       ['What is ChinaEase Buddy?', 'ChinaEase Buddy is a web-based digital China travel toolkit for foreign visitors. It helps with phrase cards, payments, food, transport, hotels, emergency references, and Buddy AI travel questions.'],
       ['Is ChinaEase Buddy free?', 'ChinaEase Buddy has a free starting plan with core tools and limited Buddy AI usage. Paid passes may unlock additional digital access, but checkout availability can vary during early access.'],
-      ['How do paid passes work?', 'Paid passes are one-time digital travel passes. Sandbox automatic checkout is being tested, and live checkout will not be enabled until approved. Access is granted after verified payment confirmation.'],
+      ['How do paid passes work?', 'Paid passes are one-time digital travel passes purchased securely through Gumroad, our checkout provider. Access is granted to your account after payment — usually within minutes.'],
       ['What emergency numbers should travelers know in China?', 'Travelers should know 110 for police, 120 for ambulance, and 119 for fire. In urgent situations, contact local emergency services directly.'],
     ],
   },

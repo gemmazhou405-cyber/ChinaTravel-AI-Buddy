@@ -159,7 +159,7 @@ const legalCopy = {
       {
         title: 'Payments and Entitlements',
         body:
-          'For paid passes, we may store PayPal order identifiers, capture identifiers, payer email if returned by PayPal, plan, expiry, quota, and payment status. We do not collect card details directly on this website.',
+          'For paid passes, we may store order identifiers, buyer email, plan, expiry, quota, and payment status. Payments are processed by Gumroad. We do not collect card details directly on this website.',
       },
       {
         title: 'Newsletter',
@@ -792,7 +792,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       {
         question: 'How do paid passes work?',
         answer:
-          'Paid passes are currently processed through PayPal payment links. Access is activated manually after payment confirmation.',
+          'Paid passes are one-time digital travel passes purchased securely through Gumroad, our checkout provider. Access is granted to your account after payment — usually within minutes.',
       },
       {
         question: 'Is ChinaEase Buddy an official travel service?',
@@ -949,7 +949,7 @@ function PricingPage() {
   return (
     <PageShell
       title="Pricing"
-      intro="ChinaEase Buddy starts with a free toolkit. Paid passes are optional and currently use manual PayPal payment links."
+      intro="ChinaEase Buddy starts with a free toolkit. Paid passes are optional one-time purchases processed securely through Gumroad."
     >
       <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
         {pricingPlans.map((plan) => (
@@ -994,10 +994,7 @@ function PricingPage() {
       <div className="mt-5 rounded-2xl border border-[#155e63]/10 bg-[#155e63]/5 p-4">
         <p className="text-sm font-semibold text-[#155e63]">One-time payment · No auto-renewal.</p>
         <p className="mt-2 text-xs leading-relaxed text-gray-600">
-          PayPal Sandbox checkout and automatic activation are being tested. Live checkout will not be enabled until owner approval.
-        </p>
-        <p className="mt-2 text-xs font-semibold leading-relaxed text-[#155e63]">
-          ChinaEase Buddy does not collect card details directly. PayPal handles the payment securely.
+          How is payment processed? Payments are processed securely by Gumroad, our checkout provider. ChinaEase Buddy never sees or stores your card details.
         </p>
       </div>
     </PageShell>
