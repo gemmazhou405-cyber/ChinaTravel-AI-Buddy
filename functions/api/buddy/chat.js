@@ -222,8 +222,8 @@ async function rollbackUsage(env, auth, usagePath, reason) {
 }
 
 async function callCoze(env, auth, message, context) {
-  if (!env.COZE_WORKER_URL) {
-    throw new Error('server_missing_coze_worker_url');
+  if (!env.COZE_WORKER_URL || !env.COZE_BOT_ID) {
+    throw new Error('service_unavailable');
   }
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort('upstream_timeout'), UPSTREAM_TIMEOUT_MS);
@@ -302,6 +302,10 @@ export async function onRequestPost({ request, env }) {
     return errorResponse(request, env, 413, 'message_too_long', 'Message is too long.');
   }
 
+  if (!env.COZE_WORKER_URL || !env.COZE_BOT_ID) {
+    return errorResponse(request, env, 503, 'service_unavailable', 'Buddy is temporarily unavailable. Please try again later.');
+  }
+
   let reservation;
   try {
     reservation = await reserveUsage(env, auth, requestId);
@@ -350,7 +354,9 @@ export async function onRequestPost({ request, env }) {
   } catch (error) {
     const reason = error instanceof Error && error.message === 'upstream_timeout'
       ? 'upstream_timeout'
-      : 'upstream_error';
+      : error instanceof Error && error.message === 'service_unavailable'
+        ? 'service_unavailable'
+        : 'upstream_error';
     try {
       await rollbackUsage(env, auth, reservation.usagePath, reason);
     } catch {
@@ -359,9 +365,11 @@ export async function onRequestPost({ request, env }) {
     return errorResponse(
       request,
       env,
-      reason === 'upstream_timeout' ? 504 : 502,
+      reason === 'upstream_timeout' ? 504 : reason === 'service_unavailable' ? 503 : 502,
       reason,
-      reason === 'upstream_timeout' ? 'Buddy timed out. Please try again.' : 'Buddy is temporarily unavailable.',
+      reason === 'upstream_timeout'
+        ? 'Buddy timed out. Please try again.'
+        : 'Buddy is temporarily unavailable. Please try again later.',
     );
   }
 }

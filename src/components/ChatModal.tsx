@@ -89,6 +89,17 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
       const data = await response.json();
 
       if (!response.ok) {
+        if (data?.error === 'auth_required') {
+          const authMsg: Message = {
+            id: Date.now() + 1,
+            role: 'buddy',
+            text: t('chat.notLoggedIn'),
+          };
+          setMessages((prev) => [...prev, authMsg]);
+          onNeedAuth();
+          return;
+        }
+
         if (data?.error === 'quota_exhausted') {
           void trackEvent('quota_exhausted', {
             tool: 'buddy',
@@ -123,6 +134,16 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
             text: t('chat.rateLimited'),
           };
           setMessages((prev) => [...prev, rateMsg]);
+          return;
+        }
+
+        if (data?.error === 'service_unavailable' || data?.error === 'upstream_error' || data?.error === 'upstream_timeout') {
+          const serviceMsg: Message = {
+            id: Date.now() + 1,
+            role: 'buddy',
+            text: t('chat.serviceUnavailable'),
+          };
+          setMessages((prev) => [...prev, serviceMsg]);
           return;
         }
 

@@ -643,7 +643,8 @@
       "needBuddy": "Can't find what you need? Ask Buddy.",
       "verifyEmail": "Please verify your email to use Buddy AI.",
       "verifyEmailHint": "Check your inbox and refresh after verification.",
-      "rateLimited": "Please wait a moment before sending another message."
+      "rateLimited": "Please wait a moment before sending another message.",
+      "serviceUnavailable": "Buddy is temporarily unavailable. Please try again later."
     },
     "auth": {
       "title": "ChinaEase Buddy",

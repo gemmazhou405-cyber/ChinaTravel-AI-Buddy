@@ -645,7 +645,8 @@
       "needBuddy": "필요한 것을 못 찾았나요? Buddy에게 물어보세요.",
       "verifyEmail": "Buddy AI를 사용하려면 이메일 인증이 필요합니다.",
       "verifyEmailHint": "받은편지함을 확인하고 인증 후 새로고침해 주세요.",
-      "rateLimited": "다음 메시지를 보내기 전에 잠시 기다려 주세요."
+      "rateLimited": "다음 메시지를 보내기 전에 잠시 기다려 주세요.",
+      "serviceUnavailable": "Buddy를 일시적으로 사용할 수 없습니다. 나중에 다시 시도해 주세요."
     },
     "auth": {
       "title": "ChinaEase Buddy",
