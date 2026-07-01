@@ -41,6 +41,22 @@ const PAID_LIMITS = {
 const userHits = new Map();
 const ipHits = new Map();
 
+function safeRequestId(requestId) {
+  return typeof requestId === 'string' ? requestId.slice(0, 8) : 'unknown';
+}
+
+function safeUserId(uid) {
+  return typeof uid === 'string' ? uid.slice(0, 8) : 'unknown';
+}
+
+function logBuddy(level, event, fields = {}) {
+  const safeFields = Object.fromEntries(
+    Object.entries(fields).filter(([key]) => !/token|secret|message|reply|email/i.test(key)),
+  );
+  const logger = level === 'error' ? console.error : level === 'warn' ? console.warn : console.info;
+  logger(`[buddy.chat] ${event}`, safeFields);
+}
+
 function pruneHits(map, key, windowMs) {
   const now = Date.now();
   const hits = (map.get(key) || []).filter((ts) => now - ts < windowMs);
@@ -232,22 +248,49 @@ async function callCoze(env, auth, message, context) {
     if (env.COZE_INTERNAL_SECRET) {
       headers['X-ChinaEase-Internal-Token'] = env.COZE_INTERNAL_SECRET;
     }
+    const cozePayload = {
+      message,
+      context,
+      botId: env.COZE_BOT_ID,
+      userId: auth.uid,
+      bot_id: env.COZE_BOT_ID,
+      user_id: auth.uid,
+      stream: false,
+      additional_messages: [
+        {
+          role: 'user',
+          content: message,
+          content_type: 'text',
+        },
+      ],
+    };
     const res = await fetch(env.COZE_WORKER_URL, {
       method: 'POST',
       headers,
       signal: controller.signal,
-      body: JSON.stringify({
-        message,
-        context,
-        botId: env.COZE_BOT_ID,
-        userId: auth.uid,
-      }),
+      body: JSON.stringify(cozePayload),
     });
+    const responseText = await res.text();
     if (!res.ok) {
+      logBuddy('warn', 'upstream_non_ok', {
+        status: res.status,
+        responseLength: responseText.length,
+        contentType: res.headers.get('Content-Type') || 'unknown',
+      });
       throw new Error(`upstream_error:${res.status}`);
     }
-    const data = await res.json();
-    const reply = String(data.reply || data.answer || '').trim();
+    let data;
+    try {
+      data = JSON.parse(responseText);
+    } catch {
+      logBuddy('warn', 'upstream_non_json', {
+        status: res.status,
+        responseLength: responseText.length,
+        contentType: res.headers.get('Content-Type') || 'unknown',
+      });
+      throw new Error('upstream_error:non_json');
+    }
+    const reply = extractReply(data);
     if (!reply) throw new Error('upstream_empty_reply');
     return reply.slice(0, MAX_REPLY_CHARS);
   } catch (error) {
@@ -260,11 +303,40 @@ async function callCoze(env, auth, message, context) {
   }
 }
 
+function extractReply(data) {
+  const candidates = [
+    data?.reply,
+    data?.answer,
+    data?.message,
+    data?.data?.reply,
+    data?.data?.answer,
+    data?.data?.message,
+  ];
+
+  for (const candidate of candidates) {
+    if (typeof candidate === 'string' && candidate.trim()) return candidate.trim();
+  }
+
+  const messages = Array.isArray(data?.messages)
+    ? data.messages
+    : Array.isArray(data?.data?.messages)
+      ? data.data.messages
+      : [];
+  const answer = [...messages].reverse().find((item) => {
+    const role = String(item?.role || '').toLowerCase();
+    const type = String(item?.type || '').toLowerCase();
+    return role === 'assistant' || type === 'answer';
+  });
+  if (typeof answer?.content === 'string' && answer.content.trim()) return answer.content.trim();
+
+  return '';
+}
+
 export async function onRequestOptions({ request, env }) {
   return optionsResponse(request, env);
 }
 
-export async function onRequestPost({ request, env }) {
+async function handlePost(request, env) {
   const contentLength = Number(request.headers.get('Content-Length') || 0);
   if (contentLength > 15000) {
     return errorResponse(request, env, 413, 'invalid_request', 'Request body is too large.');
@@ -303,13 +375,24 @@ export async function onRequestPost({ request, env }) {
   }
 
   if (!env.COZE_WORKER_URL || !env.COZE_BOT_ID) {
+    logBuddy('error', 'missing_coze_config', {
+      hasWorkerUrl: Boolean(env.COZE_WORKER_URL),
+      hasBotId: Boolean(env.COZE_BOT_ID),
+      hasInternalSecret: Boolean(env.COZE_INTERNAL_SECRET),
+    });
     return errorResponse(request, env, 503, 'service_unavailable', 'Buddy is temporarily unavailable. Please try again later.');
   }
 
   let reservation;
   try {
+    logBuddy('info', 'reserve_start', { requestId: safeRequestId(requestId), uid: safeUserId(auth.uid) });
     reservation = await reserveUsage(env, auth, requestId);
-  } catch {
+  } catch (error) {
+    logBuddy('error', 'reserve_failed', {
+      requestId: safeRequestId(requestId),
+      uid: safeUserId(auth.uid),
+      errorCode: error instanceof Error ? error.message.split(':')[0] : 'unknown',
+    });
     return errorResponse(request, env, 503, 'upstream_error', 'Buddy is temporarily unavailable.');
   }
 
@@ -340,6 +423,11 @@ export async function onRequestPost({ request, env }) {
   try {
     const reply = await callCoze(env, auth, message, context);
     await markCompleted(env, reservation.usagePath);
+    logBuddy('info', 'completed', {
+      requestId: safeRequestId(requestId),
+      uid: safeUserId(auth.uid),
+      plan: reservation.limits.plan,
+    });
     return withCors(jsonResponse({
       status: 'completed',
       reply,
@@ -357,6 +445,12 @@ export async function onRequestPost({ request, env }) {
       : error instanceof Error && error.message === 'service_unavailable'
         ? 'service_unavailable'
         : 'upstream_error';
+    logBuddy(reason === 'upstream_error' ? 'warn' : 'error', 'failed', {
+      requestId: safeRequestId(requestId),
+      uid: safeUserId(auth.uid),
+      reason,
+      errorCode: error instanceof Error ? error.message.split(':').slice(0, 2).join(':') : 'unknown',
+    });
     try {
       await rollbackUsage(env, auth, reservation.usagePath, reason);
     } catch {
@@ -371,5 +465,16 @@ export async function onRequestPost({ request, env }) {
         ? 'Buddy timed out. Please try again.'
         : 'Buddy is temporarily unavailable. Please try again later.',
     );
+  }
+}
+
+export async function onRequestPost({ request, env }) {
+  try {
+    return await handlePost(request, env);
+  } catch (error) {
+    logBuddy('error', 'unhandled_exception', {
+      errorCode: error instanceof Error ? error.message.split(':')[0] : 'unknown',
+    });
+    return errorResponse(request, env, 500, 'server_error', 'Buddy is temporarily unavailable. Please try again later.');
   }
 }

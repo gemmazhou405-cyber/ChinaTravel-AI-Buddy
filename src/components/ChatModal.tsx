@@ -86,7 +86,18 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
           context: [],
         }),
       });
-      const data = await response.json();
+      let data: { error?: string; message?: string; reply?: string; quotaType?: string; limit?: number; plan?: string } = {};
+      const responseText = await response.text();
+      if (responseText) {
+        try {
+          data = JSON.parse(responseText);
+        } catch {
+          data = {
+            error: response.status >= 500 ? 'service_unavailable' : 'buddy_request_failed',
+            message: responseText.slice(0, 120),
+          };
+        }
+      }
 
       if (!response.ok) {
         if (data?.error === 'auth_required') {
@@ -147,7 +158,7 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
           return;
         }
 
-        throw new Error(data?.error || 'buddy_request_failed');
+        throw new Error(data?.error || `buddy_request_failed:${response.status}`);
       }
 
       const replyText = data.reply || data.message || t('chat.trouble');
