@@ -100,6 +100,7 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
       }
 
       if (!response.ok) {
+        console.error('[buddy] /api/buddy/chat failed', { status: response.status, body: responseText.slice(0, 500) });
         if (data?.error === 'auth_required') {
           const authMsg: Message = {
             id: Date.now() + 1,
@@ -171,6 +172,7 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
         plan: userState.plan,
       }, userState.uid);
     } catch (error) {
+      console.error('[buddy] chat request error', error);
       trackAppError('ai_connection_error', {
         tool: 'buddy',
         context: 'chat_send',

@@ -264,7 +264,10 @@ async function callCoze(env, auth, message, context) {
         },
       ],
     };
-    const res = await fetch(env.COZE_WORKER_URL, {
+    // The worker only routes POST /coze; COZE_WORKER_URL may be set with or without the path.
+    const workerBase = env.COZE_WORKER_URL.replace(/\/+$/, '');
+    const workerEndpoint = workerBase.endsWith('/coze') ? workerBase : `${workerBase}/coze`;
+    const res = await fetch(workerEndpoint, {
       method: 'POST',
       headers,
       signal: controller.signal,
