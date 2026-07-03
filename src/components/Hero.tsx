@@ -44,7 +44,6 @@ export default function Hero({ user, userState, onGetHelpNow, onNeedAuth, onAskB
     { label: t('nav.guides'), href: '#guides' },
     { label: t('nav.travelPasses'), href: '#travel-passes' },
     { label: t('nav.howItWorks'), href: '#how-it-works' },
-    { label: t('nav.faq'), href: '/faq' },
     { label: t('nav.contact'), href: '/contact' },
   ];
 

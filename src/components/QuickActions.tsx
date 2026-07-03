@@ -123,10 +123,9 @@ export default function QuickActions({ journey, user, userState, showToast, onNe
 
   const categories = journey === 'before' ? beforeCategories : journey === 'emergency' ? emergencyCategories : nowCategories;
   const guideCards = [
-    ['firstTime', '/china-travel-checklist', 'url("/screenshot_phrases.jpg")'],
-    ['destinations', '/china-travel-checklist', 'url("/images/hero-china-landscape-900.jpg")'],
-    ['culture', '/faq', 'url("/screenshot_emergency.jpg")'],
-    ['tips', '/china-travel-apps', 'url("/email_header.jpg")'],
+    ['firstTime', 'checklist', 'url("/screenshot_phrases.jpg")'],
+    ['destinations', 'city', 'url("/images/hero-china-landscape-900.jpg")'],
+    ['tips', 'apps', 'url("/email_header.jpg")'],
   ] as const;
   const howSteps = [
     ['moment', <MapPinned className="h-5 w-5" />],
@@ -306,23 +305,23 @@ export default function QuickActions({ journey, user, userState, showToast, onNe
             >
               {t('journey.guides.title')}
             </h2>
-            <a href="/guides" className="hidden items-center gap-2 text-xs font-semibold text-[#f6ddb0] transition-colors hover:text-[#fffaf0] md:inline-flex">
+            <button onClick={() => onTabSelect('before')} className="hidden items-center gap-2 text-xs font-semibold text-[#f6ddb0] transition-colors hover:text-[#fffaf0] md:inline-flex">
               {t('journey.guides.exploreAll')} <ArrowRight className="h-3.5 w-3.5" />
-            </a>
+            </button>
           </div>
-          <div className="mt-3 grid gap-3 md:grid-cols-4">
-            {guideCards.map(([key, href, image]) => (
-              <a
+          <div className="mt-3 grid gap-3 md:grid-cols-3">
+            {guideCards.map(([key, tool, image]) => (
+              <button
                 key={key}
-                href={href}
                 onClick={() => {
                   void trackEvent('cta_clicked', {
                     ctaName: 'View Guides',
-                    destination: href,
+                    destination: `before:${tool}`,
                     journey: journey === 'now' ? 'china' : journey,
                   }, userState?.uid);
+                  onTabSelect('before', tool);
                 }}
-                className="group relative min-h-[10rem] overflow-hidden rounded-[1.25rem] bg-cover bg-center p-4 text-white shadow-[0_20px_54px_rgba(0,0,0,0.18)] transition-all hover:-translate-y-1 md:min-h-[8.5rem]"
+                className="group relative min-h-[10rem] overflow-hidden rounded-[1.25rem] bg-cover bg-center p-4 text-left text-white shadow-[0_20px_54px_rgba(0,0,0,0.18)] transition-all hover:-translate-y-1 md:min-h-[8.5rem]"
                 style={{ backgroundImage: image }}
               >
                 <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(6,30,31,0.10),rgba(6,30,31,0.82)),radial-gradient(circle_at_78%_18%,rgba(232,194,122,0.24),transparent_28%)]" />
@@ -333,7 +332,7 @@ export default function QuickActions({ journey, user, userState, showToast, onNe
                     <ArrowRight className="mt-3 h-4 w-4 text-[#e8c27a] transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
-              </a>
+              </button>
             ))}
           </div>
         </div>
