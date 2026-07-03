@@ -1,7 +1,7 @@
 import { mkdir, copyFile, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
-const siteUrl = 'https://chinaeasebuddy.com';
+const siteUrl = 'https://chinaease-buddy.pages.dev';
 const distDir = 'dist';
 const source = join(distDir, 'index.html');
 

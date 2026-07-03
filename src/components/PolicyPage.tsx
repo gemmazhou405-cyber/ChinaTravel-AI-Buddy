@@ -48,7 +48,7 @@ interface GuidePageData {
 }
 
 const contactEmail = 'gemmazhou405@gmail.com';
-const siteUrl = 'https://chinaeasebuddy.com';
+const siteUrl = 'https://chinaease-buddy.pages.dev';
 const gumroadLinks = {
   trip: 'https://gemmazhou.gumroad.com/l/oentc',
   group: 'https://gemmazhou.gumroad.com/l/mbgkxz',
