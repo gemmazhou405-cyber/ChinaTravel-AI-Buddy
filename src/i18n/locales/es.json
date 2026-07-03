@@ -672,7 +672,7 @@
       "verifyBeforeBuddy": "Verifica tu email antes de usar Buddy AI.",
       "resendVerification": "Reenviar email de verificación",
       "inAppBrowserNotice": "Es posible que el inicio de sesión con Google no funcione dentro del navegador de esta app. Abre ChinaEase Buddy en Safari o Chrome para continuar.",
-      "inAppBrowserNoticeZh": "当前 App 内置浏览器可能无法使用 Google 登录。请用 Safari 或 Chrome 打开 chinaeasebuddy.com 后继续。",
+      "inAppBrowserNoticeZh": "当前 App 内置浏览器可能无法使用 Google 登录。请用 Safari 或 Chrome 打开 chinaease-buddy.pages.dev 后继续。",
       "emailAlternative": "También puedes iniciar sesión con email."
     },
     "footer": {
