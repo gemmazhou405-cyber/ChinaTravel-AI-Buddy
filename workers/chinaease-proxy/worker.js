@@ -1,4 +1,5 @@
 const COZE_CHAT_URL = 'https://api.coze.cn/v3/chat';
+const MAX_REPLY_CHARS = 6000;
 
 function corsHeaders(env) {
   const configured = env.ALLOWED_ORIGIN || env.ALLOWED_ORIGINS || '*';
@@ -47,6 +48,75 @@ function extractUserId(incoming) {
   return typeof userId === 'string' && userId.trim() ? userId.trim().slice(0, 128) : 'chinaease-user';
 }
 
+function safeCozeErrorPayload(payload, fallback = 'coze_error') {
+  const code = payload?.code ?? payload?.error?.code ?? fallback;
+  const msg = payload?.msg || payload?.message || payload?.error?.message || 'Coze request failed.';
+  return { error: 'coze_error', code, msg };
+}
+
+function appendSseData(events, rawEvent, rawData) {
+  if (!rawData || rawData === '[DONE]') return;
+  try {
+    events.push({ event: rawEvent || '', data: JSON.parse(rawData) });
+  } catch {
+    events.push({ event: rawEvent || '', data: { raw: rawData } });
+  }
+}
+
+function parseCozeSse(text) {
+  const events = [];
+  let eventName = '';
+  let dataLines = [];
+
+  for (const line of text.split(/\r?\n/)) {
+    if (!line.trim()) {
+      appendSseData(events, eventName, dataLines.join('\n'));
+      eventName = '';
+      dataLines = [];
+      continue;
+    }
+    if (line.startsWith('event:')) {
+      eventName = line.slice('event:'.length).trim();
+    } else if (line.startsWith('data:')) {
+      dataLines.push(line.slice('data:'.length).trimStart());
+    }
+  }
+  appendSseData(events, eventName, dataLines.join('\n'));
+
+  return events;
+}
+
+function extractReplyFromCozeEvents(events) {
+  let deltaReply = '';
+  let completedReply = '';
+  let lastAnswer = '';
+
+  for (const item of events) {
+    const event = item.event;
+    const data = item.data;
+    const role = String(data?.role || '').toLowerCase();
+    const type = String(data?.type || '').toLowerCase();
+    const content = typeof data?.content === 'string' ? data.content : '';
+    const isAssistantAnswer = role === 'assistant' || type === 'answer';
+
+    if (data?.code && Number(data.code) !== 0) {
+      return { error: safeCozeErrorPayload(data) };
+    }
+
+    if (content && isAssistantAnswer) {
+      lastAnswer = content;
+      if (event === 'conversation.message.delta') {
+        deltaReply += content;
+      } else if (event === 'conversation.message.completed') {
+        completedReply = content;
+      }
+    }
+  }
+
+  const reply = (deltaReply || completedReply || lastAnswer).trim();
+  return { reply: reply.slice(0, MAX_REPLY_CHARS) };
+}
+
 async function handleCoze(request, env) {
   if (request.method !== 'POST') {
     return json({ error: 'method_not_allowed' }, { status: 405 }, env);
@@ -79,7 +149,7 @@ async function handleCoze(request, env) {
   const cozeBody = {
     bot_id: botId,
     user_id: userId,
-    stream: false,
+    stream: true,
     additional_messages: [
       {
         role: 'user',
@@ -102,19 +172,53 @@ async function handleCoze(request, env) {
   const contentType = response.headers.get('Content-Type') || 'application/json';
 
   if (!response.ok) {
+    let payload = null;
+    try {
+      payload = JSON.parse(responseText);
+    } catch {
+      payload = null;
+    }
     console.warn('[chinaease-proxy] coze_non_ok', {
       status: response.status,
       responseLength: responseText.length,
+      code: payload?.code || payload?.error?.code || 'unknown',
     });
+    return json(safeCozeErrorPayload(payload, `http_${response.status}`), { status: 502 }, env);
   }
 
-  return new Response(responseText, {
-    status: response.status,
-    headers: {
-      'Content-Type': contentType,
-      ...corsHeaders(env),
-    },
-  });
+  if (contentType.includes('application/json')) {
+    let payload = null;
+    try {
+      payload = JSON.parse(responseText);
+    } catch {
+      payload = null;
+    }
+    if (payload?.code && Number(payload.code) !== 0) {
+      console.warn('[chinaease-proxy] coze_json_error', {
+        code: payload.code,
+        responseLength: responseText.length,
+      });
+      return json(safeCozeErrorPayload(payload), { status: 502 }, env);
+    }
+  }
+
+  const parsed = extractReplyFromCozeEvents(parseCozeSse(responseText));
+  if (parsed.error) {
+    console.warn('[chinaease-proxy] coze_stream_error', {
+      code: parsed.error.code || 'unknown',
+    });
+    return json(parsed.error, { status: 502 }, env);
+  }
+  if (!parsed.reply) {
+    console.warn('[chinaease-proxy] coze_no_answer', {
+      contentType,
+      responseLength: responseText.length,
+      hasChatCompleted: responseText.includes('conversation.chat.completed'),
+    });
+    return json({ error: 'coze_no_answer', code: 'coze_no_answer', msg: 'Coze returned no assistant answer.' }, { status: 502 }, env);
+  }
+
+  return json({ reply: parsed.reply }, { status: 200 }, env);
 }
 
 export default {
