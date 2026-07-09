@@ -983,6 +983,64 @@
           ]
         }
       }
+    },
+    "home": {
+      "hero": {
+        "title": "Travel China with confidence.",
+        "subtitle": "An AI companion that speaks Chinese so you don't have to — for payments, taxis, menus, and the moments guidebooks skip.",
+        "ctaPrimary": "Open the toolkit",
+        "ctaSecondary": "Ask Buddy a question",
+        "imageAlt": "Golden-hour view over a Chinese city skyline"
+      },
+      "moments": {
+        "header": "For the moments that catch you off guard.",
+        "payment": {
+          "title": "Payments",
+          "body": "When the QR code works for everyone but you — set up Alipay and pay like a local."
+        },
+        "taxi": {
+          "title": "Taxis",
+          "body": "Show your driver exactly where you're going, in Chinese they can read."
+        },
+        "menu": {
+          "title": "Menus",
+          "body": "Know what's in a dish before you order — including the ingredients menus don't mention."
+        }
+      },
+      "demo": {
+        "header": "Ask Buddy anything. In your language.",
+        "hint": "Tap a question to try it yourself.",
+        "tryIt": "Ask Buddy",
+        "q1": {
+          "question": "How do I pay if my Alipay isn't working?",
+          "answer": "Don't worry — this happens a lot. First check whether your card is linked: open Alipay and tap Me → Bank Cards. If the card shows but payments fail, try a smaller amount — some foreign cards have per-payment limits. And keep a little cash as backup; almost every shop still accepts it."
+        },
+        "q2": {
+          "question": "Read this menu for me",
+          "answer": "Send me a photo of the menu and I'll translate every dish, flag common allergens like peanuts and shellfish, and point out surprises like pork in a \"vegetarian\" dish. Tell me what you can't eat and I'll suggest what's safe to order."
+        },
+        "q3": {
+          "question": "Tell my taxi driver where to go",
+          "answer": "Tell me your destination and I'll write it in Chinese, large enough to show your driver — with the district and a nearby landmark so there's no confusion. For example: 请送我到外滩 — Please take me to the Bund."
+        }
+      },
+      "passes": {
+        "header": "One pass. The whole trip.",
+        "note": "One-time payment. No subscription, no auto-renewal.",
+        "trip": {
+          "line1": "50 Buddy AI answers over 7 days",
+          "line2": "Menu photos, taxi cards, and every toolkit feature",
+          "line3": "Help for one traveler, the whole trip"
+        },
+        "group": {
+          "line1": "200 Buddy AI answers over 14 days",
+          "line2": "One shared account for your whole travel group",
+          "line3": "Everything in Trip Pass, for everyone"
+        }
+      },
+      "footer": {
+        "language": "Language"
+      }
     }
   }
 }

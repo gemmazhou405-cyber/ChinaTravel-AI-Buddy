@@ -983,6 +983,64 @@
           ]
         }
       }
+    },
+    "home": {
+      "hero": {
+        "title": "Voyagez en Chine en toute confiance.",
+        "subtitle": "Un compagnon IA qui parle chinois à votre place — pour les paiements, les taxis, les menus et les moments que les guides oublient.",
+        "ctaPrimary": "Ouvrir la boîte à outils",
+        "ctaSecondary": "Poser une question à Buddy",
+        "imageAlt": "Vue dorée sur une ville chinoise au coucher du soleil"
+      },
+      "moments": {
+        "header": "Pour les moments qui vous prennent au dépourvu.",
+        "payment": {
+          "title": "Paiements",
+          "body": "Quand le QR code fonctionne pour tout le monde sauf vous — configurez Alipay et payez comme un local."
+        },
+        "taxi": {
+          "title": "Taxis",
+          "body": "Montrez à votre chauffeur exactement où vous allez, en chinois lisible."
+        },
+        "menu": {
+          "title": "Menus",
+          "body": "Sachez ce qu'il y a dans un plat avant de commander — y compris les ingrédients que les menus ne mentionnent pas."
+        }
+      },
+      "demo": {
+        "header": "Demandez tout à Buddy. Dans votre langue.",
+        "hint": "Touchez une question pour l'essayer vous-même.",
+        "tryIt": "Demander à Buddy",
+        "q1": {
+          "question": "Comment payer si mon Alipay ne fonctionne pas ?",
+          "answer": "Pas d'inquiétude — cela arrive souvent. Vérifiez d'abord que votre carte est bien liée : ouvrez Alipay puis Moi → Cartes bancaires. Si la carte apparaît mais que le paiement échoue, essayez un montant plus petit — certaines cartes étrangères ont des limites par paiement. Et gardez un peu d'espèces en secours ; presque tous les commerces les acceptent encore."
+        },
+        "q2": {
+          "question": "Lis ce menu pour moi",
+          "answer": "Envoyez-moi une photo du menu et je traduirai chaque plat, signalerai les allergènes courants comme les arachides et les fruits de mer, et repérerai les surprises comme du porc dans un plat « végétarien ». Dites-moi ce que vous ne pouvez pas manger et je vous suggérerai quoi commander."
+        },
+        "q3": {
+          "question": "Dis à mon chauffeur de taxi où aller",
+          "answer": "Donnez-moi votre destination et je l'écrirai en chinois, assez grand pour la montrer au chauffeur — avec le quartier et un repère proche pour éviter toute confusion. Par exemple : 请送我到外滩 — Emmenez-moi au Bund, s'il vous plaît."
+        }
+      },
+      "passes": {
+        "header": "Un pass. Tout le voyage.",
+        "note": "Paiement unique. Pas d'abonnement, pas de renouvellement automatique.",
+        "trip": {
+          "line1": "50 réponses Buddy AI sur 7 jours",
+          "line2": "Photos de menus, cartes taxi et tous les outils",
+          "line3": "De l'aide pour un voyageur, tout le séjour"
+        },
+        "group": {
+          "line1": "200 réponses Buddy AI sur 14 jours",
+          "line2": "Un compte partagé pour tout votre groupe",
+          "line3": "Tout le Trip Pass, pour tout le monde"
+        }
+      },
+      "footer": {
+        "language": "Langue"
+      }
     }
   }
 }

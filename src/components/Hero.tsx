@@ -1,19 +1,9 @@
-import { ChevronDown, Globe, LogOut, Menu, ShieldCheck, Sparkles, Star, X } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { ChevronDown, LogOut, X } from 'lucide-react';
+import { useState } from 'react';
 import { User } from 'firebase/auth';
 import { UserState } from '../hooks/useAuth';
 import { useTranslation } from 'react-i18next';
-import i18n from '../i18n';
-import { trackEvent } from '../lib/analytics';
-
-const LANGS = [
-  { code: 'en', label: 'English' },
-  { code: 'fr', label: 'Français' },
-  { code: 'de', label: 'Deutsch' },
-  { code: 'es', label: 'Español' },
-  { code: 'ja', label: '日本語' },
-  { code: 'ko', label: '한국어' },
-];
+import LanguageSwitcher from './LanguageSwitcher';
 
 interface Props {
   user: User | null;
@@ -27,11 +17,8 @@ interface Props {
 
 export default function Hero({ user, userState, onGetHelpNow, onNeedAuth, onAskBuddy, onLogout, onResendVerification }: Props) {
   const { t } = useTranslation();
-  const [lang, setLang] = useState(i18n.language.toUpperCase());
-  const [langOpen, setLangOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
   const [confirmLogoutOpen, setConfirmLogoutOpen] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const assetBase = import.meta.env.BASE_URL;
   const currentPlan = userState?.plan ?? 'free';
   const planLabel = t(`pay.plans.${currentPlan}.name`);
@@ -39,237 +26,59 @@ export default function Hero({ user, userState, onGetHelpNow, onNeedAuth, onAskB
   const isGoogleUser = user?.providerData.some((provider) => provider.providerId === 'google.com') ?? false;
   const emailVerified = Boolean(user?.emailVerified || isGoogleUser);
   const showResendVerification = Boolean(user && isPasswordUser && !user.emailVerified);
-  const navLinks = [
-    { label: t('nav.tools'), href: '#journey-tools' },
-    { label: t('nav.guides'), href: '#guides' },
-    { label: t('nav.travelPasses'), href: '#travel-passes' },
-    { label: t('nav.howItWorks'), href: '#how-it-works' },
-    { label: t('nav.contact'), href: '/contact' },
-  ];
-
-  useEffect(() => {
-    const saved = window.localStorage?.getItem('chinaease-lang');
-    if (saved) {
-      i18n.changeLanguage(saved);
-      setLang(saved.toUpperCase());
-    }
-  }, []);
-
-  const handleLangChange = (code: string) => {
-    i18n.changeLanguage(code);
-    setLang(code.toUpperCase());
-    setLangOpen(false);
-    window.localStorage?.setItem('chinaease-lang', code);
-  };
-
-  const scrollToTabs = () => {
-    document.getElementById('tabs')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const handleNavClick = (label: string, href: string) => {
-    void trackEvent('cta_clicked', {
-      ctaName: label,
-      destination: href,
-    }, user?.uid);
-
-    if (href.startsWith('#')) {
-      const target = document.getElementById(href.slice(1));
-      target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-    setMobileMenuOpen(false);
-  };
 
   return (
-    <>
-    <section className="relative h-[64svh] min-h-[27rem] max-h-[31rem] md:h-auto md:min-h-[690px] md:max-h-[800px] flex flex-col overflow-hidden bg-[#061e1f]">
-      <style>{`
-        .hero-bg {
-          background:
-            radial-gradient(circle at 84% 18%, rgba(232,194,122,0.34), transparent 28%),
-            linear-gradient(100deg, rgba(2,10,11,0.94) 0%, rgba(6,30,31,0.82) 33%, rgba(6,30,31,0.25) 68%, rgba(2,10,11,0.42) 100%),
-            linear-gradient(to bottom, rgba(2,10,11,0.08), rgba(2,10,11,0.82)),
-            url("/images/hero-china-landscape-1400.jpg") center 45%/cover no-repeat;
-        }
-        @media (max-width: 768px) {
-          .hero-bg {
-            background:
-              radial-gradient(circle at 82% 18%, rgba(232,194,122,0.26), transparent 34%),
-              linear-gradient(to bottom, rgba(2,10,11,0.52) 0%, rgba(6,30,31,0.44) 40%, rgba(2,10,11,0.88) 100%),
-              linear-gradient(to right, rgba(2,10,11,0.74), rgba(2,10,11,0.22)),
-              url("/images/hero-china-landscape-900.jpg") 49% center/cover no-repeat;
-          }
-        }
-      `}</style>
-
-      <div className="hero-bg absolute inset-0" />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),transparent_16%,rgba(0,0,0,0.24)_78%,#061e1f_100%)]" />
-
-      {/* Nav bar */}
-      <div className="relative z-20 px-3 py-3 md:px-8 md:py-5">
-        <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/[0.16] bg-[#061e1f]/45 px-3 py-2 shadow-[0_18px_60px_rgba(0,0,0,0.24)] backdrop-blur-2xl md:bg-[#061e1f]/30 md:px-5 md:py-3">
-        <div className="flex min-w-0 items-center gap-2">
-          <img src={`${assetBase}logo.png`} width="34" height="34" alt="ChinaEase Buddy" className="h-8 w-8 shrink-0 rounded-lg ring-1 ring-white/20 md:h-9 md:w-9" />
-          <span className="truncate text-sm font-semibold tracking-tight text-white md:text-base">ChinaEase Buddy</span>
-        </div>
-        <nav className="hidden items-center gap-5 text-sm font-medium text-[#f8f3ea] lg:flex">
-          {navLinks.map((link) => (
-            link.href.startsWith('#') ? (
-              <button
-                key={link.label}
-                onClick={() => handleNavClick(link.label, link.href)}
-                className="transition-colors hover:text-[#e8c27a]"
-              >
-                {link.label}
-              </button>
-            ) : (
-              <a key={link.label} href={link.href} className="transition-colors hover:text-[#e8c27a]">
-                {link.label}
-              </a>
-            )
-          ))}
-        </nav>
-        <div className="flex shrink-0 items-center gap-1.5 md:gap-2">
-          <div className="relative">
-            <button
-              onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-1.5 rounded-full border border-white/[0.15] bg-white/10 px-2.5 py-1.5 text-[11px] text-[#f8f3ea] backdrop-blur-sm transition-colors hover:text-white md:text-xs"
-            >
-              <Globe className="w-3 h-3" />
-              <span>{lang}</span>
-              <ChevronDown className="h-3 w-3 opacity-70" />
-            </button>
-            {langOpen && (
-              <div className="absolute right-0 top-full mt-1 bg-white rounded-xl shadow-xl overflow-hidden z-50 min-w-[100px]">
-                {LANGS.map((l) => (
-                  <button
-                    key={l.code}
-                    onClick={() => handleLangChange(l.code)}
-                    className={`w-full text-left px-4 py-2.5 text-sm transition-colors ${
-                      l.code.toUpperCase() === lang ? 'bg-[#155e63]/10 text-[#155e63] font-medium' : 'text-gray-600 hover:bg-gray-50'
-                    }`}
-                  >
-                    {l.label}
-                  </button>
-                ))}
-              </div>
-            )}
+    <section className="bg-canvas">
+      {/* Header */}
+      <header className="border-b border-hairline">
+        <div className="mx-auto flex max-w-container items-center justify-between px-6 py-4 md:px-8">
+          <div className="flex min-w-0 items-center gap-2.5">
+            <img src={`${assetBase}logo.png`} width="32" height="32" alt="" className="h-8 w-8 rounded-lg" />
+            <span className="truncate text-sm font-semibold tracking-tight text-ink md:text-base">ChinaEase Buddy</span>
           </div>
-
-          <div className="relative md:hidden">
-            <button
-              onClick={() => setMobileMenuOpen((open) => !open)}
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-white/[0.15] bg-white/10 text-[#f8f3ea] backdrop-blur-sm"
-              aria-label={t('nav.menu')}
-            >
-              {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-            </button>
-            {mobileMenuOpen && (
-              <div className="absolute right-0 top-full z-50 mt-2 w-48 rounded-2xl border border-white/10 bg-[#061e1f]/95 p-2 text-sm text-[#f8f3ea] shadow-2xl backdrop-blur-xl">
-                {navLinks.map((link) => (
-                  link.href.startsWith('#') ? (
-                    <button
-                      key={link.label}
-                      onClick={() => handleNavClick(link.label, link.href)}
-                      className="block w-full rounded-xl px-3 py-2.5 text-left font-semibold hover:bg-white/10"
-                    >
-                      {link.label}
-                    </button>
-                  ) : (
-                    <a key={link.label} href={link.href} className="block rounded-xl px-3 py-2.5 font-semibold hover:bg-white/10">
-                      {link.label}
-                    </a>
-                  )
-                ))}
-                {user ? (
-                  <>
-                    <div className="mx-3 my-1 border-t border-white/10" />
-                    <div className="flex items-center gap-2 px-3 py-2">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#e8c27a] text-[10px] font-bold text-[#061e1f]">
-                        {(user.email?.[0] ?? '?').toUpperCase()}
-                      </span>
-                      <span className="truncate text-xs font-semibold text-[#f8f3ea]/70">{user.email}</span>
-                    </div>
-                    <button
-                      onClick={() => { setMobileMenuOpen(false); setConfirmLogoutOpen(true); }}
-                      className="flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-left font-semibold text-red-400 hover:bg-white/10"
-                    >
-                      <LogOut className="h-3.5 w-3.5" />
-                      {t('account.logout')}
-                    </button>
-                  </>
-                ) : (
-                  <button
-                    onClick={() => { setMobileMenuOpen(false); onNeedAuth(); }}
-                    className="block w-full rounded-xl px-3 py-2.5 text-left font-semibold text-[#e8c27a] hover:bg-white/10"
-                  >
-                    {t('nav.login')}
-                  </button>
-                )}
-              </div>
-            )}
-          </div>
-
-          <button
-            onClick={scrollToTabs}
-            className="hidden text-sm text-white/80 transition-colors hover:text-[#e8c27a] lg:hidden"
-          >
-            {t('nav.howItWorks')}
-          </button>
-
-          {user ? (
-            <div className="hidden items-center gap-2 md:flex">
-              {/* Get Help Now CTA — scrolls to tools */}
-              <button
-                onClick={onGetHelpNow}
-                className="rounded-full bg-[#e8c27a] px-4 py-2 text-sm font-bold text-[#061e1f] shadow-[0_14px_34px_rgba(232,194,122,0.24)] transition-all hover:bg-[#f4d78f]"
-              >
-                {t('nav.getHelpNow')}
-              </button>
-
-              {/* User avatar pill */}
+          <div className="flex shrink-0 items-center gap-2">
+            <LanguageSwitcher />
+            {user ? (
               <div className="relative">
                 <button
                   onClick={() => setAccountOpen((open) => !open)}
-                  className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 py-1 pl-1 pr-3 backdrop-blur-sm transition-colors hover:bg-white/20"
+                  className="flex items-center gap-2 rounded-lg border border-hairline bg-surface py-1 pl-1 pr-2.5 transition-colors duration-hover ease-out hover:border-ink-tertiary"
                   aria-label={t('account.title')}
                 >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#e8c27a] text-xs font-bold text-[#061e1f]">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-jade text-xs font-semibold text-white">
                     {(user.email?.[0] ?? '?').toUpperCase()}
                   </span>
-                  <span className="max-w-[7rem] truncate text-xs font-semibold text-[#f8f3ea]">
-                    {user.email}
-                  </span>
-                  <ChevronDown className="h-3 w-3 shrink-0 text-white/60" />
+                  <span className="hidden max-w-[7rem] truncate text-xs font-medium text-ink-secondary sm:inline">{user.email}</span>
+                  <ChevronDown className="h-3 w-3 shrink-0 text-ink-tertiary" strokeWidth={1.5} />
                 </button>
-
                 {accountOpen && (
-                  <div className="absolute right-0 top-full mt-2 w-72 rounded-2xl bg-white p-4 text-gray-700 shadow-2xl z-50">
-                    <div className="flex items-start justify-between gap-3 border-b border-gray-100 pb-3">
-                      <div className="flex items-center gap-3 min-w-0">
-                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#155e63] text-sm font-bold text-white">
+                  <div className="absolute right-0 top-full z-50 mt-2 w-72 rounded-2xl border border-hairline bg-surface p-4 shadow-card">
+                    <div className="flex items-start justify-between gap-3 border-b border-hairline pb-3">
+                      <div className="flex min-w-0 items-center gap-3">
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-jade text-sm font-semibold text-white">
                           {(user.email?.[0] ?? '?').toUpperCase()}
                         </span>
                         <div className="min-w-0">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-[#155e63]">{t('account.title')}</p>
-                          <p className="mt-0.5 truncate text-sm font-semibold text-gray-900">{user.email}</p>
+                          <p className="text-xs font-semibold uppercase tracking-wide text-jade">{t('account.title')}</p>
+                          <p className="mt-0.5 truncate text-sm font-medium text-ink">{user.email}</p>
                         </div>
                       </div>
-                      <button onClick={() => setAccountOpen(false)} className="rounded-full p-1 text-gray-400 hover:bg-gray-100">
-                        <X className="h-4 w-4" />
+                      <button onClick={() => setAccountOpen(false)} className="rounded-md p-1 text-ink-tertiary transition-colors duration-hover ease-out hover:text-ink">
+                        <X className="h-4 w-4" strokeWidth={1.5} />
                       </button>
                     </div>
                     <div className="space-y-2 py-3 text-xs">
                       <div className="flex justify-between gap-3">
-                        <span className="text-gray-500">{t('account.currentPlan')}</span>
-                        <span className="font-semibold text-[#155e63]">{planLabel}</span>
+                        <span className="text-ink-tertiary">{t('account.currentPlan')}</span>
+                        <span className="font-medium text-jade">{planLabel}</span>
                       </div>
                       <div className="flex justify-between gap-3">
-                        <span className="text-gray-500">{t('account.buddyQuota')}</span>
-                        <span className="font-semibold text-gray-900">{userState?.buddyAiQuotaUsed ?? 0} / {userState?.buddyAiQuotaTotal ?? 5}</span>
+                        <span className="text-ink-tertiary">{t('account.buddyQuota')}</span>
+                        <span className="font-medium text-ink">{userState?.buddyAiQuotaUsed ?? 0} / {userState?.buddyAiQuotaTotal ?? 5}</span>
                       </div>
                       <div className="flex justify-between gap-3">
-                        <span className="text-gray-500">{t('account.emailVerification')}</span>
-                        <span className={`font-semibold ${emailVerified ? 'text-[#155e63]' : 'text-amber-600'}`}>
+                        <span className="text-ink-tertiary">{t('account.emailVerification')}</span>
+                        <span className={`font-medium ${emailVerified ? 'text-jade' : 'text-amber-600'}`}>
                           {emailVerified ? t('account.verified') : t('account.notVerified')}
                         </span>
                       </div>
@@ -277,114 +86,90 @@ export default function Hero({ user, userState, onGetHelpNow, onNeedAuth, onAskB
                     {showResendVerification && (
                       <button
                         onClick={async () => { await onResendVerification(); }}
-                        className="mb-2 w-full rounded-xl border border-amber-100 bg-amber-50 py-2.5 text-sm font-semibold text-amber-700 hover:bg-amber-100"
+                        className="mb-2 w-full rounded-lg border border-hairline bg-canvas py-2.5 text-sm font-medium text-ink-secondary transition-colors duration-hover ease-out hover:text-ink"
                       >
                         {t('account.resendVerification')}
                       </button>
                     )}
                     <button
                       onClick={() => setConfirmLogoutOpen(true)}
-                      className="flex w-full items-center justify-center gap-2 rounded-xl border border-red-100 bg-red-50 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-100"
+                      className="flex w-full items-center justify-center gap-2 rounded-lg border border-hairline py-2.5 text-sm font-medium text-red-600 transition-colors duration-hover ease-out hover:bg-red-50"
                     >
-                      <LogOut className="h-4 w-4" />
+                      <LogOut className="h-4 w-4" strokeWidth={1.5} />
                       {t('account.logout')}
                     </button>
                   </div>
                 )}
               </div>
-            </div>
-          ) : (
-            <div className="hidden items-center gap-2 md:flex">
+            ) : (
               <button
                 onClick={onNeedAuth}
-                className="text-sm font-semibold text-[#f8f3ea]/80 transition-colors hover:text-[#e8c27a]"
+                className="rounded-lg border border-hairline bg-surface px-3 py-1.5 text-xs font-medium text-ink transition-colors duration-hover ease-out hover:border-ink-tertiary"
               >
                 {t('nav.login')}
               </button>
-              <button
-                onClick={onNeedAuth}
-                className="rounded-full bg-[#e8c27a] px-4 py-2 text-sm font-bold text-[#061e1f] shadow-[0_14px_34px_rgba(232,194,122,0.24)] transition-all hover:bg-[#f4d78f]"
-              >
-                {t('nav.getHelpNow')}
-              </button>
-            </div>
-          )}
-        </div>
-      </div>
-      </div>
-
-      {/* 主内容：两栏布局（桌面）/ 单栏（移动） */}
-      <div className="relative z-10 flex w-full flex-1 flex-col justify-center px-4 pb-8 pt-1 md:mx-auto md:max-w-7xl md:flex-row md:items-center md:gap-16 md:px-10 md:pb-16 md:pt-4">
-
-        {/* Left column: text content */}
-        <div className="md:flex-1">
-          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-[#e8c27a]/35 bg-[#e8c27a]/12 px-3 py-1.5 backdrop-blur-sm md:mb-5">
-            <Star className="h-3.5 w-3.5 fill-[#e8c27a] text-[#e8c27a]" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#f6ddb0] md:text-xs">{t('hero.badge')}</span>
+            )}
           </div>
+        </div>
+      </header>
 
-          <h1
-            className="mb-3 leading-[0.96] tracking-[-0.035em] text-[#fffaf0] drop-shadow-[0_6px_34px_rgba(0,0,0,0.52)] md:mb-6"
-            style={{ fontFamily: 'Cormorant Garamond, Playfair Display, Georgia, serif', fontSize: 'clamp(2.55rem, 5.1vw, 4.55rem)' }}
-          >
-            {t('hero.titleLine1')}<br />
-            <span className="text-[#e8c27a]">{t('hero.titleLine2')}</span>
+      {/* Hero body — text first on mobile, image right on desktop */}
+      <div className="mx-auto grid max-w-container items-center gap-10 px-6 pb-20 pt-14 md:grid-cols-[1.05fr_0.95fr] md:gap-16 md:px-8 md:py-32">
+        <div>
+          <h1 className="font-display text-[40px] font-normal leading-[1.05] tracking-[-0.02em] text-ink md:text-[64px]">
+            {t('home.hero.title')}
           </h1>
-
-          <p className="mb-4 max-w-[20rem] text-sm font-semibold leading-relaxed text-[#fffaf0]/95 drop-shadow-[0_2px_18px_rgba(0,0,0,0.78)] md:mb-7 md:max-w-xl md:text-xl md:font-medium md:text-[#f7f2e8]/90">
-            <span className="md:hidden">{t('hero.mobileSubtitle')}</span>
-            <span className="hidden md:inline">{t('hero.homeSubtitle')}</span>
+          <p className="mt-6 max-w-[32rem] text-lg leading-relaxed text-ink-secondary md:text-xl">
+            {t('home.hero.subtitle')}
           </p>
-
-          <div className="flex w-[min(17rem,100%)] flex-col gap-2 min-[420px]:w-[18rem] md:w-auto md:flex-row md:gap-3">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <button
               onClick={user ? onGetHelpNow : onNeedAuth}
-              className="flex h-11 w-full items-center justify-center gap-2 rounded-full bg-[#e8c27a] px-5 text-sm font-bold text-[#061e1f] shadow-[0_18px_44px_rgba(232,194,122,0.25)] transition-all hover:-translate-y-0.5 hover:bg-[#f4d78f] md:h-auto md:w-auto md:px-8 md:py-4 md:text-base"
+              className="rounded-lg bg-jade px-6 py-3.5 text-base font-semibold text-white transition-colors duration-hover ease-out hover:bg-[#0B4145]"
             >
-              {t('hero.openFreeToolkit')}
+              {t('home.hero.ctaPrimary')}
             </button>
             <button
               onClick={onAskBuddy}
-              className="flex h-11 w-full items-center justify-center gap-2 rounded-full border border-white/[0.26] bg-white/[0.14] px-5 text-sm font-bold text-white shadow-xl backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/[0.18] md:h-auto md:w-auto md:px-7 md:py-4 md:text-base"
+              className="rounded-lg border border-hairline bg-surface px-6 py-3.5 text-base font-semibold text-ink transition-colors duration-hover ease-out hover:border-ink-tertiary"
             >
-              {t('hero.askBuddy')}
+              {t('home.hero.ctaSecondary')}
             </button>
           </div>
-
-          <div className="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold text-[#fffaf0]/95 drop-shadow-[0_1px_12px_rgba(0,0,0,0.76)] md:mt-6 md:text-xs">
-            <span className="md:hidden">{t('hero.mobileTrustShort')}</span>
-            <span className="hidden items-center gap-2 md:inline-flex"><ShieldCheck className="h-4 w-4 text-[#e8c27a]" />{t('hero.trustTrusted')}</span>
-            <span className="hidden items-center gap-2 md:inline-flex"><Sparkles className="h-4 w-4 text-[#e8c27a]" />{t('hero.trustSupport')}</span>
-            <span className="hidden items-center gap-2 md:inline-flex"><ShieldCheck className="h-4 w-4 text-[#e8c27a]" />{t('hero.trustSafety')}</span>
-          </div>
         </div>
 
-        {/* Right column: demo image — desktop only */}
-        <div className="hidden md:flex md:flex-1 md:items-center md:justify-center">
-          <img
-            src={`${assetBase}hero-demo.png`}
-            alt="ChinaEase Buddy translating a Chinese menu into English with allergen alerts including hidden pork and shellfish"
-            className="w-full max-w-[520px] rounded-3xl shadow-2xl ring-1 ring-white/20"
+        <picture>
+          <source
+            type="image/avif"
+            srcSet={`${assetBase}hero-product-768.avif 768w, ${assetBase}hero-product-1200.avif 1200w`}
+            sizes="(min-width: 768px) 45vw, calc(100vw - 48px)"
           />
-        </div>
-
+          <source
+            type="image/webp"
+            srcSet={`${assetBase}hero-product-768.webp 768w, ${assetBase}hero-product-1200.webp 1200w`}
+            sizes="(min-width: 768px) 45vw, calc(100vw - 48px)"
+          />
+          <img
+            src={`${assetBase}hero-product.png`}
+            width={1200}
+            height={1500}
+            alt={t('home.hero.imageAlt')}
+            decoding="async"
+            className="aspect-[4/5] w-full rounded-2xl object-cover shadow-card"
+            {...({ fetchpriority: 'high' } as Record<string, string>)}
+          />
+        </picture>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden flex-col items-center gap-1 animate-bounce md:flex">
-        <div className="w-5 h-8 border-2 border-white/30 rounded-full flex items-start justify-center pt-1.5">
-          <div className="w-1 h-2 bg-white/60 rounded-full" />
-        </div>
-      </div>
       {confirmLogoutOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4" onClick={() => setConfirmLogoutOpen(false)}>
-          <div className="w-full max-w-sm rounded-2xl bg-white p-5 shadow-2xl" onClick={(e) => e.stopPropagation()}>
-            <h3 className="text-lg font-bold text-gray-950">{t('account.logoutTitle')}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-gray-500">{t('account.logoutText')}</p>
+          <div className="w-full max-w-sm rounded-[20px] bg-surface p-6 shadow-card animate-modal-in" onClick={(e) => e.stopPropagation()}>
+            <h3 className="text-lg font-semibold text-ink">{t('account.logoutTitle')}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-ink-secondary">{t('account.logoutText')}</p>
             <div className="mt-5 flex gap-2">
               <button
                 onClick={() => setConfirmLogoutOpen(false)}
-                className="flex-1 rounded-xl border border-gray-200 py-2.5 text-sm font-semibold text-gray-600 hover:bg-gray-50"
+                className="flex-1 rounded-lg border border-hairline py-2.5 text-sm font-medium text-ink-secondary transition-colors duration-hover ease-out hover:text-ink"
               >
                 {t('account.cancel')}
               </button>
@@ -394,7 +179,7 @@ export default function Hero({ user, userState, onGetHelpNow, onNeedAuth, onAskB
                   setAccountOpen(false);
                   await onLogout();
                 }}
-                className="flex-1 rounded-xl bg-red-600 py-2.5 text-sm font-semibold text-white hover:bg-red-700"
+                className="flex-1 rounded-lg bg-red-600 py-2.5 text-sm font-medium text-white transition-colors duration-hover ease-out hover:bg-red-700"
               >
                 {t('account.logout')}
               </button>
@@ -403,43 +188,5 @@ export default function Hero({ user, userState, onGetHelpNow, onNeedAuth, onAskB
         </div>
       )}
     </section>
-
-    {/* Mobile-only hero demo image — rendered outside the overflow-hidden section so the full image (incl. allergen labels at bottom) is never clipped */}
-    <div className="md:hidden bg-[#061e1f] px-6 pb-6">
-      <img
-        src={`${assetBase}hero-demo.png`}
-        alt="ChinaEase Buddy translating a Chinese menu into English with allergen alerts including hidden pork and shellfish"
-        className="mx-auto w-full max-w-[280px] rounded-2xl shadow-xl ring-1 ring-white/10"
-      />
-    </div>
-
-    {/* Feature strip */}
-    <div className="relative z-0 border-b border-gray-100 bg-white/90 shadow-sm backdrop-blur-sm">
-      <div className="mx-auto max-w-7xl px-4 py-3 md:py-4">
-        <div className="grid grid-cols-2 gap-2 text-center [&>*:last-child]:col-span-2 md:grid-cols-5 md:gap-6 md:[&>*:last-child]:col-span-1">
-          <div className="flex flex-col items-center gap-1 text-[10px] font-semibold text-gray-700 md:flex-row md:justify-center md:gap-2 md:text-sm">
-            <span className="text-base">📸</span>
-            <span>Menu translation + allergen alerts</span>
-          </div>
-          <div className="flex flex-col items-center gap-1 text-[10px] font-semibold text-gray-700 md:flex-row md:justify-center md:gap-2 md:text-sm">
-            <span className="text-base">🔊</span>
-            <span>Speak without speaking — Buddy says it in Chinese for locals</span>
-          </div>
-          <div className="flex flex-col items-center gap-1 text-[10px] font-semibold text-gray-700 md:flex-row md:justify-center md:gap-2 md:text-sm">
-            <span className="text-base">💳</span>
-            <span>Set up Alipay in minutes</span>
-          </div>
-          <div className="flex flex-col items-center gap-1 text-[10px] font-semibold text-gray-700 md:flex-row md:justify-center md:gap-2 md:text-sm">
-            <span className="text-base">🚕</span>
-            <span>Talk to taxis &amp; hotels, no Chinese</span>
-          </div>
-          <div className="flex flex-col items-center gap-1 text-[10px] font-semibold text-gray-700 md:flex-row md:justify-center md:gap-2 md:text-sm">
-            <span className="text-base">📥</span>
-            <span>Offline phrase cards for when you have no signal</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    </>
   );
 }

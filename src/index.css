@@ -2,21 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-bg: #FAF8F5;
+  --color-surface: #FFFFFF;
+  --color-ink: #111418;
+  --color-ink-secondary: #5B6470;
+  --color-ink-tertiary: #8B929B;
+  --color-jade: #0F5257;
+  --color-jade-wash: #E8F0EE;
+  --color-hairline: #E8E4DC;
+  --shadow-card: 0 1px 2px rgba(17, 20, 24, 0.04), 0 8px 24px rgba(17, 20, 24, 0.06);
+}
+
 @layer base {
   html {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     overscroll-behavior: none;
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  @media (min-width: 768px) {
+    body {
+      font-size: 17px;
+    }
+  }
+
+  .font-display {
+    font-variation-settings: 'opsz' 144;
   }
 }
 
 @layer utilities {
   .animate-fade-in {
     animation: fade-in 0.2s ease-out both;
+  }
+
+  .animate-modal-in {
+    animation: modal-in 240ms ease-out both;
   }
 
   .scrollbar-hide {
@@ -43,13 +73,79 @@
   }
 }
 
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes breathing {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 25px 50px -12px rgba(21, 94, 99, 0.40);
+    box-shadow: 0 25px 50px -12px rgba(15, 82, 87, 0.35);
   }
   50% {
     transform: scale(1.025);
-    box-shadow: 0 25px 55px -10px rgba(21, 94, 99, 0.50);
+    box-shadow: 0 25px 55px -10px rgba(15, 82, 87, 0.45);
   }
+}
+
+/* Chat markdown — scoped to buddy bubbles so LLM output keeps bubble rhythm */
+.chat-md p {
+  margin: 0;
+}
+.chat-md p + p,
+.chat-md p + ul,
+.chat-md p + ol,
+.chat-md ul + p,
+.chat-md ol + p {
+  margin-top: 0.5rem;
+}
+.chat-md ul,
+.chat-md ol {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+.chat-md ul {
+  list-style: disc;
+}
+.chat-md ol {
+  list-style: decimal;
+}
+.chat-md li {
+  margin-top: 0.25rem;
+}
+.chat-md li:first-child {
+  margin-top: 0;
+}
+.chat-md strong {
+  font-weight: 600;
+}
+.chat-md em {
+  font-style: italic;
+}
+.chat-md code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85em;
+  background: var(--color-jade-wash);
+  color: var(--color-jade);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+.chat-md .chat-heading {
+  font-weight: 600;
+}
+.chat-md p + .chat-heading,
+.chat-md ul + .chat-heading,
+.chat-md ol + .chat-heading {
+  margin-top: 0.75rem;
+}
+.chat-md a {
+  color: var(--color-jade);
+  text-decoration: underline;
 }

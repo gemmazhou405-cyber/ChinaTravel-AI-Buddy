@@ -983,6 +983,64 @@
           ]
         }
       }
+    },
+    "home": {
+      "hero": {
+        "title": "Bereisen Sie China mit Zuversicht.",
+        "subtitle": "Ein KI-Begleiter, der für Sie Chinesisch spricht — für Zahlungen, Taxis, Speisekarten und die Momente, die Reiseführer auslassen.",
+        "ctaPrimary": "Toolkit öffnen",
+        "ctaSecondary": "Buddy eine Frage stellen",
+        "imageAlt": "Goldene Abendsicht über eine chinesische Skyline"
+      },
+      "moments": {
+        "header": "Für die Momente, die Sie kalt erwischen.",
+        "payment": {
+          "title": "Bezahlen",
+          "body": "Wenn der QR-Code bei allen funktioniert, nur nicht bei Ihnen — richten Sie Alipay ein und zahlen Sie wie Einheimische."
+        },
+        "taxi": {
+          "title": "Taxis",
+          "body": "Zeigen Sie Ihrem Fahrer genau, wohin Sie wollen — auf Chinesisch, das er lesen kann."
+        },
+        "menu": {
+          "title": "Speisekarten",
+          "body": "Wissen Sie vor der Bestellung, was im Gericht steckt — auch die Zutaten, die nicht auf der Karte stehen."
+        }
+      },
+      "demo": {
+        "header": "Fragen Sie Buddy alles. In Ihrer Sprache.",
+        "hint": "Tippen Sie auf eine Frage, um es selbst auszuprobieren.",
+        "tryIt": "Buddy fragen",
+        "q1": {
+          "question": "Wie bezahle ich, wenn mein Alipay nicht funktioniert?",
+          "answer": "Keine Sorge — das passiert oft. Prüfen Sie zuerst, ob Ihre Karte verknüpft ist: Öffnen Sie Alipay und tippen Sie auf Ich → Bankkarten. Wird die Karte angezeigt, aber die Zahlung schlägt fehl, versuchen Sie einen kleineren Betrag — manche ausländische Karten haben Limits pro Zahlung. Und halten Sie etwas Bargeld bereit; fast jedes Geschäft akzeptiert es noch."
+        },
+        "q2": {
+          "question": "Lies diese Speisekarte für mich",
+          "answer": "Schicken Sie mir ein Foto der Speisekarte und ich übersetze jedes Gericht, markiere häufige Allergene wie Erdnüsse und Meeresfrüchte und weise auf Überraschungen hin — etwa Schweinefleisch in einem „vegetarischen“ Gericht. Sagen Sie mir, was Sie nicht essen können, und ich schlage vor, was sicher ist."
+        },
+        "q3": {
+          "question": "Sag meinem Taxifahrer, wohin ich will",
+          "answer": "Nennen Sie mir Ihr Ziel und ich schreibe es auf Chinesisch, groß genug zum Vorzeigen — mit Stadtteil und einem Orientierungspunkt in der Nähe, damit nichts schiefgeht. Zum Beispiel: 请送我到外滩 — Bitte bringen Sie mich zum Bund."
+        }
+      },
+      "passes": {
+        "header": "Ein Pass. Die ganze Reise.",
+        "note": "Einmalige Zahlung. Kein Abo, keine automatische Verlängerung.",
+        "trip": {
+          "line1": "50 Buddy-AI-Antworten über 7 Tage",
+          "line2": "Menüfotos, Taxikarten und alle Toolkit-Funktionen",
+          "line3": "Hilfe für einen Reisenden, die ganze Reise"
+        },
+        "group": {
+          "line1": "200 Buddy-AI-Antworten über 14 Tage",
+          "line2": "Ein gemeinsames Konto für Ihre ganze Reisegruppe",
+          "line3": "Alles aus dem Trip Pass, für alle"
+        }
+      },
+      "footer": {
+        "language": "Sprache"
+      }
     }
   }
 }

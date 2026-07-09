@@ -983,6 +983,64 @@
           ]
         }
       }
+    },
+    "home": {
+      "hero": {
+        "title": "Viaja por China con confianza.",
+        "subtitle": "Un compañero de IA que habla chino por ti — para pagos, taxis, menús y los momentos que las guías pasan por alto.",
+        "ctaPrimary": "Abrir el kit de viaje",
+        "ctaSecondary": "Hazle una pregunta a Buddy",
+        "imageAlt": "Vista dorada del horizonte de una ciudad china"
+      },
+      "moments": {
+        "header": "Para los momentos que te toman por sorpresa.",
+        "payment": {
+          "title": "Pagos",
+          "body": "Cuando el código QR funciona para todos menos para ti — configura Alipay y paga como un local."
+        },
+        "taxi": {
+          "title": "Taxis",
+          "body": "Muéstrale al conductor exactamente adónde vas, en chino que pueda leer."
+        },
+        "menu": {
+          "title": "Menús",
+          "body": "Sabe qué lleva un plato antes de pedirlo — incluidos los ingredientes que el menú no menciona."
+        }
+      },
+      "demo": {
+        "header": "Pregúntale lo que sea a Buddy. En tu idioma.",
+        "hint": "Toca una pregunta para probarlo tú mismo.",
+        "tryIt": "Preguntar a Buddy",
+        "q1": {
+          "question": "¿Cómo pago si mi Alipay no funciona?",
+          "answer": "No te preocupes — pasa mucho. Primero comprueba que tu tarjeta esté vinculada: abre Alipay y toca Yo → Tarjetas bancarias. Si la tarjeta aparece pero el pago falla, prueba con un importe menor — algunas tarjetas extranjeras tienen límites por pago. Y lleva algo de efectivo de respaldo; casi todas las tiendas lo siguen aceptando."
+        },
+        "q2": {
+          "question": "Léeme este menú",
+          "answer": "Envíame una foto del menú y traduciré cada plato, marcaré alérgenos comunes como cacahuetes y mariscos, y señalaré sorpresas como cerdo en un plato «vegetariano». Dime qué no puedes comer y te sugeriré qué pedir con seguridad."
+        },
+        "q3": {
+          "question": "Dile a mi taxista adónde voy",
+          "answer": "Dime tu destino y lo escribiré en chino, en letra grande para mostrárselo al conductor — con el distrito y un punto de referencia cercano para evitar confusiones. Por ejemplo: 请送我到外滩 — Lléveme al Bund, por favor."
+        }
+      },
+      "passes": {
+        "header": "Un pase. Todo el viaje.",
+        "note": "Pago único. Sin suscripción, sin renovación automática.",
+        "trip": {
+          "line1": "50 respuestas de Buddy AI durante 7 días",
+          "line2": "Fotos de menús, tarjetas de taxi y todas las herramientas",
+          "line3": "Ayuda para un viajero, todo el viaje"
+        },
+        "group": {
+          "line1": "200 respuestas de Buddy AI durante 14 días",
+          "line2": "Una cuenta compartida para todo tu grupo",
+          "line3": "Todo lo del Trip Pass, para todos"
+        }
+      },
+      "footer": {
+        "language": "Idioma"
+      }
     }
   }
 }

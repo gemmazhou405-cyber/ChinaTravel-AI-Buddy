@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import Hero from './components/Hero';
 import TabNav from './components/TabNav';
 import TabContent from './components/TabContent';
-import QuickActions from './components/QuickActions';
+import Moments from './components/home/Moments';
+import BuddyDemo from './components/home/BuddyDemo';
+import HomePasses from './components/home/HomePasses';
 import ChatButton from './components/ChatButton';
 import ChatModal from './components/ChatModal';
 import Footer from './components/Footer';
@@ -90,10 +92,10 @@ export default function App() {
   const landing = parseLandingParams();
   const [activeTab, setActiveTab] = useState<TabId>(landing.tab ?? 'food');
   const [chatOpen, setChatOpen] = useState(false);
+  const [chatPrefill, setChatPrefill] = useState<string | null>(null);
   const [authOpen, setAuthOpen] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const [toolOpen, setToolOpen] = useState(Boolean(landing.tab));
-  const [journey, setJourney] = useState<JourneyId>(landing.journey);
   const [deepTool, setDeepTool] = useState<string | null>(landing.tool);
   const { user, userState, logout, signup, login, loginWithGoogle, resendVerificationEmail, resetPassword, refreshUserState } = useAuth();
   const showToast = (msg: string) => setToast(msg);
@@ -169,78 +171,64 @@ export default function App() {
     };
   }, [refreshUserState, t, user]);
 
-  const handleQuickTabSelect = (tab: TabId, tool?: string) => {
-    setActiveTab(tab);
+  const openToolkit = (tab?: TabId, tool?: string) => {
+    if (tab) setActiveTab(tab);
     setToolOpen(true);
     setDeepTool(tool ?? null);
     void trackEvent('tool_category_opened', {
-      journey: analyticsJourney(journey),
-      tool: tool ?? tab,
-      category: tool ?? tab,
+      journey: analyticsJourney(landing.journey),
+      tool: tool ?? tab ?? activeTab,
+      category: tool ?? tab ?? activeTab,
     }, user?.uid);
     window.setTimeout(() => {
       document.getElementById('tabs')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 0);
   };
-  const handleJourneyChange = (nextJourney: JourneyId) => {
-    const previousJourney = journey;
-    setJourney(nextJourney);
-    void trackEvent('journey_selected', {
-      selectedJourney: analyticsJourney(nextJourney),
-      previousJourney: analyticsJourney(previousJourney),
-    }, user?.uid);
-  };
-  const openBuddy = () => {
+
+  const openBuddy = (prefill?: string) => {
     void trackEvent('cta_clicked', {
       ctaName: 'Ask Buddy',
       destination: 'chat',
-      journey: analyticsJourney(journey),
+      journey: analyticsJourney(landing.journey),
       tool: deepTool || activeTab,
     }, user?.uid);
+    setChatPrefill(prefill ?? null);
     setChatOpen(true);
   };
 
   if (policyPageType) {
     return (
-      <div className="min-h-screen bg-[#f7f3ea] pb-[env(safe-area-inset-bottom)] font-sans">
+      <div className="min-h-screen bg-canvas pb-[env(safe-area-inset-bottom)] font-sans">
         <PolicyPage type={policyPageType} userId={user?.uid} />
-        <Footer onTabChange={setActiveTab} onAskBuddy={openBuddy} />
+        <Footer onOpenEmergency={() => { window.location.href = '/?journey=emergency'; }} />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#f7f3ea] pb-[env(safe-area-inset-bottom)] font-sans">
+    <div className="min-h-screen bg-canvas pb-[env(safe-area-inset-bottom)] font-sans">
+      {/* Section 1 — Hero */}
       <Hero
         user={user}
         userState={userState}
         onGetHelpNow={() => {
           void trackEvent('cta_clicked', {
-            ctaName: 'Get Help Now',
+            ctaName: 'Open the toolkit',
             destination: 'Tools',
-            journey: analyticsJourney(journey),
+            journey: analyticsJourney(landing.journey),
           }, user?.uid);
-          document.getElementById('journey-tools')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          openToolkit();
         }}
         onNeedAuth={() => setAuthOpen(true)}
-        onAskBuddy={openBuddy}
+        onAskBuddy={() => openBuddy()}
         onLogout={logout}
         onResendVerification={async () => {
           await resendVerificationEmail();
           showToast(t('auth.verificationSent'));
         }}
       />
-      <QuickActions
-        journey={journey}
-        user={user}
-        userState={userState}
-        showToast={showToast}
-        onNeedAuth={() => setAuthOpen(true)}
-        onRefreshUserState={refreshUserState}
-        onJourneyChange={handleJourneyChange}
-        onTabSelect={handleQuickTabSelect}
-        onAskBuddy={openBuddy}
-      />
+
+      {/* Product surface — toolkit tabs, revealed by the primary CTA or deep links */}
       {toolOpen && (
         <>
           <div id="tabs" className="sticky top-0 z-40 bg-white shadow-sm">
@@ -252,13 +240,13 @@ export default function App() {
             userState={userState}
             showToast={showToast}
             onNeedAuth={() => setAuthOpen(true)}
-            onAskBuddy={openBuddy}
+            onAskBuddy={() => openBuddy()}
             onUpgradeClick={handleUpgradeClick}
             onRefreshUserState={refreshUserState}
             deepTool={deepTool}
             onToolOpened={(category) => {
               void trackEvent('tool_category_opened', {
-                journey: analyticsJourney(journey),
+                journey: analyticsJourney(landing.journey),
                 tool: deepTool || activeTab,
                 category,
               }, user?.uid);
@@ -266,25 +254,31 @@ export default function App() {
           />
         </>
       )}
-      <Footer
-        onAskBuddy={openBuddy}
-        onTabChange={(tab) => {
-          setActiveTab(tab);
-          setToolOpen(true);
-          setDeepTool(null);
-          void trackEvent('tool_category_opened', {
-            journey: tab === 'before' || tab === 'emergency' ? tab : 'china',
-            tool: tab,
-            category: tab,
-          }, user?.uid);
-        }}
+
+      {/* Section 2 — Three moments */}
+      <Moments />
+
+      {/* Section 3 — Ask Buddy demo */}
+      <BuddyDemo onAsk={(question) => openBuddy(question)} />
+
+      {/* Section 4 — Travel Pass */}
+      <HomePasses
+        user={user}
+        userState={userState}
+        showToast={showToast}
+        onNeedAuth={() => setAuthOpen(true)}
       />
-      <ChatButton onClick={openBuddy} />
+
+      {/* Section 5 — Footer */}
+      <Footer onOpenEmergency={() => openToolkit('emergency')} />
+
+      <ChatButton onClick={() => openBuddy()} />
       {chatOpen && (
         <ChatModal
           onClose={() => setChatOpen(false)}
           user={user}
           userState={userState}
+          initialPrompt={chatPrefill ?? undefined}
           onNeedAuth={() => {
             setChatOpen(false);
             setAuthOpen(true);
