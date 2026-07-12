@@ -132,7 +132,7 @@ export default function SiteHeader({ user, userState, onNeedAuth, onAskBuddy, on
           ) : (
             <button
               onClick={onNeedAuth}
-              className="rounded-lg border border-hairline bg-surface px-3 py-1.5 text-xs font-medium text-ink transition-colors duration-hover ease-out hover:border-ink-tertiary"
+              className="px-2 py-1.5 text-sm font-semibold text-ink transition-colors duration-hover ease-out hover:text-jade"
             >
               {t('nav.login')}
             </button>

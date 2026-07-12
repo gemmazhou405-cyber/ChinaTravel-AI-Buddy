@@ -13,7 +13,7 @@ const GUMROAD_LINKS = {
   group: 'https://gemmazhou.gumroad.com/l/mbgkxz',
 } as const;
 
-const PLANS = [
+export const PLANS = [
   {
     key: 'free',
     price: '$0',

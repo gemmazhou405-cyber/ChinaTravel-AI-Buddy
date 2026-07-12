@@ -281,6 +281,7 @@ export default function App() {
         userState={userState}
         showToast={showToast}
         onNeedAuth={() => setAuthOpen(true)}
+        onOpenToolkit={() => openToolkit()}
       />
 
       {/* Section 5 — Footer */}
