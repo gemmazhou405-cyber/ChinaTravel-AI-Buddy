@@ -986,26 +986,17 @@
     },
     "home": {
       "hero": {
-        "title": "Bereisen Sie China mit Zuversicht.",
-        "subtitle": "Ein KI-Begleiter, der für Sie Chinesisch spricht — für Zahlungen, Taxis, Speisekarten und die Momente, die Reiseführer auslassen.",
-        "ctaPrimary": "Toolkit öffnen",
-        "ctaSecondary": "Buddy eine Frage stellen",
-        "imageAlt": "Goldene Abendsicht über eine chinesische Skyline"
-      },
-      "moments": {
-        "header": "Für die Momente, die Sie kalt erwischen.",
-        "payment": {
-          "title": "Bezahlen",
-          "body": "Wenn der QR-Code bei allen funktioniert, nur nicht bei Ihnen — richten Sie Alipay ein und zahlen Sie wie Einheimische."
-        },
-        "taxi": {
-          "title": "Taxis",
-          "body": "Zeigen Sie Ihrem Fahrer genau, wohin Sie wollen — auf Chinesisch, das er lesen kann."
-        },
-        "menu": {
-          "title": "Speisekarten",
-          "body": "Wissen Sie vor der Bestellung, was im Gericht steckt — auch die Zutaten, die nicht auf der Karte stehen."
-        }
+        "badge": "Kostenlos für ausländische Besucher in China",
+        "title1": "Keine App. Kein VPN.",
+        "title2": "Kein Problem.",
+        "subtitle": "Ihr China-Reisehelfer im Browser.",
+        "supporting": "Zahlungen, Taxis, Speisekarten, Redewendungen und Notfälle — alles in einem browserbasierten Reisehelfer.",
+        "ctaPrimary": "Kostenloses Toolkit öffnen",
+        "ctaSecondary": "Buddy fragen",
+        "trust1": "Für ausländische Besucher gemacht",
+        "trust2": "Kein Abo — einmalige Pässe",
+        "trust3": "Englisch + 5 Sprachen",
+        "free": "Kostenlos"
       },
       "demo": {
         "header": "Fragen Sie Buddy alles. In Ihrer Sprache.",
@@ -1040,6 +1031,116 @@
       },
       "footer": {
         "language": "Sprache"
+      },
+      "nav": {
+        "toolkit": "Toolkit",
+        "features": "Funktionen",
+        "pricing": "Preise"
+      },
+      "phone": {
+        "role": "Reisebegleiter",
+        "question": "Meine Karte wurde im Restaurant abgelehnt. Wie bezahle ich?",
+        "answerLead": "Keine Sorge — das hilft meistens:",
+        "answerStep1Bold": "Versuchen Sie einen kleineren Betrag",
+        "answerStep1": "— ausländische Karten haben oft Limits pro Zahlung.",
+        "answerStep2Bold": "Zeigen Sie Ihren Alipay-QR-Code",
+        "answerStep2": "— ich führe Sie Schritt für Schritt durch.",
+        "cardName": "Mapo Tofu",
+        "cardDesc": "Seidentofu in scharfer Chili-Bohnen-Sauce.",
+        "tagSpicy": "Scharf",
+        "tagPork": "Enthält Schweinefleisch",
+        "placeholder": "Fragen Sie Buddy alles…"
+      },
+      "scenarios": {
+        "s1": {
+          "kicker": "A — Gerade gelandet",
+          "title": "Vom Flughafen in die Stadt in 30 Minuten.",
+          "body": "Daten aktiv, Alipay bereit, Airport-Express bestiegen — Buddy führt Sie Schritt für Schritt durch die Ankunft.",
+          "tag1": "SIM & Daten",
+          "tag2": "Alipay-Einrichtung",
+          "tag3": "Airport-Express",
+          "tag4": "Kein VPN nötig"
+        },
+        "s2": {
+          "kicker": "B — Zeit zu essen",
+          "title": "Bestellen ohne zu raten.",
+          "body": "Fotografieren Sie die Karte und kennen Sie jedes Gericht — samt Chili und Schweinefleisch, die die englische Karte verschweigt.",
+          "tag1": "Menüfoto-Übersetzung",
+          "tag2": "Allergen-Hinweise",
+          "tag3": "Ernährungsfilter",
+          "tag4": "Auf Chinesisch zeigen"
+        },
+        "s3": {
+          "kicker": "C — Wenn etwas schiefgeht",
+          "title": "Hilfe, die offline funktioniert.",
+          "body": "Notrufnummern, Krankenhaus-Sätze und Schritte bei Passverlust — gespeichert, bevor Sie sie brauchen.",
+          "tag1": "110 · 120 · 119",
+          "tag2": "Krankenhaus-Sätze",
+          "tag3": "Polizei-Hilfe",
+          "tag4": "Pass verloren"
+        }
+      },
+      "toolkit": {
+        "title": "Alles bereit, bevor Sie landen.",
+        "check1": "Keine Anmeldung nötig",
+        "check2": "Kein VPN nötig",
+        "col1": {
+          "label": "Vor der Landung",
+          "i1": {
+            "title": "Wichtige Apps",
+            "desc": "Die fünf Apps, die zählen — in Reihenfolge."
+          },
+          "i2": {
+            "title": "Alipay-Einrichtung",
+            "desc": "Ausländische Karte Schritt für Schritt verknüpfen."
+          },
+          "i3": {
+            "title": "eSIM & Daten",
+            "desc": "Online sein, bevor Sie den Zoll passieren."
+          },
+          "i4": {
+            "title": "Reise-Checkliste",
+            "desc": "Alles an einem Abend vorbereitet."
+          }
+        },
+        "col2": {
+          "label": "Unterwegs",
+          "i1": {
+            "title": "Menü-Übersetzung",
+            "desc": "Jede Karte fotografieren, jedes Gericht lesen."
+          },
+          "i2": {
+            "title": "Taxi-Karten",
+            "desc": "Adressen, geschrieben für Ihren Fahrer."
+          },
+          "i3": {
+            "title": "Phrasen-Karten",
+            "desc": "Chinesisch zeigen oder vorsprechen lassen."
+          },
+          "i4": {
+            "title": "Zahlungshilfe",
+            "desc": "Wenn der QR-Code nicht funktioniert."
+          }
+        },
+        "col3": {
+          "label": "Wenn etwas schiefgeht",
+          "i1": {
+            "title": "Notrufnummern",
+            "desc": "110 Polizei · 120 Rettung · 119 Feuerwehr."
+          },
+          "i2": {
+            "title": "Krankenhaus-Sätze",
+            "desc": "Symptome auf Chinesisch erklären."
+          },
+          "i3": {
+            "title": "Polizei & Anzeigen",
+            "desc": "Was sagen und wohin gehen."
+          },
+          "i4": {
+            "title": "Verloren & gefunden",
+            "desc": "Pass, Handy oder Geldbörse weg."
+          }
+        }
       }
     }
   }

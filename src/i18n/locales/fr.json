@@ -986,26 +986,17 @@
     },
     "home": {
       "hero": {
-        "title": "Voyagez en Chine en toute confiance.",
-        "subtitle": "Un compagnon IA qui parle chinois à votre place — pour les paiements, les taxis, les menus et les moments que les guides oublient.",
-        "ctaPrimary": "Ouvrir la boîte à outils",
-        "ctaSecondary": "Poser une question à Buddy",
-        "imageAlt": "Vue dorée sur une ville chinoise au coucher du soleil"
-      },
-      "moments": {
-        "header": "Pour les moments qui vous prennent au dépourvu.",
-        "payment": {
-          "title": "Paiements",
-          "body": "Quand le QR code fonctionne pour tout le monde sauf vous — configurez Alipay et payez comme un local."
-        },
-        "taxi": {
-          "title": "Taxis",
-          "body": "Montrez à votre chauffeur exactement où vous allez, en chinois lisible."
-        },
-        "menu": {
-          "title": "Menus",
-          "body": "Sachez ce qu'il y a dans un plat avant de commander — y compris les ingrédients que les menus ne mentionnent pas."
-        }
+        "badge": "Gratuit pour les visiteurs étrangers en Chine",
+        "title1": "Pas d'appli. Pas de VPN.",
+        "title2": "Pas de problème.",
+        "subtitle": "Votre assistant de voyage en Chine, dans le navigateur.",
+        "supporting": "Paiements, taxis, menus, phrases et urgences — tout dans un seul assistant de voyage accessible depuis le navigateur.",
+        "ctaPrimary": "Ouvrir la boîte à outils gratuite",
+        "ctaSecondary": "Demander à Buddy",
+        "trust1": "Conçu pour les visiteurs étrangers",
+        "trust2": "Sans abonnement — pass à paiement unique",
+        "trust3": "Anglais + 5 langues",
+        "free": "Gratuit"
       },
       "demo": {
         "header": "Demandez tout à Buddy. Dans votre langue.",
@@ -1040,6 +1031,116 @@
       },
       "footer": {
         "language": "Langue"
+      },
+      "nav": {
+        "toolkit": "Boîte à outils",
+        "features": "Fonctionnalités",
+        "pricing": "Tarifs"
+      },
+      "phone": {
+        "role": "Compagnon de voyage",
+        "question": "Ma carte a été refusée au restaurant. Comment payer ?",
+        "answerLead": "Pas d'inquiétude — voici ce qui marche en général :",
+        "answerStep1Bold": "Essayez un montant plus petit",
+        "answerStep1": "— les cartes étrangères ont souvent des limites par paiement.",
+        "answerStep2Bold": "Montrez votre QR code Alipay",
+        "answerStep2": "— je peux vous guider pas à pas.",
+        "cardName": "Mapo Tofu",
+        "cardDesc": "Tofu soyeux dans une sauce pimentée aux haricots.",
+        "tagSpicy": "Épicé",
+        "tagPork": "Contient du porc",
+        "placeholder": "Demandez tout à Buddy…"
+      },
+      "scenarios": {
+        "s1": {
+          "kicker": "A — Vous venez d'atterrir",
+          "title": "De l'aéroport au centre-ville en 30 minutes.",
+          "body": "Données mobiles actives, Alipay prêt, express de l'aéroport embarqué — Buddy vous guide à l'arrivée, étape par étape.",
+          "tag1": "SIM & données",
+          "tag2": "Configuration Alipay",
+          "tag3": "Express aéroport",
+          "tag4": "Sans VPN"
+        },
+        "s2": {
+          "kicker": "B — L'heure de manger",
+          "title": "Commandez sans deviner.",
+          "body": "Photographiez le menu et sachez ce que contient chaque plat — y compris le piment et le porc que le menu anglais a oubliés.",
+          "tag1": "Traduction photo du menu",
+          "tag2": "Alertes allergènes",
+          "tag3": "Filtres alimentaires",
+          "tag4": "À montrer en chinois"
+        },
+        "s3": {
+          "kicker": "C — Quand ça tourne mal",
+          "title": "De l'aide qui fonctionne hors ligne.",
+          "body": "Numéros d'urgence, phrases d'hôpital et démarches passeport perdu — enregistrés sur votre téléphone avant d'en avoir besoin.",
+          "tag1": "110 · 120 · 119",
+          "tag2": "Phrases d'hôpital",
+          "tag3": "Aide police",
+          "tag4": "Passeport perdu"
+        }
+      },
+      "toolkit": {
+        "title": "Tout est prêt avant d'atterrir.",
+        "check1": "Sans inscription",
+        "check2": "Sans VPN",
+        "col1": {
+          "label": "Avant d'atterrir",
+          "i1": {
+            "title": "Applis essentielles",
+            "desc": "Les cinq applis qui comptent, dans l'ordre."
+          },
+          "i2": {
+            "title": "Configuration Alipay",
+            "desc": "Liez votre carte étrangère, étape par étape."
+          },
+          "i3": {
+            "title": "eSIM & données",
+            "desc": "Soyez en ligne avant la douane."
+          },
+          "i4": {
+            "title": "Checklist du voyage",
+            "desc": "Tout préparer en une soirée."
+          }
+        },
+        "col2": {
+          "label": "Pendant le voyage",
+          "i1": {
+            "title": "Traduction de menus",
+            "desc": "Photographiez un menu, lisez chaque plat."
+          },
+          "i2": {
+            "title": "Cartes taxi",
+            "desc": "Adresses écrites pour votre chauffeur."
+          },
+          "i3": {
+            "title": "Cartes de phrases",
+            "desc": "Montrez le chinois, ou faites-le entendre."
+          },
+          "i4": {
+            "title": "Aide au paiement",
+            "desc": "Quand le QR code ne passe pas."
+          }
+        },
+        "col3": {
+          "label": "En cas de problème",
+          "i1": {
+            "title": "Numéros d'urgence",
+            "desc": "110 police · 120 ambulance · 119 pompiers."
+          },
+          "i2": {
+            "title": "Phrases d'hôpital",
+            "desc": "Expliquez vos symptômes en chinois."
+          },
+          "i3": {
+            "title": "Police & déclarations",
+            "desc": "Quoi dire et où aller."
+          },
+          "i4": {
+            "title": "Objets perdus",
+            "desc": "Passeport, téléphone ou portefeuille perdu."
+          }
+        }
       }
     }
   }

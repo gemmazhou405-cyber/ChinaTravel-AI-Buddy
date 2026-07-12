@@ -986,26 +986,17 @@
     },
     "home": {
       "hero": {
-        "title": "Viaja por China con confianza.",
-        "subtitle": "Un compañero de IA que habla chino por ti — para pagos, taxis, menús y los momentos que las guías pasan por alto.",
-        "ctaPrimary": "Abrir el kit de viaje",
-        "ctaSecondary": "Hazle una pregunta a Buddy",
-        "imageAlt": "Vista dorada del horizonte de una ciudad china"
-      },
-      "moments": {
-        "header": "Para los momentos que te toman por sorpresa.",
-        "payment": {
-          "title": "Pagos",
-          "body": "Cuando el código QR funciona para todos menos para ti — configura Alipay y paga como un local."
-        },
-        "taxi": {
-          "title": "Taxis",
-          "body": "Muéstrale al conductor exactamente adónde vas, en chino que pueda leer."
-        },
-        "menu": {
-          "title": "Menús",
-          "body": "Sabe qué lleva un plato antes de pedirlo — incluidos los ingredientes que el menú no menciona."
-        }
+        "badge": "Gratis para visitantes extranjeros en China",
+        "title1": "Sin app. Sin VPN.",
+        "title2": "Sin problema.",
+        "subtitle": "Tu asistente de viaje por China, en el navegador.",
+        "supporting": "Pagos, taxis, menús, frases y emergencias — todo en un asistente de viaje en el navegador.",
+        "ctaPrimary": "Abrir kit gratuito",
+        "ctaSecondary": "Preguntar a Buddy",
+        "trust1": "Hecho para visitantes extranjeros",
+        "trust2": "Sin suscripción — pases de pago único",
+        "trust3": "Inglés + 5 idiomas",
+        "free": "Gratis"
       },
       "demo": {
         "header": "Pregúntale lo que sea a Buddy. En tu idioma.",
@@ -1040,6 +1031,116 @@
       },
       "footer": {
         "language": "Idioma"
+      },
+      "nav": {
+        "toolkit": "Kit de viaje",
+        "features": "Funciones",
+        "pricing": "Precios"
+      },
+      "phone": {
+        "role": "Compañero de viaje",
+        "question": "Rechazaron mi tarjeta en el restaurante. ¿Cómo pago?",
+        "answerLead": "Tranquilo — esto suele funcionar:",
+        "answerStep1Bold": "Prueba con un importe menor",
+        "answerStep1": "— las tarjetas extranjeras suelen tener límites por pago.",
+        "answerStep2Bold": "Muestra tu código QR de Alipay",
+        "answerStep2": "— te guío paso a paso.",
+        "cardName": "Mapo Tofu",
+        "cardDesc": "Tofu sedoso en salsa picante de chile y frijol.",
+        "tagSpicy": "Picante",
+        "tagPork": "Contiene cerdo",
+        "placeholder": "Pregúntale a Buddy…"
+      },
+      "scenarios": {
+        "s1": {
+          "kicker": "A — Acabas de aterrizar",
+          "title": "Del aeropuerto al centro en 30 minutos.",
+          "body": "Datos activos, Alipay listo y el expreso del aeropuerto abordado — Buddy te guía en la llegada, paso a paso.",
+          "tag1": "SIM y datos",
+          "tag2": "Configurar Alipay",
+          "tag3": "Expreso del aeropuerto",
+          "tag4": "Sin VPN"
+        },
+        "s2": {
+          "kicker": "B — Hora de comer",
+          "title": "Pide la cena sin adivinar.",
+          "body": "Fotografía el menú y conoce cada plato — incluidos el picante y el cerdo que el menú en inglés olvidó mencionar.",
+          "tag1": "Traducción por foto",
+          "tag2": "Alertas de alérgenos",
+          "tag3": "Filtros de dieta",
+          "tag4": "Muéstralo en chino"
+        },
+        "s3": {
+          "kicker": "C — Cuando algo sale mal",
+          "title": "Ayuda que funciona sin conexión.",
+          "body": "Números de emergencia, frases de hospital y pasos si pierdes el pasaporte — guardados antes de necesitarlos.",
+          "tag1": "110 · 120 · 119",
+          "tag2": "Frases de hospital",
+          "tag3": "Ayuda policial",
+          "tag4": "Pasaporte perdido"
+        }
+      },
+      "toolkit": {
+        "title": "Todo listo antes de aterrizar.",
+        "check1": "Sin registro",
+        "check2": "Sin VPN",
+        "col1": {
+          "label": "Antes de aterrizar",
+          "i1": {
+            "title": "Apps esenciales",
+            "desc": "Las cinco apps que importan, en orden."
+          },
+          "i2": {
+            "title": "Configurar Alipay",
+            "desc": "Vincula tu tarjeta extranjera paso a paso."
+          },
+          "i3": {
+            "title": "eSIM y datos",
+            "desc": "Conéctate antes de pasar la aduana."
+          },
+          "i4": {
+            "title": "Lista de viaje",
+            "desc": "Todo preparado en una tarde."
+          }
+        },
+        "col2": {
+          "label": "Durante el viaje",
+          "i1": {
+            "title": "Traducción de menús",
+            "desc": "Fotografía cualquier menú y lee cada plato."
+          },
+          "i2": {
+            "title": "Tarjetas de taxi",
+            "desc": "Direcciones escritas para tu conductor."
+          },
+          "i3": {
+            "title": "Tarjetas de frases",
+            "desc": "Muestra el chino o hazlo escuchar."
+          },
+          "i4": {
+            "title": "Ayuda con pagos",
+            "desc": "Para cuando el QR no funciona."
+          }
+        },
+        "col3": {
+          "label": "Si algo sale mal",
+          "i1": {
+            "title": "Números de emergencia",
+            "desc": "110 policía · 120 ambulancia · 119 bomberos."
+          },
+          "i2": {
+            "title": "Frases de hospital",
+            "desc": "Explica tus síntomas en chino."
+          },
+          "i3": {
+            "title": "Policía y denuncias",
+            "desc": "Qué decir y adónde ir."
+          },
+          "i4": {
+            "title": "Objetos perdidos",
+            "desc": "Pasaporte, móvil o cartera perdidos."
+          }
+        }
       }
     }
   }

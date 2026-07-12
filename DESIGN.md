@@ -33,11 +33,18 @@
 - 180ms ease-out hovers, 240ms ease-out modal entry
 - No auto-playing hero animations
 
-## Copy (English source)
-Hero H1: "Travel China with confidence."
-Hero subhead: "An AI companion that speaks Chinese so you don't have to — for payments, taxis, menus, and the moments guidebooks skip."
-Primary CTA: "Open the toolkit"
-Secondary CTA: "Ask Buddy a question"
-Section 2 header: "For the moments that catch you off guard."
-Section 3 header: "Ask Buddy anything. In your language."
-Section 4 header: "One pass. The whole trip."
+## Copy (English source — Figma V3)
+Hero badge: "Free for foreign visitors in China"
+Hero H1: "No app. No VPN. No problem." — "No problem." on its own line, jade italic Fraunces; first two phrases ink roman
+Hero subhead: "Your China travel helper in the browser."
+Hero supporting: "Payments, taxis, menus, phrases, and emergencies — all in one browser-based travel helper."
+Primary CTA: "Open Free Toolkit"
+Secondary CTA: "Ask Buddy →"
+Toolkit header: "Everything ready before you land."
+Ask Buddy header: "Ask Buddy anything. In your language."
+Travel Pass header: "One pass. The whole trip."
+
+## V3 accents (used sparingly, on the warm off-white base)
+- Glass: translucent header + phone stage only — bg canvas/75 + backdrop-blur; stage wash #D7E0E6 at ~45%
+- Section tints (toolkit columns only): cool gray-blue #EDF2F5, warm cream #F7F1E5, soft red #F9EFED, with matching darker label bars
+- Scenario cards: deep jade surface, white Fraunces headline, outline tag chips, paired editorial photography

@@ -16,6 +16,14 @@ export default {
           wash: '#E8F0EE',
         },
         hairline: '#E8E4DC',
+        tint: {
+          blue: '#EDF2F5',
+          bluelabel: '#DEE8EE',
+          cream: '#F7F1E5',
+          creamlabel: '#EFE4CC',
+          red: '#F9EFED',
+          redlabel: '#F2DFDB',
+        },
       },
       fontFamily: {
         display: ['"Fraunces Variable"', 'Georgia', 'serif'],

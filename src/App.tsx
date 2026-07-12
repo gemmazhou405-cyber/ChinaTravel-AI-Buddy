@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import Hero from './components/Hero';
+import SiteHeader from './components/SiteHeader';
 import TabNav from './components/TabNav';
 import TabContent from './components/TabContent';
-import Moments from './components/home/Moments';
+import Scenarios from './components/home/Scenarios';
+import ToolkitGrid from './components/home/ToolkitGrid';
 import BuddyDemo from './components/home/BuddyDemo';
 import HomePasses from './components/home/HomePasses';
 import ChatButton from './components/ChatButton';
@@ -205,22 +207,28 @@ export default function App() {
     );
   }
 
+  const handlePrimaryCta = () => {
+    void trackEvent('cta_clicked', {
+      ctaName: 'Open Free Toolkit',
+      destination: 'Tools',
+      journey: analyticsJourney(landing.journey),
+    }, user?.uid);
+    openToolkit();
+  };
+
+  const navigateToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <div className="min-h-screen bg-canvas pb-[env(safe-area-inset-bottom)] font-sans">
-      {/* Section 1 — Hero */}
-      <Hero
+      <SiteHeader
         user={user}
         userState={userState}
-        onGetHelpNow={() => {
-          void trackEvent('cta_clicked', {
-            ctaName: 'Open the toolkit',
-            destination: 'Tools',
-            journey: analyticsJourney(landing.journey),
-          }, user?.uid);
-          openToolkit();
-        }}
         onNeedAuth={() => setAuthOpen(true)}
         onAskBuddy={() => openBuddy()}
+        onOpenToolkit={handlePrimaryCta}
+        onNavigate={navigateToSection}
         onLogout={logout}
         onResendVerification={async () => {
           await resendVerificationEmail();
@@ -228,10 +236,13 @@ export default function App() {
         }}
       />
 
+      {/* Section 1 — Hero */}
+      <Hero onOpenToolkit={handlePrimaryCta} onAskBuddy={() => openBuddy()} />
+
       {/* Product surface — toolkit tabs, revealed by the primary CTA or deep links */}
       {toolOpen && (
         <>
-          <div id="tabs" className="sticky top-0 z-40 bg-white shadow-sm">
+          <div id="tabs" className="sticky top-16 z-40 bg-white shadow-sm">
             <TabNav activeTab={activeTab} onTabChange={setActiveTab} />
           </div>
           <TabContent
@@ -255,10 +266,13 @@ export default function App() {
         </>
       )}
 
-      {/* Section 2 — Three moments */}
-      <Moments />
+      {/* Section 2 — Scenario cards */}
+      <Scenarios />
 
-      {/* Section 3 — Ask Buddy demo */}
+      {/* Section 3 — Toolkit grid */}
+      <ToolkitGrid onOpen={(tab, tool) => openToolkit(tab, tool)} />
+
+      {/* Section 4 — Ask Buddy demo */}
       <BuddyDemo onAsk={(question) => openBuddy(question)} />
 
       {/* Section 4 — Travel Pass */}
