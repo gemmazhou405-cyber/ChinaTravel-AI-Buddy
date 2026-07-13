@@ -1057,10 +1057,11 @@
           "kicker": "A — Gerade gelandet",
           "title": "Vom Flughafen in die Stadt, Schritt für Schritt.",
           "body": "Daten aktiv, Alipay bereit, Airport-Express bestiegen — Buddy führt Sie Schritt für Schritt durch die Ankunft.",
-          "tag1": "SIM & Daten",
+          "tag1": "Wichtige Apps",
           "tag2": "Alipay-Einrichtung",
-          "tag3": "Airport-Express",
-          "tag4": "Kein VPN nötig"
+          "tag3": "eSIM & Daten",
+          "tag4": "Flughafentransfer",
+          "cta": "Reise-Checkliste öffnen"
         },
         "s2": {
           "kicker": "B — Zeit zu essen",
@@ -1075,11 +1076,12 @@
           "kicker": "C — Wenn etwas schiefgeht",
           "title": "Hilfe, die offline funktioniert.",
           "body": "Notrufnummern, Krankenhaus-Sätze und Schritte bei Passverlust — gespeichert, bevor Sie sie brauchen.",
-          "tag1": "110 · 120 · 119",
+          "tag1": "Notrufnummern",
           "tag2": "Krankenhaus-Sätze",
           "tag3": "Polizei-Hilfe",
           "tag4": "Pass verloren"
-        }
+        },
+        "tagAria": "{{name}} im kostenlosen Toolkit öffnen"
       },
       "toolkit": {
         "title": "Alles bereit, bevor Sie landen.",

@@ -1057,10 +1057,11 @@
           "kicker": "A — You just landed",
           "title": "Airport to city, step by step.",
           "body": "Data working, Alipay ready, and the airport express boarded — Buddy walks you through arrival, step by step.",
-          "tag1": "SIM & data",
+          "tag1": "Essential apps",
           "tag2": "Alipay setup",
-          "tag3": "Airport express",
-          "tag4": "No VPN needed"
+          "tag3": "eSIM & data",
+          "tag4": "Airport transfer",
+          "cta": "Open pre-trip checklist"
         },
         "s2": {
           "kicker": "B — Time to eat",
@@ -1075,11 +1076,12 @@
           "kicker": "C — When things go wrong",
           "title": "Help that works offline.",
           "body": "Emergency numbers, hospital phrases, and lost-passport steps — saved to your phone before you need them.",
-          "tag1": "110 · 120 · 119",
+          "tag1": "Emergency numbers",
           "tag2": "Hospital phrases",
           "tag3": "Police help",
           "tag4": "Lost passport"
-        }
+        },
+        "tagAria": "Open {{name}} in the free toolkit"
       },
       "toolkit": {
         "title": "Everything ready before you land.",

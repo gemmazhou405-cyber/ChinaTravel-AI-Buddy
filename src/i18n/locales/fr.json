@@ -1057,10 +1057,11 @@
           "kicker": "A — Vous venez d'atterrir",
           "title": "De l'aéroport à la ville, étape par étape.",
           "body": "Données mobiles actives, Alipay prêt, express de l'aéroport embarqué — Buddy vous guide à l'arrivée, étape par étape.",
-          "tag1": "SIM & données",
+          "tag1": "Applis essentielles",
           "tag2": "Configuration Alipay",
-          "tag3": "Express aéroport",
-          "tag4": "Sans VPN"
+          "tag3": "eSIM & données",
+          "tag4": "Transfert aéroport",
+          "cta": "Ouvrir la checklist pré-départ"
         },
         "s2": {
           "kicker": "B — L'heure de manger",
@@ -1075,11 +1076,12 @@
           "kicker": "C — Quand ça tourne mal",
           "title": "De l'aide qui fonctionne hors ligne.",
           "body": "Numéros d'urgence, phrases d'hôpital et démarches passeport perdu — enregistrés sur votre téléphone avant d'en avoir besoin.",
-          "tag1": "110 · 120 · 119",
+          "tag1": "Numéros d'urgence",
           "tag2": "Phrases d'hôpital",
           "tag3": "Aide police",
           "tag4": "Passeport perdu"
-        }
+        },
+        "tagAria": "Ouvrir {{name}} dans la boîte à outils gratuite"
       },
       "toolkit": {
         "title": "Tout est prêt avant d'atterrir.",

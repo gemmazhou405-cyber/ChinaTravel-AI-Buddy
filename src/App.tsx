@@ -31,6 +31,7 @@ function parseLandingParams(): { journey: JourneyId; tab: TabId | null; tool: st
       payment: 'payment',
       checklist: 'checklist',
       city: 'city',
+      transport: 'transport',
     };
     return { journey: 'before', tab: tool && beforeTools[tool] ? 'before' : null, tool: tool && beforeTools[tool] ? beforeTools[tool] : null };
   }
@@ -177,6 +178,20 @@ export default function App() {
     if (tab) setActiveTab(tab);
     setToolOpen(true);
     setDeepTool(tool ?? null);
+    if (tab) {
+      // Mirror parseLandingParams so the opened state is shareable.
+      const params = new URLSearchParams();
+      if (tab === 'before') {
+        params.set('journey', 'before');
+        if (tool) params.set('tool', tool);
+      } else if (tab === 'emergency') {
+        params.set('journey', 'emergency');
+      } else {
+        params.set('journey', 'china');
+        params.set('tool', tab);
+      }
+      window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
+    }
     void trackEvent('tool_category_opened', {
       journey: analyticsJourney(landing.journey),
       tool: tool ?? tab ?? activeTab,
@@ -268,7 +283,7 @@ export default function App() {
       )}
 
       {/* Section 2 — Scenario cards */}
-      <Scenarios />
+      <Scenarios onOpenTool={(tab, tool) => openToolkit(tab, tool)} />
 
       {/* Section 3 — Toolkit grid */}
       <ToolkitGrid onOpen={(tab, tool) => openToolkit(tab, tool)} />
