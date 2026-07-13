@@ -1142,6 +1142,23 @@
             "desc": "Pass, Handy oder Geldbörse weg."
           }
         }
+      },
+      "showcase": {
+        "cardA": {
+          "title": "In China bezahlen",
+          "body": "Alipay- und WeChat-Pay-Einrichtung für ausländische Karten"
+        },
+        "cardB": {
+          "title": "Jede Speisekarte verstehen",
+          "body": "Übersetzung, Zutaten, Schärfegrad und Allergen-Hinweise",
+          "dish": "Mapo Tofu",
+          "meta": "Scharf · Enthält Schweinefleisch"
+        },
+        "cardC": {
+          "title": "Auf Chinesisch zeigen",
+          "body": "Phrasen-Karten für Taxi, Hotel, Krankenhaus und Notfälle",
+          "phrase": "Bitte bringen Sie mich zu dieser Adresse."
+        }
       }
     }
   }

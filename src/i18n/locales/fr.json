@@ -1142,6 +1142,23 @@
             "desc": "Passeport, téléphone ou portefeuille perdu."
           }
         }
+      },
+      "showcase": {
+        "cardA": {
+          "title": "Payer en Chine",
+          "body": "Configuration d'Alipay et WeChat Pay pour cartes étrangères"
+        },
+        "cardB": {
+          "title": "Comprendre n'importe quel menu",
+          "body": "Traduction, ingrédients, niveau d'épice et alertes allergènes",
+          "dish": "Mapo Tofu",
+          "meta": "Épicé · Contient du porc"
+        },
+        "cardC": {
+          "title": "Montrez-le en chinois",
+          "body": "Cartes de phrases taxi, hôtel, hôpital et urgences",
+          "phrase": "Emmenez-moi à cette adresse, s'il vous plaît."
+        }
       }
     }
   }

@@ -24,7 +24,7 @@ export default function BuddyDemo({ onAsk }: Props) {
               <button
                 key={key}
                 onClick={() => onAsk(question)}
-                className="group flex flex-col rounded-2xl bg-surface p-6 text-left shadow-card transition-transform duration-hover ease-out hover:-translate-y-0.5 md:p-8"
+                className="glass group flex flex-col rounded-2xl p-6 text-left transition-[transform,box-shadow] duration-hover ease-out hover:-translate-y-0.5 hover:shadow-[var(--glass-highlight),var(--jade-glow)] md:p-8"
               >
                 <p className="text-lg font-semibold leading-snug text-ink">“{question}”</p>
                 <div className="mt-4 flex items-start gap-2.5 border-t border-hairline pt-4">

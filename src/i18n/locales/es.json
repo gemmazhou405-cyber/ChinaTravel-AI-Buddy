@@ -1142,6 +1142,23 @@
             "desc": "Pasaporte, móvil o cartera perdidos."
           }
         }
+      },
+      "showcase": {
+        "cardA": {
+          "title": "Paga en China",
+          "body": "Configuración de Alipay y WeChat Pay para tarjetas extranjeras"
+        },
+        "cardB": {
+          "title": "Entiende cualquier menú",
+          "body": "Traducción, ingredientes, nivel de picante y alertas de alérgenos",
+          "dish": "Mapo Tofu",
+          "meta": "Picante · Contiene cerdo"
+        },
+        "cardC": {
+          "title": "Muéstralo en chino",
+          "body": "Tarjetas de frases para taxi, hotel, hospital y emergencias",
+          "phrase": "Lléveme a esta dirección, por favor."
+        }
       }
     }
   }

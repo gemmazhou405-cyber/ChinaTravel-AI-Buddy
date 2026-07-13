@@ -73,7 +73,7 @@ export default function Footer({ onOpenEmergency }: Props) {
             <p className="text-sm font-semibold text-ink">{t('footer.stayInKnow')}</p>
             <form className="mt-4 space-y-2" onSubmit={handleSubscribe}>
               <label className="sr-only" htmlFor="newsletter-email">{t('footer.emailPlaceholder')}</label>
-              <label className="flex items-center gap-2 rounded-lg border border-hairline bg-canvas px-3 py-2.5 text-sm">
+              <label className="flex items-center gap-2 rounded-lg border border-white/60 bg-white/55 px-3 py-2.5 text-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] backdrop-blur-sm">
                 <Mail className="h-4 w-4 text-ink-tertiary" strokeWidth={1.5} />
                 <input
                   id="newsletter-email"

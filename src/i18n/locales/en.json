@@ -1142,6 +1142,23 @@
             "desc": "Passport, phone, or wallet gone."
           }
         }
+      },
+      "showcase": {
+        "cardA": {
+          "title": "Pay in China",
+          "body": "Alipay and WeChat Pay setup for foreign cards"
+        },
+        "cardB": {
+          "title": "Understand any menu",
+          "body": "Translation, ingredients, spice level, and allergen alerts",
+          "dish": "Mapo Tofu",
+          "meta": "Spicy · Contains pork"
+        },
+        "cardC": {
+          "title": "Show it in Chinese",
+          "body": "Taxi, hotel, hospital, and emergency phrase cards",
+          "phrase": "Please take me to this address."
+        }
       }
     }
   }

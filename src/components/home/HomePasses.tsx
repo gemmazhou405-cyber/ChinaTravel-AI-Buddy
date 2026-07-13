@@ -69,8 +69,10 @@ export default function HomePasses({ user, userState, showToast, onNeedAuth, onO
                 key={key}
                 className={
                   isFree
-                    ? 'rounded-2xl border border-hairline p-6 md:p-8'
-                    : `rounded-2xl bg-surface p-6 shadow-card md:p-8 ${highlighted ? 'border border-jade' : 'border border-hairline'}`
+                    ? 'rounded-2xl border border-hairline bg-white/40 p-6 backdrop-blur-sm md:p-8'
+                    : highlighted
+                      ? 'glass rounded-2xl border-jade/40 p-6 !shadow-[var(--glass-highlight),var(--jade-glow)] md:p-8'
+                      : 'glass rounded-2xl p-6 md:p-8'
                 }
               >
                 <h3 className="text-xl font-semibold text-ink">{t(`pay.plans.${key}.name`)}</h3>

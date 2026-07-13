@@ -14,7 +14,10 @@ export default function Scenarios() {
       <div className="mx-auto max-w-container space-y-6 px-6 md:space-y-8 md:px-8">
         {SCENARIOS.map(({ key, image }, index) => (
           <div key={key} className="grid overflow-hidden rounded-2xl shadow-card md:grid-cols-2">
-            <div className={`flex flex-col justify-center bg-jade p-8 md:p-12 ${index % 2 === 1 ? 'md:order-2' : ''}`}>
+            <div
+              className={`flex flex-col justify-center p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.14)] md:p-12 ${index % 2 === 1 ? 'md:order-2' : ''}`}
+              style={{ background: 'var(--surface-jade-deep)' }}
+            >
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
                 {t(`home.scenarios.${key}.kicker`)}
               </p>
@@ -26,7 +29,7 @@ export default function Scenarios() {
               </p>
               <div className="mt-7 flex flex-wrap gap-2">
                 {([1, 2, 3, 4] as const).map((n) => (
-                  <span key={n} className="rounded-full border border-white/25 px-3 py-1 text-xs font-medium text-white/85">
+                  <span key={n} className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium text-white/90 backdrop-blur-sm">
                     {t(`home.scenarios.${key}.tag${n}`)}
                   </span>
                 ))}

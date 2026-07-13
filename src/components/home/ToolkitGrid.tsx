@@ -28,7 +28,7 @@ const COLUMNS: Array<{
 }> = [
   {
     key: 'col1',
-    tint: 'bg-tint-blue',
+    tint: 'bg-tint-blue/75',
     label: 'bg-tint-bluelabel',
     labelText: 'text-[#3D5A6B]',
     items: [
@@ -40,7 +40,7 @@ const COLUMNS: Array<{
   },
   {
     key: 'col2',
-    tint: 'bg-tint-cream',
+    tint: 'bg-tint-cream/75',
     label: 'bg-tint-creamlabel',
     labelText: 'text-[#8A6A2F]',
     items: [
@@ -52,7 +52,7 @@ const COLUMNS: Array<{
   },
   {
     key: 'col3',
-    tint: 'bg-tint-red',
+    tint: 'bg-tint-red/75',
     label: 'bg-tint-redlabel',
     labelText: 'text-[#A13D33]',
     items: [
@@ -90,7 +90,10 @@ export default function ToolkitGrid({ onOpen }: Props) {
 
         <div className="mt-10 grid gap-4 md:mt-14 md:grid-cols-3 md:gap-6">
           {COLUMNS.map(({ key, tint, label, labelText, items }) => (
-            <div key={key} className={`rounded-2xl p-6 md:p-7 ${tint}`}>
+            <div
+              key={key}
+              className={`rounded-2xl border border-white/60 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_8px_24px_rgba(17,20,24,0.05)] backdrop-blur-sm md:p-7 ${tint}`}
+            >
               <span className={`inline-flex rounded-md px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.14em] ${label} ${labelText}`}>
                 {t(`home.toolkit.${key}.label`)}
               </span>

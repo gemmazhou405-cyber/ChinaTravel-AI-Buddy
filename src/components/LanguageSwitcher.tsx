@@ -48,7 +48,7 @@ export default function LanguageSwitcher({ direction = 'down' }: Props) {
     <div ref={rootRef} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1.5 rounded-lg border border-hairline bg-surface px-2.5 py-1.5 text-xs font-medium text-ink-secondary transition-colors duration-hover ease-out hover:text-ink"
+        className="flex items-center gap-1.5 rounded-lg border border-white/60 bg-white/55 px-2.5 py-1.5 text-xs font-medium text-ink-secondary backdrop-blur-sm transition-colors duration-hover ease-out hover:text-ink"
         aria-haspopup="listbox"
         aria-expanded={open}
       >

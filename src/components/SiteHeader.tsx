@@ -35,7 +35,7 @@ export default function SiteHeader({ user, userState, onNeedAuth, onAskBuddy, on
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-hairline/70 bg-canvas/75 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-hairline bg-[#FFFDFA]/[0.74] shadow-[0_1px_16px_rgba(17,20,24,0.05)] backdrop-blur-2xl">
       <div className="mx-auto flex h-16 max-w-container items-center justify-between gap-3 px-6 md:px-8">
         <div className="flex min-w-0 items-center gap-2.5">
           <img src={`${assetBase}logo.png`} width="30" height="30" alt="" className="h-[30px] w-[30px] rounded-lg" />
