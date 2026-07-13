@@ -29,7 +29,7 @@ const SCENARIOS: Array<{ key: 's1' | 's2' | 's3'; image: string; tags: TagTarget
   },
   {
     key: 's3',
-    image: '/scenario-help-900.webp',
+    image: '/screenshot_emergency.jpg',
     tags: [
       { tab: 'emergency', tool: 'numbers' },
       { tab: 'emergency', tool: 'hospital' },
@@ -95,7 +95,7 @@ export default function Scenarios({ onOpenTool }: Props) {
                 alt={t(`home.scenarios.${key}.title`)}
                 loading="lazy"
                 decoding="async"
-                className="absolute inset-0 h-full w-full object-cover"
+                className={`absolute inset-0 h-full w-full ${key === 's3' ? 'bg-[#f8f3ea] object-contain p-5 md:p-8' : 'object-cover'}`}
               />
             </div>
           </div>
