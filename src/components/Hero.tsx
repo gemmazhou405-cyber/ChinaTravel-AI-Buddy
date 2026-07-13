@@ -1,6 +1,8 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import PhoneDemo from './home/PhoneDemo';
+
+const TRUST_KEYS = ['trust1', 'trust2', 'trust3', 'trust4'] as const;
 
 interface Props {
   onOpenToolkit: () => void;
@@ -11,8 +13,21 @@ export default function Hero({ onOpenToolkit, onAskBuddy }: Props) {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-canvas">
-      <div className="mx-auto grid max-w-container items-center gap-12 px-6 pb-16 pt-12 md:grid-cols-[1.1fr_0.9fr] md:gap-10 md:px-8 md:pb-28 md:pt-20">
+    <section className="relative overflow-hidden bg-canvas">
+      {/* Subtle Shanghai atmosphere behind the phone — low opacity, soft blur, no overlay */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 hidden w-[52%] md:block">
+        <img
+          src="/hero-atmosphere-900.webp"
+          alt=""
+          className="h-full w-full object-cover opacity-[0.15] blur-[5px]"
+          style={{
+            maskImage: 'radial-gradient(80% 78% at 62% 45%, black 28%, transparent 76%)',
+            WebkitMaskImage: 'radial-gradient(80% 78% at 62% 45%, black 28%, transparent 76%)',
+          }}
+        />
+      </div>
+
+      <div className="relative mx-auto grid max-w-container items-center gap-12 px-6 pb-16 pt-12 md:grid-cols-[1.1fr_0.9fr] md:gap-10 md:px-8 md:pb-28 md:pt-20">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-hairline bg-surface px-3.5 py-1.5 text-xs font-medium text-ink-secondary">
             <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
@@ -45,10 +60,13 @@ export default function Hero({ onOpenToolkit, onAskBuddy }: Props) {
             </button>
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-hairline pt-5 text-sm text-ink-tertiary">
-            <span>{t('home.hero.trust1')}</span>
-            <span>{t('home.hero.trust2')}</span>
-            <span>{t('home.hero.trust3')}</span>
+          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-2.5 rounded-xl border border-white/60 bg-white/45 px-5 py-4 backdrop-blur-md sm:grid-cols-2">
+            {TRUST_KEYS.map((key) => (
+              <span key={key} className="flex items-center gap-2 text-sm font-medium text-ink">
+                <Check className="h-4 w-4 shrink-0 text-jade" strokeWidth={1.5} />
+                {t(`home.hero.${key}`)}
+              </span>
+            ))}
           </div>
         </div>
 

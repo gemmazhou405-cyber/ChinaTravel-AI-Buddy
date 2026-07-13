@@ -993,10 +993,11 @@
         "supporting": "Pagos, taxis, menús, frases y emergencias — todo en un asistente de viaje en el navegador.",
         "ctaPrimary": "Abrir kit gratuito",
         "ctaSecondary": "Preguntar a Buddy",
-        "trust1": "Hecho para visitantes extranjeros",
-        "trust2": "Sin suscripción — pases de pago único",
-        "trust3": "Inglés + 5 idiomas",
-        "free": "Gratis"
+        "trust1": "Sin registro",
+        "trust2": "Sin VPN para acceder al kit",
+        "trust3": "Traducción de menús + alertas de alérgenos",
+        "free": "Gratis",
+        "trust4": "Frases en chino listas para mostrar"
       },
       "demo": {
         "header": "Pregúntale lo que sea a Buddy. En tu idioma.",
@@ -1054,7 +1055,7 @@
       "scenarios": {
         "s1": {
           "kicker": "A — Acabas de aterrizar",
-          "title": "Del aeropuerto al centro en 30 minutos.",
+          "title": "Del aeropuerto a la ciudad, paso a paso.",
           "body": "Datos activos, Alipay listo y el expreso del aeropuerto abordado — Buddy te guía en la llegada, paso a paso.",
           "tag1": "SIM y datos",
           "tag2": "Configurar Alipay",

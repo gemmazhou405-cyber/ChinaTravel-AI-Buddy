@@ -993,10 +993,11 @@
         "supporting": "Paiements, taxis, menus, phrases et urgences — tout dans un seul assistant de voyage accessible depuis le navigateur.",
         "ctaPrimary": "Ouvrir la boîte à outils gratuite",
         "ctaSecondary": "Demander à Buddy",
-        "trust1": "Conçu pour les visiteurs étrangers",
-        "trust2": "Sans abonnement — pass à paiement unique",
-        "trust3": "Anglais + 5 langues",
-        "free": "Gratuit"
+        "trust1": "Sans inscription",
+        "trust2": "Pas de VPN pour accéder à la boîte à outils",
+        "trust3": "Traduction de menus + alertes allergènes",
+        "free": "Gratuit",
+        "trust4": "Phrases en chinois prêtes à montrer aux locaux"
       },
       "demo": {
         "header": "Demandez tout à Buddy. Dans votre langue.",
@@ -1054,7 +1055,7 @@
       "scenarios": {
         "s1": {
           "kicker": "A — Vous venez d'atterrir",
-          "title": "De l'aéroport au centre-ville en 30 minutes.",
+          "title": "De l'aéroport à la ville, étape par étape.",
           "body": "Données mobiles actives, Alipay prêt, express de l'aéroport embarqué — Buddy vous guide à l'arrivée, étape par étape.",
           "tag1": "SIM & données",
           "tag2": "Configuration Alipay",

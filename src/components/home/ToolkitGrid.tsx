@@ -74,11 +74,11 @@ export default function ToolkitGrid({ onOpen }: Props) {
   return (
     <section id="toolkit" className="scroll-mt-20 bg-canvas py-20 md:py-32">
       <div className="mx-auto max-w-container px-6 md:px-8">
-        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <h2 className="max-w-[24rem] font-display text-3xl font-normal leading-[1.1] tracking-[-0.01em] text-ink md:max-w-[30rem] md:text-[44px]">
+        <div className="md:flex md:items-end md:justify-between md:gap-10">
+          <h2 className="min-w-0 font-display text-3xl font-normal leading-[1.1] tracking-[-0.01em] text-ink md:flex-1 md:text-[44px]">
             {t('home.toolkit.title')}
           </h2>
-          <div className="flex flex-col gap-2 pb-1 sm:flex-row sm:gap-6">
+          <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 md:mt-0 md:shrink-0 md:pb-1">
             {(['check1', 'check2'] as const).map((c) => (
               <span key={c} className="inline-flex items-center gap-2 text-sm text-ink-secondary">
                 <Check className="h-4 w-4 text-jade" strokeWidth={1.5} />

@@ -993,10 +993,11 @@
         "supporting": "Payments, taxis, menus, phrases, and emergencies — all in one browser-based travel helper.",
         "ctaPrimary": "Open Free Toolkit",
         "ctaSecondary": "Ask Buddy",
-        "trust1": "Built for foreign visitors",
-        "trust2": "No subscription — one-time passes",
-        "trust3": "English + 5 languages",
-        "free": "Free"
+        "trust1": "No sign-in required",
+        "trust2": "No VPN needed for toolkit access",
+        "trust3": "Menu translation + allergen alerts",
+        "free": "Free",
+        "trust4": "Chinese phrases ready to show locals"
       },
       "demo": {
         "header": "Ask Buddy anything. In your language.",
@@ -1054,7 +1055,7 @@
       "scenarios": {
         "s1": {
           "kicker": "A — You just landed",
-          "title": "Airport to city in 30 minutes.",
+          "title": "Airport to city, step by step.",
           "body": "Data working, Alipay ready, and the airport express boarded — Buddy walks you through arrival, step by step.",
           "tag1": "SIM & data",
           "tag2": "Alipay setup",

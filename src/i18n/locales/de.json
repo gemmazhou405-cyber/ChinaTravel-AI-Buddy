@@ -993,10 +993,11 @@
         "supporting": "Zahlungen, Taxis, Speisekarten, Redewendungen und Notfälle — alles in einem browserbasierten Reisehelfer.",
         "ctaPrimary": "Kostenloses Toolkit öffnen",
         "ctaSecondary": "Buddy fragen",
-        "trust1": "Für ausländische Besucher gemacht",
-        "trust2": "Kein Abo — einmalige Pässe",
-        "trust3": "Englisch + 5 Sprachen",
-        "free": "Kostenlos"
+        "trust1": "Keine Anmeldung nötig",
+        "trust2": "Kein VPN für den Toolkit-Zugriff nötig",
+        "trust3": "Menü-Übersetzung + Allergen-Hinweise",
+        "free": "Kostenlos",
+        "trust4": "Chinesische Sätze zum Vorzeigen bereit"
       },
       "demo": {
         "header": "Fragen Sie Buddy alles. In Ihrer Sprache.",
@@ -1054,7 +1055,7 @@
       "scenarios": {
         "s1": {
           "kicker": "A — Gerade gelandet",
-          "title": "Vom Flughafen in die Stadt in 30 Minuten.",
+          "title": "Vom Flughafen in die Stadt, Schritt für Schritt.",
           "body": "Daten aktiv, Alipay bereit, Airport-Express bestiegen — Buddy führt Sie Schritt für Schritt durch die Ankunft.",
           "tag1": "SIM & Daten",
           "tag2": "Alipay-Einrichtung",

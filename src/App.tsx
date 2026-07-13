@@ -239,9 +239,10 @@ export default function App() {
       {/* Section 1 — Hero */}
       <Hero onOpenToolkit={handlePrimaryCta} onAskBuddy={() => openBuddy()} />
 
-      {/* Product surface — toolkit tabs, revealed by the primary CTA or deep links */}
+      {/* Product surface — toolkit tabs, revealed by the primary CTA or deep links.
+          The wrapper bounds the sticky tab bar so it can't float over later sections. */}
       {toolOpen && (
-        <>
+        <div className="relative">
           <div id="tabs" className="sticky top-16 z-40 bg-white shadow-sm">
             <TabNav activeTab={activeTab} onTabChange={setActiveTab} />
           </div>
@@ -263,7 +264,7 @@ export default function App() {
               }, user?.uid);
             }}
           />
-        </>
+        </div>
       )}
 
       {/* Section 2 — Scenario cards */}
