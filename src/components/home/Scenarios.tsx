@@ -72,10 +72,9 @@ export default function Scenarios({ onOpenTool }: Props) {
         {SCENARIOS.map(({ key, image, tags }, index) => (
           <div
             key={key}
-            className="motion-reveal-item group/scenario grid overflow-hidden rounded-2xl shadow-card"
+            className="motion-reveal-item group/scenario grid overflow-hidden rounded-2xl shadow-card md:grid-cols-2"
             style={{ '--reveal-index': index } as CSSProperties}
           >
-            <div className="grid md:grid-cols-2">
             <div
               className={`flex flex-col justify-center p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.14)] md:p-12 ${index % 2 === 1 ? 'md:order-2' : ''}`}
               style={{ background: 'var(--surface-jade-deep)' }}
@@ -133,10 +132,8 @@ export default function Scenarios({ onOpenTool }: Props) {
                 alt={t(`home.scenarios.${key}.title`)}
                 loading="lazy"
                 decoding="async"
-                className={`absolute inset-0 h-full w-full object-cover transition-transform duration-[650ms] ease-out group-hover/scenario:scale-[1.04] ${revealed ? 'scale-100' : 'scale-[1.02]'}`}
+                className="absolute inset-0 h-full w-full object-cover"
               />
-              <div className="pointer-events-none absolute inset-0 bg-jade/0 transition-colors duration-hover ease-out group-hover/scenario:bg-jade/[0.04]" />
-            </div>
             </div>
           </div>
         ))}
