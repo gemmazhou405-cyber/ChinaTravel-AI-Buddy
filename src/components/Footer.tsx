@@ -73,7 +73,7 @@ export default function Footer({ onOpenEmergency }: Props) {
             <p className="text-sm font-semibold text-ink">{t('footer.stayInKnow')}</p>
             <form className="mt-4 space-y-2" onSubmit={handleSubscribe}>
               <label className="sr-only" htmlFor="newsletter-email">{t('footer.emailPlaceholder')}</label>
-              <label className="flex items-center gap-2 rounded-lg border border-white/60 bg-white/55 px-3 py-2.5 text-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] backdrop-blur-sm">
+              <label className="flex items-center gap-2 rounded-lg border border-white/60 bg-white/55 px-3 py-2.5 text-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] backdrop-blur-sm transition-[border-color,box-shadow,background-color] duration-hover ease-out focus-within:border-jade/35 focus-within:bg-white/75 focus-within:shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_0_0_3px_rgba(15,82,87,0.08)]">
                 <Mail className="h-4 w-4 text-ink-tertiary" strokeWidth={1.5} />
                 <input
                   id="newsletter-email"
@@ -97,7 +97,7 @@ export default function Footer({ onOpenEmergency }: Props) {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full rounded-lg bg-jade px-4 py-2.5 text-sm font-semibold text-white transition-colors duration-hover ease-out hover:bg-[#0B4145] disabled:opacity-60"
+                className="w-full rounded-lg bg-jade px-4 py-2.5 text-sm font-semibold text-white transition-[background-color,transform,opacity] duration-hover ease-out hover:-translate-y-0.5 hover:bg-[#0B4145] active:scale-[0.99] disabled:translate-y-0 disabled:opacity-60"
               >
                 {status === 'loading' ? t('footer.subscribing') : t('footer.subscribe')}
               </button>

@@ -1,5 +1,5 @@
 import { ChevronDown, LogOut, X } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { User } from 'firebase/auth';
 import { UserState } from '../hooks/useAuth';
 import { useTranslation } from 'react-i18next';
@@ -20,6 +20,8 @@ export default function SiteHeader({ user, userState, onNeedAuth, onAskBuddy, on
   const { t } = useTranslation();
   const [accountOpen, setAccountOpen] = useState(false);
   const [confirmLogoutOpen, setConfirmLogoutOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('toolkit');
   const assetBase = import.meta.env.BASE_URL;
   const currentPlan = userState?.plan ?? 'free';
   const planLabel = t(`pay.plans.${currentPlan}.name`);
@@ -34,8 +36,42 @@ export default function SiteHeader({ user, userState, onNeedAuth, onAskBuddy, on
     { id: 'travel-passes', label: t('home.nav.pricing') },
   ];
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 32);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = NAV.map(({ id }) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible?.target.id) setActiveSection(visible.target.id);
+      },
+      {
+        rootMargin: '-30% 0px -55% 0px',
+        threshold: [0.08, 0.2, 0.36],
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  // NAV labels change with language, but ids do not need a re-observe.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-hairline bg-[#FFFDFA]/[0.74] shadow-[0_1px_16px_rgba(17,20,24,0.05)] backdrop-blur-2xl">
+    <header className={`sticky top-0 z-50 border-b border-hairline backdrop-blur-2xl transition-[background-color,box-shadow] duration-[260ms] ease-out ${
+      scrolled
+        ? 'bg-[#FFFDFA]/[0.9] shadow-[0_6px_24px_rgba(17,20,24,0.08)]'
+        : 'bg-[#FFFDFA]/[0.74] shadow-[0_1px_16px_rgba(17,20,24,0.05)]'
+    }`}>
       <div className="mx-auto flex h-16 max-w-container items-center justify-between gap-3 px-6 md:px-8">
         <div className="flex min-w-0 items-center gap-2.5">
           <img src={`${assetBase}logo.png`} width="30" height="30" alt="" className="h-[30px] w-[30px] rounded-lg" />
@@ -47,8 +83,15 @@ export default function SiteHeader({ user, userState, onNeedAuth, onAskBuddy, on
 
         <nav className="hidden items-center gap-7 text-sm font-medium text-ink-secondary lg:flex">
           {NAV.map(({ id, label }) => (
-            <button key={id} onClick={() => onNavigate(id)} className="transition-colors duration-hover ease-out hover:text-ink">
+            <button
+              key={id}
+              onClick={() => onNavigate(id)}
+              className={`relative transition-colors duration-hover ease-out hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade ${
+                activeSection === id ? 'text-jade' : ''
+              }`}
+            >
               {label}
+              <span className={`absolute -bottom-2 left-0 h-px bg-jade transition-[width,opacity] duration-hover ease-out ${activeSection === id ? 'w-full opacity-100' : 'w-0 opacity-0'}`} />
             </button>
           ))}
         </nav>

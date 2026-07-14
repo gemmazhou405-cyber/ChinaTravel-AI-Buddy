@@ -14,8 +14,11 @@ import {
   Wallet,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import type { CSSProperties } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { TabId } from '../../App';
+import { useRevealOnView } from '../../hooks/useRevealOnView';
 
 type Item = { icon: LucideIcon; tab: TabId; tool?: string };
 
@@ -70,11 +73,21 @@ interface Props {
 
 export default function ToolkitGrid({ onOpen }: Props) {
   const { t } = useTranslation();
+  const { ref, revealed } = useRevealOnView<HTMLElement>();
+  const [selectedKey, setSelectedKey] = useState<string | null>(null);
+
+  const handleOpen = (itemKey: string, tab: TabId, tool?: string) => {
+    setSelectedKey(itemKey);
+    window.setTimeout(() => {
+      onOpen(tab, tool);
+      setSelectedKey(null);
+    }, 150);
+  };
 
   return (
-    <section id="toolkit" className="scroll-mt-20 bg-canvas py-20 md:py-32">
+    <section ref={ref} id="toolkit" className={`scroll-mt-20 bg-canvas py-20 md:py-32 ${revealed ? 'motion-reveal-on' : ''}`}>
       <div className="mx-auto max-w-container px-6 md:px-8">
-        <div className="md:flex md:items-end md:justify-between md:gap-10">
+        <div className="motion-reveal-item md:flex md:items-end md:justify-between md:gap-10">
           <h2 className="min-w-0 font-display text-3xl font-normal leading-[1.1] tracking-[-0.01em] text-ink md:flex-1 md:text-[44px]">
             {t('home.toolkit.title')}
           </h2>
@@ -89,25 +102,35 @@ export default function ToolkitGrid({ onOpen }: Props) {
         </div>
 
         <div className="mt-10 grid gap-4 md:mt-14 md:grid-cols-3 md:gap-6">
-          {COLUMNS.map(({ key, tint, label, labelText, items }) => (
+          {COLUMNS.map(({ key, tint, label, labelText, items }, columnIndex) => (
             <div
               key={key}
-              className={`rounded-2xl border border-white/60 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_8px_24px_rgba(17,20,24,0.05)] backdrop-blur-sm md:p-7 ${tint}`}
+              className={`motion-reveal-item rounded-2xl border border-white/60 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_8px_24px_rgba(17,20,24,0.05)] backdrop-blur-sm md:p-7 ${tint}`}
+              style={{ '--reveal-index': columnIndex + 1 } as CSSProperties}
             >
               <span className={`inline-flex rounded-md px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.14em] ${label} ${labelText}`}>
                 {t(`home.toolkit.${key}.label`)}
               </span>
               <ul className="mt-6 space-y-5">
-                {items.map(({ icon: Icon, tab, tool }, index) => (
+                {items.map(({ icon: Icon, tab, tool }, index) => {
+                  const itemKey = `${key}-${index}`;
+                  const selected = selectedKey === itemKey;
+                  return (
                   <li key={index}>
                     <button
-                      onClick={() => onOpen(tab, tool)}
-                      className="group flex w-full items-start gap-3 text-left"
+                      onClick={() => handleOpen(itemKey, tab, tool)}
+                      className={`group motion-card flex min-h-[56px] w-full items-start gap-3 rounded-xl border px-2 py-2 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jade ${
+                        selected
+                          ? 'border-jade/30 bg-white/78 shadow-[0_10px_28px_rgba(15,82,87,0.12)]'
+                          : 'border-transparent hover:border-jade/18 hover:bg-white/46 hover:shadow-[0_10px_28px_rgba(17,20,24,0.06)] focus-visible:border-jade/22 focus-visible:bg-white/52'
+                      }`}
                     >
-                      <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/70">
-                        <Icon className="h-4 w-4 text-jade" strokeWidth={1.5} />
+                      <span className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-[background-color,box-shadow,transform] duration-hover ease-out ${
+                        selected ? 'bg-jade text-white shadow-[0_8px_20px_rgba(15,82,87,0.18)]' : 'bg-white/70 text-jade group-hover:bg-jade group-hover:text-white group-focus-visible:bg-jade group-focus-visible:text-white'
+                      }`}>
+                        <Icon className="h-4 w-4" strokeWidth={1.5} />
                       </span>
-                      <span>
+                      <span className="min-w-0 flex-1">
                         <span className="block text-sm font-semibold text-ink transition-colors duration-hover ease-out group-hover:text-jade">
                           {t(`home.toolkit.${key}.i${index + 1}.title`)}
                         </span>
@@ -115,14 +138,27 @@ export default function ToolkitGrid({ onOpen }: Props) {
                           {t(`home.toolkit.${key}.i${index + 1}.desc`)}
                         </span>
                       </span>
+                      <ArrowRightIcon />
                     </button>
                   </li>
-                ))}
+                  );
+                })}
               </ul>
             </div>
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function ArrowRightIcon() {
+  return (
+    <span
+      aria-hidden="true"
+      className="mt-1 text-jade/60 opacity-0 transition-[opacity,transform] duration-hover ease-out group-hover:translate-x-[3px] group-hover:opacity-100 group-focus-visible:translate-x-[3px] group-focus-visible:opacity-100"
+    >
+      →
+    </span>
   );
 }

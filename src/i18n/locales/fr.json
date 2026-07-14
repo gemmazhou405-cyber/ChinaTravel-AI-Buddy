@@ -618,7 +618,8 @@
             "Valable 14 jours",
             "Un compte partagé pour un petit groupe"
           ]
-        }
+        },
+        "opening": "Ouverture…"
       }
     },
     "chat": {
@@ -1005,16 +1006,38 @@
         "tryIt": "Demander à Buddy",
         "q1": {
           "question": "Comment payer si mon Alipay ne fonctionne pas ?",
-          "answer": "Pas d'inquiétude — cela arrive souvent. Vérifiez d'abord que votre carte est bien liée : ouvrez Alipay puis Moi → Cartes bancaires. Si la carte apparaît mais que le paiement échoue, essayez un montant plus petit — certaines cartes étrangères ont des limites par paiement. Et gardez un peu d'espèces en secours ; presque tous les commerces les acceptent encore."
+          "answer": "Pas d'inquiétude — cela arrive souvent. Vérifiez d'abord que votre carte est bien liée : ouvrez Alipay puis Moi → Cartes bancaires. Si la carte apparaît mais que le paiement échoue, essayez un montant plus petit — certaines cartes étrangères ont des limites par paiement. Et gardez un peu d'espèces en secours ; presque tous les commerces les acceptent encore.",
+          "demoLead": "Pas de panique — essayez ceci :",
+          "demoSteps": [
+            "Essayez un montant plus petit ; certaines cartes étrangères ont une limite par paiement.",
+            "Ouvrez Alipay ou WeChat Pay et montrez votre QR code s’il est déjà configuré."
+          ],
+          "demoActionTitle": "À montrer si besoin",
+          "demoAction": "Puis-je payer autrement ? Ma carte ne fonctionne pas."
         },
         "q2": {
           "question": "Lis ce menu pour moi",
-          "answer": "Envoyez-moi une photo du menu et je traduirai chaque plat, signalerai les allergènes courants comme les arachides et les fruits de mer, et repérerai les surprises comme du porc dans un plat « végétarien ». Dites-moi ce que vous ne pouvez pas manger et je vous suggérerai quoi commander."
+          "answer": "Envoyez-moi une photo du menu et je traduirai chaque plat, signalerai les allergènes courants comme les arachides et les fruits de mer, et repérerai les surprises comme du porc dans un plat « végétarien ». Dites-moi ce que vous ne pouvez pas manger et je vous suggérerai quoi commander.",
+          "demoLead": "Je peux transformer le menu en choix simples :",
+          "demoSteps": [
+            "Traduire les noms des plats et expliquer les ingrédients courants.",
+            "Signaler le niveau de piment et les allergènes courants possibles à confirmer avec le personnel."
+          ],
+          "demoActionTitle": "Demander au personnel",
+          "demoAction": "Ce plat contient-il des cacahuètes, des fruits de mer ou du porc ?"
         },
         "q3": {
           "question": "Dis à mon chauffeur de taxi où aller",
-          "answer": "Donnez-moi votre destination et je l'écrirai en chinois, assez grand pour la montrer au chauffeur — avec le quartier et un repère proche pour éviter toute confusion. Par exemple : 请送我到外滩 — Emmenez-moi au Bund, s'il vous plaît."
-        }
+          "answer": "Donnez-moi votre destination et je l'écrirai en chinois, assez grand pour la montrer au chauffeur — avec le quartier et un repère proche pour éviter toute confusion. Par exemple : 请送我到外滩 — Emmenez-moi au Bund, s'il vous plaît.",
+          "demoLead": "Voici une version facile à montrer au chauffeur :",
+          "demoSteps": [
+            "Montrez l’adresse en chinois et gardez le nom du bâtiment visible.",
+            "Ajoutez un repère proche si le chauffeur hésite."
+          ],
+          "demoActionTitle": "Montrer au chauffeur",
+          "demoAction": "请带我去这个地址"
+        },
+        "askThisQuestion": "Poser cette question"
       },
       "passes": {
         "header": "Un pass. Tout le voyage.",

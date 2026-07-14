@@ -618,7 +618,8 @@
             "Valid for 14 days",
             "One shared account for a small travel group"
           ]
-        }
+        },
+        "opening": "Opening…"
       }
     },
     "chat": {
@@ -1005,16 +1006,38 @@
         "tryIt": "Ask Buddy",
         "q1": {
           "question": "How do I pay if my Alipay isn't working?",
-          "answer": "Don't worry — this happens a lot. First check whether your card is linked: open Alipay and tap Me → Bank Cards. If the card shows but payments fail, try a smaller amount — some foreign cards have per-payment limits. And keep a little cash as backup; almost every shop still accepts it."
+          "answer": "Don't worry — this happens a lot. First check whether your card is linked: open Alipay and tap Me → Bank Cards. If the card shows but payments fail, try a smaller amount — some foreign cards have per-payment limits. And keep a little cash as backup; almost every shop still accepts it.",
+          "demoLead": "Don't worry — this usually works:",
+          "demoSteps": [
+            "Try a smaller amount; some foreign cards have per-payment limits.",
+            "Open Alipay or WeChat Pay and show your QR code if it is already set up."
+          ],
+          "demoActionTitle": "Show if needed",
+          "demoAction": "Can I pay another way? My card is not working."
         },
         "q2": {
           "question": "Read this menu for me",
-          "answer": "Send me a photo of the menu and I'll translate every dish, flag common allergens like peanuts and shellfish, and point out surprises like pork in a \"vegetarian\" dish. Tell me what you can't eat and I'll suggest what's safe to order."
+          "answer": "Send me a photo of the menu and I'll translate every dish, flag common allergens like peanuts and shellfish, and point out surprises like pork in a \"vegetarian\" dish. Tell me what you can't eat and I'll suggest what's safe to order.",
+          "demoLead": "I can turn the menu into simple choices:",
+          "demoSteps": [
+            "Translate dish names and explain common ingredients.",
+            "Flag spice level and possible common allergens to confirm with staff."
+          ],
+          "demoActionTitle": "Ask staff",
+          "demoAction": "Does this contain peanuts, shellfish, or pork?"
         },
         "q3": {
           "question": "Tell my taxi driver where to go",
-          "answer": "Tell me your destination and I'll write it in Chinese, large enough to show your driver — with the district and a nearby landmark so there's no confusion. For example: 请送我到外滩 — Please take me to the Bund."
-        }
+          "answer": "Tell me your destination and I'll write it in Chinese, large enough to show your driver — with the district and a nearby landmark so there's no confusion. For example: 请送我到外滩 — Please take me to the Bund.",
+          "demoLead": "Here is a driver-friendly version:",
+          "demoSteps": [
+            "Show the address in Chinese and keep the building name visible.",
+            "Add a nearby landmark if the driver is unsure."
+          ],
+          "demoActionTitle": "Show driver",
+          "demoAction": "请带我去这个地址"
+        },
+        "askThisQuestion": "Ask this question"
       },
       "passes": {
         "header": "One pass. The whole trip.",

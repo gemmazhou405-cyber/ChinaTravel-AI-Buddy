@@ -618,7 +618,8 @@
             "14 Tage gültig",
             "Ein geteiltes Konto für eine kleine Reisegruppe"
           ]
-        }
+        },
+        "opening": "Wird geöffnet…"
       }
     },
     "chat": {
@@ -1005,16 +1006,38 @@
         "tryIt": "Buddy fragen",
         "q1": {
           "question": "Wie bezahle ich, wenn mein Alipay nicht funktioniert?",
-          "answer": "Keine Sorge — das passiert oft. Prüfen Sie zuerst, ob Ihre Karte verknüpft ist: Öffnen Sie Alipay und tippen Sie auf Ich → Bankkarten. Wird die Karte angezeigt, aber die Zahlung schlägt fehl, versuchen Sie einen kleineren Betrag — manche ausländische Karten haben Limits pro Zahlung. Und halten Sie etwas Bargeld bereit; fast jedes Geschäft akzeptiert es noch."
+          "answer": "Keine Sorge — das passiert oft. Prüfen Sie zuerst, ob Ihre Karte verknüpft ist: Öffnen Sie Alipay und tippen Sie auf Ich → Bankkarten. Wird die Karte angezeigt, aber die Zahlung schlägt fehl, versuchen Sie einen kleineren Betrag — manche ausländische Karten haben Limits pro Zahlung. Und halten Sie etwas Bargeld bereit; fast jedes Geschäft akzeptiert es noch.",
+          "demoLead": "Keine Sorge — das hilft meistens:",
+          "demoSteps": [
+            "Versuchen Sie einen kleineren Betrag; manche ausländische Karten haben Limits pro Zahlung.",
+            "Öffnen Sie Alipay oder WeChat Pay und zeigen Sie den QR-Code, falls es bereits eingerichtet ist."
+          ],
+          "demoActionTitle": "Bei Bedarf zeigen",
+          "demoAction": "Kann ich anders bezahlen? Meine Karte funktioniert nicht."
         },
         "q2": {
           "question": "Lies diese Speisekarte für mich",
-          "answer": "Schicken Sie mir ein Foto der Speisekarte und ich übersetze jedes Gericht, markiere häufige Allergene wie Erdnüsse und Meeresfrüchte und weise auf Überraschungen hin — etwa Schweinefleisch in einem „vegetarischen“ Gericht. Sagen Sie mir, was Sie nicht essen können, und ich schlage vor, was sicher ist."
+          "answer": "Schicken Sie mir ein Foto der Speisekarte und ich übersetze jedes Gericht, markiere häufige Allergene wie Erdnüsse und Meeresfrüchte und weise auf Überraschungen hin — etwa Schweinefleisch in einem „vegetarischen“ Gericht. Sagen Sie mir, was Sie nicht essen können, und ich schlage vor, was sicher ist.",
+          "demoLead": "Ich kann die Speisekarte in einfache Optionen übersetzen:",
+          "demoSteps": [
+            "Gerichtenamen übersetzen und häufige Zutaten erklären.",
+            "Schärfegrad und mögliche häufige Allergene markieren, damit Sie beim Personal nachfragen können."
+          ],
+          "demoActionTitle": "Personal fragen",
+          "demoAction": "Enthält das Erdnüsse, Meeresfrüchte oder Schweinefleisch?"
         },
         "q3": {
           "question": "Sag meinem Taxifahrer, wohin ich will",
-          "answer": "Nennen Sie mir Ihr Ziel und ich schreibe es auf Chinesisch, groß genug zum Vorzeigen — mit Stadtteil und einem Orientierungspunkt in der Nähe, damit nichts schiefgeht. Zum Beispiel: 请送我到外滩 — Bitte bringen Sie mich zum Bund."
-        }
+          "answer": "Nennen Sie mir Ihr Ziel und ich schreibe es auf Chinesisch, groß genug zum Vorzeigen — mit Stadtteil und einem Orientierungspunkt in der Nähe, damit nichts schiefgeht. Zum Beispiel: 请送我到外滩 — Bitte bringen Sie mich zum Bund.",
+          "demoLead": "Hier ist eine fahrerfreundliche Version:",
+          "demoSteps": [
+            "Adresse auf Chinesisch zeigen und den Gebäudenamen sichtbar lassen.",
+            "Einen nahen Orientierungspunkt hinzufügen, falls der Fahrer unsicher ist."
+          ],
+          "demoActionTitle": "Dem Fahrer zeigen",
+          "demoAction": "请带我去这个地址"
+        },
+        "askThisQuestion": "Diese Frage stellen"
       },
       "passes": {
         "header": "Ein Pass. Die ganze Reise.",
