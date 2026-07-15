@@ -49,6 +49,45 @@ function safeUserId(uid) {
   return typeof uid === 'string' ? uid.slice(0, 8) : 'unknown';
 }
 
+function isLocalRequest(request) {
+  const { hostname } = new URL(request.url);
+  return hostname === 'localhost' || hostname === '127.0.0.1' || hostname.endsWith('.localhost');
+}
+
+function safeBotId(botId) {
+  if (typeof botId !== 'string') return '';
+  return botId.trim();
+}
+
+function validBotId(botId) {
+  const value = safeBotId(botId);
+  if (!value) return false;
+  if (/^(0|undefined|null|nan)$/i.test(value)) return false;
+  if (value.length < 8 || value.length > 80) return false;
+  return /^[A-Za-z0-9_-]+$/.test(value);
+}
+
+function cozeConfigStatus(request, env) {
+  const hasWorkerUrl = Boolean(env.COZE_WORKER_URL);
+  const botId = safeBotId(env.COZE_BOT_ID);
+  const hasInternalSecret = Boolean(env.COZE_INTERNAL_SECRET);
+  if (!hasWorkerUrl || !validBotId(botId)) {
+    return {
+      ok: false,
+      code: 'coze_configuration_error',
+      providerCode: !hasWorkerUrl ? 'missing_worker_url' : 'invalid_bot_id',
+    };
+  }
+  if (!hasInternalSecret && !isLocalRequest(request)) {
+    return {
+      ok: false,
+      code: 'coze_configuration_error',
+      providerCode: 'missing_internal_secret',
+    };
+  }
+  return { ok: true, botId, hasInternalSecret };
+}
+
 function logBuddy(level, event, fields = {}) {
   const safeFields = Object.fromEntries(
     Object.entries(fields).filter(([key]) => !/token|secret|message|reply|email/i.test(key)),
@@ -123,7 +162,7 @@ async function reserveUsage(env, auth, requestId) {
 
     if (usageDoc) {
       if (usageDoc.status === 'completed') {
-        return { kind: 'duplicate_completed' };
+        return { kind: 'duplicate_completed', reply: usageDoc.reply || '' };
       }
       if (usageDoc.status === 'reserved') {
         return { kind: 'duplicate_processing' };
@@ -194,7 +233,7 @@ async function reserveUsage(env, auth, requestId) {
   return { kind: 'error', status: 409, code: 'duplicate_request' };
 }
 
-async function markCompleted(env, usagePath) {
+async function markCompleted(env, usagePath, reply) {
   const now = Date.now();
   const transaction = await beginTransaction(env);
   await batchGetDocs(env, [usagePath], transaction);
@@ -202,7 +241,8 @@ async function markCompleted(env, usagePath) {
     updateWrite(env, usagePath, {
       status: 'completed',
       completedAt: now,
-    }, ['status', 'completedAt']),
+      reply: reply.slice(0, MAX_REPLY_CHARS),
+    }, ['status', 'completedAt', 'reply']),
   ]);
 }
 
@@ -215,10 +255,17 @@ async function rollbackUsage(env, auth, usagePath, reason) {
     const usageDoc = docs.get(usagePath);
     if (!userDoc || !usageDoc || usageDoc.status !== 'reserved') return;
 
+    const currentTotal = Number(userDoc.buddyAiQuotaUsed || 0);
+    const currentDaily = Number(userDoc.dailyBuddyAiUsed || 0);
+    const currentResetAt = userDoc.dailyResetAt ?? null;
     const nextUser = {
-      buddyAiQuotaUsed: Math.max(0, Number(userDoc.buddyAiQuotaUsed || 0) - 1),
-      dailyBuddyAiUsed: Math.max(0, Number(userDoc.dailyBuddyAiUsed || 0) - 1),
-      dailyResetAt: usageDoc.dailyResetAtBefore ?? null,
+      buddyAiQuotaUsed: currentTotal >= Number(usageDoc.quotaAfter || 0)
+        ? Math.max(Number(usageDoc.quotaBefore || 0), currentTotal - 1)
+        : currentTotal,
+      dailyBuddyAiUsed: currentResetAt === (usageDoc.dailyResetAtAfter ?? null) && currentDaily >= Number(usageDoc.dailyAfter || 0)
+        ? Math.max(Number(usageDoc.dailyBefore || 0), currentDaily - 1)
+        : currentDaily,
+      dailyResetAt: currentResetAt,
     };
 
     try {
@@ -238,22 +285,20 @@ async function rollbackUsage(env, auth, usagePath, reason) {
 }
 
 async function callCoze(env, auth, message, context) {
-  if (!env.COZE_WORKER_URL || !env.COZE_BOT_ID) {
+  if (!env.COZE_WORKER_URL || !validBotId(env.COZE_BOT_ID)) {
     throw new Error('service_unavailable');
   }
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort('upstream_timeout'), UPSTREAM_TIMEOUT_MS);
   try {
     const headers = { 'Content-Type': 'application/json' };
-    if (env.COZE_INTERNAL_SECRET) {
-      headers['X-ChinaEase-Internal-Token'] = env.COZE_INTERNAL_SECRET;
-    }
+    if (env.COZE_INTERNAL_SECRET) headers['X-ChinaEase-Internal-Token'] = env.COZE_INTERNAL_SECRET;
     const cozePayload = {
       message,
       context,
-      botId: env.COZE_BOT_ID,
+      botId: safeBotId(env.COZE_BOT_ID),
       userId: auth.uid,
-      bot_id: env.COZE_BOT_ID,
+      bot_id: safeBotId(env.COZE_BOT_ID),
       user_id: auth.uid,
       stream: false,
       additional_messages: [
@@ -275,12 +320,24 @@ async function callCoze(env, auth, message, context) {
     });
     const responseText = await res.text();
     if (!res.ok) {
+      let errorPayload = {};
+      try {
+        errorPayload = responseText ? JSON.parse(responseText) : {};
+      } catch {
+        errorPayload = {};
+      }
+      const providerCode = errorPayload.code || errorPayload.error || `http_${res.status}`;
       logBuddy('warn', 'upstream_non_ok', {
         status: res.status,
+        providerCode,
         responseLength: responseText.length,
         contentType: res.headers.get('Content-Type') || 'unknown',
       });
-      throw new Error(`upstream_error:${res.status}`);
+      if (errorPayload.error === 'upstream_timeout') throw new Error('upstream_timeout');
+      if (errorPayload.error === 'coze_configuration_error' || providerCode === 4200) {
+        throw new Error(`service_unavailable:${providerCode}`);
+      }
+      throw new Error(`upstream_error:${providerCode}`);
     }
     let data;
     try {
@@ -377,13 +434,19 @@ async function handlePost(request, env) {
     return errorResponse(request, env, 413, 'message_too_long', 'Message is too long.');
   }
 
-  if (!env.COZE_WORKER_URL || !env.COZE_BOT_ID) {
+  const cozeConfig = cozeConfigStatus(request, env);
+  if (!cozeConfig.ok) {
     logBuddy('error', 'missing_coze_config', {
+      providerCode: cozeConfig.providerCode,
       hasWorkerUrl: Boolean(env.COZE_WORKER_URL),
       hasBotId: Boolean(env.COZE_BOT_ID),
       hasInternalSecret: Boolean(env.COZE_INTERNAL_SECRET),
     });
-    return errorResponse(request, env, 503, 'service_unavailable', 'Buddy is temporarily unavailable. Please try again later.');
+    return withCors(jsonResponse({
+      error: 'service_unavailable',
+      providerCode: cozeConfig.providerCode,
+      message: 'Buddy is temporarily unavailable. Please try again later.',
+    }, { status: 503 }), request, env);
   }
 
   let reservation;
@@ -403,7 +466,7 @@ async function handlePost(request, env) {
     return withCors(jsonResponse({
       status: 'completed',
       duplicate: true,
-      message: 'This request was already completed. Please send a new message if you need more help.',
+      reply: reservation.reply || 'This request was already completed. Please send a new message if you need more help.',
     }), request, env);
   }
   if (reservation.kind === 'duplicate_processing') {
@@ -425,7 +488,7 @@ async function handlePost(request, env) {
 
   try {
     const reply = await callCoze(env, auth, message, context);
-    await markCompleted(env, reservation.usagePath);
+    await markCompleted(env, reservation.usagePath, reply);
     logBuddy('info', 'completed', {
       requestId: safeRequestId(requestId),
       uid: safeUserId(auth.uid),

@@ -11,6 +11,8 @@ interface Message {
   role: 'user' | 'buddy';
   text: string;
   kind?: 'error';
+  retryText?: string;
+  retryRequestId?: string;
 }
 
 const SUGGESTIONS = ['chat.suggestions.s1', 'chat.suggestions.s2', 'chat.suggestions.s3', 'chat.suggestions.s4'];
@@ -22,10 +24,11 @@ interface Props {
   onNeedAuth: () => void;
   onResendVerification: () => Promise<void>;
   onRefreshUserState: () => Promise<UserState | null>;
+  onOpenToolkit?: () => void;
   initialPrompt?: string;
 }
 
-export default function ChatModal({ onClose, user, userState, onNeedAuth, onResendVerification, onRefreshUserState, initialPrompt }: Props) {
+export default function ChatModal({ onClose, user, userState, onNeedAuth, onResendVerification, onRefreshUserState, onOpenToolkit, initialPrompt }: Props) {
   const { t } = useTranslation();
   const [messages, setMessages] = useState<Message[]>([
     { id: 0, role: 'buddy', text: t('chat.welcome') },
@@ -60,15 +63,40 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
     resizeInput();
   }, [resizeInput]);
 
-  const pushBuddy = (text: string, kind?: 'error') => {
-    setMessages((prev) => [...prev, { id: Date.now() + 1, role: 'buddy', text, kind }]);
+  const pushBuddy = (text: string, kind?: 'error', retry?: { text: string; requestId: string }) => {
+    setMessages((prev) => [...prev, {
+      id: Date.now() + 1,
+      role: 'buddy',
+      text,
+      kind,
+      retryText: retry?.text,
+      retryRequestId: retry?.requestId,
+    }]);
   };
 
-  const send = async (text: string) => {
+  const buildContext = (items: Message[]) => {
+    const eligible = items
+      .filter((item) => item.id !== 0 && item.kind !== 'error')
+      .filter((item) => item.role === 'user' || item.role === 'buddy')
+      .map((item) => ({ role: item.role, text: item.text.trim().slice(0, 600) }))
+      .filter((item) => item.text);
+    const selected: Array<{ role: 'user' | 'buddy'; text: string }> = [];
+    let total = 0;
+    for (const item of eligible.slice().reverse()) {
+      if (selected.length >= 6) break;
+      if (total + item.text.length > 3000) continue;
+      selected.push(item);
+      total += item.text.length;
+    }
+    return selected.reverse();
+  };
+
+  const send = async (text: string, options?: { requestId?: string; retry?: boolean }) => {
     if (!text.trim()) return;
     if (typing) return;
 
     if (!userState) {
+      pushBuddy('Create a free account to ask Buddy. No card required.', 'error');
       onNeedAuth();
       return;
     }
@@ -78,8 +106,17 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
       return;
     }
 
-    const userMsg: Message = { id: Date.now(), role: 'user', text: text.trim() };
-    setMessages((prev) => [...prev, userMsg]);
+    const trimmedText = text.trim();
+    const requestId = options?.requestId || crypto.randomUUID();
+    const context = buildContext(messages);
+    if (options?.retry) {
+      const last = context[context.length - 1];
+      if (last?.role === 'user' && last.text === trimmedText) context.pop();
+    }
+    if (!options?.retry) {
+      const userMsg: Message = { id: Date.now(), role: 'user', text: trimmedText };
+      setMessages((prev) => [...prev, userMsg]);
+    }
     setInput('');
     requestAnimationFrame(resizeInput);
     setTyping(true);
@@ -91,7 +128,6 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
         return;
       }
 
-      const requestId = crypto.randomUUID();
       const response = await fetch('/api/buddy/chat', {
         method: 'POST',
         headers: {
@@ -100,8 +136,8 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
         },
         body: JSON.stringify({
           requestId,
-          message: text.trim(),
-          context: [],
+          message: trimmedText,
+          context,
         }),
       });
       let data: { error?: string; message?: string; reply?: string; quotaType?: string; limit?: number; plan?: string } = {};
@@ -151,7 +187,7 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
         }
 
         if (data?.error === 'service_unavailable' || data?.error === 'upstream_error' || data?.error === 'upstream_timeout') {
-          pushBuddy(t('chat.serviceUnavailable'), 'error');
+          pushBuddy(t('chat.serviceUnavailable'), 'error', { text: trimmedText, requestId });
           return;
         }
 
@@ -172,7 +208,7 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
         context: 'chat_send',
         errorCode: error instanceof Error ? error.message.slice(0, 80) : 'buddy_request_failed',
       }, userState.uid);
-      pushBuddy(t('chat.connectionIssue'), 'error');
+      pushBuddy(t('chat.connectionIssue'), 'error', { text: trimmedText, requestId });
     } finally {
       setTyping(false);
     }
@@ -217,6 +253,28 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
               ) : m.kind === 'error' ? (
                 <div className="max-w-[78%] rounded-2xl rounded-bl-md border border-red-200 bg-red-50 px-3.5 py-2.5 text-sm leading-relaxed text-red-800">
                   {m.text}
+                  {m.retryText && m.retryRequestId && (
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <button
+                        onClick={() => send(m.retryText || '', { requestId: m.retryRequestId, retry: true })}
+                        disabled={typing}
+                        className="rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-red-700 shadow-sm transition-colors duration-hover ease-out hover:bg-red-100 disabled:opacity-50"
+                      >
+                        Retry
+                      </button>
+                      {onOpenToolkit && (
+                        <button
+                          onClick={() => {
+                            onClose();
+                            onOpenToolkit();
+                          }}
+                          className="rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-jade shadow-sm transition-colors duration-hover ease-out hover:bg-red-100"
+                        >
+                          Open Toolkit
+                        </button>
+                      )}
+                    </div>
+                  )}
                 </div>
               ) : (
                 <div

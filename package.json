@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "node scripts/check-i18n-parity.mjs && tsc --noEmit -p tsconfig.app.json",
+    "test:buddy": "node scripts/test-buddy-phase1.mjs",
     "audit:public-html": "node scripts/audit-public-html.mjs",
     "audit:p0-buddy-menu": "node scripts/audit-p0-buddy-menu.mjs"
   },

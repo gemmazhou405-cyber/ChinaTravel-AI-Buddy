@@ -319,6 +319,7 @@ export default function App() {
             showToast(t('auth.verificationSent'));
           }}
           onRefreshUserState={refreshUserState}
+          onOpenToolkit={() => openToolkit()}
         />
       )}
       {authOpen && (
