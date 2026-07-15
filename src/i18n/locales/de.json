@@ -53,12 +53,12 @@
       "trust": "Funktioniert in China · Kein VPN nötig · Kostenlos starten",
       "titleLine1": "China-Reisehilfe,",
       "titleLine2": "elegant vereinfacht.",
-      "homeSubtitle": "Apps, Zahlungen, Transport, Essen und Notfallhilfe für ausländische Besucher in China.",
+      "homeSubtitle": "Nutze ChinaEase Buddy für Zahlungen, Taxis, Speisekarten, Sätze und Notfälle. Menüfoto-Hilfe ist im privaten Test.",
       "startFree": "Jetzt Hilfe bekommen",
       "askBuddy": "Buddy fragen",
       "mobileTrust": "Von Reisenden genutzt · 24/7 Hilfe · Ihre Sicherheit zählt",
       "realMoments": "Gemacht für echte Momente in China — Taxis, Essen, Zahlungen, Hotels und Notfälle.",
-      "mobileSubtitle": "Apps, Zahlungen, Transport, Essen und Notfallhilfe in China.",
+      "mobileSubtitle": "Zahlungen, Taxis, Speisekarten und Notfälle in einem Reisehelfer.",
       "mobileTrustShort": "Keine App · Mobilfreundlich · Gratis starten",
       "trustTrusted": "Von Reisenden genutzt",
       "trustSupport": "24/7 Hilfe",
@@ -421,9 +421,9 @@
       "currency": "Währungsrechner",
       "currencyLive": "USD · EUR · GBP · AUD → RMB en direct",
       "open": "Öffnen",
-      "secure": "Sicherer Gumroad-Checkout",
+      "secure": "Sicherer PayPal-Checkout",
       "bannerAlt": "Votre aventure en Chine commence maintenant",
-      "paymentSoon": "Bezahlte Pässe sind einmalige digitale Travel Pässe, die über Gumroad gekauft werden. Der Zugang wird nach der Zahlung automatisch gewährt — in der Regel innerhalb von Minuten.",
+      "paymentSoon": "Bezahlte Pässe sind einmalige digitale Travel Pässe, die bei aktiviertem Checkout über PayPal verarbeitet werden. Der Zugang beginnt nach verifizierter Zahlungserfassung.",
       "plans": {
         "free": {
           "name": "Kostenlos",
@@ -535,12 +535,12 @@
       "paymentCardsSubtitle": "{{count}} Karten für Alipay, WeChat Pay, Karte und Bargeld",
       "setupShort": "Verknüpfe vor der Ankunft eine Karte.",
       "earlyAccess": {
-        "title": "Sicherer Gumroad-Checkout",
-        "body": "Trip Pass und Group Pass werden sicher über Gumroad gekauft. Der Zugang wird nach der Zahlung automatisch gewährt — in der Regel innerhalb von Minuten.",
+        "title": "Sicherer PayPal-Checkout",
+        "body": "Trip Pass und Group Pass werden bei aktiviertem Checkout sicher über PayPal verarbeitet. Der Zugang beginnt nach verifizierter Zahlungserfassung.",
         "options": "Bitte nutze dieselbe E-Mail wie für dein ChinaEase Buddy Konto.",
         "safety": "ChinaEase Buddy sammelt auf dieser Website keine Kartendaten direkt.",
         "modalTitle": "Manuelle Zahlung",
-        "modalSubtitle": "Kaufe deinen gewählten Pass über Gumroad. Der Zugang wird nach der Zahlung automatisch gewährt — in der Regel innerhalb von Minuten.",
+        "modalSubtitle": "Fahre mit dem PayPal-Checkout fort. Der Zugang beginnt nach verifizierter Zahlungserfassung.",
         "email": "E-Mail-Adresse",
         "plan": "Plan auswählen",
         "travelDate": "Reisedatum optional",
@@ -548,7 +548,7 @@
         "messagePlaceholder": "Gibt es etwas, das wir über deine Reise wissen sollten?",
         "submit": "Fortfahren",
         "contactEmail": "Per E-Mail kontaktieren",
-        "confirmation": "Der Zugang wird nach Zahlungsbestätigung manuell aktiviert.",
+        "confirmation": "Der Zugang beginnt nach verifizierter Zahlungserfassung.",
         "noCard": "Auf dieser Website werden keine Kartendaten erfasst.",
         "sameEmail": "Bitte nutze dieselbe E-Mail wie für dein ChinaEase Buddy Konto.",
         "createAccount": "Erstelle zuerst ein kostenloses Konto für eine schnellere Aktivierung.",
@@ -579,7 +579,7 @@
         "transactionRequired": "Bitte gib deine PayPal-Transaktions-ID ein.",
         "submit": "Aktivierungsanfrage senden",
         "submitting": "Wird gesendet...",
-        "submitted": "Aktivierungsanfrage gesendet. Wir prüfen sie manuell.",
+        "submitted": "Aktivierungsanfrage gesendet. Der Support prüft sie manuell.",
         "submitError": "Die Anfrage konnte nicht gesendet werden. Bitte versuche es erneut oder kontaktiere den Support.",
         "noCards": "Gib keine Kartennummern oder sensiblen Zahlungsdaten ein."
       },
@@ -877,7 +877,7 @@
       "title": "Konto",
       "currentPlan": "Aktueller Plan",
       "buddyQuota": "Buddy-AI-Kontingent",
-      "menuQuota": "Menüscan-Kontingent",
+      "menuQuota": "Menüfoto-Hilfe",
       "emailVerification": "E-Mail-Verifizierung",
       "verified": "Verifiziert",
       "notVerified": "Nicht verifiziert",
@@ -937,7 +937,7 @@
         "food": [
           "Probiere lokale Spezialitäten zuerst in kleinen Portionen.",
           "Prüfe Schärfegrad und Allergene vor der Bestellung.",
-          "Nutze Menüfotos oder Phrase Cards, wenn das Personal kein Englisch spricht."
+          "Nutze Essensreferenzen oder Satzkarten, wenn das Personal kein Englisch spricht."
         ],
         "watch": [
           "Meide inoffizielle Taxis und unklare Preise.",
@@ -970,7 +970,7 @@
           "food": [
             "Probiere Xiaolongbao und Shengjianbao zuerst in kleinen Portionen.",
             "Frage bei Allergien nach Krabbe, Schwein, Erdnüssen und Schärfe.",
-            "Nutze Menüfotos, wenn lokale Restaurants keine englische Karte haben."
+            "Nutze Essensreferenzen, wenn lokale Restaurants keine englische Speisekarte haben."
           ],
           "watch": [
             "Vorsicht bei Teezeremonie-Einladungen mit hoher Rechnung.",
@@ -996,7 +996,7 @@
         "ctaSecondary": "Buddy fragen",
         "trust1": "Keine Anmeldung nötig",
         "trust2": "Kein VPN für den Toolkit-Zugriff nötig",
-        "trust3": "Menü-Übersetzung + Allergen-Hinweise",
+        "trust3": "Essenssätze + Allergenhinweise",
         "free": "Kostenlos",
         "trust4": "Chinesische Sätze zum Vorzeigen bereit"
       },
@@ -1016,9 +1016,9 @@
           "demoAction": "Kann ich anders bezahlen? Meine Karte funktioniert nicht."
         },
         "q2": {
-          "question": "Lies diese Speisekarte für mich",
-          "answer": "Schicken Sie mir ein Foto der Speisekarte und ich übersetze jedes Gericht, markiere häufige Allergene wie Erdnüsse und Meeresfrüchte und weise auf Überraschungen hin — etwa Schweinefleisch in einem „vegetarischen“ Gericht. Sagen Sie mir, was Sie nicht essen können, und ich schlage vor, was sicher ist.",
-          "demoLead": "Ich kann die Speisekarte in einfache Optionen übersetzen:",
+          "question": "Hilf mir, diese Speisekarte zu verstehen",
+          "answer": "Nenne mir den Gerichtnamen oder suche in der Essensreferenz. Ich kann häufige Zutaten, Schärfegrad und mögliche Allergene erklären, die du mit dem Restaurantpersonal bestätigen solltest. Menüfoto-Hilfe ist noch im privaten Test.",
+          "demoLead": "Ich kann Gerichtnamen in einfache Auswahl verwandeln:",
           "demoSteps": [
             "Gerichtenamen übersetzen und häufige Zutaten erklären.",
             "Schärfegrad und mögliche häufige Allergene markieren, damit Sie beim Personal nachfragen können."
@@ -1044,7 +1044,7 @@
         "note": "Einmalige Zahlung. Kein Abo, keine automatische Verlängerung.",
         "trip": {
           "line1": "50 Buddy-AI-Antworten über 7 Tage",
-          "line2": "Menüfotos, Taxikarten und alle Toolkit-Funktionen",
+          "line2": "Taxi-Karten, Satzkarten und zentrale Toolkit-Funktionen",
           "line3": "Hilfe für einen Reisenden, die ganze Reise"
         },
         "group": {
@@ -1089,10 +1089,10 @@
         "s2": {
           "kicker": "B — Zeit zu essen",
           "title": "Bestellen ohne zu raten.",
-          "body": "Fotografieren Sie die Karte und kennen Sie jedes Gericht — samt Chili und Schweinefleisch, die die englische Karte verschweigt.",
-          "tag1": "Menüfoto-Übersetzung",
-          "tag2": "Allergen-Hinweise",
-          "tag3": "Ernährungsfilter",
+          "body": "Suche häufige Gerichte, prüfe Schärfe und mögliche Allergene und halte chinesische Sätze für das Restaurantpersonal bereit.",
+          "tag1": "Essensreferenz",
+          "tag2": "Allergenhinweise",
+          "tag3": "Restaurant-Sätze",
           "tag4": "Auf Chinesisch zeigen"
         },
         "s3": {
@@ -1132,8 +1132,8 @@
         "col2": {
           "label": "Unterwegs",
           "i1": {
-            "title": "Menü-Übersetzung",
-            "desc": "Jede Karte fotografieren, jedes Gericht lesen."
+            "title": "Essensreferenz",
+            "desc": "Suche häufige Gerichte und nützliche Restaurant-Sätze."
           },
           "i2": {
             "title": "Taxi-Karten",
@@ -1174,8 +1174,8 @@
           "body": "Alipay- und WeChat-Pay-Einrichtung für ausländische Karten"
         },
         "cardB": {
-          "title": "Jede Speisekarte verstehen",
-          "body": "Übersetzung, Zutaten, Schärfegrad und Allergen-Hinweise",
+          "title": "Häufige Gerichte verstehen",
+          "body": "Zutaten, Schärfegrad und mögliche Allergenhinweise",
           "dish": "Mapo Tofu",
           "meta": "Scharf · Enthält Schweinefleisch"
         },

@@ -48,10 +48,10 @@ interface GuidePageData {
 }
 
 const contactEmail = 'gemmazhou405@gmail.com';
-const siteUrl = 'https://chinaease-buddy.pages.dev';
-const gumroadLinks = {
-  trip: 'https://gemmazhou.gumroad.com/l/oentc',
-  group: 'https://gemmazhou.gumroad.com/l/mbgkxz',
+const siteUrl = 'https://chinaeasebuddy.com';
+const manualPaypalLinks = {
+  trip: 'https://www.paypal.com/ncp/payment/863ZKSY6RJ64J',
+  group: 'https://www.paypal.com/ncp/payment/CL8J5WJVK3TAJ',
 } as const;
 const standardDisclaimer =
   'ChinaEase Buddy is a digital travel toolkit. It is not an official travel authority, visa service, immigration service, medical service, legal service, financial service, hotel booking service, or flight booking service. Always confirm important travel, payment, health, and entry information with official sources or service providers.';
@@ -80,10 +80,10 @@ const pricingPlans = [
       'Valid for 7 days',
       'Extra travel help for one traveler',
       'One-time payment',
-      'Instant access after Gumroad checkout',
+      'Access after verified PayPal payment capture',
     ],
     cta: 'Get Trip Pass',
-    href: gumroadLinks.trip,
+    href: manualPaypalLinks.trip,
     plan: 'trip_pass',
     featured: true,
   },
@@ -96,10 +96,10 @@ const pricingPlans = [
       'Valid for 14 days',
       'One account and one shared allowance for couples, families or small travel groups',
       'One-time payment',
-      'Instant access after Gumroad checkout',
+      'Access after verified PayPal payment capture',
     ],
     cta: 'Get Group Pass',
-    href: gumroadLinks.group,
+    href: manualPaypalLinks.group,
     plan: 'group_pass',
   },
 ];
@@ -159,7 +159,7 @@ const legalCopy = {
       {
         title: 'Payments and Entitlements',
         body:
-          'For paid passes, we may store order identifiers, buyer email, plan, expiry, quota, and payment status. Payments are processed by Gumroad. We do not collect card details directly on this website.',
+          'For paid passes, we may store order identifiers, payer email if returned by PayPal, plan, expiry, quota, and payment status. Payments are processed by PayPal. We do not collect card details directly on this website.',
       },
       {
         title: 'Newsletter',
@@ -388,7 +388,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
         items: [
           'Google Translate — camera translation is very useful for menus and signs, but requires a VPN to work in China.',
           'Translation app availability in China can be inconsistent; a tool that works offline or is built for China travel is more dependable.',
-          'ChinaEase Buddy — photograph a Chinese menu and get a translation with allergen alerts highlighted. No VPN needed. Also covers payment phrases, transport, emergency numbers, and the Buddy AI for travel questions.',
+          'ChinaEase Buddy — search common dishes, keep restaurant phrases ready, and review possible ingredients or common allergens to confirm with staff. Menu photo help is in private testing.',
           'Offline tip: download the Chinese language pack inside any translation app before leaving home — camera translation then works without any internet connection.',
         ],
       },
@@ -412,7 +412,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
             ['DiDi', 'Ride-hailing', 'Yes (in-app setting)', 'Taxis and private cars'],
             ['Trip.com', 'Booking', 'Yes', 'Trains, flights, hotels'],
             ['12306', 'Rail tickets', 'Primarily Chinese', 'Official train booking'],
-            ['ChinaEase Buddy', 'Translation + tools', 'Yes', 'Menu translation, allergen alerts, phrases'],
+            ['ChinaEase Buddy', 'Food reference + tools', 'Yes', 'Dish reference, possible allergen reminders, phrases'],
           ],
         },
       },
@@ -792,7 +792,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       {
         question: 'How do paid passes work?',
         answer:
-          'Paid passes are one-time digital travel passes purchased securely through Gumroad, our checkout provider. Access is granted to your account after payment — usually within minutes.',
+          'Paid passes are one-time digital travel passes processed through PayPal checkout when enabled. Access is activated after verified payment capture; manual activation may be used only as a support fallback.',
       },
       {
         question: 'Is ChinaEase Buddy an official travel service?',
@@ -949,7 +949,7 @@ function PricingPage() {
   return (
     <PageShell
       title="Pricing"
-      intro="ChinaEase Buddy starts with a free toolkit. Paid passes are optional one-time purchases processed securely through Gumroad."
+      intro="ChinaEase Buddy starts with a free toolkit. Paid passes are optional one-time purchases processed securely through PayPal."
     >
       <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
         {pricingPlans.map((plan) => (
@@ -977,7 +977,7 @@ function PricingPage() {
               onClick={() => {
                 void trackEvent('cta_clicked', {
                   ctaName: plan.cta,
-                  destination: plan.plan === 'trip_pass' ? 'Gumroad Trip Pass' : plan.plan === 'group_pass' ? 'Gumroad Group Pass' : 'free-toolkit',
+                  destination: plan.plan === 'trip_pass' ? 'PayPal Trip Pass' : plan.plan === 'group_pass' ? 'PayPal Group Pass' : 'free-toolkit',
                   tool: 'pricing',
                   plan: plan.plan,
                 });
@@ -994,7 +994,7 @@ function PricingPage() {
       <div className="mt-5 rounded-2xl border border-[#155e63]/10 bg-[#155e63]/5 p-4">
         <p className="text-sm font-semibold text-[#155e63]">One-time payment · No auto-renewal.</p>
         <p className="mt-2 text-xs leading-relaxed text-gray-600">
-          How is payment processed? Payments are processed securely by Gumroad, our checkout provider. ChinaEase Buddy never sees or stores your card details.
+          How is payment processed? Payments are processed securely by PayPal when paid checkout is enabled. ChinaEase Buddy never sees or stores your card details.
         </p>
       </div>
     </PageShell>

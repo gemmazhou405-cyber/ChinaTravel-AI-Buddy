@@ -24,9 +24,9 @@ const SCENARIOS: Array<{ key: 's1' | 's2' | 's3'; image: string; tags: TagTarget
     key: 's2',
     image: '/scenario-food-900.webp',
     tags: [
-      { tab: 'food', tool: 'food' },  // Menu photo translation
-      { tab: 'food', tool: 'food' },  // Allergen alerts (part of the menu tool)
-      { tab: 'food', tool: 'food' },  // Dietary filters (part of the menu tool)
+      { tab: 'food', tool: 'food' },  // Food reference
+      { tab: 'food', tool: 'food' },  // Allergen reminders (part of the menu tool)
+      { tab: 'food', tool: 'food' },  // Restaurant phrases (part of the menu tool)
       { tab: 'stay', tool: 'stay' },  // Show it in Chinese (phrase cards)
     ],
   },

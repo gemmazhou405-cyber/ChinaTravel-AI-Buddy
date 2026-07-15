@@ -38,11 +38,11 @@ Scope: functional repair only. Do not redesign the approved homepage, replace ap
 
 ## Phase 3 — Copy And Product Truthfulness
 
-- [ ] Remove public claims that menu-photo translation is generally available.
-- [ ] Preserve safe allergen language and no guarantee wording.
+- [x] Remove public claims that menu-photo translation is generally available.
+- [x] Preserve safe allergen language and no guarantee wording.
 - [ ] Clarify no-VPN claims.
 - [ ] Soften foreign-card acceptance claims.
-- [ ] Make every plan state exact validity, total Buddy allowance, daily allowance, and activation timing.
+- [x] Make every plan state exact validity, total Buddy allowance, daily allowance, and activation timing.
 - [ ] Add “Free account required. No card required.” near Ask Buddy entry points.
 
 ## Phase 4 — Product UX And Fallbacks
