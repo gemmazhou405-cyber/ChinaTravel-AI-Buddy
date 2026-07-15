@@ -17,21 +17,21 @@ Scope: functional repair only. Do not redesign the approved homepage, replace ap
 - [ ] Require matching `COZE_INTERNAL_SECRET` between Pages Function and `chinaease-proxy` in production.
 - [ ] Send recent safe multi-turn context from `ChatModal`.
 - [ ] Add retry UX for provider failures without double-charging quota.
-- [ ] Store completed reply for idempotent duplicate requests.
-- [ ] Make rollback request-specific and safer under concurrency.
-- [ ] Clarify free account requirement for Ask Buddy.
-- [ ] Add focused tests for auth, provider errors, Coze response shapes, idempotency, and rollback.
+- [x] Store completed reply for idempotent duplicate requests.
+- [x] Make rollback request-specific and safer under concurrency.
+- [x] Clarify free account requirement for Ask Buddy.
+- [x] Add focused tests for auth, provider errors, Coze response shapes, idempotency, and rollback.
 
 ## Phase 2 — Unify Payment And Membership Activation
 
-- [ ] Report missing backend pieces before frontend changes.
+- [x] Report missing backend pieces before frontend changes.
 - [ ] Create shared checkout controller/component for all paid CTAs.
-- [ ] Remove Gumroad from primary new-purchase CTAs.
-- [ ] Use PayPal create/capture/status flow consistently.
-- [ ] Implement return/cancel/status UX based on server-side status.
-- [ ] Reconcile plan configuration across server, frontend, account display, and quota checks.
-- [ ] Keep manual claims only as manual-mode or emergency fallback.
-- [ ] Keep Gumroad only as legacy restore path if retained.
+- [x] Remove Gumroad from primary new-purchase CTAs.
+- [x] Use PayPal create/capture/status flow consistently.
+- [x] Implement return/cancel/status UX based on server-side status.
+- [x] Reconcile plan configuration across server, frontend, account display, and quota checks.
+- [x] Keep manual claims only as manual-mode or emergency fallback.
+- [x] Remove Gumroad from new-purchase flows while retaining legacy backend claim/webhook code.
 - [ ] Add success state with plan, expiry, and remaining Buddy allowance.
 - [ ] Improve account purchase/usage status.
 - [ ] Add payment tests for invalid plan/amount/currency, duplicate capture, active pass, pending/cancelled/completed states.

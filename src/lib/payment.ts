@@ -4,6 +4,11 @@ import { getAttributionContext } from './analytics';
 export type PaymentMode = 'manual' | 'sandbox' | 'live';
 export type PaidPlanId = 'trip_pass' | 'group_pass';
 
+export const MANUAL_PAYPAL_LINKS = {
+  trip: 'https://www.paypal.com/ncp/payment/863ZKSY6RJ64J',
+  group: 'https://www.paypal.com/ncp/payment/CL8J5WJVK3TAJ',
+} as const;
+
 export interface CheckoutOrder {
   orderId: string;
   approvalUrl: string;
