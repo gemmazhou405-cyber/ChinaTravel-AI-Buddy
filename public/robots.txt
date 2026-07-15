@@ -31,4 +31,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://chinaease-buddy.pages.dev/sitemap.xml
+Sitemap: https://chinaeasebuddy.com/sitemap.xml

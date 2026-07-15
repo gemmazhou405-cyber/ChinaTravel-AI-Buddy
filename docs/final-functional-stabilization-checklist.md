@@ -47,20 +47,20 @@ Scope: functional repair only. Do not redesign the approved homepage, replace ap
 
 ## Phase 4 — Product UX And Fallbacks
 
-- [ ] Add helpful toolkit fallback links when Buddy is unavailable.
-- [ ] Improve quota exhausted messaging with total/daily distinction.
+- [x] Add helpful toolkit fallback links when Buddy is unavailable.
+- [x] Improve quota exhausted messaging with total/daily distinction.
 - [ ] Improve account panel plan/expiry/usage/pending state.
 - [ ] Improve checkout accessibility and popup-blocked fallback.
-- [ ] Add safe analytics events without PII or message text.
+- [x] Add safe analytics events without PII or message text.
 
 ## Phase 5 — Validation
 
-- [ ] Run `npm run typecheck`.
-- [ ] Run `npm run build`.
-- [ ] Run configured tests.
+- [x] Run `npm run typecheck`.
+- [x] Run `npm run build`.
+- [x] Run configured tests.
 - [ ] Run focused API/curl tests where credentials allow.
 - [ ] Test specified viewport sizes and reduced motion.
-- [ ] Confirm secrets are not in frontend bundle.
+- [x] Confirm secrets are not in frontend bundle.
 - [ ] Confirm direct `/coze` is blocked without internal token.
-- [ ] Create `docs/final-functional-audit.md`.
-- [ ] Commit each phase separately locally only.
+- [x] Create `docs/final-functional-audit.md`.
+- [x] Commit each phase separately locally only.

@@ -673,7 +673,7 @@
       "verifyBeforeBuddy": "Please verify your email before using Buddy AI.",
       "resendVerification": "Resend verification email",
       "inAppBrowserNotice": "Google sign-in may not work inside this app browser. Please open ChinaEase Buddy in Safari or Chrome to continue.",
-      "inAppBrowserNoticeZh": "当前 App 内置浏览器可能无法使用 Google 登录。请用 Safari 或 Chrome 打开 chinaease-buddy.pages.dev 后继续。",
+      "inAppBrowserNoticeZh": "当前 App 内置浏览器可能无法使用 Google 登录。请用 Safari 或 Chrome 打开 chinaeasebuddy.com 后继续。",
       "emailAlternative": "You can also sign in with email."
     },
     "footer": {
