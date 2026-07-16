@@ -1,3 +1,9 @@
+const OAUTH_TIMEOUT_MS = 8000;
+const FIRESTORE_TIMEOUT_MS = 8000;
+
+let _tokenCache = '';
+let _tokenExpiresAt = 0;
+
 function base64UrlEncode(input) {
   const bytes = typeof input === 'string' ? new TextEncoder().encode(input) : new Uint8Array(input);
   let binary = '';
@@ -14,11 +20,14 @@ function pemToArrayBuffer(pem) {
 }
 
 async function serviceAccountToken(env) {
+  const nowMs = Date.now();
+  if (_tokenCache && _tokenExpiresAt > nowMs + 30000) return _tokenCache;
+
   if (!env.FIREBASE_CLIENT_EMAIL || !env.FIREBASE_PRIVATE_KEY) {
     throw new Error('server_missing_firebase_service_account');
   }
 
-  const now = Math.floor(Date.now() / 1000);
+  const now = Math.floor(nowMs / 1000);
   const header = base64UrlEncode(JSON.stringify({ alg: 'RS256', typ: 'JWT' }));
   const claim = base64UrlEncode(JSON.stringify({
     iss: env.FIREBASE_CLIENT_EMAIL,
@@ -46,10 +55,13 @@ async function serviceAccountToken(env) {
       grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
       assertion: jwt,
     }),
+    signal: AbortSignal.timeout(OAUTH_TIMEOUT_MS),
   });
   if (!res.ok) throw new Error('firebase_service_token_failed');
   const body = await res.json();
-  return body.access_token;
+  _tokenCache = body.access_token;
+  _tokenExpiresAt = nowMs + 55 * 60 * 1000;
+  return _tokenCache;
 }
 
 function firestoreValue(value) {
@@ -101,6 +113,7 @@ async function firestoreFetch(env, path, init = {}) {
       'Content-Type': 'application/json',
       ...(init.headers || {}),
     },
+    signal: init.signal ?? AbortSignal.timeout(FIRESTORE_TIMEOUT_MS),
   });
   if (res.status === 404) return null;
   if (!res.ok) {
@@ -150,6 +163,7 @@ export async function commitWrites(env, writes) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ writes }),
+    signal: AbortSignal.timeout(FIRESTORE_TIMEOUT_MS),
   });
   if (!res.ok) {
     const text = await res.text();
@@ -167,6 +181,7 @@ export async function beginTransaction(env) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ options: { readWrite: {} } }),
+    signal: AbortSignal.timeout(FIRESTORE_TIMEOUT_MS),
   });
   if (!res.ok) {
     const text = await res.text();
@@ -189,6 +204,7 @@ export async function batchGetDocs(env, paths, transaction) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(body),
+    signal: AbortSignal.timeout(FIRESTORE_TIMEOUT_MS),
   });
   if (!res.ok) {
     const text = await res.text();
@@ -216,6 +232,7 @@ export async function commitTransaction(env, transaction, writes) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ transaction, writes }),
+    signal: AbortSignal.timeout(FIRESTORE_TIMEOUT_MS),
   });
   if (!res.ok) {
     const text = await res.text();

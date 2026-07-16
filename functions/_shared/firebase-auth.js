@@ -14,6 +14,7 @@ function decodeJson(part) {
 async function getJwk(kid) {
   const res = await fetch(CERTS_URL, {
     cf: { cacheTtl: 3600, cacheEverything: true },
+    signal: AbortSignal.timeout(5000),
   });
   if (!res.ok) throw new Error('firebase_jwks_unavailable');
   const body = await res.json();
