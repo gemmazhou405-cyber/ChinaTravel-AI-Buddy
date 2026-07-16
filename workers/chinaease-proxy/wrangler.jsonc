@@ -2,5 +2,8 @@
   "$schema": "../../node_modules/wrangler/config-schema.json",
   "name": "chinaease-proxy",
   "main": "./worker.js",
-  "compatibility_date": "2026-07-01"
+  "compatibility_date": "2026-07-01",
+  "vars": {
+    "ALLOWED_ORIGIN": "https://chinaeasebuddy.com"
+  }
 }
