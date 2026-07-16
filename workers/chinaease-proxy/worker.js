@@ -2,7 +2,10 @@ const COZE_CHAT_URL = 'https://api.coze.cn/v3/chat';
 const COZE_RETRIEVE_URL = 'https://api.coze.cn/v3/chat/retrieve';
 const COZE_MESSAGE_LIST_URL = 'https://api.coze.cn/v3/chat/message/list';
 const MAX_REPLY_CHARS = 6000;
-const POLL_DELAYS_MS = [650, 900, 1200, 1600, 2100, 2600, 3200];
+const POLL_DELAYS_MS = [800, 1200, 1600, 2200, 3000];
+const COZE_GLOBAL_BUDGET_MS = 22000;
+const COZE_INITIAL_FETCH_MS = 8000;
+const COZE_POLL_FETCH_MS = 6000;
 
 function corsHeaders(env) {
   const configured = env.ALLOWED_ORIGIN || env.ALLOWED_ORIGINS || '*';
@@ -183,36 +186,44 @@ function cozeHeaders(env) {
 }
 
 async function fetchCozeJson(env, url, init = {}) {
-  const response = await fetch(url, {
-    ...init,
-    headers: {
-      ...cozeHeaders(env),
-      ...(init.headers || {}),
-    },
-  });
-  const responseText = await response.text();
-  let payload = null;
   try {
-    payload = responseText ? JSON.parse(responseText) : {};
-  } catch {
-    payload = null;
-  }
-  if (!response.ok) {
-    console.warn('[chinaease-proxy] coze_non_ok', {
-      status: response.status,
-      responseLength: responseText.length,
-      code: payload?.code || payload?.error?.code || 'unknown',
+    const response = await fetch(url, {
+      ...init,
+      headers: {
+        ...cozeHeaders(env),
+        ...(init.headers || {}),
+      },
     });
-    return { ok: false, status: response.status, payload };
+    const responseText = await response.text();
+    let payload = null;
+    try {
+      payload = responseText ? JSON.parse(responseText) : {};
+    } catch {
+      payload = null;
+    }
+    if (!response.ok) {
+      console.warn('[chinaease-proxy] coze_non_ok', {
+        status: response.status,
+        responseLength: responseText.length,
+        code: payload?.code || payload?.error?.code || 'unknown',
+      });
+      return { ok: false, status: response.status, payload };
+    }
+    if (payload?.code && Number(payload.code) !== 0) {
+      console.warn('[chinaease-proxy] coze_json_error', {
+        code: payload.code,
+        responseLength: responseText.length,
+      });
+      return { ok: false, status: 502, payload };
+    }
+    return { ok: true, status: response.status, payload };
+  } catch (err) {
+    if (err?.name === 'AbortError' || err?.name === 'TimeoutError') {
+      console.warn('[chinaease-proxy] coze_fetch_timeout', { url });
+      return { ok: false, status: 408, payload: null, timedOut: true };
+    }
+    throw err;
   }
-  if (payload?.code && Number(payload.code) !== 0) {
-    console.warn('[chinaease-proxy] coze_json_error', {
-      code: payload.code,
-      responseLength: responseText.length,
-    });
-    return { ok: false, status: 502, payload };
-  }
-  return { ok: true, status: response.status, payload };
 }
 
 function textContent(value) {
@@ -283,21 +294,21 @@ function chatIds(payload) {
   };
 }
 
-async function retrieveChat(env, conversationId, chatId) {
+async function retrieveChat(env, conversationId, chatId, signal) {
   const url = new URL(COZE_RETRIEVE_URL);
   url.searchParams.set('conversation_id', conversationId);
   url.searchParams.set('chat_id', chatId);
-  return fetchCozeJson(env, url.toString());
+  return fetchCozeJson(env, url.toString(), signal ? { signal } : {});
 }
 
-async function listMessages(env, conversationId, chatId) {
+async function listMessages(env, conversationId, chatId, signal) {
   const url = new URL(COZE_MESSAGE_LIST_URL);
   url.searchParams.set('conversation_id', conversationId);
   url.searchParams.set('chat_id', chatId);
-  return fetchCozeJson(env, url.toString());
+  return fetchCozeJson(env, url.toString(), signal ? { signal } : {});
 }
 
-async function resolveCozeReply(env, createPayload) {
+async function resolveCozeReply(env, createPayload, deadlineAt) {
   const immediate = extractReplyFromPayload(createPayload);
   if (immediate) return { reply: immediate };
 
@@ -307,7 +318,13 @@ async function resolveCozeReply(env, createPayload) {
   let lastStatus = chatStatus(createPayload);
   for (let i = 0; i < POLL_DELAYS_MS.length; i += 1) {
     await delay(POLL_DELAYS_MS[i]);
-    const retrieved = await retrieveChat(env, conversationId, chatId);
+
+    const remaining = deadlineAt - Date.now();
+    if (remaining < 500) return { error: 'upstream_timeout', status: lastStatus || 'deadline' };
+
+    const pollMs = Math.min(remaining - 200, COZE_POLL_FETCH_MS);
+    const retrieved = await retrieveChat(env, conversationId, chatId, AbortSignal.timeout(pollMs));
+    if (retrieved.timedOut) return { error: 'upstream_timeout', status: 'fetch_timeout' };
     if (!retrieved.ok) return { error: safeCozeErrorPayload(retrieved.payload, `http_${retrieved.status}`) };
 
     const retrievedReply = extractReplyFromPayload(retrieved.payload);
@@ -319,7 +336,11 @@ async function resolveCozeReply(env, createPayload) {
     }
 
     if (['completed', 'complete', 'done'].includes(lastStatus)) {
-      const messages = await listMessages(env, conversationId, chatId);
+      const listRemaining = deadlineAt - Date.now();
+      if (listRemaining < 500) return { error: 'upstream_timeout', status: 'list_deadline' };
+      const listMs = Math.min(listRemaining - 200, COZE_POLL_FETCH_MS);
+      const messages = await listMessages(env, conversationId, chatId, AbortSignal.timeout(listMs));
+      if (messages.timedOut) return { error: 'upstream_timeout', status: 'list_timeout' };
       if (!messages.ok) return { error: safeCozeErrorPayload(messages.payload, `http_${messages.status}`) };
       const messageReply = extractReplyFromPayload(messages.payload);
       return messageReply ? { reply: messageReply } : { error: 'coze_no_answer' };
@@ -376,16 +397,22 @@ async function handleCoze(request, env) {
     ],
   };
 
+  const globalDeadlineAt = Date.now() + COZE_GLOBAL_BUDGET_MS;
   const created = await fetchCozeJson(env, COZE_CHAT_URL, {
     method: 'POST',
     body: JSON.stringify(cozeBody),
+    signal: AbortSignal.timeout(COZE_INITIAL_FETCH_MS),
   });
 
+  if (created.timedOut) {
+    console.warn('[chinaease-proxy] coze_initial_timeout');
+    return json({ error: 'upstream_timeout', code: 'upstream_timeout' }, { status: 504 }, env);
+  }
   if (!created.ok) {
     return json(safeCozeErrorPayload(created.payload, `http_${created.status}`), { status: 502 }, env);
   }
 
-  const resolved = await resolveCozeReply(env, created.payload);
+  const resolved = await resolveCozeReply(env, created.payload, globalDeadlineAt);
   if (resolved.reply) return json({ reply: resolved.reply }, { status: 200 }, env);
 
   if (resolved.error && typeof resolved.error === 'object') {
