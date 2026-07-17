@@ -3,7 +3,8 @@ const COZE_RETRIEVE_URL = 'https://api.coze.cn/v3/chat/retrieve';
 const COZE_MESSAGE_LIST_URL = 'https://api.coze.cn/v3/chat/message/list';
 const MAX_REPLY_CHARS = 6000;
 const POLL_DELAYS_MS = [800, 1200, 1600, 2200, 3000];
-const COZE_GLOBAL_BUDGET_MS = 22000;
+const COZE_GLOBAL_BUDGET_MS = 14000;
+const COZE_MIN_BUDGET_MS = 5000;
 const COZE_INITIAL_FETCH_MS = 8000;
 const COZE_POLL_FETCH_MS = 6000;
 
@@ -12,7 +13,7 @@ function corsHeaders(env) {
   return {
     'Access-Control-Allow-Origin': configured,
     'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type,Authorization,X-ChinaEase-Internal-Token',
+    'Access-Control-Allow-Headers': 'Content-Type,Authorization,X-ChinaEase-Internal-Token,X-ChinaEase-Timeout-Ms',
     'Access-Control-Max-Age': '86400',
     Vary: 'Origin',
   };
@@ -86,6 +87,12 @@ function extractBotId(incoming) {
 function extractUserId(incoming) {
   const userId = incoming?.user_id || incoming?.userId || 'chinaease-user';
   return typeof userId === 'string' && userId.trim() ? userId.trim().slice(0, 128) : 'chinaease-user';
+}
+
+function clampTimeoutMs(value) {
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed)) return COZE_GLOBAL_BUDGET_MS;
+  return Math.min(COZE_GLOBAL_BUDGET_MS, Math.max(COZE_MIN_BUDGET_MS, Math.floor(parsed)));
 }
 
 function extractContextMessages(incoming) {
@@ -317,12 +324,14 @@ async function resolveCozeReply(env, createPayload, deadlineAt) {
 
   let lastStatus = chatStatus(createPayload);
   for (let i = 0; i < POLL_DELAYS_MS.length; i += 1) {
-    await delay(POLL_DELAYS_MS[i]);
-
     const remaining = deadlineAt - Date.now();
-    if (remaining < 500) return { error: 'upstream_timeout', status: lastStatus || 'deadline' };
+    if (remaining < 700) return { error: 'upstream_timeout', status: lastStatus || 'deadline' };
+    await delay(Math.min(POLL_DELAYS_MS[i], Math.max(0, remaining - 600)));
 
-    const pollMs = Math.min(remaining - 200, COZE_POLL_FETCH_MS);
+    const afterDelayRemaining = deadlineAt - Date.now();
+    if (afterDelayRemaining < 500) return { error: 'upstream_timeout', status: lastStatus || 'deadline' };
+
+    const pollMs = Math.min(afterDelayRemaining - 200, COZE_POLL_FETCH_MS);
     const retrieved = await retrieveChat(env, conversationId, chatId, AbortSignal.timeout(pollMs));
     if (retrieved.timedOut) return { error: 'upstream_timeout', status: 'fetch_timeout' };
     if (!retrieved.ok) return { error: safeCozeErrorPayload(retrieved.payload, `http_${retrieved.status}`) };
@@ -374,6 +383,8 @@ async function handleCoze(request, env) {
   const botId = extractBotId(incoming);
   const userId = extractUserId(incoming);
   const contextMessages = extractContextMessages(incoming);
+  const requestedTimeoutMs = request.headers.get('X-ChinaEase-Timeout-Ms') || incoming?.timeoutMs;
+  const budgetMs = clampTimeoutMs(requestedTimeoutMs);
 
   if (!botId || !message) {
     console.warn('[chinaease-proxy] invalid_request', {
@@ -397,11 +408,12 @@ async function handleCoze(request, env) {
     ],
   };
 
-  const globalDeadlineAt = Date.now() + COZE_GLOBAL_BUDGET_MS;
+  const globalDeadlineAt = Date.now() + budgetMs;
+  const initialFetchMs = Math.max(1000, Math.min(COZE_INITIAL_FETCH_MS, budgetMs - 1000));
   const created = await fetchCozeJson(env, COZE_CHAT_URL, {
     method: 'POST',
     body: JSON.stringify(cozeBody),
-    signal: AbortSignal.timeout(COZE_INITIAL_FETCH_MS),
+    signal: AbortSignal.timeout(initialFetchMs),
   });
 
   if (created.timedOut) {
@@ -411,7 +423,6 @@ async function handleCoze(request, env) {
   if (!created.ok) {
     return json(safeCozeErrorPayload(created.payload, `http_${created.status}`), { status: 502 }, env);
   }
-
   const resolved = await resolveCozeReply(env, created.payload, globalDeadlineAt);
   if (resolved.reply) return json({ reply: resolved.reply }, { status: 200 }, env);
 
@@ -427,6 +438,7 @@ async function handleCoze(request, env) {
 }
 
 export const __test__ = {
+  clampTimeoutMs,
   extractReplyFromPayload,
   extractReplyFromCozeEvents,
   parseCozeSse,

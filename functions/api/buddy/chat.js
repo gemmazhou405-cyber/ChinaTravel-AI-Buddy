@@ -12,7 +12,11 @@ const REQUEST_ID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{
 const MAX_MESSAGE_CHARS = 1200;
 const MAX_CONTEXT_ITEMS = 6;
 const MAX_CONTEXT_CHARS = 3000;
-const UPSTREAM_TIMEOUT_MS = 35000;
+const TOTAL_REQUEST_BUDGET_MS = 21000;
+const WORKER_MIN_TIMEOUT_MS = 5000;
+const WORKER_MAX_TIMEOUT_MS = 14000;
+const POST_WORKER_BUFFER_MS = 3500;
+const CLEANUP_TIMEOUT_MS = 2500;
 const MAX_REPLY_CHARS = 5000;
 const USER_RATE_WINDOW_MS = 10000;
 const USER_RATE_LIMIT = 3;
@@ -47,6 +51,32 @@ function safeRequestId(requestId) {
 
 function safeUserId(uid) {
   return typeof uid === 'string' ? uid.slice(0, 8) : 'unknown';
+}
+
+function remainingMs(deadlineAt) {
+  return Math.max(0, deadlineAt - Date.now());
+}
+
+function timeoutError() {
+  return new Error('upstream_timeout');
+}
+
+function assertTimeRemaining(deadlineAt, minimumMs = 1000) {
+  if (remainingMs(deadlineAt) < minimumMs) throw timeoutError();
+}
+
+async function withTimeout(promise, timeoutMs, label) {
+  let timer;
+  try {
+    return await Promise.race([
+      promise,
+      new Promise((_, reject) => {
+        timer = setTimeout(() => reject(new Error(label)), Math.max(1, timeoutMs));
+      }),
+    ]);
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 function isLocalRequest(request) {
@@ -284,15 +314,18 @@ async function rollbackUsage(env, auth, usagePath, reason) {
   }
 }
 
-async function callCoze(env, auth, message, context) {
+async function callCoze(env, auth, message, context, deadlineAt) {
   if (!env.COZE_WORKER_URL || !validBotId(env.COZE_BOT_ID)) {
     throw new Error('service_unavailable');
   }
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort('upstream_timeout'), UPSTREAM_TIMEOUT_MS);
+  const availableForWorker = remainingMs(deadlineAt) - POST_WORKER_BUFFER_MS;
+  if (availableForWorker < WORKER_MIN_TIMEOUT_MS) throw timeoutError();
+  const workerTimeoutMs = Math.min(WORKER_MAX_TIMEOUT_MS, Math.max(WORKER_MIN_TIMEOUT_MS, availableForWorker));
+  const fetchTimeoutMs = Math.max(1000, Math.min(workerTimeoutMs + 1200, remainingMs(deadlineAt) - 1500));
   try {
     const headers = { 'Content-Type': 'application/json' };
     if (env.COZE_INTERNAL_SECRET) headers['X-ChinaEase-Internal-Token'] = env.COZE_INTERNAL_SECRET;
+    headers['X-ChinaEase-Timeout-Ms'] = String(workerTimeoutMs);
     const cozePayload = {
       message,
       context,
@@ -308,6 +341,7 @@ async function callCoze(env, auth, message, context) {
           content_type: 'text',
         },
       ],
+      timeoutMs: workerTimeoutMs,
     };
     // The worker only routes POST /coze; COZE_WORKER_URL may be set with or without the path.
     const workerBase = env.COZE_WORKER_URL.replace(/\/+$/, '');
@@ -315,7 +349,7 @@ async function callCoze(env, auth, message, context) {
     const res = await fetch(workerEndpoint, {
       method: 'POST',
       headers,
-      signal: controller.signal,
+      signal: AbortSignal.timeout(fetchTimeoutMs),
       body: JSON.stringify(cozePayload),
     });
     const responseText = await res.text();
@@ -354,12 +388,10 @@ async function callCoze(env, auth, message, context) {
     if (!reply) throw new Error('upstream_empty_reply');
     return reply.slice(0, MAX_REPLY_CHARS);
   } catch (error) {
-    if (error?.name === 'AbortError' || error === 'upstream_timeout') {
-      throw new Error('upstream_timeout');
+    if (error?.name === 'AbortError' || error?.name === 'TimeoutError' || error?.message === 'upstream_timeout') {
+      throw timeoutError();
     }
     throw error;
-  } finally {
-    clearTimeout(timeout);
   }
 }
 
@@ -396,7 +428,8 @@ export async function onRequestOptions({ request, env }) {
   return optionsResponse(request, env);
 }
 
-async function handlePost(request, env) {
+async function handlePost(request, env, deadlineAt) {
+  assertTimeRemaining(deadlineAt, 1500);
   const contentLength = Number(request.headers.get('Content-Length') || 0);
   if (contentLength > 15000) {
     return errorResponse(request, env, 413, 'invalid_request', 'Request body is too large.');
@@ -449,6 +482,7 @@ async function handlePost(request, env) {
     }, { status: 503 }), request, env);
   }
 
+  assertTimeRemaining(deadlineAt, 9000);
   let reservation;
   try {
     logBuddy('info', 'reserve_start', { requestId: safeRequestId(requestId), uid: safeUserId(auth.uid) });
@@ -487,8 +521,10 @@ async function handlePost(request, env) {
   }
 
   try {
-    const reply = await callCoze(env, auth, message, context);
-    await markCompleted(env, reservation.usagePath, reply);
+    const reply = await callCoze(env, auth, message, context, deadlineAt);
+    assertTimeRemaining(deadlineAt, 1500);
+    const completionBudget = Math.max(500, Math.min(CLEANUP_TIMEOUT_MS, remainingMs(deadlineAt) - 500));
+    await withTimeout(markCompleted(env, reservation.usagePath, reply), completionBudget, 'completion_timeout');
     logBuddy('info', 'completed', {
       requestId: safeRequestId(requestId),
       uid: safeUserId(auth.uid),
@@ -518,9 +554,16 @@ async function handlePost(request, env) {
       errorCode: error instanceof Error ? error.message.split(':').slice(0, 2).join(':') : 'unknown',
     });
     try {
-      await rollbackUsage(env, auth, reservation.usagePath, reason);
-    } catch {
+      const cleanupBudget = Math.max(500, Math.min(CLEANUP_TIMEOUT_MS, remainingMs(deadlineAt) - 500));
+      await withTimeout(rollbackUsage(env, auth, reservation.usagePath, reason), cleanupBudget, 'rollback_timeout');
+    } catch (rollbackError) {
       // Usage rollback failure is intentionally not exposed with internal details.
+      logBuddy('warn', 'rollback_not_completed_before_deadline', {
+        requestId: safeRequestId(requestId),
+        uid: safeUserId(auth.uid),
+        reason,
+        errorCode: rollbackError instanceof Error ? rollbackError.message : 'unknown',
+      });
     }
     return errorResponse(
       request,
@@ -528,19 +571,23 @@ async function handlePost(request, env) {
       reason === 'upstream_timeout' ? 504 : reason === 'service_unavailable' ? 503 : 502,
       reason,
       reason === 'upstream_timeout'
-        ? 'Buddy timed out. Please try again.'
+        ? 'Buddy is temporarily unavailable. Please try again.'
         : 'Buddy is temporarily unavailable. Please try again later.',
     );
   }
 }
 
 export async function onRequestPost({ request, env }) {
+  const deadlineAt = Date.now() + TOTAL_REQUEST_BUDGET_MS;
   try {
-    return await handlePost(request, env);
+    return await handlePost(request, env, deadlineAt);
   } catch (error) {
     logBuddy('error', 'unhandled_exception', {
       errorCode: error instanceof Error ? error.message.split(':')[0] : 'unknown',
     });
+    if (error instanceof Error && error.message === 'upstream_timeout') {
+      return errorResponse(request, env, 504, 'upstream_timeout', 'Buddy is temporarily unavailable. Please try again.');
+    }
     return errorResponse(request, env, 500, 'server_error', 'Buddy is temporarily unavailable. Please try again later.');
   }
 }
