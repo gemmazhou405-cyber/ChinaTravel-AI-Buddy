@@ -4,6 +4,14 @@
   "main": "./worker.js",
   "compatibility_date": "2026-07-01",
   "vars": {
-    "ALLOWED_ORIGIN": "https://chinaeasebuddy.com"
+    "ALLOWED_ORIGIN": "https://chinaeasebuddy.com",
+    "AI_PROVIDER": "deepseek"
+  },
+  "secrets": {
+    "required": [
+      "COZE_INTERNAL_SECRET",
+      "COZE_TOKEN",
+      "DEEPSEEK_API_KEY"
+    ]
   }
 }
