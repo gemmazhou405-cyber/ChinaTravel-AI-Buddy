@@ -49,9 +49,9 @@ interface GuidePageData {
 
 const contactEmail = 'gemmazhou405@gmail.com';
 const siteUrl = 'https://chinaeasebuddy.com';
-const manualPaypalLinks = {
-  trip: 'https://www.paypal.com/ncp/payment/863ZKSY6RJ64J',
-  group: 'https://www.paypal.com/ncp/payment/CL8J5WJVK3TAJ',
+const gumroadLinks = {
+  trip: import.meta.env.VITE_GUMROAD_TRIP_URL || 'https://chinaease.gumroad.com/l/trip-pass',
+  group: import.meta.env.VITE_GUMROAD_GROUP_URL || 'https://chinaease.gumroad.com/l/group-pass',
 } as const;
 const standardDisclaimer =
   'ChinaEase Buddy is a digital travel toolkit. It is not an official travel authority, visa service, immigration service, medical service, legal service, financial service, hotel booking service, or flight booking service. Always confirm important travel, payment, health, and entry information with official sources or service providers.';
@@ -77,13 +77,13 @@ const pricingPlans = [
     note: 'One-time payment',
     features: [
       '50 Buddy AI messages',
-      'Valid for 7 days',
+      'Valid for 14 days',
       'Extra travel help for one traveler',
       'One-time payment',
-      'Access after verified PayPal payment capture',
+      'Instant access after purchase',
     ],
     cta: 'Get Trip Pass',
-    href: manualPaypalLinks.trip,
+    href: gumroadLinks.trip,
     plan: 'trip_pass',
     featured: true,
   },
@@ -96,10 +96,10 @@ const pricingPlans = [
       'Valid for 14 days',
       'One account and one shared allowance for couples, families or small travel groups',
       'One-time payment',
-      'Access after verified PayPal payment capture',
+      'Instant access after purchase',
     ],
     cta: 'Get Group Pass',
-    href: manualPaypalLinks.group,
+    href: gumroadLinks.group,
     plan: 'group_pass',
   },
 ];
@@ -159,7 +159,7 @@ const legalCopy = {
       {
         title: 'Payments and Entitlements',
         body:
-          'For paid passes, we may store order identifiers, payer email if returned by PayPal, plan, expiry, quota, and payment status. Payments are processed by PayPal. We do not collect card details directly on this website.',
+          'For paid passes, we may store order identifiers, purchase email, plan, expiry, quota, and payment status. Payments are processed by Gumroad. We do not collect card details directly on this website.',
       },
       {
         title: 'Newsletter',
@@ -792,7 +792,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       {
         question: 'How do paid passes work?',
         answer:
-          'Paid passes are one-time digital travel passes processed through PayPal checkout when enabled. Access is activated after verified payment capture; manual activation may be used only as a support fallback.',
+          'Paid passes are one-time digital travel passes purchased through Gumroad. Access is activated immediately after purchase using your sale ID.',
       },
       {
         question: 'Is ChinaEase Buddy an official travel service?',
@@ -949,7 +949,7 @@ function PricingPage() {
   return (
     <PageShell
       title="Pricing"
-      intro="ChinaEase Buddy starts with a free toolkit. Paid passes are optional one-time purchases processed securely through PayPal."
+      intro="ChinaEase Buddy starts with a free toolkit. Paid passes are optional one-time purchases processed securely through Gumroad."
     >
       <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
         {pricingPlans.map((plan) => (
@@ -977,7 +977,7 @@ function PricingPage() {
               onClick={() => {
                 void trackEvent('cta_clicked', {
                   ctaName: plan.cta,
-                  destination: plan.plan === 'trip_pass' ? 'PayPal Trip Pass' : plan.plan === 'group_pass' ? 'PayPal Group Pass' : 'free-toolkit',
+                  destination: plan.plan === 'trip_pass' ? 'Gumroad Trip Pass' : plan.plan === 'group_pass' ? 'Gumroad Group Pass' : 'free-toolkit',
                   tool: 'pricing',
                   plan: plan.plan,
                 });
@@ -994,7 +994,7 @@ function PricingPage() {
       <div className="mt-5 rounded-2xl border border-[#155e63]/10 bg-[#155e63]/5 p-4">
         <p className="text-sm font-semibold text-[#155e63]">One-time payment · No auto-renewal.</p>
         <p className="mt-2 text-xs leading-relaxed text-gray-600">
-          How is payment processed? Payments are processed securely by PayPal when paid checkout is enabled. ChinaEase Buddy never sees or stores your card details.
+          How is payment processed? Payments are processed securely by Gumroad. ChinaEase Buddy never sees or stores your card details.
         </p>
       </div>
     </PageShell>
