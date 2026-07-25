@@ -270,6 +270,44 @@ export function setWrite(env, path, data) {
   };
 }
 
+export async function queryOneWithId(env, collectionId, field, value) {
+  const token = await serviceAccountToken(env);
+  const body = {
+    structuredQuery: {
+      from: [{ collectionId }],
+      where: {
+        fieldFilter: {
+          field: { fieldPath: field },
+          op: 'EQUAL',
+          value: firestoreValue(value),
+        },
+      },
+      limit: 1,
+    },
+  };
+  const res = await fetch(
+    `https://firestore.googleapis.com/v1/projects/${env.FIREBASE_PROJECT_ID}/databases/(default)/documents:runQuery`,
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+      signal: AbortSignal.timeout(FIRESTORE_TIMEOUT_MS),
+    },
+  );
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`firestore_query_error:${res.status}:${text.slice(0, 240)}`);
+  }
+  const rows = await res.json();
+  const first = rows.find((row) => row.document?.fields);
+  if (!first) return null;
+  const id = first.document.name.split('/').pop();
+  return { id, ...fromFirestoreDocument(first.document) };
+}
+
 export async function queryCollection(env, collectionId, field, value, limit = 10) {
   const token = await serviceAccountToken(env);
   const body = {
