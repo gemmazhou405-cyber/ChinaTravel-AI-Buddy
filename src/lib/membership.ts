@@ -1,23 +1,16 @@
-import type { UserState } from '../hooks/useAuth';
+import type { PassState } from '../hooks/usePass';
 
-type Plan = 'free' | 'trip' | 'group';
-
-export function isPlanActive(userState: UserState | null): boolean {
-  if (!userState) return false;
-  if (!userState.planExpiresAt) return true;
-  return Date.now() < userState.planExpiresAt;
+export function isTripOrGroup(passState: PassState | null): boolean {
+  if (!passState || passState.tier === 'free' || passState.expired) return false;
+  return passState.tier === 'trip' || passState.tier === 'group';
 }
 
-export function getPlan(userState: UserState | null): Plan {
-  if (!userState || !isPlanActive(userState)) return 'free';
-  return userState.plan;
+export function isGroup(passState: PassState | null): boolean {
+  if (!passState || passState.expired) return false;
+  return passState.tier === 'group';
 }
 
-export function isTripOrGroup(userState: UserState | null): boolean {
-  const plan = getPlan(userState);
-  return plan === 'trip' || plan === 'group';
-}
-
-export function isGroup(userState: UserState | null): boolean {
-  return getPlan(userState) === 'group';
+export function getPlanTier(passState: PassState | null): 'free' | 'trip' | 'group' {
+  if (!passState || passState.tier === 'free' || passState.expired) return 'free';
+  return passState.tier;
 }
