@@ -5,7 +5,7 @@ import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
 import TabSectionHeader from '../TabSectionHeader';
 import ToolDisclosure from '../ToolDisclosure';
 import { airportCards, taxiCards, trainCards } from '../../data/phraseCards';
-import type { UserState } from '../../hooks/useAuth';
+import type { PassState } from '../../hooks/usePass';
 import { isTripOrGroup } from '../../lib/membership';
 
 const METRO_PHRASES = [
@@ -23,7 +23,7 @@ interface TransportApp {
 }
 
 interface Props {
-  userState: UserState | null;
+  passState: PassState | null;
   showToast: (msg: string) => void;
   onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
@@ -31,13 +31,13 @@ interface Props {
   onToolOpened?: (category: string) => void;
 }
 
-export default function TransportTab({ userState, showToast, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
+export default function TransportTab({ passState, showToast, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
   const { t } = useTranslation();
   const [selectedPhrase, setSelectedPhrase] = useState<(typeof METRO_PHRASES)[number] | null>(null);
   const [fromCity, setFromCity] = useState('');
   const [toCity, setToCity] = useState('');
   const apps = t('transport.apps', { returnObjects: true }) as TransportApp[];
-  const hasFullAccess = isTripOrGroup(userState);
+  const hasFullAccess = isTripOrGroup(passState);
 
   const speakChinese = (text: string) => {
     if ('speechSynthesis' in window) {

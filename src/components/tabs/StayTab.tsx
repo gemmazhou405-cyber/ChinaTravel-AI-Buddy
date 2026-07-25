@@ -6,7 +6,7 @@ import TabSectionHeader from '../TabSectionHeader';
 import ToolDisclosure from '../ToolDisclosure';
 import CitySurvivalPack from '../CitySurvivalPack';
 import { hotelCards } from '../../data/phraseCards';
-import type { UserState } from '../../hooks/useAuth';
+import type { PassState } from '../../hooks/usePass';
 import { isGroup, isTripOrGroup } from '../../lib/membership';
 import { cityPacks } from '../../data/cityPacks';
 
@@ -29,7 +29,7 @@ const TIPS = [
 ];
 
 interface Props {
-  userState: UserState | null;
+  passState: PassState | null;
   showToast: (msg: string) => void;
   onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
@@ -37,7 +37,7 @@ interface Props {
   onToolOpened?: (category: string) => void;
 }
 
-export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
+export default function StayTab({ passState, showToast, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
   const { t } = useTranslation();
   const [customPhrase, setCustomPhrase] = useState('');
   const [showCustomResult, setShowCustomResult] = useState(false);
@@ -48,8 +48,8 @@ export default function StayTab({ userState, showToast, onAskBuddy, onUpgradeCli
     chinese: '请问我最晚几点退房？',
     pinyin: 'Qǐngwèn wǒ zuì wǎn jǐ diǎn tuìfáng?',
   };
-  const hasFullAccess = isTripOrGroup(userState);
-  const canUseCustomPhraseHelper = isGroup(userState);
+  const hasFullAccess = isTripOrGroup(passState);
+  const canUseCustomPhraseHelper = isGroup(passState);
   const selectedCity = cityPacks.find((city) => city.cityId === selectedCityId) || cityPacks[0];
   const isCityLocked = (cityId: string) => !hasFullAccess && cityId !== 'shanghai';
 

@@ -1,7 +1,7 @@
 import { CheckCircle, Circle, Wifi, CreditCard, Smartphone, FileText, ChevronRight, Lock, X, MapPin, Train, Globe, BookOpen, ClipboardList } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import type { UserState } from '../../hooks/useAuth';
+import type { PassState } from '../../hooks/usePass';
 import type { CityPack } from '../../types/cityPack';
 import { isTripOrGroup } from '../../lib/membership';
 import TabSectionHeader from '../TabSectionHeader';
@@ -230,16 +230,16 @@ function VisaContent({ data }: { data: VisaGuide }) {
 // ── Main component ───────────────────────────────────────────────────────────
 
 interface Props {
-  userState: UserState | null;
+  passState: PassState | null;
   onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
   deepTool?: string | null;
   onToolOpened?: (category: string) => void;
 }
 
-export default function BeforeTab({ userState, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
+export default function BeforeTab({ passState, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
   const { t } = useTranslation();
-  const hasFullAccess = isTripOrGroup(userState);
+  const hasFullAccess = isTripOrGroup(passState);
   const [selectedCity, setSelectedCity] = useState<{ city: CityPack; emoji: string } | null>(null);
   const essentialApps = t('before.essentialApps.items', { returnObjects: true }) as EssentialApp[];
   const [checked, setChecked] = useState<number[]>(() => {

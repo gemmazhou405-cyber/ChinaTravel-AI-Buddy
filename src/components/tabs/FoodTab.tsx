@@ -5,7 +5,7 @@ import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
 import TabSectionHeader from '../TabSectionHeader';
 import ToolDisclosure from '../ToolDisclosure';
 import { restaurantCards } from '../../data/phraseCards';
-import type { UserState } from '../../hooks/useAuth';
+import type { PassState } from '../../hooks/usePass';
 import { isTripOrGroup } from '../../lib/membership';
 import allDishes from '../../data/dishes/commonChineseDishes.json';
 
@@ -98,7 +98,7 @@ function AllergyCard({ card, showToast }: AllergyCardProps) {
 }
 
 interface Props {
-  userState: UserState | null;
+  passState: PassState | null;
   showToast: (msg: string) => void;
   onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
@@ -106,10 +106,10 @@ interface Props {
   onToolOpened?: (category: string) => void;
 }
 
-export default function FoodTab({ userState, showToast, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
+export default function FoodTab({ passState, showToast, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
   const { t } = useTranslation();
   const allergyCards = t('food.allergyCards', { returnObjects: true }) as AllergyCardData[];
-  const hasFullAccess = isTripOrGroup(userState);
+  const hasFullAccess = isTripOrGroup(passState);
   const [dishQuery, setDishQuery] = useState('');
 
   const dishResults = (() => {

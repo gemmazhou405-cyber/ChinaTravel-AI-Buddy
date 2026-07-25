@@ -1,6 +1,5 @@
 import { Smartphone, DollarSign, Info, ChevronRight, CreditCard, WalletCards, Banknote, QrCode } from 'lucide-react';
-import type { User } from 'firebase/auth';
-import { UserState } from '../../hooks/useAuth';
+import type { PassState } from '../../hooks/usePass';
 import { useTranslation } from 'react-i18next';
 import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
 import TabSectionHeader from '../TabSectionHeader';
@@ -12,13 +11,10 @@ import PhraseCard from '../PhraseCard';
 import type { PhraseCardData } from '../../types/phraseCard';
 
 interface Props {
-  user: User | null;
-  userState: UserState | null;
+  passState: PassState | null;
   showToast: (msg: string) => void;
-  onNeedAuth: () => void;
   onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
-  onRefreshUserState?: () => Promise<UserState | null>;
   deepTool?: string | null;
   onToolOpened?: (category: string) => void;
 }
@@ -32,11 +28,11 @@ interface PaymentMethod {
   icon: string;
 }
 
-export default function PayTab({ user, userState, showToast, onNeedAuth, onAskBuddy, onUpgradeClick, onRefreshUserState, deepTool, onToolOpened }: Props) {
+export default function PayTab({ passState, showToast, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
   const { t } = useTranslation();
   const assetBase = import.meta.env.BASE_URL;
   const paymentMethods = t('pay.methods', { returnObjects: true }) as PaymentMethod[];
-  const hasFullAccess = isTripOrGroup(userState);
+  const hasFullAccess = isTripOrGroup(passState);
   const setupSteps = [
     t('pay.setup.step1'),
     t('pay.setup.step2'),
@@ -142,7 +138,6 @@ export default function PayTab({ user, userState, showToast, onNeedAuth, onAskBu
         </div>
       </ToolDisclosure>
 
-      {/* Pricing cards */}
       <section>
         <h2 className="text-base font-semibold text-gray-900 mb-3">{t('pay.plansTitle')}</h2>
         <div className="mb-4 rounded-2xl border border-[#155e63]/10 bg-white/70 p-4">
@@ -156,24 +151,17 @@ export default function PayTab({ user, userState, showToast, onNeedAuth, onAskBu
             ))}
           </ul>
         </div>
-        <PricingPlans user={user} userState={userState} showToast={showToast} onNeedAuth={onNeedAuth} onRefreshUserState={onRefreshUserState} onCtaClick={(plan) => onToolOpened?.(`early-access-${plan}`)} />
+        <PricingPlans passState={passState} showToast={showToast} onCtaClick={(plan) => onToolOpened?.(`early-access-${plan}`)} />
       </section>
 
-      {/* Email header banner */}
       <section aria-label={t('pay.bannerAlt')}>
         <img
           src={`${assetBase}email_header.jpg`}
           alt={t('pay.bannerAlt')}
-          style={{
-            width: '100%',
-            borderRadius: '16px',
-            marginBottom: '2rem',
-            display: 'block',
-          }}
+          style={{ width: '100%', borderRadius: '16px', marginBottom: '2rem', display: 'block' }}
         />
       </section>
 
-      {/* Payment methods */}
       <ToolDisclosure
         id="tool-pay"
         title={t('pay.paymentTitle')}
@@ -193,9 +181,7 @@ export default function PayTab({ user, userState, showToast, onNeedAuth, onAskBu
                     <span className="text-gray-400 text-xs ml-1.5">{m.label}</span>
                   </div>
                 </div>
-                <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${m.statusColor}`}>
-                  {m.status}
-                </span>
+                <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${m.statusColor}`}>{m.status}</span>
               </div>
               <p className="text-gray-500 text-xs leading-relaxed pl-8">{m.desc}</p>
             </div>
@@ -203,7 +189,6 @@ export default function PayTab({ user, userState, showToast, onNeedAuth, onAskBu
         </div>
       </ToolDisclosure>
 
-      {/* WeChat Pay setup */}
       <ToolDisclosure
         id="tool-wechat"
         title={t('pay.wechatSetup')}
@@ -231,9 +216,7 @@ export default function PayTab({ user, userState, showToast, onNeedAuth, onAskBu
         <Info className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
         <div>
           <p className="text-amber-800 font-semibold text-sm">{t('pay.exchangeTip')}</p>
-          <p className="text-amber-600 text-xs mt-0.5 leading-relaxed">
-            {t('pay.exchangeBody')}
-          </p>
+          <p className="text-amber-600 text-xs mt-0.5 leading-relaxed">{t('pay.exchangeBody')}</p>
         </div>
       </div>
 
@@ -250,15 +233,13 @@ export default function PayTab({ user, userState, showToast, onNeedAuth, onAskBu
       </div>
 
       <PhraseCategoryAccordion
-        categories={[
-          {
-            id: 'payment',
-            title: t('pay.paymentPhraseCards'),
-            subtitle: t('pay.paymentCardsSubtitle', { count: paymentCards.length }),
-            icon: <CreditCard className="w-4 h-4" />,
-            cards: paymentCards,
-          },
-        ]}
+        categories={[{
+          id: 'payment',
+          title: t('pay.paymentPhraseCards'),
+          subtitle: t('pay.paymentCardsSubtitle', { count: paymentCards.length }),
+          icon: <CreditCard className="w-4 h-4" />,
+          cards: paymentCards,
+        }]}
         freeLimit={3}
         lockedPreviewLimit={3}
         isPaidUser={hasFullAccess}

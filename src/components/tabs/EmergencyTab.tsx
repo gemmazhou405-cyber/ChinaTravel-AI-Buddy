@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
 import TabSectionHeader from '../TabSectionHeader';
 import { emergencyCards, hospitalCards, pharmacyCards, policeCards } from '../../data/phraseCards';
-import type { UserState } from '../../hooks/useAuth';
+import type { PassState } from '../../hooks/usePass';
 import { isTripOrGroup } from '../../lib/membership';
 
 // Emergency kit data
@@ -151,7 +151,7 @@ function PhraseRow({ english, chinese, pinyin, speak, copy }: { english: string;
 // ── Main component ───────────────────────────────────────────────────────────
 
 interface Props {
-  userState: UserState | null;
+  passState: PassState | null;
   showToast: (msg: string) => void;
   onAskBuddy: () => void;
   onUpgradeClick: (message?: string) => void;
@@ -159,9 +159,9 @@ interface Props {
   onToolOpened?: (category: string) => void;
 }
 
-export default function EmergencyTab({ userState, showToast, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
+export default function EmergencyTab({ passState, showToast, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
   const { t } = useTranslation();
-  const hasFullAccess = isTripOrGroup(userState);
+  const hasFullAccess = isTripOrGroup(passState);
   const [kitModal, setKitModal] = useState<string | null>(null);
 
   const speakChinese = (text: string) => {

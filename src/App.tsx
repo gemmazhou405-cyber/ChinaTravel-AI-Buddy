@@ -10,13 +10,11 @@ import HomePasses from './components/home/HomePasses';
 import ChatButton from './components/ChatButton';
 import ChatModal from './components/ChatModal';
 import Footer from './components/Footer';
-import AuthModal from './components/AuthModal';
 import Toast from './components/Toast';
 import PolicyPage, { getPolicyPageType } from './components/PolicyPage';
-import { useAuth } from './hooks/useAuth';
+import { usePass } from './hooks/usePass';
 import { useTranslation } from 'react-i18next';
 import { initAttribution, trackEvent, trackEventOnce } from './lib/analytics';
-import { captureCheckoutOrder } from './lib/payment';
 
 export type TabId = 'before' | 'stay' | 'food' | 'transport' | 'emergency' | 'pay';
 export type JourneyId = 'before' | 'now' | 'emergency';
@@ -26,25 +24,12 @@ function parseLandingParams(): { journey: JourneyId; tab: TabId | null; tool: st
   const journeyParam = params.get('journey');
   const tool = params.get('tool');
   if (journeyParam === 'before') {
-    const beforeTools: Record<string, string> = {
-      apps: 'apps',
-      payment: 'payment',
-      checklist: 'checklist',
-      city: 'city',
-      transport: 'transport',
-    };
+    const beforeTools: Record<string, string> = { apps: 'apps', payment: 'payment', checklist: 'checklist', city: 'city', transport: 'transport' };
     return { journey: 'before', tab: tool && beforeTools[tool] ? 'before' : null, tool: tool && beforeTools[tool] ? beforeTools[tool] : null };
   }
-  if (journeyParam === 'emergency') {
-    return { journey: 'emergency', tab: 'emergency', tool: 'numbers' };
-  }
+  if (journeyParam === 'emergency') return { journey: 'emergency', tab: 'emergency', tool: 'numbers' };
   if (journeyParam === 'china') {
-    const chinaTabs: Record<string, TabId> = {
-      transport: 'transport',
-      stay: 'stay',
-      food: 'food',
-      pay: 'pay',
-    };
+    const chinaTabs: Record<string, TabId> = { transport: 'transport', stay: 'stay', food: 'food', pay: 'pay' };
     return { journey: 'now', tab: tool && chinaTabs[tool] ? chinaTabs[tool] : null, tool: tool && chinaTabs[tool] ? tool : null };
   }
   return { journey: 'now', tab: null, tool: null };
@@ -56,22 +41,11 @@ function analyticsJourney(journey: JourneyId) {
 
 function deepLinkTargetId(landing: { journey: JourneyId; tab: TabId | null; tool: string | null }) {
   if (landing.journey === 'before') {
-    const beforeTargets: Record<string, string> = {
-      checklist: 'tool-checklist',
-      apps: 'tool-apps',
-      payment: 'tool-payment',
-      transport: 'tool-transport',
-      city: 'tool-city',
-    };
+    const beforeTargets: Record<string, string> = { checklist: 'tool-checklist', apps: 'tool-apps', payment: 'tool-payment', transport: 'tool-transport', city: 'tool-city' };
     return landing.tool ? beforeTargets[landing.tool] : null;
   }
   if (landing.journey === 'now') {
-    const nowTargets: Record<string, string> = {
-      transport: 'phrase-category-taxi',
-      stay: 'phrase-category-hotel',
-      food: 'tool-food',
-      pay: 'tool-pay',
-    };
+    const nowTargets: Record<string, string> = { transport: 'phrase-category-taxi', stay: 'phrase-category-hotel', food: 'tool-food', pay: 'tool-pay' };
     return landing.tool ? nowTargets[landing.tool] : null;
   }
   if (landing.journey === 'emergency') return 'tool-emergency-numbers';
@@ -96,13 +70,13 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<TabId>(landing.tab ?? 'food');
   const [chatOpen, setChatOpen] = useState(false);
   const [chatPrefill, setChatPrefill] = useState<string | null>(null);
-  const [authOpen, setAuthOpen] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const [toolOpen, setToolOpen] = useState(Boolean(landing.tab));
   const [deepTool, setDeepTool] = useState<string | null>(landing.tool);
-  const { user, userState, logout, signup, login, loginWithGoogle, resendVerificationEmail, resetPassword, refreshUserState } = useAuth();
+  const { passState, refreshPassState } = usePass();
   const showToast = (msg: string) => setToast(msg);
-  const handleUpgradeClick = (message = 'Unlock all phrase cards with Trip Pass.') => {
+
+  const handleUpgradeClick = (message = t('pay.upgradePrompt')) => {
     setActiveTab('pay');
     setToolOpen(true);
     showToast(message);
@@ -110,9 +84,8 @@ export default function App() {
       document.getElementById('plans')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 0);
   };
-  useEffect(() => {
-    initAttribution();
-  }, []);
+
+  useEffect(() => { initAttribution(); }, []);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -127,10 +100,9 @@ export default function App() {
           tool: toolParam || landing.tool || '',
           path: `${window.location.pathname}${window.location.search}`,
         },
-        user?.uid,
       );
     }
-  // Initial landing event only. User id may be absent for anonymous visitors.
+  // Initial landing event only
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -143,72 +115,29 @@ export default function App() {
       };
       [250, 650, 1100, 1800, 2600].forEach((delay) => window.setTimeout(scrollTarget, delay));
     }
-  // Run only for initial URL landing.
+  // Run only for initial URL landing
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const payment = params.get('payment');
-    const orderId = params.get('order');
-    if (payment !== 'paypal-return' || !orderId || !user) return;
-
-    let cancelled = false;
-    (async () => {
-      try {
-        const result = await captureCheckoutOrder(user, orderId);
-        if (cancelled) return;
-        if (result.status === 'completed') {
-          await refreshUserState();
-          showToast(t('pay.checkout.success'));
-        } else {
-          showToast(t('pay.checkout.pending'));
-        }
-        window.history.replaceState({}, '', window.location.pathname);
-      } catch {
-        if (!cancelled) showToast(t('pay.checkout.captureError'));
-      }
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, [refreshUserState, t, user]);
 
   const openToolkit = (tab?: TabId, tool?: string) => {
     if (tab) setActiveTab(tab);
     setToolOpen(true);
     setDeepTool(tool ?? null);
     if (tab) {
-      // Mirror parseLandingParams so the opened state is shareable.
       const params = new URLSearchParams();
-      if (tab === 'before') {
-        params.set('journey', 'before');
-        if (tool) params.set('tool', tool);
-      } else if (tab === 'emergency') {
-        params.set('journey', 'emergency');
-      } else {
-        params.set('journey', 'china');
-        params.set('tool', tab);
-      }
+      if (tab === 'before') { params.set('journey', 'before'); if (tool) params.set('tool', tool); }
+      else if (tab === 'emergency') { params.set('journey', 'emergency'); }
+      else { params.set('journey', 'china'); params.set('tool', tab); }
       window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
     }
-    void trackEvent('tool_category_opened', {
-      journey: analyticsJourney(landing.journey),
-      tool: tool ?? tab ?? activeTab,
-      category: tool ?? tab ?? activeTab,
-    }, user?.uid);
+    void trackEvent('tool_category_opened', { journey: analyticsJourney(landing.journey), tool: tool ?? tab ?? activeTab, category: tool ?? tab ?? activeTab });
     window.setTimeout(() => {
       document.getElementById('tabs')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 0);
   };
 
   const openBuddy = (prefill?: string) => {
-    void trackEvent('cta_clicked', {
-      ctaName: 'Ask Buddy',
-      destination: 'chat',
-      journey: analyticsJourney(landing.journey),
-      tool: deepTool || activeTab,
-    }, user?.uid);
+    void trackEvent('cta_clicked', { ctaName: 'Ask Buddy', destination: 'chat', journey: analyticsJourney(landing.journey), tool: deepTool || activeTab });
     setChatPrefill(prefill ?? null);
     setChatOpen(true);
   };
@@ -216,18 +145,14 @@ export default function App() {
   if (policyPageType) {
     return (
       <div className="min-h-screen bg-canvas pb-[env(safe-area-inset-bottom)] font-sans">
-        <PolicyPage type={policyPageType} userId={user?.uid} />
+        <PolicyPage type={policyPageType} userId={undefined} />
         <Footer onOpenEmergency={() => { window.location.href = '/?journey=emergency'; }} />
       </div>
     );
   }
 
   const handlePrimaryCta = () => {
-    void trackEvent('cta_clicked', {
-      ctaName: 'Open Free Toolkit',
-      destination: 'Tools',
-      journey: analyticsJourney(landing.journey),
-    }, user?.uid);
+    void trackEvent('cta_clicked', { ctaName: 'Open Free Toolkit', destination: 'Tools', journey: analyticsJourney(landing.journey) });
     openToolkit();
   };
 
@@ -238,24 +163,15 @@ export default function App() {
   return (
     <div className="min-h-screen bg-canvas pb-[env(safe-area-inset-bottom)] font-sans">
       <SiteHeader
-        user={user}
-        userState={userState}
-        onNeedAuth={() => setAuthOpen(true)}
+        passState={passState}
         onAskBuddy={() => openBuddy()}
         onOpenToolkit={handlePrimaryCta}
         onNavigate={navigateToSection}
-        onLogout={logout}
-        onResendVerification={async () => {
-          await resendVerificationEmail();
-          showToast(t('auth.verificationSent'));
-        }}
+        onViewPass={() => navigateToSection('travel-passes')}
       />
 
-      {/* Section 1 — Hero */}
       <Hero onOpenToolkit={handlePrimaryCta} onAskBuddy={() => openBuddy()} />
 
-      {/* Product surface — toolkit tabs, revealed by the primary CTA or deep links.
-          The wrapper bounds the sticky tab bar so it can't float over later sections. */}
       {toolOpen && (
         <div className="relative">
           <div id="tabs" className="sticky top-16 z-40 bg-white shadow-sm">
@@ -263,77 +179,39 @@ export default function App() {
           </div>
           <TabContent
             activeTab={activeTab}
-            user={user}
-            userState={userState}
+            passState={passState}
             showToast={showToast}
-            onNeedAuth={() => setAuthOpen(true)}
             onAskBuddy={() => openBuddy()}
             onUpgradeClick={handleUpgradeClick}
-            onRefreshUserState={refreshUserState}
             deepTool={deepTool}
             onToolOpened={(category) => {
-              void trackEvent('tool_category_opened', {
-                journey: analyticsJourney(landing.journey),
-                tool: deepTool || activeTab,
-                category,
-              }, user?.uid);
+              void trackEvent('tool_category_opened', { journey: analyticsJourney(landing.journey), tool: deepTool || activeTab, category });
             }}
           />
         </div>
       )}
 
-      {/* Section 2 — Scenario cards */}
       <Scenarios onOpenTool={(tab, tool) => openToolkit(tab, tool)} />
-
-      {/* Section 3 — Toolkit grid */}
       <ToolkitGrid onOpen={(tab, tool) => openToolkit(tab, tool)} />
-
-      {/* Section 4 — Ask Buddy demo */}
       <BuddyDemo onAsk={(question) => openBuddy(question)} />
 
-      {/* Section 4 — Travel Pass */}
       <HomePasses
-        user={user}
-        userState={userState}
+        passState={passState}
         showToast={showToast}
-        onNeedAuth={() => setAuthOpen(true)}
         onOpenToolkit={() => openToolkit()}
-        onRefreshUserState={refreshUserState}
       />
 
-      {/* Section 5 — Footer */}
       <Footer onOpenEmergency={() => openToolkit('emergency')} />
 
       <ChatButton onClick={() => openBuddy()} />
       {chatOpen && (
         <ChatModal
           onClose={() => setChatOpen(false)}
-          user={user}
-          userState={userState}
+          passState={passState}
+          refreshPassState={refreshPassState}
           initialPrompt={chatPrefill ?? undefined}
-          onNeedAuth={() => {
-            setChatOpen(false);
-            setAuthOpen(true);
-          }}
-          onResendVerification={async () => {
-            await resendVerificationEmail();
-            showToast(t('auth.verificationSent'));
-          }}
-          onRefreshUserState={refreshUserState}
           onOpenToolkit={() => openToolkit()}
-        />
-      )}
-      {authOpen && (
-        <AuthModal
-          onClose={() => setAuthOpen(false)}
-          onSignup={async (email, password) => {
-            const result = await signup(email, password);
-            showToast(t('auth.verifyBeforeBuddy'));
-            return result;
-          }}
-          onLogin={login}
-          onGoogleLogin={loginWithGoogle}
-          onPasswordReset={resetPassword}
+          onViewPricing={() => { setChatOpen(false); navigateToSection('travel-passes'); }}
         />
       )}
       {toast && <Toast message={toast} onDone={() => setToast(null)} />}

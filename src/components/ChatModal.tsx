@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { X, Send, Sparkles, AlertCircle } from 'lucide-react';
-import { User } from 'firebase/auth';
-import { UserState } from '../hooks/useAuth';
+import { createPortal } from 'react-dom';
+import { X, Send, Sparkles, AlertCircle, ArrowLeft } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackAppError, trackEvent, trackEventOnce } from '../lib/analytics';
 import { renderChatMarkdown } from '../lib/chatMarkdown';
+import type { PassState } from '../hooks/usePass';
 
 interface Message {
   id: number;
@@ -15,20 +15,23 @@ interface Message {
   retryRequestId?: string;
 }
 
-const SUGGESTIONS = ['chat.suggestions.s1', 'chat.suggestions.s2', 'chat.suggestions.s3', 'chat.suggestions.s4'];
+const SUGGESTIONS = [
+  'chat.suggestions.s1',
+  'chat.suggestions.s2',
+  'chat.suggestions.s3',
+  'chat.suggestions.s4',
+];
 
 interface Props {
   onClose: () => void;
-  user: User | null;
-  userState: UserState | null;
-  onNeedAuth: () => void;
-  onResendVerification: () => Promise<void>;
-  onRefreshUserState: () => Promise<UserState | null>;
+  passState: PassState | null;
+  refreshPassState: () => Promise<void>;
   onOpenToolkit?: () => void;
+  onViewPricing?: () => void;
   initialPrompt?: string;
 }
 
-export default function ChatModal({ onClose, user, userState, onNeedAuth, onResendVerification, onRefreshUserState, onOpenToolkit, initialPrompt }: Props) {
+export default function ChatModal({ onClose, passState, refreshPassState, onOpenToolkit, onViewPricing, initialPrompt }: Props) {
   const { t } = useTranslation();
   const [messages, setMessages] = useState<Message[]>([
     { id: 0, role: 'buddy', text: t('chat.welcome') },
@@ -37,8 +40,28 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
   const [typing, setTyping] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
-  const isGoogleUser = user?.providerData.some((provider) => provider.providerId === 'google.com') ?? false;
-  const needsEmailVerification = Boolean(user && !user.emailVerified && !isGoogleUser);
+  const hasUserMessages = messages.some((m) => m.role === 'user');
+
+  // Lock body scroll; save + restore scroll position on unmount
+  useEffect(() => {
+    const scrollY = window.scrollY;
+    const body = document.body;
+    body.style.overflow = 'hidden';
+    body.style.position = 'fixed';
+    body.style.top = `-${scrollY}px`;
+    body.style.left = '0';
+    body.style.right = '0';
+    body.style.width = '100%';
+    return () => {
+      body.style.overflow = '';
+      body.style.position = '';
+      body.style.top = '';
+      body.style.left = '';
+      body.style.right = '';
+      body.style.width = '';
+      window.scrollTo(0, scrollY);
+    };
+  }, []);
 
   const scrollToBottom = useCallback(() => {
     const el = scrollRef.current;
@@ -46,8 +69,28 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
     el.scrollTop = el.scrollHeight;
   }, []);
 
+  // Track the real visible viewport height so the panel shrinks when the iOS
+  // keyboard opens instead of leaving a blank gap above the input bar.
   useEffect(() => {
-    // rAF so layout (autosizing input, new bubbles) settles before we measure.
+    const vv = window.visualViewport;
+    if (!vv) return;
+    const update = () => {
+      document.documentElement.style.setProperty('--buddy-vvp-height', `${vv.height}px`);
+      document.documentElement.style.setProperty('--buddy-vvp-top', `${vv.offsetTop}px`);
+      requestAnimationFrame(scrollToBottom);
+    };
+    update();
+    vv.addEventListener('resize', update);
+    vv.addEventListener('scroll', update);
+    return () => {
+      vv.removeEventListener('resize', update);
+      vv.removeEventListener('scroll', update);
+      document.documentElement.style.removeProperty('--buddy-vvp-height');
+      document.documentElement.style.removeProperty('--buddy-vvp-top');
+    };
+  }, [scrollToBottom]);
+
+  useEffect(() => {
     requestAnimationFrame(scrollToBottom);
   }, [messages, typing, scrollToBottom]);
 
@@ -64,14 +107,10 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
   }, [resizeInput]);
 
   const pushBuddy = (text: string, kind?: 'error', retry?: { text: string; requestId: string }) => {
-    setMessages((prev) => [...prev, {
-      id: Date.now() + 1,
-      role: 'buddy',
-      text,
-      kind,
-      retryText: retry?.text,
-      retryRequestId: retry?.requestId,
-    }]);
+    setMessages((prev) => [
+      ...prev,
+      { id: Date.now() + 1, role: 'buddy', text, kind, retryText: retry?.text, retryRequestId: retry?.requestId },
+    ]);
   };
 
   const buildContext = (items: Message[]) => {
@@ -92,19 +131,7 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
   };
 
   const send = async (text: string, options?: { requestId?: string; retry?: boolean }) => {
-    if (!text.trim()) return;
-    if (typing) return;
-
-    if (!userState) {
-      pushBuddy('Create a free account to ask Buddy. No card required.', 'error');
-      onNeedAuth();
-      return;
-    }
-
-    if (needsEmailVerification) {
-      pushBuddy(`${t('chat.verifyEmail')} ${t('chat.verifyEmailHint')}`, 'error');
-      return;
-    }
+    if (!text.trim() || typing) return;
 
     const trimmedText = text.trim();
     const requestId = options?.requestId || crypto.randomUUID();
@@ -114,252 +141,208 @@ export default function ChatModal({ onClose, user, userState, onNeedAuth, onRese
       if (last?.role === 'user' && last.text === trimmedText) context.pop();
     }
     if (!options?.retry) {
-      const userMsg: Message = { id: Date.now(), role: 'user', text: trimmedText };
-      setMessages((prev) => [...prev, userMsg]);
+      setMessages((prev) => [...prev, { id: Date.now(), role: 'user', text: trimmedText }]);
     }
     setInput('');
     requestAnimationFrame(resizeInput);
     setTyping(true);
 
     try {
-      const token = await user?.getIdToken();
-      if (!token) {
-        onNeedAuth();
-        return;
-      }
-
+      // Cookie is sent automatically — no Authorization header needed
       const response = await fetch('/api/buddy/chat', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          requestId,
-          message: trimmedText,
-          context,
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ requestId, message: trimmedText, context }),
       });
-      let data: { error?: string; message?: string; reply?: string; quotaType?: string; limit?: number; plan?: string } = {};
+
+      let data: {
+        error?: string; message?: string; reply?: string;
+        tier?: string; remaining?: number;
+      } = {};
       const responseText = await response.text();
       if (responseText) {
-        try {
-          data = JSON.parse(responseText);
-        } catch {
-          data = {
-            error: response.status >= 500 ? 'service_unavailable' : 'buddy_request_failed',
-            message: responseText.slice(0, 120),
-          };
-        }
+        try { data = JSON.parse(responseText); }
+        catch { data = { error: response.status >= 500 ? 'service_unavailable' : 'buddy_request_failed', message: responseText.slice(0, 120) }; }
       }
 
       if (!response.ok) {
         console.error('[buddy] /api/buddy/chat failed', { status: response.status, body: responseText.slice(0, 500) });
-        if (data?.error === 'auth_required') {
-          pushBuddy(t('chat.notLoggedIn'), 'error');
-          onNeedAuth();
+        if (data?.error === 'quota_exhausted' || data?.error === 'pass_expired') {
+          void trackEvent('quota_exhausted', { tool: 'buddy', code: data.error, tier: data.tier || passState?.tier });
+          pushBuddy(t('chat.quotaExhausted'), 'error');
           return;
         }
-
-        if (data?.error === 'quota_exhausted') {
-          void trackEvent('quota_exhausted', {
-            tool: 'buddy',
-            quotaType: data.quotaType || 'total',
-            plan: data.plan || userState.plan,
-          }, userState.uid);
-          pushBuddy(
-            data.quotaType === 'daily'
-              ? t('chat.dailyQuotaExceeded', { limit: data.limit || userState.dailyBuddyAiLimit })
-              : t('chat.quotaExceeded', { limit: data.limit || userState.buddyAiQuotaTotal, plan: data.plan || userState.plan }),
-            'error',
-          );
+        if (data?.error === 'free_quota_exhausted') {
+          pushBuddy(t('chat.freeQuotaExhausted'), 'error');
           return;
         }
-
-        if (data?.error === 'email_verification_required') {
-          pushBuddy(`${t('chat.verifyEmail')} ${t('chat.verifyEmailHint')}`, 'error');
-          return;
-        }
-
-        if (data?.error === 'rate_limited') {
-          pushBuddy(t('chat.rateLimited'), 'error');
-          return;
-        }
-
+        if (data?.error === 'rate_limited') { pushBuddy(t('chat.rateLimited'), 'error'); return; }
         if (data?.error === 'service_unavailable' || data?.error === 'upstream_error' || data?.error === 'upstream_timeout') {
           pushBuddy(t('chat.serviceUnavailable'), 'error', { text: trimmedText, requestId });
           return;
         }
-
         throw new Error(data?.error || `buddy_request_failed:${response.status}`);
       }
 
-      const replyText = data.reply || data.message || t('chat.trouble');
-      pushBuddy(replyText);
-      await onRefreshUserState();
-      trackEventOnce(`buddy:first-success:${userState.uid}`, 'buddy_first_success', {
-        tool: 'buddy',
-        plan: userState.plan,
-      }, userState.uid);
+      pushBuddy(data.reply || data.message || t('chat.trouble'));
+      await refreshPassState();
+      trackEventOnce('buddy:first-success', 'buddy_first_success', { tool: 'buddy', tier: passState?.tier });
     } catch (error) {
       console.error('[buddy] chat request error', error);
-      trackAppError('ai_connection_error', {
-        tool: 'buddy',
-        context: 'chat_send',
-        errorCode: error instanceof Error ? error.message.slice(0, 80) : 'buddy_request_failed',
-      }, userState.uid);
+      trackAppError('ai_connection_error', { tool: 'buddy', context: 'chat_send', errorCode: error instanceof Error ? error.message.slice(0, 80) : 'buddy_request_failed' });
       pushBuddy(t('chat.connectionIssue'), 'error', { text: trimmedText, requestId });
     } finally {
       setTyping(false);
     }
   };
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center p-0 sm:items-center sm:p-4">
-      {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" onClick={onClose} />
+  const content = (
+    <>
+      <div className="fixed inset-0 z-[9998] hidden bg-black/30 md:block" onClick={onClose} />
 
-      {/* Panel */}
-      <div className="animate-modal-in relative flex max-h-[85vh] w-full flex-col overflow-hidden rounded-t-[20px] bg-surface shadow-card sm:max-w-md sm:rounded-[20px]">
-        {/* Header */}
-        <div className="flex items-center gap-3 border-b border-hairline bg-surface px-5 py-4">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-jade">
+      <div className="buddy-panel-vvp animate-modal-in fixed inset-0 z-[9999] flex flex-col overflow-hidden bg-surface md:inset-y-0 md:left-auto md:right-0 md:w-[480px] md:shadow-2xl">
+        <div
+          className="flex flex-shrink-0 items-center gap-2 border-b border-hairline bg-surface px-3"
+          style={{ paddingTop: 'max(14px, env(safe-area-inset-top))', paddingBottom: '14px' }}
+        >
+          <button onClick={onClose} aria-label="Back" className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg text-ink-tertiary transition-colors active:bg-canvas md:hidden">
+            <ArrowLeft className="h-5 w-5" strokeWidth={1.5} />
+          </button>
+          <div className="hidden h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-jade md:flex">
             <Sparkles className="h-4 w-4 text-white" strokeWidth={1.5} />
           </div>
-          <div className="flex-1">
-            <h3 className="text-sm font-semibold text-ink">{t('chat.title')}</h3>
-            <p className="text-xs text-ink-tertiary">{t('chat.subtitle')}</p>
+          <div className="min-w-0 flex-1 text-center md:text-left">
+            <h2 className="text-sm font-semibold text-ink">{t('chat.title')}</h2>
+            <p className="text-[11px] text-ink-tertiary">{t('chat.subtitle')}</p>
           </div>
-          <button onClick={onClose} className="flex h-8 w-8 items-center justify-center rounded-lg text-ink-tertiary transition-colors duration-hover ease-out hover:bg-canvas hover:text-ink">
+          <div className="h-10 w-10 flex-shrink-0 md:hidden" aria-hidden />
+          <button onClick={onClose} aria-label="Close" className="hidden h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg text-ink-tertiary transition-colors hover:bg-canvas hover:text-ink md:flex">
             <X className="h-4 w-4" strokeWidth={1.5} />
           </button>
         </div>
 
-        {/* Messages */}
-        <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto bg-canvas p-4">
-          {messages.map((m) => (
-            <div key={m.id} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-              {m.role === 'buddy' && (
-                <div className={`mr-2 mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full ${m.kind === 'error' ? 'bg-red-600' : 'bg-jade'}`}>
-                  {m.kind === 'error'
-                    ? <AlertCircle className="h-3 w-3 text-white" strokeWidth={1.5} />
-                    : <Sparkles className="h-3 w-3 text-white" strokeWidth={1.5} />}
+        <div ref={scrollRef} className="min-h-0 flex-1 overflow-x-hidden overflow-y-auto bg-canvas">
+          {!hasUserMessages ? (
+            <div className="space-y-4 p-4">
+              <div className="flex items-start gap-2.5">
+                <div className="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-jade">
+                  <Sparkles className="h-3.5 w-3.5 text-white" strokeWidth={1.5} />
                 </div>
-              )}
-              {m.role === 'user' ? (
-                <div className="max-w-[78%] whitespace-pre-wrap rounded-2xl rounded-br-md bg-jade px-3.5 py-2.5 text-sm leading-relaxed text-white">
-                  {m.text}
+                <div className="max-w-[85%] rounded-2xl rounded-tl-sm border border-hairline bg-surface px-3.5 py-2.5 text-sm leading-relaxed text-ink">
+                  {messages[0]?.text}
                 </div>
-              ) : m.kind === 'error' ? (
-                <div className="max-w-[78%] rounded-2xl rounded-bl-md border border-red-200 bg-red-50 px-3.5 py-2.5 text-sm leading-relaxed text-red-800">
-                  {m.text}
-                  {m.retryText && m.retryRequestId && (
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      <button
-                        onClick={() => send(m.retryText || '', { requestId: m.retryRequestId, retry: true })}
-                        disabled={typing}
-                        className="rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-red-700 shadow-sm transition-colors duration-hover ease-out hover:bg-red-100 disabled:opacity-50"
-                      >
-                        Retry
-                      </button>
-                      {onOpenToolkit && (
-                        <button
-                          onClick={() => {
-                            onClose();
-                            onOpenToolkit();
-                          }}
-                          className="rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-jade shadow-sm transition-colors duration-hover ease-out hover:bg-red-100"
-                        >
-                          Open Toolkit
-                        </button>
-                      )}
+              </div>
+              <p className="pl-9 text-[11px] font-medium uppercase tracking-wide text-ink-tertiary">{t('chat.suggested')}</p>
+              <div className="space-y-2">
+                {SUGGESTIONS.map((s) => (
+                  <button
+                    key={s}
+                    onClick={() => send(t(s))}
+                    disabled={typing}
+                    className="w-full rounded-xl border border-hairline bg-surface px-4 py-3 text-left text-sm font-medium text-ink transition-colors hover:border-jade/30 hover:bg-jade-wash active:bg-jade-wash disabled:opacity-50"
+                  >
+                    {t(s)}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="space-y-3 p-4">
+              {messages.map((m) => (
+                <div key={m.id} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                  {m.role === 'buddy' && (
+                    <div className={`mr-2 mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full ${m.kind === 'error' ? 'bg-red-600' : 'bg-jade'}`}>
+                      {m.kind === 'error'
+                        ? <AlertCircle className="h-3 w-3 text-white" strokeWidth={1.5} />
+                        : <Sparkles className="h-3 w-3 text-white" strokeWidth={1.5} />}
                     </div>
                   )}
+                  {m.role === 'user' ? (
+                    <div className="max-w-[85%] whitespace-pre-wrap rounded-2xl rounded-br-sm bg-jade px-3.5 py-2.5 text-sm leading-relaxed text-white">
+                      {m.text}
+                    </div>
+                  ) : m.kind === 'error' ? (
+                    <div className="max-w-[85%] rounded-2xl rounded-bl-sm border border-red-200 bg-red-50 px-3.5 py-2.5 text-sm leading-relaxed text-red-800">
+                      {m.text}
+                      {m.retryText && m.retryRequestId && (
+                        <div className="mt-3 flex flex-wrap gap-2">
+                          <button
+                            onClick={() => send(m.retryText || '', { requestId: m.retryRequestId, retry: true })}
+                            disabled={typing}
+                            className="rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-red-700 shadow-sm transition-colors hover:bg-red-100 disabled:opacity-50"
+                          >
+                            {t('chat.retry')}
+                          </button>
+                          {onViewPricing && (
+                            <button
+                              onClick={onViewPricing}
+                              className="rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-jade shadow-sm transition-colors hover:bg-jade-wash"
+                            >
+                              {t('chat.getPass')}
+                            </button>
+                          )}
+                          {onOpenToolkit && (
+                            <button
+                              onClick={() => { onClose(); onOpenToolkit(); }}
+                              className="rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-jade shadow-sm transition-colors hover:bg-red-100"
+                            >
+                              {t('chat.openToolkit')}
+                            </button>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <div
+                      className="chat-md max-w-[85%] rounded-2xl rounded-bl-sm border border-hairline bg-surface px-3.5 py-2.5 text-sm leading-relaxed text-ink"
+                      dangerouslySetInnerHTML={{ __html: renderChatMarkdown(m.text) }}
+                    />
+                  )}
                 </div>
-              ) : (
-                <div
-                  className="chat-md max-w-[78%] rounded-2xl rounded-bl-md border border-hairline bg-surface px-3.5 py-2.5 text-sm leading-relaxed text-ink"
-                  dangerouslySetInnerHTML={{ __html: renderChatMarkdown(m.text) }}
-                />
+              ))}
+              {typing && (
+                <div className="flex items-start gap-2" role="status" aria-label={t('chat.title')}>
+                  <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-jade">
+                    <Sparkles className="h-3 w-3 text-white" strokeWidth={1.5} />
+                  </div>
+                  <div className="w-[68%] space-y-2 rounded-2xl rounded-bl-sm border border-hairline bg-surface px-3.5 py-3">
+                    <div className="h-2.5 w-full animate-pulse rounded bg-jade-wash" />
+                    <div className="h-2.5 w-4/5 animate-pulse rounded bg-jade-wash [animation-delay:120ms]" />
+                    <div className="h-2.5 w-3/5 animate-pulse rounded bg-jade-wash [animation-delay:240ms]" />
+                  </div>
+                </div>
               )}
-            </div>
-          ))}
-          {typing && (
-            <div className="flex items-start gap-2" aria-label={t('chat.title')} role="status">
-              <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-jade">
-                <Sparkles className="h-3 w-3 text-white" strokeWidth={1.5} />
-              </div>
-              <div className="w-[68%] space-y-2 rounded-2xl rounded-bl-md border border-hairline bg-surface px-3.5 py-3">
-                <div className="h-2.5 w-full animate-pulse rounded bg-jade-wash" />
-                <div className="h-2.5 w-4/5 animate-pulse rounded bg-jade-wash [animation-delay:120ms]" />
-                <div className="h-2.5 w-3/5 animate-pulse rounded bg-jade-wash [animation-delay:240ms]" />
-              </div>
             </div>
           )}
         </div>
 
-        {/* Suggestions */}
-        {messages.length === 1 && (
-          <div className="border-t border-hairline bg-surface px-4 pb-1 pt-3">
-            <p className="mb-2 text-xs text-ink-tertiary">{t('chat.suggested')}</p>
-            <div className="scrollbar-hide flex gap-2 overflow-x-auto pb-1">
-              {SUGGESTIONS.map((s) => (
-                <button
-                  key={s}
-                  onClick={() => send(t(s))}
-                  disabled={typing}
-                  className="flex-shrink-0 whitespace-nowrap rounded-lg bg-jade-wash px-3 py-1.5 text-xs font-medium text-jade transition-colors duration-hover ease-out hover:bg-jade hover:text-white"
-                >
-                  {t(s)}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {needsEmailVerification && (
-          <div className="border-t border-amber-100 bg-amber-50 px-4 py-3">
-            <p className="text-xs font-semibold text-amber-800">{t('chat.verifyEmail')}</p>
-            <p className="mt-0.5 text-xs text-amber-700">{t('chat.verifyEmailHint')}</p>
-            <button
-              onClick={onResendVerification}
-              className="mt-2 rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-jade shadow-sm transition-colors duration-hover ease-out hover:bg-amber-100"
-            >
-              {t('auth.resendVerification')}
-            </button>
-          </div>
-        )}
-
-        {/* Input */}
-        <div className="flex items-end gap-2 border-t border-hairline bg-surface px-4 py-3">
+        <div
+          className="flex flex-shrink-0 items-end gap-2 border-t border-hairline bg-surface px-4 pt-3"
+          style={{ paddingBottom: 'max(12px, env(safe-area-inset-bottom))' }}
+        >
           <textarea
             ref={inputRef}
             value={input}
             rows={1}
             disabled={typing}
-            onChange={(e) => {
-              setInput(e.target.value);
-              resizeInput();
-            }}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                send(input);
-              }
-            }}
+            onChange={(e) => { setInput(e.target.value); resizeInput(); }}
+            onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); void send(input); } }}
             placeholder={t('chat.placeholder')}
-            className="max-h-32 flex-1 resize-none rounded-lg border border-hairline bg-canvas px-3.5 py-2.5 text-sm leading-relaxed text-ink outline-none transition-colors duration-hover ease-out placeholder:text-ink-tertiary focus:border-jade disabled:opacity-60"
+            className="max-h-32 min-w-0 flex-1 resize-none rounded-lg border border-hairline bg-canvas px-3.5 py-2.5 text-sm leading-relaxed text-ink outline-none transition-colors placeholder:text-ink-tertiary focus:border-jade disabled:opacity-60"
           />
           <button
-            onClick={() => send(input)}
+            onClick={() => void send(input)}
             disabled={!input.trim() || typing}
             aria-label={t('chat.askBuddy')}
-            className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-jade transition-colors duration-hover ease-out hover:bg-[#0B4145] disabled:opacity-30"
+            className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-jade transition-colors hover:bg-[#0B4145] disabled:opacity-30"
           >
             <Send className="h-4 w-4 text-white" strokeWidth={1.5} />
           </button>
         </div>
       </div>
-    </div>
+    </>
   );
+
+  return createPortal(content, document.body);
 }
