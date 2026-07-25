@@ -1,14 +1,11 @@
-import { grantGumroadEntitlement } from '../../_shared/entitlements.js';
-import { createDoc, getDoc, patchDoc, queryCollection } from '../../_shared/firestore.js';
+import { createDoc, getDoc, patchDoc } from '../../_shared/firestore.js';
 
-// GET requests to this endpoint come from browsers landing here after a redirect
-// (e.g. Firebase OAuth fallback). Send them home.
+// GET requests (e.g. Firebase OAuth redirect fallback) go home
 export function onRequestGet() {
   return Response.redirect('/', 302);
 }
 
 export async function onRequestPost({ request, env }) {
-  // Verify the secret token Gumroad includes in the webhook URL
   const url = new URL(request.url);
   const secret = url.searchParams.get('secret');
   if (!secret || secret !== env.GUMROAD_WEBHOOK_SECRET) {
@@ -18,7 +15,6 @@ export async function onRequestPost({ request, env }) {
     });
   }
 
-  // Gumroad sends application/x-www-form-urlencoded
   let formData;
   try {
     formData = await request.formData();
@@ -32,9 +28,9 @@ export async function onRequestPost({ request, env }) {
   const saleId = (formData.get('sale_id') || '').trim();
   const email = (formData.get('email') || '').toLowerCase().trim();
   const permalink = (formData.get('product_permalink') || '').trim();
+  const productId = (formData.get('product_id') || '').trim();
   const isTest = formData.get('test') === 'true';
 
-  // Return 200 for anything we don't need to process — prevents Gumroad retries
   if (!saleId || !email) {
     return new Response(JSON.stringify({ ok: true, ignored: true, reason: 'missing_fields' }), {
       status: 200,
@@ -48,20 +44,7 @@ export async function onRequestPost({ request, env }) {
     });
   }
 
-  // Map product permalink to internal plan ID
-  const tripPermalink = env.GUMROAD_TRIP_PERMALINK || 'oentc';
-  const groupPermalink = env.GUMROAD_GROUP_PERMALINK || 'mbgkxz';
-  let planId;
-  if (permalink === tripPermalink) planId = 'trip_pass';
-  else if (permalink === groupPermalink) planId = 'group_pass';
-  else {
-    return new Response(JSON.stringify({ ok: true, ignored: true, reason: 'unknown_product', permalink }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
-    });
-  }
-
-  // Deduplicate: if we've already seen this sale_id, skip
+  // Deduplicate
   const existing = await getDoc(env, `gumroadSales/${saleId}`).catch(() => null);
   if (existing) {
     return new Response(JSON.stringify({ ok: true, duplicate: true }), {
@@ -70,41 +53,27 @@ export async function onRequestPost({ request, env }) {
     });
   }
 
-  const now = Date.now();
+  const tripPermalink = env.GUMROAD_TRIP_PERMALINK || 'oentc';
+  const groupPermalink = env.GUMROAD_GROUP_PERMALINK || 'mbgkxz';
+  let tier = null;
+  if (permalink === tripPermalink || productId === env.GUMROAD_TRIP_PRODUCT_ID) tier = 'trip';
+  else if (permalink === groupPermalink || productId === env.GUMROAD_GROUP_PRODUCT_ID) tier = 'group';
 
+  const now = Date.now();
   try {
-    // Record the sale immediately so concurrent retries are deduplicated
+    // Record sale — the buyer will call /api/claim to create their pass
     await createDoc(env, 'gumroadSales', saleId, {
       saleId,
       email,
-      planId,
+      tier,
       permalink,
+      productId,
       status: 'received',
       receivedAt: now,
     });
 
-    // Look up the Firebase user by their email
-    const matchedUsers = await queryCollection(env, 'users', 'email', email, 1);
-    const userDoc = matchedUsers[0];
-
-    if (userDoc && userDoc.uid) {
-      // User account exists — grant plan immediately
-      await grantGumroadEntitlement(env, { userId: userDoc.uid, planId, saleId, buyerEmail: email });
-      await patchDoc(env, `gumroadSales/${saleId}`, {
-        status: 'granted',
-        userId: userDoc.uid,
-        grantedAt: now,
-      });
-    } else {
-      // No matching account yet — store for pickup when buyer signs in or up
-      await patchDoc(env, `gumroadSales/${saleId}`, { status: 'pending' });
-      await createDoc(env, 'gumroadPendingPurchases', saleId, {
-        saleId,
-        email,
-        planId,
-        status: 'pending',
-        createdAt: now,
-      });
+    if (!tier) {
+      await patchDoc(env, `gumroadSales/${saleId}`, { status: 'unknown_product' }).catch(() => {});
     }
 
     return new Response(JSON.stringify({ ok: true }), {
@@ -112,11 +81,10 @@ export async function onRequestPost({ request, env }) {
       headers: { 'Content-Type': 'application/json' },
     });
   } catch (err) {
-    // Log the error but still return 200 — Gumroad retrying a partially-written sale is worse
     const errorMessage = err instanceof Error ? err.message.slice(0, 200) : 'unknown';
     await patchDoc(env, `gumroadSales/${saleId}`, { status: 'error', error: errorMessage }).catch(() => {});
     return new Response(JSON.stringify({ ok: false, error: 'internal' }), {
-      status: 200,
+      status: 200, // Return 200 so Gumroad doesn't retry a partially-written document
       headers: { 'Content-Type': 'application/json' },
     });
   }
