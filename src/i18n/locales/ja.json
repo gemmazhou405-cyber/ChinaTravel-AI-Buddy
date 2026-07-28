@@ -15,7 +15,8 @@
       "aboutUs": "会社情報",
       "contact": "お問い合わせ",
       "getHelpNow": "今すぐヘルプ",
-      "menu": "メニュー"
+      "menu": "メニュー",
+      "getPass": "パスを取得"
     },
     "homepage": {
       "how": {
@@ -442,7 +443,7 @@
           "cta": "Trip Passを取得",
           "features": [
             "Buddy AI 50メッセージ",
-            "7日間有効",
+            "14日間有効",
             "1人の旅行者向けの追加サポート",
             "1回払い · 自動更新なし"
           ]
@@ -622,7 +623,8 @@
           ]
         },
         "opening": "開いています…"
-      }
+      },
+      "upgradePrompt": "Buddy AIのメッセージをさらに使うにはアップグレードしてください。"
     },
     "chat": {
       "title": "Buddyに質問",
@@ -630,10 +632,10 @@
       "placeholder": "中国旅行について何でも質問...",
       "suggested": "おすすめ質問",
       "suggestions": {
-        "s1": "上海の空港から市内中心部へ行くには？",
-        "s2": "Que faire si je perds mon passeport ?",
-        "s3": "中国語を話せない場合、どう注文すればいいですか？",
-        "s4": "Peut-on boire l’eau du robinet ?"
+        "s1": "中国でAlipayを使うにはどうすればいいですか？",
+        "s2": "電車のチケットを買うにはどうすればいいですか？",
+        "s3": "到着前にどのアプリが必要ですか？",
+        "s4": "パスポートを紛失した場合はどうすればいいですか？"
       },
       "welcome": "こんにちは！私はBuddy、中国旅行のAIコンパニオンです。交通、安全な食事、支払い、緊急時のことを何でも聞いてください。",
       "quotaExceeded": "{{plan}}プランのBuddy AIメッセージ{{limit}}回をすべて使用しました。Trip Pass（$9.90）で50回、Group Pass（$29.90）で200回にアップグレードできます。",
@@ -647,7 +649,12 @@
       "verifyEmail": "Buddy AIを使用するにはメール認証が必要です。",
       "verifyEmailHint": "受信箱を確認し、認証後にページを更新してください。",
       "rateLimited": "次のメッセージを送る前に少しお待ちください。",
-      "serviceUnavailable": "Buddyは一時的に利用できません。しばらくしてからもう一度お試しください。"
+      "serviceUnavailable": "Buddyは一時的に利用できません。しばらくしてからもう一度お試しください。",
+      "quotaExhausted": "パスのメッセージをすべて使い切りました。",
+      "freeQuotaExhausted": "今日の無料制限（5メッセージ）に達しました。さらにはパスを取得してください。",
+      "retry": "再試行",
+      "getPass": "パスを取得",
+      "openToolkit": "ツールキットを開く"
     },
     "auth": {
       "title": "ChinaEase Buddy",
@@ -674,8 +681,8 @@
       "verificationSent": "認証メールを送信しました。",
       "verifyBeforeBuddy": "Buddy AIを使用する前にメールを認証してください。",
       "resendVerification": "認証メールを再送信",
-      "inAppBrowserNotice": "このアプリ内ブラウザでは Google ログインが使えない場合があります。Safari または Chrome で ChinaEase Buddy を開いて続行してください。",
-      "inAppBrowserNoticeZh": "当前 App 内置浏览器可能无法使用 Google 登录。请用 Safari 或 Chrome 打开 chinaeasebuddy.com 后继续。",
+      "inAppBrowserNotice": "このブラウザではGoogleログインが使えない場合があります。SafariかChromeで開くか、メールを使用してください。",
+      "inAppBrowserNoticeZh": "当前浏览器可能无法使用 Google 登录。请在 Safari 或 Chrome 中打开，或改用邮箱登录。",
       "emailAlternative": "メールでもログインできます。"
     },
     "footer": {
@@ -1186,6 +1193,56 @@
           "body": "タクシー・ホテル・病院・緊急時のフレーズカード",
           "phrase": "この住所までお願いします。"
         }
+      }
+    },
+    "pass": {
+      "claim": {
+        "title": "Activate Your Pass",
+        "subtitle": "Enter your Gumroad sale ID from your confirmation email.",
+        "saleIdLabel": "Gumroad Sale ID",
+        "saleIdPlaceholder": "e.g. abcd1234",
+        "submit": "Activate Pass",
+        "submitting": "Activating…",
+        "errorNotFound": "Sale ID not found. Check your Gumroad receipt email.",
+        "errorAlreadyClaimed": "This sale is already linked. Try recovering with your recovery code.",
+        "errorMaxDevices": "This pass has reached its device limit.",
+        "errorGeneric": "Something went wrong. Please try again.",
+        "switchToRecover": "Have a recovery code instead?",
+        "successTitle": "Pass Activated!",
+        "recoveryCodeLabel": "Your recovery code",
+        "recoveryCodeNote": "Save this code — it’s the only way to add this pass to a new device.",
+        "copyCode": "Copy",
+        "copied": "Copied!",
+        "confirmSaved": "I’ve saved my recovery code",
+        "done": "Start using your pass"
+      },
+      "recover": {
+        "title": "Recover Access",
+        "subtitle": "Enter your recovery code to add this device to your pass.",
+        "codeLabel": "Recovery code",
+        "codePlaceholder": "XXXX-XXXX-XXXX",
+        "submit": "Recover Access",
+        "submitting": "Recovering…",
+        "errorNotFound": "Recovery code not found. Check you entered it correctly.",
+        "errorMaxDevices": "This pass has reached its device limit.",
+        "errorRateLimited": "Too many attempts. Please try again in an hour.",
+        "errorGeneric": "Something went wrong. Please try again.",
+        "switchToClaim": "Have a Gumroad sale ID instead?",
+        "successTitle": "Access Restored!",
+        "done": "Continue"
+      },
+      "dashboard": {
+        "title": "Your Pass",
+        "messagesUsed": "{{used}} / {{total}} messages used",
+        "messagesLeft": "{{remaining}} left",
+        "expires": "Expires {{date}}",
+        "expired": "Expired",
+        "devicesTitle": "Devices",
+        "devicesCount": "{{count}} of {{max}} devices",
+        "removeDevice": "Remove",
+        "removing": "Removing…",
+        "addDevice": "Add this device with a recovery code",
+        "close": "Done"
       }
     }
   }

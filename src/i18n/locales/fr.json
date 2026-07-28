@@ -15,7 +15,8 @@
       "aboutUs": "À propos",
       "contact": "Contact",
       "getHelpNow": "Obtenir de l’aide",
-      "menu": "Menu"
+      "menu": "Menu",
+      "getPass": "Obtenir un Pass"
     },
     "homepage": {
       "how": {
@@ -442,7 +443,7 @@
           "cta": "Obtenir Trip Pass",
           "features": [
             "50 messages Buddy AI",
-            "Valable 7 jours",
+            "Valable 14 jours",
             "Aide supplémentaire pour un voyageur",
             "Paiement unique · pas de renouvellement automatique"
           ]
@@ -620,7 +621,8 @@
           ]
         },
         "opening": "Ouverture…"
-      }
+      },
+      "upgradePrompt": "Passez à la version supérieure pour plus de messages Buddy AI."
     },
     "chat": {
       "title": "Demander à Buddy",
@@ -628,10 +630,10 @@
       "placeholder": "Posez une question sur votre voyage en Chine...",
       "suggested": "Questions suggérées",
       "suggestions": {
-        "s1": "Comment aller de l’aéroport de Shanghai au centre-ville ?",
-        "s2": "Que faire si je perds mon passeport ?",
-        "s3": "Comment commander sans parler chinois ?",
-        "s4": "Peut-on boire l’eau du robinet ?"
+        "s1": "Comment utiliser Alipay en Chine ?",
+        "s2": "Comment acheter un billet de train ?",
+        "s3": "Quelles applications me faut-il avant d'arriver ?",
+        "s4": "Que faire si je perds mon passeport ?"
       },
       "welcome": "Bonjour ! Je suis Buddy, votre compagnon IA pour la Chine. Posez-moi vos questions sur les transports, les repas, les paiements ou les urgences.",
       "quotaExceeded": "Vous avez utilisé les {{limit}} messages Buddy AI de votre forfait {{plan}}. Passez au Trip Pass (9,90 $) pour 50 messages Buddy AI, ou au Group Pass (29,90 $) pour 200.",
@@ -645,7 +647,12 @@
       "verifyEmail": "Veuillez vérifier votre e-mail pour utiliser Buddy AI.",
       "verifyEmailHint": "Vérifiez votre boîte de réception puis actualisez après vérification.",
       "rateLimited": "Veuillez patienter un instant avant d’envoyer un autre message.",
-      "serviceUnavailable": "Buddy est temporairement indisponible. Veuillez réessayer plus tard."
+      "serviceUnavailable": "Buddy est temporairement indisponible. Veuillez réessayer plus tard.",
+      "quotaExhausted": "Vous avez utilisé tous vos messages de pass.",
+      "freeQuotaExhausted": "Vous avez atteint la limite gratuite du jour (5 messages). Obtenez un pass pour plus.",
+      "retry": "Réessayer",
+      "getPass": "Obtenir un Pass",
+      "openToolkit": "Ouvrir la boîte à outils"
     },
     "auth": {
       "title": "ChinaEase Buddy",
@@ -672,8 +679,8 @@
       "verificationSent": "E-mail de vérification envoyé.",
       "verifyBeforeBuddy": "Veuillez vérifier votre e-mail avant d’utiliser Buddy AI.",
       "resendVerification": "Renvoyer l’e-mail de vérification",
-      "inAppBrowserNotice": "La connexion Google peut ne pas fonctionner dans le navigateur intégré de cette app. Ouvrez ChinaEase Buddy dans Safari ou Chrome pour continuer.",
-      "inAppBrowserNoticeZh": "当前 App 内置浏览器可能无法使用 Google 登录。请用 Safari 或 Chrome 打开 chinaeasebuddy.com 后继续。",
+      "inAppBrowserNotice": "La connexion Google peut ne pas fonctionner dans ce navigateur. Ouvre Safari ou Chrome, ou connecte-toi par e-mail.",
+      "inAppBrowserNoticeZh": "当前浏览器可能无法使用 Google 登录。请在 Safari 或 Chrome 中打开，或改用邮箱登录。",
       "emailAlternative": "Vous pouvez aussi vous connecter par e-mail."
     },
     "footer": {
@@ -1184,6 +1191,56 @@
           "body": "Cartes de phrases taxi, hôtel, hôpital et urgences",
           "phrase": "Emmenez-moi à cette adresse, s'il vous plaît."
         }
+      }
+    },
+    "pass": {
+      "claim": {
+        "title": "Activate Your Pass",
+        "subtitle": "Enter your Gumroad sale ID from your confirmation email.",
+        "saleIdLabel": "Gumroad Sale ID",
+        "saleIdPlaceholder": "e.g. abcd1234",
+        "submit": "Activate Pass",
+        "submitting": "Activating…",
+        "errorNotFound": "Sale ID not found. Check your Gumroad receipt email.",
+        "errorAlreadyClaimed": "This sale is already linked. Try recovering with your recovery code.",
+        "errorMaxDevices": "This pass has reached its device limit.",
+        "errorGeneric": "Something went wrong. Please try again.",
+        "switchToRecover": "Have a recovery code instead?",
+        "successTitle": "Pass Activated!",
+        "recoveryCodeLabel": "Your recovery code",
+        "recoveryCodeNote": "Save this code — it’s the only way to add this pass to a new device.",
+        "copyCode": "Copy",
+        "copied": "Copied!",
+        "confirmSaved": "I’ve saved my recovery code",
+        "done": "Start using your pass"
+      },
+      "recover": {
+        "title": "Recover Access",
+        "subtitle": "Enter your recovery code to add this device to your pass.",
+        "codeLabel": "Recovery code",
+        "codePlaceholder": "XXXX-XXXX-XXXX",
+        "submit": "Recover Access",
+        "submitting": "Recovering…",
+        "errorNotFound": "Recovery code not found. Check you entered it correctly.",
+        "errorMaxDevices": "This pass has reached its device limit.",
+        "errorRateLimited": "Too many attempts. Please try again in an hour.",
+        "errorGeneric": "Something went wrong. Please try again.",
+        "switchToClaim": "Have a Gumroad sale ID instead?",
+        "successTitle": "Access Restored!",
+        "done": "Continue"
+      },
+      "dashboard": {
+        "title": "Your Pass",
+        "messagesUsed": "{{used}} / {{total}} messages used",
+        "messagesLeft": "{{remaining}} left",
+        "expires": "Expires {{date}}",
+        "expired": "Expired",
+        "devicesTitle": "Devices",
+        "devicesCount": "{{count}} of {{max}} devices",
+        "removeDevice": "Remove",
+        "removing": "Removing…",
+        "addDevice": "Add this device with a recovery code",
+        "close": "Done"
       }
     }
   }
