@@ -5,7 +5,7 @@ import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
 import TabSectionHeader from '../TabSectionHeader';
 import ToolDisclosure from '../ToolDisclosure';
 import CitySurvivalPack from '../CitySurvivalPack';
-import { hotelCards } from '../../data/phraseCards';
+import { hotelCards, universalCards } from '../../data/phraseCards';
 import type { PassState } from '../../hooks/usePass';
 import { isGroup, isTripOrGroup } from '../../lib/membership';
 import { cityPacks } from '../../data/cityPacks';
@@ -196,6 +196,13 @@ export default function StayTab({ passState, showToast, onAskBuddy, onUpgradeCli
       <PhraseCategoryAccordion
         categories={[
           {
+            id: 'universal',
+            title: t('stay.universalPhraseCards'),
+            subtitle: t('stay.universalCardsSubtitle', { count: universalCards.length }),
+            icon: <MapPin className="w-4 h-4" />,
+            cards: universalCards,
+          },
+          {
             id: 'hotel',
             title: t('stay.hotelPhraseCards'),
             subtitle: t('stay.hotelCardsSubtitle', { count: hotelCards.length }),
@@ -208,7 +215,7 @@ export default function StayTab({ passState, showToast, onAskBuddy, onUpgradeCli
         isPaidUser={hasFullAccess}
         showToast={showToast}
         onUpgradeClick={onUpgradeClick}
-        initialOpenId={deepTool === 'stay' || deepTool === 'hotel' ? 'hotel' : null}
+        initialOpenId={deepTool === 'stay' || deepTool === 'hotel' ? 'hotel' : deepTool === 'universal' ? 'universal' : null}
         onCategoryOpen={(category) => onToolOpened?.(category)}
       />
 

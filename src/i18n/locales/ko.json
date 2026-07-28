@@ -234,7 +234,9 @@
         "touristTips": "여행 팁"
       },
       "hotelPhraseCards": "호텔 문장 카드",
-      "hotelCardsSubtitle": "체크인 및 프런트 카드 {{count}}개"
+      "hotelCardsSubtitle": "체크인 및 프런트 카드 {{count}}개",
+      "universalPhraseCards": "일상 표현",
+      "universalCardsSubtitle": "어떤 상황에서나 필수인 {{count}}장 카드"
     },
     "food": {
       "decoderTitle": "메뉴 도움",
@@ -407,7 +409,8 @@
       "police": "경찰",
       "policeCardsSubtitle": "경찰 신고 카드 {{count}}개",
       "pharmacy": "약국",
-      "pharmacyCardsSubtitle": "약 및 약국 카드 {{count}}개"
+      "pharmacyCardsSubtitle": "약 및 약국 카드 {{count}}개",
+      "medicalCardsSubtitle": "의료 문구 카드 {{count}}장"
     },
     "pay": {
       "plansTitle": "여행 패스",
@@ -906,7 +909,10 @@
       "speak": "재생",
       "copy": "복사",
       "showToLocal": "현지인에게 보여주기",
-      "preview": "미리보기"
+      "preview": "미리보기",
+      "showCard": "현지인에게 보여주기",
+      "fillInDetails": "세부 정보를 먼저 입력하세요",
+      "addressPlaceholder": "여기에 주소를 붙여넣거나 입력하세요…"
     },
     "tabHeaders": {
       "before": "중국 도착 전 필수 준비를 완료하세요.",

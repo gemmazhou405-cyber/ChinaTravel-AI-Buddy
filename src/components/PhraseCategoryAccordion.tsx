@@ -2,14 +2,14 @@ import { ChevronDown, Lock } from 'lucide-react';
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PhraseCardCategorySection from './PhraseCardCategorySection';
-import type { PhraseCardData } from '../types/phraseCard';
+import type { PhraseCard } from '../types/phraseCard';
 
 interface PhraseCategory {
   id: string;
   title: string;
   subtitle?: string;
   icon: ReactNode;
-  cards: PhraseCardData[];
+  cards: PhraseCard[];
 }
 
 interface Props {
@@ -67,7 +67,11 @@ export default function PhraseCategoryAccordion({
           const open = openId === category.id;
           const lockedCount = Math.max(category.cards.length - freeLimit, 0);
           return (
-            <div id={`phrase-category-${category.id}`} key={category.id} className="scroll-mt-20 overflow-hidden rounded-[1.35rem] border border-white/60 bg-white/[0.52] shadow-[0_16px_42px_rgba(11,63,67,0.08)] backdrop-blur-2xl">
+            <div
+              id={`phrase-category-${category.id}`}
+              key={category.id}
+              className="scroll-mt-20 overflow-hidden rounded-[1.35rem] border border-white/60 bg-white/[0.52] shadow-[0_16px_42px_rgba(11,63,67,0.08)] backdrop-blur-2xl"
+            >
               <button
                 type="button"
                 onClick={() => {
@@ -94,7 +98,9 @@ export default function PhraseCategoryAccordion({
                     {category.subtitle || t('common.cardCount', { count: category.cards.length })}
                   </p>
                 </div>
-                <ChevronDown className={`h-4 w-4 shrink-0 text-gray-300 transition-transform ${open ? 'rotate-180' : ''}`} />
+                <ChevronDown
+                  className={`h-4 w-4 shrink-0 text-gray-300 transition-transform ${open ? 'rotate-180' : ''}`}
+                />
               </button>
 
               {open && (

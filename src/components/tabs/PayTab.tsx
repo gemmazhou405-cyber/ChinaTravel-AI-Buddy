@@ -7,8 +7,8 @@ import ToolDisclosure from '../ToolDisclosure';
 import { paymentCards } from '../../data/phraseCards';
 import PricingPlans from '../PricingPlans';
 import { isTripOrGroup } from '../../lib/membership';
-import PhraseCard from '../PhraseCard';
-import type { PhraseCardData } from '../../types/phraseCard';
+import PhraseCardDisplay from '../PhraseCard';
+import type { PhraseCard } from '../../types/phraseCard';
 
 interface Props {
   passState: PassState | null;
@@ -40,58 +40,34 @@ export default function PayTab({ passState, showToast, onAskBuddy, onUpgradeClic
     t('pay.setup.step4'),
     t('pay.setup.step5'),
   ];
-  const paymentFailedCards: PhraseCardData[] = [
+  const paymentFailedCards: PhraseCard[] = [
     {
       id: 'payment_failed_alipay',
-      scene: t('pay.failed.scene'),
-      priority: 'high',
-      english: t('pay.failed.alipay.en'),
-      chinese: '可以用支付宝付款吗？',
+      zh: '可以用支付宝付款吗？',
       pinyin: 'Kěyǐ yòng Zhīfùbǎo fùkuǎn ma?',
-      usageNote: t('pay.failed.alipay.note'),
-      showToLocal: true,
-      emergencyRelevant: false,
-      audioText: '可以用支付宝付款吗？',
-      tags: ['payment', 'alipay'],
+      en: t('pay.failed.alipay.en'),
+      priority: 1,
     },
     {
       id: 'payment_failed_wechat',
-      scene: t('pay.failed.scene'),
-      priority: 'high',
-      english: t('pay.failed.wechat.en'),
-      chinese: '可以用微信支付吗？',
+      zh: '可以用微信支付吗？',
       pinyin: 'Kěyǐ yòng Wēixìn zhīfù ma?',
-      usageNote: t('pay.failed.wechat.note'),
-      showToLocal: true,
-      emergencyRelevant: false,
-      audioText: '可以用微信支付吗？',
-      tags: ['payment', 'wechat'],
+      en: t('pay.failed.wechat.en'),
+      priority: 1,
     },
     {
       id: 'payment_failed_cash',
-      scene: t('pay.failed.scene'),
-      priority: 'medium',
-      english: t('pay.failed.cash.en'),
-      chinese: '我的银行卡不能用，可以付现金吗？',
+      zh: '我的银行卡不能用，可以付现金吗？',
       pinyin: 'Wǒ de yínhángkǎ bù néng yòng, kěyǐ fù xiànjīn ma?',
-      usageNote: t('pay.failed.cash.note'),
-      showToLocal: true,
-      emergencyRelevant: false,
-      audioText: '我的银行卡不能用，可以付现金吗？',
-      tags: ['payment', 'cash', 'card'],
+      en: t('pay.failed.cash.en'),
+      priority: 2,
     },
     {
       id: 'payment_failed_qr',
-      scene: t('pay.failed.scene'),
-      priority: 'medium',
-      english: t('pay.failed.qr.en'),
-      chinese: '你能帮我扫这个二维码吗？',
+      zh: '你能帮我扫这个二维码吗？',
       pinyin: 'Nǐ néng bāng wǒ sǎo zhège èrwéimǎ ma?',
-      usageNote: t('pay.failed.qr.note'),
-      showToLocal: true,
-      emergencyRelevant: false,
-      audioText: '你能帮我扫这个二维码吗？',
-      tags: ['payment', 'qr'],
+      en: t('pay.failed.qr.en'),
+      priority: 2,
     },
   ];
 
@@ -133,7 +109,7 @@ export default function PayTab({ passState, showToast, onAskBuddy, onUpgradeClic
       >
         <div className="grid gap-2.5 sm:grid-cols-2">
           {paymentFailedCards.map((card) => (
-            <PhraseCard key={card.id} card={card} />
+            <PhraseCardDisplay key={card.id} card={card} />
           ))}
         </div>
       </ToolDisclosure>

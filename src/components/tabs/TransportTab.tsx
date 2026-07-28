@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
 import TabSectionHeader from '../TabSectionHeader';
 import ToolDisclosure from '../ToolDisclosure';
-import { airportCards, taxiCards, trainCards } from '../../data/phraseCards';
+import { taxiCards } from '../../data/phraseCards';
 import type { PassState } from '../../hooks/usePass';
 import { isTripOrGroup } from '../../lib/membership';
 
@@ -186,27 +186,13 @@ export default function TransportTab({ passState, showToast, onAskBuddy, onUpgra
             icon: <Car className="w-4 h-4" />,
             cards: taxiCards,
           },
-          {
-            id: 'train',
-            title: t('transport.trainPhrases'),
-            subtitle: t('transport.trainCardsSubtitle', { count: trainCards.length }),
-            icon: <Train className="w-4 h-4" />,
-            cards: trainCards,
-          },
-          {
-            id: 'airport',
-            title: t('transport.airportPhrases'),
-            subtitle: t('transport.airportCardsSubtitle', { count: airportCards.length }),
-            icon: <Plane className="w-4 h-4" />,
-            cards: airportCards,
-          },
         ]}
         freeLimit={3}
         lockedPreviewLimit={3}
         isPaidUser={hasFullAccess}
         showToast={showToast}
         onUpgradeClick={onUpgradeClick}
-        initialOpenId={deepTool === 'transport' || deepTool === 'taxi' ? 'taxi' : deepTool === 'airport' ? 'airport' : deepTool === 'trainPhrases' ? 'train' : null}
+        initialOpenId={deepTool === 'transport' || deepTool === 'taxi' ? 'taxi' : null}
         onCategoryOpen={(category) => onToolOpened?.(category)}
       />
 

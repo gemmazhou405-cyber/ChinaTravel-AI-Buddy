@@ -234,7 +234,9 @@
         "touristTips": "Tourist Tips"
       },
       "hotelPhraseCards": "Hotel Phrase Cards",
-      "hotelCardsSubtitle": "{{count}} check-in and front desk cards"
+      "hotelCardsSubtitle": "{{count}} check-in and front desk cards",
+      "universalPhraseCards": "Everyday Phrases",
+      "universalCardsSubtitle": "{{count}} must-have cards for any situation"
     },
     "food": {
       "decoderTitle": "Menu Help",
@@ -407,7 +409,8 @@
       "police": "Police",
       "policeCardsSubtitle": "{{count}} police report cards",
       "pharmacy": "Pharmacy",
-      "pharmacyCardsSubtitle": "{{count}} medicine and pharmacy cards"
+      "pharmacyCardsSubtitle": "{{count}} medicine and pharmacy cards",
+      "medicalCardsSubtitle": "{{count}} medical phrase cards"
     },
     "pay": {
       "plansTitle": "Travel Passes",
@@ -904,7 +907,10 @@
       "speak": "Speak",
       "copy": "Copy",
       "showToLocal": "Show to local",
-      "preview": "Preview"
+      "preview": "Preview",
+      "showCard": "Show to Local",
+      "fillInDetails": "Fill in the details first",
+      "addressPlaceholder": "Paste or type the address here…"
     },
     "tabHeaders": {
       "before": "Set up the essentials before landing in China.",

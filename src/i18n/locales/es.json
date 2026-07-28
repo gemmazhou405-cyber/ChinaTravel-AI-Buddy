@@ -234,7 +234,9 @@
         "touristTips": "Consejos de viaje"
       },
       "hotelPhraseCards": "Tarjetas de frases de hotel",
-      "hotelCardsSubtitle": "{{count}} tarjetas de check-in y recepción"
+      "hotelCardsSubtitle": "{{count}} tarjetas de check-in y recepción",
+      "universalPhraseCards": "Frases cotidianas",
+      "universalCardsSubtitle": "{{count}} tarjetas esenciales para cualquier situación"
     },
     "food": {
       "decoderTitle": "Ayuda con menús",
@@ -407,7 +409,8 @@
       "police": "Policía",
       "policeCardsSubtitle": "{{count}} tarjetas para reporte policial",
       "pharmacy": "Farmacia",
-      "pharmacyCardsSubtitle": "{{count}} tarjetas de medicamentos y farmacia"
+      "pharmacyCardsSubtitle": "{{count}} tarjetas de medicamentos y farmacia",
+      "medicalCardsSubtitle": "{{count}} tarjetas médicas"
     },
     "pay": {
       "plansTitle": "Pases de viaje",
@@ -904,7 +907,10 @@
       "speak": "Reproducir",
       "copy": "Copiar",
       "showToLocal": "Mostrar a un local",
-      "preview": "Vista previa"
+      "preview": "Vista previa",
+      "showCard": "Mostrar al local",
+      "fillInDetails": "Rellena los detalles primero",
+      "addressPlaceholder": "Pega o escribe la dirección aquí…"
     },
     "tabHeaders": {
       "before": "Configura lo esencial antes de aterrizar en China.",

@@ -234,7 +234,9 @@
         "touristTips": "Conseils voyage"
       },
       "hotelPhraseCards": "Cartes de phrases hôtel",
-      "hotelCardsSubtitle": "{{count}} cartes arrivée et réception"
+      "hotelCardsSubtitle": "{{count}} cartes arrivée et réception",
+      "universalPhraseCards": "Phrases du quotidien",
+      "universalCardsSubtitle": "{{count}} fiches indispensables pour toute situation"
     },
     "food": {
       "decoderTitle": "Aide menu",
@@ -407,7 +409,8 @@
       "police": "Police",
       "policeCardsSubtitle": "{{count}} cartes signalement police",
       "pharmacy": "Pharmacie",
-      "pharmacyCardsSubtitle": "{{count}} cartes pharmacie et médicaments"
+      "pharmacyCardsSubtitle": "{{count}} cartes pharmacie et médicaments",
+      "medicalCardsSubtitle": "{{count}} fiches médicales"
     },
     "pay": {
       "plansTitle": "Pass voyage",
@@ -904,7 +907,10 @@
       "speak": "Lire",
       "copy": "Copier",
       "showToLocal": "Montrer à un local",
-      "preview": "Aperçu"
+      "preview": "Aperçu",
+      "showCard": "Montrer au local",
+      "fillInDetails": "Remplissez les détails d'abord",
+      "addressPlaceholder": "Collez ou saisissez l'adresse ici…"
     },
     "tabHeaders": {
       "before": "Configurez l’essentiel avant d’atterrir en Chine.",

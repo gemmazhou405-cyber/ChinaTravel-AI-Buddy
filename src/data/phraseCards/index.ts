@@ -1,41 +1,37 @@
-import airportCards from './airport.json';
-import hospitalCards from './hospital.json';
-import hotelCards from './hotel.json';
-import paymentCards from './payment.json';
-import pharmacyCards from './pharmacy.json';
-import policeCards from './police.json';
-import emergencyCards from './emergency.json';
-import lostItemsCards from './lostItems.json';
-import restaurantCards from './restaurant.json';
-import shoppingCards from './shopping.json';
-import taxiCards from './taxi.json';
-import trainCards from './train.json';
-import type { PhraseCardData } from '../../types/phraseCard';
+import rawData from '../../../docs/launch/phrase-cards.json';
+import type { PhraseCard, PhraseAllergen } from '../../types/phraseCard';
 
-export const airportCardsData = airportCards as PhraseCardData[];
-export const taxiCardsData = taxiCards as PhraseCardData[];
-export const trainCardsData = trainCards as PhraseCardData[];
-export const hotelCardsData = hotelCards as PhraseCardData[];
-export const hospitalCardsData = hospitalCards as PhraseCardData[];
-export const policeCardsData = policeCards as PhraseCardData[];
-export const pharmacyCardsData = pharmacyCards as PhraseCardData[];
-export const paymentCardsData = paymentCards as PhraseCardData[];
-export const emergencyCardsData = emergencyCards as PhraseCardData[];
-export const lostItemsCardsData = lostItemsCards as PhraseCardData[];
-export const restaurantCardsData = restaurantCards as PhraseCardData[];
-export const shoppingCardsData = shoppingCards as PhraseCardData[];
+interface RawCategory {
+  id: string;
+  en?: string;
+  priority?: number;
+  cards: PhraseCard[];
+}
 
-export {
-  airportCardsData as airportCards,
-  taxiCardsData as taxiCards,
-  trainCardsData as trainCards,
-  hotelCardsData as hotelCards,
-  hospitalCardsData as hospitalCards,
-  policeCardsData as policeCards,
-  pharmacyCardsData as pharmacyCards,
-  paymentCardsData as paymentCards,
-  emergencyCardsData as emergencyCards,
-  lostItemsCardsData as lostItemsCards,
-  restaurantCardsData as restaurantCards,
-  shoppingCardsData as shoppingCards,
-};
+interface RawData {
+  categories: RawCategory[];
+  allergens: PhraseAllergen[];
+}
+
+const data = rawData as unknown as RawData;
+
+const byId = (id: string): PhraseCard[] =>
+  data.categories.find((c) => c.id === id)?.cards ?? [];
+
+export const universalCards: PhraseCard[] = byId('universal');
+export const taxiCards: PhraseCard[] = byId('taxi');
+export const restaurantCards: PhraseCard[] = byId('restaurant');
+export const hotelCards: PhraseCard[] = byId('hotel');
+export const medicalCards: PhraseCard[] = byId('medical');
+export const policeCards: PhraseCard[] = byId('police');
+export const paymentCards: PhraseCard[] = byId('payment');
+export const allergens: PhraseAllergen[] = data.allergens;
+
+// Deprecated exports — kept so any remaining imports don't hard-fail at build time
+export const airportCards: PhraseCard[] = [];
+export const trainCards: PhraseCard[] = [];
+export const hospitalCards: PhraseCard[] = [];
+export const pharmacyCards: PhraseCard[] = [];
+export const emergencyCards: PhraseCard[] = [];
+export const lostItemsCards: PhraseCard[] = [];
+export const shoppingCards: PhraseCard[] = [];

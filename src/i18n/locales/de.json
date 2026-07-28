@@ -234,7 +234,9 @@
         "touristTips": "Reisetipps"
       },
       "hotelPhraseCards": "Hotel Phrase Cards",
-      "hotelCardsSubtitle": "{{count}} Karten für Check-in und Rezeption"
+      "hotelCardsSubtitle": "{{count}} Karten für Check-in und Rezeption",
+      "universalPhraseCards": "Alltagsphrasen",
+      "universalCardsSubtitle": "{{count}} unverzichtbare Karten für jede Situation"
     },
     "food": {
       "decoderTitle": "Menühilfe",
@@ -407,7 +409,8 @@
       "police": "Polizei",
       "policeCardsSubtitle": "{{count}} Karten für Polizeibericht",
       "pharmacy": "Apotheke",
-      "pharmacyCardsSubtitle": "{{count}} Medizin- und Apothekenkarten"
+      "pharmacyCardsSubtitle": "{{count}} Medizin- und Apothekenkarten",
+      "medicalCardsSubtitle": "{{count}} medizinische Wortkarten"
     },
     "pay": {
       "plansTitle": "Reisepässe",
@@ -904,7 +907,10 @@
       "speak": "Abspielen",
       "copy": "Kopieren",
       "showToLocal": "Einheimischen zeigen",
-      "preview": "Vorschau"
+      "preview": "Vorschau",
+      "showCard": "Einheimischen zeigen",
+      "fillInDetails": "Details zuerst ausfüllen",
+      "addressPlaceholder": "Adresse hier einfügen oder eingeben…"
     },
     "tabHeaders": {
       "before": "Richte das Wichtigste ein, bevor du in China landest.",

@@ -1,15 +1,24 @@
-export interface PhraseCardData {
+export interface PhraseSlot {
   id: string;
-  scene: string;
-  priority: 'high' | 'medium' | 'low';
-  english: string;
-  chinese: string;
-  pinyin: string;
-  usageNote: string;
-  showToLocal: boolean;
-  emergencyRelevant: boolean;
-  audioText: string;
-  tags: string[];
+  type: 'address' | 'allergen' | 'number' | 'text';
+  position: 'below' | 'inline';
 }
 
-export type PhraseCard = PhraseCardData;
+export interface PhraseAllergen {
+  id: string;
+  zh: string;
+  en: string;
+  note?: string;
+}
+
+export interface PhraseCard {
+  id: string;
+  zh: string;
+  pinyin: string;
+  en: string;
+  priority: number;
+  slots?: PhraseSlot[];
+}
+
+// Alias kept for any remaining references
+export type PhraseCardData = PhraseCard;

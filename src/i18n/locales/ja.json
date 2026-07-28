@@ -234,7 +234,9 @@
         "touristTips": "旅行のヒント"
       },
       "hotelPhraseCards": "ホテルフレーズカード",
-      "hotelCardsSubtitle": "チェックインとフロント用カード {{count}}枚"
+      "hotelCardsSubtitle": "チェックインとフロント用カード {{count}}枚",
+      "universalPhraseCards": "日常フレーズ",
+      "universalCardsSubtitle": "どんな場面でも使える{{count}}枚のカード"
     },
     "food": {
       "decoderTitle": "メニューサポート",
@@ -407,7 +409,8 @@
       "police": "警察",
       "policeCardsSubtitle": "警察への説明カード {{count}}枚",
       "pharmacy": "薬局",
-      "pharmacyCardsSubtitle": "薬・薬局カード {{count}}枚"
+      "pharmacyCardsSubtitle": "薬・薬局カード {{count}}枚",
+      "medicalCardsSubtitle": "{{count}}枚の医療フレーズカード"
     },
     "pay": {
       "plansTitle": "トラベルパス",
@@ -906,7 +909,10 @@
       "speak": "再生",
       "copy": "コピー",
       "showToLocal": "相手に見せる",
-      "preview": "プレビュー"
+      "preview": "プレビュー",
+      "showCard": "現地の方に見せる",
+      "fillInDetails": "詳細を入力してください",
+      "addressPlaceholder": "住所をここに貼り付けまたは入力してください…"
     },
     "tabHeaders": {
       "before": "中国到着前に必要な準備を整えます。",

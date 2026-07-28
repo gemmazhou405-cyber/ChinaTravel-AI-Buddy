@@ -1,9 +1,9 @@
-import { Phone, FileText, Heart, MapPin, Shield, ChevronRight, Building2, Pill, Siren, Lock, X } from 'lucide-react';
+import { Phone, FileText, Heart, MapPin, Shield, ChevronRight, Siren, Lock, X } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
 import TabSectionHeader from '../TabSectionHeader';
-import { emergencyCards, hospitalCards, pharmacyCards, policeCards } from '../../data/phraseCards';
+import { medicalCards, policeCards } from '../../data/phraseCards';
 import type { PassState } from '../../hooks/usePass';
 import { isTripOrGroup } from '../../lib/membership';
 
@@ -294,17 +294,15 @@ export default function EmergencyTab({ passState, showToast, onAskBuddy, onUpgra
 
       <PhraseCategoryAccordion
         categories={[
-          { id: 'emergency', title: t('emergency.emergencyPhrases'), subtitle: t('emergency.emergencyCardsSubtitle', { count: emergencyCards.length }), icon: <Shield className="w-4 h-4" />, cards: emergencyCards },
-          { id: 'hospital', title: t('emergency.hospital'), subtitle: t('emergency.hospitalCardsSubtitle', { count: hospitalCards.length }), icon: <Building2 className="w-4 h-4" />, cards: hospitalCards },
+          { id: 'medical', title: t('emergency.medical'), subtitle: t('emergency.medicalCardsSubtitle', { count: medicalCards.length }), icon: <Heart className="w-4 h-4" />, cards: medicalCards },
           { id: 'police', title: t('emergency.police'), subtitle: t('emergency.policeCardsSubtitle', { count: policeCards.length }), icon: <Siren className="w-4 h-4" />, cards: policeCards },
-          { id: 'pharmacy', title: t('emergency.pharmacy'), subtitle: t('emergency.pharmacyCardsSubtitle', { count: pharmacyCards.length }), icon: <Pill className="w-4 h-4" />, cards: pharmacyCards },
         ]}
         freeLimit={3}
         lockedPreviewLimit={3}
         isPaidUser={hasFullAccess}
         showToast={showToast}
         onUpgradeClick={onUpgradeClick}
-        initialOpenId={deepTool === 'hospital' ? 'hospital' : deepTool === 'police' ? 'police' : deepTool === 'lost' ? 'emergency' : null}
+        initialOpenId={deepTool === 'hospital' || deepTool === 'medical' ? 'medical' : deepTool === 'police' ? 'police' : null}
         onCategoryOpen={(category) => onToolOpened?.(category)}
       />
 
