@@ -3,13 +3,13 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
 import TabSectionHeader from '../TabSectionHeader';
-import { medicalCards, policeCards } from '../../data/phraseCards';
+import AllergenPhraseSelector from '../AllergenPhraseSelector';
+import { medicalCards, policeCards, restaurantCards } from '../../data/phraseCards';
 import type { PassState } from '../../hooks/usePass';
 import { isTripOrGroup } from '../../lib/membership';
 
 // Emergency kit data
 import medicalCardsData from '../../data/emergencyKit/medicalCards.json';
-import allergyCardsData from '../../data/emergencyKit/allergyCards.json';
 import emergencyNumbersData from '../../data/emergencyKit/emergencyNumbers.json';
 import lostDocumentsData from '../../data/emergencyKit/lostDocuments.json';
 import embassyContactsData from '../../data/emergencyKit/embassyContacts.json';
@@ -18,7 +18,6 @@ import hospitalPhrasesData from '../../data/emergencyKit/hospitalPhrases.json';
 // ── Interfaces ──────────────────────────────────────────────────────────────
 
 interface MedPhrase { id: string; english: string; chinese: string; pinyin: string; }
-interface AllergyCard { id: string; allergen: string; english: string; chinese: string; pinyin: string; severity: string; }
 interface EmergencyNumberEntry { service: string; number: string; chinese: string; notes: string; }
 interface CityHotline { city: string; number: string; notes: string; }
 interface EmergencyNumbersDataShape { id: string; national: EmergencyNumberEntry[]; cityHotlines: CityHotline[]; }
@@ -33,8 +32,11 @@ const emNumbers = emergencyNumbersData as unknown as EmergencyNumbersDataShape;
 const lostDocs = lostDocumentsData as unknown as LostDocDataShape;
 const embassyData = embassyContactsData as unknown as EmbassyDataShape;
 const medPhrases = medicalCardsData as unknown as MedPhrase[];
-const allergies = allergyCardsData as unknown as AllergyCard[];
 const hospitalPhrases = hospitalPhrasesData as unknown as HospitalPhrase[];
+
+const allergyPhraseCards = [...restaurantCards, ...medicalCards].filter(
+  (c) => c.id === 'r-allergy' || c.id === 'r-allergy-check' || c.id === 'm-allergy',
+);
 
 const KIT_CATEGORIES = [
   { id: 'medical', emoji: '💊', title: 'Medical Phrases', description: 'Show to doctors & paramedics', free: true },
@@ -318,24 +320,10 @@ export default function EmergencyTab({ passState, showToast, onAskBuddy, onUpgra
 
       {kitModal === 'allergy' && (
         <KitBottomSheet title="Allergy Cards" onClose={() => setKitModal(null)}>
-          <p className="text-xs text-[#155e63] font-medium mb-3">Show these to restaurant staff before ordering</p>
-          <div className="space-y-2">
-            {allergies.map((a) => (
-              <div key={a.id} className="bg-white rounded-2xl p-3.5 shadow-sm">
-                <div className="flex items-center justify-between mb-1.5">
-                  <p className="text-sm font-semibold text-gray-900">{a.allergen}</p>
-                  <span className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${a.severity === 'severe' ? 'bg-red-100 text-red-700' : 'bg-amber-100 text-amber-700'}`}>{a.severity}</span>
-                </div>
-                <p className="text-xs text-gray-400 mb-1">{a.english}</p>
-                <p className="text-sm font-medium text-gray-900">{a.chinese}</p>
-                <p className="text-xs text-gray-400 mt-0.5">{a.pinyin}</p>
-                <div className="flex gap-3 mt-1.5">
-                  <button onClick={() => speakChinese(a.chinese)} className="text-xs text-[#155e63]">🔊 Speak</button>
-                  <button onClick={() => copyText(a.chinese)} className="text-xs text-gray-400">📋 Copy</button>
-                </div>
-              </div>
-            ))}
-          </div>
+          <p className="text-xs text-[#155e63] font-medium mb-3">
+            Select your allergen — tap "Show to Local" for the fullscreen card to show restaurant staff or a doctor.
+          </p>
+          <AllergenPhraseSelector cards={allergyPhraseCards} showToast={showToast} />
         </KitBottomSheet>
       )}
 

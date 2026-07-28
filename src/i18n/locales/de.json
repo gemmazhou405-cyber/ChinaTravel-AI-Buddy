@@ -323,7 +323,8 @@
       "allergenDisclaimer": "Hilft, mögliche Zutaten und häufige Allergene aus Menüinformationen zu erkennen. Bestätige dies immer direkt beim Restaurantpersonal.",
       "allergenResultWarning": "Dieses Tool kann Zutaten oder Allergene übersehen. Verlasse dich besonders bei schweren Allergien nicht als einzige Sicherheitsprüfung darauf.",
       "privateTestingTitle": "Menüfoto-Hilfe ist im privaten Test.",
-      "privateTestingBody": "Nutze vorerst die lokale Gerichtreferenz und die Restaurant-Phrase-Cards unten. Verlasse dich bei Allergien nicht ausschließlich auf diese App."
+      "privateTestingBody": "Nutze vorerst die lokale Gerichtreferenz und die Restaurant-Phrase-Cards unten. Verlasse dich bei Allergien nicht ausschließlich auf diese App.",
+      "allergyHint": "Wählen Sie ein Allergen aus, um eine fertige Wortkarte für Restaurants zu erhalten."
     },
     "transport": {
       "appsTitle": "Empfohlene Apps",

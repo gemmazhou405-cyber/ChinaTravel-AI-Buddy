@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Upload, AlertTriangle, MessageSquare, ChevronRight, X, Search, Utensils } from 'lucide-react';
+import { Upload, X, Search, Utensils } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import PhraseCategoryAccordion from '../PhraseCategoryAccordion';
 import TabSectionHeader from '../TabSectionHeader';
 import ToolDisclosure from '../ToolDisclosure';
+import AllergenPhraseSelector from '../AllergenPhraseSelector';
 import { restaurantCards } from '../../data/phraseCards';
 import type { PassState } from '../../hooks/usePass';
 import { isTripOrGroup } from '../../lib/membership';
@@ -23,80 +24,6 @@ interface Dish {
   orderTip: string;
 }
 
-interface AllergyCardData {
-  name: string;
-  chinese: string;
-  pinyin: string;
-  phrase: string;
-  chinesePhrase: string;
-  color: string;
-  iconColor: string;
-  badge: string;
-}
-
-interface AllergyCardProps {
-  card: AllergyCardData;
-  showToast: (msg: string) => void;
-}
-
-function AllergyCard({ card, showToast }: AllergyCardProps) {
-  const { t } = useTranslation();
-  const [expanded, setExpanded] = useState(false);
-  const speakChinese = (text: string) => {
-    if ('speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-      const u = new SpeechSynthesisUtterance(text);
-      u.lang = 'zh-CN';
-      u.rate = 0.8;
-      window.speechSynthesis.speak(u);
-    }
-  };
-  const copyPhrase = async (text: string) => {
-    await navigator.clipboard?.writeText(text);
-    showToast(t('toast.copied'));
-  };
-
-  return (
-    <div className={`border rounded-2xl p-4 transition-all ${card.color}`}>
-      <div className="flex items-start justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-white flex items-center justify-center shadow-sm">
-            <AlertTriangle className={`w-4 h-4 ${card.iconColor}`} />
-          </div>
-          <div>
-            <h3 className="font-semibold text-gray-800 text-sm">{card.name}</h3>
-            <p className="text-gray-500 text-xs">{card.chinese} · {card.pinyin}</p>
-          </div>
-        </div>
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className={`text-xs font-medium px-2.5 py-1 rounded-full ${card.badge} transition-all`}
-        >
-          {expanded ? t('food.hide') : t('food.showPhrase')}
-        </button>
-      </div>
-
-      {expanded && (
-        <div className="mt-3 pt-3 border-t border-black/5">
-          <div className="bg-white rounded-xl p-3 shadow-sm">
-            <p className="text-gray-600 text-xs leading-relaxed mb-2">{card.phrase}</p>
-            <p className="text-gray-800 text-sm font-medium leading-relaxed">{card.chinesePhrase}</p>
-          </div>
-          <div className="flex gap-2 mt-2">
-            <button onClick={() => speakChinese(card.chinesePhrase)} className="flex-1 text-xs text-[#155e63] flex items-center justify-center gap-1">
-              🔊 {t('common.speak')}
-            </button>
-            <button onClick={() => copyPhrase(card.chinesePhrase)} className="flex-1 text-xs text-gray-400 flex items-center justify-center gap-1 hover:text-gray-600 transition-colors">
-              <MessageSquare className="w-3 h-3" />
-              📋 {t('common.copy')}
-            </button>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
 interface Props {
   passState: PassState | null;
   showToast: (msg: string) => void;
@@ -108,7 +35,6 @@ interface Props {
 
 export default function FoodTab({ passState, showToast, onAskBuddy, onUpgradeClick, deepTool, onToolOpened }: Props) {
   const { t } = useTranslation();
-  const allergyCards = t('food.allergyCards', { returnObjects: true }) as AllergyCardData[];
   const hasFullAccess = isTripOrGroup(passState);
   const [dishQuery, setDishQuery] = useState('');
 
@@ -221,19 +147,14 @@ export default function FoodTab({ passState, showToast, onAskBuddy, onUpgradeCli
 
       </ToolDisclosure>
 
-      {/* Section: Allergy Alerts */}
+      {/* Section: Allergy Phrases */}
       <section>
-        <div className="flex items-center justify-between mb-3">
-          <h2 className="text-base font-semibold text-gray-900">{t('food.allergyTitle')}</h2>
-          <button className="text-xs text-[#155e63] font-medium flex items-center gap-0.5 hover:underline">
-            {t('food.customize')} <ChevronRight className="w-3 h-3" />
-          </button>
-        </div>
-        <div className="space-y-3">
-          {allergyCards.map((card) => (
-            <AllergyCard key={card.name} card={card} showToast={showToast} />
-          ))}
-        </div>
+        <h2 className="text-base font-semibold text-gray-900 mb-1">{t('food.allergyTitle')}</h2>
+        <p className="text-xs text-gray-500 mb-3 leading-relaxed">{t('food.allergyHint')}</p>
+        <AllergenPhraseSelector
+          cards={restaurantCards.filter((c) => c.id === 'r-allergy' || c.id === 'r-allergy-check')}
+          showToast={showToast}
+        />
       </section>
 
       {/* Section: Phrase Cards */}

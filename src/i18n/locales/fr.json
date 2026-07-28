@@ -323,7 +323,8 @@
       "allergenDisclaimer": "Aide à identifier les ingrédients possibles et les allergènes courants à partir des informations du menu. Confirmez toujours directement avec le personnel du restaurant.",
       "allergenResultWarning": "Cet outil peut manquer des ingrédients ou des allergènes. Ne l’utilisez pas comme seule vérification de sécurité, surtout en cas d’allergies sévères.",
       "privateTestingTitle": "L’aide par photo de menu est en test privé.",
-      "privateTestingBody": "Pour l’instant, utilisez la référence locale des plats et les cartes de phrases restaurant ci-dessous. Ne comptez pas sur cette app comme seul contrôle de sécurité allergie."
+      "privateTestingBody": "Pour l’instant, utilisez la référence locale des plats et les cartes de phrases restaurant ci-dessous. Ne comptez pas sur cette app comme seul contrôle de sécurité allergie.",
+      "allergyHint": "Sélectionnez un allergène pour obtenir une carte de phrase prête à montrer aux restaurants."
     },
     "transport": {
       "appsTitle": "Apps recommandées",

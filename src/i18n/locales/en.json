@@ -323,7 +323,8 @@
       "vegetarianShort": "Veg",
       "restaurantCardsSubtitle": "{{count}} restaurant ordering cards",
       "privateTestingTitle": "Menu photo help is in private testing.",
-      "privateTestingBody": "For now, use the local dish reference and restaurant phrase cards below. Do not rely on this app as your only allergy safety check."
+      "privateTestingBody": "For now, use the local dish reference and restaurant phrase cards below. Do not rely on this app as your only allergy safety check.",
+      "allergyHint": "Select an allergen to get a ready-to-show phrase card for restaurants."
     },
     "transport": {
       "appsTitle": "Recommended Apps",
