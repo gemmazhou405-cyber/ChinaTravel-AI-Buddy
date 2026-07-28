@@ -433,7 +433,7 @@
           "features": [
             "Wichtige Tools für Apps, Zahlungen, Transport, Essen, Hotel und Notfälle",
             "Basis-Phrasecards und Reiseführer",
-            "5 Buddy-AI-Nachrichten",
+            "10 Buddy-KI-Nachrichten",
             "Keine Zahlung erforderlich"
           ]
         },
@@ -649,7 +649,7 @@
       "rateLimited": "Bitte warte einen Moment, bevor du eine weitere Nachricht sendest.",
       "serviceUnavailable": "Buddy ist vorübergehend nicht verfügbar. Bitte versuche es später erneut.",
       "quotaExhausted": "Sie haben alle Pass-Nachrichten verbraucht.",
-      "freeQuotaExhausted": "Sie haben das heutige Gratis-Limit (5 Nachrichten) erreicht. Holen Sie sich einen Pass für mehr.",
+      "freeQuotaExhausted": "Sie haben das heutige Gratis-Limit (10 Nachrichten) erreicht. Holen Sie sich einen Pass für mehr.",
       "retry": "Erneut versuchen",
       "getPass": "Einen Pass erhalten",
       "openToolkit": "Toolkit öffnen"

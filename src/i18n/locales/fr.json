@@ -433,7 +433,7 @@
           "features": [
             "Outils essentiels pour apps, paiements, transport, repas, hôtel et urgences",
             "Cartes de phrases et guides de voyage de base",
-            "5 messages Buddy AI",
+            "10 messages Buddy AI",
             "Aucun paiement requis"
           ]
         },
@@ -649,7 +649,7 @@
       "rateLimited": "Veuillez patienter un instant avant d’envoyer un autre message.",
       "serviceUnavailable": "Buddy est temporairement indisponible. Veuillez réessayer plus tard.",
       "quotaExhausted": "Vous avez utilisé tous vos messages de pass.",
-      "freeQuotaExhausted": "Vous avez atteint la limite gratuite du jour (5 messages). Obtenez un pass pour plus.",
+      "freeQuotaExhausted": "Vous avez atteint la limite gratuite du jour (10 messages). Obtenez un pass pour plus.",
       "retry": "Réessayer",
       "getPass": "Obtenir un Pass",
       "openToolkit": "Ouvrir la boîte à outils"
