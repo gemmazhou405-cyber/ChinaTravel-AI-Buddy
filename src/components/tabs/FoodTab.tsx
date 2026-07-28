@@ -95,6 +95,10 @@ export default function FoodTab({ passState, showToast, onAskBuddy, onUpgradeCli
 
           {dishResults.length > 0 && (
             <div className="mt-2 space-y-2">
+              {/* Universal disclaimer — shown once above all results */}
+              <p className="text-[11px] leading-relaxed text-amber-700 px-0.5">
+                ⚠️ {t('food.allergenResultWarning')}
+              </p>
               {dishResults.map((dish) => (
                 <div key={dish.id} className="bg-white border border-gray-100 rounded-2xl p-3.5 shadow-sm">
                   <div className="flex items-start justify-between gap-2">
@@ -118,18 +122,19 @@ export default function FoodTab({ passState, showToast, onAskBuddy, onUpgradeCli
                     </div>
                   </div>
                   <p className="text-gray-500 text-xs mt-1.5 leading-relaxed">{dish.shortDescription}</p>
-                  {dish.allergens.length > 0 && (
-                    <>
-                      <div className="flex flex-wrap gap-1 mt-1.5">
-                        {dish.allergens.map((a) => (
-                          <span key={a} className="text-[10px] bg-amber-50 text-amber-700 border border-amber-100 px-1.5 py-0.5 rounded-full">
-                            ⚠️ {a}
-                          </span>
-                        ))}
-                      </div>
-                      <p className="mt-1.5 text-[11px] leading-relaxed text-amber-700">{t('food.allergenResultWarning')}</p>
-                    </>
-                  )}
+                  <div className="flex flex-wrap gap-1 mt-1.5">
+                    {dish.allergens.length > 0 ? (
+                      dish.allergens.map((a) => (
+                        <span key={a} className="text-[10px] bg-amber-50 text-amber-700 border border-amber-100 px-1.5 py-0.5 rounded-full">
+                          ⚠️ {a}
+                        </span>
+                      ))
+                    ) : (
+                      <span className="text-[10px] bg-gray-50 text-gray-500 border border-gray-100 px-1.5 py-0.5 rounded-full">
+                        {t('food.allergensUnconfirmed')}
+                      </span>
+                    )}
+                  </div>
                   {dish.orderTip && (
                     <p className="text-[11px] text-[#155e63] mt-1.5 leading-relaxed">
                       💬 {dish.orderTip}
@@ -151,6 +156,13 @@ export default function FoodTab({ passState, showToast, onAskBuddy, onUpgradeCli
       <section>
         <h2 className="text-base font-semibold text-gray-900 mb-1">{t('food.allergyTitle')}</h2>
         <p className="text-xs text-gray-500 mb-3 leading-relaxed">{t('food.allergyHint')}</p>
+        {/* Persistent safety disclaimer */}
+        <div className="mb-4 flex gap-2.5 rounded-xl border border-amber-100 bg-amber-50 px-3 py-2.5">
+          <span className="mt-px shrink-0 text-sm">⚠️</span>
+          <p className="text-[11px] leading-relaxed text-amber-800">
+            {t('food.allergyDisclaimer')}
+          </p>
+        </div>
         <AllergenPhraseSelector
           cards={restaurantCards.filter((c) => c.id === 'r-allergy' || c.id === 'r-allergy-check')}
           showToast={showToast}

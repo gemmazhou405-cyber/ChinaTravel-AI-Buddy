@@ -324,7 +324,9 @@
       "allergenResultWarning": "このツールは材料やアレルゲンを見落とす場合があります。特に重いアレルギーがある場合、唯一の安全確認として頼らないでください。",
       "privateTestingTitle": "メニュー写真サポートはプライベートテスト中です。",
       "privateTestingBody": "今は下の料理リファレンスとレストラン用フレーズカードを使ってください。重いアレルギー確認をこのアプリだけに頼らないでください。",
-      "allergyHint": "アレルゲンを選択して、レストランですぐに見せられるフレーズカードを取得してください。"
+      "allergyHint": "アレルゲンを選択して、レストランですぐに見せられるフレーズカードを取得してください。",
+      "allergyDisclaimer": "このカードはアレルギーを伝えるためのものです — 医療上の保証ではありません。厨房でのアレルゲン混入は排除できません。医療上の緊急事態では120に電話してください。",
+      "allergensUnconfirmed": "アレルゲン未確認 — スタッフに確認してください"
     },
     "transport": {
       "appsTitle": "おすすめアプリ",
@@ -411,7 +413,8 @@
       "policeCardsSubtitle": "警察への説明カード {{count}}枚",
       "pharmacy": "薬局",
       "pharmacyCardsSubtitle": "薬・薬局カード {{count}}枚",
-      "medicalCardsSubtitle": "{{count}}枚の医療フレーズカード"
+      "medicalCardsSubtitle": "{{count}}枚の医療フレーズカード",
+      "phraseCardDisclaimer": "このカードは医療スタッフや警察とのコミュニケーションを助けます — 専門的なケアの代替ではありません。生命の危険がある緊急事態では、すぐに120に電話してください。"
     },
     "pay": {
       "plansTitle": "トラベルパス",

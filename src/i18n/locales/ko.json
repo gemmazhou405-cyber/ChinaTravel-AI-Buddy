@@ -324,7 +324,9 @@
       "allergenResultWarning": "이 도구는 재료나 알레르기 유발 성분을 놓칠 수 있습니다. 특히 심한 알레르기가 있는 경우 유일한 안전 확인 수단으로 의존하지 마세요.",
       "privateTestingTitle": "메뉴 사진 도움 기능은 비공개 테스트 중입니다.",
       "privateTestingBody": "현재는 아래의 현지 음식 참고 자료와 식당 문구 카드를 사용하세요. 특히 심한 알레르기가 있다면 이 앱만으로 확인하지 마세요.",
-      "allergyHint": "알레르겐을 선택하여 레스토랑에서 바로 보여줄 수 있는 표현 카드를 받으세요."
+      "allergyHint": "알레르겐을 선택하여 레스토랑에서 바로 보여줄 수 있는 표현 카드를 받으세요.",
+      "allergyDisclaimer": "이 카드는 알레르기를 전달하는 데 도움을 줍니다 — 의료적 보장이 아닙니다. 주방에서의 교차 오염은 배제할 수 없습니다. 의료 응급 상황에서는 120에 전화하세요.",
+      "allergensUnconfirmed": "알레르겐 미확인 — 직원에게 확인하세요"
     },
     "transport": {
       "appsTitle": "추천 앱",
@@ -411,7 +413,8 @@
       "policeCardsSubtitle": "경찰 신고 카드 {{count}}개",
       "pharmacy": "약국",
       "pharmacyCardsSubtitle": "약 및 약국 카드 {{count}}개",
-      "medicalCardsSubtitle": "의료 문구 카드 {{count}}장"
+      "medicalCardsSubtitle": "의료 문구 카드 {{count}}장",
+      "phraseCardDisclaimer": "이 카드는 의료진 및 경찰과의 소통을 돕습니다 — 전문적인 치료를 대신하지 않습니다. 생명을 위협하는 응급 상황에서는 즉시 120에 전화하세요."
     },
     "pay": {
       "plansTitle": "여행 패스",

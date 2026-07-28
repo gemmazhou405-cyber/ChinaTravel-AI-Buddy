@@ -324,7 +324,9 @@
       "allergenResultWarning": "Cet outil peut manquer des ingrédients ou des allergènes. Ne l’utilisez pas comme seule vérification de sécurité, surtout en cas d’allergies sévères.",
       "privateTestingTitle": "L’aide par photo de menu est en test privé.",
       "privateTestingBody": "Pour l’instant, utilisez la référence locale des plats et les cartes de phrases restaurant ci-dessous. Ne comptez pas sur cette app comme seul contrôle de sécurité allergie.",
-      "allergyHint": "Sélectionnez un allergène pour obtenir une carte de phrase prête à montrer aux restaurants."
+      "allergyHint": "Sélectionnez un allergène pour obtenir une carte de phrase prête à montrer aux restaurants.",
+      "allergyDisclaimer": "Ces cartes vous aident à communiquer votre allergie — elles ne constituent pas une garantie médicale. La contamination croisée en cuisine ne peut être exclue. En cas d'urgence médicale, appelez le 120.",
+      "allergensUnconfirmed": "Allergènes non répertoriés — confirmez avec le personnel"
     },
     "transport": {
       "appsTitle": "Apps recommandées",
@@ -411,7 +413,8 @@
       "policeCardsSubtitle": "{{count}} cartes signalement police",
       "pharmacy": "Pharmacie",
       "pharmacyCardsSubtitle": "{{count}} cartes pharmacie et médicaments",
-      "medicalCardsSubtitle": "{{count}} fiches médicales"
+      "medicalCardsSubtitle": "{{count}} fiches médicales",
+      "phraseCardDisclaimer": "Ces cartes vous aident à communiquer avec le personnel médical et la police — elles ne remplacent pas les soins professionnels. Pour une urgence mettant la vie en danger, appelez le 120 immédiatement."
     },
     "pay": {
       "plansTitle": "Pass voyage",

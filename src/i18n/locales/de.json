@@ -324,7 +324,9 @@
       "allergenResultWarning": "Dieses Tool kann Zutaten oder Allergene übersehen. Verlasse dich besonders bei schweren Allergien nicht als einzige Sicherheitsprüfung darauf.",
       "privateTestingTitle": "Menüfoto-Hilfe ist im privaten Test.",
       "privateTestingBody": "Nutze vorerst die lokale Gerichtreferenz und die Restaurant-Phrase-Cards unten. Verlasse dich bei Allergien nicht ausschließlich auf diese App.",
-      "allergyHint": "Wählen Sie ein Allergen aus, um eine fertige Wortkarte für Restaurants zu erhalten."
+      "allergyHint": "Wählen Sie ein Allergen aus, um eine fertige Wortkarte für Restaurants zu erhalten.",
+      "allergyDisclaimer": "Diese Karten helfen Ihnen, Ihre Allergie mitzuteilen — sie sind keine medizinische Garantie. Kreuzkontaminierung in der Küche kann nicht ausgeschlossen werden. Bei einem medizinischen Notfall rufen Sie die 120 an.",
+      "allergensUnconfirmed": "Allergene nicht aufgeführt — beim Personal nachfragen"
     },
     "transport": {
       "appsTitle": "Empfohlene Apps",
@@ -411,7 +413,8 @@
       "policeCardsSubtitle": "{{count}} Karten für Polizeibericht",
       "pharmacy": "Apotheke",
       "pharmacyCardsSubtitle": "{{count}} Medizin- und Apothekenkarten",
-      "medicalCardsSubtitle": "{{count}} medizinische Wortkarten"
+      "medicalCardsSubtitle": "{{count}} medizinische Wortkarten",
+      "phraseCardDisclaimer": "Diese Karten helfen Ihnen, mit medizinischem Personal und Polizei zu kommunizieren — sie sind kein Ersatz für professionelle Versorgung. Bei einem lebensbedrohlichen Notfall rufen Sie sofort die 120 an."
     },
     "pay": {
       "plansTitle": "Reisepässe",

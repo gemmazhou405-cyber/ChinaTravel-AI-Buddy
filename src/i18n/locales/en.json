@@ -324,7 +324,9 @@
       "restaurantCardsSubtitle": "{{count}} restaurant ordering cards",
       "privateTestingTitle": "Menu photo help is in private testing.",
       "privateTestingBody": "For now, use the local dish reference and restaurant phrase cards below. Do not rely on this app as your only allergy safety check.",
-      "allergyHint": "Select an allergen to get a ready-to-show phrase card for restaurants."
+      "allergyHint": "Select an allergen to get a ready-to-show phrase card for restaurants.",
+      "allergyDisclaimer": "These cards help you communicate your allergy — they are not a medical guarantee. Kitchen cross-contamination cannot be excluded. In a medical emergency, call 120.",
+      "allergensUnconfirmed": "Allergens not listed — confirm with staff"
     },
     "transport": {
       "appsTitle": "Recommended Apps",
@@ -411,7 +413,8 @@
       "policeCardsSubtitle": "{{count}} police report cards",
       "pharmacy": "Pharmacy",
       "pharmacyCardsSubtitle": "{{count}} medicine and pharmacy cards",
-      "medicalCardsSubtitle": "{{count}} medical phrase cards"
+      "medicalCardsSubtitle": "{{count}} medical phrase cards",
+      "phraseCardDisclaimer": "These cards help you communicate with medical staff and police — they are not a substitute for professional care. For a life-threatening emergency, call 120 immediately."
     },
     "pay": {
       "plansTitle": "Travel Passes",

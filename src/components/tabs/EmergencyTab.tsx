@@ -294,6 +294,14 @@ export default function EmergencyTab({ passState, showToast, onAskBuddy, onUpgra
         </button>
       </div>
 
+      {/* Persistent medical disclaimer */}
+      <div className="flex gap-2.5 rounded-xl border border-red-100 bg-red-50 px-3 py-2.5">
+        <span className="mt-px shrink-0 text-sm">🚨</span>
+        <p className="text-[11px] leading-relaxed text-red-800">
+          {t('emergency.phraseCardDisclaimer')}
+        </p>
+      </div>
+
       <PhraseCategoryAccordion
         categories={[
           { id: 'medical', title: t('emergency.medical'), subtitle: t('emergency.medicalCardsSubtitle', { count: medicalCards.length }), icon: <Heart className="w-4 h-4" />, cards: medicalCards },
