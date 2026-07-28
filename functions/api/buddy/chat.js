@@ -14,7 +14,7 @@ const CLEANUP_TIMEOUT_MS = 2500;
 const MAX_REPLY_CHARS = 5000;
 const IP_RATE_WINDOW_MS = 60000;
 const IP_RATE_LIMIT = 40;
-const FREE_DAILY_LIMIT = 5;
+const FREE_DAILY_LIMIT = 10;
 
 const ipHits = new Map();
 
