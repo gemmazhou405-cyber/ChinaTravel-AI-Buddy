@@ -931,7 +931,15 @@ async function handleCoze(request, env) {
     return json(safeCozeErrorPayload(created.payload, `http_${created.status}`), { status: 502 }, env);
   }
   const resolved = await resolveCozeReply(env, created.payload, globalDeadlineAt);
-  if (resolved.reply) return json({ reply: resolved.reply }, { status: 200 }, env);
+  if (resolved.reply) {
+    if (incoming?.stream === true) {
+      return new Response(
+        `data: ${JSON.stringify({ delta: resolved.reply })}\n\ndata: ${JSON.stringify({ done: true })}\n\n`,
+        { status: 200, headers: { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache', ...corsHeaders(env) } },
+      );
+    }
+    return json({ reply: resolved.reply }, { status: 200 }, env);
+  }
 
   if (resolved.error && typeof resolved.error === 'object') {
     return json(resolved.error, { status: 502 }, env);
@@ -991,6 +999,111 @@ function buildDeepSeekMessages(contextMessages, message, { verifiedGuide = null,
 }
 
 // ---------------------------------------------------------------------------
+// DeepSeek streaming handler
+// Returns text/event-stream with {delta} chunks and a final {done:true} event.
+// On non-200 from DeepSeek, returns a plain JSON error so the caller can
+// roll back quota before any bytes are sent to the browser.
+// ---------------------------------------------------------------------------
+
+async function streamDeepSeek(env, message, contextMessages, { verifiedGuide, isTimeSensitive, budgetMs }) {
+  const fetchMs = Math.max(3000, budgetMs - 500);
+
+  let dsResponse;
+  try {
+    dsResponse = await fetch(DEEPSEEK_CHAT_URL, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${env.DEEPSEEK_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: DEEPSEEK_MODEL,
+        messages: buildDeepSeekMessages(contextMessages, message, { verifiedGuide, isTimeSensitive }),
+        thinking: { type: 'disabled' },
+        stream: true,
+        max_tokens: DEEPSEEK_MAX_TOKENS,
+      }),
+      signal: AbortSignal.timeout(fetchMs),
+    });
+  } catch (err) {
+    if (err?.name === 'AbortError' || err?.name === 'TimeoutError') {
+      console.warn('[chinaease-proxy] deepseek_stream_timeout');
+      return json({ error: 'upstream_timeout', code: 'upstream_timeout' }, { status: 504 });
+    }
+    throw err;
+  }
+
+  // Non-200: return JSON error so chat.js can roll back quota cleanly
+  if (!dsResponse.ok) {
+    const httpStatus = dsResponse.status;
+    if (httpStatus === 401 || httpStatus === 403) {
+      console.error('[chinaease-proxy] deepseek_auth_error', { httpStatus });
+      return json({ error: 'configuration_error', code: 'auth_error' }, { status: 503 });
+    }
+    if (httpStatus === 402) {
+      console.error('[chinaease-proxy] deepseek_balance_error', { httpStatus });
+      return json({ error: 'configuration_error', code: 'balance_error' }, { status: 503 });
+    }
+    if (httpStatus === 429) {
+      console.warn('[chinaease-proxy] deepseek_rate_limited', { httpStatus });
+      return json({ error: 'upstream_error', code: 'rate_limited' }, { status: 429 });
+    }
+    console.warn('[chinaease-proxy] deepseek_stream_non_ok', { httpStatus });
+    return json({ error: 'upstream_error', code: `http_${httpStatus}` }, { status: 502 });
+  }
+
+  // Transform DeepSeek OpenAI-SSE → our {delta} / {done} format
+  const encoder = new TextEncoder();
+  const decoder = new TextDecoder();
+  let buf = '';
+
+  const transformedBody = new ReadableStream({
+    async start(controller) {
+      const reader = dsResponse.body.getReader();
+      try {
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          buf += decoder.decode(value, { stream: true });
+          const lines = buf.split('\n');
+          buf = lines.pop() ?? '';
+          for (const line of lines) {
+            const trimmed = line.trim();
+            if (!trimmed.startsWith('data:')) continue;
+            const raw = trimmed.slice('data:'.length).trim();
+            if (raw === '[DONE]') {
+              controller.enqueue(encoder.encode(`data: ${JSON.stringify({ done: true })}\n\n`));
+              continue;
+            }
+            try {
+              const chunk = JSON.parse(raw);
+              const delta = chunk?.choices?.[0]?.delta?.content;
+              if (typeof delta === 'string' && delta) {
+                controller.enqueue(encoder.encode(`data: ${JSON.stringify({ delta })}\n\n`));
+              }
+            } catch { /* non-JSON SSE comment line */ }
+          }
+        }
+      } catch (err) {
+        console.warn('[chinaease-proxy] stream_read_error', { error: err?.message?.slice?.(0, 60) });
+        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: 'stream_error' })}\n\n`));
+      } finally {
+        controller.close();
+      }
+    },
+  });
+
+  return new Response(transformedBody, {
+    status: 200,
+    headers: {
+      'Content-Type': 'text/event-stream',
+      'Cache-Control': 'no-cache',
+      'X-Accel-Buffering': 'no',
+    },
+  });
+}
+
+// ---------------------------------------------------------------------------
 // DeepSeek handler (default provider)
 // Processing order:
 //   1. Method + auth
@@ -999,7 +1112,7 @@ function buildDeepSeekMessages(contextMessages, message, { verifiedGuide = null,
 //   4. Extract context, timeout budget
 //   5. Guide match
 //   6. Time-sensitivity flag
-//   7. Build messages → call DeepSeek
+//   7. Build messages → call DeepSeek (stream or non-stream)
 //   8. Parse and return
 // ---------------------------------------------------------------------------
 
@@ -1028,10 +1141,19 @@ async function handleDeepSeek(request, env) {
     return json({ error: 'Invalid request' }, { status: 400 }, env);
   }
 
+  const wantsStream = incoming?.stream === true;
+
   // FAQ layer: deterministic intercept, bypasses DeepSeek entirely
   const faqKey = matchFaq(message);
   if (faqKey) {
-    return json({ reply: getFaqAnswer(faqKey, message) }, { status: 200 }, env);
+    const faqReply = getFaqAnswer(faqKey, message);
+    if (wantsStream) {
+      return new Response(
+        `data: ${JSON.stringify({ delta: faqReply })}\n\ndata: ${JSON.stringify({ done: true })}\n\n`,
+        { status: 200, headers: { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache', ...corsHeaders(env) } },
+      );
+    }
+    return json({ reply: faqReply }, { status: 200 }, env);
   }
 
   const contextMessages = extractContextMessages(incoming);
@@ -1041,6 +1163,10 @@ async function handleDeepSeek(request, env) {
 
   const verifiedGuide = matchesTopics(message, ALIPAY_TOPICS) ? VERIFIED_GUIDES.alipay : null;
   const isTimeSensitive = !verifiedGuide && matchesTopics(message, TIME_SENSITIVE_TOPICS);
+
+  if (wantsStream) {
+    return streamDeepSeek(env, message, contextMessages, { verifiedGuide, isTimeSensitive, budgetMs });
+  }
 
   let response;
   try {
@@ -1126,6 +1252,7 @@ export const __test__ = {
   detectChineseLanguage,
   matchFaq,
   getFaqAnswer,
+  streamDeepSeek,
 };
 
 // ---------------------------------------------------------------------------
