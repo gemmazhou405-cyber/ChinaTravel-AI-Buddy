@@ -12,6 +12,8 @@ import ChatModal from './components/ChatModal';
 import Footer from './components/Footer';
 import Toast from './components/Toast';
 import PolicyPage, { getPolicyPageType } from './components/PolicyPage';
+import ClaimModal from './components/ClaimModal';
+import PassDashboard from './components/PassDashboard';
 import { usePass } from './hooks/usePass';
 import { useTranslation } from 'react-i18next';
 import { initAttribution, trackEvent, trackEventOnce } from './lib/analytics';
@@ -73,6 +75,9 @@ export default function App() {
   const [toast, setToast] = useState<string | null>(null);
   const [toolOpen, setToolOpen] = useState(Boolean(landing.tab));
   const [deepTool, setDeepTool] = useState<string | null>(landing.tool);
+  const [claimOpen, setClaimOpen] = useState(false);
+  const [claimInitialTab, setClaimInitialTab] = useState<'claim' | 'recover'>('claim');
+  const [dashOpen, setDashOpen] = useState(false);
   const { passState, refreshPassState } = usePass();
   const showToast = (msg: string) => setToast(msg);
 
@@ -167,7 +172,14 @@ export default function App() {
         onAskBuddy={() => openBuddy()}
         onOpenToolkit={handlePrimaryCta}
         onNavigate={navigateToSection}
-        onViewPass={() => navigateToSection('travel-passes')}
+        onViewPass={() => {
+          if (passState && passState.tier !== 'free') {
+            setDashOpen(true);
+          } else {
+            setClaimInitialTab('claim');
+            setClaimOpen(true);
+          }
+        }}
       />
 
       <Hero onOpenToolkit={handlePrimaryCta} onAskBuddy={() => openBuddy()} />
@@ -211,10 +223,24 @@ export default function App() {
           refreshPassState={refreshPassState}
           initialPrompt={chatPrefill ?? undefined}
           onOpenToolkit={() => openToolkit()}
-          onViewPricing={() => { setChatOpen(false); navigateToSection('travel-passes'); }}
+          onViewPricing={() => { setChatOpen(false); setClaimInitialTab('claim'); setClaimOpen(true); }}
         />
       )}
       {toast && <Toast message={toast} onDone={() => setToast(null)} />}
+      {claimOpen && (
+        <ClaimModal
+          initialTab={claimInitialTab}
+          onClose={() => setClaimOpen(false)}
+          onPassActivated={refreshPassState}
+        />
+      )}
+      {dashOpen && passState && passState.tier !== 'free' && (
+        <PassDashboard
+          passState={passState}
+          onClose={() => setDashOpen(false)}
+          onAddDevice={() => { setDashOpen(false); setClaimInitialTab('recover'); setClaimOpen(true); }}
+        />
+      )}
     </div>
   );
 }
