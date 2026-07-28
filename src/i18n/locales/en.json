@@ -1208,10 +1208,10 @@
         "switchToRecover": "Have a recovery code instead?",
         "successTitle": "Pass Activated!",
         "recoveryCodeLabel": "Your recovery code",
-        "recoveryCodeNote": "Save this code — it’s the only way to add this pass to a new device.",
+        "recoveryCodeNote": "Screenshot this now — Gmail and foreign email apps are blocked in China, so if you lose this code there is no way to recover access.",
         "copyCode": "Copy",
         "copied": "Copied!",
-        "confirmSaved": "I’ve saved my recovery code",
+        "confirmSaved": "I've screenshotted or written down my recovery code",
         "done": "Start using your pass"
       },
       "recover": {
