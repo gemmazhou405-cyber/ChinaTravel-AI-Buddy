@@ -38,6 +38,7 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
   ]);
   const [input, setInput] = useState(initialPrompt ?? '');
   const [typing, setTyping] = useState(false);
+  const [streaming, setStreaming] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const hasUserMessages = messages.some((m) => m.role === 'user');
@@ -131,7 +132,7 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
   };
 
   const send = async (text: string, options?: { requestId?: string; retry?: boolean }) => {
-    if (!text.trim() || typing) return;
+    if (!text.trim() || typing || streaming) return;
 
     const trimmedText = text.trim();
     const requestId = options?.requestId || crypto.randomUUID();
@@ -148,35 +149,24 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
     setTyping(true);
 
     try {
-      // Cookie is sent automatically — no Authorization header needed
       const response = await fetch('/api/buddy/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
-        body: JSON.stringify({ requestId, message: trimmedText, context }),
+        body: JSON.stringify({ requestId, message: trimmedText, context, stream: true }),
       });
 
-      let data: {
-        error?: string; message?: string; reply?: string;
-        tier?: string; remaining?: number;
-      } = {};
-      const responseText = await response.text();
-      if (responseText) {
-        try { data = JSON.parse(responseText); }
-        catch { data = { error: response.status >= 500 ? 'service_unavailable' : 'buddy_request_failed', message: responseText.slice(0, 120) }; }
-      }
-
       if (!response.ok) {
-        console.error('[buddy] /api/buddy/chat failed', { status: response.status, body: responseText.slice(0, 500) });
+        let data: { error?: string; message?: string; tier?: string } = {};
+        const responseText = await response.text();
+        if (responseText) { try { data = JSON.parse(responseText); } catch {} }
+        console.error('[buddy] /api/buddy/chat failed', { status: response.status });
         if (data?.error === 'quota_exhausted' || data?.error === 'pass_expired') {
           void trackEvent('quota_exhausted', { tool: 'buddy', code: data.error, tier: data.tier || passState?.tier });
           pushBuddy(t('chat.quotaExhausted'), 'error');
           return;
         }
-        if (data?.error === 'free_quota_exhausted') {
-          pushBuddy(t('chat.freeQuotaExhausted'), 'error');
-          return;
-        }
+        if (data?.error === 'free_quota_exhausted') { pushBuddy(t('chat.freeQuotaExhausted'), 'error'); return; }
         if (data?.error === 'rate_limited') { pushBuddy(t('chat.rateLimited'), 'error'); return; }
         if (data?.error === 'service_unavailable' || data?.error === 'upstream_error' || data?.error === 'upstream_timeout') {
           pushBuddy(t('chat.serviceUnavailable'), 'error', { text: trimmedText, requestId });
@@ -185,15 +175,85 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
         throw new Error(data?.error || `buddy_request_failed:${response.status}`);
       }
 
-      pushBuddy(data.reply || data.message || t('chat.trouble'));
-      await refreshPassState();
-      trackEventOnce('buddy:first-success', 'buddy_first_success', { tool: 'buddy', tier: passState?.tier });
+      const contentType = response.headers.get('content-type') ?? '';
+
+      if (contentType.includes('text/event-stream') && response.body) {
+        // ── Streaming path ──────────────────────────────────────────────────
+        const streamId = Date.now() + 1;
+        setMessages((prev) => [...prev, { id: streamId, role: 'buddy', text: '' }]);
+        setTyping(false);   // hide dots — live bubble is now visible
+        setStreaming(true); // disable input while streaming
+
+        const reader = response.body.getReader();
+        const dec = new TextDecoder();
+        let buf = '';
+        let accumulated = '';
+
+        try {
+          outer: while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            buf += dec.decode(value, { stream: true });
+            const events = buf.split('\n\n');
+            buf = events.pop() ?? '';
+            for (const event of events) {
+              const trimmedEvt = event.trim();
+              if (!trimmedEvt.startsWith('data:')) continue;
+              const raw = trimmedEvt.slice('data:'.length).trim();
+              let parsed: { delta?: string; done?: boolean; usage?: object; error?: string };
+              try { parsed = JSON.parse(raw); } catch { continue; }
+
+              if (parsed.delta) {
+                accumulated += parsed.delta;
+                setMessages((prev) =>
+                  prev.map((m) => (m.id === streamId ? { ...m, text: accumulated } : m)),
+                );
+              }
+              if (parsed.done) {
+                void refreshPassState();
+                trackEventOnce('buddy:first-success', 'buddy_first_success', { tool: 'buddy', tier: passState?.tier });
+                break outer;
+              }
+              if (parsed.error) {
+                setMessages((prev) =>
+                  prev.map((m) =>
+                    m.id === streamId && !m.text
+                      ? { ...m, text: t('chat.serviceUnavailable'), kind: 'error' }
+                      : m,
+                  ),
+                );
+                break outer;
+              }
+            }
+          }
+        } finally {
+          reader.releaseLock();
+        }
+
+        // Trim to max; replace empty placeholder with error
+        setMessages((prev) =>
+          prev.map((m) => {
+            if (m.id !== streamId) return m;
+            if (!accumulated) return { ...m, text: t('chat.trouble'), kind: 'error' as const };
+            return { ...m, text: accumulated.slice(0, 5000) };
+          }),
+        );
+      } else {
+        // ── Non-streaming fallback (should not normally occur) ───────────────
+        const responseText = await response.text();
+        let data: { reply?: string; message?: string } = {};
+        if (responseText) { try { data = JSON.parse(responseText); } catch {} }
+        pushBuddy(data.reply || data.message || t('chat.trouble'));
+        await refreshPassState();
+        trackEventOnce('buddy:first-success', 'buddy_first_success', { tool: 'buddy', tier: passState?.tier });
+      }
     } catch (error) {
       console.error('[buddy] chat request error', error);
       trackAppError('ai_connection_error', { tool: 'buddy', context: 'chat_send', errorCode: error instanceof Error ? error.message.slice(0, 80) : 'buddy_request_failed' });
       pushBuddy(t('chat.connectionIssue'), 'error', { text: trimmedText, requestId });
     } finally {
       setTyping(false);
+      setStreaming(false);
     }
   };
 
@@ -239,7 +299,7 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
                   <button
                     key={s}
                     onClick={() => send(t(s))}
-                    disabled={typing}
+                    disabled={typing || streaming}
                     className="w-full rounded-xl border border-hairline bg-surface px-4 py-3 text-left text-sm font-medium text-ink transition-colors hover:border-jade/30 hover:bg-jade-wash active:bg-jade-wash disabled:opacity-50"
                   >
                     {t(s)}
@@ -269,7 +329,7 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
                         <div className="mt-3 flex flex-wrap gap-2">
                           <button
                             onClick={() => send(m.retryText || '', { requestId: m.retryRequestId, retry: true })}
-                            disabled={typing}
+                            disabled={typing || streaming}
                             className="rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-red-700 shadow-sm transition-colors hover:bg-red-100 disabled:opacity-50"
                           >
                             {t('chat.retry')}
@@ -301,7 +361,7 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
                   )}
                 </div>
               ))}
-              {typing && (
+              {typing && !streaming && (
                 <div className="flex items-start gap-2" role="status" aria-label={t('chat.title')}>
                   <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-jade">
                     <Sparkles className="h-3 w-3 text-white" strokeWidth={1.5} />
@@ -325,7 +385,7 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
             ref={inputRef}
             value={input}
             rows={1}
-            disabled={typing}
+            disabled={typing || streaming}
             onChange={(e) => { setInput(e.target.value); resizeInput(); }}
             onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); void send(input); } }}
             placeholder={t('chat.placeholder')}
