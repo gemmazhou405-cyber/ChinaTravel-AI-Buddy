@@ -164,6 +164,47 @@ async function rollbackPassUsage(env, passId, before) {
   }
 }
 
+async function callCozeStream(env, userId, message, context, deadlineAt) {
+  if (!env.COZE_WORKER_URL || !validBotId(env.COZE_BOT_ID)) throw new Error('service_unavailable');
+  const availableForWorker = remainingMs(deadlineAt) - POST_WORKER_BUFFER_MS;
+  if (availableForWorker < WORKER_MIN_TIMEOUT_MS) throw timeoutError();
+  const workerTimeoutMs = Math.min(WORKER_MAX_TIMEOUT_MS, Math.max(WORKER_MIN_TIMEOUT_MS, availableForWorker));
+  const fetchTimeoutMs = Math.max(1000, Math.min(workerTimeoutMs + 1200, remainingMs(deadlineAt) - 1500));
+  try {
+    const headers = { 'Content-Type': 'application/json' };
+    if (env.COZE_INTERNAL_SECRET) headers['X-ChinaEase-Internal-Token'] = env.COZE_INTERNAL_SECRET;
+    headers['X-ChinaEase-Timeout-Ms'] = String(workerTimeoutMs);
+    const botId = safeBotId(env.COZE_BOT_ID);
+    const workerBase = env.COZE_WORKER_URL.replace(/\/+$/, '');
+    const workerEndpoint = workerBase.endsWith('/coze') ? workerBase : `${workerBase}/coze`;
+    const res = await fetch(workerEndpoint, {
+      method: 'POST',
+      headers,
+      signal: AbortSignal.timeout(fetchTimeoutMs),
+      body: JSON.stringify({
+        message, context, botId, userId,
+        bot_id: botId, user_id: userId,
+        stream: true,
+        additional_messages: [{ role: 'user', content: message, content_type: 'text' }],
+        timeoutMs: workerTimeoutMs,
+      }),
+    });
+    if (!res.ok) {
+      let errorPayload = {};
+      try { errorPayload = await res.json(); } catch {}
+      const providerCode = errorPayload.code || errorPayload.error || `http_${res.status}`;
+      logBuddy('warn', 'stream_worker_non_ok', { status: res.status, providerCode });
+      if (errorPayload.error === 'upstream_timeout') throw new Error('upstream_timeout');
+      if (errorPayload.error === 'coze_configuration_error' || providerCode === 4200) throw new Error(`service_unavailable:${providerCode}`);
+      throw new Error(`upstream_error:${providerCode}`);
+    }
+    return res; // HTTP 200 — text/event-stream body ready to pipe
+  } catch (error) {
+    if (error?.name === 'AbortError' || error?.name === 'TimeoutError' || error?.message === 'upstream_timeout') throw timeoutError();
+    throw error;
+  }
+}
+
 async function callCoze(env, userId, message, context, deadlineAt) {
   if (!env.COZE_WORKER_URL || !validBotId(env.COZE_BOT_ID)) throw new Error('service_unavailable');
   const availableForWorker = remainingMs(deadlineAt) - POST_WORKER_BUFFER_MS;
@@ -256,6 +297,7 @@ async function handlePost(request, env, deadlineAt) {
   const requestId = typeof body.requestId === 'string' ? body.requestId.trim() : '';
   const message = typeof body.message === 'string' ? body.message.trim() : '';
   const context = normalizeContext(body.context);
+  const wantsStream = body.stream === true;
 
   if (!REQUEST_ID_RE.test(requestId) || !message || context === null) {
     return errorResponse(request, env, 400, 'invalid_request', 'Invalid request.');
@@ -317,19 +359,78 @@ async function handlePost(request, env, deadlineAt) {
     usageTier = 'free';
   }
 
+  const usageInfo = session && reservation
+    ? {
+      tier: reservation.pass.tier,
+      messagesUsed: reservation.before + 1,
+      messageAllowance: reservation.pass.messageAllowance,
+      remaining: Math.max(0, (reservation.pass.messageAllowance ?? 0) - (reservation.before + 1)),
+    }
+    : { tier: 'free' };
+
+  if (wantsStream) {
+    let workerRes;
+    try {
+      workerRes = await callCozeStream(env, userId, message, context, deadlineAt);
+    } catch (error) {
+      // Worker returned non-200 before stream started — safe to roll back quota
+      if (session && reservation?.ok) {
+        const rollbackBudget = Math.max(500, Math.min(CLEANUP_TIMEOUT_MS, remainingMs(deadlineAt) - 500));
+        await withTimeout(rollbackPassUsage(env, session.passId, reservation.before), rollbackBudget, 'rollback_timeout').catch(() => {});
+      }
+      const reason = error instanceof Error && error.message === 'upstream_timeout'
+        ? 'upstream_timeout'
+        : error instanceof Error && error.message?.startsWith('service_unavailable')
+          ? 'service_unavailable'
+          : 'upstream_error';
+      logBuddy('warn', 'stream_failed_before_start', { reason });
+      return errorResponse(request, env,
+        reason === 'upstream_timeout' ? 504 : reason === 'service_unavailable' ? 503 : 502,
+        reason,
+        'Buddy is temporarily unavailable. Please try again.',
+      );
+    }
+
+    logBuddy('info', 'stream_started', { tier: usageTier });
+
+    // Intercept the {done:true} event from the worker and inject usage info
+    const encoder = new TextEncoder();
+    const decoder = new TextDecoder();
+    let sseBuf = '';
+    const usageInjector = new TransformStream({
+      transform(chunk, controller) {
+        sseBuf += decoder.decode(chunk, { stream: true });
+        const events = sseBuf.split('\n\n');
+        sseBuf = events.pop() ?? '';
+        for (const event of events) {
+          const trimmed = event.trim();
+          if (!trimmed) continue;
+          if (trimmed.startsWith('data:')) {
+            try {
+              const parsed = JSON.parse(trimmed.slice('data:'.length).trim());
+              if (parsed.done === true) {
+                controller.enqueue(encoder.encode(`data: ${JSON.stringify({ done: true, usage: usageInfo })}\n\n`));
+                continue;
+              }
+            } catch { /* pass through non-done events unchanged */ }
+          }
+          controller.enqueue(encoder.encode(`${event}\n\n`));
+        }
+      },
+      flush(controller) {
+        if (sseBuf.trim()) controller.enqueue(encoder.encode(`${sseBuf}\n\n`));
+      },
+    });
+
+    return withCors(new Response(workerRes.body.pipeThrough(usageInjector), {
+      status: 200,
+      headers: { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache', 'X-Accel-Buffering': 'no' },
+    }), request, env);
+  }
+
   try {
     const reply = await callCoze(env, userId, message, context, deadlineAt);
     logBuddy('info', 'completed', { tier: usageTier });
-
-    const usageInfo = session && reservation
-      ? {
-        tier: reservation.pass.tier,
-        messagesUsed: reservation.before + 1,
-        messageAllowance: reservation.pass.messageAllowance,
-        remaining: Math.max(0, (reservation.pass.messageAllowance ?? 0) - (reservation.before + 1)),
-      }
-      : { tier: 'free' };
-
     return withCors(jsonResponse({ status: 'completed', reply, usage: usageInfo }), request, env);
   } catch (error) {
     const reason = error instanceof Error && error.message === 'upstream_timeout'
