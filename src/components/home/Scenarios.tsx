@@ -67,7 +67,7 @@ export default function Scenarios({ onOpenTool }: Props) {
   };
 
   return (
-    <section ref={ref} id="features" className={`scroll-mt-20 bg-canvas py-20 md:py-32 ${revealed ? 'motion-reveal-on' : ''}`}>
+    <section ref={ref} id="features" className={`scroll-mt-20 bg-canvas py-16 md:py-24 ${revealed ? 'motion-reveal-on' : ''}`}>
       <div className="mx-auto max-w-container space-y-6 px-6 md:space-y-8 md:px-8">
         {SCENARIOS.map(({ key, image, tags }, index) => (
           <div

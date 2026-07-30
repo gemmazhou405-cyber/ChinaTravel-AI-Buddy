@@ -77,13 +77,13 @@ export default function SiteHeader({ passState, onAskBuddy, onOpenToolkit, onNav
         <div className="flex shrink-0 items-center gap-2">
           <button
             onClick={onAskBuddy}
-            className="hidden text-sm font-medium text-jade transition-colors duration-hover ease-out hover:text-[#0B4145] md:inline"
+            className="hidden text-sm font-medium text-jade transition-colors duration-hover ease-out hover:text-jade-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade md:inline"
           >
             {t('home.hero.ctaSecondary')}
           </button>
           <button
             onClick={onOpenToolkit}
-            className="hidden rounded-lg bg-jade px-3.5 py-2 text-sm font-semibold text-white transition-colors duration-hover ease-out hover:bg-[#0B4145] md:inline-flex"
+            className="hidden rounded-lg bg-jade px-3.5 py-2 text-sm font-semibold text-white transition-colors duration-hover ease-out hover:bg-jade-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jade md:inline-flex"
           >
             {t('home.hero.ctaPrimary')}
           </button>

@@ -14,6 +14,7 @@ export default {
         jade: {
           DEFAULT: '#0F5257',
           wash: '#E8F0EE',
+          dark: '#0B4145',
         },
         hairline: '#E8E4DC',
         tint: {

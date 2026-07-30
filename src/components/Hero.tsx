@@ -1,4 +1,4 @@
-import { ArrowRight, Check } from 'lucide-react';
+import { Check, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import PhoneDemo from './home/PhoneDemo';
 
@@ -32,18 +32,20 @@ export default function Hero({ onOpenToolkit, onAskBuddy }: Props) {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <button
-              onClick={onOpenToolkit}
-              className="rounded-lg bg-jade px-6 py-3.5 text-base font-semibold text-white transition-colors duration-hover ease-out hover:bg-[#0B4145]"
-            >
-              {t('home.hero.ctaPrimary')}
-            </button>
+            {/* Ask Buddy — primary visual weight: jade solid with AI icon */}
             <button
               onClick={onAskBuddy}
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-hairline bg-surface px-6 py-3.5 text-base font-semibold text-ink transition-colors duration-hover ease-out hover:border-ink-tertiary"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-jade px-6 py-3.5 text-base font-semibold text-white transition-[background-color,transform] duration-hover ease-out hover:-translate-y-0.5 hover:bg-jade-dark active:scale-[0.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jade"
             >
+              <Sparkles className="h-4 w-4" strokeWidth={1.5} />
               {t('home.hero.ctaSecondary')}
-              <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
+            </button>
+            {/* Open Toolkit — secondary */}
+            <button
+              onClick={onOpenToolkit}
+              className="rounded-lg border border-jade/40 bg-jade/8 px-6 py-3.5 text-base font-semibold text-jade transition-colors duration-hover ease-out hover:bg-jade hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jade"
+            >
+              {t('home.hero.ctaPrimary')}
             </button>
           </div>
 

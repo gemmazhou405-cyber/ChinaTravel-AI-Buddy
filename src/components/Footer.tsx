@@ -97,7 +97,7 @@ export default function Footer({ onOpenEmergency }: Props) {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full rounded-lg bg-jade px-4 py-2.5 text-sm font-semibold text-white transition-[background-color,transform,opacity] duration-hover ease-out hover:-translate-y-0.5 hover:bg-[#0B4145] active:scale-[0.99] disabled:translate-y-0 disabled:opacity-60"
+                className="w-full rounded-lg bg-jade px-4 py-2.5 text-sm font-semibold text-white transition-[background-color,transform,opacity] duration-hover ease-out hover:-translate-y-0.5 hover:bg-jade-dark active:scale-[0.99] disabled:translate-y-0 disabled:opacity-60"
               >
                 {status === 'loading' ? t('footer.subscribing') : t('footer.subscribe')}
               </button>

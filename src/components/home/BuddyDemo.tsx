@@ -47,10 +47,10 @@ export default function BuddyDemo({ onAsk }: Props) {
   const steps = t(`home.demo.${activeKey}.demoSteps`, { returnObjects: true }) as string[];
 
   return (
-    <section ref={ref} className={`bg-jade-wash py-20 md:py-32 ${revealed ? 'motion-reveal-on' : ''}`}>
+    <section ref={ref} className={`bg-jade-wash py-16 md:py-24 ${revealed ? 'motion-reveal-on' : ''}`}>
       <div className="mx-auto max-w-container px-6 md:px-8">
         <div className="motion-reveal-item">
-          <h2 className="max-w-[26rem] text-2xl font-semibold tracking-tight text-ink md:max-w-[34rem] md:text-[32px] md:leading-tight">
+          <h2 className="max-w-[26rem] font-display text-3xl font-normal leading-[1.1] tracking-[-0.01em] text-ink md:max-w-[34rem] md:text-[40px]">
             {t('home.demo.header')}
           </h2>
           <p className="mt-3 text-base text-ink-secondary">{t('home.demo.hint')}</p>
@@ -126,7 +126,7 @@ export default function BuddyDemo({ onAsk }: Props) {
 
             <button
               onClick={() => onAsk(activeQuestion)}
-              className="mt-5 inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg bg-jade px-5 py-2.5 text-sm font-semibold text-white transition-[background-color,transform] duration-hover ease-out hover:-translate-y-0.5 hover:bg-[#0B4145] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jade active:scale-[0.99]"
+              className="mt-5 inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg bg-jade px-5 py-2.5 text-sm font-semibold text-white transition-[background-color,transform] duration-hover ease-out hover:-translate-y-0.5 hover:bg-jade-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jade active:scale-[0.99]"
             >
               {t('home.demo.askThisQuestion')}
               <ArrowRight className="h-4 w-4" strokeWidth={1.5} />

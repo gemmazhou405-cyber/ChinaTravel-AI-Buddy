@@ -53,7 +53,7 @@ export default function HomePasses({ passState, showToast, onOpenToolkit }: Prop
   };
 
   return (
-    <section ref={ref} id="travel-passes" className={`scroll-mt-20 bg-canvas py-20 md:py-32 ${revealed ? 'motion-reveal-on' : ''}`}>
+    <section ref={ref} id="travel-passes" className={`scroll-mt-20 bg-canvas py-16 md:py-24 ${revealed ? 'motion-reveal-on' : ''}`}>
       <div className="mx-auto max-w-container px-6 md:px-8">
         <h2 className="motion-reveal-item max-w-[26rem] font-display text-3xl font-normal leading-[1.1] tracking-[-0.01em] text-ink md:max-w-[34rem] md:text-[44px]">
           {t('home.passes.header')}
@@ -95,9 +95,9 @@ export default function HomePasses({ passState, showToast, onOpenToolkit }: Prop
                 <button
                   onClick={() => handleCta(key)}
                   disabled={paidDisabled}
-                  className={`mt-8 w-full rounded-lg px-6 py-3.5 text-base font-semibold transition-[background-color,border-color,transform,opacity] duration-hover ease-out active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-50 ${
+                  className={`mt-8 w-full rounded-lg px-6 py-3.5 text-base font-semibold transition-[background-color,border-color,transform,opacity] duration-hover ease-out active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jade ${
                     highlighted
-                      ? 'bg-jade text-white hover:-translate-y-0.5 hover:bg-[#0B4145]'
+                      ? 'bg-jade text-white hover:-translate-y-0.5 hover:bg-jade-dark'
                       : 'border border-hairline bg-surface text-ink hover:-translate-y-0.5 hover:border-ink-tertiary'
                   }`}
                 >

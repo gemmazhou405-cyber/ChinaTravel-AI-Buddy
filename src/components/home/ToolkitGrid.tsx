@@ -85,7 +85,7 @@ export default function ToolkitGrid({ onOpen }: Props) {
   };
 
   return (
-    <section ref={ref} id="toolkit" className={`scroll-mt-20 bg-canvas py-20 md:py-32 ${revealed ? 'motion-reveal-on' : ''}`}>
+    <section ref={ref} id="toolkit" className={`scroll-mt-20 bg-canvas py-16 md:py-24 ${revealed ? 'motion-reveal-on' : ''}`}>
       <div className="mx-auto max-w-container px-6 md:px-8">
         <div className="motion-reveal-item md:flex md:items-end md:justify-between md:gap-10">
           <h2 className="min-w-0 font-display text-3xl font-normal leading-[1.1] tracking-[-0.01em] text-ink md:flex-1 md:text-[44px]">
@@ -105,7 +105,7 @@ export default function ToolkitGrid({ onOpen }: Props) {
           {COLUMNS.map(({ key, tint, label, labelText, items }, columnIndex) => (
             <div
               key={key}
-              className={`motion-reveal-item rounded-2xl border border-white/60 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_8px_24px_rgba(17,20,24,0.05)] backdrop-blur-sm md:p-7 ${tint}`}
+              className={`motion-reveal-item rounded-2xl border border-white/60 p-6 shadow-card backdrop-blur-sm md:p-7 ${tint}`}
               style={{ '--reveal-index': columnIndex + 1 } as CSSProperties}
             >
               <span className={`inline-flex rounded-md px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.14em] ${label} ${labelText}`}>
