@@ -438,10 +438,9 @@
           "desc": "Basis-Toolkit für typische Reisesituationen in China.",
           "cta": "Kostenlos starten",
           "features": [
-            "Wichtige Tools für Apps, Zahlungen, Transport, Essen, Hotel und Notfälle",
-            "Basis-Phrasecards und Reiseführer",
-            "10 Buddy-KI-Nachrichten",
-            "Keine Zahlung erforderlich"
+            "Vollständiges Toolkit: Apps, Zahlungen, Essen, Transport und Notfälle",
+            "10 Buddy-KI-Antworten",
+            "Phrasekarten und Reiseführer inklusive"
           ]
         },
         "trip": {
@@ -449,10 +448,9 @@
           "desc": "Zusätzliche Reisehilfe für eine Person während einer China-Reise",
           "cta": "Trip Pass erhalten",
           "features": [
-            "50 Buddy-AI-Nachrichten",
+            "50 Buddy-KI-Antworten",
             "14 Tage gültig",
-            "Zusätzliche Reisehilfe für eine Person",
-            "Einmalzahlung · keine automatische Verlängerung"
+            "Für eine Person, die gesamte Reise"
           ]
         },
         "group": {
@@ -460,10 +458,9 @@
           "desc": "Zusätzliche Reisehilfe für Paare, Familien oder kleine Gruppen mit einem geteilten Konto",
           "cta": "Group Pass erhalten",
           "features": [
-            "200 Buddy-AI-Nachrichten",
+            "200 Buddy-KI-Antworten",
             "14 Tage gültig",
-            "Ein Konto und ein geteiltes Kontingent",
-            "Einmalzahlung · keine automatische Verlängerung"
+            "Ein gemeinsamer Pass für Paare, Familien oder Gruppen"
           ]
         }
       },
@@ -1008,21 +1005,21 @@
         "title1": "Keine App. Kein VPN.",
         "title2": "Kein Problem.",
         "subtitle": "Ihr China-Reisehelfer im Browser.",
-        "supporting": "Zahlungen, Taxis, Speisekarten, Redewendungen und Notfälle — alles in einem browserbasierten Reisehelfer.",
+        "supporting": "",
         "ctaPrimary": "Kostenloses Toolkit öffnen",
         "ctaSecondary": "Buddy fragen",
-        "trust1": "Keine Anmeldung nötig",
-        "trust2": "Kein VPN für den Toolkit-Zugriff nötig",
-        "trust3": "Essenssätze + Allergenhinweise",
+        "trust1": "Zahlungen, Taxis, Essen und Notfälle",
+        "trust2": "Chinesische Sätze zum Vorzeigen bereit",
+        "trust3": "Kein Login · Kein VPN · Kostenlos starten",
         "free": "Kostenlos",
         "trust4": "Chinesische Sätze zum Vorzeigen bereit"
       },
       "demo": {
-        "header": "Fragen Sie Buddy alles. In Ihrer Sprache.",
+        "header": "Fragen Sie Buddy. In Ihrer Sprache.",
         "hint": "Tippen Sie auf eine Frage, um es selbst auszuprobieren.",
         "tryIt": "Buddy fragen",
         "q1": {
-          "question": "Wie bezahle ich, wenn mein Alipay nicht funktioniert?",
+          "question": "Wie bezahle ich, wenn Alipay nicht funktioniert?",
           "answer": "Keine Sorge — das passiert oft. Prüfen Sie zuerst, ob Ihre Karte verknüpft ist: Öffnen Sie Alipay und tippen Sie auf Ich → Bankkarten. Wird die Karte angezeigt, aber die Zahlung schlägt fehl, versuchen Sie einen kleineren Betrag — manche ausländische Karten haben Limits pro Zahlung. Und halten Sie etwas Bargeld bereit; fast jedes Geschäft akzeptiert es noch.",
           "demoLead": "Keine Sorge — das hilft meistens:",
           "demoSteps": [
@@ -1033,15 +1030,15 @@
           "demoAction": "Kann ich anders bezahlen? Meine Karte funktioniert nicht."
         },
         "q2": {
-          "question": "Hilf mir, diese Speisekarte zu verstehen",
-          "answer": "Nenne mir den Gerichtnamen oder suche in der Essensreferenz. Ich kann häufige Zutaten, Schärfegrad und mögliche Allergene erklären, die du mit dem Restaurantpersonal bestätigen solltest. Menüfoto-Hilfe ist noch im privaten Test.",
-          "demoLead": "Ich kann Gerichtnamen in einfache Auswahl verwandeln:",
+          "question": "Wie buche ich einen Hochgeschwindigkeitszug?",
+          "answer": "Ausländische Reisende können Hochgeschwindigkeitsbahntickets in der Regel über den offiziellen Railway-12306-Service oder unterstützte Reiseplattformen kaufen. Sie benötigen denselben Reisepass, der bei der Buchung verwendet wurde, um den Bahnhof zu betreten und an Bord zu gehen.",
+          "demoLead": "Fangen Sie mit diesen Schritten an:",
           "demoSteps": [
-            "Gerichtenamen übersetzen und häufige Zutaten erklären.",
-            "Schärfegrad und mögliche häufige Allergene markieren, damit Sie beim Personal nachfragen können."
+            "Suchen Sie die Strecke und das Reisedatum und geben Sie die Reisepassdaten jedes Reisenden genau wie im Pass ein.",
+            "Bringen Sie denselben Reisepass zum Bahnhof und planen Sie zusätzliche Zeit für Sicherheits- und Identitätskontrollen ein."
           ],
-          "demoActionTitle": "Personal fragen",
-          "demoAction": "Enthält das Erdnüsse, Meeresfrüchte oder Schweinefleisch?"
+          "demoActionTitle": "Um Tickethilfe bitten",
+          "demoAction": "我想买一张高铁票，请问怎么买？"
         },
         "q3": {
           "question": "Sag meinem Taxifahrer, wohin ich will",
@@ -1053,6 +1050,17 @@
           ],
           "demoActionTitle": "Dem Fahrer zeigen",
           "demoAction": "请带我去这个地址"
+        },
+        "q4": {
+          "question": "Welche Gerichte sind vegetarisch oder ohne Schweinefleisch?",
+          "answer": "Manche chinesischen Gerichte können Schweinefleisch, Schmalz, Fleischbrühe oder versteckte tierische Zutaten enthalten, selbst wenn sie vegetarisch aussehen. Ich kann Ihnen helfen, gängige Gerichte zu erkennen und eine chinesische Phrase für das Restaurantpersonal vorzubereiten. Bestätigen Sie die Zutaten immer direkt mit dem Restaurant, besonders bei Allergien.",
+          "demoLead": "Folgen Sie diesen Schritten beim Bestellen:",
+          "demoSteps": [
+            "Fragen Sie, ob das Gericht Schweinefleisch, Schmalz, Fleischbrühe oder andere tierische Zutaten enthält.",
+            "Bei Allergien oder strengen Ernährungsanforderungen bestätigen Sie Zutaten und mögliche Kreuzkontamination direkt beim Personal."
+          ],
+          "demoActionTitle": "Personal fragen",
+          "demoAction": "这道菜有猪肉或荤油吗？"
         },
         "askThisQuestion": "Diese Frage stellen"
       },
@@ -1096,35 +1104,35 @@
         "s1": {
           "kicker": "A — Gerade gelandet",
           "title": "Vom Flughafen in die Stadt, Schritt für Schritt.",
-          "body": "Daten aktiv, Alipay bereit, Airport-Express bestiegen — Buddy führt Sie Schritt für Schritt durch die Ankunft.",
+          "body": "Von der Einreise bis zum Hotel — Apps, Daten und Alipay erledigt, bevor Sie landen.",
           "tag1": "Wichtige Apps",
           "tag2": "Alipay-Einrichtung",
-          "tag3": "eSIM & Daten",
+          "tag3": "Flughafentransfer",
           "tag4": "Flughafentransfer",
           "cta": "Reise-Checkliste öffnen"
         },
         "s2": {
           "kicker": "B — Zeit zu essen",
           "title": "Bestellen ohne zu raten.",
-          "body": "Suche häufige Gerichte, prüfe Schärfe und mögliche Allergene und halte chinesische Sätze für das Restaurantpersonal bereit.",
+          "body": "Gerichte erkennen, Allergene prüfen und eine chinesische Phrase für das Personal bereithalten.",
           "tag1": "Essensreferenz",
           "tag2": "Allergenhinweise",
-          "tag3": "Restaurant-Sätze",
+          "tag3": "Auf Chinesisch zeigen",
           "tag4": "Auf Chinesisch zeigen"
         },
         "s3": {
-          "kicker": "C — WENN ETWAS SCHIEFGEHT",
+          "kicker": "C — Wenn etwas schiefgeht",
           "title": "Wichtige Hilfe, bereit wenn etwas schiefgeht.",
-          "body": "Notrufnummern, Krankenhaus-Sätze, Polizei-Hilfe und Schritte bei Passverlust — bereit, bevor Sie sie brauchen.",
+          "body": "Notrufnummern, Krankenhaus-Sätze und Schritte bei Passverlust — bereit, wenn Sie sie brauchen.",
           "tag1": "Notrufnummern",
           "tag2": "Krankenhaus-Sätze",
-          "tag3": "Polizei-Hilfe",
+          "tag3": "Pass verloren",
           "tag4": "Pass verloren"
         },
         "tagAria": "{{name}} im kostenlosen Toolkit öffnen"
       },
       "toolkit": {
-        "title": "Alles bereit, bevor Sie landen.",
+        "title": "Ihr vollständiges Reise-Toolkit für China.",
         "check1": "Keine Anmeldung nötig",
         "check2": "Kein VPN nötig",
         "col1": {

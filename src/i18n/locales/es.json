@@ -438,10 +438,9 @@
           "desc": "Kit básico para situaciones comunes de viaje en China.",
           "cta": "Empezar gratis",
           "features": [
-            "Herramientas esenciales para apps, pagos, transporte, comida, hotel y emergencias",
-            "Tarjetas de frases y guías básicas",
-            "10 mensajes de Buddy AI",
-            "No requiere pago"
+            "Kit completo: apps, pagos, comida, transporte y emergencias",
+            "10 respuestas de Buddy AI",
+            "Tarjetas de frases y guías incluidas"
           ]
         },
         "trip": {
@@ -449,10 +448,9 @@
           "desc": "Ayuda extra para un viajero durante un viaje por China",
           "cta": "Obtener Trip Pass",
           "features": [
-            "50 mensajes de Buddy AI",
+            "50 respuestas de Buddy AI",
             "Válido por 14 días",
-            "Ayuda extra para un viajero",
-            "Pago único · sin renovación automática"
+            "Para un viajero, todo el viaje"
           ]
         },
         "group": {
@@ -460,10 +458,9 @@
           "desc": "Ayuda extra para parejas, familias o grupos pequeños que usan una cuenta compartida",
           "cta": "Obtener Group Pass",
           "features": [
-            "200 mensajes de Buddy AI",
+            "200 respuestas de Buddy AI",
             "Válido por 14 días",
-            "Una cuenta y una asignación compartida",
-            "Pago único · sin renovación automática"
+            "Un pass compartido para parejas, familias o grupos"
           ]
         }
       },
@@ -1008,21 +1005,21 @@
         "title1": "Sin app. Sin VPN.",
         "title2": "Sin problema.",
         "subtitle": "Tu asistente de viaje por China, en el navegador.",
-        "supporting": "Pagos, taxis, menús, frases y emergencias — todo en un asistente de viaje en el navegador.",
+        "supporting": "",
         "ctaPrimary": "Abrir kit gratuito",
         "ctaSecondary": "Preguntar a Buddy",
-        "trust1": "Sin registro",
-        "trust2": "Sin VPN para acceder al kit",
-        "trust3": "Frases de comida + recordatorios de alérgenos",
+        "trust1": "Pagos, taxis, comida y emergencias",
+        "trust2": "Frases en chino listas para mostrar",
+        "trust3": "Sin registro · Sin VPN · Gratis para empezar",
         "free": "Gratis",
         "trust4": "Frases en chino listas para mostrar"
       },
       "demo": {
-        "header": "Pregúntale lo que sea a Buddy. En tu idioma.",
+        "header": "Pregúntale a Buddy. En tu idioma.",
         "hint": "Toca una pregunta para probarlo tú mismo.",
         "tryIt": "Preguntar a Buddy",
         "q1": {
-          "question": "¿Cómo pago si mi Alipay no funciona?",
+          "question": "¿Cómo pago si Alipay no funciona?",
           "answer": "No te preocupes — pasa mucho. Primero comprueba que tu tarjeta esté vinculada: abre Alipay y toca Yo → Tarjetas bancarias. Si la tarjeta aparece pero el pago falla, prueba con un importe menor — algunas tarjetas extranjeras tienen límites por pago. Y lleva algo de efectivo de respaldo; casi todas las tiendas lo siguen aceptando.",
           "demoLead": "No te preocupes — esto suele funcionar:",
           "demoSteps": [
@@ -1033,15 +1030,15 @@
           "demoAction": "¿Puedo pagar de otra forma? Mi tarjeta no funciona."
         },
         "q2": {
-          "question": "Ayúdame a entender este menú",
-          "answer": "Dime el nombre del plato o busca en la referencia de comida. Puedo explicar ingredientes comunes, nivel de picante y posibles alérgenos para confirmar con el personal. La ayuda con fotos de menú sigue en prueba privada.",
-          "demoLead": "Puedo convertir nombres de platos en opciones simples:",
+          "question": "¿Cómo reservo un tren de alta velocidad?",
+          "answer": "Los viajeros extranjeros generalmente pueden comprar billetes de tren de alta velocidad a través del servicio oficial Railway 12306 o plataformas de viaje compatibles. Necesitarás el mismo pasaporte usado en la reserva para entrar a la estación y abordar.",
+          "demoLead": "Empieza con estos pasos:",
           "demoSteps": [
-            "Traducir nombres de platos y explicar ingredientes comunes.",
-            "Marcar nivel de picante y posibles alérgenos comunes para confirmar con el personal."
+            "Busca la ruta y la fecha, luego introduce los datos del pasaporte de cada viajero exactamente como aparecen en el documento.",
+            "Lleva el mismo pasaporte a la estación y reserva tiempo extra para los controles de seguridad e identidad."
           ],
-          "demoActionTitle": "Preguntar al personal",
-          "demoAction": "¿Esto contiene cacahuetes, mariscos o cerdo?"
+          "demoActionTitle": "Pedir ayuda con el billete",
+          "demoAction": "我想买一张高铁票，请问怎么买？"
         },
         "q3": {
           "question": "Dile a mi taxista adónde voy",
@@ -1053,6 +1050,17 @@
           ],
           "demoActionTitle": "Mostrar al conductor",
           "demoAction": "请带我去这个地址"
+        },
+        "q4": {
+          "question": "¿Qué platos son vegetarianos o sin cerdo?",
+          "answer": "Algunos platos chinos pueden contener cerdo, manteca, caldo de carne o ingredientes de origen animal ocultos, incluso si parecen vegetarianos. Puedo ayudarte a identificar platos comunes y preparar una frase en chino para mostrar al personal. Confirma siempre los ingredientes directamente con el restaurante, especialmente si tienes una alergia.",
+          "demoLead": "Usa estos pasos al pedir:",
+          "demoSteps": [
+            "Pregunta si el plato contiene cerdo, manteca, caldo de carne u otros ingredientes de origen animal.",
+            "Para alergias o necesidades dietéticas estrictas, confirma los ingredientes y posible contaminación cruzada directamente con el personal."
+          ],
+          "demoActionTitle": "Preguntar al personal",
+          "demoAction": "这道菜有猪肉或荤油吗？"
         },
         "askThisQuestion": "Hacer esta pregunta"
       },
@@ -1096,35 +1104,35 @@
         "s1": {
           "kicker": "A — Acabas de aterrizar",
           "title": "Del aeropuerto a la ciudad, paso a paso.",
-          "body": "Datos activos, Alipay listo y el expreso del aeropuerto abordado — Buddy te guía en la llegada, paso a paso.",
+          "body": "Desde la aduana hasta tu hotel — apps, datos y Alipay listos antes de aterrizar.",
           "tag1": "Apps esenciales",
           "tag2": "Configurar Alipay",
-          "tag3": "eSIM y datos",
+          "tag3": "Traslado del aeropuerto",
           "tag4": "Traslado del aeropuerto",
           "cta": "Abrir la lista pre-viaje"
         },
         "s2": {
           "kicker": "B — Hora de comer",
           "title": "Pide la cena sin adivinar.",
-          "body": "Busca platos comunes, revisa picante y posibles alérgenos, y ten frases en chino listas para el personal.",
+          "body": "Identifica platos, revisa alérgenos y ten una frase en chino lista para el personal del restaurante.",
           "tag1": "Referencia de comida",
           "tag2": "Recordatorios de alérgenos",
-          "tag3": "Frases de restaurante",
+          "tag3": "Muéstralo en chino",
           "tag4": "Muéstralo en chino"
         },
         "s3": {
-          "kicker": "C — CUANDO ALGO SALE MAL",
+          "kicker": "C — Cuando algo sale mal",
           "title": "Ayuda esencial, lista cuando algo sale mal.",
-          "body": "Números de emergencia, frases de hospital, ayuda policial y pasos si pierdes el pasaporte — listos antes de necesitarlos.",
+          "body": "Números de emergencia, frases de hospital y pasos si pierdes el pasaporte — listos cuando los necesites.",
           "tag1": "Números de emergencia",
           "tag2": "Frases de hospital",
-          "tag3": "Ayuda policial",
+          "tag3": "Pasaporte perdido",
           "tag4": "Pasaporte perdido"
         },
         "tagAria": "Abrir {{name}} en el kit gratuito"
       },
       "toolkit": {
-        "title": "Todo listo antes de aterrizar.",
+        "title": "Tu kit de viaje completo para China.",
         "check1": "Sin registro",
         "check2": "Sin VPN",
         "col1": {

@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRevealOnView } from '../../hooks/useRevealOnView';
 
-const QUESTIONS = ['q1', 'q2', 'q3'] as const;
+const QUESTIONS = ['q1', 'q2', 'q3', 'q4'] as const;
 type QuestionKey = typeof QUESTIONS[number];
 
 interface Props {

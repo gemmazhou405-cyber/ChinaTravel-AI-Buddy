@@ -16,7 +16,6 @@ const SCENARIOS: Array<{ key: 's1' | 's2' | 's3'; image: string; tags: TagTarget
     tags: [
       { tab: 'before', tool: 'apps' },      // Essential apps
       { tab: 'before', tool: 'payment' },   // Alipay setup
-      { tab: 'before', tool: 'apps' },      // eSIM & data (lives in the apps tool)
       { tab: 'before', tool: 'transport' }, // Airport transfer
     ],
   },
@@ -26,7 +25,6 @@ const SCENARIOS: Array<{ key: 's1' | 's2' | 's3'; image: string; tags: TagTarget
     tags: [
       { tab: 'food', tool: 'food' },  // Food reference
       { tab: 'food', tool: 'food' },  // Allergen reminders (part of the menu tool)
-      { tab: 'food', tool: 'food' },  // Restaurant phrases (part of the menu tool)
       { tab: 'stay', tool: 'stay' },  // Show it in Chinese (phrase cards)
     ],
   },
@@ -36,7 +34,6 @@ const SCENARIOS: Array<{ key: 's1' | 's2' | 's3'; image: string; tags: TagTarget
     tags: [
       { tab: 'emergency', tool: 'numbers' },
       { tab: 'emergency', tool: 'hospital' },
-      { tab: 'emergency', tool: 'police' },
       { tab: 'emergency', tool: 'lost' },
     ],
   },

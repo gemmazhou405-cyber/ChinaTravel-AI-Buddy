@@ -2,7 +2,7 @@ import { Check, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import PhoneDemo from './home/PhoneDemo';
 
-const TRUST_KEYS = ['trust1', 'trust2', 'trust3', 'trust4'] as const;
+const TRUST_KEYS = ['trust1', 'trust2', 'trust3'] as const;
 
 interface Props {
   onOpenToolkit: () => void;
@@ -27,9 +27,6 @@ export default function Hero({ onOpenToolkit, onAskBuddy }: Props) {
           </h1>
 
           <p className="mt-6 text-xl font-medium text-ink md:text-2xl">{t('home.hero.subtitle')}</p>
-          <p className="mt-3 max-w-[30rem] text-base leading-relaxed text-ink-secondary md:text-lg">
-            {t('home.hero.supporting')}
-          </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             {/* Ask Buddy — primary visual weight: jade solid with AI icon */}

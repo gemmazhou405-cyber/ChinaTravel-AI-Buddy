@@ -438,10 +438,9 @@
           "desc": "Boîte à outils de base pour les situations courantes en Chine.",
           "cta": "Commencer gratuitement",
           "features": [
-            "Outils essentiels pour apps, paiements, transport, repas, hôtel et urgences",
-            "Cartes de phrases et guides de voyage de base",
-            "10 messages Buddy AI",
-            "Aucun paiement requis"
+            "Boîte à outils complète : apps, paiements, nourriture, transport et urgences",
+            "10 réponses Buddy AI",
+            "Cartes de phrases et guides de voyage inclus"
           ]
         },
         "trip": {
@@ -449,10 +448,9 @@
           "desc": "Aide de voyage supplémentaire pour une personne pendant un séjour en Chine",
           "cta": "Obtenir Trip Pass",
           "features": [
-            "50 messages Buddy AI",
+            "50 réponses Buddy AI",
             "Valable 14 jours",
-            "Aide supplémentaire pour un voyageur",
-            "Paiement unique · pas de renouvellement automatique"
+            "Pour un voyageur, tout le séjour"
           ]
         },
         "group": {
@@ -460,10 +458,9 @@
           "desc": "Aide supplémentaire pour couples, familles ou petits groupes utilisant un seul compte partagé",
           "cta": "Obtenir Group Pass",
           "features": [
-            "200 messages Buddy AI",
+            "200 réponses Buddy AI",
             "Valable 14 jours",
-            "Un compte et une allocation partagée",
-            "Paiement unique · pas de renouvellement automatique"
+            "Un pass partagé pour couples, familles ou groupes"
           ]
         }
       },
@@ -1008,21 +1005,21 @@
         "title1": "Pas d'appli. Pas de VPN.",
         "title2": "Pas de problème.",
         "subtitle": "Votre assistant de voyage en Chine, dans le navigateur.",
-        "supporting": "Paiements, taxis, menus, phrases et urgences — tout dans un seul assistant de voyage accessible depuis le navigateur.",
+        "supporting": "",
         "ctaPrimary": "Ouvrir la boîte à outils gratuite",
         "ctaSecondary": "Demander à Buddy",
-        "trust1": "Sans inscription",
-        "trust2": "Pas de VPN pour accéder à la boîte à outils",
-        "trust3": "Phrases repas + rappels allergènes",
+        "trust1": "Paiements, taxis, nourriture et urgences",
+        "trust2": "Phrases chinoises prêtes à montrer aux habitants",
+        "trust3": "Sans inscription · Sans VPN · Gratuit",
         "free": "Gratuit",
         "trust4": "Phrases en chinois prêtes à montrer aux locaux"
       },
       "demo": {
-        "header": "Demandez tout à Buddy. Dans votre langue.",
+        "header": "Demandez à Buddy. Dans votre langue.",
         "hint": "Touchez une question pour l'essayer vous-même.",
         "tryIt": "Demander à Buddy",
         "q1": {
-          "question": "Comment payer si mon Alipay ne fonctionne pas ?",
+          "question": "Comment payer si Alipay ne fonctionne pas ?",
           "answer": "Pas d'inquiétude — cela arrive souvent. Vérifiez d'abord que votre carte est bien liée : ouvrez Alipay puis Moi → Cartes bancaires. Si la carte apparaît mais que le paiement échoue, essayez un montant plus petit — certaines cartes étrangères ont des limites par paiement. Et gardez un peu d'espèces en secours ; presque tous les commerces les acceptent encore.",
           "demoLead": "Pas de panique — essayez ceci :",
           "demoSteps": [
@@ -1033,15 +1030,15 @@
           "demoAction": "Puis-je payer autrement ? Ma carte ne fonctionne pas."
         },
         "q2": {
-          "question": "Aide-moi à comprendre ce menu",
-          "answer": "Indiquez le nom du plat ou cherchez dans la référence culinaire. Je peux expliquer les ingrédients courants, le niveau d’épices et les allergènes possibles à confirmer avec le personnel. L’aide par photo de menu est encore en test privé.",
-          "demoLead": "Je peux transformer les noms de plats en choix simples :",
+          "question": "Comment réserver un train à grande vitesse ?",
+          "answer": "Les voyageurs étrangers peuvent généralement acheter des billets de train à grande vitesse via le service officiel Railway 12306 ou des plateformes de voyage compatibles. Vous aurez besoin du même passeport utilisé lors de la réservation pour entrer en gare et monter à bord.",
+          "demoLead": "Commencez par ces étapes :",
           "demoSteps": [
-            "Traduire les noms des plats et expliquer les ingrédients courants.",
-            "Signaler le niveau de piment et les allergènes courants possibles à confirmer avec le personnel."
+            "Cherchez l’itinéraire et la date, puis saisissez les informations du passeport de chaque voyageur exactement comme indiqué.",
+            "Apportez le même passeport à la gare et prévoyez du temps supplémentaire pour les contrôles de sécurité et d’identité."
           ],
-          "demoActionTitle": "Demander au personnel",
-          "demoAction": "Ce plat contient-il des cacahuètes, des fruits de mer ou du porc ?"
+          "demoActionTitle": "Demander de l’aide pour le billet",
+          "demoAction": "我想买一张高铁票，请问怎么买？"
         },
         "q3": {
           "question": "Dis à mon chauffeur de taxi où aller",
@@ -1053,6 +1050,17 @@
           ],
           "demoActionTitle": "Montrer au chauffeur",
           "demoAction": "请带我去这个地址"
+        },
+        "q4": {
+          "question": "Quels plats sont végétariens ou sans porc ?",
+          "answer": "Certains plats chinois peuvent contenir du porc, du saindoux, du bouillon de viande ou des ingrédients d'origine animale cachés, même s'ils semblent végétariens. Je peux vous aider à identifier des plats courants et préparer une phrase en chinois à montrer au personnel. Confirmez toujours les ingrédients directement avec le restaurant, surtout en cas d'allergie.",
+          "demoLead": "Suivez ces étapes pour commander :",
+          "demoSteps": [
+            "Demandez si le plat contient du porc, du saindoux, du bouillon de viande ou d'autres ingrédients d'origine animale.",
+            "Pour les allergies ou régimes stricts, confirmez les ingrédients et les risques de contamination croisée directement avec le personnel."
+          ],
+          "demoActionTitle": "Demander au personnel",
+          "demoAction": "这道菜有猪肉或荤油吗？"
         },
         "askThisQuestion": "Poser cette question"
       },
@@ -1096,35 +1104,35 @@
         "s1": {
           "kicker": "A — Vous venez d'atterrir",
           "title": "De l'aéroport à la ville, étape par étape.",
-          "body": "Données mobiles actives, Alipay prêt, express de l'aéroport embarqué — Buddy vous guide à l'arrivée, étape par étape.",
+          "body": "Tout, de la douane à votre hôtel — applis, données mobiles et Alipay organisés avant votre arrivée.",
           "tag1": "Applis essentielles",
           "tag2": "Configuration Alipay",
-          "tag3": "eSIM & données",
+          "tag3": "Transfert aéroport",
           "tag4": "Transfert aéroport",
           "cta": "Ouvrir la checklist pré-départ"
         },
         "s2": {
           "kicker": "B — L'heure de manger",
           "title": "Commandez sans deviner.",
-          "body": "Recherchez des plats courants, vérifiez le niveau d’épices et les allergènes possibles, et gardez des phrases chinoises prêtes pour le personnel.",
+          "body": "Identifiez les plats, vérifiez les allergènes et gardez une phrase en chinois prête pour le personnel.",
           "tag1": "Référence culinaire",
           "tag2": "Rappels allergènes",
-          "tag3": "Phrases restaurant",
+          "tag3": "À montrer en chinois",
           "tag4": "À montrer en chinois"
         },
         "s3": {
-          "kicker": "C — QUAND ÇA TOURNE MAL",
+          "kicker": "C — Quand ça tourne mal",
           "title": "L’aide essentielle, prête quand ça tourne mal.",
-          "body": "Numéros d’urgence, phrases d’hôpital, aide police et démarches passeport perdu — prêts avant d’en avoir besoin.",
-          "tag1": "Numéros d'urgence",
-          "tag2": "Phrases d'hôpital",
-          "tag3": "Aide police",
+          "body": "Numéros d’urgence, phrases d’hôpital et démarches passeport perdu — disponibles quand vous en avez besoin.",
+          "tag1": "Numéros d’urgence",
+          "tag2": "Phrases d’hôpital",
+          "tag3": "Passeport perdu",
           "tag4": "Passeport perdu"
         },
         "tagAria": "Ouvrir {{name}} dans la boîte à outils gratuite"
       },
       "toolkit": {
-        "title": "Tout est prêt avant d'atterrir.",
+        "title": "Votre boîte à outils complète pour voyager en Chine.",
         "check1": "Sans inscription",
         "check2": "Sans VPN",
         "col1": {

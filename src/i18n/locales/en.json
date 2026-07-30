@@ -438,10 +438,9 @@
           "desc": "Basic China travel toolkit for common travel situations.",
           "cta": "Start Free",
           "features": [
-            "Essential apps, payments, transport, food, hotel and emergency tools",
-            "Basic phrase cards and travel guides",
-            "10 Buddy AI messages",
-            "No payment required"
+            "Full toolkit: apps, payments, food, transport, and emergencies",
+            "10 Buddy AI answers",
+            "Phrase cards and travel guides included"
           ]
         },
         "trip": {
@@ -449,10 +448,9 @@
           "desc": "Extra travel help for one traveler during a China trip",
           "cta": "Get Trip Pass",
           "features": [
-            "50 Buddy AI messages",
+            "50 Buddy AI answers",
             "Valid for 14 days",
-            "Extra travel help for one traveler",
-            "One-time payment · no auto-renewal"
+            "For one traveler, the whole trip"
           ]
         },
         "group": {
@@ -460,10 +458,9 @@
           "desc": "Extra travel help for couples, families, or small groups using one shared account",
           "cta": "Get Group Pass",
           "features": [
-            "200 Buddy AI messages",
+            "200 Buddy AI answers",
             "Valid for 14 days",
-            "One account and one shared allowance",
-            "One-time payment · no auto-renewal"
+            "One shared pass for couples, families, or groups"
           ]
         }
       },
@@ -1008,21 +1005,21 @@
         "title1": "No app. No VPN.",
         "title2": "No problem.",
         "subtitle": "Your China travel helper in the browser.",
-        "supporting": "Payments, taxis, menus, phrases, and emergencies — all in one browser-based travel helper.",
+        "supporting": "",
         "ctaPrimary": "Open Free Toolkit",
         "ctaSecondary": "Ask Buddy",
-        "trust1": "No sign-in required",
-        "trust2": "No VPN needed for toolkit access",
-        "trust3": "Food phrases + allergen reminders",
+        "trust1": "Payments, taxis, food, and emergencies",
+        "trust2": "Chinese phrases ready to show locals",
+        "trust3": "No sign-in · No VPN · Free to start",
         "free": "Free",
         "trust4": "Chinese phrases ready to show locals"
       },
       "demo": {
-        "header": "Ask Buddy anything. In your language.",
+        "header": "Ask Buddy. In your language.",
         "hint": "Tap a question to try it yourself.",
         "tryIt": "Ask Buddy",
         "q1": {
-          "question": "How do I pay if my Alipay isn't working?",
+          "question": "How do I pay if Alipay isn't working?",
           "answer": "Don't worry — this happens a lot. First check whether your card is linked: open Alipay and tap Me → Bank Cards. If the card shows but payments fail, try a smaller amount — some foreign cards have per-payment limits. And keep a little cash as backup; almost every shop still accepts it.",
           "demoLead": "Don't worry — this usually works:",
           "demoSteps": [
@@ -1033,15 +1030,15 @@
           "demoAction": "Can I pay another way? My card is not working."
         },
         "q2": {
-          "question": "Help me understand this menu",
-          "answer": "Tell me the dish name or search the food reference. I can explain common ingredients, spice level, and possible common allergens to confirm with restaurant staff. Menu photo help is still in private testing.",
-          "demoLead": "I can turn dish names into simple choices:",
+          "question": "How do I book a high-speed train?",
+          "answer": "Foreign travelers can usually book high-speed train tickets through the official Railway 12306 service or supported travel platforms. You will need the same passport used for booking when entering the station and boarding.",
+          "demoLead": "Start with these steps:",
           "demoSteps": [
-            "Translate dish names and explain common ingredients.",
-            "Flag spice level and possible common allergens to confirm with staff."
+            "Search the route and travel date, then enter each traveler's passport details exactly as shown on the passport.",
+            "Bring the same passport to the station and allow extra time for security and identity checks."
           ],
-          "demoActionTitle": "Ask staff",
-          "demoAction": "Does this contain peanuts, shellfish, or pork?"
+          "demoActionTitle": "Ask for ticket help",
+          "demoAction": "我想买一张高铁票，请问怎么买？"
         },
         "q3": {
           "question": "Tell my taxi driver where to go",
@@ -1053,6 +1050,17 @@
           ],
           "demoActionTitle": "Show driver",
           "demoAction": "请带我去这个地址"
+        },
+        "q4": {
+          "question": "Which dishes are vegetarian or pork-free?",
+          "answer": "Some Chinese dishes may contain pork, lard, meat stock, or hidden animal-based ingredients, even when they look vegetarian. I can help you identify common dishes and prepare a Chinese phrase to show restaurant staff. Always confirm ingredients directly with the restaurant, especially if you have an allergy.",
+          "demoLead": "Use these steps when ordering:",
+          "demoSteps": [
+            "Ask whether the dish contains pork, lard, meat stock, or other animal-based ingredients.",
+            "For allergies or strict dietary needs, confirm ingredients and possible cross-contact directly with restaurant staff."
+          ],
+          "demoActionTitle": "Ask restaurant staff",
+          "demoAction": "这道菜有猪肉或荤油吗？"
         },
         "askThisQuestion": "Ask this question"
       },
@@ -1096,35 +1104,35 @@
         "s1": {
           "kicker": "A — You just landed",
           "title": "Airport to city, step by step.",
-          "body": "Data working, Alipay ready, and the airport express boarded — Buddy walks you through arrival, step by step.",
+          "body": "Everything from customs to your hotel — apps, data, and Alipay sorted before you land.",
           "tag1": "Essential apps",
           "tag2": "Alipay setup",
-          "tag3": "eSIM & data",
+          "tag3": "Airport transfer",
           "tag4": "Airport transfer",
           "cta": "Open pre-trip checklist"
         },
         "s2": {
           "kicker": "B — Time to eat",
           "title": "Order dinner without guessing.",
-          "body": "Search common dishes, check spice and possible allergens, and keep Chinese phrases ready for restaurant staff.",
+          "body": "Identify dishes, check allergens, and keep a Chinese phrase ready for restaurant staff.",
           "tag1": "Food reference",
           "tag2": "Allergen reminders",
-          "tag3": "Restaurant phrases",
+          "tag3": "Show it in Chinese",
           "tag4": "Show it in Chinese"
         },
         "s3": {
-          "kicker": "C — WHEN THINGS GO WRONG",
+          "kicker": "C — When things go wrong",
           "title": "Essential help, ready when things go wrong.",
-          "body": "Emergency numbers, hospital phrases, police help, and lost-passport steps — ready before you need them.",
+          "body": "Emergency numbers, hospital phrases, and lost-passport steps — ready when you need them.",
           "tag1": "Emergency numbers",
           "tag2": "Hospital phrases",
-          "tag3": "Police help",
+          "tag3": "Lost passport",
           "tag4": "Lost passport"
         },
         "tagAria": "Open {{name}} in the free toolkit"
       },
       "toolkit": {
-        "title": "Everything ready before you land.",
+        "title": "Your complete China travel toolkit.",
         "check1": "No sign-in required",
         "check2": "No VPN needed",
         "col1": {
