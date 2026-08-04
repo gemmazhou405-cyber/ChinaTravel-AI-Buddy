@@ -1260,6 +1260,28 @@
         "addDevice": "Add this device with a recovery code",
         "close": "Done"
       }
+    },
+    "lead": {
+      "ctaTitle": "Besoin d'aide pour planifier votre voyage en Chine ?",
+      "ctaDesc": "Partagez votre email et quelques détails sur votre voyage. Nous vous aiderons à passer à l'étape suivante.",
+      "ctaButton": "Planifier mon voyage",
+      "ctaDismiss": "Pas maintenant",
+      "formTitle": "Parlez-nous de votre voyage",
+      "fieldEmail": "Email",
+      "fieldDate": "Date de voyage",
+      "fieldDatePlaceholder": "ex. Octobre 2026 ou T4 2026",
+      "fieldTravelers": "Voyageurs",
+      "fieldHelp": "En quoi pouvons-nous vous aider ?",
+      "fieldHelpPlaceholder": "Décrivez ce que vous souhaitez planifier. N'incluez pas de passeport, de données bancaires ou d'informations médicales sensibles.",
+      "fieldHelpCount": "{{count}}/500",
+      "submit": "Envoyer mes informations de voyage",
+      "submitting": "Envoi en cours...",
+      "consent": "Nous utiliserons vos coordonnées uniquement pour vous aider dans votre voyage.",
+      "consentLink": "Politique de confidentialité",
+      "success": "Merci — nous avons bien reçu vos informations de voyage.",
+      "errorGeneric": "Impossible d'envoyer vos informations pour le moment. Veuillez réessayer.",
+      "errorTooMany": "Trop de demandes. Veuillez réessayer plus tard.",
+      "errorEmail": "Veuillez saisir une adresse email valide."
     }
   }
 }

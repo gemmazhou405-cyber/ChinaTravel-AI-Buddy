@@ -1262,6 +1262,28 @@
         "addDevice": "Add this device with a recovery code",
         "close": "Done"
       }
+    },
+    "lead": {
+      "ctaTitle": "中国旅行のプランニングをお手伝いします",
+      "ctaDesc": "メールアドレスと旅行の詳細をお知らせください。次のステップをサポートします。",
+      "ctaButton": "旅行を計画する",
+      "ctaDismiss": "今はしない",
+      "formTitle": "旅行について教えてください",
+      "fieldEmail": "メールアドレス",
+      "fieldDate": "旅行日程",
+      "fieldDatePlaceholder": "例：2026年10月、または2026年第4四半期",
+      "fieldTravelers": "旅行人数",
+      "fieldHelp": "どのようなお手伝いが必要ですか？",
+      "fieldHelpPlaceholder": "計画したいことを教えてください。パスポート情報、支払い情報、医療などの機密情報は記入しないでください。",
+      "fieldHelpCount": "{{count}}/500",
+      "submit": "旅行の詳細を送信",
+      "submitting": "送信中...",
+      "consent": "ご入力いただいた情報は、旅行のサポート目的にのみ使用します。",
+      "consentLink": "プライバシーポリシー",
+      "success": "ありがとうございます — 旅行の詳細を受け取りました。",
+      "errorGeneric": "現在、情報を送信できませんでした。もう一度お試しください。",
+      "errorTooMany": "リクエストが多すぎます。しばらくしてから再試行してください。",
+      "errorEmail": "有効なメールアドレスを入力してください。"
     }
   }
 }

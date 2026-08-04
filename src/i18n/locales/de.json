@@ -1260,6 +1260,28 @@
         "addDevice": "Add this device with a recovery code",
         "close": "Done"
       }
+    },
+    "lead": {
+      "ctaTitle": "Hilfe bei der Planung Ihrer China-Reise?",
+      "ctaDesc": "Teilen Sie uns Ihre E-Mail-Adresse und einige Reisedetails mit. Wir helfen Ihnen beim nächsten Schritt.",
+      "ctaButton": "Meine Reise planen",
+      "ctaDismiss": "Nicht jetzt",
+      "formTitle": "Erzählen Sie uns von Ihrer Reise",
+      "fieldEmail": "E-Mail",
+      "fieldDate": "Reisedatum",
+      "fieldDatePlaceholder": "z. B. Oktober 2026 oder Q4 2026",
+      "fieldTravelers": "Reisende",
+      "fieldHelp": "Wobei brauchen Sie Hilfe?",
+      "fieldHelpPlaceholder": "Beschreiben Sie, was Sie planen möchten. Bitte keine Passdaten, Zahlungsinformationen oder sensiblen Gesundheitsdaten angeben.",
+      "fieldHelpCount": "{{count}}/500",
+      "submit": "Reisedetails senden",
+      "submitting": "Wird gesendet...",
+      "consent": "Wir verwenden Ihre Daten ausschließlich, um Ihnen bei Ihrer Reise zu helfen.",
+      "consentLink": "Datenschutzrichtlinie",
+      "success": "Vielen Dank – wir haben Ihre Reisedetails erhalten.",
+      "errorGeneric": "Ihre Daten konnten gerade nicht gesendet werden. Bitte versuchen Sie es erneut.",
+      "errorTooMany": "Zu viele Anfragen. Bitte versuchen Sie es später erneut.",
+      "errorEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
     }
   }
 }

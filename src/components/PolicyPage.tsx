@@ -144,7 +144,7 @@ const legalCopy = {
       {
         title: 'Information We Collect',
         body:
-          'We may collect your email address, account plan, entitlement status, usage quotas, basic app usage data, anonymous session ID, UTM attribution, newsletter email, and information required to operate Buddy AI conversations and food reference tools.',
+          'We may collect your email address, account plan, entitlement status, usage quotas, basic app usage data, anonymous session ID, UTM attribution, newsletter email, trip planning details you choose to submit through Buddy, and information required to operate Buddy AI conversations and food reference tools.',
       },
       {
         title: 'Authentication and Storage',
@@ -167,9 +167,14 @@ const legalCopy = {
           'If you subscribe to travel updates, we store your email address, consent version, source path, UTM attribution, subscription status, and unsubscribe information. You can unsubscribe at any time.',
       },
       {
+        title: 'Trip Planning Enquiries',
+        body:
+          'If you submit a trip planning enquiry through Buddy, we may collect your email address, approximate travel date, number of travelers, and any information you choose to provide about the trip help you need. This information is used only to review, process, and respond to your enquiry, and to provide help related to that specific trip. Submitting a trip planning enquiry does not subscribe you to newsletters or marketing communications. Please do not submit passport information, payment card details, sensitive health or medical information, or other sensitive personal information you do not need to share for trip planning purposes. Trip planning enquiries are processed server-side. We may record a hashed version of your IP address for abuse prevention and security purposes. We do not store full Buddy conversation content as part of a trip planning submission. Trip enquiry data is retained for as long as needed to process your enquiry and for reasonable business record purposes. You may request access, correction, or deletion of your submitted information by contacting us.',
+      },
+      {
         title: 'Retention and Deletion',
         body:
-          'We keep account, entitlement, payment, support, analytics, and newsletter records as needed to operate the service, investigate issues, meet legal obligations, and handle support requests. Contact us to request account deletion or privacy assistance.',
+          'We keep account, entitlement, payment, support, analytics, newsletter records, and trip planning enquiry records as needed to operate the service, investigate issues, meet legal obligations, and handle support requests. Contact us to request account deletion or privacy assistance.',
       },
       {
         title: 'No Sale of Data',

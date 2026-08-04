@@ -1262,6 +1262,28 @@
         "addDevice": "Add this device with a recovery code",
         "close": "Done"
       }
+    },
+    "lead": {
+      "ctaTitle": "중국 여행 계획에 도움이 필요하신가요?",
+      "ctaDesc": "이메일과 여행 세부 정보를 공유해 주세요. 다음 단계를 도와드리겠습니다.",
+      "ctaButton": "여행 계획하기",
+      "ctaDismiss": "나중에",
+      "formTitle": "여행에 대해 알려주세요",
+      "fieldEmail": "이메일",
+      "fieldDate": "여행 날짜",
+      "fieldDatePlaceholder": "예: 2026년 10월 또는 2026년 4분기",
+      "fieldTravelers": "여행 인원",
+      "fieldHelp": "어떤 도움이 필요하신가요?",
+      "fieldHelpPlaceholder": "계획하고 싶은 내용을 알려주세요. 여권, 결제, 민감한 건강 정보는 포함하지 마세요.",
+      "fieldHelpCount": "{{count}}/500",
+      "submit": "여행 정보 전송",
+      "submitting": "전송 중...",
+      "consent": "입력하신 정보는 여행 도움 목적으로만 사용됩니다.",
+      "consentLink": "개인정보 처리방침",
+      "success": "감사합니다 — 여행 정보를 받았습니다.",
+      "errorGeneric": "현재 정보를 전송할 수 없습니다. 다시 시도해 주세요.",
+      "errorTooMany": "요청이 너무 많습니다. 잠시 후 다시 시도해 주세요.",
+      "errorEmail": "유효한 이메일 주소를 입력해 주세요."
     }
   }
 }

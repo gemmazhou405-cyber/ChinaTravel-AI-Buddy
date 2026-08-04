@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
-import { X, Send, Sparkles, AlertCircle, ArrowLeft } from 'lucide-react';
+import { X, Send, Sparkles, AlertCircle, ArrowLeft, RotateCcw } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackAppError, trackEvent, trackEventOnce } from '../lib/analytics';
 import { renderChatMarkdown } from '../lib/chatMarkdown';
+import { submitTripLead } from '../lib/tripLead';
 import type { PassState } from '../hooks/usePass';
 
 interface Message {
@@ -14,6 +15,8 @@ interface Message {
   retryText?: string;
   retryRequestId?: string;
 }
+
+const SS_ATTEMPT_KEY = 'chinaease_buddy_lead_question_count';
 
 const SUGGESTIONS = [
   'chat.suggestions.s1',
@@ -42,6 +45,18 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const hasUserMessages = messages.some((m) => m.role === 'user');
+
+  type LeadCtaState = 'hidden' | 'cta' | 'form' | 'submitting' | 'success' | 'error';
+  const [leadCtaState, setLeadCtaState] = useState<LeadCtaState>('hidden');
+  const [leadEmail, setLeadEmail] = useState('');
+  const [leadDate, setLeadDate] = useState('');
+  const [leadTravelers, setLeadTravelers] = useState('');
+  const [leadHelp, setLeadHelp] = useState('');
+  const [leadApiError, setLeadApiError] = useState<'generic' | 'too_many' | null>(null);
+  const [sendAttemptCount, setSendAttemptCount] = useState<number>(() => {
+    const stored = sessionStorage.getItem(SS_ATTEMPT_KEY);
+    return stored ? (parseInt(stored, 10) || 0) : 0;
+  });
 
   // Lock body scroll; save + restore scroll position on unmount
   useEffect(() => {
@@ -95,6 +110,20 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
     requestAnimationFrame(scrollToBottom);
   }, [messages, typing, scrollToBottom]);
 
+  useEffect(() => {
+    if (leadCtaState !== 'hidden') return;
+    if (sessionStorage.getItem('chinaease:leadCtaDismissed') === '1') return;
+    if (sessionStorage.getItem('chinaease:leadSubmitted') === '1') return;
+    if (sendAttemptCount >= 3) {
+      setLeadCtaState('cta');
+      void trackEvent('lead_cta_shown', { trigger: 'buddy_cta' });
+    }
+  }, [sendAttemptCount, leadCtaState]);
+
+  useEffect(() => {
+    sessionStorage.setItem(SS_ATTEMPT_KEY, String(sendAttemptCount));
+  }, [sendAttemptCount]);
+
   const resizeInput = useCallback(() => {
     const el = inputRef.current;
     if (!el) return;
@@ -131,6 +160,45 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
     return selected.reverse();
   };
 
+  const handleRestart = () => {
+    setMessages([{ id: 0, role: 'buddy', text: t('chat.welcome') }]);
+    setSendAttemptCount(0);
+    sessionStorage.removeItem(SS_ATTEMPT_KEY);
+    setLeadCtaState('hidden');
+    setLeadEmail('');
+    setLeadDate('');
+    setLeadTravelers('');
+    setLeadHelp('');
+    setLeadApiError(null);
+  };
+
+  const handleLeadSubmit = async () => {
+    const emailTrimmed = leadEmail.trim().toLowerCase();
+    if (!emailTrimmed || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailTrimmed)) {
+      setLeadApiError('generic');
+      return;
+    }
+    setLeadCtaState('submitting');
+    setLeadApiError(null);
+    void trackEvent('lead_submit', { trigger: 'buddy_cta' });
+    const travelers = leadTravelers ? parseInt(leadTravelers, 10) : undefined;
+    const result = await submitTripLead({
+      email: emailTrimmed,
+      travelDate: leadDate.trim() || undefined,
+      travelers: travelers && travelers >= 1 && travelers <= 20 ? travelers : undefined,
+      helpWith: leadHelp.trim() || undefined,
+    });
+    if (result === 'success') {
+      setLeadCtaState('success');
+      sessionStorage.setItem('chinaease:leadSubmitted', '1');
+      void trackEvent('lead_success', { trigger: 'buddy_cta' });
+    } else {
+      setLeadCtaState('error');
+      setLeadApiError(result === 'too_many' ? 'too_many' : 'generic');
+      void trackEvent('lead_error', { trigger: 'buddy_cta', errorCode: result });
+    }
+  };
+
   const send = async (text: string, options?: { requestId?: string; retry?: boolean }) => {
     if (!text.trim() || typing || streaming) return;
 
@@ -143,6 +211,7 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
     }
     if (!options?.retry) {
       setMessages((prev) => [...prev, { id: Date.now(), role: 'user', text: trimmedText }]);
+      setSendAttemptCount((prev) => prev + 1);
     }
     setInput('');
     requestAnimationFrame(resizeInput);
@@ -276,7 +345,18 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
             <h2 className="text-sm font-semibold text-ink">{t('chat.title')}</h2>
             <p className="text-[11px] text-ink-tertiary">{t('chat.subtitle')}</p>
           </div>
-          <div className="h-10 w-10 flex-shrink-0 md:hidden" aria-hidden />
+          {hasUserMessages ? (
+            <button onClick={handleRestart} aria-label="New chat" className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg text-ink-tertiary transition-colors active:bg-canvas md:hidden">
+              <RotateCcw className="h-5 w-5" strokeWidth={1.5} />
+            </button>
+          ) : (
+            <div className="h-10 w-10 flex-shrink-0 md:hidden" aria-hidden />
+          )}
+          {hasUserMessages && (
+            <button onClick={handleRestart} aria-label="New chat" className="hidden h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg text-ink-tertiary transition-colors hover:bg-canvas hover:text-ink md:flex">
+              <RotateCcw className="h-4 w-4" strokeWidth={1.5} />
+            </button>
+          )}
           <button onClick={onClose} aria-label="Close" className="hidden h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg text-ink-tertiary transition-colors hover:bg-canvas hover:text-ink md:flex">
             <X className="h-4 w-4" strokeWidth={1.5} />
           </button>
@@ -371,6 +451,168 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
                     <div className="h-2.5 w-4/5 animate-pulse rounded bg-jade-wash [animation-delay:120ms]" />
                     <div className="h-2.5 w-3/5 animate-pulse rounded bg-jade-wash [animation-delay:240ms]" />
                   </div>
+                </div>
+              )}
+
+              {leadCtaState === 'cta' && (
+                <div role="region" aria-label={t('lead.ctaTitle')} className="rounded-2xl border border-jade/20 bg-jade-wash p-4">
+                  <div className="flex items-start justify-between gap-2">
+                    <p className="text-sm font-semibold text-ink">{t('lead.ctaTitle')}</p>
+                    <button
+                      onClick={() => {
+                        sessionStorage.setItem('chinaease:leadCtaDismissed', '1');
+                        setLeadCtaState('hidden');
+                        void trackEvent('lead_form_dismiss', { trigger: 'buddy_cta' });
+                      }}
+                      aria-label={t('lead.ctaDismiss')}
+                      className="flex-shrink-0 text-ink-tertiary hover:text-ink"
+                    >
+                      <X className="h-4 w-4" strokeWidth={1.5} />
+                    </button>
+                  </div>
+                  <p className="mt-1 text-xs leading-relaxed text-ink-secondary">{t('lead.ctaDesc')}</p>
+                  <div className="mt-3 flex gap-2">
+                    <button
+                      onClick={() => {
+                        setLeadCtaState('form');
+                        void trackEvent('lead_cta_clicked', { trigger: 'buddy_cta' });
+                      }}
+                      className="rounded-full bg-jade px-4 py-2 text-xs font-semibold text-white"
+                    >
+                      {t('lead.ctaButton')}
+                    </button>
+                    <button
+                      onClick={() => {
+                        sessionStorage.setItem('chinaease:leadCtaDismissed', '1');
+                        setLeadCtaState('hidden');
+                        void trackEvent('lead_form_dismiss', { trigger: 'buddy_cta' });
+                      }}
+                      className="rounded-full border border-hairline px-4 py-2 text-xs font-semibold text-ink-secondary"
+                    >
+                      {t('lead.ctaDismiss')}
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {(leadCtaState === 'form' || leadCtaState === 'submitting' || leadCtaState === 'error') && (
+                <div className="rounded-2xl border border-jade/20 bg-jade-wash p-4">
+                  <p className="text-sm font-semibold text-ink">{t('lead.formTitle')}</p>
+
+                  {leadApiError && (
+                    <p role="alert" aria-live="assertive" className="mt-2 text-xs font-semibold text-red-600">
+                      {t(leadApiError === 'too_many' ? 'lead.errorTooMany' : 'lead.errorGeneric')}
+                    </p>
+                  )}
+
+                  <div className="mt-3 space-y-3">
+                    <div>
+                      <label htmlFor="lead-email" className="text-xs font-semibold text-ink">
+                        {t('lead.fieldEmail')} *
+                      </label>
+                      <input
+                        id="lead-email"
+                        type="email"
+                        autoComplete="email"
+                        inputMode="email"
+                        value={leadEmail}
+                        onChange={(e) => setLeadEmail(e.target.value)}
+                        disabled={leadCtaState === 'submitting'}
+                        maxLength={160}
+                        style={{ fontSize: '16px' }}
+                        className="mt-1 w-full rounded-lg border border-hairline bg-surface px-3 py-2 text-sm text-ink outline-none focus:border-jade/40 disabled:opacity-60"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="lead-date" className="text-xs font-semibold text-ink">
+                        {t('lead.fieldDate')}
+                      </label>
+                      <input
+                        id="lead-date"
+                        type="text"
+                        autoComplete="off"
+                        value={leadDate}
+                        onChange={(e) => setLeadDate(e.target.value)}
+                        disabled={leadCtaState === 'submitting'}
+                        maxLength={80}
+                        placeholder={t('lead.fieldDatePlaceholder')}
+                        style={{ fontSize: '16px' }}
+                        className="mt-1 w-full rounded-lg border border-hairline bg-surface px-3 py-2 text-sm text-ink outline-none focus:border-jade/40 disabled:opacity-60"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="lead-travelers" className="text-xs font-semibold text-ink">
+                        {t('lead.fieldTravelers')}
+                      </label>
+                      <input
+                        id="lead-travelers"
+                        type="number"
+                        inputMode="numeric"
+                        min={1}
+                        max={20}
+                        step={1}
+                        value={leadTravelers}
+                        onChange={(e) => setLeadTravelers(e.target.value)}
+                        disabled={leadCtaState === 'submitting'}
+                        style={{ fontSize: '16px' }}
+                        className="mt-1 w-24 rounded-lg border border-hairline bg-surface px-3 py-2 text-sm text-ink outline-none focus:border-jade/40 disabled:opacity-60"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="lead-help" className="text-xs font-semibold text-ink">
+                        {t('lead.fieldHelp')}
+                      </label>
+                      <textarea
+                        id="lead-help"
+                        rows={3}
+                        maxLength={500}
+                        value={leadHelp}
+                        onChange={(e) => setLeadHelp(e.target.value)}
+                        disabled={leadCtaState === 'submitting'}
+                        placeholder={t('lead.fieldHelpPlaceholder')}
+                        style={{ fontSize: '16px' }}
+                        className="mt-1 w-full resize-none rounded-lg border border-hairline bg-surface px-3 py-2 text-sm text-ink outline-none focus:border-jade/40 disabled:opacity-60"
+                      />
+                      <p className="mt-0.5 text-right text-xs text-ink-tertiary">
+                        {t('lead.fieldHelpCount', { count: leadHelp.length })}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Honeypot — hidden from real users */}
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    aria-hidden="true"
+                    className="hidden"
+                    defaultValue=""
+                  />
+
+                  <button
+                    onClick={() => void handleLeadSubmit()}
+                    disabled={leadCtaState === 'submitting'}
+                    aria-busy={leadCtaState === 'submitting'}
+                    className="mt-4 w-full rounded-full bg-jade py-2.5 text-sm font-semibold text-white disabled:opacity-60"
+                  >
+                    {leadCtaState === 'submitting' ? t('lead.submitting') : t('lead.submit')}
+                  </button>
+
+                  <p className="mt-2 text-xs leading-relaxed text-ink-tertiary">
+                    {t('lead.consent')}{' '}
+                    <a href="/privacy" className="underline hover:text-ink-secondary">
+                      {t('lead.consentLink')}
+                    </a>
+                  </p>
+                </div>
+              )}
+
+              {leadCtaState === 'success' && (
+                <div role="status" aria-live="polite" className="rounded-2xl border border-jade/20 bg-jade-wash px-4 py-3">
+                  <p className="text-sm font-semibold text-jade">{t('lead.success')}</p>
                 </div>
               )}
             </div>

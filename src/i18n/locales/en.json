@@ -1260,6 +1260,28 @@
         "addDevice": "Add this device with a recovery code",
         "close": "Done"
       }
+    },
+    "lead": {
+      "ctaTitle": "Need help planning your China trip?",
+      "ctaDesc": "Share your email and a few trip details. We'll help you take the next step.",
+      "ctaButton": "Plan my trip",
+      "ctaDismiss": "Not now",
+      "formTitle": "Tell us about your trip",
+      "fieldEmail": "Email",
+      "fieldDate": "Travel date",
+      "fieldDatePlaceholder": "e.g. October 2026 or Q4 2026",
+      "fieldTravelers": "Travelers",
+      "fieldHelp": "What do you need help with?",
+      "fieldHelpPlaceholder": "Tell us what you'd like help planning. Please don't include passport, payment, or sensitive health information.",
+      "fieldHelpCount": "{{count}}/500",
+      "submit": "Send my trip details",
+      "submitting": "Sending...",
+      "consent": "We'll only use your details to help with your trip.",
+      "consentLink": "Privacy Policy",
+      "success": "Thanks — we've received your trip details.",
+      "errorGeneric": "Could not send your details right now. Please try again.",
+      "errorTooMany": "Too many requests. Please try again later.",
+      "errorEmail": "Please enter a valid email address."
     }
   }
 }

@@ -88,6 +88,18 @@
     display: none;
   }
 
+  /* dvh with vh fallback for iOS < 16 */
+  .h-dvh {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  /* Safe-area-aware input bar padding */
+  .chat-input-bar {
+    padding-top: 0.75rem;
+    padding-bottom: max(0.75rem, calc(0.5rem + env(safe-area-inset-bottom, 0px)));
+  }
+
   .animate-breathing {
     animation: breathing 3.6s ease-in-out infinite;
   }
@@ -309,4 +321,36 @@
 .chat-md a {
   color: var(--color-jade);
   text-decoration: underline;
+}
+
+/*
+ * iOS Safari auto-zoom fix.
+ * Safari zooms in whenever a focused input/textarea/select has font-size < 16px.
+ * This rule enforces 1rem (16px) on mobile without disabling user scaling.
+ * Placed outside @layer so it wins over Tailwind utility classes (text-sm etc.)
+ * via !important, scoped to mobile only (<768px).
+ */
+@media (max-width: 767px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]),
+  textarea,
+  select {
+    font-size: 1rem !important;
+  }
+}
+
+/*
+ * ChatModal keyboard layout fix (mobile only).
+ * window.visualViewport reports the real visible height when the iOS keyboard
+ * opens. JS writes --buddy-vvp-height / --buddy-vvp-top to :root; this class
+ * reads them so the chat panel shrinks to the actual viewport instead of staying
+ * at full screen height and leaving a blank gap above the keyboard.
+ * !important is required to override the Tailwind `inset-0` / `fixed` values.
+ * Scoped to <768px so the desktop right-drawer layout is untouched.
+ */
+@media (max-width: 767px) {
+  .buddy-panel-vvp {
+    top: var(--buddy-vvp-top, 0px) !important;
+    height: var(--buddy-vvp-height, 100dvh) !important;
+    bottom: auto !important;
+  }
 }
