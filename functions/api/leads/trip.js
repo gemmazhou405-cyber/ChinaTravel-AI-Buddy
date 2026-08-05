@@ -7,7 +7,7 @@ import {
   optionsResponse,
   parseJson,
 } from '../../_shared/http.js';
-import { sendTripLeadNotification } from '../../_shared/email.js';
+import { sendTripLeadNotification, sendTripLeadConfirmation } from '../../_shared/email.js';
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
@@ -118,6 +118,7 @@ export async function onRequestPost({ request, env }) {
       ipHash,
       createdAt,
       notificationStatus: 'pending',
+      confirmationEmailStatus: 'pending',
     });
   } catch (err) {
     if (String(err?.message).includes(':409:')) {
@@ -128,8 +129,9 @@ export async function onRequestPost({ request, env }) {
     return errorResponse(request, env, 500, 'firestore_error', 'Could not save your enquiry. Please try again.');
   }
 
-  // Send admin notification — must be awaited before returning Response
-  const notifyResult = await sendTripLeadNotification(env, {
+  // Shared lead payload for both email functions
+  const lead = {
+    requestId: docId,
     email: emailRaw,
     travelDate,
     travelers,
@@ -138,24 +140,56 @@ export async function onRequestPost({ request, env }) {
     sourcePath,
     utmSource,
     createdAt,
-  });
+  };
 
-  // Update notification status — await to ensure completion before Response is returned
+  // Send both emails in parallel — must be awaited before returning Response
+  const [adminSettled, confirmSettled] = await Promise.allSettled([
+    sendTripLeadNotification(env, lead),
+    sendTripLeadConfirmation(env, lead),
+  ]);
+  const adminResult =
+    adminSettled.status === 'fulfilled'
+      ? adminSettled.value
+      : { ok: false, errorCode: 'unknown_error' };
+  const confirmResult =
+    confirmSettled.status === 'fulfilled'
+      ? confirmSettled.value
+      : { ok: false, errorCode: 'unknown_error' };
+
+  // Update admin notification status
   try {
-    if (notifyResult.ok) {
+    if (adminResult.ok) {
       await patchDoc(env, `tripLeads/${docId}`, {
         notificationStatus: 'sent',
         notificationSentAt: Date.now(),
       });
     } else {
-      console.error('[leads/trip] notification_failed', { errorCode: notifyResult.errorCode, rid: docId.slice(0, 8) });
+      console.error('[leads/trip] notification_failed', { errorCode: adminResult.errorCode, rid: docId.slice(0, 8) });
       await patchDoc(env, `tripLeads/${docId}`, {
         notificationStatus: 'failed',
-        notificationErrorCode: notifyResult.errorCode,
+        notificationErrorCode: adminResult.errorCode,
       });
     }
   } catch (patchErr) {
-    console.error('[leads/trip] status update failed', String(patchErr?.message).slice(0, 60));
+    console.error('[leads/trip] admin_status_update_failed', String(patchErr?.message).slice(0, 60));
+  }
+
+  // Update customer confirmation status
+  try {
+    if (confirmResult.ok) {
+      await patchDoc(env, `tripLeads/${docId}`, {
+        confirmationEmailStatus: 'sent',
+        confirmationEmailSentAt: Date.now(),
+      });
+    } else {
+      console.error('[leads/trip] confirmation_failed', { errorCode: confirmResult.errorCode, rid: docId.slice(0, 8) });
+      await patchDoc(env, `tripLeads/${docId}`, {
+        confirmationEmailStatus: 'failed',
+        confirmationEmailErrorCode: confirmResult.errorCode,
+      });
+    }
+  } catch (patchErr) {
+    console.error('[leads/trip] confirm_status_update_failed', String(patchErr?.message).slice(0, 60));
   }
 
   return withCors(jsonResponse({ status: 'received' }), request, env);
