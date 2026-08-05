@@ -53,6 +53,9 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
   const [leadTravelers, setLeadTravelers] = useState('');
   const [leadHelp, setLeadHelp] = useState('');
   const [leadApiError, setLeadApiError] = useState<'generic' | 'too_many' | null>(null);
+  const [leadRequestId, setLeadRequestId] = useState<string>(() =>
+    crypto.randomUUID()
+  );
   const [sendAttemptCount, setSendAttemptCount] = useState<number>(() => {
     const stored = sessionStorage.getItem(SS_ATTEMPT_KEY);
     return stored ? (parseInt(stored, 10) || 0) : 0;
@@ -170,6 +173,7 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
     setLeadTravelers('');
     setLeadHelp('');
     setLeadApiError(null);
+    setLeadRequestId(crypto.randomUUID());
   };
 
   const handleLeadSubmit = async () => {
@@ -183,6 +187,7 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
     void trackEvent('lead_submit', { trigger: 'buddy_cta' });
     const travelers = leadTravelers ? parseInt(leadTravelers, 10) : undefined;
     const result = await submitTripLead({
+      requestId: leadRequestId,
       email: emailTrimmed,
       travelDate: leadDate.trim() || undefined,
       travelers: travelers && travelers >= 1 && travelers <= 20 ? travelers : undefined,

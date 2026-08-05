@@ -5,6 +5,7 @@ export interface TripLeadPayload {
   travelDate?: string;
   travelers?: number;
   helpWith?: string;
+  requestId: string;
 }
 
 export async function submitTripLead(
@@ -16,6 +17,7 @@ export async function submitTripLead(
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
+        requestId: payload.requestId,
         email: payload.email,
         travelDate: payload.travelDate ?? '',
         travelers: payload.travelers ?? '',

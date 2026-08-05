@@ -1,4 +1,4 @@
-import { createDoc } from '../../_shared/firestore.js';
+import { createDoc, getDoc, patchDoc } from '../../_shared/firestore.js';
 import {
   clientIp,
   withCors,
@@ -7,6 +7,9 @@ import {
   optionsResponse,
   parseJson,
 } from '../../_shared/http.js';
+import { sendTripLeadNotification } from '../../_shared/email.js';
+
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 async function sha256(input) {
   const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(input));
@@ -61,6 +64,10 @@ export async function onRequestPost({ request, env }) {
     return errorResponse(request, env, 429, 'too_many_requests', 'Too many requests. Please try again later.');
   }
 
+  // requestId — used as idempotency key and Firestore document ID
+  const requestIdRaw = typeof body.requestId === 'string' ? body.requestId.trim() : '';
+  const docId = UUID_RE.test(requestIdRaw) ? requestIdRaw : crypto.randomUUID();
+
   // Sanitize optional fields
   const travelDate = clampStr(body.travelDate, 80);
   const helpWith = (() => {
@@ -82,10 +89,18 @@ export async function onRequestPost({ request, env }) {
   const utmContent = clampStr(body.utmContent, 120);
 
   const emailHash = await sha256(emailRaw);
-  const docId = crypto.randomUUID();
+  const createdAt = Date.now();
 
+  // Idempotency: if this requestId already exists, skip re-processing
+  const existing = await getDoc(env, `tripLeads/${docId}`).catch(() => null);
+  if (existing) {
+    return withCors(jsonResponse({ status: 'received', alreadyProcessed: true }), request, env);
+  }
+
+  // Write lead to Firestore
   try {
     await createDoc(env, 'tripLeads', docId, {
+      requestId: docId,
       email: emailRaw,
       emailHash,
       travelDate,
@@ -101,11 +116,46 @@ export async function onRequestPost({ request, env }) {
       source: 'buddy_trip_lead',
       status: 'new',
       ipHash,
-      createdAt: Date.now(),
+      createdAt,
+      notificationStatus: 'pending',
     });
   } catch (err) {
-    console.error('[leads/trip] Firestore write failed', err);
+    if (String(err?.message).includes(':409:')) {
+      // Concurrent duplicate write — treat as already processed
+      return withCors(jsonResponse({ status: 'received', alreadyProcessed: true }), request, env);
+    }
+    console.error('[leads/trip] Firestore write failed', String(err?.message).slice(0, 80));
     return errorResponse(request, env, 500, 'firestore_error', 'Could not save your enquiry. Please try again.');
+  }
+
+  // Send admin notification — must be awaited before returning Response
+  const notifyResult = await sendTripLeadNotification(env, {
+    email: emailRaw,
+    travelDate,
+    travelers,
+    helpWith,
+    locale,
+    sourcePath,
+    utmSource,
+    createdAt,
+  });
+
+  // Update notification status — await to ensure completion before Response is returned
+  try {
+    if (notifyResult.ok) {
+      await patchDoc(env, `tripLeads/${docId}`, {
+        notificationStatus: 'sent',
+        notificationSentAt: Date.now(),
+      });
+    } else {
+      console.error('[leads/trip] notification_failed', { errorCode: notifyResult.errorCode, rid: docId.slice(0, 8) });
+      await patchDoc(env, `tripLeads/${docId}`, {
+        notificationStatus: 'failed',
+        notificationErrorCode: notifyResult.errorCode,
+      });
+    }
+  } catch (patchErr) {
+    console.error('[leads/trip] status update failed', String(patchErr?.message).slice(0, 60));
   }
 
   return withCors(jsonResponse({ status: 'received' }), request, env);
