@@ -16,7 +16,7 @@ import ClaimModal from './components/ClaimModal';
 import PassDashboard from './components/PassDashboard';
 import { usePass } from './hooks/usePass';
 import { useTranslation } from 'react-i18next';
-import { initAttribution, trackEvent, trackEventOnce } from './lib/analytics';
+import { initAttribution, trackEvent, trackEventOnce, markFunnelOnce } from './lib/analytics';
 
 export type TabId = 'before' | 'stay' | 'food' | 'transport' | 'emergency' | 'pay';
 export type JourneyId = 'before' | 'now' | 'emergency';
@@ -142,7 +142,9 @@ export default function App() {
   };
 
   const openBuddy = (prefill?: string) => {
-    void trackEvent('cta_clicked', { ctaName: 'Ask Buddy', destination: 'chat', journey: analyticsJourney(landing.journey), tool: deepTool || activeTab });
+    if (markFunnelOnce('buddy_opened')) {
+      void trackEvent('buddy_opened', { journey: analyticsJourney(landing.journey), tool: deepTool || activeTab });
+    }
     setChatPrefill(prefill ?? null);
     setChatOpen(true);
   };

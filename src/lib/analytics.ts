@@ -29,7 +29,20 @@ const FIRST_TOUCH_KEY = 'chinaease:firstTouchAttribution';
 const SESSION_ATTR_KEY = 'chinaease:sessionAttribution';
 const ANON_SESSION_KEY = 'chinaease:anonymousSessionId';
 const ONCE_PREFIX = 'chinaease:analyticsOnce:';
+const FUNNEL_PREFIX = 'chinaease_funnel_';
 const isDev = import.meta.env.DEV;
+
+// Events that are posted to /api/events in production.
+// All other events are dev-only console.log and are silently dropped in production.
+const FUNNEL_EVENTS = new Set([
+  'buddy_opened',
+  'buddy_question_sent',
+  'lead_cta_shown',
+  'lead_form_opened',
+  'lead_submit_started',
+  'lead_submit_success',
+  'lead_submit_failed',
+]);
 
 const utmKeys: UtmKey[] = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
 
@@ -118,6 +131,45 @@ function cleanPayload(payload: AnalyticsPayload) {
   );
 }
 
+function getEnvironment(): string {
+  try {
+    if (window.location.hostname.endsWith('.pages.dev')) return 'preview';
+    if (new URLSearchParams(window.location.search).get('test_mode') === '1') return 'test';
+    return 'production';
+  } catch { return 'production'; }
+}
+
+function getDeviceCategory(): string {
+  try {
+    const ua = navigator.userAgent.toLowerCase();
+    if (/tablet|ipad/.test(ua)) return 'tablet';
+    if (/mobile|android|iphone|ipod/.test(ua)) return 'mobile';
+    return 'desktop';
+  } catch { return 'unknown'; }
+}
+
+function getClientLocale(): string {
+  const local = safeStorage('localStorage');
+  try {
+    const lng = local?.getItem('i18nextLng') || navigator.language || 'en';
+    return lng.slice(0, 8);
+  } catch { return 'en'; }
+}
+
+// Marks a funnel event as seen for this browser session. Returns true on first call
+// (caller should fire the event), false if already seen (caller should skip).
+// Keys are stored in sessionStorage and cleared when the tab/browser session ends.
+// Values are never uploaded to any server.
+export function markFunnelOnce(event: string): boolean {
+  const session = safeStorage('sessionStorage');
+  try {
+    const key = `${FUNNEL_PREFIX}${event}`;
+    if (session?.getItem(key)) return false;
+    session?.setItem(key, '1');
+    return true;
+  } catch { return true; }
+}
+
 export function markTrackedOnce(key: string) {
   const session = safeStorage('sessionStorage');
   try {
@@ -128,17 +180,38 @@ export function markTrackedOnce(key: string) {
   } catch { return true; }
 }
 
-// trackEvent is a no-op in production until a server-side event endpoint is wired up.
-// In dev mode it logs to the console so feature behaviour is visible.
-export async function trackEvent(eventName: string, payload: AnalyticsPayload = {}, _userId?: string | null) {
-  if (!isDev) return;
-  const context = getAttributionContext();
-  console.log('[ChinaEase analytics]', eventName, {
-    ...cleanPayload(context),
-    ...cleanPayload(payload),
-    path: payload.path || `${window.location.pathname}${window.location.search}`,
-    timestamp: Date.now(),
-  });
+export async function trackEvent(eventName: string, payload: AnalyticsPayload = {}, userId?: string | null) {
+  void userId; // accepted by callers for future use; not included in event payload
+  if (isDev) {
+    const context = getAttributionContext();
+    console.log('[ChinaEase analytics]', eventName, {
+      ...cleanPayload(context),
+      ...cleanPayload(payload),
+      path: payload.path || `${window.location.pathname}${window.location.search}`,
+      timestamp: Date.now(),
+    });
+  }
+
+  if (!FUNNEL_EVENTS.has(eventName)) return;
+
+  const attr = getAttributionContext();
+  const body: Record<string, string> = {
+    event: eventName,
+    environment: getEnvironment(),
+    deviceCategory: getDeviceCategory(),
+    locale: getClientLocale(),
+    sourcePath: window.location.pathname.slice(0, 500),
+  };
+  if (attr.utm_source) body.utmSource = attr.utm_source.slice(0, 80);
+  if (attr.utm_medium) body.utmMedium = attr.utm_medium.slice(0, 80);
+  if (attr.utm_campaign) body.utmCampaign = attr.utm_campaign.slice(0, 120);
+
+  // Fire-and-forget: analytics failure must never surface to the user.
+  fetch('/api/events', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  }).catch(() => {});
 }
 
 export function trackEventOnce(key: string, eventName: string, payload: AnalyticsPayload = {}, userId?: string | null) {

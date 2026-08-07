@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Send, Sparkles, AlertCircle, ArrowLeft, RotateCcw } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { trackAppError, trackEvent, trackEventOnce } from '../lib/analytics';
+import { trackAppError, trackEvent, markFunnelOnce } from '../lib/analytics';
 import { renderChatMarkdown } from '../lib/chatMarkdown';
 import { submitTripLead } from '../lib/tripLead';
 import type { PassState } from '../hooks/usePass';
@@ -119,7 +119,9 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
     if (sessionStorage.getItem('chinaease:leadSubmitted') === '1') return;
     if (sendAttemptCount >= 3) {
       setLeadCtaState('cta');
-      void trackEvent('lead_cta_shown', { trigger: 'buddy_cta' });
+      if (markFunnelOnce('lead_cta_shown')) {
+        void trackEvent('lead_cta_shown', { trigger: 'buddy_cta' });
+      }
     }
   }, [sendAttemptCount, leadCtaState]);
 
@@ -184,7 +186,9 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
     }
     setLeadCtaState('submitting');
     setLeadApiError(null);
-    void trackEvent('lead_submit', { trigger: 'buddy_cta' });
+    if (markFunnelOnce('lead_submit_started')) {
+      void trackEvent('lead_submit_started', { trigger: 'buddy_cta' });
+    }
     const travelers = leadTravelers ? parseInt(leadTravelers, 10) : undefined;
     const result = await submitTripLead({
       requestId: leadRequestId,
@@ -196,11 +200,13 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
     if (result === 'success') {
       setLeadCtaState('success');
       sessionStorage.setItem('chinaease:leadSubmitted', '1');
-      void trackEvent('lead_success', { trigger: 'buddy_cta' });
+      if (markFunnelOnce('lead_submit_success')) {
+        void trackEvent('lead_submit_success', { trigger: 'buddy_cta' });
+      }
     } else {
       setLeadCtaState('error');
       setLeadApiError(result === 'too_many' ? 'too_many' : 'generic');
-      void trackEvent('lead_error', { trigger: 'buddy_cta', errorCode: result });
+      void trackEvent('lead_submit_failed', { trigger: 'buddy_cta', errorCode: result });
     }
   };
 
@@ -217,6 +223,9 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
     if (!options?.retry) {
       setMessages((prev) => [...prev, { id: Date.now(), role: 'user', text: trimmedText }]);
       setSendAttemptCount((prev) => prev + 1);
+      if (markFunnelOnce('buddy_question_sent')) {
+        void trackEvent('buddy_question_sent', {});
+      }
     }
     setInput('');
     requestAnimationFrame(resizeInput);
@@ -233,7 +242,7 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
       if (!response.ok) {
         let data: { error?: string; message?: string; tier?: string } = {};
         const responseText = await response.text();
-        if (responseText) { try { data = JSON.parse(responseText); } catch {} }
+        if (responseText) { try { data = JSON.parse(responseText); } catch { /* ignore parse errors */ } }
         console.error('[buddy] /api/buddy/chat failed', { status: response.status });
         if (data?.error === 'quota_exhausted' || data?.error === 'pass_expired') {
           void trackEvent('quota_exhausted', { tool: 'buddy', code: data.error, tier: data.tier || passState?.tier });
@@ -285,7 +294,6 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
               }
               if (parsed.done) {
                 void refreshPassState();
-                trackEventOnce('buddy:first-success', 'buddy_first_success', { tool: 'buddy', tier: passState?.tier });
                 break outer;
               }
               if (parsed.error) {
@@ -316,10 +324,9 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
         // ── Non-streaming fallback (should not normally occur) ───────────────
         const responseText = await response.text();
         let data: { reply?: string; message?: string } = {};
-        if (responseText) { try { data = JSON.parse(responseText); } catch {} }
+        if (responseText) { try { data = JSON.parse(responseText); } catch { /* ignore parse errors */ } }
         pushBuddy(data.reply || data.message || t('chat.trouble'));
         await refreshPassState();
-        trackEventOnce('buddy:first-success', 'buddy_first_success', { tool: 'buddy', tier: passState?.tier });
       }
     } catch (error) {
       console.error('[buddy] chat request error', error);
@@ -480,7 +487,9 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
                     <button
                       onClick={() => {
                         setLeadCtaState('form');
-                        void trackEvent('lead_cta_clicked', { trigger: 'buddy_cta' });
+                        if (markFunnelOnce('lead_form_opened')) {
+                          void trackEvent('lead_form_opened', { trigger: 'buddy_cta' });
+                        }
                       }}
                       className="rounded-full bg-jade px-4 py-2 text-xs font-semibold text-white"
                     >
