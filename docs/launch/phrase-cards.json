@@ -1,0 +1,210 @@
+{
+  "_readme": {
+    "purpose": "Phrase card dataset for ChinaEase Buddy. The zh field is what a local person reads. Everything else is for the traveller.",
+    "lastVerified": "2026-07",
+    "displayRules": [
+      "zh MUST be the largest element on the card — target 28-36px on mobile. This is the whole point of the feature.",
+      "en (or the active locale) sits BELOW the Chinese, at roughly 40% of its size, muted colour.",
+      "pinyin is tertiary — smallest, lightest. It is for the traveller's confidence, not for the local.",
+      "Every card needs a one-tap fullscreen mode: black text on white, maximum brightness forced, no chrome. This is what gets held up in a noisy restaurant.",
+      "Every card must work with zero network. Ship the whole dataset in the service worker cache.",
+      "Cards with slots.type present need an input UI before they can be shown.",
+      "Add a persistent 'point / write it down / type it' button on every card — see the universal category. This is the single highest-value UX detail here."
+    ],
+    "localisation": [
+      "ONLY the traveller-facing side gets localised. Add locale keys alongside 'en'.",
+      "NEVER regenerate the zh field per locale, and never let the AI rewrite it at runtime. It is human-verified and fixed.",
+      "Machine translation is acceptable for the traveller-facing text. It is not acceptable for zh."
+    ],
+    "slotTypes": {
+      "address": "Free text or a saved address. Render inside the card, same size as the zh text.",
+      "allergen": "Pick from the allergen list. Insert the zh term, not the English one.",
+      "number": "Numeric stepper.",
+      "text": "Short free text."
+    }
+  },
+
+  "allergens": [
+    { "id": "peanut", "zh": "花生", "en": "peanuts", "note": "Also warn about 花生油 (peanut oil) — extremely common in Chinese cooking and often missed." },
+    { "id": "treenut", "zh": "坚果", "en": "tree nuts" },
+    { "id": "shellfish", "zh": "虾、蟹、贝类", "en": "shellfish" },
+    { "id": "fish", "zh": "鱼", "en": "fish" },
+    { "id": "egg", "zh": "鸡蛋", "en": "eggs" },
+    { "id": "milk", "zh": "牛奶和奶制品", "en": "milk and dairy" },
+    { "id": "soy", "zh": "大豆和豆制品", "en": "soy" },
+    { "id": "wheat", "zh": "小麦和面筋", "en": "wheat and gluten", "note": "Warn that soy sauce (酱油) usually contains wheat." },
+    { "id": "sesame", "zh": "芝麻", "en": "sesame", "note": "Sesame oil (香油) is used as a finishing oil almost everywhere." },
+    { "id": "msg", "zh": "味精", "en": "MSG" }
+  ],
+
+  "categories": [
+
+    {
+      "id": "universal",
+      "en": "Anywhere",
+      "priority": 0,
+      "note": "Surface these on every other card as a bottom bar. They solve the core failure of phrasebooks: you show a question, they answer in fluent Chinese, and you are worse off than before.",
+      "cards": [
+        { "id": "u-nochinese", "zh": "非常抱歉，我不会说中文。", "pinyin": "Fēicháng bàoqiàn, wǒ bú huì shuō zhōngwén.", "en": "I'm very sorry, I don't speak Chinese.", "priority": 1 },
+        { "id": "u-point", "zh": "麻烦您指给我看，谢谢。", "pinyin": "Máfan nín zhǐ gěi wǒ kàn, xièxie.", "en": "Please point, thank you.", "priority": 1, "note": "The highest-value card in the whole set. Pointing needs no translation." },
+        { "id": "u-write", "zh": "麻烦您写下来，谢谢。", "pinyin": "Máfan nín xiě xiàlái, xièxie.", "en": "Please write it down, thank you.", "priority": 1, "note": "Numbers and addresses become readable. Pair with a blank writing area on screen." },
+        { "id": "u-type", "zh": "麻烦您用手机打字给我看，我可以翻译。", "pinyin": "Máfan nín yòng shǒujī dǎzì gěi wǒ kàn, wǒ kěyǐ fānyì.", "en": "Please type it on your phone and show me — I can translate it.", "priority": 1 },
+        { "id": "u-slow", "zh": "麻烦您说慢一点。", "pinyin": "Máfan nín shuō màn yìdiǎn.", "en": "Please speak more slowly.", "priority": 2 },
+        { "id": "u-yesno", "zh": "可以就点头，不可以就摇头，谢谢。", "pinyin": "Kěyǐ jiù diǎntóu, bù kěyǐ jiù yáotóu, xièxie.", "en": "Nod if yes, shake your head if no. Thank you.", "priority": 2, "note": "Forces a binary answer. Use when the traveller genuinely cannot parse a spoken reply." },
+        { "id": "u-help", "zh": "可以帮我一下吗？", "pinyin": "Kěyǐ bāng wǒ yíxià ma?", "en": "Could you help me?", "priority": 2 },
+        { "id": "u-thanks", "zh": "太感谢您了！", "pinyin": "Tài gǎnxiè nín le!", "en": "Thank you so much!", "priority": 3 },
+        { "id": "u-english", "zh": "请问这里有会说英语的人吗？", "pinyin": "Qǐngwèn zhèlǐ yǒu huì shuō yīngyǔ de rén ma?", "en": "Is there anyone here who speaks English?", "priority": 2 },
+        { "id": "u-howmuch", "zh": "多少钱？麻烦您写下来或者按计算器给我看。", "pinyin": "Duōshao qián? Máfan nín xiě xiàlái huòzhě àn jìsuànqì gěi wǒ kàn.", "en": "How much? Please write it down or show me on a calculator.", "priority": 1, "note": "Spoken Chinese numbers are the number one comprehension failure. Never ask for a price without asking for it in writing." }
+      ]
+    },
+
+    {
+      "id": "taxi",
+      "en": "Taxi & getting around",
+      "priority": 1,
+      "cards": [
+        { "id": "t-address", "zh": "麻烦您带我去这个地址，谢谢。", "pinyin": "Máfan nín dài wǒ qù zhège dìzhǐ, xièxie.", "en": "Please take me to this address, thank you.", "priority": 1, "slots": [{ "id": "address", "type": "address", "position": "below" }] },
+        { "id": "t-nav", "zh": "麻烦您把这个地址输入导航，谢谢。", "pinyin": "Máfan nín bǎ zhège dìzhǐ shūrù dǎoháng, xièxie.", "en": "Please enter this address into your navigation, thank you.", "priority": 1, "note": "More reliable than expecting the driver to recognise a written address, especially outside city centres." },
+        { "id": "t-meter", "zh": "麻烦您打表，谢谢。", "pinyin": "Máfan nín dǎbiǎo, xièxie.", "en": "Please use the meter, thank you.", "priority": 1, "note": "The main anti-overcharging phrase. Worth flagging in the UI as one to use at the start of every ride." },
+        { "id": "t-airport", "zh": "我要去机场，麻烦走高速，谢谢。", "pinyin": "Wǒ yào qù jīchǎng, máfan zǒu gāosù, xièxie.", "en": "I'm going to the airport — please take the expressway.", "priority": 2 },
+        { "id": "t-station", "zh": "我要去火车站，我的车是___点___分的。", "pinyin": "Wǒ yào qù huǒchēzhàn, wǒ de chē shì ___ diǎn ___ fēn de.", "en": "I'm going to the railway station. My train is at ___.", "priority": 2, "slots": [{ "id": "time", "type": "text", "position": "inline" }] },
+        { "id": "t-howlong", "zh": "大概要多久？麻烦您写下来。", "pinyin": "Dàgài yào duōjiǔ? Máfan nín xiě xiàlái.", "en": "About how long will it take? Please write it down.", "priority": 2 },
+        { "id": "t-fare", "zh": "大概多少钱？麻烦您写下来。", "pinyin": "Dàgài duōshao qián? Máfan nín xiě xiàlái.", "en": "Roughly how much will it cost? Please write it down.", "priority": 1 },
+        { "id": "t-stop", "zh": "麻烦在这里停车，谢谢。", "pinyin": "Máfan zài zhèlǐ tíngchē, xièxie.", "en": "Please stop here, thank you.", "priority": 1 },
+        { "id": "t-boot", "zh": "麻烦您开一下后备箱，谢谢。", "pinyin": "Máfan nín kāi yíxià hòubèixiāng, xièxie.", "en": "Please open the boot, thank you.", "priority": 2 },
+        { "id": "t-pay", "zh": "我可以用支付宝或者微信付款吗？", "pinyin": "Wǒ kěyǐ yòng Zhīfùbǎo huòzhě Wēixìn fùkuǎn ma?", "en": "Can I pay with Alipay or WeChat Pay?", "priority": 1 },
+        { "id": "t-wait", "zh": "麻烦您等我五分钟，我马上回来。", "pinyin": "Máfan nín děng wǒ wǔ fēnzhōng, wǒ mǎshàng huílái.", "en": "Please wait five minutes — I'll be right back.", "priority": 3 },
+        { "id": "t-wrong", "zh": "我下错地方了，麻烦带我回刚才的地方。", "pinyin": "Wǒ xià cuò dìfang le, máfan dài wǒ huí gāngcái de dìfang.", "en": "I got out at the wrong place — please take me back.", "priority": 3 },
+        { "id": "t-subway", "zh": "请问地铁站怎么走？麻烦您指给我看。", "pinyin": "Qǐngwèn dìtiězhàn zěnme zǒu? Máfan nín zhǐ gěi wǒ kàn.", "en": "How do I get to the subway station? Please point.", "priority": 2 },
+        { "id": "t-receipt", "zh": "麻烦给我一张发票，谢谢。", "pinyin": "Máfan gěi wǒ yì zhāng fāpiào, xièxie.", "en": "Please give me a receipt, thank you.", "priority": 3, "note": "Taxi receipts carry the vehicle number — the only practical way to trace items left behind." }
+      ]
+    },
+
+    {
+      "id": "restaurant",
+      "en": "Eating out",
+      "priority": 1,
+      "cards": [
+        { "id": "r-table", "zh": "___位，谢谢。", "pinyin": "___ wèi, xièxie.", "en": "Table for ___, thank you.", "priority": 1, "slots": [{ "id": "people", "type": "number", "position": "inline" }] },
+        { "id": "r-menu", "zh": "麻烦给我看一下菜单，谢谢。", "pinyin": "Máfan gěi wǒ kàn yíxià càidān, xièxie.", "en": "May I see the menu, please?", "priority": 1 },
+        { "id": "r-english", "zh": "请问有英文菜单或者带图片的菜单吗？", "pinyin": "Qǐngwèn yǒu yīngwén càidān huòzhě dài túpiàn de càidān ma?", "en": "Do you have an English menu, or one with pictures?", "priority": 1 },
+        { "id": "r-recommend", "zh": "麻烦推荐两三道招牌菜，不要太辣。", "pinyin": "Máfan tuījiàn liǎng-sān dào zhāopáicài, búyào tài là.", "en": "Please recommend two or three signature dishes — not too spicy.", "priority": 1 },
+        { "id": "r-spicy", "zh": "这个辣吗？", "pinyin": "Zhège là ma?", "en": "Is this spicy?", "priority": 1 },
+        { "id": "r-nospicy", "zh": "麻烦不要放辣椒，一点点也不要，谢谢。", "pinyin": "Máfan búyào fàng làjiāo, yìdiǎndiǎn yě búyào, xièxie.", "en": "Please use no chili at all — not even a little. Thank you.", "priority": 1, "note": "The 一点点也不要 is deliberate. 'Not spicy' alone is often interpreted as 'mildly spicy'." },
+        { "id": "r-nopork", "zh": "我不吃猪肉，包括猪油和肉汤，麻烦您确认一下。", "pinyin": "Wǒ bù chī zhūròu, bāokuò zhūyóu hé ròutāng, máfan nín quèrèn yíxià.", "en": "I don't eat pork — including lard and pork broth. Please check for me.", "priority": 1 },
+        { "id": "r-nobeef", "zh": "我不吃牛肉，麻烦您确认一下。", "pinyin": "Wǒ bù chī niúròu, máfan nín quèrèn yíxià.", "en": "I don't eat beef. Please check for me.", "priority": 2 },
+        { "id": "r-vegetarian", "zh": "我吃素。麻烦不要放肉、猪油和肉汤，谢谢。", "pinyin": "Wǒ chī sù. Máfan búyào fàng ròu, zhūyóu hé ròutāng, xièxie.", "en": "I'm vegetarian. Please no meat, lard, or meat broth.", "priority": 1, "note": "Vegetable dishes in China are routinely cooked with lard or meat stock. Saying only 'vegetarian' is not enough — this card names the two things that actually catch people out." },
+        { "id": "r-vegan", "zh": "我吃全素，不吃肉、蛋、奶，也不要肉汤和猪油。", "pinyin": "Wǒ chī quánsù, bù chī ròu, dàn, nǎi, yě búyào ròutāng hé zhūyóu.", "en": "I'm vegan — no meat, eggs, or dairy, and no meat broth or lard.", "priority": 2 },
+        { "id": "r-allergy", "zh": "我对___过敏，很严重，会有生命危险。麻烦这道菜完全不要放，也不要用同一个锅。", "pinyin": "Wǒ duì ___ guòmǐn, hěn yánzhòng, huì yǒu shēngmìng wēixiǎn.", "en": "I'm allergic to ___. It's severe and life-threatening. Please use none at all, and don't use the same wok.", "priority": 1, "slots": [{ "id": "allergen", "type": "allergen", "position": "inline" }], "note": "Cross-contamination via a shared wok is the realistic failure mode in a Chinese kitchen, which is why it is named explicitly. This card should be the primary answer to any allergy question in the app — not a label on a dish." },
+        { "id": "r-allergy-check", "zh": "麻烦您帮我问一下厨师，这道菜里有没有___？", "pinyin": "Máfan nín bāng wǒ wèn yíxià chúshī, zhè dào cài lǐ yǒu méiyǒu ___?", "en": "Could you ask the chef whether this dish contains ___?", "priority": 1, "slots": [{ "id": "allergen", "type": "allergen", "position": "inline" }] },
+        { "id": "r-water", "zh": "麻烦给我一杯温水，谢谢。", "pinyin": "Máfan gěi wǒ yì bēi wēnshuǐ, xièxie.", "en": "A glass of warm water, please.", "priority": 2, "note": "Water is not served automatically and is usually hot. 温水 gets drinkable temperature; 冰水 (ice water) often isn't available." },
+        { "id": "r-samedish", "zh": "麻烦给我和那桌一样的菜。", "pinyin": "Máfan gěi wǒ hé nà zhuō yíyàng de cài.", "en": "I'd like the same dish as that table.", "priority": 3, "note": "Genuinely effective when the menu is impenetrable. Pair with pointing." },
+        { "id": "r-toilet", "zh": "请问洗手间在哪里？麻烦您指给我看。", "pinyin": "Qǐngwèn xǐshǒujiān zài nǎlǐ? Máfan nín zhǐ gěi wǒ kàn.", "en": "Where is the restroom? Please point.", "priority": 1 },
+        { "id": "r-bill", "zh": "麻烦买单，谢谢。", "pinyin": "Máfan mǎidān, xièxie.", "en": "The bill, please.", "priority": 1 },
+        { "id": "r-takeaway", "zh": "麻烦帮我打包，谢谢。", "pinyin": "Máfan bāng wǒ dǎbāo, xièxie.", "en": "Please pack this to take away.", "priority": 2 },
+        { "id": "r-wrong", "zh": "不好意思，这个我没有点。", "pinyin": "Bù hǎoyìsi, zhège wǒ méiyǒu diǎn.", "en": "Sorry — I didn't order this.", "priority": 3 }
+      ]
+    },
+
+    {
+      "id": "hotel",
+      "en": "At the hotel",
+      "priority": 2,
+      "cards": [
+        { "id": "h-checkin", "zh": "我有预订，想办理入住。这是我的护照。", "pinyin": "Wǒ yǒu yùdìng, xiǎng bànlǐ rùzhù. Zhè shì wǒ de hùzhào.", "en": "I have a reservation and would like to check in. Here is my passport.", "priority": 1 },
+        { "id": "h-foreigner", "zh": "请问你们可以接待外国人入住吗？", "pinyin": "Qǐngwèn nǐmen kěyǐ jiēdài wàiguórén rùzhù ma?", "en": "Are you able to accept foreign guests?", "priority": 1, "note": "Not all Chinese hotels are licensed to register foreign guests. Worth asking before unpacking — and worth explaining in the guide, because most travellers have no idea this is a thing." },
+        { "id": "h-checkout", "zh": "我想退房，谢谢。", "pinyin": "Wǒ xiǎng tuìfáng, xièxie.", "en": "I'd like to check out, thank you.", "priority": 1 },
+        { "id": "h-luggage", "zh": "可以帮我寄存行李吗？我___点回来取。", "pinyin": "Kěyǐ bāng wǒ jìcún xíngli ma?", "en": "Can I leave my luggage here? I'll collect it at ___.", "priority": 2, "slots": [{ "id": "time", "type": "text", "position": "inline" }] },
+        { "id": "h-wifi", "zh": "麻烦把 WiFi 名称和密码写下来，谢谢。", "pinyin": "Máfan bǎ WiFi míngchēng hé mìmǎ xiě xiàlái, xièxie.", "en": "Please write down the WiFi name and password.", "priority": 1 },
+        { "id": "h-card", "zh": "我的房卡不能用了，麻烦帮我重新激活。", "pinyin": "Wǒ de fángkǎ bù néng yòng le, máfan bāng wǒ chóngxīn jīhuó.", "en": "My room card has stopped working — please reactivate it.", "priority": 2 },
+        { "id": "h-broken", "zh": "我房间的___坏了，麻烦派人来看一下。我的房间号是___。", "pinyin": "Wǒ fángjiān de ___ huài le, máfan pài rén lái kàn yíxià.", "en": "The ___ in my room is broken — please send someone. My room number is ___.", "priority": 2, "slots": [{ "id": "item", "type": "text", "position": "inline" }, { "id": "room", "type": "text", "position": "inline" }] },
+        { "id": "h-writeaddress", "zh": "麻烦把酒店的地址用中文写下来，我打车要用。", "pinyin": "Máfan bǎ jiǔdiàn de dìzhǐ yòng zhōngwén xiě xiàlái, wǒ dǎchē yào yòng.", "en": "Please write the hotel's address in Chinese — I need it for taxis.", "priority": 1, "note": "Prompt this on day one. It is the cheapest insurance against being stranded, and it works even if the phone dies." },
+        { "id": "h-taxi", "zh": "麻烦帮我叫一辆出租车，谢谢。", "pinyin": "Máfan bāng wǒ jiào yí liàng chūzūchē, xièxie.", "en": "Please call me a taxi, thank you.", "priority": 2 },
+        { "id": "h-latecheckout", "zh": "可以延迟退房吗？最晚到几点？要加钱吗？", "pinyin": "Kěyǐ yánchí tuìfáng ma? Zuì wǎn dào jǐ diǎn? Yào jiā qián ma?", "en": "Can I check out late? Until when, and is there a charge?", "priority": 3 },
+        { "id": "h-pharmacy", "zh": "请问附近有药店吗？麻烦您指给我看。", "pinyin": "Qǐngwèn fùjìn yǒu yàodiàn ma? Máfan nín zhǐ gěi wǒ kàn.", "en": "Is there a pharmacy nearby? Please point.", "priority": 2 },
+        { "id": "h-quiet", "zh": "可以帮我换一个安静一点的房间吗？", "pinyin": "Kěyǐ bāng wǒ huàn yí ge ānjìng yìdiǎn de fángjiān ma?", "en": "Could I change to a quieter room?", "priority": 3 }
+      ]
+    },
+
+    {
+      "id": "medical",
+      "en": "Feeling unwell",
+      "priority": 1,
+      "warning": "Show a persistent banner on this category: these cards help you communicate, they are not medical advice. In an emergency call 120 rather than working through cards.",
+      "cards": [
+        { "id": "m-doctor", "zh": "我需要看医生。", "pinyin": "Wǒ xūyào kàn yīshēng.", "en": "I need to see a doctor.", "priority": 1 },
+        { "id": "m-emergency", "zh": "这是紧急情况，需要马上看医生。", "pinyin": "Zhè shì jǐnjí qíngkuàng, xūyào mǎshàng kàn yīshēng.", "en": "This is an emergency — I need a doctor immediately.", "priority": 1 },
+        { "id": "m-foreigner", "zh": "请问外国人可以在这里看病吗？需要带什么证件？", "pinyin": "Qǐngwèn wàiguórén kěyǐ zài zhèlǐ kànbìng ma? Xūyào dài shénme zhèngjiàn?", "en": "Can foreigners be treated here? What documents do I need?", "priority": 1 },
+        { "id": "m-english", "zh": "请问有会说英语的医生吗？", "pinyin": "Qǐngwèn yǒu huì shuō yīngyǔ de yīshēng ma?", "en": "Is there a doctor who speaks English?", "priority": 1 },
+        { "id": "m-here", "zh": "我这里痛。", "pinyin": "Wǒ zhèlǐ tòng.", "en": "It hurts here.", "priority": 1, "note": "Pair with a body diagram the traveller can tap. Pointing crosses every language barrier and is faster than any phrase." },
+        { "id": "m-howlong", "zh": "已经___天了。", "pinyin": "Yǐjīng ___ tiān le.", "en": "It's been ___ days.", "priority": 2, "slots": [{ "id": "days", "type": "number", "position": "inline" }] },
+        { "id": "m-symptoms", "zh": "我的症状是：", "pinyin": "Wǒ de zhèngzhuàng shì:", "en": "My symptoms are:", "priority": 1, "note": "Render as a multi-select of the symptom list below, appended to the card in Chinese.", "options": [
+          { "zh": "发烧", "en": "fever" },
+          { "zh": "头痛", "en": "headache" },
+          { "zh": "肚子痛", "en": "stomach pain" },
+          { "zh": "呕吐", "en": "vomiting" },
+          { "zh": "拉肚子", "en": "diarrhoea" },
+          { "zh": "头晕", "en": "dizziness" },
+          { "zh": "咳嗽", "en": "cough" },
+          { "zh": "呼吸困难", "en": "difficulty breathing" },
+          { "zh": "皮疹", "en": "rash" },
+          { "zh": "受伤了", "en": "I'm injured" }
+        ]},
+        { "id": "m-allergy", "zh": "我对___过敏。", "pinyin": "Wǒ duì ___ guòmǐn.", "en": "I'm allergic to ___.", "priority": 1, "slots": [{ "id": "allergen", "type": "allergen", "position": "inline" }] },
+        { "id": "m-medication", "zh": "我在吃这些药。", "pinyin": "Wǒ zài chī zhèxiē yào.", "en": "I'm taking these medicines.", "priority": 1, "note": "Instruct the traveller to show the actual packaging alongside this card. Do not ask them to type medication names into the app." },
+        { "id": "m-insurance", "zh": "我有旅行保险。麻烦给我收据、诊断证明和用药清单，我要用来理赔。", "pinyin": "Wǒ yǒu lǚxíng bǎoxiǎn. Máfan gěi wǒ shōujù, zhěnduàn zhèngmíng hé yòngyào qīngdān.", "en": "I have travel insurance. Please give me a receipt, a diagnosis certificate, and a list of medications — I need them for my claim.", "priority": 1, "note": "Insurers reject claims without these. Ask at the counter, not after leaving — reissuing them later is difficult." },
+        { "id": "m-cost", "zh": "大概要多少钱？可以用外国信用卡付吗？", "pinyin": "Dàgài yào duōshao qián? Kěyǐ yòng wàiguó xìnyòngkǎ fù ma?", "en": "Roughly how much will it cost? Can I pay with a foreign credit card?", "priority": 2 },
+        { "id": "m-embassy", "zh": "麻烦帮我联系我的大使馆。", "pinyin": "Máfan bāng wǒ liánxì wǒ de dàshǐguǎn.", "en": "Please help me contact my embassy.", "priority": 2 },
+        { "id": "m-pharmacy", "zh": "我需要买这个症状的药，麻烦您推荐一下。", "pinyin": "Wǒ xūyào mǎi zhège zhèngzhuàng de yào, máfan nín tuījiàn yíxià.", "en": "I need medicine for this — could you recommend something?", "priority": 2 }
+      ]
+    },
+
+    {
+      "id": "police",
+      "en": "Police & lost items",
+      "priority": 2,
+      "cards": [
+        { "id": "p-report", "zh": "我要报警。", "pinyin": "Wǒ yào bàojǐng.", "en": "I need to report this to the police.", "priority": 1 },
+        { "id": "p-english", "zh": "我不会说中文，麻烦找一位会说英语的警察，谢谢。", "pinyin": "Wǒ bú huì shuō zhōngwén, máfan zhǎo yí wèi huì shuō yīngyǔ de jǐngchá, xièxie.", "en": "I don't speak Chinese — please find an English-speaking officer.", "priority": 1 },
+        { "id": "p-passport", "zh": "我的护照丢了。", "pinyin": "Wǒ de hùzhào diū le.", "en": "I've lost my passport.", "priority": 1 },
+        { "id": "p-stolen", "zh": "我的东西被偷了。", "pinyin": "Wǒ de dōngxi bèi tōu le.", "en": "My belongings were stolen.", "priority": 1 },
+        { "id": "p-what", "zh": "丢的是：", "pinyin": "Diū de shì:", "en": "What I lost:", "priority": 1, "options": [
+          { "zh": "护照", "en": "passport" },
+          { "zh": "手机", "en": "phone" },
+          { "zh": "钱包", "en": "wallet" },
+          { "zh": "银行卡", "en": "bank card" },
+          { "zh": "行李箱", "en": "suitcase" },
+          { "zh": "背包", "en": "backpack" }
+        ]},
+        { "id": "p-where", "zh": "大概是在___丢的，时间是___。", "pinyin": "Dàgài shì zài ___ diū de, shíjiān shì ___.", "en": "I lost it around ___, at about ___.", "priority": 2, "slots": [{ "id": "place", "type": "text", "position": "inline" }, { "id": "time", "type": "text", "position": "inline" }] },
+        { "id": "p-receipt", "zh": "麻烦给我一份报案回执，我需要用来办保险理赔和补办护照。", "pinyin": "Máfan gěi wǒ yí fèn bào'àn huízhí, wǒ xūyào yòng lái bàn bǎoxiǎn lǐpéi hé bǔbàn hùzhào.", "en": "Please give me a police report receipt — I need it for my insurance claim and to replace my passport.", "priority": 1, "note": "The 报案回执 is the single most important thing to obtain. Embassies require it before issuing emergency travel documents, and insurers require it for theft claims. Do not leave the station without it." },
+        { "id": "p-embassy", "zh": "麻烦帮我联系我的大使馆。", "pinyin": "Máfan bāng wǒ liánxì wǒ de dàshǐguǎn.", "en": "Please help me contact my embassy.", "priority": 1 },
+        { "id": "p-hotel", "zh": "我住在这家酒店。", "pinyin": "Wǒ zhù zài zhè jiā jiǔdiàn.", "en": "I'm staying at this hotel.", "priority": 2, "slots": [{ "id": "address", "type": "address", "position": "below" }] },
+        { "id": "p-lostfound", "zh": "请问失物招领处在哪里？麻烦您指给我看。", "pinyin": "Qǐngwèn shīwù zhāolǐngchù zài nǎlǐ? Máfan nín zhǐ gěi wǒ kàn.", "en": "Where is the lost and found? Please point.", "priority": 2 },
+        { "id": "p-taxi", "zh": "我把东西忘在出租车上了，这是发票。", "pinyin": "Wǒ bǎ dōngxi wàng zài chūzūchē shàng le, zhè shì fāpiào.", "en": "I left something in a taxi — here is the receipt.", "priority": 3 }
+      ]
+    },
+
+    {
+      "id": "payment",
+      "en": "Paying for things",
+      "priority": 1,
+      "cards": [
+        { "id": "pay-declined", "zh": "不好意思，我的卡不能用。可以用别的方式付款吗？", "pinyin": "Bù hǎoyìsi, wǒ de kǎ bù néng yòng. Kěyǐ yòng bié de fāngshì fùkuǎn ma?", "en": "Sorry, my card isn't working. Can I pay another way?", "priority": 1, "note": "This is the card currently rendering English-only on the live site. It is the most-used card in the set — it should be the first thing fixed." },
+        { "id": "pay-alipay", "zh": "我可以用支付宝付款吗？", "pinyin": "Wǒ kěyǐ yòng Zhīfùbǎo fùkuǎn ma?", "en": "Can I pay with Alipay?", "priority": 1 },
+        { "id": "pay-wechat", "zh": "我可以用微信支付吗？", "pinyin": "Wǒ kěyǐ yòng Wēixìn zhīfù ma?", "en": "Can I pay with WeChat Pay?", "priority": 1 },
+        { "id": "pay-scanme", "zh": "麻烦扫我的付款码。", "pinyin": "Máfan sǎo wǒ de fùkuǎnmǎ.", "en": "Please scan my payment code.", "priority": 1 },
+        { "id": "pay-scanyou", "zh": "我扫您的收款码可以吗？", "pinyin": "Wǒ sǎo nín de shōukuǎnmǎ kěyǐ ma?", "en": "Can I scan your payment code instead?", "priority": 1, "note": "When the merchant's scanner won't read a foreign-linked code, reversing the direction often works. Worth surfacing as the first thing to try." },
+        { "id": "pay-smaller", "zh": "麻烦再试一次，金额少一点。", "pinyin": "Máfan zài shì yí cì, jīn'é shǎo yìdiǎn.", "en": "Please try again with a smaller amount.", "priority": 1, "note": "Foreign cards linked to Alipay commonly hit per-transaction limits. Splitting the payment frequently succeeds." },
+        { "id": "pay-card", "zh": "请问可以刷外国信用卡吗？Visa 或者 Mastercard。", "pinyin": "Qǐngwèn kěyǐ shuā wàiguó xìnyòngkǎ ma?", "en": "Do you accept foreign credit cards — Visa or Mastercard?", "priority": 1 },
+        { "id": "pay-cash", "zh": "我可以付现金吗？", "pinyin": "Wǒ kěyǐ fù xiànjīn ma?", "en": "Can I pay in cash?", "priority": 1 },
+        { "id": "pay-change", "zh": "不好意思，我只有大钞，可以找零吗？", "pinyin": "Bù hǎoyìsi, wǒ zhǐ yǒu dàchāo, kěyǐ zhǎolíng ma?", "en": "Sorry, I only have large notes — can you give change?", "priority": 2 },
+        { "id": "pay-atm", "zh": "请问附近有可以用外国银行卡的 ATM 吗？麻烦您指给我看。", "pinyin": "Qǐngwèn fùjìn yǒu kěyǐ yòng wàiguó yínhángkǎ de ATM ma?", "en": "Is there an ATM nearby that takes foreign cards? Please point.", "priority": 2 },
+        { "id": "pay-receipt", "zh": "麻烦给我收据，谢谢。", "pinyin": "Máfan gěi wǒ shōujù, xièxie.", "en": "A receipt, please.", "priority": 2 },
+        { "id": "pay-wait", "zh": "不好意思，麻烦稍等一下，我在处理付款。", "pinyin": "Bù hǎoyìsi, máfan shāo děng yíxià, wǒ zài chǔlǐ fùkuǎn.", "en": "Sorry — one moment, I'm sorting out the payment.", "priority": 2, "note": "Small, but it defuses the queue-pressure that makes people panic and give up on a payment that would have worked." },
+        { "id": "pay-price", "zh": "一共多少钱？麻烦写下来或者按计算器给我看。", "pinyin": "Yígòng duōshao qián? Máfan xiě xiàlái huòzhě àn jìsuànqì gěi wǒ kàn.", "en": "How much altogether? Please write it down or show me on a calculator.", "priority": 1 }
+      ]
+    }
+
+  ]
+}
