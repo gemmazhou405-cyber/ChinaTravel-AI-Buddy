@@ -1,5 +1,5 @@
-import { createDoc } from '../../_shared/firestore.js';
-import { parseJson } from '../../_shared/http.js';
+import { createDoc } from '../_shared/firestore.js';
+import { parseJson } from '../_shared/http.js';
 
 const PRODUCTION_ORIGIN = 'https://chinaeasebuddy.com';
 const PREVIEW_SUFFIX = '.chinaease-buddy.pages.dev';
