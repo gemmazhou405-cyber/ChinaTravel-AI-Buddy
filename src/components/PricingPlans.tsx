@@ -1,7 +1,7 @@
 import { Check, Zap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import type { PassState } from '../hooks/usePass';
-import { trackEvent } from '../lib/analytics';
+import { trackEvent, trackGumroadClick } from '../lib/analytics';
 
 export const PLANS = [
   { key: 'free',  price: '$0',     periodKey: '',            highlighted: false },
@@ -56,6 +56,7 @@ export default function PricingPlans({ passState, showToast, onCtaClick }: Props
       return;
     }
 
+    trackGumroadClick(plan as 'trip' | 'group');
     window.open(gumroadUrl(plan), '_blank', 'noopener,noreferrer');
   };
 

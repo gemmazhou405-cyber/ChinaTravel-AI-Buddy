@@ -2,7 +2,7 @@ import { Check } from 'lucide-react';
 import type { CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { PassState } from '../../hooks/usePass';
-import { trackEvent } from '../../lib/analytics';
+import { trackEvent, trackGumroadClick } from '../../lib/analytics';
 import { PLANS } from '../PricingPlans';
 import { useRevealOnView } from '../../hooks/useRevealOnView';
 
@@ -49,6 +49,7 @@ export default function HomePasses({ passState, showToast, onOpenToolkit }: Prop
       return;
     }
 
+    trackGumroadClick(plan as 'trip' | 'group');
     window.open(gumroadUrl(plan), '_blank', 'noopener,noreferrer');
   };
 

@@ -12,11 +12,13 @@ const ALLOWED_EVENTS = new Set([
   'lead_submit_started',
   'lead_submit_success',
   'lead_submit_failed',
+  'gumroad_click',
 ]);
 
 const ALLOWED_DEVICE_CATEGORIES = new Set(['mobile', 'tablet', 'desktop', 'unknown']);
 const ALLOWED_ENVIRONMENTS = new Set(['production', 'test', 'preview']);
 const ALLOWED_LOCALE_PREFIXES = new Set(['en', 'zh', 'fr', 'de', 'ja', 'ko']);
+const ALLOWED_PLANS = new Set(['trip', 'group']);
 
 // Per-isolate best-effort rate limit. Not shared across Cloudflare isolates — V1 acceptable.
 const _ipRateMap = new Map();
@@ -143,6 +145,11 @@ export async function onRequestPost({ request, env }) {
   const utmSource = clampStr(body.utmSource, 80);
   const utmMedium = clampStr(body.utmMedium, 80);
   const utmCampaign = clampStr(body.utmCampaign, 120);
+  const utmContent = clampStr(body.utmContent, 80);
+  const utmTerm = clampStr(body.utmTerm, 80);
+  const referrerDomain = clampStr(body.referrerDomain, 100);
+  const landingPath = (() => { const r = clampStr(body.landingPath, 200); return r ? r.split('?')[0].split('#')[0] || null : null; })();
+  const plan = ALLOWED_PLANS.has(body.plan) ? body.plan : null;
   const deviceCategory = ALLOWED_DEVICE_CATEGORIES.has(body.deviceCategory)
     ? body.deviceCategory
     : 'unknown';
@@ -160,6 +167,11 @@ export async function onRequestPost({ request, env }) {
   if (utmSource) doc.utmSource = utmSource;
   if (utmMedium) doc.utmMedium = utmMedium;
   if (utmCampaign) doc.utmCampaign = utmCampaign;
+  if (utmContent) doc.utmContent = utmContent;
+  if (utmTerm) doc.utmTerm = utmTerm;
+  if (referrerDomain) doc.referrerDomain = referrerDomain;
+  if (landingPath) doc.landingPath = landingPath;
+  if (plan && eventName === 'gumroad_click') doc.plan = plan;
 
   // Firestore write failure is non-fatal — analytics must never break the user experience.
   try {
