@@ -28,15 +28,15 @@
 ## Key pages
 
 - [Home](https://chinaeasebuddy.com/)
-- [Guides](https://chinaeasebuddy.com/guides)
-- [China travel apps](https://chinaeasebuddy.com/china-travel-apps)
-- [Alipay for foreign visitors](https://chinaeasebuddy.com/alipay-for-foreigners)
-- [China payment guide](https://chinaeasebuddy.com/china-payment-guide)
-- [China travel checklist](https://chinaeasebuddy.com/china-travel-checklist)
-- [Emergency numbers](https://chinaeasebuddy.com/china-emergency-numbers)
-- [FAQ](https://chinaeasebuddy.com/faq)
-- [Pricing](https://chinaeasebuddy.com/pricing)
-- [About](https://chinaeasebuddy.com/about)
+- [Guides](https://chinaeasebuddy.com/guides/)
+- [China travel apps](https://chinaeasebuddy.com/china-travel-apps/)
+- [Alipay for foreign visitors](https://chinaeasebuddy.com/alipay-for-foreigners/)
+- [China payment guide](https://chinaeasebuddy.com/china-payment-guide/)
+- [China travel checklist](https://chinaeasebuddy.com/china-travel-checklist/)
+- [Emergency numbers](https://chinaeasebuddy.com/china-emergency-numbers/)
+- [FAQ](https://chinaeasebuddy.com/faq/)
+- [Pricing](https://chinaeasebuddy.com/pricing/)
+- [About](https://chinaeasebuddy.com/about/)
 
 ## Audience
 

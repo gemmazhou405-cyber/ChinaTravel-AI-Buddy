@@ -288,7 +288,7 @@ const legalCopy = {
 
 const guidePages: Record<GuidePageType, GuidePageData> = {
   guides: {
-    path: '/guides',
+    path: '/guides/',
     title: 'China Travel Guides',
     intro: 'Practical guide pages for foreign visitors preparing for or traveling in China.',
     metaTitle: 'China Travel Guides | ChinaEase Buddy',
@@ -324,16 +324,16 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
-      { label: 'China travel apps', href: '/china-travel-apps' },
-      { label: 'Alipay for foreigners', href: '/alipay-for-foreigners' },
-      { label: 'China payment guide', href: '/china-payment-guide' },
-      { label: 'China travel checklist', href: '/china-travel-checklist' },
-      { label: 'Emergency numbers in China', href: '/china-emergency-numbers' },
-      { label: 'FAQ', href: '/faq' },
+      { label: 'China travel apps', href: '/china-travel-apps/' },
+      { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
+      { label: 'China payment guide', href: '/china-payment-guide/' },
+      { label: 'China travel checklist', href: '/china-travel-checklist/' },
+      { label: 'Emergency numbers in China', href: '/china-emergency-numbers/' },
+      { label: 'FAQ', href: '/faq/' },
     ],
   },
   'china-travel-apps': {
-    path: '/china-travel-apps',
+    path: '/china-travel-apps/',
     title: 'Essential Apps for Foreign Tourists in China (2026)',
     intro:
       'A category-by-category guide to the apps that actually work in China — payments, maps, rides, trains, translation, and what to do about blocked services.',
@@ -455,13 +455,13 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
-      { label: 'China payment guide', href: '/china-payment-guide' },
-      { label: 'China travel checklist', href: '/china-travel-checklist' },
-      { label: 'Emergency numbers in China', href: '/china-emergency-numbers' },
+      { label: 'China payment guide', href: '/china-payment-guide/' },
+      { label: 'China travel checklist', href: '/china-travel-checklist/' },
+      { label: 'Emergency numbers in China', href: '/china-emergency-numbers/' },
     ],
   },
   'alipay-for-foreigners': {
-    path: '/alipay-for-foreigners',
+    path: '/alipay-for-foreigners/',
     title: 'Can Foreigners Use Alipay in China?',
     intro: 'A conservative, practical overview of using Alipay as a foreign traveler in China.',
     metaTitle: 'Can Foreigners Use Alipay in China? | ChinaEase Buddy',
@@ -529,13 +529,13 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
-      { label: 'How to pay in China as a foreigner', href: '/china-payment-guide' },
-      { label: 'Apps to download before China', href: '/china-travel-apps' },
-      { label: 'FAQ', href: '/faq' },
+      { label: 'How to pay in China as a foreigner', href: '/china-payment-guide/' },
+      { label: 'Apps to download before China', href: '/china-travel-apps/' },
+      { label: 'FAQ', href: '/faq/' },
     ],
   },
   'china-payment-guide': {
-    path: '/china-payment-guide',
+    path: '/china-payment-guide/',
     title: 'How to Pay in China as a Foreigner',
     intro:
       'A quick-answer guide to paying in China with a foreign card, Alipay, and WeChat Pay — no Chinese bank account required.',
@@ -632,13 +632,13 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
-      { label: 'Can foreigners use Alipay?', href: '/alipay-for-foreigners' },
-      { label: 'China travel apps', href: '/china-travel-apps' },
-      { label: 'China travel checklist', href: '/china-travel-checklist' },
+      { label: 'Can foreigners use Alipay?', href: '/alipay-for-foreigners/' },
+      { label: 'China travel apps', href: '/china-travel-apps/' },
+      { label: 'China travel checklist', href: '/china-travel-checklist/' },
     ],
   },
   'china-travel-checklist': {
-    path: '/china-travel-checklist',
+    path: '/china-travel-checklist/',
     title: 'China Travel Checklist for First-Time Visitors',
     intro: 'A practical pre-trip checklist for apps, payments, phrases, hotel addresses, and emergency basics.',
     metaTitle: 'China Travel Checklist for First-Time Visitors | ChinaEase Buddy',
@@ -700,13 +700,13 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
-      { label: 'Apps to download before China', href: '/china-travel-apps' },
-      { label: 'China payment guide', href: '/china-payment-guide' },
-      { label: 'Emergency numbers in China', href: '/china-emergency-numbers' },
+      { label: 'Apps to download before China', href: '/china-travel-apps/' },
+      { label: 'China payment guide', href: '/china-payment-guide/' },
+      { label: 'Emergency numbers in China', href: '/china-emergency-numbers/' },
     ],
   },
   'china-emergency-numbers': {
-    path: '/china-emergency-numbers',
+    path: '/china-emergency-numbers/',
     title: 'Emergency Numbers in China for Travelers',
     intro: 'Key emergency numbers and practical words to show locals when something goes wrong in China.',
     metaTitle: 'Emergency Numbers in China for Travelers | ChinaEase Buddy',
@@ -762,13 +762,13 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
-      { label: 'China travel checklist', href: '/china-travel-checklist' },
-      { label: 'China travel apps', href: '/china-travel-apps' },
-      { label: 'FAQ', href: '/faq' },
+      { label: 'China travel checklist', href: '/china-travel-checklist/' },
+      { label: 'China travel apps', href: '/china-travel-apps/' },
+      { label: 'FAQ', href: '/faq/' },
     ],
   },
   faq: {
-    path: '/faq',
+    path: '/faq/',
     title: 'ChinaEase Buddy FAQ',
     intro: 'Short answers for travelers using ChinaEase Buddy and preparing for practical travel situations in China.',
     metaTitle: 'ChinaEase Buddy FAQ | China Travel Tools for Foreign Visitors',
@@ -846,9 +846,9 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
-      { label: 'China travel apps', href: '/china-travel-apps' },
-      { label: 'Alipay for foreigners', href: '/alipay-for-foreigners' },
-      { label: 'Emergency numbers in China', href: '/china-emergency-numbers' },
+      { label: 'China travel apps', href: '/china-travel-apps/' },
+      { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
+      { label: 'Emergency numbers in China', href: '/china-emergency-numbers/' },
     ],
   },
 };
@@ -903,7 +903,7 @@ function useGuideSeo(page: GuidePageData) {
           isPartOf: {
             '@type': 'WebSite',
             name: 'ChinaEase Buddy',
-            url: siteUrl,
+            url: `${siteUrl}/`,
           },
         },
         {

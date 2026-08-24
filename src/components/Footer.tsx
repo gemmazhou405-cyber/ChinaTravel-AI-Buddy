@@ -129,10 +129,10 @@ export default function Footer({ onOpenEmergency }: Props) {
         <div className="mt-8 flex flex-col items-start justify-between gap-3 border-t border-hairline pt-6 sm:flex-row sm:items-center">
           <p className="text-xs text-ink-tertiary">{t('footer.rights')}</p>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs">
-            <a href="/privacy" className="text-ink-tertiary transition-colors duration-hover ease-out hover:text-ink">{t('footer.privacy')}</a>
-            <a href="/terms" className="text-ink-tertiary transition-colors duration-hover ease-out hover:text-ink">{t('footer.terms')}</a>
-            <a href="/refund" className="text-ink-tertiary transition-colors duration-hover ease-out hover:text-ink">{t('footer.refundPolicy')}</a>
-            <a href="/contact" className="text-ink-tertiary transition-colors duration-hover ease-out hover:text-ink">{t('footer.contactUs')}</a>
+            <a href="/privacy/" className="text-ink-tertiary transition-colors duration-hover ease-out hover:text-ink">{t('footer.privacy')}</a>
+            <a href="/terms/" className="text-ink-tertiary transition-colors duration-hover ease-out hover:text-ink">{t('footer.terms')}</a>
+            <a href="/refund/" className="text-ink-tertiary transition-colors duration-hover ease-out hover:text-ink">{t('footer.refundPolicy')}</a>
+            <a href="/contact/" className="text-ink-tertiary transition-colors duration-hover ease-out hover:text-ink">{t('footer.contactUs')}</a>
           </div>
         </div>
       </div>

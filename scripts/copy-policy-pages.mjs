@@ -11,12 +11,12 @@ const pageMeta = {
     description:
       'Practical China travel guides for foreign visitors: essential apps, Alipay, payments, checklists, emergency numbers, and frequently asked questions.',
     sections: [
-      ['China Travel Apps', 'Prepare Alipay, WeChat, Amap, Didi, and Trip.com before arrival.', '/china-travel-apps'],
-      ['Alipay for Foreigners', 'What foreign visitors should know before trying Alipay in China.', '/alipay-for-foreigners'],
-      ['China Payment Guide', 'Practical payment reminders for Alipay, WeChat Pay, cards, and cash backup.', '/china-payment-guide'],
-      ['China Travel Checklist', 'A first-time visitor checklist for apps, payments, hotels, phrases, and emergency basics.', '/china-travel-checklist'],
-      ['Emergency Numbers in China', 'Know 110, 120, and 119, plus simple phrases for urgent situations.', '/china-emergency-numbers'],
-      ['FAQ', 'Short answers about ChinaEase Buddy, paid passes, travel tools, and service limits.', '/faq'],
+      ['China Travel Apps', 'Prepare Alipay, WeChat, Amap, Didi, and Trip.com before arrival.', '/china-travel-apps/'],
+      ['Alipay for Foreigners', 'What foreign visitors should know before trying Alipay in China.', '/alipay-for-foreigners/'],
+      ['China Payment Guide', 'Practical payment reminders for Alipay, WeChat Pay, cards, and cash backup.', '/china-payment-guide/'],
+      ['China Travel Checklist', 'A first-time visitor checklist for apps, payments, hotels, phrases, and emergency basics.', '/china-travel-checklist/'],
+      ['Emergency Numbers in China', 'Know 110, 120, and 119, plus simple phrases for urgent situations.', '/china-emergency-numbers/'],
+      ['FAQ', 'Short answers about ChinaEase Buddy, paid passes, travel tools, and service limits.', '/faq/'],
     ],
   },
   pricing: {
@@ -24,8 +24,8 @@ const pageMeta = {
     description: 'ChinaEase Buddy pricing: Free, Trip Pass, and Group Pass for digital China travel tools.',
     sections: [
       ['Free', 'Basic toolkit for apps, payments, transport, food, hotels, emergency help, and limited Buddy AI access.', '/?journey=china&tool=food'],
-      ['Trip Pass', 'USD 9.90 one-time travel pass with 50 Buddy AI messages for 7 days.', '/pricing'],
-      ['Group Pass', 'USD 29.90 one-time travel pass with 200 Buddy AI messages for 14 days on one shared account.', '/pricing'],
+      ['Trip Pass', 'USD 9.90 one-time travel pass with 50 Buddy AI messages for 7 days.', '/pricing/'],
+      ['Group Pass', 'USD 29.90 one-time travel pass with 200 Buddy AI messages for 14 days on one shared account.', '/pricing/'],
     ],
     faqs: [
       ['How do paid passes work?', 'Paid passes are one-time digital travel passes processed through PayPal checkout when enabled. Access begins after verified payment capture.'],
@@ -122,6 +122,14 @@ const pageMeta = {
 
 const pages = Object.keys(pageMeta);
 
+function pagePath(page) {
+  return `/${page}/`;
+}
+
+function pageUrl(page) {
+  return `${siteUrl}${pagePath(page)}`;
+}
+
 function escapeAttr(value) {
   return value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 }
@@ -137,13 +145,13 @@ function escapeHtml(value) {
 
 const staticCtas = {
   guides: ['Open the free toolkit', '/'],
-  pricing: ['View travel passes', '/pricing'],
-  terms: ['Read the terms', '/terms'],
-  privacy: ['Read the privacy policy', '/privacy'],
-  refund: ['Read the refund policy', '/refund'],
-  contact: ['Contact support', '/contact'],
-  about: ['Learn about ChinaEase Buddy', '/about'],
-  unsubscribe: ['Contact support', '/contact'],
+  pricing: ['View travel passes', '/pricing/'],
+  terms: ['Read the terms', '/terms/'],
+  privacy: ['Read the privacy policy', '/privacy/'],
+  refund: ['Read the refund policy', '/refund/'],
+  contact: ['Contact support', '/contact/'],
+  about: ['Learn about ChinaEase Buddy', '/about/'],
+  unsubscribe: ['Contact support', '/contact/'],
   'china-travel-apps': ['Open the app checklist', '/?journey=before&tool=apps'],
   'alipay-for-foreigners': ['Open payment setup tools', '/?journey=before&tool=payment'],
   'china-payment-guide': ['Open payment phrases', '/?journey=china&tool=pay'],
@@ -153,26 +161,26 @@ const staticCtas = {
 };
 
 const relatedLinks = [
-  ['All guides', '/guides'],
-  ['China travel apps', '/china-travel-apps'],
-  ['China payment guide', '/china-payment-guide'],
-  ['China travel checklist', '/china-travel-checklist'],
-  ['China emergency numbers', '/china-emergency-numbers'],
-  ['FAQ', '/faq'],
+  ['All guides', '/guides/'],
+  ['China travel apps', '/china-travel-apps/'],
+  ['China payment guide', '/china-payment-guide/'],
+  ['China travel checklist', '/china-travel-checklist/'],
+  ['China emergency numbers', '/china-emergency-numbers/'],
+  ['FAQ', '/faq/'],
 ];
 
 const pageRelatedLinks = {
   'china-payment-guide': [
     ['Open payment phrases', '/?journey=china&tool=pay'],
-    ['Alipay for Foreigners', '/alipay-for-foreigners'],
-    ['China travel apps', '/china-travel-apps'],
-    ['FAQ', '/faq'],
+    ['Alipay for Foreigners', '/alipay-for-foreigners/'],
+    ['China travel apps', '/china-travel-apps/'],
+    ['FAQ', '/faq/'],
   ],
   pricing: [
     ['Home', '/'],
-    ['Terms of Service', '/terms'],
-    ['Privacy Policy', '/privacy'],
-    ['Refund information', '/refund'],
+    ['Terms of Service', '/terms/'],
+    ['Privacy Policy', '/privacy/'],
+    ['Refund information', '/refund/'],
   ],
 };
 
@@ -251,14 +259,14 @@ function schemaFor(page, meta) {
   const graph = [
     {
       '@type': 'WebPage',
-      '@id': `${siteUrl}/${page}#webpage`,
-      url: `${siteUrl}/${page}`,
+      '@id': `${pageUrl(page)}#webpage`,
+      url: pageUrl(page),
       name: meta.title,
       description: meta.description,
       isPartOf: {
         '@type': 'WebSite',
         name: 'ChinaEase Buddy',
-        url: siteUrl,
+        url: `${siteUrl}/`,
       },
     },
   ];
@@ -266,7 +274,7 @@ function schemaFor(page, meta) {
   if (meta.faqs) {
     graph.push({
       '@type': 'FAQPage',
-      '@id': `${siteUrl}/${page}#faq`,
+      '@id': `${pageUrl(page)}#faq`,
       mainEntity: meta.faqs.map(([question, answer]) => ({
         '@type': 'Question',
         name: question,
@@ -285,7 +293,7 @@ function schemaFor(page, meta) {
 }
 
 function withPageMeta(html, page, meta) {
-  const canonical = `${siteUrl}/${page}`;
+  const canonical = pageUrl(page);
   let next = html
     .replace(/<title>.*?<\/title>/, `<title>${escapeAttr(meta.title)}</title>`)
     .replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${escapeAttr(meta.description)}" />`)
@@ -322,7 +330,7 @@ const lastmod = '2026-06-20';
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemapPages.map((page) => `  <url>
-    <loc>${siteUrl}${page ? `/${page}` : '/'}</loc>
+    <loc>${page ? pageUrl(page) : `${siteUrl}/`}</loc>
     <lastmod>${lastmod}</lastmod>
   </url>`).join('\n')}
 </urlset>
