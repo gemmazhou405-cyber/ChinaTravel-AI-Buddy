@@ -10,7 +10,7 @@ interface Props {
   onOpenLead: () => void;
 }
 
-export default function Hero({ onOpenToolkit, onAskBuddy }: Props) {
+export default function Hero({ onOpenToolkit, onAskBuddy, onOpenLead }: Props) {
   const { t } = useTranslation();
 
   return (
