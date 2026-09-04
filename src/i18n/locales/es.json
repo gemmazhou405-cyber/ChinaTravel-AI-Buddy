@@ -1008,11 +1008,27 @@
         "supporting": "",
         "ctaPrimary": "Abrir kit gratuito",
         "ctaSecondary": "Preguntar a Buddy",
+        "ctaTripPlan": "Obtén un plan de viaje gratis",
         "trust1": "Pagos, taxis, comida y emergencias",
         "trust2": "Frases en chino listas para mostrar",
         "trust3": "Sin registro · Sin VPN · Gratis para empezar",
         "free": "Gratis",
         "trust4": "Frases en chino listas para mostrar"
+      },
+      "tripPlan": {
+        "kicker": "Inicio de viaje gratis",
+        "title": "Obtén un plan de viaje gratis para China",
+        "description": "Cuéntanos cuándo viajas y qué quieres ver. Te enviaremos los siguientes pasos prácticos para tu primer viaje a China.",
+        "item1": "Una ruta sencilla según tus fechas e intereses",
+        "item2": "Las apps, pagos, transporte y preparativos clave",
+        "item3": "Respuesta personal por email o WhatsApp, tú eliges",
+        "note": "Sin pago y sin código SMS. Usaremos tus datos solo para preparar y responder a esta solicitud.",
+        "formTitle": "Cuéntanos sobre tu viaje",
+        "formSubtitle": "Empieza por lo básico. Puedes escribir poco.",
+        "submit": "Solicitar mi plan gratis",
+        "successTitle": "Tu solicitud ha sido enviada",
+        "success": "Gracias — recibimos tus datos. Revisaremos tu viaje y te responderemos con un plan inicial práctico.",
+        "submitAnother": "Enviar otra solicitud"
       },
       "demo": {
         "header": "Pregúntale a Buddy. En tu idioma.",
@@ -1082,6 +1098,7 @@
         "language": "Idioma"
       },
       "nav": {
+        "tripPlan": "Plan gratis",
         "toolkit": "Kit de viaje",
         "features": "Funciones",
         "pricing": "Precios"
@@ -1263,7 +1280,7 @@
     },
     "lead": {
       "ctaTitle": "¿Necesitas ayuda para planificar tu viaje a China?",
-      "ctaDesc": "Comparte tu email y algunos detalles del viaje. Te ayudaremos a dar el siguiente paso.",
+      "ctaDesc": "Obtén un plan inicial gratis. Comparte tu email y algunos detalles — sin verificación telefónica ni pago.",
       "ctaButton": "Planificar mi viaje",
       "ctaDismiss": "Ahora no",
       "formTitle": "Cuéntanos sobre tu viaje",
@@ -1281,7 +1298,14 @@
       "success": "Gracias — hemos recibido los detalles de tu viaje.",
       "errorGeneric": "No se pudo enviar tu información en este momento. Por favor, inténtalo de nuevo.",
       "errorTooMany": "Demasiadas solicitudes. Por favor, inténtalo más tarde.",
-      "errorEmail": "Por favor, introduce una dirección de email válida."
+      "errorEmail": "Por favor, introduce una dirección de email válida.",
+      "contactMethod": "¿Cómo quieres que respondamos?",
+      "contactEmailOption": "Email",
+      "contactWhatsAppOption": "WhatsApp",
+      "fieldWhatsApp": "Número de WhatsApp",
+      "fieldWhatsAppPlaceholder": "+34 600 123 456",
+      "whatsappNote": "Incluye el prefijo del país. No hace falta código de verificación; responderemos manualmente.",
+      "errorWhatsApp": "Introduce un número de WhatsApp válido con prefijo de país."
     }
   }
 }

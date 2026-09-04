@@ -23,11 +23,11 @@ function buildHtml(lead) {
   const rows = [
     ['Submitted at', escapeHtml(submittedAt)],
     ['Email', escapeHtml(lead.email)],
-    ['Phone (verified)', escapeHtml(lead.phoneE164)],
     ['Travel date', escapeHtml(lead.travelDate)],
-    ['Destinations / interests', escapeHtml(lead.destinations)],
     ['Travelers', escapeHtml(lead.travelers)],
     ['Help needed', escapeHtml(lead.helpWith)],
+    ['Preferred contact', escapeHtml(lead.contactMethod)],
+    ['WhatsApp', escapeHtml(lead.whatsapp)],
     ['Locale', escapeHtml(lead.locale)],
     ['Source path', escapeHtml(lead.sourcePath)],
     ['UTM source', escapeHtml(lead.utmSource)],
@@ -53,11 +53,11 @@ function buildText(lead) {
     '',
     `Submitted at: ${textVal(submittedAt)}`,
     `Email:        ${textVal(lead.email)}`,
-    `Phone (verified): ${textVal(lead.phoneE164)}`,
     `Travel date:  ${textVal(lead.travelDate)}`,
     `Travelers:    ${textVal(lead.travelers)}`,
-    `Destinations: ${textVal(lead.destinations)}`,
     `Help needed:  ${textVal(lead.helpWith)}`,
+    `Contact:      ${textVal(lead.contactMethod)}`,
+    `WhatsApp:     ${textVal(lead.whatsapp)}`,
     `Locale:       ${textVal(lead.locale)}`,
     `Source path:  ${textVal(lead.sourcePath)}`,
     `UTM source:   ${textVal(lead.utmSource)}`,
@@ -75,6 +75,7 @@ function buildConfirmationHtml(lead) {
     ['Trip date', travelDate],
     ['Travelers', travelers],
     ['Help needed', helpWith],
+    ['Preferred contact', escapeHtml(lead.contactMethod)],
   ];
   const trs = rows
     .map(
@@ -108,6 +109,8 @@ function buildConfirmationText(lead) {
     `Travelers:\n${textVal(lead.travelers)}`,
     '',
     `Help needed:\n${textVal(lead.helpWith)}`,
+    '',
+    `Preferred contact:\n${textVal(lead.contactMethod)}`,
     '',
     'This message confirms that your trip enquiry was received. It does not subscribe you to our newsletter.',
     '',
@@ -165,7 +168,7 @@ export async function sendTripLeadNotification(env, lead) {
     {
       from,
       to: env.TRIP_LEAD_NOTIFY_EMAIL,
-      ...(lead.email ? { reply_to: lead.email } : {}),
+      reply_to: lead.email,
       subject: 'New ChinaEase trip lead',
       html: buildHtml(lead),
       text: buildText(lead),

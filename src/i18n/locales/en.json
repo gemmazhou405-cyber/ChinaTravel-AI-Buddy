@@ -1008,11 +1008,27 @@
         "supporting": "",
         "ctaPrimary": "Open Free Toolkit",
         "ctaSecondary": "Ask Buddy",
+        "ctaTripPlan": "Get a free China trip plan",
         "trust1": "Payments, taxis, food, and emergencies",
         "trust2": "Chinese phrases ready to show locals",
         "trust3": "No sign-in · No VPN · Free to start",
         "free": "Free",
         "trust4": "Chinese phrases ready to show locals"
+      },
+      "tripPlan": {
+        "kicker": "Free trip starter",
+        "title": "Get a free China trip plan",
+        "description": "Tell us when you are visiting and what you want to see. We will send practical next steps for your first China trip.",
+        "item1": "A simple route outline based on your dates and interests",
+        "item2": "The key apps, payment, transport, and arrival checks to prepare",
+        "item3": "A human follow-up by email or WhatsApp — your choice",
+        "note": "No payment and no SMS verification code. We only use your details to prepare and respond to this trip request.",
+        "formTitle": "Tell us about your trip",
+        "formSubtitle": "Start with the basics. You can keep it short.",
+        "submit": "Send my free plan request",
+        "successTitle": "Your request is on its way",
+        "success": "Thanks — we received your details. We will review your trip and reply with a practical starter plan.",
+        "submitAnother": "Submit another request"
       },
       "demo": {
         "header": "Ask Buddy. In your language.",
@@ -1082,6 +1098,7 @@
         "language": "Language"
       },
       "nav": {
+        "tripPlan": "Free trip plan",
         "toolkit": "Toolkit",
         "features": "Features",
         "pricing": "Pricing"
@@ -1263,7 +1280,7 @@
     },
     "lead": {
       "ctaTitle": "Need help planning your China trip?",
-      "ctaDesc": "Share your email and a few trip details. We'll help you take the next step.",
+      "ctaDesc": "Get a free starter plan. Share your email and a few trip details — no phone verification or payment required.",
       "ctaButton": "Plan my trip",
       "ctaDismiss": "Not now",
       "formTitle": "Tell us about your trip",
@@ -1281,7 +1298,14 @@
       "success": "Thanks — we've received your trip details.",
       "errorGeneric": "Could not send your details right now. Please try again.",
       "errorTooMany": "Too many requests. Please try again later.",
-      "errorEmail": "Please enter a valid email address."
+      "errorEmail": "Please enter a valid email address.",
+      "contactMethod": "How should we reply?",
+      "contactEmailOption": "Email",
+      "contactWhatsAppOption": "WhatsApp",
+      "fieldWhatsApp": "WhatsApp number",
+      "fieldWhatsAppPlaceholder": "+44 7700 900000",
+      "whatsappNote": "Include your country code. No verification code is required; we will reply manually.",
+      "errorWhatsApp": "Please enter a valid WhatsApp number with country code."
     }
   }
 }

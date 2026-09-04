@@ -4,7 +4,7 @@ import { X, Send, Sparkles, AlertCircle, ArrowLeft, RotateCcw } from 'lucide-rea
 import { useTranslation } from 'react-i18next';
 import { trackAppError, trackEvent, markFunnelOnce } from '../lib/analytics';
 import { renderChatMarkdown } from '../lib/chatMarkdown';
-import { submitTripLead } from '../lib/tripLead';
+import { isValidWhatsApp, submitTripLead } from '../lib/tripLead';
 import type { PassState } from '../hooks/usePass';
 
 interface Message {
@@ -52,7 +52,9 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
   const [leadDate, setLeadDate] = useState('');
   const [leadTravelers, setLeadTravelers] = useState('');
   const [leadHelp, setLeadHelp] = useState('');
-  const [leadApiError, setLeadApiError] = useState<'generic' | 'too_many' | null>(null);
+  const [leadWhatsApp, setLeadWhatsApp] = useState('');
+  const [leadContactMethod, setLeadContactMethod] = useState<'email' | 'whatsapp'>('email');
+  const [leadApiError, setLeadApiError] = useState<'generic' | 'too_many' | 'whatsapp' | null>(null);
   const [leadRequestId, setLeadRequestId] = useState<string>(() =>
     crypto.randomUUID()
   );
@@ -174,6 +176,8 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
     setLeadDate('');
     setLeadTravelers('');
     setLeadHelp('');
+    setLeadWhatsApp('');
+    setLeadContactMethod('email');
     setLeadApiError(null);
     setLeadRequestId(crypto.randomUUID());
   };
@@ -182,6 +186,10 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
     const emailTrimmed = leadEmail.trim().toLowerCase();
     if (!emailTrimmed || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailTrimmed)) {
       setLeadApiError('generic');
+      return;
+    }
+    if (leadContactMethod === 'whatsapp' && !isValidWhatsApp(leadWhatsApp)) {
+      setLeadApiError('whatsapp');
       return;
     }
     setLeadCtaState('submitting');
@@ -196,6 +204,8 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
       travelDate: leadDate.trim() || undefined,
       travelers: travelers && travelers >= 1 && travelers <= 20 ? travelers : undefined,
       helpWith: leadHelp.trim() || undefined,
+      whatsapp: leadWhatsApp.trim() || undefined,
+      contactMethod: leadContactMethod,
     });
     if (result === 'success') {
       setLeadCtaState('success');
@@ -515,7 +525,7 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
 
                   {leadApiError && (
                     <p role="alert" aria-live="assertive" className="mt-2 text-xs font-semibold text-red-600">
-                      {t(leadApiError === 'too_many' ? 'lead.errorTooMany' : 'lead.errorGeneric')}
+                      {t(leadApiError === 'too_many' ? 'lead.errorTooMany' : leadApiError === 'whatsapp' ? 'lead.errorWhatsApp' : 'lead.errorGeneric')}
                     </p>
                   )}
 
@@ -594,6 +604,58 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
                         {t('lead.fieldHelpCount', { count: leadHelp.length })}
                       </p>
                     </div>
+
+                    <fieldset>
+                      <legend className="text-xs font-semibold text-ink">{t('lead.contactMethod')}</legend>
+                      <div className="mt-2 grid gap-2 sm:grid-cols-2">
+                        <label className={`flex cursor-pointer items-center gap-2 rounded-lg border px-3 py-2 text-xs transition-colors ${leadContactMethod === 'email' ? 'border-jade/40 bg-surface text-ink' : 'border-hairline text-ink-secondary'}`}>
+                          <input
+                            type="radio"
+                            name="lead-contact-method"
+                            value="email"
+                            checked={leadContactMethod === 'email'}
+                            onChange={() => setLeadContactMethod('email')}
+                            disabled={leadCtaState === 'submitting'}
+                            className="accent-[#0F5257]"
+                          />
+                          <span>{t('lead.contactEmailOption')}</span>
+                        </label>
+                        <label className={`flex cursor-pointer items-center gap-2 rounded-lg border px-3 py-2 text-xs transition-colors ${leadContactMethod === 'whatsapp' ? 'border-jade/40 bg-surface text-ink' : 'border-hairline text-ink-secondary'}`}>
+                          <input
+                            type="radio"
+                            name="lead-contact-method"
+                            value="whatsapp"
+                            checked={leadContactMethod === 'whatsapp'}
+                            onChange={() => setLeadContactMethod('whatsapp')}
+                            disabled={leadCtaState === 'submitting'}
+                            className="accent-[#0F5257]"
+                          />
+                          <span>{t('lead.contactWhatsAppOption')}</span>
+                        </label>
+                      </div>
+                    </fieldset>
+
+                    {leadContactMethod === 'whatsapp' && (
+                      <div>
+                        <label htmlFor="lead-whatsapp" className="text-xs font-semibold text-ink">
+                          {t('lead.fieldWhatsApp')} *
+                        </label>
+                        <input
+                          id="lead-whatsapp"
+                          type="tel"
+                          autoComplete="tel"
+                          inputMode="tel"
+                          value={leadWhatsApp}
+                          onChange={(e) => setLeadWhatsApp(e.target.value)}
+                          disabled={leadCtaState === 'submitting'}
+                          maxLength={40}
+                          placeholder={t('lead.fieldWhatsAppPlaceholder')}
+                          style={{ fontSize: '16px' }}
+                          className="mt-1 w-full rounded-lg border border-hairline bg-surface px-3 py-2 text-sm text-ink outline-none focus:border-jade/40 disabled:opacity-60"
+                        />
+                        <p className="mt-1 text-xs leading-relaxed text-ink-tertiary">{t('lead.whatsappNote')}</p>
+                      </div>
+                    )}
                   </div>
 
                   {/* Honeypot — hidden from real users */}

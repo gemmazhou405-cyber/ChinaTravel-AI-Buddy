@@ -1010,11 +1010,27 @@
         "supporting": "",
         "ctaPrimary": "무료 툴킷 열기",
         "ctaSecondary": "Buddy에게 묻기",
+        "ctaTripPlan": "무료 중국 여행 플랜 받기",
         "trust1": "결제, 택시, 음식, 긴급 상황 지원",
         "trust2": "현지인에게 보여줄 중국어 문구 준비 완료",
         "trust3": "로그인 불필요 · VPN 불필요 · 무료 시작",
         "free": "무료",
         "trust4": "현지인에게 보여줄 중국어 문구 준비"
+      },
+      "tripPlan": {
+        "kicker": "무료 여행 스타터",
+        "title": "무료 중국 여행 플랜을 받아보세요",
+        "description": "여행 일정과 가고 싶은 곳을 알려주세요. 첫 중국 여행을 위한 실용적인 다음 단계를 보내드립니다.",
+        "item1": "일정과 관심사에 맞춘 간단한 루트 제안",
+        "item2": "준비해야 할 앱, 결제, 교통, 도착 체크",
+        "item3": "이메일 또는 WhatsApp으로 받는 개인 답변",
+        "note": "결제와 SMS 인증 코드가 필요 없습니다. 이 여행 문의에 답변하는 데만 정보를 사용합니다.",
+        "formTitle": "여행 정보를 알려주세요",
+        "formSubtitle": "기본 정보부터 짧게 시작해도 됩니다.",
+        "submit": "무료 플랜 요청하기",
+        "successTitle": "요청이 전송되었습니다",
+        "success": "감사합니다. 내용을 확인한 뒤 실용적인 여행 스타터 플랜으로 답변드리겠습니다.",
+        "submitAnother": "다른 요청 보내기"
       },
       "demo": {
         "header": "Buddy에게 물어보세요. 당신의 언어로.",
@@ -1084,6 +1100,7 @@
         "language": "언어"
       },
       "nav": {
+        "tripPlan": "무료 플랜",
         "toolkit": "툴킷",
         "features": "기능",
         "pricing": "요금"
@@ -1265,7 +1282,7 @@
     },
     "lead": {
       "ctaTitle": "중국 여행 계획에 도움이 필요하신가요?",
-      "ctaDesc": "이메일과 여행 세부 정보를 공유해 주세요. 다음 단계를 도와드리겠습니다.",
+      "ctaDesc": "무료 여행 스타터 플랜을 받아보세요. 이메일과 여행 정보를 공유하면 되며 전화 인증이나 결제가 필요하지 않습니다.",
       "ctaButton": "여행 계획하기",
       "ctaDismiss": "나중에",
       "formTitle": "여행에 대해 알려주세요",
@@ -1283,7 +1300,14 @@
       "success": "감사합니다 — 여행 정보를 받았습니다.",
       "errorGeneric": "현재 정보를 전송할 수 없습니다. 다시 시도해 주세요.",
       "errorTooMany": "요청이 너무 많습니다. 잠시 후 다시 시도해 주세요.",
-      "errorEmail": "유효한 이메일 주소를 입력해 주세요."
+      "errorEmail": "유효한 이메일 주소를 입력해 주세요.",
+      "contactMethod": "어떻게 답변해 드릴까요?",
+      "contactEmailOption": "이메일",
+      "contactWhatsAppOption": "WhatsApp",
+      "fieldWhatsApp": "WhatsApp 번호",
+      "fieldWhatsAppPlaceholder": "+82 10 1234 5678",
+      "whatsappNote": "국가번호를 포함해 주세요. 인증 코드는 필요하지 않으며 직접 답변드립니다.",
+      "errorWhatsApp": "국가번호를 포함한 유효한 WhatsApp 번호를 입력해 주세요."
     }
   }
 }

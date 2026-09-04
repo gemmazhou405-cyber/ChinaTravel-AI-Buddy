@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import Hero from './components/Hero';
-import LeadCaptureSection from './components/LeadCaptureSection';
 import SiteHeader from './components/SiteHeader';
 import TabNav from './components/TabNav';
 import TabContent from './components/TabContent';
@@ -8,6 +7,7 @@ import Scenarios from './components/home/Scenarios';
 import ToolkitGrid from './components/home/ToolkitGrid';
 import BuddyDemo from './components/home/BuddyDemo';
 import HomePasses from './components/home/HomePasses';
+import TripPlanLead from './components/home/TripPlanLead';
 import ChatButton from './components/ChatButton';
 import ChatModal from './components/ChatModal';
 import Footer from './components/Footer';
@@ -164,13 +164,16 @@ export default function App() {
     openToolkit();
   };
 
-  const navigateToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const handleTripPlanCta = () => {
+    void trackEvent('lead_form_opened', { trigger: 'hero_trip_plan' });
+    window.setTimeout(() => {
+      document.getElementById('trip-plan')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('homepage-lead-email')?.focus();
+    }, 0);
   };
 
-  const openLeadCapture = () => {
-    void trackEvent('lead_form_opened', { trigger: 'hero_cta', location: 'homepage_free_trip_plan' });
-    window.setTimeout(() => scrollToElementId('free-trip-plan'), 0);
+  const navigateToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
@@ -190,9 +193,9 @@ export default function App() {
         }}
       />
 
-      <Hero onOpenToolkit={handlePrimaryCta} onAskBuddy={() => openBuddy()} onOpenLead={openLeadCapture} />
+      <Hero onOpenToolkit={handlePrimaryCta} onAskBuddy={() => openBuddy()} onOpenTripPlan={handleTripPlanCta} />
 
-      <LeadCaptureSection />
+      <TripPlanLead />
 
       {toolOpen && (
         <div className="relative">

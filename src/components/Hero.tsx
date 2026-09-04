@@ -7,10 +7,10 @@ const TRUST_KEYS = ['trust1', 'trust2', 'trust3'] as const;
 interface Props {
   onOpenToolkit: () => void;
   onAskBuddy: () => void;
-  onOpenLead: () => void;
+  onOpenTripPlan: () => void;
 }
 
-export default function Hero({ onOpenToolkit, onAskBuddy, onOpenLead }: Props) {
+export default function Hero({ onOpenToolkit, onAskBuddy, onOpenTripPlan }: Props) {
   const { t } = useTranslation();
 
   return (
@@ -47,14 +47,6 @@ export default function Hero({ onOpenToolkit, onAskBuddy, onOpenLead }: Props) {
             </button>
           </div>
 
-          <button
-            onClick={onOpenLead}
-            className="group mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-jade transition-colors duration-hover ease-out hover:text-jade-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jade"
-          >
-            Get a free personalised China trip plan
-            <ArrowRight className="h-4 w-4 transition-transform duration-hover ease-out motion-safe:group-hover:translate-x-0.5" strokeWidth={1.5} />
-          </button>
-
           <div className="glass mt-10 grid grid-cols-1 gap-x-6 gap-y-2.5 rounded-xl px-5 py-4 sm:grid-cols-2">
             {TRUST_KEYS.map((key) => (
               <span key={key} className="flex items-center gap-2 text-sm font-medium text-ink">
@@ -63,6 +55,15 @@ export default function Hero({ onOpenToolkit, onAskBuddy, onOpenLead }: Props) {
               </span>
             ))}
           </div>
+
+          <button
+            type="button"
+            onClick={onOpenTripPlan}
+            className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-jade transition-colors duration-hover ease-out hover:text-jade-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade"
+          >
+            {t('home.hero.ctaTripPlan')}
+            <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
+          </button>
         </div>
 
         <PhoneDemo />

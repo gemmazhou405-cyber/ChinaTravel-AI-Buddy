@@ -1008,11 +1008,27 @@
         "supporting": "",
         "ctaPrimary": "Ouvrir la boîte à outils gratuite",
         "ctaSecondary": "Demander à Buddy",
+        "ctaTripPlan": "Obtenir un plan de voyage gratuit",
         "trust1": "Paiements, taxis, nourriture et urgences",
         "trust2": "Phrases chinoises prêtes à montrer aux habitants",
         "trust3": "Sans inscription · Sans VPN · Gratuit",
         "free": "Gratuit",
         "trust4": "Phrases en chinois prêtes à montrer aux locaux"
+      },
+      "tripPlan": {
+        "kicker": "Démarrage gratuit",
+        "title": "Obtenez un plan de voyage gratuit pour la Chine",
+        "description": "Indiquez vos dates et ce que vous voulez voir. Nous vous enverrons les prochaines étapes utiles pour votre premier voyage en Chine.",
+        "item1": "Un itinéraire simple selon vos dates et vos envies",
+        "item2": "Les applis, paiements, transports et vérifications à préparer",
+        "item3": "Un suivi humain par e-mail ou WhatsApp, au choix",
+        "note": "Aucun paiement ni code SMS. Vos informations servent uniquement à préparer et traiter cette demande.",
+        "formTitle": "Parlez-nous de votre voyage",
+        "formSubtitle": "Commencez par l'essentiel. Réponse courte acceptée.",
+        "submit": "Demander mon plan gratuit",
+        "successTitle": "Votre demande est envoyée",
+        "success": "Merci — nous avons reçu vos informations. Nous allons les examiner et vous répondre avec un plan de départ pratique.",
+        "submitAnother": "Envoyer une autre demande"
       },
       "demo": {
         "header": "Demandez à Buddy. Dans votre langue.",
@@ -1082,6 +1098,7 @@
         "language": "Langue"
       },
       "nav": {
+        "tripPlan": "Plan gratuit",
         "toolkit": "Boîte à outils",
         "features": "Fonctionnalités",
         "pricing": "Tarifs"
@@ -1263,7 +1280,7 @@
     },
     "lead": {
       "ctaTitle": "Besoin d'aide pour planifier votre voyage en Chine ?",
-      "ctaDesc": "Partagez votre email et quelques détails sur votre voyage. Nous vous aiderons à passer à l'étape suivante.",
+      "ctaDesc": "Obtenez un plan de départ gratuit. Partagez votre e-mail et quelques détails — sans vérification téléphonique ni paiement.",
       "ctaButton": "Planifier mon voyage",
       "ctaDismiss": "Pas maintenant",
       "formTitle": "Parlez-nous de votre voyage",
@@ -1281,7 +1298,14 @@
       "success": "Merci — nous avons bien reçu vos informations de voyage.",
       "errorGeneric": "Impossible d'envoyer vos informations pour le moment. Veuillez réessayer.",
       "errorTooMany": "Trop de demandes. Veuillez réessayer plus tard.",
-      "errorEmail": "Veuillez saisir une adresse email valide."
+      "errorEmail": "Veuillez saisir une adresse email valide.",
+      "contactMethod": "Comment souhaitez-vous recevoir notre réponse ?",
+      "contactEmailOption": "E-mail",
+      "contactWhatsAppOption": "WhatsApp",
+      "fieldWhatsApp": "Numéro WhatsApp",
+      "fieldWhatsAppPlaceholder": "+33 6 12 34 56 78",
+      "whatsappNote": "Ajoutez l'indicatif du pays. Aucun code de vérification n'est requis ; nous répondrons manuellement.",
+      "errorWhatsApp": "Saisissez un numéro WhatsApp valide avec l'indicatif du pays."
     }
   }
 }

@@ -1008,11 +1008,27 @@
         "supporting": "",
         "ctaPrimary": "Kostenloses Toolkit öffnen",
         "ctaSecondary": "Buddy fragen",
+        "ctaTripPlan": "Kostenlosen China-Reiseplan erhalten",
         "trust1": "Zahlungen, Taxis, Essen und Notfälle",
         "trust2": "Chinesische Sätze zum Vorzeigen bereit",
         "trust3": "Kein Login · Kein VPN · Kostenlos starten",
         "free": "Kostenlos",
         "trust4": "Chinesische Sätze zum Vorzeigen bereit"
+      },
+      "tripPlan": {
+        "kicker": "Kostenloser Reise-Starter",
+        "title": "Kostenlosen China-Reiseplan erhalten",
+        "description": "Teilen Sie uns Ihre Reisedaten und Wunschziele mit. Wir senden praktische nächste Schritte für Ihre erste China-Reise.",
+        "item1": "Eine einfache Route passend zu Ihren Daten und Interessen",
+        "item2": "Wichtige Apps, Zahlungen, Transport- und Ankunfts-Checks",
+        "item3": "Persönliche Antwort per E-Mail oder WhatsApp – Sie entscheiden",
+        "note": "Keine Zahlung und kein SMS-Code. Ihre Angaben werden nur für diese Reiseanfrage verwendet.",
+        "formTitle": "Erzählen Sie uns von Ihrer Reise",
+        "formSubtitle": "Beginnen Sie mit den wichtigsten Angaben.",
+        "submit": "Kostenlosen Plan anfordern",
+        "successTitle": "Ihre Anfrage wurde gesendet",
+        "success": "Vielen Dank — wir haben Ihre Angaben erhalten und melden uns mit einem praktischen Starterplan.",
+        "submitAnother": "Weitere Anfrage senden"
       },
       "demo": {
         "header": "Fragen Sie Buddy. In Ihrer Sprache.",
@@ -1082,6 +1098,7 @@
         "language": "Sprache"
       },
       "nav": {
+        "tripPlan": "Kostenloser Plan",
         "toolkit": "Toolkit",
         "features": "Funktionen",
         "pricing": "Preise"
@@ -1263,7 +1280,7 @@
     },
     "lead": {
       "ctaTitle": "Hilfe bei der Planung Ihrer China-Reise?",
-      "ctaDesc": "Teilen Sie uns Ihre E-Mail-Adresse und einige Reisedetails mit. Wir helfen Ihnen beim nächsten Schritt.",
+      "ctaDesc": "Erhalten Sie einen kostenlosen Starterplan. Teilen Sie Ihre E-Mail und einige Reisedetails — ohne Telefonprüfung oder Zahlung.",
       "ctaButton": "Meine Reise planen",
       "ctaDismiss": "Nicht jetzt",
       "formTitle": "Erzählen Sie uns von Ihrer Reise",
@@ -1281,7 +1298,14 @@
       "success": "Vielen Dank – wir haben Ihre Reisedetails erhalten.",
       "errorGeneric": "Ihre Daten konnten gerade nicht gesendet werden. Bitte versuchen Sie es erneut.",
       "errorTooMany": "Zu viele Anfragen. Bitte versuchen Sie es später erneut.",
-      "errorEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+      "errorEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "contactMethod": "Wie sollen wir antworten?",
+      "contactEmailOption": "E-Mail",
+      "contactWhatsAppOption": "WhatsApp",
+      "fieldWhatsApp": "WhatsApp-Nummer",
+      "fieldWhatsAppPlaceholder": "+49 151 23456789",
+      "whatsappNote": "Bitte mit Ländervorwahl angeben. Kein Bestätigungscode nötig; wir antworten manuell.",
+      "errorWhatsApp": "Bitte geben Sie eine gültige WhatsApp-Nummer mit Ländervorwahl ein."
     }
   }
 }

@@ -11,7 +11,7 @@ interface Props {
   onViewPass: () => void;
 }
 
-const NAV_IDS = ['toolkit', 'features', 'travel-passes'] as const;
+const NAV_IDS = ['trip-plan', 'toolkit', 'features', 'travel-passes'] as const;
 
 export default function SiteHeader({ passState, onAskBuddy, onOpenToolkit, onNavigate, onViewPass }: Props) {
   const { t } = useTranslation();
@@ -21,6 +21,7 @@ export default function SiteHeader({ passState, onAskBuddy, onOpenToolkit, onNav
 
   const hasPaidPass = Boolean(passState && passState.tier !== 'free' && !passState.expired);
   const NAV = [
+    { id: 'trip-plan', label: t('home.nav.tripPlan') },
     { id: 'toolkit', label: t('home.nav.toolkit') },
     { id: 'features', label: t('home.nav.features') },
     { id: 'travel-passes', label: t('home.nav.pricing') },
@@ -45,7 +46,6 @@ export default function SiteHeader({ passState, onAskBuddy, onOpenToolkit, onNav
     );
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
