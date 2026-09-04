@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Hero from './components/Hero';
+import LeadCaptureSection from './components/LeadCaptureSection';
 import SiteHeader from './components/SiteHeader';
 import TabNav from './components/TabNav';
 import TabContent from './components/TabContent';
@@ -167,6 +168,11 @@ export default function App() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
+  const openLeadCapture = () => {
+    void trackEvent('lead_form_opened', { trigger: 'hero_cta', location: 'homepage_free_trip_plan' });
+    window.setTimeout(() => scrollToElementId('free-trip-plan'), 0);
+  };
+
   return (
     <div className="min-h-screen bg-canvas pb-[env(safe-area-inset-bottom)] font-sans">
       <SiteHeader
@@ -184,7 +190,9 @@ export default function App() {
         }}
       />
 
-      <Hero onOpenToolkit={handlePrimaryCta} onAskBuddy={() => openBuddy()} />
+      <Hero onOpenToolkit={handlePrimaryCta} onAskBuddy={() => openBuddy()} onOpenLead={openLeadCapture} />
+
+      <LeadCaptureSection />
 
       {toolOpen && (
         <div className="relative">
