@@ -1,10 +1,20 @@
 import { getAttributionContext } from './analytics';
 
 export interface TripLeadPayload {
+  firstName?: string;
   email: string;
+  countryOfResidence?: string;
+  plannedTravelMonth?: string;
+  numberOfTravellers?: number;
+  citiesAndInterests?: string;
+  whatsapp?: string;
   travelDate?: string;
   travelers?: number;
   helpWith?: string;
+  consentAccepted?: boolean;
+  consentVersion?: string;
+  locale?: string;
+  sourcePath?: string;
   requestId: string;
 }
 
@@ -18,23 +28,51 @@ export async function submitTripLead(
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         requestId: payload.requestId,
+        firstName: payload.firstName,
         email: payload.email,
-        travelDate: payload.travelDate ?? '',
-        travelers: payload.travelers ?? '',
-        helpWith: payload.helpWith ?? '',
-        locale: document.documentElement.lang || 'en',
-        sourcePath: window.location.pathname + window.location.search,
+        countryOfResidence: payload.countryOfResidence,
+        plannedTravelMonth: payload.plannedTravelMonth ?? payload.travelDate ?? '',
+        numberOfTravellers: payload.numberOfTravellers ?? payload.travelers ?? '',
+        citiesAndInterests: payload.citiesAndInterests ?? '',
+        whatsapp: payload.whatsapp ?? '',
+        travelDate: payload.plannedTravelMonth ?? payload.travelDate ?? '',
+        travelers: payload.numberOfTravellers ?? payload.travelers ?? '',
+        helpWith: payload.citiesAndInterests ?? payload.helpWith ?? '',
+        consentAccepted: payload.consentAccepted ?? false,
+        consentVersion: payload.consentVersion ?? 'trip-lead-2026-08',
+        locale: (payload.locale ?? document.documentElement.lang) || 'en',
+        sourcePath: payload.sourcePath ?? (window.location.pathname + window.location.search),
         utmSource: attr.utm_source,
         utmMedium: attr.utm_medium,
         utmCampaign: attr.utm_campaign,
         utmContent: attr.utm_content,
         website: '',
-        consentVersion: 'trip-lead-2026-08',
+        honeypot: '',
       }),
     });
+
     if (res.status === 429) return 'too_many';
-    if (!res.ok) return 'error';
-    return 'success';
+    if (res.status !== 200) return 'error';
+
+    const contentType = res.headers.get('content-type') || '';
+    if (!contentType.includes('application/json')) return 'error';
+
+    let data: unknown;
+    try {
+      data = await res.json();
+    } catch {
+      return 'error';
+    }
+
+    if (
+      data &&
+      typeof data === 'object' &&
+      'status' in data &&
+      (data as Record<string, unknown>).status === 'received'
+    ) {
+      return 'success';
+    }
+    return 'error';
   } catch {
     return 'error';
   }

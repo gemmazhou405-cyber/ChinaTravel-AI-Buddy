@@ -1267,21 +1267,38 @@
       "ctaButton": "Planifier mon voyage",
       "ctaDismiss": "Pas maintenant",
       "formTitle": "Parlez-nous de votre voyage",
+      "fieldFirstName": "First name",
       "fieldEmail": "Email",
+      "fieldCountry": "Country of residence",
       "fieldDate": "Date de voyage",
       "fieldDatePlaceholder": "ex. Octobre 2026 ou T4 2026",
+      "fieldTravelMonth": "When are you planning to travel?",
+      "fieldTravelMonthPlaceholder": "e.g. October 2026",
       "fieldTravelers": "Voyageurs",
       "fieldHelp": "En quoi pouvons-nous vous aider ?",
       "fieldHelpPlaceholder": "Décrivez ce que vous souhaitez planifier. N'incluez pas de passeport, de données bancaires ou d'informations médicales sensibles.",
       "fieldHelpCount": "{{count}}/500",
+      "fieldCities": "Which cities and experiences interest you?",
+      "fieldCitiesPlaceholder": "Tell us the cities you're considering, what you enjoy and anything we should know.",
+      "fieldWhatsApp": "WhatsApp number (optional)",
+      "consentLabel": "I agree to the Privacy Policy and consent to ChinaEase Buddy using my details to prepare and deliver my itinerary.",
+      "consentVersion": "trip-lead-2026-08",
       "submit": "Envoyer mes informations de voyage",
       "submitting": "Envoi en cours...",
+      "benefits": [
+        "Built around your dates, cities and interests",
+        "Practical transport, timing and daily pacing",
+        "Human-reviewed before it reaches your inbox"
+      ],
+      "trustNote": "Free · Human-reviewed · Delivered by email within 24 hours.",
+      "privacyNote": "We'll only use your details to prepare and deliver your itinerary.",
       "consent": "Nous utiliserons vos coordonnées uniquement pour vous aider dans votre voyage.",
       "consentLink": "Politique de confidentialité",
       "success": "Merci — nous avons bien reçu vos informations de voyage.",
       "errorGeneric": "Impossible d'envoyer vos informations pour le moment. Veuillez réessayer.",
       "errorTooMany": "Trop de demandes. Veuillez réessayer plus tard.",
-      "errorEmail": "Veuillez saisir une adresse email valide."
+      "errorEmail": "Veuillez saisir une adresse email valide.",
+      "errorConsent": "Please accept the consent to continue."
     }
   }
 }

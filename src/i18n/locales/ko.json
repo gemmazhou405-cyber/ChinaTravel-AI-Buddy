@@ -1269,21 +1269,38 @@
       "ctaButton": "여행 계획하기",
       "ctaDismiss": "나중에",
       "formTitle": "여행에 대해 알려주세요",
+      "fieldFirstName": "First name",
       "fieldEmail": "이메일",
+      "fieldCountry": "Country of residence",
       "fieldDate": "여행 날짜",
       "fieldDatePlaceholder": "예: 2026년 10월 또는 2026년 4분기",
+      "fieldTravelMonth": "When are you planning to travel?",
+      "fieldTravelMonthPlaceholder": "e.g. October 2026",
       "fieldTravelers": "여행 인원",
       "fieldHelp": "어떤 도움이 필요하신가요?",
       "fieldHelpPlaceholder": "계획하고 싶은 내용을 알려주세요. 여권, 결제, 민감한 건강 정보는 포함하지 마세요.",
       "fieldHelpCount": "{{count}}/500",
+      "fieldCities": "Which cities and experiences interest you?",
+      "fieldCitiesPlaceholder": "Tell us the cities you're considering, what you enjoy and anything we should know.",
+      "fieldWhatsApp": "WhatsApp number (optional)",
+      "consentLabel": "I agree to the Privacy Policy and consent to ChinaEase Buddy using my details to prepare and deliver my itinerary.",
+      "consentVersion": "trip-lead-2026-08",
       "submit": "여행 정보 전송",
       "submitting": "전송 중...",
+      "benefits": [
+        "Built around your dates, cities and interests",
+        "Practical transport, timing and daily pacing",
+        "Human-reviewed before it reaches your inbox"
+      ],
+      "trustNote": "Free · Human-reviewed · Delivered by email within 24 hours.",
+      "privacyNote": "We'll only use your details to prepare and deliver your itinerary.",
       "consent": "입력하신 정보는 여행 도움 목적으로만 사용됩니다.",
       "consentLink": "개인정보 처리방침",
       "success": "감사합니다 — 여행 정보를 받았습니다.",
       "errorGeneric": "현재 정보를 전송할 수 없습니다. 다시 시도해 주세요.",
       "errorTooMany": "요청이 너무 많습니다. 잠시 후 다시 시도해 주세요.",
-      "errorEmail": "유효한 이메일 주소를 입력해 주세요."
+      "errorEmail": "유효한 이메일 주소를 입력해 주세요.",
+      "errorConsent": "Please accept the consent to continue."
     }
   }
 }

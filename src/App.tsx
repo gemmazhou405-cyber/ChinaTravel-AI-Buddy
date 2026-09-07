@@ -8,6 +8,7 @@ import ToolkitGrid from './components/home/ToolkitGrid';
 import BuddyDemo from './components/home/BuddyDemo';
 import HomePasses from './components/home/HomePasses';
 import ChatButton from './components/ChatButton';
+import TripPlanForm from './components/home/TripPlanForm';
 import ChatModal from './components/ChatModal';
 import Footer from './components/Footer';
 import Toast from './components/Toast';
@@ -167,6 +168,11 @@ export default function App() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
+  const scrollToForm = () => {
+    navigateToSection('free-itinerary');
+    void trackEvent('itinerary_cta_clicked', { journey: analyticsJourney(landing.journey) });
+  };
+
   return (
     <div className="min-h-screen bg-canvas pb-[env(safe-area-inset-bottom)] font-sans">
       <SiteHeader
@@ -184,7 +190,7 @@ export default function App() {
         }}
       />
 
-      <Hero onOpenToolkit={handlePrimaryCta} onAskBuddy={() => openBuddy()} />
+      <Hero onOpenToolkit={scrollToForm} onAskBuddy={() => openBuddy()} />
 
       {toolOpen && (
         <div className="relative">
@@ -216,6 +222,8 @@ export default function App() {
       />
 
       <Footer onOpenEmergency={() => openToolkit('emergency')} />
+
+      <TripPlanForm />
 
       <ChatButton onClick={() => openBuddy()} />
       {chatOpen && (

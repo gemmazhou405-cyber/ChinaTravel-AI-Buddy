@@ -1269,21 +1269,38 @@
       "ctaButton": "旅行を計画する",
       "ctaDismiss": "今はしない",
       "formTitle": "旅行について教えてください",
+      "fieldFirstName": "First name",
       "fieldEmail": "メールアドレス",
+      "fieldCountry": "Country of residence",
       "fieldDate": "旅行日程",
       "fieldDatePlaceholder": "例：2026年10月、または2026年第4四半期",
+      "fieldTravelMonth": "When are you planning to travel?",
+      "fieldTravelMonthPlaceholder": "e.g. October 2026",
       "fieldTravelers": "旅行人数",
       "fieldHelp": "どのようなお手伝いが必要ですか？",
       "fieldHelpPlaceholder": "計画したいことを教えてください。パスポート情報、支払い情報、医療などの機密情報は記入しないでください。",
       "fieldHelpCount": "{{count}}/500",
+      "fieldCities": "Which cities and experiences interest you?",
+      "fieldCitiesPlaceholder": "Tell us the cities you're considering, what you enjoy and anything we should know.",
+      "fieldWhatsApp": "WhatsApp number (optional)",
+      "consentLabel": "I agree to the Privacy Policy and consent to ChinaEase Buddy using my details to prepare and deliver my itinerary.",
+      "consentVersion": "trip-lead-2026-08",
       "submit": "旅行の詳細を送信",
       "submitting": "送信中...",
+      "benefits": [
+        "Built around your dates, cities and interests",
+        "Practical transport, timing and daily pacing",
+        "Human-reviewed before it reaches your inbox"
+      ],
+      "trustNote": "Free · Human-reviewed · Delivered by email within 24 hours.",
+      "privacyNote": "We'll only use your details to prepare and deliver your itinerary.",
       "consent": "ご入力いただいた情報は、旅行のサポート目的にのみ使用します。",
       "consentLink": "プライバシーポリシー",
       "success": "ありがとうございます — 旅行の詳細を受け取りました。",
       "errorGeneric": "現在、情報を送信できませんでした。もう一度お試しください。",
       "errorTooMany": "リクエストが多すぎます。しばらくしてから再試行してください。",
-      "errorEmail": "有効なメールアドレスを入力してください。"
+      "errorEmail": "有効なメールアドレスを入力してください。",
+      "errorConsent": "Please accept the consent to continue."
     }
   }
 }
