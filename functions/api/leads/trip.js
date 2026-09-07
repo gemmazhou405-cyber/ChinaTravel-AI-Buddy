@@ -48,6 +48,15 @@ function parseWhatsApp(value) {
   return trimmed;
 }
 
+function parseStringArray(value, maxItems = 12, maxLength = 80) {
+  if (!Array.isArray(value)) return [];
+  return value
+    .filter((item) => typeof item === 'string')
+    .map((item) => item.trim().slice(0, maxLength))
+    .filter(Boolean)
+    .slice(0, maxItems);
+}
+
 export async function onRequestOptions({ request, env }) {
   return optionsResponse(request, env);
 }
@@ -97,6 +106,15 @@ export async function onRequestPost({ request, env }) {
     if (Number.isNaN(v) || v < 1 || v > 20) return null;
     return v;
   })();
+  const tripLength = (() => {
+    const v = parseInt(body.tripLength, 10);
+    return Number.isNaN(v) || v < 1 || v > 60 ? null : v;
+  })();
+  const departureCountry = clampStr(body.departureCountry, 80);
+  const arrivalCity = clampStr(body.arrivalCity, 80);
+  const destinationCities = parseStringArray(body.destinationCities);
+  const priorities = parseStringArray(body.priorities);
+  const concerns = parseStringArray(body.concerns);
   const locale = clampStr(body.locale, 8) ?? 'en';
   const sourcePath = clampStr(body.sourcePath, 500);
   const utmSource = clampStr(body.utmSource, 80);
@@ -121,6 +139,12 @@ export async function onRequestPost({ request, env }) {
       emailHash,
       travelDate,
       travelers,
+      tripLength,
+      departureCountry,
+      arrivalCity,
+      destinationCities,
+      priorities,
+      concerns,
       helpWith,
       whatsapp,
       contactMethod,
@@ -153,6 +177,12 @@ export async function onRequestPost({ request, env }) {
     email: emailRaw,
     travelDate,
     travelers,
+    tripLength,
+    departureCountry,
+    arrivalCity,
+    destinationCities,
+    priorities,
+    concerns,
     helpWith,
     whatsapp,
     contactMethod,
@@ -214,3 +244,4 @@ export async function onRequestPost({ request, env }) {
 
   return withCors(jsonResponse({ status: 'received' }), request, env);
 }
+

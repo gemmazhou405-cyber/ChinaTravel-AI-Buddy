@@ -1,6 +1,6 @@
 import { ArrowRight, Check, Mail, MessageCircle, Send } from 'lucide-react';
 import type { CSSProperties, FormEvent } from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRevealOnView } from '../../hooks/useRevealOnView';
 import { markFunnelOnce, trackEvent, trackEventOnce } from '../../lib/analytics';
@@ -8,285 +8,40 @@ import { isValidWhatsApp, submitTripLead } from '../../lib/tripLead';
 
 type ContactMethod = 'email' | 'whatsapp';
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
+const cities = ['Beijing', 'Shanghai', 'Xi’an', 'Chengdu', 'Chongqing', 'Guilin', 'Zhangjiajie', 'Hangzhou', 'Guangzhou', 'Shenzhen'];
+const arrivalCities = ['Beijing', 'Shanghai', 'Guangzhou', 'Shenzhen', 'Chengdu', 'Chongqing', 'Xi’an', 'Guilin', 'Kunming', 'Hangzhou', 'Hong Kong'];
+const priorities = ['Scenery & nature', 'Local culture & history', 'Food', 'Shopping & city life', 'Family-friendly activities', 'Medical / hospital visit'];
+const concerns = ['Language & translation', 'Food allergies / dietary needs', 'Accommodation experience', 'Transport & navigation', 'Payments & mobile apps', 'Accessibility / mobility'];
+const countries = ['United Kingdom', 'United States', 'Australia', 'Canada', 'France', 'Germany', 'Spain', 'Italy', 'Japan', 'South Korea', 'Singapore', 'Other'];
 
 function createRequestId() {
   if (typeof crypto !== 'undefined' && 'randomUUID' in crypto) return crypto.randomUUID();
   return `trip_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`;
 }
 
+function ToggleGroup({ items, values, onChange, disabled }: { items: string[]; values: string[]; onChange: (value: string) => void; disabled: boolean }) {
+  return <div className="mt-2 grid gap-2 sm:grid-cols-2">{items.map((item) => { const checked = values.includes(item); return <label key={item} className={`flex cursor-pointer items-center gap-2 rounded-lg border px-3 py-2.5 text-sm transition-colors ${checked ? 'border-jade/40 bg-white/80 text-ink' : 'border-hairline bg-white/35 text-ink-secondary'}`}><input type="checkbox" checked={checked} onChange={() => onChange(item)} disabled={disabled} className="accent-[#0F5257]" /><span>{item}</span></label>; })}</div>;
+}
+
 export default function TripPlanLead() {
   const { t } = useTranslation();
   const { ref, revealed } = useRevealOnView<HTMLElement>();
-  const [email, setEmail] = useState('');
-  const [travelDate, setTravelDate] = useState('');
-  const [travelers, setTravelers] = useState('');
-  const [helpWith, setHelpWith] = useState('');
-  const [whatsapp, setWhatsapp] = useState('');
-  const [contactMethod, setContactMethod] = useState<ContactMethod>('email');
-  const [status, setStatus] = useState<FormStatus>('idle');
-  const [error, setError] = useState<'email' | 'whatsapp' | 'generic' | null>(null);
-
-  useEffect(() => {
-    if (markFunnelOnce('lead_homepage_shown')) {
-      trackEventOnce('lead-homepage-shown', 'lead_cta_shown', { trigger: 'homepage_trip_plan' });
-    }
-  }, []);
-
-  const resetForm = () => {
-    setEmail('');
-    setTravelDate('');
-    setTravelers('');
-    setHelpWith('');
-    setWhatsapp('');
-    setContactMethod('email');
-    setStatus('idle');
-    setError(null);
-  };
-
+  const [email, setEmail] = useState(''); const [travelDate, setTravelDate] = useState(''); const [travelers, setTravelers] = useState('2'); const [tripLength, setTripLength] = useState('7'); const [departureCountry, setDepartureCountry] = useState(''); const [arrivalCity, setArrivalCity] = useState(''); const [destinationCities, setDestinationCities] = useState<string[]>([]); const [selectedPriorities, setSelectedPriorities] = useState<string[]>([]); const [selectedConcerns, setSelectedConcerns] = useState<string[]>([]); const [helpWith, setHelpWith] = useState(''); const [whatsapp, setWhatsapp] = useState(''); const [contactMethod, setContactMethod] = useState<ContactMethod>('email'); const [status, setStatus] = useState<FormStatus>('idle'); const [error, setError] = useState<'email' | 'whatsapp' | 'generic' | null>(null);
+  useEffect(() => { if (markFunnelOnce('lead_homepage_shown')) trackEventOnce('lead-homepage-shown', 'lead_cta_shown', { trigger: 'homepage_trip_plan' }); }, []);
+  const route = useMemo(() => (destinationCities.length ? destinationCities : arrivalCity ? [arrivalCity] : ['Beijing', 'Shanghai']).slice(0, 3).join(' → '), [arrivalCity, destinationCities]);
+  const toggle = (value: string, setter: (values: string[]) => void, current: string[]) => setter(current.includes(value) ? current.filter((item) => item !== value) : [...current, value]);
+  const resetForm = () => { setEmail(''); setTravelDate(''); setTravelers('2'); setTripLength('7'); setDepartureCountry(''); setArrivalCity(''); setDestinationCities([]); setSelectedPriorities([]); setSelectedConcerns([]); setHelpWith(''); setWhatsapp(''); setContactMethod('email'); setStatus('idle'); setError(null); };
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const emailTrimmed = email.trim().toLowerCase();
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailTrimmed)) {
-      setError('email');
-      return;
-    }
-    if (contactMethod === 'whatsapp' && !isValidWhatsApp(whatsapp)) {
-      setError('whatsapp');
-      return;
-    }
-
-    setStatus('submitting');
-    setError(null);
-    if (markFunnelOnce('lead_homepage_submit_started')) {
-      void trackEvent('lead_submit_started', { trigger: 'homepage_trip_plan' });
-    }
-
-    const travelerCount = travelers ? parseInt(travelers, 10) : undefined;
-    const result = await submitTripLead({
-      requestId: createRequestId(),
-      email: emailTrimmed,
-      travelDate: travelDate.trim() || undefined,
-      travelers: travelerCount && travelerCount >= 1 && travelerCount <= 20 ? travelerCount : undefined,
-      helpWith: helpWith.trim() || undefined,
-      whatsapp: whatsapp.trim() || undefined,
-      contactMethod,
-    });
-
-    if (result === 'success') {
-      setStatus('success');
-      void trackEvent('lead_submit_success', { trigger: 'homepage_trip_plan' });
-      return;
-    }
-
-    setStatus('error');
-    setError(result === 'too_many' ? 'generic' : 'generic');
-    void trackEvent('lead_submit_failed', { trigger: 'homepage_trip_plan', errorCode: result });
+    event.preventDefault(); const emailTrimmed = email.trim().toLowerCase();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailTrimmed)) { setError('email'); return; }
+    if (contactMethod === 'whatsapp' && !isValidWhatsApp(whatsapp)) { setError('whatsapp'); return; }
+    setStatus('submitting'); setError(null); if (markFunnelOnce('lead_homepage_submit_started')) void trackEvent('lead_submit_started', { trigger: 'homepage_trip_plan' });
+    const result = await submitTripLead({ requestId: createRequestId(), email: emailTrimmed, travelDate: travelDate || undefined, travelers: Number(travelers), tripLength: Number(tripLength), departureCountry: departureCountry || undefined, arrivalCity: arrivalCity || undefined, destinationCities, priorities: selectedPriorities, concerns: selectedConcerns, helpWith: helpWith.trim() || undefined, whatsapp: whatsapp.trim() || undefined, contactMethod });
+    if (result === 'success') { setStatus('success'); void trackEvent('lead_submit_success', { trigger: 'homepage_trip_plan' }); return; }
+    setStatus('error'); setError('generic'); void trackEvent('lead_submit_failed', { trigger: 'homepage_trip_plan', errorCode: result });
   };
-
-  return (
-    <section
-      ref={ref}
-      id="trip-plan"
-      className={`scroll-mt-20 bg-jade-wash py-16 md:py-24 ${revealed ? 'motion-reveal-on' : ''}`}
-    >
-      <div className="mx-auto grid max-w-container gap-10 px-6 md:grid-cols-[0.9fr_1.1fr] md:gap-16 md:px-8">
-        <div className="motion-reveal-item">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-jade">{t('home.tripPlan.kicker')}</p>
-          <h2 className="mt-4 max-w-[34rem] font-display text-3xl font-normal leading-[1.08] tracking-[-0.01em] text-ink md:text-[44px]">
-            {t('home.tripPlan.title')}
-          </h2>
-          <p className="mt-4 max-w-[31rem] text-base leading-relaxed text-ink-secondary md:text-lg">
-            {t('home.tripPlan.description')}
-          </p>
-          <ul className="mt-7 space-y-3">
-            {(['item1', 'item2', 'item3'] as const).map((key) => (
-              <li key={key} className="flex items-start gap-2.5 text-sm font-medium leading-relaxed text-ink md:text-base">
-                <Check className="mt-0.5 h-4 w-4 shrink-0 text-jade" strokeWidth={1.5} />
-                <span>{t(`home.tripPlan.${key}`)}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-7 max-w-[31rem] text-xs leading-relaxed text-ink-tertiary">{t('home.tripPlan.note')}</p>
-        </div>
-
-        <div className="motion-reveal-item glass rounded-2xl p-5 md:p-8" style={{ '--reveal-index': 2 } as CSSProperties}>
-          {status === 'success' ? (
-            <div className="flex min-h-[360px] flex-col items-start justify-center">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-jade text-white">
-                <Check className="h-5 w-5" strokeWidth={1.7} />
-              </span>
-              <h3 className="mt-5 font-display text-2xl text-ink md:text-3xl">{t('home.tripPlan.successTitle')}</h3>
-              <p className="mt-3 max-w-md text-sm leading-relaxed text-ink-secondary md:text-base">{t('home.tripPlan.success')}</p>
-              <button
-                type="button"
-                onClick={resetForm}
-                className="mt-7 inline-flex min-h-[44px] items-center gap-2 rounded-lg border border-jade/30 px-4 py-2.5 text-sm font-semibold text-jade transition-colors duration-hover ease-out hover:bg-jade hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jade"
-              >
-                {t('home.tripPlan.submitAnother')}
-                <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} noValidate>
-              <div className="flex items-start gap-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-jade text-white">
-                  <Mail className="h-4 w-4" strokeWidth={1.5} />
-                </span>
-                <div>
-                  <h3 className="text-xl font-semibold text-ink">{t('home.tripPlan.formTitle')}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-ink-secondary">{t('home.tripPlan.formSubtitle')}</p>
-                </div>
-              </div>
-
-              {error && (
-                <p role="alert" aria-live="assertive" className="mt-4 rounded-lg bg-red-50 px-3 py-2 text-xs font-semibold text-red-700">
-                  {t(error === 'email' ? 'lead.errorEmail' : error === 'whatsapp' ? 'lead.errorWhatsApp' : 'lead.errorGeneric')}
-                </p>
-              )}
-
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <div className="sm:col-span-2">
-                  <label htmlFor="homepage-lead-email" className="text-xs font-semibold text-ink">
-                    {t('lead.fieldEmail')} *
-                  </label>
-                  <input
-                    id="homepage-lead-email"
-                    type="email"
-                    required
-                    autoComplete="email"
-                    inputMode="email"
-                    value={email}
-                    onChange={(event) => setEmail(event.target.value)}
-                    disabled={status === 'submitting'}
-                    maxLength={160}
-                    style={{ fontSize: '16px' }}
-                    className="mt-1 w-full rounded-lg border border-hairline bg-surface px-3 py-2.5 text-sm text-ink outline-none focus:border-jade/40 disabled:opacity-60"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="homepage-lead-date" className="text-xs font-semibold text-ink">{t('lead.fieldDate')}</label>
-                  <input
-                    id="homepage-lead-date"
-                    type="text"
-                    autoComplete="off"
-                    value={travelDate}
-                    onChange={(event) => setTravelDate(event.target.value)}
-                    disabled={status === 'submitting'}
-                    maxLength={80}
-                    placeholder={t('lead.fieldDatePlaceholder')}
-                    style={{ fontSize: '16px' }}
-                    className="mt-1 w-full rounded-lg border border-hairline bg-surface px-3 py-2.5 text-sm text-ink outline-none focus:border-jade/40 disabled:opacity-60"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="homepage-lead-travelers" className="text-xs font-semibold text-ink">{t('lead.fieldTravelers')}</label>
-                  <input
-                    id="homepage-lead-travelers"
-                    type="number"
-                    inputMode="numeric"
-                    min={1}
-                    max={20}
-                    step={1}
-                    value={travelers}
-                    onChange={(event) => setTravelers(event.target.value)}
-                    disabled={status === 'submitting'}
-                    style={{ fontSize: '16px' }}
-                    className="mt-1 w-full rounded-lg border border-hairline bg-surface px-3 py-2.5 text-sm text-ink outline-none focus:border-jade/40 disabled:opacity-60"
-                  />
-                </div>
-
-                <div className="sm:col-span-2">
-                  <label htmlFor="homepage-lead-help" className="text-xs font-semibold text-ink">{t('lead.fieldHelp')}</label>
-                  <textarea
-                    id="homepage-lead-help"
-                    rows={3}
-                    maxLength={500}
-                    value={helpWith}
-                    onChange={(event) => setHelpWith(event.target.value)}
-                    disabled={status === 'submitting'}
-                    placeholder={t('lead.fieldHelpPlaceholder')}
-                    style={{ fontSize: '16px' }}
-                    className="mt-1 w-full resize-none rounded-lg border border-hairline bg-surface px-3 py-2.5 text-sm text-ink outline-none focus:border-jade/40 disabled:opacity-60"
-                  />
-                  <p className="mt-0.5 text-right text-xs text-ink-tertiary">{t('lead.fieldHelpCount', { count: helpWith.length })}</p>
-                </div>
-              </div>
-
-              <fieldset className="mt-5">
-                <legend className="text-xs font-semibold text-ink">{t('lead.contactMethod')}</legend>
-                <div className="mt-2 grid gap-2 sm:grid-cols-2">
-                  <label className={`flex cursor-pointer items-center gap-2 rounded-lg border px-3 py-2.5 text-sm transition-colors ${contactMethod === 'email' ? 'border-jade/40 bg-white/75 text-ink' : 'border-hairline bg-white/35 text-ink-secondary'}`}>
-                    <input
-                      type="radio"
-                      name="homepage-contact-method"
-                      value="email"
-                      checked={contactMethod === 'email'}
-                      onChange={() => setContactMethod('email')}
-                      disabled={status === 'submitting'}
-                      className="accent-[#0F5257]"
-                    />
-                    <Mail className="h-4 w-4 text-jade" strokeWidth={1.5} />
-                    <span>{t('lead.contactEmailOption')}</span>
-                  </label>
-                  <label className={`flex cursor-pointer items-center gap-2 rounded-lg border px-3 py-2.5 text-sm transition-colors ${contactMethod === 'whatsapp' ? 'border-jade/40 bg-white/75 text-ink' : 'border-hairline bg-white/35 text-ink-secondary'}`}>
-                    <input
-                      type="radio"
-                      name="homepage-contact-method"
-                      value="whatsapp"
-                      checked={contactMethod === 'whatsapp'}
-                      onChange={() => setContactMethod('whatsapp')}
-                      disabled={status === 'submitting'}
-                      className="accent-[#0F5257]"
-                    />
-                    <MessageCircle className="h-4 w-4 text-jade" strokeWidth={1.5} />
-                    <span>{t('lead.contactWhatsAppOption')}</span>
-                  </label>
-                </div>
-              </fieldset>
-
-              {contactMethod === 'whatsapp' && (
-                <div className="mt-4">
-                  <label htmlFor="homepage-lead-whatsapp" className="text-xs font-semibold text-ink">{t('lead.fieldWhatsApp')} *</label>
-                  <input
-                    id="homepage-lead-whatsapp"
-                    type="tel"
-                    required
-                    autoComplete="tel"
-                    inputMode="tel"
-                    value={whatsapp}
-                    onChange={(event) => setWhatsapp(event.target.value)}
-                    disabled={status === 'submitting'}
-                    maxLength={40}
-                    placeholder={t('lead.fieldWhatsAppPlaceholder')}
-                    style={{ fontSize: '16px' }}
-                    className="mt-1 w-full rounded-lg border border-hairline bg-surface px-3 py-2.5 text-sm text-ink outline-none focus:border-jade/40 disabled:opacity-60"
-                  />
-                  <p className="mt-1 text-xs leading-relaxed text-ink-tertiary">{t('lead.whatsappNote')}</p>
-                </div>
-              )}
-
-              {/* Honeypot — hidden from real users */}
-              <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
-
-              <button
-                type="submit"
-                disabled={status === 'submitting'}
-                aria-busy={status === 'submitting'}
-                className="mt-6 inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-lg bg-jade px-5 py-3 text-sm font-semibold text-white transition-[background-color,transform,opacity] duration-hover ease-out hover:-translate-y-0.5 hover:bg-jade-dark active:scale-[0.99] disabled:translate-y-0 disabled:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jade"
-              >
-                <Send className="h-4 w-4" strokeWidth={1.5} />
-                {status === 'submitting' ? t('lead.submitting') : t('home.tripPlan.submit')}
-              </button>
-              <p className="mt-3 text-xs leading-relaxed text-ink-tertiary">
-                {t('lead.consent')}{' '}
-                <a href="/privacy/" className="underline hover:text-ink-secondary">{t('lead.consentLink')}</a>
-              </p>
-            </form>
-          )}
-        </div>
-      </div>
-    </section>
-  );
+  return <section ref={ref} id="trip-plan" className={`scroll-mt-20 bg-jade-wash py-16 md:py-24 ${revealed ? 'motion-reveal-on' : ''}`}><div className="mx-auto grid max-w-container gap-10 px-6 md:grid-cols-[0.9fr_1.1fr] md:gap-16 md:px-8"><div className="motion-reveal-item"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-jade">{t('home.tripPlan.kicker')}</p><h2 className="mt-4 max-w-[34rem] font-display text-3xl font-normal leading-[1.08] tracking-[-0.01em] text-ink md:text-[44px]">{t('home.tripPlan.title')}</h2><p className="mt-4 max-w-[31rem] text-base leading-relaxed text-ink-secondary md:text-lg">{t('home.tripPlan.description')}</p><ul className="mt-7 space-y-3">{(['item1', 'item2', 'item3'] as const).map((key) => <li key={key} className="flex items-start gap-2.5 text-sm font-medium leading-relaxed text-ink md:text-base"><Check className="mt-0.5 h-4 w-4 shrink-0 text-jade" strokeWidth={1.5} /><span>{t(`home.tripPlan.${key}`)}</span></li>)}</ul><p className="mt-7 max-w-[31rem] text-xs leading-relaxed text-ink-tertiary">{t('home.tripPlan.note')}</p></div>
+    <div className="motion-reveal-item glass rounded-2xl p-5 md:p-8" style={{ '--reveal-index': 2 } as CSSProperties}>{status === 'success' ? <div className="flex flex-col items-start"><span className="flex h-11 w-11 items-center justify-center rounded-full bg-jade text-white"><Check className="h-5 w-5" strokeWidth={1.7} /></span><h3 className="mt-5 font-display text-2xl text-ink md:text-3xl">{t('home.tripPlan.successTitle')}</h3><p className="mt-3 text-sm leading-relaxed text-ink-secondary md:text-base">{t('home.tripPlan.success')}</p><div className="mt-5 w-full rounded-xl border border-jade/20 bg-white/70 p-4"><p className="text-xs font-semibold uppercase tracking-[0.16em] text-jade">Your rough plan preview</p><p className="mt-2 text-lg font-semibold text-ink">{route}</p><p className="mt-1 text-sm text-ink-secondary">{tripLength} days · {travelers} traveller{travelers === '1' ? '' : 's'}{travelDate ? ` · starting ${travelDate}` : ''}</p>{selectedPriorities.length > 0 && <p className="mt-3 text-sm leading-relaxed text-ink-secondary"><strong className="text-ink">Focus:</strong> {selectedPriorities.join(', ')}</p>}{selectedConcerns.length > 0 && <p className="mt-1 text-sm leading-relaxed text-ink-secondary"><strong className="text-ink">We’ll watch for:</strong> {selectedConcerns.join(', ')}</p>}<p className="mt-3 text-xs leading-relaxed text-ink-tertiary">We’ll send the detailed version to {email}{contactMethod === 'whatsapp' ? ` and follow up on WhatsApp (${whatsapp}).` : '.'}</p></div><button type="button" onClick={resetForm} className="mt-7 inline-flex min-h-[44px] items-center gap-2 rounded-lg border border-jade/30 px-4 py-2.5 text-sm font-semibold text-jade transition-colors hover:bg-jade hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jade">{t('home.tripPlan.submitAnother')}<ArrowRight className="h-4 w-4" strokeWidth={1.5} /></button></div> : <form onSubmit={handleSubmit} noValidate><div className="flex items-start gap-3"><span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-jade text-white"><Mail className="h-4 w-4" strokeWidth={1.5} /></span><div><h3 className="text-xl font-semibold text-ink">{t('home.tripPlan.formTitle')}</h3><p className="mt-1 text-sm leading-relaxed text-ink-secondary">{t('home.tripPlan.formSubtitle')}</p></div></div>{error && <p role="alert" aria-live="assertive" className="mt-4 rounded-lg bg-red-50 px-3 py-2 text-xs font-semibold text-red-700">{t(error === 'email' ? 'lead.errorEmail' : error === 'whatsapp' ? 'lead.errorWhatsApp' : 'lead.errorGeneric')}</p>}
+      <div className="mt-6 space-y-6"><fieldset><legend className="text-sm font-semibold text-ink">1. Trip basics</legend><div className="mt-3 grid gap-4 sm:grid-cols-2"><div><label htmlFor="homepage-lead-date" className="text-xs font-semibold text-ink">Travel date</label><input id="homepage-lead-date" type="date" min={new Date().toISOString().slice(0, 10)} value={travelDate} onChange={(e) => setTravelDate(e.target.value)} disabled={status === 'submitting'} className="mt-1 w-full rounded-lg border border-hairline bg-surface px-3 py-2.5 text-sm text-ink outline-none focus:border-jade/40 disabled:opacity-60" /></div><div><label htmlFor="homepage-lead-length" className="text-xs font-semibold text-ink">How many days?</label><select id="homepage-lead-length" value={tripLength} onChange={(e) => setTripLength(e.target.value)} disabled={status === 'submitting'} className="mt-1 w-full rounded-lg border border-hairline bg-surface px-3 py-2.5 text-sm text-ink outline-none focus:border-jade/40 disabled:opacity-60">{[3, 5, 7, 10, 14, 21].map((n) => <option key={n} value={n}>{n} days</option>)}</select></div><div><label htmlFor="homepage-lead-travelers" className="text-xs font-semibold text-ink">Travellers</label><select id="homepage-lead-travelers" value={travelers} onChange={(e) => setTravelers(e.target.value)} disabled={status === 'submitting'} className="mt-1 w-full rounded-lg border border-hairline bg-surface px-3 py-2.5 text-sm text-ink outline-none focus:border-jade/40 disabled:opacity-60">{[1, 2, 3, 4, 5, 6, 7, 8].map((n) => <option key={n} value={n}>{n} {n === 1 ? 'traveller' : 'travellers'}</option>)}<option value="9">9+ travellers</option></select></div><div><label htmlFor="homepage-lead-country" className="text-xs font-semibold text-ink">Where are you travelling from?</label><select id="homepage-lead-country" value={departureCountry} onChange={(e) => setDepartureCountry(e.target.value)} disabled={status === 'submitting'} className="mt-1 w-full rounded-lg border border-hairline bg-surface px-3 py-2.5 text-sm text-ink outline-none focus:border-jade/40 disabled:opacity-60"><option value="">Select a country</option>{countries.map((country) => <option key={country}>{country}</option>)}</select></div></div></fieldset><fieldset><legend className="text-sm font-semibold text-ink">2. Where do you want to go?</legend><div className="mt-3 grid gap-4 sm:grid-cols-2"><div><label htmlFor="homepage-lead-arrival" className="text-xs font-semibold text-ink">First arrival city in China</label><select id="homepage-lead-arrival" value={arrivalCity} onChange={(e) => setArrivalCity(e.target.value)} disabled={status === 'submitting'} className="mt-1 w-full rounded-lg border border-hairline bg-surface px-3 py-2.5 text-sm text-ink outline-none focus:border-jade/40 disabled:opacity-60"><option value="">Not sure yet</option>{arrivalCities.map((city) => <option key={city}>{city}</option>)}</select></div><div className="sm:col-span-2"><p className="text-xs font-semibold text-ink">Cities or regions you’re considering</p><ToggleGroup items={cities} values={destinationCities} onChange={(v) => toggle(v, setDestinationCities, destinationCities)} disabled={status === 'submitting'} /></div></div></fieldset><fieldset><legend className="text-sm font-semibold text-ink">3. What should the plan focus on?</legend><ToggleGroup items={priorities} values={selectedPriorities} onChange={(v) => toggle(v, setSelectedPriorities, selectedPriorities)} disabled={status === 'submitting'} /></fieldset><fieldset><legend className="text-sm font-semibold text-ink">4. What are you most concerned about?</legend><ToggleGroup items={concerns} values={selectedConcerns} onChange={(v) => toggle(v, setSelectedConcerns, selectedConcerns)} disabled={status === 'submitting'} /></fieldset><div><label htmlFor="homepage-lead-help" className="text-xs font-semibold text-ink">Anything else we should know? <span className="font-normal text-ink-tertiary">(optional)</span></label><textarea id="homepage-lead-help" rows={2} maxLength={500} value={helpWith} onChange={(e) => setHelpWith(e.target.value)} disabled={status === 'submitting'} placeholder="For example: travelling with children, dietary preferences, or a must-see experience." className="mt-1 w-full resize-none rounded-lg border border-hairline bg-surface px-3 py-2.5 text-sm text-ink outline-none focus:border-jade/40 disabled:opacity-60" /><p className="mt-0.5 text-right text-xs text-ink-tertiary">{helpWith.length}/500</p></div><fieldset><legend className="text-sm font-semibold text-ink">5. Where should we send the detailed plan?</legend><div className="mt-3"><label htmlFor="homepage-lead-email" className="text-xs font-semibold text-ink">Email *</label><input id="homepage-lead-email" type="email" required autoComplete="email" inputMode="email" value={email} onChange={(e) => setEmail(e.target.value)} disabled={status === 'submitting'} maxLength={160} className="mt-1 w-full rounded-lg border border-hairline bg-surface px-3 py-2.5 text-sm text-ink outline-none focus:border-jade/40 disabled:opacity-60" /></div><div className="mt-3 grid gap-2 sm:grid-cols-2"><label className={`flex cursor-pointer items-center gap-2 rounded-lg border px-3 py-2.5 text-sm ${contactMethod === 'email' ? 'border-jade/40 bg-white/75 text-ink' : 'border-hairline bg-white/35 text-ink-secondary'}`}><input type="radio" name="homepage-contact-method" checked={contactMethod === 'email'} onChange={() => setContactMethod('email')} disabled={status === 'submitting'} className="accent-[#0F5257]" /><Mail className="h-4 w-4 text-jade" strokeWidth={1.5} /><span>Email follow-up</span></label><label className={`flex cursor-pointer items-center gap-2 rounded-lg border px-3 py-2.5 text-sm ${contactMethod === 'whatsapp' ? 'border-jade/40 bg-white/75 text-ink' : 'border-hairline bg-white/35 text-ink-secondary'}`}><input type="radio" name="homepage-contact-method" checked={contactMethod === 'whatsapp'} onChange={() => setContactMethod('whatsapp')} disabled={status === 'submitting'} className="accent-[#0F5257]" /><MessageCircle className="h-4 w-4 text-jade" strokeWidth={1.5} /><span>WhatsApp follow-up</span></label></div>{contactMethod === 'whatsapp' && <div className="mt-3"><label htmlFor="homepage-lead-whatsapp" className="text-xs font-semibold text-ink">WhatsApp number *</label><input id="homepage-lead-whatsapp" type="tel" required autoComplete="tel" inputMode="tel" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} disabled={status === 'submitting'} maxLength={40} placeholder="+44 7700 900000" className="mt-1 w-full rounded-lg border border-hairline bg-surface px-3 py-2.5 text-sm text-ink outline-none focus:border-jade/40 disabled:opacity-60" /><p className="mt-1 text-xs leading-relaxed text-ink-tertiary">Include your country code. We will follow up manually; no verification code is required.</p></div>}</fieldset></div><input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" /><button type="submit" disabled={status === 'submitting'} aria-busy={status === 'submitting'} className="mt-7 inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-lg bg-jade px-5 py-3 text-sm font-semibold text-white transition-[background-color,transform,opacity] duration-hover ease-out hover:-translate-y-0.5 hover:bg-jade-dark active:scale-[0.99] disabled:translate-y-0 disabled:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jade"><Send className="h-4 w-4" strokeWidth={1.5} />{status === 'submitting' ? t('lead.submitting') : 'Show my free plan preview'}</button><p className="mt-3 text-xs leading-relaxed text-ink-tertiary">{t('lead.consent')}{' '}<a href="/privacy/" className="underline hover:text-ink-secondary">{t('lead.consentLink')}</a></p></form>}</div></div></section>;
 }
+

@@ -4,6 +4,12 @@ export interface TripLeadPayload {
   email: string;
   travelDate?: string;
   travelers?: number;
+  tripLength?: number;
+  departureCountry?: string;
+  arrivalCity?: string;
+  destinationCities?: string[];
+  priorities?: string[];
+  concerns?: string[];
   helpWith?: string;
   whatsapp?: string;
   contactMethod?: 'email' | 'whatsapp';
@@ -30,6 +36,12 @@ export async function submitTripLead(
         email: payload.email,
         travelDate: payload.travelDate ?? '',
         travelers: payload.travelers ?? '',
+        tripLength: payload.tripLength ?? '',
+        departureCountry: payload.departureCountry ?? '',
+        arrivalCity: payload.arrivalCity ?? '',
+        destinationCities: payload.destinationCities ?? [],
+        priorities: payload.priorities ?? [],
+        concerns: payload.concerns ?? [],
         helpWith: payload.helpWith ?? '',
         whatsapp: payload.whatsapp ?? '',
         contactMethod: payload.contactMethod ?? 'email',
@@ -50,3 +62,28 @@ export async function submitTripLead(
     return 'error';
   }
 }
+
+// Kept for the legacy lead component that is no longer mounted on the homepage.
+export interface VerifiedTripLeadPayload {
+  requestId: string;
+  phone: string;
+  code: string;
+  email?: string;
+  travelDate?: string;
+  travelers?: number;
+  destinations?: string;
+  consentVersion: string;
+}
+
+export type PhoneVerificationResult = { ok: true } | { ok: false; errorCode: string };
+
+export async function requestPhoneVerification(_phone: string): Promise<PhoneVerificationResult> {
+  void _phone;
+  return { ok: false, errorCode: 'phone_verification_unavailable' };
+}
+
+export async function submitVerifiedTripLead(_payload: VerifiedTripLeadPayload): Promise<PhoneVerificationResult> {
+  void _payload;
+  return { ok: false, errorCode: 'phone_verification_unavailable' };
+}
+

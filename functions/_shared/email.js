@@ -18,6 +18,10 @@ function textVal(v) {
   return s || 'Not provided';
 }
 
+function listVal(value) {
+  return Array.isArray(value) && value.length ? value.join(', ') : 'Not provided';
+}
+
 function buildHtml(lead) {
   const submittedAt = lead.createdAt ? new Date(lead.createdAt).toISOString() : null;
   const rows = [
@@ -25,6 +29,12 @@ function buildHtml(lead) {
     ['Email', escapeHtml(lead.email)],
     ['Travel date', escapeHtml(lead.travelDate)],
     ['Travelers', escapeHtml(lead.travelers)],
+    ['Trip length', escapeHtml(lead.tripLength ? `${lead.tripLength} days` : null)],
+    ['Departure country', escapeHtml(lead.departureCountry)],
+    ['Arrival city', escapeHtml(lead.arrivalCity)],
+    ['Cities considered', escapeHtml(listVal(lead.destinationCities))],
+    ['Priorities', escapeHtml(listVal(lead.priorities))],
+    ['Concerns', escapeHtml(listVal(lead.concerns))],
     ['Help needed', escapeHtml(lead.helpWith)],
     ['Preferred contact', escapeHtml(lead.contactMethod)],
     ['WhatsApp', escapeHtml(lead.whatsapp)],
@@ -55,6 +65,12 @@ function buildText(lead) {
     `Email:        ${textVal(lead.email)}`,
     `Travel date:  ${textVal(lead.travelDate)}`,
     `Travelers:    ${textVal(lead.travelers)}`,
+    `Trip length:  ${lead.tripLength ? `${lead.tripLength} days` : 'Not provided'}`,
+    `From:         ${textVal(lead.departureCountry)}`,
+    `Arrival city: ${textVal(lead.arrivalCity)}`,
+    `Cities:       ${listVal(lead.destinationCities)}`,
+    `Priorities:   ${listVal(lead.priorities)}`,
+    `Concerns:     ${listVal(lead.concerns)}`,
     `Help needed:  ${textVal(lead.helpWith)}`,
     `Contact:      ${textVal(lead.contactMethod)}`,
     `WhatsApp:     ${textVal(lead.whatsapp)}`,
@@ -74,6 +90,10 @@ function buildConfirmationHtml(lead) {
   const rows = [
     ['Trip date', travelDate],
     ['Travelers', travelers],
+    ['Trip length', escapeHtml(lead.tripLength ? `${lead.tripLength} days` : null)],
+    ['Arrival city', escapeHtml(lead.arrivalCity)],
+    ['Cities considered', escapeHtml(listVal(lead.destinationCities))],
+    ['Trip focus', escapeHtml(listVal(lead.priorities))],
     ['Help needed', helpWith],
     ['Preferred contact', escapeHtml(lead.contactMethod)],
   ];
@@ -107,6 +127,14 @@ function buildConfirmationText(lead) {
     `Trip date:\n${textVal(lead.travelDate)}`,
     '',
     `Travelers:\n${textVal(lead.travelers)}`,
+    '',
+    `Trip length:\n${lead.tripLength ? `${lead.tripLength} days` : 'Not provided'}`,
+    '',
+    `Arrival city:\n${textVal(lead.arrivalCity)}`,
+    '',
+    `Cities considered:\n${listVal(lead.destinationCities)}`,
+    '',
+    `Trip focus:\n${listVal(lead.priorities)}`,
     '',
     `Help needed:\n${textVal(lead.helpWith)}`,
     '',
@@ -195,3 +223,4 @@ export async function sendTripLeadConfirmation(env, lead) {
     { idempotencyKey: lead.requestId ? `trip-lead-customer-${lead.requestId}` : undefined },
   );
 }
+
