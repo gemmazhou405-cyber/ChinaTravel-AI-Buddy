@@ -102,7 +102,7 @@ export default function SiteHeader({ passState, onAskBuddy, onOpenToolkit, onNav
           ) : (
             <button
               onClick={onViewPass}
-              className="rounded-lg border border-jade/30 px-2.5 py-1.5 text-xs font-semibold text-jade transition-colors duration-hover ease-out hover:bg-jade-wash"
+              className="hidden rounded-lg border border-jade/30 px-2.5 py-1.5 text-xs font-semibold text-jade transition-colors duration-hover ease-out hover:bg-jade-wash sm:block"
             >
               {t('nav.getPass')}
             </button>

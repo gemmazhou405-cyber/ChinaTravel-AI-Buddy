@@ -27,7 +27,7 @@ export default {
         },
       },
       fontFamily: {
-        display: ['"Fraunces Variable"', 'Georgia', 'serif'],
+        display: ['Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'system-ui', 'sans-serif'],
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
