@@ -16,6 +16,22 @@ export interface TripLeadPayload {
   requestId: string;
 }
 
+export interface TripPlanPreview {
+  title: string;
+  summary: string;
+  days: Array<{
+    day: string;
+    city: string;
+    morning: string;
+    afternoon: string;
+    evening: string;
+  }>;
+}
+
+export type TripLeadResult =
+  | { status: 'success'; planGenerated: boolean; planPreview: TripPlanPreview | null; whatsappReminderSent: boolean }
+  | { status: 'too_many' | 'error'; planGenerated: false; planPreview: null; whatsappReminderSent: false };
+
 export function isValidWhatsApp(value: string) {
   const trimmed = value.trim();
   if (!trimmed || trimmed.length > 40 || !/^[+0-9() .-]+$/.test(trimmed)) return false;
@@ -25,7 +41,7 @@ export function isValidWhatsApp(value: string) {
 
 export async function submitTripLead(
   payload: TripLeadPayload,
-): Promise<'success' | 'too_many' | 'error'> {
+): Promise<TripLeadResult> {
   const attr = getAttributionContext();
   try {
     const res = await fetch('/api/leads/trip', {
@@ -55,11 +71,17 @@ export async function submitTripLead(
         consentVersion: 'trip-lead-2026-09',
       }),
     });
-    if (res.status === 429) return 'too_many';
-    if (!res.ok) return 'error';
-    return 'success';
+    if (res.status === 429) return { status: 'too_many', planGenerated: false, planPreview: null, whatsappReminderSent: false };
+    if (!res.ok) return { status: 'error', planGenerated: false, planPreview: null, whatsappReminderSent: false };
+    const data = await res.json().catch(() => ({}));
+    return {
+      status: 'success',
+      planGenerated: data.planGenerated === true,
+      planPreview: data.planPreview && Array.isArray(data.planPreview.days) ? data.planPreview : null,
+      whatsappReminderSent: data.whatsappReminderSent === true,
+    };
   } catch {
-    return 'error';
+    return { status: 'error', planGenerated: false, planPreview: null, whatsappReminderSent: false };
   }
 }
 
@@ -86,4 +108,3 @@ export async function submitVerifiedTripLead(_payload: VerifiedTripLeadPayload):
   void _payload;
   return { ok: false, errorCode: 'phone_verification_unavailable' };
 }
-

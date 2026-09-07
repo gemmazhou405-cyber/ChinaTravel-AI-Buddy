@@ -207,7 +207,7 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
       whatsapp: leadWhatsApp.trim() || undefined,
       contactMethod: leadContactMethod,
     });
-    if (result === 'success') {
+    if (result.status === 'success') {
       setLeadCtaState('success');
       sessionStorage.setItem('chinaease:leadSubmitted', '1');
       if (markFunnelOnce('lead_submit_success')) {
@@ -215,8 +215,8 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
       }
     } else {
       setLeadCtaState('error');
-      setLeadApiError(result === 'too_many' ? 'too_many' : 'generic');
-      void trackEvent('lead_submit_failed', { trigger: 'buddy_cta', errorCode: result });
+      setLeadApiError(result.status === 'too_many' ? 'too_many' : 'generic');
+      void trackEvent('lead_submit_failed', { trigger: 'buddy_cta', errorCode: result.status });
     }
   };
 

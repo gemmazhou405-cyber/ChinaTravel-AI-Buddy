@@ -275,5 +275,24 @@ export async function onRequestPost({ request, env }) {
     console.error('[leads/trip] whatsapp_status_update_failed', String(patchErr?.message).slice(0, 60));
   }
 
-  return withCors(jsonResponse({ status: 'received', planGenerated: Boolean(plan), whatsappReminderSent: Boolean(whatsappResult.ok) }), request, env);
+  const planPreview = plan
+    ? {
+        title: plan.title,
+        summary: plan.summary,
+        days: plan.daily_itinerary.slice(0, 3).map((item) => ({
+          day: item.day,
+          city: item.city,
+          morning: item.morning,
+          afternoon: item.afternoon,
+          evening: item.evening,
+        })),
+      }
+    : null;
+
+  return withCors(jsonResponse({
+    status: 'received',
+    planGenerated: Boolean(plan),
+    planPreview,
+    whatsappReminderSent: Boolean(whatsappResult.ok),
+  }), request, env);
 }

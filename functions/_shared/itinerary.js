@@ -43,8 +43,85 @@ function normalisePlan(value) {
   };
 }
 
-export async function generateTripPlan(env, lead) {
+function parsePlanContent(content) {
+  if (typeof content !== 'string' || !content.trim()) return null;
+  const cleaned = content
+    .trim()
+    .replace(/^```(?:json)?\s*/i, '')
+    .replace(/\s*```$/, '');
+  try {
+    return normalisePlan(JSON.parse(cleaned));
+  } catch {
+    const start = cleaned.indexOf('{');
+    const end = cleaned.lastIndexOf('}');
+    if (start < 0 || end <= start) return null;
+    try {
+      return normalisePlan(JSON.parse(cleaned.slice(start, end + 1)));
+    } catch {
+      return null;
+    }
+  }
+}
+
+async function callDeepSeekDirect(env, messages) {
   if (!env.DEEPSEEK_API_KEY) return { ok: false, errorCode: 'missing_config' };
+  try {
+    const response = await fetch('https://api.deepseek.com/chat/completions', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${env.DEEPSEEK_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: env.DEEPSEEK_ITINERARY_MODEL || 'deepseek-v4-flash',
+        messages,
+        response_format: { type: 'json_object' },
+        max_tokens: 3500,
+        stream: false,
+      }),
+      signal: timeoutSignal(ITINERARY_TIMEOUT_MS),
+    });
+    if (!response.ok) return { ok: false, errorCode: response.status >= 500 ? 'provider_error' : 'provider_rejected' };
+    const data = await response.json();
+    const plan = parsePlanContent(data?.choices?.[0]?.message?.content);
+    return plan ? { ok: true, plan } : { ok: false, errorCode: 'invalid_plan' };
+  } catch (error) {
+    if (error?.name === 'AbortError' || error?.name === 'TimeoutError') return { ok: false, errorCode: 'provider_timeout' };
+    return { ok: false, errorCode: 'unknown_error' };
+  }
+}
+
+async function callExistingBuddyProxy(env, systemPrompt, userPrompt, requestId) {
+  if (!env.COZE_WORKER_URL) return { ok: false, errorCode: 'missing_config' };
+  const workerBase = env.COZE_WORKER_URL.replace(/\/+$/, '');
+  const endpoint = workerBase.endsWith('/coze') ? workerBase : `${workerBase}/coze`;
+  const headers = { 'Content-Type': 'application/json' };
+  if (env.COZE_INTERNAL_SECRET) headers['X-ChinaEase-Internal-Token'] = env.COZE_INTERNAL_SECRET;
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        message: `${systemPrompt}\n\n${userPrompt}`,
+        context: [],
+        userId: requestId || crypto.randomUUID(),
+        botId: env.COZE_BOT_ID || 'chinaease-trip-planner',
+        stream: false,
+        timeoutMs: 18000,
+      }),
+      signal: timeoutSignal(ITINERARY_TIMEOUT_MS),
+    });
+    if (!response.ok) return { ok: false, errorCode: response.status >= 500 ? 'provider_error' : 'provider_rejected' };
+    const data = await response.json();
+    const plan = parsePlanContent(data?.reply);
+    return plan ? { ok: true, plan } : { ok: false, errorCode: 'invalid_plan' };
+  } catch (error) {
+    if (error?.name === 'AbortError' || error?.name === 'TimeoutError') return { ok: false, errorCode: 'provider_timeout' };
+    return { ok: false, errorCode: 'unknown_error' };
+  }
+}
+
+export async function generateTripPlan(env, lead) {
   const input = {
     travel_date: lead.travelDate || null,
     travelers: lead.travelers || null,
@@ -60,35 +137,15 @@ export async function generateTripPlan(env, lead) {
 {"title":"...","summary":"...","daily_itinerary":[{"day":"Day 1","city":"...","morning":"...","afternoon":"...","evening":"...","transport":"...","food":"...","notes":"..."}],"transport":["..."],"preparation":["..."],"personalised_notes":["..."],"verify_before_booking":["..."]}
 Make each day specific and useful. If the user has not chosen enough cities, build a sensible route around the arrival city and clearly label assumptions. Use concise English suitable for an email.`;
   const userPrompt = `Create the JSON trip plan for this traveller:\n${JSON.stringify(input)}`;
-  try {
-    const response = await fetch('https://api.deepseek.com/chat/completions', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${env.DEEPSEEK_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: env.DEEPSEEK_ITINERARY_MODEL || 'deepseek-v4-flash',
-        messages: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: userPrompt },
-        ],
-        response_format: { type: 'json_object' },
-        max_tokens: 3500,
-        stream: false,
-        user_id: lead.requestId || undefined,
-      }),
-      signal: timeoutSignal(ITINERARY_TIMEOUT_MS),
-    });
-    if (!response.ok) return { ok: false, errorCode: response.status >= 500 ? 'provider_error' : 'provider_rejected' };
-    const data = await response.json();
-    const content = data?.choices?.[0]?.message?.content;
-    if (typeof content !== 'string' || !content.trim()) return { ok: false, errorCode: 'empty_response' };
-    const plan = normalisePlan(JSON.parse(content));
-    return plan ? { ok: true, plan } : { ok: false, errorCode: 'invalid_plan' };
-  } catch (error) {
-    if (error?.name === 'AbortError' || error?.name === 'TimeoutError') return { ok: false, errorCode: 'provider_timeout' };
-    if (error instanceof SyntaxError) return { ok: false, errorCode: 'invalid_plan' };
-    return { ok: false, errorCode: 'unknown_error' };
-  }
+  const messages = [
+    { role: 'system', content: systemPrompt },
+    { role: 'user', content: userPrompt },
+  ];
+
+  // Prefer a dedicated key when configured. If the website does not have one,
+  // reuse the already-configured DeepSeek proxy that powers Ask Buddy.
+  const directResult = await callDeepSeekDirect(env, messages);
+  if (directResult.ok) return directResult;
+  const proxyResult = await callExistingBuddyProxy(env, systemPrompt, userPrompt, lead.requestId);
+  return proxyResult.ok ? proxyResult : { ok: false, errorCode: proxyResult.errorCode || directResult.errorCode };
 }

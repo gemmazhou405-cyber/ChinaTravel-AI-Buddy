@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Sparkles } from 'lucide-react';
+import { ArrowRight, Check, Map, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import PhoneDemo from './home/PhoneDemo';
 
@@ -32,25 +32,25 @@ export default function Hero({ onOpenToolkit, onAskBuddy, onOpenTripPlan }: Prop
           <button
             type="button"
             onClick={onOpenTripPlan}
-            className="mt-5 inline-flex items-center gap-2 text-base font-semibold text-jade underline decoration-jade/40 underline-offset-4 transition-colors duration-hover ease-out hover:text-jade-dark hover:decoration-jade focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade"
+            className="mt-7 inline-flex min-h-[56px] w-full items-center justify-center gap-3 rounded-xl bg-jade px-6 py-4 text-lg font-semibold text-white shadow-[0_12px_30px_rgba(15,82,87,0.22)] transition-[background-color,transform,box-shadow] duration-hover ease-out hover:-translate-y-0.5 hover:bg-jade-dark hover:shadow-[0_16px_36px_rgba(15,82,87,0.28)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-jade sm:w-auto"
           >
+            <Map className="h-5 w-5" strokeWidth={1.7} />
             {t('home.hero.ctaTripPlan')}
-            <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
+            <ArrowRight className="h-5 w-5" strokeWidth={1.7} />
           </button>
+          <p className="mt-3 text-sm font-medium text-ink-secondary">Instant route preview · Detailed plan by email · Free</p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            {/* Ask Buddy — primary visual weight: jade solid with AI icon */}
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
             <button
               onClick={onAskBuddy}
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-jade px-6 py-3.5 text-base font-semibold text-white transition-[background-color,transform] duration-hover ease-out hover:-translate-y-0.5 hover:bg-jade-dark active:scale-[0.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jade"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-jade transition-colors hover:text-jade-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-jade"
             >
               <Sparkles className="h-4 w-4" strokeWidth={1.5} />
               {t('home.hero.ctaSecondary')}
             </button>
-            {/* Open Toolkit — secondary */}
             <button
               onClick={onOpenToolkit}
-              className="rounded-lg border border-jade/40 bg-jade/8 px-6 py-3.5 text-base font-semibold text-jade transition-colors duration-hover ease-out hover:bg-jade hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jade"
+              className="text-sm font-semibold text-jade transition-colors hover:text-jade-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-jade"
             >
               {t('home.hero.ctaPrimary')}
             </button>
