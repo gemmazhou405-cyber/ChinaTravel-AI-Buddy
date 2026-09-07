@@ -165,7 +165,11 @@ export default function App() {
   };
 
   const navigateToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (scrollToElementId(id)) return;
+
+    // Retry after the current render frame so CTA navigation remains reliable
+    // while a lazily mounted section is being added to the page.
+    window.setTimeout(() => scrollToElementId(id), 0);
   };
 
   const scrollToForm = () => {

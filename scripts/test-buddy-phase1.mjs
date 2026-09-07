@@ -67,12 +67,12 @@ assert.doesNotMatch(buddySource, /UPSTREAM_TIMEOUT_MS = 35000/, 'Pages Function 
 assert.match(buddySource, /X-ChinaEase-Timeout-Ms/, 'Pages Function passes remaining budget to Worker');
 assert.match(buddySource, /assertTimeRemaining\(deadlineAt, 9000\)/, 'Pages Function fails fast if there is not enough time before Worker call');
 assert.match(buddySource, /signal: AbortSignal\.timeout\(fetchTimeoutMs\)/, 'Pages Function aborts Worker calls before platform timeout');
-assert.match(buddySource, /withTimeout\(rollbackUsage/, 'Pages Function bounds rollback work after upstream timeout');
+assert.match(buddySource, /withTimeout\(rollbackPassUsage/, 'Pages Function bounds rollback work after upstream timeout');
 assert.match(buddySource, /504, 'upstream_timeout'/, 'Pages Function returns JSON 504 for timeout');
 assert.match(buddySource, /Buddy is temporarily unavailable\. Please try again\./, 'Pages timeout returns JSON-safe user message');
 assert.match(buddySource, /updateWrite\(env, userPath, \{\s*buddyAiQuotaUsed: totalBefore \+ 1/s, 'successful reservation charges quota once');
 assert.match(buddySource, /duplicate_completed/, 'duplicate completed requests remain idempotent');
-assert.match(buddySource, /rollbackUsage/, 'timed-out requests attempt quota rollback');
+assert.match(buddySource, /rollbackPassUsage/, 'timed-out requests attempt quota rollback');
 assert.match(buddySource, /validBotId/, 'Pages Function validates bot id');
 assert.match(buddySource, /missing_internal_secret/, 'Pages Function rejects missing production internal secret');
 assert.match(buddySource, /reply: reply\.slice/, 'Pages Function stores completed reply for idempotency');
