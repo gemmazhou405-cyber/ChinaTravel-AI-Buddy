@@ -29,6 +29,15 @@ export default function Hero({ onOpenToolkit, onAskBuddy, onOpenTripPlan }: Prop
 
           <p className="mt-6 text-xl font-medium text-ink md:text-2xl">{t('home.hero.subtitle')}</p>
 
+          <button
+            type="button"
+            onClick={onOpenTripPlan}
+            className="mt-5 inline-flex items-center gap-2 text-base font-semibold text-jade underline decoration-jade/40 underline-offset-4 transition-colors duration-hover ease-out hover:text-jade-dark hover:decoration-jade focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade"
+          >
+            {t('home.hero.ctaTripPlan')}
+            <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
+          </button>
+
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             {/* Ask Buddy — primary visual weight: jade solid with AI icon */}
             <button
@@ -56,14 +65,6 @@ export default function Hero({ onOpenToolkit, onAskBuddy, onOpenTripPlan }: Prop
             ))}
           </div>
 
-          <button
-            type="button"
-            onClick={onOpenTripPlan}
-            className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-jade transition-colors duration-hover ease-out hover:text-jade-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade"
-          >
-            {t('home.hero.ctaTripPlan')}
-            <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
-          </button>
         </div>
 
         <PhoneDemo />
