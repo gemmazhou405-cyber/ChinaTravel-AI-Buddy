@@ -100,7 +100,33 @@ function buildText(lead) {
   ].join('\n');
 }
 
-function buildConfirmationHtml(lead) {
+function planHtml(plan) {
+  if (!plan) return '';
+  const days = plan.daily_itinerary.map((item) => `<li style="margin:0 0 12px;"><strong>${escapeHtml(item.day)} · ${escapeHtml(item.city)}</strong><br>${escapeHtml(item.morning)}${item.afternoon ? ` · ${escapeHtml(item.afternoon)}` : ''}${item.evening ? ` · ${escapeHtml(item.evening)}` : ''}${item.transport ? `<br><span style="color:#555;">Transport: ${escapeHtml(item.transport)}</span>` : ''}${item.food ? `<br><span style="color:#555;">Food: ${escapeHtml(item.food)}</span>` : ''}${item.notes ? `<br><span style="color:#555;">Note: ${escapeHtml(item.notes)}</span>` : ''}</li>`).join('');
+  const section = (title, items) => Array.isArray(items) && items.length ? `<h3 style="font-size:15px;margin:18px 0 8px;">${title}</h3><ul style="margin:0 0 16px;padding-left:20px;">${items.map((item) => `<li style="margin:0 0 6px;">${escapeHtml(item)}</li>`).join('')}</ul>` : '';
+  return `<h3 style="font-size:15px;margin:18px 0 8px;">${escapeHtml(plan.title)}</h3><p style="margin:0 0 12px;">${escapeHtml(plan.summary)}</p><ol style="margin:0 0 16px;padding-left:20px;">${days}</ol>${section('Transport notes', plan.transport)}${section('Prepare before you go', plan.preparation)}${section('Personalised notes', plan.personalised_notes)}${section('Check before booking', plan.verify_before_booking)}`;
+}
+
+function planText(plan) {
+  if (!plan) return [];
+  const lines = [plan.title, plan.summary, '', 'Daily itinerary:'];
+  for (const item of plan.daily_itinerary) {
+    lines.push(`${item.day} · ${item.city}`);
+    if (item.morning) lines.push(`Morning: ${item.morning}`);
+    if (item.afternoon) lines.push(`Afternoon: ${item.afternoon}`);
+    if (item.evening) lines.push(`Evening: ${item.evening}`);
+    if (item.transport) lines.push(`Transport: ${item.transport}`);
+    if (item.food) lines.push(`Food: ${item.food}`);
+    if (item.notes) lines.push(`Note: ${item.notes}`);
+    lines.push('');
+  }
+  for (const [title, items] of [['Transport notes', plan.transport], ['Prepare before you go', plan.preparation], ['Personalised notes', plan.personalised_notes], ['Check before booking', plan.verify_before_booking]]) {
+    if (items?.length) { lines.push(`${title}:`, ...items.map((item) => `- ${item}`), ''); }
+  }
+  return lines;
+}
+
+function buildConfirmationHtml(lead, plan) {
   const travelDate = escapeHtml(lead.travelDate);
   const travelers = escapeHtml(lead.travelers);
   // Escape HTML first, then convert newlines to <br> for multi-line display
@@ -123,29 +149,29 @@ function buildConfirmationHtml(lead) {
         `<tr><td style="padding:4px 12px 4px 0;font-weight:600;white-space:nowrap;vertical-align:top;">${label}</td><td style="padding:4px 0;word-break:break-word;">${value}</td></tr>`,
     )
     .join('\n');
-  const starterRoute = buildStarterRoute(lead).map((item) => `<li style="margin:0 0 6px;">${escapeHtml(item)}</li>`).join('');
+  const content = plan
+    ? `<p style="margin:0 0 16px;">We generated a personalised first draft from the details you shared. Our team can refine it and send any final practical notes within 48 hours.</p>${planHtml(plan)}`
+    : `<p style="margin:0 0 16px;">We&#39;ve received your request. We&#39;ll prepare and send your personalised China trip plan within 48 hours.</p>`;
   return `<!DOCTYPE html><html><head><meta charset="utf-8"></head><body style="font-family:sans-serif;font-size:14px;color:#111;max-width:600px;margin:0 auto;padding:24px;">
 <p style="margin:0 0 12px;">Hi,</p>
 <p style="margin:0 0 12px;">Thanks for sharing your China trip details with ChinaEase Buddy.</p>
-<p style="margin:0 0 16px;">We&#39;ve received your request. Here is a starter route outline based on the information you shared:</p>
 <table style="border-collapse:collapse;width:100%;margin:0 0 16px;">
 ${trs}
 </table>
-<h3 style="font-size:15px;margin:18px 0 8px;">Starter route outline</h3>
-<ul style="margin:0 0 16px;padding-left:20px;">${starterRoute}</ul>
-<p style="margin:0 0 12px;">Our team will review the details and follow up with practical transport, arrival, and preparation notes. This message does not subscribe you to our newsletter.</p>
+${content}
+<p style="margin:0 0 12px;">This message does not subscribe you to our newsletter.</p>
 <p style="margin:0 0 16px;">Please do not reply with passport details, payment card information, or sensitive medical information.</p>
 <p style="margin:0;">ChinaEase Buddy<br><a href="https://chinaeasebuddy.com" style="color:#0066cc;">https://chinaeasebuddy.com</a></p>
 </body></html>`;
 }
 
-function buildConfirmationText(lead) {
+function buildConfirmationText(lead, plan) {
   return [
     'Hi,',
     '',
     'Thanks for sharing your China trip details with ChinaEase Buddy.',
     '',
-    "We've received your request. Here is a starter route outline based on the information you shared:",
+    ...(plan ? ['We generated a personalised first draft from the details you shared. Our team can refine it and send any final practical notes within 48 hours.'] : ["We've received your request. We'll prepare and send your personalised China trip plan within 48 hours."]),
     '',
     `Trip date:\n${textVal(lead.travelDate)}`,
     '',
@@ -163,8 +189,7 @@ function buildConfirmationText(lead) {
     '',
     `Preferred contact:\n${textVal(lead.contactMethod)}`,
     '',
-    'Starter route outline:',
-    ...buildStarterRoute(lead),
+    ...(plan ? planText(plan) : []),
     '',
     'Our team will review the details and follow up with practical transport, arrival, and preparation notes. This message does not subscribe you to our newsletter.',
     '',
@@ -231,7 +256,7 @@ export async function sendTripLeadNotification(env, lead) {
   );
 }
 
-export async function sendTripLeadConfirmation(env, lead) {
+export async function sendTripLeadConfirmation(env, lead, plan = null) {
   if (!env.RESEND_API_KEY || !env.TRIP_LEAD_NOTIFY_EMAIL) {
     return { ok: false, errorCode: 'missing_config' };
   }
@@ -243,8 +268,8 @@ export async function sendTripLeadConfirmation(env, lead) {
       to: lead.email,
       reply_to: env.TRIP_LEAD_NOTIFY_EMAIL,
       subject: "We've received your China trip details",
-      html: buildConfirmationHtml(lead),
-      text: buildConfirmationText(lead),
+      html: buildConfirmationHtml(lead, plan),
+      text: buildConfirmationText(lead, plan),
     },
     { idempotencyKey: lead.requestId ? `trip-lead-customer-${lead.requestId}` : undefined },
   );

@@ -47,7 +47,7 @@ interface GuidePageData {
   }>;
 }
 
-const contactEmail = 'gemmazhou405@gmail.com';
+const contactEmail = 'hello@chinaeasebuddy.com';
 const siteUrl = 'https://chinaeasebuddy.com';
 const gumroadLinks = {
   trip: import.meta.env.VITE_GUMROAD_TRIP_URL || 'https://chinaease.gumroad.com/l/trip-pass',

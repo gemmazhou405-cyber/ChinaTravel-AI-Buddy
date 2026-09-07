@@ -8,6 +8,8 @@ import {
   parseJson,
 } from '../../_shared/http.js';
 import { sendTripLeadNotification, sendTripLeadConfirmation } from '../../_shared/email.js';
+import { generateTripPlan } from '../../_shared/itinerary.js';
+import { sendWhatsAppTripReminder } from '../../_shared/whatsapp.js';
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
@@ -161,6 +163,8 @@ export async function onRequestPost({ request, env }) {
       createdAt,
       notificationStatus: 'pending',
       confirmationEmailStatus: 'pending',
+      planGenerationStatus: 'pending',
+      whatsappReminderStatus: contactMethod === 'whatsapp' ? 'pending' : 'not_requested',
     });
   } catch (err) {
     if (String(err?.message).includes(':409:')) {
@@ -192,10 +196,24 @@ export async function onRequestPost({ request, env }) {
     createdAt,
   };
 
-  // Send both emails in parallel — must be awaited before returning Response
-  const [adminSettled, confirmSettled] = await Promise.allSettled([
+  // Generate a real, personalised draft before the customer confirmation email.
+  // If the provider is unavailable, the email explicitly promises a later review instead of sending a fake route.
+  const planResult = await generateTripPlan(env, lead);
+  const plan = planResult.ok ? planResult.plan : null;
+  try {
+    await patchDoc(env, `tripLeads/${docId}`, {
+      planGenerationStatus: planResult.ok ? 'sent' : 'failed',
+      ...(planResult.ok ? { generatedPlan: plan, planGeneratedAt: Date.now() } : { planGenerationErrorCode: planResult.errorCode }),
+    });
+  } catch (patchErr) {
+    console.error('[leads/trip] plan_status_update_failed', String(patchErr?.message).slice(0, 80));
+  }
+
+  // Send notifications in parallel — each result is recorded independently.
+  const [adminSettled, confirmSettled, whatsappSettled] = await Promise.allSettled([
     sendTripLeadNotification(env, lead),
-    sendTripLeadConfirmation(env, lead),
+    sendTripLeadConfirmation(env, lead, plan),
+    sendWhatsAppTripReminder(env, lead),
   ]);
   const adminResult =
     adminSettled.status === 'fulfilled'
@@ -204,6 +222,10 @@ export async function onRequestPost({ request, env }) {
   const confirmResult =
     confirmSettled.status === 'fulfilled'
       ? confirmSettled.value
+      : { ok: false, errorCode: 'unknown_error' };
+  const whatsappResult =
+    whatsappSettled.status === 'fulfilled'
+      ? whatsappSettled.value
       : { ok: false, errorCode: 'unknown_error' };
 
   // Update admin notification status
@@ -242,6 +264,16 @@ export async function onRequestPost({ request, env }) {
     console.error('[leads/trip] confirm_status_update_failed', String(patchErr?.message).slice(0, 60));
   }
 
-  return withCors(jsonResponse({ status: 'received' }), request, env);
-}
+  try {
+    if (whatsappResult.ok) {
+      await patchDoc(env, `tripLeads/${docId}`, { whatsappReminderStatus: 'sent', whatsappReminderSentAt: Date.now() });
+    } else if (whatsappResult.errorCode !== 'not_requested') {
+      console.error('[leads/trip] whatsapp_reminder_failed', { errorCode: whatsappResult.errorCode, rid: docId.slice(0, 8) });
+      await patchDoc(env, `tripLeads/${docId}`, { whatsappReminderStatus: 'failed', whatsappReminderErrorCode: whatsappResult.errorCode });
+    }
+  } catch (patchErr) {
+    console.error('[leads/trip] whatsapp_status_update_failed', String(patchErr?.message).slice(0, 60));
+  }
 
+  return withCors(jsonResponse({ status: 'received', planGenerated: Boolean(plan), whatsappReminderSent: Boolean(whatsappResult.ok) }), request, env);
+}
