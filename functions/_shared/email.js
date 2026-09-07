@@ -22,6 +22,26 @@ function listVal(value) {
   return Array.isArray(value) && value.length ? value.join(', ') : 'Not provided';
 }
 
+function buildStarterRoute(lead) {
+  const cities = Array.isArray(lead.destinationCities) && lead.destinationCities.length
+    ? lead.destinationCities.slice(0, 6)
+    : (lead.arrivalCity ? [lead.arrivalCity] : []);
+  const days = Number(lead.tripLength) || 7;
+  if (!cities.length) return ['We will suggest a route after reviewing your dates and interests.'];
+  const usableDays = Math.max(days, cities.length);
+  const baseDays = Math.floor(usableDays / cities.length);
+  const extraDays = usableDays % cities.length;
+  let day = 1;
+  return cities.map((city, index) => {
+    const cityDays = baseDays + (index < extraDays ? 1 : 0);
+    const start = day;
+    const end = day + cityDays - 1;
+    day = end + 1;
+    const focus = listVal(lead.priorities) === 'Not provided' ? 'a relaxed first look at the city' : listVal(lead.priorities).toLowerCase();
+    return `Days ${start}–${end}: ${city} — build the day around ${focus}.`;
+  });
+}
+
 function buildHtml(lead) {
   const submittedAt = lead.createdAt ? new Date(lead.createdAt).toISOString() : null;
   const rows = [
@@ -103,14 +123,17 @@ function buildConfirmationHtml(lead) {
         `<tr><td style="padding:4px 12px 4px 0;font-weight:600;white-space:nowrap;vertical-align:top;">${label}</td><td style="padding:4px 0;word-break:break-word;">${value}</td></tr>`,
     )
     .join('\n');
+  const starterRoute = buildStarterRoute(lead).map((item) => `<li style="margin:0 0 6px;">${escapeHtml(item)}</li>`).join('');
   return `<!DOCTYPE html><html><head><meta charset="utf-8"></head><body style="font-family:sans-serif;font-size:14px;color:#111;max-width:600px;margin:0 auto;padding:24px;">
 <p style="margin:0 0 12px;">Hi,</p>
 <p style="margin:0 0 12px;">Thanks for sharing your China trip details with ChinaEase Buddy.</p>
-<p style="margin:0 0 16px;">We&#39;ve received your request and will review the information you submitted.</p>
+<p style="margin:0 0 16px;">We&#39;ve received your request. Here is a starter route outline based on the information you shared:</p>
 <table style="border-collapse:collapse;width:100%;margin:0 0 16px;">
 ${trs}
 </table>
-<p style="margin:0 0 12px;">This message confirms that your trip enquiry was received. It does not subscribe you to our newsletter.</p>
+<h3 style="font-size:15px;margin:18px 0 8px;">Starter route outline</h3>
+<ul style="margin:0 0 16px;padding-left:20px;">${starterRoute}</ul>
+<p style="margin:0 0 12px;">Our team will review the details and follow up with practical transport, arrival, and preparation notes. This message does not subscribe you to our newsletter.</p>
 <p style="margin:0 0 16px;">Please do not reply with passport details, payment card information, or sensitive medical information.</p>
 <p style="margin:0;">ChinaEase Buddy<br><a href="https://chinaeasebuddy.com" style="color:#0066cc;">https://chinaeasebuddy.com</a></p>
 </body></html>`;
@@ -122,7 +145,7 @@ function buildConfirmationText(lead) {
     '',
     'Thanks for sharing your China trip details with ChinaEase Buddy.',
     '',
-    "We've received your request and will review the information you submitted.",
+    "We've received your request. Here is a starter route outline based on the information you shared:",
     '',
     `Trip date:\n${textVal(lead.travelDate)}`,
     '',
@@ -140,7 +163,10 @@ function buildConfirmationText(lead) {
     '',
     `Preferred contact:\n${textVal(lead.contactMethod)}`,
     '',
-    'This message confirms that your trip enquiry was received. It does not subscribe you to our newsletter.',
+    'Starter route outline:',
+    ...buildStarterRoute(lead),
+    '',
+    'Our team will review the details and follow up with practical transport, arrival, and preparation notes. This message does not subscribe you to our newsletter.',
     '',
     'Please do not reply with passport details, payment card information, or sensitive medical information.',
     '',
@@ -223,4 +249,3 @@ export async function sendTripLeadConfirmation(env, lead) {
     { idempotencyKey: lead.requestId ? `trip-lead-customer-${lead.requestId}` : undefined },
   );
 }
-
