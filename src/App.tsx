@@ -193,9 +193,9 @@ export default function App() {
         }}
       />
 
-      <Hero onOpenToolkit={handlePrimaryCta} onAskBuddy={() => openBuddy()} onOpenTripPlan={handleTripPlanCta} />
-
       <TripPlanLead />
+
+      <Hero onOpenToolkit={handlePrimaryCta} onAskBuddy={() => openBuddy()} onOpenTripPlan={handleTripPlanCta} />
 
       {toolOpen && (
         <div className="relative">
