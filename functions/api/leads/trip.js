@@ -1,4 +1,13 @@
-import { createDoc, getDoc, patchDoc } from '../../_shared/firestore.js';
+import {
+  batchGetDocs,
+  beginTransaction,
+  commitTransaction,
+  createDoc,
+  createWrite,
+  getDoc,
+  patchDoc,
+  updateWrite,
+} from '../../_shared/firestore.js';
 import {
   clientIp,
   withCors,
@@ -10,6 +19,8 @@ import {
 import { sendTripLeadNotification, sendTripLeadConfirmation } from '../../_shared/email.js';
 import { generateTripPlan } from '../../_shared/itinerary.js';
 import { sendWhatsAppTripReminder } from '../../_shared/whatsapp.js';
+import { activePassForId } from '../../_shared/entitlements.js';
+import { verifySessionCookie } from '../../_shared/session.js';
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
@@ -30,6 +41,62 @@ function checkRateLimit(ipHash) {
   if (prev.length >= RATE_MAX) return false;
   _ipRateMap.set(ipHash, [...prev, now]);
   return true;
+}
+
+const CLAIM_STALE_MS = 5 * 60 * 1000;
+
+async function hasActivePaidPass(request, env) {
+  try {
+    const session = await verifySessionCookie(request.headers.get('Cookie'), env.SESSION_SECRET);
+    if (!session?.passId) return false;
+    const entitlement = await activePassForId(env, session.passId);
+    return entitlement.active;
+  } catch {
+    return false;
+  }
+}
+
+async function reserveFreePlan(env, { emailHash, ipHash, requestId }) {
+  const paths = [
+    `tripPlanClaims/email_${emailHash}`,
+    `tripPlanClaims/ip_${ipHash}`,
+  ];
+  const transaction = await beginTransaction(env);
+  const existing = await batchGetDocs(env, paths, transaction);
+  const now = Date.now();
+
+  for (const path of paths) {
+    const claim = existing.get(path);
+    const pendingIsFresh = claim?.status === 'pending' && now - (claim.createdAt || 0) < CLAIM_STALE_MS;
+    if (claim?.status === 'used' || pendingIsFresh) {
+      return { ok: false, reason: path.includes('/email_') ? 'email' : 'ip' };
+    }
+  }
+
+  const data = { requestId, status: 'pending', createdAt: now };
+  const writes = paths.map((path) => existing.get(path)
+    ? updateWrite(env, path, data)
+    : createWrite(env, path, data));
+
+  try {
+    await commitTransaction(env, transaction, writes);
+    return { ok: true, paths };
+  } catch (error) {
+    if (String(error?.message).includes('409') || String(error?.message).includes('ABORTED')) {
+      return { ok: false, reason: 'email_or_ip' };
+    }
+    throw error;
+  }
+}
+
+async function finishFreePlanClaim(env, paths, status) {
+  if (!paths?.length) return;
+  await Promise.all(paths.map((path) => patchDoc(env, path, {
+    status,
+    completedAt: Date.now(),
+  }).catch((error) => {
+    console.error('[leads/trip] claim_update_failed', String(error?.message).slice(0, 60));
+  })));
 }
 
 function clampStr(value, max) {
@@ -133,6 +200,30 @@ export async function onRequestPost({ request, env }) {
     return withCors(jsonResponse({ status: 'received', alreadyProcessed: true }), request, env);
   }
 
+  // Paid pass holders can generate new plans. Free visitors get one successful
+  // personalised plan per email address and per IP address.
+  const paidPass = await hasActivePaidPass(request, env);
+  let freePlanClaimPaths = null;
+  if (!paidPass) {
+    let reservation;
+    try {
+      reservation = await reserveFreePlan(env, { emailHash, ipHash, requestId: docId });
+    } catch (error) {
+      console.error('[leads/trip] free_plan_claim_failed', String(error?.message).slice(0, 80));
+      return errorResponse(request, env, 500, 'claim_error', 'Could not check free-plan eligibility. Please try again.');
+    }
+    if (!reservation.ok) {
+      return errorResponse(
+        request,
+        env,
+        409,
+        'free_plan_used',
+        'This email address or network has already used the free personalised plan. Use a new email address or purchase a ChinaEase Pass.',
+      );
+    }
+    freePlanClaimPaths = reservation.paths;
+  }
+
   // Write lead to Firestore
   try {
     await createDoc(env, 'tripLeads', docId, {
@@ -172,6 +263,7 @@ export async function onRequestPost({ request, env }) {
       return withCors(jsonResponse({ status: 'received', alreadyProcessed: true }), request, env);
     }
     console.error('[leads/trip] Firestore write failed', String(err?.message).slice(0, 80));
+    await finishFreePlanClaim(env, freePlanClaimPaths, 'failed');
     return errorResponse(request, env, 500, 'firestore_error', 'Could not save your enquiry. Please try again.');
   }
 
@@ -208,6 +300,8 @@ export async function onRequestPost({ request, env }) {
   } catch (patchErr) {
     console.error('[leads/trip] plan_status_update_failed', String(patchErr?.message).slice(0, 80));
   }
+
+  await finishFreePlanClaim(env, freePlanClaimPaths, planResult.ok ? 'used' : 'failed');
 
   // Send notifications in parallel — each result is recorded independently.
   const [adminSettled, confirmSettled, whatsappSettled] = await Promise.allSettled([
@@ -279,7 +373,7 @@ export async function onRequestPost({ request, env }) {
     ? {
         title: plan.title,
         summary: plan.summary,
-        days: plan.daily_itinerary.slice(0, 3).map((item) => ({
+        days: plan.daily_itinerary.slice(0, 1).map((item) => ({
           day: item.day,
           city: item.city,
           morning: item.morning,

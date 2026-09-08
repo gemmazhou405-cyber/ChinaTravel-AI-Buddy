@@ -30,7 +30,7 @@ export interface TripPlanPreview {
 
 export type TripLeadResult =
   | { status: 'success'; planGenerated: boolean; planPreview: TripPlanPreview | null; whatsappReminderSent: boolean }
-  | { status: 'too_many' | 'error'; planGenerated: false; planPreview: null; whatsappReminderSent: false };
+  | { status: 'free_plan_used' | 'too_many' | 'error'; planGenerated: false; planPreview: null; whatsappReminderSent: false };
 
 export function isValidWhatsApp(value: string) {
   const trimmed = value.trim();
@@ -71,6 +71,12 @@ export async function submitTripLead(
         consentVersion: 'trip-lead-2026-09',
       }),
     });
+    if (res.status === 409) {
+      const data = await res.json().catch(() => ({}));
+      if (data?.error === 'free_plan_used' || data?.code === 'free_plan_used') {
+        return { status: 'free_plan_used', planGenerated: false, planPreview: null, whatsappReminderSent: false };
+      }
+    }
     if (res.status === 429) return { status: 'too_many', planGenerated: false, planPreview: null, whatsappReminderSent: false };
     if (!res.ok) return { status: 'error', planGenerated: false, planPreview: null, whatsappReminderSent: false };
     const data = await res.json().catch(() => ({}));
