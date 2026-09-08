@@ -1,4 +1,4 @@
-const ITINERARY_TIMEOUT_MS = 20000;
+const ITINERARY_TIMEOUT_MS = 45000;
 
 function timeoutSignal(ms) {
   if (typeof AbortSignal.timeout === 'function') return AbortSignal.timeout(ms);
@@ -73,10 +73,10 @@ async function callDeepSeekDirect(env, messages) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: env.DEEPSEEK_ITINERARY_MODEL || 'deepseek-v4-flash',
+        model: env.DEEPSEEK_ITINERARY_MODEL || 'deepseek-chat',
         messages,
         response_format: { type: 'json_object' },
-        max_tokens: 3500,
+        max_tokens: 5000,
         stream: false,
       }),
       signal: timeoutSignal(ITINERARY_TIMEOUT_MS),
@@ -107,7 +107,7 @@ async function callExistingBuddyProxy(env, systemPrompt, userPrompt, requestId) 
         userId: requestId || crypto.randomUUID(),
         botId: env.COZE_BOT_ID || 'chinaease-trip-planner',
         stream: false,
-        timeoutMs: 18000,
+        timeoutMs: 40000,
       }),
       signal: timeoutSignal(ITINERARY_TIMEOUT_MS),
     });
@@ -135,7 +135,7 @@ export async function generateTripPlan(env, lead) {
   };
   const systemPrompt = `You are ChinaEase Buddy's travel planning assistant. Create a practical first-draft China itinerary for a foreign visitor. Use only the information supplied by the user. Do not invent visa eligibility, live prices, opening hours, ticket availability, medical advice, or bookings; put anything that must be checked in verify_before_booking. Return JSON only, matching this exact shape:
 {"title":"...","summary":"...","daily_itinerary":[{"day":"Day 1","city":"...","morning":"...","afternoon":"...","evening":"...","transport":"...","food":"...","notes":"..."}],"transport":["..."],"preparation":["..."],"personalised_notes":["..."],"verify_before_booking":["..."]}
-Make each day specific and useful. If the user has not chosen enough cities, build a sensible route around the arrival city and clearly label assumptions. Use concise English suitable for an email.`;
+Make each day specific and useful. If the user has not chosen enough cities, build a sensible route around the arrival city and clearly label assumptions. Use concise English suitable for an email. Keep every morning, afternoon, evening, transport, food, and notes value under 140 characters so the complete JSON response is not truncated.`;
   const userPrompt = `Create the JSON trip plan for this traveller:\n${JSON.stringify(input)}`;
   const messages = [
     { role: 'system', content: systemPrompt },

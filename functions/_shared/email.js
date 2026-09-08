@@ -151,7 +151,7 @@ function buildConfirmationHtml(lead, plan) {
     .join('\n');
   const content = plan
     ? `<p style="margin:0 0 16px;">We generated a personalised first draft from the details you shared. Our team can refine it and send any final practical notes within 48 hours.</p>${planHtml(plan)}`
-    : `<p style="margin:0 0 16px;">We&#39;ve received your request. We&#39;ll prepare and send your personalised China trip plan within 48 hours.</p>`;
+    : `<p style="margin:0 0 16px;">We received your request, but we could not generate your personalised plan this time. Please submit the form again in a few minutes.</p>`;
   return `<!DOCTYPE html><html><head><meta charset="utf-8"></head><body style="font-family:sans-serif;font-size:14px;color:#111;max-width:600px;margin:0 auto;padding:24px;">
 <p style="margin:0 0 12px;">Hi,</p>
 <p style="margin:0 0 12px;">Thanks for sharing your China trip details with ChinaEase Buddy.</p>
@@ -171,7 +171,7 @@ function buildConfirmationText(lead, plan) {
     '',
     'Thanks for sharing your China trip details with ChinaEase Buddy.',
     '',
-    ...(plan ? ['We generated a personalised first draft from the details you shared. Our team can refine it and send any final practical notes within 48 hours.'] : ["We've received your request. We'll prepare and send your personalised China trip plan within 48 hours."]),
+    ...(plan ? ['We generated a personalised first draft from the details you shared. Our team can refine it and send any final practical notes within 48 hours.'] : ['We received your request, but we could not generate your personalised plan this time. Please submit the form again in a few minutes.']),
     '',
     `Trip date:\n${textVal(lead.travelDate)}`,
     '',

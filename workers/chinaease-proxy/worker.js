@@ -1,7 +1,7 @@
 const COZE_CHAT_URL = 'https://api.coze.cn/v3/chat';
 const COZE_RETRIEVE_URL = 'https://api.coze.cn/v3/chat/retrieve';
 const COZE_MESSAGE_LIST_URL = 'https://api.coze.cn/v3/chat/message/list';
-const MAX_REPLY_CHARS = 6000;
+const MAX_REPLY_CHARS = 16000;
 const POLL_DELAYS_MS = [800, 1200, 1600, 2200, 3000];
 const COZE_GLOBAL_BUDGET_MS = 14000;
 const COZE_MIN_BUDGET_MS = 5000;
