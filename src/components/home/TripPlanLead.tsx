@@ -67,9 +67,9 @@ function SamplePreview() {
       </div>
       <div className="grid gap-3 p-4 text-sm md:grid-cols-3">
         {[
-          ['Day 1', 'Arrival, easy dinner, payment setup'],
-          ['Day 2', 'Forbidden City, hutong walk, local food'],
-          ['Full plan', 'Sent by email after your preview'],
+          ['Day 1 · Beijing', 'Easy check-in, first dinner, Alipay setup'],
+          ['Day 2 · Beijing', 'Forbidden City, hutong walk, local food'],
+          ['Full itinerary', 'Daily route, transport notes, app checklist'],
         ].map(([title, body]) => (
           <div key={title} className="rounded-xl bg-jade-wash/70 p-3">
             <p className="font-semibold text-ink">{title}</p>
@@ -161,10 +161,10 @@ export default function TripPlanLead() {
             <span className="h-2 w-2 rounded-full bg-red-500" />
             <span className="text-[12px] font-extrabold uppercase tracking-[0.18em] text-jade">{t('home.tripPlan.kicker')}</span>
           </div>
-          <p className="mt-5 max-w-[32rem] text-sm font-semibold uppercase tracking-[0.12em] text-jade">Your first China itinerary, made simple.</p>
-          <h2 className="mt-3 max-w-[34rem] text-4xl font-extrabold leading-[1.04] tracking-[-0.02em] text-ink md:text-[56px]">{t('home.tripPlan.title')}</h2>
+          <p className="mt-5 max-w-[32rem] text-sm font-semibold uppercase tracking-[0.12em] text-jade">Local insight for first-time China travellers.</p>
+          <h2 className="mt-3 max-w-[34rem] text-4xl font-extrabold leading-[1.04] tracking-[-0.02em] text-ink md:text-[56px]">Your first China trip, planned with local insight.</h2>
           <p className="mt-4 max-w-[33rem] text-lg font-medium leading-relaxed text-ink-secondary md:text-xl">
-            Get a Day 1 route preview instantly. The full personalised plan arrives by email, with transport, apps, food and arrival checks included.
+            Get a free personalised route preview before you travel. We help with cities, transport, payments, food and the small details that make China easier.
           </p>
           <div className="mt-5 flex flex-wrap gap-2 text-xs font-semibold text-jade">
             <span className="rounded-full bg-white px-3 py-2 shadow-sm">No payment</span>
@@ -216,8 +216,8 @@ export default function TripPlanLead() {
               <div className="flex items-start gap-3">
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-jade text-white"><Map className="h-5 w-5" strokeWidth={1.6} /></span>
                 <div>
-                  <h3 className="text-2xl font-bold leading-tight text-ink">Create your free plan</h3>
-                  <p className="mt-1 text-sm text-ink-secondary">A short form. Instant Day 1 preview. Full plan by email.</p>
+                  <h3 className="text-2xl font-bold leading-tight text-ink">Get your free itinerary</h3>
+                  <p className="mt-1 text-sm text-ink-secondary">Instant Day 1 preview. Full plan by email. No payment.</p>
                 </div>
               </div>
               {error && (error === 'free_plan_used' ? (
@@ -262,7 +262,7 @@ export default function TripPlanLead() {
                 <fieldset>
                   <legend className="text-sm font-semibold text-ink">How should we follow up?</legend>
                   <div className="mt-3">
-                    <label htmlFor="homepage-lead-email" className="text-xs font-semibold text-ink">Email for the full plan *</label>
+                    <label htmlFor="homepage-lead-email" className="text-xs font-semibold text-ink">Email for the full itinerary *</label>
                     <input id="homepage-lead-email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} disabled={status === 'submitting'} placeholder="you@example.com" className="mt-1 w-full rounded-lg border border-hairline bg-surface px-3 py-2.5 text-sm text-ink" />
                   </div>
                   <div className="mt-3 flex gap-2">
@@ -278,8 +278,8 @@ export default function TripPlanLead() {
                   )}
                 </fieldset>
               </div>
-              <button type="submit" disabled={status === 'submitting'} className="mt-6 inline-flex min-h-[50px] w-full items-center justify-center gap-2 rounded-xl bg-jade px-5 py-3 text-base font-bold text-white shadow-[0_12px_28px_rgba(15,82,87,0.22)] hover:bg-jade-dark"><Send className="h-4 w-4" />{status === 'submitting' ? t('lead.submitting') : 'Show my free plan preview'}</button>
-              <p className="mt-3 text-xs text-ink-tertiary">{t('lead.consent')} <a href="/privacy/" className="underline">{t('lead.consentLink')}</a></p>
+              <button type="submit" disabled={status === 'submitting'} className="mt-6 inline-flex min-h-[50px] w-full items-center justify-center gap-2 rounded-xl bg-jade px-5 py-3 text-base font-bold text-white shadow-[0_12px_28px_rgba(15,82,87,0.22)] hover:bg-jade-dark"><Send className="h-4 w-4" />{status === 'submitting' ? t('lead.submitting') : 'Get my free China itinerary'}</button>
+              <p className="mt-3 text-xs leading-relaxed text-ink-tertiary">We only use your email to send your trip plan. No newsletter unless you choose it. <a href="/privacy/" className="underline">{t('lead.consentLink')}</a></p>
             </form>
           )}
         </div>
