@@ -292,6 +292,7 @@ export async function onRequestPost({ request, env }) {
   return withCors(jsonResponse({
     status: 'received',
     planGenerated: Boolean(plan),
+    planErrorCode: plan ? null : planResult.errorCode,
     planPreview,
     whatsappReminderSent: Boolean(whatsappResult.ok),
   }), request, env);
