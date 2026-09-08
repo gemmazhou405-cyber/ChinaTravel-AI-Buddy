@@ -94,7 +94,9 @@ async function callDeepSeekDirect(env, messages) {
 async function callExistingBuddyProxy(env, systemPrompt, userPrompt, requestId) {
   if (!env.COZE_WORKER_URL) return { ok: false, errorCode: 'missing_config' };
   const workerBase = env.COZE_WORKER_URL.replace(/\/+$/, '');
-  const endpoint = workerBase.endsWith('/coze') ? workerBase : `${workerBase}/coze`;
+  const endpoint = workerBase.endsWith('/coze')
+    ? `${workerBase.slice(0, -'/coze'.length)}/trip-plan`
+    : `${workerBase}/trip-plan`;
   const headers = { 'Content-Type': 'application/json' };
   if (env.COZE_INTERNAL_SECRET) headers['X-ChinaEase-Internal-Token'] = env.COZE_INTERNAL_SECRET;
   try {
@@ -102,19 +104,16 @@ async function callExistingBuddyProxy(env, systemPrompt, userPrompt, requestId) 
       method: 'POST',
       headers,
       body: JSON.stringify({
-        message: `${systemPrompt}\n\n${userPrompt}`,
-        context: [],
-        userId: requestId || crypto.randomUUID(),
-        botId: env.COZE_BOT_ID || 'chinaease-trip-planner',
-        stream: false,
-        timeoutMs: 40000,
+        systemPrompt,
+        userPrompt,
+        requestId: requestId || crypto.randomUUID(),
       }),
       signal: timeoutSignal(ITINERARY_TIMEOUT_MS),
     });
     if (!response.ok) return { ok: false, errorCode: response.status >= 500 ? 'provider_error' : 'provider_rejected' };
     const data = await response.json();
-    const plan = parsePlanContent(data?.reply);
-    return plan ? { ok: true, plan } : { ok: false, errorCode: 'invalid_plan' };
+    const plan = normalisePlan(data?.plan);
+    return plan ? { ok: true, plan } : { ok: false, errorCode: data?.code || 'invalid_plan' };
   } catch (error) {
     if (error?.name === 'AbortError' || error?.name === 'TimeoutError') return { ok: false, errorCode: 'provider_timeout' };
     return { ok: false, errorCode: 'unknown_error' };

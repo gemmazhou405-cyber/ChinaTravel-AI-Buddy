@@ -1365,6 +1365,101 @@ async function handleDeepSeek(request, env) {
 }
 
 // ---------------------------------------------------------------------------
+// Dedicated trip-plan handler
+// Keeps itinerary instructions in the system role instead of passing them
+// through Buddy's general travel-chat prompt.
+// ---------------------------------------------------------------------------
+
+async function handleTripPlan(request, env) {
+  if (request.method !== 'POST') {
+    return json({ error: 'method_not_allowed' }, { status: 405 }, env);
+  }
+
+  const auth = await requireInternalAuth(request, env);
+  if (!auth.ok) return auth.response;
+
+  if (!env.DEEPSEEK_API_KEY) {
+    return json({ error: 'configuration_error', code: 'missing_api_key' }, { status: 503 }, env);
+  }
+
+  let incoming;
+  try {
+    incoming = await request.json();
+  } catch {
+    return json({ error: 'invalid_json', code: 'invalid_json' }, { status: 400 }, env);
+  }
+
+  const systemPrompt = typeof incoming?.systemPrompt === 'string'
+    ? incoming.systemPrompt.trim().slice(0, 12000)
+    : '';
+  const userPrompt = typeof incoming?.userPrompt === 'string'
+    ? incoming.userPrompt.trim().slice(0, 12000)
+    : '';
+
+  if (!systemPrompt || !userPrompt) {
+    return json({ error: 'invalid_request', code: 'missing_prompt' }, { status: 400 }, env);
+  }
+
+  let response;
+  try {
+    response = await fetch(DEEPSEEK_CHAT_URL, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${env.DEEPSEEK_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: env.DEEPSEEK_ITINERARY_MODEL || DEEPSEEK_MODEL,
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: userPrompt },
+        ],
+        response_format: { type: 'json_object' },
+        thinking: { type: 'disabled' },
+        stream: false,
+        max_tokens: 5000,
+      }),
+      signal: AbortSignal.timeout(40000),
+    });
+  } catch (error) {
+    const code = error?.name === 'AbortError' || error?.name === 'TimeoutError'
+      ? 'provider_timeout'
+      : 'provider_error';
+    return json({ error: 'upstream_error', code }, { status: 502 }, env);
+  }
+
+  if (!response.ok) {
+    const code = response.status === 401 || response.status === 403
+      ? 'auth_error'
+      : response.status === 402
+        ? 'balance_error'
+        : response.status === 429
+          ? 'rate_limited'
+          : `http_${response.status}`;
+    return json({ error: 'upstream_error', code }, { status: 502 }, env);
+  }
+
+  let data;
+  try {
+    data = await response.json();
+  } catch {
+    return json({ error: 'upstream_error', code: 'non_json' }, { status: 502 }, env);
+  }
+
+  const content = data?.choices?.[0]?.message?.content;
+  if (typeof content !== 'string' || !content.trim()) {
+    return json({ error: 'upstream_error', code: 'empty_reply' }, { status: 502 }, env);
+  }
+
+  const cleaned = content.trim().replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '');
+  try {
+    return json({ plan: JSON.parse(cleaned) }, { status: 200 }, env);
+  } catch {
+    return json({ error: 'upstream_error', code: 'invalid_json_reply' }, { status: 502 }, env);
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Test exports
 // ---------------------------------------------------------------------------
 
@@ -1399,6 +1494,17 @@ export default {
     const url = new URL(request.url);
     if (url.pathname === '/health') {
       return json({ status: 'ok', service: 'ChinaEase Proxy' }, { status: 200 }, env);
+    }
+
+    if (url.pathname === '/trip-plan') {
+      try {
+        return await handleTripPlan(request, env);
+      } catch (error) {
+        console.error('[chinaease-proxy] trip_plan_unhandled_error', {
+          errorCode: error instanceof Error ? error.message.split(':')[0] : 'unknown',
+        });
+        return json({ error: 'upstream_error', code: 'unhandled_error' }, { status: 502 }, env);
+      }
     }
 
     if (url.pathname === '/coze') {
