@@ -218,7 +218,7 @@ export async function onRequestPost({ request, env }) {
         env,
         409,
         'free_plan_used',
-        'This email address or network has already used the free personalised plan. Use a new email address or purchase a ChinaEase Pass.',
+        'Your free plan quota has been used. Please use a new email address or upgrade your membership.',
       );
     }
     freePlanClaimPaths = reservation.paths;
