@@ -19,11 +19,7 @@ export default function PlanLanding() {
       </header>
 
       <main className="flex-1">
-        <div className="mx-auto max-w-2xl px-4 pt-3 md:px-8 md:pt-6">
-          <h1 className="text-[22px] font-extrabold leading-[1.15] tracking-[-0.02em] text-ink sm:text-3xl">
-            Get your free China itinerary
-          </h1>
-        </div>
+        {/* TripPlanLead (standalone) renders its own <h1> + one-line subtitle + CTA + form. */}
         <TripPlanLead standalone />
       </main>
 

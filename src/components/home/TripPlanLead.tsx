@@ -123,6 +123,21 @@ export default function TripPlanLead({ standalone = false }: { standalone?: bool
     void trackEvent('plan_form_start', {});
   };
 
+  // Mobile intro CTA. On /plan the form is right below — just focus its first
+  // field; on the homepage, smooth-scroll the form into view then focus it.
+  const handleIntroCta = () => {
+    void trackEvent('lead_form_opened', { trigger: standalone ? 'plan_hero' : 'homepage_hero' });
+    const focusFirstField = () => document.getElementById('homepage-lead-date')?.focus();
+    if (standalone) {
+      focusFirstField();
+      return;
+    }
+    document.getElementById('trip-plan-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.setTimeout(focusFirstField, 500);
+  };
+
+  const IntroHeading = standalone ? 'h1' : 'h2';
+
   const toggle = (value: string, current: string[], setter: (values: string[]) => void) => setter(current.includes(value) ? current.filter((item) => item !== value) : [...current, value]);
   const resetForm = () => {
     setEmail(''); setTravelDate(''); setTravelers('2'); setTripLength('7'); setDepartureCountry(''); setArrivalCity(''); setCitiesInput(''); setSelectedPriorities([]); setSelectedConcerns([]); setShowPreferences(false); setWhatsapp(''); setContactMethod('email'); setStatus('idle'); setError(null); setPlanPreview(null); setPlanGenerated(false);
@@ -167,27 +182,45 @@ export default function TripPlanLead({ standalone = false }: { standalone?: bool
     <section ref={ref} id="trip-plan" className={`relative overflow-hidden bg-[#F4F8F6] ${standalone ? 'py-3 md:py-8' : 'scroll-mt-16 py-6 md:scroll-mt-20 md:py-14'} ${revealed ? 'motion-reveal-on' : ''}`}>
       <div className={`absolute inset-x-0 top-0 bg-gradient-to-b from-jade-wash to-transparent ${standalone ? 'h-32' : 'h-56'}`} />
       <div className={`relative mx-auto grid gap-6 px-4 md:gap-10 md:px-8 ${standalone ? 'max-w-2xl' : 'max-w-container md:grid-cols-[0.92fr_1.08fr]'}`}>
-        {!standalone && (
         <div className="motion-reveal-item">
           <div className="inline-flex items-center gap-2 rounded-full border border-jade/25 bg-white px-4 py-2 shadow-sm">
             <span className="h-2 w-2 rounded-full bg-red-500" />
             <span className="text-[12px] font-extrabold uppercase tracking-[0.18em] text-jade">{t('home.tripPlan.kicker')}</span>
           </div>
-          <p className="mt-5 max-w-[32rem] text-sm font-semibold uppercase tracking-[0.12em] text-jade">Local insight for first-time China travellers.</p>
-          <h2 className="mt-3 max-w-[34rem] text-4xl font-extrabold leading-[1.04] tracking-[-0.02em] text-ink md:text-[56px]">Your first China trip, planned with local insight.</h2>
-          <p className="mt-4 max-w-[33rem] text-lg font-medium leading-relaxed text-ink-secondary md:text-xl">
+
+          <IntroHeading className="mt-4 max-w-[34rem] text-[26px] font-extrabold leading-[1.12] tracking-[-0.02em] text-ink sm:text-4xl sm:leading-[1.04] md:mt-3 md:text-[52px]">
+            Your first China trip, planned for you.
+          </IntroHeading>
+
+          {/* Mobile: one line. Desktop: full supporting paragraph (layout unchanged). */}
+          <p className="mt-3 text-base font-medium text-ink-secondary md:hidden">
+            Free personalised itinerary in 30 seconds.
+          </p>
+          <p className="mt-4 hidden max-w-[33rem] text-lg font-medium leading-relaxed text-ink-secondary md:block md:text-xl">
             Get a free personalised route preview before you travel. We help with cities, transport, payments, food and the small details that make China easier.
           </p>
-          <div className="mt-5 flex flex-wrap gap-2 text-xs font-semibold text-jade">
+
+          {/* Mobile-only primary CTA — scrolls to / focuses the form. */}
+          <button
+            type="button"
+            onClick={handleIntroCta}
+            className="mt-5 inline-flex min-h-[50px] w-full items-center justify-center gap-2 rounded-xl bg-jade px-5 py-3 text-base font-bold text-white shadow-[0_12px_28px_rgba(15,82,87,0.22)] transition-colors hover:bg-jade-dark md:hidden"
+          >
+            <Map className="h-4 w-4" strokeWidth={1.7} />
+            Get my free itinerary
+          </button>
+
+          {/* Mobile: plain reassurance line. Desktop: pills (minus "Built for first-time visitors"). */}
+          <p className="mt-3 text-xs text-ink-tertiary md:hidden">No payment · No spam</p>
+          <div className="mt-5 hidden flex-wrap gap-2 text-xs font-semibold text-jade md:flex">
             <span className="rounded-full bg-white px-3 py-2 shadow-sm">No payment</span>
             <span className="rounded-full bg-white px-3 py-2 shadow-sm">No spam</span>
-            <span className="rounded-full bg-white px-3 py-2 shadow-sm">Built for first-time visitors</span>
           </div>
+
           <SamplePreview />
         </div>
-        )}
 
-        <div className="motion-reveal-item glass rounded-2xl p-4 sm:p-5 md:p-7" style={standalone ? undefined : ({ '--reveal-index': 2 } as CSSProperties)}>
+        <div id="trip-plan-form" className="motion-reveal-item glass rounded-2xl p-4 sm:p-5 md:p-7" style={standalone ? undefined : ({ '--reveal-index': 2 } as CSSProperties)}>
           {status === 'success' ? (
             <div className="flex flex-col items-start">
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-jade text-white"><Check className="h-5 w-5" strokeWidth={1.7} /></span>
