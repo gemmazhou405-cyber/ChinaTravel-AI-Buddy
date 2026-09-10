@@ -27,11 +27,14 @@ export default {
         },
       },
       fontFamily: {
-        display: ['Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'system-ui', 'sans-serif'],
+        // DESIGN.md: display face is Fraunces (serif). Was regressed to Inter in 46b7da6.
+        display: ['"Fraunces Variable"', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         card: '0 1px 2px rgba(17,20,24,0.04), 0 8px 24px rgba(17,20,24,0.06)',
+        // Single large-and-soft elevation used across raised surfaces.
+        soft: '0 18px 44px -14px rgba(17,20,24,0.12)',
       },
       transitionDuration: {
         hover: '180ms',

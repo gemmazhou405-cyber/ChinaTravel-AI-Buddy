@@ -56,7 +56,7 @@ function CompactChecks({ label, items, values, onToggle, disabled }: { label: st
 
 function SamplePreview() {
   return (
-    <div className="mt-5 overflow-hidden rounded-2xl border border-white/70 bg-white shadow-[0_18px_44px_rgba(15,82,87,0.14)] md:mt-7">
+    <div className="mt-7 overflow-hidden rounded-2xl bg-white shadow-soft md:mt-7">
       <div className="relative h-36 overflow-hidden md:h-44">
         <img src="/images/great-wall-1600.webp" alt="The Great Wall of China winding over forested mountains" className="h-full w-full object-cover" loading="lazy" />
         {/* Bottom-up deep-jade scrim, weighted to the lower ~40% so the white label stays readable. */}
@@ -180,21 +180,21 @@ export default function TripPlanLead({ standalone = false }: { standalone?: bool
   };
 
   return (
-    <section ref={ref} id="trip-plan" className={`relative overflow-hidden bg-[#F4F8F6] ${standalone ? 'py-3 md:py-8' : 'scroll-mt-16 py-6 md:scroll-mt-20 md:py-14'} ${revealed ? 'motion-reveal-on' : ''}`}>
+    <section ref={ref} id="trip-plan" className={`relative overflow-hidden bg-[#F4F8F6] ${standalone ? 'py-5 md:py-8' : 'scroll-mt-16 py-9 md:scroll-mt-20 md:py-14'} ${revealed ? 'motion-reveal-on' : ''}`}>
       <div className={`absolute inset-x-0 top-0 bg-gradient-to-b from-jade-wash to-transparent ${standalone ? 'h-32' : 'h-56'}`} />
       <div className={`relative mx-auto grid gap-6 px-4 md:gap-10 md:px-8 ${standalone ? 'max-w-2xl' : 'max-w-container md:grid-cols-[0.92fr_1.08fr]'}`}>
         <div className="motion-reveal-item">
-          <div className="inline-flex items-center gap-2 rounded-full border border-jade/25 bg-white px-4 py-2 shadow-sm">
+          <div className="inline-flex items-center gap-2 rounded-full bg-jade-wash px-3.5 py-1.5">
             <span className="h-2 w-2 rounded-full bg-red-500" />
             <span className="text-[12px] font-extrabold uppercase tracking-[0.18em] text-jade">{t('home.tripPlan.kicker')}</span>
           </div>
 
-          <IntroHeading className="mt-4 max-w-[34rem] text-[26px] font-extrabold leading-[1.12] tracking-[-0.02em] text-ink sm:text-4xl sm:leading-[1.04] md:mt-3 md:text-[52px]">
+          <IntroHeading className="mt-6 max-w-[20rem] font-display text-[30px] font-semibold leading-[1.08] tracking-[-0.02em] text-ink sm:max-w-[34rem] sm:text-[40px] md:mt-4 md:text-[54px]">
             Your first China trip, planned for you.
           </IntroHeading>
 
           {/* Mobile: one line. Desktop: full supporting paragraph (layout unchanged). */}
-          <p className="mt-3 text-base font-medium text-ink-secondary md:hidden">
+          <p className="mt-4 text-base font-medium text-ink-secondary md:hidden">
             Free personalised itinerary in 30 seconds.
           </p>
           <p className="mt-4 hidden max-w-[33rem] text-lg font-medium leading-relaxed text-ink-secondary md:block md:text-xl">
@@ -205,17 +205,17 @@ export default function TripPlanLead({ standalone = false }: { standalone?: bool
           <button
             type="button"
             onClick={handleIntroCta}
-            className="mt-5 inline-flex min-h-[50px] w-full items-center justify-center gap-2 rounded-xl bg-jade px-5 py-3 text-base font-bold text-white shadow-[0_12px_28px_rgba(15,82,87,0.22)] transition-colors hover:bg-jade-dark md:hidden"
+            className="mt-7 inline-flex min-h-[54px] w-full items-center justify-center gap-2 rounded-xl bg-jade px-6 py-4 text-base font-extrabold text-white shadow-soft transition-colors hover:bg-jade-dark md:hidden"
           >
-            <Map className="h-4 w-4" strokeWidth={1.7} />
+            <Map className="h-4 w-4" strokeWidth={1.9} />
             Get my free itinerary
           </button>
 
-          {/* Mobile: plain reassurance line. Desktop: pills (minus "Built for first-time visitors"). */}
-          <p className="mt-3 text-xs text-ink-tertiary md:hidden">No payment · No spam</p>
+          {/* Mobile: plain reassurance line. Desktop: bg chips (minus "Built for first-time visitors"). */}
+          <p className="mt-4 text-xs text-ink-tertiary md:hidden">No payment · No spam</p>
           <div className="mt-5 hidden flex-wrap gap-2 text-xs font-semibold text-jade md:flex">
-            <span className="rounded-full bg-white px-3 py-2 shadow-sm">No payment</span>
-            <span className="rounded-full bg-white px-3 py-2 shadow-sm">No spam</span>
+            <span className="rounded-full bg-jade-wash px-3 py-2">No payment</span>
+            <span className="rounded-full bg-jade-wash px-3 py-2">No spam</span>
           </div>
 
           <SamplePreview />
