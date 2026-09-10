@@ -190,7 +190,7 @@ export default function TripPlanLead({ standalone = false }: { standalone?: bool
           </div>
 
           <IntroHeading
-            className="mt-6 max-w-[20rem] font-display text-[30px] text-ink sm:max-w-[34rem] sm:text-[40px] md:mt-4 md:text-[54px]"
+            className="mt-6 max-w-[22rem] font-display text-[30px] text-ink [text-wrap:balance] sm:max-w-[34rem] sm:text-[40px] md:mt-4 md:text-[54px]"
             style={{
               // Fraunces variable axes: lighter weight, SOFT/WONK off for a crisp
               // high-contrast display cut, opsz maxed for large sizes.
