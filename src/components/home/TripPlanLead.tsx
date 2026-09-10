@@ -58,8 +58,9 @@ function SamplePreview() {
   return (
     <div className="mt-5 overflow-hidden rounded-2xl border border-white/70 bg-white shadow-[0_18px_44px_rgba(15,82,87,0.14)] md:mt-7">
       <div className="relative h-36 overflow-hidden md:h-44">
-        <img src="/images/hero-china-landscape-900.jpg" alt="Rice terraces in China" className="h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+        <img src="/images/great-wall-1600.webp" alt="The Great Wall of China winding over forested mountains" className="h-full w-full object-cover" loading="lazy" />
+        {/* Bottom-up deep-jade scrim, weighted to the lower ~40% so the white label stays readable. */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(11,65,69,0.92)_0%,rgba(11,65,69,0.55)_20%,rgba(11,65,69,0.15)_40%,transparent_62%)]" />
         <div className="absolute bottom-4 left-4 right-4 text-white">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/75">Sample route</p>
           <p className="mt-1 text-xl font-bold leading-tight">7 days: Beijing → Xi’an → Chengdu</p>
