@@ -164,8 +164,8 @@ export default function TripPlanLead({ standalone = false }: { standalone?: bool
   };
 
   return (
-    <section ref={ref} id="trip-plan" className={`relative overflow-hidden bg-[#F4F8F6] ${standalone ? 'py-4 md:py-8' : 'scroll-mt-16 py-6 md:scroll-mt-20 md:py-14'} ${revealed ? 'motion-reveal-on' : ''}`}>
-      <div className="absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-jade-wash to-transparent" />
+    <section ref={ref} id="trip-plan" className={`relative overflow-hidden bg-[#F4F8F6] ${standalone ? 'py-3 md:py-8' : 'scroll-mt-16 py-6 md:scroll-mt-20 md:py-14'} ${revealed ? 'motion-reveal-on' : ''}`}>
+      <div className={`absolute inset-x-0 top-0 bg-gradient-to-b from-jade-wash to-transparent ${standalone ? 'h-32' : 'h-56'}`} />
       <div className={`relative mx-auto grid gap-6 px-4 md:gap-10 md:px-8 ${standalone ? 'max-w-2xl' : 'max-w-container md:grid-cols-[0.92fr_1.08fr]'}`}>
         {!standalone && (
         <div className="motion-reveal-item">
@@ -227,9 +227,9 @@ export default function TripPlanLead({ standalone = false }: { standalone?: bool
           ) : (
             <form onSubmit={handleSubmit} onFocusCapture={handleFirstFieldInteraction} onChange={handleFirstFieldInteraction} noValidate>
               <div className="flex items-start gap-3">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-jade text-white"><Map className="h-5 w-5" strokeWidth={1.6} /></span>
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-jade text-white sm:h-11 sm:w-11"><Map className="h-5 w-5" strokeWidth={1.6} /></span>
                 <div>
-                  <h3 className="text-2xl font-bold leading-tight text-ink">Get your free itinerary</h3>
+                  <h3 className={`font-bold leading-tight text-ink ${standalone ? 'text-lg sm:text-xl' : 'text-2xl'}`}>Get your free itinerary</h3>
                   <p className="mt-1 text-sm text-ink-secondary">Instant Day 1 preview. Full plan by email. No payment.</p>
                 </div>
               </div>
