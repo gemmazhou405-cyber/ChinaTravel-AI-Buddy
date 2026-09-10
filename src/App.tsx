@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Hero from './components/Hero';
 import SiteHeader from './components/SiteHeader';
 import TabNav from './components/TabNav';
 import TabContent from './components/TabContent';
@@ -170,14 +169,6 @@ export default function App() {
     openToolkit();
   };
 
-  const handleTripPlanCta = () => {
-    void trackEvent('lead_form_opened', { trigger: 'hero_trip_plan' });
-    window.setTimeout(() => {
-      document.getElementById('trip-plan')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      document.getElementById('homepage-lead-email')?.focus();
-    }, 0);
-  };
-
   const navigateToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
@@ -200,8 +191,6 @@ export default function App() {
       />
 
       <TripPlanLead />
-
-      <Hero onOpenToolkit={handlePrimaryCta} onAskBuddy={() => openBuddy()} onOpenTripPlan={handleTripPlanCta} />
 
       {toolOpen && (
         <div className="relative">
