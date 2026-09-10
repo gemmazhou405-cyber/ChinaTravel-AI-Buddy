@@ -13,6 +13,7 @@ import ChatModal from './components/ChatModal';
 import Footer from './components/Footer';
 import Toast from './components/Toast';
 import PolicyPage, { getPolicyPageType } from './components/PolicyPage';
+import PlanLanding from './components/PlanLanding';
 import ClaimModal from './components/ClaimModal';
 import PassDashboard from './components/PassDashboard';
 import { usePass } from './hooks/usePass';
@@ -69,6 +70,7 @@ function scrollToElementId(id: string) {
 export default function App() {
   const { t } = useTranslation();
   const policyPageType = getPolicyPageType(window.location.pathname);
+  const isPlanPage = window.location.pathname.replace(/\/+$/, '') === '/plan';
   const landing = parseLandingParams();
   const [activeTab, setActiveTab] = useState<TabId>(landing.tab ?? 'food');
   const [chatOpen, setChatOpen] = useState(false);
@@ -149,6 +151,10 @@ export default function App() {
     setChatPrefill(prefill ?? null);
     setChatOpen(true);
   };
+
+  if (isPlanPage) {
+    return <PlanLanding />;
+  }
 
   if (policyPageType) {
     return (

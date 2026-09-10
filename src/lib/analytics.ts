@@ -45,6 +45,8 @@ const FUNNEL_EVENTS = new Set([
   'lead_submit_success',
   'lead_submit_failed',
   'gumroad_click',
+  'plan_form_start',
+  'plan_form_submit',
 ]);
 
 const utmKeys: UtmKey[] = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
@@ -237,6 +239,13 @@ export async function trackEvent(eventName: string, payload: AnalyticsPayload = 
   if (eventName === 'gumroad_click') {
     const plan = typeof payload.plan === 'string' ? payload.plan : '';
     if (plan === 'trip' || plan === 'group') body.plan = plan;
+  }
+  if (eventName === 'plan_form_submit') {
+    // Non-PII trip shape only. sourcePath (added above) already distinguishes "/" from "/plan".
+    const days = typeof payload.tripLength === 'number' ? payload.tripLength : NaN;
+    if (Number.isFinite(days) && days > 0) body.planTripLength = String(Math.min(Math.round(days), 60));
+    const cities = typeof payload.cityCount === 'number' ? payload.cityCount : NaN;
+    if (Number.isFinite(cities) && cities >= 0) body.planCityCount = String(Math.min(Math.round(cities), 20));
   }
 
   // Fire-and-forget: analytics failure must never surface to the user.

@@ -3,8 +3,8 @@ const ORIGIN = 'https://chinaeasebuddy.com';
 const pages = [
   {
     path: '/',
-    h1: /China travel help|Travel China without/i,
-    keywords: ['ChinaEase Buddy', 'Travel Passes', 'Buddy AI'],
+    h1: /planned with local insight|first China trip/i,
+    keywords: ['ChinaEase Buddy', 'Travel Passes', 'itinerary'],
     links: ['/guides/', '/pricing/'],
   },
   {

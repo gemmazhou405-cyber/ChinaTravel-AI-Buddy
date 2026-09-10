@@ -13,6 +13,8 @@ const ALLOWED_EVENTS = new Set([
   'lead_submit_success',
   'lead_submit_failed',
   'gumroad_click',
+  'plan_form_start',
+  'plan_form_submit',
 ]);
 
 const ALLOWED_DEVICE_CATEGORIES = new Set(['mobile', 'tablet', 'desktop', 'unknown']);
@@ -150,6 +152,13 @@ export async function onRequestPost({ request, env }) {
   const referrerDomain = clampStr(body.referrerDomain, 100);
   const landingPath = (() => { const r = clampStr(body.landingPath, 200); return r ? r.split('?')[0].split('#')[0] || null : null; })();
   const plan = ALLOWED_PLANS.has(body.plan) ? body.plan : null;
+  // Non-PII trip shape for plan_form_submit. sourcePath already carries "/" vs "/plan".
+  const clampInt = (value, min, max) => {
+    const n = parseInt(value, 10);
+    return Number.isNaN(n) || n < min || n > max ? null : n;
+  };
+  const planTripLength = clampInt(body.planTripLength, 1, 60);
+  const planCityCount = clampInt(body.planCityCount, 0, 20);
   const deviceCategory = ALLOWED_DEVICE_CATEGORIES.has(body.deviceCategory)
     ? body.deviceCategory
     : 'unknown';
@@ -172,6 +181,10 @@ export async function onRequestPost({ request, env }) {
   if (referrerDomain) doc.referrerDomain = referrerDomain;
   if (landingPath) doc.landingPath = landingPath;
   if (plan && eventName === 'gumroad_click') doc.plan = plan;
+  if (eventName === 'plan_form_submit') {
+    if (planTripLength !== null) doc.planTripLength = planTripLength;
+    if (planCityCount !== null) doc.planCityCount = planCityCount;
+  }
 
   // Firestore write failure is non-fatal — analytics must never break the user experience.
   try {

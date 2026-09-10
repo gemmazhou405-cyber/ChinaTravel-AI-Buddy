@@ -6,6 +6,25 @@ const distDir = 'dist';
 const source = join(distDir, 'index.html');
 
 const pageMeta = {
+  plan: {
+    title: 'Get your free personalised China itinerary | ChinaEase Buddy',
+    description:
+      'Tell us your travel dates, cities and interests and get a free personalised China itinerary. Instant route preview, full day-by-day plan by email. No payment, no account.',
+    customBody: `
+    <main id="static-plan-content" style="max-width: 640px; margin: 0 auto; padding: 32px 20px; color: #122022; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+      <p style="margin: 0 0 8px; color: #0F5257; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">Free personalised China itinerary</p>
+      <h1 style="margin: 0 0 16px; font-size: clamp(1.75rem, 5vw, 2.5rem); line-height: 1.12; letter-spacing: -0.02em;">Tell us your dates and cities &mdash; get your free China itinerary.</h1>
+      <p style="margin: 0 0 16px; color: #536365; line-height: 1.6;">Share your travel dates, the cities you want to visit and what you enjoy. You will see an instant route preview, and the full day-by-day itinerary is sent to your email. No payment and no account required.</p>
+      <ul style="margin: 0 0 20px; padding-left: 20px; color: #536365; line-height: 1.8;">
+        <li>A route built around your dates, cities and interests &mdash; not a template.</li>
+        <li>Instant Day 1 preview, full plan by email.</li>
+        <li>Practical transport, timing, payment and arrival checks for first-time visitors.</li>
+      </ul>
+      <p style="margin: 0 0 24px;"><a href="/" style="display: inline-flex; border-radius: 999px; background: #0F5257; color: #fffdf8; padding: 12px 18px; font-weight: 700; text-decoration: none;">Open ChinaEase Buddy</a></p>
+      <p style="margin: 0; color: #6b7678; font-size: 0.85rem; line-height: 1.7;">ChinaEase Buddy is a digital travel toolkit. It is not an official travel authority, visa service, immigration service, medical service, legal service, financial service, hotel booking service, or flight booking service. Always confirm important travel, payment, health and entry information with official sources or service providers.</p>
+    </main>
+  `,
+  },
   guides: {
     title: 'China Travel Guides | ChinaEase Buddy',
     description:
@@ -188,6 +207,7 @@ const standardDisclaimer =
   'ChinaEase Buddy is a digital travel toolkit. It is not an official travel authority, visa service, immigration service, medical service, legal service, financial service, hotel booking service, or flight booking service. Always confirm important travel, payment, health, and entry information with official sources or service providers.';
 
 function staticPageContent(page, meta) {
+  if (meta.customBody) return meta.customBody;
   const heading = meta.title.split('|')[0].trim();
   const [ctaLabel, ctaHref] = staticCtas[page] || ['Open ChinaEase Buddy', '/'];
   const faqItems = meta.faqs || [

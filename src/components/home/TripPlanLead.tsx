@@ -1,6 +1,6 @@
 import { ArrowRight, CalendarDays, Check, Mail, Map, MessageCircle, Send } from 'lucide-react';
 import type { CSSProperties, FormEvent } from 'react';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRevealOnView } from '../../hooks/useRevealOnView';
 import { markFunnelOnce, trackEvent, trackEventOnce } from '../../lib/analytics';
@@ -81,9 +81,10 @@ function SamplePreview() {
   );
 }
 
-export default function TripPlanLead() {
+export default function TripPlanLead({ standalone = false }: { standalone?: boolean } = {}) {
   const { t } = useTranslation();
   const { ref, revealed } = useRevealOnView<HTMLElement>();
+  const planStartFired = useRef(false);
   const [email, setEmail] = useState('');
   const [travelDate, setTravelDate] = useState('');
   const [travelers, setTravelers] = useState('2');
@@ -112,6 +113,15 @@ export default function TripPlanLead() {
   }, [arrivalCity, selectedCities]);
   const previewRoute = routeCities.length ? routeCities.join(' → ') : 'Route to be tailored after review';
   const formattedTravelDate = travelDate ? new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${travelDate}T00:00:00Z`)) : '';
+
+  // Fires once per page view when the visitor first touches any field. Shared by
+  // the homepage section and the /plan landing page; sourcePath on the event
+  // distinguishes the two entry points.
+  const handleFirstFieldInteraction = () => {
+    if (planStartFired.current) return;
+    planStartFired.current = true;
+    void trackEvent('plan_form_start', {});
+  };
 
   const toggle = (value: string, current: string[], setter: (values: string[]) => void) => setter(current.includes(value) ? current.filter((item) => item !== value) : [...current, value]);
   const resetForm = () => {
@@ -145,6 +155,7 @@ export default function TripPlanLead() {
       setPlanGenerated(result.planGenerated);
       setStatus('success');
       void trackEvent('lead_submit_success', { trigger: 'homepage_trip_plan', planGenerated: result.planGenerated });
+      void trackEvent('plan_form_submit', { tripLength: Number(tripLength), cityCount: routeCities.length });
     } else {
       setStatus('error');
       setError(result.status === 'free_plan_used' ? 'free_plan_used' : 'generic');
@@ -153,9 +164,10 @@ export default function TripPlanLead() {
   };
 
   return (
-    <section ref={ref} id="trip-plan" className={`relative scroll-mt-16 overflow-hidden bg-[#F4F8F6] py-6 md:scroll-mt-20 md:py-14 ${revealed ? 'motion-reveal-on' : ''}`}>
+    <section ref={ref} id="trip-plan" className={`relative overflow-hidden bg-[#F4F8F6] ${standalone ? 'py-4 md:py-8' : 'scroll-mt-16 py-6 md:scroll-mt-20 md:py-14'} ${revealed ? 'motion-reveal-on' : ''}`}>
       <div className="absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-jade-wash to-transparent" />
-      <div className="relative mx-auto grid max-w-container gap-6 px-4 md:grid-cols-[0.92fr_1.08fr] md:gap-10 md:px-8">
+      <div className={`relative mx-auto grid gap-6 px-4 md:gap-10 md:px-8 ${standalone ? 'max-w-2xl' : 'max-w-container md:grid-cols-[0.92fr_1.08fr]'}`}>
+        {!standalone && (
         <div className="motion-reveal-item">
           <div className="inline-flex items-center gap-2 rounded-full border border-jade/25 bg-white px-4 py-2 shadow-sm">
             <span className="h-2 w-2 rounded-full bg-red-500" />
@@ -173,8 +185,9 @@ export default function TripPlanLead() {
           </div>
           <SamplePreview />
         </div>
+        )}
 
-        <div className="motion-reveal-item glass rounded-2xl p-4 sm:p-5 md:p-7" style={{ '--reveal-index': 2 } as CSSProperties}>
+        <div className="motion-reveal-item glass rounded-2xl p-4 sm:p-5 md:p-7" style={standalone ? undefined : ({ '--reveal-index': 2 } as CSSProperties)}>
           {status === 'success' ? (
             <div className="flex flex-col items-start">
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-jade text-white"><Check className="h-5 w-5" strokeWidth={1.7} /></span>
@@ -212,7 +225,7 @@ export default function TripPlanLead() {
               <button type="button" onClick={resetForm} className="mt-7 inline-flex min-h-[44px] items-center gap-2 rounded-lg border border-jade/30 px-4 py-2.5 text-sm font-semibold text-jade hover:bg-jade hover:text-white">{t('home.tripPlan.submitAnother')}<ArrowRight className="h-4 w-4" strokeWidth={1.5} /></button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} noValidate>
+            <form onSubmit={handleSubmit} onFocusCapture={handleFirstFieldInteraction} onChange={handleFirstFieldInteraction} noValidate>
               <div className="flex items-start gap-3">
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-jade text-white"><Map className="h-5 w-5" strokeWidth={1.6} /></span>
                 <div>
