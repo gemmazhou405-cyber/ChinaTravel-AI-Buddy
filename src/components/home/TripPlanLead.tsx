@@ -189,7 +189,17 @@ export default function TripPlanLead({ standalone = false }: { standalone?: bool
             <span className="text-[12px] font-extrabold uppercase tracking-[0.18em] text-jade">{t('home.tripPlan.kicker')}</span>
           </div>
 
-          <IntroHeading className="mt-6 max-w-[20rem] font-display text-[30px] font-semibold leading-[1.08] tracking-[-0.02em] text-ink sm:max-w-[34rem] sm:text-[40px] md:mt-4 md:text-[54px]">
+          <IntroHeading
+            className="mt-6 max-w-[20rem] font-display text-[30px] text-ink sm:max-w-[34rem] sm:text-[40px] md:mt-4 md:text-[54px]"
+            style={{
+              // Fraunces variable axes: lighter weight, SOFT/WONK off for a crisp
+              // high-contrast display cut, opsz maxed for large sizes.
+              fontWeight: 540,
+              fontVariationSettings: "'wght' 540, 'SOFT' 0, 'WONK' 0, 'opsz' 144",
+              letterSpacing: '-0.03em',
+              lineHeight: 1.02,
+            }}
+          >
             Your first China trip, planned for you.
           </IntroHeading>
 
