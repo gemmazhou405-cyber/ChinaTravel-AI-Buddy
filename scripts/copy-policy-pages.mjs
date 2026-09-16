@@ -87,13 +87,97 @@ const pageMeta = {
     ],
   },
   'alipay-for-foreigners': {
-    title: 'Can Foreigners Use Alipay in China? | ChinaEase Buddy',
+    title: 'Alipay for Foreigners: Setup & Payment Guide (2026)',
     description:
-      'Learn what foreign visitors should know about using Alipay in China, including setup reminders, foreign cards, backup payments, and common issues.',
+      'Set up Alipay for China: register with an overseas number, link an eligible international card, pay by QR code, and fix common payment failures.',
+    quickAnswer:
+      'Yes. Foreign visitors can register Alipay with an overseas mobile number and add an eligible international debit or credit card for everyday purchases in mainland China. You do not normally need a Chinese bank account, but card-issuer approval, identity checks, merchant support, and payment limits can vary. Set it up before your flight and keep a second payment method.',
+    lastReviewed: 'September 16, 2026',
+    lastModified: '2026-09-16',
+    article: true,
+    contentSections: [
+      {
+        title: 'What you need before setup',
+        items: [
+          'A mobile number that can receive verification messages while you are abroad.',
+          'An eligible credit or debit card issued outside the Chinese mainland.',
+          'Your passport details if Alipay asks you to complete identity verification.',
+          'Access to your bank app, SMS, or other card-verification method.',
+          'A backup card and a small amount of RMB cash in case one payment route fails.',
+        ],
+      },
+      {
+        title: 'Set up Alipay before your flight',
+        ordered: true,
+        items: [
+          'Download the standard Alipay app from your official app store. Do not choose AlipayHK or another regional version.',
+          'Register with your home-country mobile number and enter the verification code.',
+          'Choose the International Version if Alipay offers that option after registration.',
+          'Tap Add Now or open Bank Cards, then enter or scan your international card details.',
+          'Follow the in-app prompts for identity and card verification. Make sure your name and document details match.',
+          'Keep access to your original phone number and bank verification method during the trip.',
+        ],
+      },
+      {
+        title: 'How to pay at a merchant',
+        items: [
+          'Merchant scans you: open Alipay, show your payment code, and let the merchant scan it.',
+          'You scan the merchant: use Scan, check the merchant name, enter the amount if needed, and confirm payment.',
+          'Personal transfer QR: an international card may not work because person-to-person transfers are not supported. Ask for a merchant payment code or another payment method.',
+          'Check the merchant name and amount before confirming every payment.',
+        ],
+      },
+      {
+        title: 'What an international card can and cannot do',
+        items: [
+          'Pay for eligible daily purchases in mainland China through Alipay.',
+          'Use merchant QR payment flows at shops, restaurants, taxis, and other supported services.',
+          'International cards do not support person-to-person transfers, red packets, wealth-management products, insurance, or some other financial services.',
+          'Supported networks, limits, verification, and merchant acceptance can change, so treat the card list shown inside Alipay as the current source of truth.',
+        ],
+      },
+      {
+        title: 'If your payment fails',
+        ordered: true,
+        items: [
+          'Confirm that the card still appears under Bank Cards and that identity verification is complete.',
+          'Check your bank app or SMS for a declined or pending verification request.',
+          'Make sure the QR code is for a merchant payment rather than a personal transfer.',
+          'Try the other payment flow: show your payment code instead of scanning, or scan the merchant code instead.',
+          'Try another eligible card or WeChat Pay if you have already set it up.',
+          'Ask the merchant whether a physical card or RMB cash is accepted.',
+          'For account-specific problems, use Alipay customer support because ChinaEase Buddy cannot see or change your payment account.',
+        ],
+      },
+      {
+        title: 'Fees and exchange rates',
+        items: [
+          'Review the payment confirmation screen before approving a transaction.',
+          'For payments funded by an international bank card, the exchange rate is provided by the card network and issuing bank.',
+          'Your card issuer may add a foreign-transaction or currency-conversion fee. Check the final amount on your card statement.',
+          'Do not rely on an old blog post for a fixed fee or limit; check the current information shown inside Alipay and by your bank.',
+        ],
+      },
+      {
+        title: 'Useful payment phrases',
+        items: [
+          '可以用支付宝吗？ — Can I pay with Alipay?',
+          '请扫我的付款码。 — Please scan my payment code.',
+          '支付失败了，可以换一种方式吗？ — My payment failed. Can I pay another way?',
+        ],
+      },
+    ],
     faqs: [
-      ['Can foreigners use Alipay in China?', 'Many foreign visitors can try using Alipay with supported international cards, but successful setup and payment acceptance can vary. Prepare a backup payment option.'],
-      ['Do I need a Chinese bank account to use Alipay?', 'Some foreign travelers may be able to link supported international cards. Rules and supported cards can change, so check Alipay’s current instructions.'],
-      ['What if my Alipay payment fails?', 'Ask whether you can use WeChat Pay, cash, or a card. ChinaEase Buddy includes short Chinese payment phrases you can show to staff.'],
+      ['Can foreigners use Alipay in China?', 'Yes. Overseas visitors can register Alipay and add an eligible international bank card for daily purchases in mainland China. Card-issuer approval, verification, limits, and merchant support can vary.'],
+      ['Do I need a Chinese bank account to use Alipay?', 'No Chinese bank account is normally required when you use an eligible international card issued outside the Chinese mainland.'],
+      ['Can I set up Alipay before arriving in China?', 'Yes. Download the standard Alipay app, register with your overseas mobile number, and try adding your card before your flight so you have time to resolve verification problems.'],
+      ['What if my Alipay payment fails?', 'Check that your card and identity verification are complete, look for a bank approval request, confirm the QR code is a merchant payment rather than a personal transfer, and try another prepared payment method.'],
+      ['Can I transfer money to another person with my international card?', 'Alipay states that international cards do not support person-to-person transfers or red packets. Ask for a merchant payment code or use another suitable payment method.'],
+      ['Should I carry cash in China?', 'Carry a modest amount of RMB as a backup rather than relying on a single app or card. You can also prepare WeChat Pay and a second international card.'],
+    ],
+    sourceLinks: [
+      ['Alipay+ official guide for paying in the Chinese mainland', 'https://www.alipayplus.com/pay-in-the-chinese-mainland/'],
+      ['Shanghai government guide to linking international cards to Alipay', 'https://english.shanghai.gov.cn/en-FAQs-StudyinShanghai/20231211/a58d4c15179f468fb2c5d72b393f1fd4.html'],
     ],
   },
   'china-payment-guide': {
@@ -172,7 +256,7 @@ const staticCtas = {
   about: ['Learn about ChinaEase Buddy', '/about/'],
   unsubscribe: ['Contact support', '/contact/'],
   'china-travel-apps': ['Open the app checklist', '/?journey=before&tool=apps'],
-  'alipay-for-foreigners': ['Open payment setup tools', '/?journey=before&tool=payment'],
+  'alipay-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
   'china-payment-guide': ['Open payment phrases', '/?journey=china&tool=pay'],
   'china-travel-checklist': ['View the trip checklist', '/?journey=before&tool=checklist'],
   'china-emergency-numbers': ['View emergency help', '/?journey=emergency'],
@@ -189,6 +273,12 @@ const relatedLinks = [
 ];
 
 const pageRelatedLinks = {
+  'alipay-for-foreigners': [
+    ['First trip to China', '/first-trip-to-china/'],
+    ['How to pay in China as a foreigner', '/china-payment-guide/'],
+    ['Apps to download before China', '/china-travel-apps/'],
+    ['FAQ', '/faq/'],
+  ],
   'china-payment-guide': [
     ['Open payment phrases', '/?journey=china&tool=pay'],
     ['Alipay for Foreigners', '/alipay-for-foreigners/'],
@@ -221,9 +311,9 @@ function staticPageContent(page, meta) {
       <h1 style="margin: 0 0 18px; font-size: clamp(2rem, 6vw, 3.75rem); line-height: 1.05; letter-spacing: -0.03em;">${escapeHtml(heading)}</h1>
       <section aria-labelledby="quick-answer" style="margin: 0 0 24px; padding: 22px; border: 1px solid rgba(21, 94, 99, 0.14); border-radius: 22px; background: #fffdf8;">
         <h2 id="quick-answer" style="margin: 0 0 10px; font-size: 1.25rem;">Quick answer</h2>
-        <p style="margin: 0; color: #536365; line-height: 1.7;">${escapeHtml(meta.description)}</p>
+        <p style="margin: 0; color: #536365; line-height: 1.7;">${escapeHtml(meta.quickAnswer || meta.description)}</p>
       </section>
-      <p style="margin: 0 0 20px; color: #6b7678; font-size: 0.9rem;">Last reviewed: June 12, 2026</p>
+      <p style="margin: 0 0 20px; color: #6b7678; font-size: 0.9rem;">Last reviewed: ${escapeHtml(meta.lastReviewed || 'June 12, 2026')}</p>
       ${meta.sections ? `
         <section aria-labelledby="guide-list" style="margin: 0 0 24px;">
           <h2 id="guide-list" style="margin: 0 0 12px; font-size: 1.25rem;">Available guides</h2>
@@ -237,14 +327,23 @@ function staticPageContent(page, meta) {
           </div>
         </section>
       ` : ''}
-      <section aria-labelledby="practical-tips" style="margin: 0 0 24px;">
-        <h2 id="practical-tips" style="margin: 0 0 12px; font-size: 1.25rem;">Practical tips</h2>
-        <ul style="margin: 0; padding-left: 20px; color: #536365; line-height: 1.8;">
-          <li>Prepare core China travel tools before arrival when possible.</li>
-          <li>Keep backup options for payments, transport, and communication.</li>
-          <li>Use bilingual phrases when you need to show clear Chinese text to local staff.</li>
-        </ul>
-      </section>
+      ${meta.contentSections ? meta.contentSections.map((section, sectionIndex) => `
+        <section aria-labelledby="guide-section-${sectionIndex}" style="margin: 0 0 24px; padding: 20px; border: 1px solid rgba(21, 94, 99, 0.12); border-radius: 20px; background: rgba(255, 253, 248, 0.72);">
+          <h2 id="guide-section-${sectionIndex}" style="margin: 0 0 12px; font-size: 1.25rem;">${escapeHtml(section.title)}</h2>
+          <${section.ordered ? 'ol' : 'ul'} style="margin: 0; padding-left: 20px; color: #536365; line-height: 1.8;">
+            ${section.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
+          </${section.ordered ? 'ol' : 'ul'}>
+        </section>
+      `).join('') : `
+        <section aria-labelledby="practical-tips" style="margin: 0 0 24px;">
+          <h2 id="practical-tips" style="margin: 0 0 12px; font-size: 1.25rem;">Practical tips</h2>
+          <ul style="margin: 0; padding-left: 20px; color: #536365; line-height: 1.8;">
+            <li>Prepare core China travel tools before arrival when possible.</li>
+            <li>Keep backup options for payments, transport, and communication.</li>
+            <li>Use bilingual phrases when you need to show clear Chinese text to local staff.</li>
+          </ul>
+        </section>
+      `}
       <p style="margin: 0 0 28px;"><a href="${escapeAttr(ctaHref)}" style="display: inline-flex; border-radius: 999px; background: #155e63; color: #fffdf8; padding: 12px 18px; font-weight: 700; text-decoration: none;">${escapeHtml(ctaLabel)}</a></p>
       <section aria-labelledby="faq" style="margin: 0 0 24px;">
         <h2 id="faq" style="margin: 0 0 12px; font-size: 1.25rem;">FAQ</h2>
@@ -264,8 +363,9 @@ function staticPageContent(page, meta) {
       <section aria-labelledby="sources" style="margin: 0 0 24px;">
         <h2 id="sources" style="margin: 0 0 12px; font-size: 1.25rem;">Official or primary sources to verify</h2>
         <ul style="margin: 0; padding-left: 20px; color: #536365; line-height: 1.8;">
-          <li>Official app instructions from Alipay, WeChat, Didi, Amap, and Trip.com.</li>
-          <li>Your airline, hotel, card issuer, embassy, consulate, or relevant official authority for time-sensitive requirements.</li>
+          ${meta.sourceLinks
+            ? meta.sourceLinks.map(([label, href]) => `<li><a href="${escapeAttr(href)}" style="color: #155e63;">${escapeHtml(label)}</a></li>`).join('')
+            : '<li>Official app instructions from Alipay, WeChat, Didi, Amap, and Trip.com.</li><li>Your airline, hotel, card issuer, embassy, consulate, or relevant official authority for time-sensitive requirements.</li>'}
         </ul>
       </section>
       <p style="margin: 0; color: #6b7678; font-size: 0.9rem; line-height: 1.7;">${escapeHtml(standardDisclaimer)}</p>
@@ -291,6 +391,19 @@ function schemaFor(page, meta) {
     },
   ];
 
+  if (meta.article) {
+    graph.push({
+      '@type': 'Article',
+      '@id': `${pageUrl(page)}#article`,
+      headline: meta.title.split('|')[0].trim(),
+      description: meta.description,
+      dateModified: meta.lastModified,
+      mainEntityOfPage: { '@id': `${pageUrl(page)}#webpage` },
+      author: { '@id': `${siteUrl}/#organization` },
+      publisher: { '@id': `${siteUrl}/#organization` },
+    });
+  }
+
   if (meta.faqs) {
     graph.push({
       '@type': 'FAQPage',
@@ -312,9 +425,23 @@ function schemaFor(page, meta) {
   })}</script>`;
 }
 
+function removeHomepageFaqSchema(html) {
+  return html.replace(
+    /<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/g,
+    (block, json) => {
+      try {
+        const parsed = JSON.parse(json);
+        return parsed?.['@type'] === 'FAQPage' ? '' : block;
+      } catch {
+        return block;
+      }
+    },
+  );
+}
+
 function withPageMeta(html, page, meta) {
   const canonical = pageUrl(page);
-  let next = html
+  let next = removeHomepageFaqSchema(html)
     .replace(/<title>.*?<\/title>/, `<title>${escapeAttr(meta.title)}</title>`)
     .replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${escapeAttr(meta.description)}" />`)
     .replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${canonical}" />`)
@@ -351,7 +478,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemapPages.map((page) => `  <url>
     <loc>${page ? pageUrl(page) : `${siteUrl}/`}</loc>
-    <lastmod>${lastmod}</lastmod>
+    <lastmod>${page && pageMeta[page]?.lastModified ? pageMeta[page].lastModified : lastmod}</lastmod>
   </url>`).join('\n')}
 </urlset>
 `;

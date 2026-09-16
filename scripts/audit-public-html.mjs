@@ -27,9 +27,9 @@ const pages = [
   },
   {
     path: '/alipay-for-foreigners/',
-    h1: /Can Foreigners Use Alipay in China/i,
-    keywords: ['Alipay', 'foreign card', 'backup payment', 'China'],
-    links: ['/?journey=before&tool=payment', '/china-payment-guide/'],
+    h1: /Alipay for Foreigners.*2026/i,
+    keywords: ['Alipay', 'international card', 'person-to-person transfers', 'payment fails'],
+    links: ['/#trip-plan', '/first-trip-to-china/', '/china-payment-guide/'],
   },
   {
     path: '/china-travel-checklist/',
