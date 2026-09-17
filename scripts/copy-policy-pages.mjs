@@ -30,6 +30,7 @@ const pageMeta = {
     description:
       'Practical China travel guides for foreign visitors: essential apps, Alipay, payments, checklists, emergency numbers, and frequently asked questions.',
     sections: [
+      ['China eSIM & Internet Guide', 'Choose, install, activate, and troubleshoot mobile data for a trip to mainland China.', '/china-esim-internet-guide/'],
       ['China Travel Apps', 'Prepare Alipay, WeChat, Amap, Didi, and Trip.com before arrival.', '/china-travel-apps/'],
       ['Alipay for Foreigners', 'What foreign visitors should know before trying Alipay in China.', '/alipay-for-foreigners/'],
       ['China Payment Guide', 'Practical payment reminders for Alipay, WeChat Pay, cards, and cash backup.', '/china-payment-guide/'],
@@ -84,6 +85,115 @@ const pageMeta = {
       ['What apps should I download before visiting China?', 'Most first-time visitors should prepare Alipay, WeChat, Amap, Didi, and Trip.com before arrival. Availability and setup requirements can change, so verify details inside each app.'],
       ['Should I set up Alipay before arriving in China?', 'It is usually helpful to try setting up Alipay before arrival, especially if you plan to use taxis, shops, restaurants, or metro systems. Keep backup payment options in case setup or card verification fails.'],
       ['Does Google Maps work well in China?', 'Google services may be limited in mainland China. Amap is often more practical for local navigation, public transport routes, and Chinese addresses.'],
+    ],
+  },
+  'china-esim-internet-guide': {
+    title: 'China eSIM & Internet Guide for Tourists (2026)',
+    description:
+      'Choose and set up a China travel eSIM, avoid roaming charges, understand internet restrictions, and fix mobile data problems after arrival.',
+    quickAnswer:
+      'For most short trips, an international travel eSIM is the simplest way to get mobile data in mainland China if your phone is unlocked and eSIM-compatible. Buy and install it on reliable Wi-Fi before your flight, follow the provider\'s activation timing, select it for cellular data after landing, and keep your home line from using roaming data. Do not assume every China eSIM gives access to Google or other restricted services: routing, phone-number support, hotspot rules, speed limits, and activation policies differ by plan.',
+    lastReviewed: 'September 17, 2026',
+    lastModified: '2026-09-17',
+    article: true,
+    contentSections: [
+      {
+        title: 'Choose between a travel eSIM, roaming, and a local SIM',
+        items: [
+          'Travel eSIM: convenient for an unlocked, compatible phone; usually data-only and installed before arrival.',
+          'Home-carrier roaming: often the easiest option for a short trip, but check the daily price, data allowance, and whether international services work before relying on it.',
+          'Mainland local SIM: can provide a Chinese phone number, but purchase and registration requirements differ and ordinary local internet access remains subject to mainland restrictions.',
+          'There is no single best option for everyone. Compare total cost, local-number needs, coverage, hotspot support, and access to the services you actually use.',
+        ],
+      },
+      {
+        title: 'Check these details before buying an eSIM',
+        items: [
+          'Your phone supports eSIM and is carrier-unlocked. On iPhone, Carrier Lock should show No SIM Restrictions.',
+          'The plan explicitly covers mainland China, not only Hong Kong or Macao.',
+          'When validity begins: at purchase, installation, or first connection to a supported network.',
+          'Whether the plan is data-only or includes calls, SMS, or a phone number.',
+          'The high-speed data allowance, fair-use or throttling rules, hotspot support, top-up options, and refund policy.',
+          'Whether the provider explicitly says that your required international apps work on that exact plan. Do not infer this from the word eSIM alone.',
+        ],
+      },
+      {
+        title: 'Install it before your flight',
+        ordered: true,
+        items: [
+          'Buy the plan from a provider you can contact if setup fails, then save the order number and support channel.',
+          'Connect to reliable Wi-Fi and install the eSIM using the provider app, QR code, or manual activation details.',
+          'Label the new line China Travel so you do not confuse it with your home SIM.',
+          'Keep the QR code or manual installation details available on another device or offline document.',
+          'Follow the provider\'s instructions about whether to leave the line off until arrival. Installation and plan activation are not always the same event.',
+          'Do not delete an installed eSIM while troubleshooting unless the provider tells you to; some activation codes can be used only once.',
+        ],
+      },
+      {
+        title: 'Settings to use after landing',
+        ordered: true,
+        items: [
+          'Turn on the travel eSIM line and select it as the cellular or mobile data line.',
+          'Enable data roaming for the travel eSIM if your provider requires it; most international travel plans connect through roaming partners.',
+          'Turn off data roaming for your home line and disable cellular data switching to reduce the risk of unexpected charges.',
+          'Wait several minutes for network registration, then test a normal website, your map app, and your messaging app.',
+          'Keep your home line active only if you need calls or verification SMS, and check what your home carrier charges for receiving or answering them abroad.',
+        ],
+      },
+      {
+        title: 'Internet access in mainland China',
+        items: [
+          'Ordinary mainland mobile networks and Wi-Fi are subject to local internet controls. Google, Facebook, YouTube, X, and some other services are blocked or restricted.',
+          'Some international roaming and travel eSIM plans route data outside mainland China, but this is provider- and plan-specific. Confirm the claim on the exact product page and keep a backup.',
+          'A travel eSIM is not automatically a VPN. Do not advertise or assume unrestricted access unless the provider explicitly supports it.',
+          'If you consider a VPN or similar service, check current rules. UK travel advice notes that online services such as VPNs need to be licensed by the Chinese government.',
+          'Download essential local apps, offline maps, hotel addresses, tickets, and translation phrases before departure even if your plan promises international access.',
+        ],
+      },
+      {
+        title: 'How much data should you buy?',
+        items: [
+          'Light use: messaging, payments, maps, and occasional browsing may fit within roughly 3–5 GB for a short trip.',
+          'Typical use: frequent maps, social posting, translation, and ride-hailing often justify around 10 GB for one to two weeks.',
+          'Heavy use: video, hotspot sharing, cloud photo backup, and frequent calls can require 20 GB or more.',
+          'Turn off automatic photo backup, app updates, and high-resolution video on cellular data if your allowance is limited.',
+          'Unlimited plans may reduce speed after a daily or total threshold, so read the fair-use terms rather than relying on the word unlimited.',
+        ],
+      },
+      {
+        title: 'If the eSIM has no signal or data',
+        ordered: true,
+        items: [
+          'Confirm the eSIM line is turned on and selected for mobile data.',
+          'Check that data roaming is enabled on the travel line and disabled on the home line.',
+          'Toggle airplane mode for about 30 seconds, then restart the phone if needed.',
+          'Use automatic network selection first; choose a partner network manually only if the provider lists one.',
+          'Check the provider\'s APN instructions, activation status, validity dates, and remaining high-speed data.',
+          'Contact the eSIM provider on airport or hotel Wi-Fi before deleting the plan.',
+        ],
+      },
+      {
+        title: 'Keep an offline backup',
+        items: [
+          'Screenshot your hotel name, address, and phone number in Chinese.',
+          'Save flight and train details, your first airport transfer, and emergency contacts offline.',
+          'Download an offline translation pack and the map area for your first destination.',
+          'Keep a payment card, some RMB cash, and key Chinese phrases available in case both data and QR payments are temporarily unavailable.',
+        ],
+      },
+    ],
+    faqs: [
+      ['Does eSIM work in mainland China?', 'Yes, if your phone is unlocked and eSIM-compatible and the plan explicitly includes mainland China. Apple also lists worldwide providers offering prepaid travel eSIM plans for visitors to mainland China.'],
+      ['Will a China eSIM let me use Google, WhatsApp, or Instagram?', 'Sometimes, but not because it is an eSIM. Access depends on how that specific provider routes traffic. Confirm each required service with the provider before purchase and keep an offline backup.'],
+      ['Should I install the eSIM before arriving in China?', 'Usually yes. Install it on reliable Wi-Fi before departure, but follow the provider\'s instructions about when validity starts and whether the line should remain off until arrival.'],
+      ['Do I need to turn on data roaming?', 'Many travel eSIMs require data roaming because they connect through partner networks. Enable it only for the travel line and follow the provider\'s setup instructions.'],
+      ['Will I get a Chinese phone number?', 'Most short-term travel eSIMs are data-only. Check the plan details if you need traditional calls, SMS, or a local number.'],
+      ['What should I do if the eSIM does not connect?', 'Check the selected data line, roaming setting, network selection, APN, activation status, validity, and remaining data. Contact the provider before deleting the eSIM.'],
+    ],
+    sourceLinks: [
+      ['Apple: use eSIM while travelling internationally', 'https://support.apple.com/en-us/118227'],
+      ['Apple: carriers and worldwide eSIM service providers', 'https://support.apple.com/en-us/101569'],
+      ['UK government China travel advice: internet access', 'https://www.gov.uk/foreign-travel-advice/china/safety-and-security#internet-access'],
     ],
   },
   'alipay-for-foreigners': {
@@ -256,6 +366,7 @@ const staticCtas = {
   about: ['Learn about ChinaEase Buddy', '/about/'],
   unsubscribe: ['Contact support', '/contact/'],
   'china-travel-apps': ['Open the app checklist', '/?journey=before&tool=apps'],
+  'china-esim-internet-guide': ['Get my free China itinerary', '/#trip-plan'],
   'alipay-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
   'china-payment-guide': ['Open payment phrases', '/?journey=china&tool=pay'],
   'china-travel-checklist': ['View the trip checklist', '/?journey=before&tool=checklist'],
@@ -265,6 +376,7 @@ const staticCtas = {
 
 const relatedLinks = [
   ['All guides', '/guides/'],
+  ['China eSIM & internet guide', '/china-esim-internet-guide/'],
   ['China travel apps', '/china-travel-apps/'],
   ['China payment guide', '/china-payment-guide/'],
   ['China travel checklist', '/china-travel-checklist/'],
@@ -273,7 +385,14 @@ const relatedLinks = [
 ];
 
 const pageRelatedLinks = {
+  'china-esim-internet-guide': [
+    ['First trip to China', '/first-trip-to-china/'],
+    ['Apps to download before China', '/china-travel-apps/'],
+    ['China travel checklist', '/china-travel-checklist/'],
+    ['Get a free China itinerary', '/#trip-plan'],
+  ],
   'alipay-for-foreigners': [
+    ['China eSIM & internet guide', '/china-esim-internet-guide/'],
     ['First trip to China', '/first-trip-to-china/'],
     ['How to pay in China as a foreigner', '/china-payment-guide/'],
     ['Apps to download before China', '/china-travel-apps/'],
