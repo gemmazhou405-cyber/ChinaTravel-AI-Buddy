@@ -10,8 +10,8 @@ const pages = [
   {
     path: '/guides/',
     h1: /China Travel Guides/i,
-    keywords: ['China Travel Apps', 'Alipay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
-    links: ['/china-travel-apps/', '/china-payment-guide/', '/faq/'],
+    keywords: ['China Travel Apps', 'China Train Travel Guide', 'Alipay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
+    links: ['/china-travel-apps/', '/china-train-travel-guide/', '/china-payment-guide/', '/faq/'],
   },
   {
     path: '/china-payment-guide/',
@@ -23,7 +23,13 @@ const pages = [
     path: '/china-travel-apps/',
     h1: /8 Essential Apps for China Travel.*2026/i,
     keywords: ['Alipay', 'WeChat', 'AMap Global', 'DiDi', 'Trip.com', 'Railway 12306', 'offline translation'],
-    links: ['/#trip-plan', '/china-esim-internet-guide/', '/alipay-for-foreigners/', '/china-travel-checklist/'],
+    links: ['/#trip-plan', '/china-train-travel-guide/', '/china-esim-internet-guide/', '/alipay-for-foreigners/', '/china-travel-checklist/'],
+  },
+  {
+    path: '/china-train-travel-guide/',
+    h1: /China Train Travel Guide for Foreigners.*2026/i,
+    keywords: ['foreign passport', 'Railway 12306', 'Trip.com', 'e-ticket', 'station', 'refund'],
+    links: ['/#trip-plan', '/first-trip-to-china/', '/china-travel-apps/', '/china-esim-internet-guide/'],
   },
   {
     path: '/china-esim-internet-guide/',
