@@ -538,7 +538,7 @@ function schemaFor(page, meta) {
     });
   }
 
-  return `<script type="application/ld+json">${JSON.stringify({
+  return `<script id="chinaease-guide-schema" type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@graph': graph,
   })}</script>`;
