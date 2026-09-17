@@ -78,13 +78,120 @@ const pageMeta = {
     description: 'Unsubscribe from occasional ChinaEase Buddy travel updates.',
   },
   'china-travel-apps': {
-    title: '5 Essential Apps to Download Before Visiting China | ChinaEase Buddy',
+    title: 'Best Apps for China Travel (2026) | ChinaEase Buddy',
+    heading: '8 Essential Apps for China Travel in 2026',
     description:
-      'Download and prepare Alipay, WeChat, Amap, Didi, and Trip.com before visiting China. Practical app tips for foreign travelers.',
+      'Set up Alipay, WeChat, AMap Global, DiDi, Trip.com, 12306, translation and mobile data tools before your China trip.',
+    quickAnswer:
+      'Before flying to mainland China, prepare a small core stack: Alipay for payments, WeChat for communication and backup payments, AMap Global for maps and public transport, DiDi for rides, Trip.com or Railway 12306 for trains, and an offline translation tool. Arrange an eSIM or roaming plan separately. Install from official stores, keep access to your home number for verification, save your hotel address in Chinese, and do not rely on Google or any single app as your only option.',
+    lastReviewed: 'September 17, 2026',
+    lastModified: '2026-09-17',
+    article: true,
+    contentSections: [
+      {
+        title: 'Your China travel app stack at a glance',
+        items: [
+          'Alipay: QR payments and useful travel mini-programs; foreign visitors can link an eligible international card.',
+          'WeChat: messaging, calls, location sharing, mini-programs, and a possible backup payment option where available.',
+          'AMap Global (Gaode Maps): destination search, route planning, public transport, walking, driving, and ride-hailing in mainland China.',
+          'DiDi: app-based taxi and ride-hailing; keep pickup and destination names in Chinese for easier driver communication.',
+          'Trip.com: English-language booking for trains, flights, and hotels.',
+          'Railway 12306: the official China Railway website and app, with an English website for registration and ticket services.',
+          'An offline translation app: download Chinese language data and test camera or text translation without mobile data.',
+          'ChinaEase Buddy: a web-based toolkit for itinerary planning, practical phrases, food references, payments, and emergencies.',
+        ],
+      },
+      {
+        title: 'Set everything up before your flight',
+        ordered: true,
+        items: [
+          'Download each app from its official website or your phone\'s official app store, and check that you selected the correct regional version.',
+          'Register with a phone number you can still access abroad, then complete any identity or card verification requested by the provider.',
+          'Save your hotel name, full address, and phone number in Chinese in both your notes and screenshots.',
+          'Arrange your eSIM or home-carrier roaming plan, but check the exact plan rules instead of assuming every international app will work.',
+          'Test login, payments, routes, and offline translation before departure; keep a backup for every essential task.',
+        ],
+      },
+      {
+        title: 'Payments: prepare Alipay and a backup',
+        items: [
+          'Alipay states that foreign visitors can connect a credit card for payments at merchants across China. Eligibility, verification, limits, and fees can vary by account and transaction.',
+          'WeChat includes payment features in supported regions, but availability and onboarding can differ. Treat it as a useful backup, not a guaranteed replacement for Alipay.',
+          'Carry a physical bank card and some renminbi as backups. A linked card or wallet can still fail because of verification, issuer controls, merchant rules, or connectivity.',
+          'For the full setup and troubleshooting steps, read Alipay for Foreigners and the China Payment Guide.',
+        ],
+      },
+      {
+        title: 'Maps: use AMap Global and save Chinese addresses',
+        items: [
+          'AMap Global currently advertises destination search, route planning, buses, subways, driving, walking, cycling, local places, and ride-hailing in mainland China.',
+          'Language, login, and individual features can vary by phone, region, and app version. Install and test your exact version before travel.',
+          'Google services are blocked on ordinary mainland internet connections, so do not make Google Maps your only navigation option.',
+          'Save important destinations in Chinese characters. Searching a hotel, station, attraction, or business name is often more reliable than entering a translated street address.',
+        ],
+      },
+      {
+        title: 'Rides: prepare DiDi without assuming one payment flow',
+        items: [
+          'Use the standalone DiDi app or a supported mini-program path that is available on your device and account.',
+          'Enter pickup and destination carefully, then match the car plate and driver details before entering the vehicle.',
+          'Keep the destination name and address in Chinese in case you need to show the driver.',
+          'Follow the payment choices shown in your version of the app. Availability can differ by region, account, card, and booking channel.',
+        ],
+      },
+      {
+        title: 'Trains: choose Trip.com or official Railway 12306',
+        items: [
+          'Trip.com offers an English booking route for China trains and other travel products.',
+          'Railway 12306 is the official ticketing service and has an English website with registration, search, ticketing, refund, and travel guidance.',
+          'Enter your passport name and document number exactly as shown on the passport. The passport used for the booking is also needed for travel.',
+          'Check sales dates and availability for your route, especially around national holidays; do not depend on an arbitrary fixed number of days.',
+        ],
+      },
+      {
+        title: 'Translation and offline information',
+        items: [
+          'Choose a translation app that lets you download Chinese for offline use, and test it in airplane mode before departure.',
+          'If the app supports camera translation, download any required language files and permissions in advance.',
+          'Keep essential phrases, allergies, hotel details, tickets, and emergency information as screenshots as well as inside apps.',
+          'ChinaEase Buddy can keep practical China travel references together in English, but it should not be your only offline backup.',
+        ],
+      },
+      {
+        title: 'Internet access changes which apps work',
+        items: [
+          'Ordinary mainland mobile networks and Wi-Fi are subject to local internet controls. Google, Facebook, YouTube, X, and some other services are blocked or restricted.',
+          'International roaming and travel eSIM routing differ by provider and plan. Confirm access, hotspot support, data limits, and activation timing on the exact product page.',
+          'A travel eSIM is not automatically a VPN, and online services such as VPNs are subject to Chinese licensing rules.',
+          'Read the China eSIM & Internet Guide before choosing a connection plan.',
+        ],
+      },
+      {
+        title: 'Common setup mistakes to avoid',
+        items: [
+          'Downloading an unofficial clone or the wrong regional version of an app.',
+          'Losing access to the phone number used for verification after changing SIM settings.',
+          'Depending on one wallet, one map, or one internet connection without a backup.',
+          'Arriving without the hotel address and first destination saved in Chinese.',
+          'Deleting an eSIM while troubleshooting or storing all tickets only inside an online account.',
+        ],
+      },
+    ],
     faqs: [
-      ['What apps should I download before visiting China?', 'Most first-time visitors should prepare Alipay, WeChat, Amap, Didi, and Trip.com before arrival. Availability and setup requirements can change, so verify details inside each app.'],
-      ['Should I set up Alipay before arriving in China?', 'It is usually helpful to try setting up Alipay before arrival, especially if you plan to use taxis, shops, restaurants, or metro systems. Keep backup payment options in case setup or card verification fails.'],
-      ['Does Google Maps work well in China?', 'Google services may be limited in mainland China. Amap is often more practical for local navigation, public transport routes, and Chinese addresses.'],
+      ['What apps should I download before visiting China?', 'Most first-time visitors should prepare Alipay, WeChat, AMap Global, DiDi, Trip.com or Railway 12306, and an offline translation tool. Also arrange mobile data and keep offline copies of hotel, ticket, and emergency information.'],
+      ['Is AMap Global available in English?', 'AMap now markets a global version with worldwide map and route-planning services. Language and features can still vary by region, phone, and app version, so install and test your exact version before travel.'],
+      ['Does Google Maps work in mainland China?', 'Do not rely on it as your only map. Google services are blocked on ordinary mainland internet connections. Prepare AMap Global or another currently supported local navigation option and save key addresses in Chinese.'],
+      ['Can I book China train tickets with a foreign passport?', 'Yes. Travelers can use an eligible passport through services such as Trip.com or the official Railway 12306 system. Enter the name and document number exactly as shown on the passport and carry that passport when traveling.'],
+      ['Should I set these apps up before arriving in China?', 'Yes. Install, register, verify, and test them before departure while you have reliable internet and access to your usual phone number. Keep backup payment, navigation, and offline information in case one setup fails.'],
+      ['Do I need a Chinese phone number for every app?', 'No, not for every app, but registration and individual features vary. Keep access to your home number for verification and check each provider\'s current requirements before departure.'],
+    ],
+    sourceLinks: [
+      ['AMap Global official Google Play listing', 'https://play.google.com/store/apps/details?id=com.autonavi.minimap'],
+      ['Alipay official Google Play listing', 'https://play.google.com/store/apps/details?id=com.eg.android.AlipayGphone'],
+      ['WeChat official Google Play listing', 'https://play.google.com/store/apps/details?id=com.tencent.mm'],
+      ['Railway 12306 English website', 'https://www.12306.cn/en/index.html'],
+      ['Trip.com official website', 'https://www.trip.com/'],
+      ['UK government China internet-access advice', 'https://www.gov.uk/foreign-travel-advice/china/safety-and-security#internet-access'],
     ],
   },
   'china-esim-internet-guide': {
@@ -365,7 +472,7 @@ const staticCtas = {
   contact: ['Contact support', '/contact/'],
   about: ['Learn about ChinaEase Buddy', '/about/'],
   unsubscribe: ['Contact support', '/contact/'],
-  'china-travel-apps': ['Open the app checklist', '/?journey=before&tool=apps'],
+  'china-travel-apps': ['Get my free China itinerary', '/#trip-plan'],
   'china-esim-internet-guide': ['Get my free China itinerary', '/#trip-plan'],
   'alipay-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
   'china-payment-guide': ['Open payment phrases', '/?journey=china&tool=pay'],
@@ -385,6 +492,14 @@ const relatedLinks = [
 ];
 
 const pageRelatedLinks = {
+  'china-travel-apps': [
+    ['First trip to China', '/first-trip-to-china/'],
+    ['China eSIM & internet guide', '/china-esim-internet-guide/'],
+    ['Alipay for foreigners', '/alipay-for-foreigners/'],
+    ['China payment guide', '/china-payment-guide/'],
+    ['China travel checklist', '/china-travel-checklist/'],
+    ['Get a free China itinerary', '/#trip-plan'],
+  ],
   'china-esim-internet-guide': [
     ['First trip to China', '/first-trip-to-china/'],
     ['Apps to download before China', '/china-travel-apps/'],
@@ -417,7 +532,7 @@ const standardDisclaimer =
 
 function staticPageContent(page, meta) {
   if (meta.customBody) return meta.customBody;
-  const heading = meta.title.split('|')[0].trim();
+  const heading = meta.heading || meta.title.split('|')[0].trim();
   const [ctaLabel, ctaHref] = staticCtas[page] || ['Open ChinaEase Buddy', '/'];
   const faqItems = meta.faqs || [
     ['What is this page about?', meta.description],
@@ -514,7 +629,7 @@ function schemaFor(page, meta) {
     graph.push({
       '@type': 'Article',
       '@id': `${pageUrl(page)}#article`,
-      headline: meta.title.split('|')[0].trim(),
+      headline: meta.heading || meta.title.split('|')[0].trim(),
       description: meta.description,
       dateModified: meta.lastModified,
       mainEntityOfPage: { '@id': `${pageUrl(page)}#webpage` },
