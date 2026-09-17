@@ -26,6 +26,12 @@ const pages = [
     links: ['/?journey=before&tool=apps', '/china-travel-checklist/'],
   },
   {
+    path: '/china-esim-internet-guide/',
+    h1: /China eSIM.*Internet Guide.*2026/i,
+    keywords: ['travel eSIM', 'data roaming', 'mainland China', 'Google', 'APN'],
+    links: ['/#trip-plan', '/first-trip-to-china/', '/china-travel-apps/'],
+  },
+  {
     path: '/alipay-for-foreigners/',
     h1: /Alipay for Foreigners.*2026/i,
     keywords: ['Alipay', 'international card', 'person-to-person transfers', 'payment fails'],
