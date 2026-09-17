@@ -21,9 +21,9 @@ const pages = [
   },
   {
     path: '/china-travel-apps/',
-    h1: /Essential Apps/i,
-    keywords: ['Alipay', 'WeChat', 'Amap', 'Didi', 'Trip.com'],
-    links: ['/?journey=before&tool=apps', '/china-travel-checklist/'],
+    h1: /8 Essential Apps for China Travel.*2026/i,
+    keywords: ['Alipay', 'WeChat', 'AMap Global', 'DiDi', 'Trip.com', 'Railway 12306', 'offline translation'],
+    links: ['/#trip-plan', '/china-esim-internet-guide/', '/alipay-for-foreigners/', '/china-travel-checklist/'],
   },
   {
     path: '/china-esim-internet-guide/',
