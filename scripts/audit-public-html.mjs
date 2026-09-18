@@ -10,8 +10,8 @@ const pages = [
   {
     path: '/guides/',
     h1: /China Travel Guides/i,
-    keywords: ['China Travel Apps', 'China Train Travel Guide', 'Alipay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
-    links: ['/china-travel-apps/', '/china-train-travel-guide/', '/china-payment-guide/', '/faq/'],
+    keywords: ['China Travel Apps', 'China Train Travel Guide', '10-Day China Itinerary', 'Alipay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
+    links: ['/china-travel-apps/', '/china-train-travel-guide/', '/10-day-china-itinerary/', '/china-payment-guide/', '/faq/'],
   },
   {
     path: '/china-payment-guide/',
@@ -29,7 +29,13 @@ const pages = [
     path: '/china-train-travel-guide/',
     h1: /China Train Travel Guide for Foreigners.*2026/i,
     keywords: ['foreign passport', 'Railway 12306', 'Trip.com', 'e-ticket', 'station', 'refund'],
-    links: ['/#trip-plan', '/first-trip-to-china/', '/china-travel-apps/', '/china-esim-internet-guide/'],
+    links: ['/#trip-plan', '/first-trip-to-china/', '/10-day-china-itinerary/', '/china-travel-apps/', '/china-esim-internet-guide/'],
+  },
+  {
+    path: '/10-day-china-itinerary/',
+    h1: /10-Day China Itinerary for First-Time Visitors/i,
+    keywords: ['Beijing', 'Xi\'an', 'Shanghai', 'Palace Museum', 'Terracotta Warriors', 'high-speed train'],
+    links: ['/#trip-plan', '/first-trip-to-china/', '/china-train-travel-guide/', '/china-travel-apps/'],
   },
   {
     path: '/china-esim-internet-guide/',
