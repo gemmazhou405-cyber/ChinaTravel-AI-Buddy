@@ -8,6 +8,7 @@ type GuidePageType =
   | 'guides'
   | 'china-travel-apps'
   | 'amap-in-english'
+  | 'china-metro-guide'
   | 'didi-in-china-for-foreigners'
   | 'china-train-travel-guide'
   | '10-day-china-itinerary'
@@ -318,6 +319,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'China eSIM & Internet Guide: choose, install, activate, and troubleshoot mobile data.',
           'China Travel Apps: prepare Alipay, WeChat, Amap, Didi, and Trip.com.',
           'AMap in English: search places, plan routes, and navigate stations and entrances.',
+          'China Metro Guide: buy tickets, transfer lines, and choose the correct exit.',
           'DiDi in China for Foreigners: book rides, verify the car, communicate, and pay.',
           'China Train Travel Guide: book with a foreign passport and navigate the station.',
           '10-Day China Itinerary: follow a practical Beijing, Xi\'an, and Shanghai route.',
@@ -346,6 +348,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China eSIM & internet guide', href: '/china-esim-internet-guide/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
       { label: 'AMap in English', href: '/amap-in-english/' },
+      { label: 'China metro guide', href: '/china-metro-guide/' },
       { label: 'DiDi in China for foreigners', href: '/didi-in-china-for-foreigners/' },
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
@@ -501,6 +504,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China eSIM & internet guide', href: '/china-esim-internet-guide/' },
       { label: 'First trip to China', href: '/first-trip-to-china/' },
       { label: 'AMap in English', href: '/amap-in-english/' },
+      { label: 'China metro guide', href: '/china-metro-guide/' },
       { label: 'DiDi in China for foreigners', href: '/didi-in-china-for-foreigners/' },
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
       { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
@@ -662,6 +666,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'First trip to China', href: '/first-trip-to-china/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
+      { label: 'China metro guide', href: '/china-metro-guide/' },
       { label: 'China eSIM & internet guide', href: '/china-esim-internet-guide/' },
       { label: 'China payment guide', href: '/china-payment-guide/' },
       { label: 'China travel checklist', href: '/china-travel-checklist/' },
@@ -808,6 +813,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     related: [
       { label: 'First trip to China', href: '/first-trip-to-china/' },
       { label: 'Apps to download before China', href: '/china-travel-apps/' },
+      { label: 'China metro guide', href: '/china-metro-guide/' },
       { label: 'DiDi in China for foreigners', href: '/didi-in-china-for-foreigners/' },
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
       { label: 'China eSIM & internet guide', href: '/china-esim-internet-guide/' },
@@ -828,6 +834,193 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
         label: 'UK travel advice: internet access in China',
         href: 'https://www.gov.uk/foreign-travel-advice/china/safety-and-security#internet-access',
       },
+    ],
+  },
+  'china-metro-guide': {
+    path: '/china-metro-guide/',
+    title: 'China Metro Guide for Foreigners (2026)',
+    intro: 'A practical guide to tickets, overseas cards, transport QR codes, security, transfers, station exits, luggage, and late trains.',
+    metaTitle: 'China Metro Guide for Foreigners (2026) | ChinaEase Buddy',
+    metaDescription:
+      'Ride China metros with confidence. Learn tickets, overseas card and QR payment, security checks, transfers, station exits, luggage, and late-train tips.',
+    quickAnswer:
+      'Foreign visitors can use metro systems in major Chinese cities, but ticket and payment options vary by city. The most dependable first-ride method is to plan the route in AMap, note the destination station and exit, then buy a single-journey ticket from an English-language machine or staffed counter. Some cities also support Alipay or WeChat transport QR codes, local transit cards, or direct contactless payment with selected overseas bank cards. Check the signs on the machine and gate instead of assuming one payment method works nationwide, keep the same ticket, card, or QR method for entry and exit, and allow time for the security check.',
+    ctaLabel: 'Get my free China itinerary',
+    ctaHref: '/#trip-plan',
+    lastReviewed: 'September 18, 2026',
+    lastModified: '2026-09-18',
+    isArticle: true,
+    sections: [
+      {
+        title: 'Prepare your first metro trip',
+        ordered: true,
+        items: [
+          'Use AMap to find the nearest station, destination station, line direction, transfer stations, estimated journey time, and recommended exit.',
+          'Save the station names in Chinese and English. A station can serve several lines, exits, shopping centres, and large road junctions.',
+          'Check the approximate last-train time for the complete route, especially when a transfer or airport line is involved.',
+          'Keep a payment backup: some cash in RMB, a working Alipay or WeChat Pay account, and a physical bank card.',
+          'Allow extra time for ticket purchase, security screening, transfers, and walking through a large interchange.',
+        ],
+      },
+      {
+        title: 'Choose a ticket or payment method',
+        table: {
+          headers: ['Method', 'What to know'],
+          rows: [
+            ['Single-journey ticket', 'Buy for a specific destination from a machine or staffed counter; a useful universal backup.'],
+            ['Transport QR code', 'May be available through Alipay, WeChat, or a city app; activation and foreign-card support vary.'],
+            ['Contactless overseas card', 'Available on supported gates or machines in certain cities; check the card and gate logos.'],
+            ['Local transit card or pass', 'Useful for repeated rides, but purchase, top-up, refund, and cross-city rules vary.'],
+            ['Cash or staffed counter', 'Keep as a fallback when a phone, QR code, card, or vending machine does not work.'],
+          ],
+        },
+        items: [
+          'Beijing officially supports five major card organizations across its metro network. Do not assume that the same card or gate support applies in every other city.',
+        ],
+      },
+      {
+        title: 'Buy a single-journey ticket',
+        ordered: true,
+        items: [
+          'Find a ticket vending machine and switch it to English when that option is available.',
+          'Select the destination line and station, not the attraction name. Confirm similarly named stations carefully.',
+          'Choose the number of passengers and review the fare shown on the screen.',
+          'Pay with one of the methods displayed on that machine. Card brands, cash acceptance, notes, coins, and mobile-payment support can differ.',
+          'Collect the ticket or token and any change. Keep it until you have fully exited at the destination.',
+          'If the machine will not accept your payment, show the destination station to staff at the service counter.',
+        ],
+      },
+      {
+        title: 'Enter the station and pass security',
+        items: [
+          'Follow signs for the correct metro line. Airport, railway, and shopping-centre entrances may connect to several transport areas.',
+          'Place bags on the security scanner when directed and carry liquids or other items through the passenger screening route. Follow local instructions because procedures can vary.',
+          'Use the designated gate for your ticket, QR code, transit card, or overseas bank card. Not every gate necessarily accepts every method.',
+          'Use the same payment medium at entry and exit. Do not enter with a physical card and try to exit with the phone wallet linked to that card.',
+          'Do not follow another passenger through the gate. If the gate does not open, use the service point instead of repeatedly tapping.',
+        ],
+      },
+      {
+        title: 'Find the correct platform and direction',
+        items: [
+          'After entering, follow the line number, line colour, and terminus or next-station direction shown on overhead signs.',
+          'Check the next one or two station names against your route before boarding. Opposite directions often use different platforms or corridors.',
+          'Stand behind the platform safety line and let passengers leave before boarding.',
+          'Watch or listen for the destination station. English announcements and signage are common in major systems, but coverage can vary.',
+          'Keep bags close during busy periods and avoid blocking doors or priority areas.',
+        ],
+      },
+      {
+        title: 'Transfer between metro lines',
+        items: [
+          'Follow the transfer signs for the next line without passing through an exit gate unless the route specifically requires an out-of-station transfer.',
+          'Large interchange stations can involve long corridors, stairs, escalators, or a separate platform level, so the map time may not include every delay.',
+          'Confirm the direction again when you reach the new line. The same line number has two opposite terminus directions.',
+          'If you accidentally exit, ask staff before buying another ticket or attempting to re-enter.',
+        ],
+      },
+      {
+        title: 'Choose the right station exit',
+        items: [
+          'Check the exit letter or number in AMap before the train arrives, then compare it with the station exit map and signs.',
+          'Different exits can be on opposite sides of a wide road, inside a shopping centre, or several hundred metres apart.',
+          'For attractions, hotels, hospitals, and railway stations, use the exit linked to the correct entrance rather than simply choosing the nearest-looking exit.',
+          'If an exit is closed, follow the station notice to the alternative and recalculate the walking route after reaching street level.',
+        ],
+      },
+      {
+        title: 'Airport, railway-station, and luggage tips',
+        items: [
+          'Confirm the exact airport terminal or full railway-station name. Major cities can have several airports, terminals, and distant railway stations.',
+          'Check that the metro or airport line will still be operating when you land or when your train arrives; do not assume service runs all night.',
+          'Allow more transfer time with suitcases, because some routes involve long walks, stairs, crowded trains, or limited lift access.',
+          'Follow signs for lifts and accessible routes when needed, but allow a backup route because facilities and access points can change.',
+          'During peak periods, an official taxi queue or DiDi may be more practical than several crowded metro transfers with heavy luggage.',
+        ],
+      },
+      {
+        title: 'Common metro problems and fixes',
+        items: [
+          'Card or phone will not open the gate: confirm the gate accepts that brand or QR service, remove other contactless cards, and ask staff rather than tapping repeatedly.',
+          'Ticket will not work at exit: take it to the service counter; the fare may need adjustment if the destination or journey time differs.',
+          'QR code will not load: check mobile data, screen brightness, account status, and whether the correct city transport code is active.',
+          'You boarded in the wrong direction: leave at the next station and follow signs to the opposite platform without exiting the paid area when possible.',
+          'You missed the last train or a connection: use the official taxi queue, DiDi, or another verified transport option rather than accepting an unsolicited ride.',
+        ],
+      },
+      {
+        title: 'Useful Chinese metro phrases',
+        items: [
+          '我要去这个地铁站。 — I want to go to this metro station.',
+          '怎么买单程票？ — How do I buy a single-journey ticket?',
+          '这张银行卡可以用吗？ — Can I use this bank card?',
+          '我应该坐哪个方向？ — Which direction should I take?',
+          '在哪里换乘？ — Where do I transfer?',
+          '我应该从哪个出口出去？ — Which exit should I use?',
+          '末班车是几点？ — What time is the last train?',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Can foreigners use the metro in China?',
+        answer:
+          'Yes. Foreign visitors can use metro systems in Chinese cities. A passport is not normally needed for an ordinary metro ride, but local security, payment, and ticket rules apply.',
+      },
+      {
+        question: 'Can I buy a China metro ticket with cash?',
+        answer:
+          'Many systems provide ticket machines or staffed counters that accept RMB, but the denominations and cash support can differ by machine and city. Carry smaller notes and keep a digital or card backup.',
+      },
+      {
+        question: 'Can I use a foreign bank card on the metro?',
+        answer:
+          'It depends on the city and card. Beijing officially supports contactless access through five major card organizations across its network, and Shanghai offers several international-card routes. Check the gate or machine logo in each city.',
+      },
+      {
+        question: 'Can I use Alipay or WeChat Pay for the metro?',
+        answer:
+          'Many cities offer a transport QR code or ticket payment through Alipay, WeChat, or a local metro app. Activation, city selection, identity checks, and support for an international card can vary.',
+      },
+      {
+        question: 'Do I need a Chinese phone number to ride the metro?',
+        answer:
+          'Not if you buy a supported single-journey ticket or use an accepted contactless card. App-based transport codes may have their own account, verification, and phone-number requirements.',
+      },
+      {
+        question: 'Does every Chinese metro use the same ticket or QR code?',
+        answer:
+          'No. Metro payment products and transport codes are usually city-specific. A method that works in Beijing or Shanghai may require separate activation or may not work in another city.',
+      },
+      {
+        question: 'How late do metros run in China?',
+        answer:
+          'Operating hours differ by city, line, station, weekday, and special date. Check the official operator or live route information for every line in your journey, especially the final transfer.',
+      },
+    ],
+    related: [
+      { label: 'First trip to China', href: '/first-trip-to-china/' },
+      { label: 'AMap in English', href: '/amap-in-english/' },
+      { label: 'Apps to download before China', href: '/china-travel-apps/' },
+      { label: 'DiDi in China for foreigners', href: '/didi-in-china-for-foreigners/' },
+      { label: 'China train travel guide', href: '/china-train-travel-guide/' },
+      { label: 'China payment guide', href: '/china-payment-guide/' },
+      { label: 'Get a free China itinerary', href: '/#trip-plan' },
+    ],
+    sources: [
+      {
+        label: 'Beijing government: How to buy subway tickets',
+        href: 'https://english.beijing.gov.cn/specials/beijinglifeonthesubway/noticeforpassengers/202206/t20220623_2749418.html',
+      },
+      {
+        label: 'Beijing government: Overseas card tap-and-go',
+        href: 'https://english.beijing.gov.cn/latest/news/202506/t20250616_4114250.html',
+      },
+      {
+        label: 'Shanghai government: How to take the metro',
+        href: 'https://english.shanghai.gov.cn/en-Transportation/20231214/c727f5e15eff4b8c9340651dd95f3f7c.html',
+      },
+      { label: 'AMap official mobile website', href: 'https://mobile.amap.com/' },
     ],
   },
   'didi-in-china-for-foreigners': {
@@ -987,6 +1180,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     related: [
       { label: 'Apps to download before China', href: '/china-travel-apps/' },
       { label: 'AMap in English', href: '/amap-in-english/' },
+      { label: 'China metro guide', href: '/china-metro-guide/' },
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
       { label: 'China payment guide', href: '/china-payment-guide/' },
@@ -2357,6 +2551,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/unsubscribe')) return 'unsubscribe';
   if (cleanPath.endsWith('/china-travel-apps')) return 'china-travel-apps';
   if (cleanPath.endsWith('/amap-in-english')) return 'amap-in-english';
+  if (cleanPath.endsWith('/china-metro-guide')) return 'china-metro-guide';
   if (cleanPath.endsWith('/didi-in-china-for-foreigners')) return 'didi-in-china-for-foreigners';
   if (cleanPath.endsWith('/china-train-travel-guide')) return 'china-train-travel-guide';
   if (cleanPath.endsWith('/10-day-china-itinerary')) return '10-day-china-itinerary';
