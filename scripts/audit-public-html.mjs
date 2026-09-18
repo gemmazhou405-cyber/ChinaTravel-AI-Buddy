@@ -34,7 +34,7 @@ const pages = [
   {
     path: '/10-day-china-itinerary/',
     h1: /10-Day China Itinerary for First-Time Visitors/i,
-    keywords: ['Beijing', 'Xi’an', 'Shanghai', 'Palace Museum', 'Terracotta Warriors', 'high-speed train'],
+    keywords: ['Beijing', 'Xi\'an', 'Shanghai', 'Palace Museum', 'Terracotta Warriors', 'high-speed train'],
     links: ['/#trip-plan', '/first-trip-to-china/', '/china-train-travel-guide/', '/china-travel-apps/'],
   },
   {
@@ -90,8 +90,10 @@ function titleOf(html) {
 }
 
 function metaDescriptionOf(html) {
-  return firstMatch(html, /<meta\s+name=["']description["']\s+content=["']([^"']+)["'][^>]*>/i)
-    || firstMatch(html, /<meta\s+content=["']([^"']+)["']\s+name=["']description["'][^>]*>/i);
+  return firstMatch(html, /<meta\s+name=["']description["']\s+content="([^"]*)"[^>]*>/i)
+    || firstMatch(html, /<meta\s+content="([^"]*)"\s+name=["']description["'][^>]*>/i)
+    || firstMatch(html, /<meta\s+name=["']description["']\s+content='([^']*)'[^>]*>/i)
+    || firstMatch(html, /<meta\s+content='([^']*)'\s+name=["']description["'][^>]*>/i);
 }
 
 function canonicalOf(html) {
@@ -112,6 +114,8 @@ function stripHtml(html) {
     .replace(/<[^>]+>/g, ' ')
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
+    .replace(/&#(?:39|x27);|&apos;/gi, "'")
+    .replace(/&quot;/g, '"')
     .replace(/\s+/g, ' ')
     .trim();
 }
