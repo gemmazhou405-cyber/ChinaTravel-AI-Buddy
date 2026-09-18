@@ -32,6 +32,7 @@ const pageMeta = {
     sections: [
       ['China eSIM & Internet Guide', 'Choose, install, activate, and troubleshoot mobile data for a trip to mainland China.', '/china-esim-internet-guide/'],
       ['China Travel Apps', 'Prepare Alipay, WeChat, Amap, Didi, and Trip.com before arrival.', '/china-travel-apps/'],
+      ['AMap in English', 'Search places, plan walking and metro routes, and navigate stations and entrances.', '/amap-in-english/'],
       ['DiDi in China for Foreigners', 'Book rides, find the correct pickup point, verify the car, and handle payment.', '/didi-in-china-for-foreigners/'],
       ['China Train Travel Guide', 'Book high-speed train tickets with a foreign passport and board with confidence.', '/china-train-travel-guide/'],
       ['10-Day China Itinerary', 'Follow a practical first-trip route through Beijing, Xi\'an, and Shanghai.', '/10-day-china-itinerary/'],
@@ -428,6 +429,114 @@ const pageMeta = {
       ['DiDi China official Google Play listing', 'https://play.google.com/store/apps/details?id=com.sdu.didi.psnger'],
       ['DiDi China official Apple App Store listing', 'https://apps.apple.com/us/app/didi-china-ride-hailing/id554499054'],
       ['DiDi official customer-support direction', 'https://didiglobal.com/contact'],
+    ],
+  },
+  'amap-in-english': {
+    title: 'AMap in English: China Map Guide (2026) | ChinaEase Buddy',
+    heading: 'How to Use AMap in English in China (2026)',
+    description:
+      'Use AMap in English for China travel. Learn setup, English place search, walking and metro routes, saved addresses, ride-hailing, and navigation fixes.',
+    quickAnswer:
+      'AMap, also called Gaode Maps, offers an English version for overseas users and can plan walking, public-transport, driving, and other routes in mainland China. Download it from an official app store, test the English interface before departure, and save the Chinese name and address of every important destination. When searching, select the exact hotel branch, station building, terminal, entrance, or metro exit rather than relying on a general place name. Keep screenshots and a second navigation option in case mobile data, GPS, or place search fails.',
+    lastReviewed: 'September 18, 2026',
+    lastModified: '2026-09-18',
+    article: true,
+    contentSections: [
+      {
+        title: 'Download and prepare AMap before your trip',
+        ordered: true,
+        items: [
+          'Download AMap or AMap Global only from its official website or your phone\'s official app store. Check the publisher before installing.',
+          'Open the language settings and select English if it is not already active. Names and menu locations can change by phone, region, and app version.',
+          'Allow location access while using the app if you want live positioning and turn-by-turn guidance; review other permissions instead of accepting them automatically.',
+          'Search your first hotel, airport terminal, railway station, and key attractions while you still have reliable internet.',
+          'Save the destination name, Chinese address, phone number, and a screenshot outside the app so you can show them to staff or a driver.',
+          'Arrange mobile data and keep a charged phone or power bank. Live traffic, search, and route updates depend on connectivity.',
+        ],
+      },
+      {
+        title: 'Search for the correct place',
+        items: [
+          'Start with the full English place name, but use the Chinese name or address when English search returns no result or the wrong result.',
+          'For hotels, restaurants, shops, hospitals, and attractions with several branches, compare the district, street, phone number, photos, and distance.',
+          'For a large attraction, search for the ticket entrance or visitor entrance rather than the centre point of the entire site.',
+          'For a railway station or airport, confirm the complete station name, terminal, departure level, arrival level, or pickup area.',
+          'Do not assume the first search result is correct. Save the verified place before starting the route.',
+        ],
+      },
+      {
+        title: 'Plan walking and public-transport routes',
+        items: [
+          'Choose the route mode you actually need: walking, public transport, driving, cycling, or another option shown in your version.',
+          'For public transport, compare the departure time, total duration, number of transfers, walking distance, and last-service information shown in the app.',
+          'Check the named metro station entrance when entering and the recommended station exit at your destination. The wrong exit can add a long surface walk.',
+          'For walking routes, zoom in around large roads, elevated walkways, shopping centres, parks, and compounds to confirm the accessible entrance.',
+          'Route details and service availability can change. Follow official signs and staff instructions when they differ from the map.',
+        ],
+      },
+      {
+        title: 'Use AMap at airports and railway stations',
+        items: [
+          'Confirm the airport terminal or the full railway-station name before leaving your hotel; major cities can have several distant stations and terminals.',
+          'Search for the correct entrance, departure hall, metro connection, taxi queue, or ride-hailing pickup point instead of the general station pin.',
+          'Leave extra time for security, walking inside the complex, and finding the correct gate or waiting area.',
+          'Once inside, treat official signs, screens, tickets, and staff instructions as the final authority. Indoor routes and access controls may change faster than the map.',
+        ],
+      },
+      {
+        title: 'AMap maps and ride-hailing are different tasks',
+        items: [
+          'AMap is useful for place search, route planning, live traffic, and navigation. Some versions can also display ride-hailing services.',
+          'A ride-hailing entry inside AMap does not guarantee the same English support, payment methods, identity checks, or customer service as the standalone DiDi route.',
+          'Before ordering a car, confirm the pickup pin, destination, service category, estimated fare, payment method, and vehicle details shown on your screen.',
+          'For a dedicated step-by-step ride guide, use the separate DiDi in China for Foreigners page.',
+        ],
+      },
+      {
+        title: 'What to save for weak or missing mobile data',
+        items: [
+          'Take screenshots of the full route, key turns, metro line and transfer stations, destination entrance, and return route.',
+          'Keep your hotel name, Chinese address, phone number, and nearest metro station in your notes.',
+          'Assume that live search, traffic, and route recalculation require internet unless your exact app version clearly confirms an offline feature.',
+          'Carry a second data option or know where to find official station, hotel, or visitor-service help.',
+        ],
+      },
+      {
+        title: 'Common AMap problems and fixes',
+        items: [
+          'No English search result: paste the Chinese place name or full Chinese address from the hotel, booking, attraction, or official website.',
+          'Wrong branch: compare the district, street, phone number, photos, opening information, and distance before choosing.',
+          'Location appears wrong: check GPS and location permission, confirm mobile data, step outside dense buildings, and wait for the position to refresh.',
+          'Walking route ends at the wrong side: look for the named gate or entrance and zoom in for footbridges, tunnels, compounds, or road barriers.',
+          'Public-transport route is unavailable or no longer practical: check a later route, another station entrance, an official taxi queue, or DiDi.',
+        ],
+      },
+      {
+        title: 'Useful Chinese map phrases',
+        items: [
+          '这个地址在哪里？ — Where is this address?',
+          '请问最近的地铁站入口在哪里？ — Where is the nearest metro entrance?',
+          '我应该从哪个出口出去？ — Which exit should I use?',
+          '这是正确的火车站吗？ — Is this the correct railway station?',
+          '请带我到这个地址。 — Please take me to this address.',
+        ],
+      },
+    ],
+    faqs: [
+      ['Is AMap available in English?', 'Yes. AMap launched an English map experience for overseas users, with English interface and place information. Exact language coverage and menus can vary by app version and location.'],
+      ['Can foreigners use AMap in China?', 'Yes. Overseas users can download AMap from supported official app stores and use it for place search and route planning. Some account-based or transaction features may require additional setup.'],
+      ['Do I need a Chinese phone number for AMap?', 'Basic map search and route planning may be available without a Chinese number, but login, saved data, ride-hailing, or other account features can vary. Follow the requirements shown in your current version and keep access to your travel phone number.'],
+      ['Can AMap plan metro and walking routes?', 'Yes. AMap provides public-transport and walking route planning. Check the station entrance, destination exit, transfers, walking distance, and current service information before starting.'],
+      ['Does Google Maps work in mainland China?', 'Do not rely on Google Maps as your only map on an ordinary mainland China connection. Access to some international services can be restricted, so prepare AMap and save essential addresses and screenshots before travel.'],
+      ['Does AMap work offline?', 'Some capabilities can vary by device and version. Unless your version clearly confirms an offline feature, assume search, live traffic, and route recalculation need mobile data and save route screenshots as a backup.'],
+      ['Should I use AMap or DiDi?', 'Use AMap mainly for maps, place search, walking and public-transport routes, and navigation. Use DiDi when you want a dedicated ride-hailing flow with pickup, vehicle, trip, payment, and support details.'],
+    ],
+    sourceLinks: [
+      ['AMap official mobile website', 'https://mobile.amap.com/'],
+      ['AMap official Google Play listing', 'https://play.google.com/store/apps/details?id=com.autonavi.minimap'],
+      ['Shanghai city guide: AMap English launch', 'https://www.meet-in-shanghai.net/en/news/gaode-maps-launches-chinas-first-english-map-for-overseas-users-600989/'],
+      ['Shanghai government: essential apps for visitors', 'https://english.shanghai.gov.cn/en-UsefulApps/20231214/3cac2d8cc7f847da92a72252bae06705.html'],
+      ['UK travel advice: internet access in China', 'https://www.gov.uk/foreign-travel-advice/china/safety-and-security#internet-access'],
     ],
   },
   '10-day-china-itinerary': {
@@ -931,6 +1040,7 @@ const staticCtas = {
   about: ['Learn about ChinaEase Buddy', '/about/'],
   unsubscribe: ['Contact support', '/contact/'],
   'china-travel-apps': ['Get my free China itinerary', '/#trip-plan'],
+  'amap-in-english': ['Get my free China itinerary', '/#trip-plan'],
   'didi-in-china-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
   'china-train-travel-guide': ['Get my free China itinerary', '/#trip-plan'],
   '10-day-china-itinerary': ['Get my personalised 10-day itinerary', '/#trip-plan'],
@@ -947,6 +1057,7 @@ const relatedLinks = [
   ['All guides', '/guides/'],
   ['China eSIM & internet guide', '/china-esim-internet-guide/'],
   ['China travel apps', '/china-travel-apps/'],
+  ['AMap in English', '/amap-in-english/'],
   ['DiDi in China for foreigners', '/didi-in-china-for-foreigners/'],
   ['China train travel guide', '/china-train-travel-guide/'],
   ['10-day China itinerary', '/10-day-china-itinerary/'],
@@ -960,6 +1071,7 @@ const relatedLinks = [
 const pageRelatedLinks = {
   'china-travel-apps': [
     ['First trip to China', '/first-trip-to-china/'],
+    ['AMap in English', '/amap-in-english/'],
     ['DiDi in China for foreigners', '/didi-in-china-for-foreigners/'],
     ['China train travel guide', '/china-train-travel-guide/'],
     ['China eSIM & internet guide', '/china-esim-internet-guide/'],
@@ -970,10 +1082,19 @@ const pageRelatedLinks = {
   ],
   'didi-in-china-for-foreigners': [
     ['Apps to download before China', '/china-travel-apps/'],
+    ['AMap in English', '/amap-in-english/'],
     ['China train travel guide', '/china-train-travel-guide/'],
     ['10-day China itinerary', '/10-day-china-itinerary/'],
     ['China payment guide', '/china-payment-guide/'],
     ['First trip to China', '/first-trip-to-china/'],
+    ['Get a free China itinerary', '/#trip-plan'],
+  ],
+  'amap-in-english': [
+    ['First trip to China', '/first-trip-to-china/'],
+    ['Apps to download before China', '/china-travel-apps/'],
+    ['DiDi in China for foreigners', '/didi-in-china-for-foreigners/'],
+    ['China train travel guide', '/china-train-travel-guide/'],
+    ['China eSIM & internet guide', '/china-esim-internet-guide/'],
     ['Get a free China itinerary', '/#trip-plan'],
   ],
   'china-train-travel-guide': [
