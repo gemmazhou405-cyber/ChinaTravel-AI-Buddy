@@ -10,14 +10,14 @@ const pages = [
   {
     path: '/guides/',
     h1: /China Travel Guides/i,
-    keywords: ['China Travel Apps', 'China Train Travel Guide', '10-Day China Itinerary', 'Alipay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
-    links: ['/china-travel-apps/', '/china-train-travel-guide/', '/10-day-china-itinerary/', '/china-payment-guide/', '/faq/'],
+    keywords: ['China Travel Apps', 'China Train Travel Guide', '10-Day China Itinerary', 'Alipay for Foreigners', 'WeChat Pay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
+    links: ['/china-travel-apps/', '/china-train-travel-guide/', '/10-day-china-itinerary/', '/wechat-pay-for-foreigners/', '/china-payment-guide/', '/faq/'],
   },
   {
     path: '/china-payment-guide/',
     h1: /How to Pay in China as a Foreigner/i,
     keywords: ['Alipay', 'WeChat Pay', 'foreign card', 'payment failure'],
-    links: ['/?journey=china&tool=pay', '/alipay-for-foreigners/'],
+    links: ['/?journey=china&tool=pay', '/alipay-for-foreigners/', '/wechat-pay-for-foreigners/'],
   },
   {
     path: '/china-travel-apps/',
@@ -34,7 +34,7 @@ const pages = [
   {
     path: '/10-day-china-itinerary/',
     h1: /10-Day China Itinerary for First-Time Visitors/i,
-    keywords: ['Beijing', 'Xi\'an', 'Shanghai', 'Palace Museum', 'Terracotta Warriors', 'high-speed train'],
+    keywords: ['Beijing', 'Xi’an', 'Shanghai', 'Palace Museum', 'Terracotta Warriors', 'high-speed train'],
     links: ['/#trip-plan', '/first-trip-to-china/', '/china-train-travel-guide/', '/china-travel-apps/'],
   },
   {
@@ -47,7 +47,13 @@ const pages = [
     path: '/alipay-for-foreigners/',
     h1: /Alipay for Foreigners.*2026/i,
     keywords: ['Alipay', 'international card', 'person-to-person transfers', 'payment fails'],
-    links: ['/#trip-plan', '/first-trip-to-china/', '/china-payment-guide/'],
+    links: ['/#trip-plan', '/first-trip-to-china/', '/china-payment-guide/', '/wechat-pay-for-foreigners/'],
+  },
+  {
+    path: '/wechat-pay-for-foreigners/',
+    h1: /WeChat Pay in China as a Foreigner.*2026/i,
+    keywords: ['international card', 'QR code', 'person-to-person transfers', 'payment feature', 'Weixin Pay', 'payment failed'],
+    links: ['/#trip-plan', '/first-trip-to-china/', '/alipay-for-foreigners/', '/china-payment-guide/', '/china-travel-apps/'],
   },
   {
     path: '/china-travel-checklist/',
