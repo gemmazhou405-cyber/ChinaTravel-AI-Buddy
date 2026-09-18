@@ -10,8 +10,8 @@ const pages = [
   {
     path: '/guides/',
     h1: /China Travel Guides/i,
-    keywords: ['China Travel Apps', 'DiDi in China for Foreigners', 'China Train Travel Guide', '10-Day China Itinerary', 'Alipay for Foreigners', 'WeChat Pay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
-    links: ['/china-travel-apps/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/10-day-china-itinerary/', '/wechat-pay-for-foreigners/', '/china-payment-guide/', '/faq/'],
+    keywords: ['China Travel Apps', 'AMap in English', 'DiDi in China for Foreigners', 'China Train Travel Guide', '10-Day China Itinerary', 'Alipay for Foreigners', 'WeChat Pay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
+    links: ['/china-travel-apps/', '/amap-in-english/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/10-day-china-itinerary/', '/wechat-pay-for-foreigners/', '/china-payment-guide/', '/faq/'],
   },
   {
     path: '/china-payment-guide/',
@@ -23,13 +23,19 @@ const pages = [
     path: '/china-travel-apps/',
     h1: /8 Essential Apps for China Travel.*2026/i,
     keywords: ['Alipay', 'WeChat', 'AMap Global', 'DiDi', 'Trip.com', 'Railway 12306', 'offline translation'],
-    links: ['/#trip-plan', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/china-esim-internet-guide/', '/alipay-for-foreigners/', '/china-travel-checklist/'],
+    links: ['/#trip-plan', '/amap-in-english/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/china-esim-internet-guide/', '/alipay-for-foreigners/', '/china-travel-checklist/'],
+  },
+  {
+    path: '/amap-in-english/',
+    h1: /AMap in English in China.*2026/i,
+    keywords: ['English', 'place search', 'walking', 'public transport', 'Chinese address', 'station exit'],
+    links: ['/#trip-plan', '/first-trip-to-china/', '/china-travel-apps/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/'],
   },
   {
     path: '/didi-in-china-for-foreigners/',
     h1: /DiDi in China as a Foreigner.*2026/i,
     keywords: ['international mobile number', 'English interface', 'licence plate', 'ride-hailing pickup point', 'bilingual', 'lost item'],
-    links: ['/#trip-plan', '/first-trip-to-china/', '/china-travel-apps/', '/china-train-travel-guide/', '/10-day-china-itinerary/', '/china-payment-guide/'],
+    links: ['/#trip-plan', '/first-trip-to-china/', '/china-travel-apps/', '/amap-in-english/', '/china-train-travel-guide/', '/10-day-china-itinerary/', '/china-payment-guide/'],
   },
   {
     path: '/china-train-travel-guide/',
