@@ -11,6 +11,7 @@ type GuidePageType =
   | '10-day-china-itinerary'
   | 'china-esim-internet-guide'
   | 'alipay-for-foreigners'
+  | 'wechat-pay-for-foreigners'
   | 'china-payment-guide'
   | 'china-travel-checklist'
   | 'china-emergency-numbers'
@@ -317,6 +318,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'China Train Travel Guide: book with a foreign passport and navigate the station.',
           '10-Day China Itinerary: follow a practical Beijing, Xi\'an, and Shanghai route.',
           'Alipay for Foreigners: understand setup reminders and backup options.',
+          'WeChat Pay for Foreigners: add an eligible international card and pay by QR code.',
           'China Payment Guide: practical notes for Alipay, WeChat Pay, cards, and cash.',
           'China Travel Checklist: first-time visitor preparation before arrival.',
           'China Emergency Numbers: 110, 120, 119, and simple emergency phrases.',
@@ -342,6 +344,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
       { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
+      { label: 'WeChat Pay for foreigners', href: '/wechat-pay-for-foreigners/' },
       { label: 'China payment guide', href: '/china-payment-guide/' },
       { label: 'China travel checklist', href: '/china-travel-checklist/' },
       { label: 'Emergency numbers in China', href: '/china-emergency-numbers/' },
@@ -1111,6 +1114,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     ],
     related: [
       { label: 'How to pay in China as a foreigner', href: '/china-payment-guide/' },
+      { label: 'WeChat Pay for foreigners', href: '/wechat-pay-for-foreigners/' },
       { label: 'Apps to download before China', href: '/china-travel-apps/' },
       { label: 'FAQ', href: '/faq/' },
     ],
@@ -1122,6 +1126,166 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       {
         label: 'Shanghai government guide to linking international cards to Alipay',
         href: 'https://english.shanghai.gov.cn/en-FAQs-StudyinShanghai/20231211/a58d4c15179f468fb2c5d72b393f1fd4.html',
+      },
+    ],
+  },
+  'wechat-pay-for-foreigners': {
+    path: '/wechat-pay-for-foreigners/',
+    title: 'How to Use WeChat Pay in China as a Foreigner (2026)',
+    intro: 'A practical setup, QR payment, and troubleshooting guide for first-time visitors using an international bank card.',
+    metaTitle: 'WeChat Pay for Foreigners: Setup Guide (2026) | ChinaEase Buddy',
+    metaDescription:
+      'Set up WeChat Pay for China: register with an overseas number, add an eligible international card, pay by QR code, and troubleshoot common failures.',
+    quickAnswer:
+      'Foreign visitors can use WeChat Pay in mainland China when the payment feature is available on their account and an eligible international card passes identity and issuer checks. Register the standard WeChat app with a mobile number you can access, open the payment or wallet area shown in your version, add the card, and complete any requested verification. Set it up before departure and keep Alipay, a physical card, and some RMB as backups.',
+    ctaLabel: 'Get my free China itinerary',
+    ctaHref: '/#trip-plan',
+    lastReviewed: 'September 18, 2026',
+    lastModified: '2026-09-18',
+    isArticle: true,
+    sections: [
+      {
+        title: 'What you need before setup',
+        items: [
+          'The standard WeChat app from an official app store, rather than a separate regional wallet product.',
+          'A mobile number that can receive verification messages while you travel.',
+          'An eligible debit or credit card issued outside the Chinese mainland.',
+          'Your passport details if identity verification is requested.',
+          'Access to your bank app, SMS, or other card-approval method.',
+          'Alipay, a physical bank card, and a modest amount of RMB as payment backups.',
+        ],
+      },
+      {
+        title: 'Set up WeChat Pay before your flight',
+        ordered: true,
+        items: [
+          'Download the standard WeChat app from your phone\'s official app store and register with a mobile number you can continue to access.',
+          'Open Me and look for Services, Pay and Services, or Wallet. The label and location can vary by region, account, and app version.',
+          'Choose Wallet or Cards, then add your international card using the details requested in the app.',
+          'Complete identity verification exactly as prompted. Make sure your name and passport details match your documents.',
+          'Approve any verification request from your card issuer and review the terms, supported uses, limits, and fees shown in the app.',
+          'Keep the registered phone number, passport, and bank-verification method available during the trip.',
+        ],
+      },
+      {
+        title: 'How to pay by QR code',
+        table: {
+          headers: ['Payment situation', 'What to do'],
+          rows: [
+            ['The merchant scans you', 'Open the payment code inside WeChat Pay and let the merchant scan it.'],
+            ['You scan the merchant', 'Use Scan, confirm the merchant name, enter the amount if required, and review it before paying.'],
+            ['The code is a personal transfer', 'Your international card may not be available. Ask for a merchant code or another payment method.'],
+          ],
+        },
+        items: [
+          'Never hand an unlocked phone to a stranger or share a payment password or verification code.',
+        ],
+      },
+      {
+        title: 'What may be different with an international card',
+        items: [
+          'Merchant purchases may be available while person-to-person transfers, red packets, wallet balance functions, or other financial features remain restricted.',
+          'Availability depends on the account, card network, issuer, merchant, transaction, and current WeChat Pay rules.',
+          'A card that was added successfully can still be declined later by the issuer or payment risk controls.',
+          'Use the card and feature information shown inside your account as the current source of truth.',
+        ],
+      },
+      {
+        title: 'WeChat Pay, Weixin Pay, and regional wallets',
+        items: [
+          'Weixin Pay is the payment service inside the Weixin or WeChat ecosystem for the Chinese mainland.',
+          'Regional products such as WeChat Pay HK follow their own eligibility, funding, and cross-border rules.',
+          'Do not assume instructions for a regional wallet match the standard international WeChat account on your phone.',
+          'Follow the payment menu and terms shown in your exact app version and region.',
+        ],
+      },
+      {
+        title: 'Fees, limits, and exchange rates',
+        items: [
+          'Review the amount, any service fee, and the selected card on the confirmation screen before approving payment.',
+          'Your card network and issuing bank may determine the exchange rate and may add a foreign-transaction or currency-conversion fee.',
+          'Transaction and account limits can change after verification or risk checks.',
+          'Do not rely on an old fixed fee or limit from a blog; check the current in-app notice and your card issuer.',
+        ],
+      },
+      {
+        title: 'If WeChat Pay does not work',
+        ordered: true,
+        items: [
+          'Confirm that the payment feature and linked card still appear in your account.',
+          'Check whether identity verification or an issuer approval request is incomplete.',
+          'Make sure you are paying a merchant rather than trying a personal transfer.',
+          'Check your mobile connection and retry only after confirming that the first attempt did not complete.',
+          'Try another eligible card, Alipay, a physical card, or RMB cash.',
+          'Use WeChat Pay support for account-specific restrictions because ChinaEase Buddy cannot access or change your wallet.',
+        ],
+      },
+      {
+        title: 'Useful payment phrases',
+        items: [
+          '可以用微信支付吗？ — Can I pay with WeChat Pay?',
+          '请扫我的付款码。 — Please scan my payment code.',
+          '这个是商家收款码吗？ — Is this a merchant payment code?',
+          '支付失败了，可以换一种方式吗？ — My payment failed. Can I pay another way?',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Can foreigners use WeChat Pay in China?',
+        answer:
+          'Yes, when the payment feature is available on the account and an eligible international card passes identity, issuer, and payment checks. Availability can vary by account and transaction.',
+      },
+      {
+        question: 'Do I need a Chinese bank account for WeChat Pay?',
+        answer:
+          'Foreign visitors may be able to fund eligible merchant payments with a supported international card, so a Chinese bank account is not always required. Follow the options shown in your account.',
+      },
+      {
+        question: 'Can I set up WeChat Pay before arriving in China?',
+        answer:
+          'Yes. Install the standard WeChat app, register, look for the payment or wallet area, add your card, and complete verification before departure if the feature is available.',
+      },
+      {
+        question: 'Why can I not see Wallet or Pay and Services?',
+        answer:
+          'Menu names and payment availability can differ by region, account, identity status, and app version. Update the official app and use WeChat support if the payment feature is unavailable.',
+      },
+      {
+        question: 'Can I send money to a person with an international card?',
+        answer:
+          'Do not assume that you can. Merchant purchases may work while personal transfers, red packets, and balance features remain restricted for an international-card setup.',
+      },
+      {
+        question: 'What should I do if WeChat Pay is declined?',
+        answer:
+          'Check verification and issuer approval, confirm that the QR code is for a merchant, then use another prepared payment method rather than repeatedly retrying an uncertain transaction.',
+      },
+      {
+        question: 'Should I choose WeChat Pay or Alipay for China?',
+        answer:
+          'Prepare both if possible. Many first-time visitors use Alipay as the primary wallet and WeChat Pay as a backup, while also carrying a physical card and some RMB.',
+      },
+    ],
+    related: [
+      { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
+      { label: 'How to pay in China as a foreigner', href: '/china-payment-guide/' },
+      { label: 'Apps to download before China', href: '/china-travel-apps/' },
+      { label: 'First trip to China', href: '/first-trip-to-china/' },
+      { label: 'Get a free China itinerary', href: '/#trip-plan' },
+    ],
+    sources: [
+      {
+        label: 'Tencent: cross-border payment support through Weixin Pay',
+        href: 'https://www.tencent.com/tencent-showcases-future-of-finance-at-hong-kong-fintech-week-2025/',
+      },
+      {
+        label: 'WeChat official Google Play listing',
+        href: 'https://play.google.com/store/apps/details?id=com.tencent.mm',
+      },
+      {
+        label: 'China government: Guide to Payment Services in China',
+        href: 'https://english.www.gov.cn/news/202403/15/content_WS65f3b5d9c6d0868f4e8e52ea.html',
       },
     ],
   },
@@ -1224,6 +1388,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     ],
     related: [
       { label: 'Can foreigners use Alipay?', href: '/alipay-for-foreigners/' },
+      { label: 'WeChat Pay for foreigners', href: '/wechat-pay-for-foreigners/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
       { label: 'China travel checklist', href: '/china-travel-checklist/' },
     ],
@@ -1848,6 +2013,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/10-day-china-itinerary')) return '10-day-china-itinerary';
   if (cleanPath.endsWith('/china-esim-internet-guide')) return 'china-esim-internet-guide';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
+  if (cleanPath.endsWith('/wechat-pay-for-foreigners')) return 'wechat-pay-for-foreigners';
   if (cleanPath.endsWith('/china-payment-guide')) return 'china-payment-guide';
   if (cleanPath.endsWith('/china-travel-checklist')) return 'china-travel-checklist';
   if (cleanPath.endsWith('/china-emergency-numbers')) return 'china-emergency-numbers';
