@@ -11,6 +11,7 @@ type GuidePageType =
   | 'china-hotels-for-foreigners'
   | 'china-food-ordering-guide'
   | 'chinese-travel-phrases'
+  | 'china-travel-safety-guide'
   | 'china-travel-apps'
   | 'amap-in-english'
   | 'china-metro-guide'
@@ -327,6 +328,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'China Hotels for Foreigners: passport booking, check-in, registration, deposits, and problem solving.',
           'China Food Ordering Guide: use QR and photo menus, explain dietary needs, handle allergies, and pay.',
           'Chinese Travel Phrases: save practical Mandarin for transport, hotels, food, payment, and emergencies.',
+          'China Travel Safety Guide: understand crime, scams, transport, local laws, health, and emergency planning.',
           'China Travel Apps: prepare Alipay, WeChat, Amap, Didi, and Trip.com.',
           'AMap in English: search places, plan routes, and navigate stations and entrances.',
           'China Metro Guide: buy tickets, transfer lines, and choose the correct exit.',
@@ -361,6 +363,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
       { label: 'How to order food in China', href: '/china-food-ordering-guide/' },
       { label: 'Essential Chinese travel phrases', href: '/chinese-travel-phrases/' },
+      { label: 'China travel safety guide', href: '/china-travel-safety-guide/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
       { label: 'AMap in English', href: '/amap-in-english/' },
       { label: 'China metro guide', href: '/china-metro-guide/' },
@@ -1267,6 +1270,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     ],
     related: [
       { label: 'How to order food in China', href: '/china-food-ordering-guide/' },
+      { label: 'China travel safety guide', href: '/china-travel-safety-guide/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
       { label: 'DiDi in China for foreigners', href: '/didi-in-china-for-foreigners/' },
       { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
@@ -1281,6 +1285,184 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' },
       { label: 'China National Immigration Administration 12367 service', href: 'https://en.nia.gov.cn/n108/c117393/content.html' },
       { label: 'CDC: food and drink safety while traveling', href: 'https://wwwnc.cdc.gov/travel/page/food-water-safety' },
+    ],
+  },
+  'china-travel-safety-guide': {
+    path: '/china-travel-safety-guide/',
+    title: 'Is China Safe to Travel? Safety Guide for Tourists (2026)',
+    intro:
+      'A practical, evidence-based safety guide for crime, scams, solo and female travel, transport, local laws, health, weather, and emergencies in mainland China.',
+    metaTitle: 'Is China Safe to Travel? Tourist Safety Guide (2026)',
+    metaDescription:
+      'Plan a safer China trip. Understand crime, tourist scams, solo and female travel, taxis, local laws, health, weather, emergency numbers, and what to prepare.',
+    quickAnswer:
+      'Many tourists visit mainland China without serious safety problems, and official UK and US guidance says serious or violent crime against foreign visitors is relatively uncommon. That does not make any trip risk-free. The most practical concerns are protecting belongings in crowded places, avoiding tea-house and bar scams, using verified transport, following local laws, preparing mobile data and payment backups, monitoring weather, and knowing how to get medical or police help. Government advisories also highlight broad national-security laws, possible exit bans, and restrictions in sensitive areas, so check the current advice issued for your own nationality and itinerary before departure.',
+    ctaLabel: 'Get my free China itinerary',
+    ctaHref: '/#trip-plan',
+    lastReviewed: 'September 20, 2026',
+    lastModified: '2026-09-20',
+    isArticle: true,
+    sections: [
+      {
+        title: 'Understand the risk picture',
+        items: [
+          'Separate everyday tourist safety from legal and geopolitical risk. Street crime may be relatively uncommon while laws, restricted areas, business disputes, or a traveler\'s professional background can create different risks.',
+          'As reviewed on 20 September 2026, the US Department of State rates mainland China Level 2, “Exercise increased caution,” citing enforcement of local laws, exit bans, and detention risks.',
+          'UK guidance says serious crime against foreign nationals is relatively rare, but isolated violent incidents have occurred and ordinary precautions remain necessary.',
+          'Travel advice varies by nationality and can change quickly. Read the current government advisory for your passport, not only social-media accounts or an old travel video.',
+          'Hong Kong and Macao have separate entry, legal, emergency, and travel-advisory pages. Do not treat a mainland China guide as complete advice for either place.',
+        ],
+      },
+      {
+        title: 'Prepare a safety backup before departure',
+        ordered: true,
+        items: [
+          'Share your route, hotel details, transport bookings, and check-in plan with one trusted person who is not traveling with you.',
+          'Save your embassy or consulate contact, travel insurer, card issuer, airline, hotel, and the China emergency numbers 110, 120, and 119.',
+          'Keep passport and visa details, insurance documents, prescriptions, and bookings available offline. Store a separate secure copy in case the original is lost.',
+          'Set up at least two payment routes, mobile data plus an offline information backup, and Chinese-language addresses for every hotel and major destination.',
+          'Buy travel insurance that matches your activities and check medical treatment, evacuation, trip disruption, valuables, and pre-existing-condition terms.',
+        ],
+      },
+      {
+        title: 'Solo and female traveler precautions',
+        items: [
+          'Use the same baseline precautions you would use in any large unfamiliar city: tell someone where you are going, avoid isolated shortcuts, and keep control of your transport home.',
+          'Do not leave food or drinks unattended or accept open drinks from strangers. Official guidance notes that drink spiking and sexual assault are uncommon but can occur.',
+          'Meet new contacts in public places, keep your own phone and payment access, and avoid moving to a second unknown venue when the situation changes unexpectedly.',
+          'At night, use a verified DiDi or a marked, metered taxi; check the licence plate and driver details before entering and share the ride when practical.',
+          'If a person or venue makes you uncomfortable, leave early and move toward hotel staff, station staff, security, police, or another busy public place.',
+        ],
+      },
+      {
+        title: 'Recognize common tourist scams',
+        items: [
+          'Tea-house, massage, bar, and “practice English” scams often begin with a friendly stranger inviting you to a nearby venue, followed by an inflated bill and pressure to pay.',
+          'Decline spontaneous invitations from strangers in major tourist areas when you cannot independently verify the venue, menu, price, and route back.',
+          'Inspect payment requests before scanning or approving them. QR-code phishing, substituted payment codes, fake customer support, and suspicious links can expose money or account data.',
+          'Use ATMs inside banks or established shopping centers where possible, shield the keypad, and stop if the machine or card slot looks altered.',
+          'Never carry a parcel or luggage for a stranger. Pack your own bags and keep them under your control through airport and railway security.',
+          'If a dispute becomes threatening, do not start a physical confrontation. Move to a public area, call 110, contact the card issuer if needed, and request a police report.',
+        ],
+      },
+      {
+        title: 'Transport and road safety',
+        items: [
+          'Use official airport taxi queues, verified ride-hailing, or marked and metered taxis. Avoid unmarked or unmetered vehicles even when the offer appears convenient.',
+          'Check the licence plate, car model, and driver shown in the app before entering. Do not get into a different vehicle because someone knows your destination.',
+          'Traffic direction and road behavior may differ from what you expect. Look both ways at crossings, watch for scooters and e-bikes, and do not assume a green pedestrian light removes every risk.',
+          'A foreign or international driving permit alone does not normally authorize driving in mainland China. Confirm current licence and insurance requirements before renting a vehicle.',
+          'At railway stations, airports, and overnight trains, keep your passport, phone, cards, and essential medicine on your person rather than in unattended luggage.',
+        ],
+      },
+      {
+        title: 'Local laws, identification, and sensitive places',
+        items: [
+          'Foreign visitors are subject to Chinese law. Rules and enforcement can differ from those in your home country, and saying that you did not know the rule may not prevent penalties.',
+          'Official UK advice tells travelers to carry their original passport because police can conduct identity checks and may not accept a printed copy. Keep a separate secure copy as a loss backup.',
+          'Avoid demonstrations and political gatherings. Do not photograph military, police, border, government, industrial, or other restricted facilities when permission is unclear.',
+          'National-security, counterespionage, data, mapping, research, and publication rules can be broad. Travelers in journalism, academia, government, NGOs, technology, or business should obtain role-specific advice.',
+          'Illegal-drug penalties are severe. Do not carry cannabis, CBD, unknown medicine, drug-containing products, or another person\'s bag without confirming legality through official channels.',
+          'Drones are regulated. Check current Civil Aviation Administration and local rules before bringing, registering, or flying one.',
+        ],
+      },
+      {
+        title: 'Phone, payment, and data safety',
+        items: [
+          'Set up essential apps before departure and keep access to the phone number used for verification. Do not let a stranger take control of your unlocked phone to “fix” a payment.',
+          'Check the merchant name and amount before approving an Alipay or WeChat Pay transaction. Keep receipts and screenshots when a charge is disputed.',
+          'Use strong device locks, account recovery methods, and remote-loss controls. Avoid accessing highly sensitive accounts over unknown public Wi-Fi.',
+          'Save hotel addresses, emergency phrases, bookings, and one map area offline because international services or mobile data may be unavailable.',
+          'If a phone or wallet is lost, freeze cards and payment access quickly, change exposed credentials from a trusted device, and make a police report when required.',
+        ],
+      },
+      {
+        title: 'Health, medicine, food, and water',
+        items: [
+          'Check destination-specific vaccines and medicines with a qualified clinician ideally at least one month before travel. Recommendations depend on route, season, activities, and medical history.',
+          'Carry routine and prescribed medicine in appropriate packaging with supporting documents, and verify Chinese import and controlled-medicine rules before travel.',
+          'CDC guidance says tap water is not drinkable in China, including major cities. Use sealed bottled water or properly treated water when drinking safety is uncertain.',
+          'Choose thoroughly cooked food served hot, practice hand hygiene, and use extra caution with raw or undercooked meat, seafood, eggs, and food held at unsafe temperatures.',
+          'For a serious illness, injury, or allergic reaction, follow your personal medical plan and call 120. ChinaEase phrases are communication support, not medical advice.',
+        ],
+      },
+      {
+        title: 'Weather and outdoor safety',
+        items: [
+          'China covers many climates and is affected by earthquakes, heat, cold, altitude, flooding, and severe storms. Check the exact cities and season, not a national average.',
+          'Typhoons and flooding commonly affect parts of southern and eastern China from May to November. Monitor official weather and follow local closure or evacuation instructions.',
+          'Do not hike alone in isolated areas or on unrestored sections of the Great Wall. Leave the route and expected return time with another person.',
+          'Carry water, power, offline navigation, weather-appropriate clothing, and an emergency contact plan for outdoor trips.',
+          'When air quality, extreme heat, altitude, or an existing medical condition is relevant, seek personalized medical advice and reduce exposure rather than relying on a generic travel rule.',
+        ],
+      },
+      {
+        title: 'What to do in an emergency',
+        ordered: true,
+        items: [
+          'Move away from immediate danger and toward a staffed, well-lit public place when it is safe to do so.',
+          'Call 110 for police, 120 for ambulance, or 119 for fire. Ask a hotel, station, restaurant, or security employee to call if language is a barrier.',
+          'Show a short Chinese phrase and your exact location: 请帮我报警 (“Please help me call the police”) or 请帮我叫救护车 (“Please help me call an ambulance”).',
+          'Contact your embassy or consulate and travel insurer when the situation involves detention, a lost passport, serious medical care, crime, or emergency travel changes.',
+          'Preserve booking records, receipts, card charges, screenshots, photos, and the police report number. Do not publish sensitive evidence before obtaining appropriate advice.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is China safe for tourists in 2026?',
+        answer:
+          'Many tourists travel without serious incidents, and official UK and US guidance describes serious or violent crime against foreign visitors as relatively uncommon. Travelers should still protect belongings, avoid scams, use verified transport, follow local laws, and check current government advice for their nationality and route.',
+      },
+      {
+        question: 'Is China safe for solo female travelers?',
+        answer:
+          'Many women travel independently in China, but normal solo-travel precautions still matter. Keep control of drinks and transport, meet new contacts in public, share plans, avoid isolated places at night, and leave if a person or venue makes you uncomfortable.',
+      },
+      {
+        question: 'What scams should tourists watch for in China?',
+        answer:
+          'Common warnings include tea-house, massage, bar, and “practice English” invitations that end with an inflated bill. Also check QR codes, payment amounts, ATM equipment, suspicious links, and anyone asking you to carry a parcel.',
+      },
+      {
+        question: 'Should I carry my passport in China?',
+        answer:
+          'Official UK guidance advises carrying the original passport because police may conduct identity checks and may not accept a printed copy. Store a secure copy separately and check the current advice for your nationality and situation.',
+      },
+      {
+        question: 'Is tap water safe to drink in China?',
+        answer:
+          'CDC traveler guidance says tap water is not drinkable in China, including major cities. Use factory-sealed bottled water or water that has been properly treated when drinking safety is uncertain.',
+      },
+      {
+        question: 'What are the emergency numbers in China?',
+        answer:
+          'Call 110 for police, 120 for ambulance, and 119 for fire. Save the numbers and useful Chinese phrases offline before travel.',
+      },
+      {
+        question: 'Do I need travel insurance for China?',
+        answer:
+          'Travel insurance is strongly recommended. Check that the policy covers your medical needs, planned activities, evacuation, trip disruption, valuables, and any pre-existing conditions; exclusions vary by policy.',
+      },
+    ],
+    related: [
+      { label: 'Emergency numbers in China', href: '/china-emergency-numbers/' },
+      { label: 'Essential Chinese travel phrases', href: '/chinese-travel-phrases/' },
+      { label: 'China travel apps', href: '/china-travel-apps/' },
+      { label: 'DiDi in China for foreigners', href: '/didi-in-china-for-foreigners/' },
+      { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+      { label: 'How to order food in China', href: '/china-food-ordering-guide/' },
+      { label: 'China payment guide', href: '/china-payment-guide/' },
+      { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
+      { label: 'First trip to China', href: '/first-trip-to-china/' },
+      { label: 'Get a free China itinerary', href: '/#trip-plan' },
+    ],
+    sources: [
+      { label: 'UK government: China safety and security advice', href: 'https://www.gov.uk/foreign-travel-advice/china/safety-and-security' },
+      { label: 'US Department of State: China travel advisory', href: 'https://travel.state.gov/en/international-travel/travel-advisories/china.html' },
+      { label: 'Australian Smartraveller: China travel advice', href: 'https://www.smartraveller.gov.au/destinations/asia/china' },
+      { label: 'CDC: China traveler health guidance', href: 'https://wwwnc.cdc.gov/travel/destinations/traveler/none/china' },
+      { label: 'China Meteorological Administration', href: 'https://www.cma.gov.cn/en/' },
     ],
   },
   'china-travel-apps': {
@@ -1435,6 +1617,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China payment guide', href: '/china-payment-guide/' },
       { label: 'How to order food in China', href: '/china-food-ordering-guide/' },
       { label: 'Essential Chinese travel phrases', href: '/chinese-travel-phrases/' },
+      { label: 'China travel safety guide', href: '/china-travel-safety-guide/' },
       { label: 'China travel checklist', href: '/china-travel-checklist/' },
       { label: 'Get a free China itinerary', href: '/#trip-plan' },
     ],
@@ -2994,6 +3177,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China travel apps', href: '/china-travel-apps/' },
       { label: 'Food ordering and allergy guide', href: '/china-food-ordering-guide/' },
       { label: 'Essential Chinese travel phrases', href: '/chinese-travel-phrases/' },
+      { label: 'China travel safety guide', href: '/china-travel-safety-guide/' },
       { label: 'FAQ', href: '/faq/' },
     ],
   },
@@ -3487,6 +3671,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/china-hotels-for-foreigners')) return 'china-hotels-for-foreigners';
   if (cleanPath.endsWith('/china-food-ordering-guide')) return 'china-food-ordering-guide';
   if (cleanPath.endsWith('/chinese-travel-phrases')) return 'chinese-travel-phrases';
+  if (cleanPath.endsWith('/china-travel-safety-guide')) return 'china-travel-safety-guide';
   if (cleanPath.endsWith('/china-travel-apps')) return 'china-travel-apps';
   if (cleanPath.endsWith('/amap-in-english')) return 'amap-in-english';
   if (cleanPath.endsWith('/china-metro-guide')) return 'china-metro-guide';
