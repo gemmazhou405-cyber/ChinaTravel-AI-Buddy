@@ -1,3 +1,6 @@
+Warning: truncated output (original token count: 51742)
+Total output lines: 3320
+
 import { useEffect, useState, type ReactNode } from 'react';
 import { ArrowLeft, Check } from 'lucide-react';
 import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
@@ -9,6 +12,7 @@ type GuidePageType =
   | 'china-visa-free-travel-guide'
   | 'china-airport-arrival-guide'
   | 'china-hotels-for-foreigners'
+  | 'china-food-ordering-guide'
   | 'china-travel-apps'
   | 'amap-in-english'
   | 'china-metro-guide'
@@ -323,6 +327,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'China Visa-Free Travel Guide: compare 30-day visa-free entry, 240-hour transit, routes, ports, and documents.',
           'China Airport Arrival Guide: immigration, baggage, customs, mobile data, payment, and airport transfers.',
           'China Hotels for Foreigners: passport booking, check-in, registration, deposits, and problem solving.',
+          'China Food Ordering Guide: use QR and photo menus, explain dietary needs, handle allergies, and pay.',
           'China Travel Apps: prepare Alipay, WeChat, Amap, Didi, and Trip.com.',
           'AMap in English: search places, plan routes, and navigate stations and entrances.',
           'China Metro Guide: buy tickets, transfer lines, and choose the correct exit.',
@@ -355,6 +360,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China visa-free travel guide', href: '/china-visa-free-travel-guide/' },
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
       { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+      { label: 'How to order food in China', href: '/china-food-ordering-guide/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
       { label: 'AMap in English', href: '/amap-in-english/' },
       { label: 'China metro guide', href: '/china-metro-guide/' },
@@ -918,6 +924,181 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
   },
+  'china-food-ordering-guide': {
+    path: '/china-food-ordering-guide/',
+    title: 'How to Order Food in China: Menu and Allergy Guide (2026)',
+    intro:
+      'A practical restaurant guide for QR and photo menus, shared dishes, dietary needs, serious food allergies, payment, and useful Chinese phrases.',
+    metaTitle: 'How to Order Food in China (2026) | ChinaEase Buddy',
+    metaDescription:
+      'Order food in China with confidence. Use photo and QR menus, explain allergies or dietary needs, pay, avoid common mistakes, and save useful Chinese phrases.',
+    quickAnswer:
+      'You can order without speaking Chinese by using a QR menu, a photo menu, or a translation app and pointing to the dish. Confirm the number of dishes, spice level, rice, drinks, and payment before finishing the order. If you have a serious food allergy, show a clinician-reviewed bilingual allergy card, name the exact allergen and its oils, sauces, stocks, and derivatives, ask about shared woks and utensils, and do not eat the dish when staff cannot confirm. A translation app or phrase card is useful communication support, but it is not a medical safeguard.',
+    ctaLabel: 'Get my free China itinerary',
+    ctaHref: '/#trip-plan',
+    lastReviewed: 'September 20, 2026',
+    lastModified: '2026-09-20',
+    isArticle: true,
+    sections: [
+      {
+        title: 'The simplest way to order',
+        ordered: true,
+        items: [
+          'Choose a restaurant where you can see a paper, wall, photo, counter, or QR menu and where staff can answer questions when you have dietary restrictions.',
+          'Open the QR menu in WeChat, Alipay, or your browser when offered. If it does not load, ask for a paper or photo menu instead.',
+          'Use photos and translated dish names to shortlist choices, then ask about ingredients, spice level, portion size, and allergens before submitting.',
+          'Check the cart or repeat the order with staff. Confirm the quantity of each dish and whether steamed white rice, drinks, or tableware are separate charges.',
+          'Pay through the menu or at the counter with Alipay, WeChat Pay, an accepted card, or cash. Keep a second payment method ready.',
+        ],
+      },
+      {
+        title: 'QR, photo, paper, and counter menus',
+        items: [
+          'QR ordering varies by restaurant. The code may open a WeChat mini-program, Alipay mini-program, or ordinary web page; some require a table number or phone verification.',
+          'A photo menu is often easier than translating a long dish name, but a picture does not reveal cooking oil, stock, sauce, garnish, or cross-contact risk.',
+          'At counter-service restaurants, point to the item and show the quantity with your phone. Check whether you must collect the food when a number is called.',
+          'Keep an offline translation tool available, because a menu or mini-program may not offer English and mobile data can fail.',
+          'Save the restaurant name and address in Chinese so you can return, share it with companions, or explain your location if help is needed.',
+        ],
+      },
+      {
+        title: 'Shared dishes, rice, spice, and portions',
+        items: [
+          'Many sit-down meals are ordered for the table and shared. Ask the server how many people a dish serves instead of ordering one main dish per person automatically.',
+          'Steamed white rice is often ordered separately. Ask for the exact number of bowls you need: 请给我一碗白米饭。',
+          'Spice levels are not standardized. “Not spicy” may still include chili oil or pepper, so ask whether the dish itself, sauce, garnish, or hotpot base contains chili.',
+          'Cold dishes, tea, tableware, tissues, or snacks placed on the table may be chargeable. Ask before opening or using them if the price matters.',
+          'For leftovers, ask 可以打包吗？ (“Can I take this away?”), but refrigerate perishable food promptly and discard it if storage has been unsafe.',
+        ],
+      },
+      {
+        title: 'Vegetarian, vegan, and halal needs',
+        items: [
+          'A dish described as vegetables or 素菜 may still contain meat stock, oyster sauce, lard, egg, or a garnish. Name everything you avoid rather than relying on one label.',
+          'For vegetarian food, show: 我是素食者，不吃肉、鱼和海鲜。 Ask separately about broth, sauces, cooking fat, and shared cookware when those matter to you.',
+          'For vegan food, also ask the restaurant to exclude egg, dairy, honey, fish sauce, oyster sauce, meat stock, and animal fat as applicable.',
+          'For halal food, look for 清真, then confirm pork, lard, alcohol, meat sourcing, and shared utensils according to your requirements. A sign alone may not answer every question.',
+          'When staff cannot confirm an ingredient or preparation method, choose a simpler dish or another restaurant instead of guessing.',
+        ],
+      },
+      {
+        title: 'Serious food allergies and cross-contact',
+        items: [
+          'Prepare a clinician-reviewed bilingual allergy card that states the exact allergen, common derivatives, severity, and what must be avoided. Do not rely on automatic translation alone.',
+          'Show the card before ordering and ask staff to confirm sauces, oils, marinades, stock, garnish, shared woks, utensils, chopping boards, and fryers.',
+          'Use direct wording such as 我对花生严重过敏。 (“I have a severe peanut allergy.”) and ask whether the dish contains peanuts, peanut oil, or peanut sauce.',
+          'Cross-contamination can occur even when the main ingredient is absent. If staff appear unsure or the kitchen cannot prevent cross-contact, do not eat the dish.',
+          'China\'s updated GB 7718-2025 prepackaged-food label standard includes allergen provisions but takes effect in 2027. In 2026, do not assume allergen declarations are uniform; read the full ingredient list and ask.',
+        ],
+      },
+      {
+        title: 'Food and water safety',
+        items: [
+          'Choose food that is cooked thoroughly and served steaming hot. Avoid raw or undercooked meat, poultry, seafood, eggs, and food that has been sitting lukewarm.',
+          'Prefer busy stalls and restaurants where food is prepared fresh. Street food is safer when cooked in front of you and served hot rather than held at room temperature.',
+          'Use factory-sealed bottled water or water that has been properly treated when safety is uncertain, and check that the bottle seal is intact.',
+          'Wash your hands with soap and water before eating, or use an alcohol-based hand sanitizer when washing is not available.',
+          'People who are pregnant, older, very young, or immunocompromised should take particular care with high-risk foods and seek personalized medical advice before travel.',
+        ],
+      },
+      {
+        title: 'Payment and receipts',
+        items: [
+          'Some QR menus combine ordering and payment; others only send the order and require payment at the counter. Check before leaving the table.',
+          'Alipay and WeChat Pay are common, but availability and foreign-card transactions vary. Keep a physical card and some RMB as backups.',
+          'Confirm the total, service or tableware charges, and any deposit before paying. Ask for a receipt when you need to review the order or claim reimbursement.',
+          'If the mobile payment fails, try the second wallet, another linked card, a physical card accepted by the restaurant, or cash rather than repeatedly submitting the same charge.',
+        ],
+      },
+      {
+        title: 'If an allergic reaction starts',
+        items: [
+          'Treat breathing difficulty, throat or tongue swelling, faintness, or a rapidly worsening reaction as an emergency. Anaphylaxis can be life-threatening and progress quickly.',
+          'Follow your personal emergency plan and use your prescribed adrenaline auto-injector immediately if instructed to do so; do not wait for a translation app to settle the diagnosis.',
+          'Call 120 for an ambulance in China, or ask staff: 请帮我叫救护车，我可能严重过敏。 (“Please call an ambulance; I may be having a severe allergic reaction.”)',
+          'Carry prescribed emergency medicine with you, not in checked luggage or back at the hotel, and tell companions where it is and how to help.',
+          'This guide is general travel information, not medical advice. Discuss severe allergies and an emergency plan with a qualified clinician before travel.',
+        ],
+      },
+      {
+        title: 'Useful Chinese restaurant phrases',
+        items: [
+          '可以看一下英文菜单吗？ — Can I see an English menu?',
+          '请给我看有图片的菜单。 — Please show me a menu with pictures.',
+          '这个辣吗？ / 请不要放辣。 — Is this spicy? / Please do not make it spicy.',
+          '请给我一碗白米饭。 / 可以打包吗？ — Please give me a bowl of steamed white rice. / Can I take this away?',
+          '我对花生严重过敏。 — I have a severe peanut allergy.',
+          '这道菜里有花生、花生油或花生酱吗？ — Does this contain peanuts, peanut oil, or peanut sauce?',
+          '请不要使用含花生的调料、油或厨具。 — Do not use sauces, oil, or utensils containing peanuts.',
+          '我不吃猪肉。 / 我是素食者，不吃肉、鱼和海鲜。 — I do not eat pork. / I am vegetarian; I do not eat meat, fish, or seafood.',
+        ],
+      },
+      {
+        title: 'Common mistakes to avoid',
+        items: [
+          'Assuming every QR menu has English, accepts a foreign phone number, or completes payment automatically.',
+          'Ordering from a photo without checking hidden ingredients, cooking oil, sauce, stock, garnish, or cross-contact.',
+          'Treating “vegetable,” 素菜, 清真, or a translated label as a complete guarantee for a dietary or medical requirement.',
+          'Using a generic translation card for a severe allergy without clinician review, exact allergen names, derivatives, and an emergency plan.',
+          'Relying on one payment app, ordering too many shared dishes, or forgetting that rice may need to be ordered separately.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Can tourists order food in China without speaking Chinese?',
+        answer:
+          'Yes. Use a QR, paper, or photo menu; point to the dish; use an offline translation app; and show short Chinese phrases. Confirm the item, quantity, spice level, rice, and total before submitting the order.',
+      },
+      {
+        question: 'Do restaurants in China have English menus?',
+        answer:
+          'Some tourist-area, hotel, chain, and larger restaurants do, but many local restaurants do not. A photo menu, translation app, and saved Chinese phrases are useful backups.',
+      },
+      {
+        question: 'How do QR restaurant menus work in China?',
+        answer:
+          'Scan the table code with WeChat, Alipay, or your phone camera. It may open a mini-program or web page where you choose items and sometimes pay. If it requires unsupported verification or does not load, ask for a paper or photo menu.',
+      },
+      {
+        question: 'Is Chinese food always spicy?',
+        answer:
+          'No. Chinese cuisines vary greatly, and many dishes are mild. Ask 这个辣吗？ and 请不要放辣, while remembering that chili may also appear in oil, sauce, garnish, or hotpot base.',
+      },
+      {
+        question: 'How do I explain vegetarian, vegan, or halal needs?',
+        answer:
+          'Name the specific ingredients and preparation methods you avoid. Ask about stock, sauces, lard, egg, dairy, alcohol, meat sourcing, and shared cookware rather than relying only on a broad label.',
+      },
+      {
+        question: 'How should I handle a severe food allergy in China?',
+        answer:
+          'Carry a clinician-reviewed bilingual allergy card and prescribed emergency medicine, ask about exact ingredients and cross-contact, and do not eat when staff cannot confirm. Follow your medical action plan and call 120 for a severe reaction.',
+      },
+      {
+        question: 'How do tourists pay at restaurants in China?',
+        answer:
+          'Many restaurants accept Alipay or WeChat Pay, while some accept cards or cash. The QR menu may collect payment or you may pay at the counter. Keep at least one backup method.',
+      },
+    ],
+    related: [
+      { label: 'China travel apps', href: '/china-travel-apps/' },
+      { label: 'China payment guide', href: '/china-payment-guide/' },
+      { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
+      { label: 'WeChat Pay for foreigners', href: '/wechat-pay-for-foreigners/' },
+      { label: 'Emergency numbers in China', href: '/china-emergency-numbers/' },
+      { label: 'AMap in English', href: '/amap-in-english/' },
+      { label: 'First trip to China', href: '/first-trip-to-china/' },
+      { label: 'Get a free China itinerary', href: '/#trip-plan' },
+    ],
+    sources: [
+      { label: 'CDC: food and drink safety while traveling', href: 'https://wwwnc.cdc.gov/travel/page/food-water-safety' },
+      { label: 'China National Health Commission: GB 7718-2025 FAQ', href: 'https://www.nhc.gov.cn/sps/c100087/202509/bc824a504ec34c27883da73f14c20d44.shtml' },
+      { label: 'China Customs: GB 7718-2025 standard record', href: 'https://jckspj.customs.gov.cn/spj/2024-07/25/article_2025121606074757815.html' },
+      { label: 'NHS: anaphylaxis symptoms and emergency action', href: 'https://www.nhs.uk/conditions/anaphylaxis/' },
+      { label: 'People\'s Bank of China: payment guide for visitors', href: 'https://english.www.gov.cn/news/202403/15/content_WS65f3b5d9c6d0868f4e8e52ea.html' },
+    ],
+  },
   'china-travel-apps': {
     path: '/china-travel-apps/',
     title: '8 Essential Apps for China Travel in 2026',
@@ -1068,6 +1249,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
       { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
       { label: 'China payment guide', href: '/china-payment-guide/' },
+      { label: 'How to order food in China', href: '/china-food-ordering-guide/' },
       { label: 'China travel checklist', href: '/china-travel-checklist/' },
       { label: 'Get a free China itinerary', href: '/#trip-plan' },
     ],
@@ -1259,104 +1441,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'Download AMap or AMap Global only from its official website or your phone\'s official app store. Check the publisher before installing.',
           'Open the language settings and select English if it is not already active. Names and menu locations can change by phone, region, and app version.',
           'Allow location access while using the app if you want live positioning and turn-by-turn guidance; review other permissions instead of accepting them automatically.',
-          'Search your first hotel, airport terminal, railway station, and key attractions while you still have reliable internet.',
-          'Save the destination name, Chinese address, phone number, and a screenshot outside the app so you can show them to staff or a driver.',
-          'Arrange mobile data and keep a charged phone or power bank. Live traffic, search, and route updates depend on connectivity.',
-        ],
-      },
-      {
-        title: 'Search for the correct place',
-        items: [
-          'Start with the full English place name, but use the Chinese name or address when English search returns no result or the wrong result.',
-          'For hotels, restaurants, shops, hospitals, and attractions with several branches, compare the district, street, phone number, photos, and distance.',
-          'For a large attraction, search for the ticket entrance or visitor entrance rather than the centre point of the entire site.',
-          'For a railway station or airport, confirm the complete station name, terminal, departure level, arrival level, or pickup area.',
-          'Do not assume the first search result is correct. Save the verified place before starting the route.',
-        ],
-      },
-      {
-        title: 'Plan walking and public-transport routes',
-        items: [
-          'Choose the route mode you actually need: walking, public transport, driving, cycling, or another option shown in your version.',
-          'For public transport, compare the departure time, total duration, number of transfers, walking distance, and last-service information shown in the app.',
-          'Check the named metro station entrance when entering and the recommended station exit at your destination. The wrong exit can add a long surface walk.',
-          'For walking routes, zoom in around large roads, elevated walkways, shopping centres, parks, and compounds to confirm the accessible entrance.',
-          'Route details and service availability can change. Follow official signs and staff instructions when they differ from the map.',
-        ],
-      },
-      {
-        title: 'Use AMap at airports and railway stations',
-        items: [
-          'Confirm the airport terminal or the full railway-station name before leaving your hotel; major cities can have several distant stations and terminals.',
-          'Search for the correct entrance, departure hall, metro connection, taxi queue, or ride-hailing pickup point instead of the general station pin.',
-          'Leave extra time for security, walking inside the complex, and finding the correct gate or waiting area.',
-          'Once inside, treat official signs, screens, tickets, and staff instructions as the final authority. Indoor routes and access controls may change faster than the map.',
-        ],
-      },
-      {
-        title: 'AMap maps and ride-hailing are different tasks',
-        items: [
-          'AMap is useful for place search, route planning, live traffic, and navigation. Some versions can also display ride-hailing services.',
-          'A ride-hailing entry inside AMap does not guarantee the same English support, payment methods, identity checks, or customer service as the standalone DiDi route.',
-          'Before ordering a car, confirm the pickup pin, destination, service category, estimated fare, payment method, and vehicle details shown on your screen.',
-          'For a dedicated step-by-step ride guide, use the separate DiDi in China for Foreigners page.',
-        ],
-      },
-      {
-        title: 'What to save for weak or missing mobile data',
-        items: [
-          'Take screenshots of the full route, key turns, metro line and transfer stations, destination entrance, and return route.',
-          'Keep your hotel name, Chinese address, phone number, and nearest metro station in your notes.',
-          'Assume that live search, traffic, and route recalculation require internet unless your exact app version clearly confirms an offline feature.',
-          'Carry a second data option or know where to find official station, hotel, or visitor-service help.',
-        ],
-      },
-      {
-        title: 'Common AMap problems and fixes',
-        items: [
-          'No English search result: paste the Chinese place name or full Chinese address from the hotel, booking, attraction, or official website.',
-          'Wrong branch: compare the district, street, phone number, photos, opening information, and distance before choosing.',
-          'Location appears wrong: check GPS and location permission, confirm mobile data, step outside dense buildings, and wait for the position to refresh.',
-          'Walking route ends at the wrong side: look for the named gate or entrance and zoom in for footbridges, tunnels, compounds, or road barriers.',
-          'Public-transport route is unavailable or no longer practical: check a later route, another station entrance, an official taxi queue, or DiDi.',
-        ],
-      },
-      {
-        title: 'Useful Chinese map phrases',
-        items: [
-          '这个地址在哪里？ — Where is this address?',
-          '请问最近的地铁站入口在哪里？ — Where is the nearest metro entrance?',
-          '我应该从哪个出口出去？ — Which exit should I use?',
-          '这是正确的火车站吗？ — Is this the correct railway station?',
-          '请带我到这个地址。 — Please take me to this address.',
-        ],
-      },
-    ],
-    faqs: [
-      {
-        question: 'Is AMap available in English?',
-        answer:
-          'Yes. AMap launched an English map experience for overseas users, with English interface and place information. Exact language coverage and menus can vary by app version and location.',
-      },
-      {
-        question: 'Can foreigners use AMap in China?',
-        answer:
-          'Yes. Overseas users can download AMap from supported official app stores and use it for place search and route planning. Some account-based or transaction features may require additional setup.',
-      },
-      {
-        question: 'Do I need a Chinese phone number for AMap?',
-        answer:
-          'Basic map search and route planning may be available without a Chinese number, but login, saved data, ride-hailing, or other account features can vary. Follow the requirements shown in your current version and keep access to your travel phone number.',
-      },
-      {
-        question: 'Can AMap plan metro and walking routes?',
-        answer:
-          'Yes. AMap provides public-transport and walking route planning. Check the station entrance, destination exit, transfers, walking distance, and current service information before starting.',
-      },
-      {
-        question: 'Does Google Maps work in mainland China?',
-        answer:
-          'Do not rely on Google Maps as your only map on an ordinary mainland China connection. Access to some international services can be restricted, so prepare AMap and save essential addresses and screenshots before travel.',
+          'Search your first hotel, airport termin…1742 tokens truncated…shots before travel.',
       },
       {
         question: 'Does AMap work offline?',
@@ -2494,6 +2579,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'Can foreigners use Alipay?', href: '/alipay-for-foreigners/' },
       { label: 'WeChat Pay for foreigners', href: '/wechat-pay-for-foreigners/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
+      { label: 'How to order food in China', href: '/china-food-ordering-guide/' },
       { label: 'China travel checklist', href: '/china-travel-checklist/' },
     ],
   },
@@ -2624,6 +2710,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     related: [
       { label: 'China travel checklist', href: '/china-travel-checklist/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
+      { label: 'Food ordering and allergy guide', href: '/china-food-ordering-guide/' },
       { label: 'FAQ', href: '/faq/' },
     ],
   },
@@ -3115,6 +3202,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/china-visa-free-travel-guide')) return 'china-visa-free-travel-guide';
   if (cleanPath.endsWith('/china-airport-arrival-guide')) return 'china-airport-arrival-guide';
   if (cleanPath.endsWith('/china-hotels-for-foreigners')) return 'china-hotels-for-foreigners';
+  if (cleanPath.endsWith('/china-food-ordering-guide')) return 'china-food-ordering-guide';
   if (cleanPath.endsWith('/china-travel-apps')) return 'china-travel-apps';
   if (cleanPath.endsWith('/amap-in-english')) return 'amap-in-english';
   if (cleanPath.endsWith('/china-metro-guide')) return 'china-metro-guide';
