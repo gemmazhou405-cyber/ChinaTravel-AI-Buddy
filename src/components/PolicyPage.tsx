@@ -10,6 +10,7 @@ type GuidePageType =
   | 'china-airport-arrival-guide'
   | 'china-hotels-for-foreigners'
   | 'china-food-ordering-guide'
+  | 'chinese-travel-phrases'
   | 'china-travel-apps'
   | 'amap-in-english'
   | 'china-metro-guide'
@@ -325,6 +326,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'China Airport Arrival Guide: immigration, baggage, customs, mobile data, payment, and airport transfers.',
           'China Hotels for Foreigners: passport booking, check-in, registration, deposits, and problem solving.',
           'China Food Ordering Guide: use QR and photo menus, explain dietary needs, handle allergies, and pay.',
+          'Chinese Travel Phrases: save practical Mandarin for transport, hotels, food, payment, and emergencies.',
           'China Travel Apps: prepare Alipay, WeChat, Amap, Didi, and Trip.com.',
           'AMap in English: search places, plan routes, and navigate stations and entrances.',
           'China Metro Guide: buy tickets, transfer lines, and choose the correct exit.',
@@ -358,6 +360,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
       { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
       { label: 'How to order food in China', href: '/china-food-ordering-guide/' },
+      { label: 'Essential Chinese travel phrases', href: '/chinese-travel-phrases/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
       { label: 'AMap in English', href: '/amap-in-english/' },
       { label: 'China metro guide', href: '/china-metro-guide/' },
@@ -1080,6 +1083,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     ],
     related: [
       { label: 'China travel apps', href: '/china-travel-apps/' },
+      { label: 'Essential Chinese travel phrases', href: '/chinese-travel-phrases/' },
       { label: 'China payment guide', href: '/china-payment-guide/' },
       { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
       { label: 'WeChat Pay for foreigners', href: '/wechat-pay-for-foreigners/' },
@@ -1094,6 +1098,189 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China Customs: GB 7718-2025 standard record', href: 'https://jckspj.customs.gov.cn/spj/2024-07/25/article_2025121606074757815.html' },
       { label: 'NHS: anaphylaxis symptoms and emergency action', href: 'https://www.nhs.uk/conditions/anaphylaxis/' },
       { label: 'People\'s Bank of China: payment guide for visitors', href: 'https://english.www.gov.cn/news/202403/15/content_WS65f3b5d9c6d0868f4e8e52ea.html' },
+    ],
+  },
+  'chinese-travel-phrases': {
+    path: '/chinese-travel-phrases/',
+    title: 'Essential Chinese Phrases for Travel in China (2026)',
+    intro:
+      'A practical Mandarin phrase guide with Chinese characters, pinyin, and English for transport, hotels, restaurants, payments, directions, and emergencies.',
+    metaTitle: 'Essential Chinese Travel Phrases (2026) | ChinaEase Buddy',
+    metaDescription:
+      'Save essential Chinese phrases for travel in China, with characters, pinyin, and English for taxis, hotels, food, payments, trains, directions, and emergencies.',
+    quickAnswer:
+      'You do not need fluent Mandarin for a first trip to China, but you should save a compact set of phrases in Chinese characters. Show the Chinese sentence full-screen when pronunciation is difficult, keep the address or destination beside it, and download an offline translation tool before arrival. Pinyin helps you attempt the sound, but showing the characters is usually more reliable in a noisy station, taxi, restaurant, or emergency.',
+    ctaLabel: 'Open the free phrase tools',
+    ctaHref: '/?journey=china',
+    lastReviewed: 'September 20, 2026',
+    lastModified: '2026-09-20',
+    isArticle: true,
+    sections: [
+      {
+        title: 'How to use these phrases',
+        ordered: true,
+        items: [
+          'Save this page and screenshot the phrases you are most likely to need. Do not assume mobile data will be available exactly when a problem occurs.',
+          'Show the Chinese characters at a readable size. For an address, hotel, station, or attraction, show the exact Chinese name as well as the sentence.',
+          'Use pinyin as a pronunciation aid, not as the only message. Tone marks matter, and an English approximation can easily be misunderstood.',
+          'Keep each request short and specific. Ask one question at a time, then use 可以打字吗？ to invite the person to type the answer.',
+          'For medical, allergy, police, immigration, or legal situations, use these phrases only to obtain help; contact the appropriate professional or authority directly.',
+        ],
+      },
+      {
+        title: 'Basic communication',
+        items: [
+          '你好 — nǐ hǎo — Hello.',
+          '谢谢 — xièxie — Thank you.',
+          '不好意思 — bù hǎo yìsi — Excuse me / sorry.',
+          '我不会说中文。— wǒ bù huì shuō Zhōngwén — I do not speak Chinese.',
+          '我听不懂。— wǒ tīng bù dǒng — I do not understand.',
+          '请说慢一点。— qǐng shuō màn yìdiǎn — Please speak more slowly.',
+          '可以打字吗？— kěyǐ dǎzì ma — Can you type it?',
+          '请写下来。— qǐng xiě xiàlái — Please write it down.',
+        ],
+      },
+      {
+        title: 'Directions, taxis, and ride-hailing',
+        items: [
+          '请带我去这个地址。— qǐng dài wǒ qù zhège dìzhǐ — Please take me to this address.',
+          '地铁站在哪里？— dìtiě zhàn zài nǎlǐ — Where is the metro station?',
+          '这个入口在哪里？— zhège rùkǒu zài nǎlǐ — Where is this entrance?',
+          '我走错了吗？— wǒ zǒu cuò le ma — Am I going the wrong way?',
+          '请在这里停车。— qǐng zài zhèlǐ tíngchē — Please stop here.',
+          '我在这个上车点。— wǒ zài zhège shàngchē diǎn — I am at this pickup point.',
+          '我找不到您。— wǒ zhǎo bù dào nín — I cannot find you.',
+          '车牌号是多少？— chēpái hào shì duōshao — What is the licence-plate number?',
+        ],
+      },
+      {
+        title: 'Hotel phrases',
+        items: [
+          '我有预订。— wǒ yǒu yùdìng — I have a reservation.',
+          '我可以用护照入住吗？— wǒ kěyǐ yòng hùzhào rùzhù ma — Can I check in with my passport?',
+          '请帮我办理住宿登记。— qǐng bāng wǒ bànlǐ zhùsù dēngjì — Please help me complete the accommodation registration.',
+          'Wi-Fi密码是什么？— Wi-Fi mìmǎ shì shénme — What is the Wi-Fi password?',
+          '房间里没有热水。— fángjiān lǐ méiyǒu rèshuǐ — There is no hot water in the room.',
+          '可以晚一点退房吗？— kěyǐ wǎn yìdiǎn tuìfáng ma — Can I check out later?',
+          '请帮我叫一辆出租车。— qǐng bāng wǒ jiào yí liàng chūzūchē — Please call a taxi for me.',
+        ],
+      },
+      {
+        title: 'Restaurant and food phrases',
+        items: [
+          '可以看一下英文菜单吗？— kěyǐ kàn yíxià Yīngwén càidān ma — Can I see an English menu?',
+          '请给我看有图片的菜单。— qǐng gěi wǒ kàn yǒu túpiàn de càidān — Please show me a menu with pictures.',
+          '这个辣吗？— zhège là ma — Is this spicy?',
+          '请不要放辣。— qǐng bù yào fàng là — Please do not make it spicy.',
+          '请给我一碗白米饭。— qǐng gěi wǒ yì wǎn bái mǐfàn — Please give me a bowl of steamed white rice.',
+          '我对花生严重过敏。— wǒ duì huāshēng yánzhòng guòmǐn — I have a severe peanut allergy.',
+          '我不吃猪肉。— wǒ bù chī zhūròu — I do not eat pork.',
+          '可以打包吗？— kěyǐ dǎbāo ma — Can I take this away?',
+        ],
+      },
+      {
+        title: 'Payment and shopping phrases',
+        items: [
+          '这个多少钱？— zhège duōshao qián — How much is this?',
+          '可以用支付宝吗？— kěyǐ yòng Zhīfùbǎo ma — Can I use Alipay?',
+          '可以用微信支付吗？— kěyǐ yòng Wēixìn Zhīfù ma — Can I use WeChat Pay?',
+          '可以刷卡吗？— kěyǐ shuākǎ ma — Can I pay by card?',
+          '可以用现金吗？— kěyǐ yòng xiànjīn ma — Can I pay in cash?',
+          '支付失败了。— zhīfù shībài le — The payment failed.',
+          '请再试一次。— qǐng zài shì yí cì — Please try again.',
+          '请给我收据。— qǐng gěi wǒ shōujù — Please give me a receipt.',
+        ],
+      },
+      {
+        title: 'Train, metro, and station phrases',
+        items: [
+          '站台在哪里？— zhàntái zài nǎlǐ — Where is the platform?',
+          '这趟车去北京吗？— zhè tàng chē qù Běijīng ma — Does this train go to Beijing?',
+          '我应该在哪一站下车？— wǒ yīnggāi zài nǎ yí zhàn xiàchē — At which station should I get off?',
+          '换乘在哪里？— huànchéng zài nǎlǐ — Where do I transfer?',
+          '这个出口对吗？— zhège chūkǒu duì ma — Is this the correct exit?',
+          '我的座位在哪里？— wǒ de zuòwèi zài nǎlǐ — Where is my seat?',
+          '我赶不上这趟车了。— wǒ gǎn bù shàng zhè tàng chē le — I am going to miss this train.',
+        ],
+      },
+      {
+        title: 'Internet and everyday needs',
+        items: [
+          '洗手间在哪里？— xǐshǒujiān zài nǎlǐ — Where is the toilet?',
+          '这里有Wi-Fi吗？— zhèlǐ yǒu Wi-Fi ma — Is there Wi-Fi here?',
+          '我的手机没有网络。— wǒ de shǒujī méiyǒu wǎngluò — My phone has no internet connection.',
+          '这里可以充电吗？— zhèlǐ kěyǐ chōngdiàn ma — Can I charge my phone here?',
+          '可以帮我拍照吗？— kěyǐ bāng wǒ pāizhào ma — Can you take a photo for me?',
+          '营业到几点？— yíngyè dào jǐ diǎn — What time do you close?',
+        ],
+      },
+      {
+        title: 'Emergency and medical phrases',
+        items: [
+          '我需要帮助。— wǒ xūyào bāngzhù — I need help.',
+          '请帮我报警。— qǐng bāng wǒ bàojǐng — Please help me call the police.',
+          '请帮我叫救护车。— qǐng bāng wǒ jiào jiùhùchē — Please help me call an ambulance.',
+          '我需要医生。— wǒ xūyào yīshēng — I need a doctor.',
+          '我的护照丢了。— wǒ de hùzhào diū le — I lost my passport.',
+          '我的手机丢了。— wǒ de shǒujī diū le — I lost my phone.',
+          '我可能严重过敏。— wǒ kěnéng yánzhòng guòmǐn — I may be having a severe allergic reaction.',
+          'China emergency numbers: 110 police, 120 ambulance, and 119 fire. Call the appropriate service directly in an urgent situation.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Do I need to speak Chinese to travel in China?',
+        answer:
+          'No. Many first-time visitors travel with translation tools, Chinese addresses, and a short phrase list. Prepare offline backups because English support and mobile data vary by place and situation.',
+      },
+      {
+        question: 'Should I speak the pinyin or show the Chinese characters?',
+        answer:
+          'Try the pinyin if you feel comfortable, but show the Chinese characters as well. Correct tones can be difficult for beginners, while a clear written sentence is often easier for the other person to understand.',
+      },
+      {
+        question: 'What is the most useful Chinese phrase for tourists?',
+        answer:
+          '可以打字吗？ (“Can you type it?”) is especially useful because the reply can be copied into a translation app. For transport, also keep 请带我去这个地址 (“Please take me to this address”) beside the exact Chinese destination.',
+      },
+      {
+        question: 'Will an English translation app work everywhere in China?',
+        answer:
+          'Do not rely on one online app. Download an offline Chinese language pack, test camera and text translation before departure, and keep screenshots for hotels, transport, payment, food, and emergencies.',
+      },
+      {
+        question: 'How do I show a taxi driver my destination?',
+        answer:
+          'Show the exact Chinese place name and full address, not only an English name. Save the entrance or pickup point when a large station, mall, or attraction has several gates.',
+      },
+      {
+        question: 'Can I use a translated phrase for a severe food allergy?',
+        answer:
+          'A translated phrase can start the conversation, but it is not a medical safeguard. Use a clinician-reviewed bilingual allergy card, ask about ingredients and cross-contact, carry prescribed medicine, and do not eat when staff cannot confirm.',
+      },
+      {
+        question: 'Which emergency numbers should I save in China?',
+        answer:
+          'Save 110 for police, 120 for ambulance, and 119 for fire. ChinaEase Buddy provides reference phrases only and cannot contact emergency services for you.',
+      },
+    ],
+    related: [
+      { label: 'How to order food in China', href: '/china-food-ordering-guide/' },
+      { label: 'China travel apps', href: '/china-travel-apps/' },
+      { label: 'DiDi in China for foreigners', href: '/didi-in-china-for-foreigners/' },
+      { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+      { label: 'China payment guide', href: '/china-payment-guide/' },
+      { label: 'China train travel guide', href: '/china-train-travel-guide/' },
+      { label: 'Emergency numbers in China', href: '/china-emergency-numbers/' },
+      { label: 'First trip to China', href: '/first-trip-to-china/' },
+      { label: 'Open the free phrase tools', href: '/?journey=china' },
+    ],
+    sources: [
+      { label: 'People\'s Bank of China: payment guide for visitors', href: 'https://english.www.gov.cn/news/202403/15/content_WS65f3b5d9c6d0868f4e8e52ea.html' },
+      { label: 'Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' },
+      { label: 'China National Immigration Administration 12367 service', href: 'https://en.nia.gov.cn/n108/c117393/content.html' },
+      { label: 'CDC: food and drink safety while traveling', href: 'https://wwwnc.cdc.gov/travel/page/food-water-safety' },
     ],
   },
   'china-travel-apps': {
@@ -1247,6 +1434,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
       { label: 'China payment guide', href: '/china-payment-guide/' },
       { label: 'How to order food in China', href: '/china-food-ordering-guide/' },
+      { label: 'Essential Chinese travel phrases', href: '/chinese-travel-phrases/' },
       { label: 'China travel checklist', href: '/china-travel-checklist/' },
       { label: 'Get a free China itinerary', href: '/#trip-plan' },
     ],
@@ -2805,6 +2993,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China travel checklist', href: '/china-travel-checklist/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
       { label: 'Food ordering and allergy guide', href: '/china-food-ordering-guide/' },
+      { label: 'Essential Chinese travel phrases', href: '/chinese-travel-phrases/' },
       { label: 'FAQ', href: '/faq/' },
     ],
   },
@@ -3297,6 +3486,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/china-airport-arrival-guide')) return 'china-airport-arrival-guide';
   if (cleanPath.endsWith('/china-hotels-for-foreigners')) return 'china-hotels-for-foreigners';
   if (cleanPath.endsWith('/china-food-ordering-guide')) return 'china-food-ordering-guide';
+  if (cleanPath.endsWith('/chinese-travel-phrases')) return 'chinese-travel-phrases';
   if (cleanPath.endsWith('/china-travel-apps')) return 'china-travel-apps';
   if (cleanPath.endsWith('/amap-in-english')) return 'amap-in-english';
   if (cleanPath.endsWith('/china-metro-guide')) return 'china-metro-guide';
