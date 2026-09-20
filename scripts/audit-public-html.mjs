@@ -10,8 +10,8 @@ const pages = [
   {
     path: '/guides/',
     h1: /China Travel Guides/i,
-    keywords: ['China Airport Arrival Guide', 'China Travel Apps', 'AMap in English', 'China Metro Guide', 'DiDi in China for Foreigners', 'China Train Travel Guide', '10-Day China Itinerary', 'Alipay for Foreigners', 'WeChat Pay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
-    links: ['/china-airport-arrival-guide/', '/china-travel-apps/', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/10-day-china-itinerary/', '/wechat-pay-for-foreigners/', '/china-payment-guide/', '/faq/'],
+    keywords: ['China Airport Arrival Guide', 'China Hotels for Foreigners', 'China Travel Apps', 'AMap in English', 'China Metro Guide', 'DiDi in China for Foreigners', 'China Train Travel Guide', '10-Day China Itinerary', 'Alipay for Foreigners', 'WeChat Pay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
+    links: ['/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/10-day-china-itinerary/', '/wechat-pay-for-foreigners/', '/china-payment-guide/', '/faq/'],
   },
   {
     path: '/china-payment-guide/',
@@ -23,7 +23,13 @@ const pages = [
     path: '/china-airport-arrival-guide/',
     h1: /China Airport Arrival Guide for First-Time Visitors.*2026/i,
     keywords: ['arrival card', 'Immigration', 'Baggage', 'Customs', 'eSIM', 'airport transfer'],
-    links: ['/#trip-plan', '/first-trip-to-china/', '/china-esim-internet-guide/', '/china-payment-guide/', '/china-metro-guide/', '/didi-in-china-for-foreigners/'],
+    links: ['/#trip-plan', '/china-hotels-for-foreigners/', '/first-trip-to-china/', '/china-esim-internet-guide/', '/china-payment-guide/', '/china-metro-guide/', '/didi-in-china-for-foreigners/'],
+  },
+  {
+    path: '/china-hotels-for-foreigners/',
+    h1: /China Hotels for Foreigners.*Booking and Check-In Guide.*2026/i,
+    keywords: ['foreign passport', 'foreign-related qualification', 'accommodation registration', 'late arrival', 'deposit', '24 hours'],
+    links: ['/#trip-plan', '/china-airport-arrival-guide/', '/first-trip-to-china/', '/china-payment-guide/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/10-day-china-itinerary/'],
   },
   {
     path: '/china-travel-apps/',
