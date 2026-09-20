@@ -10,14 +10,14 @@ const pages = [
   {
     path: '/guides/',
     h1: /China Travel Guides/i,
-    keywords: ['China Visa-Free Travel Guide', 'China Airport Arrival Guide', 'China Hotels for Foreigners', 'China Travel Apps', 'AMap in English', 'China Metro Guide', 'DiDi in China for Foreigners', 'China Train Travel Guide', '10-Day China Itinerary', 'Alipay for Foreigners', 'WeChat Pay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
-    links: ['/china-visa-free-travel-guide/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/10-day-china-itinerary/', '/wechat-pay-for-foreigners/', '/china-payment-guide/', '/faq/'],
+    keywords: ['China Visa-Free Travel Guide', 'China Airport Arrival Guide', 'China Hotels for Foreigners', 'China Food Ordering Guide', 'China Travel Apps', 'AMap in English', 'China Metro Guide', 'DiDi in China for Foreigners', 'China Train Travel Guide', '10-Day China Itinerary', 'Alipay for Foreigners', 'WeChat Pay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
+    links: ['/china-visa-free-travel-guide/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-food-ordering-guide/', '/china-travel-apps/', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/10-day-china-itinerary/', '/wechat-pay-for-foreigners/', '/china-payment-guide/', '/faq/'],
   },
   {
     path: '/china-payment-guide/',
     h1: /How to Pay in China as a Foreigner/i,
     keywords: ['Alipay', 'WeChat Pay', 'foreign card', 'payment failure'],
-    links: ['/?journey=china&tool=pay', '/alipay-for-foreigners/', '/wechat-pay-for-foreigners/'],
+    links: ['/?journey=china&tool=pay', '/alipay-for-foreigners/', '/wechat-pay-for-foreigners/', '/china-food-ordering-guide/'],
   },
   {
     path: '/china-visa-free-travel-guide/',
@@ -38,10 +38,16 @@ const pages = [
     links: ['/#trip-plan', '/china-visa-free-travel-guide/', '/china-airport-arrival-guide/', '/first-trip-to-china/', '/china-payment-guide/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/10-day-china-itinerary/'],
   },
   {
+    path: '/china-food-ordering-guide/',
+    h1: /How to Order Food in China.*Menu and Allergy Guide.*2026/i,
+    keywords: ['QR menu', 'photo menu', 'food allergy', 'cross-contamination', 'steaming hot', '120', 'white rice'],
+    links: ['/#trip-plan', '/china-travel-apps/', '/china-payment-guide/', '/alipay-for-foreigners/', '/wechat-pay-for-foreigners/', '/china-emergency-numbers/', '/amap-in-english/', '/first-trip-to-china/'],
+  },
+  {
     path: '/china-travel-apps/',
     h1: /8 Essential Apps for China Travel.*2026/i,
     keywords: ['Alipay', 'WeChat', 'AMap Global', 'DiDi', 'Trip.com', 'Railway 12306', 'offline translation'],
-    links: ['/#trip-plan', '/china-airport-arrival-guide/', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/china-esim-internet-guide/', '/alipay-for-foreigners/', '/china-travel-checklist/'],
+    links: ['/#trip-plan', '/china-airport-arrival-guide/', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/china-esim-internet-guide/', '/alipay-for-foreigners/', '/china-food-ordering-guide/', '/china-travel-checklist/'],
   },
   {
     path: '/amap-in-english/',
