@@ -6,6 +6,7 @@ import { unsubscribeNewsletter } from '../lib/newsletter';
 type LegalPageType = 'terms' | 'privacy' | 'refund' | 'contact' | 'about' | 'unsubscribe';
 type GuidePageType =
   | 'guides'
+  | 'china-visa-free-travel-guide'
   | 'china-airport-arrival-guide'
   | 'china-hotels-for-foreigners'
   | 'china-travel-apps'
@@ -319,6 +320,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
         title: 'Current guide pages',
         items: [
           'China eSIM & Internet Guide: choose, install, activate, and troubleshoot mobile data.',
+          'China Visa-Free Travel Guide: compare 30-day visa-free entry, 240-hour transit, routes, ports, and documents.',
           'China Airport Arrival Guide: immigration, baggage, customs, mobile data, payment, and airport transfers.',
           'China Hotels for Foreigners: passport booking, check-in, registration, deposits, and problem solving.',
           'China Travel Apps: prepare Alipay, WeChat, Amap, Didi, and Trip.com.',
@@ -350,6 +352,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     ],
     related: [
       { label: 'China eSIM & internet guide', href: '/china-esim-internet-guide/' },
+      { label: 'China visa-free travel guide', href: '/china-visa-free-travel-guide/' },
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
       { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
@@ -364,6 +367,187 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China travel checklist', href: '/china-travel-checklist/' },
       { label: 'Emergency numbers in China', href: '/china-emergency-numbers/' },
       { label: 'FAQ', href: '/faq/' },
+    ],
+  },
+  'china-visa-free-travel-guide': {
+    path: '/china-visa-free-travel-guide/',
+    title: 'China Visa-Free Travel Guide for Tourists (2026)',
+    intro:
+      'A decision guide to ordinary 30-day visa-free entry, 240-hour visa-free transit, 24-hour transit, route rules, approved ports, and travel documents.',
+    metaTitle: 'China Visa-Free Travel Guide (2026) | ChinaEase Buddy',
+    metaDescription:
+      'Compare China\'s 30-day visa-free entry and 240-hour transit rules. Check passport, route, purpose, ports, documents, and common mistakes.',
+    quickAnswer:
+      'First decide which policy fits your passport and route. China\'s ordinary visa-free entry lets eligible ordinary-passport holders visit for up to 30 days for approved purposes without needing a third-country itinerary. The separate 240-hour visa-free transit policy is available to eligible nationals only when they travel through mainland China to a third country or region, use an approved port, remain within the permitted area, and hold a confirmed onward ticket. A return trip such as London–Beijing–London is not third-country transit. Policies can change, and admission is still subject to border inspection, so verify your nationality, passport, purpose, route, ports, and exact dates with the official sources immediately before travel.',
+    ctaLabel: 'Get my free China itinerary',
+    ctaHref: '/#trip-plan',
+    lastReviewed: 'September 20, 2026',
+    lastModified: '2026-09-20',
+    isArticle: true,
+    sections: [
+      {
+        title: 'Choose the correct entry route first',
+        ordered: true,
+        items: [
+          'Ordinary visa-free entry: use this when your passport nationality is on the current visa-waiver list, your purpose is covered, and your intended stay is within the allowed period. A third-country route is not required.',
+          '240-hour visa-free transit: use this only when your eligible itinerary continues from mainland China to a different country or region, through an approved port and within the permitted stay area.',
+          '24-hour visa-free transit: this generally covers an international connection of no more than 24 hours while remaining in the restricted port area. Leaving that area requires a temporary entry permit.',
+          'Visa required: arrange the correct visa in advance when your passport, purpose, route, port, destination area, or stay length does not satisfy a visa-free policy.',
+          'Do not treat an airline ticket, arrival card, hotel booking, or this guide as approval to enter. Border inspection authorities make the final decision.',
+        ],
+      },
+      {
+        title: 'Ordinary visa-free entry: up to 30 days',
+        items: [
+          'As reviewed on 20 September 2026, China\'s Ministry of Foreign Affairs lists 50 nationalities whose valid ordinary-passport holders can enter without a visa for up to 30 days for business, tourism, family or friend visits, exchange, or transit.',
+          'The route does not need to continue to a third country. Eligible travelers may depart for China from any country or region and may leave for the same country they came from.',
+          'The 30-day stay is calculated from the day after entry and covers 30 calendar days, according to the Ministry of Foreign Affairs FAQ.',
+          'No advance declaration to a Chinese embassy or consulate is required, but travelers should carry evidence consistent with the purpose of entry, such as flight tickets, accommodation reservations, and an itinerary or invitation when relevant.',
+          'Work, long-term study, news reporting, and other purposes outside the waiver still require the appropriate visa or approval.',
+          'Most of the listed waivers are scheduled to run through 31 December 2026; the official FAQ gives different validity for Brunei and Russia. Recheck the current list and policy period before every trip.',
+        ],
+      },
+      {
+        title: '240-hour visa-free transit: the route is essential',
+        items: [
+          'As reviewed on 20 September 2026, the National Immigration Administration lists 57 eligible nationalities, 65 approved ports, and permitted stay areas across 24 provincial-level regions.',
+          'You need a valid ordinary passport and a confirmed onward international air, sea, or train ticket showing a seat and departure date within the permitted period.',
+          'Your itinerary must transit mainland China on the way to a third country or region. The destination after mainland China must differ from the place from which you entered mainland China.',
+          'You must enter through an approved port, leave through an approved port allowed for the itinerary, and remain inside the policy\'s designated area during the stay.',
+          'Tourism, business, visits, and family reunions are allowed within the designated area. Work, study, and news reporting still require prior approval and the appropriate visa.',
+          'Ten days is a maximum, not a guaranteed stay. Border officers examine the passport, route, ticket, purpose, and other circumstances at entry.',
+        ],
+      },
+      {
+        title: 'Route examples: what third-country transit means',
+        items: [
+          'London → Beijing → Tokyo: potentially qualifies as third-country transit when the passport, ports, tickets, dates, purpose, and permitted area all satisfy the current policy.',
+          'London → Beijing → London: does not meet the third-country transit route requirement because the traveler returns to the same country.',
+          'New York → Shanghai → Seoul: potentially qualifies for an eligible United States passport holder when every other condition is met.',
+          'Sydney → Guangzhou → Bangkok: potentially qualifies for transit, although an eligible Australian ordinary-passport holder may also qualify for ordinary 30-day visa-free entry. Use the policy that accurately matches the journey.',
+          'Separate tickets can create airline and missed-connection risks. Confirm that the carrier will check you in for the full route and that you can show the confirmed onward departure.',
+        ],
+      },
+      {
+        title: 'Documents to keep ready',
+        ordered: true,
+        items: [
+          'Original valid ordinary passport. Check that its validity covers the intended stay and that the document type is accepted by the policy you plan to use.',
+          'Confirmed inbound and outbound or onward bookings. Transit travelers should keep the ticket showing the confirmed seat and departure date to the third country or region.',
+          'Accommodation reservation with the hotel\'s name, address, phone number, and Chinese-language details available offline.',
+          'A simple itinerary and evidence matching the stated travel purpose; carry an invitation letter when it is relevant to a business, family, or exchange visit.',
+          'Official policy pages saved offline, especially the current country list, approved ports, permitted areas, and policy dates applicable to the journey.',
+          'Arrival-card confirmation when required. The National Immigration Administration\'s official online arrival-card service is free and does not replace entry eligibility.',
+        ],
+      },
+      {
+        title: 'Check the port and permitted area before booking',
+        items: [
+          'The 240-hour policy does not turn every mainland China airport, railway station, or seaport into an eligible entry or exit point.',
+          'The permitted movement area varies by the port and region. Do not assume the policy allows unrestricted travel throughout mainland China.',
+          'Check every mainland segment, including domestic connections. A connecting flight or train can take you outside the area allowed by the port through which you entered.',
+          'Use the National Immigration Administration\'s current table of approved ports and permitted stay areas, then confirm the itinerary with the operating carrier before buying a restrictive ticket.',
+          'If the route changes because of a cancellation or missed connection, contact the carrier and immigration authorities immediately rather than improvising a new domestic route.',
+        ],
+      },
+      {
+        title: 'At airline check-in and border inspection',
+        ordered: true,
+        items: [
+          'Tell the airline which entry basis you intend to use and present the full confirmed itinerary. Check-in staff may need time to verify the current rule.',
+          'At the China port, follow the sign or staff instruction for visa-free or temporary entry processing rather than joining a lane based only on an old airport video.',
+          'Present the passport, onward booking, accommodation, and supporting travel-purpose documents clearly and consistently.',
+          'Answer questions about the route, cities, stay length, and departure plan accurately. Do not describe a trip as transit when the ticket returns to the same country.',
+          'Keep the entry record and confirm the permitted stay and area. If you are uncertain, ask the border officer before leaving the inspection area.',
+        ],
+      },
+      {
+        title: 'Common mistakes to avoid',
+        items: [
+          'Confusing ordinary 30-day visa-free entry with 240-hour visa-free transit. They have different nationality lists and route conditions.',
+          'Assuming that any 10-day China stay is visa-free. Transit requires an eligible nationality, third-country route, approved ports, confirmed onward ticket, permitted area, and acceptable purpose.',
+          'Counting a return to the origin country as third-country transit.',
+          'Booking a domestic segment that leaves the permitted transit area or using a port not included in the current official table.',
+          'Relying on a social-media country list or an old screenshot after the policy has changed.',
+          'Treating the free arrival card as a visa application or entry approval.',
+          'Planning work, study, or reporting activity under a tourist or transit exemption.',
+        ],
+      },
+      {
+        title: 'Final verification checklist',
+        items: [
+          'Passport nationality and document type are on the current official list for the policy you plan to use.',
+          'Travel purpose is permitted and the stay is within the current maximum.',
+          'For 240-hour transit, the origin and onward country or region are different and the ticket is confirmed.',
+          'Every entry, domestic connection, destination, and exit fits the approved ports and permitted area.',
+          'Accommodation, itinerary, onward ticket, and policy evidence are available offline.',
+          'The airline and an official Chinese government, embassy, or consular source have been checked again immediately before departure.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is China visa-free for tourists in 2026?',
+        answer:
+          'China offers ordinary visa-free entry to eligible ordinary-passport holders and separate visa-free transit policies. Eligibility depends on nationality, passport type, purpose, route, port, permitted area, stay length, and travel dates.',
+      },
+      {
+        question: 'What is the difference between 30-day visa-free entry and 240-hour transit?',
+        answer:
+          'Ordinary 30-day visa-free entry does not require a third-country route when the traveler meets that policy. The 240-hour policy requires eligible transit through mainland China to a different country or region and is limited to approved ports and permitted areas.',
+      },
+      {
+        question: 'Does London to Beijing to London qualify for 240-hour visa-free transit?',
+        answer:
+          'No. It returns to the same country and therefore does not meet the third-country or region transit requirement.',
+      },
+      {
+        question: 'Can a US passport holder visit China without a visa?',
+        answer:
+          'A United States passport holder is on the current 240-hour transit list but not the current ordinary 30-day unilateral visa-waiver list. The traveler must meet every transit condition or obtain the appropriate visa.',
+      },
+      {
+        question: 'Can UK and Australian passport holders enter China visa-free?',
+        answer:
+          'As reviewed on 20 September 2026, the Ministry of Foreign Affairs lists the United Kingdom and Australia among the countries eligible for ordinary visa-free entry of up to 30 days for covered purposes. Recheck the official list and validity period before travel.',
+      },
+      {
+        question: 'Can I travel anywhere in China during 240-hour visa-free transit?',
+        answer:
+          'No. You must remain within the permitted area associated with the approved entry port and use eligible entry and exit ports. Check the current National Immigration Administration table for the exact itinerary.',
+      },
+      {
+        question: 'Does completing the China arrival card guarantee entry?',
+        answer:
+          'No. The arrival card records entry information; it does not replace a visa or visa-free eligibility, and it does not guarantee admission. The final decision is made by border inspection authorities.',
+      },
+    ],
+    related: [
+      { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
+      { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+      { label: 'First trip to China', href: '/first-trip-to-china/' },
+      { label: 'China travel checklist', href: '/china-travel-checklist/' },
+      { label: 'China train travel guide', href: '/china-train-travel-guide/' },
+      { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
+      { label: 'Get a free China itinerary', href: '/#trip-plan' },
+    ],
+    sources: [
+      {
+        label: 'Ministry of Foreign Affairs: FAQs on visa-free entry into China',
+        href: 'https://www.mfa.gov.cn/wjbzwfwpt/kzx/tzgg/202511/t20251110_11749824.html',
+      },
+      {
+        label: 'National Immigration Administration: visa-free transit policies',
+        href: 'https://en.nia.gov.cn/n147418/n147463/c183412/content.html',
+      },
+      {
+        label: 'National Immigration Administration: official arrival-card guidance',
+        href: 'https://en.nia.gov.cn/n147418/n147463/c191530/content.html',
+      },
+      {
+        label: 'Official China online arrival card form',
+        href: 'https://s.nia.gov.cn/ArrivalCardFillingPC/',
+      },
     ],
   },
   'china-airport-arrival-guide': {
@@ -515,6 +699,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
+      { label: 'China visa-free travel guide', href: '/china-visa-free-travel-guide/' },
       { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
       { label: 'First trip to China', href: '/first-trip-to-china/' },
       { label: 'China eSIM & internet guide', href: '/china-esim-internet-guide/' },
@@ -707,6 +892,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
+      { label: 'China visa-free travel guide', href: '/china-visa-free-travel-guide/' },
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
       { label: 'First trip to China', href: '/first-trip-to-china/' },
       { label: 'China eSIM & internet guide', href: '/china-esim-internet-guide/' },
@@ -2926,6 +3112,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/contact')) return 'contact';
   if (cleanPath.endsWith('/about')) return 'about';
   if (cleanPath.endsWith('/unsubscribe')) return 'unsubscribe';
+  if (cleanPath.endsWith('/china-visa-free-travel-guide')) return 'china-visa-free-travel-guide';
   if (cleanPath.endsWith('/china-airport-arrival-guide')) return 'china-airport-arrival-guide';
   if (cleanPath.endsWith('/china-hotels-for-foreigners')) return 'china-hotels-for-foreigners';
   if (cleanPath.endsWith('/china-travel-apps')) return 'china-travel-apps';
