@@ -10,8 +10,8 @@ const pages = [
   {
     path: '/guides/',
     h1: /China Travel Guides/i,
-    keywords: ['China Travel Apps', 'AMap in English', 'China Metro Guide', 'DiDi in China for Foreigners', 'China Train Travel Guide', '10-Day China Itinerary', 'Alipay for Foreigners', 'WeChat Pay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
-    links: ['/china-travel-apps/', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/10-day-china-itinerary/', '/wechat-pay-for-foreigners/', '/china-payment-guide/', '/faq/'],
+    keywords: ['China Airport Arrival Guide', 'China Travel Apps', 'AMap in English', 'China Metro Guide', 'DiDi in China for Foreigners', 'China Train Travel Guide', '10-Day China Itinerary', 'Alipay for Foreigners', 'WeChat Pay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
+    links: ['/china-airport-arrival-guide/', '/china-travel-apps/', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/10-day-china-itinerary/', '/wechat-pay-for-foreigners/', '/china-payment-guide/', '/faq/'],
   },
   {
     path: '/china-payment-guide/',
@@ -20,10 +20,16 @@ const pages = [
     links: ['/?journey=china&tool=pay', '/alipay-for-foreigners/', '/wechat-pay-for-foreigners/'],
   },
   {
+    path: '/china-airport-arrival-guide/',
+    h1: /China Airport Arrival Guide for First-Time Visitors.*2026/i,
+    keywords: ['arrival card', 'Immigration', 'Baggage', 'Customs', 'eSIM', 'airport transfer'],
+    links: ['/#trip-plan', '/first-trip-to-china/', '/china-esim-internet-guide/', '/china-payment-guide/', '/china-metro-guide/', '/didi-in-china-for-foreigners/'],
+  },
+  {
     path: '/china-travel-apps/',
     h1: /8 Essential Apps for China Travel.*2026/i,
     keywords: ['Alipay', 'WeChat', 'AMap Global', 'DiDi', 'Trip.com', 'Railway 12306', 'offline translation'],
-    links: ['/#trip-plan', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/china-esim-internet-guide/', '/alipay-for-foreigners/', '/china-travel-checklist/'],
+    links: ['/#trip-plan', '/china-airport-arrival-guide/', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/china-esim-internet-guide/', '/alipay-for-foreigners/', '/china-travel-checklist/'],
   },
   {
     path: '/amap-in-english/',
@@ -35,13 +41,13 @@ const pages = [
     path: '/china-metro-guide/',
     h1: /China Metro Guide for Foreigners.*2026/i,
     keywords: ['single-journey ticket', 'overseas bank card', 'security', 'transfer', 'station exit', 'last train'],
-    links: ['/#trip-plan', '/first-trip-to-china/', '/amap-in-english/', '/china-travel-apps/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/china-payment-guide/'],
+    links: ['/#trip-plan', '/china-airport-arrival-guide/', '/first-trip-to-china/', '/amap-in-english/', '/china-travel-apps/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/china-payment-guide/'],
   },
   {
     path: '/didi-in-china-for-foreigners/',
     h1: /DiDi in China as a Foreigner.*2026/i,
     keywords: ['international mobile number', 'English interface', 'licence plate', 'ride-hailing pickup point', 'bilingual', 'lost item'],
-    links: ['/#trip-plan', '/first-trip-to-china/', '/china-travel-apps/', '/amap-in-english/', '/china-metro-guide/', '/china-train-travel-guide/', '/10-day-china-itinerary/', '/china-payment-guide/'],
+    links: ['/#trip-plan', '/china-airport-arrival-guide/', '/first-trip-to-china/', '/china-travel-apps/', '/amap-in-english/', '/china-metro-guide/', '/china-train-travel-guide/', '/10-day-china-itinerary/', '/china-payment-guide/'],
   },
   {
     path: '/china-train-travel-guide/',
@@ -59,7 +65,7 @@ const pages = [
     path: '/china-esim-internet-guide/',
     h1: /China eSIM.*Internet Guide.*2026/i,
     keywords: ['travel eSIM', 'data roaming', 'mainland China', 'Google', 'APN'],
-    links: ['/#trip-plan', '/first-trip-to-china/', '/china-travel-apps/'],
+    links: ['/#trip-plan', '/china-airport-arrival-guide/', '/first-trip-to-china/', '/china-travel-apps/'],
   },
   {
     path: '/alipay-for-foreigners/',
