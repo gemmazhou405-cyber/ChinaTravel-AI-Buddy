@@ -12,6 +12,7 @@ type GuidePageType =
   | 'china-food-ordering-guide'
   | 'chinese-travel-phrases'
   | 'china-travel-safety-guide'
+  | 'china-travel-budget'
   | 'china-travel-apps'
   | 'amap-in-english'
   | 'china-metro-guide'
@@ -329,6 +330,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'China Food Ordering Guide: use QR and photo menus, explain dietary needs, handle allergies, and pay.',
           'Chinese Travel Phrases: save practical Mandarin for transport, hotels, food, payment, and emergencies.',
           'China Travel Safety Guide: understand crime, scams, transport, local laws, health, and emergency planning.',
+          'China Travel Budget: estimate daily costs, trip totals, transport, food, hotels, and seasonal price changes.',
           'China Travel Apps: prepare Alipay, WeChat, Amap, Didi, and Trip.com.',
           'AMap in English: search places, plan routes, and navigate stations and entrances.',
           'China Metro Guide: buy tickets, transfer lines, and choose the correct exit.',
@@ -364,6 +366,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'How to order food in China', href: '/china-food-ordering-guide/' },
       { label: 'Essential Chinese travel phrases', href: '/chinese-travel-phrases/' },
       { label: 'China travel safety guide', href: '/china-travel-safety-guide/' },
+      { label: 'China travel budget', href: '/china-travel-budget/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
       { label: 'AMap in English', href: '/amap-in-english/' },
       { label: 'China metro guide', href: '/china-metro-guide/' },
@@ -1465,6 +1468,219 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China Meteorological Administration', href: 'https://www.cma.gov.cn/en/' },
     ],
   },
+  'china-travel-budget': {
+    path: '/china-travel-budget/',
+    title: 'China Travel Budget: How Much Does a Trip Cost? (2026)',
+    intro:
+      'A practical RMB budget for hotels, food, local transport, trains, attractions, mobile data, and 5-, 10-, or 14-day trips in mainland China.',
+    metaTitle: 'China Travel Budget: Trip Costs for 2026 | ChinaEase Buddy',
+    metaDescription:
+      'Estimate your China travel budget in RMB. Compare budget, mid-range, and comfortable daily costs plus realistic 5-, 10-, and 14-day trip totals.',
+    quickAnswer:
+      'For planning, allow roughly RMB 350–650 per person per day for a budget trip, RMB 800–1,500 for a mid-range trip, or RMB 1,800–3,000+ for a comfortable trip. These are ChinaEase planning ranges, not official averages or fixed prices. They exclude international flights and assume normal travel dates; your route, room-sharing, city, booking date, exchange rate, and holiday demand can change the total substantially. Check exact hotel, attraction, airline, and China Railway 12306 prices before booking.',
+    ctaLabel: 'Get my free China itinerary',
+    ctaHref: '/#trip-plan',
+    lastReviewed: 'September 20, 2026',
+    lastModified: '2026-09-20',
+    isArticle: true,
+    sections: [
+      {
+        title: 'Daily China travel budget at a glance',
+        table: {
+          headers: ['Travel style', 'Planning range per person/day', 'Typical approach'],
+          rows: [
+            ['Budget', 'RMB 350–650', 'Hostel or simple room, local meals, metro and bus, selective paid sights'],
+            ['Mid-range', 'RMB 800–1,500', 'Comfortable hotel, mixed dining, metro plus some DiDi, several paid sights'],
+            ['Comfortable', 'RMB 1,800–3,000+', 'Higher-grade hotel, frequent taxis, premium meals, tours or shows'],
+          ],
+        },
+        items: [
+          'Use the table as a first planning envelope, not a quotation. Exact prices change by destination, date, room type, booking channel, and availability.',
+          'Daily ranges exclude international flights and major intercity transport. The longer-trip examples below add a broad domestic transport allowance.',
+          'Solo travelers usually pay the full hotel-room price. Two people sharing one room may have a lower per-person accommodation cost.',
+        ],
+      },
+      {
+        title: 'What the estimates include — and exclude',
+        items: [
+          'Included in the daily estimate: accommodation, ordinary meals, city transport, common attraction tickets, and a modest allowance for small travel expenses.',
+          'Excluded: flights to and from China, visas where required, travel insurance, shopping, nightlife, medical care, luxury experiences, private guides, and large exchange or card fees.',
+          'Intercity high-speed rail and domestic flights depend heavily on route and class, so price the exact journey separately using the official Railway 12306 service or the airline.',
+          'All figures are in renminbi (RMB). Convert them using the live rate offered by your card, bank, or regulated payment provider; a fixed foreign-currency conversion would become outdated quickly.',
+        ],
+      },
+      {
+        title: 'Accommodation: usually the biggest variable',
+        items: [
+          'Hostel bed or very basic room: plan around RMB 100–250 per night where available.',
+          'Simple chain hotel or typical three-star room: often budget around RMB 250–600 per room per night.',
+          'Comfortable four-star room: a useful planning range is RMB 600–1,200+ per room per night.',
+          'Luxury and landmark hotels can start above RMB 1,200 and rise far beyond it. Central Beijing, Shanghai, Shenzhen, resort areas, and major events often cost more.',
+          'Confirm that the property accepts your passport details and can complete foreign-guest registration. Compare the final price, taxes, breakfast, cancellation, deposit, and room type—not only the search result headline.',
+        ],
+      },
+      {
+        title: 'Food: inexpensive locally, but easy to scale up',
+        items: [
+          'Simple breakfast, bakery item, or snack: roughly RMB 10–30.',
+          'Local noodle, rice, dumpling, or canteen-style meal: roughly RMB 25–60 per person.',
+          'Casual sit-down restaurant: roughly RMB 60–150 per person before premium drinks or special dishes.',
+          'Hotpot, specialty restaurants, imported food, cocktails, and fine dining can reach RMB 120–300+ per person.',
+          'Ordering several shared dishes may be good value for a group but expensive for one person. Check menu units, portion size, tea charges, service charges, and seafood prices before confirming.',
+        ],
+      },
+      {
+        title: 'Local transport: metro, bus, and DiDi',
+        items: [
+          'A metro-and-bus day can often fit within roughly RMB 10–30, depending on city and distance.',
+          'For a day mixing public transport with one or two app-booked rides, allow roughly RMB 80–250.',
+          'Airport transfers, tolls, late-night travel, congestion, vehicle class, and long cross-city journeys can raise the cost.',
+          'Save the destination in Chinese, confirm the pickup point and licence plate, and never accept an unmetered or unverified ride simply because the initial quote sounds cheap.',
+        ],
+      },
+      {
+        title: 'High-speed rail and domestic flights',
+        items: [
+          'There is no useful single “China train price.” Distance, route, train type, seat class, and date determine the fare.',
+          'Search the exact origin, destination, date, and class on the official Railway 12306 English website. Use a booking platform only after comparing its service fee and conditions.',
+          'Domestic flights can beat rail on very long routes, but include airport transfers, baggage rules, check-in time, and disruption risk in the comparison.',
+          'Leave room in the budget for one route change or replacement ticket, especially during busy periods when the cheapest seats may be unavailable.',
+        ],
+      },
+      {
+        title: 'Attractions, tours, and entertainment',
+        items: [
+          'Many parks, neighborhoods, museums, and public spaces are free, while common major paid sights may fall around RMB 40–200. This is only a planning range.',
+          'Theme parks, performances, cable cars, private tours, premium museum exhibitions, and bundled excursions can cost much more.',
+          'Some popular attractions require advance real-name reservations even when admission is free. Use the attraction’s official channel and enter the passport name exactly.',
+          'Build a daily sightseeing allowance from your actual list rather than multiplying one average ticket price across the trip.',
+        ],
+      },
+      {
+        title: 'Mobile data, payment, and small extras',
+        items: [
+          'For an eSIM, roaming package, or local connectivity plan, a broad trip allowance of RMB 50–300 may be reasonable, but coverage, data volume, duration, and provider vary.',
+          'Keep at least two payment methods. The People’s Bank of China visitor guide explains mobile payment, bank card, and cash options for overseas visitors.',
+          'Your card issuer or payment provider may add foreign-exchange or cross-border fees. Those charges are separate from the merchant price.',
+          'Also budget for luggage storage, laundry, bottled water, delivery, hotel deposits, and occasional booking-platform fees.',
+        ],
+      },
+      {
+        title: 'Estimated total for 5, 10, or 14 days',
+        table: {
+          headers: ['Trip length', 'Budget', 'Mid-range', 'Comfortable'],
+          rows: [
+            ['5 days', 'RMB 2,500–4,500', 'RMB 5,000–9,000', 'RMB 10,000–18,000+'],
+            ['10 days', 'RMB 4,500–8,000', 'RMB 9,000–18,000', 'RMB 20,000–36,000+'],
+            ['14 days', 'RMB 6,500–11,000', 'RMB 13,000–25,000', 'RMB 28,000–50,000+'],
+          ],
+        },
+        items: [
+          'These totals are planning envelopes for one person and include a broad allowance for domestic intercity travel. International flights remain excluded.',
+          'A fast multi-city route generally costs more than a slower stay in one or two places. A couple sharing rooms may spend less per person than two solo travelers.',
+          'Price the fixed items first—hotels, long-distance transport, and must-see tickets—then use a daily allowance for food, local transport, and flexible activities.',
+        ],
+      },
+      {
+        title: 'When and where China costs more',
+        items: [
+          'Chinese New Year, the Labor Day holiday, the National Day holiday, school holidays, major trade fairs, and peak summer dates can tighten availability and raise accommodation or transport costs.',
+          'Central districts in Beijing, Shanghai, Shenzhen, Guangzhou, Hangzhou, and popular resort destinations usually need a higher hotel allowance than smaller or less-visited cities.',
+          'Remote natural areas may have inexpensive rooms but costly transfers, guides, cable cars, or limited alternatives.',
+          'Book critical transport and accommodation earlier for peak dates, but compare cancellation rules before paying a non-refundable rate.',
+        ],
+      },
+      {
+        title: 'Reduce cost without weakening the trip',
+        ordered: true,
+        items: [
+          'Choose fewer bases and stay longer in each city; this cuts station transfers, repeated check-in time, and expensive one-night bookings.',
+          'Stay near a useful metro interchange rather than paying the highest premium for a famous landmark address.',
+          'Use metro and bus for predictable daytime journeys, then reserve DiDi for luggage, late arrivals, or locations poorly served by public transport.',
+          'Mix free neighborhoods, parks, markets, and museums with a small number of paid priority sights.',
+          'Eat where prices and portions are clear, and keep one premium meal as a deliberate experience instead of an accidental daily pattern.',
+          'Track spending in RMB and review it every two or three days so a small recurring overspend does not surprise you at the end.',
+        ],
+      },
+      {
+        title: 'Build your personal China budget',
+        ordered: true,
+        items: [
+          'List the cities, nights, room arrangement, and travel dates. Mark any Chinese public holiday or major event.',
+          'Add live hotel prices and the exact 12306 or airline fares for every intercity leg.',
+          'Add must-see attraction prices from official booking channels and any private tour or performance you already know you want.',
+          'Choose a realistic daily amount for meals and city transport based on your travel style.',
+          'Add mobile data, insurance, visa costs if applicable, payment fees, shopping, and a contingency of roughly 10–15 percent.',
+          'Keep international flights separate so you can compare the cost of the China portion clearly.',
+        ],
+      },
+      {
+        title: 'Budget mistakes to avoid',
+        items: [
+          'Treating a national daily average as a guaranteed price for Beijing, Shanghai, a remote scenic area, or a public holiday.',
+          'Forgetting that a solo traveler pays for the whole room while a couple can split it.',
+          'Comparing a rail fare with a flight headline price without airport transfers, baggage, and time.',
+          'Using an old fixed USD conversion instead of the live rate and fees that will actually apply to your payment method.',
+          'Relying on one wallet or card and then paying costly last-minute alternatives when it fails.',
+          'Leaving no contingency for rebooking, illness, weather, lost items, or an itinerary change.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'How much money do I need per day in China?',
+        answer:
+          'As a planning range, allow about RMB 350–650 for budget travel, RMB 800–1,500 for mid-range travel, or RMB 1,800–3,000+ for comfortable travel per person per day. These are not official averages or fixed prices.',
+      },
+      {
+        question: 'Is China cheap for tourists?',
+        answer:
+          'Local food and public transport can be inexpensive, while central hotels, premium attractions, private tours, nightlife, and fast multi-city travel can raise the total quickly. Whether China feels cheap depends on your route, room standard, travel dates, and home currency.',
+      },
+      {
+        question: 'How much should I budget for 10 days in China?',
+        answer:
+          'A useful planning envelope is RMB 4,500–8,000 for a budget trip, RMB 9,000–18,000 for mid-range travel, or RMB 20,000–36,000+ for a comfortable trip. This excludes international flights and is not a quotation.',
+      },
+      {
+        question: 'Are high-speed trains expensive in China?',
+        answer:
+          'The fare depends on distance, route, train type, seat class, and date. Search the exact journey on the official Railway 12306 service instead of relying on one national average.',
+      },
+      {
+        question: 'Do I need cash in China?',
+        answer:
+          'Mobile payment is widely used, but foreign visitors should keep a backup. Official visitor guidance covers mobile payment, bank cards, and cash; prepare at least two usable payment methods and check your provider’s fees.',
+      },
+      {
+        question: 'Does the budget include international flights?',
+        answer:
+          'No. The daily and trip ranges exclude international flights. The 5-, 10-, and 14-day totals include only a broad domestic intercity travel allowance, which you should replace with live route prices.',
+      },
+      {
+        question: 'When is travel in China most expensive?',
+        answer:
+          'Demand is often higher around Chinese New Year, Labor Day, National Day, school holidays, major events, and peak summer dates. Exact effects vary by city, route, and booking date.',
+      },
+    ],
+    related: [
+      { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+      { label: 'How to order food in China', href: '/china-food-ordering-guide/' },
+      { label: 'China payment guide', href: '/china-payment-guide/' },
+      { label: 'China train travel guide', href: '/china-train-travel-guide/' },
+      { label: 'China metro guide', href: '/china-metro-guide/' },
+      { label: 'DiDi in China for foreigners', href: '/didi-in-china-for-foreigners/' },
+      { label: 'China eSIM & internet guide', href: '/china-esim-internet-guide/' },
+      { label: 'China travel apps', href: '/china-travel-apps/' },
+      { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
+      { label: 'First trip to China', href: '/first-trip-to-china/' },
+      { label: 'Get a free China itinerary', href: '/#trip-plan' },
+    ],
+    sources: [
+      { label: 'China Railway 12306 English website', href: 'https://www.12306.cn/en/' },
+      { label: 'People\'s Bank of China: payment guide for visitors', href: 'https://english.www.gov.cn/news/202403/15/content_WS65f3b5d9c6d0868f4e8e52ea.html' },
+    ],
+  },
   'china-travel-apps': {
     path: '/china-travel-apps/',
     title: '8 Essential Apps for China Travel in 2026',
@@ -1618,6 +1834,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'How to order food in China', href: '/china-food-ordering-guide/' },
       { label: 'Essential Chinese travel phrases', href: '/chinese-travel-phrases/' },
       { label: 'China travel safety guide', href: '/china-travel-safety-guide/' },
+      { label: 'China travel budget', href: '/china-travel-budget/' },
       { label: 'China travel checklist', href: '/china-travel-checklist/' },
       { label: 'Get a free China itinerary', href: '/#trip-plan' },
     ],
@@ -2464,6 +2681,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     related: [
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
       { label: 'First trip to China', href: '/first-trip-to-china/' },
+      { label: 'China travel budget', href: '/china-travel-budget/' },
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
       { label: 'China eSIM & internet guide', href: '/china-esim-internet-guide/' },
@@ -3672,6 +3890,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/china-food-ordering-guide')) return 'china-food-ordering-guide';
   if (cleanPath.endsWith('/chinese-travel-phrases')) return 'chinese-travel-phrases';
   if (cleanPath.endsWith('/china-travel-safety-guide')) return 'china-travel-safety-guide';
+  if (cleanPath.endsWith('/china-travel-budget')) return 'china-travel-budget';
   if (cleanPath.endsWith('/china-travel-apps')) return 'china-travel-apps';
   if (cleanPath.endsWith('/amap-in-english')) return 'amap-in-english';
   if (cleanPath.endsWith('/china-metro-guide')) return 'china-metro-guide';
