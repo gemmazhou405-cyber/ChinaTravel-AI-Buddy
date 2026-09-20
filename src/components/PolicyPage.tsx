@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 51742)
-Total output lines: 3320
-
 import { useEffect, useState, type ReactNode } from 'react';
 import { ArrowLeft, Check } from 'lucide-react';
 import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
@@ -1441,7 +1438,104 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'Download AMap or AMap Global only from its official website or your phone\'s official app store. Check the publisher before installing.',
           'Open the language settings and select English if it is not already active. Names and menu locations can change by phone, region, and app version.',
           'Allow location access while using the app if you want live positioning and turn-by-turn guidance; review other permissions instead of accepting them automatically.',
-          'Search your first hotel, airport termin…1742 tokens truncated…shots before travel.',
+          'Search your first hotel, airport terminal, railway station, and key attractions while you still have reliable internet.',
+          'Save the destination name, Chinese address, phone number, and a screenshot outside the app so you can show them to staff or a driver.',
+          'Arrange mobile data and keep a charged phone or power bank. Live traffic, search, and route updates depend on connectivity.',
+        ],
+      },
+      {
+        title: 'Search for the correct place',
+        items: [
+          'Start with the full English place name, but use the Chinese name or address when English search returns no result or the wrong result.',
+          'For hotels, restaurants, shops, hospitals, and attractions with several branches, compare the district, street, phone number, photos, and distance.',
+          'For a large attraction, search for the ticket entrance or visitor entrance rather than the centre point of the entire site.',
+          'For a railway station or airport, confirm the complete station name, terminal, departure level, arrival level, or pickup area.',
+          'Do not assume the first search result is correct. Save the verified place before starting the route.',
+        ],
+      },
+      {
+        title: 'Plan walking and public-transport routes',
+        items: [
+          'Choose the route mode you actually need: walking, public transport, driving, cycling, or another option shown in your version.',
+          'For public transport, compare the departure time, total duration, number of transfers, walking distance, and last-service information shown in the app.',
+          'Check the named metro station entrance when entering and the recommended station exit at your destination. The wrong exit can add a long surface walk.',
+          'For walking routes, zoom in around large roads, elevated walkways, shopping centres, parks, and compounds to confirm the accessible entrance.',
+          'Route details and service availability can change. Follow official signs and staff instructions when they differ from the map.',
+        ],
+      },
+      {
+        title: 'Use AMap at airports and railway stations',
+        items: [
+          'Confirm the airport terminal or the full railway-station name before leaving your hotel; major cities can have several distant stations and terminals.',
+          'Search for the correct entrance, departure hall, metro connection, taxi queue, or ride-hailing pickup point instead of the general station pin.',
+          'Leave extra time for security, walking inside the complex, and finding the correct gate or waiting area.',
+          'Once inside, treat official signs, screens, tickets, and staff instructions as the final authority. Indoor routes and access controls may change faster than the map.',
+        ],
+      },
+      {
+        title: 'AMap maps and ride-hailing are different tasks',
+        items: [
+          'AMap is useful for place search, route planning, live traffic, and navigation. Some versions can also display ride-hailing services.',
+          'A ride-hailing entry inside AMap does not guarantee the same English support, payment methods, identity checks, or customer service as the standalone DiDi route.',
+          'Before ordering a car, confirm the pickup pin, destination, service category, estimated fare, payment method, and vehicle details shown on your screen.',
+          'For a dedicated step-by-step ride guide, use the separate DiDi in China for Foreigners page.',
+        ],
+      },
+      {
+        title: 'What to save for weak or missing mobile data',
+        items: [
+          'Take screenshots of the full route, key turns, metro line and transfer stations, destination entrance, and return route.',
+          'Keep your hotel name, Chinese address, phone number, and nearest metro station in your notes.',
+          'Assume that live search, traffic, and route recalculation require internet unless your exact app version clearly confirms an offline feature.',
+          'Carry a second data option or know where to find official station, hotel, or visitor-service help.',
+        ],
+      },
+      {
+        title: 'Common AMap problems and fixes',
+        items: [
+          'No English search result: paste the Chinese place name or full Chinese address from the hotel, booking, attraction, or official website.',
+          'Wrong branch: compare the district, street, phone number, photos, opening information, and distance before choosing.',
+          'Location appears wrong: check GPS and location permission, confirm mobile data, step outside dense buildings, and wait for the position to refresh.',
+          'Walking route ends at the wrong side: look for the named gate or entrance and zoom in for footbridges, tunnels, compounds, or road barriers.',
+          'Public-transport route is unavailable or no longer practical: check a later route, another station entrance, an official taxi queue, or DiDi.',
+        ],
+      },
+      {
+        title: 'Useful Chinese map phrases',
+        items: [
+          '这个地址在哪里？ — Where is this address?',
+          '请问最近的地铁站入口在哪里？ — Where is the nearest metro entrance?',
+          '我应该从哪个出口出去？ — Which exit should I use?',
+          '这是正确的火车站吗？ — Is this the correct railway station?',
+          '请带我到这个地址。 — Please take me to this address.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is AMap available in English?',
+        answer:
+          'Yes. AMap launched an English map experience for overseas users, with English interface and place information. Exact language coverage and menus can vary by app version and location.',
+      },
+      {
+        question: 'Can foreigners use AMap in China?',
+        answer:
+          'Yes. Overseas users can download AMap from supported official app stores and use it for place search and route planning. Some account-based or transaction features may require additional setup.',
+      },
+      {
+        question: 'Do I need a Chinese phone number for AMap?',
+        answer:
+          'Basic map search and route planning may be available without a Chinese number, but login, saved data, ride-hailing, or other account features can vary. Follow the requirements shown in your current version and keep access to your travel phone number.',
+      },
+      {
+        question: 'Can AMap plan metro and walking routes?',
+        answer:
+          'Yes. AMap provides public-transport and walking route planning. Check the station entrance, destination exit, transfers, walking distance, and current service information before starting.',
+      },
+      {
+        question: 'Does Google Maps work in mainland China?',
+        answer:
+          'Do not rely on Google Maps as your only map on an ordinary mainland China connection. Access to some international services can be restricted, so prepare AMap and save essential addresses and screenshots before travel.',
       },
       {
         question: 'Does AMap work offline?',
