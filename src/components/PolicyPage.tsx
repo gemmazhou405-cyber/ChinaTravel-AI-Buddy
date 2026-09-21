@@ -20,6 +20,7 @@ type GuidePageType =
   | 'china-train-travel-guide'
   | '7-day-china-itinerary'
   | '10-day-china-itinerary'
+  | '14-day-china-itinerary'
   | 'china-esim-internet-guide'
   | 'alipay-for-foreigners'
   | 'wechat-pay-for-foreigners'
@@ -339,6 +340,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'China Train Travel Guide: book with a foreign passport and navigate the station.',
           '7-Day China Itinerary: compare a fast three-city route with a more relaxed two-city trip.',
           '10-Day China Itinerary: follow a practical Beijing, Xi\'an, and Shanghai route.',
+          '14-Day China Itinerary: build a balanced two-week route through Beijing, Xi\'an, Chengdu, and Shanghai.',
           'Alipay for Foreigners: understand setup reminders and backup options.',
           'WeChat Pay for Foreigners: add an eligible international card and pay by QR code.',
           'China Payment Guide: practical notes for Alipay, WeChat Pay, cards, and cash.',
@@ -376,6 +378,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
       { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
+      { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
       { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
       { label: 'WeChat Pay for foreigners', href: '/wechat-pay-for-foreigners/' },
       { label: 'China payment guide', href: '/china-payment-guide/' },
@@ -1677,6 +1680,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China travel apps', href: '/china-travel-apps/' },
       { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
+      { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
       { label: 'First trip to China', href: '/first-trip-to-china/' },
       { label: 'Get a free China itinerary', href: '/#trip-plan' },
     ],
@@ -1996,6 +2000,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'First trip to China', href: '/first-trip-to-china/' },
       { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
+      { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
       { label: 'China metro guide', href: '/china-metro-guide/' },
       { label: 'China eSIM & internet guide', href: '/china-esim-internet-guide/' },
@@ -2732,6 +2737,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     ],
     related: [
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
+      { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
       { label: 'China travel budget', href: '/china-travel-budget/' },
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
@@ -2897,6 +2903,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
       { label: 'First trip to China', href: '/first-trip-to-china/' },
       { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
+      { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
       { label: 'China travel budget', href: '/china-travel-budget/' },
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
@@ -2909,6 +2916,234 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'Emperor Qinshihuang\'s Mausoleum Site Museum official website', href: 'https://www.bmy.com.cn/' },
       { label: 'Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' },
       { label: 'Railway 12306 official English FAQ', href: 'https://www.12306.cn/en/faq.html' },
+    ],
+  },
+  '14-day-china-itinerary': {
+    path: '/14-day-china-itinerary/',
+    title: '14-Day China Itinerary for First-Time Visitors (2026)',
+    intro:
+      'A balanced two-week route through Beijing, Xi\'an, Chengdu, and Shanghai, with a Guilin alternative for travelers who prefer scenery to pandas and food.',
+    metaTitle: '14-Day China Itinerary for First-Time Visitors (2026)',
+    metaDescription:
+      'Plan two weeks in China with a realistic Beijing, Xi\'an, Chengdu, and Shanghai route, transport advice, booking priorities, costs, and a Guilin alternative.',
+    quickAnswer:
+      'For a first 14-day trip to China, limit the route to four bases: four nights in Beijing, three in Xi\'an, three in Chengdu, and three in Shanghai, with the final day reserved for departure. This gives you imperial history and the Great Wall, the Terracotta Warriors, Sichuan food and pandas, then historic and modern Shanghai. If landscapes matter more than pandas and food, replace Chengdu with Guilin and Yangshuo rather than adding a fifth destination. Use an open-jaw international ticket so you arrive in Beijing and depart from Shanghai, and verify every long-distance leg against the live 12306 or airline schedule before booking.',
+    ctaLabel: 'Get my personalised 14-day itinerary',
+    ctaHref: '/#trip-plan',
+    lastReviewed: 'September 21, 2026',
+    lastModified: '2026-09-21',
+    isArticle: true,
+    sections: [
+      {
+        title: 'The 14-day route at a glance',
+        table: {
+          headers: ['Day', 'Base', 'Main plan'],
+          rows: [
+            ['1', 'Beijing', 'Arrive, check in, set up data and payments, then take a short local walk'],
+            ['2', 'Beijing', 'Tiananmen area, Palace Museum, and Jingshan Park'],
+            ['3', 'Beijing', 'Full-day Great Wall trip'],
+            ['4', 'Beijing', 'Temple of Heaven and hutongs, or the Summer Palace'],
+            ['5', 'Xi\'an', 'High-speed train, hotel check-in, then City Wall or Bell and Drum Tower area'],
+            ['6', 'Xi\'an', 'Terracotta Warriors and a light evening'],
+            ['7', 'Xi\'an', 'History museum or Tang-culture focus and Giant Wild Goose Pagoda area'],
+            ['8', 'Chengdu', 'Train or flight, hotel check-in, Sichuan food, and an easy neighborhood walk'],
+            ['9', 'Chengdu', 'Early Panda Base visit, then People\'s Park or a teahouse area'],
+            ['10', 'Chengdu', 'Leshan day trip, food day, or a slower city day'],
+            ['11', 'Shanghai', 'Travel east, check in, then a short Bund walk if energy allows'],
+            ['12', 'Shanghai', 'Old city or Yu Garden area, the Bund, and Pudong skyline'],
+            ['13', 'Shanghai', 'Neighborhoods, museum, architecture, food, or one focused day trip'],
+            ['14', 'Shanghai', 'Flexible final half-day and airport transfer'],
+          ],
+        },
+        items: [
+          'This assumes 13 nights in China and an open-jaw flight. If your 14 days include both long-haul travel days, remove one optional day trip or one city.',
+          'Four bases are enough. A fifth major destination creates another hotel change and often removes the recovery time that makes a two-week trip enjoyable.',
+          'Reverse the route only when international flights and live domestic transport make the opposite direction clearly easier.',
+        ],
+      },
+      {
+        title: 'Choose four cities, not every famous place',
+        table: {
+          headers: ['Route style', 'Suggested bases', 'Best for'],
+          rows: [
+            ['Balanced classic', 'Beijing, Xi\'an, Chengdu, Shanghai', 'History, food, pandas, and modern cities'],
+            ['History and scenery', 'Beijing, Xi\'an, Guilin/Yangshuo, Shanghai', 'Landscapes and outdoor photography'],
+            ['Slower first trip', 'Beijing, Xi\'an, Shanghai', 'Families, mobility needs, deeper city time, or less packing'],
+          ],
+        },
+        items: [
+          'Chengdu and Guilin solve different travel goals. Choose one instead of trying to fit both between Xi\'an and Shanghai.',
+          'Zhangjiajie can replace Chengdu or Xi\'an, but mountain weather, park transfers, walking, and flight schedules require more buffer.',
+          'Hong Kong is a separate immigration and border-planning decision. Add it only after checking entry documents and the effect on your mainland route.',
+        ],
+      },
+      {
+        title: 'Days 1–4: Beijing with recovery time',
+        items: [
+          'Keep Day 1 light because immigration, baggage, airport transfer, hotel registration, mobile data, payments, and jet lag can consume much of the day.',
+          'Group the Tiananmen area, Palace Museum, and Jingshan on Day 2. Verify the current reservation, identity-document, closure, and entry rules before travel.',
+          'Give the Great Wall a full day and choose the section, transfer, walking difficulty, weather backup, and return time in advance.',
+          'Use Day 4 for the Temple of Heaven and hutongs, or choose the Summer Palace if gardens and architecture are a higher priority.',
+          'Stay near a useful metro line. A slightly less central hotel can be more practical than a landmark address with awkward transport.',
+        ],
+      },
+      {
+        title: 'Days 5–7: Xi\'an history without rushing',
+        items: [
+          'Take a daytime high-speed train from Beijing. Confirm the complete station names because both cities have multiple railway stations.',
+          'Keep the arrival evening flexible: choose the City Wall or Bell and Drum Tower area according to hotel location and energy.',
+          'Reserve Day 6 for the Terracotta Warriors. The museum is outside central Xi\'an, and its official site says visits use real-name reservations, including for foreign visitors.',
+          'Use Day 7 for a history museum or Tang-culture focus, then the Giant Wild Goose Pagoda area. Confirm any separate reservation requirement.',
+          'Do not schedule a late-night transfer after every full sightseeing day; the third Xi\'an night protects the pace of the entire trip.',
+        ],
+      },
+      {
+        title: 'Days 8–10: Chengdu for pandas and food',
+        items: [
+          'Travel from Xi\'an on Day 8, then keep the first Chengdu evening for a neighborhood walk and a planned Sichuan meal.',
+          'Visit the Chengdu Research Base of Giant Panda Breeding early on Day 9. Check its official opening hours, ticket route, transport, and visitor notices before departure.',
+          'Pair the Panda Base with a lighter afternoon such as People\'s Park, a teahouse area, or a food-focused neighborhood rather than another distant excursion.',
+          'Use Day 10 for Leshan only if the live transport and your walking pace work. Otherwise stay in Chengdu for markets, food, culture, or rest.',
+          'If spice, food allergies, or dietary restrictions matter, carry clear Chinese text and ask about ingredients and cross-contact rather than relying on appearance.',
+        ],
+      },
+      {
+        title: 'Days 11–14: Shanghai and departure',
+        items: [
+          'Compare a flight with a longer train from Chengdu to Shanghai using total door-to-door time. Either option consumes a meaningful part of Day 11.',
+          'Use Day 12 for older streets or the Yu Garden area, the Bund, and the Pudong skyline, keeping nearby stops together.',
+          'Use Day 13 for neighborhoods, architecture, a museum, food, or one focused day trip. Do not cross the city repeatedly for unrelated attractions.',
+          'Keep Day 14 flexible for a missed highlight, shopping, weather changes, or an unhurried airport transfer.',
+          'Shanghai has two major airports and several railway stations. Confirm the full name and terminal before leaving the hotel.',
+        ],
+      },
+      {
+        title: 'Nature alternative: replace Chengdu with Guilin and Yangshuo',
+        items: [
+          'Use Day 8 to reach Guilin or Yangshuo, but price the exact Xi\'an connection before committing because the best route may involve a flight or a long rail journey.',
+          'Use Day 9 for the Li River or another major karst-landscape experience, subject to the current operator, weather, water, and ticket conditions.',
+          'Use Day 10 for Yangshuo countryside at a pace that matches heat, rain, cycling ability, and road confidence.',
+          'Travel toward Shanghai on Day 11. If the connection is poor, reduce the final Shanghai plan rather than scheduling an impossible transfer day.',
+          'This swap is best for scenery and photography; Chengdu is better for pandas, Sichuan food, and an easier urban recovery block.',
+        ],
+      },
+      {
+        title: 'Intercity transport plan',
+        table: {
+          headers: ['Leg', 'Default choice', 'What to verify'],
+          rows: [
+            ['Beijing → Xi\'an', 'High-speed train', 'Exact stations, live duration, seat class, passport details, and hotel transfer'],
+            ['Xi\'an → Chengdu', 'High-speed train or flight', 'Door-to-door time, schedule, baggage, and arrival hour'],
+            ['Chengdu → Shanghai', 'Flight or longer train', 'Total travel day, airport or station transfer, and disruption buffer'],
+            ['Shanghai → home', 'International flight', 'Correct airport, terminal, check-in time, and visa or transit implications'],
+          ],
+        },
+        items: [
+          'Use the official Railway 12306 English service to check the exact live rail schedule, fare, accepted identity document, change, and refund conditions.',
+          'A third-party booking flow may be easier, but compare the final price, service fee, support, ticket-issuance status, and refund rules.',
+          'Do not build the itinerary around estimated journey times from an old article. Timetables, fares, and availability are date-specific.',
+        ],
+      },
+      {
+        title: 'Book in this order',
+        ordered: true,
+        items: [
+          'Confirm passport validity, visa or visa-free eligibility, route, permitted purpose, entry port, and departure plan.',
+          'Compare open-jaw international flights into Beijing and out of Shanghai before fixing domestic transport.',
+          'Reserve hotels with clear foreign-guest policies, useful transport, correct room occupancy, and workable cancellation terms.',
+          'Book the Palace Museum, Terracotta Warriors, Panda Base, and other capacity-controlled attractions through official or clearly authorized channels.',
+          'Book intercity rail or flights when the relevant sales window opens, entering the passport name and number exactly.',
+          'Set up mobile data, Alipay, WeChat, AMap, translation, insurance, payment backups, and Chinese hotel addresses before departure.',
+        ],
+      },
+      {
+        title: 'Estimated budget for two weeks',
+        items: [
+          'For planning, allow roughly RMB 6,500–11,000 per person for a budget trip, RMB 13,000–25,000 for mid-range travel, or RMB 28,000–50,000+ for a comfortable trip.',
+          'These are ChinaEase planning envelopes, not official averages or quotations. They exclude international flights and assume a broad domestic intercity allowance.',
+          'Solo travelers often pay the full hotel-room price, while two people sharing one room may reduce the per-person total.',
+          'Public holidays, major events, central hotels, premium tours, private transfers, and late booking can raise the cost substantially.',
+          'Replace the broad transport allowance with live 12306 or airline prices, then add insurance, visa costs where applicable, card fees, shopping, and a contingency.',
+        ],
+      },
+      {
+        title: 'Adjust the route to your pace',
+        items: [
+          'For slower travel, remove Chengdu and redistribute the nights across Beijing, Xi\'an, and Shanghai.',
+          'For families, older travelers, or limited mobility, plan one major anchor per day and keep hotel locations close to useful transport.',
+          'For food-focused travel, keep Chengdu and add food experiences without turning every meal into a distant reservation.',
+          'For scenery, replace Chengdu with Guilin and Yangshuo; for mountains, replace it with Zhangjiajie and add weather flexibility.',
+          'For a late arrival or early departure, remove an optional day trip before removing the recovery time around long transport legs.',
+        ],
+      },
+      {
+        title: 'Common two-week itinerary mistakes',
+        items: [
+          'Adding five or six major cities because 14 days sounds long, then losing the holiday to packing, stations, airports, and check-in.',
+          'Treating arrival, every transfer, and departure as full sightseeing days.',
+          'Booking a round trip to one city when an open-jaw ticket could remove a long return journey.',
+          'Leaving major attraction and peak-period train reservations until arrival.',
+          'Choosing hotels by map distance without checking the metro line, station exit, luggage route, and airport connection.',
+          'Depending on one payment method, one map app, or constant access to international services.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is 14 days enough for a first trip to China?',
+        answer:
+          'Yes. Fourteen days is enough for a balanced four-base trip through Beijing, Xi\'an, Chengdu, and Shanghai, or a slower three-city route. It is not enough to cover every major region comfortably.',
+      },
+      {
+        question: 'What is the best two-week China itinerary?',
+        answer:
+          'A strong first-trip route is Beijing for imperial history and the Great Wall, Xi\'an for the Terracotta Warriors, Chengdu for pandas and Sichuan culture, then Shanghai for historic neighborhoods and modern China.',
+      },
+      {
+        question: 'Should I choose Chengdu or Guilin?',
+        answer:
+          'Choose Chengdu for pandas, Sichuan food, teahouse culture, and an urban recovery block. Choose Guilin and Yangshuo for karst landscapes, outdoor experiences, and photography. Replace one with the other instead of adding both.',
+      },
+      {
+        question: 'How many cities should I visit in 14 days?',
+        answer:
+          'Three cities create a relaxed trip; four bases create a varied but manageable route. Five or more major destinations usually introduce too much transport and too little flexibility for a first visit.',
+      },
+      {
+        question: 'How much does a 14-day China trip cost?',
+        answer:
+          'A useful planning envelope is RMB 6,500–11,000 for budget travel, RMB 13,000–25,000 for mid-range travel, or RMB 28,000–50,000+ for a comfortable trip, excluding international flights.',
+      },
+      {
+        question: 'Should I use trains or domestic flights?',
+        answer:
+          'High-speed rail is a natural choice from Beijing to Xi\'an. Compare rail and air for the longer legs using live door-to-door time, station or airport location, baggage, fare, and your preferred pace.',
+      },
+      {
+        question: 'Can ChinaEase Buddy personalize this two-week itinerary?',
+        answer:
+          'Yes. Share your dates, flights, arrival and departure cities, interests, group size, pace, hotel preferences, and practical concerns to receive a route built around the real trip.',
+      },
+    ],
+    related: [
+      { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
+      { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
+      { label: 'China travel budget', href: '/china-travel-budget/' },
+      { label: 'China train travel guide', href: '/china-train-travel-guide/' },
+      { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
+      { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+      { label: 'China food ordering guide', href: '/china-food-ordering-guide/' },
+      { label: 'China travel apps', href: '/china-travel-apps/' },
+      { label: 'China eSIM & internet guide', href: '/china-esim-internet-guide/' },
+      { label: 'First trip to China', href: '/first-trip-to-china/' },
+      { label: 'Get a personalised China itinerary', href: '/#trip-plan' },
+    ],
+    sources: [
+      { label: 'The Palace Museum official international website', href: 'https://intl.dpm.org.cn/index.html' },
+      { label: 'Emperor Qinshihuang\'s Mausoleum Site Museum official website', href: 'https://www.bmy.com.cn/' },
+      { label: 'Chengdu Research Base of Giant Panda Breeding', href: 'https://www.panda.org.cn/en/' },
+      { label: 'China Railway 12306 English website', href: 'https://www.12306.cn/en/' },
+      { label: 'People\'s Bank of China: payment guide for visitors', href: 'https://english.www.gov.cn/news/202403/15/content_WS65f3b5d9c6d0868f4e8e52ea.html' },
     ],
   },
   'china-esim-internet-guide': {
@@ -4114,6 +4349,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/china-train-travel-guide')) return 'china-train-travel-guide';
   if (cleanPath.endsWith('/7-day-china-itinerary')) return '7-day-china-itinerary';
   if (cleanPath.endsWith('/10-day-china-itinerary')) return '10-day-china-itinerary';
+  if (cleanPath.endsWith('/14-day-china-itinerary')) return '14-day-china-itinerary';
   if (cleanPath.endsWith('/china-esim-internet-guide')) return 'china-esim-internet-guide';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
   if (cleanPath.endsWith('/wechat-pay-for-foreigners')) return 'wechat-pay-for-foreigners';
