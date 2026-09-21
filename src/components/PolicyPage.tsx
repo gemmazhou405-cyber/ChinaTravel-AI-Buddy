@@ -22,6 +22,7 @@ type GuidePageType =
   | '10-day-china-itinerary'
   | '14-day-china-itinerary'
   | 'beijing-vs-shanghai'
+  | '3-day-beijing-itinerary'
   | 'best-time-to-visit-china'
   | 'china-esim-internet-guide'
   | 'alipay-for-foreigners'
@@ -344,6 +345,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           '10-Day China Itinerary: follow a practical Beijing, Xi\'an, and Shanghai route.',
           '14-Day China Itinerary: build a balanced two-week route through Beijing, Xi\'an, Chengdu, and Shanghai.',
           'Beijing vs Shanghai: choose the better first stop based on history, city style, trip length, flights, and onward route.',
+          '3-Day Beijing Itinerary: plan the Palace Museum, Great Wall, Temple of Heaven, hutongs, bookings, and transport.',
           'Best Time to Visit China: compare seasons, months, regions, crowds, public holidays, and weather risks.',
           'Alipay for Foreigners: understand setup reminders and backup options.',
           'WeChat Pay for Foreigners: add an eligible international card and pay by QR code.',
@@ -384,6 +386,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
       { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
       { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' },
+      { label: '3-day Beijing itinerary', href: '/3-day-beijing-itinerary/' },
       { label: 'Best time to visit China', href: '/best-time-to-visit-china/' },
       { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
       { label: 'WeChat Pay for foreigners', href: '/wechat-pay-for-foreigners/' },
@@ -3138,6 +3141,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
+      { label: '3-day Beijing itinerary', href: '/3-day-beijing-itinerary/' },
       { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
       { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' },
@@ -3342,6 +3346,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
+      { label: '3-day Beijing itinerary', href: '/3-day-beijing-itinerary/' },
       { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
       { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
@@ -3359,6 +3364,181 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'The Palace Museum official international website', href: 'https://intl.dpm.org.cn/index.html' },
       { label: 'Badaling Great Wall official website', href: 'https://www.badaling.cn/website/pc/index.html' },
       { label: 'Shanghai Municipal Government: scenic spots', href: 'https://english.shanghai.gov.cn/en-ScenicSpots/' },
+      { label: 'China Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' },
+    ],
+  },
+  '3-day-beijing-itinerary': {
+    path: '/3-day-beijing-itinerary/',
+    title: '3-Day Beijing Itinerary for First-Time Visitors (2026)',
+    intro:
+      'A realistic first Beijing plan covering the imperial centre, the Great Wall, the Temple of Heaven, hutongs, reservations, transport, and backup options.',
+    metaTitle: '3-Day Beijing Itinerary for First-Time Visitors (2026)',
+    metaDescription:
+      'Plan three days in Beijing with the Palace Museum, Great Wall, Temple of Heaven, hutongs, hotel areas, bookings, transport, costs, and alternatives.',
+    quickAnswer:
+      'With three full days in Beijing, use one day for Tiananmen and the Palace Museum, one separate day for the Great Wall, and one flexible city day for the Temple of Heaven plus hutongs or another major sight. Book identity-controlled attractions before travel, keep the Great Wall day separate from the imperial centre, and do not count a late arrival or early departure as one of the three days. The Palace Museum publishes official opening, ticket, map, and visitor-trail information; check its live rules and the official Great Wall information again before fixing each day.',
+    ctaLabel: 'Get my personalised Beijing itinerary',
+    ctaHref: '/#trip-plan',
+    lastReviewed: 'September 21, 2026',
+    lastModified: '2026-09-21',
+    isArticle: true,
+    sections: [
+      {
+        title: 'Three days in Beijing at a glance',
+        table: {
+          headers: ['Day', 'Main plan', 'Why this grouping works'],
+          rows: [
+            ['Day 1', 'Tiananmen area, Palace Museum, Jingshan or nearby hutongs', 'Keeps the imperial core together and avoids unnecessary cross-city travel'],
+            ['Day 2', 'Great Wall day trip', 'Protects enough time for the transfer, security, walking, weather, and return'],
+            ['Day 3', 'Temple of Heaven, hutongs, and one flexible afternoon choice', 'Balances a major landmark with neighbourhood time and a weather-resistant option'],
+          ],
+        },
+        items: [
+          'This plan assumes three complete sightseeing days after arrival and before departure.',
+          'Reserve the hardest-to-book attraction first, then place the Great Wall on the better weather day and adjust the remaining city day around it.',
+          'Do not add the Summer Palace, multiple museums, and a second Great Wall section unless you remove something else.',
+        ],
+      },
+      {
+        title: 'Day 1: Beijing imperial centre',
+        ordered: true,
+        items: [
+          'Start with the Tiananmen area only after checking the current reservation, identity-document, security, access, and restricted-item rules.',
+          'Enter the Palace Museum with the same passport details used for the booking. Allow several hours and follow a northbound route instead of trying to see every side hall.',
+          'After the north exit, choose Jingshan for a city view when conditions and opening arrangements permit, or use the extra time for a slower nearby walk.',
+          'Finish with an early dinner or a short hutong visit. Avoid crossing the city for another headline attraction after a long museum day.',
+          'The Palace Museum is normally the fixed point. Its official website provides live ticket, opening-hour, map, and visitor-trail information, so recheck it shortly before the visit.',
+        ],
+      },
+      {
+        title: 'Day 2: Great Wall day trip',
+        items: [
+          'Choose the wall section according to transport, walking ability, crowd tolerance, season, and return-time certainty—not only photographs.',
+          'Badaling has an official visitor website and established transport options; other sections may suit travellers seeking a different walking experience but can require more complex transfers.',
+          'Confirm the exact gate, ticket, passport requirement, transport departure point, cable-car operation, last return, and weather before leaving Beijing.',
+          'Carry water, sun or cold-weather protection, shoes with reliable grip, a charged phone, and the hotel address in Chinese.',
+          'Keep the evening flexible. Delays, heat, cold, rain, wind, and walking fatigue can make a fixed night activity unrealistic.',
+        ],
+      },
+      {
+        title: 'Day 3: Temple of Heaven and local Beijing',
+        ordered: true,
+        items: [
+          'Visit the Temple of Heaven earlier in the day and allow time for both the monumental complex and the surrounding park experience.',
+          'Continue to a hutong area or a food-focused neighbourhood, using a map app and saved Chinese place names rather than relying on English-name search alone.',
+          'Choose one afternoon priority: the Summer Palace for another major historic landscape, a museum for poor weather, or a slower neighbourhood walk for a less rushed trip.',
+          'Keep the final evening close to the hotel when departing early the next day, and prepare the complete airport or railway-station name and terminal in advance.',
+        ],
+      },
+      {
+        title: 'Book these before the trip',
+        table: {
+          headers: ['Item', 'What to confirm', 'When to act'],
+          rows: [
+            ['Palace Museum', 'Live opening calendar, ticket release, passport details, entry gate, prohibited items', 'As soon as the official booking window opens'],
+            ['Tiananmen-area access', 'Current reservation and identity rules for the exact places you plan to enter', 'Before building Day 1 around a fixed time'],
+            ['Great Wall', 'Section, entrance, transport, ticket, cable car, last return, weather', 'Before departure; recheck the day before'],
+            ['Hotel', 'Foreign-passport check-in, address in Chinese, nearest useful metro station', 'Before paying a non-refundable rate'],
+            ['Onward train', 'Complete station, passport name, departure time, change and refund rules', 'Check and book through the official Railway 12306 service'],
+          ],
+        },
+        items: [
+          'Use the exact passport spelling consistently. A nickname, missing middle name, or wrong document number can cause avoidable booking problems.',
+          'Opening hours, ticket-release procedures, closures, and security arrangements can change. Treat this page as a route framework, not a replacement for live official notices.',
+        ],
+      },
+      {
+        title: 'Where to stay for a three-day visit',
+        items: [
+          'Choose a hotel for daily transport rather than the lowest city-wide price. Being near a useful metro connection can save more time than staying near one attraction.',
+          'Wangfujing and the central east side work well for many first-time visitors who want convenient access to the imperial core, restaurants, and transport.',
+          'Qianmen can suit travellers prioritising the historic centre and Temple of Heaven, while areas farther east may suit nightlife or business-focused stays.',
+          'Confirm foreign-passport check-in, late-arrival arrangements, deposit method, breakfast time, and the hotel name and address in Chinese.',
+        ],
+      },
+      {
+        title: 'Transport and daily pace',
+        items: [
+          'Use the metro for predictable cross-city journeys, but allow time for security, long station corridors, transfers, and choosing the correct exit.',
+          'Use licensed taxis or in-app ride-hailing for awkward connections, late returns, or travellers with mobility limits. Save the destination in Chinese and verify the licence plate.',
+          'Beijing attractions are large. A day with two nearby major sights can still involve substantial walking and standing.',
+          'Build at least one flexible block into every day. Security queues, timed entry, traffic, weather, and meal waits can shift the schedule.',
+        ],
+      },
+      {
+        title: 'Adjust the itinerary for your trip',
+        table: {
+          headers: ['Situation', 'Best adjustment'],
+          rows: [
+            ['Only two full days', 'Keep the imperial centre and Great Wall; remove Day 3 rather than compressing all three'],
+            ['Four full days', 'Add the Summer Palace, a deeper museum visit, or a slower neighbourhood day'],
+            ['Poor Great Wall weather', 'Swap Days 2 and 3 when reservations permit; never ignore closure or safety notices'],
+            ['Travelling with children', 'Shorten museum time, protect meal breaks, and choose a manageable Great Wall route'],
+            ['Limited mobility', 'Reduce daily stops, verify step-free access, and budget for more point-to-point transport'],
+            ['Monday or closure conflict', 'Check live calendars first and rebuild the sequence around closed attractions'],
+          ],
+        },
+        items: [
+          'If Beijing is part of a longer China trip, connect it with the 7-day, 10-day, or 14-day itinerary rather than planning each city independently.',
+          'For a Beijing–Shanghai route, compare an open-jaw flight plan with the live Railway 12306 schedule and the complete station locations.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Are three days enough for Beijing?',
+        answer:
+          'Three full days are enough for a focused first visit: one imperial-centre day, one Great Wall day, and one Temple of Heaven plus hutong or flexible-sight day. Three hotel nights with a late arrival and early departure are not the same as three full days.',
+      },
+      {
+        question: 'Which Great Wall section is best for a first visit?',
+        answer:
+          'Choose according to transport, walking ability, season, crowd tolerance, and live operations. Badaling has established visitor infrastructure and an official website; other sections can offer a different experience but may need more planning.',
+      },
+      {
+        question: 'Do I need to book the Palace Museum in advance?',
+        answer:
+          'Plan on using the official reservation process and matching the booking to your passport. Check the Palace Museum website for the live ticket window, opening calendar, entry process, and current visitor rules.',
+      },
+      {
+        question: 'Can I visit the Forbidden City and Great Wall on the same day?',
+        answer:
+          'It is not a good first-trip plan. Both need meaningful time, and combining them creates a fragile schedule with transport, security, ticket, weather, and walking risks.',
+      },
+      {
+        question: 'Where should a first-time visitor stay in Beijing?',
+        answer:
+          'A central area near a useful metro connection is usually the safest choice. Wangfujing, the central east side, and Qianmen can work, but check the exact hotel location, passport check-in, and daily routes before booking.',
+      },
+      {
+        question: 'How should I get around Beijing?',
+        answer:
+          'Combine the metro for predictable cross-city journeys with licensed taxis or app-based rides for awkward connections. Save Chinese addresses, allow for security and long station walks, and verify the car before entering.',
+      },
+      {
+        question: 'Can ChinaEase Buddy personalise this Beijing itinerary?',
+        answer:
+          'Yes. Share your dates, arrival and departure points, group, interests, walking ability, hotel, budget, and fixed bookings to receive a route adapted to the actual trip.',
+      },
+    ],
+    related: [
+      { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' },
+      { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
+      { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
+      { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
+      { label: 'Best time to visit China', href: '/best-time-to-visit-china/' },
+      { label: 'China train travel guide', href: '/china-train-travel-guide/' },
+      { label: 'China metro guide', href: '/china-metro-guide/' },
+      { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+      { label: 'China travel apps', href: '/china-travel-apps/' },
+      { label: 'First trip to China', href: '/first-trip-to-china/' },
+      { label: 'Get a personalised Beijing itinerary', href: '/#trip-plan' },
+    ],
+    sources: [
+      { label: 'The Palace Museum official international website', href: 'https://intl.dpm.org.cn/index.html' },
+      { label: 'Palace Museum official ticket service', href: 'https://bookingticket.dpm.org.cn/' },
+      { label: 'Badaling Great Wall official website', href: 'https://www.badaling.cn/website/pc/index.html' },
+      { label: 'Beijing Municipal Government English website', href: 'https://english.beijing.gov.cn/' },
       { label: 'China Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' },
     ],
   },
@@ -3548,6 +3728,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
+      { label: '3-day Beijing itinerary', href: '/3-day-beijing-itinerary/' },
       { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' },
       { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
@@ -4772,6 +4953,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/10-day-china-itinerary')) return '10-day-china-itinerary';
   if (cleanPath.endsWith('/14-day-china-itinerary')) return '14-day-china-itinerary';
   if (cleanPath.endsWith('/beijing-vs-shanghai')) return 'beijing-vs-shanghai';
+  if (cleanPath.endsWith('/3-day-beijing-itinerary')) return '3-day-beijing-itinerary';
   if (cleanPath.endsWith('/best-time-to-visit-china')) return 'best-time-to-visit-china';
   if (cleanPath.endsWith('/china-esim-internet-guide')) return 'china-esim-internet-guide';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
