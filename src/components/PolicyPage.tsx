@@ -21,6 +21,7 @@ type GuidePageType =
   | '7-day-china-itinerary'
   | '10-day-china-itinerary'
   | '14-day-china-itinerary'
+  | 'beijing-vs-shanghai'
   | 'china-esim-internet-guide'
   | 'alipay-for-foreigners'
   | 'wechat-pay-for-foreigners'
@@ -341,6 +342,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           '7-Day China Itinerary: compare a fast three-city route with a more relaxed two-city trip.',
           '10-Day China Itinerary: follow a practical Beijing, Xi\'an, and Shanghai route.',
           '14-Day China Itinerary: build a balanced two-week route through Beijing, Xi\'an, Chengdu, and Shanghai.',
+          'Beijing vs Shanghai: choose the better first stop based on history, city style, trip length, flights, and onward route.',
           'Alipay for Foreigners: understand setup reminders and backup options.',
           'WeChat Pay for Foreigners: add an eligible international card and pay by QR code.',
           'China Payment Guide: practical notes for Alipay, WeChat Pay, cards, and cash.',
@@ -379,6 +381,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
       { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
+      { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' },
       { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
       { label: 'WeChat Pay for foreigners', href: '/wechat-pay-for-foreigners/' },
       { label: 'China payment guide', href: '/china-payment-guide/' },
@@ -2001,6 +2004,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
       { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
+      { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
       { label: 'China metro guide', href: '/china-metro-guide/' },
       { label: 'China eSIM & internet guide', href: '/china-esim-internet-guide/' },
@@ -2738,6 +2742,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     related: [
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
       { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
+      { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' },
       { label: 'China travel budget', href: '/china-travel-budget/' },
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
@@ -2904,6 +2909,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'First trip to China', href: '/first-trip-to-china/' },
       { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
       { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
+      { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' },
       { label: 'China travel budget', href: '/china-travel-budget/' },
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
@@ -3128,6 +3134,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     related: [
       { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
+      { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' },
       { label: 'China travel budget', href: '/china-travel-budget/' },
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
@@ -3144,6 +3151,207 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'Chengdu Research Base of Giant Panda Breeding', href: 'https://www.panda.org.cn/en/' },
       { label: 'China Railway 12306 English website', href: 'https://www.12306.cn/en/' },
       { label: 'People\'s Bank of China: payment guide for visitors', href: 'https://english.www.gov.cn/news/202403/15/content_WS65f3b5d9c6d0868f4e8e52ea.html' },
+    ],
+  },
+  'beijing-vs-shanghai': {
+    path: '/beijing-vs-shanghai/',
+    title: 'Beijing vs Shanghai: Which City Should You Visit First? (2026)',
+    intro:
+      'A practical comparison for first-time China visitors choosing between imperial Beijing and fast-moving Shanghai—or deciding how to combine both.',
+    metaTitle: 'Beijing vs Shanghai: Which Should You Visit? (2026)',
+    metaDescription:
+      'Compare Beijing and Shanghai for a first China trip: history, sights, food, pace, weather, airports, costs, trip length, and how to visit both.',
+    quickAnswer:
+      'Choose Beijing if your first priority is imperial history, the Palace Museum, the Great Wall, monumental landmarks, and a stronger sense of China\'s political and historical centre. Choose Shanghai if you prefer a more compact urban introduction, waterfront architecture, modern city life, neighbourhood walks, easier short stays, and convenient onward travel through eastern China. For a trip of seven days or more, the strongest answer is often both: enter through Beijing, spend three to four full days there, take a high-speed train to Shanghai, spend two to three full days there, and fly home from Shanghai. Check live flights, rail schedules, attraction reservations, weather, and entry rules before fixing the order.',
+    ctaLabel: 'Get my personalised China itinerary',
+    ctaHref: '/#trip-plan',
+    lastReviewed: 'September 21, 2026',
+    lastModified: '2026-09-21',
+    isArticle: true,
+    sections: [
+      {
+        title: 'Beijing vs Shanghai at a glance',
+        table: {
+          headers: ['Question', 'Beijing', 'Shanghai'],
+          rows: [
+            ['Best for', 'Imperial history, major monuments, the Great Wall, traditional urban fabric', 'Modern China, waterfront architecture, neighbourhoods, design, food, and day trips'],
+            ['Ideal first stay', '3–5 full days', '2–4 full days'],
+            ['Sightseeing style', 'Large landmark days with longer transfers and more advance planning', 'Denser urban days that are easier to group by neighbourhood'],
+            ['Signature experiences', 'Palace Museum, Temple of Heaven, hutongs, Great Wall', 'The Bund, Pudong skyline, Yuyuan area, former-concession streets'],
+            ['Best onward route', 'Xi\'an, northern China, or south to Shanghai', 'Suzhou, Hangzhou, eastern China, or international departure'],
+            ['Choose it when', 'History is the main reason for your China trip', 'You want the easiest short urban introduction'],
+          ],
+        },
+        items: [
+          'Neither city is objectively better. The right choice depends on what you want to understand, how many full days you have, your international flights, and the next destination.',
+          'Count full sightseeing days rather than hotel nights. Arrival, jet lag, airport transfers, and departure can remove much of the first and last day.',
+          'If the flight difference is large, let the better international connection influence the route rather than forcing a theoretical “best” city.',
+        ],
+      },
+      {
+        title: 'Choose Beijing for history and landmark experiences',
+        items: [
+          'Beijing is the stronger first choice when the Palace Museum, the Great Wall, the Temple of Heaven, imperial planning, and modern national history are central to the trip.',
+          'The city rewards three to five full days because its major sights are large, security and reservation steps take time, and the Great Wall normally needs its own day.',
+          'A strong first visit combines one imperial-core day, one Great Wall day, and one flexible day for the Temple of Heaven, Summer Palace, hutongs, museums, or food.',
+          'The Palace Museum provides official opening-hour, ticket, service-map, and visitor-trail information. Check the current identity-document and reservation process before the visit.',
+          'Beijing can feel more demanding on a very short trip because distances, walking, seasonal weather, and advance bookings shape the day.',
+        ],
+      },
+      {
+        title: 'Choose Shanghai for a shorter and more urban first stop',
+        items: [
+          'Shanghai is the stronger choice when your interests are architecture, modern city life, design, restaurants, shopping, waterfront views, and walkable neighbourhood clusters.',
+          'A useful first visit can fit into two or three full days: combine the Bund and older central areas, spend another day in neighbourhoods and museums, then add a focused day trip only if time allows.',
+          'The Shanghai municipal tourism pages identify the Bund as a protected historic waterfront and list Yuyuan Garden, Wukang Road, museums, parks, and other city attractions.',
+          'Shanghai is not only skyscrapers. Its value comes from the contrast between the Bund, lane neighbourhoods, commercial streets, traditional gardens, and Pudong.',
+          'It is often the easier final city because a flexible urban day can sit before an international departure without committing to a distant excursion.',
+        ],
+      },
+      {
+        title: 'Which city matches your travel style?',
+        table: {
+          headers: ['Traveler priority', 'Better starting point', 'Why'],
+          rows: [
+            ['Chinese history and famous monuments', 'Beijing', 'More imperial and national landmarks, plus access to the Great Wall'],
+            ['Architecture, cafés, design, and city walks', 'Shanghai', 'Denser neighbourhood variety and strong historic-modern contrast'],
+            ['Only 2–3 full days in China', 'Shanghai', 'A coherent first visit can be built with fewer long-distance attraction days'],
+            ['First trip of 4–5 full days', 'Beijing', 'Enough time for the historic core, Great Wall, and one flexible day'],
+            ['Travel with limited walking capacity', 'Depends', 'Shanghai can be easier to cluster, but hotel location and daily transport matter more than the city name'],
+            ['Continue to Xi\'an', 'Beijing', 'The route fits a classic north-to-central itinerary'],
+            ['Continue to Suzhou or Hangzhou', 'Shanghai', 'Both are natural additions to an eastern China route'],
+          ],
+        },
+        items: [
+          'Food is not a clean tie-breaker: both cities have deep local traditions and broad restaurant choice. Pick the city for the overall route, then plan food deliberately.',
+          'Families, older travellers, and anyone sensitive to heat, cold, or long walking days should compare season and hotel location before deciding.',
+        ],
+      },
+      {
+        title: 'How many days do you need?',
+        table: {
+          headers: ['Time available', 'Recommended choice', 'Realistic plan'],
+          rows: [
+            ['2–3 full days', 'Choose one city', 'Shanghai for a compact urban trip; Beijing only if you prioritise two or three major sights'],
+            ['4–5 full days', 'One city in depth', 'Beijing for a classic first visit, or Shanghai plus one nearby day trip'],
+            ['6–7 full days', 'Both cities', '3–4 full days in Beijing, train day, then 2–3 full days in Shanghai'],
+            ['8–10 full days', 'Both plus Xi\'an or a nearby region', 'Use an open-jaw route and avoid returning to the arrival city'],
+            ['14 days', 'Both within a wider route', 'Add Xi\'an and one of Chengdu or Guilin without exceeding four bases'],
+          ],
+        },
+        items: [
+          'Do not count a late arrival as a full day or schedule a major timed attraction immediately after a long-haul flight.',
+          'For seven days, flying into Beijing and home from Shanghai usually protects more sightseeing time than a round trip through one city.',
+          'For ten or fourteen days, use the existing ChinaEase itinerary guides to decide whether Xi\'an, Chengdu, or Guilin deserves the additional nights.',
+        ],
+      },
+      {
+        title: 'Getting between Beijing and Shanghai',
+        items: [
+          'High-speed rail is usually the simplest city-to-city comparison because central-station access can reduce airport-transfer time, but the correct answer depends on the live departure, station, fare, and hotel locations.',
+          'Use the official Railway 12306 English service to check the exact train, complete station name, journey time, fare, accepted identity document, availability, change, and refund rules.',
+          'Both cities have multiple airports and railway stations. Never write only “Beijing station” or “Shanghai airport” in the plan; save the complete English and Chinese name plus terminal.',
+          'A flight may make sense when it connects directly with another domestic leg or offers a much better schedule, but compare total door-to-door time rather than time in the air.',
+          'Treat the transfer as a travel block. Even a fast train requires hotel checkout, station arrival, security, boarding, arrival, and another hotel transfer.',
+        ],
+      },
+      {
+        title: 'Weather, pace, and seasonal trade-offs',
+        items: [
+          'Beijing generally has a more continental feel, with colder winters, hotter summers, and drier conditions; Shanghai is typically more humid and has a different rain and heat pattern.',
+          'Do not choose by average temperature alone. Check the short-range forecast, air conditions, rain, wind, attraction closures, and outdoor walking load immediately before travel.',
+          'Public holidays and major events can change hotel prices, rail availability, attraction capacity, and crowd levels in both cities.',
+          'In difficult weather, Beijing needs an alternative to the Great Wall day, while Shanghai needs a strong indoor plan for neighbourhood walks and skyline views.',
+        ],
+      },
+      {
+        title: 'Budget differences that actually matter',
+        items: [
+          'Both cities can support budget, mid-range, and comfortable trips; hotel location and standard usually matter more than a simple city-wide price label.',
+          'Beijing can create extra transport or tour costs for a Great Wall day. Shanghai can create higher spending through central hotels, restaurants, nightlife, shopping, and paid skyline experiences.',
+          'Compare real hotel quotes for your dates near a useful metro line, then add attraction tickets, local transport, food, airport or station transfers, and one contingency allowance.',
+          'Do not assume the cheapest room is the cheapest trip. A remote hotel can add daily transfer time and ride-hailing costs.',
+          'Use the China travel budget guide for broad planning, but replace every estimate with live prices before booking.',
+        ],
+      },
+      {
+        title: 'Best first-trip route using both cities',
+        ordered: true,
+        items: [
+          'Fly into Beijing and keep the arrival day light for immigration, hotel registration, data, payments, and recovery.',
+          'Spend three or four full days on the imperial core, the Great Wall, and one flexible Beijing day.',
+          'Take a daytime high-speed train to Shanghai, using the exact station and passport details shown in the booking.',
+          'Spend two or three full days on the Bund and central historic areas, neighbourhoods, museums, food, or one carefully chosen day trip.',
+          'Fly home from Shanghai, or reverse the route when international flights, weather, reservations, or the wider itinerary clearly favour it.',
+        ],
+      },
+      {
+        title: 'Common Beijing vs Shanghai planning mistakes',
+        items: [
+          'Choosing only from social-media aesthetics instead of matching the city to the trip length and onward route.',
+          'Trying to visit both cities in three or four days and losing most of the trip to transfers and check-in.',
+          'Adding a distant Great Wall trip or regional day trip without protecting enough time for the city itself.',
+          'Booking international round-trip flights before comparing an open-jaw arrival and departure.',
+          'Assuming every major attraction accepts a spontaneous walk-in visit with no identity or reservation requirement.',
+          'Ignoring the complete airport, railway-station, terminal, and hotel address until travel day.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is Beijing or Shanghai better for a first trip to China?',
+        answer:
+          'Beijing is better for imperial history, major monuments, and the Great Wall. Shanghai is better for a shorter urban introduction, architecture, neighbourhoods, restaurants, and modern city life. Choose according to your main interest and onward route.',
+      },
+      {
+        question: 'Is Beijing or Shanghai easier for tourists?',
+        answer:
+          'Shanghai can be easier to structure into compact neighbourhood days, while Beijing requires more time for large sights and the Great Wall. In both cities, a well-located hotel, mobile data, payment setup, maps, and saved Chinese addresses matter more than the city label.',
+      },
+      {
+        question: 'Which city needs more days, Beijing or Shanghai?',
+        answer:
+          'Beijing usually needs more time. Allow three to five full days for a first visit, compared with two to four full days for Shanghai, depending on day trips and travel pace.',
+      },
+      {
+        question: 'Can I visit Beijing and Shanghai in one week?',
+        answer:
+          'Yes. A realistic plan is three to four full days in Beijing, one rail travel block, and two to three full days in Shanghai. Use open-jaw flights if the price and schedule work.',
+      },
+      {
+        question: 'Should I fly or take the train between Beijing and Shanghai?',
+        answer:
+          'High-speed rail is often the simplest city-centre-to-city-centre option, but compare live 12306 schedules, complete station locations, fares, flight times, airport transfers, and your hotel locations before deciding.',
+      },
+      {
+        question: 'Which city is better for families or older travelers?',
+        answer:
+          'Either can work. Shanghai may be easier to cluster into shorter urban days, while Beijing offers more iconic historic sights. The best choice depends on mobility, weather, hotel location, transport, and whether a Great Wall day is essential.',
+      },
+      {
+        question: 'Can ChinaEase Buddy choose the right city for my route?',
+        answer:
+          'Yes. Share your dates, flights, trip length, interests, group size, pace, budget, mobility needs, and next destination to receive a route built around the real trip.',
+      },
+    ],
+    related: [
+      { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
+      { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
+      { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
+      { label: 'China train travel guide', href: '/china-train-travel-guide/' },
+      { label: 'China travel budget', href: '/china-travel-budget/' },
+      { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
+      { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+      { label: 'China travel apps', href: '/china-travel-apps/' },
+      { label: 'China metro guide', href: '/china-metro-guide/' },
+      { label: 'First trip to China', href: '/first-trip-to-china/' },
+      { label: 'Get a personalised China itinerary', href: '/#trip-plan' },
+    ],
+    sources: [
+      { label: 'The Palace Museum official international website', href: 'https://intl.dpm.org.cn/index.html' },
+      { label: 'Badaling Great Wall official website', href: 'https://www.badaling.cn/website/pc/index.html' },
+      { label: 'Shanghai Municipal Government: scenic spots', href: 'https://english.shanghai.gov.cn/en-ScenicSpots/' },
+      { label: 'China Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' },
     ],
   },
   'china-esim-internet-guide': {
@@ -4350,6 +4558,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/7-day-china-itinerary')) return '7-day-china-itinerary';
   if (cleanPath.endsWith('/10-day-china-itinerary')) return '10-day-china-itinerary';
   if (cleanPath.endsWith('/14-day-china-itinerary')) return '14-day-china-itinerary';
+  if (cleanPath.endsWith('/beijing-vs-shanghai')) return 'beijing-vs-shanghai';
   if (cleanPath.endsWith('/china-esim-internet-guide')) return 'china-esim-internet-guide';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
   if (cleanPath.endsWith('/wechat-pay-for-foreigners')) return 'wechat-pay-for-foreigners';
