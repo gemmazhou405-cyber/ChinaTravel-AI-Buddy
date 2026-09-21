@@ -10,8 +10,8 @@ const pages = [
   {
     path: '/guides/',
     h1: /China Travel Guides/i,
-    keywords: ['China Visa-Free Travel Guide', 'China Airport Arrival Guide', 'China Hotels for Foreigners', 'China Food Ordering Guide', 'Chinese Travel Phrases', 'China Travel Safety Guide', 'China Travel Budget', 'China Travel Apps', 'AMap in English', 'China Metro Guide', 'DiDi in China for Foreigners', 'China Train Travel Guide', '7-Day China Itinerary', '10-Day China Itinerary', '14-Day China Itinerary', 'Beijing vs Shanghai', 'Alipay for Foreigners', 'WeChat Pay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
-    links: ['/china-visa-free-travel-guide/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-food-ordering-guide/', '/chinese-travel-phrases/', '/china-travel-safety-guide/', '/china-travel-budget/', '/china-travel-apps/', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/wechat-pay-for-foreigners/', '/china-payment-guide/', '/faq/'],
+    keywords: ['China Visa-Free Travel Guide', 'China Airport Arrival Guide', 'China Hotels for Foreigners', 'China Food Ordering Guide', 'Chinese Travel Phrases', 'China Travel Safety Guide', 'China Travel Budget', 'China Travel Apps', 'AMap in English', 'China Metro Guide', 'DiDi in China for Foreigners', 'China Train Travel Guide', '7-Day China Itinerary', '10-Day China Itinerary', '14-Day China Itinerary', 'Beijing vs Shanghai', 'Best Time to Visit China', 'Alipay for Foreigners', 'WeChat Pay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
+    links: ['/china-visa-free-travel-guide/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-food-ordering-guide/', '/chinese-travel-phrases/', '/china-travel-safety-guide/', '/china-travel-budget/', '/china-travel-apps/', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/best-time-to-visit-china/', '/wechat-pay-for-foreigners/', '/china-payment-guide/', '/faq/'],
   },
   {
     path: '/china-payment-guide/',
@@ -59,7 +59,7 @@ const pages = [
     path: '/china-travel-budget/',
     h1: /China Travel Budget.*How Much Does a Trip Cost.*2026/i,
     keywords: ['RMB 350', 'RMB 800', 'RMB 1,800', 'international flights', '12306', 'peak', 'solo travelers'],
-    links: ['/#trip-plan', '/china-hotels-for-foreigners/', '/china-food-ordering-guide/', '/china-payment-guide/', '/china-train-travel-guide/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-esim-internet-guide/', '/china-travel-apps/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/first-trip-to-china/'],
+    links: ['/#trip-plan', '/china-hotels-for-foreigners/', '/china-food-ordering-guide/', '/china-payment-guide/', '/china-train-travel-guide/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-esim-internet-guide/', '/china-travel-apps/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/best-time-to-visit-china/', '/first-trip-to-china/'],
   },
   {
     path: '/china-travel-apps/',
@@ -95,25 +95,31 @@ const pages = [
     path: '/7-day-china-itinerary/',
     h1: /7-Day China Itinerary for First-Time Visitors.*2026/i,
     keywords: ['open-jaw', 'Beijing', 'Xi\'an', 'Shanghai', 'Palace Museum', 'Terracotta Warriors', 'RMB 350', '12306'],
-    links: ['/#trip-plan', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/china-travel-budget/', '/china-train-travel-guide/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/china-esim-internet-guide/', '/china-payment-guide/', '/first-trip-to-china/'],
+    links: ['/#trip-plan', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/best-time-to-visit-china/', '/china-travel-budget/', '/china-train-travel-guide/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/china-esim-internet-guide/', '/china-payment-guide/', '/first-trip-to-china/'],
   },
   {
     path: '/10-day-china-itinerary/',
     h1: /10-Day China Itinerary for First-Time Visitors/i,
     keywords: ['Beijing', 'Xi\'an', 'Shanghai', 'Palace Museum', 'Terracotta Warriors', 'high-speed train'],
-    links: ['/#trip-plan', '/first-trip-to-china/', '/7-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/china-travel-budget/', '/china-train-travel-guide/', '/china-travel-apps/'],
+    links: ['/#trip-plan', '/first-trip-to-china/', '/7-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/best-time-to-visit-china/', '/china-travel-budget/', '/china-train-travel-guide/', '/china-travel-apps/'],
   },
   {
     path: '/14-day-china-itinerary/',
     h1: /14-Day China Itinerary for First-Time Visitors.*2026/i,
     keywords: ['two-week', 'Beijing', 'Xi\'an', 'Chengdu', 'Shanghai', 'Guilin', 'Panda Base', 'RMB 6,500', '12306'],
-    links: ['/#trip-plan', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/beijing-vs-shanghai/', '/china-travel-budget/', '/china-train-travel-guide/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-food-ordering-guide/', '/china-travel-apps/', '/china-esim-internet-guide/', '/first-trip-to-china/'],
+    links: ['/#trip-plan', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/beijing-vs-shanghai/', '/best-time-to-visit-china/', '/china-travel-budget/', '/china-train-travel-guide/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-food-ordering-guide/', '/china-travel-apps/', '/china-esim-internet-guide/', '/first-trip-to-china/'],
   },
   {
     path: '/beijing-vs-shanghai/',
     h1: /Beijing vs Shanghai.*Which City Should You Visit First.*2026/i,
     keywords: ['imperial history', 'Great Wall', 'The Bund', '3–5 full days', '2–4 full days', 'open-jaw', '12306', 'Suzhou', 'Hangzhou'],
-    links: ['/#trip-plan', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/china-train-travel-guide/', '/china-travel-budget/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/china-metro-guide/', '/first-trip-to-china/'],
+    links: ['/#trip-plan', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/best-time-to-visit-china/', '/china-train-travel-guide/', '/china-travel-budget/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/china-metro-guide/', '/first-trip-to-china/'],
+  },
+  {
+    path: '/best-time-to-visit-china/',
+    h1: /Best Time to Visit China.*Weather and Crowds by Month.*2026/i,
+    keywords: ['April', 'September', 'Spring Festival', 'National Day', 'typhoons', 'Tibet', 'Hainan', 'China Meteorological Administration'],
+    links: ['/#trip-plan', '/beijing-vs-shanghai/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/china-travel-budget/', '/china-visa-free-travel-guide/', '/china-travel-safety-guide/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/first-trip-to-china/'],
   },
   {
     path: '/china-esim-internet-guide/',
