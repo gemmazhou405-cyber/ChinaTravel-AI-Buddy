@@ -22,6 +22,7 @@ type GuidePageType =
   | '10-day-china-itinerary'
   | '14-day-china-itinerary'
   | 'beijing-vs-shanghai'
+  | 'best-time-to-visit-china'
   | 'china-esim-internet-guide'
   | 'alipay-for-foreigners'
   | 'wechat-pay-for-foreigners'
@@ -343,6 +344,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           '10-Day China Itinerary: follow a practical Beijing, Xi\'an, and Shanghai route.',
           '14-Day China Itinerary: build a balanced two-week route through Beijing, Xi\'an, Chengdu, and Shanghai.',
           'Beijing vs Shanghai: choose the better first stop based on history, city style, trip length, flights, and onward route.',
+          'Best Time to Visit China: compare seasons, months, regions, crowds, public holidays, and weather risks.',
           'Alipay for Foreigners: understand setup reminders and backup options.',
           'WeChat Pay for Foreigners: add an eligible international card and pay by QR code.',
           'China Payment Guide: practical notes for Alipay, WeChat Pay, cards, and cash.',
@@ -382,6 +384,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
       { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
       { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' },
+      { label: 'Best time to visit China', href: '/best-time-to-visit-china/' },
       { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
       { label: 'WeChat Pay for foreigners', href: '/wechat-pay-for-foreigners/' },
       { label: 'China payment guide', href: '/china-payment-guide/' },
@@ -1684,6 +1687,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
       { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
+      { label: 'Best time to visit China', href: '/best-time-to-visit-china/' },
       { label: 'First trip to China', href: '/first-trip-to-china/' },
       { label: 'Get a free China itinerary', href: '/#trip-plan' },
     ],
@@ -2743,6 +2747,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
       { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
       { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' },
+      { label: 'Best time to visit China', href: '/best-time-to-visit-china/' },
       { label: 'China travel budget', href: '/china-travel-budget/' },
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
@@ -2910,6 +2915,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
       { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
       { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' },
+      { label: 'Best time to visit China', href: '/best-time-to-visit-china/' },
       { label: 'China travel budget', href: '/china-travel-budget/' },
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
@@ -3135,6 +3141,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
       { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' },
+      { label: 'Best time to visit China', href: '/best-time-to-visit-china/' },
       { label: 'China travel budget', href: '/china-travel-budget/' },
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
@@ -3338,6 +3345,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
       { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
+      { label: 'Best time to visit China', href: '/best-time-to-visit-china/' },
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
       { label: 'China travel budget', href: '/china-travel-budget/' },
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
@@ -3352,6 +3360,211 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'Badaling Great Wall official website', href: 'https://www.badaling.cn/website/pc/index.html' },
       { label: 'Shanghai Municipal Government: scenic spots', href: 'https://english.shanghai.gov.cn/en-ScenicSpots/' },
       { label: 'China Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' },
+    ],
+  },
+  'best-time-to-visit-china': {
+    path: '/best-time-to-visit-china/',
+    title: 'Best Time to Visit China: Weather and Crowds by Month (2026)',
+    intro:
+      'A month-by-month planning guide for choosing China travel dates around regional weather, public-holiday crowds, prices, and the route you actually want.',
+    metaTitle: 'Best Time to Visit China: Month-by-Month Guide (2026)',
+    metaDescription:
+      'Choose the best time to visit China in 2026. Compare months, seasons, regions, weather risks, crowds, public holidays, prices, and route ideas.',
+    quickAnswer:
+      'For a classic first trip through Beijing, Xi\'an, and Shanghai, late spring and autumn usually offer the easiest balance of outdoor sightseeing and manageable temperatures. April to May and September to October are useful starting windows, but avoid assuming the whole country shares one climate and check the exact public-holiday dates before booking. Northern China, the humid east and south, high-altitude western regions, and tropical Hainan can need completely different timing. Choose the route first, then compare city-level climate, current forecasts, weather warnings, holiday crowds, and live prices for your exact dates.',
+    ctaLabel: 'Get my itinerary for the right season',
+    ctaHref: '/#trip-plan',
+    lastReviewed: 'September 21, 2026',
+    lastModified: '2026-09-21',
+    isArticle: true,
+    sections: [
+      {
+        title: 'The best season depends on your route',
+        table: {
+          headers: ['Season', 'Often works well for', 'Main trade-offs'],
+          rows: [
+            ['Spring: March–May', 'Beijing, Xi\'an, Shanghai, gardens, walking, multi-city first trips', 'Fast weather changes, rain in some regions, northern wind or dust, early-May crowds'],
+            ['Summer: June–August', 'High-altitude routes, school-holiday travel, long daylight, some mountain regions', 'Heat, humidity, heavy rain, flooding, typhoons in affected coastal areas, larger crowds'],
+            ['Autumn: September–November', 'Classic city routes, walking, northern landscapes, photography', 'Early-October holiday demand, shorter days later in the season, rapid cooling in the north'],
+            ['Winter: December–February', 'Harbin, snow, lower-season city travel, southern escapes', 'Cold in the north, limited daylight, some seasonal closures, Spring Festival transport demand'],
+          ],
+        },
+        items: [
+          'There is no single nationwide best month. China spans tropical, temperate, arid, monsoon, mountain, and high-altitude environments.',
+          'A comfortable Beijing week can coincide with very different rain, heat, or altitude conditions elsewhere, so compare every overnight stop rather than one national average.',
+          'Use climate patterns for the first decision, then switch to official short-range forecasts and warnings close to departure.',
+        ],
+      },
+      {
+        title: 'China month by month',
+        table: {
+          headers: ['Month', 'Where it can work', 'What to plan around'],
+          rows: [
+            ['January', 'Harbin snow trips, Yunnan, Hainan, quieter major cities', 'Severe cold in the north, winter daylight, ice, holiday dates'],
+            ['February', 'Winter culture, southern routes, selected city trips', 'Spring Festival crowds and closures vary by lunar calendar'],
+            ['March', 'Yunnan, southern and eastern city trips, early spring routes', 'Unstable temperatures, rain, wind, possible northern dust'],
+            ['April', 'Beijing–Xi\'an–Shanghai, gardens, walking, many classic routes', 'Cool mornings, spring rain, Qingming travel demand'],
+            ['May', 'Northern and central routes, mountains before peak summer heat', 'Early-May public-holiday demand, rising heat and rain later'],
+            ['June', 'Highlands, some mountain routes, early-summer travel', 'Heat, humidity, rainy seasons, exam and school-calendar effects'],
+            ['July', 'Tibet and some high-altitude or northern routes', 'Peak heat, heavy rain, flooding, school holidays, strong demand'],
+            ['August', 'Highlands, grasslands, family travel', 'Heat, rain, typhoon disruption in affected coastal regions, crowds'],
+            ['September', 'Classic multi-city routes, northern and western scenery', 'Residual heat or rain in some regions; check Mid-Autumn dates'],
+            ['October', 'Beijing, Xi\'an, Shanghai, many scenic routes', 'National Day holiday demand at the start of the month; cooling later'],
+            ['November', 'Major cities, Yunnan, some southern routes', 'Shorter days, colder north, seasonal change and dry conditions'],
+            ['December', 'Harbin season, southern cities, lower-season urban travel', 'Cold, ice, reduced daylight, winter attraction schedules'],
+          ],
+        },
+        items: [
+          'This table is a planning screen, not a forecast. Conditions vary by year, city, elevation, and the exact week.',
+          'Do not buy non-refundable transport solely because a month is described as “best” online. Check the route and live conditions first.',
+        ],
+      },
+      {
+        title: 'Choose timing by region',
+        table: {
+          headers: ['Region or route', 'Useful starting window', 'Important constraint'],
+          rows: [
+            ['Beijing and northern China', 'April–May or September–October', 'Winter cold, summer heat and rain, wind or dust, holiday crowds'],
+            ['Shanghai, Hangzhou, and eastern China', 'Spring or autumn', 'Humidity, plum-rain periods, summer heat, coastal storms'],
+            ['Xi\'an and central routes', 'Spring or autumn', 'Hot summers, cold winters, outdoor walking load'],
+            ['Chengdu and Sichuan Basin', 'Spring or autumn for many city routes', 'Cloud, humidity, rain, mountain conditions outside the city'],
+            ['Guilin and Yangshuo', 'Spring or autumn, depending on the experience', 'Rain, river conditions, heat, visibility, outdoor activity safety'],
+            ['Yunnan', 'Route-specific across much of the year', 'Elevation, large day–night temperature range, regional rainy season'],
+            ['Tibet and high-altitude west', 'Specialist route and season planning', 'Altitude health, permits where applicable, snow, road and flight disruption'],
+            ['Guangdong, Hainan, and the far south', 'Cooler months for many visitors', 'Summer heat, humidity, rain, and tropical-cyclone risk'],
+          ],
+        },
+        items: [
+          'A multi-region itinerary inherits the hardest weather constraint. The best dates for Shanghai do not automatically make a Tibet or Hainan extension sensible.',
+          'For mountains, river cruises, hiking, cycling, or high altitude, check the operator, local authority, forecast, and safety notices rather than using a national season label.',
+        ],
+      },
+      {
+        title: 'Spring: the flexible first-trip season',
+        items: [
+          'Spring can work well for the classic Beijing–Xi\'an–Shanghai route because much of the sightseeing is outdoors and summer heat has not fully arrived.',
+          'March may still feel wintry in northern cities while southern and eastern regions move into wetter conditions. Pack layers instead of assuming uniform mild weather.',
+          'April is a strong general planning month, but reservations, weekends, Qingming travel, blossoms, and local events can still change prices and crowds.',
+          'May becomes warmer and wetter in many places. Check the official early-May holiday arrangement before choosing transport or attraction dates.',
+        ],
+      },
+      {
+        title: 'Summer: possible, but build weather resilience',
+        items: [
+          'Summer is not automatically a bad time, especially when school holidays or high-altitude destinations determine the trip, but the itinerary needs more recovery and indoor alternatives.',
+          'Heat and humidity can reduce realistic walking time. Plan one main outdoor anchor, start earlier, carry water, and protect the hottest part of the day.',
+          'Heavy rain can affect urban transport, mountain access, rivers, flights, and trains. Coastal routes may also face tropical-cyclone disruption.',
+          'China Meteorological Administration describes official forecasting and warnings for high-impact hazards including typhoons, heavy rain, severe convection, high temperatures, floods, and geological risks.',
+          'Use refundable or changeable bookings where disruption would damage the whole route, and keep an indoor backup for every weather-sensitive day.',
+        ],
+      },
+      {
+        title: 'Autumn: excellent weather, but watch the calendar',
+        items: [
+          'September and October often suit classic city routes, walking, and northern scenery, but the first part of autumn can remain hot or wet in some southern and eastern regions.',
+          'The National Day holiday period around early October can sharply increase domestic travel demand, accommodation prices, attraction crowds, and rail-ticket competition.',
+          'Late October and November may be quieter, but northern destinations cool quickly and daylight shortens.',
+          'Autumn colour timing is local and weather-dependent. Do not build a non-refundable trip around a single predicted foliage date.',
+        ],
+      },
+      {
+        title: 'Winter: lower-season value or a snow-focused trip',
+        items: [
+          'Winter can be rewarding for Harbin, snow experiences, museums, food, and quieter urban travel, provided you plan for cold, ice, and shorter daylight.',
+          'Southern destinations such as parts of Yunnan, Guangdong, Guangxi, Fujian, and Hainan may be more comfortable than northern cities, but weather still differs by elevation and coast.',
+          'Outdoor sites may operate shorter schedules or close sections in poor conditions. Verify the official opening information for each key attraction.',
+          'Spring Festival dates move with the lunar calendar and can transform transport demand, business hours, hotel availability, and family travel patterns. Check the official annual schedule before booking.',
+        ],
+      },
+      {
+        title: 'Public holidays can matter more than the weather',
+        items: [
+          'Before paying, check the State Council\'s official holiday arrangement for your travel year. Compensatory working days and the exact break length can change annually.',
+          'The highest-impact periods for many first-time routes include Spring Festival, the early-May Labor Day break, and the National Day holiday period around early October.',
+          'Holiday travel is still possible, but reserve intercity transport, hotels, and capacity-controlled attractions early and expect more queueing and less flexibility.',
+          'A date just outside a peak period can be more valuable than a theoretically perfect weather week inside it.',
+        ],
+      },
+      {
+        title: 'A practical booking timeline',
+        ordered: true,
+        items: [
+          'Choose the regions and non-negotiable experiences before choosing the month.',
+          'Check visa or visa-free eligibility, passport validity, permitted route, and entry conditions.',
+          'Compare city-level climate patterns and the official annual public-holiday calendar.',
+          'Price open-jaw international flights, hotels, and domestic transport for at least two nearby date windows.',
+          'Choose refundable or changeable terms for weather-sensitive routes and peak periods.',
+          'Reserve capacity-controlled attractions and intercity transport when their official sales windows open.',
+          'Review official forecasts and warnings before departure and again before each mountain, river, coastal, or long-distance travel day.',
+        ],
+      },
+      {
+        title: 'Common timing mistakes',
+        items: [
+          'Using one city\'s monthly temperature to plan a route across several climate zones.',
+          'Calling April, May, September, or October “perfect” without checking the exact holiday calendar.',
+          'Treating climate averages as a guarantee for a particular week.',
+          'Planning every day outdoors with no heat, rain, cold, or air-quality alternative.',
+          'Booking mountains, river activities, or high-altitude travel without local safety and operator checks.',
+          'Choosing the cheapest flight dates before comparing hotel prices, train availability, and attraction closures.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is the best month to visit China?',
+        answer:
+          'For a classic Beijing, Xi\'an, and Shanghai trip, April, May, September, and October are useful months to compare. The best exact week depends on public holidays, current weather, prices, and the regions in your route.',
+      },
+      {
+        question: 'Is spring or autumn better for China?',
+        answer:
+          'Both can work well. Spring brings changing temperatures and rain patterns, while autumn can bring comfortable city weather but heavy early-October demand. Choose using your route and exact dates rather than the season name alone.',
+      },
+      {
+        question: 'When is the cheapest time to travel to China?',
+        answer:
+          'Lower prices are more likely outside major public holidays, school breaks, major events, and the most popular weather windows. Compare live flights and hotels because low season differs by city and experience.',
+      },
+      {
+        question: 'Should I avoid China during Golden Week?',
+        answer:
+          'If you have flexible dates, avoiding the National Day holiday period around early October usually reduces competition for trains, hotels, and attractions. If you must travel then, book early and simplify the route.',
+      },
+      {
+        question: 'Is summer too hot for a China trip?',
+        answer:
+          'Not always, but many eastern, central, and southern routes can be hot and humid, with heavy rain and possible coastal storm disruption. Use shorter outdoor blocks, indoor alternatives, weather warnings, and flexible bookings.',
+      },
+      {
+        question: 'Can I visit China in winter?',
+        answer:
+          'Yes. Winter suits Harbin, snow experiences, museums, quieter city travel, and some southern routes. Plan around cold, ice, daylight, seasonal opening hours, and Spring Festival demand.',
+      },
+      {
+        question: 'Can ChinaEase Buddy choose dates for my itinerary?',
+        answer:
+          'Yes. Share your possible dates, destinations, interests, group, pace, weather tolerance, and budget so the route can be matched to the season and practical constraints.',
+      },
+    ],
+    related: [
+      { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' },
+      { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
+      { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
+      { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
+      { label: 'China travel budget', href: '/china-travel-budget/' },
+      { label: 'China visa-free travel guide', href: '/china-visa-free-travel-guide/' },
+      { label: 'China travel safety guide', href: '/china-travel-safety-guide/' },
+      { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
+      { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+      { label: 'First trip to China', href: '/first-trip-to-china/' },
+      { label: 'Get a personalised China itinerary', href: '/#trip-plan' },
+    ],
+    sources: [
+      { label: 'China Meteorological Administration', href: 'https://www.cma.gov.cn/en/' },
+      { label: 'National Meteorological Centre forecasts and warnings', href: 'https://www.nmc.cn/publish/forecast.html' },
+      { label: 'State Council policy portal', href: 'https://english.www.gov.cn/policies/' },
+      { label: 'China government Visit China portal', href: 'https://english.www.gov.cn/services/visitchina/' },
     ],
   },
   'china-esim-internet-guide': {
@@ -4559,6 +4772,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/10-day-china-itinerary')) return '10-day-china-itinerary';
   if (cleanPath.endsWith('/14-day-china-itinerary')) return '14-day-china-itinerary';
   if (cleanPath.endsWith('/beijing-vs-shanghai')) return 'beijing-vs-shanghai';
+  if (cleanPath.endsWith('/best-time-to-visit-china')) return 'best-time-to-visit-china';
   if (cleanPath.endsWith('/china-esim-internet-guide')) return 'china-esim-internet-guide';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
   if (cleanPath.endsWith('/wechat-pay-for-foreigners')) return 'wechat-pay-for-foreigners';
