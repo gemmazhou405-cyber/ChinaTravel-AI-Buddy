@@ -24,6 +24,7 @@ type GuidePageType =
   | 'beijing-vs-shanghai'
   | '3-day-beijing-itinerary'
   | '3-day-shanghai-itinerary'
+  | '3-day-xian-itinerary'
   | 'best-time-to-visit-china'
   | 'china-esim-internet-guide'
   | 'alipay-for-foreigners'
@@ -348,6 +349,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'Beijing vs Shanghai: choose the better first stop based on history, city style, trip length, flights, and onward route.',
           '3-Day Beijing Itinerary: plan the Palace Museum, Great Wall, Temple of Heaven, hutongs, bookings, and transport.',
           '3-Day Shanghai Itinerary: group the Bund, Yuyuan Garden, Wukang Road, Pudong, museums, food, and transport.',
+          '3-Day Xi\'an Itinerary: plan the Terracotta Army, city wall, Muslim Quarter, museums, pagodas, and transport.',
           'Best Time to Visit China: compare seasons, months, regions, crowds, public holidays, and weather risks.',
           'Alipay for Foreigners: understand setup reminders and backup options.',
           'WeChat Pay for Foreigners: add an eligible international card and pay by QR code.',
@@ -390,6 +392,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' },
       { label: '3-day Beijing itinerary', href: '/3-day-beijing-itinerary/' },
       { label: '3-day Shanghai itinerary', href: '/3-day-shanghai-itinerary/' },
+      { label: '3-day Xi\'an itinerary', href: '/3-day-xian-itinerary/' },
       { label: 'Best time to visit China', href: '/best-time-to-visit-china/' },
       { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
       { label: 'WeChat Pay for foreigners', href: '/wechat-pay-for-foreigners/' },
@@ -2750,6 +2753,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
+      { label: '3-day Xi\'an itinerary', href: '/3-day-xian-itinerary/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
       { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
       { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' },
@@ -2916,6 +2920,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
+      { label: '3-day Xi\'an itinerary', href: '/3-day-xian-itinerary/' },
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
       { label: 'First trip to China', href: '/first-trip-to-china/' },
       { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
@@ -3144,6 +3149,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
+      { label: '3-day Xi\'an itinerary', href: '/3-day-xian-itinerary/' },
       { label: '3-day Beijing itinerary', href: '/3-day-beijing-itinerary/' },
       { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
@@ -3722,6 +3728,154 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'Shanghai Municipal Government: scenic spots', href: 'https://english.shanghai.gov.cn/en-ScenicSpots/' },
       { label: 'Shanghai Municipal Government: transportation', href: 'https://english.shanghai.gov.cn/en-Transportation/' },
       { label: 'Shanghai Municipal Government: museums and galleries', href: 'https://english.shanghai.gov.cn/en-MuseumsGalleries/' },
+      { label: 'China Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' },
+    ],
+  },
+  '3-day-xian-itinerary': {
+    path: '/3-day-xian-itinerary/',
+    title: '3-Day Xi\'an Itinerary for First-Time Visitors (2026)',
+    intro:
+      'A realistic first Xi\'an plan covering the Terracotta Army, city wall, Muslim Quarter, Shaanxi History Museum, pagodas, transport, bookings, and food.',
+    metaTitle: '3-Day Xi\'an Itinerary for First-Time Visitors (2026)',
+    metaDescription:
+      'Plan three days in Xi\'an with the Terracotta Army, city wall, Muslim Quarter, Shaanxi History Museum, pagodas, hotels, transport, and alternatives.',
+    quickAnswer:
+      'With three full days in Xi\'an, keep the Terracotta Army as a separate day, use one day for the city wall and historic centre, and reserve the third for the Shaanxi History Museum plus the Big Wild Goose Pagoda area or another focused interest. The official Terracotta Army museum states that foreign visitors can make real-name reservations through its website or official WeChat channel, and that the Terracotta Warriors Museum and Lishan Garden each need substantial time. Book the hardest museum first, use the same passport details throughout, and do not treat arrival or departure as a full sightseeing day.',
+    ctaLabel: 'Get my personalised Xi\'an itinerary',
+    ctaHref: '/#trip-plan',
+    lastReviewed: 'September 21, 2026',
+    lastModified: '2026-09-21',
+    isArticle: true,
+    sections: [
+      {
+        title: 'Three days in Xi\'an at a glance',
+        table: {
+          headers: ['Day', 'Main plan', 'Why this grouping works'],
+          rows: [
+            ['Day 1', 'City wall, Bell and Drum Tower area, Great Mosque and Muslim Quarter', 'Keeps the historic centre together and leaves room for food and evening atmosphere'],
+            ['Day 2', 'Terracotta Army and optional Lishan Garden', 'Protects a full day for the out-of-centre transfer, real-name entry, and museum visit'],
+            ['Day 3', 'Shaanxi History Museum, Big Wild Goose Pagoda area, flexible evening', 'Connects the region\'s history with Tang-era Xi\'an and allows an indoor alternative'],
+          ],
+        },
+        items: [
+          'This itinerary assumes three complete sightseeing days after arrival and before departure.',
+          'Book the hardest reservation first, then organise the other two days around its date and time.',
+          'Do not combine the Terracotta Army, city wall, Shaanxi History Museum, and a Tang show into one rushed day.',
+        ],
+      },
+      {
+        title: 'Day 1: City wall and historic centre',
+        ordered: true,
+        items: [
+          'Start at a city-wall gate that fits the rest of the route, after checking live opening, ticket, bicycle, weather, and gate-access information.',
+          'Walk or cycle only the distance suitable for your fitness and weather. The full wall is much longer than a short photo stop and has limited shade in some conditions.',
+          'Continue to the Bell and Drum Tower area, then visit the Great Mosque and surrounding lanes with respectful clothing and behaviour.',
+          'Treat the Muslim Quarter as a broad neighbourhood experience rather than one famous main street. Compare stalls, watch hygiene, and order smaller portions to try more dishes.',
+          'Keep the evening flexible for a night view, food, or an early finish before the Terracotta Army day.',
+        ],
+      },
+      {
+        title: 'Day 2: Terracotta Army day trip',
+        items: [
+          'Use the official Emperor Qinshihuang\'s Mausoleum Site Museum channel for the current real-name reservation and entry rules. Match the booking exactly to the passport carried on the day.',
+          'Allow enough time for the transfer to Lintong, security, entry, the three main pits, exhibitions, crowds, and the return to central Xi\'an.',
+          'The official museum explains that the Terracotta Warriors Museum and Lishan Garden are separate parts of the site and each requires about 1.5 hours; a shuttle links them.',
+          'Decide in advance whether Lishan Garden is essential. Adding it creates a longer day and should not be treated as a quick extra.',
+          'Avoid unverified “official” guides or transport offers near stations and entrances. Confirm the vehicle, pickup point, inclusions, and return arrangement before leaving.',
+        ],
+      },
+      {
+        title: 'Day 3: Shaanxi History Museum and Tang Xi\'an',
+        ordered: true,
+        items: [
+          'Visit the Shaanxi History Museum only with a confirmed reservation for the correct venue. Its official site publishes live opening times, notices, transport, ticket information, and exhibitions.',
+          'Allow several hours for the collection rather than rushing through every gallery. If tickets are unavailable, use Xi\'an Museum, the Stele Forest Museum, or another verified museum as the backup.',
+          'Continue to the Big Wild Goose Pagoda and surrounding public spaces, choosing the actual pagoda visit, a neighbourhood walk, or evening atmosphere according to time and energy.',
+          'Add one evening show only after checking the venue, seat, language support, start time, duration, and return transport.',
+        ],
+      },
+      {
+        title: 'Book and check these before the trip',
+        table: {
+          headers: ['Item', 'What to confirm', 'When to act'],
+          rows: [
+            ['Terracotta Army', 'Official real-name ticket, passport details, entry time, Lishan Garden plan, transport', 'As soon as the official booking window allows'],
+            ['Shaanxi History Museum', 'Correct venue, official reservation, opening date, passport entry, exhibition access', 'Before fixing Day 3'],
+            ['City wall', 'Open gates, bicycle operation, weather restrictions, last entry', 'Recheck the day before'],
+            ['Hotel', 'Foreign-passport check-in, Chinese address, metro access, late arrival', 'Before paying a non-refundable rate'],
+            ['Onward train', 'Xi\'an North or Xi\'an station, passport name, departure time, change rules', 'Check through the official Railway 12306 service'],
+          ],
+        },
+        items: [
+          'Use the exact passport spelling and document number across tickets, trains, and hotel bookings.',
+          'Museum opening hours, reservation releases, free-ticket rules, exhibitions, and temporary closures can change. Recheck official sources immediately before the visit.',
+        ],
+      },
+      {
+        title: 'Where to stay for a three-day visit',
+        items: [
+          'Inside or near the city wall works well for first-time visitors who prioritise the historic centre, food, evening walks, and metro access.',
+          'The Bell Tower area is central, but check the exact room location, noise, road crossings, and distance to a useful metro entrance.',
+          'The Big Wild Goose Pagoda area can suit travellers prioritising museums, modern public spaces, and a calmer evening base.',
+          'Staying near Xi\'an North station only saves time for a specific early train; it is not automatically the best base for central sightseeing.',
+          'Confirm foreign-passport check-in, deposit method, breakfast time, and the hotel name and address in Chinese.',
+        ],
+      },
+      {
+        title: 'Transport and daily pace',
+        items: [
+          'Use the metro for central-city journeys and verified taxis or ride-hailing for awkward connections. Save the destination in Chinese and verify the licence plate.',
+          'The Terracotta Army sits outside central Xi\'an, so compare official public transport with a clearly documented private transfer by total time and reliability.',
+          'Xi\'an North and Xi\'an railway stations are different. Save the complete station name shown on the ticket and allow time for security and passport checks.',
+          'Walking surfaces, stairs, heat, cold, rain, and crowds can change the pace. Build one flexible block into every day.',
+        ],
+      },
+      {
+        title: 'Adjust the itinerary for your trip',
+        table: {
+          headers: ['Situation', 'Best adjustment'],
+          rows: [
+            ['Only two full days', 'Keep the Terracotta Army and combine a focused city-wall visit with one central neighbourhood'],
+            ['Four full days', 'Add a deeper museum day, Hanyangling, the Stele Forest, or a slower food and neighbourhood day'],
+            ['Museum tickets unavailable', 'Use Xi\'an Museum or another official museum and keep the Big Wild Goose Pagoda area'],
+            ['Extreme heat or poor air/weather', 'Shorten exposed wall time and move an indoor museum earlier'],
+            ['Travelling with children', 'Reduce museum duration, protect meal breaks, and avoid stacking a late show after the Terracotta Army'],
+            ['Limited mobility', 'Use shorter wall sections, verify accessibility, and budget for more point-to-point transport'],
+          ],
+        },
+        items: [
+          'If Xi\'an is part of a Beijing–Xi\'an–Shanghai trip, connect this plan with the 7-day, 10-day, or 14-day itinerary and protect the rail transfer blocks.',
+          'A day trip to Mount Hua is not a casual addition to these three days; add another day and plan around weather, transport, tickets, and physical ability.',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'Are three days enough for Xi\'an?', answer: 'Yes. Three full days are enough for one historic-centre day, one Terracotta Army day, and one museum plus pagoda day. A late arrival and early departure should not be counted as two of those days.' },
+      { question: 'How much time do I need at the Terracotta Army?', answer: 'Protect most of a day including the transfer from central Xi\'an. The official museum says the Terracotta Warriors Museum and Lishan Garden each need about 1.5 hours, before transport, security, queues, and breaks.' },
+      { question: 'Do foreigners need to book the Terracotta Army in advance?', answer: 'Use the live official real-name reservation process and carry the passport used for booking. The museum states that foreign visitors can reserve through its official website or WeChat channel.' },
+      { question: 'Is the Shaanxi History Museum worth visiting?', answer: 'Yes for travellers who want context for Zhou, Qin, Han, and Tang history. It can be difficult to reserve, so confirm the correct venue and keep another official museum as a backup.' },
+      { question: 'Where should a first-time visitor stay in Xi\'an?', answer: 'Near the city wall or a useful central metro station is usually the simplest choice. The Bell Tower area is convenient, while the Big Wild Goose Pagoda area suits museum and evening-space priorities.' },
+      { question: 'Which railway station should I use in Xi\'an?', answer: 'Use the exact station printed on the ticket. Xi\'an North handles many high-speed trains and is separate from Xi\'an station, so compare hotel transfer time before booking.' },
+      { question: 'Can ChinaEase Buddy personalise this Xi\'an itinerary?', answer: 'Yes. Share your dates, trains or flights, hotel, group, interests, walking ability, budget, and fixed bookings to receive a route adapted to the actual trip.' },
+    ],
+    related: [
+      { label: '3-day Beijing itinerary', href: '/3-day-beijing-itinerary/' },
+      { label: '3-day Shanghai itinerary', href: '/3-day-shanghai-itinerary/' },
+      { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
+      { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
+      { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
+      { label: 'Best time to visit China', href: '/best-time-to-visit-china/' },
+      { label: 'China train travel guide', href: '/china-train-travel-guide/' },
+      { label: 'China metro guide', href: '/china-metro-guide/' },
+      { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+      { label: 'China travel apps', href: '/china-travel-apps/' },
+      { label: 'First trip to China', href: '/first-trip-to-china/' },
+      { label: 'Get a personalised Xi\'an itinerary', href: '/#trip-plan' },
+    ],
+    sources: [
+      { label: 'Emperor Qinshihuang\'s Mausoleum Site Museum official website', href: 'https://www.bmy.com.cn/index.html' },
+      { label: 'Shaanxi History Museum official website', href: 'https://www.sxhm.com/index.html' },
+      { label: 'Xi\'an City Wall official website', href: 'https://www.xacitywall.com/' },
       { label: 'China Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' },
     ],
   },
@@ -5139,6 +5293,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/beijing-vs-shanghai')) return 'beijing-vs-shanghai';
   if (cleanPath.endsWith('/3-day-beijing-itinerary')) return '3-day-beijing-itinerary';
   if (cleanPath.endsWith('/3-day-shanghai-itinerary')) return '3-day-shanghai-itinerary';
+  if (cleanPath.endsWith('/3-day-xian-itinerary')) return '3-day-xian-itinerary';
   if (cleanPath.endsWith('/best-time-to-visit-china')) return 'best-time-to-visit-china';
   if (cleanPath.endsWith('/china-esim-internet-guide')) return 'china-esim-internet-guide';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
