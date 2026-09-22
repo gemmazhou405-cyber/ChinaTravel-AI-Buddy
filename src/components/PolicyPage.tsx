@@ -28,6 +28,7 @@ type GuidePageType =
   | '3-day-chongqing-itinerary'
   | '3-day-chengdu-itinerary'
   | '3-day-guilin-yangshuo-itinerary'
+  | '3-day-zhangjiajie-itinerary'
   | 'best-time-to-visit-china'
   | 'china-esim-internet-guide'
   | 'alipay-for-foreigners'
@@ -399,6 +400,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: '3-day Chongqing itinerary', href: '/3-day-chongqing-itinerary/' },
       { label: '3-day Chengdu itinerary', href: '/3-day-chengdu-itinerary/' },
       { label: '3-day Guilin and Yangshuo itinerary', href: '/3-day-guilin-yangshuo-itinerary/' },
+      { label: '3-day Zhangjiajie itinerary', href: '/3-day-zhangjiajie-itinerary/' },
       { label: 'Best time to visit China', href: '/best-time-to-visit-china/' },
       { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
       { label: 'WeChat Pay for foreigners', href: '/wechat-pay-for-foreigners/' },
@@ -4178,6 +4180,35 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'Visit Guilin: official Guilin travel guide', href: 'https://visitguilin.org/' }, { label: 'Visit Guilin: Li River', href: 'https://visitguilin.org/things-to-do/guilin-attractions/li-river/' }, { label: 'Visit Guilin: Yulong River', href: 'https://visitguilin.org/things-to-do/yangshuo-attractions/yulong-river/' }, { label: 'China Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' },
     ],
   },
+  '3-day-zhangjiajie-itinerary': {
+    path: '/3-day-zhangjiajie-itinerary/', title: '3-Day Zhangjiajie Itinerary for First-Time Visitors (2026)',
+    intro: 'A realistic first Zhangjiajie plan covering Wulingyuan, Zhangjiajie National Forest Park, Tianmen Mountain, entrances, hotels, transport, weather, and walking difficulty.',
+    metaTitle: '3-Day Zhangjiajie Itinerary for First-Time Visitors (2026)',
+    metaDescription: 'Plan three days in Zhangjiajie with Wulingyuan, the national forest park, Tianmen Mountain, hotels, park entrances, trains, weather, and alternatives.',
+    quickAnswer: 'With three full days, stay near Wulingyuan for two days in Zhangjiajie National Forest Park, then use one separate day for Tianmen Mountain near Zhangjiajie city. Wulingyuan is a large UNESCO-listed scenic area, not one short trail, and Tianmen Mountain is a different attraction with its own ticket and access route. Confirm the park entrance, timed ticket, shuttle and cableway operations, weather, walking difficulty, and final transport before each day.',
+    ctaLabel: 'Get my personalised Zhangjiajie itinerary', ctaHref: '/#trip-plan', lastReviewed: 'September 22, 2026', lastModified: '2026-09-22', isArticle: true,
+    sections: [
+      { title: 'Three days at a glance', table: { headers: ['Day', 'Main plan', 'Best base'], rows: [['Day 1', 'Wulingyuan entrance, Yuanjiajie area, one upper scenic route', 'Wulingyuan'], ['Day 2', 'Second forest-park route: Tianzi Mountain or a valley-level alternative', 'Wulingyuan'], ['Day 3', 'Tianmen Mountain, then Zhangjiajie city departure', 'Zhangjiajie city']] }, items: ['This plan assumes three complete sightseeing days and workable weather.', 'Do not combine Tianmen Mountain with a full Wulingyuan park day.', 'Keep one route flexible because fog, rain, wind, queues, and transport operations can change visibility and access.'] },
+      { title: 'Day 1: first Wulingyuan park route', ordered: true, items: ['Enter through the gate that matches your hotel and planned route; Wulingyuan and Zhangjiajie National Forest Park gates are not interchangeable starting points.', 'Use the official park map and live shuttle information to select one upper scenic area rather than chasing every viewpoint.', 'Allow time for queues at shuttle buses, lifts, cableways, and popular viewpoints.', 'Carry water and weather protection, but keep luggage at the hotel. Return before the final internal transport service.'] },
+      { title: 'Day 2: second forest-park route', items: ['Choose a contrasting route such as Tianzi Mountain, Yangjiajie, Golden Whip Stream, or another open section based on weather and walking ability.', 'Low cloud can hide upper viewpoints; a valley walk may be the better alternative, but rain can make stone paths slippery.', 'Do not assume every lift, cableway, trail, or gate is operating. Check live notices and last-service times.', 'Move to Zhangjiajie city after the park only if it improves the confirmed Tianmen Mountain entry and departure plan.'] },
+      { title: 'Day 3: Tianmen Mountain', ordered: true, items: ['Use the ticket route and entry time shown on the current official booking; different route products can reverse the order of cableway, road, and mountain sections.', 'Allow most of the day for check-in, queues, cableway or shuttle travel, cliff paths, weather changes, and descent.', 'Glass walkways and exposed cliff paths are optional. Choose alternatives if heights, rain, wind, or mobility make them unsuitable.', 'Keep a generous buffer before an evening train or flight; do not rely on a best-case descent time.'] },
+      { title: 'Do not confuse these places', table: { headers: ['Place', 'What it is', 'Planning consequence'], rows: [['Wulingyuan', 'Main tourist base and a common park entrance area', 'Best for two forest-park days'], ['Zhangjiajie National Forest Park', 'Part of the wider Wulingyuan scenic area', 'Multiple gates and large internal transport network'], ['Tianmen Mountain', 'Separate mountain attraction by Zhangjiajie city', 'Separate ticket and dedicated day'], ['Zhangjiajie city', 'Transport hub near Tianmen Mountain', 'Not the best base for early Wulingyuan starts'], ['Zhangjiajie West station', 'Major railway station', 'Check hotel and park transfer time']] }, items: ['Save every gate, hotel, station, and ticket name in Chinese.', 'A place that looks close on a map may still require a shuttle, cableway, queue, or mountain road.'] },
+      { title: 'Where to stay and how to move', items: ['Stay near Wulingyuan for the first two park days to protect early starts and reduce daily transfers.', 'Move to Zhangjiajie city only when Tianmen Mountain or an early departure makes it useful.', 'Confirm foreign-passport check-in, luggage storage, breakfast time, and late arrival before booking.', 'Use verified hotel transfers, official park transport, or ride-hailing with the destination saved in Chinese.', 'Check whether your train uses Zhangjiajie West or another station and copy the exact station from the ticket.'] },
+      { title: 'Book and check before travel', table: { headers: ['Item', 'What to confirm', 'When to check'], rows: [['Wulingyuan ticket', 'Valid dates, entrance, passport, included transport, re-entry rules', 'Before choosing the hotel'], ['Tianmen Mountain', 'Route product, timed entry, cableway or shuttle sequence', 'Before fixing Day 3'], ['Weather', 'Rain, fog, wind, heat, visibility and warnings', 'Each morning'], ['Hotel', 'Correct base, foreign-passport check-in, luggage transfer', 'Before paying'], ['Train or flight', 'Exact station or airport, departure buffer and baggage', 'Before the final day']] }, items: ['Tickets, route products, park sections, lifts, cableways, shuttle buses, and safety closures can change.', 'Use current official notices and keep a lower-level or rest-day alternative.'] },
+      { title: 'Adjust this itinerary', items: ['With two full days, choose one Wulingyuan day and one Tianmen Mountain day.', 'With four days, add another forest-park route or a recovery day; do not automatically add another distant attraction.', 'With children or limited mobility, shorten cliff paths, verify lift access, and protect meal and toilet breaks.', 'In heavy fog, prioritise safe lower routes and accept that famous pillar views may not appear.', 'If Zhangjiajie replaces Chengdu or Guilin in a longer China route, verify the actual flight or rail schedule before setting the city order.'] },
+    ],
+    faqs: [
+      { question: 'Are three days enough for Zhangjiajie?', answer: 'Yes for two Wulingyuan park days and one Tianmen Mountain day. Add time for slower walking, uncertain weather, or another regional attraction.' },
+      { question: 'Is Tianmen Mountain inside Zhangjiajie National Forest Park?', answer: 'No. Tianmen Mountain is a separate attraction near Zhangjiajie city with its own ticket and access route.' },
+      { question: 'Where should I stay in Zhangjiajie?', answer: 'Stay near Wulingyuan for the forest-park days, then consider Zhangjiajie city for Tianmen Mountain or an early departure.' },
+      { question: 'Which park entrance should I use?', answer: 'Use the entrance that matches the confirmed route and hotel. Multiple gates lead to different parts of the large scenic area, so do not choose only by the English name.' },
+      { question: 'What if Zhangjiajie is foggy or raining?', answer: 'Upper viewpoints may disappear and stone paths can become slippery. Check warnings and live operations, use a safe lower route, or keep a flexible rest block.' },
+      { question: 'Which railway station serves Zhangjiajie?', answer: 'Many high-speed services use Zhangjiajie West, but use the exact station printed on the ticket and calculate the transfer from your hotel.' },
+      { question: 'Can ChinaEase Buddy personalise this itinerary?', answer: 'Yes. Share your dates, tickets, hotel, walking ability, heights tolerance, group, and onward transport for a route adapted to the actual trip.' },
+    ],
+    related: [{ label: '3-day Guilin and Yangshuo itinerary', href: '/3-day-guilin-yangshuo-itinerary/' }, { label: '3-day Chengdu itinerary', href: '/3-day-chengdu-itinerary/' }, { label: '14-day China itinerary', href: '/14-day-china-itinerary/' }, { label: '10-day China itinerary', href: '/10-day-china-itinerary/' }, { label: 'China train travel guide', href: '/china-train-travel-guide/' }, { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' }, { label: 'China travel apps', href: '/china-travel-apps/' }, { label: 'Best time to visit China', href: '/best-time-to-visit-china/' }, { label: 'First trip to China', href: '/first-trip-to-china/' }, { label: 'Get a personalised Zhangjiajie itinerary', href: '/#trip-plan' }],
+    sources: [{ label: 'UNESCO: Wulingyuan Scenic and Historic Interest Area', href: 'https://whc.unesco.org/en/list/640/' }, { label: 'Hunan Provincial Government English website', href: 'https://enghunan.gov.cn/' }, { label: 'China Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' }],
+  },
   'best-time-to-visit-china': {
     path: '/best-time-to-visit-china/',
     title: 'Best Time to Visit China: Weather and Crowds by Month (2026)',
@@ -5596,6 +5627,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/3-day-chongqing-itinerary')) return '3-day-chongqing-itinerary';
   if (cleanPath.endsWith('/3-day-chengdu-itinerary')) return '3-day-chengdu-itinerary';
   if (cleanPath.endsWith('/3-day-guilin-yangshuo-itinerary')) return '3-day-guilin-yangshuo-itinerary';
+  if (cleanPath.endsWith('/3-day-zhangjiajie-itinerary')) return '3-day-zhangjiajie-itinerary';
   if (cleanPath.endsWith('/best-time-to-visit-china')) return 'best-time-to-visit-china';
   if (cleanPath.endsWith('/china-esim-internet-guide')) return 'china-esim-internet-guide';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
