@@ -27,6 +27,7 @@ type GuidePageType =
   | '3-day-xian-itinerary'
   | '3-day-chongqing-itinerary'
   | '3-day-chengdu-itinerary'
+  | '3-day-guilin-yangshuo-itinerary'
   | 'best-time-to-visit-china'
   | 'china-esim-internet-guide'
   | 'alipay-for-foreigners'
@@ -397,6 +398,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: '3-day Xi\'an itinerary', href: '/3-day-xian-itinerary/' },
       { label: '3-day Chongqing itinerary', href: '/3-day-chongqing-itinerary/' },
       { label: '3-day Chengdu itinerary', href: '/3-day-chengdu-itinerary/' },
+      { label: '3-day Guilin and Yangshuo itinerary', href: '/3-day-guilin-yangshuo-itinerary/' },
       { label: 'Best time to visit China', href: '/best-time-to-visit-china/' },
       { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
       { label: 'WeChat Pay for foreigners', href: '/wechat-pay-for-foreigners/' },
@@ -4125,6 +4127,57 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' },
     ],
   },
+  '3-day-guilin-yangshuo-itinerary': {
+    path: '/3-day-guilin-yangshuo-itinerary/',
+    title: '3-Day Guilin and Yangshuo Itinerary (2026)',
+    intro: 'A realistic first Guilin and Yangshuo plan covering the Li River, Yulong River, karst countryside, Xingping, transport, hotels, weather, and activity choices.',
+    metaTitle: '3-Day Guilin and Yangshuo Itinerary (2026)',
+    metaDescription: 'Plan three days in Guilin and Yangshuo with the Li River, Yulong River, Xingping, karst scenery, hotels, trains, transfers, weather, and alternatives.',
+    quickAnswer: 'For three full days, spend the first night in Guilin, travel down the Li River or transfer by road on Day 2, then use two nights in Yangshuo for the Yulong River and karst countryside. Do not treat Guilin city, Yangshuo town, Xingping, the Longji rice terraces, and every river activity as one compact area. Choose one main river experience, confirm the correct pier or pickup point, and plan around rainfall, river conditions, visibility, and luggage transfers.',
+    ctaLabel: 'Get my personalised Guilin and Yangshuo itinerary', ctaHref: '/#trip-plan',
+    lastReviewed: 'September 22, 2026', lastModified: '2026-09-22', isArticle: true,
+    sections: [
+      { title: 'Three days at a glance', table: { headers: ['Day', 'Main plan', 'Overnight'], rows: [
+        ['Day 1', 'Arrive in Guilin, lakes or one central sight, prepare the river transfer', 'Guilin'],
+        ['Day 2', 'Li River cruise or verified road transfer, arrive in Yangshuo, easy evening', 'Yangshuo'],
+        ['Day 3', 'Yulong River and countryside, or Xingping as the main alternative', 'Yangshuo or depart'],
+      ] }, items: ['This itinerary assumes three complete sightseeing days; a late arrival should not be counted as Day 1.', 'One night in Guilin and two in Yangshuo usually reduces backtracking for a landscape-focused first visit.', 'Longji rice terraces need additional transfer time and normally work better with a fourth day.'] },
+      { title: 'Day 1: arrive and keep Guilin simple', ordered: true, items: ['Check whether you arrive at Guilin Liangjiang International Airport, Guilin railway station, Guilin North, or Guilin West; they require different transfers.', 'Choose one compact city experience such as the central lakes, Elephant Trunk Hill area, or a relaxed food walk rather than filling the day with distant caves and parks.', 'Confirm the next morning\'s Li River cruise pier, pickup, ticket, passport requirements, luggage policy, and Yangshuo drop-off before sleeping.', 'If weather or river operations make the cruise unsuitable, keep a verified road transfer as the alternative.'] },
+      { title: 'Day 2: Guilin to Yangshuo', ordered: true, items: ['For the classic river journey, use a verified Li River cruise product and confirm the actual departure pier. The Guilin travel guide notes that common piers sit outside the city centre.', 'Allow for the transfer to the pier, check-in, the cruise itself, disembarkation, and the final transfer to your Yangshuo hotel.', 'If travelling by road instead, use the saved Chinese hotel address and confirm whether the driver reaches the hotel entrance or a nearby vehicle-access point.', 'After check-in, keep the evening easy. West Street can be lively and crowded; it is optional rather than the whole Yangshuo experience.'] },
+      { title: 'Day 3: Yulong River countryside or Xingping', items: ['Choose the Yulong River for a slower countryside day, cycling or walking, and a separately booked regulated rafting section if operating.', 'Choose Xingping for Li River viewpoints and an old-town base, but verify the transfer from Yangshuo and do not assume Yangshuo railway station sits beside Yangshuo town.', 'For cycling or e-bikes, check the vehicle, helmet, traffic comfort, weather, battery, route surface, and return plan before leaving.', 'Avoid entering closed river sections or using unverified boats. Heavy rain, high water, heat, and poor visibility can change the safest plan.'] },
+      { title: 'Choose one main landscape experience', table: { headers: ['Experience', 'Best for', 'Main planning issue'], rows: [
+        ['Li River cruise', 'Classic Guilin-to-Yangshuo scenery', 'Correct pier, fixed departure, luggage and weather'],
+        ['Yulong River', 'Slower countryside and short activities', 'Section choice, rafting operation and local transfers'],
+        ['Xingping', 'River viewpoints and photography', 'Separate location and station confusion'],
+        ['Longji terraces', 'Rice terraces and village landscapes', 'Long transfer; add a fourth day'],
+        ['Yangshuo town', 'Restaurants and convenient base', 'Crowds and distance from rural scenery'],
+      ] }, items: ['A cruise and a Yulong countryside day complement each other; multiple similar boat activities may not add enough value.', 'Choose activities for the actual season and river conditions, not only for photos seen online.'] },
+      { title: 'Where to stay and how to move', items: ['Stay centrally in Guilin only for the first night and an easy morning departure; verify the transfer to the actual cruise pier.', 'In Yangshuo, town is convenient for restaurants, while countryside hotels provide quieter scenery but require more transport.', 'Confirm that the hotel accepts foreign passports and save its Chinese name, phone number, location pin, and vehicle-access instructions.', 'Yangshuo railway station is closer to Xingping than to Yangshuo town. Calculate the full hotel transfer before selecting it.', 'Use China Railway 12306 for the exact station name and train, and allow time for security and passport checks.'] },
+      { title: 'Book and check before travel', table: { headers: ['Item', 'What to confirm', 'When to check'], rows: [
+        ['Li River cruise', 'Operator, pier, pickup, entry ID, luggage, end point', 'Before booking the Guilin hotel'],
+        ['Yulong activity', 'Official operation, section, age or safety rules, weather', 'Recheck the day before'],
+        ['Hotel', 'Foreign-passport check-in, road access, Chinese address', 'Before paying a non-refundable rate'],
+        ['Train', 'Exact Guilin or Yangshuo-area station and passport details', 'Before fixing transfers'],
+        ['Outdoor day', 'Rain, heat, visibility, water conditions, closure notices', 'Morning of the activity'],
+      ] }, items: ['River schedules, piers, access, rafting sections, and safety restrictions can change. Confirm with official or authorised channels immediately before travel.', 'Keep a weather-safe alternative such as a shorter city route, café, museum, or rest block.'] },
+      { title: 'Adjust this itinerary', items: ['With two full days, travel directly to Yangshuo or use the Li River transfer, then keep one countryside day.', 'With four days, add Longji, a slower Xingping day, or more time in the Yangshuo countryside—choose one.', 'With children or limited mobility, reduce cycling and steep viewpoints, confirm boat access, and arrange point-to-point transport.', 'If Guilin and Yangshuo replace Chengdu in a 14-day China route, compare the exact flight or rail connection before fixing the city order.', 'Avoid stacking a late show after a long outdoor day unless transport and group energy are secure.'] },
+    ],
+    faqs: [
+      { question: 'Are three days enough for Guilin and Yangshuo?', answer: 'Yes for one Guilin arrival day, one river or transfer day, and one Yangshuo countryside day. Add another day for Longji or a slower Xingping visit.' },
+      { question: 'Should I stay in Guilin or Yangshuo?', answer: 'For a scenery-focused trip, spend the first night in Guilin and two nights in Yangshuo. Guilin is useful for arrival and cruise access; Yangshuo is better for the Yulong River and countryside.' },
+      { question: 'Is the Li River cruise worth it?', answer: 'It is the classic Guilin-to-Yangshuo landscape journey and also functions as a transfer. Confirm the operator, pier, luggage arrangement, weather policy, and Yangshuo endpoint before booking.' },
+      { question: 'What is the difference between the Li River and Yulong River?', answer: 'The Li River offers the broader Guilin-to-Yangshuo landscape journey. The Yulong River is a smaller Yangshuo-area countryside experience suited to shorter activities, walking, cycling, and regulated rafting sections.' },
+      { question: 'Is Yangshuo railway station in Yangshuo town?', answer: 'No. It is closer to Xingping and requires an onward transfer to Yangshuo town. Calculate the full journey before booking a train or hotel pickup.' },
+      { question: 'Should I add the Longji rice terraces?', answer: 'Add Longji only with another day or by replacing a core activity. The road transfer and village access make it a poor fit as a rushed extra in this three-day plan.' },
+      { question: 'Can ChinaEase Buddy personalise this route?', answer: 'Yes. Share your dates, arrival station or airport, hotels, group, mobility, weather tolerance, and preferred river activities for a route adapted to the actual trip.' },
+    ],
+    related: [
+      { label: '14-day China itinerary', href: '/14-day-china-itinerary/' }, { label: '10-day China itinerary', href: '/10-day-china-itinerary/' }, { label: '3-day Chengdu itinerary', href: '/3-day-chengdu-itinerary/' }, { label: '3-day Chongqing itinerary', href: '/3-day-chongqing-itinerary/' }, { label: 'China train travel guide', href: '/china-train-travel-guide/' }, { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' }, { label: 'China travel apps', href: '/china-travel-apps/' }, { label: 'Best time to visit China', href: '/best-time-to-visit-china/' }, { label: 'First trip to China', href: '/first-trip-to-china/' }, { label: 'Get a personalised Guilin and Yangshuo itinerary', href: '/#trip-plan' },
+    ],
+    sources: [
+      { label: 'Visit Guilin: official Guilin travel guide', href: 'https://visitguilin.org/' }, { label: 'Visit Guilin: Li River', href: 'https://visitguilin.org/things-to-do/guilin-attractions/li-river/' }, { label: 'Visit Guilin: Yulong River', href: 'https://visitguilin.org/things-to-do/yangshuo-attractions/yulong-river/' }, { label: 'China Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' },
+    ],
+  },
   'best-time-to-visit-china': {
     path: '/best-time-to-visit-china/',
     title: 'Best Time to Visit China: Weather and Crowds by Month (2026)',
@@ -5542,6 +5595,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/3-day-xian-itinerary')) return '3-day-xian-itinerary';
   if (cleanPath.endsWith('/3-day-chongqing-itinerary')) return '3-day-chongqing-itinerary';
   if (cleanPath.endsWith('/3-day-chengdu-itinerary')) return '3-day-chengdu-itinerary';
+  if (cleanPath.endsWith('/3-day-guilin-yangshuo-itinerary')) return '3-day-guilin-yangshuo-itinerary';
   if (cleanPath.endsWith('/best-time-to-visit-china')) return 'best-time-to-visit-china';
   if (cleanPath.endsWith('/china-esim-internet-guide')) return 'china-esim-internet-guide';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
