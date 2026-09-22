@@ -26,6 +26,7 @@ type GuidePageType =
   | '3-day-shanghai-itinerary'
   | '3-day-xian-itinerary'
   | '3-day-chongqing-itinerary'
+  | '3-day-chengdu-itinerary'
   | 'best-time-to-visit-china'
   | 'china-esim-internet-guide'
   | 'alipay-for-foreigners'
@@ -395,6 +396,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: '3-day Shanghai itinerary', href: '/3-day-shanghai-itinerary/' },
       { label: '3-day Xi\'an itinerary', href: '/3-day-xian-itinerary/' },
       { label: '3-day Chongqing itinerary', href: '/3-day-chongqing-itinerary/' },
+      { label: '3-day Chengdu itinerary', href: '/3-day-chengdu-itinerary/' },
       { label: 'Best time to visit China', href: '/best-time-to-visit-china/' },
       { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
       { label: 'WeChat Pay for foreigners', href: '/wechat-pay-for-foreigners/' },
@@ -4028,6 +4030,101 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' },
     ],
   },
+  '3-day-chengdu-itinerary': {
+    path: '/3-day-chengdu-itinerary/',
+    title: '3-Day Chengdu Itinerary for First-Time Visitors (2026)',
+    intro: 'A realistic first Chengdu plan covering giant pandas, People\'s Park, teahouses, Sichuan food, historic streets, museums, transport, and day-trip choices.',
+    metaTitle: '3-Day Chengdu Itinerary for First-Time Visitors (2026)',
+    metaDescription: 'Plan three days in Chengdu with the Panda Base, People\'s Park, Sichuan food, museums, hotels, transport, Leshan, and Sanxingdui alternatives.',
+    quickAnswer: 'With three full days in Chengdu, visit the Chengdu Research Base of Giant Panda Breeding early on one morning, use another day for People\'s Park, a teahouse, central neighbourhoods, and Sichuan food, then choose either a deeper city day or one focused excursion such as Leshan or Sanxingdui. The Panda Base requires advance online booking according to its official ticket notice. Do not combine pandas, Leshan, Sanxingdui, and every central attraction into three days; choose one out-of-city priority and leave room for meals, queues, and transport.',
+    ctaLabel: 'Get my personalised Chengdu itinerary',
+    ctaHref: '/#trip-plan',
+    lastReviewed: 'September 22, 2026',
+    lastModified: '2026-09-22',
+    isArticle: true,
+    sections: [
+      {
+        title: 'Three days in Chengdu at a glance',
+        table: { headers: ['Day', 'Main plan', 'Why this grouping works'], rows: [
+          ['Day 1', 'People\'s Park, teahouse, central neighbourhoods, Sichuan dinner', 'Starts slowly and keeps flexible city experiences together'],
+          ['Day 2', 'Early Panda Base visit, Giant Panda Museum if booked, relaxed evening', 'Protects the best part of the day for animal activity and the large park'],
+          ['Day 3', 'Leshan or Sanxingdui, or a second Chengdu culture-and-food day', 'Gives one clear priority instead of stacking incompatible excursions'],
+        ] },
+        items: ['This itinerary assumes three complete sightseeing days after arrival and before departure.', 'Book the Panda Base first, then organise the other days around its confirmed entry period.', 'Chengdu rewards slower meals and neighbourhood time, so avoid treating every stop as a short photo visit.'],
+      },
+      {
+        title: 'Day 1: teahouse culture and central Chengdu', ordered: true,
+        items: ['Start at People\'s Park and choose a teahouse experience without trying to schedule every park activity.', 'Continue through one or two central areas such as Kuanzhai Alley, Tianfu Square, or a nearby museum, depending on crowds and your interests.', 'Use the afternoon for a neighbourhood walk, café, or rest rather than crossing the city for another checklist sight.', 'Plan a Sichuan dinner with the spice level, allergies, offal, bones, and shared-dish format clearly communicated. Order conservatively before adding more.', 'Keep the evening flexible for Jinli, a performance, or a quieter local area, but verify current hours and transport before going.'],
+      },
+      {
+        title: 'Day 2: Chengdu Panda Base', ordered: true,
+        items: ['Reserve through the official Panda Base channel. Its current ticket notice says all visitors should book online in advance, with on-site sales subject to availability in special circumstances.', 'Choose the correct site: a Panda Base ticket does not cover the separate Dujiangyan Panda Valley.', 'Arrive early enough for your booked entry period and allow time for security, walking, orientation, crowds, and animal rest periods.', 'Use the official map to plan a limited route. The base is extensive, so prioritise a few enclosures instead of rushing everywhere.', 'If visiting the Chengdu Giant Panda Museum, follow its separate official reservation instructions. Keep the evening light after the long walking day.'],
+      },
+      {
+        title: 'Day 3: choose Leshan, Sanxingdui, or Chengdu',
+        items: ['Choose Leshan for the UNESCO-listed Giant Buddha and a full heritage excursion. Confirm the live rail or road plan, scenic-area tickets, weather, walking route, and return time.', 'Choose Sanxingdui for archaeology and bronze-age culture. Confirm the official museum reservation, the exact transport connection, passport entry rules, and return journey before fixing the day.', 'Stay in Chengdu if you prefer food, teahouses, markets, museums, or a lower-effort final day. Jinsha Site Museum can provide archaeological context without the longer Sanxingdui transfer.', 'Do not attempt both Leshan and Sanxingdui on the same day. Each deserves a focused visit and reliable return plan.'],
+      },
+      {
+        title: 'Choose the right third day',
+        table: { headers: ['Priority', 'Best choice', 'Main trade-off'], rows: [
+          ['Giant Buddha and UNESCO heritage', 'Leshan', 'Longer transfer, weather and walking considerations'],
+          ['Ancient archaeology and bronzes', 'Sanxingdui Museum', 'Advance reservation and out-of-city transport'],
+          ['Food and relaxed local life', 'Stay in Chengdu', 'Fewer headline day-trip sights'],
+          ['Travelling with young children', 'Panda day plus a gentle city day', 'Skip the longest excursion'],
+          ['Limited mobility', 'Accessible city museums and direct rides', 'Verify each entrance and facility in advance'],
+        ] },
+        items: ['Mount Emei normally needs more time than a casual addition to this three-day plan. Add a separate day or overnight plan if it is a priority.', 'Weather, ticket availability, group energy, and onward transport should decide the final choice.'],
+      },
+      {
+        title: 'Where to stay and how to get around',
+        items: ['Tianfu Square and nearby metro stations offer a central base for first-time visitors, but check the exact walk from the station exit.', 'Chunxi Road and Taikoo Li suit travellers prioritising restaurants, shopping, and evening activity; compare noise and room location.', 'A hotel near one attraction is not automatically convenient for the whole trip. Prioritise a useful metro connection and verified foreign-passport check-in.', 'Use the metro for predictable city transfers and verified ride-hailing for awkward connections. Save destinations and your hotel address in Chinese.', 'Tianfu International Airport is far from central Chengdu. Shuangliu and Tianfu are different airports, so confirm the full airport and terminal before planning the transfer.'],
+      },
+      {
+        title: 'Book and check these before the trip',
+        table: { headers: ['Item', 'What to confirm', 'When to act'], rows: [
+          ['Panda Base', 'Correct site, official ticket, entry period, passport details, route', 'As soon as the official window allows'],
+          ['Giant Panda Museum', 'Separate reservation method and entry conditions', 'Before fixing Day 2'],
+          ['Day 3 excursion', 'Ticket, passport rules, transport, weather, return time', 'Before paying for a fixed transfer'],
+          ['Hotel', 'Foreign-passport check-in, metro access, Chinese address, late arrival', 'Before choosing a non-refundable rate'],
+          ['Train or flight', 'Exact station, airport, terminal, passport name, baggage rules', 'Before planning arrival and departure day'],
+        ] },
+        items: ['Use the exact passport spelling across tickets, trains, flights, and hotels.', 'Opening hours, entry periods, museum reservations, animal visibility, and transport can change. Recheck official sources immediately before travel.'],
+      },
+      {
+        title: 'Adjust the itinerary for your trip',
+        items: ['With only two full days, keep the Panda Base and one central Chengdu day; skip the excursion.', 'With four days, add either Leshan or Sanxingdui without sacrificing the city experience.', 'With five or more days, consider Dujiangyan, Mount Qingcheng, or an overnight Emei plan after checking current access and transport.', 'For food allergies or dietary restrictions, carry a Chinese allergy card and confirm ingredients, broth, oils, garnishes, and shared utensils.', 'If Chengdu sits between Xi\'an and Shanghai, protect the transfer blocks and connect this plan with the 14-day China itinerary.'],
+      },
+    ],
+    faqs: [
+      { question: 'Are three days enough for Chengdu?', answer: 'Yes. Three full days allow one central city day, one Panda Base day, and either one excursion or a deeper city day. Arrival and departure days should not be counted as full sightseeing days.' },
+      { question: 'Do I need to book the Chengdu Panda Base in advance?', answer: 'Yes. The official ticket page currently says all visitors are required to book online in advance, while on-site purchases in special circumstances depend on availability.' },
+      { question: 'What time should I visit the pandas?', answer: 'An early visit is usually the most practical plan because it protects time for the large park and can avoid part of the later-day crowd. Animal activity is never guaranteed, so use the current official entry periods rather than relying on an old timetable.' },
+      { question: 'Should I visit Leshan or Sanxingdui?', answer: 'Choose Leshan for the Giant Buddha and UNESCO heritage; choose Sanxingdui for archaeology and distinctive bronze culture. Both need a dedicated day and confirmed tickets and transport.' },
+      { question: 'Where should a first-time visitor stay in Chengdu?', answer: 'A central hotel near a useful metro station around Tianfu Square, Chunxi Road, or another well-connected area is usually easiest. Confirm the exact station exit, noise, and foreign-passport check-in.' },
+      { question: 'Which Chengdu airport should I use?', answer: 'Use the exact airport and terminal printed on the booking. Tianfu International and Shuangliu are different airports with very different transfer times from the centre.' },
+      { question: 'Can ChinaEase Buddy personalise this Chengdu itinerary?', answer: 'Yes. Share your dates, arrival airport or station, hotel, group, walking ability, food needs, budget, and preferred excursion for a route adapted to the actual trip.' },
+    ],
+    related: [
+      { label: '3-day Chongqing itinerary', href: '/3-day-chongqing-itinerary/' },
+      { label: '3-day Xi\'an itinerary', href: '/3-day-xian-itinerary/' },
+      { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
+      { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
+      { label: 'China train travel guide', href: '/china-train-travel-guide/' },
+      { label: 'China food ordering guide', href: '/china-food-ordering-guide/' },
+      { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+      { label: 'China travel apps', href: '/china-travel-apps/' },
+      { label: 'Best time to visit China', href: '/best-time-to-visit-china/' },
+      { label: 'First trip to China', href: '/first-trip-to-china/' },
+      { label: 'Get a personalised Chengdu itinerary', href: '/#trip-plan' },
+    ],
+    sources: [
+      { label: 'Chengdu Research Base of Giant Panda Breeding: tickets', href: 'https://m.panda.org.cn/en/service/ticket/' },
+      { label: 'Chengdu Research Base of Giant Panda Breeding: visitor services', href: 'https://m.panda.org.cn/en/service/' },
+      { label: 'Chengdu Research Base of Giant Panda Breeding: official map', href: 'https://m.panda.org.cn/en/service/map/' },
+      { label: 'UNESCO: Mount Emei Scenic Area and Leshan Giant Buddha', href: 'https://whc.unesco.org/en/list/779/' },
+      { label: 'China Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' },
+    ],
+  },
   'best-time-to-visit-china': {
     path: '/best-time-to-visit-china/',
     title: 'Best Time to Visit China: Weather and Crowds by Month (2026)',
@@ -5444,6 +5541,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/3-day-shanghai-itinerary')) return '3-day-shanghai-itinerary';
   if (cleanPath.endsWith('/3-day-xian-itinerary')) return '3-day-xian-itinerary';
   if (cleanPath.endsWith('/3-day-chongqing-itinerary')) return '3-day-chongqing-itinerary';
+  if (cleanPath.endsWith('/3-day-chengdu-itinerary')) return '3-day-chengdu-itinerary';
   if (cleanPath.endsWith('/best-time-to-visit-china')) return 'best-time-to-visit-china';
   if (cleanPath.endsWith('/china-esim-internet-guide')) return 'china-esim-internet-guide';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
