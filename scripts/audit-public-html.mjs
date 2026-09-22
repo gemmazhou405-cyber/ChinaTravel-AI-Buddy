@@ -10,8 +10,8 @@ const pages = [
   {
     path: '/guides/',
     h1: /China Travel Guides/i,
-    keywords: ['China Visa-Free Travel Guide', 'China Airport Arrival Guide', 'China Hotels for Foreigners', 'China Food Ordering Guide', 'Chinese Travel Phrases', 'China Travel Safety Guide', 'China Travel Budget', 'China Travel Apps', 'AMap in English', 'China Metro Guide', 'DiDi in China for Foreigners', 'China Train Travel Guide', '7-Day China Itinerary', '10-Day China Itinerary', '14-Day China Itinerary', 'Beijing vs Shanghai', '3-Day Beijing Itinerary', '3-Day Shanghai Itinerary', 'Best Time to Visit China', 'Alipay for Foreigners', 'WeChat Pay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
-    links: ['/china-visa-free-travel-guide/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-food-ordering-guide/', '/chinese-travel-phrases/', '/china-travel-safety-guide/', '/china-travel-budget/', '/china-travel-apps/', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/3-day-beijing-itinerary/', '/3-day-shanghai-itinerary/', '/best-time-to-visit-china/', '/wechat-pay-for-foreigners/', '/china-payment-guide/', '/faq/'],
+    keywords: ['China Visa-Free Travel Guide', 'China Airport Arrival Guide', 'China Hotels for Foreigners', 'China Food Ordering Guide', 'Chinese Travel Phrases', 'China Travel Safety Guide', 'China Travel Budget', 'China Travel Apps', 'AMap in English', 'China Metro Guide', 'DiDi in China for Foreigners', 'China Train Travel Guide', '7-Day China Itinerary', '10-Day China Itinerary', '14-Day China Itinerary', 'Beijing vs Shanghai', '3-Day Beijing Itinerary', '3-Day Shanghai Itinerary', '3-Day Xi\'an Itinerary', 'Best Time to Visit China', 'Alipay for Foreigners', 'WeChat Pay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
+    links: ['/china-visa-free-travel-guide/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-food-ordering-guide/', '/chinese-travel-phrases/', '/china-travel-safety-guide/', '/china-travel-budget/', '/china-travel-apps/', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/3-day-beijing-itinerary/', '/3-day-shanghai-itinerary/', '/3-day-xian-itinerary/', '/best-time-to-visit-china/', '/wechat-pay-for-foreigners/', '/china-payment-guide/', '/faq/'],
   },
   {
     path: '/china-payment-guide/',
@@ -126,6 +126,12 @@ const pages = [
     h1: /3-Day Shanghai Itinerary for First-Time Visitors.*2026/i,
     keywords: ['The Bund', 'Yuyuan Garden', 'Wukang Road', 'Pudong', 'People\'s Square', 'Hongqiao', 'Railway 12306'],
     links: ['/#trip-plan', '/3-day-beijing-itinerary/', '/beijing-vs-shanghai/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/best-time-to-visit-china/', '/china-train-travel-guide/', '/china-metro-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/first-trip-to-china/'],
+  },
+  {
+    path: '/3-day-xian-itinerary/',
+    h1: /3-Day Xi'an Itinerary for First-Time Visitors.*2026/i,
+    keywords: ['Terracotta Army', 'city wall', 'Muslim Quarter', 'Shaanxi History Museum', 'Big Wild Goose Pagoda', 'Xi\'an North', 'Railway 12306'],
+    links: ['/#trip-plan', '/3-day-beijing-itinerary/', '/3-day-shanghai-itinerary/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/best-time-to-visit-china/', '/china-train-travel-guide/', '/china-metro-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/first-trip-to-china/'],
   },
   {
     path: '/best-time-to-visit-china/',
