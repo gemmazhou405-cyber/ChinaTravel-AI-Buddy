@@ -25,6 +25,7 @@ type GuidePageType =
   | '3-day-beijing-itinerary'
   | '3-day-shanghai-itinerary'
   | '3-day-xian-itinerary'
+  | '3-day-chongqing-itinerary'
   | 'best-time-to-visit-china'
   | 'china-esim-internet-guide'
   | 'alipay-for-foreigners'
@@ -393,6 +394,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: '3-day Beijing itinerary', href: '/3-day-beijing-itinerary/' },
       { label: '3-day Shanghai itinerary', href: '/3-day-shanghai-itinerary/' },
       { label: '3-day Xi\'an itinerary', href: '/3-day-xian-itinerary/' },
+      { label: '3-day Chongqing itinerary', href: '/3-day-chongqing-itinerary/' },
       { label: 'Best time to visit China', href: '/best-time-to-visit-china/' },
       { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
       { label: 'WeChat Pay for foreigners', href: '/wechat-pay-for-foreigners/' },
@@ -3879,6 +3881,153 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' },
     ],
   },
+  '3-day-chongqing-itinerary': {
+    path: '/3-day-chongqing-itinerary/',
+    title: '3-Day Chongqing Itinerary for First-Time Visitors (2026)',
+    intro:
+      'A realistic first Chongqing plan covering Jiefangbei, Hongya Cave, Liziba monorail, the Three Gorges Museum, hotpot, rivers, steep terrain, and transport.',
+    metaTitle: '3-Day Chongqing Itinerary for First-Time Visitors (2026)',
+    metaDescription:
+      'Plan three days in Chongqing with Hongya Cave, Liziba monorail, Three Gorges Museum, hotpot, river views, hotels, transport, hills, and alternatives.',
+    quickAnswer:
+      'With three full days in Chongqing, use one day for Jiefangbei, the river-confluence area, and Hongya Cave after dark; one for Liziba and the Three Gorges Museum; and one for Ciqikou or a focused day trip. Chongqing is a vertical mountain city, so a short distance on a map can hide steep stairs, several road levels, or an entrance on a different floor. Group stops by both district and elevation, save each destination in Chinese, and leave room for finding the correct entrance, pickup point, and viewing level.',
+    ctaLabel: 'Get my personalised Chongqing itinerary',
+    ctaHref: '/#trip-plan',
+    lastReviewed: 'September 22, 2026',
+    lastModified: '2026-09-22',
+    isArticle: true,
+    sections: [
+      {
+        title: 'Three days in Chongqing at a glance',
+        table: {
+          headers: ['Day', 'Main plan', 'Why this grouping works'],
+          rows: [
+            ['Day 1', 'Jiefangbei, central lanes, Chaotianmen area, Hongya Cave at night', 'Keeps the core peninsula together and saves the illuminated skyline for evening'],
+            ['Day 2', 'Liziba monorail, Three Gorges Museum, People\'s Great Hall area, hotpot', 'Links an outdoor city icon with a substantial indoor history stop'],
+            ['Day 3', 'Ciqikou and a slower neighbourhood day, or a pre-planned Dazu day trip', 'Lets you choose local atmosphere or one major heritage excursion without overloading the first two days'],
+          ],
+        },
+        items: [
+          'This plan assumes three complete sightseeing days after arrival and before departure.',
+          'Do not judge transfers by straight-line distance alone: hills, stairs, bridges, lifts, and multi-level roads change the real journey.',
+          'Keep one flexible block each day for weather, crowds, queues, and locating the correct building entrance.',
+        ],
+      },
+      {
+        title: 'Day 1: Jiefangbei, rivers, and Hongya Cave',
+        ordered: true,
+        items: [
+          'Start around Jiefangbei and explore a small number of nearby streets instead of collecting distant photo stops.',
+          'Continue toward the Chaotianmen and river-confluence area, checking current access because construction, viewpoints, and walking routes can change.',
+          'Take a meal break before the evening crowds. For hotpot, choose the spice level deliberately and confirm whether the broth, condiments, and dishes are priced separately.',
+          'Visit Hongya Cave around dusk or after dark for the illuminated exterior. The famous viewpoint and the internal commercial complex are different experiences, so decide which matters most.',
+          'Before leaving, save a specific ride-hailing pickup point or metro entrance. A driver on another road level may be physically close but difficult to reach.',
+        ],
+      },
+      {
+        title: 'Day 2: Liziba and Chongqing history',
+        ordered: true,
+        items: [
+          'Ride Chongqing Rail Transit Line 2 to Liziba and use the designated viewing area rather than stopping in traffic or residential access points.',
+          'Continue to the Chongqing China Three Gorges Museum. Its official site lists permanent exhibitions including The Marvelous Three Gorges and Chongqing: City Evolution.',
+          'Pair the museum with the People\'s Great Hall exterior and nearby public space, allowing time for security, galleries, and breaks.',
+          'Use the evening for one neighbourhood, a river view, or hotpot. Do not stack Liziba, every museum gallery, a cableway queue, a cruise, and Hongya Cave into the same day.',
+        ],
+      },
+      {
+        title: 'Day 3: choose one clear priority',
+        items: [
+          'For a slower city day, visit Ciqikou early, leave the busiest main lane when possible, and keep the afternoon flexible for a café, riverside walk, or another neighbourhood.',
+          'For art and history, use the day for the UNESCO-listed Dazu Rock Carvings only after confirming current tickets, transport, opening information, and the exact site you will visit.',
+          'Wulong is another major excursion, but long transfers make it a demanding addition to a short first visit. Treat it as a dedicated day with verified transport rather than a quick side trip.',
+          'If rain, heat, or low visibility changes the plan, prioritise the museum and food experiences and move exposed viewpoints to the clearest period.',
+        ],
+      },
+      {
+        title: 'Plan around Chongqing\'s vertical terrain',
+        table: {
+          headers: ['Situation', 'What can go wrong', 'Practical fix'],
+          rows: [
+            ['Map says the stop is close', 'The route may include steep stairs or several road levels', 'Check the walking profile and allow extra time'],
+            ['Ride-hailing pickup', 'Driver and passenger can wait on different levels', 'Choose a named gate, hotel entrance, or landmark'],
+            ['Large building or mall', 'Street level on one side may be a high floor on another', 'Save the floor, entrance, and Chinese place name'],
+            ['Night attraction', 'Crowds make crossings and pickups slower', 'Arrive before peak darkness and leave from a planned point'],
+            ['Limited mobility', 'Stairs and slopes can make short routes difficult', 'Use more point-to-point rides and verify lift access'],
+          ],
+        },
+        items: [
+          'Wear shoes with grip and carry only what you need. Wet steps and long descents can be tiring even when the total distance looks modest.',
+          'Download an offline copy of the hotel name, address, and phone number in Chinese.',
+        ],
+      },
+      {
+        title: 'Where to stay for a three-day visit',
+        items: [
+          'Jiefangbei is convenient for a first visit focused on Hongya Cave, central food, and evening walks, but check noise and the exact walking route to the metro.',
+          'Near a useful metro interchange can be more practical than staying beside one famous sight. Compare the entrance, elevation, and last part of the walk.',
+          'Nan\'an can suit travellers prioritising skyline views, but river crossings add time to central sightseeing.',
+          'Confirm foreign-passport check-in, late-arrival arrangements, deposit method, and the hotel\'s Chinese address before paying a non-refundable rate.',
+        ],
+      },
+      {
+        title: 'Bookings and transport to check',
+        table: {
+          headers: ['Item', 'What to confirm', 'When to check'],
+          rows: [
+            ['Museum', 'Opening day, reservation or ID rules, exhibitions, last entry', 'Before fixing Day 2'],
+            ['Dazu excursion', 'Official opening information, selected carving site, tickets, return transport', 'Before choosing Day 3'],
+            ['Train', 'Chongqing North, West, Shapingba, or another exact station', 'Before booking hotel transfers'],
+            ['Airport transfer', 'Terminal, metro operating time, realistic luggage route', 'Before arrival and departure'],
+            ['Night activity', 'Weather, queue, final service, return pickup point', 'Recheck on the day'],
+          ],
+        },
+        items: [
+          'Use China Railway 12306 or another authorised channel and copy the complete station name from the ticket.',
+          'Opening hours, reservations, transport operations, and temporary closures can change. Recheck official sources immediately before the visit.',
+        ],
+      },
+      {
+        title: 'Adjust the itinerary for your trip',
+        items: [
+          'With only two full days, keep the central peninsula and the Liziba–museum day; skip the out-of-city excursion.',
+          'With four or five days, add Dazu or Wulong as a dedicated excursion and keep a recovery evening afterward.',
+          'For families, shorten long museum blocks and protect regular meal and rest stops.',
+          'For limited mobility, reduce hillside wandering, verify accessible entrances, and budget for more direct rides.',
+          'If Chongqing is part of a longer China route, protect the transfer day and connect this plan with the 10-day or 14-day itinerary.',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'Are three days enough for Chongqing?', answer: 'Yes. Three full days cover the central peninsula, Liziba and a museum day, plus either a slower neighbourhood day or one carefully planned excursion. Arrival and departure days should not be counted as full sightseeing days.' },
+      { question: 'Is Chongqing difficult to walk around?', answer: 'It can be. Hills, stairs, lifts, bridges, and stacked roads make map distance misleading. Group sights by area and elevation, use the metro and ride-hailing strategically, and allow extra time.' },
+      { question: 'When should I visit Hongya Cave?', answer: 'The illuminated exterior is the main reason many visitors go after dark. Arriving around dusk can make orientation easier before peak crowds, but check current lighting, access, weather, and transport on the day.' },
+      { question: 'Is Liziba monorail worth visiting?', answer: 'Yes if Chongqing\'s vertical transport and urban design interest you. Combine the designated viewing area with a ride on Line 2 and nearby history stops rather than making it a long standalone visit.' },
+      { question: 'Should I choose Dazu or Wulong for Day 3?', answer: 'Choose Dazu for historic rock carvings and Wulong for dramatic natural scenery. Both require a dedicated, pre-planned day; for a slower first visit, stay in the city and use Ciqikou or another neighbourhood instead.' },
+      { question: 'Which Chongqing railway station should I use?', answer: 'Use the exact station printed on your ticket. Chongqing has multiple major stations, and transfer times vary substantially, so compare the station with your hotel before booking.' },
+      { question: 'Can ChinaEase Buddy personalise this Chongqing itinerary?', answer: 'Yes. Share your dates, arrival station or airport, hotel, group, walking ability, food preferences, budget, and fixed bookings for a route adapted to the actual trip.' },
+    ],
+    related: [
+      { label: '3-day Xi\'an itinerary', href: '/3-day-xian-itinerary/' },
+      { label: '3-day Beijing itinerary', href: '/3-day-beijing-itinerary/' },
+      { label: '3-day Shanghai itinerary', href: '/3-day-shanghai-itinerary/' },
+      { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
+      { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
+      { label: 'China train travel guide', href: '/china-train-travel-guide/' },
+      { label: 'China metro guide', href: '/china-metro-guide/' },
+      { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+      { label: 'China travel apps', href: '/china-travel-apps/' },
+      { label: 'Best time to visit China', href: '/best-time-to-visit-china/' },
+      { label: 'First trip to China', href: '/first-trip-to-china/' },
+      { label: 'Get a personalised Chongqing itinerary', href: '/#trip-plan' },
+    ],
+    sources: [
+      { label: 'Chongqing Municipal Government English website', href: 'https://english.cq.gov.cn/' },
+      { label: 'Chongqing Rail Transit official website', href: 'https://www.cqmetro.cn/' },
+      { label: 'Chongqing China Three Gorges Museum official website', href: 'https://www.3gmuseum.cn/' },
+      { label: 'UNESCO: Dazu Rock Carvings', href: 'https://whc.unesco.org/en/list/912/' },
+      { label: 'China Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' },
+    ],
+  },
   'best-time-to-visit-china': {
     path: '/best-time-to-visit-china/',
     title: 'Best Time to Visit China: Weather and Crowds by Month (2026)',
@@ -5294,6 +5443,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/3-day-beijing-itinerary')) return '3-day-beijing-itinerary';
   if (cleanPath.endsWith('/3-day-shanghai-itinerary')) return '3-day-shanghai-itinerary';
   if (cleanPath.endsWith('/3-day-xian-itinerary')) return '3-day-xian-itinerary';
+  if (cleanPath.endsWith('/3-day-chongqing-itinerary')) return '3-day-chongqing-itinerary';
   if (cleanPath.endsWith('/best-time-to-visit-china')) return 'best-time-to-visit-china';
   if (cleanPath.endsWith('/china-esim-internet-guide')) return 'china-esim-internet-guide';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
