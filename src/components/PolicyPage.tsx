@@ -4279,7 +4279,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   '3-day-hangzhou-itinerary': {
     path: '/3-day-hangzhou-itinerary/', title: '3-Day Hangzhou Itinerary for First-Time Visitors (2026)',
-    intro: 'A practical first Hangzhou plan covering West Lake, Lingyin Temple, Longjing tea country, Hefang Street, the Grand Canal, hotels, trains, airport transfers, reservations, crowds, and weather alternatives.',
+    intro: 'A practical first Hangzhou plan covering West Lake, Lingyin Temple, Longjing tea country, Hefang Street, the Grand Canal, hotels, trains, airport transfers, reservations, crowds, and realistic weather alternatives.',
     metaTitle: '3-Day Hangzhou Itinerary for First-Time Visitors (2026)',
     metaDescription: 'Plan three days in Hangzhou with West Lake, Lingyin Temple, Longjing tea, the Grand Canal, Hefang Street, hotels, trains, airport and weather advice.',
     quickAnswer: 'With three full days, give West Lake one unhurried day, combine Lingyin and the western hills or Longjing area on another, then use the third day for the Grand Canal, Southern Song heritage, a wetland, or a water-town extension. Stay near the east or north side of West Lake, a useful Metro interchange, or Hangzhou East only when transport convenience matters more than atmosphere. Confirm temple and museum reservations, boat operations, weather, the exact railway station, and Xiaoshan Airport transfer before travel.',
