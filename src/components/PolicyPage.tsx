@@ -4,6 +4,7 @@ import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
 import { unsubscribeNewsletter } from '../lib/newsletter';
 import suzhouGuide from '../data/seoPages/3-day-suzhou-itinerary.json';
 import nanjingGuide from '../data/seoPages/3-day-nanjing-itinerary.json';
+import daliGuide from '../data/seoPages/3-day-dali-itinerary.json';
 
 type LegalPageType = 'terms' | 'privacy' | 'refund' | 'contact' | 'about' | 'unsubscribe';
 type GuidePageType =
@@ -36,6 +37,7 @@ type GuidePageType =
   | '3-day-hangzhou-itinerary'
   | '3-day-suzhou-itinerary'
   | '3-day-nanjing-itinerary'
+  | '3-day-dali-itinerary'
   | 'best-time-to-visit-china'
   | 'china-esim-internet-guide'
   | 'alipay-for-foreigners'
@@ -4364,6 +4366,32 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     ],
     sources: nanjingGuide.sourceLinks.map(([label, href]) => ({ label, href })),
   },
+  '3-day-dali-itinerary': {
+    path: '/3-day-dali-itinerary/',
+    title: daliGuide.heading,
+    intro: daliGuide.description,
+    metaTitle: daliGuide.title,
+    metaDescription: daliGuide.description,
+    quickAnswer: daliGuide.quickAnswer,
+    ctaLabel: 'Get my personalised Dali itinerary',
+    ctaHref: '/#trip-plan',
+    lastReviewed: daliGuide.lastReviewed,
+    lastModified: daliGuide.lastModified,
+    isArticle: true,
+    sections: daliGuide.contentSections,
+    faqs: daliGuide.faqs.map(([question, answer]) => ({ question, answer })),
+    related: [
+      { label: '3-day Guilin and Yangshuo itinerary', href: '/3-day-guilin-yangshuo-itinerary/' },
+      { label: '3-day Zhangjiajie itinerary', href: '/3-day-zhangjiajie-itinerary/' },
+      { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
+      { label: 'China train travel guide', href: '/china-train-travel-guide/' },
+      { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+      { label: 'Best time to visit China', href: '/best-time-to-visit-china/' },
+      { label: 'First trip to China', href: '/first-trip-to-china/' },
+      { label: 'Get my personalised Dali itinerary', href: '/#trip-plan' },
+    ],
+    sources: daliGuide.sourceLinks.map(([label, href]) => ({ label, href })),
+  },
   'best-time-to-visit-china': {
     path: '/best-time-to-visit-china/',
     title: 'Best Time to Visit China: Weather and Crowds by Month (2026)',
@@ -5788,6 +5816,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/3-day-hangzhou-itinerary')) return '3-day-hangzhou-itinerary';
   if (cleanPath.endsWith('/3-day-suzhou-itinerary')) return '3-day-suzhou-itinerary';
   if (cleanPath.endsWith('/3-day-nanjing-itinerary')) return '3-day-nanjing-itinerary';
+  if (cleanPath.endsWith('/3-day-dali-itinerary')) return '3-day-dali-itinerary';
   if (cleanPath.endsWith('/best-time-to-visit-china')) return 'best-time-to-visit-china';
   if (cleanPath.endsWith('/china-esim-internet-guide')) return 'china-esim-internet-guide';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
