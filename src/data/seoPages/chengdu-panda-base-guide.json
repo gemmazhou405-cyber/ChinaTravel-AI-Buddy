@@ -1,0 +1,62 @@
+{
+  "title": "Chengdu Panda Base Guide 2026: Tickets, Gates and Route | ChinaEase Buddy",
+  "heading": "Chengdu Panda Base Guide for First-Time Visitors (2026)",
+  "description": "Visit the Chengdu Research Base of Giant Panda Breeding: official tickets, passport entry, south and west gates, transport, route, crowds and panda welfare.",
+  "quickAnswer": "Book a real-name ticket through the Chengdu Panda Base's official or authorised channel for your actual date and morning or afternoon entry session. Bring the identity document used to reserve, confirm whether your transport arrives at the South or West Gate, and choose a manageable route through the large park. The official site says entry is limited to the reserved session and the sightseeing bus is a separate service. Seeing active pandas is never guaranteed: animals may rest or be off view, especially when weather or husbandry requires it.",
+  "lastReviewed": "September 25, 2026",
+  "lastModified": "2026-09-25",
+  "article": true,
+  "contentSections": [
+    {
+      "title": "Book the right ticket before you travel",
+      "ordered": true,
+      "items": ["Start from the Chengdu Research Base of Giant Panda Breeding's official ticket page and read the current date, entry session, real-name and accepted-document rules.", "Use the exact passport or other valid document details required by the reservation. The base says visitors must present the original document used for booking at entry.", "Check whether you booked a morning or afternoon slot; an afternoon ticket does not mean you can enter during the morning session.", "A ticket for the base, a sightseeing bus ticket, a guide and transport from your hotel are different products. Compare only what each one actually includes.", "Save your booking and gate name offline. If the ticket system or passport entry is unclear, use the official visitor contact or authorised booking channel before travel."]
+    },
+    {
+      "title": "South Gate or West Gate?",
+      "table": {"headers": ["Gate", "Planning use", "Verify"], "rows": [
+        ["South Gate", "A common starting point for classic panda viewing areas", "Actual drop-off and the walking route from your arrival"],
+        ["West Gate", "A useful starting point for a different park section or a shuttle-based route", "Your taxi or shuttle's exact destination and the return exit"],
+        ["Either gate", "A valid option when the route and transport match", "The park map, internal distances and exit plan"]
+      ]},
+      "items": ["The base's official transport page distinguishes South and West Gate approaches. Save the gate name in Chinese for the driver or map app.", "The park is large; do not assume a sightseeing bus instantly takes you to every enclosure or that queues disappear.", "If your route ends at the other gate, calculate how to reach your next stop or hotel from that gate before leaving."]
+    },
+    {
+      "title": "A half-day route that leaves room to look",
+      "ordered": true,
+      "items": ["Enter in your reserved session and photograph the park map or use the official map before choosing an area.", "Prioritise a small number of panda viewing areas, then walk between them at a comfortable pace. Check staff signs for temporary closures.", "Allow time for queues and for moments when an enclosure is quiet. Do not plan the visit around a promised feeding or animal appearance.", "Take a break in the shade or at an official rest area. In warm weather, pandas may spend more time indoors or resting.", "Leave enough time for the correct gate, booked transport and a relaxed afternoon in Chengdu. Add one nearby food or tea block rather than another distant attraction."]
+    },
+    {
+      "title": "Sightseeing bus: when it helps",
+      "items": ["The official base lists a separate sightseeing-bus service with its own stops, hours and fare. Check the current route and whether your desired stop is served.", "The bus can reduce walking for a large park or mixed-ability group, but you may still need to queue, walk between habitats and buy a separate ticket.", "Check the direction: a South-to-West route is not identical to a West-to-South route, and the official site describes different stops.", "Do not purchase it automatically if you only plan a compact walking route near your entry gate.", "For limited mobility, verify accessibility, gradients and available assistance with the base rather than assuming every viewing area has the same access."]
+    },
+    {
+      "title": "Panda welfare and respectful viewing",
+      "items": ["Keep noise down, follow barriers and staff instructions, and never feed or touch an animal.", "Use permitted photography without flash where site rules require it. Do not block others for a long video or attempt to enter a restricted work area.", "Animal visibility changes with individual behaviour, care routines and weather. A quiet enclosure does not mean your ticket is invalid.", "If a particular panda is important to you, check current official notices and accept that no visitor itinerary can guarantee a sighting."]
+    },
+    {
+      "title": "Transport, costs and common mistakes",
+      "table": {"headers": ["Decision", "Check", "Avoid"], "rows": [
+        ["Hotel to base", "Exact entry gate, transit and traffic for your time", "Typing only 'panda base' into a driver app"],
+        ["Ticket", "Official or authorised vendor, date, ID and time slot", "A name that differs from the passport"],
+        ["Internal route", "Map, walking distance and bus direction", "Trying to see every area in one short visit"],
+        ["After the visit", "Return gate and next transport", "Assuming your driver waits at the opposite gate"]
+      ]},
+      "items": ["The base's official ticket, transport and bus pages provide the current rules. Check them again shortly before your date rather than trusting an old price or timetable.", "For a three-day Chengdu stay, give the base a morning or afternoon block and keep the rest of that day light."]
+    }
+  ],
+  "faqs": [
+    ["Do I need to book Chengdu Panda Base tickets in advance?", "The official ticket page describes real-name online reservations and a reserved entry session. Check availability and the accepted booking channels for your date."],
+    ["Can a foreign visitor use a passport?", "Follow the base's official accepted-ID and booking rules. Enter the required passport details accurately and bring the original document used for the reservation."],
+    ["Which gate should I use?", "Choose South or West Gate according to your ticket, route and transport. The park's official transport information distinguishes them; save your actual gate name."],
+    ["Is the sightseeing bus included?", "Treat it as a separate service unless your purchased product explicitly includes it. Check the current official route, price and operating hours."],
+    ["Will I definitely see pandas?", "No specific animal sighting can be guaranteed. Panda behaviour, animal care, weather and closures can change what is visible."],
+    ["Can ChinaEase Buddy combine this with Chengdu sightseeing?", "Yes. Share your ticket session, gate, hotel, walking pace and food interests for a practical Chengdu day."]
+  ],
+  "sourceLinks": [
+    ["Chengdu Panda Base: official tickets", "https://m.panda.org.cn/en/service/ticket/"],
+    ["Chengdu Panda Base: transportation", "https://m.panda.org.cn/en/service/transit/"],
+    ["Chengdu Panda Base: sightseeing bus", "https://m.panda.org.cn/en/service/sightseeingbus/"],
+    ["Chengdu Panda Base official website", "https://m.panda.org.cn/en/"]
+  ]
+}
