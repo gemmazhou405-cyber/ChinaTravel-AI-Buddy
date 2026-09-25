@@ -5,6 +5,9 @@ import { unsubscribeNewsletter } from '../lib/newsletter';
 import suzhouGuide from '../data/seoPages/3-day-suzhou-itinerary.json';
 import nanjingGuide from '../data/seoPages/3-day-nanjing-itinerary.json';
 import daliGuide from '../data/seoPages/3-day-dali-itinerary.json';
+import goldenWeekGuide from '../data/seoPages/china-golden-week-2026-travel-guide.json';
+import greatWallGuide from '../data/seoPages/great-wall-of-china-day-trip-from-beijing.json';
+import pandaBaseGuide from '../data/seoPages/chengdu-panda-base-guide.json';
 
 type LegalPageType = 'terms' | 'privacy' | 'refund' | 'contact' | 'about' | 'unsubscribe';
 type GuidePageType =
@@ -38,6 +41,9 @@ type GuidePageType =
   | '3-day-suzhou-itinerary'
   | '3-day-nanjing-itinerary'
   | '3-day-dali-itinerary'
+  | 'china-golden-week-2026-travel-guide'
+  | 'great-wall-of-china-day-trip-from-beijing'
+  | 'chengdu-panda-base-guide'
   | 'best-time-to-visit-china'
   | 'china-esim-internet-guide'
   | 'alipay-for-foreigners'
@@ -86,6 +92,31 @@ interface GuidePageData {
     label: string;
     href: string;
   }>;
+}
+
+function guideFromArticle(
+  data: typeof goldenWeekGuide | typeof greatWallGuide | typeof pandaBaseGuide,
+  path: string,
+  ctaLabel: string,
+  related: GuidePageData['related'],
+): GuidePageData {
+  return {
+    path,
+    title: data.heading,
+    intro: data.description,
+    metaTitle: data.title,
+    metaDescription: data.description,
+    quickAnswer: data.quickAnswer,
+    ctaLabel,
+    ctaHref: '/#trip-plan',
+    lastReviewed: data.lastReviewed,
+    lastModified: data.lastModified,
+    isArticle: true,
+    sections: data.contentSections,
+    faqs: data.faqs.map(([question, answer]) => ({ question, answer })),
+    related,
+    sources: data.sourceLinks.map(([label, href]) => ({ label, href })),
+  };
 }
 
 const contactEmail = 'hello@chinaeasebuddy.com';
@@ -4392,6 +4423,34 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     ],
     sources: daliGuide.sourceLinks.map(([label, href]) => ({ label, href })),
   },
+  'china-golden-week-2026-travel-guide': guideFromArticle(goldenWeekGuide, '/china-golden-week-2026-travel-guide/', 'Get my Golden Week China itinerary', [
+    { label: 'Best time to visit China', href: '/best-time-to-visit-china/' },
+    { label: 'China train travel guide', href: '/china-train-travel-guide/' },
+    { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+    { label: 'China travel budget', href: '/china-travel-budget/' },
+    { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
+    { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
+    { label: 'First trip to China', href: '/first-trip-to-china/' },
+    { label: 'Get my Golden Week China itinerary', href: '/#trip-plan' },
+  ]),
+  'great-wall-of-china-day-trip-from-beijing': guideFromArticle(greatWallGuide, '/great-wall-of-china-day-trip-from-beijing/', 'Get my Beijing itinerary', [
+    { label: '3-day Beijing itinerary', href: '/3-day-beijing-itinerary/' },
+    { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
+    { label: 'China train travel guide', href: '/china-train-travel-guide/' },
+    { label: 'China travel safety guide', href: '/china-travel-safety-guide/' },
+    { label: 'China Golden Week 2026 travel guide', href: '/china-golden-week-2026-travel-guide/' },
+    { label: 'First trip to China', href: '/first-trip-to-china/' },
+    { label: 'Get my Beijing itinerary', href: '/#trip-plan' },
+  ]),
+  'chengdu-panda-base-guide': guideFromArticle(pandaBaseGuide, '/chengdu-panda-base-guide/', 'Get my Chengdu itinerary', [
+    { label: '3-day Chengdu itinerary', href: '/3-day-chengdu-itinerary/' },
+    { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
+    { label: 'China train travel guide', href: '/china-train-travel-guide/' },
+    { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+    { label: 'China Golden Week 2026 travel guide', href: '/china-golden-week-2026-travel-guide/' },
+    { label: 'First trip to China', href: '/first-trip-to-china/' },
+    { label: 'Get my Chengdu itinerary', href: '/#trip-plan' },
+  ]),
   'best-time-to-visit-china': {
     path: '/best-time-to-visit-china/',
     title: 'Best Time to Visit China: Weather and Crowds by Month (2026)',
@@ -5817,6 +5876,9 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/3-day-suzhou-itinerary')) return '3-day-suzhou-itinerary';
   if (cleanPath.endsWith('/3-day-nanjing-itinerary')) return '3-day-nanjing-itinerary';
   if (cleanPath.endsWith('/3-day-dali-itinerary')) return '3-day-dali-itinerary';
+  if (cleanPath.endsWith('/china-golden-week-2026-travel-guide')) return 'china-golden-week-2026-travel-guide';
+  if (cleanPath.endsWith('/great-wall-of-china-day-trip-from-beijing')) return 'great-wall-of-china-day-trip-from-beijing';
+  if (cleanPath.endsWith('/chengdu-panda-base-guide')) return 'chengdu-panda-base-guide';
   if (cleanPath.endsWith('/best-time-to-visit-china')) return 'best-time-to-visit-china';
   if (cleanPath.endsWith('/china-esim-internet-guide')) return 'china-esim-internet-guide';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
