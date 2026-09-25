@@ -2,6 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { ArrowLeft, Check } from 'lucide-react';
 import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
 import { unsubscribeNewsletter } from '../lib/newsletter';
+import suzhouGuide from '../data/seoPages/3-day-suzhou-itinerary.json';
 
 type LegalPageType = 'terms' | 'privacy' | 'refund' | 'contact' | 'about' | 'unsubscribe';
 type GuidePageType =
@@ -32,6 +33,7 @@ type GuidePageType =
   | '3-day-shenzhen-itinerary'
   | '3-day-guangzhou-itinerary'
   | '3-day-hangzhou-itinerary'
+  | '3-day-suzhou-itinerary'
   | 'best-time-to-visit-china'
   | 'china-esim-internet-guide'
   | 'alipay-for-foreigners'
@@ -4307,6 +4309,32 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     related: [{ label: '3-day Shanghai itinerary', href: '/3-day-shanghai-itinerary/' }, { label: '3-day Guangzhou itinerary', href: '/3-day-guangzhou-itinerary/' }, { label: '10-day China itinerary', href: '/10-day-china-itinerary/' }, { label: '14-day China itinerary', href: '/14-day-china-itinerary/' }, { label: 'China train travel guide', href: '/china-train-travel-guide/' }, { label: 'China metro guide', href: '/china-metro-guide/' }, { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' }, { label: 'China food ordering guide', href: '/china-food-ordering-guide/' }, { label: 'China travel apps', href: '/china-travel-apps/' }, { label: 'Best time to visit China', href: '/best-time-to-visit-china/' }, { label: 'First trip to China', href: '/first-trip-to-china/' }, { label: 'Get a personalised Hangzhou itinerary', href: '/#trip-plan' }],
     sources: [{ label: 'UNESCO: West Lake Cultural Landscape of Hangzhou', href: 'https://whc.unesco.org/en/list/1334/' }, { label: 'UNESCO: The Grand Canal', href: 'https://whc.unesco.org/en/list/1443/' }, { label: 'Hangzhou city international portal', href: 'https://www.ehangzhou.gov.cn/' }, { label: 'China Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' }],
   },
+  '3-day-suzhou-itinerary': {
+    path: '/3-day-suzhou-itinerary/',
+    title: suzhouGuide.heading,
+    intro: suzhouGuide.description,
+    metaTitle: suzhouGuide.title,
+    metaDescription: suzhouGuide.description,
+    quickAnswer: suzhouGuide.quickAnswer,
+    ctaLabel: 'Get my personalised Suzhou itinerary',
+    ctaHref: '/#trip-plan',
+    lastReviewed: suzhouGuide.lastReviewed,
+    lastModified: suzhouGuide.lastModified,
+    isArticle: true,
+    sections: suzhouGuide.contentSections,
+    faqs: suzhouGuide.faqs.map(([question, answer]) => ({ question, answer })),
+    related: [
+      { label: '3-day Shanghai itinerary', href: '/3-day-shanghai-itinerary/' },
+      { label: '3-day Hangzhou itinerary', href: '/3-day-hangzhou-itinerary/' },
+      { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
+      { label: 'China train travel guide', href: '/china-train-travel-guide/' },
+      { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+      { label: 'China metro guide', href: '/china-metro-guide/' },
+      { label: 'First trip to China', href: '/first-trip-to-china/' },
+      { label: 'Get my personalised Suzhou itinerary', href: '/#trip-plan' },
+    ],
+    sources: suzhouGuide.sourceLinks.map(([label, href]) => ({ label, href })),
+  },
   'best-time-to-visit-china': {
     path: '/best-time-to-visit-china/',
     title: 'Best Time to Visit China: Weather and Crowds by Month (2026)',
@@ -5729,6 +5757,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/3-day-shenzhen-itinerary')) return '3-day-shenzhen-itinerary';
   if (cleanPath.endsWith('/3-day-guangzhou-itinerary')) return '3-day-guangzhou-itinerary';
   if (cleanPath.endsWith('/3-day-hangzhou-itinerary')) return '3-day-hangzhou-itinerary';
+  if (cleanPath.endsWith('/3-day-suzhou-itinerary')) return '3-day-suzhou-itinerary';
   if (cleanPath.endsWith('/best-time-to-visit-china')) return 'best-time-to-visit-china';
   if (cleanPath.endsWith('/china-esim-internet-guide')) return 'china-esim-internet-guide';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
