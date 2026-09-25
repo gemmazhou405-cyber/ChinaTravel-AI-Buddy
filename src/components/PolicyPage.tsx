@@ -2398,9 +2398,9 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     path: '/didi-in-china-for-foreigners/',
     title: 'How to Use DiDi in China as a Foreigner (2026)',
     intro: 'A practical ride-hailing guide for app setup, pickup points, car verification, driver messages, payment, and common problems.',
-    metaTitle: 'DiDi in China for Foreigners (2026) | ChinaEase Buddy',
+    metaTitle: 'How to Use and Pay for DiDi in China (2026) | ChinaEase Buddy',
     metaDescription:
-      'Use DiDi in China with an international phone number. Learn app setup, pickup points, car verification, driver messages, payment, and problem solving.',
+      'How can foreigners book and pay for DiDi rides in China? Compare the DiDi app, Alipay and WeChat routes, then check pickup, fare and payment status.',
     quickAnswer:
       'Foreign visitors can use the DiDi China ride-hailing app with an international mobile number and an English interface, or access DiDi through supported WeChat and Alipay routes. Before requesting a car, save the exact destination in Chinese, confirm the pickup pin and meeting point, compare the service type and estimated fare, and prepare a payment method shown in your version. When the car arrives, match the licence plate and vehicle details before entering.',
     ctaLabel: 'Get my free China itinerary',
@@ -2469,7 +2469,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
         ],
       },
       {
-        title: 'Payment, estimates, and receipts',
+        title: 'How to pay for a DiDi ride in China',
         items: [
           'The payment method depends on whether you booked through the DiDi app, Alipay, or WeChat and on the options available to your account.',
           'Review the estimated fare and service category before confirming; tolls, waiting, route changes, and other displayed charges can affect the final amount.',
