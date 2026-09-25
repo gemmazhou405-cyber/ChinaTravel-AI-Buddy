@@ -10,7 +10,7 @@ async function ensureSitemapEntry() {
   if (!sitemap.includes(seoUrl)) {
     sitemap = sitemap.replace(
       '</urlset>',
-      `  <url>\n    <loc>${seoUrl}</loc>\n    <lastmod>2026-09-16</lastmod>\n  </url>\n</urlset>`,
+      `  <url>\n    <loc>${seoUrl}</loc>\n    <lastmod>2026-09-25</lastmod>\n  </url>\n</urlset>`,
     );
     await writeFile(sitemapPath, sitemap);
   }
