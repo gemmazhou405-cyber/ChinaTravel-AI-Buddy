@@ -7,6 +7,9 @@ const source = join(distDir, 'index.html');
 const suzhouGuide = JSON.parse(await readFile('src/data/seoPages/3-day-suzhou-itinerary.json', 'utf8'));
 const nanjingGuide = JSON.parse(await readFile('src/data/seoPages/3-day-nanjing-itinerary.json', 'utf8'));
 const daliGuide = JSON.parse(await readFile('src/data/seoPages/3-day-dali-itinerary.json', 'utf8'));
+const goldenWeekGuide = JSON.parse(await readFile('src/data/seoPages/china-golden-week-2026-travel-guide.json', 'utf8'));
+const greatWallGuide = JSON.parse(await readFile('src/data/seoPages/great-wall-of-china-day-trip-from-beijing.json', 'utf8'));
+const pandaBaseGuide = JSON.parse(await readFile('src/data/seoPages/chengdu-panda-base-guide.json', 'utf8'));
 
 const pageMeta = {
   plan: {
@@ -63,6 +66,9 @@ const pageMeta = {
       ['3-Day Suzhou Itinerary', 'Plan classical gardens, Pingjiang Road, Suzhou Museum, canals, food and Shanghai train connections.', '/3-day-suzhou-itinerary/'],
       ['3-Day Nanjing Itinerary', 'Plan Sun Yat-sen Mausoleum, Ming Xiaoling, museums, the memorial, city walls and Qinhuai River.', '/3-day-nanjing-itinerary/'],
       ['3-Day Dali Itinerary', 'Plan Dali Old Town, Three Pagodas, Erhai Lake, Xizhou and a flexible Cangshan day.', '/3-day-dali-itinerary/'],
+      ['China Golden Week 2026 Travel Guide', 'Plan October 1–7 trains, hotels, attractions, crowds and a flexible first-time route.', '/china-golden-week-2026-travel-guide/'],
+      ['Great Wall Day Trip from Beijing', 'Compare Mutianyu and Badaling, booking layers, transport, walking and return timing.', '/great-wall-of-china-day-trip-from-beijing/'],
+      ['Chengdu Panda Base Guide', 'Book official tickets, choose South or West Gate and plan a manageable viewing route.', '/chengdu-panda-base-guide/'],
       ['Best Time to Visit China', 'Compare seasons, months, regions, crowds, public holidays, and weather risks.', '/best-time-to-visit-china/'],
       ['Alipay for Foreigners', 'What foreign visitors should know before trying Alipay in China.', '/alipay-for-foreigners/'],
       ['WeChat Pay for Foreigners', 'Set up an eligible international card, pay by QR code, and prepare a backup.', '/wechat-pay-for-foreigners/'],
@@ -2813,6 +2819,9 @@ const pageMeta = {
   '3-day-suzhou-itinerary': suzhouGuide,
   '3-day-nanjing-itinerary': nanjingGuide,
   '3-day-dali-itinerary': daliGuide,
+  'china-golden-week-2026-travel-guide': goldenWeekGuide,
+  'great-wall-of-china-day-trip-from-beijing': greatWallGuide,
+  'chengdu-panda-base-guide': pandaBaseGuide,
   'best-time-to-visit-china': {
     title: 'Best Time to Visit China: Month-by-Month Guide (2026)',
     heading: 'Best Time to Visit China: Weather and Crowds by Month (2026)',
@@ -3386,6 +3395,9 @@ const staticCtas = {
   '3-day-suzhou-itinerary': ['Get my personalised Suzhou itinerary', '/#trip-plan'],
   '3-day-nanjing-itinerary': ['Get my personalised Nanjing itinerary', '/#trip-plan'],
   '3-day-dali-itinerary': ['Get my personalised Dali itinerary', '/#trip-plan'],
+  'china-golden-week-2026-travel-guide': ['Get my Golden Week China itinerary', '/#trip-plan'],
+  'great-wall-of-china-day-trip-from-beijing': ['Get my Beijing itinerary', '/#trip-plan'],
+  'chengdu-panda-base-guide': ['Get my Chengdu itinerary', '/#trip-plan'],
   'best-time-to-visit-china': ['Get my itinerary for the right season', '/#trip-plan'],
   'china-esim-internet-guide': ['Get my free China itinerary', '/#trip-plan'],
   'alipay-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
@@ -3428,6 +3440,9 @@ const relatedLinks = [
   ['3-day Suzhou itinerary', '/3-day-suzhou-itinerary/'],
   ['3-day Nanjing itinerary', '/3-day-nanjing-itinerary/'],
   ['3-day Dali itinerary', '/3-day-dali-itinerary/'],
+  ['China Golden Week 2026 travel guide', '/china-golden-week-2026-travel-guide/'],
+  ['Great Wall day trip from Beijing', '/great-wall-of-china-day-trip-from-beijing/'],
+  ['Chengdu Panda Base guide', '/chengdu-panda-base-guide/'],
   ['Best time to visit China', '/best-time-to-visit-china/'],
   ['WeChat Pay for foreigners', '/wechat-pay-for-foreigners/'],
   ['China payment guide', '/china-payment-guide/'],
@@ -3569,6 +3584,7 @@ const pageRelatedLinks = {
     ['Get a personalised China itinerary', '/#trip-plan'],
   ],
   '3-day-beijing-itinerary': [
+    ['Great Wall day trip from Beijing', '/great-wall-of-china-day-trip-from-beijing/'],
     ['3-day Shanghai itinerary', '/3-day-shanghai-itinerary/'],
     ['Beijing vs Shanghai', '/beijing-vs-shanghai/'],
     ['7-day China itinerary', '/7-day-china-itinerary/'],
@@ -3628,6 +3644,7 @@ const pageRelatedLinks = {
     ['Get a personalised Chongqing itinerary', '/#trip-plan'],
   ],
   '3-day-chengdu-itinerary': [
+    ['Chengdu Panda Base guide', '/chengdu-panda-base-guide/'],
     ['3-day Chongqing itinerary', '/3-day-chongqing-itinerary/'],
     ['3-day Xi\'an itinerary', '/3-day-xian-itinerary/'],
     ['14-day China itinerary', '/14-day-china-itinerary/'],
@@ -3688,7 +3705,36 @@ const pageRelatedLinks = {
     ['First trip to China', '/first-trip-to-china/'],
     ['Get my personalised Dali itinerary', '/#trip-plan'],
   ],
+  'china-golden-week-2026-travel-guide': [
+    ['Best time to visit China', '/best-time-to-visit-china/'],
+    ['China train travel guide', '/china-train-travel-guide/'],
+    ['China hotels for foreigners', '/china-hotels-for-foreigners/'],
+    ['China travel budget', '/china-travel-budget/'],
+    ['7-day China itinerary', '/7-day-china-itinerary/'],
+    ['10-day China itinerary', '/10-day-china-itinerary/'],
+    ['First trip to China', '/first-trip-to-china/'],
+    ['Get my Golden Week China itinerary', '/#trip-plan'],
+  ],
+  'great-wall-of-china-day-trip-from-beijing': [
+    ['3-day Beijing itinerary', '/3-day-beijing-itinerary/'],
+    ['7-day China itinerary', '/7-day-china-itinerary/'],
+    ['China train travel guide', '/china-train-travel-guide/'],
+    ['China travel safety guide', '/china-travel-safety-guide/'],
+    ['China Golden Week 2026 travel guide', '/china-golden-week-2026-travel-guide/'],
+    ['First trip to China', '/first-trip-to-china/'],
+    ['Get my Beijing itinerary', '/#trip-plan'],
+  ],
+  'chengdu-panda-base-guide': [
+    ['3-day Chengdu itinerary', '/3-day-chengdu-itinerary/'],
+    ['14-day China itinerary', '/14-day-china-itinerary/'],
+    ['China train travel guide', '/china-train-travel-guide/'],
+    ['China hotels for foreigners', '/china-hotels-for-foreigners/'],
+    ['China Golden Week 2026 travel guide', '/china-golden-week-2026-travel-guide/'],
+    ['First trip to China', '/first-trip-to-china/'],
+    ['Get my Chengdu itinerary', '/#trip-plan'],
+  ],
   'best-time-to-visit-china': [
+    ['China Golden Week 2026 travel guide', '/china-golden-week-2026-travel-guide/'],
     ['3-day Zhangjiajie itinerary', '/3-day-zhangjiajie-itinerary/'],
     ['3-day Guilin and Yangshuo itinerary', '/3-day-guilin-yangshuo-itinerary/'],
     ['3-day Chengdu itinerary', '/3-day-chengdu-itinerary/'],
