@@ -3,6 +3,7 @@ import { ArrowLeft, Check } from 'lucide-react';
 import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
 import { unsubscribeNewsletter } from '../lib/newsletter';
 import suzhouGuide from '../data/seoPages/3-day-suzhou-itinerary.json';
+import nanjingGuide from '../data/seoPages/3-day-nanjing-itinerary.json';
 
 type LegalPageType = 'terms' | 'privacy' | 'refund' | 'contact' | 'about' | 'unsubscribe';
 type GuidePageType =
@@ -34,6 +35,7 @@ type GuidePageType =
   | '3-day-guangzhou-itinerary'
   | '3-day-hangzhou-itinerary'
   | '3-day-suzhou-itinerary'
+  | '3-day-nanjing-itinerary'
   | 'best-time-to-visit-china'
   | 'china-esim-internet-guide'
   | 'alipay-for-foreigners'
@@ -4324,6 +4326,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     sections: suzhouGuide.contentSections,
     faqs: suzhouGuide.faqs.map(([question, answer]) => ({ question, answer })),
     related: [
+      { label: '3-day Nanjing itinerary', href: '/3-day-nanjing-itinerary/' },
       { label: '3-day Shanghai itinerary', href: '/3-day-shanghai-itinerary/' },
       { label: '3-day Hangzhou itinerary', href: '/3-day-hangzhou-itinerary/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
@@ -4334,6 +4337,32 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'Get my personalised Suzhou itinerary', href: '/#trip-plan' },
     ],
     sources: suzhouGuide.sourceLinks.map(([label, href]) => ({ label, href })),
+  },
+  '3-day-nanjing-itinerary': {
+    path: '/3-day-nanjing-itinerary/',
+    title: nanjingGuide.heading,
+    intro: nanjingGuide.description,
+    metaTitle: nanjingGuide.title,
+    metaDescription: nanjingGuide.description,
+    quickAnswer: nanjingGuide.quickAnswer,
+    ctaLabel: 'Get my personalised Nanjing itinerary',
+    ctaHref: '/#trip-plan',
+    lastReviewed: nanjingGuide.lastReviewed,
+    lastModified: nanjingGuide.lastModified,
+    isArticle: true,
+    sections: nanjingGuide.contentSections,
+    faqs: nanjingGuide.faqs.map(([question, answer]) => ({ question, answer })),
+    related: [
+      { label: '3-day Shanghai itinerary', href: '/3-day-shanghai-itinerary/' },
+      { label: '3-day Suzhou itinerary', href: '/3-day-suzhou-itinerary/' },
+      { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
+      { label: 'China train travel guide', href: '/china-train-travel-guide/' },
+      { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+      { label: 'China metro guide', href: '/china-metro-guide/' },
+      { label: 'First trip to China', href: '/first-trip-to-china/' },
+      { label: 'Get my personalised Nanjing itinerary', href: '/#trip-plan' },
+    ],
+    sources: nanjingGuide.sourceLinks.map(([label, href]) => ({ label, href })),
   },
   'best-time-to-visit-china': {
     path: '/best-time-to-visit-china/',
@@ -5758,6 +5787,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/3-day-guangzhou-itinerary')) return '3-day-guangzhou-itinerary';
   if (cleanPath.endsWith('/3-day-hangzhou-itinerary')) return '3-day-hangzhou-itinerary';
   if (cleanPath.endsWith('/3-day-suzhou-itinerary')) return '3-day-suzhou-itinerary';
+  if (cleanPath.endsWith('/3-day-nanjing-itinerary')) return '3-day-nanjing-itinerary';
   if (cleanPath.endsWith('/best-time-to-visit-china')) return 'best-time-to-visit-china';
   if (cleanPath.endsWith('/china-esim-internet-guide')) return 'china-esim-internet-guide';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
