@@ -10,8 +10,8 @@ const pages = [
   {
     path: '/guides/',
     h1: /China Travel Guides/i,
-    keywords: ['China Visa-Free Travel Guide', 'China Airport Arrival Guide', 'China Hotels for Foreigners', 'China Food Ordering Guide', 'Chinese Travel Phrases', 'China Travel Safety Guide', 'China Travel Budget', 'China Travel Apps', 'AMap in English', 'China Metro Guide', 'DiDi in China for Foreigners', 'China Train Travel Guide', '7-Day China Itinerary', '10-Day China Itinerary', '14-Day China Itinerary', 'Beijing vs Shanghai', '3-Day Beijing Itinerary', '3-Day Shanghai Itinerary', '3-Day Xi\'an Itinerary', '3-Day Chongqing Itinerary', '3-Day Chengdu Itinerary', '3-Day Guilin and Yangshuo Itinerary', '3-Day Zhangjiajie Itinerary', '3-Day Shenzhen Itinerary', '3-Day Guangzhou Itinerary', '3-Day Hangzhou Itinerary', '3-Day Suzhou Itinerary', '3-Day Nanjing Itinerary', '3-Day Dali Itinerary', 'Best Time to Visit China', 'Alipay for Foreigners', 'WeChat Pay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
-    links: ['/china-visa-free-travel-guide/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-food-ordering-guide/', '/chinese-travel-phrases/', '/china-travel-safety-guide/', '/china-travel-budget/', '/china-travel-apps/', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/3-day-beijing-itinerary/', '/3-day-shanghai-itinerary/', '/3-day-xian-itinerary/', '/3-day-chongqing-itinerary/', '/3-day-chengdu-itinerary/', '/3-day-guilin-yangshuo-itinerary/', '/3-day-zhangjiajie-itinerary/', '/3-day-shenzhen-itinerary/', '/3-day-guangzhou-itinerary/', '/3-day-hangzhou-itinerary/', '/3-day-suzhou-itinerary/', '/3-day-nanjing-itinerary/', '/3-day-dali-itinerary/', '/best-time-to-visit-china/', '/wechat-pay-for-foreigners/', '/china-payment-guide/', '/faq/'],
+    keywords: ['China Visa-Free Travel Guide', 'China Airport Arrival Guide', 'China Hotels for Foreigners', 'China Food Ordering Guide', 'Chinese Travel Phrases', 'China Travel Safety Guide', 'China Travel Budget', 'China Travel Apps', 'AMap in English', 'China Metro Guide', 'DiDi in China for Foreigners', 'China Train Travel Guide', '7-Day China Itinerary', '10-Day China Itinerary', '14-Day China Itinerary', 'Beijing vs Shanghai', '3-Day Beijing Itinerary', '3-Day Shanghai Itinerary', '3-Day Xi\'an Itinerary', '3-Day Chongqing Itinerary', '3-Day Chengdu Itinerary', '3-Day Guilin and Yangshuo Itinerary', '3-Day Zhangjiajie Itinerary', '3-Day Shenzhen Itinerary', '3-Day Guangzhou Itinerary', '3-Day Hangzhou Itinerary', '3-Day Suzhou Itinerary', '3-Day Nanjing Itinerary', '3-Day Dali Itinerary', 'China Golden Week 2026 Travel Guide', 'Great Wall Day Trip from Beijing', 'Chengdu Panda Base Guide', 'Best Time to Visit China', 'Alipay for Foreigners', 'WeChat Pay for Foreigners', 'China Payment Guide', 'China Emergency Numbers'],
+    links: ['/china-visa-free-travel-guide/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-food-ordering-guide/', '/chinese-travel-phrases/', '/china-travel-safety-guide/', '/china-travel-budget/', '/china-travel-apps/', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/3-day-beijing-itinerary/', '/3-day-shanghai-itinerary/', '/3-day-xian-itinerary/', '/3-day-chongqing-itinerary/', '/3-day-chengdu-itinerary/', '/3-day-guilin-yangshuo-itinerary/', '/3-day-zhangjiajie-itinerary/', '/3-day-shenzhen-itinerary/', '/3-day-guangzhou-itinerary/', '/3-day-hangzhou-itinerary/', '/3-day-suzhou-itinerary/', '/3-day-nanjing-itinerary/', '/3-day-dali-itinerary/', '/china-golden-week-2026-travel-guide/', '/great-wall-of-china-day-trip-from-beijing/', '/chengdu-panda-base-guide/', '/best-time-to-visit-china/', '/wechat-pay-for-foreigners/', '/china-payment-guide/', '/faq/'],
   },
   {
     path: '/china-payment-guide/',
@@ -192,6 +192,24 @@ const pages = [
     h1: /3-Day Dali Itinerary for First-Time Visitors.*2026/i,
     keywords: ['Dali Old Town', 'Three Pagodas', 'Erhai', 'Xizhou', 'Cangshan', 'Xiaguan', '12306'],
     links: ['/#trip-plan', '/3-day-guilin-yangshuo-itinerary/', '/3-day-zhangjiajie-itinerary/', '/14-day-china-itinerary/', '/china-train-travel-guide/', '/china-hotels-for-foreigners/', '/best-time-to-visit-china/', '/first-trip-to-china/'],
+  },
+  {
+    path: '/china-golden-week-2026-travel-guide/',
+    h1: /China Golden Week 2026.*Travel Guide for Foreign Visitors/i,
+    keywords: ['October 1', 'October 7', 'Mid-Autumn Festival', '12306', 'hotel', 'National Day'],
+    links: ['/#trip-plan', '/best-time-to-visit-china/', '/china-train-travel-guide/', '/china-hotels-for-foreigners/', '/china-travel-budget/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/first-trip-to-china/'],
+  },
+  {
+    path: '/great-wall-of-china-day-trip-from-beijing/',
+    h1: /Great Wall Day Trip from Beijing.*Mutianyu or Badaling.*2026/i,
+    keywords: ['Mutianyu', 'Badaling', 'cableway', 'shuttle', '12306', 'Forbidden City'],
+    links: ['/#trip-plan', '/3-day-beijing-itinerary/', '/7-day-china-itinerary/', '/china-train-travel-guide/', '/china-travel-safety-guide/', '/china-golden-week-2026-travel-guide/', '/first-trip-to-china/'],
+  },
+  {
+    path: '/chengdu-panda-base-guide/',
+    h1: /Chengdu Panda Base Guide for First-Time Visitors.*2026/i,
+    keywords: ['real-name', 'passport', 'South Gate', 'West Gate', 'sightseeing bus', 'pandas'],
+    links: ['/#trip-plan', '/3-day-chengdu-itinerary/', '/14-day-china-itinerary/', '/china-train-travel-guide/', '/china-hotels-for-foreigners/', '/china-golden-week-2026-travel-guide/', '/first-trip-to-china/'],
   },
   {
     path: '/best-time-to-visit-china/',
