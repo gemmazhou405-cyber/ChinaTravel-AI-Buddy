@@ -3434,6 +3434,54 @@ const pageMeta = {
   },
 };
 
+Object.assign(pageMeta, {
+  'is-china-safe-for-tourists-2026': {
+    ...pageMeta['china-travel-safety-guide'],
+    title: 'Is China Safe for Tourists in 2026? Honest Guide for Americans',
+    heading: "Is China Safe for Tourists in 2026? Yes, with Important Caveats.",
+    description: 'Is China safe for American tourists? Serious crime against visitors is relatively uncommon. Understand the Level 2 advisory, local laws, scams, and safety tips.',
+    quickAnswer: 'Many visitors travel through China without serious incidents. The current US Level 2 advisory means Exercise Increased Caution and focuses on arbitrary enforcement of local laws, exit bans, and detention risk. Everyday precautions and respect for local laws still matter.',
+    lastReviewed: 'September 26, 2026',
+    lastModified: '2026-09-26',
+  },
+  'best-apps-for-china-travel-2026': {
+    ...pageMeta['china-travel-apps'],
+    title: '10 Best Apps for China Travel (2026): What to Download Before You Land',
+    heading: '10 Apps You Should Download Before Landing in China',
+    description: "Don't land without these 10 apps. Alipay and WeChat Pay for payment, DiDi for taxis, Amap for maps, 12306 for trains. Full setup guide for foreigners.",
+    quickAnswer: 'Prepare Alipay, WeChat, DiDi, Amap or Apple Maps, and Trip.com or Railway 12306 before departure. Then add metro, translation, food, and eSIM tools for your route.',
+    lastReviewed: 'September 26, 2026',
+    lastModified: '2026-09-26',
+  },
+  'how-to-use-didi-in-china-foreigners': {
+    ...pageMeta['didi-in-china-for-foreigners'],
+    title: 'How to Use DiDi in China as a Foreigner (No Chinese Number Needed)',
+    heading: 'How to Use DiDi in China Without a Chinese Phone Number',
+    description: 'Foreigners can use DiDi with a supported international number or through Alipay and WeChat. Enter destinations, verify the car, and pay in-app.',
+    quickAnswer: 'Use DiDi China or a supported Alipay or WeChat ride-hailing route. Confirm the pickup pin, search the destination, review the estimate, and verify the licence plate before entering.',
+    lastReviewed: 'September 26, 2026',
+    lastModified: '2026-09-26',
+  },
+  'beijing-shanghai-layover-240-hour-guide': {
+    ...pageMeta['china-visa-free-travel-guide'],
+    title: 'Beijing & Shanghai Layover Guide 2026: 240-Hour Visa-Free Transit Explained',
+    heading: 'Beijing and Shanghai Layovers: Turn Transit Time into a Real Trip',
+    description: 'Plan a Beijing or Shanghai layover with China 240-hour visa-free transit. Check the third-country route, 65 ports, allowed areas, and realistic itineraries.',
+    quickAnswer: 'The 240-hour policy currently covers eligible nationals from 57 countries entering through 65 designated ports in 24 provincial-level areas. A confirmed onward ticket to a different country or region is required, and travel must remain inside permitted areas.',
+    lastReviewed: 'September 26, 2026',
+    lastModified: '2026-09-26',
+  },
+  'how-much-does-china-trip-cost-2026-calculator': {
+    ...pageMeta['china-travel-budget'],
+    title: 'How Much Does a China Trip Cost in 2026? Daily Budget Calculator',
+    heading: 'How Much Does a China Trip Cost in 2026? Real Planning Numbers',
+    description: 'Plan China trip costs for 2026. Compare budget, mid-range, and comfortable daily spending for hotels, food, transport, attractions, and trains.',
+    quickAnswer: 'Plan roughly RMB 350-650 per person per day for budget travel, RMB 800-1,500 for mid-range travel, or RMB 1,800-3,000+ for a comfortable trip, excluding international flights.',
+    lastReviewed: 'September 26, 2026',
+    lastModified: '2026-09-26',
+  },
+});
+
 const pages = Object.keys(pageMeta);
 
 function pagePath(page) {
@@ -3510,6 +3558,11 @@ const staticCtas = {
   'china-esim-internet-vpn-guide': ['Check my phone and connection', '/'],
   'china-train-booking-foreigners-12306': ['Plan my train booking', '/'],
   'china-itinerary-first-time-7-10-14-days': ['Generate my China route', '/'],
+  'is-china-safe-for-tourists-2026': ['Ask Buddy for a city safety check', '/'],
+  'best-apps-for-china-travel-2026': ['Generate my personal app checklist', '/'],
+  'how-to-use-didi-in-china-foreigners': ['Translate my hotel address for DiDi', '/'],
+  'beijing-shanghai-layover-240-hour-guide': ['Plan my layover with Buddy', '/'],
+  'how-much-does-china-trip-cost-2026-calculator': ['Calculate my China budget with Buddy', '/'],
   faq: ['Open the free toolkit', '/'],
 };
 
@@ -3557,6 +3610,11 @@ const relatedLinks = [
   ['China eSIM guide', '/china-esim-internet-vpn-guide/'],
   ['China train booking', '/china-train-booking-foreigners-12306/'],
   ['China itineraries', '/china-itinerary-first-time-7-10-14-days/'],
+  ['China tourist safety 2026', '/is-china-safe-for-tourists-2026/'],
+  ['Best apps for China travel', '/best-apps-for-china-travel-2026/'],
+  ['DiDi for foreigners', '/how-to-use-didi-in-china-foreigners/'],
+  ['Beijing and Shanghai layover guide', '/beijing-shanghai-layover-240-hour-guide/'],
+  ['China trip cost calculator', '/how-much-does-china-trip-cost-2026-calculator/'],
   ['FAQ', '/faq/'],
 ];
 

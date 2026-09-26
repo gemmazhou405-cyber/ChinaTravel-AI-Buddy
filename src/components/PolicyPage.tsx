@@ -56,6 +56,11 @@ type GuidePageType =
   | 'china-esim-internet-vpn-guide'
   | 'china-train-booking-foreigners-12306'
   | 'china-itinerary-first-time-7-10-14-days'
+  | 'is-china-safe-for-tourists-2026'
+  | 'best-apps-for-china-travel-2026'
+  | 'how-to-use-didi-in-china-foreigners'
+  | 'beijing-shanghai-layover-240-hour-guide'
+  | 'how-much-does-china-trip-cost-2026-calculator'
   | 'faq';
 type PageType = 'pricing' | LegalPageType | GuidePageType;
 
@@ -422,6 +427,11 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'China eSIM and Internet Guide: prepare access to Google, WhatsApp, and Instagram.',
           'China Train Booking: register on 12306 and travel with a foreign passport.',
           'First-Time China Itineraries: choose a practical 7, 10, or 14-day route.',
+          'China Tourist Safety 2026: understand everyday risks and the US Level 2 advisory.',
+          'Best Apps for China Travel: prepare payments, maps, rides, and bookings.',
+          'DiDi for Foreigners: book rides with an international number or mini-program.',
+          'Beijing and Shanghai Layovers: plan eligible 240-hour transit routes.',
+          'China Trip Cost Calculator: estimate realistic daily and total budgets.',
           'FAQ: concise answers about ChinaEase Buddy and service limitations.',
         ],
       },
@@ -477,6 +487,11 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China eSIM and internet guide', href: '/china-esim-internet-vpn-guide/' },
       { label: 'China train booking', href: '/china-train-booking-foreigners-12306/' },
       { label: 'First-time China itineraries', href: '/china-itinerary-first-time-7-10-14-days/' },
+      { label: 'Is China safe for tourists?', href: '/is-china-safe-for-tourists-2026/' },
+      { label: 'Best apps for China travel', href: '/best-apps-for-china-travel-2026/' },
+      { label: 'How to use DiDi in China', href: '/how-to-use-didi-in-china-foreigners/' },
+      { label: 'Beijing and Shanghai layover guide', href: '/beijing-shanghai-layover-240-hour-guide/' },
+      { label: 'China trip cost calculator', href: '/how-much-does-china-trip-cost-2026-calculator/' },
       { label: 'FAQ', href: '/faq/' },
     ],
   },
@@ -5386,6 +5401,140 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'FAQ', href: '/faq/' },
     ],
   },
+  'is-china-safe-for-tourists-2026': {
+    path: '/is-china-safe-for-tourists-2026/',
+    title: "Is China Safe for Tourists in 2026? Yes, with Important Caveats.",
+    intro: 'An honest guide for American visitors, solo travelers, and families covering everyday safety, the US Level 2 advisory, common scams, local laws, and emergency preparation.',
+    metaTitle: 'Is China Safe for Tourists in 2026? Honest Guide for Americans',
+    metaDescription: 'Is China safe for American tourists? Serious crime against visitors is relatively uncommon. Understand the Level 2 advisory, local laws, scams, and safety tips.',
+    quickAnswer: 'Many visitors travel through China without serious incidents, and official guidance describes serious crime against foreign visitors as relatively uncommon. The current US Level 2 advisory means “Exercise Increased Caution”; it focuses on arbitrary enforcement of local laws, exit bans, and detention risk rather than describing China as a war zone. Everyday precautions, respect for local laws, and a clear emergency plan still matter.',
+    ctaLabel: 'Ask Buddy for a city safety check',
+    midCtaLabel: 'Build my personal safety checklist',
+    ctaHref: '/',
+    buddyPrompt: 'Give me a practical safety checklist for [city] in China. I am traveling [solo/with family], my nationality is [country], and my main concerns are [concerns].',
+    reviewed: 'September 26, 2026',
+    sections: [
+      { title: 'What the US Level 2 Advisory Really Means', items: ['Level 2 means Exercise Increased Caution. It is not the same as Level 3 “Reconsider Travel” or Level 4 “Do Not Travel.”', 'The advisory highlights arbitrary enforcement of local laws, exit bans, and possible detention. Travelers with business disputes, government links, journalism, research, or sensitive professional backgrounds should read the full advisory carefully.', 'Check the latest advisory for your own nationality before departure because government guidance can change.'] },
+      { title: 'Everyday Safety for Tourists', items: ['Busy streets, metros, and major visitor areas are commonly used late into the evening, but no city is risk-free.', 'Solo and female travelers should share plans, keep control of drinks and transport, and avoid isolated shortcuts at night.', 'For children, carry hotel details, emergency contacts, necessary medicine, and a clear meeting plan for crowded attractions and stations.', 'Use a verified DiDi or a marked, metered taxi and check the licence plate before entering.'] },
+      { title: 'Scams and Problems to Avoid', items: ['Decline unexpected tea-house, bar, massage, or “practice English” invitations near major tourist sights when prices and the venue cannot be independently verified.', 'Check the merchant name and amount before approving any QR payment.', 'Avoid unmarked vehicles, unofficial ticket sellers, and anyone asking you to carry a parcel or luggage.', 'Do not photograph military, police, border, government, or other sensitive facilities when permission is unclear. Avoid demonstrations and political gatherings.'] },
+      { title: 'Your Safety Toolkit', items: ['Save 110 for police, 120 for ambulance, and 119 for fire.', 'Keep your hotel name and address in Chinese available offline.', 'Store passport, insurance, booking, embassy, and emergency-contact details securely offline.', 'Prepare mobile data and payment backups so one failed app does not leave you stranded.'] },
+    ],
+    faqs: [
+      { question: 'Is China safe for American tourists in 2026?', answer: 'Many Americans visit without serious incidents. The US advisory is Level 2, Exercise Increased Caution, because of legal-enforcement, exit-ban, and detention risks. Read the full current advisory and follow local laws.' },
+      { question: 'Is China safe for solo female travelers?', answer: 'Many women travel independently in China, but standard precautions still apply: share plans, use verified transport, keep control of drinks, avoid isolated areas, and leave situations that feel unsafe.' },
+      { question: 'Is China safe for children and families?', answer: 'China can be practical for family travel. Plan for crowds, carry medicine and hotel details, use child-appropriate restraints where available, and agree on a meeting point.' },
+      { question: 'What emergency numbers should I save?', answer: 'Save 110 for police, 120 for ambulance, and 119 for fire. Ask hotel, station, or attraction staff to help call if language is a barrier.' },
+    ],
+    related: [{ label: 'Full China travel safety guide', href: '/china-travel-safety-guide/' }, { label: 'Emergency numbers', href: '/china-emergency-numbers/' }, { label: 'Essential travel apps', href: '/best-apps-for-china-travel-2026/' }],
+    sources: [{ label: 'US Department of State: China travel advisory', href: 'https://travel.state.gov/en/international-travel/travel-advisories/china.html' }, { label: 'UK government: China safety and security', href: 'https://www.gov.uk/foreign-travel-advice/china/safety-and-security' }],
+  },
+  'best-apps-for-china-travel-2026': {
+    path: '/best-apps-for-china-travel-2026/',
+    title: '10 Apps You Should Download Before Landing in China',
+    intro: 'Prepare payments, taxis, maps, messaging, trains, hotels, food delivery, and metro navigation before your flight so account verification does not consume your first day.',
+    metaTitle: '10 Best Apps for China Travel (2026): What to Download Before You Land',
+    metaDescription: "Don't land without these 10 apps. Alipay and WeChat Pay for payment, DiDi for taxis, Amap for maps, 12306 for trains. Full setup guide for foreigners.",
+    quickAnswer: 'Start with Alipay, WeChat, DiDi, Amap or Apple Maps, and Trip.com or Railway 12306. Then add tools for metro navigation, translation, food delivery, and your international eSIM. Complete passport, card, and phone-number verification before departure whenever possible.',
+    ctaLabel: 'Generate my personal app checklist',
+    midCtaLabel: 'Check the apps for my phone and trip',
+    ctaHref: '/',
+    buddyPrompt: 'Create my China app checklist. My phone is [model], I use [iPhone/Android], I will visit [cities], and I need help with [payments/maps/taxis/trains/translation].',
+    reviewed: 'September 26, 2026',
+    sections: [
+      { title: 'The Essential App Stack', table: { headers: ['Need', 'Primary app', 'Backup or alternative'], rows: [['Payments', 'Alipay', 'WeChat Pay and RMB cash'], ['Taxis', 'DiDi', 'Official taxi queue'], ['Maps', 'Amap (Gaode)', 'Apple Maps in mainland China'], ['Messaging', 'WeChat', 'Your travel eSIM for overseas services'], ['Trains and hotels', 'Railway 12306 / Trip.com', 'Hotel or station counter']] } },
+      { title: 'Five Apps to Prepare Before Your Flight', items: ['Alipay: verify identity and link a supported international card.', 'WeChat: create the account and prepare WeChat Pay as a payment backup.', 'DiDi: register with your reachable mobile number or learn the Alipay/WeChat ride-hailing route.', 'Amap or Apple Maps: save hotels and destinations in Chinese.', 'Trip.com and Railway 12306: register passenger names exactly as shown in the passport.'] },
+      { title: 'Useful Apps After Landing', items: ['Meituan for food and local services where its interface and payment route are practical for you.', 'MetroMan or official city metro tools for station maps and route planning.', 'Alipay Transport for local bus or metro QR codes where supported.', 'An offline-capable translation tool with Chinese downloaded before arrival.', 'Your eSIM provider app or account page, with setup instructions saved offline.'] },
+      { title: 'Setup Rules That Prevent First-Day Problems', items: ['Keep access to the home phone number used for SMS verification.', 'Use the exact passport spelling for train and hotel accounts.', 'Prepare at least two payment methods and save hotel addresses offline.', 'Do not assume Google Maps, Google Pay, Uber, or WhatsApp will work on ordinary mainland Wi-Fi or a local SIM.'] },
+    ],
+    faqs: [
+      { question: 'What apps do foreigners need most in China?', answer: 'For most trips, prioritize Alipay, WeChat, DiDi, Amap or Apple Maps, and Trip.com or Railway 12306.' },
+      { question: 'Should I download China travel apps before landing?', answer: 'Yes. Account creation, passport checks, card linking, language packs, and SMS verification are easier while your normal phone number and internet access are available.' },
+      { question: 'Does Google Maps work in China?', answer: 'Google services are generally unavailable on ordinary mainland connections, and local map data can be unsuitable for navigation. Use Amap or Apple Maps in mainland China.' },
+      { question: 'Can I use Uber in China?', answer: 'Uber is not the standard ride-hailing option in mainland China. Use DiDi or an official taxi service.' },
+    ],
+    related: [{ label: 'Full China travel apps guide', href: '/china-travel-apps/' }, { label: 'DiDi guide for foreigners', href: '/how-to-use-didi-in-china-foreigners/' }, { label: 'China eSIM guide', href: '/china-esim-internet-vpn-guide/' }],
+  },
+  'how-to-use-didi-in-china-foreigners': {
+    path: '/how-to-use-didi-in-china-foreigners/',
+    title: 'How to Use DiDi in China Without a Chinese Phone Number',
+    intro: 'Foreign visitors can use the DiDi China app with a supported international number or access ride-hailing through Alipay and WeChat. Prepare the payment route and hotel address before requesting your first ride.',
+    metaTitle: 'How to Use DiDi in China as a Foreigner (No Chinese Number Needed)',
+    metaDescription: 'Foreigners can use DiDi with a supported international number or through Alipay and WeChat. Enter destinations, verify the car, and pay in-app.',
+    quickAnswer: 'Open DiDi China or the supported ride-hailing option in Alipay or WeChat, confirm the pickup pin, search for the destination, compare the displayed car categories and estimate, then verify the licence plate before entering. A Chinese phone number is not always required, but keep access to the number used for registration.',
+    ctaLabel: 'Translate my hotel address for DiDi',
+    midCtaLabel: 'Create my pickup message',
+    ctaHref: '/',
+    buddyPrompt: 'Translate this destination and create a short DiDi driver message: [hotel/address]. My pickup point is [airport/station/gate].',
+    reviewed: 'September 26, 2026',
+    sections: [
+      { title: 'Book a DiDi Step by Step', ordered: true, items: ['Open the DiDi China app or the ride-hailing service available through Alipay or WeChat.', 'Allow location access, then correct the pickup pin to the exact gate, road side, floor, or ride-hailing zone.', 'Search for the destination in English or paste its Chinese name and address.', 'Review the displayed category, fare estimate, and pickup time before confirming.', 'At pickup, match the licence plate, car model, and driver shown in the app. Complete payment through the route shown in the booking platform.'] },
+      { title: 'Airport and Station Pickups', items: ['Follow signs to the designated ride-hailing pickup area; drivers often cannot stop at the ordinary arrivals curb.', 'Send the exact terminal, floor, zone, gate, or pillar number.', 'Ask airport, station, or hotel staff to confirm the pickup point when the pin is unclear.', 'Do not accept an unsolicited off-platform ride from someone approaching inside the terminal.'] },
+      { title: 'Useful Driver Messages', table: { headers: ['English', 'Chinese'], rows: [['I am at Gate 3.', '我在三号门。'], ['I am at the ride-hailing pickup point.', '我在网约车上车点。'], ['Please take me to this address.', '请送我到这个地址。'], ['Please stop here.', '请在这里停车。'], ['I left something in the car.', '我把东西落在车上了。']] } },
+      { title: 'Payment and Ride Safety', items: ['Check the estimated fare and category before confirming; tolls, waiting, and route changes can affect the final amount.', 'Keep communication and payment in the platform when possible.', 'Wear a seat belt and share the trip through the app when available.', 'Save the completed trip record for lost items, disputed charges, or safety reports.'] },
+    ],
+    faqs: [
+      { question: 'Can foreigners use DiDi in China?', answer: 'Yes. DiDi China supports inbound visitors, and ride-hailing may also be available through Alipay and WeChat.' },
+      { question: 'Do I need a Chinese phone number for DiDi?', answer: 'Not always. The official DiDi China app supports global mobile-number login, subject to current availability and verification.' },
+      { question: 'Can I enter a destination in English?', answer: 'Many major places can be found in English, but saving the Chinese hotel or destination name and address is the safest backup.' },
+      { question: 'What if the driver cannot find me?', answer: 'Send the exact gate, floor, zone, or nearby landmark. At airports and stations, confirm that you are in the official ride-hailing pickup area.' },
+    ],
+    related: [{ label: 'Full DiDi guide', href: '/didi-in-china-for-foreigners/' }, { label: 'China payment guide', href: '/how-to-pay-in-china-as-foreigner/' }, { label: 'Best China travel apps', href: '/best-apps-for-china-travel-2026/' }],
+    sources: [{ label: 'Shanghai government: online ride-hailing for foreign visitors', href: 'https://english.shanghai.gov.cn/en-UsefulApps/20240206/976515bc601f4803b9ce2f64ae9f0cd3.html' }, { label: 'DiDi official website', href: 'https://www.didiglobal.com/' }],
+  },
+  'beijing-shanghai-layover-240-hour-guide': {
+    path: '/beijing-shanghai-layover-240-hour-guide/',
+    title: 'Beijing and Shanghai Layovers: Turn Transit Time into a Real Trip',
+    intro: 'Use a short airport layover for one realistic city highlight, or use eligible 240-hour visa-free transit for a longer route within the officially permitted areas.',
+    metaTitle: 'Beijing & Shanghai Layover Guide 2026: 240-Hour Visa-Free Transit Explained',
+    metaDescription: 'Plan a Beijing or Shanghai layover with China 240-hour visa-free transit. Check the third-country route, 65 ports, allowed areas, and realistic itineraries.',
+    quickAnswer: 'China’s current 240-hour visa-free transit policy covers eligible nationals from 57 countries entering through 65 designated ports in 24 provincial-level areas. You need an ordinary passport and a confirmed onward ticket to a different country or region. Cross-province travel is allowed only within the officially permitted areas, so validate every city and exit port before booking.',
+    ctaLabel: 'Plan my layover with Buddy',
+    midCtaLabel: 'Check whether my route qualifies',
+    ctaHref: '/',
+    buddyPrompt: 'Plan my China layover. I arrive at [airport] on [date/time], depart from [airport] to [country/region] on [date/time], hold a [country] passport, and want to see [interests].',
+    reviewed: 'September 26, 2026',
+    sections: [
+      { title: 'Who Qualifies for 240-Hour Transit?', items: ['You must hold an eligible ordinary passport and travel from country or region A through mainland China to a different country or region C.', 'You need a confirmed onward ticket with a departure date within the permitted stay.', 'Entry and exit must use designated ports, and every overnight stop and domestic journey must remain inside the currently permitted areas.', 'A return such as United States -> China -> United States is not third-country transit. Hong Kong and Macao can count as separate regions for route analysis, subject to all other conditions.'] },
+      { title: 'Choose an Itinerary That Fits the Clock', table: { headers: ['Available time', 'Practical scope', 'Important buffer'], rows: [['About 10 hours', 'One nearby city area only; avoid ambitious cross-city plans', 'Allow immigration, baggage, transport, security, and return to the airport'], ['About 24 hours', 'One city with an overnight stay or one carefully planned day trip', 'Confirm hotel registration and airport transfer timing'], ['72-240 hours', 'A multi-city route may be possible inside permitted areas', 'Verify each province, port, domestic ticket, and onward departure']] } },
+      { title: 'Beijing Layover Ideas', items: ['For a short layover, choose one cluster such as Tiananmen and the hutong area rather than combining it with the Great Wall.', 'For a full day or overnight stay, pre-book the Palace Museum or choose a Great Wall section with reliable transport.', 'PEK and PKX are far from central sights. Build airport transfer time and a large return buffer into the plan.'] },
+      { title: 'Shanghai Layover Ideas', items: ['For a short city visit, focus on the Bund, Nanjing Road, or one neighborhood rather than crossing the city repeatedly.', 'A longer stay can add the Former French Concession, museums, Pudong, or an eligible Yangtze Delta side trip.', 'PVG is far from central Shanghai. Check the last practical metro, Maglev connection, or DiDi timing for your flight.'] },
+      { title: 'Can You Take a Train During Transit?', items: ['Yes, domestic rail can be used when the journey remains entirely within the officially permitted areas and your entry and exit ports comply.', 'The policy allows cross-province travel within permitted areas in 24 provincial-level regions; it does not mean unrestricted travel everywhere in mainland China.', 'Carry your passport, temporary entry documentation, domestic bookings, hotel details, and confirmed onward international ticket.'] },
+    ],
+    faqs: [
+      { question: 'Does a US passport holder qualify for 240-hour visa-free transit?', answer: 'US citizens are on the current eligible-nationality list, but the passport, third-country route, ports, dates, tickets, and permitted-area conditions must all be met.' },
+      { question: 'Can I fly to China and return to the same country?', answer: 'Not under the 240-hour transit route. The destination after mainland China must be a different country or region from the place you entered from.' },
+      { question: 'Can I take a bullet train between cities?', answer: 'Yes, when every part of the domestic journey remains within the officially permitted areas and the entry and exit arrangements comply with the policy.' },
+      { question: 'Is a 10-hour layover enough to leave the airport?', answer: 'Sometimes, but only after allowing for immigration, baggage, airport-city travel, security, and airline check-in. A single nearby area is safer than a multi-stop itinerary.' },
+    ],
+    related: [{ label: 'Complete visa-free transit guide', href: '/china-visa-free-travel-guide/' }, { label: 'China train booking', href: '/china-train-booking-foreigners-12306/' }, { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' }],
+    sources: [{ label: 'National Immigration Administration: visa-free transit policy', href: 'https://en.nia.gov.cn/n147418/n147463/c183412/content.html' }, { label: 'Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' }],
+  },
+  'how-much-does-china-trip-cost-2026-calculator': {
+    path: '/how-much-does-china-trip-cost-2026-calculator/',
+    title: 'How Much Does a China Trip Cost in 2026? Real Planning Numbers',
+    intro: 'Build a realistic daily budget for accommodation, food, local transport, attractions, and intercity travel, then adjust it for your cities, dates, room sharing, and travel style.',
+    metaTitle: 'How Much Does a China Trip Cost in 2026? Daily Budget Calculator',
+    metaDescription: 'Plan China trip costs for 2026. Compare budget, mid-range, and comfortable daily spending for hotels, food, transport, attractions, and trains.',
+    quickAnswer: 'A useful planning range is RMB 350-650 per person per day for budget travel, RMB 800-1,500 for mid-range travel, or RMB 1,800-3,000+ for a comfortable trip. These ranges exclude international flights and are not fixed prices. Holidays, central hotels, private tours, room sharing, and late booking can change the total substantially.',
+    ctaLabel: 'Calculate my China budget with Buddy',
+    midCtaLabel: 'Estimate my trip total',
+    ctaHref: '/',
+    buddyPrompt: 'Estimate my China trip budget. I have [days] days, will visit [cities], travel in [month], prefer [budget/mid-range/comfortable] hotels, and travel with [number] people.',
+    reviewed: 'September 26, 2026',
+    sections: [
+      { title: 'Daily Budget at a Glance', table: { headers: ['Travel style', 'Per person/day', 'Typical approach'], rows: [['Budget', 'RMB 350-650', 'Hostel or simple room, local meals, metro, selective paid sights'], ['Mid-range', 'RMB 800-1,500', 'Comfortable hotel, mixed dining, metro plus some DiDi, several paid sights'], ['Comfortable', 'RMB 1,800-3,000+', 'Higher-grade hotel, frequent taxis, premium meals, tours or shows']] }, items: ['International flights and major intercity journeys are excluded from these daily ranges.', 'Two people sharing one room may spend less per person than a solo traveler.'] },
+      { title: 'Where the Money Goes', table: { headers: ['Category', 'Budget approach', 'Mid-range approach', 'Comfortable approach'], rows: [['Hotel', 'Hostel or simple local room', 'Well-reviewed 3-4 star hotel', 'Premium or landmark hotel'], ['Food', 'Local restaurants and simple meals', 'Mixed local and destination dining', 'Premium restaurants and hotel dining'], ['City transport', 'Metro and bus', 'Metro plus some DiDi', 'Frequent DiDi or private transfer'], ['Attractions', 'Free areas and selected tickets', 'Several major paid sights', 'Tours, shows, cable cars, or private guide']] } },
+      { title: 'Estimate a Full Trip', items: ['Multiply the daily range by the number of travelers and travel days.', 'Add exact high-speed train or domestic-flight prices for every intercity leg.', 'Add international flights, insurance, visas when required, mobile data, payment fees, shopping, and special activities.', 'Add a contingency of roughly 10-15 percent for price changes and unplanned transport.'] },
+      { title: 'When China Costs More', items: ['Chinese New Year, Labor Day, National Day Golden Week, school holidays, fairs, and major events can raise hotel and transport prices.', 'Central Beijing, Shanghai, Shenzhen, resort areas, and famous nature destinations can cost more than secondary cities.', 'Fast multi-city trips create more train, flight, transfer, and hotel-change costs than slower routes.', 'Live prices from hotels, airlines, attractions, and Railway 12306 should replace estimates before booking.'] },
+    ],
+    faqs: [
+      { question: 'How much should I budget per day in China?', answer: 'A practical planning range is RMB 350-650 for budget travel, RMB 800-1,500 for mid-range travel, or RMB 1,800-3,000+ for comfortable travel per person per day.' },
+      { question: 'Are international flights included?', answer: 'No. Add international flights separately because origin, season, cabin, and booking date create large price differences.' },
+      { question: 'How much does a 10-day China trip cost?', answer: 'Multiply your chosen daily range by ten, then add major intercity transport, international flights, insurance, visa costs where applicable, and a contingency.' },
+      { question: 'When is China most expensive to visit?', answer: 'Major public holidays, school holidays, trade fairs, summer peaks, and late booking can tighten availability and raise prices.' },
+    ],
+    related: [{ label: 'Full China travel budget guide', href: '/china-travel-budget/' }, { label: '7, 10 and 14-day itineraries', href: '/china-itinerary-first-time-7-10-14-days/' }, { label: 'China train booking guide', href: '/china-train-booking-foreigners-12306/' }],
+  },
   'china-visa-free-guide-2026': {
     path: '/china-visa-free-guide-2026/',
     title: 'Do You Need a Visa for China in 2026? Probably Not.',
@@ -6130,6 +6279,11 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/china-esim-internet-vpn-guide')) return 'china-esim-internet-vpn-guide';
   if (cleanPath.endsWith('/china-train-booking-foreigners-12306')) return 'china-train-booking-foreigners-12306';
   if (cleanPath.endsWith('/china-itinerary-first-time-7-10-14-days')) return 'china-itinerary-first-time-7-10-14-days';
+  if (cleanPath.endsWith('/is-china-safe-for-tourists-2026')) return 'is-china-safe-for-tourists-2026';
+  if (cleanPath.endsWith('/best-apps-for-china-travel-2026')) return 'best-apps-for-china-travel-2026';
+  if (cleanPath.endsWith('/how-to-use-didi-in-china-foreigners')) return 'how-to-use-didi-in-china-foreigners';
+  if (cleanPath.endsWith('/beijing-shanghai-layover-240-hour-guide')) return 'beijing-shanghai-layover-240-hour-guide';
+  if (cleanPath.endsWith('/how-much-does-china-trip-cost-2026-calculator')) return 'how-much-does-china-trip-cost-2026-calculator';
   if (cleanPath.endsWith('/faq')) return 'faq';
   return null;
 }
