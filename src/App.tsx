@@ -158,8 +158,19 @@ export default function App() {
   if (policyPageType) {
     return (
       <div className="min-h-screen bg-canvas pb-[env(safe-area-inset-bottom)] font-sans">
-        <PolicyPage type={policyPageType} userId={undefined} />
+        <PolicyPage type={policyPageType} userId={undefined} onAskBuddy={openBuddy} />
         <Footer onOpenEmergency={() => { window.location.href = '/?journey=emergency'; }} />
+        <ChatButton onClick={() => openBuddy()} />
+        {chatOpen && (
+          <ChatModal
+            onClose={() => setChatOpen(false)}
+            passState={passState}
+            refreshPassState={refreshPassState}
+            initialPrompt={chatPrefill ?? undefined}
+            onOpenToolkit={() => { window.location.href = '/'; }}
+            onViewPricing={() => { setChatOpen(false); window.location.href = '/pricing/'; }}
+          />
+        )}
       </div>
     );
   }

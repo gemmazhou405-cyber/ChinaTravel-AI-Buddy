@@ -75,6 +75,11 @@ const pageMeta = {
       ['China Payment Guide', 'Practical payment reminders for Alipay, WeChat Pay, cards, and cash backup.', '/china-payment-guide/'],
       ['China Travel Checklist', 'A first-time visitor checklist for apps, payments, hotels, phrases, and emergency basics.', '/china-travel-checklist/'],
       ['Emergency Numbers in China', 'Know 110, 120, and 119, plus simple phrases for urgent situations.', '/china-emergency-numbers/'],
+      ['China Visa-Free Guide 2026', 'Compare the 30-day policy and the A-China-C requirement for 240-hour transit.', '/china-visa-free-guide-2026/'],
+      ['Paying in China', 'Set up Alipay and WeChat Pay, understand fees, and prepare backups.', '/how-to-pay-in-china-as-foreigner/'],
+      ['China eSIM and Internet', 'Keep Google, WhatsApp, and Instagram available with the right travel connection.', '/china-esim-internet-vpn-guide/'],
+      ['China Train Booking', 'Register on 12306 with a foreign passport and board with an e-ticket.', '/china-train-booking-foreigners-12306/'],
+      ['First-Time China Itineraries', 'Choose a practical 7, 10, or 14-day route.', '/china-itinerary-first-time-7-10-14-days/'],
       ['FAQ', 'Short answers about ChinaEase Buddy, paid passes, travel tools, and service limits.', '/faq/'],
     ],
   },
@@ -3321,6 +3326,101 @@ const pageMeta = {
       ['What should I do if I lose my passport in China?', 'First handle immediate safety needs. Then contact local police if needed and reach your embassy or consulate for passport replacement guidance.'],
     ],
   },
+  'china-visa-free-guide-2026': {
+    heading: 'Do You Need a Visa for China in 2026? Probably Not.',
+    title: 'China Visa-Free Guide 2026: 45+ Countries, 30/60 Days & 240-Hour Transit Explained',
+    description: 'Check if you can visit China visa-free in 2026. Full list of 45+ countries, 30-day rules, 240-hour transit via 65 ports, and entry checklist. Ask ChinaEase Buddy AI.',
+    sections: [
+      ['Who Qualifies in 2026?', 'France, Germany, Italy, Spain, Malaysia, and other eligible passports can use the extended 30-day policy through December 31, 2026.', '#who-qualifies-in-2026'],
+      ['UK and Canada: Separate 2026 Policy', 'The United Kingdom and Canada were announced separately: up to 30 days from February 17, 2026 through December 31, 2026.', '#who-qualifies-in-2026'],
+      ['240-Hour Visa-Free Transit', 'Eligible travelers must fly country A to China to a different country or region C. They cannot return directly to the origin country.', '#240-hour-visa-free-transit-the-10-day-option'],
+      ['Entry Checklist', 'Carry your passport, onward ticket, accommodation details, and documents supporting the trip purpose.', '#entry-checklist-no-visa-still-needs-this'],
+    ],
+    faqs: [
+      ['Can I make multiple visa-free entries?', 'Each entry is assessed separately. Frequent or back-to-back visits may prompt questions about your purpose and itinerary.'],
+      ['Can I work in China during a visa-free stay?', 'No. Visa-free entry does not authorize employment.'],
+      ['Do I need to register with the police?', 'Hotels normally register guests. Private-home guests should complete temporary accommodation registration with the local authority within the required timeframe.'],
+      ['Can a US passport holder use 240-hour transit?', 'Potentially, if all conditions are met and the journey continues to a different country or region after China. United States to China to United States does not qualify.'],
+    ],
+  },
+  'how-to-pay-in-china-as-foreigner': {
+    heading: 'How to Pay in China When Cash Is No Longer the Default',
+    title: 'How to Pay in China as a Foreigner (2026): Alipay & WeChat Pay Setup Guide',
+    description: 'The easiest way to pay in China in 2026 is Alipay linked to Visa/Mastercard, with WeChat Pay as backup. Step-by-step setup, fees under ¥200 free.',
+    sections: [
+      ['Five-Minute Setup Before Landing', 'Download Alipay, complete passport and face verification, link a supported Visa or Mastercard, test the wallet, and set up WeChat Pay as backup.', '#the-5-minute-setup-you-must-do-before-landing'],
+      ['Alipay vs WeChat Pay', 'Use Alipay as the usual first choice and prepare WeChat Pay for merchants displaying only a WeChat QR code.', '#alipay-vs-wechat-pay-which-first'],
+      ['Fees You Must Know', 'International-card payments of ¥200 or less are generally free of the platform fee; a transaction over ¥200 typically carries about a 3% fee.', '#fees-you-must-know'],
+      ['When QR Payment Fails', 'Keep about ¥200 cash, a physical card, the second wallet, and Trip.com as booking backups.', '#what-if-a-qr-payment-fails'],
+    ],
+    faqs: [
+      ['Can foreigners use Alipay without a Chinese bank account?', 'Many foreign visitors can link supported international cards directly to Alipay. Complete setup before departure and keep backups.'],
+      ['Should I set up both Alipay and WeChat Pay?', 'Yes. Alipay is usually the easier primary wallet, while WeChat Pay is useful when a merchant accepts only its QR flow.'],
+      ['Is cash accepted in China?', 'RMB cash remains legal tender, but QR payment is the practical default in many places. Carry small notes.'],
+      ['Why did my foreign card payment fail?', 'Possible causes include identity checks, bank fraud controls, merchant restrictions, or limits. Try a backup and contact the card issuer.'],
+    ],
+  },
+  'china-esim-internet-vpn-guide': {
+    heading: 'Stay Connected Without Losing Google',
+    title: 'China eSIM for Tourists 2026: Use Google, WhatsApp & Instagram Without VPN',
+    description: 'WhatsApp & Google blocked in China? Get a China eSIM with built-in VPN on China Unicom. 5G, activates on arrival, no VPN app needed.',
+    sections: [
+      ['What Is Blocked?', 'Google, Gmail, YouTube, Instagram, WhatsApp, Facebook, and Google Maps are generally blocked on hotel Wi-Fi and ordinary local SIM data.', '#what-is-blocked'],
+      ['Travel eSIM with Overseas Routing', 'Choose a plan that explicitly routes China data through a foreign gateway such as Hong Kong or Singapore.', '#best-solution-in-2026-travel-esim-with-overseas-routing'],
+      ['Local SIM Plus VPN', 'Install and sign in before landing, and do not depend on one connection for critical travel documents.', '#local-sim-plus-vpn-app-the-older-route'],
+      ['Check Your Phone', 'Confirm exact-model eSIM support and carrier-unlocked status before buying.', '#check-your-phone-before-buying'],
+    ],
+    faqs: [
+      ['Does WhatsApp work in mainland China?', 'WhatsApp is generally blocked on hotel Wi-Fi and ordinary local mobile data. An appropriately routed international eSIM may preserve access.'],
+      ['Do I need a VPN with a China travel eSIM?', 'Not necessarily. A plan that routes through an overseas gateway may work without a separate VPN app. Confirm the plan details.'],
+      ['Can I activate the eSIM after arriving?', 'It may be possible, but installing it before departure and saving setup instructions offline is safer.'],
+      ['Will my phone support a China eSIM?', 'Support depends on exact model, market variant, and carrier lock. Check manufacturer specifications before purchase.'],
+    ],
+  },
+  'china-train-booking-foreigners-12306': {
+    heading: "China's 350 km/h Trains Are Open to Foreigners",
+    title: 'How to Book China High-Speed Train Tickets as a Foreigner: 12306 English Guide',
+    description: 'Foreigners can buy China bullet train tickets on 12306 English with passport. No Chinese ID needed. E-ticket linked to passport, scan to board.',
+    sections: [
+      ['12306 vs Trip.com', '12306 has official inventory and no booking fee; Trip.com offers easier English support but usually adds a ¥20-50 service fee.', '#12306-vs-trip-com'],
+      ['Register on 12306 English', 'Download the app, switch to English, register with your passport and email, then complete identity or face verification.', '#how-to-register-on-12306-english'],
+      ['Boarding Without a Paper Ticket', 'The passport linked to the reservation is your ticket. Use a staffed channel if the automated gate cannot read it.', '#boarding-no-paper-ticket'],
+      ['Popular Routes', 'Beijing-Shanghai and Beijing-Xian take about 4.5 hours on the fastest trains; Shanghai-Hangzhou takes about 45 minutes.', '#top-routes-to-book'],
+    ],
+    howTo: {
+      name: 'How to register on Railway 12306 English with a foreign passport',
+      description: 'Create and verify a Railway 12306 account to book China train tickets with a foreign passport.',
+      steps: [
+        ['Download and switch language', 'Download the official Railway 12306 app and switch the interface to English.'],
+        ['Register your passport', 'Create an account with your email and passport number. Enter your name exactly as printed in your passport.'],
+        ['Complete verification', 'Follow the in-app identity or face-verification instructions before booking.'],
+      ],
+    },
+    faqs: [
+      ['Can foreigners book China trains on 12306?', 'Yes. Foreign passport holders can register, verify their passenger details, and buy tickets on Railway 12306.'],
+      ['Do I need a Chinese ID card?', 'No. Use the foreign passport entered during registration and carry that physical passport when traveling.'],
+      ['Do I need to collect a paper ticket?', 'Usually no. The e-ticket is linked to your passport. Use a staffed gate if necessary.'],
+      ['When should I book?', 'Book when sales open for popular dates, especially around national holidays and weekends.'],
+    ],
+  },
+  'china-itinerary-first-time-7-10-14-days': {
+    heading: 'The Perfect China Itinerary for Your First Trip',
+    title: 'Best China Itinerary for First Time: 7, 10 & 14 Days Routes (2026)',
+    description: "First time in China? 7 days = 2 cities, 10 days = Beijing-Xi'an-Shanghai golden triangle, 14 days = add Guilin or Chengdu. AI-custom plan by Buddy.",
+    sections: [
+      ['Quick Picker', 'Seven days suits two cities, ten days fits three, and fourteen days gives room for four or five destinations.', '#quick-picker'],
+      ['Golden Triangle', 'Beijing for 3 days, Xian for 2, and Shanghai for 3, with a possible Suzhou day trip.', '#route-1-the-golden-triangle'],
+      ['Culture Plus Nature', 'Combine Beijing and Xian with Guilin and the Li River.', '#route-2-culture-plus-nature'],
+      ['Pandas and Mountains', 'Pair Chengdu with Zhangjiajie and keep a buffer for the longer transfer and mountain weather.', '#route-3-pandas-and-mountains'],
+      ['Train or Flight?', 'Take high-speed rail when the fastest journey is under about five hours; compare total door-to-door time.', '#train-or-flight'],
+    ],
+    faqs: [
+      ['Is seven days enough for a first trip to China?', 'Yes, if you choose two cities. Beijing plus Xian emphasizes history; Beijing plus Shanghai contrasts old and new.'],
+      ['What is the best 10-day China itinerary?', 'The classic first-time route is Beijing, Xian, and Shanghai with time for transfers and a possible Suzhou day trip.'],
+      ['Should I add Guilin or Chengdu?', 'Choose Guilin for landscapes and Chengdu for pandas, Sichuan food, and a relaxed city experience.'],
+      ['Should I book trains or flights?', 'Use high-speed rail when the journey is under about five hours, comparing total door-to-door time.'],
+    ],
+  },
   faq: {
     title: 'ChinaEase Buddy FAQ | China Travel Tools for Foreign Visitors',
     description:
@@ -3405,6 +3505,11 @@ const staticCtas = {
   'china-payment-guide': ['Open payment phrases', '/?journey=china&tool=pay'],
   'china-travel-checklist': ['View the trip checklist', '/?journey=before&tool=checklist'],
   'china-emergency-numbers': ['View emergency help', '/?journey=emergency'],
+  'china-visa-free-guide-2026': ["Ask Buddy if you're visa-free", '/'],
+  'how-to-pay-in-china-as-foreigner': ['Build my China payment checklist', '/'],
+  'china-esim-internet-vpn-guide': ['Check my phone and connection', '/'],
+  'china-train-booking-foreigners-12306': ['Plan my train booking', '/'],
+  'china-itinerary-first-time-7-10-14-days': ['Generate my China route', '/'],
   faq: ['Open the free toolkit', '/'],
 };
 
@@ -3448,6 +3553,10 @@ const relatedLinks = [
   ['China payment guide', '/china-payment-guide/'],
   ['China travel checklist', '/china-travel-checklist/'],
   ['China emergency numbers', '/china-emergency-numbers/'],
+  ['China visa-free guide', '/china-visa-free-guide-2026/'],
+  ['China eSIM guide', '/china-esim-internet-vpn-guide/'],
+  ['China train booking', '/china-train-booking-foreigners-12306/'],
+  ['China itineraries', '/china-itinerary-first-time-7-10-14-days/'],
   ['FAQ', '/faq/'],
 ];
 
@@ -4002,6 +4111,21 @@ function schemaFor(page, meta) {
     });
   }
 
+  if (meta.howTo) {
+    graph.push({
+      '@type': 'HowTo',
+      '@id': `${pageUrl(page)}#howto`,
+      name: meta.howTo.name,
+      description: meta.howTo.description,
+      step: meta.howTo.steps.map(([name, text], index) => ({
+        '@type': 'HowToStep',
+        position: index + 1,
+        name,
+        text,
+      })),
+    });
+  }
+
   return `<script id="chinaease-guide-schema" type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@graph': graph,
@@ -4056,7 +4180,7 @@ await Promise.all(
 );
 
 const sitemapPages = [''].concat(pages);
-const lastmod = '2026-06-20';
+const lastmod = '2026-09-26';
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemapPages.map((page) => `  <url>

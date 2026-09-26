@@ -51,12 +51,18 @@ type GuidePageType =
   | 'china-payment-guide'
   | 'china-travel-checklist'
   | 'china-emergency-numbers'
+  | 'china-visa-free-guide-2026'
+  | 'how-to-pay-in-china-as-foreigner'
+  | 'china-esim-internet-vpn-guide'
+  | 'china-train-booking-foreigners-12306'
+  | 'china-itinerary-first-time-7-10-14-days'
   | 'faq';
 type PageType = 'pricing' | LegalPageType | GuidePageType;
 
 interface Props {
   type: PageType;
   userId?: string | null;
+  onAskBuddy?: (prefill?: string) => void;
 }
 
 interface GuidePageData {
@@ -71,6 +77,14 @@ interface GuidePageData {
   lastReviewed?: string;
   lastModified?: string;
   isArticle?: boolean;
+  buddyPrompt?: string;
+  midCtaLabel?: string;
+  reviewed?: string;
+  howTo?: {
+    name: string;
+    description: string;
+    steps: Array<{ name: string; text: string }>;
+  };
   sections: Array<{
     title: string;
     items?: string[];
@@ -403,6 +417,11 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'China Payment Guide: practical notes for Alipay, WeChat Pay, cards, and cash.',
           'China Travel Checklist: first-time visitor preparation before arrival.',
           'China Emergency Numbers: 110, 120, 119, and simple emergency phrases.',
+          'China Visa-Free Guide 2026: compare the 30-day policy with 240-hour transit.',
+          'How to Pay in China: set up Alipay and WeChat Pay with practical backups.',
+          'China eSIM and Internet Guide: prepare access to Google, WhatsApp, and Instagram.',
+          'China Train Booking: register on 12306 and travel with a foreign passport.',
+          'First-Time China Itineraries: choose a practical 7, 10, or 14-day route.',
           'FAQ: concise answers about ChinaEase Buddy and service limitations.',
         ],
       },
@@ -453,6 +472,11 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China payment guide', href: '/china-payment-guide/' },
       { label: 'China travel checklist', href: '/china-travel-checklist/' },
       { label: 'Emergency numbers in China', href: '/china-emergency-numbers/' },
+      { label: 'China visa-free guide 2026', href: '/china-visa-free-guide-2026/' },
+      { label: 'How to pay in China', href: '/how-to-pay-in-china-as-foreigner/' },
+      { label: 'China eSIM and internet guide', href: '/china-esim-internet-vpn-guide/' },
+      { label: 'China train booking', href: '/china-train-booking-foreigners-12306/' },
+      { label: 'First-time China itineraries', href: '/china-itinerary-first-time-7-10-14-days/' },
       { label: 'FAQ', href: '/faq/' },
     ],
   },
@@ -5362,6 +5386,178 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'FAQ', href: '/faq/' },
     ],
   },
+  'china-visa-free-guide-2026': {
+    path: '/china-visa-free-guide-2026/',
+    title: 'Do You Need a Visa for China in 2026? Probably Not.',
+    intro:
+      'China now offers several visa-free routes for eligible visitors. The rule that applies depends on your passport, trip purpose, length of stay, and onward itinerary.',
+    metaTitle: 'China Visa-Free Guide 2026: 45+ Countries, 30/60 Days & 240-Hour Transit Explained',
+    metaDescription:
+      'Check if you can visit China visa-free in 2026. Full list of 45+ countries, 30-day rules, 240-hour transit via 65 ports, and entry checklist. Ask ChinaEase Buddy AI.',
+    quickAnswer:
+      'Many European, Oceanian, and Asian passport holders can enter China for up to 30 days without a visa for eligible purposes. The United Kingdom and Canada joined under a separately announced policy effective February 17, 2026. Travelers who are not covered by the 30-day list may still qualify for 240-hour visa-free transit when traveling from country A through China to a different country or region C.',
+    ctaLabel: "Ask Buddy if you're visa-free",
+    midCtaLabel: 'Check my passport and route with Buddy',
+    ctaHref: '/',
+    buddyPrompt: 'Can I enter China visa-free in 2026? My passport is from [country], I plan to stay [days], and my route is [origin] -> China -> [next destination].',
+    reviewed: 'September 26, 2026',
+    sections: [
+      {
+        title: 'Who Qualifies in 2026?',
+        table: {
+          headers: ['Country group', 'Stay', 'Policy period'],
+          rows: [
+            ['45+ country policy group', 'Up to 30 days', 'Includes France, Germany, Italy, Spain, Malaysia, and other eligible passports; current extensions run through December 31, 2026.'],
+            ['United Kingdom', 'Up to 30 days', 'Separate policy batch effective February 17, 2026, through December 31, 2026.'],
+            ['Canada', 'Up to 30 days', 'Separate policy batch effective February 17, 2026, through December 31, 2026.'],
+            ['Other bilateral arrangements', 'May vary, including some 60-day arrangements', 'Check the rule for your specific passport before departure.'],
+          ],
+        },
+        items: [
+          'The United Kingdom and Canada were announced as a separate policy batch. They should not be treated as part of the earlier 45-country announcement.',
+          'Visa-free entry normally covers tourism, business, family visits, exchanges, and transit. It does not permit employment or other activities that require prior approval.',
+          'Your airline and Chinese immigration officers make the final eligibility and boarding decisions, so verify the current rule before travel.',
+        ],
+      },
+      {
+        title: '240-Hour Visa-Free Transit: The 10-Day Option',
+        items: [
+          'This route can help eligible travelers whose passports are not on the 30-day visa-free list, including travelers from the United States, Brazil, and Mexico.',
+          'Your itinerary must be country or region A -> an eligible Chinese port and permitted area -> a different country or region C.',
+          'You cannot use the transit policy to fly from your origin country to China and then return directly to that same origin country. A round trip such as United States -> China -> United States does not meet the third-country transit requirement.',
+          'The policy covers 65 eligible entry ports and allows travel within the permitted areas attached to your arrival port; it is not limited to staying inside the transit city.',
+          'Carry a confirmed onward ticket showing departure within 240 hours and accommodation details for your stay.',
+        ],
+      },
+      {
+        title: 'Entry Checklist (No Visa Still Needs This)',
+        items: [
+          'Passport with at least six months of remaining validity recommended.',
+          'Confirmed return or onward ticket that matches the visa-free route you are using.',
+          'Hotel booking or local address, including the first night of your stay.',
+          '12306 account prepared if you plan to use China Railway trains.',
+          'Evidence supporting your purpose of travel if an airline or border officer asks for it.',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'Can I make multiple visa-free entries?', answer: 'The policy does not generally impose a published annual entry count, but each entry is assessed separately. Frequent or back-to-back visits may prompt questions about your purpose, itinerary, and whether you are effectively living or working in China.' },
+      { question: 'Can I work in China during a visa-free stay?', answer: 'No. Visa-free entry does not authorize employment. You need the appropriate work authorization and residence documents before working in China.' },
+      { question: 'Do I need to register with the police?', answer: 'Yes. Hotels normally complete temporary accommodation registration for guests. If you stay in a private home, you and your host should complete registration with the local public security authority within the required local timeframe.' },
+      { question: 'Can a US passport holder use the 240-hour transit policy?', answer: 'Potentially, yes, if all eligibility conditions are met. The itinerary must continue to a different country or region after China; United States -> China -> United States is not a qualifying transit route.' },
+    ],
+    related: [
+      { label: 'China train booking guide', href: '/china-train-booking-foreigners-12306/' },
+      { label: 'First-time China itineraries', href: '/china-itinerary-first-time-7-10-14-days/' },
+      { label: 'China travel checklist', href: '/china-travel-checklist/' },
+    ],
+  },
+  'how-to-pay-in-china-as-foreigner': {
+    path: '/how-to-pay-in-china-as-foreigner/',
+    title: 'How to Pay in China When Cash Is No Longer the Default',
+    intro: 'QR payments dominate daily life in China. Set up both Alipay and WeChat Pay before your trip so you have two payment options when foreign cards are not accepted directly.',
+    metaTitle: 'How to Pay in China as a Foreigner (2026): Alipay & WeChat Pay Setup Guide',
+    metaDescription: 'The easiest way to pay in China in 2026 is Alipay linked to Visa/Mastercard, with WeChat Pay as backup. Step-by-step setup, fees under ¥200 free.',
+    quickAnswer: 'Set up Alipay with a supported international Visa or Mastercard before landing, then prepare WeChat Pay as a backup. Small merchants, taxis, street stalls, and even some attractions rely on QR payments. Carry about ¥200 cash and one physical card as fallbacks.',
+    ctaLabel: 'Build my China payment checklist',
+    midCtaLabel: 'Ask Buddy about my cards and setup',
+    ctaHref: '/',
+    buddyPrompt: 'Create a personal China payment setup checklist for me. My phone is [iPhone/Android], my cards are [Visa/Mastercard/etc.], and I arrive on [date].',
+    reviewed: 'September 26, 2026',
+    sections: [
+      { title: 'The 5-Minute Setup You Must Do Before Landing', ordered: true, items: ['Download the standard Alipay app and create an account with your home mobile number.', 'Look for the current international visitor or Tour Pass options in the app if direct card linking is unavailable for your account.', 'Complete identity verification using your passport and face verification when requested.', 'Link a supported Visa or Mastercard and complete your bank\'s verification step.', 'Test the setup with a small payment when possible, then add WeChat Pay as a backup.'] },
+      { title: 'Alipay vs WeChat Pay: Which First?', table: { headers: ['Feature', 'Alipay', 'WeChat Pay'], rows: [['Tourist setup', 'Usually easier for foreign visitors', 'Useful backup; setup may vary'], ['Typical published transaction limit', 'Up to ¥3,000 per transaction', 'Up to ¥6,000 per transaction'], ['Best use', 'Primary choice for street stalls, transport, and shops', 'Small merchants that display only a WeChat QR code'], ['Recommendation', 'Set up first', 'Set up second']] }, items: ['Limits and supported cards can change. Confirm the amount displayed in your own app before making a large payment.'] },
+      { title: 'Fees You Must Know', items: ['International-card payments of ¥200 or less are generally free of the platform service fee.', 'For a single transaction above ¥200, expect a service fee of about 3%.', 'Splitting a legitimate large purchase into smaller payments may reduce platform fees only when the merchant agrees; never use splitting to bypass app or bank controls.', 'Your card issuer may separately charge foreign-transaction or currency-conversion fees.'] },
+      { title: 'What If a QR Payment Fails?', items: ['Try the second wallet: use WeChat Pay if Alipay fails, or vice versa.', 'Keep about ¥200 in RMB cash for taxis, food, and small emergencies.', 'Use Trip.com for hotels and train bookings when you need an English checkout that accepts foreign cards.', 'Call your bank if it blocks the verification or China-based transaction.'] },
+    ],
+    faqs: [
+      { question: 'Can foreigners use Alipay without a Chinese bank account?', answer: 'Many foreign visitors can link supported international cards directly to Alipay. Verification and card acceptance can vary, so complete setup before departure and keep backups.' },
+      { question: 'Should I set up both Alipay and WeChat Pay?', answer: 'Yes. Alipay is usually the easier primary wallet for visitors, while WeChat Pay is valuable when a small merchant accepts only a WeChat QR payment.' },
+      { question: 'Is cash accepted in China?', answer: 'RMB cash remains legal tender, but QR payment is the practical default in many places. Carry small notes because some merchants may not have change.' },
+      { question: 'Why did my foreign card payment fail?', answer: 'Common causes include identity verification, bank fraud controls, unsupported card settings, merchant restrictions, or limits. Try your backup wallet or card and contact your issuer.' },
+    ],
+    related: [{ label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' }, { label: 'China eSIM and internet', href: '/china-esim-internet-vpn-guide/' }, { label: 'China travel apps', href: '/china-travel-apps/' }],
+  },
+  'china-esim-internet-vpn-guide': {
+    path: '/china-esim-internet-vpn-guide/',
+    title: 'Stay Connected Without Losing Google',
+    intro: 'Mainland hotel Wi-Fi and local SIMs do not provide direct access to many familiar overseas services. An international travel eSIM can route data through an overseas gateway and keep those services available without a separate VPN app.',
+    metaTitle: 'China eSIM for Tourists 2026: Use Google, WhatsApp & Instagram Without VPN',
+    metaDescription: 'WhatsApp & Google blocked in China? Get a China eSIM with built-in VPN on China Unicom. 5G, activates on arrival, no VPN app needed.',
+    quickAnswer: 'For most short trips, choose a travel eSIM that explicitly says it routes mainland China data through an overseas gateway such as Hong Kong or Singapore. It can roam on China Unicom or China Mobile while preserving access to Google, WhatsApp, and Instagram without a separate VPN app.',
+    ctaLabel: 'Ask Buddy which connection fits my phone',
+    midCtaLabel: 'Check my phone and data needs',
+    ctaHref: '/',
+    buddyPrompt: 'Help me choose internet access for China. My phone model is [model], it is [locked/unlocked], my trip is [days] days, and I need [Google/WhatsApp/Instagram/work apps].',
+    reviewed: 'September 26, 2026',
+    sections: [
+      { title: 'What Is Blocked?', table: { headers: ['Service', 'Hotel Wi-Fi or local SIM'], rows: [['Google Search and Gmail', 'Blocked without a working circumvention route'], ['YouTube', 'Blocked'], ['Instagram and Facebook', 'Blocked'], ['WhatsApp', 'Blocked'], ['Google Maps', 'Blocked and not recommended for local map accuracy']] }, items: ['Availability can change. Chinese apps such as Alipay, WeChat, Amap, and DiDi work on ordinary local connections.'] },
+      { title: 'Best Solution in 2026: Travel eSIM with Overseas Routing', items: ['The eSIM roams on a mainland network such as China Unicom or China Mobile but sends traffic through a foreign gateway, often in Hong Kong or Singapore.', 'Because routing happens at the carrier level, no separate VPN app is normally required.', 'Providers commonly offering China travel plans include Airalo, Holafly, UPeSIM, and ByteSIM. Check the current plan wording, routing, allowance, hotspot rules, and refund terms before buying.', 'Install the eSIM before departure, but activate or enable data roaming according to the provider\'s instructions.'] },
+      { title: 'Local SIM Plus VPN App: The Older Route', items: ['A local SIM can provide a Chinese number and inexpensive data, but blocked overseas services still require a working connection method.', 'VPN availability and use sit in a regulated area; rules and reliability can change.', 'Download and sign in to any necessary app before landing because provider sites and app stores may be difficult to reach after arrival.', 'Do not rely on one connection for critical work, authentication, or travel documents.'] },
+      { title: 'Check Your Phone Before Buying', items: ['iPhone XS, XS Max, XR, and newer models generally support eSIM, though models sold for some markets may differ.', 'Confirm that your exact model supports eSIM and is carrier-unlocked.', 'Many newer Google Pixel and Samsung Galaxy models support eSIM, but regional variants differ.', 'Keep your home SIM active if you need bank or account verification SMS, and disable its data roaming to avoid charges.'] },
+    ],
+    faqs: [
+      { question: 'Does WhatsApp work in mainland China?', answer: 'WhatsApp is generally blocked on hotel Wi-Fi and ordinary local mobile data. A properly routed international eSIM or another working connection method may preserve access.' },
+      { question: 'Do I need a VPN with a China travel eSIM?', answer: 'Not necessarily. If the plan explicitly routes data through an overseas gateway, blocked services may work without a separate VPN app. Confirm this with the provider before purchase.' },
+      { question: 'Can I buy and activate the eSIM after arriving?', answer: 'It may be possible, but installing it before departure is safer. Save the QR code and setup instructions offline, and follow the provider\'s activation timing.' },
+      { question: 'Will my phone support a China eSIM?', answer: 'Support depends on the exact model, region, and carrier lock. Check the phone settings and manufacturer specifications before buying a non-refundable plan.' },
+    ],
+    related: [{ label: 'Essential China travel apps', href: '/china-travel-apps/' }, { label: 'China payment setup', href: '/how-to-pay-in-china-as-foreigner/' }, { label: 'First-time itinerary guide', href: '/china-itinerary-first-time-7-10-14-days/' }],
+  },
+  'china-train-booking-foreigners-12306': {
+    path: '/china-train-booking-foreigners-12306/',
+    title: "China's 350 km/h Trains Are Open to Foreigners",
+    intro: 'Foreign passport holders can book high-speed rail tickets through the official 12306 website or app. Your verified passport is linked to the e-ticket, so no Chinese ID is required.',
+    metaTitle: 'How to Book China High-Speed Train Tickets as a Foreigner: 12306 English Guide',
+    metaDescription: 'Foreigners can buy China bullet train tickets on 12306 English with passport. No Chinese ID needed. E-ticket linked to passport, scan to board.',
+    quickAnswer: 'Use the official Railway 12306 app for real-time inventory with no booking fee, or Trip.com for easier English support with a service fee. Register the passenger name exactly as shown on the passport. At the station, the passport linked to the booking is your ticket.',
+    ctaLabel: 'Ask Buddy to plan my train booking',
+    midCtaLabel: 'Get help with my route and booking date',
+    ctaHref: '/',
+    buddyPrompt: 'Help me book a China train. My route is [city] to [city], travel date is [date], passenger passport country is [country], and I prefer [fastest/cheapest/most comfortable].',
+    reviewed: 'September 26, 2026',
+    howTo: { name: 'How to register on Railway 12306 English with a foreign passport', description: 'Create and verify a Railway 12306 account so you can book China train tickets with a foreign passport.', steps: [{ name: 'Download and switch language', text: 'Download the official Railway 12306 app and switch the interface to English.' }, { name: 'Register your passport', text: 'Create an account with your email and passport number. Enter your name exactly as printed in your passport.' }, { name: 'Complete verification', text: 'Follow the in-app identity or face-verification instructions and wait for passenger verification before booking.' }] },
+    sections: [
+      { title: '12306 vs Trip.com', table: { headers: ['Option', 'Advantages', 'Trade-off'], rows: [['Railway 12306', 'Official inventory, real seats, no booking fee', 'Registration and verification can take more effort'], ['Trip.com', 'English support, foreign-card checkout, easier interface', 'Usually adds a booking fee of about ¥20-50']] } },
+      { title: 'How to Register on 12306 English', ordered: true, items: ['Download the official Railway 12306 app and switch the interface to English.', 'Register with your email and foreign passport number. Enter the passenger name exactly as it appears on the passport.', 'Complete the requested identity or face verification. Do this before tickets for your travel date go on sale.'] },
+      { title: 'Boarding: No Paper Ticket', items: ['Your verified passport is linked to the e-ticket and acts as your ticket.', 'At an automated gate that reads foreign passports, scan the passport used for the booking.', 'If the gate does not accept the passport, use the staffed channel; do not buy a duplicate ticket.', 'Arrive 45-60 minutes early at a large station for security, navigation, and passport checks.'] },
+      { title: 'Top Routes to Book', table: { headers: ['Route', 'Typical fastest time', 'Why take the train'], rows: [['Beijing -> Shanghai', 'About 4.5 hours', 'City-center travel with frequent departures'], ["Beijing -> Xi'an", 'About 4.5 hours', 'Faster door to door than flying for many trips'], ['Shanghai -> Hangzhou', 'About 45 minutes', 'Easy day trip or onward connection']] } },
+    ],
+    faqs: [
+      { question: 'Can foreigners book China trains on 12306?', answer: 'Yes. Foreign passport holders recognized by the system can register, verify passenger details, and buy tickets on the official Railway 12306 platform.' },
+      { question: 'Do I need a Chinese ID card?', answer: 'No. Use the foreign passport entered during registration and carry the same physical passport when traveling.' },
+      { question: 'Do I need to collect a paper ticket?', answer: 'Usually no. The booking is an e-ticket linked to your passport. Use the passport at the gate or ask staff to use the manual channel.' },
+      { question: 'When should I book popular routes?', answer: 'Book when sales open for your date, especially around national holidays and weekends. Current sale windows and schedules can change, so check 12306.' },
+    ],
+    related: [{ label: 'China itinerary planner', href: '/china-itinerary-first-time-7-10-14-days/' }, { label: 'China visa-free guide', href: '/china-visa-free-guide-2026/' }, { label: 'China payment guide', href: '/how-to-pay-in-china-as-foreigner/' }],
+  },
+  'china-itinerary-first-time-7-10-14-days': {
+    path: '/china-itinerary-first-time-7-10-14-days/',
+    title: 'The Perfect China Itinerary for Your First Trip',
+    intro: 'Choose two cities in seven days, the Beijing-Xi\'an-Shanghai golden triangle in ten, or add one nature or food destination for a well-paced fourteen-day first visit.',
+    metaTitle: 'Best China Itinerary for First Time: 7, 10 & 14 Days Routes (2026)',
+    metaDescription: "First time in China? 7 days = 2 cities, 10 days = Beijing-Xi'an-Shanghai golden triangle, 14 days = add Guilin or Chengdu. AI-custom plan by Buddy.",
+    quickAnswer: "For seven days, choose Beijing plus Xi'an or Shanghai. With ten days, follow the classic Beijing-Xi'an-Shanghai route. With fourteen days, add Guilin for landscapes or Chengdu for food and pandas without turning the trip into a daily transfer marathon.",
+    ctaLabel: 'Generate my China route with Buddy',
+    midCtaLabel: 'Personalize this route for my interests',
+    ctaHref: '/',
+    buddyPrompt: 'Build my first China itinerary. I have [7/10/14] days, I like [history/food/nature], my budget is [budget], and I arrive in [city].',
+    reviewed: 'September 26, 2026',
+    sections: [
+      { title: 'Quick Picker', table: { headers: ['Days', 'Cities', 'Pace', 'Best for'], rows: [['7 days', '2 cities', 'Focused', 'A first look with minimal transfers'], ['10 days', '3 cities', 'Balanced', "Beijing, Xi'an, and Shanghai highlights"], ['14 days', '4-5 destinations', 'Varied', 'Adding nature, pandas, or regional food']] } },
+      { title: 'Route 1: The Golden Triangle', items: ['Beijing: 3 days for the Forbidden City, Great Wall, hutongs, and imperial history.', "Xi'an: 2 days for the Terracotta Warriors, city wall, and Muslim Quarter.", 'Shanghai: 3 days for the Bund, neighborhoods, museums, and modern city life.', 'Add a Suzhou day trip when your schedule has at least one flexible Shanghai day.'] },
+      { title: 'Route 2: Culture Plus Nature', items: ["Begin with Beijing and Xi'an for China’s essential historical arc.", 'Continue to Guilin and Yangshuo for the Li River, karst landscapes, and a slower finish.', 'Use this route when scenery matters more than finishing in Shanghai.'] },
+      { title: 'Route 3: Pandas and Mountains', items: ['Base in Chengdu for pandas, Sichuan food, teahouses, and a relaxed urban pace.', 'Continue to Zhangjiajie for dramatic sandstone peaks and hiking viewpoints.', 'Allow a buffer day because the transfer is longer and mountain weather can affect plans.'] },
+      { title: 'Train or Flight?', items: ['If the fastest high-speed train takes under five hours, take the train in most cases.', "Beijing to Xi'an is a good example: the train takes about 4.5 hours and is often faster door to door after airport travel, check-in, and security.", 'Fly when the rail journey is long, the flight schedule is substantially better, or you are connecting distant regions.', 'Avoid one-night city stops. Two or three nights per major destination makes a first trip more enjoyable.'] },
+    ],
+    faqs: [
+      { question: 'Is seven days enough for a first trip to China?', answer: 'Yes, if you choose two cities. Beijing plus Xi\'an emphasizes history; Beijing plus Shanghai gives a stronger old-and-new contrast.' },
+      { question: 'What is the best 10-day China itinerary?', answer: "The classic first-time route is Beijing for three days, Xi'an for two, and Shanghai for three, using the remaining time for transfers and a Suzhou day trip." },
+      { question: 'Should I add Guilin or Chengdu to a 14-day trip?', answer: 'Choose Guilin for landscapes and outdoor time. Choose Chengdu for pandas, Sichuan food, and a more relaxed city experience.' },
+      { question: 'Should I book trains or flights between Chinese cities?', answer: 'Use high-speed rail when the journey is under about five hours. Compare total door-to-door time rather than the scheduled flight duration alone.' },
+    ],
+    related: [{ label: 'China train booking guide', href: '/china-train-booking-foreigners-12306/' }, { label: 'China visa-free guide', href: '/china-visa-free-guide-2026/' }, { label: 'China eSIM guide', href: '/china-esim-internet-vpn-guide/' }],
+  },
   faq: {
     path: '/faq/',
     title: 'ChinaEase Buddy FAQ',
@@ -5486,7 +5682,7 @@ function useGuideSeo(page: GuidePageData) {
     const schema = document.createElement('script');
     schema.id = 'chinaease-guide-schema';
     schema.type = 'application/ld+json';
-    const graph: Array<Record<string, unknown>> = [
+  const graph: Array<Record<string, unknown>> = [
       {
         '@type': 'WebPage',
         '@id': `${siteUrl}${page.path}#webpage`,
@@ -5526,6 +5722,21 @@ function useGuideSeo(page: GuidePageData) {
         },
       })),
     });
+
+    if (page.howTo) {
+      graph.push({
+        '@type': 'HowTo',
+        '@id': `${siteUrl}${page.path}#howto`,
+        name: page.howTo.name,
+        description: page.howTo.description,
+        step: page.howTo.steps.map((step, index) => ({
+          '@type': 'HowToStep',
+          position: index + 1,
+          name: step.name,
+          text: step.text,
+        })),
+      });
+    }
 
     schema.textContent = JSON.stringify({
       '@context': 'https://schema.org',
@@ -5675,7 +5886,7 @@ function LegalPage({ type }: { type: LegalPageType }) {
   );
 }
 
-function GuidePage({ type, userId }: { type: GuidePageType; userId?: string | null }) {
+function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?: string | null; onAskBuddy?: (prefill?: string) => void }) {
   const page = guidePages[type];
   useGuideSeo(page);
 
@@ -5698,20 +5909,22 @@ function GuidePage({ type, userId }: { type: GuidePageType; userId?: string | nu
         <section className="rounded-2xl border border-[#155e63]/15 bg-[#155e63]/5 p-4 md:p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-[#155e63]">Quick answer</p>
           <p className="mt-2 text-sm leading-relaxed text-gray-700 md:text-base">{page.quickAnswer}</p>
-          <p className="mt-3 text-xs font-semibold text-gray-500">Last reviewed: {page.lastReviewed || 'June 12, 2026'}</p>
-          <a
-            href={page.ctaHref}
+          <p className="mt-3 text-xs font-semibold text-gray-500">Last reviewed: {page.reviewed ?? page.lastReviewed ?? 'June 12, 2026'}</p>
+          <button
+            type="button"
             onClick={() => {
               void trackEvent('cta_clicked', {
                 ctaName: page.ctaLabel,
-                destination: page.ctaHref,
+                destination: onAskBuddy && page.buddyPrompt ? 'buddy' : page.ctaHref,
                 tool: type,
               }, userId);
+              if (onAskBuddy && page.buddyPrompt) onAskBuddy(page.buddyPrompt);
+              else window.location.href = page.ctaHref;
             }}
             className="mt-4 inline-flex rounded-full bg-[#155e63] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#0e4a4e]"
           >
             {page.ctaLabel}
-          </a>
+          </button>
         </section>
 
         <nav className="rounded-2xl border border-gray-100 bg-white/70 p-4">
@@ -5780,6 +5993,19 @@ function GuidePage({ type, userId }: { type: GuidePageType; userId?: string | nu
           ))}
         </div>
 
+        {page.buddyPrompt && (
+          <section className="border-y border-[#155e63]/15 bg-[#155e63] px-5 py-6 text-white md:px-7">
+            <p className="text-sm font-semibold text-white/75">Need an answer for your exact trip?</p>
+            <button
+              type="button"
+              onClick={() => onAskBuddy?.(page.buddyPrompt)}
+              className="mt-3 inline-flex rounded-lg bg-white px-4 py-2.5 text-sm font-bold text-[#155e63] transition hover:bg-gray-50"
+            >
+              {page.midCtaLabel ?? page.ctaLabel}
+            </button>
+          </section>
+        )}
+
         <section id="faq" className="rounded-2xl border border-gray-100 bg-white/80 p-4 shadow-sm md:p-5">
           <h2 className="text-xl font-bold text-gray-950">FAQ</h2>
           <div className="mt-4 divide-y divide-gray-100">
@@ -5794,6 +6020,19 @@ function GuidePage({ type, userId }: { type: GuidePageType; userId?: string | nu
             ))}
           </div>
         </section>
+
+        {page.buddyPrompt && (
+          <section className="border-y border-[#155e63]/15 py-6 text-center">
+            <h2 className="text-xl font-bold text-gray-950">Still deciding?</h2>
+            <button
+              type="button"
+              onClick={() => onAskBuddy?.(page.buddyPrompt)}
+              className="mt-4 inline-flex rounded-lg bg-[#155e63] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#0e4a4e]"
+            >
+              {page.ctaLabel}
+            </button>
+          </section>
+        )}
 
         <section className="rounded-2xl border border-gray-100 bg-white/70 p-4">
           <h2 className="text-base font-bold text-gray-950">Related guides</h2>
@@ -5886,12 +6125,17 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/china-payment-guide')) return 'china-payment-guide';
   if (cleanPath.endsWith('/china-travel-checklist')) return 'china-travel-checklist';
   if (cleanPath.endsWith('/china-emergency-numbers')) return 'china-emergency-numbers';
+  if (cleanPath.endsWith('/china-visa-free-guide-2026')) return 'china-visa-free-guide-2026';
+  if (cleanPath.endsWith('/how-to-pay-in-china-as-foreigner')) return 'how-to-pay-in-china-as-foreigner';
+  if (cleanPath.endsWith('/china-esim-internet-vpn-guide')) return 'china-esim-internet-vpn-guide';
+  if (cleanPath.endsWith('/china-train-booking-foreigners-12306')) return 'china-train-booking-foreigners-12306';
+  if (cleanPath.endsWith('/china-itinerary-first-time-7-10-14-days')) return 'china-itinerary-first-time-7-10-14-days';
   if (cleanPath.endsWith('/faq')) return 'faq';
   return null;
 }
 
-export default function PolicyPage({ type, userId }: Props) {
+export default function PolicyPage({ type, userId, onAskBuddy }: Props) {
   if (type === 'pricing') return <PricingPage />;
-  if (type in guidePages) return <GuidePage type={type as GuidePageType} userId={userId} />;
+  if (type in guidePages) return <GuidePage type={type as GuidePageType} userId={userId} onAskBuddy={onAskBuddy} />;
   return <LegalPage type={type as LegalPageType} />;
 }
