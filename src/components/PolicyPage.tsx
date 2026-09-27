@@ -66,6 +66,12 @@ type GuidePageType =
   | 'how-to-visit-great-wall-from-beijing-2026'
   | 'what-to-eat-in-china-first-time-guide'
   | 'how-to-use-wechat-as-foreigner-2026'
+  | 'nia-12367-online-accommodation-registration-guide'
+  | 'amap-english-mode-guide-2026'
+  | 'alipay-metro-qr-transport-code-guide'
+  | 'china-travel-ai-itinerary-generator'
+  | '240-hour-transit-zone-map-high-speed-rail'
+  | 'wechat-verification-without-friend-qr-2026'
   | 'faq';
 type PageType = 'pricing' | LegalPageType | GuidePageType;
 
@@ -442,6 +448,12 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'Great Wall from Beijing: compare Badaling and Mutianyu independently.',
           'What to Eat in China: choose 15 approachable regional dishes.',
           'WeChat for Foreigners: prepare registration, payments, and mini-programs.',
+          'NIA 12367 Accommodation Registration: register private and non-hotel stays through the current official channels.',
+          'Amap English Mode: switch languages, search destinations, and save China-ready addresses.',
+          'Alipay Metro QR: activate city-specific transport codes and prepare ticket backups.',
+          'China Travel AI Itinerary Generator: turn dates, interests, pace, and budget into a practical route.',
+          '240-Hour Transit and High-Speed Rail: validate ports, permitted areas, and every domestic segment.',
+          'WeChat Verification Without a Friend: use official registration and account-recovery paths safely.',
           'FAQ: concise answers about ChinaEase Buddy and service limitations.',
         ],
       },
@@ -507,6 +519,12 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'Great Wall from Beijing', href: '/how-to-visit-great-wall-from-beijing-2026/' },
       { label: 'What to eat in China', href: '/what-to-eat-in-china-first-time-guide/' },
       { label: 'WeChat for foreigners', href: '/how-to-use-wechat-as-foreigner-2026/' },
+      { label: 'NIA 12367 accommodation registration', href: '/nia-12367-online-accommodation-registration-guide/' },
+      { label: 'Amap English mode guide', href: '/amap-english-mode-guide-2026/' },
+      { label: 'Alipay metro QR guide', href: '/alipay-metro-qr-transport-code-guide/' },
+      { label: 'China travel AI itinerary generator', href: '/china-travel-ai-itinerary-generator/' },
+      { label: '240-hour transit and high-speed rail', href: '/240-hour-transit-zone-map-high-speed-rail/' },
+      { label: 'WeChat verification without a friend', href: '/wechat-verification-without-friend-qr-2026/' },
       { label: 'FAQ', href: '/faq/' },
     ],
   },
@@ -5416,6 +5434,159 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'FAQ', href: '/faq/' },
     ],
   },
+  'nia-12367-online-accommodation-registration-guide': {
+    path: '/nia-12367-online-accommodation-registration-guide/',
+    title: 'How to Register a Non-Hotel Stay with NIA 12367',
+    intro: 'Foreigners staying in private homes or other non-hotel accommodation generally need registration within 24 hours. Where the online pilot is available, the NIA 12367 platform can replace an in-person police-station visit.',
+    metaTitle: 'NIA 12367 Online Accommodation Registration Guide for Foreigners (2026)',
+    metaDescription: 'Learn how foreigners register a private or non-hotel stay through NIA 12367, where online registration is available, what documents you need, and when hotels register for you.',
+    quickAnswer: 'Hotels register foreign guests as part of check-in. For a private home or other non-hotel stay, the guest or host generally registers within 24 hours. The official online service is available through the NIA Government Service Platform, NIA 12367 app, and WeChat or Alipay mini-programs, but the latest verified national notice describes a pilot in seven provincial-level regions rather than confirmed nationwide availability. Check the platform or call 12367 for your address.',
+    ctaLabel: 'Prepare my registration details with Buddy',
+    midCtaLabel: 'Format my Chinese address',
+    ctaHref: '/',
+    buddyPrompt: 'Help me prepare non-hotel accommodation registration details for this address: [address]. I am staying in [province/city] with [friend/family/host].',
+    reviewed: 'September 27, 2026',
+    sections: [
+      { title: 'Hotel vs Non-Hotel Registration', table: { headers: ['Stay type', 'Who handles registration', 'Typical action'], rows: [['Hotel', 'Hotel front desk', 'Present the passport during check-in'], ['Private home or other non-hotel residence', 'Guest or accommodation host', 'Register within 24 hours through an available official channel'], ['Online pilot area', 'Guest or host through NIA platform', 'Complete identity, address, and residence details online']] } },
+      { title: 'Where Online Registration Is Verified', items: ['The latest official notice reviewed for this page describes a pilot beginning March 20, 2026 in Hebei, Liaoning, Zhejiang, Hubei, Guangxi, Chongqing, and Sichuan.', 'The platform may expand, but do not assume nationwide availability without checking the current NIA interface for the property address.', 'If online registration is unavailable or unclear, contact the local police station or call 12367.'] },
+      { title: 'Online Registration Steps', ordered: true, items: ['Open the NIA Government Service Platform, NIA 12367 app, or official WeChat or Alipay mini-program.', 'Complete account and passport identity verification.', 'Open Foreigner Service and select the accommodation-registration module when available.', 'Enter the Chinese address and host or property details accurately, then upload any documents requested.', 'Submit and save the registration record; online registration has the same legal effect as on-site registration where the service applies.'] },
+      { title: 'Prepare Before Starting', items: ['Passport and current entry or stay information.', 'Full Chinese address, property type, arrival date, and planned departure date.', 'Host identity and contact information when required.', 'A backup plan to visit the local police station if the platform cannot process the address.'] },
+    ],
+    faqs: [
+      { question: 'Is NIA 12367 online accommodation registration available nationwide?', answer: 'The latest official notice verified for this guide describes a seven-region pilot and gradual expansion. Check the current platform for your exact address or call 12367.' },
+      { question: 'Do hotel guests need to register themselves?', answer: 'Normally no. Hotels collect the passport details and submit the accommodation registration during check-in.' },
+      { question: 'How soon must a private stay be registered?', answer: 'The general rule is within 24 hours after arrival at the non-hotel residence.' },
+      { question: 'Is online registration legally valid?', answer: 'The NIA states that completed online registration has the same legal effect as on-site registration where the online service applies.' },
+    ],
+    related: [{ label: 'Hotel rejection guide', href: '/china-hotels-for-foreigners-no-rejection-guide/' }, { label: 'Full China hotels guide', href: '/china-hotels-for-foreigners/' }, { label: 'China travel checklist', href: '/china-travel-checklist/' }],
+    sources: [{ label: 'NIA policy interpretation: online accommodation registration', href: 'https://english.www.gov.cn/services/visitchina/202603/21/content_WS69ce124cc6d00ca5f9a0a368.html' }],
+  },
+  'amap-english-mode-guide-2026': {
+    path: '/amap-english-mode-guide-2026/',
+    title: 'Amap English Guide: Set Up Search and Navigation',
+    intro: 'Amap Global provides English and multilingual local maps for international visitors, including walking, driving, cycling, public transport, traffic, place search, and ride-hailing.',
+    metaTitle: 'Amap English Guide: How to Switch Language & Search in English (2026)',
+    metaDescription: 'Set up Amap Global in English, search China destinations, save Chinese hotel addresses, plan metro routes, and use local navigation and ride-hailing.',
+    quickAnswer: 'Download the overseas Amap Global version before arrival and select a supported language when prompted or in settings. Major attractions and hotels can often be searched in English; for small businesses, paste the Chinese name or address. Save critical destinations before leaving Wi-Fi.',
+    ctaLabel: 'Convert my address into an Amap-ready search',
+    midCtaLabel: 'Prepare my saved places',
+    ctaHref: '/',
+    buddyPrompt: 'Convert these destinations into English and Chinese Amap-ready searches: [places/addresses]. Also give me short taxi messages.',
+    reviewed: 'September 27, 2026',
+    sections: [
+      { title: 'Install and Choose a Language', ordered: true, items: ['Download Amap Global from the Apple App Store or Google Play.', 'Choose English or another supported language during setup; if needed, open profile/settings and find the language option available in your version.', 'Allow location access while using the app and verify the location pin.', 'Save your hotel, airports, railway stations, and first-day attractions.'] },
+      { title: 'Search Tips That Work', items: ['Use English for major attractions, airports, stations, and many hotels.', 'Paste the Chinese place name or address for small restaurants, apartment compounds, gates, and local shops.', 'Check district, photos, phone number, and distance before choosing a result with a repeated name.', 'For large sites, search the exact entrance, ticket gate, or pickup point rather than only the attraction name.'] },
+      { title: 'What Amap Can Do', table: { headers: ['Feature', 'Use'], rows: [['Public transport', 'Metro, bus, transfers, exits, and estimated travel time'], ['Walking and cycling', 'Turn-by-turn local routes'], ['Driving and traffic', 'Live traffic, lane guidance where available, and ETAs'], ['Ride-hailing', 'Compare pickup, providers, and fare estimates where supported']] } },
+    ],
+    faqs: [
+      { question: 'Is Amap available in English?', answer: 'Yes. Amap Global provides English and other supported languages for overseas users.' },
+      { question: 'Can I search places in English?', answer: 'Major places often work in English. Keep the Chinese name or address for small or ambiguous destinations.' },
+      { question: 'Is Amap better than Google Maps in China?', answer: 'Amap uses current local data and is designed for mainland navigation. Google services are generally unavailable on ordinary mainland connections.' },
+    ],
+    related: [{ label: 'Google Maps alternative guide', href: '/does-google-maps-work-in-china-amap-guide/' }, { label: 'Full Amap guide', href: '/amap-in-english/' }, { label: 'DiDi guide', href: '/how-to-use-didi-in-china-foreigners/' }],
+    sources: [{ label: 'Shanghai government: multilingual Amap services', href: 'https://english.shanghai.gov.cn/en-EasyShanghai/20260713/379bcea6e1bd4defaa7db2451d68d3dd.html' }],
+  },
+  'alipay-metro-qr-transport-code-guide': {
+    path: '/alipay-metro-qr-transport-code-guide/',
+    title: 'How to Ride China Metros with an Alipay Transport QR Code',
+    intro: 'Transport QR availability and activation vary by city. Alipay can be convenient for visitors, but single-journey tickets, transit cards, and contactless bank cards remain important backups.',
+    metaTitle: 'How to Ride China Metro With Alipay as a Foreigner (Transport QR Guide 2026)',
+    metaDescription: 'Set up an Alipay transport QR code for China metro systems. Select the city, activate the supported transit service, scan at gates, and prepare ticket backups.',
+    quickAnswer: 'Open Alipay, search Transport, select your current city, and activate the metro or transit service shown for that city. Complete identity and payment authorization if requested, then use the dynamic QR at supported gates. The exact service is city-specific; if activation fails, buy a single-journey ticket or use another locally supported payment option.',
+    ctaLabel: 'Ask Buddy for my city metro setup',
+    midCtaLabel: 'Show my activation steps',
+    ctaHref: '/',
+    buddyPrompt: 'Give me current metro payment setup steps for [city]. I use Alipay with a [card type] and need a backup if the transport QR does not activate.',
+    reviewed: 'September 27, 2026',
+    sections: [
+      { title: 'Activate the Transport Code', ordered: true, items: ['Open Alipay and search Transport or open the transport section.', 'Select the correct city before choosing metro, bus, or a combined local service.', 'Open the official service shown for that city and review its terms.', 'Complete identity verification and payment authorization if requested.', 'Display the dynamic QR and use a gate marked for that code. Use the same payment method to enter and exit.'] },
+      { title: 'City Differences Matter', items: ['Shanghai offers several routes, including local metro or mobility services connected to Alipay and WeChat.', 'Beijing also supports selected direct foreign contactless cards at many gates, providing a useful alternative.', 'Other cities may use a local transit card, local mini-program, or separate QR product even when reached through Alipay.', 'Always follow the current signage and service shown inside the app rather than assuming one national QR works everywhere.'] },
+      { title: 'Backup Options', items: ['Single-journey ticket from an English-language machine or staffed counter.', 'Physical local transit card or visitor pass where available.', 'Eligible contactless international bank card at gates that display its logo.', 'Small RMB cash for ticket machines or counters that accept it.'] },
+    ],
+    faqs: [
+      { question: 'Can foreigners use Alipay for the metro?', answer: 'Often yes, after activating the city-specific transport service. Availability and card authorization vary by city and account.' },
+      { question: 'Does one Alipay metro QR work across China?', answer: 'No. Select the city and activate the local service. Products and rules differ between metro systems.' },
+      { question: 'What if the QR code does not work?', answer: 'Use a staffed gate, single-journey ticket, local transit card, or eligible contactless bank card rather than repeatedly scanning.' },
+    ],
+    related: [{ label: 'China metro guide', href: '/china-metro-guide/' }, { label: 'Alipay setup guide', href: '/how-to-pay-in-china-as-foreigner/' }, { label: 'Amap English guide', href: '/amap-english-mode-guide-2026/' }],
+    sources: [{ label: 'Shanghai government: public transport options for foreign visitors', href: 'https://english.shanghai.gov.cn/en-Individuals-Transportation-PublicTransport/20260813/f257d5c373db4da3a8bde717b9f46b27.html' }],
+  },
+  'china-travel-ai-itinerary-generator': {
+    path: '/china-travel-ai-itinerary-generator/',
+    title: 'Build a Personal China Itinerary with an AI Travel Assistant',
+    intro: 'Use Buddy to turn trip length, cities, interests, budget, mobility, and booking constraints into a practical first draft, then verify live schedules, prices, closures, and entry rules.',
+    metaTitle: 'China Travel AI Itinerary Generator: Build a Personal Route in 30 Seconds (2026)',
+    metaDescription: 'Generate a personalized China itinerary with Buddy AI. Enter days, cities, interests, budget, pace, and mobility needs for a practical route and booking checklist.',
+    quickAnswer: 'Tell Buddy your dates, arrival and departure cities, interests, budget, pace, mobility needs, and must-see places. It can draft a day-by-day route, suggest train-versus-flight choices, produce Chinese addresses and travel phrases, and identify bookings to make first. Treat the output as planning support and verify time-sensitive information with official providers.',
+    ctaLabel: 'Generate my China itinerary',
+    midCtaLabel: 'Start with my trip details',
+    ctaHref: '/',
+    buddyPrompt: 'Build my China itinerary. I have [days] days, arrive in [city], depart from [city], like [interests], have a [budget] budget, and prefer a [slow/balanced/fast] pace.',
+    reviewed: 'September 27, 2026',
+    sections: [
+      { title: 'What to Tell the Planner', items: ['Exact travel dates and international arrival and departure airports.', 'Cities or sights that are fixed, optional, or unwanted.', 'History, food, nature, family, nightlife, shopping, or other interests.', 'Budget, hotel style, preferred pace, mobility limits, and tolerance for early departures.', 'Passport and visa-free context when it affects the route. Do not submit passport numbers or sensitive identifiers.'] },
+      { title: 'What Buddy Can Generate', table: { headers: ['Output', 'Purpose'], rows: [['Day-by-day route', 'Group nearby sights and reduce unnecessary transfers'], ['Transport plan', 'Compare high-speed rail, flight, metro, and DiDi'], ['Booking priorities', 'Flag attractions, trains, and hotels to reserve first'], ['China-ready details', 'Provide Chinese addresses, map searches, and practical phrases'], ['Budget draft', 'Estimate daily and trip-level planning ranges']] } },
+      { title: 'What You Still Need to Verify', items: ['Official entry, visa-free, transit, and accommodation-registration requirements.', 'Live Railway 12306 and airline schedules, prices, and availability.', 'Official attraction opening days, reservation rules, weather closures, and holiday restrictions.', 'Hotel acceptance, room details, payment terms, and cancellation rules.'] },
+    ],
+    faqs: [
+      { question: 'Can AI plan a complete China trip?', answer: 'It can produce a strong planning draft and checklist, but live prices, schedules, closures, and legal requirements still need official verification.' },
+      { question: 'What information should I provide?', answer: 'Provide dates, cities, interests, budget, pace, mobility needs, and fixed bookings. Do not provide passport numbers, card details, or other unnecessary sensitive data.' },
+      { question: 'Can Buddy create Chinese addresses and phrases?', answer: 'Yes. Buddy can format destination names, hotel messages, pickup phrases, and planning notes for local apps.' },
+    ],
+    related: [{ label: '7, 10 and 14-day itinerary guide', href: '/china-itinerary-first-time-7-10-14-days/' }, { label: 'China trip cost calculator', href: '/how-much-does-china-trip-cost-2026-calculator/' }, { label: 'China train booking guide', href: '/china-train-booking-foreigners-12306/' }],
+  },
+  '240-hour-transit-zone-map-high-speed-rail': {
+    path: '/240-hour-transit-zone-map-high-speed-rail/',
+    title: 'Can You Take High-Speed Rail During 240-Hour Visa-Free Transit?',
+    intro: 'Yes, when the domestic journey remains within the permitted stay areas and your passport, entry port, exit port, onward ticket, and full route satisfy the current policy.',
+    metaTitle: '240-Hour Transit Zone Map: Can You Take High-Speed Rail? (2026)',
+    metaDescription: 'Check whether a high-speed rail route is allowed during China 240-hour visa-free transit. Understand 57 eligible countries, 65 ports, permitted areas, and route limits.',
+    quickAnswer: 'Eligible travelers from 57 countries can use designated ports and stay up to 240 hours within the permitted areas listed by the National Immigration Administration. High-speed rail is not automatically prohibited, but every city and domestic segment must remain within the current permitted stay areas, and the traveler must still depart for a different country or region. Check the official port-area table for the exact itinerary.',
+    ctaLabel: 'Check my 240-hour rail route',
+    midCtaLabel: 'Validate my airports and cities',
+    ctaHref: '/',
+    buddyPrompt: 'Check this 240-hour transit route against the official permitted-area rules: passport [country], origin [A], entry port [port], China cities [cities], exit port [port], onward destination [C], dates [dates].',
+    reviewed: 'September 27, 2026',
+    sections: [
+      { title: 'The Five-Part Route Check', ordered: true, items: ['Confirm that the passport nationality appears on the current 57-country list.', 'Confirm that the arrival and departure points are designated ports for the policy.', 'Confirm a booked onward journey to a different country or region within 240 hours.', 'Check every planned city against the permitted stay areas in the latest NIA table.', 'Carry international and domestic tickets, accommodation details, and the passport used for the route.'] },
+      { title: 'High-Speed Rail Is Route-Dependent', items: ['Rail travel is possible inside the allowed areas; the policy does not grant unrestricted travel across all of mainland China.', 'Do not rely on old regional summaries or forum answers because eligible countries, ports, and permitted areas have expanded over time.', 'A route between two famous cities is not automatically valid or invalid: the current entry port, exit port, and permitted-area rows must be read together.', 'Call 12367 or ask immigration authorities before travel when an itinerary crosses multiple provincial-level areas or uses different entry and exit regions.'] },
+      { title: 'Examples to Test Carefully', table: { headers: ['Proposed route', 'Planning response'], rows: [['Shanghai -> Suzhou -> Hangzhou', 'These cities appear in commonly permitted Yangtze Delta areas, but verify the current entry and exit rows'], ['Beijing -> Tianjin', 'Commonly covered together, subject to designated-port and route conditions'], ['Shanghai -> Beijing', 'Do not assume either answer; validate both cities, ports, and the latest permitted-area table or call 12367'], ['Origin country -> China -> same origin country', 'Does not meet the required third-country or region transit pattern']] } },
+    ],
+    faqs: [
+      { question: 'Can I take a high-speed train during 240-hour transit?', answer: 'Yes, if the entire domestic route remains within the current permitted stay areas and all other passport, port, ticket, and third-country conditions are met.' },
+      { question: 'Can I travel anywhere in China?', answer: 'No. Travel is limited to the permitted areas published for the policy.' },
+      { question: 'Can I travel from Shanghai to Beijing?', answer: 'Do not decide from an old zone graphic alone. Check the latest NIA permitted-area table for both ports and the complete route, or call 12367 before booking.' },
+      { question: 'Does a return to my origin country qualify?', answer: 'No. The destination after mainland China must be a different country or region from the place of arrival.' },
+    ],
+    related: [{ label: 'Beijing and Shanghai layover guide', href: '/beijing-shanghai-layover-240-hour-guide/' }, { label: 'Complete visa-free guide', href: '/china-visa-free-travel-guide/' }, { label: 'Train booking for foreigners', href: '/china-train-booking-foreigners-12306/' }],
+    sources: [{ label: 'NIA: current 240-hour visa-free transit policy', href: 'https://en.nia.gov.cn/n147418/n147463/c183412/content.html' }],
+  },
+  'wechat-verification-without-friend-qr-2026': {
+    path: '/wechat-verification-without-friend-qr-2026/',
+    title: 'WeChat Verification Without a Friend: Use Only Official Recovery Paths',
+    intro: 'Some registrations request assistance from an existing user, while others use different security checks. Avoid paid “verification” sellers and public QR sharing that can expose or compromise the account.',
+    metaTitle: 'WeChat Verification Without a Friend: Safe Registration Options (2026)',
+    metaDescription: 'WeChat may request user-assisted verification. Learn safe official options, what to try when no friend can help, account recovery, and scams to avoid.',
+    quickAnswer: 'There is no guaranteed universal bypass for a WeChat security check. Follow the exact in-app verification or appeal flow shown for your account. If user assistance is required, ask a person or institution you genuinely know and trust. Do not pay strangers, post the QR code publicly, cycle through many numbers, or use unofficial unlock services.',
+    ctaLabel: 'Troubleshoot my WeChat verification',
+    midCtaLabel: 'Build my safe recovery checklist',
+    ctaHref: '/',
+    buddyPrompt: 'Help me understand this WeChat verification screen and list safe official next steps. The message says: [paste the message without phone numbers, codes, or personal data].',
+    reviewed: 'September 27, 2026',
+    sections: [
+      { title: 'Why Verification Appears', items: ['WeChat uses security checks to reduce automated registrations, spam, fraud, and account abuse.', 'The exact flow can differ by country, phone number, device, network, account history, and current risk controls.', 'Not every new user sees friend-assisted verification, and another person’s experience may not match yours.'] },
+      { title: 'Safe Options When You Have No WeChat Friend', ordered: true, items: ['Read the complete in-app message and use any official alternate verification or appeal option displayed.', 'Confirm the phone number, country code, app version, and SMS access, then retry only as instructed.', 'Contact official WeChat support through the app or official help channels.', 'If assistance from an existing user remains required, ask a trusted real-life contact, employer, university office, host, or business counterpart who is comfortable using the official flow.', 'If verification cannot be completed before travel, keep Alipay and ordinary phone, email, hotel, and booking channels ready.'] },
+      { title: 'What Not to Do', items: ['Do not pay an unknown “verification service” or buy an account.', 'Do not publish the verification QR code, phone number, SMS code, password, or identity documents in a public group.', 'Do not repeatedly create accounts with multiple numbers or devices to evade security checks.', 'Do not give remote-control access to your phone or let a stranger bind payment details.'] },
+      { title: 'After the Account Opens', items: ['Add an available recovery email or trusted recovery method.', 'Review login devices, privacy settings, and payment security.', 'Link an eligible card to WeChat Pay only through the official wallet flow.', 'Prepare Alipay, a physical card, and RMB cash so WeChat is not a single point of failure.'] },
+    ],
+    faqs: [
+      { question: 'Can I bypass WeChat friend verification?', answer: 'There is no guaranteed safe bypass. Use the official alternatives, appeal, or support options shown for your account.' },
+      { question: 'Should I pay someone online to scan the QR code?', answer: 'No. Paid or unknown verification services can lead to fraud, account compromise, or later restrictions.' },
+      { question: 'Can a university or employer help?', answer: 'A trusted institution or real-life contact may help if the official flow permits it and they are comfortable doing so.' },
+      { question: 'Can I travel in China without WeChat?', answer: 'Yes, although WeChat is useful. Prepare Alipay, mobile data, email, hotel contacts, Trip.com or 12306, and other direct booking channels.' },
+    ],
+    related: [{ label: 'Complete WeChat setup guide', href: '/how-to-use-wechat-as-foreigner-2026/' }, { label: 'WeChat Pay guide', href: '/wechat-pay-for-foreigners/' }, { label: 'Best China travel apps', href: '/best-apps-for-china-travel-2026/' }],
+  },
   'china-hotels-for-foreigners-no-rejection-guide': {
     path: '/china-hotels-for-foreigners-no-rejection-guide/',
     title: "Why Some Hotels in China Refuse Foreign Guests, and What to Do Next",
@@ -6437,6 +6608,12 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/how-to-visit-great-wall-from-beijing-2026')) return 'how-to-visit-great-wall-from-beijing-2026';
   if (cleanPath.endsWith('/what-to-eat-in-china-first-time-guide')) return 'what-to-eat-in-china-first-time-guide';
   if (cleanPath.endsWith('/how-to-use-wechat-as-foreigner-2026')) return 'how-to-use-wechat-as-foreigner-2026';
+  if (cleanPath.endsWith('/nia-12367-online-accommodation-registration-guide')) return 'nia-12367-online-accommodation-registration-guide';
+  if (cleanPath.endsWith('/amap-english-mode-guide-2026')) return 'amap-english-mode-guide-2026';
+  if (cleanPath.endsWith('/alipay-metro-qr-transport-code-guide')) return 'alipay-metro-qr-transport-code-guide';
+  if (cleanPath.endsWith('/china-travel-ai-itinerary-generator')) return 'china-travel-ai-itinerary-generator';
+  if (cleanPath.endsWith('/240-hour-transit-zone-map-high-speed-rail')) return '240-hour-transit-zone-map-high-speed-rail';
+  if (cleanPath.endsWith('/wechat-verification-without-friend-qr-2026')) return 'wechat-verification-without-friend-qr-2026';
   if (cleanPath.endsWith('/faq')) return 'faq';
   return null;
 }
