@@ -3435,6 +3435,51 @@ const pageMeta = {
 };
 
 Object.assign(pageMeta, {
+  'china-hotels-for-foreigners-no-rejection-guide': {
+    ...pageMeta['china-hotels-for-foreigners'],
+    title: 'Why Hotels in China Refuse Foreign Guests (and How to Avoid It) [2026]',
+    heading: "Why Some Hotels in China Refuse Foreign Guests, and What to Do Next",
+    description: 'Can foreigners stay in any hotel in China? Learn why rejection still happens, how hotel registration works, what to confirm before arrival, and when to call 12367.',
+    quickAnswer: 'Authorities have instructed departments and platforms not to restrict accommodation operators from receiving foreign guests based on qualification requirements. Hotels register foreign guests; private and other non-hotel stays follow a separate registration process.',
+    lastReviewed: 'September 27, 2026',
+    lastModified: '2026-09-27',
+  },
+  'does-google-maps-work-in-china-amap-guide': {
+    ...pageMeta['amap-in-english'],
+    title: 'Does Google Maps Work in China? Use Amap English Instead [2026]',
+    heading: 'Google Maps Is Not the Best Navigation Choice in China. Use Amap Instead.',
+    description: 'Google Maps is generally unavailable on ordinary mainland connections. Use Amap Global in English or Apple Maps for accurate China navigation, transit, and ride-hailing.',
+    quickAnswer: 'Download Amap Global before departure and select English or another supported language. It provides current local driving, walking, cycling, public-transit, traffic, and ride-hailing information.',
+    lastReviewed: 'September 27, 2026',
+    lastModified: '2026-09-27',
+  },
+  'how-to-visit-great-wall-from-beijing-2026': {
+    ...pageMeta['great-wall-of-china-day-trip-from-beijing'],
+    title: 'How to Visit the Great Wall from Beijing Without a Tour (2026 Guide)',
+    heading: 'How to Visit the Great Wall from Beijing Without a Tour',
+    description: 'Compare Badaling and Mutianyu Great Wall, transport from Beijing, tickets, walking difficulty, crowds, cable cars, and a realistic independent day trip.',
+    quickAnswer: 'Choose Badaling for the simplest high-speed rail connection or Mutianyu for a scenic day with cable-car, chairlift, and toboggan options. Reserve transport and admission before departure.',
+    lastReviewed: 'September 27, 2026',
+    lastModified: '2026-09-27',
+  },
+  'what-to-eat-in-china-first-time-guide': {
+    ...pageMeta['china-food-ordering-guide'],
+    title: 'What to Eat in China: 15 Must-Try Dishes for First-Time Visitors',
+    heading: 'What to Eat in China: 15 Dishes for a First Visit',
+    description: 'Discover 15 dishes to try in China, including jianbing, xiaolongbao, Peking duck, hot pot, biangbiang noodles, dumplings, and regional specialties.',
+    quickAnswer: 'Choose regional strengths: Peking duck in Beijing, xiaolongbao in Shanghai, biangbiang noodles in Xi’an, hot pot in Sichuan or Chongqing, plus jianbing, dumplings, noodles, and seasonal vegetables.',
+    lastReviewed: 'September 27, 2026',
+    lastModified: '2026-09-27',
+  },
+  'how-to-use-wechat-as-foreigner-2026': {
+    ...pageMeta['wechat-pay-for-foreigners'],
+    title: 'How to Use WeChat as a Foreigner (2026): Registration, Verification & Pay',
+    heading: 'How to Use WeChat as a Foreigner in 2026',
+    description: 'Set up WeChat before China using a foreign mobile number. Learn registration, possible security verification, WeChat Pay card linking, QR contacts, and mini-programs.',
+    quickAnswer: 'Register with a reachable mobile number, complete the security verification shown for your account, add recovery options, and link an eligible international card to WeChat Pay when available.',
+    lastReviewed: 'September 27, 2026',
+    lastModified: '2026-09-27',
+  },
   'is-china-safe-for-tourists-2026': {
     ...pageMeta['china-travel-safety-guide'],
     title: 'Is China Safe for Tourists in 2026? Honest Guide for Americans',
@@ -3563,6 +3608,11 @@ const staticCtas = {
   'how-to-use-didi-in-china-foreigners': ['Translate my hotel address for DiDi', '/'],
   'beijing-shanghai-layover-240-hour-guide': ['Plan my layover with Buddy', '/'],
   'how-much-does-china-trip-cost-2026-calculator': ['Calculate my China budget with Buddy', '/'],
+  'china-hotels-for-foreigners-no-rejection-guide': ['Ask Buddy to check my hotel plan', '/'],
+  'does-google-maps-work-in-china-amap-guide': ['Convert my destination for China maps', '/'],
+  'how-to-visit-great-wall-from-beijing-2026': ['Plan my Great Wall day with Buddy', '/'],
+  'what-to-eat-in-china-first-time-guide': ['Ask Buddy what to order', '/'],
+  'how-to-use-wechat-as-foreigner-2026': ['Build my WeChat setup checklist', '/'],
   faq: ['Open the free toolkit', '/'],
 };
 
@@ -3615,6 +3665,11 @@ const relatedLinks = [
   ['DiDi for foreigners', '/how-to-use-didi-in-china-foreigners/'],
   ['Beijing and Shanghai layover guide', '/beijing-shanghai-layover-240-hour-guide/'],
   ['China trip cost calculator', '/how-much-does-china-trip-cost-2026-calculator/'],
+  ['China hotels without rejection', '/china-hotels-for-foreigners-no-rejection-guide/'],
+  ['Google Maps and Amap guide', '/does-google-maps-work-in-china-amap-guide/'],
+  ['Great Wall from Beijing', '/how-to-visit-great-wall-from-beijing-2026/'],
+  ['What to eat in China', '/what-to-eat-in-china-first-time-guide/'],
+  ['WeChat for foreigners', '/how-to-use-wechat-as-foreigner-2026/'],
   ['FAQ', '/faq/'],
 ];
 

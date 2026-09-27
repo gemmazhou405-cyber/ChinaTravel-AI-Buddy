@@ -61,6 +61,11 @@ type GuidePageType =
   | 'how-to-use-didi-in-china-foreigners'
   | 'beijing-shanghai-layover-240-hour-guide'
   | 'how-much-does-china-trip-cost-2026-calculator'
+  | 'china-hotels-for-foreigners-no-rejection-guide'
+  | 'does-google-maps-work-in-china-amap-guide'
+  | 'how-to-visit-great-wall-from-beijing-2026'
+  | 'what-to-eat-in-china-first-time-guide'
+  | 'how-to-use-wechat-as-foreigner-2026'
   | 'faq';
 type PageType = 'pricing' | LegalPageType | GuidePageType;
 
@@ -432,6 +437,11 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'DiDi for Foreigners: book rides with an international number or mini-program.',
           'Beijing and Shanghai Layovers: plan eligible 240-hour transit routes.',
           'China Trip Cost Calculator: estimate realistic daily and total budgets.',
+          'China Hotels Without Rejection: understand registration and handle check-in problems.',
+          'Google Maps Alternatives: set up Amap Global and navigation backups.',
+          'Great Wall from Beijing: compare Badaling and Mutianyu independently.',
+          'What to Eat in China: choose 15 approachable regional dishes.',
+          'WeChat for Foreigners: prepare registration, payments, and mini-programs.',
           'FAQ: concise answers about ChinaEase Buddy and service limitations.',
         ],
       },
@@ -492,6 +502,11 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'How to use DiDi in China', href: '/how-to-use-didi-in-china-foreigners/' },
       { label: 'Beijing and Shanghai layover guide', href: '/beijing-shanghai-layover-240-hour-guide/' },
       { label: 'China trip cost calculator', href: '/how-much-does-china-trip-cost-2026-calculator/' },
+      { label: 'China hotels without rejection', href: '/china-hotels-for-foreigners-no-rejection-guide/' },
+      { label: 'Google Maps and Amap guide', href: '/does-google-maps-work-in-china-amap-guide/' },
+      { label: 'Great Wall from Beijing', href: '/how-to-visit-great-wall-from-beijing-2026/' },
+      { label: 'What to eat in China', href: '/what-to-eat-in-china-first-time-guide/' },
+      { label: 'WeChat for foreigners', href: '/how-to-use-wechat-as-foreigner-2026/' },
       { label: 'FAQ', href: '/faq/' },
     ],
   },
@@ -5401,6 +5416,139 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'FAQ', href: '/faq/' },
     ],
   },
+  'china-hotels-for-foreigners-no-rejection-guide': {
+    path: '/china-hotels-for-foreigners-no-rejection-guide/',
+    title: "Why Some Hotels in China Refuse Foreign Guests, and What to Do Next",
+    intro: 'Foreign visitors are not limited to a special class of “foreigner-licensed” hotels. In practice, some properties still reject bookings because staff do not understand passport registration or platform information is wrong.',
+    metaTitle: 'Why Hotels in China Refuse Foreign Guests (and How to Avoid It) [2026]',
+    metaDescription: 'Can foreigners stay in any hotel in China? Learn why rejection still happens, how hotel registration works, what to confirm before arrival, and when to call 12367.',
+    quickAnswer: 'Chinese authorities have instructed local departments and booking platforms not to restrict accommodation operators from receiving foreign guests based on qualification requirements, and operators may not illegally advertise that they refuse foreigners. Hotels must register a foreign guest’s accommodation details. A property may still be unable to honor a booking for ordinary operational reasons, so confirm acceptance and passport-registration capability before arrival, especially at small or remote properties.',
+    ctaLabel: 'Ask Buddy to check my hotel plan',
+    midCtaLabel: 'Prepare my hotel confirmation message',
+    ctaHref: '/',
+    buddyPrompt: 'Help me check a China hotel booking. The hotel is [name/city], I booked through [platform], and I need a Chinese message confirming that they accept my passport and can register my stay.',
+    reviewed: 'September 27, 2026',
+    sections: [
+      { title: 'Why Rejection Still Happens', items: ['Front-desk staff may be unfamiliar with entering a foreign passport into the accommodation-registration system.', 'A small property may rely on outdated internal policy or incorrect booking-platform labels.', 'The booking name, passport spelling, visa status, arrival time, or room rules may not match the reservation.', 'A hotel can refuse a stay for lawful ordinary reasons such as no valid booking, no available room, identity problems, or serious rule violations; nationality alone should not be used as an unlawful blanket restriction.'] },
+      { title: 'Confirm Before You Travel', ordered: true, items: ['Book through a reputable platform and read the latest guest notes, but do not treat an old “foreign guests accepted” label as the only legal test.', 'Message or call the property with your nationality, passport document type, arrival time, and booking number.', 'Ask the property to confirm in writing that it can check you in and submit hotel accommodation registration.', 'Save the confirmation, Chinese hotel name, address, phone number, and one backup property nearby.'] },
+      { title: 'What to Do If the Front Desk Refuses', items: ['Stay calm and ask for the specific reason: booking problem, room availability, passport entry, payment, or an alleged foreign-guest rule.', 'Show the written hotel confirmation and ask for a manager who understands foreign-passport registration.', 'Call the booking platform for relocation or refund support if the reservation cannot be honored.', 'For immigration-registration questions, call the National Immigration Administration service hotline at 12367. Do not rely on Buddy as legal representation.'] },
+      { title: 'Hotel Registration vs Private Accommodation', items: ['When you stay in a hotel, the hotel handles accommodation registration and submits the information to public security.', 'When staying in a private home or other non-hotel residence, the foreign guest or host generally must register within 24 hours.', 'The NIA online registration service for non-hotel accommodation began as a 2026 pilot in specified provincial-level regions. Availability is not yet a reason to assume online registration works everywhere.', 'Keep the registration record when you may need it for later immigration, visa, or administrative procedures.'] },
+    ],
+    faqs: [
+      { question: 'Can foreigners stay in any hotel in China?', answer: 'Authorities have said local departments and platforms should not restrict operators from receiving foreign guests based on qualification requirements. A hotel still needs to complete the required registration and can refuse for lawful ordinary operational reasons.' },
+      { question: 'Do hotels need a special foreigner licence?', answer: 'The current national policy direction rejects blanket accommodation restrictions based on such qualification requirements. Confusion may persist locally, so confirm the property can process your passport registration.' },
+      { question: 'Does the hotel register me with the police?', answer: 'Hotels submit foreign-guest accommodation information as part of check-in. Private or other non-hotel accommodation follows a separate registration process.' },
+      { question: 'What is the 12367 hotline?', answer: '12367 is the National Immigration Administration service hotline for immigration and entry-exit questions, including accommodation-registration guidance.' },
+    ],
+    related: [{ label: 'Full China hotels guide', href: '/china-hotels-for-foreigners/' }, { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' }, { label: 'China travel safety guide', href: '/china-travel-safety-guide/' }],
+    sources: [{ label: 'Chinese government: facilitating accommodation for foreign travelers', href: 'https://english.www.gov.cn/news/202407/26/content_WS66a2d827c6d0868f4e8e975c.html' }, { label: 'NIA: online registration for non-hotel accommodation', href: 'https://english.www.gov.cn/services/visitchina/202603/21/content_WS69ce124cc6d00ca5f9a0a368.html' }],
+  },
+  'does-google-maps-work-in-china-amap-guide': {
+    path: '/does-google-maps-work-in-china-amap-guide/',
+    title: "Google Maps Is Not the Best Navigation Choice in China. Use Amap Instead.",
+    intro: 'Google services are generally unavailable on ordinary mainland connections, and Google Maps is not designed around current local navigation data. Amap Global now offers English and multilingual navigation for international visitors.',
+    metaTitle: 'Does Google Maps Work in China? Use Amap English Instead [2026]',
+    metaDescription: 'Google Maps is generally unavailable on ordinary mainland connections. Use Amap Global in English or Apple Maps for accurate China navigation, transit, and ride-hailing.',
+    quickAnswer: 'Download Amap Global before departure and switch to English or another supported language. It provides driving, walking, cycling, public-transit routes, translated place names, traffic information, and ride-hailing. Apple Maps is a practical alternative for many iPhone users. Save your hotel name and address in Chinese as a final backup.',
+    ctaLabel: 'Convert my destination for China maps',
+    midCtaLabel: 'Create my navigation backup',
+    ctaHref: '/',
+    buddyPrompt: 'Convert this China destination into a map-ready English and Chinese address, plus a taxi message: [place/address].',
+    reviewed: 'September 27, 2026',
+    sections: [
+      { title: 'Why Not to Rely on Google Maps', items: ['Google services are generally blocked on ordinary mainland Wi-Fi and local mobile data.', 'Even when connectivity is available, place listings, transit information, and local navigation may be incomplete or outdated.', 'China uses regulated coordinate systems, which can create visible offsets when different map and satellite layers are combined.', 'Use a current local navigation product rather than building a trip around Google Maps alone.'] },
+      { title: 'Set Up Amap Global in English', ordered: true, items: ['Download Amap Global from your app store before departure.', 'Select English or another supported language and allow location access while using the app.', 'Search for your hotel and major attractions, then save them before the trip.', 'Compare walking, transit, driving, cycling, and ride-hailing options and confirm the correct entrance or gate.'] },
+      { title: 'Amap vs Apple Maps vs Baidu Maps', table: { headers: ['Map', 'Best for visitors', 'Main limitation'], rows: [['Amap Global', 'Detailed local navigation, transit, traffic, and ride-hailing', 'Some listings or service flows may still contain Chinese'], ['Apple Maps', 'Simple English navigation on iPhone using local map data', 'Feature depth varies by place and mode'], ['Baidu Maps', 'Broad local place data and Chinese-language searches', 'Less convenient for travelers who cannot read Chinese']] } },
+      { title: 'Navigation Backups', items: ['Save every hotel and station address in Chinese.', 'Screenshot the destination, nearest metro station, exit number, and pickup gate.', 'Download essential information before leaving Wi-Fi.', 'Show a driver the Chinese address rather than only an English place name.'] },
+    ],
+    faqs: [
+      { question: 'Does Google Maps work in mainland China?', answer: 'It is generally unavailable on ordinary mainland connections, and its local data may not be suitable for dependable navigation. Prepare Amap Global or Apple Maps.' },
+      { question: 'Is Amap available in English?', answer: 'Yes. Amap Global offers English and multiple other languages for overseas users.' },
+      { question: 'Does Apple Maps work in China?', answer: 'Apple Maps is commonly usable in mainland China and can be a convenient English-language option, though local feature availability varies.' },
+      { question: 'Should I use Baidu Maps?', answer: 'Baidu Maps has strong local coverage, but Amap Global or Apple Maps is usually easier for visitors who need an English interface.' },
+    ],
+    related: [{ label: 'Full Amap English guide', href: '/amap-in-english/' }, { label: 'Best China travel apps', href: '/best-apps-for-china-travel-2026/' }, { label: 'DiDi guide', href: '/how-to-use-didi-in-china-foreigners/' }],
+    sources: [{ label: 'Shanghai government: Amap English map', href: 'https://english.shanghai.gov.cn/en-InFocus/20250123/78d115a256af4c29a607b3d326ac2d8a.html' }, { label: 'Shanghai government: multilingual Amap services', href: 'https://english.shanghai.gov.cn/en-EasyShanghai/20260713/379bcea6e1bd4defaa7db2451d68d3dd.html' }],
+  },
+  'how-to-visit-great-wall-from-beijing-2026': {
+    path: '/how-to-visit-great-wall-from-beijing-2026/',
+    title: 'How to Visit the Great Wall from Beijing Without a Tour',
+    intro: 'Choose Badaling for the easiest rail connection or Mutianyu for a scenic day with shuttle, cable-car, chairlift, and toboggan options.',
+    metaTitle: 'How to Visit the Great Wall from Beijing Without a Tour (2026 Guide)',
+    metaDescription: 'Compare Badaling and Mutianyu Great Wall, transport from Beijing, tickets, walking difficulty, crowds, cable cars, and a realistic independent day trip.',
+    quickAnswer: 'Badaling is the simplest independent option because high-speed trains run from Beijing North or Qinghe to Badaling Great Wall station, but tickets and peak crowds require planning. Mutianyu is scenic and often feels less compressed outside peak hours, but usually needs a tourist bus, public-bus combination, taxi, or private transfer. Reserve the entrance and transport layers before departure.',
+    ctaLabel: 'Plan my Great Wall day with Buddy',
+    midCtaLabel: 'Choose Badaling or Mutianyu for me',
+    ctaHref: '/',
+    buddyPrompt: 'Plan my independent Great Wall day from Beijing. I travel on [date], stay near [hotel/area], have [fitness level], and prefer [easy transport/fewer crowds/scenery/toboggan].',
+    reviewed: 'September 27, 2026',
+    sections: [
+      { title: 'Badaling vs Mutianyu', table: { headers: ['Section', 'Best for', 'Transport trade-off'], rows: [['Badaling', 'First-time visitors prioritizing simple rail access and extensive facilities', 'Fast train is convenient but popular departures can sell out'], ['Mutianyu', 'Scenery, families, cable-car options, and a less compressed visit outside peaks', 'Requires a bus, shuttle, taxi, or private transfer']] } },
+      { title: 'Independent Transport Options', items: ['Badaling: book the high-speed train from Beijing North or Qinghe to Badaling Great Wall station through Railway 12306; confirm the exact station and return train.', 'Mutianyu: use an authorized tourist bus, a public-bus combination, or a verified car service. Confirm where the internal scenic-area shuttle begins.', 'Avoid accepting an unverified “direct bus” or private car offer near a station without checking the operator, destination, and return terms.'] },
+      { title: 'A Realistic Day Plan', ordered: true, items: ['Leave central Beijing early and carry your passport, booking confirmations, water, and weather protection.', 'Allow time for the station, bus transfer, ticket check, and any internal shuttle.', 'Spend roughly three to four hours on the wall, choosing cable-car assistance based on weather and mobility.', 'Start the return before late afternoon and keep the final train or bus details available offline.'] },
+      { title: 'Tickets, Weather, and Walking', items: ['Reserve required admission and transport through official or clearly authorized channels.', 'Wear shoes with grip; restored sections still include steep and uneven stairs.', 'Cable cars, chairlifts, and the Mutianyu toboggan can close because of wind, ice, maintenance, or other conditions.', 'Avoid unrestored or closed wild-wall sections unless you have lawful access and appropriate specialist support.'] },
+    ],
+    faqs: [
+      { question: 'Can I visit the Great Wall without a tour?', answer: 'Yes. Badaling is accessible by high-speed rail, while Mutianyu can be reached by authorized bus, public transport plus shuttle, taxi, or private transfer.' },
+      { question: 'Is Badaling or Mutianyu better?', answer: 'Choose Badaling for easier rail access and extensive facilities. Choose Mutianyu for scenery and cable-car or toboggan options, accepting a more complex transfer.' },
+      { question: 'How long should I spend at the Great Wall?', answer: 'Most independent visitors should allow a full day from central Beijing, including transfers, ticket checks, and roughly three to four hours at the wall.' },
+      { question: 'Do I need to book in advance?', answer: 'Advance booking is strongly recommended for admission and train or tourist-bus seats, especially on weekends and holidays.' },
+    ],
+    related: [{ label: 'Full Great Wall day-trip guide', href: '/great-wall-of-china-day-trip-from-beijing/' }, { label: '3-day Beijing itinerary', href: '/3-day-beijing-itinerary/' }, { label: 'China train booking guide', href: '/china-train-booking-foreigners-12306/' }],
+  },
+  'what-to-eat-in-china-first-time-guide': {
+    path: '/what-to-eat-in-china-first-time-guide/',
+    title: 'What to Eat in China: 15 Dishes for a First Visit',
+    intro: 'Start with regional classics rather than treating Chinese food as one cuisine. This practical list covers breakfasts, noodles, dumplings, street snacks, shared dishes, and ordering safety.',
+    metaTitle: 'What to Eat in China: 15 Must-Try Dishes for First-Time Visitors',
+    metaDescription: 'Discover 15 dishes to try in China, including jianbing, xiaolongbao, Peking duck, hot pot, biangbiang noodles, dumplings, and regional specialties.',
+    quickAnswer: 'Try dishes where they are regional strengths: Peking duck and zhajiangmian in Beijing, xiaolongbao and shengjian in Shanghai, biangbiang noodles and roujiamo in Xi’an, hot pot and mapo tofu in Sichuan or Chongqing, plus jianbing, dumplings, barbecue skewers, and seasonal vegetables across many cities.',
+    ctaLabel: 'Ask Buddy what to order',
+    midCtaLabel: 'Build my personal food list',
+    ctaHref: '/',
+    buddyPrompt: 'Recommend dishes for my China trip. I will visit [cities], eat [meat/vegetarian/etc.], avoid [allergens/ingredients], and prefer [mild/spicy/adventurous] food.',
+    reviewed: 'September 27, 2026',
+    sections: [
+      { title: '15 Dishes to Put on Your List', items: ['Jianbing: a savory breakfast crepe with egg, sauces, herbs, and a crisp filling.', 'Xiaolongbao: steamed soup dumplings associated with Jiangnan and Shanghai.', 'Shengjianbao: pan-fried buns with a crisp base and juicy filling.', 'Peking duck: roast duck served with thin pancakes, scallion, cucumber, and sauce.', 'Zhajiangmian: Beijing-style noodles with fermented soybean meat sauce.', 'Biangbiang noodles: wide, hand-pulled Shaanxi noodles.', 'Roujiamo: chopped meat in a crisp flatbread, strongly associated with Shaanxi.', 'Hot pot: broth-based communal cooking, especially famous in Chongqing and Sichuan.', 'Mapo tofu: tofu with minced meat, chili, and Sichuan pepper in the classic version.', 'Kung pao chicken: diced chicken with chili and peanuts.', 'Lanzhou beef noodles: hand-pulled noodles in a clear beef broth.', 'Jiaozi: boiled, steamed, or pan-fried dumplings.', 'Yangzhou fried rice: rice with egg and mixed ingredients in the classic style.', 'Lamb skewers: cumin-seasoned grilled meat associated with northwestern flavors.', 'Seasonal stir-fried greens: a useful balance to richer shared dishes.'] },
+      { title: 'Order by City', table: { headers: ['City or region', 'Good starting choices'], rows: [['Beijing', 'Peking duck, zhajiangmian, dumplings'], ['Shanghai / Jiangnan', 'Xiaolongbao, shengjianbao, braised dishes'], ["Xi'an / Shaanxi", 'Biangbiang noodles, roujiamo, lamb dishes'], ['Chengdu / Sichuan', 'Mapo tofu, hot pot, dry-fried dishes'], ['Guangzhou / Guangdong', 'Dim sum, roast meats, seafood, soups']] } },
+      { title: 'Food Safety and Allergies', items: ['Choose busy, clean-looking vendors that cook food thoroughly and serve it hot.', 'Drink sealed bottled or properly treated water when safety is uncertain.', 'Allergy communication is difficult because sauces, broths, oils, and shared equipment may contain hidden ingredients.', 'Show a specific Chinese allergy card and confirm with staff; Buddy provides communication support, not a medical guarantee.'] },
+      { title: 'How to Order', items: ['Use photo menus, displayed dishes, or a translation tool, but confirm portion size before ordering.', 'Shared dishes are common; a rough starting point is one dish per person plus one additional vegetable or staple for the table.', 'Ask whether the price is per dish, per person, per 500 grams, or by live weight when seafood and market ingredients are involved.', 'Keep Alipay or WeChat Pay ready and carry a cash backup.'] },
+    ],
+    faqs: [
+      { question: 'What food should I try first in China?', answer: 'Start with the regional specialties of your destination, such as Peking duck in Beijing, xiaolongbao in Shanghai, biangbiang noodles in Xi’an, or hot pot in Chengdu and Chongqing.' },
+      { question: 'Is Chinese street food safe?', answer: 'Risk varies. Choose busy vendors with clean preparation areas, food cooked thoroughly and served hot, and safe water and ice practices.' },
+      { question: 'Is it easy to eat vegetarian food in China?', answer: 'Vegetable dishes are common, but meat stock, lard, oyster sauce, or small meat pieces may be used. Show a precise Chinese request and confirm ingredients.' },
+      { question: 'How do I communicate a food allergy?', answer: 'Carry a detailed Chinese allergy card naming the allergen and the need to avoid sauces, broths, oils, and cross-contact. Seek professional medical advice for severe allergies.' },
+    ],
+    related: [{ label: 'Full China food-ordering guide', href: '/china-food-ordering-guide/' }, { label: 'Essential Chinese phrases', href: '/chinese-travel-phrases/' }, { label: 'China payment guide', href: '/how-to-pay-in-china-as-foreigner/' }],
+  },
+  'how-to-use-wechat-as-foreigner-2026': {
+    path: '/how-to-use-wechat-as-foreigner-2026/',
+    title: 'How to Use WeChat as a Foreigner in 2026',
+    intro: 'Set up messaging, account recovery, WeChat Pay, QR contacts, and mini-programs before your trip, while keeping Alipay and other backups available.',
+    metaTitle: 'How to Use WeChat as a Foreigner (2026): Registration, Verification & Pay',
+    metaDescription: 'Set up WeChat before China using a foreign mobile number. Learn registration, possible security verification, WeChat Pay card linking, QR contacts, and mini-programs.',
+    quickAnswer: 'Download the official WeChat app, register with a reachable foreign or Chinese mobile number, complete any security verification shown, and set recovery options before travel. Eligible foreign users can link supported international bank cards to WeChat Pay. Verification, features, limits, fees, and merchant acceptance vary, so keep Alipay, a physical card, and some RMB as backups.',
+    ctaLabel: 'Build my WeChat setup checklist',
+    midCtaLabel: 'Troubleshoot my WeChat setup',
+    ctaHref: '/',
+    buddyPrompt: 'Help me set up WeChat for China. I am stuck at [registration/security verification/WeChat Pay/mini-program], my phone is [model], and my card is [type].',
+    reviewed: 'September 27, 2026',
+    sections: [
+      { title: 'Register Before You Arrive', ordered: true, items: ['Download the official WeChat app and register with a mobile number you can continue to access.', 'Use your real account details and complete the security checks shown in the app.', 'If WeChat requests assistance from an existing user, follow the exact in-app process; not every registration requires the same verification.', 'Add an email or other available recovery method and review privacy and login settings.', 'Test messaging and save your account details before departure.'] },
+      { title: 'Set Up WeChat Pay', ordered: true, items: ['Open the wallet or payment section available in your WeChat account.', 'Complete identity verification with your passport when requested.', 'Link a supported Visa, Mastercard, American Express, JCB, Diners Club, Discover, or other card currently shown as eligible.', 'Complete the issuing bank’s verification step and review the limits and fees displayed in the app.', 'Test the payment route in China and retain Alipay, a physical card, and RMB cash as backups.'] },
+      { title: 'Contacts, QR Codes, and Mini-Programs', items: ['Use personal QR codes to add local contacts without spelling usernames.', 'Official accounts can provide attraction notices, bookings, and customer service, but verify the account before paying or sharing information.', 'Mini-programs can support transport, food, attractions, hotels, and other services without installing a separate app.', 'Do not scan unknown QR codes or share login, payment, or SMS verification codes.'] },
+      { title: 'Common Setup Problems', items: ['Security verification can vary by phone number, device, region, account history, and risk controls.', 'A card can fail because of issuer authorization, identity mismatch, unsupported settings, or app limits.', 'Changing devices, numbers, or networks repeatedly may trigger additional security checks.', 'Use official in-app support and never pay an unknown person to “unlock” or verify an account.'] },
+    ],
+    faqs: [
+      { question: 'Can foreigners register for WeChat?', answer: 'Yes. Foreign users can register with supported international mobile numbers, subject to the security verification displayed for that account.' },
+      { question: 'Do I always need another user to verify my account?', answer: 'No. Verification requirements vary. Follow the exact official in-app instructions rather than assuming every account needs friend-assisted verification.' },
+      { question: 'Can foreigners use WeChat Pay?', answer: 'Eligible foreign visitors can link supported international bank cards after completing the required identity and bank verification.' },
+      { question: 'Should I use WeChat Pay or Alipay?', answer: 'Prepare both. WeChat Pay is useful for merchants and mini-programs inside WeChat, while many visitors find Alipay easier as a primary travel wallet.' },
+    ],
+    related: [{ label: 'Full WeChat Pay guide', href: '/wechat-pay-for-foreigners/' }, { label: 'China payment setup', href: '/how-to-pay-in-china-as-foreigner/' }, { label: 'Best China travel apps', href: '/best-apps-for-china-travel-2026/' }],
+    sources: [{ label: 'Chinese government: payment guide for overseas visitors', href: 'https://english.www.gov.cn/news/202404/11/content_WS6617c858c6d0868f4e8e5f4d.html' }],
+  },
   'is-china-safe-for-tourists-2026': {
     path: '/is-china-safe-for-tourists-2026/',
     title: "Is China Safe for Tourists in 2026? Yes, with Important Caveats.",
@@ -6284,6 +6432,11 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/how-to-use-didi-in-china-foreigners')) return 'how-to-use-didi-in-china-foreigners';
   if (cleanPath.endsWith('/beijing-shanghai-layover-240-hour-guide')) return 'beijing-shanghai-layover-240-hour-guide';
   if (cleanPath.endsWith('/how-much-does-china-trip-cost-2026-calculator')) return 'how-much-does-china-trip-cost-2026-calculator';
+  if (cleanPath.endsWith('/china-hotels-for-foreigners-no-rejection-guide')) return 'china-hotels-for-foreigners-no-rejection-guide';
+  if (cleanPath.endsWith('/does-google-maps-work-in-china-amap-guide')) return 'does-google-maps-work-in-china-amap-guide';
+  if (cleanPath.endsWith('/how-to-visit-great-wall-from-beijing-2026')) return 'how-to-visit-great-wall-from-beijing-2026';
+  if (cleanPath.endsWith('/what-to-eat-in-china-first-time-guide')) return 'what-to-eat-in-china-first-time-guide';
+  if (cleanPath.endsWith('/how-to-use-wechat-as-foreigner-2026')) return 'how-to-use-wechat-as-foreigner-2026';
   if (cleanPath.endsWith('/faq')) return 'faq';
   return null;
 }
