@@ -10,6 +10,9 @@ const daliGuide = JSON.parse(await readFile('src/data/seoPages/3-day-dali-itiner
 const goldenWeekGuide = JSON.parse(await readFile('src/data/seoPages/china-golden-week-2026-travel-guide.json', 'utf8'));
 const greatWallGuide = JSON.parse(await readFile('src/data/seoPages/great-wall-of-china-day-trip-from-beijing.json', 'utf8'));
 const pandaBaseGuide = JSON.parse(await readFile('src/data/seoPages/chengdu-panda-base-guide.json', 'utf8'));
+const didiPaymentGuide = JSON.parse(await readFile('src/data/seoPages/didi-payment-for-foreigners.json', 'utf8'));
+const beijingAirportGuide = JSON.parse(await readFile('src/data/seoPages/beijing-airport-to-city-guide.json', 'utf8'));
+const mapsComparisonGuide = JSON.parse(await readFile('src/data/seoPages/amap-vs-google-maps-china.json', 'utf8'));
 
 const pageMeta = {
   plan: {
@@ -66,6 +69,9 @@ const pageMeta = {
       ['3-Day Suzhou Itinerary', 'Plan classical gardens, Pingjiang Road, Suzhou Museum, canals, food and Shanghai train connections.', '/3-day-suzhou-itinerary/'],
       ['3-Day Nanjing Itinerary', 'Plan Sun Yat-sen Mausoleum, Ming Xiaoling, museums, the memorial, city walls and Qinhuai River.', '/3-day-nanjing-itinerary/'],
       ['3-Day Dali Itinerary', 'Plan Dali Old Town, Three Pagodas, Erhai Lake, Xizhou and a flexible Cangshan day.', '/3-day-dali-itinerary/'],
+      ['DiDi Payment for Foreigners', 'Troubleshoot foreign card and wallet payment for a ride in China.', '/didi-payment-for-foreigners/'],
+      ['Beijing Airport to City Guide', 'Compare PEK and PKX express trains, taxis and late arrival transfers.', '/beijing-airport-to-city-guide/'],
+      ['AMap vs Google Maps in China', 'Choose local maps, verify entrances and save Chinese addresses.', '/amap-vs-google-maps-china/'],
       ['China Golden Week 2026 Travel Guide', 'Plan October 1–7 trains, hotels, attractions, crowds and a flexible first-time route.', '/china-golden-week-2026-travel-guide/'],
       ['Great Wall Day Trip from Beijing', 'Compare Mutianyu and Badaling, booking layers, transport, walking and return timing.', '/great-wall-of-china-day-trip-from-beijing/'],
       ['Chengdu Panda Base Guide', 'Book official tickets, choose South or West Gate and plan a manageable viewing route.', '/chengdu-panda-base-guide/'],
@@ -2833,6 +2839,9 @@ const pageMeta = {
   'china-golden-week-2026-travel-guide': goldenWeekGuide,
   'great-wall-of-china-day-trip-from-beijing': greatWallGuide,
   'chengdu-panda-base-guide': pandaBaseGuide,
+  'didi-payment-for-foreigners': didiPaymentGuide,
+  'beijing-airport-to-city-guide': beijingAirportGuide,
+  'amap-vs-google-maps-china': mapsComparisonGuide,
   'best-time-to-visit-china': {
     title: 'Best Time to Visit China: Month-by-Month Guide (2026)',
     heading: 'Best Time to Visit China: Weather and Crowds by Month (2026)',
@@ -3684,6 +3693,9 @@ const staticCtas = {
   'china-golden-week-2026-travel-guide': ['Get my Golden Week China itinerary', '/#trip-plan'],
   'great-wall-of-china-day-trip-from-beijing': ['Get my Beijing itinerary', '/#trip-plan'],
   'chengdu-panda-base-guide': ['Get my Chengdu itinerary', '/#trip-plan'],
+  'didi-payment-for-foreigners': ['Get my China transport plan', '/#trip-plan'],
+  'beijing-airport-to-city-guide': ['Get my Beijing itinerary', '/#trip-plan'],
+  'amap-vs-google-maps-china': ['Get my China itinerary', '/#trip-plan'],
   'best-time-to-visit-china': ['Get my itinerary for the right season', '/#trip-plan'],
   'china-esim-internet-guide': ['Get my free China itinerary', '/#trip-plan'],
   'alipay-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
@@ -3756,6 +3768,9 @@ const relatedLinks = [
   ['China Golden Week 2026 travel guide', '/china-golden-week-2026-travel-guide/'],
   ['Great Wall day trip from Beijing', '/great-wall-of-china-day-trip-from-beijing/'],
   ['Chengdu Panda Base guide', '/chengdu-panda-base-guide/'],
+  ['DiDi Payment for Foreigners', '/didi-payment-for-foreigners/'],
+  ['Beijing Airport to City Guide', '/beijing-airport-to-city-guide/'],
+  ['AMap vs Google Maps in China', '/amap-vs-google-maps-china/'],
   ['Best time to visit China', '/best-time-to-visit-china/'],
   ['WeChat Pay for foreigners', '/wechat-pay-for-foreigners/'],
   ['China payment guide', '/china-payment-guide/'],
@@ -3779,6 +3794,30 @@ const relatedLinks = [
 ];
 
 const pageRelatedLinks = {
+  'didi-payment-for-foreigners': [
+    ['Didi In China For Foreigners', '/didi-in-china-for-foreigners/'],
+    ['Alipay For Foreigners', '/alipay-for-foreigners/'],
+    ['Wechat Pay For Foreigners', '/wechat-pay-for-foreigners/'],
+    ['China Payment Guide', '/china-payment-guide/'],
+    ['Beijing Airport to City Guide', '/beijing-airport-to-city-guide/'],
+    ['Get my free China itinerary', '/#trip-plan'],
+  ],
+  'beijing-airport-to-city-guide': [
+    ['China Airport Arrival Guide', '/china-airport-arrival-guide/'],
+    ['DiDi Payment for Foreigners', '/didi-payment-for-foreigners/'],
+    ['China Metro Guide', '/china-metro-guide/'],
+    ['3 Day Beijing Itinerary', '/3-day-beijing-itinerary/'],
+    ['China Esim Internet Guide', '/china-esim-internet-guide/'],
+    ['Get my free China itinerary', '/#trip-plan'],
+  ],
+  'amap-vs-google-maps-china': [
+    ['Amap In English', '/amap-in-english/'],
+    ['China Travel Apps', '/china-travel-apps/'],
+    ['China Metro Guide', '/china-metro-guide/'],
+    ['Didi In China For Foreigners', '/didi-in-china-for-foreigners/'],
+    ['China Esim Internet Guide', '/china-esim-internet-guide/'],
+    ['Get my free China itinerary', '/#trip-plan'],
+  ],
   'china-visa-free-travel-guide': [
     ['China airport arrival guide', '/china-airport-arrival-guide/'],
     ['China hotels for foreigners', '/china-hotels-for-foreigners/'],
@@ -3806,6 +3845,7 @@ const pageRelatedLinks = {
     ['Get a free China itinerary', '/#trip-plan'],
   ],
   'didi-in-china-for-foreigners': [
+    ['DiDi Payment for Foreigners', '/didi-payment-for-foreigners/'],
     ['China airport arrival guide', '/china-airport-arrival-guide/'],
     ['Apps to download before China', '/china-travel-apps/'],
     ['AMap in English', '/amap-in-english/'],
@@ -3817,6 +3857,7 @@ const pageRelatedLinks = {
     ['Get a free China itinerary', '/#trip-plan'],
   ],
   'amap-in-english': [
+    ['AMap vs Google Maps in China', '/amap-vs-google-maps-china/'],
     ['First trip to China', '/first-trip-to-china/'],
     ['Apps to download before China', '/china-travel-apps/'],
     ['China metro guide', '/china-metro-guide/'],
@@ -4089,6 +4130,7 @@ const pageRelatedLinks = {
     ['Get a free China itinerary', '/#trip-plan'],
   ],
   'china-airport-arrival-guide': [
+    ['Beijing Airport to City Guide', '/beijing-airport-to-city-guide/'],
     ['China visa-free travel guide', '/china-visa-free-travel-guide/'],
     ['China hotels for foreigners', '/china-hotels-for-foreigners/'],
     ['First trip to China', '/first-trip-to-china/'],
