@@ -1300,26 +1300,29 @@
         "subtitle": "Wähle einige Reisedetails, sieh dir deine Route an und erhalte sie per E-Mail.",
         "stepLabel": "Schritt {{current}} von 3",
         "step1Name": "Reiseziele", "step2Name": "Dein Reisestil", "step3Name": "Vorschau",
-        "cityTitle": "Wohin möchtest du reisen?", "cityHelp": "Wähle eine oder mehrere Städte.",
+        "cityTitle": "Wohin möchtest du reisen?", "cityHelp": "Wähle bis zu 3 Reiseziele",
         "cityRequired": "Wähle mindestens eine Stadt aus, um fortzufahren.",
+        "cityMax": "Du kannst bis zu 3 Reiseziele auswählen.",
         "whenLabel": "Wann reist du?", "whenPlaceholder": "z. B. 12.–20. Oktober 2026",
-        "interestTitle": "Welche Art von Reise magst du?", "interestHelp": "Wähle beliebig viele Optionen.",
-        "travelersLabel": "Wie viele Reisende?", "travelersOption": "{{count}} Person", "travelersOption_plural": "{{count}} Personen", "travelersSixPlus": "6+ Personen",
-        "previewTitle": "Deine Reisevorschau", "previewHelp": "Prüfe deine Auswahl und gib deine E-Mail-Adresse für die vollständige Route ein.",
+        "selectDates": "Reisedaten wählen →", "startDate": "Startdatum", "endDate": "Enddatum",
+        "interestTitle": "Was gefällt dir?", "interestHelp": "Wähle beliebig viele Optionen.",
+        "travelersLabel": "Wie viele Reisende?", "travelersPreviewLabel": "Reisende", "travelers": { "1": "1 Person", "2": "2 Personen", "3-4": "3–4 Personen", "family": "Familie" },
+        "previewTitle": "Wohin sollen wir deine Route senden?", "previewHelp": "Prüfe deine Auswahl und gib deine E-Mail-Adresse für die vollständige Route ein.",
         "dayOnePreview": "Vorschau auf Tag 1", "routeLabel": "Route", "datesLabel": "Reisezeit", "interestsLabel": "Interessen",
         "flexibleDates": "Flexibel", "openRecommendations": "Offen für Vorschläge", "emailPlaceholder": "du@beispiel.de",
         "privacyNote": "Wir verwenden deine E-Mail-Adresse nur zur Erstellung und Zusendung deiner Route. Kein Spam.",
         "continuePreview": "Weiter → Vorschau auf Tag 1", "continue": "Weiter", "back": "Zurück",
         "submit": "Kostenlose Route erhalten →",
-        "trust": "✓ Sofortige Vorschau • ✓ Kein Spam • ✓ Über 12.000 Routen versendet",
+        "trust": "🛡️ Jetzt keine Zahlung • ⭐ 4,9 bei über 2.000 Bewertungen • 🔒 Sicher und privat",
+        "adjustLater": "Du kannst Details in den nächsten Schritten anpassen",
         "successTitle": "Deine Anfrage ist unterwegs",
         "cities": {
           "beijing": "Peking", "shanghai": "Shanghai", "chengdu": "Chengdu", "xian": "Xi'an",
           "guilin": "Guilin", "zhangjiajie": "Zhangjiajie", "hangzhou": "Hangzhou", "chongqing": "Chongqing"
         },
         "interests": {
-          "food": "Lokales Essen", "culture": "Geschichte & Kultur", "nature": "Natur", "photography": "Fotografie",
-          "family": "Familienfreundlich", "nightlife": "Nachtleben", "shopping": "Shopping", "easyChinese": "Einfach ohne Chinesisch"
+          "food": "Essen", "pandas": "Pandas", "history": "Geschichte", "mountains": "Berge",
+          "photography": "Fotografie", "family": "Familienfreundlich", "noChinese": "Ohne Chinesisch", "nightlife": "Nachtleben"
         }
       },
       "success": "Vielen Dank – wir haben Ihre Reisedetails erhalten.",

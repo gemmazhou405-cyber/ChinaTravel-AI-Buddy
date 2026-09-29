@@ -1,6 +1,5 @@
 import { FormEvent, useRef, useState } from 'react';
-import type { ReactNode } from 'react';
-import { ArrowLeft, ArrowRight, Check, Mail, MapPin, Sparkles, Users } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CalendarDays, Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { submitTripLead } from '../../lib/tripLead';
 import { trackEvent } from '../../lib/analytics';
@@ -10,19 +9,23 @@ const CITY_OPTIONS = [
 ] as const;
 
 const INTEREST_OPTIONS = [
-  'food', 'culture', 'nature', 'photography', 'family', 'nightlife', 'shopping', 'easyChinese',
+  'food', 'pandas', 'history', 'mountains', 'photography', 'family', 'noChinese', 'nightlife',
 ] as const;
 
 type CityId = (typeof CITY_OPTIONS)[number];
 type InterestId = (typeof INTEREST_OPTIONS)[number];
+type TravelerOption = '1' | '2' | '3-4' | 'family';
 
 export default function TripPlanForm() {
   const { t } = useTranslation();
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [cities, setCities] = useState<CityId[]>([]);
   const [dates, setDates] = useState('');
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
+  const [datePickerOpen, setDatePickerOpen] = useState(false);
   const [interests, setInterests] = useState<InterestId[]>([]);
-  const [travelers, setTravelers] = useState(1);
+  const [travelers, setTravelers] = useState<TravelerOption>('1');
   const [email, setEmail] = useState('');
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -38,9 +41,20 @@ export default function TripPlanForm() {
   const toggleCity = (city: CityId) => {
     markFormStarted();
     setError(null);
-    setCities((current) =>
-      current.includes(city) ? current.filter((item) => item !== city) : [...current, city],
-    );
+    setCities((current) => {
+      if (current.includes(city)) return current.filter((item) => item !== city);
+      if (current.length >= 3) {
+        setError(t('lead.progressive.cityMax'));
+        return current;
+      }
+      return [...current, city];
+    });
+  };
+
+  const updateDates = (nextStart: string, nextEnd: string) => {
+    setStartDate(nextStart);
+    setEndDate(nextEnd);
+    setDates([nextStart, nextEnd].filter(Boolean).join(' → '));
   };
 
   const toggleInterest = (interest: InterestId) => {
@@ -104,10 +118,11 @@ export default function TripPlanForm() {
 
   const cityLabels = cities.map((city) => t(`lead.progressive.cities.${city}`));
   const interestLabels = interests.map((interest) => t(`lead.progressive.interests.${interest}`));
+  const travelerLabel = t(`lead.progressive.travelers.${travelers}`);
 
   return (
     <section id="free-itinerary" className="scroll-mt-20 bg-white py-16 md:py-24">
-      <div className="mx-auto max-w-3xl px-5 sm:px-6 md:px-8">
+      <div className="mx-auto max-w-[420px] px-4 sm:px-0">
         <div className="text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-jade">
             {t('lead.progressive.eyebrow')}
@@ -115,20 +130,20 @@ export default function TripPlanForm() {
           <h2 className="mt-3 font-display text-3xl font-normal tracking-tight text-ink md:text-[42px]">
             {t('lead.progressive.title')}
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-base leading-relaxed text-ink-secondary">
+          <p className="mx-auto mt-3 text-base leading-relaxed text-ink-secondary">
             {t('lead.progressive.subtitle')}
           </p>
         </div>
 
-        <div className="mt-8 overflow-hidden rounded-2xl border border-hairline bg-[#fffdfa] shadow-card md:mt-10">
-          <div className="border-b border-hairline px-5 py-4 sm:px-8">
+        <div className="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl shadow-slate-900/10 md:mt-10">
+          <div className="border-b border-slate-100 px-5 py-4 sm:px-6">
             <div className="flex items-center justify-between text-xs font-semibold text-ink-secondary">
               <span>{t('lead.progressive.stepLabel', { current: step })}</span>
-              <span>{t(`lead.progressive.step${step}Name`)}</span>
+              <span>{step}/3</span>
             </div>
             <div className="mt-3 grid grid-cols-3 gap-2" aria-hidden="true">
               {[1, 2, 3].map((item) => (
-                <div key={item} className={`h-1.5 rounded-full transition-colors ${item <= step ? 'bg-jade' : 'bg-hairline'}`} />
+                <div key={item} className={`h-1.5 rounded-full transition-colors ${item <= step ? 'bg-blue-600' : 'bg-slate-200'}`} />
               ))}
             </div>
           </div>
@@ -143,29 +158,51 @@ export default function TripPlanForm() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} onFocusCapture={markFormStarted} onInput={markFormStarted} onChange={markFormStarted} noValidate>
-              <div className="px-5 py-7 sm:px-8 sm:py-9">
+              <div className="px-5 py-6 sm:px-6 sm:py-7">
                 {step === 1 && (
                   <div>
-                    <StepHeading icon={<MapPin className="h-5 w-5" />} title={t('lead.progressive.cityTitle')} help={t('lead.progressive.cityHelp')} />
-                    <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                    <StepHeading title={t('lead.progressive.cityTitle')} help={t('lead.progressive.cityHelp')} />
+                    <div className="mt-5 grid grid-cols-2 gap-2">
                       {CITY_OPTIONS.map((city) => {
                         const selected = cities.includes(city);
                         return (
-                          <button key={city} type="button" aria-pressed={selected} onClick={() => toggleCity(city)} className={chipClass(selected, false)}>
-                            {t(`lead.progressive.cities.${city}`)}
+                          <button key={city} type="button" aria-pressed={selected} disabled={!selected && cities.length >= 3} onClick={() => toggleCity(city)} className={chipClass(selected, false)}>
+                            {selected && <Check className="mr-1.5 inline h-3.5 w-3.5" aria-hidden="true" />}
+                            <span>{t(`lead.progressive.cities.${city}`)}</span>
                           </button>
                         );
                       })}
                     </div>
-                    <label htmlFor="trip-dates" className="mt-7 block text-sm font-semibold text-ink">{t('lead.progressive.whenLabel')}</label>
-                    <input id="trip-dates" value={dates} onChange={(event) => setDates(event.target.value)} maxLength={80} className="mt-2 w-full rounded-xl border border-hairline bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink-tertiary focus:border-jade focus:ring-2 focus:ring-jade/15" placeholder={t('lead.progressive.whenPlaceholder')} />
+                    <p className="mt-6 text-sm font-semibold text-ink">{t('lead.progressive.whenLabel')}</p>
+                    <button
+                      type="button"
+                      aria-expanded={datePickerOpen}
+                      onClick={() => { markFormStarted(); setDatePickerOpen((open) => !open); }}
+                      className="mt-2 flex min-h-12 w-full items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 text-left text-sm font-medium text-ink transition hover:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                    >
+                      <CalendarDays className="h-5 w-5 shrink-0 text-blue-600" aria-hidden="true" />
+                      <span className="flex-1 truncate">{dates || t('lead.progressive.selectDates')}</span>
+                      <ArrowRight className="h-4 w-4 text-blue-600" aria-hidden="true" />
+                    </button>
+                    {datePickerOpen && (
+                      <div className="mt-3 grid grid-cols-2 gap-3 rounded-xl bg-blue-50 p-3">
+                        <label className="text-xs font-medium text-slate-600">
+                          {t('lead.progressive.startDate')}
+                          <input type="date" value={startDate} onChange={(event) => updateDates(event.target.value, endDate)} className="mt-1.5 w-full rounded-lg border border-blue-100 bg-white px-2 py-2 text-sm text-ink outline-none focus:border-blue-500" />
+                        </label>
+                        <label className="text-xs font-medium text-slate-600">
+                          {t('lead.progressive.endDate')}
+                          <input type="date" min={startDate || undefined} value={endDate} onChange={(event) => updateDates(startDate, event.target.value)} className="mt-1.5 w-full rounded-lg border border-blue-100 bg-white px-2 py-2 text-sm text-ink outline-none focus:border-blue-500" />
+                        </label>
+                      </div>
+                    )}
                   </div>
                 )}
 
                 {step === 2 && (
                   <div>
-                    <StepHeading icon={<Sparkles className="h-5 w-5" />} title={t('lead.progressive.interestTitle')} help={t('lead.progressive.interestHelp')} />
-                    <div className="mt-6 flex flex-wrap gap-2">
+                    <StepHeading title={t('lead.progressive.interestTitle')} help={t('lead.progressive.interestHelp')} />
+                    <div className="mt-5 flex flex-wrap gap-2">
                       {INTEREST_OPTIONS.map((interest) => {
                         const selected = interests.includes(interest);
                         return (
@@ -176,22 +213,10 @@ export default function TripPlanForm() {
                         );
                       })}
                     </div>
-                    <label htmlFor="trip-travelers" className="mt-7 flex items-center gap-2 text-sm font-semibold text-ink">
-                      <Users className="h-4 w-4 text-jade" aria-hidden="true" />
-                      {t('lead.progressive.travelersLabel')}
-                    </label>
-                    <select id="trip-travelers" value={travelers} onChange={(event) => setTravelers(Number(event.target.value))} className="mt-2 w-full rounded-xl border border-hairline bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-jade focus:ring-2 focus:ring-jade/15">
-                      {[1, 2, 3, 4, 5, 6].map((count) => (
-                        <option key={count} value={count}>
-                          {count === 6
-                            ? t('lead.progressive.travelersSixPlus')
-                            : t(
-                                count === 1
-                                  ? 'lead.progressive.travelersOption'
-                                  : 'lead.progressive.travelersOption_plural',
-                                { count },
-                              )}
-                        </option>
+                    <label htmlFor="trip-travelers" className="mt-6 block text-sm font-semibold text-ink">{t('lead.progressive.travelersLabel')}</label>
+                    <select id="trip-travelers" value={travelers} onChange={(event) => setTravelers(event.target.value as TravelerOption)} className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20">
+                      {(['1', '2', '3-4', 'family'] as TravelerOption[]).map((option) => (
+                        <option key={option} value={option}>{t(`lead.progressive.travelers.${option}`)}</option>
                       ))}
                     </select>
                   </div>
@@ -199,40 +224,41 @@ export default function TripPlanForm() {
 
                 {step === 3 && (
                   <div>
-                    <StepHeading icon={<Mail className="h-5 w-5" />} title={t('lead.progressive.previewTitle')} help={t('lead.progressive.previewHelp')} />
-                    <div className="mt-6 rounded-xl border border-jade/15 bg-jade-wash/60 p-4 sm:p-5">
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-jade">{t('lead.progressive.dayOnePreview')}</p>
-                      <dl className="mt-4 grid gap-3 text-sm sm:grid-cols-3">
-                        <PreviewItem label={t('lead.progressive.routeLabel')} value={cityLabels.join(' → ')} />
-                        <PreviewItem label={t('lead.progressive.datesLabel')} value={dates || t('lead.progressive.flexibleDates')} />
-                        <PreviewItem label={t('lead.progressive.interestsLabel')} value={interestLabels.length > 0 ? interestLabels.join(', ') : t('lead.progressive.openRecommendations')} />
+                    <StepHeading title={t('lead.progressive.previewTitle')} help={t('lead.progressive.previewHelp')} />
+                    <div className="mt-5 rounded-2xl border border-blue-100 bg-blue-50 p-4">
+                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-700">{t('lead.progressive.dayOnePreview')}</p>
+                      <dl className="mt-3 grid gap-2.5 text-sm">
+                        <PreviewItem icon="📍" label={t('lead.progressive.routeLabel')} value={cityLabels.join(' → ')} />
+                        <PreviewItem icon="📅" label={t('lead.progressive.datesLabel')} value={dates || t('lead.progressive.flexibleDates')} />
+                        <PreviewItem icon="👥" label={t('lead.progressive.travelersPreviewLabel')} value={travelerLabel} />
+                        <PreviewItem icon="🎯" label={t('lead.progressive.interestsLabel')} value={interestLabels.length > 0 ? interestLabels.join(', ') : t('lead.progressive.openRecommendations')} />
                       </dl>
                     </div>
                     <label htmlFor="itinerary-email" className="mt-6 block text-sm font-semibold text-ink">{t('lead.fieldEmail')}</label>
-                    <input id="itinerary-email" type="email" value={email} onChange={(event) => setEmail(event.target.value)} required maxLength={160} autoComplete="email" inputMode="email" className="mt-2 w-full rounded-xl border border-hairline bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink-tertiary focus:border-jade focus:ring-2 focus:ring-jade/15" placeholder={t('lead.progressive.emailPlaceholder')} />
+                    <input id="itinerary-email" type="email" value={email} onChange={(event) => setEmail(event.target.value)} required maxLength={160} autoComplete="email" inputMode="email" className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink-tertiary focus:border-jade focus:ring-2 focus:ring-jade/15" placeholder={t('lead.progressive.emailPlaceholder')} />
                     <p className="mt-3 text-xs leading-relaxed text-ink-secondary">{t('lead.progressive.privacyNote')}</p>
                   </div>
                 )}
                 {error && <p className="mt-5 text-sm font-medium text-red-600" role="alert">{error}</p>}
               </div>
 
-              <div className="border-t border-hairline bg-white/70 px-5 py-5 sm:px-8">
+              <div className="border-t border-slate-100 bg-slate-50/70 px-5 py-5 sm:px-6">
                 <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
                   {step > 1 ? (
                     <button type="button" onClick={() => { setError(null); setStep((step - 1) as 1 | 2); }} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 text-sm font-semibold text-ink-secondary transition hover:bg-jade-wash hover:text-jade">
                       <ArrowLeft className="h-4 w-4" aria-hidden="true" />{t('lead.progressive.back')}
                     </button>
                   ) : <span />}
-                  {step === 1 && <PrimaryButton label={t('lead.progressive.continuePreview')} onClick={continueFromCities} />}
+                  {step === 1 && <PrimaryButton label={t('lead.progressive.continuePreview')} onClick={continueFromCities} disabled={cities.length === 0} />}
                   {step === 2 && <PrimaryButton label={t('lead.progressive.continue')} onClick={() => { markFormStarted(); setError(null); setStep(3); }} />}
                   {step === 3 && (
-                    <button type="submit" disabled={sending} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-jade px-6 py-3 text-sm font-semibold text-white transition hover:bg-jade-dark disabled:cursor-wait disabled:opacity-60">
+                    <button type="submit" disabled={sending} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#0F4C4A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#0b3d3b] disabled:cursor-wait disabled:opacity-60">
                       {sending ? t('lead.submitting') : t('lead.progressive.submit')}
-                      {!sending && <ArrowRight className="h-4 w-4" aria-hidden="true" />}
                     </button>
                   )}
                 </div>
-                <p className="mt-4 text-center text-xs font-medium text-jade">{t('lead.progressive.trust')}</p>
+                <p className="mt-4 text-center text-[11px] font-medium leading-relaxed text-slate-600">{t('lead.progressive.trust')}</p>
+                {step === 1 && <p className="mt-1.5 text-center text-[11px] text-slate-500">{t('lead.progressive.adjustLater')}</p>}
               </div>
             </form>
           )}
@@ -242,31 +268,28 @@ export default function TripPlanForm() {
   );
 }
 
-function StepHeading({ icon, title, help }: { icon: ReactNode; title: string; help: string }) {
+function StepHeading({ title, help }: { title: string; help: string }) {
   return (
-    <div className="flex items-start gap-3">
-      <span className="mt-0.5 rounded-lg bg-jade-wash p-2 text-jade" aria-hidden="true">{icon}</span>
-      <div><h3 className="text-xl font-semibold text-ink">{title}</h3><p className="mt-1 text-sm text-ink-secondary">{help}</p></div>
-    </div>
+    <div><h3 className="text-2xl font-semibold tracking-tight text-ink">{title}</h3><p className="mt-1.5 text-sm text-ink-secondary">{help}</p></div>
   );
 }
 
-function PreviewItem({ label, value }: { label: string; value: string }) {
-  return <div><dt className="text-xs text-ink-secondary">{label}</dt><dd className="mt-1 font-semibold text-ink">{value}</dd></div>;
+function PreviewItem({ icon, label, value }: { icon: string; label: string; value: string }) {
+  return <div className="grid grid-cols-[24px_74px_1fr] items-start gap-1"><span aria-hidden="true">{icon}</span><dt className="text-xs font-medium text-slate-500">{label}</dt><dd className="font-semibold leading-snug text-ink">{value}</dd></div>;
 }
 
-function PrimaryButton({ label, onClick }: { label: string; onClick: () => void }) {
+function PrimaryButton({ label, onClick, disabled = false }: { label: string; onClick: () => void; disabled?: boolean }) {
   return (
-    <button type="button" onClick={onClick} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-jade px-6 py-3 text-sm font-semibold text-white transition hover:bg-jade-dark">
-      {label}<ArrowRight className="h-4 w-4" aria-hidden="true" />
+    <button type="button" onClick={onClick} disabled={disabled} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-slate-300">
+      {label}
     </button>
   );
 }
 
 function chipClass(selected: boolean, rounded: boolean) {
-  return `min-h-11 border px-4 py-2.5 text-sm font-medium transition ${rounded ? 'rounded-full' : 'rounded-xl'} ${
+  return `inline-flex min-h-11 items-center justify-center border px-3 py-2.5 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-45 ${rounded ? 'rounded-full' : 'rounded-xl'} ${
     selected
-      ? 'border-jade bg-jade text-white shadow-sm'
-      : 'border-hairline bg-white text-ink hover:border-jade/40 hover:bg-jade-wash/50'
+      ? 'border-blue-600 bg-blue-600 text-white shadow-sm'
+      : 'border-slate-200 bg-white text-ink hover:border-blue-400 hover:bg-blue-50'
   }`;
 }

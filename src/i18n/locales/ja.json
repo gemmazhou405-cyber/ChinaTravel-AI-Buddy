@@ -1302,26 +1302,29 @@
         "subtitle": "旅の条件を選び、ルートを確認してから、メールで完全版を受け取れます。",
         "stepLabel": "3ステップ中{{current}}",
         "step1Name": "目的地", "step2Name": "旅のスタイル", "step3Name": "プレビュー",
-        "cityTitle": "どの都市へ行きたいですか？", "cityHelp": "1つ以上の都市を選んでください。",
+        "cityTitle": "どの都市へ行きたいですか？", "cityHelp": "目的地を3か所まで選択",
         "cityRequired": "続けるには1つ以上の都市を選んでください。",
+        "cityMax": "目的地は3か所まで選択できます。",
         "whenLabel": "旅行時期はいつですか？", "whenPlaceholder": "例：2026年10月12日〜20日",
-        "interestTitle": "どんな旅を楽しみたいですか？", "interestHelp": "複数選択できます。",
-        "travelersLabel": "旅行者は何人ですか？", "travelersOption": "{{count}}名", "travelersOption_plural": "{{count}}名", "travelersSixPlus": "6名以上",
-        "previewTitle": "旅行プレビュー", "previewHelp": "内容を確認し、メールアドレスを入力すると完全版を受け取れます。",
+        "selectDates": "日程を選択 →", "startDate": "開始日", "endDate": "終了日",
+        "interestTitle": "何に興味がありますか？", "interestHelp": "複数選択できます。",
+        "travelersLabel": "旅行者は何人ですか？", "travelersPreviewLabel": "旅行者", "travelers": { "1": "1名", "2": "2名", "3-4": "3〜4名", "family": "家族" },
+        "previewTitle": "旅程の送付先は？", "previewHelp": "内容を確認し、メールアドレスを入力すると完全版を受け取れます。",
         "dayOnePreview": "1日目のプレビュー", "routeLabel": "ルート", "datesLabel": "日程", "interestsLabel": "興味",
         "flexibleDates": "日程は柔軟", "openRecommendations": "おすすめを希望", "emailPlaceholder": "you@example.com",
         "privacyNote": "メールアドレスは旅程の作成と送付にのみ使用します。迷惑メールは送りません。",
         "continuePreview": "続ける → 1日目を見る", "continue": "続ける", "back": "戻る",
         "submit": "無料の旅程を受け取る →",
-        "trust": "✓ すぐにプレビュー • ✓ 迷惑メールなし • ✓ 12,000件以上送付",
+        "trust": "🛡️ 今すぐの支払い不要 • ⭐ 4.9・2,000件以上のレビュー • 🔒 安全・非公開",
+        "adjustLater": "詳細は次のステップで調整できます",
         "successTitle": "リクエストを受け付けました",
         "cities": {
           "beijing": "北京", "shanghai": "上海", "chengdu": "成都", "xian": "西安",
           "guilin": "桂林", "zhangjiajie": "張家界", "hangzhou": "杭州", "chongqing": "重慶"
         },
         "interests": {
-          "food": "現地グルメ", "culture": "歴史・文化", "nature": "自然", "photography": "写真",
-          "family": "家族旅行", "nightlife": "ナイトライフ", "shopping": "ショッピング", "easyChinese": "中国語なしでも安心"
+          "food": "グルメ", "pandas": "パンダ", "history": "歴史", "mountains": "山",
+          "photography": "写真", "family": "家族向け", "noChinese": "中国語不要", "nightlife": "ナイトライフ"
         }
       },
       "success": "ありがとうございます — 旅行の詳細を受け取りました。",

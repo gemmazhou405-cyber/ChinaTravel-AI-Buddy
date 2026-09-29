@@ -1302,26 +1302,29 @@
         "subtitle": "여행 정보를 선택하고 경로를 미리 본 뒤 이메일로 전체 일정을 받아보세요.",
         "stepLabel": "3단계 중 {{current}}단계",
         "step1Name": "목적지", "step2Name": "여행 스타일", "step3Name": "미리보기",
-        "cityTitle": "어디로 여행하고 싶으신가요?", "cityHelp": "도시를 하나 이상 선택하세요.",
+        "cityTitle": "어디로 여행하고 싶으신가요?", "cityHelp": "목적지를 최대 3곳 선택하세요",
         "cityRequired": "계속하려면 도시를 하나 이상 선택하세요.",
+        "cityMax": "목적지는 최대 3곳까지 선택할 수 있습니다.",
         "whenLabel": "언제 여행하시나요?", "whenPlaceholder": "예: 2026년 10월 12일~20일",
-        "interestTitle": "어떤 여행을 좋아하시나요?", "interestHelp": "여러 항목을 선택할 수 있습니다.",
-        "travelersLabel": "여행자는 몇 명인가요?", "travelersOption": "{{count}}명", "travelersOption_plural": "{{count}}명", "travelersSixPlus": "6명 이상",
-        "previewTitle": "여행 미리보기", "previewHelp": "선택 내용을 확인하고 이메일을 입력해 전체 일정을 받아보세요.",
+        "selectDates": "날짜 선택 →", "startDate": "시작일", "endDate": "종료일",
+        "interestTitle": "무엇을 좋아하시나요?", "interestHelp": "여러 항목을 선택할 수 있습니다.",
+        "travelersLabel": "여행자는 몇 명인가요?", "travelersPreviewLabel": "여행자", "travelers": { "1": "1명", "2": "2명", "3-4": "3~4명", "family": "가족" },
+        "previewTitle": "여행 일정을 어디로 보내드릴까요?", "previewHelp": "선택 내용을 확인하고 이메일을 입력해 전체 일정을 받아보세요.",
         "dayOnePreview": "1일 차 미리보기", "routeLabel": "경로", "datesLabel": "날짜", "interestsLabel": "관심사",
         "flexibleDates": "일정 조정 가능", "openRecommendations": "추천받기", "emailPlaceholder": "you@example.com",
         "privacyNote": "이메일은 여행 일정 작성과 발송에만 사용합니다. 스팸은 보내지 않습니다.",
         "continuePreview": "계속 → 1일 차 미리보기", "continue": "계속", "back": "뒤로",
         "submit": "무료 여행 일정 받기 →",
-        "trust": "✓ 즉시 미리보기 • ✓ 스팸 없음 • ✓ 12,000건 이상 발송",
+        "trust": "🛡️ 지금 결제 없음 • ⭐ 평점 4.9, 리뷰 2천+ • 🔒 안전하고 비공개",
+        "adjustLater": "다음 단계에서 세부 정보를 조정할 수 있습니다",
         "successTitle": "요청이 접수되었습니다",
         "cities": {
           "beijing": "베이징", "shanghai": "상하이", "chengdu": "청두", "xian": "시안",
           "guilin": "구이린", "zhangjiajie": "장자제", "hangzhou": "항저우", "chongqing": "충칭"
         },
         "interests": {
-          "food": "현지 음식", "culture": "역사와 문화", "nature": "자연", "photography": "사진",
-          "family": "가족 여행", "nightlife": "나이트라이프", "shopping": "쇼핑", "easyChinese": "중국어 없이도 편하게"
+          "food": "음식", "pandas": "판다", "history": "역사", "mountains": "산",
+          "photography": "사진", "family": "가족 친화", "noChinese": "중국어 불필요", "nightlife": "나이트라이프"
         }
       },
       "success": "감사합니다 — 여행 정보를 받았습니다.",

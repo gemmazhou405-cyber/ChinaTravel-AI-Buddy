@@ -79,7 +79,7 @@ export async function onRequestPost({ request, env }) {
   const docId = UUID_RE.test(requestIdRaw) ? requestIdRaw : crypto.randomUUID();
 
   // Sanitize optional fields
-  const cities = clampStringArray(body.cities, 8, 40);
+  const cities = clampStringArray(body.cities, 3, 40);
   const interests = clampStringArray(body.interests, 8, 40);
   const dates = clampStr(body.dates, 80) ?? clampStr(body.travelDate, 80);
   const travelDate = dates;
@@ -90,6 +90,9 @@ export async function onRequestPost({ request, env }) {
     return t.slice(0, 500);
   })();
   const travelers = (() => {
+    if (typeof body.travelers === 'string' && ['1', '2', '3-4', 'family'].includes(body.travelers)) {
+      return body.travelers;
+    }
     const v = parseInt(body.travelers, 10);
     if (Number.isNaN(v) || v < 1 || v > 20) return null;
     return v;

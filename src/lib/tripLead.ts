@@ -9,7 +9,7 @@ export interface TripLeadPayload {
   citiesAndInterests?: string;
   whatsapp?: string;
   travelDate?: string;
-  travelers?: number;
+  travelers?: number | string;
   helpWith?: string;
   cities?: string[];
   dates?: string;
