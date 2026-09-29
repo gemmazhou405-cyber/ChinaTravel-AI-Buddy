@@ -1350,6 +1350,7 @@
         "trust": "🛡️ No payment now • ⭐ 4.9 2k+ reviews • 🔒 Secure & private",
         "adjustLater": "You can adjust details in the next steps",
         "successTitle": "Your request is on its way",
+        "freePlanUsed": "A free itinerary has already been requested from this email or connection. Please check your inbox.",
         "cities": {
           "beijing": "Beijing",
           "shanghai": "Shanghai",

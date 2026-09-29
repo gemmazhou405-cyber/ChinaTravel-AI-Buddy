@@ -1,12 +1,11 @@
 import {
-  batchGetDocs,
-  beginTransaction,
-  commitTransaction,
+  commitWrites,
   createDoc,
   createWrite,
   getDoc,
+  getDocSnapshot,
   patchDoc,
-  updateWrite,
+  updateWriteIfUnchanged,
 } from '../../_shared/firestore.js';
 import {
   clientIp,
@@ -61,12 +60,11 @@ async function reserveFreePlan(env, { emailHash, ipHash, requestId }) {
     `tripPlanClaims/email_${emailHash}`,
     `tripPlanClaims/ip_${ipHash}`,
   ];
-  const transaction = await beginTransaction(env);
-  const existing = await batchGetDocs(env, paths, transaction);
+  const snapshots = await Promise.all(paths.map((path) => getDocSnapshot(env, path)));
   const now = Date.now();
 
-  for (const path of paths) {
-    const claim = existing.get(path);
+  for (const [index, path] of paths.entries()) {
+    const claim = snapshots[index]?.data;
     const pendingIsFresh = claim?.status === 'pending' && now - (claim.createdAt || 0) < CLAIM_STALE_MS;
     if (claim?.status === 'used' || pendingIsFresh) {
       return { ok: false, reason: path.includes('/email_') ? 'email' : 'ip' };
@@ -74,15 +72,25 @@ async function reserveFreePlan(env, { emailHash, ipHash, requestId }) {
   }
 
   const data = { requestId, status: 'pending', createdAt: now };
-  const writes = paths.map((path) => existing.get(path)
-    ? updateWrite(env, path, data)
-    : createWrite(env, path, data));
+  const writes = paths.map((path, index) => {
+    const snapshot = snapshots[index];
+    return snapshot
+      ? updateWriteIfUnchanged(env, path, data, snapshot.updateTime)
+      : createWrite(env, path, data);
+  });
 
   try {
-    await commitTransaction(env, transaction, writes);
+    // Atomically reserve both claims; optimistic preconditions reject races.
+    await commitWrites(env, writes);
     return { ok: true, paths };
   } catch (error) {
-    if (String(error?.message).includes('409') || String(error?.message).includes('ABORTED')) {
+    const message = String(error?.message);
+    if (
+      message.includes('409')
+      || message.includes('ABORTED')
+      || message.includes('FAILED_PRECONDITION')
+      || message.includes('ALREADY_EXISTS')
+    ) {
       return { ok: false, reason: 'email_or_ip' };
     }
     throw error;

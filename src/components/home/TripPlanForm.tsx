@@ -133,7 +133,12 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
         return;
       }
       void trackEvent('lead_submit_failed', { trigger: 'homepage_trip_plan', errorCode: result.status });
-      setError(t(result.status === 'too_many' ? 'lead.errorTooMany' : 'lead.errorGeneric'));
+      const errorKey = result.status === 'too_many'
+        ? 'lead.errorTooMany'
+        : result.status === 'free_plan_used'
+          ? 'lead.progressive.freePlanUsed'
+          : 'lead.errorGeneric';
+      setError(t(errorKey));
     } catch {
       setError(t('lead.errorGeneric'));
     } finally {

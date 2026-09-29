@@ -136,6 +136,15 @@ export async function getDoc(env, path) {
   return fromFirestoreDocument(doc);
 }
 
+export async function getDocSnapshot(env, path) {
+  const doc = await firestoreFetch(env, path);
+  if (!doc) return null;
+  return {
+    data: fromFirestoreDocument(doc),
+    updateTime: doc.updateTime,
+  };
+}
+
 export async function patchDoc(env, path, data, updateMaskFields = Object.keys(data)) {
   const mask = updateMaskFields.map((field) => `updateMask.fieldPaths=${encodeURIComponent(field)}`).join('&');
   const suffix = mask ? `?${mask}` : '';
@@ -248,6 +257,14 @@ export function updateWrite(env, path, data, updateMaskFields = Object.keys(data
       ...toFirestoreDocument(data),
     },
     updateMask: { fieldPaths: updateMaskFields },
+  };
+}
+
+export function updateWriteIfUnchanged(env, path, data, updateTime, updateMaskFields = Object.keys(data)) {
+  if (!updateTime) throw new Error('firestore_missing_update_time');
+  return {
+    ...updateWrite(env, path, data, updateMaskFields),
+    currentDocument: { updateTime },
   };
 }
 

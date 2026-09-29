@@ -1350,6 +1350,7 @@
         "trust": "🛡️ Jetzt keine Zahlung • ⭐ 4,9 bei über 2.000 Bewertungen • 🔒 Sicher und privat",
         "adjustLater": "Du kannst Details in den nächsten Schritten anpassen",
         "successTitle": "Deine Anfrage ist unterwegs",
+        "freePlanUsed": "Für diese E-Mail-Adresse oder Verbindung wurde bereits eine kostenlose Reiseroute angefordert. Bitte prüfe deinen Posteingang.",
         "cities": {
           "beijing": "Peking",
           "shanghai": "Shanghai",
