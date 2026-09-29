@@ -18,13 +18,19 @@ function textVal(v) {
   return s || 'Not provided';
 }
 
+function listVal(value) {
+  return Array.isArray(value) && value.length > 0 ? value.join(', ') : null;
+}
+
 function buildHtml(lead) {
   const submittedAt = lead.createdAt ? new Date(lead.createdAt).toISOString() : null;
   const rows = [
     ['Submitted at', escapeHtml(submittedAt)],
     ['Email', escapeHtml(lead.email)],
+    ['Cities', escapeHtml(listVal(lead.cities))],
     ['Travel date', escapeHtml(lead.travelDate)],
     ['Travelers', escapeHtml(lead.travelers)],
+    ['Interests', escapeHtml(listVal(lead.interests))],
     ['Help needed', escapeHtml(lead.helpWith)],
     ['Locale', escapeHtml(lead.locale)],
     ['Source path', escapeHtml(lead.sourcePath)],
@@ -51,8 +57,10 @@ function buildText(lead) {
     '',
     `Submitted at: ${textVal(submittedAt)}`,
     `Email:        ${textVal(lead.email)}`,
+    `Cities:       ${textVal(listVal(lead.cities))}`,
     `Travel date:  ${textVal(lead.travelDate)}`,
     `Travelers:    ${textVal(lead.travelers)}`,
+    `Interests:    ${textVal(listVal(lead.interests))}`,
     `Help needed:  ${textVal(lead.helpWith)}`,
     `Locale:       ${textVal(lead.locale)}`,
     `Source path:  ${textVal(lead.sourcePath)}`,
@@ -68,8 +76,10 @@ function buildConfirmationHtml(lead) {
   const helpWith =
     helpWithEscaped === 'Not provided' ? helpWithEscaped : helpWithEscaped.replace(/\n/g, '<br>');
   const rows = [
+    ['Cities', escapeHtml(listVal(lead.cities))],
     ['Trip date', travelDate],
     ['Travelers', travelers],
+    ['Interests', escapeHtml(listVal(lead.interests))],
     ['Help needed', helpWith],
   ];
   const trs = rows
@@ -99,9 +109,13 @@ function buildConfirmationText(lead) {
     '',
     "We've received your request and will review the information you submitted.",
     '',
+    `Cities:\n${textVal(listVal(lead.cities))}`,
+    '',
     `Trip date:\n${textVal(lead.travelDate)}`,
     '',
     `Travelers:\n${textVal(lead.travelers)}`,
+    '',
+    `Interests:\n${textVal(listVal(lead.interests))}`,
     '',
     `Help needed:\n${textVal(lead.helpWith)}`,
     '',

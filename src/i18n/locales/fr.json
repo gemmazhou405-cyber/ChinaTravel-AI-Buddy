@@ -1294,6 +1294,34 @@
       "privacyNote": "We'll only use your details to prepare and deliver your itinerary.",
       "consent": "Nous utiliserons vos coordonnées uniquement pour vous aider dans votre voyage.",
       "consentLink": "Politique de confidentialité",
+      "progressive": {
+        "eyebrow": "Planification gratuite",
+        "title": "Itinéraire personnalisé gratuit pour la Chine",
+        "subtitle": "Choisissez quelques détails, prévisualisez votre parcours, puis recevez-le par e-mail.",
+        "stepLabel": "Étape {{current}} sur 3",
+        "step1Name": "Destinations", "step2Name": "Votre style", "step3Name": "Aperçu",
+        "cityTitle": "Où souhaitez-vous aller ?", "cityHelp": "Sélectionnez une ou plusieurs villes.",
+        "cityRequired": "Choisissez au moins une ville pour continuer.",
+        "whenLabel": "Quand voyagez-vous ?", "whenPlaceholder": "ex. du 12 au 20 octobre 2026",
+        "interestTitle": "Quel type de voyage aimez-vous ?", "interestHelp": "Choisissez autant d'options que vous le souhaitez.",
+        "travelersLabel": "Combien de voyageurs ?", "travelersOption": "{{count}} voyageur", "travelersOption_plural": "{{count}} voyageurs", "travelersSixPlus": "6 voyageurs ou plus",
+        "previewTitle": "Aperçu de votre voyage", "previewHelp": "Vérifiez vos choix et saisissez votre e-mail pour recevoir l'itinéraire complet.",
+        "dayOnePreview": "Aperçu du jour 1", "routeLabel": "Parcours", "datesLabel": "Dates", "interestsLabel": "Centres d'intérêt",
+        "flexibleDates": "Dates flexibles", "openRecommendations": "Ouvert aux suggestions", "emailPlaceholder": "vous@exemple.com",
+        "privacyNote": "Nous utiliserons votre e-mail uniquement pour préparer et envoyer votre itinéraire. Aucun spam.",
+        "continuePreview": "Continuer → Voir l'aperçu du jour 1", "continue": "Continuer", "back": "Retour",
+        "submit": "Recevoir mon itinéraire gratuit →",
+        "trust": "✓ Aperçu instantané • ✓ Aucun spam • ✓ Plus de 12 000 itinéraires envoyés",
+        "successTitle": "Votre demande est en route",
+        "cities": {
+          "beijing": "Pékin", "shanghai": "Shanghai", "chengdu": "Chengdu", "xian": "Xi'an",
+          "guilin": "Guilin", "zhangjiajie": "Zhangjiajie", "hangzhou": "Hangzhou", "chongqing": "Chongqing"
+        },
+        "interests": {
+          "food": "Cuisine locale", "culture": "Histoire et culture", "nature": "Nature", "photography": "Photographie",
+          "family": "En famille", "nightlife": "Vie nocturne", "shopping": "Shopping", "easyChinese": "Facile sans parler chinois"
+        }
+      },
       "success": "Merci — nous avons bien reçu vos informations de voyage.",
       "errorGeneric": "Impossible d'envoyer vos informations pour le moment. Veuillez réessayer.",
       "errorTooMany": "Trop de demandes. Veuillez réessayer plus tard.",

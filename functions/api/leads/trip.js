@@ -37,6 +37,16 @@ function clampStr(value, max) {
   return trimmed.slice(0, max);
 }
 
+function clampStringArray(value, maxItems, maxLength) {
+  if (!Array.isArray(value)) return [];
+  return [...new Set(
+    value
+      .filter((item) => typeof item === 'string')
+      .map((item) => item.trim().slice(0, maxLength))
+      .filter(Boolean),
+  )].slice(0, maxItems);
+}
+
 export async function onRequestOptions({ request, env }) {
   return optionsResponse(request, env);
 }
@@ -69,7 +79,10 @@ export async function onRequestPost({ request, env }) {
   const docId = UUID_RE.test(requestIdRaw) ? requestIdRaw : crypto.randomUUID();
 
   // Sanitize optional fields
-  const travelDate = clampStr(body.travelDate, 80);
+  const cities = clampStringArray(body.cities, 8, 40);
+  const interests = clampStringArray(body.interests, 8, 40);
+  const dates = clampStr(body.dates, 80) ?? clampStr(body.travelDate, 80);
+  const travelDate = dates;
   const helpWith = (() => {
     if (typeof body.helpWith !== 'string') return null;
     const t = body.helpWith.trim();
@@ -81,7 +94,13 @@ export async function onRequestPost({ request, env }) {
     if (Number.isNaN(v) || v < 1 || v > 20) return null;
     return v;
   })();
+  const normalizedHelpWith = [
+    cities.length > 0 ? `Cities: ${cities.join(', ')}` : null,
+    interests.length > 0 ? `Interests: ${interests.join(', ')}` : null,
+    helpWith,
+  ].filter(Boolean).join('\n') || null;
   const locale = clampStr(body.locale, 8) ?? 'en';
+  const consentVersion = clampStr(body.consentVersion, 40) ?? 'trip-lead-2026-08';
   const sourcePath = clampStr(body.sourcePath, 500);
   const utmSource = clampStr(body.utmSource, 80);
   const utmMedium = clampStr(body.utmMedium, 80);
@@ -103,16 +122,19 @@ export async function onRequestPost({ request, env }) {
       requestId: docId,
       email: emailRaw,
       emailHash,
+      cities,
+      dates,
+      interests,
       travelDate,
       travelers,
-      helpWith,
+      helpWith: normalizedHelpWith,
       locale,
       sourcePath,
       utmSource,
       utmMedium,
       utmCampaign,
       utmContent,
-      consentVersion: 'trip-lead-2026-08',
+      consentVersion,
       source: 'buddy_trip_lead',
       status: 'new',
       ipHash,
@@ -133,9 +155,12 @@ export async function onRequestPost({ request, env }) {
   const lead = {
     requestId: docId,
     email: emailRaw,
+    cities,
+    dates,
+    interests,
     travelDate,
     travelers,
-    helpWith,
+    helpWith: normalizedHelpWith,
     locale,
     sourcePath,
     utmSource,

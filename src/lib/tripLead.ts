@@ -11,6 +11,9 @@ export interface TripLeadPayload {
   travelDate?: string;
   travelers?: number;
   helpWith?: string;
+  cities?: string[];
+  dates?: string;
+  interests?: string[];
   consentAccepted?: boolean;
   consentVersion?: string;
   locale?: string;
@@ -22,14 +25,17 @@ export async function submitTripLead(
   payload: TripLeadPayload,
 ): Promise<'success' | 'too_many' | 'error'> {
   const attr = getAttributionContext();
-  try {
-    const res = await fetch('/api/leads/trip', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        requestId: payload.requestId,
+  const usesProgressiveFields =
+    payload.cities !== undefined || payload.dates !== undefined || payload.interests !== undefined;
+  const formFields = usesProgressiveFields
+    ? {
+        cities: payload.cities ?? [],
+        dates: payload.dates ?? '',
+        travelers: payload.travelers ?? '',
+        interests: payload.interests ?? [],
+      }
+    : {
         firstName: payload.firstName,
-        email: payload.email,
         countryOfResidence: payload.countryOfResidence,
         plannedTravelMonth: payload.plannedTravelMonth ?? payload.travelDate ?? '',
         numberOfTravellers: payload.numberOfTravellers ?? payload.travelers ?? '',
@@ -38,6 +44,15 @@ export async function submitTripLead(
         travelDate: payload.plannedTravelMonth ?? payload.travelDate ?? '',
         travelers: payload.numberOfTravellers ?? payload.travelers ?? '',
         helpWith: payload.citiesAndInterests ?? payload.helpWith ?? '',
+      };
+  try {
+    const res = await fetch('/api/leads/trip', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        requestId: payload.requestId,
+        email: payload.email,
+        ...formFields,
         consentAccepted: payload.consentAccepted ?? false,
         consentVersion: payload.consentVersion ?? 'trip-lead-2026-08',
         locale: (payload.locale ?? document.documentElement.lang) || 'en',

@@ -1294,6 +1294,34 @@
       "privacyNote": "We'll only use your details to prepare and deliver your itinerary.",
       "consent": "Wir verwenden Ihre Daten ausschließlich, um Ihnen bei Ihrer Reise zu helfen.",
       "consentLink": "Datenschutzrichtlinie",
+      "progressive": {
+        "eyebrow": "Kostenlose Reiseplanung",
+        "title": "Kostenlose persönliche China-Reiseroute",
+        "subtitle": "Wähle einige Reisedetails, sieh dir deine Route an und erhalte sie per E-Mail.",
+        "stepLabel": "Schritt {{current}} von 3",
+        "step1Name": "Reiseziele", "step2Name": "Dein Reisestil", "step3Name": "Vorschau",
+        "cityTitle": "Wohin möchtest du reisen?", "cityHelp": "Wähle eine oder mehrere Städte.",
+        "cityRequired": "Wähle mindestens eine Stadt aus, um fortzufahren.",
+        "whenLabel": "Wann reist du?", "whenPlaceholder": "z. B. 12.–20. Oktober 2026",
+        "interestTitle": "Welche Art von Reise magst du?", "interestHelp": "Wähle beliebig viele Optionen.",
+        "travelersLabel": "Wie viele Reisende?", "travelersOption": "{{count}} Person", "travelersOption_plural": "{{count}} Personen", "travelersSixPlus": "6+ Personen",
+        "previewTitle": "Deine Reisevorschau", "previewHelp": "Prüfe deine Auswahl und gib deine E-Mail-Adresse für die vollständige Route ein.",
+        "dayOnePreview": "Vorschau auf Tag 1", "routeLabel": "Route", "datesLabel": "Reisezeit", "interestsLabel": "Interessen",
+        "flexibleDates": "Flexibel", "openRecommendations": "Offen für Vorschläge", "emailPlaceholder": "du@beispiel.de",
+        "privacyNote": "Wir verwenden deine E-Mail-Adresse nur zur Erstellung und Zusendung deiner Route. Kein Spam.",
+        "continuePreview": "Weiter → Vorschau auf Tag 1", "continue": "Weiter", "back": "Zurück",
+        "submit": "Kostenlose Route erhalten →",
+        "trust": "✓ Sofortige Vorschau • ✓ Kein Spam • ✓ Über 12.000 Routen versendet",
+        "successTitle": "Deine Anfrage ist unterwegs",
+        "cities": {
+          "beijing": "Peking", "shanghai": "Shanghai", "chengdu": "Chengdu", "xian": "Xi'an",
+          "guilin": "Guilin", "zhangjiajie": "Zhangjiajie", "hangzhou": "Hangzhou", "chongqing": "Chongqing"
+        },
+        "interests": {
+          "food": "Lokales Essen", "culture": "Geschichte & Kultur", "nature": "Natur", "photography": "Fotografie",
+          "family": "Familienfreundlich", "nightlife": "Nachtleben", "shopping": "Shopping", "easyChinese": "Einfach ohne Chinesisch"
+        }
+      },
       "success": "Vielen Dank – wir haben Ihre Reisedetails erhalten.",
       "errorGeneric": "Ihre Daten konnten gerade nicht gesendet werden. Bitte versuchen Sie es erneut.",
       "errorTooMany": "Zu viele Anfragen. Bitte versuchen Sie es später erneut.",

@@ -1296,6 +1296,34 @@
       "privacyNote": "We'll only use your details to prepare and deliver your itinerary.",
       "consent": "ご入力いただいた情報は、旅行のサポート目的にのみ使用します。",
       "consentLink": "プライバシーポリシー",
+      "progressive": {
+        "eyebrow": "無料の旅行プラン",
+        "title": "中国旅行の無料パーソナルプラン",
+        "subtitle": "旅の条件を選び、ルートを確認してから、メールで完全版を受け取れます。",
+        "stepLabel": "3ステップ中{{current}}",
+        "step1Name": "目的地", "step2Name": "旅のスタイル", "step3Name": "プレビュー",
+        "cityTitle": "どの都市へ行きたいですか？", "cityHelp": "1つ以上の都市を選んでください。",
+        "cityRequired": "続けるには1つ以上の都市を選んでください。",
+        "whenLabel": "旅行時期はいつですか？", "whenPlaceholder": "例：2026年10月12日〜20日",
+        "interestTitle": "どんな旅を楽しみたいですか？", "interestHelp": "複数選択できます。",
+        "travelersLabel": "旅行者は何人ですか？", "travelersOption": "{{count}}名", "travelersOption_plural": "{{count}}名", "travelersSixPlus": "6名以上",
+        "previewTitle": "旅行プレビュー", "previewHelp": "内容を確認し、メールアドレスを入力すると完全版を受け取れます。",
+        "dayOnePreview": "1日目のプレビュー", "routeLabel": "ルート", "datesLabel": "日程", "interestsLabel": "興味",
+        "flexibleDates": "日程は柔軟", "openRecommendations": "おすすめを希望", "emailPlaceholder": "you@example.com",
+        "privacyNote": "メールアドレスは旅程の作成と送付にのみ使用します。迷惑メールは送りません。",
+        "continuePreview": "続ける → 1日目を見る", "continue": "続ける", "back": "戻る",
+        "submit": "無料の旅程を受け取る →",
+        "trust": "✓ すぐにプレビュー • ✓ 迷惑メールなし • ✓ 12,000件以上送付",
+        "successTitle": "リクエストを受け付けました",
+        "cities": {
+          "beijing": "北京", "shanghai": "上海", "chengdu": "成都", "xian": "西安",
+          "guilin": "桂林", "zhangjiajie": "張家界", "hangzhou": "杭州", "chongqing": "重慶"
+        },
+        "interests": {
+          "food": "現地グルメ", "culture": "歴史・文化", "nature": "自然", "photography": "写真",
+          "family": "家族旅行", "nightlife": "ナイトライフ", "shopping": "ショッピング", "easyChinese": "中国語なしでも安心"
+        }
+      },
       "success": "ありがとうございます — 旅行の詳細を受け取りました。",
       "errorGeneric": "現在、情報を送信できませんでした。もう一度お試しください。",
       "errorTooMany": "リクエストが多すぎます。しばらくしてから再試行してください。",
