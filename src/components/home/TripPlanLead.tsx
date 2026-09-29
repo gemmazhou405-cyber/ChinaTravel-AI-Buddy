@@ -137,7 +137,7 @@ export default function TripPlanLead({ standalone = false }: { standalone?: bool
     window.setTimeout(focusFirstField, 500);
   };
 
-  const IntroHeading = standalone ? 'h1' : 'h2';
+  const IntroHeading = 'h1';
 
   const toggle = (value: string, current: string[], setter: (values: string[]) => void) => setter(current.includes(value) ? current.filter((item) => item !== value) : [...current, value]);
   const resetForm = () => {
@@ -200,7 +200,7 @@ export default function TripPlanLead({ standalone = false }: { standalone?: bool
               lineHeight: 1.02,
             }}
           >
-            Your first China trip, planned for you.
+            {standalone ? 'Your first China trip, planned for you.' : 'The AI Travel Assistant That Actually Works in China'}
           </IntroHeading>
 
           {/* Mobile: one line. Desktop: full supporting paragraph (layout unchanged). */}

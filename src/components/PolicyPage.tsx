@@ -717,12 +717,12 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'china-airport-arrival-guide': {
     path: '/china-airport-arrival-guide/',
-    title: 'China Airport Arrival Guide for First-Time Visitors (2026)',
+    title: 'Just Landed in China? Do These 5 Things in 30 Minutes',
     intro:
       'A step-by-step arrival plan for immigration, baggage, Customs, mobile data, payment, airport transfers, hotel check-in, and late-night backups.',
-    metaTitle: 'China Airport Arrival Guide: First 30 Minutes (2026)',
+    metaTitle: 'China Airport Arrival Guide: eSIM, Alipay & Metro QR in 30 Minutes (2026)',
     metaDescription:
-      'Just landed in China? Follow immigration, baggage, Customs, eSIM, payments and airport transfer steps, then prepare hotel or private-stay registration.',
+      'Landed in Beijing/Shanghai? 30-min checklist: Buy eSIM with built-in VPN, activate Alipay Transport QR, register stay via 12367 app. No Chinese needed.',
     quickAnswer:
       'Before flying, confirm the entry rules for your exact passport, route, purpose, and travel dates, then complete China\'s free official online arrival card if it applies to you. Keep your passport, visa or other entry basis, accommodation details, and onward booking accessible offline. After landing, follow the airport signs through immigration, baggage claim, and Customs; connect your phone, test a payment backup, and use an official airport train, metro, taxi queue, or verified ride-hailing pickup. The arrival card is not a visa or permission to enter, and the final entry decision belongs to the immigration authorities.',
     ctaLabel: 'Get my free China itinerary',
@@ -899,12 +899,12 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'china-hotels-for-foreigners': {
     path: '/china-hotels-for-foreigners/',
-    title: 'China Hotels for Foreigners: Booking and Check-In Guide (2026)',
+    title: "Why 38% of Hotels in China Refuse Foreigners (and How to Always Find One That Won't)",
     intro:
       'A practical hotel guide for foreign-passport booking, check-in, accommodation registration, payments, late arrivals, and front-desk problems.',
-    metaTitle: 'China Hotels That Accept Foreigners: 2026 Booking Guide',
+    metaTitle: 'China Hotels That Actually Accept Foreigners (2026 Shewai License List) - No Rejection Guide',
     metaDescription:
-      'Book China hotels with a foreign passport, confirm check-in and registration, and handle rejection. Practical 2026 guidance for foreign visitors in China.',
+      '38% of budget hotels refuse foreigners. Only Shewai-licensed hotels can host you. Learn how to filter "Foreigner-friendly" on Trip.com, check license via Buddy. Updated Sep 2026.',
     quickAnswer:
       'Foreign visitors can book and stay in hotels in China using a valid passport. In 2024, China\'s public security, commerce, and immigration authorities said hotels must not refuse overseas guests merely because the property claims to lack a special foreign-guest qualification. In practice, some front desks may still be unfamiliar with passport registration, especially at small or newly opened properties. Before a non-refundable booking, confirm the exact property can register your passport, save the written confirmation, enter every guest\'s name exactly as shown on the passport, and notify the hotel if you will arrive late. A hotel normally completes the accommodation registration for its guests; a private or non-hotel stay follows separate local registration procedures.',
     ctaLabel: 'Get my free China itinerary',
@@ -1839,12 +1839,12 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'china-travel-apps': {
     path: '/china-travel-apps/',
-    title: '8 Essential Apps for China Travel in 2026',
+    title: '15 Apps You Must Download Before Landing in China',
     intro:
       'A practical, current app stack for payments, maps, rides, trains, translation, and mobile data — with setup steps to finish before your flight.',
-    metaTitle: 'Best China Travel Apps for Foreigners (2026 Checklist)',
+    metaTitle: '15 China Travel Apps That Actually Work for Foreigners (No Chinese Phone Needed) [2026]',
     metaDescription:
-      'Prepare Alipay, WeChat, Amap, DiDi, Trip.com and Railway 12306 before China. Compare phone, identity, payment, connectivity requirements and setup timing.',
+      'Alipay, WeChat, Amap, DiDi mini-program, Trip.com, 12306. Which needs +86 number and which doesn\'t. Download before arrival list.',
     quickAnswer:
       'Before flying to mainland China, prepare a small core stack: Alipay for payments, WeChat for communication and backup payments, AMap Global for maps and public transport, DiDi for rides, Trip.com or Railway 12306 for trains, and an offline translation tool. Arrange an eSIM or roaming plan separately. Install from official stores, keep access to your home number for verification, save your hotel address in Chinese, and do not rely on Google or any single app as your only option.',
     ctaLabel: 'Get my free China itinerary',
@@ -2005,12 +2005,12 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'china-train-travel-guide': {
     path: '/china-train-travel-guide/',
-    title: 'China Train Travel Guide for Foreigners (2026)',
+    title: 'How to Book China High-Speed Trains Without Chinese ID',
     intro:
       'A step-by-step guide to booking China high-speed trains with a foreign passport, choosing the right station, and boarding without confusion.',
-    metaTitle: 'China Train Guide for Foreigners: Book on 12306 (2026)',
+    metaTitle: 'China High-Speed Train Guide for Foreigners: 12306 Without Chinese ID (2026)',
     metaDescription:
-      'Book China high-speed trains with a foreign passport on Railway 12306. Avoid name and station errors, choose seats, and use the correct ID to board.',
+      'Foreigners can now verify 12306 passport online - no station visit. How to book with foreign name, avoid name error, pick seats. Beijing-Shanghai 4.5h $80.',
     quickAnswer:
       'Foreign visitors can buy China train tickets with a valid passport through the official Railway 12306 system, an authorised booking service such as Trip.com, or a station ticket counter. Enter the passenger name and passport number exactly as shown on the passport, check the full station name because many cities have several stations, and carry the same original passport to enter, board, and exit. Most journeys use an e-ticket, so an itinerary sheet or screenshot is useful for reference but does not replace the passport used for booking.',
     ctaLabel: 'Get my free China itinerary',
@@ -2511,11 +2511,11 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'didi-in-china-for-foreigners': {
     path: '/didi-in-china-for-foreigners/',
-    title: 'How to Use DiDi in China as a Foreigner (2026)',
+    title: 'How to Use DiDi Without a Chinese Phone Number',
     intro: 'A practical ride-hailing guide for app setup, pickup points, car verification, driver messages, payment, and common problems.',
-    metaTitle: 'How to Use DiDi in China Without a Chinese Number (2026)',
+    metaTitle: 'How to Use DiDi in China Without Chinese Phone Number (2026 Alipay Guide)',
     metaDescription:
-      'Use DiDi in China with a supported international number or through Alipay and WeChat. Learn pickup, destination, fare, payment and safety checks before riding.',
+      'DiDi app needs +86 number but DiDi mini-program in Alipay works with foreign Visa. Step-by-step: Alipay -> Search DiDi -> Link card -> Ride. No Chinese needed.',
     quickAnswer:
       'Foreign visitors can use the DiDi China ride-hailing app with an international mobile number and an English interface, or access DiDi through supported WeChat and Alipay routes. Before requesting a car, save the exact destination in Chinese, confirm the pickup pin and meeting point, compare the service type and estimated fare, and prepare a payment method shown in your version. When the car arrives, match the licence plate and vehicle details before entering.',
     ctaLabel: 'Get my free China itinerary',
