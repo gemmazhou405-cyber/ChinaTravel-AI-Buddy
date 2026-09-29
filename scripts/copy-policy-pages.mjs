@@ -223,14 +223,14 @@ const pageMeta = {
     ],
   },
   'china-airport-arrival-guide': {
-    title: 'China Airport Arrival Guide (2026) | ChinaEase Buddy',
+    title: 'China Airport Arrival Guide: First 30 Minutes (2026)',
     heading: 'China Airport Arrival Guide for First-Time Visitors (2026)',
     description:
-      'Arrive in China with confidence. Follow immigration, baggage, customs, eSIM, payment, airport transfer, hotel check-in, and late-arrival steps.',
+      'Just landed in China? Follow immigration, baggage, Customs, eSIM, payments and airport transfer steps, then prepare hotel or private-stay registration.',
     quickAnswer:
       'Before flying, confirm the entry rules for your exact passport, route, purpose, and travel dates, then complete China\'s free official online arrival card if it applies to you. Keep your passport, visa or other entry basis, accommodation details, and onward booking accessible offline. After landing, follow the airport signs through immigration, baggage claim, and Customs; connect your phone, test a payment backup, and use an official airport train, metro, taxi queue, or verified ride-hailing pickup. The arrival card is not a visa or permission to enter, and the final entry decision belongs to the immigration authorities.',
-    lastReviewed: 'September 20, 2026',
-    lastModified: '2026-09-20',
+    lastReviewed: 'September 29, 2026',
+    lastModified: '2026-09-29',
     article: true,
     contentSections: [
       {
@@ -346,14 +346,14 @@ const pageMeta = {
     ],
   },
   'china-hotels-for-foreigners': {
-    title: 'China Hotels for Foreigners: Booking Guide (2026) | ChinaEase Buddy',
+    title: 'China Hotels That Accept Foreigners: 2026 Booking Guide',
     heading: 'China Hotels for Foreigners: Booking and Check-In Guide (2026)',
     description:
-      'Book and check in to hotels in China with a foreign passport. Learn guest rules, registration, late arrival, payment, deposits, and what to do if refused.',
+      'Book China hotels with a foreign passport, confirm check-in and registration, and handle rejection. Practical 2026 guidance for foreign visitors in China.',
     quickAnswer:
       'Foreign visitors can book and stay in hotels in China using a valid passport. In 2024, China\'s public security, commerce, and immigration authorities said hotels must not refuse overseas guests merely because the property claims to lack a special foreign-guest qualification. In practice, some front desks may still be unfamiliar with passport registration, especially at small or newly opened properties. Before a non-refundable booking, confirm the exact property can register your passport, save the written confirmation, enter every guest\'s name exactly as shown on the passport, and notify the hotel if you will arrive late. A hotel normally completes the accommodation registration for its guests; a private or non-hotel stay follows separate local registration procedures.',
-    lastReviewed: 'September 20, 2026',
-    lastModified: '2026-09-20',
+    lastReviewed: 'September 29, 2026',
+    lastModified: '2026-09-29',
     article: true,
     contentSections: [
       {
@@ -1069,14 +1069,14 @@ const pageMeta = {
     description: 'Unsubscribe from occasional ChinaEase Buddy travel updates.',
   },
   'china-travel-apps': {
-    title: 'Best Apps for China Travel (2026) | ChinaEase Buddy',
+    title: 'Best China Travel Apps for Foreigners (2026 Checklist)',
     heading: '8 Essential Apps for China Travel in 2026',
     description:
-      'Set up Alipay, WeChat, AMap Global, DiDi, Trip.com, 12306, translation and mobile data tools before your China trip.',
+      'Prepare Alipay, WeChat, Amap, DiDi, Trip.com and Railway 12306 before China. Compare phone, identity, payment, connectivity requirements and setup timing.',
     quickAnswer:
       'Before flying to mainland China, prepare a small core stack: Alipay for payments, WeChat for communication and backup payments, AMap Global for maps and public transport, DiDi for rides, Trip.com or Railway 12306 for trains, and an offline translation tool. Arrange an eSIM or roaming plan separately. Install from official stores, keep access to your home number for verification, save your hotel address in Chinese, and do not rely on Google or any single app as your only option.',
-    lastReviewed: 'September 17, 2026',
-    lastModified: '2026-09-17',
+    lastReviewed: 'September 29, 2026',
+    lastModified: '2026-09-29',
     article: true,
     contentSections: [
       {
@@ -1186,14 +1186,14 @@ const pageMeta = {
     ],
   },
   'china-train-travel-guide': {
-    title: 'China Train Guide for Foreigners (2026) | ChinaEase Buddy',
+    title: 'China Train Guide for Foreigners: Book on 12306 (2026)',
     heading: 'China Train Travel Guide for Foreigners (2026)',
     description:
-      'Book China high-speed train tickets with a foreign passport. Compare 12306 and Trip.com, complete verification, board correctly, and fix common problems.',
+      'Book China high-speed trains with a foreign passport on Railway 12306. Avoid name and station errors, choose seats, and use the correct ID to board.',
     quickAnswer:
       'Foreign visitors can buy China train tickets with a valid passport through the official Railway 12306 system, an authorised booking service such as Trip.com, or a station ticket counter. Enter the passenger name and passport number exactly as shown on the passport, check the full station name because many cities have several stations, and carry the same original passport to enter, board, and exit. Most journeys use an e-ticket, so an itinerary sheet or screenshot is useful for reference but does not replace the passport used for booking.',
-    lastReviewed: 'September 17, 2026',
-    lastModified: '2026-09-17',
+    lastReviewed: 'September 29, 2026',
+    lastModified: '2026-09-29',
     article: true,
     contentSections: [
       {
@@ -1294,14 +1294,14 @@ const pageMeta = {
     ],
   },
   'didi-in-china-for-foreigners': {
-    title: 'How to Use and Pay for DiDi in China (2026) | ChinaEase Buddy',
+    title: 'How to Use DiDi in China Without a Chinese Number (2026)',
     heading: 'How to Use DiDi in China as a Foreigner (2026)',
     description:
-      'How can foreigners book and pay for DiDi rides in China? Compare the DiDi app, Alipay and WeChat routes, then check pickup, fare and payment status.',
+      'Use DiDi in China with a supported international number or through Alipay and WeChat. Learn pickup, destination, fare, payment and safety checks before riding.',
     quickAnswer:
       'Foreign visitors can use the DiDi China ride-hailing app with an international mobile number and an English interface, or access DiDi through supported WeChat and Alipay routes. Before requesting a car, save the exact destination in Chinese, confirm the pickup pin and meeting point, compare the service type and estimated fare, and prepare a payment method shown in your version. When the car arrives, match the licence plate and vehicle details before entering.',
-    lastReviewed: 'September 18, 2026',
-    lastModified: '2026-09-18',
+    lastReviewed: 'September 29, 2026',
+    lastModified: '2026-09-29',
     article: true,
     contentSections: [
       {
@@ -4440,12 +4440,13 @@ await Promise.all(
 );
 
 const sitemapPages = [''].concat(pages);
-const lastmod = '2026-09-26';
+const homepageLastmod = '2026-09-29';
+const defaultLastmod = '2026-09-26';
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemapPages.map((page) => `  <url>
     <loc>${page ? pageUrl(page) : `${siteUrl}/`}</loc>
-    <lastmod>${page && pageMeta[page]?.lastModified ? pageMeta[page].lastModified : lastmod}</lastmod>
+    <lastmod>${page ? pageMeta[page]?.lastModified || defaultLastmod : homepageLastmod}</lastmod>
   </url>`).join('\n')}
 </urlset>
 `;
