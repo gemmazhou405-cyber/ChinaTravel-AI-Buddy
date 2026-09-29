@@ -1305,7 +1305,72 @@
       "fieldWhatsApp": "Numéro WhatsApp",
       "fieldWhatsAppPlaceholder": "+33 6 12 34 56 78",
       "whatsappNote": "Ajoutez l'indicatif du pays. Aucun code de vérification n'est requis ; nous répondrons manuellement.",
-      "errorWhatsApp": "Saisissez un numéro WhatsApp valide avec l'indicatif du pays."
+      "errorWhatsApp": "Saisissez un numéro WhatsApp valide avec l'indicatif du pays.",
+      "progressive": {
+        "eyebrow": "Planification gratuite",
+        "title": "Itinéraire personnalisé gratuit pour la Chine",
+        "subtitle": "Choisissez quelques détails, prévisualisez votre parcours, puis recevez-le par e-mail.",
+        "stepLabel": "Étape {{current}} sur 3",
+        "step1Name": "Destinations",
+        "step2Name": "Votre style",
+        "step3Name": "Aperçu",
+        "cityTitle": "Où souhaitez-vous aller ?",
+        "cityHelp": "Sélectionnez jusqu'à 3 destinations",
+        "cityRequired": "Choisissez au moins une ville pour continuer.",
+        "cityMax": "Vous pouvez sélectionner jusqu'à 3 destinations.",
+        "whenLabel": "Quand voyagez-vous ?",
+        "whenPlaceholder": "ex. du 12 au 20 octobre 2026",
+        "selectDates": "Choisir les dates →",
+        "startDate": "Date de début",
+        "endDate": "Date de fin",
+        "interestTitle": "Qu'aimez-vous ?",
+        "interestHelp": "Choisissez autant d'options que vous le souhaitez.",
+        "travelersLabel": "Combien de voyageurs ?",
+        "travelersPreviewLabel": "Voyageurs",
+        "travelers": {
+          "1": "1 voyageur",
+          "2": "2 voyageurs",
+          "3-4": "3 à 4 voyageurs",
+          "family": "Famille"
+        },
+        "previewTitle": "Où envoyer votre itinéraire ?",
+        "previewHelp": "Vérifiez vos choix et saisissez votre e-mail pour recevoir l'itinéraire complet.",
+        "dayOnePreview": "Aperçu du jour 1",
+        "routeLabel": "Parcours",
+        "datesLabel": "Dates",
+        "interestsLabel": "Centres d'intérêt",
+        "flexibleDates": "Dates flexibles",
+        "openRecommendations": "Ouvert aux suggestions",
+        "emailPlaceholder": "vous@exemple.com",
+        "privacyNote": "Nous utiliserons votre e-mail uniquement pour préparer et envoyer votre itinéraire. Aucun spam.",
+        "continuePreview": "Continuer → Voir l'aperçu du jour 1",
+        "continue": "Continuer",
+        "back": "Retour",
+        "submit": "Recevoir mon itinéraire gratuit →",
+        "trust": "🛡️ Aucun paiement maintenant • ⭐ 4,9 et plus de 2 000 avis • 🔒 Sécurisé et privé",
+        "adjustLater": "Vous pourrez ajuster les détails aux étapes suivantes",
+        "successTitle": "Votre demande est en route",
+        "cities": {
+          "beijing": "Pékin",
+          "shanghai": "Shanghai",
+          "chengdu": "Chengdu",
+          "xian": "Xi'an",
+          "guilin": "Guilin",
+          "zhangjiajie": "Zhangjiajie",
+          "hangzhou": "Hangzhou",
+          "chongqing": "Chongqing"
+        },
+        "interests": {
+          "food": "Cuisine",
+          "pandas": "Pandas",
+          "history": "Histoire",
+          "mountains": "Montagnes",
+          "photography": "Photographie",
+          "family": "En famille",
+          "noChinese": "Sans parler chinois",
+          "nightlife": "Vie nocturne"
+        }
+      }
     }
   }
 }

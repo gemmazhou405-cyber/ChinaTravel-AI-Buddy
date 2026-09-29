@@ -119,10 +119,10 @@ function parseWhatsApp(value) {
 
 function parseStringArray(value, maxItems = 12, maxLength = 80) {
   if (!Array.isArray(value)) return [];
-  return value
+  return [...new Set(value
     .filter((item) => typeof item === 'string')
     .map((item) => item.trim().slice(0, maxLength))
-    .filter(Boolean)
+    .filter(Boolean))]
     .slice(0, maxItems);
 }
 
@@ -158,7 +158,10 @@ export async function onRequestPost({ request, env }) {
   const docId = UUID_RE.test(requestIdRaw) ? requestIdRaw : crypto.randomUUID();
 
   // Sanitize optional fields
-  const travelDate = clampStr(body.travelDate, 80);
+  const cities = parseStringArray(body.cities, 3, 40);
+  const interests = parseStringArray(body.interests, 8, 40);
+  const dates = clampStr(body.dates, 80);
+  const travelDate = clampStr(body.travelDate, 80) ?? dates;
   const helpWith = (() => {
     if (typeof body.helpWith !== 'string') return null;
     const t = body.helpWith.trim();
@@ -181,9 +184,12 @@ export async function onRequestPost({ request, env }) {
   })();
   const departureCountry = clampStr(body.departureCountry, 80);
   const arrivalCity = clampStr(body.arrivalCity, 80);
-  const destinationCities = parseStringArray(body.destinationCities);
-  const priorities = parseStringArray(body.priorities);
+  const destinationCitiesInput = parseStringArray(body.destinationCities);
+  const destinationCities = destinationCitiesInput.length > 0 ? destinationCitiesInput : cities;
+  const prioritiesInput = parseStringArray(body.priorities);
+  const priorities = prioritiesInput.length > 0 ? prioritiesInput : interests;
   const concerns = parseStringArray(body.concerns);
+  const consentVersion = clampStr(body.consentVersion, 40) ?? 'trip-lead-2026-09';
   const locale = clampStr(body.locale, 8) ?? 'en';
   const sourcePath = clampStr(body.sourcePath, 500);
   const utmSource = clampStr(body.utmSource, 80);
@@ -230,6 +236,9 @@ export async function onRequestPost({ request, env }) {
       requestId: docId,
       email: emailRaw,
       emailHash,
+      cities,
+      dates,
+      interests,
       travelDate,
       travelers,
       tripLength,
@@ -247,7 +256,7 @@ export async function onRequestPost({ request, env }) {
       utmMedium,
       utmCampaign,
       utmContent,
-      consentVersion: 'trip-lead-2026-09',
+      consentVersion,
       source: 'buddy_trip_lead',
       status: 'new',
       ipHash,
@@ -271,6 +280,9 @@ export async function onRequestPost({ request, env }) {
   const lead = {
     requestId: docId,
     email: emailRaw,
+    cities,
+    dates,
+    interests,
     travelDate,
     travelers,
     tripLength,

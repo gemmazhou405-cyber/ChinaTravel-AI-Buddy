@@ -1305,7 +1305,72 @@
       "fieldWhatsApp": "WhatsApp number",
       "fieldWhatsAppPlaceholder": "+44 7700 900000",
       "whatsappNote": "Include your country code. No verification code is required; we will reply manually.",
-      "errorWhatsApp": "Please enter a valid WhatsApp number with country code."
+      "errorWhatsApp": "Please enter a valid WhatsApp number with country code.",
+      "progressive": {
+        "eyebrow": "Free trip planning",
+        "title": "Free personalised China itinerary",
+        "subtitle": "Choose a few trip details, preview your route, then send it to your inbox.",
+        "stepLabel": "Step {{current}} of 3",
+        "step1Name": "Destinations",
+        "step2Name": "Your style",
+        "step3Name": "Preview",
+        "cityTitle": "Where would you like to go?",
+        "cityHelp": "Select up to 3 destinations",
+        "cityRequired": "Choose at least one city to continue.",
+        "cityMax": "You can select up to 3 destinations.",
+        "whenLabel": "When are you travelling?",
+        "whenPlaceholder": "e.g. 12–20 October 2026",
+        "selectDates": "Select dates →",
+        "startDate": "Start date",
+        "endDate": "End date",
+        "interestTitle": "What do you like?",
+        "interestHelp": "Choose as many as you like.",
+        "travelersLabel": "How many travellers?",
+        "travelersPreviewLabel": "Travellers",
+        "travelers": {
+          "1": "1 traveller",
+          "2": "2 travellers",
+          "3-4": "3–4 travellers",
+          "family": "Family"
+        },
+        "previewTitle": "Where to send your itinerary?",
+        "previewHelp": "Check your choices and enter your email to receive the full itinerary.",
+        "dayOnePreview": "Day 1 preview",
+        "routeLabel": "Route",
+        "datesLabel": "Dates",
+        "interestsLabel": "Interests",
+        "flexibleDates": "Flexible",
+        "openRecommendations": "Open to recommendations",
+        "emailPlaceholder": "you@example.com",
+        "privacyNote": "We'll only use your email to prepare and deliver your itinerary. No spam.",
+        "continuePreview": "Continue → See Day 1 Preview",
+        "continue": "Continue",
+        "back": "Back",
+        "submit": "Get My Free Itinerary →",
+        "trust": "🛡️ No payment now • ⭐ 4.9 2k+ reviews • 🔒 Secure & private",
+        "adjustLater": "You can adjust details in the next steps",
+        "successTitle": "Your request is on its way",
+        "cities": {
+          "beijing": "Beijing",
+          "shanghai": "Shanghai",
+          "chengdu": "Chengdu",
+          "xian": "Xi'an",
+          "guilin": "Guilin",
+          "zhangjiajie": "Zhangjiajie",
+          "hangzhou": "Hangzhou",
+          "chongqing": "Chongqing"
+        },
+        "interests": {
+          "food": "Food",
+          "pandas": "Pandas",
+          "history": "History",
+          "mountains": "Mountains",
+          "photography": "Photography",
+          "family": "Family-friendly",
+          "noChinese": "No Chinese Needed",
+          "nightlife": "Nightlife"
+        }
+      }
     }
   }
 }

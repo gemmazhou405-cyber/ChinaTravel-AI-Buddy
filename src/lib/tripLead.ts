@@ -13,6 +13,13 @@ export interface TripLeadPayload {
   helpWith?: string;
   whatsapp?: string;
   contactMethod?: 'email' | 'whatsapp';
+  cities?: string[];
+  dates?: string;
+  interests?: string[];
+  consentAccepted?: boolean;
+  consentVersion?: string;
+  locale?: string;
+  sourcePath?: string;
   requestId: string;
 }
 
@@ -59,16 +66,20 @@ export async function submitTripLead(
         priorities: payload.priorities ?? [],
         concerns: payload.concerns ?? [],
         helpWith: payload.helpWith ?? '',
+        cities: payload.cities ?? [],
+        dates: payload.dates ?? '',
+        interests: payload.interests ?? [],
         whatsapp: payload.whatsapp ?? '',
         contactMethod: payload.contactMethod ?? 'email',
-        locale: document.documentElement.lang || 'en',
-        sourcePath: window.location.pathname + window.location.search,
+        consentAccepted: payload.consentAccepted ?? false,
+        consentVersion: payload.consentVersion ?? 'trip-lead-2026-09',
+        locale: (payload.locale ?? document.documentElement.lang) || 'en',
+        sourcePath: payload.sourcePath ?? (window.location.pathname + window.location.search),
         utmSource: attr.utm_source,
         utmMedium: attr.utm_medium,
         utmCampaign: attr.utm_campaign,
         utmContent: attr.utm_content,
         website: '',
-        consentVersion: 'trip-lead-2026-09',
       }),
     });
     if (res.status === 409) {
