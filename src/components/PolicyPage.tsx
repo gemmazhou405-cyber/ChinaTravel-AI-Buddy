@@ -8,6 +8,9 @@ import daliGuide from '../data/seoPages/3-day-dali-itinerary.json';
 import goldenWeekGuide from '../data/seoPages/china-golden-week-2026-travel-guide.json';
 import greatWallGuide from '../data/seoPages/great-wall-of-china-day-trip-from-beijing.json';
 import pandaBaseGuide from '../data/seoPages/chengdu-panda-base-guide.json';
+import didiPaymentGuide from '../data/seoPages/didi-payment-for-foreigners.json';
+import beijingAirportGuide from '../data/seoPages/beijing-airport-to-city-guide.json';
+import mapsComparisonGuide from '../data/seoPages/amap-vs-google-maps-china.json';
 
 type LegalPageType = 'terms' | 'privacy' | 'refund' | 'contact' | 'about' | 'unsubscribe';
 type GuidePageType =
@@ -44,6 +47,9 @@ type GuidePageType =
   | 'china-golden-week-2026-travel-guide'
   | 'great-wall-of-china-day-trip-from-beijing'
   | 'chengdu-panda-base-guide'
+  | 'didi-payment-for-foreigners'
+  | 'beijing-airport-to-city-guide'
+  | 'amap-vs-google-maps-china'
   | 'best-time-to-visit-china'
   | 'china-esim-internet-guide'
   | 'alipay-for-foreigners'
@@ -125,7 +131,7 @@ interface GuidePageData {
 }
 
 function guideFromArticle(
-  data: typeof goldenWeekGuide | typeof greatWallGuide | typeof pandaBaseGuide,
+  data: typeof goldenWeekGuide | typeof greatWallGuide | typeof pandaBaseGuide | typeof didiPaymentGuide | typeof beijingAirportGuide | typeof mapsComparisonGuide,
   path: string,
   ctaLabel: string,
   related: GuidePageData['related'],
@@ -4523,6 +4529,30 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     { label: 'First trip to China', href: '/first-trip-to-china/' },
     { label: 'Get my Chengdu itinerary', href: '/#trip-plan' },
   ]),
+  'didi-payment-for-foreigners': guideFromArticle(didiPaymentGuide, '/didi-payment-for-foreigners/', 'Get my China transport plan', [
+    { label: 'Didi In China For Foreigners', href: '/didi-in-china-for-foreigners/' },
+    { label: 'Alipay For Foreigners', href: '/alipay-for-foreigners/' },
+    { label: 'Wechat Pay For Foreigners', href: '/wechat-pay-for-foreigners/' },
+    { label: 'China Payment Guide', href: '/china-payment-guide/' },
+    { label: 'Beijing Airport to City Guide', href: '/beijing-airport-to-city-guide/' },
+    { label: 'Get my free China itinerary', href: '/#trip-plan' },
+  ]),
+  'beijing-airport-to-city-guide': guideFromArticle(beijingAirportGuide, '/beijing-airport-to-city-guide/', 'Get my Beijing itinerary', [
+    { label: 'China Airport Arrival Guide', href: '/china-airport-arrival-guide/' },
+    { label: 'DiDi Payment for Foreigners', href: '/didi-payment-for-foreigners/' },
+    { label: 'China Metro Guide', href: '/china-metro-guide/' },
+    { label: '3 Day Beijing Itinerary', href: '/3-day-beijing-itinerary/' },
+    { label: 'China Esim Internet Guide', href: '/china-esim-internet-guide/' },
+    { label: 'Get my free China itinerary', href: '/#trip-plan' },
+  ]),
+  'amap-vs-google-maps-china': guideFromArticle(mapsComparisonGuide, '/amap-vs-google-maps-china/', 'Get my China itinerary', [
+    { label: 'Amap In English', href: '/amap-in-english/' },
+    { label: 'China Travel Apps', href: '/china-travel-apps/' },
+    { label: 'China Metro Guide', href: '/china-metro-guide/' },
+    { label: 'Didi In China For Foreigners', href: '/didi-in-china-for-foreigners/' },
+    { label: 'China Esim Internet Guide', href: '/china-esim-internet-guide/' },
+    { label: 'Get my free China itinerary', href: '/#trip-plan' },
+  ]),
   'best-time-to-visit-china': {
     path: '/best-time-to-visit-china/',
     title: 'Best Time to Visit China: Weather and Crowds by Month (2026)',
@@ -6586,6 +6616,9 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/china-golden-week-2026-travel-guide')) return 'china-golden-week-2026-travel-guide';
   if (cleanPath.endsWith('/great-wall-of-china-day-trip-from-beijing')) return 'great-wall-of-china-day-trip-from-beijing';
   if (cleanPath.endsWith('/chengdu-panda-base-guide')) return 'chengdu-panda-base-guide';
+  if (cleanPath.endsWith('/didi-payment-for-foreigners')) return 'didi-payment-for-foreigners';
+  if (cleanPath.endsWith('/beijing-airport-to-city-guide')) return 'beijing-airport-to-city-guide';
+  if (cleanPath.endsWith('/amap-vs-google-maps-china')) return 'amap-vs-google-maps-china';
   if (cleanPath.endsWith('/best-time-to-visit-china')) return 'best-time-to-visit-china';
   if (cleanPath.endsWith('/china-esim-internet-guide')) return 'china-esim-internet-guide';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
