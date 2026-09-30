@@ -349,6 +349,7 @@ export async function queryCollection(env, collectionId, field, value, limit = 1
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
+      signal: AbortSignal.timeout(FIRESTORE_TIMEOUT_MS),
     },
   );
   if (!res.ok) {
@@ -358,5 +359,8 @@ export async function queryCollection(env, collectionId, field, value, limit = 1
   const rows = await res.json();
   return rows
     .filter((row) => row.document?.fields)
-    .map((row) => fromFirestoreDocument(row.document));
+    .map((row) => ({
+      ...fromFirestoreDocument(row.document),
+      id: row.document.name.split('/').pop(),
+    }));
 }

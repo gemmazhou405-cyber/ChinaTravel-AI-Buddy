@@ -137,6 +137,8 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
         ? 'lead.errorTooMany'
         : result.status === 'free_plan_used'
           ? 'lead.progressive.freePlanUsed'
+          : result.status === 'paid_plan_limit_reached'
+            ? 'lead.progressive.paidPlanLimitReached'
           : result.status === 'email_delivery_failed'
             ? 'lead.progressive.emailDeliveryFailed'
           : 'lead.errorGeneric';

@@ -5,6 +5,7 @@ import {
   getDoc,
   getDocSnapshot,
   patchDoc,
+  queryCollection,
   updateWriteIfUnchanged,
 } from '../../_shared/firestore.js';
 import {
@@ -33,6 +34,9 @@ async function sha256(input) {
 const _ipRateMap = new Map();
 const RATE_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
 const RATE_MAX = 5;
+const PAID_ITINERARY_LIMIT = 20;
+const PAID_CLAIM_MAX_ATTEMPTS = 4;
+const PAID_CLAIM_STALE_MS = 5 * 60 * 1000;
 
 function checkRateLimit(ipHash) {
   const now = Date.now();
@@ -44,14 +48,133 @@ function checkRateLimit(ipHash) {
 
 const CLAIM_STALE_MS = 5 * 60 * 1000;
 
-async function hasActivePaidPass(request, env) {
+async function getActivePaidPass(request, env) {
   try {
     const session = await verifySessionCookie(request.headers.get('Cookie'), env.SESSION_SECRET);
-    if (!session?.passId) return false;
+    if (!session?.passId) return { active: false, passId: null, pass: null };
     const entitlement = await activePassForId(env, session.passId);
-    return entitlement.active;
+    const pass = entitlement.pass;
+    const active = Boolean(
+      pass
+      && ['trip', 'group'].includes(pass.tier)
+      && (!pass.expiresAt || pass.expiresAt > Date.now()),
+    );
+    return { active, passId: session.passId, pass };
   } catch {
-    return false;
+    return { active: false, passId: null, pass: null };
+  }
+}
+
+function isFirestoreConflict(error) {
+  const message = String(error?.message);
+  return message.includes('409')
+    || message.includes('ABORTED')
+    || message.includes('FAILED_PRECONDITION')
+    || message.includes('ALREADY_EXISTS');
+}
+
+async function reservePaidItinerary(env, { passId, requestId }) {
+  const passPath = `passes/${passId}`;
+  const claimPath = `tripPlanPassClaims/${passId}_${requestId}`;
+
+  for (let attempt = 0; attempt < PAID_CLAIM_MAX_ATTEMPTS; attempt += 1) {
+    const [passSnapshot, claimSnapshot] = await Promise.all([
+      getDocSnapshot(env, passPath),
+      getDocSnapshot(env, claimPath),
+    ]);
+    const pass = passSnapshot?.data;
+    if (!pass || (pass.expiresAt && pass.expiresAt <= Date.now())) {
+      return { ok: false, reason: 'inactive' };
+    }
+    if (claimSnapshot?.data?.status === 'completed') {
+      return { ok: true, claimPath, alreadyCompleted: true };
+    }
+    if (claimSnapshot?.data?.status === 'reserved') {
+      return { ok: false, reason: 'processing' };
+    }
+
+    const used = Math.max(0, Number(pass.itineraryRequestsUsed) || 0);
+    if (used >= PAID_ITINERARY_LIMIT) {
+      return { ok: false, reason: 'limit' };
+    }
+
+    const now = Date.now();
+    const claimData = {
+      passId,
+      requestId,
+      status: 'reserved',
+      createdAt: claimSnapshot?.data?.createdAt || now,
+      updatedAt: now,
+    };
+    const writes = [
+      updateWriteIfUnchanged(env, passPath, {
+        itineraryRequestLimit: PAID_ITINERARY_LIMIT,
+        itineraryRequestsUsed: used + 1,
+      }, passSnapshot.updateTime),
+      claimSnapshot
+        ? updateWriteIfUnchanged(env, claimPath, claimData, claimSnapshot.updateTime)
+        : createWrite(env, claimPath, claimData),
+    ];
+
+    try {
+      await commitWrites(env, writes);
+      return { ok: true, claimPath, used: used + 1 };
+    } catch (error) {
+      if (!isFirestoreConflict(error) || attempt === PAID_CLAIM_MAX_ATTEMPTS - 1) throw error;
+    }
+  }
+
+  throw new Error('paid_itinerary_reservation_failed');
+}
+
+async function finishPaidItinerary(env, { passId, claimPath }, completed) {
+  if (completed) {
+    await patchDoc(env, claimPath, { status: 'completed', completedAt: Date.now() }, ['status', 'completedAt']);
+    return;
+  }
+
+  const passPath = `passes/${passId}`;
+  for (let attempt = 0; attempt < PAID_CLAIM_MAX_ATTEMPTS; attempt += 1) {
+    const [passSnapshot, claimSnapshot] = await Promise.all([
+      getDocSnapshot(env, passPath),
+      getDocSnapshot(env, claimPath),
+    ]);
+    if (!claimSnapshot || claimSnapshot.data?.status !== 'reserved') return;
+    if (!passSnapshot) {
+      await patchDoc(env, claimPath, { status: 'failed', failedAt: Date.now() }, ['status', 'failedAt']);
+      return;
+    }
+
+    const used = Math.max(0, Number(passSnapshot.data?.itineraryRequestsUsed) || 0);
+    try {
+      await commitWrites(env, [
+        updateWriteIfUnchanged(env, passPath, {
+          itineraryRequestLimit: PAID_ITINERARY_LIMIT,
+          itineraryRequestsUsed: Math.max(0, used - 1),
+        }, passSnapshot.updateTime),
+        updateWriteIfUnchanged(env, claimPath, {
+          status: 'failed',
+          failedAt: Date.now(),
+        }, claimSnapshot.updateTime),
+      ]);
+      return;
+    } catch (error) {
+      if (!isFirestoreConflict(error) || attempt === PAID_CLAIM_MAX_ATTEMPTS - 1) throw error;
+    }
+  }
+}
+
+async function releaseStalePaidItineraries(env, passId) {
+  const claims = await queryCollection(env, 'tripPlanPassClaims', 'passId', passId, 25);
+  const staleClaims = claims.filter((claim) => (
+    claim.status === 'reserved'
+    && Date.now() - (claim.updatedAt || claim.createdAt || 0) >= PAID_CLAIM_STALE_MS
+  ));
+  for (const claim of staleClaims) {
+    await finishPaidItinerary(env, {
+      passId,
+      claimPath: `tripPlanPassClaims/${claim.id}`,
+    }, false);
   }
 }
 
@@ -227,9 +350,26 @@ export async function onRequestPost({ request, env }) {
 
   // Paid pass holders can generate new plans. Free visitors get one successful
   // personalised plan per email address and per IP address.
-  const paidPass = await hasActivePaidPass(request, env);
+  const paidPass = await getActivePaidPass(request, env);
   let freePlanClaimPaths = null;
-  if (!paidPass) {
+  let paidPlanClaim = null;
+  if (paidPass.active) {
+    let reservation;
+    try {
+      await releaseStalePaidItineraries(env, paidPass.passId);
+      reservation = await reservePaidItinerary(env, { passId: paidPass.passId, requestId: docId });
+    } catch (error) {
+      console.error('[leads/trip] paid_plan_claim_failed', String(error?.message).slice(0, 80));
+      return errorResponse(request, env, 500, 'claim_error', 'Could not check travel-pass eligibility. Please try again.');
+    }
+    if (!reservation.ok) {
+      if (reservation.reason === 'limit') {
+        return errorResponse(request, env, 409, 'paid_plan_limit_reached', 'This travel pass has reached its 20-itinerary limit.');
+      }
+      return errorResponse(request, env, 409, 'request_in_progress', 'This itinerary request is already being processed.');
+    }
+    paidPlanClaim = { passId: paidPass.passId, claimPath: reservation.claimPath };
+  } else {
     let reservation;
     try {
       reservation = await reserveFreePlan(env, { emailHash, ipHash, requestId: docId });
@@ -292,6 +432,11 @@ export async function onRequestPost({ request, env }) {
     }
     console.error('[leads/trip] Firestore write failed', String(err?.message).slice(0, 80));
     await finishFreePlanClaim(env, freePlanClaimPaths, 'failed');
+    if (paidPlanClaim) {
+      await finishPaidItinerary(env, paidPlanClaim, false).catch((error) => {
+        console.error('[leads/trip] paid_claim_rollback_failed', String(error?.message).slice(0, 80));
+      });
+    }
     return errorResponse(request, env, 500, 'firestore_error', 'Could not save your enquiry. Please try again.');
   }
 
@@ -396,6 +541,11 @@ export async function onRequestPost({ request, env }) {
   // A free itinerary is consumed only when the customer email provider accepts
   // the message. Failed delivery attempts remain retryable.
   await finishFreePlanClaim(env, freePlanClaimPaths, confirmResult.ok ? 'used' : 'failed');
+  if (paidPlanClaim) {
+    await finishPaidItinerary(env, paidPlanClaim, confirmResult.ok).catch((error) => {
+      console.error('[leads/trip] paid_claim_finalize_failed', String(error?.message).slice(0, 80));
+    });
+  }
 
   try {
     if (whatsappResult.ok) {

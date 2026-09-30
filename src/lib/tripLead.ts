@@ -37,7 +37,7 @@ export interface TripPlanPreview {
 
 export type TripLeadResult =
   | { status: 'success'; planGenerated: boolean; planPreview: TripPlanPreview | null; whatsappReminderSent: boolean }
-  | { status: 'free_plan_used' | 'email_delivery_failed' | 'too_many' | 'error'; planGenerated: false; planPreview: null; whatsappReminderSent: false };
+  | { status: 'free_plan_used' | 'paid_plan_limit_reached' | 'email_delivery_failed' | 'too_many' | 'error'; planGenerated: false; planPreview: null; whatsappReminderSent: false };
 
 export function isValidWhatsApp(value: string) {
   const trimmed = value.trim();
@@ -86,6 +86,9 @@ export async function submitTripLead(
       const data = await res.json().catch(() => ({}));
       if (data?.error === 'free_plan_used' || data?.code === 'free_plan_used') {
         return { status: 'free_plan_used', planGenerated: false, planPreview: null, whatsappReminderSent: false };
+      }
+      if (data?.error === 'paid_plan_limit_reached') {
+        return { status: 'paid_plan_limit_reached', planGenerated: false, planPreview: null, whatsappReminderSent: false };
       }
     }
     if (res.status === 429) return { status: 'too_many', planGenerated: false, planPreview: null, whatsappReminderSent: false };

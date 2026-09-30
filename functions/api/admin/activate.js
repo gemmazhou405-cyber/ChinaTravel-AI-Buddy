@@ -49,6 +49,8 @@ export async function onRequestPost({ request, env }) {
       expiresAt,
       messageAllowance: config.messageAllowance,
       messagesUsed: 0,
+      itineraryRequestLimit: 20,
+      itineraryRequestsUsed: 0,
       maxDevices: config.maxDevices,
       devices: [],
       recoveryCodeHash,

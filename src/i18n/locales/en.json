@@ -1351,6 +1351,7 @@
         "adjustLater": "You can adjust details in the next steps",
         "successTitle": "Your request is on its way",
         "freePlanUsed": "A free itinerary has already been requested from this email or connection. Please check your inbox.",
+        "paidPlanLimitReached": "This travel pass has reached its limit of 20 itineraries.",
         "emailDeliveryFailed": "We couldn't email your itinerary. Please try again shortly.",
         "cities": {
           "beijing": "Beijing",

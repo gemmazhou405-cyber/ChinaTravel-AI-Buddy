@@ -1351,6 +1351,7 @@
         "adjustLater": "Puedes ajustar los detalles en los siguientes pasos",
         "successTitle": "Tu solicitud está en camino",
         "freePlanUsed": "Ya se solicitó un itinerario gratuito con este correo o conexión. Revisa tu bandeja de entrada.",
+        "paidPlanLimitReached": "Este pase de viaje ha alcanzado su límite de 20 itinerarios.",
         "emailDeliveryFailed": "No pudimos enviar tu itinerario por correo. Inténtalo de nuevo en unos instantes.",
         "cities": {
           "beijing": "Pekín",
