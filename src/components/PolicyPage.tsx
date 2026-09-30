@@ -2,6 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { ArrowLeft, Check } from 'lucide-react';
 import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
 import { unsubscribeNewsletter } from '../lib/newsletter';
+import { RelatedGuidesForForeigners } from './RelatedGuidesForForeigners';
 import suzhouGuide from '../data/seoPages/3-day-suzhou-itinerary.json';
 import nanjingGuide from '../data/seoPages/3-day-nanjing-itinerary.json';
 import daliGuide from '../data/seoPages/3-day-dali-itinerary.json';
@@ -52,6 +53,7 @@ type GuidePageType =
   | 'amap-vs-google-maps-china'
   | 'best-time-to-visit-china'
   | 'china-esim-internet-guide'
+  | 'china-sim-card-for-foreigners'
   | 'alipay-for-foreigners'
   | 'wechat-pay-for-foreigners'
   | 'china-payment-guide'
@@ -404,7 +406,22 @@ Object.assign(guidePages['china-payment-guide'], {
   lastReviewed: 'September 30, 2026',
   lastModified: '2026-09-30',
   isArticle: true,
+  featuredFaqCount: 3,
 });
+guidePages['china-payment-guide'].faqs.unshift(
+  {
+    question: 'Can foreigners use WeChat Pay without a Chinese bank account?',
+    answer: 'Yes. Many foreign visitors can add an eligible Visa or Mastercard in WeChat by opening Me, then Services or Pay, Wallet, and Bank Cards. Complete any identity and issuer checks. Merchant support, card funding, fees, limits, and app labels can vary, so keep Alipay, a physical card, and RMB cash as backups.',
+  },
+  {
+    question: 'Can foreigners use Alipay without a Chinese ID?',
+    answer: 'Yes. Foreign visitors can register Alipay with an overseas mobile number and verify identity using a supported passport rather than a Chinese national ID. Add an eligible international Visa or Mastercard under Bank Cards. Approval, limits, merchant acceptance, and issuer verification vary, so prepare a second payment method.',
+  },
+  {
+    question: 'Which is better for foreigners, Alipay or WeChat Pay?',
+    answer: 'Alipay is often simpler as a dedicated payment and travel-services app, while WeChat Pay is convenient when you also use WeChat messaging and mini programs. Neither is universally better: set up both if possible, test them before relying on them, and carry a physical card and some RMB cash.',
+  },
+);
 guidePages['china-payment-guide'].sections.push(
   {
     title: 'Prepare a payment backup before arrival',
@@ -566,6 +583,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
         title: 'Current guide pages',
         items: [
           'China eSIM & Internet Guide: choose, install, activate, and troubleshoot mobile data.',
+          'China SIM Card for Foreigners: compare eSIM and physical SIM options, airport purchase, passport registration, and top-ups.',
           'China Visa-Free Travel Guide: compare 30-day visa-free entry, 240-hour transit, routes, ports, and documents.',
           'China Airport Arrival Guide: immigration, baggage, customs, mobile data, payment, and airport transfers.',
           'China Hotels for Foreigners: passport booking, check-in, registration, deposits, and problem solving.',
@@ -5080,6 +5098,119 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
   },
+  'china-sim-card-for-foreigners': {
+    path: '/china-sim-card-for-foreigners/',
+    title: 'China SIM Card for Foreigners (2026): How to Buy & Use Without Chinese ID',
+    intro:
+      'A practical guide to choosing an eSIM or physical China SIM, registering with a passport, comparing mainland carriers, and keeping mobile data active during your trip.',
+    metaTitle: 'China SIM Card for Foreigners (2026): Passport Guide',
+    metaDescription:
+      'Compare China eSIM and physical SIM options, buy a local SIM with a passport at PVG, PEK, or CAN, choose a carrier, and top up with Alipay.',
+    quickAnswer:
+      'Foreign visitors can use a travel eSIM on a compatible unlocked phone or buy a physical prepaid SIM from a staffed carrier counter using a valid passport. You normally do not need a Chinese national ID, but the carrier must complete real-name registration and may require the original passport. Airport stock, opening hours, plan availability, phone compatibility, and English-language support vary, so keep roaming or an eSIM as an arrival backup.',
+    ctaLabel: 'Get my free China itinerary',
+    ctaHref: '/#trip-plan',
+    lastReviewed: 'September 30, 2026',
+    lastModified: '2026-09-30',
+    isArticle: true,
+    featuredFaqCount: 3,
+    sections: [
+      {
+        title: 'eSIM vs physical SIM at the airport',
+        table: {
+          headers: ['Option', 'Useful when', 'Important limitation'],
+          rows: [
+            ['Travel eSIM', 'You want data ready soon after landing', 'Requires an unlocked, eSIM-compatible phone and is often data-only'],
+            ['Physical mainland SIM', 'You need a Chinese number for calls, SMS, or local services', 'Requires passport registration and remains subject to mainland internet controls'],
+            ['Home-carrier roaming', 'You need the simplest arrival backup', 'Can cost more; allowance and international-service access vary by carrier'],
+          ],
+        },
+        items: [
+          'Install a travel eSIM before departure on reliable Wi-Fi, but follow the provider\'s instructions about when validity begins. Do not assume every eSIM includes a Chinese phone number or unrestricted access to international services.',
+          'For a physical SIM, use an official staffed carrier counter or store. Avoid an unregistered SIM sold informally because real-name registration, ownership, support, and replacement may be unclear.',
+          'Dual-SIM travelers can often keep the home line active for verification SMS while using the China line for data. Disable home-line data roaming unless your home plan explicitly includes it.',
+        ],
+      },
+      {
+        title: 'China Mobile, China Unicom, and China Telecom compared',
+        table: {
+          headers: ['Carrier', 'Practical strength', 'Check before paying'],
+          rows: [
+            ['China Mobile', 'Large nationwide network and broad retail presence', 'Confirm your phone supports the plan\'s required network bands'],
+            ['China Unicom', 'Often considered by visitors using international handsets', 'Verify coverage for rural destinations and the exact prepaid plan'],
+            ['China Telecom', 'Another major nationwide option with city and regional coverage', 'Device and network compatibility can vary, especially on older imported phones'],
+          ],
+        },
+        items: [
+          'Coverage differs by destination, building, route, and device. Ask the counter to verify your phone model and test mobile data before you leave.',
+          'Compare the included high-speed data, domestic calls, validity, renewal rules, hotspot support, and what happens when the allowance is used.',
+          'English support varies by branch. Keep your destination list in Chinese and ask the hotel which carrier works reliably in any rural area on your route.',
+        ],
+      },
+      {
+        title: 'How to buy with a passport at PVG, PEK, or CAN',
+        ordered: true,
+        items: [
+          'At Shanghai Pudong (PVG), Beijing Capital (PEK), or Guangzhou Baiyun (CAN), ask the official airport information desk for the currently operating China Mobile, China Unicom, or China Telecom counter. Counter locations, opening hours, and stock can change.',
+          'Present the original passport you used to enter China. The carrier may photograph or scan the document and your face to complete legally required real-name registration.',
+          'Show the trip length, cities, expected data use, and whether you need a Chinese number, voice calls, SMS, hotspot use, or only mobile data.',
+          'Ask the staff to confirm the total price, included allowance, validity, top-up method, and whether the number expires or enters a grace period after the plan ends.',
+          'Insert or activate the SIM at the counter. Test data, one website, maps, and any required SMS before leaving. Save the carrier receipt, plan name, phone number, and support number.',
+          'If the airport counter is closed or unavailable, keep roaming or eSIM data active and visit an official staffed carrier store in the city with your passport.',
+        ],
+      },
+      {
+        title: 'How to top up with Alipay',
+        ordered: true,
+        items: [
+          'Open Alipay and search for mobile top-up or phone recharge, then enter the Chinese mobile number carefully.',
+          'Confirm the carrier and number shown before choosing an amount. A mistaken top-up may be difficult to reverse.',
+          'Review the funding source and final amount. An international card linked to Alipay may not support every recharge product or transaction.',
+          'Keep the carrier app, official store, staffed counter, or another supported payment method as a backup. Save the top-up receipt until the balance appears.',
+          'Do not share a payment PIN, SMS code, or passport image with an informal seller offering to recharge the number.',
+        ],
+      },
+      {
+        title: 'VPN, Alipay, and WeChat Pay: what to prepare',
+        items: [
+          'Ordinary mainland SIM data is subject to local internet controls. Some international roaming and travel eSIM plans route traffic differently, but this depends on the exact provider and plan.',
+          'If you intend to use a VPN or similar service, check current rules and install only a trusted, legally compliant service before departure. A China SIM does not itself provide unrestricted internet access.',
+          'Set up Alipay and WeChat Pay before departure while you can receive verification messages from your usual number. Linking an international card and passing identity checks are not guaranteed for every user or transaction.',
+          'Alipay and WeChat Pay do not normally require a VPN for domestic payment functions. Keep a physical card and some RMB cash because wallet, card issuer, merchant, or connectivity failures can still occur.',
+          'Save the hotel address, first transfer, tickets, essential contacts, and key Chinese phrases offline so one connection or payment failure does not block the arrival plan.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Can foreigners buy an eSIM for China?',
+        answer:
+          'Yes. Foreign visitors can buy a travel eSIM that covers mainland China if their phone is unlocked and eSIM-compatible. Check whether the plan is data-only, when validity starts, which network it uses, and whether required international services work. Install it before departure and keep the activation details offline.',
+      },
+      {
+        question: 'Do I need a Chinese ID to buy a SIM card in China?',
+        answer:
+          'A foreign visitor normally uses an original passport instead of a Chinese national ID at an official staffed carrier counter. The carrier must complete real-name registration and may scan the passport and take a photo. Requirements, available prepaid plans, airport stock, and opening hours can vary by location.',
+      },
+      {
+        question: 'Can I keep my existing phone number while using a China SIM?',
+        answer:
+          'Usually yes if your phone supports dual SIM or eSIM plus a physical SIM. Keep the home line active for important verification messages, select the China line for mobile data, and disable home-line data roaming unless included. Check whether receiving calls or texts on the home line creates charges.',
+      },
+    ],
+    related: [
+      { label: 'China payment guide', href: '/china-payment-guide/' },
+      { label: 'China travel checklist', href: '/china-travel-checklist/' },
+      { label: 'China eSIM and internet guide', href: '/china-esim-internet-guide/' },
+      { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
+    ],
+    sources: [
+      { label: 'China Mobile official website', href: 'https://www.10086.cn/' },
+      { label: 'China Unicom official website', href: 'https://www.10010.com/' },
+      { label: 'China Telecom official website', href: 'https://www.189.cn/' },
+      { label: 'UK government China travel advice: internet access', href: 'https://www.gov.uk/foreign-travel-advice/china/safety-and-security#internet-access' },
+    ],
+  },
   'alipay-for-foreigners': {
     path: '/alipay-for-foreigners/',
     title: 'How to Use Alipay in China as a Foreigner (2026)',
@@ -6552,6 +6683,7 @@ function LegalPage({ type }: { type: LegalPageType }) {
 
 function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?: string | null; onAskBuddy?: (prefill?: string) => void }) {
   const page = guidePages[type];
+  const isItineraryPage = type.includes('itinerary') && type !== 'china-travel-ai-itinerary-generator';
   const featuredFaqs = page.featuredFaqCount ? page.faqs.slice(0, page.featuredFaqCount) : [];
   const remainingFaqs = page.featuredFaqCount ? page.faqs.slice(page.featuredFaqCount) : page.faqs;
   useGuideSeo(page);
@@ -6586,7 +6718,7 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
           <p className="text-xs font-semibold uppercase tracking-wide text-[#155e63]">Quick answer</p>
           <p className="mt-2 text-sm leading-relaxed text-gray-700 md:text-base">{page.quickAnswer}</p>
           <p className="mt-3 text-xs font-semibold text-gray-500">Last reviewed: {page.reviewed ?? page.lastReviewed ?? 'June 12, 2026'}</p>
-          {featuredFaqs.length === 0 && (
+          {featuredFaqs.length === 0 && !isItineraryPage && (
             <button
               type="button"
               onClick={handlePrimaryCta}
@@ -6676,6 +6808,21 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
           </section>
         )}
 
+        {isItineraryPage && featuredFaqs.length === 0 && (
+          <>
+            <RelatedGuidesForForeigners />
+            <section className="border-y border-[#155e63]/15 py-6 text-center">
+              <button
+                type="button"
+                onClick={handlePrimaryCta}
+                className="inline-flex rounded-lg bg-[#155e63] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#0e4a4e]"
+              >
+                {page.ctaLabel}
+              </button>
+            </section>
+          </>
+        )}
+
         {featuredFaqs.length > 0 && (
           <section id="faq" className="rounded-2xl border border-gray-100 bg-white/80 p-4 shadow-sm md:p-5">
             <h2 className="text-xl font-bold text-gray-950">FAQ</h2>
@@ -6694,15 +6841,18 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
         )}
 
         {featuredFaqs.length > 0 && (
-          <section className="border-y border-[#155e63]/15 py-6 text-center">
-            <button
-              type="button"
-              onClick={handlePrimaryCta}
-              className="inline-flex rounded-lg bg-[#155e63] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#0e4a4e]"
-            >
-              {page.ctaLabel}
-            </button>
-          </section>
+          <>
+            {isItineraryPage && <RelatedGuidesForForeigners />}
+            <section className="border-y border-[#155e63]/15 py-6 text-center">
+              <button
+                type="button"
+                onClick={handlePrimaryCta}
+                className="inline-flex rounded-lg bg-[#155e63] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#0e4a4e]"
+              >
+                {page.ctaLabel}
+              </button>
+            </section>
+          </>
         )}
 
         {remainingFaqs.length > 0 && <section id={featuredFaqs.length > 0 ? 'more-faq' : 'faq'} className="rounded-2xl border border-gray-100 bg-white/80 p-4 shadow-sm md:p-5">
@@ -6821,6 +6971,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/beijing-airport-to-city-guide')) return 'beijing-airport-to-city-guide';
   if (cleanPath.endsWith('/amap-vs-google-maps-china')) return 'amap-vs-google-maps-china';
   if (cleanPath.endsWith('/best-time-to-visit-china')) return 'best-time-to-visit-china';
+  if (cleanPath.endsWith('/china-sim-card-for-foreigners')) return 'china-sim-card-for-foreigners';
   if (cleanPath.endsWith('/china-esim-internet-guide')) return 'china-esim-internet-guide';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
   if (cleanPath.endsWith('/wechat-pay-for-foreigners')) return 'wechat-pay-for-foreigners';

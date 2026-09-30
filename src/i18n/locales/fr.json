@@ -1374,6 +1374,11 @@
           "nightlife": "Vie nocturne"
         }
       }
+    },
+    "seoPages": {
+      "chinaSimCardForForeigners": {
+        "title": "Carte SIM en Chine pour les étrangers (2026) : acheter et utiliser sans carte d’identité chinoise"
+      }
     }
   }
 }
