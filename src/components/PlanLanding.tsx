@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import TripPlanLead from './home/TripPlanLead';
 
 // Standalone landing page for TikTok / Instagram bio-link traffic.
@@ -6,6 +7,16 @@ import TripPlanLead from './home/TripPlanLead';
 // form in `standalone` mode so submission + itinerary + UTM logic stays in one place.
 export default function PlanLanding() {
   const assetBase = import.meta.env.BASE_URL;
+
+  useEffect(() => {
+    let robots = document.head.querySelector<HTMLMetaElement>('meta[name="robots"]');
+    if (!robots) {
+      robots = document.createElement('meta');
+      robots.name = 'robots';
+      document.head.appendChild(robots);
+    }
+    robots.content = 'noindex, follow';
+  }, []);
 
   return (
     <div className="flex min-h-screen flex-col bg-canvas pb-[env(safe-area-inset-bottom)] font-sans">

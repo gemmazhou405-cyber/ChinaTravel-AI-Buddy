@@ -394,6 +394,122 @@ const legalCopy = {
   },
 };
 
+// Keep conversion links and search-focused supporting content in the same data
+// that renders the visible guide pages. The static build mirrors these additions.
+function applyGuideSearchUpdates() {
+Object.assign(guidePages['china-payment-guide'], {
+  ctaLabel: 'Get my free China itinerary',
+  ctaHref: '/#trip-plan',
+  lastReviewed: 'September 30, 2026',
+  lastModified: '2026-09-30',
+  isArticle: true,
+});
+guidePages['china-payment-guide'].sections.push(
+  {
+    title: 'Prepare a payment backup before arrival',
+    items: [
+      'Install and verify payment apps while you can still receive messages on your usual phone number. Card linking, identity checks, issuer approval, and merchant acceptance can vary, so a successful setup is not guaranteed.',
+      'Carry a physical Visa or Mastercard and a modest amount of RMB cash. Hotels, larger malls, and transport counters may accept cards, while smaller merchants often prefer a wallet QR code or cash.',
+      'Save a payment-failure phrase in Chinese and avoid repeatedly retrying the same declined transaction. Try the other prepared wallet, ask whether cash is accepted, or contact your card issuer through a trusted channel.',
+      'Check the fee, exchange rate, refund route, and any limit shown by the wallet or card issuer before confirming a large purchase. Payment rules and provider limits can change after this guide is reviewed.',
+    ],
+  },
+  {
+    title: 'Merchant QR codes and transport payments',
+    items: [
+      'A merchant-presented QR code and a personal transfer QR code can follow different rules. If a foreign card cannot fund a transfer-style payment, ask the merchant for its standard checkout code or use another method.',
+      'Metro and bus payment options are city-specific. Some visitors activate a transport code inside Alipay, while others use a ticket machine, staffed counter, or local transit app. Keep a backup for the first ride.',
+      'For DiDi, trains, hotels, and attractions, the payment method shown in one app may differ from what is accepted at an on-site counter. Read the checkout screen and preserve the booking receipt until the service is complete.',
+    ],
+  },
+);
+
+Object.assign(guidePages['china-travel-checklist'], {
+  ctaLabel: 'Get my free China itinerary',
+  ctaHref: '/#trip-plan',
+  lastReviewed: 'September 30, 2026',
+  lastModified: '2026-09-30',
+  isArticle: true,
+});
+guidePages['china-travel-checklist'].sections.push(
+  {
+    title: 'Connectivity and app setup',
+    items: [
+      'Confirm that your phone is unlocked and supports the SIM, eSIM, or roaming plan you intend to use. Install the provider profile and save activation instructions before departure, but follow the provider timing for activation.',
+      'Sign in to Alipay, WeChat, Amap, DiDi, Trip.com, and Railway 12306 where relevant. Keep access to your usual mobile number and email because identity or security checks may be required.',
+      'Download offline copies of flight details, accommodation addresses, insurance contacts, and the first day route. Do not rely on one app or one connection for information needed immediately after landing.',
+    ],
+  },
+  {
+    title: 'Hotels, arrivals, and transport',
+    items: [
+      'Ask the accommodation to confirm foreign-passport check-in, late-arrival arrangements, the full Chinese address, phone number, and nearest entrance or station exit. Keep the reply with the booking confirmation.',
+      'Check the exact airport terminal or railway station. Large cities have multiple airports and stations whose English names can look similar, so copy the destination directly from the ticket into your map or ride-hailing app.',
+      'For a late arrival, compare the final airport rail or metro departure with a realistic immigration and baggage time. Save the official taxi queue location and a verified hotel transfer or DiDi pickup as alternatives.',
+    ],
+  },
+  {
+    title: 'Money, documents, and safety backups',
+    items: [
+      'Prepare at least two payment methods and some RMB cash. Tell your card issuer about the trip when appropriate, and never share a one-time password or payment PIN with a stranger offering setup help.',
+      'Keep your passport, entry documents, onward booking, accommodation details, and emergency contacts accessible. Store secure copies separately, but do not leave sensitive identity images in a public photo album or shared device.',
+      'Save 110 for police, 120 for ambulance, and 119 for fire. ChinaEase Buddy provides reference information and phrases, not emergency, medical, legal, immigration, or financial services.',
+    ],
+  },
+);
+
+guidePages['3-day-guilin-yangshuo-itinerary'].sections.push({
+  title: 'Foreigner essentials: transport, payment, and hotels',
+  items: [
+    'Guilin has no city Metro, so save each destination in Chinese and use a verified DiDi, the official taxi queue, a public bus, or a pre-arranged hotel transfer. For the Li River, confirm the exact pier rather than entering only “Li River” in the app. In Yangshuo, vehicle access can stop short of pedestrian lanes, so ask the hotel for its recommended drop-off point and a Chinese message for the driver.',
+    'For Xingping or Yangshuo rail connections, check the station printed on the ticket and the onward road transfer. Yangshuo railway station is near Xingping, not central Yangshuo. Build a buffer for luggage, station security, passport checks, and the possibility that a driver calls to clarify a pickup pin. Screenshot the car plate and destination before leaving reliable data coverage.',
+    'Alipay and WeChat Pay are common at many restaurants, convenience shops, ticket desks, and tourism businesses, but a linked foreign card may not work for every merchant QR code. Keep a physical card and RMB cash as backups. For cruises, rafting, shows, and attraction tickets, use the payment channel named by the authorised seller and retain the receipt and cancellation terms.',
+    'For the Guilin night, a staffed hotel near the central lakes, Guilin railway station, or a practical pickup corridor can simplify transfers. In Yangshuo, West Street is convenient but noisy; the Yulong River countryside is quieter but more dependent on road transport. Chinese authorities have said accommodation operators should not refuse overseas guests solely on qualification grounds, yet operational familiarity varies, so confirm foreign-passport check-in directly before paying.',
+    'Ask the hotel to send its Chinese name, full address, phone number, map pin, and vehicle-access instructions. A platform listing alone is not enough when a property uses self-check-in or has limited reception hours. If registration is unclear, choose a staffed property with recent foreign-guest reviews and keep a second refundable option until confirmation arrives.',
+  ],
+});
+guidePages['3-day-guilin-yangshuo-itinerary'].faqs.push({
+  question: 'Do I need reservations for Guilin and Yangshuo attractions as a foreigner?',
+  answer: 'Reserve the Li River cruise and any dated show or regulated activity in advance when availability matters. Passport details may be required. Public viewpoints and neighbourhood walks often do not need a reservation, but rules, weather closures, and capacity controls can change, so check the official operator before travel.',
+});
+
+guidePages['3-day-shenzhen-itinerary'].sections.push({
+  title: 'Foreigner essentials: Metro, DiDi, payment, and hotels',
+  items: [
+    'Shenzhen Metro is usually the simplest way to move between Futian, Luohu, and much of Nanshan. Save both the station name and exit number in Chinese because an attraction can be a long walk from the wrong exit. Ticket machines and staffed counters provide alternatives if a phone-based transport code is unavailable. Keep your passport accessible when a venue or intercity journey requires identity verification.',
+    'Use DiDi for airport arrivals, late evenings, luggage transfers, or places beyond the central Metro network. Enter the exact attraction entrance or hotel lobby instead of a broad district name. At Bao’an Airport, a large mall, or Shenzhen North station, follow the marked ride-hailing pickup zone and send the bay or level to the driver. Verify the licence plate before entering.',
+    'Alipay and WeChat Pay are widely used at shops, restaurants, malls, and many attractions, but foreign-card funding can still fail for a particular merchant or transaction type. Carry a physical bank card and some RMB cash. Confirm whether a timed attraction, museum exhibition, or theme park requires an online reservation before travelling across the city, and keep the booking QR code or passport record available.',
+    'Futian is the easiest general base for central sights and transport; Nanshan suits OCT, Nantou, Shenzhen Bay, and Shekou; Luohu can suit Dongmen and Shenzhen Railway Station. There is not a special “foreign guest licence” that travelers should search for as a booking filter. Choose a staffed hotel that confirms it can register your foreign passport and provides a Chinese address and reception contact.',
+    'Before paying a non-refundable rate, message the property with the passport nationality, arrival time, and number of guests. Ask whether reception will be open and whether every guest must be present for registration. Save the reply offline. For a Hong Kong transfer, also confirm the exact border checkpoint rather than selecting a hotel simply because it is advertised as close to Hong Kong.',
+  ],
+});
+guidePages['3-day-shenzhen-itinerary'].faqs.push({
+  question: 'Do I need reservations for Shenzhen attractions as a foreigner?',
+  answer: 'Some museums, special exhibitions, observation decks, and theme parks use dated or timed reservations and may request passport details. Parks, waterfronts, and neighbourhood walks often do not. Check the official venue shortly before visiting because booking channels, closure days, and passport-entry procedures can change.',
+});
+
+guidePages['china-travel-apps'].related.splice(
+  8,
+  1,
+  { label: 'WeChat Pay without Chinese bank', href: '/china-payment-guide/' },
+  { label: '3-day Shenzhen itinerary', href: '/3-day-shenzhen-itinerary/' },
+  { label: '3-day Guilin and Yangshuo itinerary', href: '/3-day-guilin-yangshuo-itinerary/' },
+);
+guidePages['china-airport-arrival-guide'].related.splice(
+  guidePages['china-airport-arrival-guide'].related.length - 1,
+  0,
+  { label: 'China travel checklist 2026', href: '/china-travel-checklist/' },
+);
+guidePages['3-day-guilin-yangshuo-itinerary'].related.push(
+  { label: 'DiDi in China for foreigners', href: '/didi-in-china-for-foreigners/' },
+);
+guidePages['3-day-shenzhen-itinerary'].related.push(
+  { label: 'DiDi in China for foreigners', href: '/didi-in-china-for-foreigners/' },
+);
+guidePages['3-day-guilin-yangshuo-itinerary'].ctaLabel = 'Get this as custom itinerary';
+guidePages['3-day-shenzhen-itinerary'].ctaLabel = 'Get this as custom itinerary';
+}
+
 const guidePages: Record<GuidePageType, GuidePageData> = {
   guides: {
     path: '/guides/',
@@ -6142,6 +6258,8 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
 };
 
+applyGuideSearchUpdates();
+
 function setMetaContent(selector: string, attr: 'content', value: string) {
   let element = document.head.querySelector<HTMLMetaElement>(selector);
   if (!element) {
@@ -6156,6 +6274,13 @@ function setMetaContent(selector: string, attr: 'content', value: string) {
     document.head.appendChild(element);
   }
   element.setAttribute(attr, value);
+}
+
+function useNoIndexPage(enabled: boolean) {
+  useEffect(() => {
+    if (!enabled) return;
+    setMetaContent('meta[name="robots"]', 'content', 'noindex, follow');
+  }, [enabled]);
 }
 
 function useGuideSeo(page: GuidePageData) {
@@ -6276,6 +6401,7 @@ function PageShell({ title, intro, children }: { title: string; intro: string; c
 }
 
 function PricingPage() {
+  useNoIndexPage(true);
   return (
     <PageShell
       title="Pricing"
@@ -6332,6 +6458,7 @@ function PricingPage() {
 }
 
 function LegalPage({ type }: { type: LegalPageType }) {
+  useNoIndexPage(type === 'about' || type === 'refund');
   const page = legalCopy[type];
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');

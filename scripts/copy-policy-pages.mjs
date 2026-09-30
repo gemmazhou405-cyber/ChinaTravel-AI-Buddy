@@ -3629,7 +3629,107 @@ Object.assign(pageMeta, {
   },
 });
 
+Object.assign(pageMeta['china-payment-guide'], {
+  quickAnswer: 'Foreign visitors can prepare Alipay or WeChat Pay with an eligible international card, but card linking and merchant acceptance can vary. Set up the wallets before departure, carry a physical Visa or Mastercard and some RMB cash, and keep a Chinese payment-failure phrase available.',
+  lastReviewed: 'September 30, 2026',
+  lastModified: '2026-09-30',
+  article: true,
+  contentSections: [
+    { title: 'Prepare before you fly', ordered: true, items: [
+      'Install the standard Alipay and WeChat apps from an official app store. Register while you can receive messages on your usual phone number and follow the identity-verification instructions shown for your account.',
+      'Add an eligible international card if the wallet offers that option. Your card issuer may require a one-time password or other confirmation. Card linking is not guaranteed, so do not travel with only one payment method.',
+      'Tell your bank about the trip when appropriate and check foreign-transaction fees. Never share a payment PIN or one-time security code with a stranger offering to set up the wallet.',
+      'Save a Chinese payment-failure phrase and test that you can open the wallet before departure. A tiny verification transaction does not prove every merchant payment will be accepted.',
+    ] },
+    { title: 'Alipay, WeChat Pay, cards, and cash', items: [
+      'Alipay is a practical first wallet for many travelers because it combines QR payments with transport, ride-hailing, and mini-app services. WeChat Pay can be a useful backup, especially when a merchant displays its QR code. Setup requirements and supported cards can change.',
+      'Foreign cards are more likely to be accepted directly at international hotels, larger malls, and major travel businesses than at a small restaurant or market stall. Look for the card network logo and ask before relying on it.',
+      'RMB cash remains a useful backup. Carry smaller notes for taxis, ticket windows, rural stops, or a temporary app problem, and count change before leaving the counter.',
+      'A merchant checkout QR and a personal transfer QR may follow different rules. If a foreign card cannot fund a transfer-style payment, ask for the merchant payment code or use another prepared method.',
+    ] },
+    { title: 'Transport and attraction payments', items: [
+      'Metro and bus payment options are city-specific. Some visitors can activate a transport code inside Alipay, while others use a ticket machine, staffed counter, physical transit card, or a local app. Keep a backup for the first journey.',
+      'DiDi, Railway 12306, Trip.com, hotels, and attraction platforms may each show different card or wallet choices. Read the checkout screen, confirm the amount and currency, and retain the receipt until the service is complete.',
+      'For a large or timed purchase, review the refund route and cancellation terms before paying. A refund normally returns through the original channel, but processing time and exchange-rate differences depend on the provider and issuer.',
+    ] },
+    { title: 'When a payment fails', ordered: true, items: [
+      'Stop repeated attempts if the same transaction is declined. Confirm the amount and merchant, then try the second wallet, another card, or cash.',
+      'Check whether identity verification, issuer approval, the available balance, a transaction limit, or the merchant QR type is causing the problem.',
+      'Contact the wallet provider or card issuer through an official channel for an account-specific problem. ChinaEase Buddy provides travel information, not financial advice or payment guarantees.',
+      'Keep enough backup money and transport information to return to the hotel even when mobile data or a wallet is temporarily unavailable.',
+    ] },
+  ],
+});
+
+Object.assign(pageMeta['china-travel-checklist'], {
+  quickAnswer: 'Prepare local travel apps, at least two payment methods, reliable mobile data, Chinese hotel addresses, emergency numbers, offline phrases, passport details, and exact airport or railway information before departure. Save important confirmations offline and verify time-sensitive entry rules with official sources.',
+  lastReviewed: 'September 30, 2026',
+  lastModified: '2026-09-30',
+  article: true,
+  contentSections: [
+    { title: 'Apps and connectivity', items: [
+      'Install Alipay, WeChat, Amap, DiDi, Trip.com, and Railway 12306 where they fit your route. Register and complete any identity checks before departure while your usual phone number and email are available.',
+      'Confirm that your phone is unlocked and supports the SIM, eSIM, or roaming plan you intend to use. Save the provider activation instructions offline and follow its timing for installation and activation.',
+      'Download offline copies of flight details, hotel confirmations, Chinese addresses, insurance contacts, and the first-day route. Do not depend on one app or one connection for arrival-critical information.',
+    ] },
+    { title: 'Payment preparation', items: [
+      'Try to link an eligible international card to Alipay or WeChat Pay, but keep a second wallet, a physical card, and some RMB cash because setup and merchant acceptance can vary.',
+      'Check foreign-transaction fees and make sure you can receive security messages from the card issuer. Never share a payment PIN or one-time password with someone offering informal setup help.',
+      'Save a Chinese phrase asking whether Alipay, WeChat Pay, a bank card, or cash is accepted. Preserve receipts for hotel deposits, attraction tickets, and transport bookings.',
+    ] },
+    { title: 'Hotels and arrival details', items: [
+      'Ask the accommodation to confirm foreign-passport check-in, reception hours, late-arrival arrangements, and the full Chinese address before paying a non-refundable rate.',
+      'Save the hotel name, address, phone number, map pin, nearest entrance, and a screenshot of the booking. A driver may need the Chinese address even when the English brand name is familiar.',
+      'Check the exact airport terminal or railway station. Large cities have multiple airports and stations, so copy the destination directly from the ticket into the map or ride-hailing app.',
+      'For a late arrival, compare the last airport rail or metro with a realistic immigration and baggage time. Keep the official taxi queue, a verified hotel transfer, or a DiDi pickup as alternatives.',
+    ] },
+    { title: 'Documents, health, and emergency backups', items: [
+      'Keep your passport, entry documents, onward booking, first accommodation details, and required medication documents accessible. Verify visa and entry requirements with the relevant official authority for your passport and route.',
+      'Prepare clear Chinese food-allergy or dietary phrases when needed. Translation tools may miss ingredients or cross-contact, so travelers with severe allergies should confirm directly with restaurant staff and follow professional medical advice.',
+      'Save 110 for police, 120 for ambulance, and 119 for fire. Add embassy or consulate, insurer, airline, accommodation, and trusted personal contacts to an offline note.',
+      'Use the passport name consistently for flights, trains, and hotels. Leave extra time for station security and staffed passport checks, especially on the first rail journey.',
+    ] },
+    { title: 'The final 24-hour check', ordered: true, items: [
+      'Review weather, official transport notices, attraction reservations, and the opening status of the first planned venue.',
+      'Charge the phone and power bank, download confirmations, and test access to the payment and navigation apps.',
+      'Share the arrival plan with a trusted contact and keep the first hotel address available without unlocking every personal file on the phone.',
+      'Recheck the departure airport, arrival terminal, onward route, hotel reception time, and how you will travel from the airport after baggage collection.',
+    ] },
+  ],
+});
+
+pageMeta['3-day-guilin-yangshuo-itinerary'].contentSections.push({
+  title: 'Foreigner essentials: transport, payment, and hotels',
+  items: [
+    'Guilin has no city Metro, so save each destination in Chinese and use a verified DiDi, the official taxi queue, a public bus, or a pre-arranged hotel transfer. For the Li River, confirm the exact pier rather than entering only “Li River” in the app. In Yangshuo, vehicle access can stop short of pedestrian lanes, so ask the hotel for its recommended drop-off point and a Chinese message for the driver.',
+    'For Xingping or Yangshuo rail connections, check the station printed on the ticket and the onward road transfer. Yangshuo railway station is near Xingping, not central Yangshuo. Build a buffer for luggage, station security, passport checks, and a possible driver call about the pickup pin. Screenshot the car plate and destination before leaving reliable data coverage.',
+    'Alipay and WeChat Pay are common at many restaurants, shops, ticket desks, and tourism businesses, but a linked foreign card may not work for every merchant QR code. Keep a physical card and RMB cash as backups. For cruises, rafting, shows, and attraction tickets, use the channel named by the authorised seller and retain the receipt and cancellation terms.',
+    'For the Guilin night, a staffed hotel near the central lakes, Guilin railway station, or a practical pickup corridor can simplify transfers. In Yangshuo, West Street is convenient but noisy; the Yulong River countryside is quieter but more dependent on road transport. Confirm foreign-passport check-in directly before paying because operational familiarity varies by property.',
+    'Ask the hotel for its Chinese name, full address, phone number, map pin, and vehicle-access instructions. A platform listing alone is not enough when a property uses self-check-in or limited reception hours. If registration is unclear, choose a staffed property with recent foreign-guest reviews and keep a refundable alternative until confirmation arrives.',
+  ],
+});
+pageMeta['3-day-guilin-yangshuo-itinerary'].faqs.push([
+  'Do I need reservations for Guilin and Yangshuo attractions as a foreigner?',
+  'Reserve the Li River cruise and any dated show or regulated activity in advance when availability matters. Passport details may be required. Public viewpoints and neighbourhood walks often do not need a reservation, but rules, weather closures, and capacity controls can change, so check the official operator before travel.',
+]);
+
+pageMeta['3-day-shenzhen-itinerary'].contentSections.push({
+  title: 'Foreigner essentials: Metro, DiDi, payment, and hotels',
+  items: [
+    'Shenzhen Metro is usually the simplest way to move between Futian, Luohu, and much of Nanshan. Save both the station name and exit number in Chinese because an attraction can be a long walk from the wrong exit. Ticket machines and staffed counters provide alternatives if a phone-based transport code is unavailable. Keep your passport accessible when identity verification is required.',
+    'Use DiDi for airport arrivals, late evenings, luggage transfers, or places beyond the central Metro network. Enter the exact attraction entrance or hotel lobby instead of a broad district. At Bao’an Airport, a large mall, or Shenzhen North station, follow the marked ride-hailing pickup zone and send the bay or level to the driver. Verify the licence plate before entering.',
+    'Alipay and WeChat Pay are widely used at shops, restaurants, malls, and many attractions, but foreign-card funding can still fail for a particular merchant or transaction type. Carry a physical bank card and some RMB cash. Confirm whether a timed attraction, exhibition, or theme park requires an online reservation before crossing the city, and keep the booking QR code available.',
+    'Futian is the easiest general base for central sights and transport; Nanshan suits OCT, Nantou, Shenzhen Bay, and Shekou; Luohu can suit Dongmen and Shenzhen Railway Station. There is not a special “foreign guest licence” travelers need as a booking filter. Choose a staffed hotel that confirms foreign-passport registration and supplies a Chinese address and reception contact.',
+    'Before paying a non-refundable rate, message the property with the passport nationality, arrival time, and number of guests. Ask whether reception will be open and whether every guest must be present for registration. Save the reply offline. For a Hong Kong transfer, confirm the exact border checkpoint rather than selecting a hotel only because it is advertised as close to Hong Kong.',
+  ],
+});
+pageMeta['3-day-shenzhen-itinerary'].faqs.push([
+  'Do I need reservations for Shenzhen attractions as a foreigner?',
+  'Some museums, special exhibitions, observation decks, and theme parks use dated or timed reservations and may request passport details. Parks, waterfronts, and neighbourhood walks often do not. Check the official venue shortly before visiting because booking channels, closure days, and passport-entry procedures can change.',
+]);
+
 const pages = Object.keys(pageMeta);
+const noindexPages = new Set(['about', 'plan', 'pricing', 'refund']);
 
 function pagePath(page) {
   return `/${page}/`;
@@ -3682,9 +3782,9 @@ const staticCtas = {
   '3-day-xian-itinerary': ['Get my personalised Xi\'an itinerary', '/#trip-plan'],
   '3-day-chongqing-itinerary': ['Get my personalised Chongqing itinerary', '/#trip-plan'],
   '3-day-chengdu-itinerary': ['Get my personalised Chengdu itinerary', '/#trip-plan'],
-  '3-day-guilin-yangshuo-itinerary': ['Get my personalised Guilin and Yangshuo itinerary', '/#trip-plan'],
+  '3-day-guilin-yangshuo-itinerary': ['Get this as custom itinerary', '/#trip-plan'],
   '3-day-zhangjiajie-itinerary': ['Get my personalised Zhangjiajie itinerary', '/#trip-plan'],
-  '3-day-shenzhen-itinerary': ['Get my personalised Shenzhen itinerary', '/#trip-plan'],
+  '3-day-shenzhen-itinerary': ['Get this as custom itinerary', '/#trip-plan'],
   '3-day-guangzhou-itinerary': ['Get my personalised Guangzhou itinerary', '/#trip-plan'],
   '3-day-hangzhou-itinerary': ['Get my personalised Hangzhou itinerary', '/#trip-plan'],
   '3-day-suzhou-itinerary': ['Get my personalised Suzhou itinerary', '/#trip-plan'],
@@ -3700,8 +3800,8 @@ const staticCtas = {
   'china-esim-internet-guide': ['Get my free China itinerary', '/#trip-plan'],
   'alipay-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
   'wechat-pay-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
-  'china-payment-guide': ['Open payment phrases', '/?journey=china&tool=pay'],
-  'china-travel-checklist': ['View the trip checklist', '/?journey=before&tool=checklist'],
+  'china-payment-guide': ['Get my free China itinerary', '/#trip-plan'],
+  'china-travel-checklist': ['Get my free China itinerary', '/#trip-plan'],
   'china-emergency-numbers': ['View emergency help', '/?journey=emergency'],
   'china-visa-free-guide-2026': ["Ask Buddy if you're visa-free", '/'],
   'how-to-pay-in-china-as-foreigner': ['Build my China payment checklist', '/'],
@@ -3836,7 +3936,9 @@ const pageRelatedLinks = {
     ['China train travel guide', '/china-train-travel-guide/'],
     ['China eSIM & internet guide', '/china-esim-internet-guide/'],
     ['Alipay for foreigners', '/alipay-for-foreigners/'],
-    ['China payment guide', '/china-payment-guide/'],
+    ['WeChat Pay without Chinese bank', '/china-payment-guide/'],
+    ['3-day Shenzhen itinerary', '/3-day-shenzhen-itinerary/'],
+    ['3-day Guilin and Yangshuo itinerary', '/3-day-guilin-yangshuo-itinerary/'],
     ['How to order food in China', '/china-food-ordering-guide/'],
     ['Essential Chinese travel phrases', '/chinese-travel-phrases/'],
     ['China travel safety guide', '/china-travel-safety-guide/'],
@@ -4027,13 +4129,13 @@ const pageRelatedLinks = {
   ],
   '3-day-guilin-yangshuo-itinerary': [
     ['3-day Dali itinerary', '/3-day-dali-itinerary/'],
-    ['14-day China itinerary', '/14-day-china-itinerary/'], ['10-day China itinerary', '/10-day-china-itinerary/'], ['3-day Chengdu itinerary', '/3-day-chengdu-itinerary/'], ['3-day Chongqing itinerary', '/3-day-chongqing-itinerary/'], ['China train travel guide', '/china-train-travel-guide/'], ['China hotels for foreigners', '/china-hotels-for-foreigners/'], ['Apps to download before China', '/china-travel-apps/'], ['Best time to visit China', '/best-time-to-visit-china/'], ['First trip to China', '/first-trip-to-china/'], ['Get a personalised Guilin and Yangshuo itinerary', '/#trip-plan'],
+    ['14-day China itinerary', '/14-day-china-itinerary/'], ['10-day China itinerary', '/10-day-china-itinerary/'], ['3-day Chengdu itinerary', '/3-day-chengdu-itinerary/'], ['3-day Chongqing itinerary', '/3-day-chongqing-itinerary/'], ['China train travel guide', '/china-train-travel-guide/'], ['DiDi in China for foreigners', '/didi-in-china-for-foreigners/'], ['China hotels for foreigners', '/china-hotels-for-foreigners/'], ['Apps to download before China', '/china-travel-apps/'], ['Best time to visit China', '/best-time-to-visit-china/'], ['First trip to China', '/first-trip-to-china/'], ['Get this as custom itinerary', '/#trip-plan'],
   ],
   '3-day-zhangjiajie-itinerary': [
     ['3-day Guilin and Yangshuo itinerary', '/3-day-guilin-yangshuo-itinerary/'], ['3-day Chengdu itinerary', '/3-day-chengdu-itinerary/'], ['14-day China itinerary', '/14-day-china-itinerary/'], ['10-day China itinerary', '/10-day-china-itinerary/'], ['China train travel guide', '/china-train-travel-guide/'], ['China hotels for foreigners', '/china-hotels-for-foreigners/'], ['Apps to download before China', '/china-travel-apps/'], ['Best time to visit China', '/best-time-to-visit-china/'], ['First trip to China', '/first-trip-to-china/'], ['Get a personalised Zhangjiajie itinerary', '/#trip-plan'],
   ],
   '3-day-shenzhen-itinerary': [
-    ['3-day Guilin and Yangshuo itinerary', '/3-day-guilin-yangshuo-itinerary/'], ['3-day Shanghai itinerary', '/3-day-shanghai-itinerary/'], ['10-day China itinerary', '/10-day-china-itinerary/'], ['14-day China itinerary', '/14-day-china-itinerary/'], ['China airport arrival guide', '/china-airport-arrival-guide/'], ['China metro guide', '/china-metro-guide/'], ['China train travel guide', '/china-train-travel-guide/'], ['How to order food in China', '/china-food-ordering-guide/'], ['China hotels for foreigners', '/china-hotels-for-foreigners/'], ['Apps to download before China', '/china-travel-apps/'], ['First trip to China', '/first-trip-to-china/'], ['Get a personalised Shenzhen itinerary', '/#trip-plan'],
+    ['3-day Guilin and Yangshuo itinerary', '/3-day-guilin-yangshuo-itinerary/'], ['3-day Shanghai itinerary', '/3-day-shanghai-itinerary/'], ['10-day China itinerary', '/10-day-china-itinerary/'], ['14-day China itinerary', '/14-day-china-itinerary/'], ['China airport arrival guide', '/china-airport-arrival-guide/'], ['China metro guide', '/china-metro-guide/'], ['China train travel guide', '/china-train-travel-guide/'], ['How to order food in China', '/china-food-ordering-guide/'], ['DiDi in China for foreigners', '/didi-in-china-for-foreigners/'], ['China hotels for foreigners', '/china-hotels-for-foreigners/'], ['Apps to download before China', '/china-travel-apps/'], ['First trip to China', '/first-trip-to-china/'], ['Get this as custom itinerary', '/#trip-plan'],
   ],
   '3-day-guangzhou-itinerary': [
     ['3-day Shenzhen itinerary', '/3-day-shenzhen-itinerary/'], ['3-day Guilin and Yangshuo itinerary', '/3-day-guilin-yangshuo-itinerary/'], ['10-day China itinerary', '/10-day-china-itinerary/'], ['14-day China itinerary', '/14-day-china-itinerary/'], ['China airport arrival guide', '/china-airport-arrival-guide/'], ['China metro guide', '/china-metro-guide/'], ['China train travel guide', '/china-train-travel-guide/'], ['How to order food in China', '/china-food-ordering-guide/'], ['China hotels for foreigners', '/china-hotels-for-foreigners/'], ['Best time to visit China', '/best-time-to-visit-china/'], ['First trip to China', '/first-trip-to-china/'], ['Get a personalised Guangzhou itinerary', '/#trip-plan'],
@@ -4139,6 +4241,7 @@ const pageRelatedLinks = {
     ['China metro guide', '/china-metro-guide/'],
     ['DiDi in China for foreigners', '/didi-in-china-for-foreigners/'],
     ['China travel apps', '/china-travel-apps/'],
+    ['China travel checklist 2026', '/china-travel-checklist/'],
     ['Get a free China itinerary', '/#trip-plan'],
   ],
   'china-hotels-for-foreigners': [
@@ -4418,6 +4521,14 @@ function withPageMeta(html, page, meta) {
     .replace(/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${escapeAttr(meta.title)}" />`)
     .replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${escapeAttr(meta.description)}" />`);
 
+  if (noindexPages.has(page)) {
+    if (/<meta name="robots"[^>]*>/i.test(next)) {
+      next = next.replace(/<meta name="robots"[^>]*>/i, '<meta name="robots" content="noindex, follow" />');
+    } else {
+      next = next.replace('</head>', '    <meta name="robots" content="noindex, follow" />\n  </head>');
+    }
+  }
+
   const schema = schemaFor(page, meta);
   if (schema) {
     next = next.replace('</head>', `    ${schema}\n  </head>`);
@@ -4439,7 +4550,7 @@ await Promise.all(
   }),
 );
 
-const sitemapPages = [''].concat(pages);
+const sitemapPages = [''].concat(pages.filter((page) => !noindexPages.has(page)));
 const homepageLastmod = '2026-09-29';
 const defaultLastmod = '2026-09-26';
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
