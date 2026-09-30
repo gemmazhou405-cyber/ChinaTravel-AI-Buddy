@@ -63,10 +63,21 @@ async function reserveFreePlan(env, { emailHash, ipHash, requestId }) {
   const snapshots = await Promise.all(paths.map((path) => getDocSnapshot(env, path)));
   const now = Date.now();
 
+  const priorLeadIds = [...new Set(snapshots
+    .map((snapshot) => snapshot?.data)
+    .filter((claim) => claim?.status === 'used' && claim.requestId)
+    .map((claim) => claim.requestId))];
+  const priorLeads = new Map(await Promise.all(priorLeadIds.map(async (priorRequestId) => [
+    priorRequestId,
+    await getDoc(env, `tripLeads/${priorRequestId}`).catch(() => null),
+  ])));
+
   for (const [index, path] of paths.entries()) {
     const claim = snapshots[index]?.data;
     const pendingIsFresh = claim?.status === 'pending' && now - (claim.createdAt || 0) < CLAIM_STALE_MS;
-    if (claim?.status === 'used' || pendingIsFresh) {
+    const priorDeliveryFailed = claim?.status === 'used'
+      && priorLeads.get(claim.requestId)?.confirmationEmailStatus === 'failed';
+    if ((claim?.status === 'used' && !priorDeliveryFailed) || pendingIsFresh) {
       return { ok: false, reason: path.includes('/email_') ? 'email' : 'ip' };
     }
   }
@@ -321,8 +332,6 @@ export async function onRequestPost({ request, env }) {
     console.error('[leads/trip] plan_status_update_failed', String(patchErr?.message).slice(0, 80));
   }
 
-  await finishFreePlanClaim(env, freePlanClaimPaths, planResult.ok ? 'used' : 'failed');
-
   // Send notifications in parallel — each result is recorded independently.
   const [adminSettled, confirmSettled, whatsappSettled] = await Promise.allSettled([
     sendTripLeadNotification(env, lead),
@@ -378,6 +387,10 @@ export async function onRequestPost({ request, env }) {
     console.error('[leads/trip] confirm_status_update_failed', String(patchErr?.message).slice(0, 60));
   }
 
+  // A free itinerary is consumed only when the customer email provider accepts
+  // the message. Failed delivery attempts remain retryable.
+  await finishFreePlanClaim(env, freePlanClaimPaths, confirmResult.ok ? 'used' : 'failed');
+
   try {
     if (whatsappResult.ok) {
       await patchDoc(env, `tripLeads/${docId}`, { whatsappReminderStatus: 'sent', whatsappReminderSentAt: Date.now() });
@@ -402,6 +415,16 @@ export async function onRequestPost({ request, env }) {
         })),
       }
     : null;
+
+  if (!confirmResult.ok) {
+    return errorResponse(
+      request,
+      env,
+      503,
+      'email_delivery_failed',
+      'We could not email your itinerary. Please try again shortly.',
+    );
+  }
 
   return withCors(jsonResponse({
     status: 'received',

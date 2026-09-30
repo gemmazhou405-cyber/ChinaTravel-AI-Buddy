@@ -1351,6 +1351,7 @@
         "adjustLater": "Du kannst Details in den nächsten Schritten anpassen",
         "successTitle": "Deine Anfrage ist unterwegs",
         "freePlanUsed": "Für diese E-Mail-Adresse oder Verbindung wurde bereits eine kostenlose Reiseroute angefordert. Bitte prüfe deinen Posteingang.",
+        "emailDeliveryFailed": "Wir konnten deine Reiseroute nicht per E-Mail senden. Bitte versuche es gleich noch einmal.",
         "cities": {
           "beijing": "Peking",
           "shanghai": "Shanghai",

@@ -137,6 +137,8 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
         ? 'lead.errorTooMany'
         : result.status === 'free_plan_used'
           ? 'lead.progressive.freePlanUsed'
+          : result.status === 'email_delivery_failed'
+            ? 'lead.progressive.emailDeliveryFailed'
           : 'lead.errorGeneric';
       setError(t(errorKey));
     } catch {
