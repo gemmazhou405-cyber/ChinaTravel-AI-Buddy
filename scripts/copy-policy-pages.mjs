@@ -3712,6 +3712,25 @@ pageMeta['3-day-guilin-yangshuo-itinerary'].faqs.push([
   'Do I need reservations for Guilin and Yangshuo attractions as a foreigner?',
   'Reserve the Li River cruise and any dated show or regulated activity in advance when availability matters. Passport details may be required. Public viewpoints and neighbourhood walks often do not need a reservation, but rules, weather closures, and capacity controls can change, so check the official operator before travel.',
 ]);
+pageMeta['3-day-guilin-yangshuo-itinerary'].faqs.unshift(
+  [
+    'Can foreign visitors pay with Alipay or WeChat Pay in Guilin and Yangshuo?',
+    'Many foreign visitors can use Alipay or WeChat Pay after linking an eligible international card, but acceptance and card funding can vary. Keep a physical card and some RMB cash for small restaurants, countryside stops, or ticket sellers, and retain receipts for cruises, shows, and transport bookings.',
+  ],
+  [
+    'How can I use DiDi in Guilin and Yangshuo without speaking Chinese?',
+    'Guilin has no city Metro, so save every destination and the exact Li River pier in Chinese before booking DiDi. In Yangshuo, ask your hotel for the correct vehicle-access point because pedestrian lanes may block door-to-door pickup. Verify the licence plate and keep an official taxi backup.',
+  ],
+  [
+    'What should foreign visitors confirm with hotels in Guilin or Yangshuo?',
+    'Travelers do not need a special foreign-guest licence filter. Choose staffed accommodation that confirms foreign-passport registration and late-arrival arrangements. Bring the original passport used for booking, and save the Chinese hotel name, address, phone number, vehicle-access instructions, and written check-in confirmation offline before arrival.',
+  ],
+);
+Object.assign(pageMeta['3-day-guilin-yangshuo-itinerary'], {
+  featuredFaqCount: 3,
+  lastReviewed: 'September 30, 2026',
+  lastModified: '2026-09-30',
+});
 
 pageMeta['3-day-shenzhen-itinerary'].contentSections.push({
   title: 'Foreigner essentials: Metro, DiDi, payment, and hotels',
@@ -3727,6 +3746,25 @@ pageMeta['3-day-shenzhen-itinerary'].faqs.push([
   'Do I need reservations for Shenzhen attractions as a foreigner?',
   'Some museums, special exhibitions, observation decks, and theme parks use dated or timed reservations and may request passport details. Parks, waterfronts, and neighbourhood walks often do not. Check the official venue shortly before visiting because booking channels, closure days, and passport-entry procedures can change.',
 ]);
+pageMeta['3-day-shenzhen-itinerary'].faqs.unshift(
+  [
+    'Can foreign visitors pay with Alipay or WeChat Pay in Shenzhen?',
+    'Many foreign visitors can use Alipay or WeChat Pay after linking an eligible international card, but acceptance and card funding can vary by merchant. Carry a physical card and some RMB cash, keep payment receipts, and confirm timed-attraction checkout requirements before travelling across the city.',
+  ],
+  [
+    'How can I use DiDi in Shenzhen without speaking Chinese?',
+    'Save the destination, entrance, and hotel address in Chinese, then place the pickup pin at the marked ride-hailing zone. At the airport, malls, and Shenzhen North station, send the bay or level to the driver and verify the licence plate before entering. Keep an official taxi backup.',
+  ],
+  [
+    'What should foreign visitors confirm with Shenzhen hotels?',
+    'Travelers do not need to search for a special foreign-guest licence as a booking filter. Choose a staffed hotel that confirms foreign-passport registration, reception hours, and the Chinese address before payment. Bring the physical passport used for booking and save the hotel\'s written confirmation offline.',
+  ],
+);
+Object.assign(pageMeta['3-day-shenzhen-itinerary'], {
+  featuredFaqCount: 3,
+  lastReviewed: 'September 30, 2026',
+  lastModified: '2026-09-30',
+});
 
 const pages = Object.keys(pageMeta);
 const noindexPages = new Set(['about', 'plan', 'pricing', 'refund']);
@@ -4349,6 +4387,15 @@ function staticPageContent(page, meta) {
     ['What is this page about?', meta.description],
     ['How can ChinaEase Buddy help?', 'Use the free toolkit to find practical China travel help for apps, payments, food, transport, hotels, and emergency situations.'],
   ];
+  const featuredFaqCount = meta.featuredFaqCount || 0;
+  const featuredFaqItems = faqItems.slice(0, featuredFaqCount);
+  const remainingFaqItems = featuredFaqCount > 0 ? faqItems.slice(featuredFaqCount) : faqItems;
+  const renderFaqItems = (items) => items.map(([question, answer]) => `
+          <article style="margin: 0 0 14px; padding: 18px; border: 1px solid rgba(21, 94, 99, 0.12); border-radius: 18px; background: rgba(248, 243, 234, 0.72);">
+            <h3 style="margin: 0 0 8px; font-size: 1rem;">${escapeHtml(question)}</h3>
+            <p style="margin: 0; color: #536365; line-height: 1.7;">${escapeHtml(answer)}</p>
+          </article>
+        `).join('');
 
   return `
     <main id="static-seo-content" style="max-width: 960px; margin: 0 auto; padding: 48px 20px; color: #122022; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
@@ -4399,16 +4446,19 @@ function staticPageContent(page, meta) {
           </ul>
         </section>
       `}
+      ${featuredFaqItems.length > 0 ? `
+        <section aria-labelledby="faq" style="margin: 0 0 24px;">
+          <h2 id="faq" style="margin: 0 0 12px; font-size: 1.25rem;">FAQ</h2>
+          ${renderFaqItems(featuredFaqItems)}
+        </section>
+      ` : ''}
       <p style="margin: 0 0 28px;"><a href="${escapeAttr(ctaHref)}" style="display: inline-flex; border-radius: 999px; background: #155e63; color: #fffdf8; padding: 12px 18px; font-weight: 700; text-decoration: none;">${escapeHtml(ctaLabel)}</a></p>
-      <section aria-labelledby="faq" style="margin: 0 0 24px;">
-        <h2 id="faq" style="margin: 0 0 12px; font-size: 1.25rem;">FAQ</h2>
-        ${faqItems.map(([question, answer]) => `
-          <article style="margin: 0 0 14px; padding: 18px; border: 1px solid rgba(21, 94, 99, 0.12); border-radius: 18px; background: rgba(248, 243, 234, 0.72);">
-            <h3 style="margin: 0 0 8px; font-size: 1rem;">${escapeHtml(question)}</h3>
-            <p style="margin: 0; color: #536365; line-height: 1.7;">${escapeHtml(answer)}</p>
-          </article>
-        `).join('')}
-      </section>
+      ${remainingFaqItems.length > 0 ? `
+        <section aria-labelledby="${featuredFaqItems.length > 0 ? 'more-faq' : 'faq'}" style="margin: 0 0 24px;">
+          <h2 id="${featuredFaqItems.length > 0 ? 'more-faq' : 'faq'}" style="margin: 0 0 12px; font-size: 1.25rem;">FAQ</h2>
+          ${renderFaqItems(remainingFaqItems)}
+        </section>
+      ` : ''}
       <nav aria-label="Related China travel guides" style="margin: 0 0 24px;">
         <h2 style="margin: 0 0 12px; font-size: 1.25rem;">Related guides</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 10px;">

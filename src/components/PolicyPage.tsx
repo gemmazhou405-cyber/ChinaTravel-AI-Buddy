@@ -99,6 +99,7 @@ interface GuidePageData {
   lastReviewed?: string;
   lastModified?: string;
   isArticle?: boolean;
+  featuredFaqCount?: number;
   buddyPrompt?: string;
   midCtaLabel?: string;
   reviewed?: string;
@@ -472,6 +473,25 @@ guidePages['3-day-guilin-yangshuo-itinerary'].faqs.push({
   question: 'Do I need reservations for Guilin and Yangshuo attractions as a foreigner?',
   answer: 'Reserve the Li River cruise and any dated show or regulated activity in advance when availability matters. Passport details may be required. Public viewpoints and neighbourhood walks often do not need a reservation, but rules, weather closures, and capacity controls can change, so check the official operator before travel.',
 });
+guidePages['3-day-guilin-yangshuo-itinerary'].faqs.unshift(
+  {
+    question: 'Can foreign visitors pay with Alipay or WeChat Pay in Guilin and Yangshuo?',
+    answer: 'Many foreign visitors can use Alipay or WeChat Pay after linking an eligible international card, but acceptance and card funding can vary. Keep a physical card and some RMB cash for small restaurants, countryside stops, or ticket sellers, and retain receipts for cruises, shows, and transport bookings.',
+  },
+  {
+    question: 'How can I use DiDi in Guilin and Yangshuo without speaking Chinese?',
+    answer: 'Guilin has no city Metro, so save every destination and the exact Li River pier in Chinese before booking DiDi. In Yangshuo, ask your hotel for the correct vehicle-access point because pedestrian lanes may block door-to-door pickup. Verify the licence plate and keep an official taxi backup.',
+  },
+  {
+    question: 'What should foreign visitors confirm with hotels in Guilin or Yangshuo?',
+    answer: 'Travelers do not need a special foreign-guest licence filter. Choose staffed accommodation that confirms foreign-passport registration and late-arrival arrangements. Bring the original passport used for booking, and save the Chinese hotel name, address, phone number, vehicle-access instructions, and written check-in confirmation offline before arrival.',
+  },
+);
+Object.assign(guidePages['3-day-guilin-yangshuo-itinerary'], {
+  featuredFaqCount: 3,
+  lastReviewed: 'September 30, 2026',
+  lastModified: '2026-09-30',
+});
 
 guidePages['3-day-shenzhen-itinerary'].sections.push({
   title: 'Foreigner essentials: Metro, DiDi, payment, and hotels',
@@ -486,6 +506,25 @@ guidePages['3-day-shenzhen-itinerary'].sections.push({
 guidePages['3-day-shenzhen-itinerary'].faqs.push({
   question: 'Do I need reservations for Shenzhen attractions as a foreigner?',
   answer: 'Some museums, special exhibitions, observation decks, and theme parks use dated or timed reservations and may request passport details. Parks, waterfronts, and neighbourhood walks often do not. Check the official venue shortly before visiting because booking channels, closure days, and passport-entry procedures can change.',
+});
+guidePages['3-day-shenzhen-itinerary'].faqs.unshift(
+  {
+    question: 'Can foreign visitors pay with Alipay or WeChat Pay in Shenzhen?',
+    answer: 'Many foreign visitors can use Alipay or WeChat Pay after linking an eligible international card, but acceptance and card funding can vary by merchant. Carry a physical card and some RMB cash, keep payment receipts, and confirm timed-attraction checkout requirements before travelling across the city.',
+  },
+  {
+    question: 'How can I use DiDi in Shenzhen without speaking Chinese?',
+    answer: 'Save the destination, entrance, and hotel address in Chinese, then place the pickup pin at the marked ride-hailing zone. At the airport, malls, and Shenzhen North station, send the bay or level to the driver and verify the licence plate before entering. Keep an official taxi backup.',
+  },
+  {
+    question: 'What should foreign visitors confirm with Shenzhen hotels?',
+    answer: 'Travelers do not need to search for a special foreign-guest licence as a booking filter. Choose a staffed hotel that confirms foreign-passport registration, reception hours, and the Chinese address before payment. Bring the physical passport used for booking and save the hotel\'s written confirmation offline.',
+  },
+);
+Object.assign(guidePages['3-day-shenzhen-itinerary'], {
+  featuredFaqCount: 3,
+  lastReviewed: 'September 30, 2026',
+  lastModified: '2026-09-30',
 });
 
 guidePages['china-travel-apps'].related.splice(
@@ -6513,7 +6552,19 @@ function LegalPage({ type }: { type: LegalPageType }) {
 
 function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?: string | null; onAskBuddy?: (prefill?: string) => void }) {
   const page = guidePages[type];
+  const featuredFaqs = page.featuredFaqCount ? page.faqs.slice(0, page.featuredFaqCount) : [];
+  const remainingFaqs = page.featuredFaqCount ? page.faqs.slice(page.featuredFaqCount) : page.faqs;
   useGuideSeo(page);
+
+  const handlePrimaryCta = () => {
+    void trackEvent('cta_clicked', {
+      ctaName: page.ctaLabel,
+      destination: onAskBuddy && page.buddyPrompt ? 'buddy' : page.ctaHref,
+      tool: type,
+    }, userId);
+    if (onAskBuddy && page.buddyPrompt) onAskBuddy(page.buddyPrompt);
+    else window.location.href = page.ctaHref;
+  };
 
   useEffect(() => {
     initAttribution();
@@ -6535,21 +6586,15 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
           <p className="text-xs font-semibold uppercase tracking-wide text-[#155e63]">Quick answer</p>
           <p className="mt-2 text-sm leading-relaxed text-gray-700 md:text-base">{page.quickAnswer}</p>
           <p className="mt-3 text-xs font-semibold text-gray-500">Last reviewed: {page.reviewed ?? page.lastReviewed ?? 'June 12, 2026'}</p>
-          <button
-            type="button"
-            onClick={() => {
-              void trackEvent('cta_clicked', {
-                ctaName: page.ctaLabel,
-                destination: onAskBuddy && page.buddyPrompt ? 'buddy' : page.ctaHref,
-                tool: type,
-              }, userId);
-              if (onAskBuddy && page.buddyPrompt) onAskBuddy(page.buddyPrompt);
-              else window.location.href = page.ctaHref;
-            }}
-            className="mt-4 inline-flex rounded-full bg-[#155e63] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#0e4a4e]"
-          >
-            {page.ctaLabel}
-          </button>
+          {featuredFaqs.length === 0 && (
+            <button
+              type="button"
+              onClick={handlePrimaryCta}
+              className="mt-4 inline-flex rounded-full bg-[#155e63] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#0e4a4e]"
+            >
+              {page.ctaLabel}
+            </button>
+          )}
         </section>
 
         <nav className="rounded-2xl border border-gray-100 bg-white/70 p-4">
@@ -6631,10 +6676,39 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
           </section>
         )}
 
-        <section id="faq" className="rounded-2xl border border-gray-100 bg-white/80 p-4 shadow-sm md:p-5">
+        {featuredFaqs.length > 0 && (
+          <section id="faq" className="rounded-2xl border border-gray-100 bg-white/80 p-4 shadow-sm md:p-5">
+            <h2 className="text-xl font-bold text-gray-950">FAQ</h2>
+            <div className="mt-4 divide-y divide-gray-100">
+              {featuredFaqs.map((faq) => (
+                <details key={faq.question} className="group py-3 first:pt-0 last:pb-0">
+                  <summary className="cursor-pointer list-none text-sm font-semibold text-gray-950">
+                    {faq.question}
+                    <span className="float-right text-[#155e63] group-open:rotate-45">+</span>
+                  </summary>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600">{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {featuredFaqs.length > 0 && (
+          <section className="border-y border-[#155e63]/15 py-6 text-center">
+            <button
+              type="button"
+              onClick={handlePrimaryCta}
+              className="inline-flex rounded-lg bg-[#155e63] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#0e4a4e]"
+            >
+              {page.ctaLabel}
+            </button>
+          </section>
+        )}
+
+        {remainingFaqs.length > 0 && <section id={featuredFaqs.length > 0 ? 'more-faq' : 'faq'} className="rounded-2xl border border-gray-100 bg-white/80 p-4 shadow-sm md:p-5">
           <h2 className="text-xl font-bold text-gray-950">FAQ</h2>
           <div className="mt-4 divide-y divide-gray-100">
-            {page.faqs.map((faq) => (
+            {remainingFaqs.map((faq) => (
               <details key={faq.question} className="group py-3 first:pt-0 last:pb-0">
                 <summary className="cursor-pointer list-none text-sm font-semibold text-gray-950">
                   {faq.question}
@@ -6644,7 +6718,7 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
               </details>
             ))}
           </div>
-        </section>
+        </section>}
 
         {page.buddyPrompt && (
           <section className="border-y border-[#155e63]/15 py-6 text-center">
