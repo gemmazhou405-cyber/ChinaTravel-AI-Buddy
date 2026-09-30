@@ -381,6 +381,7 @@ export async function onRequestPost({ request, env }) {
         errorCode: confirmResult.errorCode,
         providerStatus: confirmResult.providerStatus ?? null,
         providerErrorType: confirmResult.providerErrorType ?? null,
+        providerMessage: confirmResult.providerMessage ?? null,
         rid: docId.slice(0, 8),
       });
       await patchDoc(env, `tripLeads/${docId}`, {

@@ -206,6 +206,14 @@ function classifyHttpError(status) {
   return 'provider_error';
 }
 
+function safeProviderMessage(value) {
+  if (typeof value !== 'string') return null;
+  return value
+    .replace(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi, '[email]')
+    .replace(/re_[A-Za-z0-9_-]+/g, '[redacted]')
+    .slice(0, 240);
+}
+
 async function sendResendEmail(env, payload, options = {}) {
   const signal =
     typeof AbortSignal.timeout === 'function'
@@ -236,6 +244,7 @@ async function sendResendEmail(env, payload, options = {}) {
         providerErrorType: typeof responseBody?.name === 'string'
           ? responseBody.name.slice(0, 60)
           : 'unknown',
+        providerMessage: safeProviderMessage(responseBody?.message),
       };
     }
     return {
