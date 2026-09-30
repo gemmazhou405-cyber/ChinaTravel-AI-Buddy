@@ -227,8 +227,21 @@ async function sendResendEmail(env, payload, options = {}) {
       body: JSON.stringify(payload),
       signal,
     });
-    if (!res.ok) return { ok: false, errorCode: classifyHttpError(res.status) };
-    return { ok: true };
+    const responseBody = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      return {
+        ok: false,
+        errorCode: classifyHttpError(res.status),
+        providerStatus: res.status,
+        providerErrorType: typeof responseBody?.name === 'string'
+          ? responseBody.name.slice(0, 60)
+          : 'unknown',
+      };
+    }
+    return {
+      ok: true,
+      providerId: typeof responseBody?.id === 'string' ? responseBody.id : null,
+    };
   } catch (err) {
     if (err.name === 'AbortError' || err.name === 'TimeoutError') {
       return { ok: false, errorCode: 'provider_timeout' };

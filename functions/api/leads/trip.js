@@ -377,7 +377,12 @@ export async function onRequestPost({ request, env }) {
         confirmationEmailSentAt: Date.now(),
       });
     } else {
-      console.error('[leads/trip] confirmation_failed', { errorCode: confirmResult.errorCode, rid: docId.slice(0, 8) });
+      console.error('[leads/trip] confirmation_failed', {
+        errorCode: confirmResult.errorCode,
+        providerStatus: confirmResult.providerStatus ?? null,
+        providerErrorType: confirmResult.providerErrorType ?? null,
+        rid: docId.slice(0, 8),
+      });
       await patchDoc(env, `tripLeads/${docId}`, {
         confirmationEmailStatus: 'failed',
         confirmationEmailErrorCode: confirmResult.errorCode,
