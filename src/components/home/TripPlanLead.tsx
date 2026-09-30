@@ -105,6 +105,12 @@ export default function TripPlanLead({ standalone = false }: { standalone?: bool
           </div>
 
           <SamplePreview />
+          <a
+            href="/didi-in-china-for-foreigners/"
+            className="mt-4 inline-flex text-sm font-semibold text-jade underline decoration-jade/30 underline-offset-4 transition hover:decoration-jade"
+          >
+            DiDi without Chinese
+          </a>
         </div>
 
         <div

@@ -1,4 +1,4 @@
-import { FormEvent, useRef, useState } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, CalendarDays, Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { submitTripLead } from '../../lib/tripLead';
@@ -16,6 +16,12 @@ const INTEREST_OPTIONS = [
 type CityId = (typeof CITY_OPTIONS)[number];
 type InterestId = (typeof INTEREST_OPTIONS)[number];
 type TravelerOption = '1' | '2' | '3-4' | 'family';
+
+function trackGa4Event(name: string, params?: Record<string, unknown>) {
+  if (typeof window === 'undefined') return;
+  const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+  gtag?.('event', name, params);
+}
 
 function tripLengthFromDates(startDate: string, endDate: string) {
   if (!startDate || !endDate) return 7;
@@ -46,6 +52,10 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
   const [success, setSuccess] = useState(false);
   const [planPreview, setPlanPreview] = useState<TripPlanPreview | null>(null);
   const formStarted = useRef(false);
+
+  useEffect(() => {
+    if (step === 3) trackGa4Event('form_step3_view', { cities });
+  }, [step, cities]);
 
   const markFormStarted = () => {
     if (formStarted.current || success) return;
@@ -88,7 +98,15 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
       return;
     }
     setError(null);
+    trackGa4Event('form_step1_continue', { cities });
     setStep(2);
+  };
+
+  const continueFromInterests = () => {
+    markFormStarted();
+    setError(null);
+    trackGa4Event('form_step2_continue', { interests });
+    setStep(3);
   };
 
   const handleSubmit = async (event: FormEvent) => {
@@ -129,6 +147,7 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
       if (result.status === 'success') {
         setPlanPreview(result.planPreview);
         setSuccess(true);
+        trackGa4Event('form_submit_success', { cities });
         void trackEvent('lead_submit_success', { trigger: 'homepage_trip_plan', planGenerated: result.planGenerated });
         return;
       }
@@ -294,7 +313,7 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
                     </button>
                   ) : <span />}
                   {step === 1 && <PrimaryButton label={t('lead.progressive.continuePreview')} onClick={continueFromCities} disabled={cities.length === 0} />}
-                  {step === 2 && <PrimaryButton label={t('lead.progressive.continue')} onClick={() => { markFormStarted(); setError(null); setStep(3); }} />}
+                  {step === 2 && <PrimaryButton label={t('lead.progressive.continue')} onClick={continueFromInterests} />}
                   {step === 3 && (
                     <button type="submit" disabled={sending} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#0F4C4A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#0b3d3b] disabled:cursor-wait disabled:opacity-60">
                       {sending ? t('lead.submitting') : t('lead.progressive.submit')}
