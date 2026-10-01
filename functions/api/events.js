@@ -15,6 +15,13 @@ const ALLOWED_EVENTS = new Set([
   'gumroad_click',
   'plan_form_start',
   'plan_form_submit',
+  'guide_cta_click',
+  'trip_form_view',
+  'trip_form_start',
+  'trip_form_submit',
+  'trip_result_day1_view',
+  'email_dispatch_success',
+  'email_dispatch_failure',
 ]);
 
 const ALLOWED_DEVICE_CATEGORIES = new Set(['mobile', 'tablet', 'desktop', 'unknown']);
@@ -159,6 +166,8 @@ export async function onRequestPost({ request, env }) {
   };
   const planTripLength = clampInt(body.planTripLength, 1, 60);
   const planCityCount = clampInt(body.planCityCount, 0, 20);
+  const guidePage = clampStr(body.guidePage, 120);
+  const destination = clampStr(body.destination, 200);
   const deviceCategory = ALLOWED_DEVICE_CATEGORIES.has(body.deviceCategory)
     ? body.deviceCategory
     : 'unknown';
@@ -181,9 +190,13 @@ export async function onRequestPost({ request, env }) {
   if (referrerDomain) doc.referrerDomain = referrerDomain;
   if (landingPath) doc.landingPath = landingPath;
   if (plan && eventName === 'gumroad_click') doc.plan = plan;
-  if (eventName === 'plan_form_submit') {
+  if (eventName === 'plan_form_submit' || eventName === 'trip_form_submit') {
     if (planTripLength !== null) doc.planTripLength = planTripLength;
     if (planCityCount !== null) doc.planCityCount = planCityCount;
+  }
+  if (eventName === 'guide_cta_click') {
+    if (guidePage) doc.guidePage = guidePage;
+    if (destination) doc.destination = destination;
   }
 
   // Firestore write failure is non-fatal — analytics must never break the user experience.

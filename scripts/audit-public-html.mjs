@@ -1,9 +1,10 @@
 const ORIGIN = 'https://chinaeasebuddy.com';
+const REQUEST_ORIGIN = process.env.AUDIT_ORIGIN || ORIGIN;
 
 const pages = [
   {
     path: '/',
-    h1: /planned with local insight|first China trip/i,
+    h1: /AI Travel Assistant.*Works in China/i,
     keywords: ['ChinaEase Buddy', 'Travel Passes', 'itinerary'],
     links: ['/guides/', '/pricing/'],
   },
@@ -34,7 +35,7 @@ const pages = [
   {
     path: '/china-payment-guide/',
     h1: /How to Pay in China as a Foreigner/i,
-    keywords: ['Alipay', 'WeChat Pay', 'foreign card', 'payment failure'],
+    keywords: ['Alipay', 'WeChat Pay', 'foreign card', 'payment fails'],
     links: ['/?journey=china&tool=pay', '/alipay-for-foreigners/', '/wechat-pay-for-foreigners/', '/china-food-ordering-guide/'],
   },
   {
@@ -45,13 +46,13 @@ const pages = [
   },
   {
     path: '/china-airport-arrival-guide/',
-    h1: /China Airport Arrival Guide for First-Time Visitors.*2026/i,
+    h1: /Just Landed in China.*5 Things.*30 Minutes/i,
     keywords: ['arrival card', 'Immigration', 'Baggage', 'Customs', 'eSIM', 'airport transfer'],
     links: ['/#trip-plan', '/china-visa-free-travel-guide/', '/china-hotels-for-foreigners/', '/first-trip-to-china/', '/china-esim-internet-guide/', '/china-payment-guide/', '/china-metro-guide/', '/didi-in-china-for-foreigners/'],
   },
   {
     path: '/china-hotels-for-foreigners/',
-    h1: /China Hotels for Foreigners.*Booking and Check-In Guide.*2026/i,
+    h1: /China Hotels for Foreigners.*Booking and Check-In Guide/i,
     keywords: ['foreign passport', 'foreign-related qualification', 'accommodation registration', 'late arrival', 'deposit', '24 hours'],
     links: ['/#trip-plan', '/china-visa-free-travel-guide/', '/china-airport-arrival-guide/', '/first-trip-to-china/', '/china-payment-guide/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/10-day-china-itinerary/'],
   },
@@ -81,7 +82,7 @@ const pages = [
   },
   {
     path: '/china-travel-apps/',
-    h1: /8 Essential Apps for China Travel.*2026/i,
+    h1: /15 Apps You Must Download Before Landing in China/i,
     keywords: ['Alipay', 'WeChat', 'AMap Global', 'DiDi', 'Trip.com', 'Railway 12306', 'offline translation'],
     links: ['/#trip-plan', '/china-airport-arrival-guide/', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/china-esim-internet-guide/', '/alipay-for-foreigners/', '/china-food-ordering-guide/', '/chinese-travel-phrases/', '/china-travel-safety-guide/', '/china-travel-budget/', '/china-travel-checklist/'],
   },
@@ -99,13 +100,13 @@ const pages = [
   },
   {
     path: '/didi-in-china-for-foreigners/',
-    h1: /DiDi in China as a Foreigner.*2026/i,
+    h1: /How to Use DiDi Without a Chinese Phone Number/i,
     keywords: ['international mobile number', 'English interface', 'licence plate', 'ride-hailing pickup point', 'bilingual', 'lost item'],
     links: ['/#trip-plan', '/china-airport-arrival-guide/', '/first-trip-to-china/', '/china-travel-apps/', '/amap-in-english/', '/china-metro-guide/', '/china-train-travel-guide/', '/10-day-china-itinerary/', '/china-payment-guide/'],
   },
   {
     path: '/china-train-travel-guide/',
-    h1: /China Train Travel Guide for Foreigners.*2026/i,
+    h1: /How to Book China High-Speed Trains Without Chinese ID/i,
     keywords: ['foreign passport', 'Railway 12306', 'Trip.com', 'e-ticket', 'station', 'refund'],
     links: ['/#trip-plan', '/first-trip-to-china/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/china-travel-apps/', '/china-metro-guide/', '/china-esim-internet-guide/'],
   },
@@ -213,7 +214,7 @@ const pages = [
   },
   {
     path: '/china-golden-week-2026-travel-guide/',
-    h1: /China Golden Week 2026.*Travel Guide for Foreign Visitors/i,
+    h1: /China Golden Week 2026 Survival Guide/i,
     keywords: ['October 1', 'October 7', 'Mid-Autumn Festival', '12306', 'hotel', 'National Day'],
     links: ['/#trip-plan', '/best-time-to-visit-china/', '/china-train-travel-guide/', '/china-hotels-for-foreigners/', '/china-travel-budget/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/first-trip-to-china/'],
   },
@@ -225,7 +226,7 @@ const pages = [
   },
   {
     path: '/chengdu-panda-base-guide/',
-    h1: /Chengdu Panda Base Guide for First-Time Visitors.*2026/i,
+    h1: /How to See Baby Pandas Without Waiting 3 Hours/i,
     keywords: ['real-name', 'passport', 'South Gate', 'West Gate', 'sightseeing bus', 'pandas'],
     links: ['/#trip-plan', '/3-day-chengdu-itinerary/', '/14-day-china-itinerary/', '/china-train-travel-guide/', '/china-hotels-for-foreigners/', '/china-golden-week-2026-travel-guide/', '/first-trip-to-china/'],
   },
@@ -256,8 +257,8 @@ const pages = [
   {
     path: '/china-travel-checklist/',
     h1: /China Travel Checklist/i,
-    keywords: ['apps', 'payment setup', 'Hotel address', 'Emergency numbers'],
-    links: ['/?journey=before&tool=checklist', '/china-travel-apps/'],
+    keywords: ['apps', 'payment methods', 'Hotel address', 'Emergency numbers'],
+    links: ['/#trip-plan', '/china-travel-apps/'],
   },
   {
     path: '/china-emergency-numbers/',
@@ -272,10 +273,29 @@ const pages = [
     links: ['/', '/china-travel-apps/'],
   },
   {
+    path: '/tenpaygo-for-tourists/',
+    h1: /TenPayGo for Tourists Visiting China/i,
+    keywords: ['September 24, 2026', 'international bank card', 'Apple Pay', 'WeChat Pay', 'Last reviewed'],
+    links: ['/#trip-plan', '/china-payment-guide/', '/wechat-pay-for-foreigners/', '/alipay-for-foreigners/'],
+  },
+  {
+    path: '/nia-12367-online-accommodation-registration-guide/',
+    h1: /How Foreigners Can Register Accommodation Online in China/i,
+    keywords: ['September 21, 2026', 'within 24 hours', 'NIA 12367', 'Hotel vs non-hotel accommodation'],
+    links: ['/#trip-plan', '/china-hotels-for-foreigners/', '/china-travel-checklist/', '/china-visa-free-checker/'],
+  },
+  {
+    path: '/china-visa-free-checker/',
+    h1: /China Visa-Free Checker/i,
+    keywords: ['ordinary passport', '240-hour visa-free transit', 'Hainan', 'onward destination', 'October 1, 2026'],
+    links: ['/#trip-plan', '/china-240-hour-visa-free-transit-2026/', '/china-visa-free-travel-guide/'],
+  },
+  {
     path: '/pricing/',
     h1: /Pricing|Travel Passes/i,
     keywords: ['Free', 'Trip Pass', 'Group Pass'],
     links: ['/', '/terms/', '/privacy/'],
+    noindex: true,
   },
 ];
 
@@ -329,7 +349,7 @@ function jsonLdBlocks(html) {
 }
 
 async function fetchPage(path) {
-  const res = await fetch(`${ORIGIN}${path}`, {
+  const res = await fetch(`${REQUEST_ORIGIN}${path}`, {
     headers: {
       'User-Agent': 'ChinaEaseBuddyLaunchAudit/1.0 (+https://chinaeasebuddy.com)',
       Accept: 'text/html,application/xhtml+xml',
@@ -365,7 +385,8 @@ for (const page of pages) {
   checks.push(['canonical', canonical === `${ORIGIN}${page.path === '/' ? '/' : page.path}`, canonical || 'missing']);
   checks.push(['single H1', h1s.length === 1 && page.h1.test(h1s[0]), h1s.join(' | ') || 'missing']);
   checks.push(['unique body', text.length >= 900, `${text.length} chars`]);
-  checks.push(['no noindex', !/<meta[^>]+name=["']robots["'][^>]+noindex/i.test(html), '']);
+  const hasNoindex = /<meta[^>]+name=["']robots["'][^>]+noindex/i.test(html);
+  checks.push([page.noindex ? 'expected noindex' : 'no noindex', page.noindex ? hasNoindex : !hasNoindex, '']);
 
   const missingKeywords = page.keywords.filter((keyword) => !text.toLowerCase().includes(keyword.toLowerCase()));
   checks.push(['page keywords', missingKeywords.length === 0, missingKeywords.length ? `missing: ${missingKeywords.join(', ')}` : 'ok']);

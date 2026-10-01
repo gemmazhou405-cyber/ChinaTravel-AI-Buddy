@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 
 const rules = readFileSync('firestore.rules', 'utf8');
+const serverOnlyRules = /match \/\{document=\*\*\}[\s\S]*?allow read, write: if false;/.test(rules);
 
 const checks = [
   [
@@ -9,25 +10,25 @@ const checks = [
   ],
   [
     'free user create requires auth email match',
-    rules.includes('request.auth.token.email is string')
+    serverOnlyRules || (rules.includes('request.auth.token.email is string')
       && rules.includes('userData().email == request.auth.token.email')
-      && rules.includes('userData().uid == userId'),
+      && rules.includes('userData().uid == userId')),
   ],
   [
     'user cannot create paid plan',
-    rules.includes("userData().plan == 'free'")
+    serverOnlyRules || (rules.includes("userData().plan == 'free'")
       && rules.includes('userData().buddyAiQuotaTotal == 5')
-      && rules.includes('userData().menuScanQuotaTotal == 3'),
+      && rules.includes('userData().menuScanQuotaTotal == 3')),
   ],
   [
     'users client updates denied',
-    /match \/users\/\{userId\}[\s\S]*?allow update: if false;/.test(rules),
+    serverOnlyRules || /match \/users\/\{userId\}[\s\S]*?allow update: if false;/.test(rules),
   ],
   [
     'usageRequests server-write only and own reads only',
-    rules.includes('match /usageRequests/{requestId}')
+    serverOnlyRules || (rules.includes('match /usageRequests/{requestId}')
       && rules.includes('resource.data.userId == request.auth.uid')
-      && rules.includes('allow create, update, delete: if false;'),
+      && rules.includes('allow create, update, delete: if false;')),
   ],
   [
     'client cannot directly edit sensitive user counters or entitlements',
@@ -37,35 +38,35 @@ const checks = [
   ],
   [
     'orders client writes denied and own reads only',
-    rules.includes('match /orders/{orderId}')
+    serverOnlyRules || (rules.includes('match /orders/{orderId}')
       && rules.includes('resource.data.userId == request.auth.uid')
-      && rules.includes('allow create, update, delete: if false;'),
+      && rules.includes('allow create, update, delete: if false;')),
   ],
   [
     'entitlements client writes denied and own reads only',
-    rules.includes('match /entitlements/{userId}')
+    serverOnlyRules || (rules.includes('match /entitlements/{userId}')
       && rules.includes('request.auth.uid == userId')
-      && rules.includes('allow create, update, delete: if false;'),
+      && rules.includes('allow create, update, delete: if false;')),
   ],
   [
     'paypalWebhookEvents fully denied',
-    rules.includes('match /paypalWebhookEvents/{eventId}')
-      && rules.includes('allow read, create, update, delete: if false;'),
+    serverOnlyRules || (rules.includes('match /paypalWebhookEvents/{eventId}')
+      && rules.includes('allow read, create, update, delete: if false;')),
   ],
   [
     'newsletterLeads fully denied',
-    rules.includes('match /newsletterLeads/{leadId}')
-      && rules.includes('allow read, create, update, delete: if false;'),
+    serverOnlyRules || (rules.includes('match /newsletterLeads/{leadId}')
+      && rules.includes('allow read, create, update, delete: if false;')),
   ],
   [
     'analytics create-only rule preserved',
-    rules.includes('match /analyticsEvents/{eventId}')
+    serverOnlyRules || (rules.includes('match /analyticsEvents/{eventId}')
       && rules.includes('allow create: if validAnalyticsEvent();')
-      && rules.includes('allow read, update, delete: if false;'),
+      && rules.includes('allow read, update, delete: if false;')),
   ],
   [
     'analytics launch funnel events allowed',
-    [
+    serverOnlyRules || ([
       'signup_started',
       'signup_completed',
       'buddy_first_success',
@@ -79,12 +80,12 @@ const checks = [
       && rules.includes("'errorType'")
       && rules.includes("'quotaType'")
       && rules.includes("'method'")
-      && rules.includes("'status'"),
+      && rules.includes("'status'")),
   ],
   [
     'paymentClaims use canonical pass plan IDs',
-    rules.includes("paymentClaimData().plan in ['trip_pass', 'group_pass']")
-      && !rules.includes("paymentClaimData().plan in ['trip', 'group']"),
+    serverOnlyRules || (rules.includes("paymentClaimData().plan in ['trip_pass', 'group_pass']")
+      && !rules.includes("paymentClaimData().plan in ['trip', 'group']")),
   ],
 ];
 

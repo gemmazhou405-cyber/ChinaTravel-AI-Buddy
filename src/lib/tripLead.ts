@@ -100,6 +100,9 @@ export async function submitTripLead(
     }
     if (!res.ok) return { status: 'error', planGenerated: false, planPreview: null, whatsappReminderSent: false };
     const data = await res.json().catch(() => ({}));
+    if (data?.status !== 'received') {
+      return { status: 'error', planGenerated: false, planPreview: null, whatsappReminderSent: false };
+    }
     return {
       status: 'success',
       planGenerated: data.planGenerated === true,

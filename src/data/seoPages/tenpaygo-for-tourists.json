@@ -1,0 +1,96 @@
+{
+  "heading": "TenPayGo for Tourists Visiting China",
+  "title": "TenPayGo for Tourists: Setup & Payment Guide (2026)",
+  "description": "A factual TenPayGo guide for international visitors to China: confirmed payment methods, setup checklist, limits, comparisons, and troubleshooting.",
+  "quickAnswer": "Tencent launched TenPayGo on September 24, 2026 for international visitors to China. Shenzhen Government Online says the app can connect supported international bank cards, overseas digital wallets, or Apple Pay and can pay at merchants that accept WeChat Pay. Availability still depends on the user's market, device, payment method, verification, and the merchant transaction. Registration steps, fees, and every supported issuer have not been independently tested by ChinaEase Buddy.",
+  "lastReviewed": "October 1, 2026",
+  "lastModified": "2026-10-01",
+  "contentSections": [
+    {
+      "title": "What is TenPayGo?",
+      "items": [
+        "TenPayGo is a Tencent payment and travel-service app designed for international visitors to China and launched on September 24, 2026.",
+        "The confirmed public description focuses on connecting supported overseas payment methods and paying through the merchant network that accepts WeChat Pay.",
+        "It is a new option, not proof that every traveler should replace Alipay, WeChat Pay, cash, or a physical card. Keep at least one backup."
+      ]
+    },
+    {
+      "title": "Who is it for?",
+      "items": [
+        "International visitors who want a visitor-oriented payment setup before or during a China trip.",
+        "Travelers with a supported international bank card, participating overseas digital wallet, or Apple Pay setup.",
+        "People who understand that identity verification, issuing-country availability, card approval, foreign-exchange treatment, and merchant acceptance may vary."
+      ]
+    },
+    {
+      "title": "Confirmed payment methods",
+      "table": {
+        "headers": ["Method", "What is confirmed", "What to verify"],
+        "rows": [
+          ["International bank card", "Supported international cards can be linked", "Your exact issuer, card type, verification, fees, and approval"],
+          ["Overseas digital wallet", "Participating overseas wallets can be connected", "Whether your wallet and country are supported"],
+          ["Apple Pay", "Apple Pay is named as a connection option", "Device, region, card, and transaction availability"],
+          ["Merchant payment", "Payments can use the merchant network accepting WeChat Pay", "The specific merchant, category, amount, and funding method"]
+        ]
+      }
+    },
+    {
+      "title": "TenPayGo vs WeChat Pay and Alipay",
+      "table": {
+        "headers": ["Option", "Practical role", "Cautious takeaway"],
+        "rows": [
+          ["TenPayGo", "Visitor-oriented Tencent payment and travel app", "New in September 2026; verify current download and onboarding support"],
+          ["WeChat Pay", "Payment inside the broader WeChat ecosystem", "Supported international cards may work, but setup and acceptance vary"],
+          ["Alipay", "Payment app with visitor-facing services and international-card support", "Keep card and cash backups and verify current terms"]
+        ]
+      }
+    },
+    {
+      "title": "Setup checklist",
+      "ordered": true,
+      "items": [
+        "Confirm that the official TenPayGo download is available in your device's app store and country or region. Availability remains to be confirmed for every market.",
+        "Prepare the original passport and a phone number or email that can receive verification codes. The exact identity checks should be confirmed in the current app.",
+        "Try one supported international card, overseas wallet, or Apple Pay. Read any displayed fees, exchange-rate information, limits, and issuer verification before accepting.",
+        "Test a small purchase after arrival and keep Alipay, WeChat Pay, a physical card, or RMB cash as backup.",
+        "Do not send card numbers, verification codes, or passport images to unofficial support accounts."
+      ]
+    },
+    {
+      "title": "Known limitations and unconfirmed details",
+      "items": [
+        "ChinaEase Buddy has not independently tested every TenPayGo registration path, card issuer, country, wallet, fee, verification step, refund flow, or merchant category.",
+        "The official launch report does not establish that all international cards, all overseas wallets, all Apple Pay configurations, or every WeChat Pay merchant will work.",
+        "Treat app-store availability, age requirements, supported documents, transaction fees, foreign-exchange rates, identity checks, and account-recovery steps as details to confirm inside the current official app."
+      ]
+    },
+    {
+      "title": "Payment limits explained",
+      "items": [
+        "A separate 2024 China Government payment guide reported that the single mobile-payment transaction limit for overseas visitors had been raised from USD 1,000 to USD 5,000 and the annual cumulative cap from USD 10,000 to USD 50,000.",
+        "That USD 5,000 figure is not a TenPayGo policy introduced in September 2026. The practical limit for a transaction can also be lower because of the app, card issuer, merchant, verification status, fraud controls, or foreign-exchange rules.",
+        "Check the limit displayed in TenPayGo and by your card or wallet provider before a large purchase."
+      ]
+    },
+    {
+      "title": "Troubleshooting",
+      "ordered": true,
+      "items": [
+        "Check mobile data, the official app version, phone region, verification messages, and whether your payment method is listed as supported.",
+        "If a card fails, contact the issuing bank and ask whether the attempted China mobile-payment transaction was declined or blocked.",
+        "Try a smaller amount or another confirmed funding method, but do not repeatedly retry a transaction that may be pending.",
+        "Ask the merchant for another payment route and use a backup such as Alipay, WeChat Pay, a physical card where accepted, or RMB cash.",
+        "Use only official Tencent or app-store support routes for account problems."
+      ]
+    }
+  ],
+  "faqs": [
+    ["Can every foreign tourist use TenPayGo?", "No universal availability has been confirmed. The launch information says TenPayGo is designed for international visitors and supports specified overseas payment routes, but app availability, country, device, identity checks, card issuer, wallet, and merchant transaction can still affect whether it works for you."],
+    ["Does TenPayGo work everywhere WeChat Pay is accepted?", "The official launch report says users can pay within the merchant network that accepts WeChat Pay. That does not guarantee every merchant, category, amount, card, wallet, or transaction will be approved. Carry another payment method and test a small purchase first."],
+    ["Is the USD 5,000 payment limit a new TenPayGo rule?", "No. The USD 5,000 single-transaction figure was reported in a 2024 China Government guide as a broader increase for overseas visitors using mobile-payment platforms. Check TenPayGo's current in-app limit and your card or wallet provider's separate limits before paying."]
+  ],
+  "sourceLinks": [
+    ["Shenzhen Government Online: Tencent launches TenPayGo", "https://www.sz.gov.cn/en_szgov/aboutsz/videos/content/post_13000672.html"],
+    ["China Government: payment service guide for overseas visitors", "https://english.www.gov.cn/news/202404/11/content_WS6617c858c6d0868f4e8e5f4d.html"]
+  ]
+}

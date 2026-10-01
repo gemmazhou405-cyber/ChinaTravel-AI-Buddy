@@ -38,6 +38,29 @@ const PAID_ITINERARY_LIMIT = 20;
 const PAID_CLAIM_MAX_ATTEMPTS = 4;
 const PAID_CLAIM_STALE_MS = 5 * 60 * 1000;
 
+async function recordEmailDispatchEvent(request, env, docId, event, lead) {
+  const eventId = `trip_${docId}_${event}`;
+  const sourcePath = typeof lead.sourcePath === 'string' ? lead.sourcePath.split('?')[0].slice(0, 500) : '/';
+  const analyticsDoc = {
+    event,
+    createdAt: Date.now(),
+    environment: new URL(request.url).hostname.endsWith('.pages.dev') ? 'preview' : 'production',
+    deviceCategory: 'unknown',
+    sourcePath,
+  };
+  if (lead.utmSource) analyticsDoc.utmSource = lead.utmSource;
+  if (lead.utmMedium) analyticsDoc.utmMedium = lead.utmMedium;
+  if (lead.utmCampaign) analyticsDoc.utmCampaign = lead.utmCampaign;
+  if (lead.utmContent) analyticsDoc.utmContent = lead.utmContent;
+  try {
+    await createDoc(env, 'analyticsEvents', eventId, analyticsDoc);
+  } catch (error) {
+    if (!isFirestoreConflict(error)) {
+      console.error('[leads/trip] email_analytics_write_failed', { event, rid: docId.slice(0, 8) });
+    }
+  }
+}
+
 function checkRateLimit(ipHash) {
   const now = Date.now();
   const prev = (_ipRateMap.get(ipHash) ?? []).filter((t) => now - t < RATE_WINDOW_MS);
@@ -537,6 +560,14 @@ export async function onRequestPost({ request, env }) {
   } catch (patchErr) {
     console.error('[leads/trip] confirm_status_update_failed', String(patchErr?.message).slice(0, 60));
   }
+
+  await recordEmailDispatchEvent(
+    request,
+    env,
+    docId,
+    confirmResult.ok ? 'email_dispatch_success' : 'email_dispatch_failure',
+    lead,
+  );
 
   // A free itinerary is consumed only when the customer email provider accepts
   // the message. Failed delivery attempts remain retryable.

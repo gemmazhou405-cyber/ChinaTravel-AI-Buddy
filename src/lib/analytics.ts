@@ -47,6 +47,13 @@ const FUNNEL_EVENTS = new Set([
   'gumroad_click',
   'plan_form_start',
   'plan_form_submit',
+  'guide_cta_click',
+  'trip_form_view',
+  'trip_form_start',
+  'trip_form_submit',
+  'trip_result_day1_view',
+  'email_dispatch_success',
+  'email_dispatch_failure',
 ]);
 
 const utmKeys: UtmKey[] = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
@@ -240,12 +247,18 @@ export async function trackEvent(eventName: string, payload: AnalyticsPayload = 
     const plan = typeof payload.plan === 'string' ? payload.plan : '';
     if (plan === 'trip' || plan === 'group') body.plan = plan;
   }
-  if (eventName === 'plan_form_submit') {
+  if (eventName === 'plan_form_submit' || eventName === 'trip_form_submit') {
     // Non-PII trip shape only. sourcePath (added above) already distinguishes "/" from "/plan".
     const days = typeof payload.tripLength === 'number' ? payload.tripLength : NaN;
     if (Number.isFinite(days) && days > 0) body.planTripLength = String(Math.min(Math.round(days), 60));
     const cities = typeof payload.cityCount === 'number' ? payload.cityCount : NaN;
     if (Number.isFinite(cities) && cities >= 0) body.planCityCount = String(Math.min(Math.round(cities), 20));
+  }
+  if (eventName === 'guide_cta_click') {
+    const guidePage = typeof payload.guidePage === 'string' ? payload.guidePage : '';
+    const destination = typeof payload.destination === 'string' ? payload.destination : '';
+    if (guidePage) body.guidePage = guidePage.slice(0, 120);
+    if (destination) body.destination = destination.slice(0, 200);
   }
 
   // Fire-and-forget: analytics failure must never surface to the user.

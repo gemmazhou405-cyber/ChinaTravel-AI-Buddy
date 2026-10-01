@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, CalendarDays, Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { submitTripLead } from '../../lib/tripLead';
 import type { TripPlanPreview } from '../../lib/tripLead';
-import { trackEvent } from '../../lib/analytics';
+import { trackEvent, trackEventOnce } from '../../lib/analytics';
 
 const CITY_OPTIONS = [
   'beijing', 'shanghai', 'chengdu', 'xian', 'guilin', 'zhangjiajie', 'hangzhou', 'chongqing',
@@ -52,6 +52,21 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
   const [success, setSuccess] = useState(false);
   const [planPreview, setPlanPreview] = useState<TripPlanPreview | null>(null);
   const formStarted = useRef(false);
+  const submitInFlight = useRef(false);
+  const formRoot = useRef<HTMLDivElement | null>(null);
+  const todayIso = new Date().toISOString().slice(0, 10);
+
+  useEffect(() => {
+    const element = formRoot.current;
+    if (!element) return;
+    const observer = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      trackEventOnce('trip-form-view', 'trip_form_view', { form: 'free_trip_starter' });
+      observer.disconnect();
+    }, { threshold: 0.35 });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (step === 3) trackGa4Event('form_step3_view', { cities });
@@ -61,6 +76,7 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
     if (formStarted.current || success) return;
     formStarted.current = true;
     void trackEvent('itinerary_form_started', { journey: 'now' });
+    void trackEvent('trip_form_start', { form: 'free_trip_starter' });
   };
 
   const toggleCity = (city: CityId) => {
@@ -77,9 +93,10 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
   };
 
   const updateDates = (nextStart: string, nextEnd: string) => {
+    const safeEnd = nextStart && nextEnd && nextEnd < nextStart ? '' : nextEnd;
     setStartDate(nextStart);
-    setEndDate(nextEnd);
-    setDates([nextStart, nextEnd].filter(Boolean).join(' → '));
+    setEndDate(safeEnd);
+    setDates([nextStart, safeEnd].filter(Boolean).join(' → '));
   };
 
   const toggleInterest = (interest: InterestId) => {
@@ -97,6 +114,11 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
       setError(t('lead.progressive.cityRequired'));
       return;
     }
+    if (!startDate || !endDate) {
+      setDatePickerOpen(true);
+      setError(t('lead.progressive.dateRequired'));
+      return;
+    }
     setError(null);
     trackGa4Event('form_step1_continue', { cities });
     setStep(2);
@@ -111,6 +133,7 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
+    if (submitInFlight.current) return;
     markFormStarted();
     setError(null);
 
@@ -119,8 +142,13 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
       return;
     }
 
+    submitInFlight.current = true;
     setSending(true);
     void trackEvent('itinerary_submit_started', { journey: 'now' });
+    void trackEvent('trip_form_submit', {
+      tripLength: tripLengthFromDates(startDate, endDate),
+      cityCount: cities.length,
+    });
     try {
       const result = await submitTripLead({
         email: email.trim(),
@@ -149,6 +177,9 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
         setSuccess(true);
         trackGa4Event('form_submit_success', { cities });
         void trackEvent('lead_submit_success', { trigger: 'homepage_trip_plan', planGenerated: result.planGenerated });
+        if (result.planPreview?.days?.[0]) {
+          trackEventOnce(`trip-day1:${result.planPreview.title}`, 'trip_result_day1_view', { form: 'free_trip_starter' });
+        }
         return;
       }
       void trackEvent('lead_submit_failed', { trigger: 'homepage_trip_plan', errorCode: result.status });
@@ -165,6 +196,7 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
     } catch {
       setError(t('lead.errorGeneric'));
     } finally {
+      submitInFlight.current = false;
       setSending(false);
     }
   };
@@ -174,7 +206,7 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
   const travelerLabel = t(`lead.progressive.travelers.${travelers}`);
 
   return (
-    <div id="trip-plan-form" className={`w-full max-w-[420px] scroll-mt-20 ${embedded ? '' : 'mx-auto px-4 py-16 sm:px-0 md:py-24'}`}>
+    <div ref={formRoot} id="trip-plan-form" className={`w-full max-w-[420px] scroll-mt-20 ${embedded ? '' : 'mx-auto px-4 py-16 sm:px-0 md:py-24'}`}>
       {!embedded && (
         <div className="text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-jade">
@@ -251,11 +283,11 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
                       <div className="mt-3 grid grid-cols-2 gap-3 rounded-xl bg-blue-50 p-3">
                         <label className="text-xs font-medium text-slate-600">
                           {t('lead.progressive.startDate')}
-                          <input type="date" value={startDate} onChange={(event) => updateDates(event.target.value, endDate)} className="mt-1.5 w-full rounded-lg border border-blue-100 bg-white px-2 py-2 text-sm text-ink outline-none focus:border-blue-500" />
+                          <input type="date" min={todayIso} value={startDate} onChange={(event) => updateDates(event.target.value, endDate)} className="mt-1.5 w-full rounded-lg border border-blue-100 bg-white px-2 py-2 text-sm text-ink outline-none focus:border-blue-500" />
                         </label>
                         <label className="text-xs font-medium text-slate-600">
                           {t('lead.progressive.endDate')}
-                          <input type="date" min={startDate || undefined} value={endDate} onChange={(event) => updateDates(startDate, event.target.value)} className="mt-1.5 w-full rounded-lg border border-blue-100 bg-white px-2 py-2 text-sm text-ink outline-none focus:border-blue-500" />
+                          <input type="date" min={startDate || todayIso} value={endDate} onChange={(event) => updateDates(startDate, event.target.value)} className="mt-1.5 w-full rounded-lg border border-blue-100 bg-white px-2 py-2 text-sm text-ink outline-none focus:border-blue-500" />
                         </label>
                       </div>
                     )}

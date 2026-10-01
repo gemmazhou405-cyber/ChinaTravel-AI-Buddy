@@ -13,6 +13,9 @@ import didiPaymentGuide from '../data/seoPages/didi-payment-for-foreigners.json'
 import beijingAirportGuide from '../data/seoPages/beijing-airport-to-city-guide.json';
 import mapsComparisonGuide from '../data/seoPages/amap-vs-google-maps-china.json';
 import transit240Guide from '../data/seoPages/china-240-hour-visa-free-transit-2026.json';
+import tenPayGoGuide from '../data/seoPages/tenpaygo-for-tourists.json';
+import accommodationRegistrationGuide from '../data/seoPages/china-online-accommodation-registration-12367.json';
+import VisaFreeCheckerPage from './VisaFreeCheckerPage';
 
 type LegalPageType = 'terms' | 'privacy' | 'refund' | 'contact' | 'about' | 'unsubscribe';
 type GuidePageType =
@@ -56,6 +59,8 @@ type GuidePageType =
   | 'china-esim-internet-guide'
   | 'china-sim-card-for-foreigners'
   | 'china-240-hour-visa-free-transit-2026'
+  | 'tenpaygo-for-tourists'
+  | 'china-visa-free-checker'
   | 'alipay-for-foreigners'
   | 'wechat-pay-for-foreigners'
   | 'china-payment-guide'
@@ -141,7 +146,17 @@ interface GuidePageData {
 }
 
 function guideFromArticle(
-  data: typeof goldenWeekGuide | typeof greatWallGuide | typeof pandaBaseGuide | typeof didiPaymentGuide | typeof beijingAirportGuide | typeof mapsComparisonGuide | typeof transit240Guide,
+  data: {
+    heading: string;
+    title: string;
+    description: string;
+    quickAnswer: string;
+    lastReviewed: string;
+    lastModified: string;
+    contentSections: GuidePageData['sections'];
+    faqs: string[][];
+    sourceLinks: string[][];
+  },
   path: string,
   ctaLabel: string,
   related: GuidePageData['related'],
@@ -592,6 +607,8 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'China eSIM & Internet Guide: choose, install, activate, and troubleshoot mobile data.',
           'China SIM Card for Foreigners: compare eSIM and physical SIM options, airport purchase, passport registration, and top-ups.',
           'China 240-Hour Visa-Free Transit 2026: check 57 eligible countries, 65 designated ports, permitted areas, route rules, and the official 10-day clock.',
+          'China Visa-Free Checker: compare selected verified ordinary entry, transit, temporary, mutual, and Hainan rules for a planned route.',
+          'TenPayGo for Tourists: understand the confirmed launch facts, supported funding methods, cautious setup checklist, and payment backups.',
           'China Visa-Free Travel Guide: compare 30-day visa-free entry, 240-hour transit, routes, ports, and documents.',
           'China Airport Arrival Guide: immigration, baggage, customs, mobile data, payment, and airport transfers.',
           'China Hotels for Foreigners: passport booking, check-in, registration, deposits, and problem solving.',
@@ -714,6 +731,32 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'WeChat verification without a friend', href: '/wechat-verification-without-friend-qr-2026/' },
       { label: 'FAQ', href: '/faq/' },
     ],
+  },
+  'tenpaygo-for-tourists': guideFromArticle(
+    tenPayGoGuide,
+    '/tenpaygo-for-tourists/',
+    'Get my free China trip starter',
+    [
+      { label: 'China payment guide', href: '/china-payment-guide/' },
+      { label: 'WeChat Pay for foreigners', href: '/wechat-pay-for-foreigners/' },
+      { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
+      { label: 'China travel checklist', href: '/china-travel-checklist/' },
+    ],
+  ),
+  'china-visa-free-checker': {
+    path: '/china-visa-free-checker/',
+    title: 'China Visa-Free Checker',
+    intro: 'A conservative planning tool based on selected official visa-free policies verified on October 1, 2026.',
+    metaTitle: 'China Visa-Free Checker (2026) | ChinaEase Buddy',
+    metaDescription: 'Check whether a current ordinary-passport, 240-hour transit, UK/Canada temporary, mutual, or Hainan visa-free rule may fit your China trip.',
+    quickAnswer: 'Enter your nationality, ordinary-passport status, travel dates, purpose, route, and ports. The result is a planning aid and never guarantees admission.',
+    ctaLabel: 'Get my free trip starter',
+    ctaHref: '/#trip-plan',
+    lastReviewed: 'October 1, 2026',
+    lastModified: '2026-10-01',
+    sections: [],
+    faqs: [],
+    related: [],
   },
   'china-visa-free-travel-guide': {
     path: '/china-visa-free-travel-guide/',
@@ -1080,18 +1123,18 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'china-hotels-for-foreigners': {
     path: '/china-hotels-for-foreigners/',
-    title: "Why 38% of Hotels in China Refuse Foreigners (and How to Always Find One That Won't)",
+    title: 'China Hotels for Foreigners: Booking and Check-In Guide',
     intro:
       'A practical hotel guide for foreign-passport booking, check-in, accommodation registration, payments, late arrivals, and front-desk problems.',
-    metaTitle: 'China Hotels That Actually Accept Foreigners (2026 Shewai License List) - No Rejection Guide',
+    metaTitle: 'China Hotels for Foreigners (2026): Booking & Check-In Guide',
     metaDescription:
-      '38% of budget hotels refuse foreigners. Only Shewai-licensed hotels can host you. Learn how to filter "Foreigner-friendly" on Trip.com, check license via Buddy. Updated Sep 2026.',
+      'Book a China hotel with a foreign passport, confirm registration before arrival, and handle common check-in problems without relying on a misleading foreign-hotel licence list.',
     quickAnswer:
       'Foreign visitors can book and stay in hotels in China using a valid passport. In 2024, China\'s public security, commerce, and immigration authorities said hotels must not refuse overseas guests merely because the property claims to lack a special foreign-guest qualification. In practice, some front desks may still be unfamiliar with passport registration, especially at small or newly opened properties. Before a non-refundable booking, confirm the exact property can register your passport, save the written confirmation, enter every guest\'s name exactly as shown on the passport, and notify the hotel if you will arrive late. A hotel normally completes the accommodation registration for its guests; a private or non-hotel stay follows separate local registration procedures.',
     ctaLabel: 'Get my free China itinerary',
     ctaHref: '/#trip-plan',
-    lastReviewed: 'September 29, 2026',
-    lastModified: '2026-09-29',
+    lastReviewed: 'October 1, 2026',
+    lastModified: '2026-10-01',
     isArticle: true,
     sections: [
       {
@@ -1182,9 +1225,9 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
         items: [
           'When you stay in a hotel, the hotel is responsible for completing and reporting the accommodation registration required for its guests.',
           'When a foreign visitor stays in a home, apartment, friend\'s residence, or another non-hotel address, the foreign visitor or host generally must register with the local public security authority within 24 hours of arrival.',
-          'From 20 March 2026, the National Immigration Administration began an online pilot for non-hotel accommodation registration in Hebei, Liaoning, Zhejiang, Hubei, Guangxi, Chongqing, and Sichuan.',
-          'The pilot can be accessed through the NIA government-service website, the Immigration 12367 app, or official WeChat and Alipay mini-programs; in-person registration remains available.',
-          'Outside the pilot areas, or when the online service does not cover the address, ask the host and local public security authority for the current local procedure.',
+          'From September 21, 2026, the National Immigration Administration expanded online non-hotel accommodation registration nationwide.',
+          'The service can be accessed through the NIA government-service website, the NIA 12367 app, or official WeChat and Alipay mini-programs; in-person registration remains available.',
+          'When the online service fails or an address cannot be matched, ask the host and local public security authority for help or call 12367.',
         ],
       },
       {
@@ -1255,8 +1298,8 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
         href: 'https://www.gansu.gov.cn/gsszf/c100199/202406/173933391.shtml',
       },
       {
-        label: 'National Immigration Administration: 2026 non-hotel registration online pilot',
-        href: 'https://s.nia.gov.cn/mps/tztg/202601/t20261010_1010.html',
+        label: 'National Immigration Administration: nationwide online non-hotel registration',
+        href: 'https://www.nia.gov.cn/n897453/c1806111/content.html',
       },
       {
         label: 'People\'s Bank of China: payment guide for visitors',
@@ -5791,23 +5834,23 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   'nia-12367-online-accommodation-registration-guide': {
     path: '/nia-12367-online-accommodation-registration-guide/',
     title: 'How to Register a Non-Hotel Stay with NIA 12367',
-    intro: 'Foreigners staying in private homes or other non-hotel accommodation generally need registration within 24 hours. Where the online pilot is available, the NIA 12367 platform can replace an in-person police-station visit.',
+    intro: 'Foreigners staying in private homes or other non-hotel accommodation generally need registration within 24 hours. Nationwide online handling is available through official NIA 12367 channels, while in-person registration remains valid.',
     metaTitle: 'NIA 12367 Online Accommodation Registration Guide for Foreigners (2026)',
     metaDescription: 'Learn how foreigners register a private or non-hotel stay through NIA 12367, where online registration is available, what documents you need, and when hotels register for you.',
-    quickAnswer: 'Hotels register foreign guests as part of check-in. For a private home or other non-hotel stay, the guest or host generally registers within 24 hours. The official online service is available through the NIA Government Service Platform, NIA 12367 app, and WeChat or Alipay mini-programs, but the latest verified national notice describes a pilot in seven provincial-level regions rather than confirmed nationwide availability. Check the platform or call 12367 for your address.',
+    quickAnswer: 'Hotels register foreign guests as part of check-in. For a private home or other non-hotel stay, the guest or host generally registers within 24 hours. From September 21, 2026, nationwide online handling is available through the NIA Government Service Platform, NIA 12367 app, and official WeChat or Alipay mini-programs. In-person registration remains available.',
     ctaLabel: 'Prepare my registration details with Buddy',
     midCtaLabel: 'Format my Chinese address',
     ctaHref: '/',
     buddyPrompt: 'Help me prepare non-hotel accommodation registration details for this address: [address]. I am staying in [province/city] with [friend/family/host].',
     reviewed: 'September 27, 2026',
     sections: [
-      { title: 'Hotel vs Non-Hotel Registration', table: { headers: ['Stay type', 'Who handles registration', 'Typical action'], rows: [['Hotel', 'Hotel front desk', 'Present the passport during check-in'], ['Private home or other non-hotel residence', 'Guest or accommodation host', 'Register within 24 hours through an available official channel'], ['Online pilot area', 'Guest or host through NIA platform', 'Complete identity, address, and residence details online']] } },
-      { title: 'Where Online Registration Is Verified', items: ['The latest official notice reviewed for this page describes a pilot beginning March 20, 2026 in Hebei, Liaoning, Zhejiang, Hubei, Guangxi, Chongqing, and Sichuan.', 'The platform may expand, but do not assume nationwide availability without checking the current NIA interface for the property address.', 'If online registration is unavailable or unclear, contact the local police station or call 12367.'] },
+      { title: 'Hotel vs Non-Hotel Registration', table: { headers: ['Stay type', 'Who handles registration', 'Typical action'], rows: [['Hotel', 'Hotel front desk', 'Present the passport during check-in'], ['Private home or other non-hotel residence', 'Guest or accommodation host', 'Register within 24 hours through an official online or in-person channel'], ['Online registration', 'Guest or host through NIA platform', 'Complete identity, address, and residence details online']] } },
+      { title: 'Where Online Registration Is Verified', items: ['The National Immigration Administration announced nationwide online handling from September 21, 2026.', 'Use the official NIA government-service platform, NIA 12367 app, or official WeChat or Alipay mini-program.', 'If online registration is unavailable or unclear, contact the local police station or call 12367.'] },
       { title: 'Online Registration Steps', ordered: true, items: ['Open the NIA Government Service Platform, NIA 12367 app, or official WeChat or Alipay mini-program.', 'Complete account and passport identity verification.', 'Open Foreigner Service and select the accommodation-registration module when available.', 'Enter the Chinese address and host or property details accurately, then upload any documents requested.', 'Submit and save the registration record; online registration has the same legal effect as on-site registration where the service applies.'] },
       { title: 'Prepare Before Starting', items: ['Passport and current entry or stay information.', 'Full Chinese address, property type, arrival date, and planned departure date.', 'Host identity and contact information when required.', 'A backup plan to visit the local police station if the platform cannot process the address.'] },
     ],
     faqs: [
-      { question: 'Is NIA 12367 online accommodation registration available nationwide?', answer: 'The latest official notice verified for this guide describes a seven-region pilot and gradual expansion. Check the current platform for your exact address or call 12367.' },
+      { question: 'Is NIA 12367 online accommodation registration available nationwide?', answer: 'Yes. NIA announced nationwide online handling from September 21, 2026. Check the current official platform for your exact address, or call 12367 if the online process does not work.' },
       { question: 'Do hotel guests need to register themselves?', answer: 'Normally no. Hotels collect the passport details and submit the accommodation registration during check-in.' },
       { question: 'How soon must a private stay be registered?', answer: 'The general rule is within 24 hours after arrival at the non-hotel residence.' },
       { question: 'Is online registration legally valid?', answer: 'The NIA states that completed online registration has the same legal effect as on-site registration where the online service applies.' },
@@ -5957,7 +6000,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { title: 'Why Rejection Still Happens', items: ['Front-desk staff may be unfamiliar with entering a foreign passport into the accommodation-registration system.', 'A small property may rely on outdated internal policy or incorrect booking-platform labels.', 'The booking name, passport spelling, visa status, arrival time, or room rules may not match the reservation.', 'A hotel can refuse a stay for lawful ordinary reasons such as no valid booking, no available room, identity problems, or serious rule violations; nationality alone should not be used as an unlawful blanket restriction.'] },
       { title: 'Confirm Before You Travel', ordered: true, items: ['Book through a reputable platform and read the latest guest notes, but do not treat an old “foreign guests accepted” label as the only legal test.', 'Message or call the property with your nationality, passport document type, arrival time, and booking number.', 'Ask the property to confirm in writing that it can check you in and submit hotel accommodation registration.', 'Save the confirmation, Chinese hotel name, address, phone number, and one backup property nearby.'] },
       { title: 'What to Do If the Front Desk Refuses', items: ['Stay calm and ask for the specific reason: booking problem, room availability, passport entry, payment, or an alleged foreign-guest rule.', 'Show the written hotel confirmation and ask for a manager who understands foreign-passport registration.', 'Call the booking platform for relocation or refund support if the reservation cannot be honored.', 'For immigration-registration questions, call the National Immigration Administration service hotline at 12367. Do not rely on Buddy as legal representation.'] },
-      { title: 'Hotel Registration vs Private Accommodation', items: ['When you stay in a hotel, the hotel handles accommodation registration and submits the information to public security.', 'When staying in a private home or other non-hotel residence, the foreign guest or host generally must register within 24 hours.', 'The NIA online registration service for non-hotel accommodation began as a 2026 pilot in specified provincial-level regions. Availability is not yet a reason to assume online registration works everywhere.', 'Keep the registration record when you may need it for later immigration, visa, or administrative procedures.'] },
+      { title: 'Hotel Registration vs Private Accommodation', items: ['When you stay in a hotel, the hotel handles accommodation registration and submits the information to public security.', 'When staying in a private home or other non-hotel residence, the foreign guest or host generally must register within 24 hours.', 'Nationwide online handling for non-hotel accommodation began on September 21, 2026 through official NIA channels; in-person handling remains available.', 'Keep the registration record when you may need it for later immigration, visa, or administrative procedures.'] },
     ],
     faqs: [
       { question: 'Can foreigners stay in any hotel in China?', answer: 'Authorities have said local departments and platforms should not restrict operators from receiving foreign guests based on qualification requirements. A hotel still needs to complete the required registration and can refuse for lawful ordinary operational reasons.' },
@@ -6468,6 +6511,27 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
 
 applyGuideSearchUpdates();
 
+Object.assign(
+  guidePages['nia-12367-online-accommodation-registration-guide'],
+  guideFromArticle(
+    accommodationRegistrationGuide,
+    '/nia-12367-online-accommodation-registration-guide/',
+    'Get my free China trip starter',
+    [
+      { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+      { label: 'China travel checklist', href: '/china-travel-checklist/' },
+      { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
+      { label: 'China visa-free checker', href: '/china-visa-free-checker/' },
+    ],
+  ),
+  { featuredFaqCount: 3 },
+);
+
+guidePages['china-payment-guide'].related.unshift({ label: 'TenPayGo for tourists', href: '/tenpaygo-for-tourists/' });
+guidePages['china-hotels-for-foreigners'].related.unshift({ label: 'Online accommodation registration', href: '/nia-12367-online-accommodation-registration-guide/' });
+guidePages['china-visa-free-travel-guide'].related.unshift({ label: 'China visa-free checker', href: '/china-visa-free-checker/' });
+guidePages['china-240-hour-visa-free-transit-2026'].related.unshift({ label: 'China visa-free checker', href: '/china-visa-free-checker/' });
+
 function setMetaContent(selector: string, attr: 'content', value: string) {
   let element = document.head.querySelector<HTMLMetaElement>(selector);
   if (!element) {
@@ -6525,6 +6589,15 @@ function useGuideSeo(page: GuidePageData) {
           name: 'ChinaEase Buddy',
           url: `${siteUrl}/`,
         },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${siteUrl}${page.path}#breadcrumb`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+          { '@type': 'ListItem', position: 2, name: 'Guides', item: `${siteUrl}/guides/` },
+          { '@type': 'ListItem', position: 3, name: page.title, item: `${siteUrl}${page.path}` },
+        ],
       },
     ];
 
@@ -6775,6 +6848,10 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
   useGuideSeo(page);
 
   const handlePrimaryCta = () => {
+    void trackEvent('guide_cta_click', {
+      guidePage: type,
+      destination: onAskBuddy && page.buddyPrompt ? 'buddy' : page.ctaHref,
+    }, userId);
     void trackEvent('cta_clicked', {
       ctaName: page.ctaLabel,
       destination: onAskBuddy && page.buddyPrompt ? 'buddy' : page.ctaHref,
@@ -7072,6 +7149,8 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/best-time-to-visit-china')) return 'best-time-to-visit-china';
   if (cleanPath.endsWith('/china-sim-card-for-foreigners')) return 'china-sim-card-for-foreigners';
   if (cleanPath.endsWith('/china-240-hour-visa-free-transit-2026')) return 'china-240-hour-visa-free-transit-2026';
+  if (cleanPath.endsWith('/tenpaygo-for-tourists')) return 'tenpaygo-for-tourists';
+  if (cleanPath.endsWith('/china-visa-free-checker')) return 'china-visa-free-checker';
   if (cleanPath.endsWith('/china-esim-internet-guide')) return 'china-esim-internet-guide';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
   if (cleanPath.endsWith('/wechat-pay-for-foreigners')) return 'wechat-pay-for-foreigners';
@@ -7105,6 +7184,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
 
 export default function PolicyPage({ type, userId, onAskBuddy }: Props) {
   if (type === 'pricing') return <PricingPage />;
+  if (type === 'china-visa-free-checker') return <VisaFreeCheckerPage />;
   if (type in guidePages) return <GuidePage type={type as GuidePageType} userId={userId} onAskBuddy={onAskBuddy} />;
   return <LegalPage type={type as LegalPageType} />;
 }

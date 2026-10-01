@@ -14,6 +14,8 @@ const didiPaymentGuide = JSON.parse(await readFile('src/data/seoPages/didi-payme
 const beijingAirportGuide = JSON.parse(await readFile('src/data/seoPages/beijing-airport-to-city-guide.json', 'utf8'));
 const mapsComparisonGuide = JSON.parse(await readFile('src/data/seoPages/amap-vs-google-maps-china.json', 'utf8'));
 const transit240Guide = JSON.parse(await readFile('src/data/seoPages/china-240-hour-visa-free-transit-2026.json', 'utf8'));
+const tenPayGoGuide = JSON.parse(await readFile('src/data/seoPages/tenpaygo-for-tourists.json', 'utf8'));
+const accommodationRegistrationGuide = JSON.parse(await readFile('src/data/seoPages/china-online-accommodation-registration-12367.json', 'utf8'));
 
 const pageMeta = {
   plan: {
@@ -43,6 +45,8 @@ const pageMeta = {
       ['China eSIM & Internet Guide', 'Choose, install, activate, and troubleshoot mobile data for a trip to mainland China.', '/china-esim-internet-guide/'],
       ['China SIM Card for Foreigners', 'Compare eSIM and physical SIM options, passport registration, mainland carriers, airport purchase, and top-ups.', '/china-sim-card-for-foreigners/'],
       ['China 240-Hour Visa-Free Transit 2026', 'Check 57 eligible countries, 65 designated ports, permitted stay areas, route rules, and the official 10-day clock.', '/china-240-hour-visa-free-transit-2026/'],
+      ['China Visa-Free Checker', 'Compare selected verified ordinary entry, transit, temporary, mutual, and Hainan rules for a planned route.', '/china-visa-free-checker/'],
+      ['TenPayGo for Tourists', 'Read confirmed launch facts, funding methods, a cautious setup checklist, limits, and payment backups.', '/tenpaygo-for-tourists/'],
       ['China Visa-Free Travel Guide', 'Compare 30-day visa-free entry, 240-hour visa-free transit, and the documents each route requires.', '/china-visa-free-travel-guide/'],
       ['China Airport Arrival Guide', 'Follow immigration, baggage, customs, mobile data, payment, and airport-transfer steps after landing.', '/china-airport-arrival-guide/'],
       ['China Hotels for Foreigners', 'Book with a foreign passport, check in smoothly, understand registration, and handle common hotel problems.', '/china-hotels-for-foreigners/'],
@@ -349,14 +353,14 @@ const pageMeta = {
     ],
   },
   'china-hotels-for-foreigners': {
-    title: 'China Hotels That Actually Accept Foreigners (2026 Shewai License List) - No Rejection Guide',
-    heading: "Why 38% of Hotels in China Refuse Foreigners (and How to Always Find One That Won't)",
+    title: 'China Hotels for Foreigners (2026): Booking & Check-In Guide',
+    heading: 'China Hotels for Foreigners: Booking and Check-In Guide',
     description:
-      '38% of budget hotels refuse foreigners. Only Shewai-licensed hotels can host you. Learn how to filter "Foreigner-friendly" on Trip.com, check license via Buddy. Updated Sep 2026.',
+      'Book a China hotel with a foreign passport, confirm registration before arrival, and handle common check-in problems without relying on a misleading foreign-hotel licence list.',
     quickAnswer:
       'Foreign visitors can book and stay in hotels in China using a valid passport. In 2024, China\'s public security, commerce, and immigration authorities said hotels must not refuse overseas guests merely because the property claims to lack a special foreign-guest qualification. In practice, some front desks may still be unfamiliar with passport registration, especially at small or newly opened properties. Before a non-refundable booking, confirm the exact property can register your passport, save the written confirmation, enter every guest\'s name exactly as shown on the passport, and notify the hotel if you will arrive late. A hotel normally completes the accommodation registration for its guests; a private or non-hotel stay follows separate local registration procedures.',
-    lastReviewed: 'September 29, 2026',
-    lastModified: '2026-09-29',
+    lastReviewed: 'October 1, 2026',
+    lastModified: '2026-10-01',
     article: true,
     contentSections: [
       {
@@ -447,9 +451,9 @@ const pageMeta = {
         items: [
           'When you stay in a hotel, the hotel is responsible for completing and reporting the accommodation registration required for its guests.',
           'When a foreign visitor stays in a home, apartment, friend\'s residence, or another non-hotel address, the foreign visitor or host generally must register with the local public security authority within 24 hours of arrival.',
-          'From 20 March 2026, the National Immigration Administration began an online pilot for non-hotel accommodation registration in Hebei, Liaoning, Zhejiang, Hubei, Guangxi, Chongqing, and Sichuan.',
-          'The pilot can be accessed through the NIA government-service website, the Immigration 12367 app, or official WeChat and Alipay mini-programs; in-person registration remains available.',
-          'Outside the pilot areas, or when the online service does not cover the address, ask the host and local public security authority for the current local procedure.',
+          'From September 21, 2026, the National Immigration Administration expanded online non-hotel accommodation registration nationwide.',
+          'The service can be accessed through the NIA government-service website, the NIA 12367 app, or official WeChat and Alipay mini-programs; in-person registration remains available.',
+          'When the online service fails or an address cannot be matched, ask the host and local public security authority for help or call 12367.',
         ],
       },
       {
@@ -476,7 +480,7 @@ const pageMeta = {
     ],
     sourceLinks: [
       ['Gansu government: official response on hotel access for overseas travelers', 'https://www.gansu.gov.cn/gsszf/c100199/202406/173933391.shtml'],
-      ['National Immigration Administration: 2026 non-hotel registration online pilot', 'https://s.nia.gov.cn/mps/tztg/202601/t20261010_1010.html'],
+      ['National Immigration Administration: nationwide online non-hotel registration', 'https://www.nia.gov.cn/n897453/c1806111/content.html'],
       ['People\'s Bank of China: payment guide for visitors', 'https://english.www.gov.cn/news/202403/15/content_WS65f3b5d9c6d0868f4e8e52ea.html'],
     ],
   },
@@ -3562,9 +3566,9 @@ Object.assign(pageMeta, {
     title: 'NIA 12367 Online Accommodation Registration Guide for Foreigners (2026)',
     heading: 'How to Register a Non-Hotel Stay with NIA 12367',
     description: 'Learn how foreigners register a private or non-hotel stay through NIA 12367, where online registration is available, what documents you need, and when hotels register for you.',
-    quickAnswer: 'Hotels register foreign guests as part of check-in. For a private home or other non-hotel stay, the guest or host generally registers within 24 hours. The latest verified national notice describes online registration as a pilot in seven provincial-level regions, so check the current NIA platform or call 12367 for the exact address.',
+    quickAnswer: 'Hotels register foreign guests as part of check-in. For a private home or other non-hotel stay, the guest or host generally registers within 24 hours. Nationwide online handling has been available through official NIA channels since September 21, 2026, while in-person registration remains available.',
     faqs: [
-      ['Is NIA 12367 online accommodation registration available nationwide?', 'The latest official notice verified for this guide describes a seven-region pilot and gradual expansion. Check the current platform for your exact address or call 12367.'],
+      ['Is NIA 12367 online accommodation registration available nationwide?', 'Yes. NIA announced nationwide online handling from September 21, 2026. Check the current official platform for your exact address, or call 12367 if the online process does not work.'],
       ['Do hotel guests need to register themselves?', 'Normally no. Hotels collect the passport details and submit the accommodation registration during check-in.'],
       ['How soon must a private stay be registered?', 'The general rule is within 24 hours after arrival at the non-hotel residence.'],
       ['Is online registration legally valid?', 'The NIA states that completed online registration has the same legal effect as on-site registration where the online service applies.'],
@@ -3888,6 +3892,42 @@ Object.assign(pageMeta['3-day-shenzhen-itinerary'], {
   lastModified: '2026-09-30',
 });
 
+pageMeta['tenpaygo-for-tourists'] = {
+  ...tenPayGoGuide,
+  article: true,
+};
+
+pageMeta['nia-12367-online-accommodation-registration-guide'] = {
+  ...accommodationRegistrationGuide,
+  article: true,
+  featuredFaqCount: 3,
+};
+
+pageMeta['china-visa-free-checker'] = {
+  title: 'China Visa-Free Checker (2026) | ChinaEase Buddy',
+  heading: 'China Visa-Free Checker',
+  description: 'Check whether a current ordinary-passport, 240-hour transit, UK/Canada temporary, mutual, or Hainan visa-free rule may fit your China trip.',
+  quickAnswer: 'Enter your nationality, ordinary-passport status, entry date, stay length, purpose, route, and ports. The checker uses selected official rules verified on October 1, 2026, and returns a cautious planning result rather than a guarantee of entry.',
+  lastReviewed: 'October 1, 2026',
+  lastModified: '2026-10-01',
+  application: true,
+  contentSections: [
+    { title: 'What the checker considers', items: ['Ordinary unilateral visa-free entry for nationalities and dates in the current official policy.', 'Temporary 30-day visa-free entry for ordinary-passport holders from the United Kingdom and Canada through December 31, 2026.', '240-hour visa-free transit for eligible nationalities using a qualifying third-country or region route and designated ports.', 'Hainan-only 30-day entry for eligible nationalities and covered purposes.', 'Mutual visa-waiver agreements, which require an official treaty-level check because allowed stays and purposes differ.'] },
+    { title: 'Information you need', items: ['Passport nationality and confirmation that the document is an ordinary passport.', 'Planned entry date, length of stay, and purpose.', 'Exact arrival and departure ports for a 240-hour transit check.', 'Origin and onward country or region, including whether the onward destination differs from the origin.', 'Whether the full mainland China stay is limited to Hainan.'] },
+    { title: 'Important limitations', items: ['A result does not authorize entry and cannot account for every passport endorsement, residence document, prior immigration issue, carrier policy, or treaty exception.', 'Hong Kong, Macao, Taiwan, and mainland China routing can be operationally complex; confirm the exact ticketed sequence with NIA 12367 and the carrier.', 'Final decisions belong to Chinese border inspection. Recheck official sources immediately before travel.'] },
+  ],
+  faqs: [
+    ['Does this checker guarantee visa-free entry?', 'No. It checks selected published rules against the information you provide. Chinese border inspection, the carrier, and the relevant embassy or consulate make operational and final decisions.'],
+    ['Does 240-hour transit require a third country?', 'Yes. The ticketed route must continue from mainland China to a country or region different from the origin. The exact ports and permitted stay areas must also match the current official list.'],
+    ['Is the Hainan policy the same as nationwide visa-free entry?', 'No. Hainan has a separate regional policy for eligible nationalities and covered purposes. It requires travelers to remain in Hainan and should not be treated as permission to travel elsewhere in mainland China.'],
+  ],
+  sourceLinks: [
+    ['National Immigration Administration visa-free policy updates', 'https://en.nia.gov.cn/n147418/n147463/index.html'],
+    ['NIA 240-hour visa-free transit policy', 'https://en.nia.gov.cn/n147418/n147463/c183412/content.html'],
+    ['China government UK and Canada temporary policy', 'https://english.www.gov.cn/news/202602/15/content_WS6991bc11c6d00ca5f9a092d6.html'],
+  ],
+};
+
 const pages = Object.keys(pageMeta);
 const noindexPages = new Set(['about', 'plan', 'pricing', 'refund']);
 
@@ -3960,6 +4000,8 @@ const staticCtas = {
   'china-esim-internet-guide': ['Get my free China itinerary', '/#trip-plan'],
   'china-sim-card-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
   'china-240-hour-visa-free-transit-2026': ['Check my visa-free transit itinerary', '/#trip-plan'],
+  'china-visa-free-checker': ['Get my free trip starter', '/#trip-plan'],
+  'tenpaygo-for-tourists': ['Get my free China trip starter', '/#trip-plan'],
   'alipay-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
   'wechat-pay-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
   'china-payment-guide': ['Get my free China itinerary', '/#trip-plan'],
@@ -3980,7 +4022,7 @@ const staticCtas = {
   'how-to-visit-great-wall-from-beijing-2026': ['Plan my Great Wall day with Buddy', '/'],
   'what-to-eat-in-china-first-time-guide': ['Ask Buddy what to order', '/'],
   'how-to-use-wechat-as-foreigner-2026': ['Build my WeChat setup checklist', '/'],
-  'nia-12367-online-accommodation-registration-guide': ['Prepare my registration details with Buddy', '/'],
+  'nia-12367-online-accommodation-registration-guide': ['Get my free China trip starter', '/#trip-plan'],
   'amap-english-mode-guide-2026': ['Convert my address into an Amap-ready search', '/'],
   'alipay-metro-qr-transport-code-guide': ['Ask Buddy for my city metro setup', '/'],
   'china-travel-ai-itinerary-generator': ['Generate my China itinerary', '/'],
@@ -3991,6 +4033,8 @@ const staticCtas = {
 
 const relatedLinks = [
   ['All guides', '/guides/'],
+  ['China visa-free checker', '/china-visa-free-checker/'],
+  ['TenPayGo for tourists', '/tenpaygo-for-tourists/'],
   ['China eSIM & internet guide', '/china-esim-internet-guide/'],
   ['China visa-free travel guide', '/china-visa-free-travel-guide/'],
   ['China airport arrival guide', '/china-airport-arrival-guide/'],
@@ -4434,6 +4478,7 @@ const pageRelatedLinks = {
     ['Get a free China itinerary', '/#trip-plan'],
   ],
   'china-hotels-for-foreigners': [
+    ['Online accommodation registration', '/nia-12367-online-accommodation-registration-guide/'],
     ['China visa-free travel guide', '/china-visa-free-travel-guide/'],
     ['China airport arrival guide', '/china-airport-arrival-guide/'],
     ['First trip to China', '/first-trip-to-china/'],
@@ -4461,6 +4506,7 @@ const pageRelatedLinks = {
     ['Get a free China itinerary', '/#trip-plan'],
   ],
   'china-payment-guide': [
+    ['TenPayGo for tourists', '/tenpaygo-for-tourists/'],
     ['Open payment phrases', '/?journey=china&tool=pay'],
     ['Alipay for Foreigners', '/alipay-for-foreigners/'],
     ['WeChat Pay for Foreigners', '/wechat-pay-for-foreigners/'],
@@ -4518,6 +4564,24 @@ const pageRelatedLinks = {
     ['Best time to visit China', '/best-time-to-visit-china/'],
     ['First trip to China', '/first-trip-to-china/'],
     ['Get a free China itinerary', '/#trip-plan'],
+  ],
+  'tenpaygo-for-tourists': [
+    ['China payment guide', '/china-payment-guide/'],
+    ['WeChat Pay for foreigners', '/wechat-pay-for-foreigners/'],
+    ['Alipay for foreigners', '/alipay-for-foreigners/'],
+    ['China travel checklist', '/china-travel-checklist/'],
+  ],
+  'nia-12367-online-accommodation-registration-guide': [
+    ['China hotels for foreigners', '/china-hotels-for-foreigners/'],
+    ['China travel checklist', '/china-travel-checklist/'],
+    ['China airport arrival guide', '/china-airport-arrival-guide/'],
+    ['China visa-free checker', '/china-visa-free-checker/'],
+  ],
+  'china-visa-free-checker': [
+    ['240-hour transit guide', '/china-240-hour-visa-free-transit-2026/'],
+    ['China visa-free travel guide', '/china-visa-free-travel-guide/'],
+    ['China airport arrival guide', '/china-airport-arrival-guide/'],
+    ['China travel checklist', '/china-travel-checklist/'],
   ],
   pricing: [
     ['Home', '/'],
@@ -4682,7 +4746,29 @@ function schemaFor(page, meta) {
         url: `${siteUrl}/`,
       },
     },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${pageUrl(page)}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+        { '@type': 'ListItem', position: 2, name: 'Guides', item: `${siteUrl}/guides/` },
+        { '@type': 'ListItem', position: 3, name: meta.heading || meta.title.split('|')[0].trim(), item: pageUrl(page) },
+      ],
+    },
   ];
+
+  if (meta.application) {
+    graph.push({
+      '@type': 'WebApplication',
+      '@id': `${pageUrl(page)}#application`,
+      name: meta.heading || meta.title.split('|')[0].trim(),
+      url: pageUrl(page),
+      applicationCategory: 'TravelApplication',
+      operatingSystem: 'Web',
+      description: meta.description,
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    });
+  }
 
   if (meta.article) {
     graph.push({
