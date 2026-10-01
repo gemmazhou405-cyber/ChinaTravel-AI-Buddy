@@ -13,6 +13,7 @@ const pandaBaseGuide = JSON.parse(await readFile('src/data/seoPages/chengdu-pand
 const didiPaymentGuide = JSON.parse(await readFile('src/data/seoPages/didi-payment-for-foreigners.json', 'utf8'));
 const beijingAirportGuide = JSON.parse(await readFile('src/data/seoPages/beijing-airport-to-city-guide.json', 'utf8'));
 const mapsComparisonGuide = JSON.parse(await readFile('src/data/seoPages/amap-vs-google-maps-china.json', 'utf8'));
+const transit240Guide = JSON.parse(await readFile('src/data/seoPages/china-240-hour-visa-free-transit-2026.json', 'utf8'));
 
 const pageMeta = {
   plan: {
@@ -41,6 +42,7 @@ const pageMeta = {
     sections: [
       ['China eSIM & Internet Guide', 'Choose, install, activate, and troubleshoot mobile data for a trip to mainland China.', '/china-esim-internet-guide/'],
       ['China SIM Card for Foreigners', 'Compare eSIM and physical SIM options, passport registration, mainland carriers, airport purchase, and top-ups.', '/china-sim-card-for-foreigners/'],
+      ['China 240-Hour Visa-Free Transit 2026', 'Check 57 eligible countries, 65 designated ports, permitted stay areas, route rules, and the official 10-day clock.', '/china-240-hour-visa-free-transit-2026/'],
       ['China Visa-Free Travel Guide', 'Compare 30-day visa-free entry, 240-hour visa-free transit, and the documents each route requires.', '/china-visa-free-travel-guide/'],
       ['China Airport Arrival Guide', 'Follow immigration, baggage, customs, mobile data, payment, and airport-transfer steps after landing.', '/china-airport-arrival-guide/'],
       ['China Hotels for Foreigners', 'Book with a foreign passport, check in smoothly, understand registration, and handle common hotel problems.', '/china-hotels-for-foreigners/'],
@@ -3541,6 +3543,20 @@ const pageMeta = {
 };
 
 Object.assign(pageMeta, {
+  'china-240-hour-visa-free-transit-2026': {
+    title: transit240Guide.title,
+    heading: transit240Guide.heading,
+    description: transit240Guide.description,
+    quickAnswer: transit240Guide.quickAnswer,
+    lastReviewed: transit240Guide.lastReviewed,
+    lastModified: transit240Guide.lastModified,
+    article: true,
+    featuredFaqCount: 3,
+    ctaBeforeFeaturedFaqs: true,
+    contentSections: transit240Guide.contentSections,
+    faqs: transit240Guide.faqs,
+    sourceLinks: transit240Guide.sourceLinks,
+  },
   'nia-12367-online-accommodation-registration-guide': {
     ...pageMeta['china-hotels-for-foreigners'],
     title: 'NIA 12367 Online Accommodation Registration Guide for Foreigners (2026)',
@@ -3943,6 +3959,7 @@ const staticCtas = {
   'best-time-to-visit-china': ['Get my itinerary for the right season', '/#trip-plan'],
   'china-esim-internet-guide': ['Get my free China itinerary', '/#trip-plan'],
   'china-sim-card-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
+  'china-240-hour-visa-free-transit-2026': ['Check my visa-free transit itinerary', '/#trip-plan'],
   'alipay-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
   'wechat-pay-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
   'china-payment-guide': ['Get my free China itinerary', '/#trip-plan'],
@@ -4039,6 +4056,27 @@ const relatedLinks = [
 ];
 
 const pageRelatedLinks = {
+  'china-240-hour-visa-free-transit-2026': [
+    ['7-day China itinerary', '/7-day-china-itinerary/'],
+    ['10-day China itinerary', '/10-day-china-itinerary/'],
+    ['14-day China itinerary', '/14-day-china-itinerary/'],
+    ['3-day Beijing itinerary', '/3-day-beijing-itinerary/'],
+    ['3-day Shanghai itinerary', '/3-day-shanghai-itinerary/'],
+    ['3-day Xi\'an itinerary', '/3-day-xian-itinerary/'],
+    ['3-day Chongqing itinerary', '/3-day-chongqing-itinerary/'],
+    ['3-day Chengdu itinerary', '/3-day-chengdu-itinerary/'],
+    ['3-day Guilin and Yangshuo itinerary', '/3-day-guilin-yangshuo-itinerary/'],
+    ['3-day Zhangjiajie itinerary', '/3-day-zhangjiajie-itinerary/'],
+    ['3-day Shenzhen itinerary', '/3-day-shenzhen-itinerary/'],
+    ['3-day Guangzhou itinerary', '/3-day-guangzhou-itinerary/'],
+    ['3-day Hangzhou itinerary', '/3-day-hangzhou-itinerary/'],
+    ['3-day Suzhou itinerary', '/3-day-suzhou-itinerary/'],
+    ['3-day Nanjing itinerary', '/3-day-nanjing-itinerary/'],
+    ['3-day Dali itinerary', '/3-day-dali-itinerary/'],
+    ['First-time China itinerary guide', '/china-itinerary-first-time-7-10-14-days/'],
+    ['China SIM card for foreigners', '/china-sim-card-for-foreigners/'],
+    ['China payment guide', '/china-payment-guide/'],
+  ],
   'didi-payment-for-foreigners': [
     ['Didi In China For Foreigners', '/didi-in-china-for-foreigners/'],
     ['Alipay For Foreigners', '/alipay-for-foreigners/'],
@@ -4531,6 +4569,7 @@ function staticPageContent(page, meta) {
             <p style="margin: 0; color: #536365; line-height: 1.7;">${escapeHtml(answer)}</p>
           </article>
         `).join('');
+  const primaryCta = `<p style="margin: 0 0 28px;"><a href="${escapeAttr(ctaHref)}" style="display: inline-flex; border-radius: 999px; background: #155e63; color: #fffdf8; padding: 12px 18px; font-weight: 700; text-decoration: none;">${escapeHtml(ctaLabel)}</a></p>`;
 
   return `
     <main id="static-seo-content" style="max-width: 960px; margin: 0 auto; padding: 48px 20px; color: #122022; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
@@ -4557,6 +4596,18 @@ function staticPageContent(page, meta) {
       ${meta.contentSections ? meta.contentSections.map((section, sectionIndex) => `
         <section aria-labelledby="guide-section-${sectionIndex}" style="margin: 0 0 24px; padding: 20px; border: 1px solid rgba(21, 94, 99, 0.12); border-radius: 20px; background: rgba(255, 253, 248, 0.72);">
           <h2 id="guide-section-${sectionIndex}" style="margin: 0 0 12px; font-size: 1.25rem;">${escapeHtml(section.title)}</h2>
+          ${section.countryGroups ? `
+            <div aria-label="Eligible nationalities" style="display: grid; gap: 16px; margin: 0 0 16px;">
+              ${section.countryGroups.map((group) => `
+                <section>
+                  <h3 style="margin: 0 0 8px; font-size: 1rem;">${escapeHtml(group.region)}</h3>
+                  <ul style="display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none;">
+                    ${group.countries.map((country) => `<li style="border: 1px solid rgba(21, 94, 99, 0.15); border-radius: 999px; background: rgba(21, 94, 99, 0.05); color: #155e63; padding: 6px 10px; font-size: 0.82rem; font-weight: 600;">${escapeHtml(country)}</li>`).join('')}
+                  </ul>
+                </section>
+              `).join('')}
+            </div>
+          ` : ''}
           ${section.table ? `
             <div style="margin: 0 0 16px; overflow-x: auto;">
               <table style="width: 100%; min-width: 560px; border-collapse: collapse; color: #536365;">
@@ -4581,6 +4632,7 @@ function staticPageContent(page, meta) {
           </ul>
         </section>
       `}
+      ${meta.ctaBeforeFeaturedFaqs ? primaryCta : ''}
       ${featuredFaqItems.length > 0 ? `
         <section aria-labelledby="faq" style="margin: 0 0 24px;">
           <h2 id="faq" style="margin: 0 0 12px; font-size: 1.25rem;">FAQ</h2>
@@ -4588,7 +4640,7 @@ function staticPageContent(page, meta) {
         </section>
       ` : ''}
       ${isItineraryPage(page) ? staticRelatedGuidesForForeigners() : ''}
-      <p style="margin: 0 0 28px;"><a href="${escapeAttr(ctaHref)}" style="display: inline-flex; border-radius: 999px; background: #155e63; color: #fffdf8; padding: 12px 18px; font-weight: 700; text-decoration: none;">${escapeHtml(ctaLabel)}</a></p>
+      ${meta.ctaBeforeFeaturedFaqs ? '' : primaryCta}
       ${remainingFaqItems.length > 0 ? `
         <section aria-labelledby="${featuredFaqItems.length > 0 ? 'more-faq' : 'faq'}" style="margin: 0 0 24px;">
           <h2 id="${featuredFaqItems.length > 0 ? 'more-faq' : 'faq'}" style="margin: 0 0 12px; font-size: 1.25rem;">FAQ</h2>

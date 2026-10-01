@@ -12,6 +12,7 @@ import pandaBaseGuide from '../data/seoPages/chengdu-panda-base-guide.json';
 import didiPaymentGuide from '../data/seoPages/didi-payment-for-foreigners.json';
 import beijingAirportGuide from '../data/seoPages/beijing-airport-to-city-guide.json';
 import mapsComparisonGuide from '../data/seoPages/amap-vs-google-maps-china.json';
+import transit240Guide from '../data/seoPages/china-240-hour-visa-free-transit-2026.json';
 
 type LegalPageType = 'terms' | 'privacy' | 'refund' | 'contact' | 'about' | 'unsubscribe';
 type GuidePageType =
@@ -54,6 +55,7 @@ type GuidePageType =
   | 'best-time-to-visit-china'
   | 'china-esim-internet-guide'
   | 'china-sim-card-for-foreigners'
+  | 'china-240-hour-visa-free-transit-2026'
   | 'alipay-for-foreigners'
   | 'wechat-pay-for-foreigners'
   | 'china-payment-guide'
@@ -102,6 +104,7 @@ interface GuidePageData {
   lastModified?: string;
   isArticle?: boolean;
   featuredFaqCount?: number;
+  ctaBeforeFeaturedFaqs?: boolean;
   buddyPrompt?: string;
   midCtaLabel?: string;
   reviewed?: string;
@@ -118,6 +121,10 @@ interface GuidePageData {
       headers: string[];
       rows: string[][];
     };
+    countryGroups?: Array<{
+      region: string;
+      countries: string[];
+    }>;
   }>;
   faqs: Array<{
     question: string;
@@ -134,7 +141,7 @@ interface GuidePageData {
 }
 
 function guideFromArticle(
-  data: typeof goldenWeekGuide | typeof greatWallGuide | typeof pandaBaseGuide | typeof didiPaymentGuide | typeof beijingAirportGuide | typeof mapsComparisonGuide,
+  data: typeof goldenWeekGuide | typeof greatWallGuide | typeof pandaBaseGuide | typeof didiPaymentGuide | typeof beijingAirportGuide | typeof mapsComparisonGuide | typeof transit240Guide,
   path: string,
   ctaLabel: string,
   related: GuidePageData['related'],
@@ -584,6 +591,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
         items: [
           'China eSIM & Internet Guide: choose, install, activate, and troubleshoot mobile data.',
           'China SIM Card for Foreigners: compare eSIM and physical SIM options, airport purchase, passport registration, and top-ups.',
+          'China 240-Hour Visa-Free Transit 2026: check 57 eligible countries, 65 designated ports, permitted areas, route rules, and the official 10-day clock.',
           'China Visa-Free Travel Guide: compare 30-day visa-free entry, 240-hour transit, routes, ports, and documents.',
           'China Airport Arrival Guide: immigration, baggage, customs, mobile data, payment, and airport transfers.',
           'China Hotels for Foreigners: passport booking, check-in, registration, deposits, and problem solving.',
@@ -5211,6 +5219,36 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'UK government China travel advice: internet access', href: 'https://www.gov.uk/foreign-travel-advice/china/safety-and-security#internet-access' },
     ],
   },
+  'china-240-hour-visa-free-transit-2026': {
+    ...guideFromArticle(
+      transit240Guide,
+      '/china-240-hour-visa-free-transit-2026/',
+      'Check my visa-free transit itinerary',
+      [
+        { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
+        { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
+        { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
+        { label: '3-day Beijing itinerary', href: '/3-day-beijing-itinerary/' },
+        { label: '3-day Shanghai itinerary', href: '/3-day-shanghai-itinerary/' },
+        { label: '3-day Xi\'an itinerary', href: '/3-day-xian-itinerary/' },
+        { label: '3-day Chongqing itinerary', href: '/3-day-chongqing-itinerary/' },
+        { label: '3-day Chengdu itinerary', href: '/3-day-chengdu-itinerary/' },
+        { label: '3-day Guilin and Yangshuo itinerary', href: '/3-day-guilin-yangshuo-itinerary/' },
+        { label: '3-day Zhangjiajie itinerary', href: '/3-day-zhangjiajie-itinerary/' },
+        { label: '3-day Shenzhen itinerary', href: '/3-day-shenzhen-itinerary/' },
+        { label: '3-day Guangzhou itinerary', href: '/3-day-guangzhou-itinerary/' },
+        { label: '3-day Hangzhou itinerary', href: '/3-day-hangzhou-itinerary/' },
+        { label: '3-day Suzhou itinerary', href: '/3-day-suzhou-itinerary/' },
+        { label: '3-day Nanjing itinerary', href: '/3-day-nanjing-itinerary/' },
+        { label: '3-day Dali itinerary', href: '/3-day-dali-itinerary/' },
+        { label: 'First-time China itinerary guide', href: '/china-itinerary-first-time-7-10-14-days/' },
+        { label: 'China SIM card for foreigners', href: '/china-sim-card-for-foreigners/' },
+        { label: 'China payment guide', href: '/china-payment-guide/' },
+      ],
+    ),
+    featuredFaqCount: 3,
+    ctaBeforeFeaturedFaqs: true,
+  },
   'alipay-for-foreigners': {
     path: '/alipay-for-foreigners/',
     title: 'How to Use Alipay in China as a Foreigner (2026)',
@@ -6681,6 +6719,54 @@ function LegalPage({ type }: { type: LegalPageType }) {
   );
 }
 
+function FilterableCountryChecklist({ groups }: { groups: Array<{ region: string; countries: string[] }> }) {
+  const [query, setQuery] = useState('');
+  const normalizedQuery = query.trim().toLocaleLowerCase();
+  const filteredGroups = groups
+    .map((group) => ({
+      ...group,
+      countries: group.countries.filter((country) => country.toLocaleLowerCase().includes(normalizedQuery)),
+    }))
+    .filter((group) => group.countries.length > 0);
+  const resultCount = filteredGroups.reduce((total, group) => total + group.countries.length, 0);
+
+  return (
+    <div className="mt-4">
+      <label htmlFor="eligible-country-filter" className="text-sm font-semibold text-gray-950">
+        Check an eligible nationality
+      </label>
+      <input
+        id="eligible-country-filter"
+        type="search"
+        value={query}
+        onChange={(event) => setQuery(event.target.value)}
+        placeholder="Search the 57-country list"
+        className="mt-2 w-full rounded-xl border border-[#155e63]/20 bg-white px-4 py-3 text-sm text-gray-950 outline-none transition placeholder:text-gray-400 focus:border-[#155e63] focus:ring-2 focus:ring-[#155e63]/15"
+      />
+      <p className="mt-2 text-xs text-gray-500" aria-live="polite">
+        {resultCount} {resultCount === 1 ? 'country' : 'countries'} shown. Nationality alone does not confirm eligibility.
+      </p>
+      <div className="mt-4 space-y-4">
+        {filteredGroups.map((group) => (
+          <div key={group.region}>
+            <h3 className="text-sm font-bold text-gray-950">{group.region}</h3>
+            <ul className="mt-2 flex flex-wrap gap-2">
+              {group.countries.map((country) => (
+                <li key={country} className="rounded-full border border-[#155e63]/15 bg-[#155e63]/5 px-3 py-1.5 text-xs font-semibold text-[#155e63]">
+                  {country}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+        {filteredGroups.length === 0 && (
+          <p className="rounded-xl bg-gray-50 px-4 py-3 text-sm text-gray-600">No country in the current list matches that search.</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?: string | null; onAskBuddy?: (prefill?: string) => void }) {
   const page = guidePages[type];
   const isItineraryPage = type.includes('itinerary') && type !== 'china-travel-ai-itinerary-generator';
@@ -6751,6 +6837,7 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
               className={`rounded-2xl border border-gray-100 bg-white/80 p-4 shadow-sm${section.table ? ' md:col-span-2' : ''}`}
             >
               <h2 className="text-lg font-bold text-gray-950">{section.title}</h2>
+              {section.countryGroups && <FilterableCountryChecklist groups={section.countryGroups} />}
               {section.table && (
                 <div className="mt-3 overflow-x-auto">
                   <table className="w-full text-sm text-left">
@@ -6823,6 +6910,18 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
           </>
         )}
 
+        {page.ctaBeforeFeaturedFaqs && featuredFaqs.length > 0 && (
+          <section className="border-y border-[#155e63]/15 py-6 text-center">
+            <button
+              type="button"
+              onClick={handlePrimaryCta}
+              className="inline-flex rounded-lg bg-[#155e63] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#0e4a4e]"
+            >
+              {page.ctaLabel}
+            </button>
+          </section>
+        )}
+
         {featuredFaqs.length > 0 && (
           <section id="faq" className="rounded-2xl border border-gray-100 bg-white/80 p-4 shadow-sm md:p-5">
             <h2 className="text-xl font-bold text-gray-950">FAQ</h2>
@@ -6840,7 +6939,7 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
           </section>
         )}
 
-        {featuredFaqs.length > 0 && (
+        {featuredFaqs.length > 0 && !page.ctaBeforeFeaturedFaqs && (
           <>
             {isItineraryPage && <RelatedGuidesForForeigners />}
             <section className="border-y border-[#155e63]/15 py-6 text-center">
@@ -6972,6 +7071,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/amap-vs-google-maps-china')) return 'amap-vs-google-maps-china';
   if (cleanPath.endsWith('/best-time-to-visit-china')) return 'best-time-to-visit-china';
   if (cleanPath.endsWith('/china-sim-card-for-foreigners')) return 'china-sim-card-for-foreigners';
+  if (cleanPath.endsWith('/china-240-hour-visa-free-transit-2026')) return 'china-240-hour-visa-free-transit-2026';
   if (cleanPath.endsWith('/china-esim-internet-guide')) return 'china-esim-internet-guide';
   if (cleanPath.endsWith('/alipay-for-foreigners')) return 'alipay-for-foreigners';
   if (cleanPath.endsWith('/wechat-pay-for-foreigners')) return 'wechat-pay-for-foreigners';

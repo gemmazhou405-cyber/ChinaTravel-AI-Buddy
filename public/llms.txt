@@ -1,60 +1,31 @@
-# ChinaEase Buddy
+# ChinaEaseBuddy - China Travel Guide for Foreigners
 
-> ChinaEase Buddy is a web-based China travel toolkit for foreign visitors.
-> It provides practical help before a trip and while traveling in China,
-> including guidance for apps, payments, transport, food, hotels,
-> emergency situations, bilingual traveler-to-local communication, and Buddy AI travel questions.
+ChinaEaseBuddy helps foreign travelers navigate China without a Chinese national ID.
 
-## Core tools
+Guides are reviewed periodically and written for foreign visitors, including travelers who do not have a Chinese national ID.
 
-- Travel preparation and essential app guidance
-- Payment guidance for foreign visitors
-- Transport, taxi, metro, train, and airport help
-- Food, restaurant, and common dish references
-- Hotel and stay-related phrase support
-- Emergency numbers and bilingual phrase cards
-- Buddy AI travel assistance, subject to the current account allowance
+## Primary guides
 
-## Plans
+- Payment for foreigners: [https://chinaeasebuddy.com/china-payment-guide/](https://chinaeasebuddy.com/china-payment-guide/)
+- SIM Card and eSIM for foreigners: [https://chinaeasebuddy.com/china-sim-card-for-foreigners/](https://chinaeasebuddy.com/china-sim-card-for-foreigners/)
+- Travel checklist: [https://chinaeasebuddy.com/china-travel-checklist/](https://chinaeasebuddy.com/china-travel-checklist/)
+- Airport arrival: [https://chinaeasebuddy.com/china-airport-arrival-guide/](https://chinaeasebuddy.com/china-airport-arrival-guide/)
+- Travel apps: [https://chinaeasebuddy.com/china-travel-apps/](https://chinaeasebuddy.com/china-travel-apps/)
+- 240-hour visa-free transit: [https://chinaeasebuddy.com/china-240-hour-visa-free-transit-2026/](https://chinaeasebuddy.com/china-240-hour-visa-free-transit-2026/)
 
-- Free: basic travel toolkit and 5 Buddy AI messages
-- Trip Pass: USD 9.90 one-time, 50 Buddy AI messages, valid for 7 days
-- Group Pass: USD 29.90 one-time, 200 Buddy AI messages, valid for 14 days
-- Group Pass uses one ChinaEase Buddy account and one shared allowance for couples, families, or small travel groups
-- PayPal Sandbox checkout and automatic entitlement activation are in development; live checkout is not enabled until owner approval
-- No auto-renewal
-- Menu photo help is in private testing and is not sold as an active entitlement.
+## City itineraries
 
-## Key pages
+- Beijing: [https://chinaeasebuddy.com/3-day-beijing-itinerary/](https://chinaeasebuddy.com/3-day-beijing-itinerary/)
+- Shanghai: [https://chinaeasebuddy.com/3-day-shanghai-itinerary/](https://chinaeasebuddy.com/3-day-shanghai-itinerary/)
+- Shenzhen: [https://chinaeasebuddy.com/3-day-shenzhen-itinerary/](https://chinaeasebuddy.com/3-day-shenzhen-itinerary/)
+- Guilin Yangshuo: [https://chinaeasebuddy.com/3-day-guilin-yangshuo-itinerary/](https://chinaeasebuddy.com/3-day-guilin-yangshuo-itinerary/)
 
-- [Home](https://chinaeasebuddy.com/)
-- [First trip to China](https://chinaeasebuddy.com/first-trip-to-china/)
-- [Guides](https://chinaeasebuddy.com/guides/)
-- [China travel apps](https://chinaeasebuddy.com/china-travel-apps/)
-- [Alipay for foreign visitors](https://chinaeasebuddy.com/alipay-for-foreigners/)
-- [China payment guide](https://chinaeasebuddy.com/china-payment-guide/)
-- [China travel checklist](https://chinaeasebuddy.com/china-travel-checklist/)
-- [Emergency numbers](https://chinaeasebuddy.com/china-emergency-numbers/)
-- [FAQ](https://chinaeasebuddy.com/faq/)
-- [Pricing](https://chinaeasebuddy.com/pricing/)
-- [About](https://chinaeasebuddy.com/about/)
+## Sitemap
 
-## Audience
+[https://chinaeasebuddy.com/sitemap.xml](https://chinaeasebuddy.com/sitemap.xml)
 
-Foreign visitors preparing for or traveling in China, including tourists,
-business travelers, students, families, and first-time visitors.
+## About
 
-## Important limitations
+[https://chinaeasebuddy.com/about/](https://chinaeasebuddy.com/about/)
 
-ChinaEase Buddy is not an official government, visa, immigration, medical,
-legal, financial, hotel booking, flight booking, or travel agency service.
-Important travel, entry, health, and payment information should be confirmed
-with official sources or service providers.
-
-The toolkit provides practical references and AI-assisted travel information
-for convenience. It does not guarantee payment acceptance, transport availability,
-translation accuracy, emergency outcomes, or official policy status.
-
-Dish reference tools may help identify possible ingredients and common allergens
-from local menu information. Travelers should always confirm directly with
-restaurant staff, especially for severe allergies.
+## Contact: via website form at /plan/
