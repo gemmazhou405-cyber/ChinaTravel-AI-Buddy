@@ -3901,6 +3901,7 @@ pageMeta['nia-12367-online-accommodation-registration-guide'] = {
   ...accommodationRegistrationGuide,
   article: true,
   featuredFaqCount: 3,
+  ctaBeforeFeaturedFaqs: true,
 };
 
 pageMeta['china-visa-free-checker'] = {
@@ -4022,7 +4023,7 @@ const staticCtas = {
   'how-to-visit-great-wall-from-beijing-2026': ['Plan my Great Wall day with Buddy', '/'],
   'what-to-eat-in-china-first-time-guide': ['Ask Buddy what to order', '/'],
   'how-to-use-wechat-as-foreigner-2026': ['Build my WeChat setup checklist', '/'],
-  'nia-12367-online-accommodation-registration-guide': ['Get my free China trip starter', '/#trip-plan'],
+  'nia-12367-online-accommodation-registration-guide': ['Get your free personalized trip starter', '/#trip-plan'],
   'amap-english-mode-guide-2026': ['Convert my address into an Amap-ready search', '/'],
   'alipay-metro-qr-transport-code-guide': ['Ask Buddy for my city metro setup', '/'],
   'china-travel-ai-itinerary-generator': ['Generate my China itinerary', '/'],
@@ -4465,6 +4466,7 @@ const pageRelatedLinks = {
     ['China airport arrival guide', '/china-airport-arrival-guide/'],
   ],
   'china-airport-arrival-guide': [
+    ['Register a non-hotel stay with NIA 12367', '/nia-12367-online-accommodation-registration-guide/'],
     ['Beijing Airport to City Guide', '/beijing-airport-to-city-guide/'],
     ['China visa-free travel guide', '/china-visa-free-travel-guide/'],
     ['China hotels for foreigners', '/china-hotels-for-foreigners/'],
@@ -4573,9 +4575,10 @@ const pageRelatedLinks = {
   ],
   'nia-12367-online-accommodation-registration-guide': [
     ['China hotels for foreigners', '/china-hotels-for-foreigners/'],
-    ['China travel checklist', '/china-travel-checklist/'],
     ['China airport arrival guide', '/china-airport-arrival-guide/'],
-    ['China visa-free checker', '/china-visa-free-checker/'],
+    ['First trip to China', '/first-trip-to-china/'],
+    ['China visa-free travel guide', '/china-visa-free-travel-guide/'],
+    ['China payment guide', '/china-payment-guide/'],
   ],
   'china-visa-free-checker': [
     ['240-hour transit guide', '/china-240-hour-visa-free-transit-2026/'],

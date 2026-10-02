@@ -6516,19 +6516,21 @@ Object.assign(
   guideFromArticle(
     accommodationRegistrationGuide,
     '/nia-12367-online-accommodation-registration-guide/',
-    'Get my free China trip starter',
+    'Get your free personalized trip starter',
     [
       { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
-      { label: 'China travel checklist', href: '/china-travel-checklist/' },
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
-      { label: 'China visa-free checker', href: '/china-visa-free-checker/' },
+      { label: 'First trip to China', href: '/first-trip-to-china/' },
+      { label: 'China visa-free travel guide', href: '/china-visa-free-travel-guide/' },
+      { label: 'China payment guide', href: '/china-payment-guide/' },
     ],
   ),
-  { featuredFaqCount: 3 },
+  { featuredFaqCount: 3, ctaBeforeFeaturedFaqs: true },
 );
 
 guidePages['china-payment-guide'].related.unshift({ label: 'TenPayGo for tourists', href: '/tenpaygo-for-tourists/' });
 guidePages['china-hotels-for-foreigners'].related.unshift({ label: 'Online accommodation registration', href: '/nia-12367-online-accommodation-registration-guide/' });
+guidePages['china-airport-arrival-guide'].related.unshift({ label: 'Register a non-hotel stay with NIA 12367', href: '/nia-12367-online-accommodation-registration-guide/' });
 guidePages['china-visa-free-travel-guide'].related.unshift({ label: 'China visa-free checker', href: '/china-visa-free-checker/' });
 guidePages['china-240-hour-visa-free-transit-2026'].related.unshift({ label: 'China visa-free checker', href: '/china-visa-free-checker/' });
 

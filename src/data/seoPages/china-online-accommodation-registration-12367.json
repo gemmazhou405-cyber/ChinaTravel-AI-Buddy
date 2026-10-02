@@ -1,94 +1,119 @@
 {
   "heading": "How Foreigners Can Register Accommodation Online in China",
-  "title": "China Online Accommodation Registration for Foreigners (2026)",
-  "description": "How foreign visitors register a private or non-hotel stay online in China through NIA 12367, and how hotel registration remains different.",
-  "quickAnswer": "From September 21, 2026, China began nationwide online handling of accommodation registration for foreigners staying outside hotels. The foreign guest or host can use the National Immigration Administration Government Service Platform, the NIA 12367 app, or the official WeChat or Alipay mini-program. Registration is generally required within 24 hours after moving into a private or non-hotel address. Hotels continue to register their own guests during check-in.",
-  "lastReviewed": "October 1, 2026",
-  "lastModified": "2026-10-01",
+  "title": "China Accommodation Registration Online: 12367 Guide",
+  "description": "A practical guide to China’s nationwide 12367 online accommodation registration service for non-hotel stays.",
+  "quickAnswer": "Hotels normally register foreign guests during check-in. For a home, rented apartment, self-owned residence, or other non-hotel stay, the foreign guest or accommodation host should complete registration within 24 hours after arrival. Since September 21, 2026, this can be done nationwide through official NIA 12367 online channels, while in-person registration remains available. This guide was reviewed against official National Immigration Administration guidance.",
+  "lastReviewed": "October 2, 2026",
+  "lastModified": "2026-10-02",
   "contentSections": [
     {
-      "title": "Who needs to register?",
+      "title": "Hotel vs non-hotel stays",
       "items": [
-        "A foreign visitor staying in a friend's home, a relative's home, their own residence, a rented home, or another address outside a hotel generally needs accommodation registration.",
-        "The foreign visitor or the person providing the accommodation may complete the registration.",
-        "This guide covers short-term visitor situations. Residence, visa, local address, and host circumstances can require additional official instructions."
+        "Hotel — The hotel normally registers each foreign guest during check-in and submits the accommodation information to the local public security organ. Bring the original passport or travel document requested for check-in.",
+        "Friend or relative’s home — The foreign guest or the person providing the accommodation should register within 24 hours after the guest arrives.",
+        "Rented apartment — The foreign guest or accommodation host should register the actual address within 24 hours. Registration does not by itself confirm that the lease or short-term rental arrangement is legally permitted.",
+        "Self-owned home — The foreign owner should register the stay. Limited simplified rules may apply when returning to the same self-owned residence after a compliant registration.",
+        "Other non-hotel accommodation — Use an official online channel or the existing in-person process. Ask NIA 12367 or the local public security authority when the correct category is unclear."
       ]
     },
     {
-      "title": "Hotel vs non-hotel accommodation",
-      "table": {
-        "headers": ["Stay type", "Who normally registers", "Traveler action"],
-        "rows": [
-          ["Hotel", "The hotel", "Present the original passport and confirm check-in details"],
-          ["Friend or relative's home", "The guest or host", "Register online or at the local public security authority"],
-          ["Own or rented residence", "The guest or accommodation provider", "Prepare the exact address and residence evidence requested by the system"],
-          ["Other non-hotel stay", "The guest or host", "Use an official online channel or the retained offline channel"]
-        ]
-      }
-    },
-    {
-      "title": "When registration must be completed",
+      "title": "Who needs to register",
       "items": [
-        "The NIA announcement cites the Exit and Entry Administration Law requirement to register a non-hotel stay within 24 hours after moving in.",
-        "Register again when the address changes or when an official channel instructs you to update the stay record.",
-        "Do not wait until departure, a visa appointment, or a police check to discover that the registration is missing."
+        "The nationwide online service is for foreigners residing or staying in domiciles other than hotels.",
+        "Common situations include staying with friends or relatives, in a rented apartment, at a self-owned residence, or in another non-hotel address.",
+        "Under Article 39 of China’s Exit and Entry Administration Law, the non-hotel registration should be completed within 24 hours after the foreigner arrives at the address.",
+        "Failure to register as required may result in a warning and may also lead to a fine. This guide does not provide a legal conclusion for an individual case."
       ]
     },
     {
-      "title": "Available online channels",
+      "title": "Who can submit",
       "items": [
-        "National Immigration Administration Government Service Platform website.",
-        "NIA 12367 app, shown in Chinese as 移民局12367.",
-        "Official NIA 12367 WeChat mini-program.",
-        "Official NIA 12367 Alipay mini-program.",
-        "In-person registration with the public security authority for the address remains available and has the same legal effect as online registration."
+        "The foreign guest or the person providing the accommodation may complete the registration online.",
+        "For the first registration at an address, official NIA guidance says it should be completed with the accommodation host’s assistance because the host is generally more familiar with the accurate residence information.",
+        "A foreign guest may register independently after previously completing registration through the NIA Government Service Platform and returning to register again at the same residence.",
+        "A foreign guest residing at a self-owned residence may also register independently under the official guidance.",
+        "The accommodation host may be a Chinese citizen or a foreigner."
       ]
     },
     {
-      "title": "Information to prepare",
+      "title": "Official online channels",
       "items": [
-        "The foreign guest's original passport and current entry or stay information.",
-        "The complete China address, including province, city, district, street, building, unit, and room where applicable.",
-        "Host or accommodation-provider information and any proof requested by the official system for that address.",
-        "Arrival date and expected stay information. Exact fields may change, so follow the current official interface rather than an old screenshot."
+        "National Immigration Administration Government Service Platform official website.",
+        "NIA 12367 mobile app, shown in Chinese as 移民局12367.",
+        "NIA 12367 WeChat mini program.",
+        "NIA 12367 Alipay mini program.",
+        "Use the official NIA service rather than an unverified third-party registration page. The in-person channel at local public security organs remains available, and online registration has the same legal effect as on-site registration."
       ]
     },
     {
       "title": "Step-by-step process",
       "ordered": true,
       "items": [
-        "Open one of the official NIA channels: the government-service website, NIA 12367 app, WeChat mini-program, or Alipay mini-program.",
-        "Choose the service for foreigner accommodation registration outside hotels. Confirm that you are using the official NIA service.",
-        "Enter the foreign guest, travel-document, arrival, host, and exact accommodation-address information requested by the current interface.",
-        "Review every passport number, date, and address field before submitting. Do not invent a hotel name or use a nearby landmark instead of the real residence.",
-        "Submit and retain the confirmation or registration record. The official notice does not promise identical screens or processing times for every address."
+        "Open an official NIA 12367 channel: the government-service website, mobile app, WeChat mini program, or Alipay mini program.",
+        "Create an account or sign in to an existing account.",
+        "Complete the identity-verification steps shown by the official platform.",
+        "Open Foreigner Service.",
+        "Select Accommodation Registration.",
+        "Enter the accommodation information requested by the current platform. Use the exact address and ask the host to help when the address details are uncertain.",
+        "Review the information and submit the registration.",
+        "Open Registration Record Inquiry to view the accommodation registration record after completion."
       ]
     },
     {
-      "title": "If online registration fails",
+      "title": "What to prepare",
       "items": [
-        "Check that the address is complete and matches the administrative area used by the official system.",
-        "Ask the host to try the official channel from their account if the service permits the accommodation provider to register.",
-        "Save the error reference without sharing passport images or codes publicly.",
-        "Call NIA 12367 for bilingual guidance or take the passport and address documents to the public security authority responsible for the residence."
+        "Your passport or other travel document.",
+        "The exact accommodation address, including the local administrative details used for that residence.",
+        "Host or accommodation information where the platform requests it.",
+        "A phone capable of accessing the selected official NIA channel and receiving any required verification messages.",
+        "The actual fields and interface may change. Have your passport or travel document and the exact accommodation details ready. The platform may request additional information based on your situation."
       ]
     },
     {
-      "title": "12367 and offline support",
+      "title": "When repeat registration may be simplified",
       "items": [
-        "NIA 12367 provides immigration policy information and support. Explain that the stay is in a non-hotel residence and give the province, city, district, and address.",
-        "The offline registration channel remains available nationwide. Online and in-person accommodation registration have equal legal effect under the September 21, 2026 announcement.",
-        "For a hotel stay, ask the hotel to complete its required guest registration rather than filing the non-hotel process yourself."
+        "The official policy interpretation describes limited situations in which re-registration is not required after the foreigner has already completed registration after arrival in accordance with the rules.",
+        "One stated situation is a foreigner returning to the same self-owned residence after travel within or outside China. A self-owned residence means a residence owned by the foreigner or the foreigner’s spouse in China.",
+        "Another stated situation concerns holders of valid residence permits or permanent residence permits returning to the same habitual residence after travel within or outside China during the permit’s validity.",
+        "A habitual residence is described by the NIA as a residence where the foreigner lives or plans to live in China for more than 180 days. Do not extend these exceptions to a hotel, a new address, an ordinary short visit, or a different rental without official confirmation."
+      ]
+    },
+    {
+      "title": "If online registration does not work",
+      "items": [
+        "Ask the accommodation host to help confirm the exact address and other residence information.",
+        "Check the official Guide to Online Accommodation Registration shown on the NIA service page.",
+        "Try another official NIA 12367 channel if one interface is unavailable.",
+        "Call the NIA 12367 service hotline for guidance.",
+        "Contact the local exit-entry administration service window or police station responsible for the address.",
+        "Use the existing in-person registration process. Do not wait for an online technical problem to resolve itself after the 24-hour period."
+      ]
+    },
+    {
+      "title": "Important distinction",
+      "items": [
+        "Accommodation registration is not the same as a visa, residence permit, rental approval, work permit, or confirmation that a short-term rental is legally permitted.",
+        "Completing the registration records where a foreigner is staying. It does not legalize an otherwise non-compliant visa status, employment arrangement, lease, hosting activity, or accommodation business.",
+        "Registration does not prevent the public security authorities from requesting further information or conducting checks when permitted by law."
       ]
     }
   ],
   "faqs": [
-    ["Is online accommodation registration available nationwide?", "Yes. The National Immigration Administration announced nationwide online handling from September 21, 2026 after an earlier pilot. The official website, NIA 12367 app, and official WeChat or Alipay mini-program can be used. In-person registration remains available when online handling fails or guidance is needed."],
-    ["Do hotel guests need to register themselves online?", "Normally no. Hotels are responsible for registering foreign guests and reporting the accommodation information during check-in. Show the original passport and make sure every guest is registered. The online non-hotel service is for homes, private residences, and other accommodation outside the hotel system."],
-    ["What if I cannot complete the online form within 24 hours?", "Contact NIA 12367 or the public security authority responsible for the address as soon as possible, explain the technical problem, and follow their instructions. Keep screenshots or error references, but do not post passport data publicly. The offline registration route remains legally effective."]
+    ["Do hotel guests need to register themselves?", "Normally no. Under the NIA notice and Article 39 of the Exit and Entry Administration Law, hotels register foreign guests and submit the accommodation information to the local public security organ. Give the hotel the original passport or travel document requested for check-in and make sure every foreign guest is included."],
+    ["How soon must I register a non-hotel stay?", "The foreign guest or accommodation host should complete the registration within 24 hours after the foreigner arrives at the non-hotel address. If an online problem prevents timely submission, contact NIA 12367 or the local public security authority and use the in-person channel rather than waiting."],
+    ["Can a foreign guest submit the registration?", "Yes. The official policy says the foreign guest or the person providing the accommodation can submit online. For an initial registration at a particular address, the NIA recommends completing it with the host’s assistance so the residence information is accurate."],
+    ["Does my Chinese host have to complete it for me?", "Not in every case. A host can submit, and the NIA recommends host assistance for the initial registration at an address. A foreigner may register independently in officially described situations, including a repeated registration at the same residence through the platform or residence at a self-owned home."],
+    ["Can a foreign host submit the registration?", "Yes. The NIA policy interpretation states that the accommodation host may be either a Chinese citizen or a foreigner. The host should use accurate information for the actual residence and follow the identity-verification and submission steps shown by the official platform."],
+    ["Is online accommodation registration available nationwide?", "Yes. The National Immigration Administration rolled out online handling nationwide from September 21, 2026 for foreigners staying outside hotels. The official website, NIA 12367 app, WeChat mini program, and Alipay mini program are listed channels. Address-specific questions may still require local assistance."],
+    ["Can I still register in person?", "Yes. The NIA announcement keeps the offline registration channel at local public security organs. Online registration and on-site registration have the same legal effect. In-person handling is a practical fallback when identity verification, address matching, or another online step does not work."],
+    ["Do I need to register again when returning to the same address?", "It depends. The NIA describes limited no-repeat situations for a previously registered self-owned residence and for valid residence-permit or permanent-residence-permit holders returning to the same habitual residence. These exceptions should not be assumed for a new address, ordinary short visit, hotel, or different rental."],
+    ["Does registration make an Airbnb or short-term rental legal?", "No. Accommodation registration records the foreigner’s place of stay. It does not confirm that a short-term rental platform listing, lease, hosting activity, or accommodation business complies with local rules. Verify the property arrangement separately with the host, platform, and relevant local authority."],
+    ["What should I do if the online system cannot verify me?", "Check that you are using an official NIA channel and that your identity and address information are accurate. Ask the host to assist, consult the platform’s registration guide, try another official channel, call 12367, or visit the local exit-entry service window or police station for on-site help."]
   ],
   "sourceLinks": [
-    ["National Immigration Administration: nationwide online non-hotel accommodation registration", "https://www.nia.gov.cn/n897453/c1806111/content.html"],
-    ["Ministry of Commerce and six other departments: facilitating accommodation for overseas visitors", "https://www.mofcom.gov.cn/zfxxgk/fdzdgknr/ztfl/fwmy/art/2024/art_c270f479bc8143dfb4754735ec870619.html"]
+    ["NIA notice: nationwide online accommodation registration for non-hotel stays", "https://en.nia.gov.cn/n147418/n147468/c237295/content.html"],
+    ["NIA policy interpretation: channels, hosts, repeat registration, and support", "https://en.nia.gov.cn/n147418/n147463/c237273/content.html"],
+    ["Exit and Entry Administration Law of the People’s Republic of China", "https://en.nia.gov.cn/n147418/n147458/c155978/content.html"],
+    ["National Immigration Administration Chinese announcement", "https://www.nia.gov.cn/n741440/n741542/c1806111/content.html"]
   ]
 }

@@ -281,8 +281,8 @@ const pages = [
   {
     path: '/nia-12367-online-accommodation-registration-guide/',
     h1: /How Foreigners Can Register Accommodation Online in China/i,
-    keywords: ['September 21, 2026', 'within 24 hours', 'NIA 12367', 'Hotel vs non-hotel accommodation'],
-    links: ['/#trip-plan', '/china-hotels-for-foreigners/', '/china-travel-checklist/', '/china-visa-free-checker/'],
+    keywords: ['September 21, 2026', 'within 24 hours', 'NIA 12367', 'Hotel vs non-hotel stays'],
+    links: ['/#trip-plan', '/china-hotels-for-foreigners/', '/china-airport-arrival-guide/', '/china-visa-free-travel-guide/'],
   },
   {
     path: '/china-visa-free-checker/',
