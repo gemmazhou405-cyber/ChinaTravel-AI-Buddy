@@ -3902,6 +3902,7 @@ pageMeta['nia-12367-online-accommodation-registration-guide'] = {
   article: true,
   featuredFaqCount: 3,
   ctaBeforeFeaturedFaqs: true,
+  buddyPrompt: undefined,
 };
 
 pageMeta['china-visa-free-checker'] = {

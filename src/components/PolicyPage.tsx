@@ -6525,7 +6525,7 @@ Object.assign(
       { label: 'China payment guide', href: '/china-payment-guide/' },
     ],
   ),
-  { featuredFaqCount: 3, ctaBeforeFeaturedFaqs: true },
+  { featuredFaqCount: 3, ctaBeforeFeaturedFaqs: true, buddyPrompt: undefined },
 );
 
 guidePages['china-payment-guide'].related.unshift({ label: 'TenPayGo for tourists', href: '/tenpaygo-for-tourists/' });
