@@ -1,0 +1,95 @@
+{
+  "heading": "China Visa-Free Checker",
+  "title": "China Visa-Free Checker 2026: 30-Day & 240-Hour Rules",
+  "description": "Check whether your passport and itinerary may qualify for China’s 30-day visa-free entry, 240-hour transit or Hainan policy.",
+  "quickAnswer": "This free planning tool compares an ordinary passport, travel date, purpose, stay length and itinerary with selected current Chinese government visa-free policies. It does not issue a visa or guarantee admission. Final entry decisions are made by Chinese border inspection authorities.",
+  "lastReviewed": "October 2, 2026",
+  "lastModified": "2026-10-02",
+  "contentSections": [
+    {
+      "title": "How the checker works",
+      "items": [
+        "The checker first confirms that the document is an ordinary passport and that the purpose can be covered by a visitor policy.",
+        "It checks the planned entry date against the verified start and expiry dates stored in the policy data.",
+        "It then compares a verified ordinary-passport mutual agreement, unilateral 30-day entry, Hainan-only entry, or 240-hour third-country transit.",
+        "A positive planning result still requires the traveler to meet every document, route, port and geographic condition when applicable."
+      ]
+    },
+    {
+      "title": "30-day visa-free entry",
+      "items": [
+        "The current official list covers 50 countries whose nationals hold ordinary passports and visit for business, tourism, family or friend visits, exchange, or transit for no more than 30 days.",
+        "The 30 calendar days are counted from 00:00 on the day after entry.",
+        "The official MFA FAQ states no expiry date for Brunei, a December 31, 2027 end date for Russia, and a December 31, 2026 end date for the other 48 countries.",
+        "Work, study, journalism or news reporting are not covered by this visitor policy."
+      ]
+    },
+    {
+      "title": "240-hour visa-free transit",
+      "items": [
+        "The policy currently covers ordinary-passport nationals of 57 countries entering through designated ports in 24 provincial-level regions.",
+        "The traveler must continue from Mainland China to a different country or region and hold a confirmed onward ticket with a departure date and seat.",
+        "The traveler must use a designated entry or exit port and remain within the permitted stay area. This checker therefore returns an additional-checks result rather than final eligibility.",
+        "A simple return route such as United States → Mainland China → United States is not third-country transit."
+      ]
+    },
+    {
+      "title": "Hainan visa-free entry",
+      "items": [
+        "The regional policy covers ordinary-passport holders from 61 countries for stays of up to 30 days for listed short-term purposes.",
+        "The traveler must enter through an open port in Hainan and remain within the administrative region of Hainan Province.",
+        "The Hainan policy is not general permission to continue to Beijing, Shanghai or another province in Mainland China.",
+        "Work and study are not covered."
+      ]
+    },
+    {
+      "title": "Mutual visa exemption agreements",
+      "items": [
+        "Mutual agreements are bilateral arrangements and must not be confused with China’s unilateral 30-day policy.",
+        "Passport categories, effective dates, maximum stays and cumulative limits differ by country.",
+        "The automated checker only returns a likely result for ordinary-passport agreements whose current official table clearly states the effective date and stay limit.",
+        "Where the official sources conflict or the relevant term cannot be confirmed, the checker directs the traveler to an official visa check."
+      ]
+    },
+    {
+      "title": "Why nationality alone is not enough",
+      "items": [
+        "Visa-free travel can depend on passport type, purpose, entry date, duration, route, onward destination, entry port and permitted travel area.",
+        "Diplomatic, service, official, public-affairs, group and specially endorsed passports can follow different agreements.",
+        "Policies can expire or change. The checker does not assume that a temporary policy will be extended.",
+        "The operating carrier and Chinese border inspection authorities may request supporting documents and make operational or final decisions."
+      ]
+    },
+    {
+      "title": "Documents travelers should consider carrying",
+      "items": [
+        "A valid ordinary passport covering the intended stay.",
+        "A return or onward ticket consistent with the route and purpose.",
+        "Accommodation reservations and a complete first-night address.",
+        "Invitation letters, event documents or other evidence matching the stated purpose where relevant.",
+        "For 240-hour transit, a confirmed onward ticket with the departure date and seat, plus evidence that every Mainland China stop is within the permitted area."
+      ]
+    }
+  ],
+  "faqs": [
+    ["Is China visa-free for my nationality?", "Nationality is only one part of the check. The applicable policy can also depend on passport type, purpose, entry date, stay length, route, port and permitted travel area. Use the checker, then confirm the cited official source before travel."],
+    ["Is the 240-hour policy the same as 10 days of general visa-free travel?", "No. It is a transit policy for eligible ordinary-passport holders traveling through Mainland China to a different country or region. It also requires designated ports, a confirmed onward ticket and travel within the permitted area."],
+    ["Can I fly from the same country to China and back?", "That simple return route does not meet the third-country condition for 240-hour visa-free transit. Another visitor policy may still apply to the passport, purpose and dates, but the transit policy should not be used for the return route."],
+    ["Do Hong Kong and Macao count as separate destinations for transit?", "Do not rely on an automated assumption for a complex Hong Kong, Macao or Taiwan itinerary. Confirm the exact ticketed sequence, entry and exit ports, through-check arrangements and permitted area with the operating carrier and Chinese immigration authorities."],
+    ["Can I work or study during visa-free entry?", "No visitor result from this checker covers work or study. Journalism and news reporting are also outside the automated visitor policies. Travelers normally need the appropriate visa or prior approval for those purposes."],
+    ["How are the 30 days calculated?", "For China’s current unilateral 30-day policy, the official FAQ says the period begins at 00:00 on the day after entry and runs for 30 calendar days. Agreement-specific rules can differ, so check the policy named in the result."],
+    ["Can I travel outside Hainan under the Hainan policy?", "No. The Hainan policy is regional and limits the stay to the administrative region of Hainan Province. A traveler planning to continue to Beijing, Shanghai or another mainland province needs another valid entry basis."],
+    ["What happens if the policy expires before my trip?", "The checker will not assume that a temporary policy will be renewed. It returns a policy-not-confirmed result and asks the traveler to check current NIA, MFA or embassy information closer to departure."],
+    ["Does a visa-free result guarantee entry?", "No. The checker is a planning aid and is not an official visa or admission result. The traveler must still satisfy the current policy, and Chinese border inspection authorities make the final entry decision."],
+    ["Do children use the same visa-free rules?", "The current MFA FAQ states that minors use the same unilateral visa-free conditions as adults. Each child still needs the required valid travel document, and families should confirm carrier and consent-document requirements separately." ]
+  ],
+  "sourceLinks": [
+    ["NIA: 50 countries covered by unilateral visa exemption", "https://en.nia.gov.cn/n147418/n147463/c183390/content.html"],
+    ["MFA: unilateral visa-free entry FAQ and validity dates", "https://www.mfa.gov.cn/wjbzwfwpt/kzx/tzgg/202511/t20251110_11749824.html"],
+    ["NIA: 240-hour visa-free transit policy", "https://en.nia.gov.cn/n147418/n147463/c183412/content.html"],
+    ["NIA: Hainan regional visa-free entry policy", "https://en.nia.gov.cn/n147418/n147463/c180637/content.html"],
+    ["MFA: mutual visa exemption agreement list", "https://cs.mfa.gov.cn/wgrlh/lhqz/lhqzjjs/202510/t20251023_11739051.shtml"],
+    ["NIA: mutual visa exemption passport types and stay limits", "https://en.nia.gov.cn/n147418/n147463/c181470/content.html"],
+    ["NIA: mutual visa exemption Q&A", "https://en.nia.gov.cn/n147418/n147463/c183401/content.html"]
+  ]
+}

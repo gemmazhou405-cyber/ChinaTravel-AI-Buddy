@@ -54,6 +54,10 @@ const FUNNEL_EVENTS = new Set([
   'trip_result_day1_view',
   'email_dispatch_success',
   'email_dispatch_failure',
+  'visa_checker_start',
+  'visa_checker_complete',
+  'visa_checker_cta_click',
+  'visa_checker_official_source_click',
 ]);
 
 const utmKeys: UtmKey[] = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
@@ -259,6 +263,15 @@ export async function trackEvent(eventName: string, payload: AnalyticsPayload = 
     const destination = typeof payload.destination === 'string' ? payload.destination : '';
     if (guidePage) body.guidePage = guidePage.slice(0, 120);
     if (destination) body.destination = destination.slice(0, 200);
+  }
+  if (eventName.startsWith('visa_checker_')) {
+    const resultCategory = typeof payload.resultCategory === 'string' ? payload.resultCategory : '';
+    const policyType = typeof payload.policyType === 'string' ? payload.policyType : '';
+    const allowedCategories = new Set(['likely_eligible', 'additional_checks', 'date_unconfirmed', 'visa_may_be_required', 'cannot_determine']);
+    const allowedPolicyTypes = new Set(['mutual_agreement', 'unilateral_30_day', 'transit_240_hour', 'hainan_30_day', 'none']);
+    if (allowedCategories.has(resultCategory)) body.resultCategory = resultCategory;
+    if (allowedPolicyTypes.has(policyType)) body.policyType = policyType;
+    if (typeof payload.completed === 'boolean') body.completed = String(payload.completed);
   }
 
   // Fire-and-forget: analytics failure must never surface to the user.

@@ -16,6 +16,7 @@ const mapsComparisonGuide = JSON.parse(await readFile('src/data/seoPages/amap-vs
 const transit240Guide = JSON.parse(await readFile('src/data/seoPages/china-240-hour-visa-free-transit-2026.json', 'utf8'));
 const tenPayGoGuide = JSON.parse(await readFile('src/data/seoPages/tenpaygo-for-tourists.json', 'utf8'));
 const accommodationRegistrationGuide = JSON.parse(await readFile('src/data/seoPages/china-online-accommodation-registration-12367.json', 'utf8'));
+const visaFreeCheckerGuide = JSON.parse(await readFile('src/data/seoPages/china-visa-free-checker.json', 'utf8'));
 
 const pageMeta = {
   plan: {
@@ -45,7 +46,7 @@ const pageMeta = {
       ['China eSIM & Internet Guide', 'Choose, install, activate, and troubleshoot mobile data for a trip to mainland China.', '/china-esim-internet-guide/'],
       ['China SIM Card for Foreigners', 'Compare eSIM and physical SIM options, passport registration, mainland carriers, airport purchase, and top-ups.', '/china-sim-card-for-foreigners/'],
       ['China 240-Hour Visa-Free Transit 2026', 'Check 57 eligible countries, 65 designated ports, permitted stay areas, route rules, and the official 10-day clock.', '/china-240-hour-visa-free-transit-2026/'],
-      ['China Visa-Free Checker', 'Compare selected verified ordinary entry, transit, temporary, mutual, and Hainan rules for a planned route.', '/china-visa-free-checker/'],
+      ['China Visa-Free Checker', 'Compare verified ordinary-passport, 30-day, transit, mutual-agreement, and Hainan rules for a planned route.', '/china-visa-free-checker/'],
       ['TenPayGo for Tourists', 'Read confirmed launch facts, funding methods, a cautious setup checklist, limits, and payment backups.', '/tenpaygo-for-tourists/'],
       ['China Visa-Free Travel Guide', 'Compare 30-day visa-free entry, 240-hour visa-free transit, and the documents each route requires.', '/china-visa-free-travel-guide/'],
       ['China Airport Arrival Guide', 'Follow immigration, baggage, customs, mobile data, payment, and airport-transfer steps after landing.', '/china-airport-arrival-guide/'],
@@ -3906,28 +3907,8 @@ pageMeta['nia-12367-online-accommodation-registration-guide'] = {
 };
 
 pageMeta['china-visa-free-checker'] = {
-  title: 'China Visa-Free Checker (2026) | ChinaEase Buddy',
-  heading: 'China Visa-Free Checker',
-  description: 'Check whether a current ordinary-passport, 240-hour transit, UK/Canada temporary, mutual, or Hainan visa-free rule may fit your China trip.',
-  quickAnswer: 'Enter your nationality, ordinary-passport status, entry date, stay length, purpose, route, and ports. The checker uses selected official rules verified on October 1, 2026, and returns a cautious planning result rather than a guarantee of entry.',
-  lastReviewed: 'October 1, 2026',
-  lastModified: '2026-10-01',
+  ...visaFreeCheckerGuide,
   application: true,
-  contentSections: [
-    { title: 'What the checker considers', items: ['Ordinary unilateral visa-free entry for nationalities and dates in the current official policy.', 'Temporary 30-day visa-free entry for ordinary-passport holders from the United Kingdom and Canada through December 31, 2026.', '240-hour visa-free transit for eligible nationalities using a qualifying third-country or region route and designated ports.', 'Hainan-only 30-day entry for eligible nationalities and covered purposes.', 'Mutual visa-waiver agreements, which require an official treaty-level check because allowed stays and purposes differ.'] },
-    { title: 'Information you need', items: ['Passport nationality and confirmation that the document is an ordinary passport.', 'Planned entry date, length of stay, and purpose.', 'Exact arrival and departure ports for a 240-hour transit check.', 'Origin and onward country or region, including whether the onward destination differs from the origin.', 'Whether the full mainland China stay is limited to Hainan.'] },
-    { title: 'Important limitations', items: ['A result does not authorize entry and cannot account for every passport endorsement, residence document, prior immigration issue, carrier policy, or treaty exception.', 'Hong Kong, Macao, Taiwan, and mainland China routing can be operationally complex; confirm the exact ticketed sequence with NIA 12367 and the carrier.', 'Final decisions belong to Chinese border inspection. Recheck official sources immediately before travel.'] },
-  ],
-  faqs: [
-    ['Does this checker guarantee visa-free entry?', 'No. It checks selected published rules against the information you provide. Chinese border inspection, the carrier, and the relevant embassy or consulate make operational and final decisions.'],
-    ['Does 240-hour transit require a third country?', 'Yes. The ticketed route must continue from mainland China to a country or region different from the origin. The exact ports and permitted stay areas must also match the current official list.'],
-    ['Is the Hainan policy the same as nationwide visa-free entry?', 'No. Hainan has a separate regional policy for eligible nationalities and covered purposes. It requires travelers to remain in Hainan and should not be treated as permission to travel elsewhere in mainland China.'],
-  ],
-  sourceLinks: [
-    ['National Immigration Administration visa-free policy updates', 'https://en.nia.gov.cn/n147418/n147463/index.html'],
-    ['NIA 240-hour visa-free transit policy', 'https://en.nia.gov.cn/n147418/n147463/c183412/content.html'],
-    ['China government UK and Canada temporary policy', 'https://english.www.gov.cn/news/202602/15/content_WS6991bc11c6d00ca5f9a092d6.html'],
-  ],
 };
 
 const pages = Object.keys(pageMeta);
@@ -4103,6 +4084,7 @@ const relatedLinks = [
 
 const pageRelatedLinks = {
   'china-240-hour-visa-free-transit-2026': [
+    ['China visa-free checker', '/china-visa-free-checker/'],
     ['7-day China itinerary', '/7-day-china-itinerary/'],
     ['10-day China itinerary', '/10-day-china-itinerary/'],
     ['14-day China itinerary', '/14-day-china-itinerary/'],
@@ -4148,6 +4130,7 @@ const pageRelatedLinks = {
     ['Get my free China itinerary', '/#trip-plan'],
   ],
   'china-visa-free-travel-guide': [
+    ['China visa-free checker', '/china-visa-free-checker/'],
     ['China airport arrival guide', '/china-airport-arrival-guide/'],
     ['China hotels for foreigners', '/china-hotels-for-foreigners/'],
     ['First trip to China', '/first-trip-to-china/'],
@@ -4467,6 +4450,7 @@ const pageRelatedLinks = {
     ['China airport arrival guide', '/china-airport-arrival-guide/'],
   ],
   'china-airport-arrival-guide': [
+    ['China visa-free checker', '/china-visa-free-checker/'],
     ['Register a non-hotel stay with NIA 12367', '/nia-12367-online-accommodation-registration-guide/'],
     ['Beijing Airport to City Guide', '/beijing-airport-to-city-guide/'],
     ['China visa-free travel guide', '/china-visa-free-travel-guide/'],
@@ -4575,6 +4559,7 @@ const pageRelatedLinks = {
     ['China travel checklist', '/china-travel-checklist/'],
   ],
   'nia-12367-online-accommodation-registration-guide': [
+    ['China visa-free checker', '/china-visa-free-checker/'],
     ['China hotels for foreigners', '/china-hotels-for-foreigners/'],
     ['China airport arrival guide', '/china-airport-arrival-guide/'],
     ['First trip to China', '/first-trip-to-china/'],
@@ -4586,6 +4571,8 @@ const pageRelatedLinks = {
     ['China visa-free travel guide', '/china-visa-free-travel-guide/'],
     ['China airport arrival guide', '/china-airport-arrival-guide/'],
     ['China travel checklist', '/china-travel-checklist/'],
+    ['NIA 12367 accommodation registration', '/nia-12367-online-accommodation-registration-guide/'],
+    ['First trip to China', '/first-trip-to-china/'],
   ],
   pricing: [
     ['Home', '/'],
@@ -4744,6 +4731,7 @@ function schemaFor(page, meta) {
       url: pageUrl(page),
       name: meta.title,
       description: meta.description,
+      ...(meta.lastModified ? { dateModified: meta.lastModified } : {}),
       isPartOf: {
         '@type': 'WebSite',
         name: 'ChinaEase Buddy',

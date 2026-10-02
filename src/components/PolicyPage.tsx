@@ -15,6 +15,7 @@ import mapsComparisonGuide from '../data/seoPages/amap-vs-google-maps-china.json
 import transit240Guide from '../data/seoPages/china-240-hour-visa-free-transit-2026.json';
 import tenPayGoGuide from '../data/seoPages/tenpaygo-for-tourists.json';
 import accommodationRegistrationGuide from '../data/seoPages/china-online-accommodation-registration-12367.json';
+import visaFreeCheckerGuide from '../data/seoPages/china-visa-free-checker.json';
 import VisaFreeCheckerPage from './VisaFreeCheckerPage';
 
 type LegalPageType = 'terms' | 'privacy' | 'refund' | 'contact' | 'about' | 'unsubscribe';
@@ -745,15 +746,15 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   ),
   'china-visa-free-checker': {
     path: '/china-visa-free-checker/',
-    title: 'China Visa-Free Checker',
-    intro: 'A conservative planning tool based on selected official visa-free policies verified on October 1, 2026.',
-    metaTitle: 'China Visa-Free Checker (2026) | ChinaEase Buddy',
-    metaDescription: 'Check whether a current ordinary-passport, 240-hour transit, UK/Canada temporary, mutual, or Hainan visa-free rule may fit your China trip.',
-    quickAnswer: 'Enter your nationality, ordinary-passport status, travel dates, purpose, route, and ports. The result is a planning aid and never guarantees admission.',
+    title: visaFreeCheckerGuide.heading,
+    intro: visaFreeCheckerGuide.quickAnswer,
+    metaTitle: visaFreeCheckerGuide.title,
+    metaDescription: visaFreeCheckerGuide.description,
+    quickAnswer: visaFreeCheckerGuide.quickAnswer,
     ctaLabel: 'Get my free trip starter',
     ctaHref: '/#trip-plan',
-    lastReviewed: 'October 1, 2026',
-    lastModified: '2026-10-01',
+    lastReviewed: visaFreeCheckerGuide.lastReviewed,
+    lastModified: visaFreeCheckerGuide.lastModified,
     sections: [],
     faqs: [],
     related: [],
@@ -1093,6 +1094,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'First trip to China', href: '/first-trip-to-china/' },
       { label: 'China eSIM & internet guide', href: '/china-esim-internet-guide/' },
       { label: 'China payment guide', href: '/china-payment-guide/' },
+      { label: 'China visa-free checker', href: '/china-visa-free-checker/' },
       { label: 'China metro guide', href: '/china-metro-guide/' },
       { label: 'DiDi in China for foreigners', href: '/didi-in-china-for-foreigners/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
@@ -6531,6 +6533,8 @@ Object.assign(
 guidePages['china-payment-guide'].related.unshift({ label: 'TenPayGo for tourists', href: '/tenpaygo-for-tourists/' });
 guidePages['china-hotels-for-foreigners'].related.unshift({ label: 'Online accommodation registration', href: '/nia-12367-online-accommodation-registration-guide/' });
 guidePages['china-airport-arrival-guide'].related.unshift({ label: 'Register a non-hotel stay with NIA 12367', href: '/nia-12367-online-accommodation-registration-guide/' });
+guidePages['china-airport-arrival-guide'].related.unshift({ label: 'China visa-free checker', href: '/china-visa-free-checker/' });
+guidePages['nia-12367-online-accommodation-registration-guide'].related.unshift({ label: 'China visa-free checker', href: '/china-visa-free-checker/' });
 guidePages['china-visa-free-travel-guide'].related.unshift({ label: 'China visa-free checker', href: '/china-visa-free-checker/' });
 guidePages['china-240-hour-visa-free-transit-2026'].related.unshift({ label: 'China visa-free checker', href: '/china-visa-free-checker/' });
 

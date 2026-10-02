@@ -1,225 +1,339 @@
-export type VisaPurpose = 'tourism' | 'business' | 'family_visit' | 'exchange' | 'transit' | 'medical' | 'work' | 'study' | 'journalism' | 'other';
+import {
+  COUNTRY_NAMES,
+  HAINAN_30_DAY_POLICIES,
+  MUTUAL_VISA_EXEMPTION_POLICIES,
+  OFFICIAL_VISA_SOURCES,
+  POLICY_LAST_VERIFIED_DATE,
+  TRANSIT_240_POLICIES,
+  UNILATERAL_30_DAY_POLICIES,
+  normalizeNationalityToIso,
+  type PassportType,
+  type TripType,
+  type VisaPolicyRecord,
+  type VisaPolicyType,
+  type VisaPurpose,
+} from '../data/chinaVisaPolicies.ts';
+
+export type { PassportType, TripType, VisaPurpose } from '../data/chinaVisaPolicies.ts';
 
 export interface VisaCheckerInput {
-  nationality: string;
-  ordinaryPassport: boolean;
+  nationalityCode: string;
+  passportType: PassportType | '';
   entryDate: string;
+  purpose: VisaPurpose | '';
   stayDays: number;
-  purpose: VisaPurpose;
-  arrivalPort: string;
-  departurePort: string;
-  continuesToThirdCountryOrRegion: boolean;
+  tripType: TripType | '';
   originCountryOrRegion: string;
   onwardCountryOrRegion: string;
-  hainanOnly: boolean;
 }
 
-export type VisaRuleType = 'temporary_30_day' | 'unilateral_30_day' | 'mutual_agreement' | 'transit_240_hour' | 'hainan_30_day' | 'official_confirmation_required';
-
-export interface VisaRuleMetadata {
-  type: VisaRuleType;
-  sourceUrl: string;
-  effectiveDate: string | null;
-  expiryDate: string | null;
-  lastVerifiedDate: string;
-}
+export type VisaResultCategory =
+  | 'likely_eligible'
+  | 'additional_checks'
+  | 'date_unconfirmed'
+  | 'visa_may_be_required'
+  | 'cannot_determine';
 
 export interface VisaCheckerResult {
-  status: 'may_be_eligible' | 'not_eligible_for_selected_route' | 'confirm_officially';
-  ruleType: VisaRuleType;
+  category: VisaResultCategory;
+  policyType: VisaPolicyType | 'none';
   heading: string;
-  explanation: string;
-  checks: string[];
-  sourceUrl: string;
+  summary: string;
+  basis: string[];
+  remainingConditions: string[];
+  maximumStay: string;
+  policyValidity: string;
+  sources: Array<{ label: string; url: string }>;
+  nextAction: string;
+  lastPolicyCheck: string;
 }
 
-export const VISA_RULE_METADATA: VisaRuleMetadata[] = [
-  {
-    type: 'temporary_30_day',
-    sourceUrl: 'https://english.www.gov.cn/news/202602/15/content_WS6991bc11c6d00ca5f9a092d6.html',
-    effectiveDate: '2026-02-17',
-    expiryDate: '2026-12-31',
-    lastVerifiedDate: '2026-10-01',
-  },
-  {
-    type: 'unilateral_30_day',
-    sourceUrl: 'https://cs.mfa.gov.cn/zytz/202607/t20260721_11988631.html',
-    effectiveDate: null,
-    expiryDate: '2026-12-31',
-    lastVerifiedDate: '2026-10-01',
-  },
-  {
-    type: 'mutual_agreement',
-    sourceUrl: 'https://cs.mfa.gov.cn/lh/lhqz_149493/list/202607/t20260713_11981384.html',
-    effectiveDate: null,
-    expiryDate: null,
-    lastVerifiedDate: '2026-10-01',
-  },
-  {
-    type: 'transit_240_hour',
-    sourceUrl: 'https://en.nia.gov.cn/n147418/n147463/c183412/content.html',
-    effectiveDate: '2026-08-20',
-    expiryDate: null,
-    lastVerifiedDate: '2026-10-01',
-  },
-  {
-    type: 'hainan_30_day',
-    sourceUrl: 'https://en.nia.gov.cn/n147418/n147463/c180637/content.html',
-    effectiveDate: '2026-08-20',
-    expiryDate: null,
-    lastVerifiedDate: '2026-10-01',
-  },
-  {
-    type: 'official_confirmation_required',
-    sourceUrl: 'https://en.nia.gov.cn/n147418/n147463/index.html',
-    effectiveDate: null,
-    expiryDate: null,
-    lastVerifiedDate: '2026-10-01',
-  },
-];
+const officialFallback = OFFICIAL_VISA_SOURCES.unilateralCountries;
+const excludedPurposes = new Set<VisaPurpose>(['work', 'study', 'journalism', 'other']);
 
-const TEMPORARY_UK_CANADA = new Set(['Canada', 'United Kingdom']);
-const UNILATERAL_30_DAY = new Set([
-  'Brunei', 'France', 'Germany', 'Italy', 'Spain', 'Netherlands', 'Switzerland', 'Ireland', 'Hungary', 'Austria', 'Belgium', 'Luxembourg', 'New Zealand', 'Australia', 'Poland', 'Portugal', 'Greece', 'Cyprus', 'Slovenia', 'Slovakia', 'Norway', 'Finland', 'Denmark', 'Iceland', 'Andorra', 'Monaco', 'Liechtenstein', 'South Korea', 'Bulgaria', 'Romania', 'Croatia', 'Montenegro', 'North Macedonia', 'Malta', 'Estonia', 'Latvia', 'Japan', 'Brazil', 'Argentina', 'Chile', 'Peru', 'Uruguay', 'Saudi Arabia', 'Oman', 'Kuwait', 'Bahrain', 'Russia', 'Sweden', 'Canada', 'United Kingdom',
-]);
-const MUTUAL_ORDINARY_PASSPORT = new Set([
-  'Albania', 'Antigua and Barbuda', 'Armenia', 'Azerbaijan', 'Bahamas', 'Barbados', 'Belarus', 'Bosnia and Herzegovina', 'Georgia', 'Grenada', 'Kazakhstan', 'Malaysia', 'Maldives', 'Mauritius', 'Qatar', 'Samoa', 'San Marino', 'Serbia', 'Seychelles', 'Singapore', 'Solomon Islands', 'Suriname', 'Thailand', 'Tonga', 'United Arab Emirates', 'Uzbekistan',
-]);
-const TRANSIT_240 = new Set([
-  'Albania', 'Austria', 'Belarus', 'Belgium', 'Bosnia and Herzegovina', 'Bulgaria', 'Croatia', 'Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany', 'Greece', 'Hungary', 'Iceland', 'Ireland', 'Italy', 'Latvia', 'Lithuania', 'Luxembourg', 'Malta', 'Monaco', 'Montenegro', 'Netherlands', 'North Macedonia', 'Norway', 'Poland', 'Portugal', 'Romania', 'Russia', 'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switzerland', 'Ukraine', 'United Kingdom', 'Canada', 'United States', 'Argentina', 'Brazil', 'Chile', 'Mexico', 'Australia', 'New Zealand', 'Brunei', 'Indonesia', 'Japan', 'Kyrgyzstan', 'Qatar', 'Singapore', 'South Korea', 'United Arab Emirates', 'Vietnam',
-]);
-const HAINAN_30_DAY = new Set([
-  'Albania', 'Argentina', 'Australia', 'Austria', 'Belarus', 'Belgium', 'Bosnia and Herzegovina', 'Brazil', 'Brunei', 'Bulgaria', 'Canada', 'Chile', 'Croatia', 'Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany', 'Greece', 'Hungary', 'Iceland', 'Indonesia', 'Ireland', 'Italy', 'Japan', 'Kazakhstan', 'Kyrgyzstan', 'Latvia', 'Lithuania', 'Luxembourg', 'Malaysia', 'Malta', 'Mexico', 'Monaco', 'Montenegro', 'Netherlands', 'New Zealand', 'North Macedonia', 'Norway', 'Philippines', 'Poland', 'Portugal', 'Qatar', 'South Korea', 'Romania', 'Russia', 'Serbia', 'Singapore', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switzerland', 'Thailand', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Vietnam',
-]);
-
-export const NATIONALITIES = Array.from(new Set([
-  ...TEMPORARY_UK_CANADA,
-  ...UNILATERAL_30_DAY,
-  ...MUTUAL_ORDINARY_PASSPORT,
-  ...TRANSIT_240,
-  ...HAINAN_30_DAY,
-])).sort((a, b) => a.localeCompare(b));
-
-const ORDINARY_PURPOSES = new Set<VisaPurpose>(['tourism', 'business', 'family_visit', 'exchange', 'transit']);
-const HAINAN_PURPOSES = new Set<VisaPurpose>(['tourism', 'business', 'family_visit', 'medical', 'exchange']);
-
-function rule(type: VisaRuleType) {
-  return VISA_RULE_METADATA.find((item) => item.type === type)!;
+function policyFor(policies: VisaPolicyRecord[], countryCode: string) {
+  return policies.find((policy) => policy.countryIsoCode === countryCode);
 }
 
-function isWithin(date: string, start: string | null, end: string | null) {
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return false;
-  if (start && date < start) return false;
-  if (end && date > end) return false;
+function hasCompleteInput(input: VisaCheckerInput) {
+  return Boolean(
+    input.nationalityCode &&
+    input.passportType &&
+    /^\d{4}-\d{2}-\d{2}$/.test(input.entryDate) &&
+    input.purpose &&
+    input.tripType &&
+    Number.isInteger(input.stayDays) &&
+    input.stayDays >= 1 &&
+    input.stayDays <= 180,
+  );
+}
+
+function isPolicyActive(policy: VisaPolicyRecord, entryDate: string) {
+  if (policy.validFrom && entryDate < policy.validFrom) return false;
+  if (policy.validUntil && entryDate > policy.validUntil) return false;
   return true;
 }
 
-function normalizeRegion(value: string) {
-  return value.trim().toLocaleLowerCase().replace(/\s+/g, ' ');
+function formatDate(value: string) {
+  return new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })
+    .format(new Date(`${value}T00:00:00Z`));
 }
 
-export function evaluateVisaFree(input: VisaCheckerInput, validTransitPorts: readonly string[]): VisaCheckerResult {
-  const officialFallback = rule('official_confirmation_required');
-  if (!input.ordinaryPassport) {
-    return {
-      status: 'confirm_officially',
-      ruleType: 'official_confirmation_required',
-      heading: 'Your passport type needs an official check',
-      explanation: 'This checker only evaluates ordinary-passport routes. Diplomatic, service, official, emergency, refugee, and other travel documents can follow different rules.',
-      checks: ['Confirm the exact document category with a Chinese embassy or consulate and your carrier.'],
-      sourceUrl: officialFallback.sourceUrl,
-    };
-  }
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(input.entryDate) || !Number.isInteger(input.stayDays) || input.stayDays < 1) {
-    return {
-      status: 'confirm_officially', ruleType: 'official_confirmation_required', heading: 'Add a valid date and stay length',
-      explanation: 'Eligibility cannot be checked without a valid planned entry date and a positive whole-number stay length.', checks: [], sourceUrl: officialFallback.sourceUrl,
-    };
-  }
-  if (['work', 'study', 'journalism'].includes(input.purpose)) {
-    return {
-      status: 'not_eligible_for_selected_route', ruleType: 'official_confirmation_required', heading: 'A visa or prior approval is normally required',
-      explanation: 'The visitor and transit policies checked here do not cover work, study, or journalism. Apply for the appropriate visa or approval before travel.', checks: [], sourceUrl: officialFallback.sourceUrl,
-    };
-  }
+function validityText(policy: VisaPolicyRecord) {
+  if (policy.validUntil) return `Verified through ${formatDate(policy.validUntil)}`;
+  if (policy.validFrom) return `In force from ${formatDate(policy.validFrom)}; no expiry is stated in the cited source`;
+  return 'No expiry is stated in the cited source; recheck before travel';
+}
 
-  if (TEMPORARY_UK_CANADA.has(input.nationality)) {
-    const currentRule = rule('temporary_30_day');
-    if (isWithin(input.entryDate, currentRule.effectiveDate, currentRule.expiryDate) && input.stayDays <= 30 && ORDINARY_PURPOSES.has(input.purpose)) {
-      return {
-        status: 'may_be_eligible', ruleType: currentRule.type, heading: 'You may be eligible for temporary 30-day visa-free entry',
-        explanation: 'Based on the information provided, an ordinary-passport holder from Canada or the United Kingdom may use the temporary policy for up to 30 days for a covered purpose between February 17 and December 31, 2026.',
-        checks: ['Confirm the policy is still in force on the entry date.', 'Carry evidence matching the stated purpose and onward or return arrangements.', 'The final decision belongs to the carrier and Chinese border inspection.'], sourceUrl: currentRule.sourceUrl,
-      };
-    }
-    if (input.entryDate > '2026-12-31') {
-      return {
-        status: 'confirm_officially', ruleType: currentRule.type, heading: 'The published UK/Canada temporary policy has expired for this date',
-        explanation: 'The verified policy currently runs through December 31, 2026. Do not assume it continues after that date unless an official extension is published.',
-        checks: ['Check the Chinese Foreign Ministry or embassy for an extension.'], sourceUrl: currentRule.sourceUrl,
-      };
-    }
-  }
+function sourcesFor(policy?: VisaPolicyRecord) {
+  if (!policy) return [{ label: 'Official NIA visa-free policy information', url: officialFallback }];
+  return [
+    { label: 'Primary official policy source', url: policy.officialSourceUrl },
+    ...policy.additionalOfficialSourceUrls.map((url, index) => ({ label: `Additional official source ${index + 1}`, url })),
+  ];
+}
 
-  const ordinaryRule = rule('unilateral_30_day');
-  if (UNILATERAL_30_DAY.has(input.nationality) && isWithin(input.entryDate, ordinaryRule.effectiveDate, ordinaryRule.expiryDate) && input.stayDays <= 30 && ORDINARY_PURPOSES.has(input.purpose)) {
-    return {
-      status: 'may_be_eligible', ruleType: ordinaryRule.type, heading: 'You may be eligible for ordinary 30-day visa-free entry',
-      explanation: 'Based on the nationality, date, stay length, passport type, and purpose provided, the current ordinary-passport policy may apply. Individual policy validity dates can differ, so recheck the official list immediately before travel.',
-      checks: ['No third-country transit route is required for ordinary visa-free entry.', 'Confirm the current nationality entry and expiry date in the official FAQ.', 'Carrier and border inspection make the operational and final decisions.'], sourceUrl: ordinaryRule.sourceUrl,
-    };
-  }
-
-  if (MUTUAL_ORDINARY_PASSPORT.has(input.nationality)) {
-    const mutualRule = rule('mutual_agreement');
-    return {
-      status: 'confirm_officially', ruleType: mutualRule.type, heading: 'A mutual visa-waiver agreement may apply',
-      explanation: 'The official mutual-agreement table includes ordinary passports for this nationality, but allowed stay, purpose, document wording, and one-way conditions can differ by agreement. This checker does not convert those treaty details into an automatic approval.',
-      checks: ['Open the official agreement table for the exact passport and nationality.', 'Confirm permitted stay and purpose with the embassy or consulate.', 'Carry documents requested by the carrier.'], sourceUrl: mutualRule.sourceUrl,
-    };
-  }
-
-  const hainanRule = rule('hainan_30_day');
-  if (input.hainanOnly && HAINAN_30_DAY.has(input.nationality) && input.stayDays <= 30 && HAINAN_PURPOSES.has(input.purpose)) {
-    return {
-      status: 'may_be_eligible', ruleType: hainanRule.type, heading: 'You may be eligible for Hainan-only 30-day visa-free entry',
-      explanation: 'Based on the information provided, the Hainan regional policy may apply. It is limited to Hainan Province and is not the same as nationwide ordinary visa-free entry or 240-hour transit.',
-      checks: ['Enter through an open port in Hainan.', 'Remain within Hainan Province.', 'Confirm that the purpose and travel date remain covered.'], sourceUrl: hainanRule.sourceUrl,
-    };
-  }
-
-  const transitRule = rule('transit_240_hour');
-  const origin = normalizeRegion(input.originCountryOrRegion);
-  const onward = normalizeRegion(input.onwardCountryOrRegion);
-  const routeIsThirdRegion = input.continuesToThirdCountryOrRegion && Boolean(origin) && Boolean(onward) && origin !== onward;
-  const arrivalValid = validTransitPorts.includes(input.arrivalPort);
-  const departureValid = validTransitPorts.includes(input.departurePort);
-  if (TRANSIT_240.has(input.nationality) && input.stayDays <= 10) {
-    if (!routeIsThirdRegion) {
-      return {
-        status: 'not_eligible_for_selected_route', ruleType: transitRule.type, heading: 'This route does not meet the third-country transit condition',
-        explanation: 'The 240-hour policy requires travel from one country or region through mainland China to a different country or region. A return to the same origin does not qualify.',
-        checks: ['Enter distinct origin and onward countries or regions.', 'Do not treat Hong Kong, Macao, Taiwan, and mainland China as interchangeable; verify the exact ticketed sequence with immigration and the carrier.'], sourceUrl: transitRule.sourceUrl,
-      };
-    }
-    if (arrivalValid && departureValid && input.purpose === 'transit') {
-      return {
-        status: 'may_be_eligible', ruleType: transitRule.type, heading: 'You may be eligible for 240-hour visa-free transit',
-        explanation: 'Based on the information provided, the nationality, ordinary passport, stay length, third-country route, and selected designated ports match core published conditions. You must still remain within the permitted area connected to the route.',
-        checks: ['Hold confirmed onward transport with a seat and departure date.', 'Verify every mainland stop is within the permitted stay area.', 'The 240-hour clock starts at 00:00 on the day after entry.', 'Confirm complex Hong Kong, Macao, or Taiwan routing with NIA 12367 and the carrier.'], sourceUrl: transitRule.sourceUrl,
-      };
-    }
-    if (!arrivalValid || !departureValid) {
-      return {
-        status: 'not_eligible_for_selected_route', ruleType: transitRule.type, heading: 'A selected port is not in the current 65-port list',
-        explanation: 'The 240-hour policy is limited to designated entry and exit ports. Choose the exact official port rather than only the city name, and verify the permitted area.', checks: [], sourceUrl: transitRule.sourceUrl,
-      };
-    }
-  }
-
+function fallback(
+  category: VisaResultCategory,
+  heading: string,
+  summary: string,
+  basis: string[],
+  nextAction: string,
+): VisaCheckerResult {
   return {
-    status: 'confirm_officially', ruleType: 'official_confirmation_required', heading: 'No safe automatic match was found',
-    explanation: 'This does not mean a visa is definitely required. A mutual agreement, another regional rule, a residence permit, or a visa category may apply, but the information provided is not enough for a reliable automated result.',
-    checks: ['Check the Chinese embassy or consulate for your passport nationality.', 'Confirm the route with the carrier.', 'For immigration policy questions in China, contact NIA 12367.'], sourceUrl: officialFallback.sourceUrl,
+    category,
+    policyType: 'none',
+    heading,
+    summary,
+    basis,
+    remainingConditions: ['Chinese border inspection makes the final admission decision.'],
+    maximumStay: 'Not determined',
+    policyValidity: 'No automated policy match',
+    sources: [{ label: 'Official NIA policy information', url: officialFallback }],
+    nextAction,
+    lastPolicyCheck: POLICY_LAST_VERIFIED_DATE,
   };
+}
+
+function resultFromPolicy(
+  category: VisaResultCategory,
+  policy: VisaPolicyRecord,
+  heading: string,
+  summary: string,
+  basis: string[],
+  remainingConditions: string[],
+  nextAction: string,
+): VisaCheckerResult {
+  return {
+    category,
+    policyType: policy.policyType,
+    heading,
+    summary,
+    basis,
+    remainingConditions,
+    maximumStay: policy.maximumStayText,
+    policyValidity: validityText(policy),
+    sources: sourcesFor(policy),
+    nextAction,
+    lastPolicyCheck: policy.lastVerifiedDate,
+  };
+}
+
+function normalizedRoutePart(value: string) {
+  const iso = normalizeNationalityToIso(value);
+  return iso === 'ZZ' ? value.trim().toLocaleLowerCase().replace(/[.,]/g, '').replace(/\s+/g, ' ') : iso;
+}
+
+export function evaluateVisaFree(input: VisaCheckerInput): VisaCheckerResult {
+  if (!hasCompleteInput(input)) {
+    return fallback(
+      'cannot_determine',
+      'This checker cannot determine your case',
+      'Complete every required field with a valid travel date and a stay between 1 and 180 days.',
+      ['Necessary trip information is missing or invalid.'],
+      'Complete the form, or use the official sources for a manual check.',
+    );
+  }
+
+  const countryName = COUNTRY_NAMES[input.nationalityCode] ?? 'the selected nationality';
+
+  if (input.passportType !== 'ordinary') {
+    return fallback(
+      'cannot_determine',
+      'This checker currently covers ordinary passports only',
+      'Diplomatic, service, official and other travel documents can follow different agreements and cannot be assessed with ordinary-tourist rules.',
+      ['The selected passport type is outside this checker’s scope.'],
+      'Check the exact passport category with a Chinese embassy or consulate and your carrier.',
+    );
+  }
+
+  if (excludedPurposes.has(input.purpose as VisaPurpose)) {
+    return fallback(
+      'visa_may_be_required',
+      'A visa may be required',
+      'You will normally need the appropriate visa or prior approval for this purpose.',
+      [`${input.purpose === 'journalism' ? 'Journalism/news reporting' : input.purpose} is not covered by the visitor policies automated here.`],
+      'Contact a Chinese embassy or consulate before booking travel.',
+    );
+  }
+
+  const mutual = policyFor(MUTUAL_VISA_EXEMPTION_POLICIES, input.nationalityCode);
+  if (mutual && isPolicyActive(mutual, input.entryDate)) {
+    if (!mutual.acceptedPurposes.includes(input.purpose as VisaPurpose) || input.stayDays > mutual.maximumStayDays) {
+      return resultFromPolicy(
+        'visa_may_be_required',
+        mutual,
+        'A visa may be required',
+        `A verified ordinary-passport mutual agreement exists for ${countryName}, but this stay length or purpose is outside the terms automated by this checker.`,
+        [`Requested stay: ${input.stayDays} days.`, `Agreement limit recorded here: ${mutual.maximumStayText}.`],
+        mutual.cumulativeStayRestriction ? [mutual.cumulativeStayRestriction, 'Confirm purpose and cumulative prior stays.'] : ['Confirm the agreement’s permitted purpose and any prior stays.'],
+        'Check the country-specific agreement and contact the relevant Chinese embassy or consulate.',
+      );
+    }
+    return resultFromPolicy(
+      'likely_eligible',
+      mutual,
+      'Likely eligible under a mutual visa exemption agreement',
+      `The current official agreement table records ordinary-passport visa-free entry for ${countryName}. This is a bilateral agreement, not China’s unilateral 30-day policy.`,
+      ['Ordinary passport selected.', `Planned stay of ${input.stayDays} days is within the recorded limit.`, 'Purpose is within the visitor purposes checked by this tool.'],
+      [
+        ...(mutual.cumulativeStayRestriction ? [mutual.cumulativeStayRestriction] : []),
+        'Carry documents consistent with the stated purpose and confirm the agreement immediately before travel.',
+        'Chinese border inspection makes the final admission decision.',
+      ],
+      'Open the official agreement table and confirm any cumulative-stay restriction before departure.',
+    );
+  }
+
+  const unilateral = policyFor(UNILATERAL_30_DAY_POLICIES, input.nationalityCode);
+  if (unilateral && !isPolicyActive(unilateral, input.entryDate) && input.tripType === 'mainland_visit') {
+    return resultFromPolicy(
+      'date_unconfirmed',
+      unilateral,
+      'Policy not yet confirmed for your travel date',
+      `The currently verified unilateral policy for ${countryName} expires before the planned entry date. This checker does not assume an extension.`,
+      [`Planned entry: ${formatDate(input.entryDate)}.`, unilateral.validUntil ? `Current verified end date: ${formatDate(unilateral.validUntil)}.` : 'No matching effective period was found.'],
+      ['Recheck the MFA or NIA source close to departure.'],
+      'Do not rely on visa-free entry unless an official extension or replacement policy is published.',
+    );
+  }
+  if (unilateral && isPolicyActive(unilateral, input.entryDate) && unilateral.acceptedPurposes.includes(input.purpose as VisaPurpose) && input.stayDays <= 30) {
+    return resultFromPolicy(
+      'likely_eligible',
+      unilateral,
+      'Likely eligible for 30-day visa-free entry',
+      `The current unilateral policy includes ordinary-passport holders from ${countryName} for the selected purpose and stay length.`,
+      ['Nationality is on the current official 50-country list.', 'Ordinary passport selected.', `Planned stay: ${input.stayDays} days.`],
+      [
+        'The 30 calendar days are calculated from 00:00 on the day after entry.',
+        'Carry a return or onward ticket, accommodation booking, and documents consistent with your stated purpose.',
+        'Chinese border inspection makes the final admission decision.',
+      ],
+      'Recheck the official list and policy validity immediately before travel.',
+    );
+  }
+
+  if (input.tripType === 'hainan_only') {
+    const hainan = policyFor(HAINAN_30_DAY_POLICIES, input.nationalityCode);
+    if (hainan && hainan.acceptedPurposes.includes(input.purpose as VisaPurpose) && input.stayDays <= hainan.maximumStayDays) {
+      return resultFromPolicy(
+        'additional_checks',
+        hainan,
+        'May qualify — additional checks required',
+        `The Hainan 30-day policy includes ordinary-passport holders from ${countryName} for this purpose and stay length.`,
+        ['The selected trip is Hainan only.', `Planned stay: ${input.stayDays} days.`],
+        ['This policy limits your stay to Hainan Province.', 'Enter and leave through an open port in Hainan.', 'Confirm the current port and purpose conditions before travel.'],
+        'Check the official Hainan policy and verify your arrival port before booking.',
+      );
+    }
+    return fallback(
+      'visa_may_be_required',
+      'A visa may be required',
+      'The selected nationality, purpose or stay length does not match the Hainan-only policy automated here.',
+      ['Hainan visa-free entry is regional and cannot be used for travel to Beijing or other mainland destinations outside Hainan.'],
+      'Check the official Hainan list and a Chinese embassy or consulate.',
+    );
+  }
+
+  if (input.tripType === 'transit') {
+    const transit = policyFor(TRANSIT_240_POLICIES, input.nationalityCode);
+    const origin = normalizedRoutePart(input.originCountryOrRegion);
+    const onward = normalizedRoutePart(input.onwardCountryOrRegion);
+    if (!origin || !onward) {
+      return fallback(
+        'cannot_determine',
+        'This checker cannot determine your case',
+        'A 240-hour transit check needs both the country or region before Mainland China and the next country or region after Mainland China.',
+        ['The transit route is incomplete.'],
+        'Add both route points and check again.',
+      );
+    }
+    if (origin === 'CN' || onward === 'CN') {
+      return fallback(
+        'visa_may_be_required',
+        'A visa may be required',
+        'The route entered does not show transit between two places outside Mainland China.',
+        ['The place before and the destination after Mainland China must both be outside Mainland China.'],
+        'Check the ticketed route with the carrier and use the appropriate visitor visa if it is not a qualifying transit.',
+      );
+    }
+    if (origin === onward) {
+      if (!transit) {
+        return fallback(
+          'visa_may_be_required',
+          'A visa may be required',
+          'The itinerary is not a third-country or third-region transit, and the selected nationality is not on the verified 240-hour transit list.',
+          [`Route entered: ${input.originCountryOrRegion} → Mainland China → ${input.onwardCountryOrRegion}.`],
+          'Check the appropriate visitor visa before travel.',
+        );
+      }
+      return resultFromPolicy(
+        'visa_may_be_required',
+        transit,
+        'A visa may be required',
+        'The itinerary is not a third-country or third-region transit because the route returns to the same origin.',
+        [`Route entered: ${input.originCountryOrRegion} → Mainland China → ${input.onwardCountryOrRegion}.`],
+        ['The destination after Mainland China must differ from the place before Mainland China.'],
+        'Change the ticketed route or check the appropriate visitor visa before travel.',
+      );
+    }
+    if (transit && input.stayDays <= transit.maximumStayDays && transit.acceptedPurposes.includes(input.purpose as VisaPurpose)) {
+      return resultFromPolicy(
+        'additional_checks',
+        transit,
+        'May qualify — additional checks required',
+        'You may qualify for the 240-hour visa-free transit policy, subject to your entry port, exit port and permitted stay area.',
+        ['Nationality is on the current 57-country list.', 'Ordinary passport selected.', 'The route continues to a different country or region.', `Planned stay: ${input.stayDays} days.`],
+        ['Hold an onward ticket with a confirmed departure date and seat.', 'Use designated entry and exit ports.', 'Remain within the permitted stay area.', 'Confirm Hong Kong, Macao or Taiwan routing with the carrier and border authorities when relevant.'],
+        'Verify the exact ports, domestic stops and permitted area on the official NIA page before booking.',
+      );
+    }
+    return fallback(
+      'visa_may_be_required',
+      'A visa may be required',
+      'The nationality, purpose or stay length does not match the 240-hour transit conditions automated here.',
+      [input.stayDays > 10 ? 'The planned stay is longer than 240 hours.' : 'No safe 240-hour policy match was found.'],
+      'Check the official 240-hour policy and contact the carrier or a Chinese embassy or consulate.',
+    );
+  }
+
+  if (unilateral && input.stayDays > 30) {
+    return resultFromPolicy(
+      'visa_may_be_required',
+      unilateral,
+      'A visa may be required',
+      'The planned stay is longer than the 30-day unilateral visa-free limit.',
+      [`Planned stay: ${input.stayDays} days.`, 'Current unilateral limit: 30 days.'],
+      ['A longer stay normally requires the appropriate visa before travel.'],
+      'Contact a Chinese embassy or consulate for the correct visa category.',
+    );
+  }
+
+  return fallback(
+    'visa_may_be_required',
+    'A visa may be required',
+    `No verified ordinary-passport policy in this checker safely covers a direct Mainland China visit for ${countryName}.`,
+    ['Nationality alone is not enough; passport type, purpose, dates and itinerary all matter.'],
+    'Use the official sources and contact a Chinese embassy or consulate before travel.',
+  );
 }

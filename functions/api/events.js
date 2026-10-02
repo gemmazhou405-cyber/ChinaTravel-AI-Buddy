@@ -22,12 +22,18 @@ const ALLOWED_EVENTS = new Set([
   'trip_result_day1_view',
   'email_dispatch_success',
   'email_dispatch_failure',
+  'visa_checker_start',
+  'visa_checker_complete',
+  'visa_checker_cta_click',
+  'visa_checker_official_source_click',
 ]);
 
 const ALLOWED_DEVICE_CATEGORIES = new Set(['mobile', 'tablet', 'desktop', 'unknown']);
 const ALLOWED_ENVIRONMENTS = new Set(['production', 'test', 'preview']);
 const ALLOWED_LOCALE_PREFIXES = new Set(['en', 'zh', 'fr', 'de', 'ja', 'ko']);
 const ALLOWED_PLANS = new Set(['trip', 'group']);
+const ALLOWED_VISA_RESULTS = new Set(['likely_eligible', 'additional_checks', 'date_unconfirmed', 'visa_may_be_required', 'cannot_determine']);
+const ALLOWED_VISA_POLICIES = new Set(['mutual_agreement', 'unilateral_30_day', 'transit_240_hour', 'hainan_30_day', 'none']);
 
 // Per-isolate best-effort rate limit. Not shared across Cloudflare isolates — V1 acceptable.
 const _ipRateMap = new Map();
@@ -168,6 +174,9 @@ export async function onRequestPost({ request, env }) {
   const planCityCount = clampInt(body.planCityCount, 0, 20);
   const guidePage = clampStr(body.guidePage, 120);
   const destination = clampStr(body.destination, 200);
+  const resultCategory = ALLOWED_VISA_RESULTS.has(body.resultCategory) ? body.resultCategory : null;
+  const policyType = ALLOWED_VISA_POLICIES.has(body.policyType) ? body.policyType : null;
+  const completed = body.completed === 'true' ? true : body.completed === 'false' ? false : null;
   const deviceCategory = ALLOWED_DEVICE_CATEGORIES.has(body.deviceCategory)
     ? body.deviceCategory
     : 'unknown';
@@ -197,6 +206,11 @@ export async function onRequestPost({ request, env }) {
   if (eventName === 'guide_cta_click') {
     if (guidePage) doc.guidePage = guidePage;
     if (destination) doc.destination = destination;
+  }
+  if (eventName.startsWith('visa_checker_')) {
+    if (resultCategory) doc.resultCategory = resultCategory;
+    if (policyType) doc.policyType = policyType;
+    if (completed !== null) doc.completed = completed;
   }
 
   // Firestore write failure is non-fatal — analytics must never break the user experience.

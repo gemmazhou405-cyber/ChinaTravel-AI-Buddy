@@ -287,8 +287,8 @@ const pages = [
   {
     path: '/china-visa-free-checker/',
     h1: /China Visa-Free Checker/i,
-    keywords: ['ordinary passport', '240-hour visa-free transit', 'Hainan', 'onward destination', 'October 1, 2026'],
-    links: ['/#trip-plan', '/china-240-hour-visa-free-transit-2026/', '/china-visa-free-travel-guide/'],
+    keywords: ['ordinary passport', '240-hour visa-free transit', 'Hainan', 'Mutual visa exemption agreements', 'October 2, 2026'],
+    links: ['/#trip-plan', '/china-240-hour-visa-free-transit-2026/', '/china-visa-free-travel-guide/', '/nia-12367-online-accommodation-registration-guide/'],
   },
   {
     path: '/pricing/',
