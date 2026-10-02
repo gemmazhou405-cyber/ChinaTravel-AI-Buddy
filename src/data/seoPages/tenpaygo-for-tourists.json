@@ -35,6 +35,31 @@
       }
     },
     {
+      "title": "What Early TenPayGo Users Are Reporting",
+      "table": {
+        "headers": ["Evidence", "Early observation or confirmed fact"],
+        "rows": [
+          ["Officially confirmed", "TenPayGo supports international payment methods for international visitors at merchants accepting WeChat Pay."],
+          ["Reported by early users", "TenPayGo appears as a standalone, mainly English-language payment tool for international visitors, without the chat or social-feed features found in WeChat."],
+          ["Reported by early users", "Some users were able to register with an email address without providing a Chinese mobile number. Gmail, Outlook, and iCloud registrations have all been reported as successful by some users."],
+          ["Reported by early users", "Some users did not encounter facial recognition during registration. Verification requirements may vary by user, account, email provider, and region."],
+          ["Reported by early users", "Early users mainly downloaded TenPayGo through Apple's App Store."],
+          ["Not yet confirmed", "Current Android availability. Early discussions suggest Android access may still be in testing or rolling out, so travelers should verify availability in the official app store for their device and region."],
+          ["Reported by early users", "Some users linked cards issued outside mainland China or paid with a card already held in Apple Pay. Reported card brands include Visa, Mastercard, American Express, JCB, Discover, Diners Club, and some overseas-issued UnionPay cards."],
+          ["Reported by early users", "Card compatibility may depend on the issuer, issuing country, card BIN, card type, and TenPayGo risk-control checks. Some users report that their account currently accepts only one linked bank card."],
+          ["Reported by early users", "Payments to standard merchant QR codes appear more reliable than payments to personal receiving codes. Early users report mixed results when paying personal QR codes."],
+          ["Reported by early users", "Several users report no extra fee on some purchases of RMB 200 or less and a fee of about 3% on some larger transactions. Other users report fees below RMB 200, so reported fees vary by card and transaction."],
+          ["Not yet confirmed", "Whether the same fee structure applies to every card, issuer, transaction type, and merchant."],
+          ["Reported by early users", "Some discussions mention a practical single-payment limit of around RMB 3,000 for particular users or transactions."],
+          ["Not yet confirmed", "Exact single-payment, daily, and annual TenPayGo limits. The broader USD 5,000 policy ceiling for overseas visitors does not mean every TenPayGo account can complete a payment of that amount."],
+          ["Reported by early users", "TenPayGo currently appears most useful for ordinary, lower-value purchases at standard merchants. It should not be a traveler's only payment method in China."]
+        ]
+      },
+      "items": [
+        "These observations are based on early user feedback collected shortly after TenPayGo launched. Results may vary depending on the user's card issuer, account verification, merchant QR code, and TenPayGo risk-control checks. Travellers should carry at least one backup payment method in China."
+      ]
+    },
+    {
       "title": "TenPayGo vs WeChat Pay and Alipay",
       "table": {
         "headers": ["Option", "Practical role", "Cautious takeaway"],
