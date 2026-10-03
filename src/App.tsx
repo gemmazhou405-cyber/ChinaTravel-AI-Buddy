@@ -7,6 +7,7 @@ import ToolkitGrid from './components/home/ToolkitGrid';
 import BuddyDemo from './components/home/BuddyDemo';
 import HomePasses from './components/home/HomePasses';
 import TripPlanLead from './components/home/TripPlanLead';
+import PlanningTools from './components/home/PlanningTools';
 import ChatButton from './components/ChatButton';
 import ChatModal from './components/ChatModal';
 import Footer from './components/Footer';
@@ -202,6 +203,8 @@ export default function App() {
       />
 
       <TripPlanLead />
+
+      <PlanningTools />
 
       {toolOpen && (
         <div className="relative">

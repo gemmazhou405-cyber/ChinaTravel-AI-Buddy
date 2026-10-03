@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
 import type { PassState } from '../hooks/usePass';
+import { trackEvent } from '../lib/analytics';
 
 interface Props {
   passState: PassState | null;
@@ -11,7 +12,7 @@ interface Props {
   onViewPass: () => void;
 }
 
-const NAV_IDS = ['trip-plan', 'toolkit', 'features', 'travel-passes'] as const;
+const NAV_IDS = ['trip-plan', 'toolkit', 'travel-passes'] as const;
 
 export default function SiteHeader({ passState, onAskBuddy, onOpenToolkit, onNavigate, onViewPass }: Props) {
   const { t } = useTranslation();
@@ -22,10 +23,14 @@ export default function SiteHeader({ passState, onAskBuddy, onOpenToolkit, onNav
   const hasPaidPass = Boolean(passState && passState.tier !== 'free' && !passState.expired);
   const NAV = [
     { id: 'trip-plan', label: t('home.nav.tripPlan') },
+    { id: 'visa-checker', label: t('home.nav.visaChecker'), href: '/china-visa-free-checker/' },
     { id: 'toolkit', label: t('home.nav.toolkit') },
-    { id: 'features', label: t('home.nav.features') },
     { id: 'travel-passes', label: t('home.nav.pricing') },
   ];
+
+  const trackVisaChecker = () => {
+    void trackEvent('homepage_visa_checker_click', { placement: 'header_navigation' });
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 32);
@@ -52,7 +57,7 @@ export default function SiteHeader({ passState, onAskBuddy, onOpenToolkit, onNav
     <header className={`sticky top-0 z-50 border-b border-hairline backdrop-blur-2xl transition-[background-color,box-shadow] duration-[260ms] ease-out ${
       scrolled ? 'bg-[#FFFDFA]/[0.9] shadow-[0_6px_24px_rgba(17,20,24,0.08)]' : 'bg-[#FFFDFA]/[0.74] shadow-[0_1px_16px_rgba(17,20,24,0.05)]'
     }`}>
-      <div className="mx-auto flex h-16 max-w-container items-center justify-between gap-3 px-6 md:px-8">
+      <div className="mx-auto flex h-16 max-w-container items-center justify-between gap-2 px-3 sm:gap-3 sm:px-6 md:px-8">
         <div className="flex min-w-0 items-center gap-2.5">
           <img src={`${assetBase}logo.png`} width="30" height="30" alt="" className="h-[30px] w-[30px] rounded-lg" />
           <span className="truncate text-sm font-semibold tracking-tight text-ink md:text-base">ChinaEase Buddy</span>
@@ -61,12 +66,21 @@ export default function SiteHeader({ passState, onAskBuddy, onOpenToolkit, onNav
           </span>
         </div>
 
-        <nav className="hidden items-center gap-7 text-sm font-medium text-ink-secondary lg:flex">
-          {NAV.map(({ id, label }) => (
+        <nav className="hidden items-center gap-5 text-sm font-medium text-ink-secondary lg:flex" aria-label={t('home.nav.primaryLabel')}>
+          {NAV.map(({ id, label, href }) => href ? (
+            <a
+              key={id}
+              href={href}
+              onClick={trackVisaChecker}
+              className="relative whitespace-nowrap transition-colors duration-hover ease-out hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade"
+            >
+              {label}
+            </a>
+          ) : (
             <button
               key={id}
               onClick={() => onNavigate(id)}
-              className={`relative transition-colors duration-hover ease-out hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade ${activeSection === id ? 'text-jade' : ''}`}
+              className={`relative whitespace-nowrap transition-colors duration-hover ease-out hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade ${activeSection === id ? 'text-jade' : ''}`}
             >
               {label}
               <span className={`absolute -bottom-2 left-0 h-px bg-jade transition-[width,opacity] duration-hover ease-out ${activeSection === id ? 'w-full opacity-100' : 'w-0 opacity-0'}`} />
@@ -75,6 +89,13 @@ export default function SiteHeader({ passState, onAskBuddy, onOpenToolkit, onNav
         </nav>
 
         <div className="flex shrink-0 items-center gap-2">
+          <a
+            href="/china-visa-free-checker/"
+            onClick={trackVisaChecker}
+            className="whitespace-nowrap rounded-md px-1.5 py-2 text-[11px] font-bold text-jade transition-colors duration-hover ease-out hover:bg-jade-wash focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jade sm:px-2 sm:text-xs lg:hidden"
+          >
+            {t('home.nav.visaChecker')}
+          </a>
           <button
             onClick={onAskBuddy}
             className="hidden text-sm font-medium text-jade transition-colors duration-hover ease-out hover:text-jade-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade md:inline"

@@ -1028,7 +1028,8 @@
         "submit": "Send my free plan request",
         "successTitle": "Your request is on its way",
         "success": "Thanks — we received your details. Your personalised China trip plan will be sent within 48 hours.",
-        "submitAnother": "Submit another request"
+        "submitAnother": "Submit another request",
+        "visaCheckerPrompt": "Not sure if you need a visa? Check your passport and itinerary in 60 seconds →"
       },
       "demo": {
         "header": "Ask Buddy. In your language.",
@@ -1098,10 +1099,24 @@
         "language": "Language"
       },
       "nav": {
+        "primaryLabel": "Primary navigation",
         "tripPlan": "Free trip plan",
+        "visaChecker": "Visa Checker",
         "toolkit": "Toolkit",
         "features": "Features",
         "pricing": "Pricing"
+      },
+      "planningTools": {
+        "kicker": "Plan before you fly",
+        "title": "Free tools for planning your China trip",
+        "subtitle": "Check entry rules, transit options, accommodation registration and payments before you fly.",
+        "browseAll": "Browse all China travel guides →",
+        "cards": {
+          "china-visa-free-checker": { "label": "Interactive tool", "title": "China Visa-Free Checker", "description": "Check which visa-free policy may apply to your passport, travel date and itinerary.", "cta": "Check my trip →" },
+          "china-240-hour-visa-free-transit-2026": { "label": "Transit guide", "title": "240-Hour Visa-Free Transit", "description": "Understand the third-country route, designated-port and permitted-area requirements.", "cta": "Read the transit guide →" },
+          "nia-12367-online-accommodation-registration-guide": { "label": "Arrival guide", "title": "Accommodation Registration", "description": "Learn when foreign visitors need to register a non-hotel stay and how the 12367 online service works.", "cta": "See the 12367 guide →" },
+          "tenpaygo-for-tourists": { "label": "Payment guide", "title": "TenPayGo for Tourists", "description": "See what is officially confirmed, what early users report and which payment backup to prepare.", "cta": "Read the payment guide →" }
+        }
       },
       "phone": {
         "role": "Travel companion",

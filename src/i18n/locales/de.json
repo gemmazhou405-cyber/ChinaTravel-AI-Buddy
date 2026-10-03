@@ -1028,7 +1028,8 @@
         "submit": "Kostenlosen Plan anfordern",
         "successTitle": "Ihre Anfrage wurde gesendet",
         "success": "Vielen Dank — wir haben Ihre Angaben erhalten und melden uns mit einem praktischen Starterplan.",
-        "submitAnother": "Weitere Anfrage senden"
+        "submitAnother": "Weitere Anfrage senden",
+        "visaCheckerPrompt": "Unsicher, ob Sie ein Visum benötigen? Prüfen Sie Reisepass und Reiseroute in 60 Sekunden →"
       },
       "demo": {
         "header": "Fragen Sie Buddy. In Ihrer Sprache.",
@@ -1098,10 +1099,24 @@
         "language": "Sprache"
       },
       "nav": {
+        "primaryLabel": "Hauptnavigation",
         "tripPlan": "Kostenloser Plan",
+        "visaChecker": "Visa-Check",
         "toolkit": "Toolkit",
         "features": "Funktionen",
         "pricing": "Preise"
+      },
+      "planningTools": {
+        "kicker": "Vor dem Abflug planen",
+        "title": "Kostenlose Tools für Ihre China-Reise",
+        "subtitle": "Prüfen Sie Einreisebestimmungen, Transitoptionen, Unterkunftsregistrierung und Zahlungen vor dem Abflug.",
+        "browseAll": "Alle China-Reiseführer ansehen →",
+        "cards": {
+          "china-visa-free-checker": { "label": "Interaktives Tool", "title": "China Visa-Check", "description": "Prüfen Sie, welche Visumfrei-Regel für Ihren Reisepass, Ihr Einreisedatum und Ihre Route gelten könnte.", "cta": "Reise prüfen →" },
+          "china-240-hour-visa-free-transit-2026": { "label": "Transitführer", "title": "240 Stunden visumfreier Transit", "description": "Verstehen Sie die Anforderungen an Drittlandroute, ausgewiesene Einreisehäfen und erlaubte Aufenthaltsgebiete.", "cta": "Transitführer lesen →" },
+          "nia-12367-online-accommodation-registration-guide": { "label": "Ankunftsführer", "title": "Unterkunftsregistrierung", "description": "Erfahren Sie, wann ausländische Besucher Aufenthalte außerhalb eines Hotels registrieren müssen und wie der Online-Dienst 12367 funktioniert.", "cta": "12367-Führer ansehen →" },
+          "tenpaygo-for-tourists": { "label": "Zahlungsführer", "title": "TenPayGo für Reisende", "description": "Lesen Sie, was offiziell bestätigt ist, was erste Nutzer berichten und welche Zahlungsreserve sinnvoll ist.", "cta": "Zahlungsführer lesen →" }
+        }
       },
       "phone": {
         "role": "Reisebegleiter",

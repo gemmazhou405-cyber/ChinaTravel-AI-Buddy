@@ -1028,7 +1028,8 @@
         "submit": "Solicitar mi plan gratis",
         "successTitle": "Tu solicitud ha sido enviada",
         "success": "Gracias — recibimos tus datos. Revisaremos tu viaje y te responderemos con un plan inicial práctico.",
-        "submitAnother": "Enviar otra solicitud"
+        "submitAnother": "Enviar otra solicitud",
+        "visaCheckerPrompt": "¿No sabes si necesitas visado? Comprueba tu pasaporte e itinerario en 60 segundos →"
       },
       "demo": {
         "header": "Pregúntale a Buddy. En tu idioma.",
@@ -1098,10 +1099,24 @@
         "language": "Idioma"
       },
       "nav": {
+        "primaryLabel": "Navegación principal",
         "tripPlan": "Plan gratis",
+        "visaChecker": "Comprobar visado",
         "toolkit": "Kit de viaje",
         "features": "Funciones",
         "pricing": "Precios"
+      },
+      "planningTools": {
+        "kicker": "Planifica antes de volar",
+        "title": "Herramientas gratuitas para planificar tu viaje a China",
+        "subtitle": "Comprueba las normas de entrada, las opciones de tránsito, el registro de alojamiento y los pagos antes de volar.",
+        "browseAll": "Ver todas las guías de viaje de China →",
+        "cards": {
+          "china-visa-free-checker": { "label": "Herramienta interactiva", "title": "Comprobador de exención de visado", "description": "Comprueba qué política de exención puede aplicarse a tu pasaporte, fecha de viaje e itinerario.", "cta": "Comprobar mi viaje →" },
+          "china-240-hour-visa-free-transit-2026": { "label": "Guía de tránsito", "title": "Tránsito sin visado de 240 horas", "description": "Comprende los requisitos de ruta a un tercer país, puertos designados y zonas de estancia permitidas.", "cta": "Leer la guía de tránsito →" },
+          "nia-12367-online-accommodation-registration-guide": { "label": "Guía de llegada", "title": "Registro de alojamiento", "description": "Descubre cuándo los visitantes extranjeros deben registrar una estancia fuera de hotel y cómo funciona el servicio 12367 en línea.", "cta": "Ver la guía 12367 →" },
+          "tenpaygo-for-tourists": { "label": "Guía de pagos", "title": "TenPayGo para turistas", "description": "Consulta qué está confirmado oficialmente, qué cuentan los primeros usuarios y qué método de pago alternativo conviene preparar.", "cta": "Leer la guía de pagos →" }
+        }
       },
       "phone": {
         "role": "Compañero de viaje",

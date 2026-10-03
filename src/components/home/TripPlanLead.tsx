@@ -104,6 +104,16 @@ export default function TripPlanLead({ standalone = false }: { standalone?: bool
             <span className="rounded-full bg-jade-wash px-3 py-2">No spam</span>
           </div>
 
+          {!standalone && (
+            <a
+              href="/china-visa-free-checker/"
+              onClick={() => void trackEvent('homepage_visa_checker_click', { placement: 'hero_secondary_link' })}
+              className="mt-5 inline-flex min-h-11 items-center rounded-lg px-1 py-2 text-sm font-bold leading-relaxed text-jade underline decoration-jade/25 underline-offset-4 transition hover:decoration-jade focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade"
+            >
+              {t('home.tripPlan.visaCheckerPrompt')}
+            </a>
+          )}
+
           <SamplePreview />
           <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-jade">
             <a href="/didi-in-china-for-foreigners/" className="underline decoration-jade/30 underline-offset-4 transition hover:decoration-jade">

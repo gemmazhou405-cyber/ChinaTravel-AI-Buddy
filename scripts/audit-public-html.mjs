@@ -5,8 +5,8 @@ const pages = [
   {
     path: '/',
     h1: /AI Travel Assistant.*Works in China/i,
-    keywords: ['ChinaEase Buddy', 'Travel Passes', 'itinerary'],
-    links: ['/guides/', '/pricing/'],
+    keywords: ['ChinaEase Buddy', 'Travel Passes', 'itinerary', 'Free tools for planning your China trip'],
+    links: ['/guides/', '/pricing/', '/china-visa-free-checker/', '/china-240-hour-visa-free-transit-2026/', '/nia-12367-online-accommodation-registration-guide/', '/tenpaygo-for-tourists/'],
   },
   {
     path: '/guides/',

@@ -1030,7 +1030,8 @@
         "submit": "無料プランを依頼する",
         "successTitle": "リクエストを送信しました",
         "success": "ありがとうございます。内容を確認し、実用的な旅行スタータープランを返信します。",
-        "submitAnother": "別のリクエストを送る"
+        "submitAnother": "別のリクエストを送る",
+        "visaCheckerPrompt": "ビザが必要か分からない場合は、パスポートと旅程を60秒で確認できます →"
       },
       "demo": {
         "header": "Buddyに聞いてみて。あなたの言語で。",
@@ -1100,10 +1101,24 @@
         "language": "言語"
       },
       "nav": {
+        "primaryLabel": "メインナビゲーション",
         "tripPlan": "無料プラン",
+        "visaChecker": "ビザ確認",
         "toolkit": "ツールキット",
         "features": "機能",
         "pricing": "料金"
+      },
+      "planningTools": {
+        "kicker": "出発前の準備",
+        "title": "中国旅行を計画するための無料ツール",
+        "subtitle": "出発前に、入国規則、トランジット、宿泊登録、支払い方法を確認できます。",
+        "browseAll": "中国旅行ガイドをすべて見る →",
+        "cards": {
+          "china-visa-free-checker": { "label": "インタラクティブツール", "title": "中国ビザ免除チェッカー", "description": "パスポート、入国日、旅程に適用される可能性のあるビザ免除制度を確認します。", "cta": "旅程を確認 →" },
+          "china-240-hour-visa-free-transit-2026": { "label": "トランジットガイド", "title": "240時間ビザ免除トランジット", "description": "第三国への移動、指定入国地、許可された滞在地域の要件を確認します。", "cta": "トランジットガイドを読む →" },
+          "nia-12367-online-accommodation-registration-guide": { "label": "到着ガイド", "title": "宿泊登録", "description": "外国人旅行者がホテル以外に滞在する際の登録時期と12367オンラインサービスの利用方法を紹介します。", "cta": "12367ガイドを見る →" },
+          "tenpaygo-for-tourists": { "label": "支払いガイド", "title": "旅行者向けTenPayGo", "description": "公式確認済みの情報、初期ユーザーの報告、準備しておくべき予備の支払い方法を確認します。", "cta": "支払いガイドを読む →" }
+        }
       },
       "phone": {
         "role": "旅のパートナー",

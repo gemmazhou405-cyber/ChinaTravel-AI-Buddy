@@ -58,6 +58,8 @@ const FUNNEL_EVENTS = new Set([
   'visa_checker_complete',
   'visa_checker_cta_click',
   'visa_checker_official_source_click',
+  'homepage_visa_checker_click',
+  'homepage_resource_click',
 ]);
 
 const utmKeys: UtmKey[] = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
@@ -272,6 +274,22 @@ export async function trackEvent(eventName: string, payload: AnalyticsPayload = 
     if (allowedCategories.has(resultCategory)) body.resultCategory = resultCategory;
     if (allowedPolicyTypes.has(policyType)) body.policyType = policyType;
     if (typeof payload.completed === 'boolean') body.completed = String(payload.completed);
+  }
+  if (eventName === 'homepage_visa_checker_click' || eventName === 'homepage_resource_click') {
+    const placement = typeof payload.placement === 'string' ? payload.placement : '';
+    const allowedPlacements = new Set(['header_navigation', 'hero_secondary_link', 'planning_tools_section']);
+    if (allowedPlacements.has(placement)) body.placement = placement;
+    if (eventName === 'homepage_resource_click') {
+      const resourceSlug = typeof payload.resourceSlug === 'string' ? payload.resourceSlug : '';
+      const allowedResources = new Set([
+        'china-visa-free-checker',
+        'china-240-hour-visa-free-transit-2026',
+        'nia-12367-online-accommodation-registration-guide',
+        'tenpaygo-for-tourists',
+        'guides',
+      ]);
+      if (allowedResources.has(resourceSlug)) body.resourceSlug = resourceSlug;
+    }
   }
 
   // Fire-and-forget: analytics failure must never surface to the user.

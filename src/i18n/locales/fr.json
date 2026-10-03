@@ -1028,7 +1028,8 @@
         "submit": "Demander mon plan gratuit",
         "successTitle": "Votre demande est envoyée",
         "success": "Merci — nous avons reçu vos informations. Nous allons les examiner et vous répondre avec un plan de départ pratique.",
-        "submitAnother": "Envoyer une autre demande"
+        "submitAnother": "Envoyer une autre demande",
+        "visaCheckerPrompt": "Vous ne savez pas si vous avez besoin d’un visa ? Vérifiez votre passeport et votre itinéraire en 60 secondes →"
       },
       "demo": {
         "header": "Demandez à Buddy. Dans votre langue.",
@@ -1098,10 +1099,24 @@
         "language": "Langue"
       },
       "nav": {
+        "primaryLabel": "Navigation principale",
         "tripPlan": "Plan gratuit",
+        "visaChecker": "Vérifier le visa",
         "toolkit": "Boîte à outils",
         "features": "Fonctionnalités",
         "pricing": "Tarifs"
+      },
+      "planningTools": {
+        "kicker": "Préparez votre départ",
+        "title": "Outils gratuits pour préparer votre voyage en Chine",
+        "subtitle": "Vérifiez les règles d’entrée, les options de transit, l’enregistrement du séjour et les paiements avant de partir.",
+        "browseAll": "Voir tous les guides de voyage en Chine →",
+        "cards": {
+          "china-visa-free-checker": { "label": "Outil interactif", "title": "Vérificateur d’exemption de visa", "description": "Vérifiez quelle politique d’exemption peut s’appliquer à votre passeport, votre date de voyage et votre itinéraire.", "cta": "Vérifier mon voyage →" },
+          "china-240-hour-visa-free-transit-2026": { "label": "Guide de transit", "title": "Transit sans visa de 240 heures", "description": "Comprenez les règles concernant le pays tiers, les ports désignés et les zones de séjour autorisées.", "cta": "Lire le guide de transit →" },
+          "nia-12367-online-accommodation-registration-guide": { "label": "Guide d’arrivée", "title": "Enregistrement de l’hébergement", "description": "Découvrez quand les visiteurs étrangers doivent enregistrer un séjour hors hôtel et comment fonctionne le service en ligne 12367.", "cta": "Voir le guide 12367 →" },
+          "tenpaygo-for-tourists": { "label": "Guide de paiement", "title": "TenPayGo pour les touristes", "description": "Découvrez les informations officielles, les retours des premiers utilisateurs et les moyens de paiement de secours à prévoir.", "cta": "Lire le guide de paiement →" }
+        }
       },
       "phone": {
         "role": "Compagnon de voyage",

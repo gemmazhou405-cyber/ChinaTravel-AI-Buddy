@@ -26,6 +26,8 @@ const ALLOWED_EVENTS = new Set([
   'visa_checker_complete',
   'visa_checker_cta_click',
   'visa_checker_official_source_click',
+  'homepage_visa_checker_click',
+  'homepage_resource_click',
 ]);
 
 const ALLOWED_DEVICE_CATEGORIES = new Set(['mobile', 'tablet', 'desktop', 'unknown']);
@@ -34,6 +36,14 @@ const ALLOWED_LOCALE_PREFIXES = new Set(['en', 'zh', 'fr', 'de', 'ja', 'ko']);
 const ALLOWED_PLANS = new Set(['trip', 'group']);
 const ALLOWED_VISA_RESULTS = new Set(['likely_eligible', 'additional_checks', 'date_unconfirmed', 'visa_may_be_required', 'cannot_determine']);
 const ALLOWED_VISA_POLICIES = new Set(['mutual_agreement', 'unilateral_30_day', 'transit_240_hour', 'hainan_30_day', 'none']);
+const ALLOWED_HOMEPAGE_PLACEMENTS = new Set(['header_navigation', 'hero_secondary_link', 'planning_tools_section']);
+const ALLOWED_HOMEPAGE_RESOURCES = new Set([
+  'china-visa-free-checker',
+  'china-240-hour-visa-free-transit-2026',
+  'nia-12367-online-accommodation-registration-guide',
+  'tenpaygo-for-tourists',
+  'guides',
+]);
 
 // Per-isolate best-effort rate limit. Not shared across Cloudflare isolates — V1 acceptable.
 const _ipRateMap = new Map();
@@ -177,6 +187,8 @@ export async function onRequestPost({ request, env }) {
   const resultCategory = ALLOWED_VISA_RESULTS.has(body.resultCategory) ? body.resultCategory : null;
   const policyType = ALLOWED_VISA_POLICIES.has(body.policyType) ? body.policyType : null;
   const completed = body.completed === 'true' ? true : body.completed === 'false' ? false : null;
+  const placement = ALLOWED_HOMEPAGE_PLACEMENTS.has(body.placement) ? body.placement : null;
+  const resourceSlug = ALLOWED_HOMEPAGE_RESOURCES.has(body.resourceSlug) ? body.resourceSlug : null;
   const deviceCategory = ALLOWED_DEVICE_CATEGORIES.has(body.deviceCategory)
     ? body.deviceCategory
     : 'unknown';
@@ -211,6 +223,13 @@ export async function onRequestPost({ request, env }) {
     if (resultCategory) doc.resultCategory = resultCategory;
     if (policyType) doc.policyType = policyType;
     if (completed !== null) doc.completed = completed;
+  }
+  if (eventName === 'homepage_visa_checker_click' && placement) {
+    doc.placement = placement;
+  }
+  if (eventName === 'homepage_resource_click' && placement === 'planning_tools_section' && resourceSlug) {
+    doc.placement = placement;
+    doc.resourceSlug = resourceSlug;
   }
 
   // Firestore write failure is non-fatal — analytics must never break the user experience.
