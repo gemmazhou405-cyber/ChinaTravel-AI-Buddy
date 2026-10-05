@@ -29,22 +29,45 @@
     "planPoints": ["选择最多三个城市", "立即查看首日预览", "通过邮箱接收完整行程"]
   },
   "visa": {
-    "eyebrow": "赴华行前检查",
-    "title": "先确认赴华入境要求，再完成其他准备。",
-    "description": "从免签查询开始，再准备支付、网络、应用和机场抵达事项。",
-    "primaryCta": "检查我的赴华要求",
+    "eyebrow": "免费中国签证政策查询",
+    "title": "检查您的中国行程是否可能需要签证",
+    "description": "回答几个简单问题，在预订行程前快速了解可能适用的中国入境政策。",
+    "basis": "根据您的护照、目的地和旅行目的进行判断。",
+    "primaryCta": "检查我的中国签证政策",
     "planCta": "获取免费中国行程",
-    "microcopy": "免费查询 · 查看结果无需邮箱 · 提供官方来源",
-    "helpTitle": "按正确顺序完成行前清单",
-    "helpDescription": "入境政策不只取决于国籍。先检查护照、日期、目的和路线，再继续实用准备。",
+    "checklistCta": "打开中国旅行清单",
+    "microcopy": "免费 · 无需账号 · 不到1分钟",
+    "preview": {
+      "ariaLabel": "签证政策工具检查信息示例",
+      "eyebrow": "查询预览",
+      "title": "快速政策检查",
+      "fields": [
+        {"label": "护照", "value": "您的国籍"},
+        {"label": "目的地", "value": "中国"},
+        {"label": "旅行目的", "value": "旅游或过境"},
+        {"label": "旅行日期", "value": "计划入境日期"}
+      ],
+      "resultLabel": "可能的结果",
+      "results": ["可能免签", "可能需要签证", "出发前需核实"]
+    },
+    "whyEyebrow": "预订之前",
+    "whyTitle": "为什么要在出发前检查？",
+    "whyPoints": [
+      {"title": "规则取决于具体行程", "description": "免签政策可能取决于护照、停留时间、路线和旅行目的，不只取决于国籍。"},
+      {"title": "减少临行前的不确定", "description": "提前了解可能适用的政策，可以让航空公司值机和入境检查准备更从容。"},
+      {"title": "准备正确的材料", "description": "在购买不可退款的产品前核实要求，并提前准备与行程有关的证明材料。"}
+    ],
+    "helpTitle": "完成签证查询后，再准备其他事项",
+    "helpDescription": "继续完成首次来华所需的实用准备，同时保持签证查询是本页最主要的行动。",
     "cards": {
-      "visa": {"title": "免签查询工具", "description": "查看哪些政策可能适用于您的护照、日期和路线。"},
-      "checklist": {"title": "出发前清单", "description": "检查证件、预订、支付、移动网络和抵达信息。"},
       "payment": {"title": "支付", "description": "准备支付宝、微信支付、银行卡和备用方式。"},
       "internet": {"title": "网络与 eSIM", "description": "落地前比较 eSIM 和实体 SIM 选择。"},
       "apps": {"title": "必备应用", "description": "提前设置地图、交通、支付和翻译应用。"},
-      "arrival": {"title": "机场抵达基础", "description": "出发前规划网络、交通和第一个目的地地址。"}
+      "arrival": {"title": "机场抵达基础", "description": "出发前规划网络、交通和第一个目的地地址。"},
+      "plan": {"title": "免费中国行程", "description": "把日期、城市和兴趣变成实用的路线预览。"}
     },
+    "secondaryTitle": "准备继续规划中国行程？",
+    "secondaryDescription": "了解可能适用的签证政策后，可以继续生成免费行程或打开完整旅行清单。",
     "planTitle": "完成入境检查后，开始规划真正的旅程。",
     "planDescription": "使用 Free Trip Starter，把日期、城市和兴趣变成实用路线预览。",
     "planButton": "获取免费中国行程",

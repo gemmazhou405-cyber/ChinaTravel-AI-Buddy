@@ -88,6 +88,7 @@ export default function CampaignLandingPage({ variant }: { variant: CampaignLand
   const params = new URLSearchParams(window.location.search);
   const rawPartner = sanitizeCampaignValue(params.get('partner') || params.get('ref'), 40);
   const partner = getCampaignPartner(rawPartner, variant);
+  const isVisaLanding = variant === 'visa';
 
   const trackCta = (cta: CampaignCta, placement: string) => {
     void trackEvent('campaign_primary_cta_click', {
@@ -134,36 +135,120 @@ export default function CampaignLandingPage({ variant }: { variant: CampaignLand
   return (
     <CampaignShell>
       <main>
-        <section className="relative overflow-hidden border-b border-hairline bg-[#F2F7F5] py-12 md:py-20">
-          <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-jade-wash to-transparent" aria-hidden="true" />
-          <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-jade">{t(`${config.translationKey}.eyebrow`)}</p>
-            <h1 className="mx-auto mt-4 max-w-3xl font-display text-[38px] leading-[1.06] sm:text-5xl md:text-[58px]">
-              {t(`${config.translationKey}.title`)}
-            </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-ink-secondary md:text-lg">
-              {t(`${config.translationKey}.description`)}
-            </p>
-            {partner && (
-              <p className="mx-auto mt-5 inline-flex rounded-full border border-jade/20 bg-white px-4 py-2 text-sm font-semibold text-jade">
-                {t('recommendedBy', { name: partner.displayName })}
-              </p>
-            )}
-            <div className="mt-7 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
-              {renderCta(
-                config.primary,
-                'inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-jade px-6 py-3.5 text-sm font-bold text-white shadow-soft transition hover:bg-jade-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade',
-                'hero_primary',
-              )}
-              {config.secondary.map((cta) => renderCta(
-                cta,
-                'inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-jade/25 bg-white px-5 py-3.5 text-sm font-bold text-jade transition hover:border-jade/50 hover:bg-jade-wash focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade',
-                'hero_secondary',
-              ))}
+        {isVisaLanding ? (
+          <section className="relative overflow-hidden border-b border-hairline bg-[#F2F7F5] py-8 sm:py-12 md:py-16">
+            <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-jade-wash to-transparent" aria-hidden="true" />
+            <div className="relative mx-auto grid max-w-container gap-8 px-4 sm:px-6 md:grid-cols-[1.05fr_0.95fr] md:items-center md:px-8">
+              <div>
+                <p className="inline-flex rounded-full border border-jade/20 bg-white px-3.5 py-2 text-[11px] font-bold uppercase tracking-[0.14em] text-jade shadow-sm">
+                  {t('visa.eyebrow')}
+                </p>
+                <h1 className="mt-4 max-w-2xl font-display text-[40px] leading-[1.02] sm:text-5xl md:text-[58px]">
+                  {t('visa.title')}
+                </h1>
+                <p className="mt-4 max-w-xl text-base leading-relaxed text-ink-secondary md:text-lg">
+                  {t('visa.description')}
+                </p>
+                <p className="mt-4 flex max-w-xl items-start gap-2 text-sm font-semibold leading-relaxed text-ink">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-jade" aria-hidden="true" />
+                  {t('visa.basis')}
+                </p>
+                {partner && (
+                  <p className="mt-4 inline-flex rounded-full border border-jade/20 bg-white px-4 py-2 text-sm font-semibold text-jade">
+                    {t('recommendedBy', { name: partner.displayName })}
+                  </p>
+                )}
+                <div className="mt-6">
+                  {renderCta(
+                    config.primary,
+                    'inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-xl bg-jade px-7 py-4 text-base font-bold text-white shadow-soft transition hover:bg-jade-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade sm:w-auto',
+                    'hero_primary',
+                  )}
+                </div>
+                <p className="mt-3 text-xs font-semibold text-ink-tertiary">{t('visa.microcopy')}</p>
+              </div>
+
+              <aside className="rounded-2xl border border-jade/15 bg-white p-5 shadow-soft sm:p-6" aria-label={t('visa.preview.ariaLabel')}>
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-jade">{t('visa.preview.eyebrow')}</p>
+                    <h2 className="mt-1.5 text-xl font-bold text-ink">{t('visa.preview.title')}</h2>
+                  </div>
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-jade-wash text-jade">
+                    <MapPinned className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                </div>
+                <dl className="mt-5 grid gap-2.5">
+                  {(t('visa.preview.fields', { returnObjects: true }) as Array<{ label: string; value: string }>).map((field) => (
+                    <div key={field.label} className="flex items-center justify-between gap-4 rounded-xl border border-hairline bg-surface px-4 py-3">
+                      <dt className="text-sm text-ink-secondary">{field.label}</dt>
+                      <dd className="text-right text-sm font-semibold text-ink">{field.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <div className="mt-4 rounded-xl border border-jade/15 bg-jade-wash p-4">
+                  <p className="text-xs font-bold uppercase tracking-[0.12em] text-jade">{t('visa.preview.resultLabel')}</p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {(t('visa.preview.results', { returnObjects: true }) as string[]).map((result) => (
+                      <span key={result} className="rounded-full border border-jade/15 bg-white px-3 py-1.5 text-xs font-semibold text-ink-secondary">{result}</span>
+                    ))}
+                  </div>
+                </div>
+              </aside>
             </div>
-            <p className="mt-4 text-xs font-medium text-ink-tertiary">{t(`${config.translationKey}.microcopy`)}</p>
-          </div>
-        </section>
+          </section>
+        ) : (
+          <section className="relative overflow-hidden border-b border-hairline bg-[#F2F7F5] py-12 md:py-20">
+            <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-jade-wash to-transparent" aria-hidden="true" />
+            <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-jade">{t(`${config.translationKey}.eyebrow`)}</p>
+              <h1 className="mx-auto mt-4 max-w-3xl font-display text-[38px] leading-[1.06] sm:text-5xl md:text-[58px]">
+                {t(`${config.translationKey}.title`)}
+              </h1>
+              <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-ink-secondary md:text-lg">
+                {t(`${config.translationKey}.description`)}
+              </p>
+              {partner && (
+                <p className="mx-auto mt-5 inline-flex rounded-full border border-jade/20 bg-white px-4 py-2 text-sm font-semibold text-jade">
+                  {t('recommendedBy', { name: partner.displayName })}
+                </p>
+              )}
+              <div className="mt-7 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+                {renderCta(
+                  config.primary,
+                  'inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-jade px-6 py-3.5 text-sm font-bold text-white shadow-soft transition hover:bg-jade-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade',
+                  'hero_primary',
+                )}
+                {config.secondary.map((cta) => renderCta(
+                  cta,
+                  'inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-jade/25 bg-white px-5 py-3.5 text-sm font-bold text-jade transition hover:border-jade/50 hover:bg-jade-wash focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade',
+                  'hero_secondary',
+                ))}
+              </div>
+              <p className="mt-4 text-xs font-medium text-ink-tertiary">{t(`${config.translationKey}.microcopy`)}</p>
+            </div>
+          </section>
+        )}
+
+        {isVisaLanding && (
+          <section className="border-b border-hairline bg-white py-10 md:py-14" aria-labelledby="visa-why-title">
+            <div className="mx-auto max-w-container px-4 sm:px-6 md:px-8">
+              <div className="max-w-2xl">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-gold-dark">{t('visa.whyEyebrow')}</p>
+                <h2 id="visa-why-title" className="mt-3 font-display text-3xl md:text-4xl">{t('visa.whyTitle')}</h2>
+              </div>
+              <div className="mt-7 grid gap-4 md:grid-cols-3">
+                {(t('visa.whyPoints', { returnObjects: true }) as Array<{ title: string; description: string }>).map((point, index) => (
+                  <article key={point.title} className="rounded-2xl border border-hairline bg-surface p-5">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-jade text-sm font-bold text-white" aria-hidden="true">{index + 1}</span>
+                    <h3 className="mt-4 text-base font-bold text-ink">{point.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-ink-secondary">{point.description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         <section className="py-12 md:py-16" aria-labelledby="campaign-help-title">
           <div className="mx-auto max-w-container px-4 sm:px-6 md:px-8">
@@ -204,6 +289,30 @@ export default function CampaignLandingPage({ variant }: { variant: CampaignLand
           </div>
         </section>
 
+        {isVisaLanding ? (
+          <section className="border-y border-hairline bg-[#F2F7F5] py-10 md:py-14">
+            <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
+              <h2 className="font-display text-3xl text-ink md:text-4xl">{t('visa.secondaryTitle')}</h2>
+              <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-ink-secondary md:text-base">{t('visa.secondaryDescription')}</p>
+              <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+                <a
+                  href="/plan/"
+                  onClick={() => trackCta({ href: '/plan/', labelKey: 'visa.planCta' }, 'secondary_section')}
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-jade/25 bg-white px-5 py-3.5 text-sm font-bold text-jade transition hover:border-jade/50 hover:bg-jade-wash focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade"
+                >
+                  {t('visa.planCta')} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+                <a
+                  href="/china-travel-checklist/"
+                  onClick={() => trackCta({ href: '/china-travel-checklist/', labelKey: 'visa.checklistCta' }, 'secondary_section')}
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-hairline bg-transparent px-5 py-3.5 text-sm font-bold text-ink transition hover:border-jade/40 hover:text-jade focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade"
+                >
+                  {t('visa.checklistCta')} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+              </div>
+            </div>
+          </section>
+        ) : (
         <section className="bg-jade py-12 text-white md:py-16">
           <div className="mx-auto grid max-w-container gap-8 px-4 sm:px-6 md:grid-cols-[1.15fr_0.85fr] md:items-center md:px-8">
             <div>
@@ -228,6 +337,7 @@ export default function CampaignLandingPage({ variant }: { variant: CampaignLand
             </ul>
           </div>
         </section>
+        )}
 
         <section className="py-12 md:py-16" aria-labelledby="campaign-resources-title">
           <div className="mx-auto max-w-4xl px-4 sm:px-6">

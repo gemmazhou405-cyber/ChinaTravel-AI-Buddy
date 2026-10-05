@@ -29,22 +29,45 @@
     "planPoints": ["Choose up to three cities", "Get an immediate Day 1 preview", "Receive the full plan by email"]
   },
   "visa": {
-    "eyebrow": "Before-you-fly China check",
-    "title": "Check your China entry requirements, then finish the essentials.",
-    "description": "Start with the Visa-Free Checker, then prepare payments, internet, apps and airport arrival basics.",
-    "primaryCta": "Check my China travel requirements",
+    "eyebrow": "Free China visa policy check",
+    "title": "Check if you may need a visa for China",
+    "description": "Answer a few simple questions and get a quick China travel requirement check before you book your trip.",
+    "basis": "Based on your passport, destination, and travel purpose.",
+    "primaryCta": "Check my China visa policy",
     "planCta": "Get a free China trip plan",
-    "microcopy": "Free check · No email required for the result · Official sources linked",
-    "helpTitle": "Your pre-flight checklist, in the right order",
-    "helpDescription": "Entry rules depend on more than nationality. Check your passport, dates, purpose and itinerary before moving on to the practical setup.",
+    "checklistCta": "Open China travel checklist",
+    "microcopy": "Free · No account needed · Takes less than 1 minute",
+    "preview": {
+      "ariaLabel": "Example of the information checked by the visa policy tool",
+      "eyebrow": "Checker preview",
+      "title": "A quick policy check",
+      "fields": [
+        {"label": "Passport", "value": "Your nationality"},
+        {"label": "Destination", "value": "China"},
+        {"label": "Trip purpose", "value": "Tourism or transit"},
+        {"label": "Travel date", "value": "Your planned entry"}
+      ],
+      "resultLabel": "Possible result",
+      "results": ["Visa-free", "Visa may be required", "Check before travel"]
+    },
+    "whyEyebrow": "Before you book",
+    "whyTitle": "Why check before you fly?",
+    "whyPoints": [
+      {"title": "Rules depend on your trip", "description": "Visa-free policies can depend on your passport, trip length, route and purpose, not nationality alone."},
+      {"title": "Avoid last-minute uncertainty", "description": "Airline boarding and entry checks are easier when you understand which policy may apply before departure."},
+      {"title": "Prepare the right documents", "description": "Check the requirements before committing to non-refundable bookings and keep relevant travel documents ready."}
+    ],
+    "helpTitle": "After your visa check, prepare the rest",
+    "helpDescription": "Complete the practical essentials for your first arrival in China without distracting from the visa check.",
     "cards": {
-      "visa": {"title": "Visa-Free Checker", "description": "See which policy may apply to your passport, travel date and route."},
-      "checklist": {"title": "Before-you-fly checklist", "description": "Review documents, bookings, payments, mobile data and arrival details."},
       "payment": {"title": "Payments", "description": "Prepare Alipay, WeChat Pay, cards and a realistic backup option."},
       "internet": {"title": "Internet and eSIM", "description": "Compare eSIM and physical SIM choices before you land."},
       "apps": {"title": "Essential apps", "description": "Set up maps, transport, payments and translation in advance."},
-      "arrival": {"title": "Airport arrival basics", "description": "Plan mobile data, transport and your first address before departure."}
+      "arrival": {"title": "Airport arrival basics", "description": "Plan mobile data, transport and your first address before departure."},
+      "plan": {"title": "Free China trip plan", "description": "Turn your dates, cities and interests into a practical route preview."}
     },
+    "secondaryTitle": "Ready for the rest of your China trip?",
+    "secondaryDescription": "Once you understand which visa policy may apply, continue with a free trip plan or the complete preparation checklist.",
     "planTitle": "Once the entry check is done, plan the actual trip.",
     "planDescription": "Use the Free Trip Starter to turn your dates, cities and interests into a practical route preview.",
     "planButton": "Get my free China trip plan",

@@ -36,21 +36,21 @@ const pages = [
   },
   {
     route: 'partners/china-visa-checker',
-    title: 'China Travel Requirements and Visa-Free Check | ChinaEase Buddy',
-    description: 'Check which China entry policy may apply, then prepare payments, mobile data, essential apps and airport arrival basics.',
-    eyebrow: 'Before-you-fly China check',
-    h1: 'Check your China entry requirements, then finish the essentials.',
-    intro: 'Start with the Visa-Free Checker, then prepare payments, internet, apps and airport arrival basics.',
+    kind: 'visa',
+    title: 'Free China Visa Policy Check for Travelers | ChinaEase Buddy',
+    description: 'Check if you may need a visa for China before your trip. Use ChinaEase Buddy’s free visa policy checker, then prepare payments, apps, internet, and your first China itinerary.',
+    eyebrow: 'Free China visa policy check',
+    h1: 'Check if you may need a visa for China',
+    intro: 'Answer a few simple questions and get a quick China travel requirement check before you book your trip.',
     primaryHref: '/china-visa-free-checker/',
-    primaryLabel: 'Check my China travel requirements',
-    sectionTitle: 'Your pre-flight checklist, in the right order',
+    primaryLabel: 'Check my China visa policy',
+    sectionTitle: 'After your visa check, prepare the rest',
     cards: [
-      ['/china-visa-free-checker/', 'Visa-Free Checker', 'See which policy may apply to your passport, travel date and route.'],
-      ['/china-travel-checklist/', 'Before-you-fly checklist', 'Review documents, bookings, payments, mobile data and arrival details.'],
       ['/china-payment-guide/', 'Payments', 'Prepare Alipay, WeChat Pay, cards and a realistic backup option.'],
       ['/china-sim-card-for-foreigners/', 'Internet and eSIM', 'Compare eSIM and physical SIM choices before you land.'],
       ['/china-travel-apps/', 'Essential apps', 'Set up maps, transport, payments and translation in advance.'],
       ['/china-airport-arrival-guide/', 'Airport arrival basics', 'Plan mobile data, transport and your first address before departure.'],
+      ['/plan/', 'Free China trip plan', 'Turn your dates, cities and interests into a practical route preview.'],
     ],
   },
   {
@@ -102,7 +102,9 @@ for (const page of pages) {
     `<article><h3><a href="${escapeHtml(href)}">${escapeHtml(title)}</a></h3><p>${escapeHtml(description)}</p></article>`
   )).join('');
   const resourceLinks = resources.map(([href, label]) => `<li><a href="${href}">${label}</a></li>`).join('');
-  const body = `<main><section><p>${escapeHtml(page.eyebrow)}</p><h1>${escapeHtml(page.h1)}</h1><p>${escapeHtml(page.intro)}</p><a href="${escapeHtml(page.primaryHref)}">${escapeHtml(page.primaryLabel)}</a></section><section><h2>${escapeHtml(page.sectionTitle)}</h2>${cards}</section><section><h2>Build a trip around your real dates</h2><p>Use the Free Trip Starter to choose cities, dates and interests, see an immediate Day 1 preview and receive the full plan by email.</p><a href="/plan/">Open the Free Trip Starter</a></section><section><h2>Keep planning with ChinaEase Buddy</h2><ul>${resourceLinks}</ul></section></main>`;
+  const body = page.kind === 'visa'
+    ? `<main><section><p>${escapeHtml(page.eyebrow)}</p><h1>${escapeHtml(page.h1)}</h1><p>${escapeHtml(page.intro)}</p><p>Based on your passport, destination, and travel purpose.</p><a href="${escapeHtml(page.primaryHref)}">${escapeHtml(page.primaryLabel)}</a><p>Free · No account needed · Takes less than 1 minute</p><aside aria-label="Example of the information checked by the visa policy tool"><h2>A quick policy check</h2><dl><dt>Passport</dt><dd>Your nationality</dd><dt>Destination</dt><dd>China</dd><dt>Trip purpose</dt><dd>Tourism or transit</dd><dt>Travel date</dt><dd>Your planned entry</dd></dl><p>Possible result: Visa-free / Visa may be required / Check before travel</p></aside></section><section><h2>Why check before you fly?</h2><article><h3>Rules depend on your trip</h3><p>Visa-free policies can depend on your passport, trip length, route and purpose, not nationality alone.</p></article><article><h3>Avoid last-minute uncertainty</h3><p>Airline boarding and entry checks are easier when you understand which policy may apply before departure.</p></article><article><h3>Prepare the right documents</h3><p>Check the requirements before committing to non-refundable bookings and keep relevant travel documents ready.</p></article></section><section><h2>${escapeHtml(page.sectionTitle)}</h2>${cards}<a href="/plan/">Get a free China trip plan</a><a href="/china-travel-checklist/">Open China travel checklist</a></section><section><h2>Keep planning with ChinaEase Buddy</h2><ul>${resourceLinks}</ul></section></main>`
+    : `<main><section><p>${escapeHtml(page.eyebrow)}</p><h1>${escapeHtml(page.h1)}</h1><p>${escapeHtml(page.intro)}</p><a href="${escapeHtml(page.primaryHref)}">${escapeHtml(page.primaryLabel)}</a></section><section><h2>${escapeHtml(page.sectionTitle)}</h2>${cards}</section><section><h2>Build a trip around your real dates</h2><p>Use the Free Trip Starter to choose cities, dates and interests, see an immediate Day 1 preview and receive the full plan by email.</p><a href="/plan/">Open the Free Trip Starter</a></section><section><h2>Keep planning with ChinaEase Buddy</h2><ul>${resourceLinks}</ul></section></main>`;
   let html = template.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(page.title)}</title>`);
   html = metaTag(html, 'description', page.description);
   html = metaTag(html, 'canonical', canonical);
