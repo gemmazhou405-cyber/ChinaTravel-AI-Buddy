@@ -12,7 +12,7 @@ const requiredLinks = [
 ];
 const checks = [
   ['dist/partners/hostel-china-travel-help/index.html', '/partners/hostel-china-travel-help/', ['In China now?', 'Take a taxi or DiDi']],
-  ['dist/partners/china-visa-checker/index.html', '/partners/china-visa-checker/', ['Check if you may need a visa for China', 'Check my China visa policy', 'Takes less than 1 minute', 'Why check before you fly?', '/china-visa-free-checker/']],
+  ['dist/partners/china-visa-checker/index.html', '/partners/china-visa-checker/', ['Check if you may need a visa for China', 'Check my China visa policy', 'Takes less than 1 minute', 'This is an example, not a form.', 'Why check before you fly?', '/china-visa-free-checker/']],
   ['dist/partners/first-trip-to-china/index.html', '/partners/first-trip-to-china/', ['Not sure where to start?', 'Everything a first-time visitor should prepare']],
 ];
 

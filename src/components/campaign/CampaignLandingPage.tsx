@@ -178,11 +178,17 @@ export default function CampaignLandingPage({ variant }: { variant: CampaignLand
                     <MapPinned className="h-5 w-5" aria-hidden="true" />
                   </span>
                 </div>
-                <dl className="mt-5 grid gap-2.5">
-                  {(t('visa.preview.fields', { returnObjects: true }) as Array<{ label: string; value: string }>).map((field) => (
-                    <div key={field.label} className="flex items-center justify-between gap-4 rounded-xl border border-hairline bg-surface px-4 py-3">
-                      <dt className="text-sm text-ink-secondary">{field.label}</dt>
-                      <dd className="text-right text-sm font-semibold text-ink">{field.value}</dd>
+                <p className="mt-3 rounded-lg bg-jade-wash px-3 py-2 text-xs font-semibold leading-relaxed text-jade">
+                  {t('visa.preview.note')}
+                </p>
+                <dl className="mt-4 divide-y divide-hairline border-y border-hairline">
+                  {(t('visa.preview.fields', { returnObjects: true }) as Array<{ label: string; value: string }>).map((field, index) => (
+                    <div key={field.label} className="grid grid-cols-[2rem_1fr] items-center gap-3 py-3">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-surface text-xs font-bold text-jade" aria-hidden="true">{index + 1}</span>
+                      <div className="min-w-0">
+                        <dt className="text-[11px] font-bold uppercase tracking-[0.1em] text-ink-tertiary">{field.label}</dt>
+                        <dd className="mt-0.5 text-sm font-semibold text-ink">{field.value}</dd>
+                      </div>
                     </div>
                   ))}
                 </dl>

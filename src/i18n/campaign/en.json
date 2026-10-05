@@ -38,9 +38,10 @@
     "checklistCta": "Open China travel checklist",
     "microcopy": "Free · No account needed · Takes less than 1 minute",
     "preview": {
-      "ariaLabel": "Example of the information checked by the visa policy tool",
-      "eyebrow": "Checker preview",
-      "title": "A quick policy check",
+      "ariaLabel": "Example preview of the information checked by the visa policy tool",
+      "eyebrow": "Example preview",
+      "title": "What the live checker asks",
+      "note": "This is an example, not a form. Use the green button to start the free check.",
       "fields": [
         {"label": "Passport", "value": "Your nationality"},
         {"label": "Destination", "value": "China"},

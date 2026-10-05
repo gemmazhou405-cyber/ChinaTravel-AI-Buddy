@@ -38,9 +38,10 @@
     "checklistCta": "打开中国旅行清单",
     "microcopy": "免费 · 无需账号 · 不到1分钟",
     "preview": {
-      "ariaLabel": "签证政策工具检查信息示例",
-      "eyebrow": "查询预览",
-      "title": "快速政策检查",
+      "ariaLabel": "签证政策工具所需信息的示例预览",
+      "eyebrow": "示例预览",
+      "title": "正式查询会询问什么",
+      "note": "这只是示例，不是表单。请点击绿色按钮开始免费查询。",
       "fields": [
         {"label": "护照", "value": "您的国籍"},
         {"label": "目的地", "value": "中国"},
