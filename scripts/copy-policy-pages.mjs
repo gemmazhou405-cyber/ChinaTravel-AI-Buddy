@@ -3911,6 +3911,389 @@ pageMeta['china-visa-free-checker'] = {
   application: true,
 };
 
+
+// Give focused search pages their own answer instead of reusing a broader guide's sections.
+const focusedPageContent = {
+  "nia-12367-online-accommodation-registration-guide": {
+    "contentSections": [
+      {
+        "title": "Choose the right registration route",
+        "items": [
+          "A hotel normally handles guest registration at check-in; a private stay needs a different route.",
+          "Ask the host who will submit the details and save the confirmation.",
+          "Use the official NIA 12367 channel or local police guidance for the address where you stay."
+        ]
+      },
+      {
+        "title": "Prepare the stay details",
+        "items": [
+          "Keep the passport, host contact, full address and arrival date available.",
+          "Check the current time limit and available online channel with the local authority.",
+          "If the online form fails, contact the local police station rather than assuming submission succeeded."
+        ]
+      }
+    ],
+    "lastReviewed": "October 5, 2026",
+    "lastModified": "2026-10-05",
+    "article": true
+  },
+  "amap-english-mode-guide-2026": {
+    "contentSections": [
+      {
+        "title": "Set the app language",
+        "items": [
+          "Update AMap from the official store, then check its language settings.",
+          "Interface labels can vary by app version and phone region.",
+          "Save the destination's Chinese name and address even when your interface is in English."
+        ]
+      },
+      {
+        "title": "Test a route before departure",
+        "items": [
+          "Search the hotel and arrival station while you have reliable data.",
+          "Compare public transport, walking and ride options for the exact time.",
+          "Keep a screenshot of the Chinese address in case a driver or station attendant needs it."
+        ]
+      }
+    ],
+    "lastReviewed": "October 5, 2026",
+    "lastModified": "2026-10-05",
+    "article": true
+  },
+  "alipay-metro-qr-transport-code-guide": {
+    "contentSections": [
+      {
+        "title": "Activate the correct city code",
+        "items": [
+          "Open Alipay's transport or metro area and select the city you are in.",
+          "Complete any account or payment verification shown before entering the station.",
+          "A payment QR used in shops is different from the city's transit code."
+        ]
+      },
+      {
+        "title": "At the gate",
+        "items": [
+          "Use the same account for entry and exit where the system requires it.",
+          "If the code is unavailable, use a ticket machine, staffed counter or local transit card.",
+          "Check the city's current transit payment options before relying on a foreign card."
+        ]
+      }
+    ],
+    "lastReviewed": "October 5, 2026",
+    "lastModified": "2026-10-05",
+    "article": true
+  },
+  "china-travel-ai-itinerary-generator": {
+    "contentSections": [
+      {
+        "title": "What to enter",
+        "items": [
+          "Provide travel dates, arrival and departure cities, group size and preferred pace.",
+          "Add fixed flights, train tickets, hotels and attractions before asking for a route.",
+          "Flag mobility, diet and budget needs so the itinerary can account for them."
+        ]
+      },
+      {
+        "title": "Check the generated plan",
+        "items": [
+          "Verify travel times and station names using the transport provider.",
+          "Confirm opening hours, reservations and entry rules at each attraction.",
+          "Leave spare time on transfer days and change anything that depends on unavailable tickets."
+        ]
+      }
+    ],
+    "lastReviewed": "October 5, 2026",
+    "lastModified": "2026-10-05",
+    "article": true
+  },
+  "240-hour-transit-zone-map-high-speed-rail": {
+    "contentSections": [
+      {
+        "title": "Check eligibility before mapping a route",
+        "items": [
+          "Confirm nationality, passport, entry port and onward destination with the National Immigration Administration.",
+          "A route map alone cannot establish eligibility for visa-free transit.",
+          "Check the latest permitted areas and ports before buying an onward ticket."
+        ]
+      },
+      {
+        "title": "Check each rail segment",
+        "items": [
+          "List every city, province and station on the proposed train route.",
+          "Confirm every segment stays inside the area permitted for your entry arrangement.",
+          "Choose a simpler route if an interchange or day trip crosses a boundary you cannot verify."
+        ]
+      }
+    ],
+    "lastReviewed": "October 5, 2026",
+    "lastModified": "2026-10-05",
+    "article": true
+  },
+  "wechat-verification-without-friend-qr-2026": {
+    "contentSections": [
+      {
+        "title": "What the screen is asking",
+        "items": [
+          "Read the exact security prompt shown for your own WeChat account.",
+          "A friend scan may be one route, but available verification routes vary by account.",
+          "Do not pay a stranger or share one-time codes to bypass an account check."
+        ]
+      },
+      {
+        "title": "Safer next steps",
+        "items": [
+          "Try the official in-app instructions and account recovery options shown to you.",
+          "Keep access to the phone number used for registration and check for SMS delivery.",
+          "Use official WeChat support if verification remains blocked; prepare another payment method for travel."
+        ]
+      }
+    ],
+    "lastReviewed": "October 5, 2026",
+    "lastModified": "2026-10-05",
+    "article": true
+  },
+  "china-hotels-for-foreigners-no-rejection-guide": {
+    "contentSections": [
+      {
+        "title": "Before paying",
+        "items": [
+          "Confirm the property can register your passport at check-in.",
+          "Ask for the exact property address, arrival time and late check-in procedure.",
+          "Keep written confirmation of the booking terms and cancellation window."
+        ]
+      },
+      {
+        "title": "If check-in is refused",
+        "items": [
+          "Ask the desk for the reason and whether a manager can resolve the registration issue.",
+          "Contact the booking platform while you still have the reservation details.",
+          "Keep a backup property with verified availability; do not assume every refusal has the same cause."
+        ]
+      }
+    ],
+    "lastReviewed": "October 5, 2026",
+    "lastModified": "2026-10-05",
+    "article": true
+  },
+  "does-google-maps-work-in-china-amap-guide": {
+    "contentSections": [
+      {
+        "title": "Which map to prepare",
+        "items": [
+          "Save offline hotel and station addresses before departure.",
+          "Test AMap or another locally reliable map on your own device.",
+          "Google Maps functions and data availability can vary with connectivity and service access."
+        ]
+      },
+      {
+        "title": "Check the real route",
+        "items": [
+          "Search the destination in Chinese as well as English when names differ.",
+          "Confirm the correct railway station and venue entrance, not only a map pin.",
+          "Keep a screenshot and a second navigation option for your first airport transfer."
+        ]
+      }
+    ],
+    "lastReviewed": "October 5, 2026",
+    "lastModified": "2026-10-05",
+    "article": true
+  },
+  "how-to-visit-great-wall-from-beijing-2026": {
+    "contentSections": [
+      {
+        "title": "Pick a section first",
+        "items": [
+          "Compare Mutianyu and Badaling by travel time, walking effort and transport you can actually book.",
+          "Check the operator's current opening, ticket and cableway arrangements.",
+          "Allow for queues and weather rather than stacking a tight evening connection."
+        ]
+      },
+      {
+        "title": "Plan the return",
+        "items": [
+          "Identify your return bus, train or driver arrangement before leaving Beijing.",
+          "Use the exact boarding location and final departure shown by the operator.",
+          "Keep enough time to exit the site and reach the station or pickup point."
+        ]
+      }
+    ],
+    "lastReviewed": "October 5, 2026",
+    "lastModified": "2026-10-05",
+    "article": true
+  },
+  "what-to-eat-in-china-first-time-guide": {
+    "contentSections": [
+      {
+        "title": "A first-timer tasting list",
+        "items": [
+          "Try jianbing for breakfast, dumplings or noodles for a simple lunch, and a regional dinner.",
+          "Choose Peking duck in Beijing, xiaolongbao around Shanghai, or hot pot in Sichuan and Chongqing when they fit your route.",
+          "Ask about spice, peanuts, pork and shellfish before ordering if relevant to your diet."
+        ]
+      },
+      {
+        "title": "Order without guessing",
+        "items": [
+          "Save dish names in Chinese and show them to the server.",
+          "Check whether portions are shared and whether a menu price is per item or by weight.",
+          "Choose a busy, clearly priced restaurant and keep a translation fallback."
+        ]
+      }
+    ],
+    "lastReviewed": "October 5, 2026",
+    "lastModified": "2026-10-05",
+    "article": true
+  },
+  "how-to-use-wechat-as-foreigner-2026": {
+    "contentSections": [
+      {
+        "title": "Set up the messaging app",
+        "items": [
+          "Install the official WeChat app and register with a phone number you can keep using.",
+          "Complete only the identity or security steps shown inside your own account.",
+          "Add recovery details and test a contact message before departure."
+        ]
+      },
+      {
+        "title": "Use features as available",
+        "items": [
+          "Scan a contact QR code to add a person, and check permissions before using a mini program.",
+          "WeChat Pay has separate card and identity requirements; a messaging account alone does not guarantee payment access.",
+          "Keep another payment and communication option in case a feature is restricted."
+        ]
+      }
+    ],
+    "lastReviewed": "October 5, 2026",
+    "lastModified": "2026-10-05",
+    "article": true
+  },
+  "is-china-safe-for-tourists-2026": {
+    "contentSections": [
+      {
+        "title": "Prepare for the trip",
+        "items": [
+          "Read the current travel advice from your own government and the rules for your route.",
+          "Keep copies of key documents and your hotel's address offline.",
+          "Arrange a reliable way to contact your accommodation and emergency services."
+        ]
+      },
+      {
+        "title": "Everyday precautions",
+        "items": [
+          "Use licensed transport and official booking channels where possible.",
+          "Protect passports and accounts, and be wary of requests for payment or verification codes.",
+          "Follow local rules at attractions, border areas and sensitive sites; ask an official source when uncertain."
+        ]
+      }
+    ],
+    "lastReviewed": "October 5, 2026",
+    "lastModified": "2026-10-05",
+    "article": true,
+    "quickAnswer": "Many visitors travel in China without serious incidents, but conditions and official travel advice can change. Check your own government's current advisory, follow local rules, use reputable transport and booking channels, and keep emergency contacts and document copies accessible."
+  },
+  "best-apps-for-china-travel-2026": {
+    "contentSections": [
+      {
+        "title": "Five core app categories",
+        "items": [
+          "Payments: prepare Alipay and, if useful, WeChat Pay with a backup card.",
+          "Navigation: test AMap or another map that works for your route.",
+          "Transport: prepare a ride-hailing option and a railway booking route."
+        ]
+      },
+      {
+        "title": "Add tools for your trip",
+        "items": [
+          "Translation: save offline language help and the Chinese names of your destinations.",
+          "Connectivity: arrange data before arrival and check the provider's coverage.",
+          "Only install apps you will use; confirm the current features and account requirements in each official app."
+        ]
+      }
+    ],
+    "lastReviewed": "October 5, 2026",
+    "lastModified": "2026-10-05",
+    "article": true,
+    "title": "Essential Apps for China Travel (2026): Payments, Maps & Transport",
+    "heading": "Essential Apps for China Travel in 2026",
+    "description": "Prepare the essential China travel apps for payments, maps, transport, translation and connectivity. See what to set up before arrival and what backups to keep."
+  },
+  "how-to-use-didi-in-china-foreigners": {
+    "contentSections": [
+      {
+        "title": "Before your first ride",
+        "items": [
+          "Set up a supported number and payment option in the DiDi app or a supported wallet route.",
+          "Save the hotel's Chinese name and the correct terminal or railway exit.",
+          "Check the pickup pin and the estimated fare before requesting."
+        ]
+      },
+      {
+        "title": "At pickup and arrival",
+        "items": [
+          "Match the licence plate and vehicle details shown in the app.",
+          "Message the driver through the app or show the destination in Chinese if needed.",
+          "Check the final fare and use the app's help route if there is a dispute."
+        ]
+      }
+    ],
+    "lastReviewed": "October 5, 2026",
+    "lastModified": "2026-10-05",
+    "article": true
+  },
+  "beijing-shanghai-layover-240-hour-guide": {
+    "contentSections": [
+      {
+        "title": "Confirm the transit route",
+        "items": [
+          "Check the official eligibility rules for your passport, entry port and onward country or region.",
+          "Verify the permitted stay area and the tickets on both sides of the stopover.",
+          "Leave enough time for immigration and airport transfers; entry is decided by the authorities."
+        ]
+      },
+      {
+        "title": "Choose a realistic city plan",
+        "items": [
+          "For a short Beijing stop, favor one compact district rather than several distant landmarks.",
+          "For Shanghai, keep a route near one transit line and a flexible return window.",
+          "Book timed attractions only after you know your arrival and departure constraints."
+        ]
+      }
+    ],
+    "lastReviewed": "October 5, 2026",
+    "lastModified": "2026-10-05",
+    "article": true
+  },
+  "how-much-does-china-trip-cost-2026-calculator": {
+    "contentSections": [
+      {
+        "title": "Calculate a planning total",
+        "items": [
+          "Multiply your per-person daily range by the number of travelers and days.",
+          "Add intercity train or flight tickets, international flights, visas where needed, insurance and a contingency separately.",
+          "For two people sharing a room, enter the actual room total instead of doubling the hotel cost."
+        ]
+      },
+      {
+        "title": "Worked examples, excluding major travel",
+        "items": [
+          "Seven budget days at RMB 350–650 per person per day: RMB 2,450–4,550 per person.",
+          "Ten mid-range days at RMB 800–1,500: RMB 8,000–15,000 per person.",
+          "Fourteen comfortable days at RMB 1,800–3,000+: RMB 25,200–42,000+ per person."
+        ]
+      }
+    ],
+    "lastReviewed": "October 5, 2026",
+    "lastModified": "2026-10-05",
+    "article": true,
+    "title": "China Trip Cost 2026: 7, 10 & 14-Day Budget Examples",
+    "heading": "China Trip Cost in 2026: Calculate Your Budget",
+    "description": "Estimate a China trip budget with daily spending ranges and worked 7, 10 and 14-day examples. Add trains, flights, insurance and other costs separately."
+  }
+};
+for (const [slug, content] of Object.entries(focusedPageContent)) {
+  Object.assign(pageMeta[slug], content);
+}
+
 const pages = Object.keys(pageMeta);
 const noindexPages = new Set(['about', 'plan', 'pricing', 'refund']);
 
