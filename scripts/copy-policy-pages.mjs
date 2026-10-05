@@ -233,7 +233,7 @@ const pageMeta = {
   },
   'china-airport-arrival-guide': {
     title: 'China Airport Arrival Guide 2026: Immigration to City Transfer',
-    heading: 'Just Landed in China? Do These 5 Things in 30 Minutes',
+    heading: 'China Airport Arrival: Entry, Baggage, Payment and Transfer',
     description:
       'After landing in China, follow immigration, baggage and customs, connect your phone, prepare a payment backup, and choose an official airport transfer.',
     quickAnswer:
