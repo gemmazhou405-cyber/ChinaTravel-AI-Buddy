@@ -28,6 +28,9 @@ const ALLOWED_EVENTS = new Set([
   'visa_checker_official_source_click',
   'homepage_visa_checker_click',
   'homepage_resource_click',
+  'campaign_landing_view',
+  'campaign_primary_cta_click',
+  'outbound_tool_click',
 ]);
 
 const ALLOWED_DEVICE_CATEGORIES = new Set(['mobile', 'tablet', 'desktop', 'unknown']);
@@ -44,6 +47,7 @@ const ALLOWED_HOMEPAGE_RESOURCES = new Set([
   'tenpaygo-for-tourists',
   'guides',
 ]);
+const ALLOWED_LANDING_VARIANTS = new Set(['hostel', 'visa', 'first-trip']);
 
 // Per-isolate best-effort rate limit. Not shared across Cloudflare isolates — V1 acceptable.
 const _ipRateMap = new Map();
@@ -189,6 +193,21 @@ export async function onRequestPost({ request, env }) {
   const completed = body.completed === 'true' ? true : body.completed === 'false' ? false : null;
   const placement = ALLOWED_HOMEPAGE_PLACEMENTS.has(body.placement) ? body.placement : null;
   const resourceSlug = ALLOWED_HOMEPAGE_RESOURCES.has(body.resourceSlug) ? body.resourceSlug : null;
+  const landingVariant = ALLOWED_LANDING_VARIANTS.has(body.landingVariant) ? body.landingVariant : null;
+  const safeCampaignSlug = (value, max) => {
+    const normalized = clampStr(value, max);
+    return normalized && /^[a-z0-9][a-z0-9._~-]*$/i.test(normalized) ? normalized : null;
+  };
+  const partnerId = safeCampaignSlug(body.partnerId, 40);
+  const partnerType = safeCampaignSlug(body.partnerType, 40);
+  const campaignChannel = safeCampaignSlug(body.campaignChannel, 40);
+  const campaignName = safeCampaignSlug(body.campaignName, 120);
+  const firstTouchSource = clampStr(body.firstTouchSource, 80);
+  const lastTouchSource = clampStr(body.lastTouchSource, 80);
+  const destinationPath = (() => {
+    const value = clampStr(body.destinationPath, 160);
+    return value && (value.startsWith('/') || value.startsWith('#')) ? value.split('?')[0] : null;
+  })();
   const deviceCategory = ALLOWED_DEVICE_CATEGORIES.has(body.deviceCategory)
     ? body.deviceCategory
     : 'unknown';
@@ -230,6 +249,19 @@ export async function onRequestPost({ request, env }) {
   if (eventName === 'homepage_resource_click' && placement === 'planning_tools_section' && resourceSlug) {
     doc.placement = placement;
     doc.resourceSlug = resourceSlug;
+  }
+  if ([
+    'campaign_landing_view', 'campaign_primary_cta_click', 'outbound_tool_click',
+    'trip_form_start', 'trip_form_submit',
+  ].includes(eventName)) {
+    if (landingVariant) doc.landingVariant = landingVariant;
+    if (partnerId) doc.partnerId = partnerId;
+    if (partnerType) doc.partnerType = partnerType;
+    if (campaignChannel) doc.campaignChannel = campaignChannel;
+    if (campaignName) doc.campaignName = campaignName;
+    if (firstTouchSource) doc.firstTouchSource = firstTouchSource;
+    if (lastTouchSource) doc.lastTouchSource = lastTouchSource;
+    if (destinationPath) doc.destinationPath = destinationPath;
   }
 
   // Firestore write failure is non-fatal — analytics must never break the user experience.

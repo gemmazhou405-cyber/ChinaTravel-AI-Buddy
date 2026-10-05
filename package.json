@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/check-i18n-parity.mjs && vite build && node scripts/copy-policy-pages.mjs && node scripts/add-seo-pages.mjs",
+    "build": "node scripts/check-i18n-parity.mjs && vite build && node scripts/copy-policy-pages.mjs && node scripts/add-seo-pages.mjs && node scripts/generate-campaign-pages.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "node scripts/check-i18n-parity.mjs && tsc --noEmit -p tsconfig.app.json",
@@ -13,7 +13,10 @@
     "test:visa-checker": "node scripts/test-visa-checker.mjs",
     "audit:public-html": "node scripts/audit-public-html.mjs",
     "audit:p0-buddy-menu": "node scripts/audit-p0-buddy-menu.mjs",
-    "audit:growth-release": "node scripts/audit-growth-release.mjs"
+    "audit:growth-release": "node scripts/audit-growth-release.mjs",
+    "test:campaign-landings": "node scripts/test-campaign-landings.mjs",
+    "test:campaign-attribution": "node scripts/test-campaign-attribution.mjs",
+    "test:campaign-redirects": "node scripts/test-campaign-redirects.mjs"
   },
   "dependencies": {
     "@fontsource-variable/fraunces": "^5.2.9",

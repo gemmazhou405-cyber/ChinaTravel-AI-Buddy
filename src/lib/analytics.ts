@@ -1,3 +1,6 @@
+import { getCampaignVariant } from '../data/campaignLandings';
+import { captureCampaignAttribution, getCampaignAttribution, sanitizeCampaignValue } from './campaignAttribution';
+
 type UtmKey = 'utm_source' | 'utm_medium' | 'utm_campaign' | 'utm_content' | 'utm_term';
 
 type Attribution = {
@@ -60,11 +63,15 @@ const FUNNEL_EVENTS = new Set([
   'visa_checker_official_source_click',
   'homepage_visa_checker_click',
   'homepage_resource_click',
+  'campaign_landing_view',
+  'campaign_primary_cta_click',
+  'outbound_tool_click',
 ]);
 
 const utmKeys: UtmKey[] = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
 
 function safeStorage(kind: 'localStorage' | 'sessionStorage'): Storage | null {
+  if (typeof window === 'undefined') return null;
   try { return window[kind]; } catch { return null; }
 }
 
@@ -87,12 +94,12 @@ function generateId() {
 }
 
 export function getAnonymousSessionId() {
-  const local = safeStorage('localStorage');
+  const session = safeStorage('sessionStorage');
   try {
-    const existing = local?.getItem(ANON_SESSION_KEY);
+    const existing = session?.getItem(ANON_SESSION_KEY);
     if (existing) return existing;
     const next = generateId();
-    local?.setItem(ANON_SESSION_KEY, next);
+    session?.setItem(ANON_SESSION_KEY, next);
     return next;
   } catch { return generateId(); }
 }
@@ -108,30 +115,35 @@ function parseAttribution(): Attribution {
   };
   utmKeys.forEach((key) => {
     const value = params.get(key);
-    if (value) attribution[key] = value;
+    const safe = sanitizeCampaignValue(value, key === 'utm_campaign' ? 120 : 80);
+    if (safe) attribution[key] = safe;
   });
   return attribution;
 }
 
 export function initAttribution() {
-  const local = safeStorage('localStorage');
   const session = safeStorage('sessionStorage');
+  const legacyPersistent = safeStorage('localStorage');
+  try {
+    legacyPersistent?.removeItem(FIRST_TOUCH_KEY);
+    legacyPersistent?.removeItem(ANON_SESSION_KEY);
+  } catch { /* storage may be blocked */ }
   const current = parseAttribution();
-  const firstTouch = readJson<Attribution>(local, FIRST_TOUCH_KEY);
-  if (!firstTouch) writeJson(local, FIRST_TOUCH_KEY, current);
+  const firstTouch = readJson<Attribution>(session, FIRST_TOUCH_KEY);
+  if (!firstTouch) writeJson(session, FIRST_TOUCH_KEY, current);
   writeJson(session, SESSION_ATTR_KEY, current);
   // Persist test flag for the session so environment stays "test" after navigation away from ?test_mode=1
   if (new URLSearchParams(window.location.search).get('test_mode') === '1') {
     try { session?.setItem(SESSION_TEST_KEY, '1'); } catch { /* ignore */ }
   }
   getAnonymousSessionId();
+  captureCampaignAttribution(getCampaignVariant(window.location.pathname));
 }
 
 export function getAttributionContext() {
   const session = safeStorage('sessionStorage');
-  const local = safeStorage('localStorage');
   const sessionAttribution = readJson<Attribution>(session, SESSION_ATTR_KEY);
-  const firstTouch = readJson<Attribution>(local, FIRST_TOUCH_KEY);
+  const firstTouch = readJson<Attribution>(session, FIRST_TOUCH_KEY);
   // Use session attribution if it carries any UTM signal; otherwise fall back to first-touch.
   // Checking any field avoids the edge case where utm_source is absent but another UTM is present.
   const hasSessionUtms = !!(
@@ -290,6 +302,24 @@ export async function trackEvent(eventName: string, payload: AnalyticsPayload = 
       ]);
       if (allowedResources.has(resourceSlug)) body.resourceSlug = resourceSlug;
     }
+  }
+  if ([
+    'campaign_landing_view', 'campaign_primary_cta_click', 'outbound_tool_click',
+    'trip_form_start', 'trip_form_submit',
+  ].includes(eventName)) {
+    const campaign = getCampaignAttribution();
+    const landingVariant = typeof payload.landingVariant === 'string' ? payload.landingVariant : campaign.landing_variant;
+    const partnerId = typeof payload.partnerId === 'string' ? payload.partnerId : campaign.partner_id;
+    const partnerType = typeof payload.partnerType === 'string' ? payload.partnerType : campaign.partner_type;
+    const destinationPath = typeof payload.destinationPath === 'string' ? payload.destinationPath : '';
+    if (landingVariant) body.landingVariant = landingVariant.slice(0, 32);
+    if (partnerId) body.partnerId = partnerId.slice(0, 40);
+    if (partnerType) body.partnerType = partnerType.slice(0, 24);
+    if (campaign.channel) body.campaignChannel = campaign.channel.slice(0, 40);
+    if (campaign.campaign) body.campaignName = campaign.campaign.slice(0, 120);
+    if (destinationPath && (destinationPath.startsWith('/') || destinationPath.startsWith('#'))) body.destinationPath = destinationPath.split('?')[0].slice(0, 160);
+    if (campaign.first_touch_source) body.firstTouchSource = campaign.first_touch_source.slice(0, 80);
+    if (campaign.last_touch_source) body.lastTouchSource = campaign.last_touch_source.slice(0, 80);
   }
 
   // Fire-and-forget: analytics failure must never surface to the user.

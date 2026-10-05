@@ -361,6 +361,17 @@ export async function onRequestPost({ request, env }) {
   const utmMedium = clampStr(body.utmMedium, 80);
   const utmCampaign = clampStr(body.utmCampaign, 120);
   const utmContent = clampStr(body.utmContent, 120);
+  const safeCampaignSlug = (value, max = 80) => {
+    const normalized = clampStr(value, max);
+    return normalized && /^[a-z0-9][a-z0-9._~-]*$/i.test(normalized) ? normalized : null;
+  };
+  const partnerId = safeCampaignSlug(body.partnerId, 40);
+  const partnerType = safeCampaignSlug(body.partnerType, 40);
+  const campaignChannel = safeCampaignSlug(body.campaignChannel, 40);
+  const campaignName = safeCampaignSlug(body.campaignName, 120);
+  const landingVariant = ['hostel', 'visa', 'first-trip'].includes(body.landingVariant) ? body.landingVariant : null;
+  const firstTouchSource = clampStr(body.firstTouchSource, 80);
+  const lastTouchSource = clampStr(body.lastTouchSource, 80);
 
   const emailHash = await sha256(emailRaw);
   const createdAt = Date.now();
@@ -438,6 +449,13 @@ export async function onRequestPost({ request, env }) {
       utmMedium,
       utmCampaign,
       utmContent,
+      partnerId,
+      partnerType,
+      campaignChannel,
+      campaignName,
+      landingVariant,
+      firstTouchSource,
+      lastTouchSource,
       consentVersion,
       source: 'buddy_trip_lead',
       status: 'new',
@@ -484,6 +502,16 @@ export async function onRequestPost({ request, env }) {
     locale,
     sourcePath,
     utmSource,
+    utmMedium,
+    utmCampaign,
+    utmContent,
+    partnerId,
+    partnerType,
+    campaignChannel,
+    campaignName,
+    landingVariant,
+    firstTouchSource,
+    lastTouchSource,
     createdAt,
   };
 

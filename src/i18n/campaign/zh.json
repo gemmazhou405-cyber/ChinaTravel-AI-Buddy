@@ -1,0 +1,93 @@
+{
+  "brandHome": "ChinaEase Buddy 首页",
+  "language": "语言",
+  "recommendedBy": "由 {{name}} 分享",
+  "helpEyebrow": "现在就能用",
+  "openHelp": "打开帮助",
+  "planEyebrow": "免费行程助手",
+  "hostel": {
+    "eyebrow": "给在华住客的本地帮助",
+    "title": "已经在中国？先解决眼前最实用的问题。",
+    "description": "支付、打车、出示酒店地址、点餐和紧急求助，不用再靠猜。",
+    "primaryCta": "获取我的免费本地行程",
+    "toolkitCta": "打开中国旅行工具箱",
+    "buddyCta": "询问 Buddy",
+    "microcopy": "实用帮助 · 清晰英文 · 专为外国游客设计",
+    "helpTitle": "几步解决下一个旅行问题",
+    "helpDescription": "选择您现在遇到的情况，直接打开对应工具或指南，无需复杂设置。",
+    "cards": {
+      "payment": {"title": "在中国支付", "description": "设置支付宝或微信支付，并准备备用付款方式。"},
+      "taxi": {"title": "打车或使用 DiDi", "description": "叫车、确认上车点，减少地址沟通问题。"},
+      "hotel": {"title": "出示酒店地址", "description": "把酒店名称和中文地址准备好给司机查看。"},
+      "emergency": {"title": "紧急联系方式", "description": "查找重要号码和紧急情况的实用步骤。"},
+      "phrases": {"title": "常用中文短语", "description": "向司机、酒店和餐厅工作人员展示清晰短语。"},
+      "food": {"title": "饮食与过敏帮助", "description": "说明饮食需求，并直接向餐厅确认食材。"}
+    },
+    "planTitle": "想规划附近或下一站怎么玩？",
+    "planDescription": "告诉我们城市、日期和兴趣。Free Trip Starter 会立即生成首日预览，并通过邮箱发送完整行程。",
+    "planButton": "生成免费本地行程",
+    "planPoints": ["选择最多三个城市", "立即查看首日预览", "通过邮箱接收完整行程"]
+  },
+  "visa": {
+    "eyebrow": "赴华行前检查",
+    "title": "先确认赴华入境要求，再完成其他准备。",
+    "description": "从免签查询开始，再准备支付、网络、应用和机场抵达事项。",
+    "primaryCta": "检查我的赴华要求",
+    "planCta": "获取免费中国行程",
+    "microcopy": "免费查询 · 查看结果无需邮箱 · 提供官方来源",
+    "helpTitle": "按正确顺序完成行前清单",
+    "helpDescription": "入境政策不只取决于国籍。先检查护照、日期、目的和路线，再继续实用准备。",
+    "cards": {
+      "visa": {"title": "免签查询工具", "description": "查看哪些政策可能适用于您的护照、日期和路线。"},
+      "checklist": {"title": "出发前清单", "description": "检查证件、预订、支付、移动网络和抵达信息。"},
+      "payment": {"title": "支付", "description": "准备支付宝、微信支付、银行卡和备用方式。"},
+      "internet": {"title": "网络与 eSIM", "description": "落地前比较 eSIM 和实体 SIM 选择。"},
+      "apps": {"title": "必备应用", "description": "提前设置地图、交通、支付和翻译应用。"},
+      "arrival": {"title": "机场抵达基础", "description": "出发前规划网络、交通和第一个目的地地址。"}
+    },
+    "planTitle": "完成入境检查后，开始规划真正的旅程。",
+    "planDescription": "使用 Free Trip Starter，把日期、城市和兴趣变成实用路线预览。",
+    "planButton": "获取免费中国行程",
+    "planPoints": ["无需付款", "按真实日期规划", "把入境和旅行准备放在一起"]
+  },
+  "firstTrip": {
+    "eyebrow": "第一次来中国",
+    "title": "不知道从哪里开始？先抓住真正重要的事。",
+    "description": "在一个清晰页面里准备支付、网络、交通、酒店、饮食、语言、安全和行程。",
+    "primaryCta": "开始我的免费中国行程",
+    "guideCta": "阅读首次来华指南",
+    "toolkitCta": "打开旅行工具箱",
+    "microcopy": "步骤简单 · 面向外国游客 · 无多余设置",
+    "helpTitle": "第一次来华应准备的核心事项",
+    "helpDescription": "按自己的节奏完成准备，只打开需要的内容，遇到新情况时随时回到工具箱。",
+    "cards": {
+      "checklist": {"title": "首次旅行清单", "description": "了解出发前要准备什么，以及哪些信息要随时可用。"},
+      "payment": {"title": "支付", "description": "设置移动支付，并准备银行卡或现金作为备用。"},
+      "internet": {"title": "网络", "description": "选择适合行程的 eSIM 或实体 SIM。"},
+      "transport": {"title": "交通", "description": "更顺利地使用 DiDi、地铁和火车。"},
+      "hotels": {"title": "酒店", "description": "选择便利区域，并准备好酒店中文地址。"},
+      "food": {"title": "饮食", "description": "更有把握地点餐并清楚表达饮食需求。"},
+      "language": {"title": "语言", "description": "在真实旅行场景中使用实用短语。"},
+      "safety": {"title": "安全", "description": "保存紧急号码，了解出问题时的第一步。"}
+    },
+    "planTitle": "把清单变成真正适合您的行程。",
+    "planDescription": "选择城市、日期和兴趣，免费获得首日预览，并通过邮箱接收个性化路线。",
+    "planButton": "开始免费行程",
+    "planPoints": ["选择最多三个目的地", "立即查看首日预览", "出发前仍可调整细节"]
+  },
+  "resources": {
+    "title": "继续使用 ChinaEase Buddy 规划",
+    "description": "外国游客最常用的实用工具和指南直达链接。",
+    "plan": "免费行程助手",
+    "firstTrip": "首次来华指南",
+    "checklist": "中国旅行清单",
+    "apps": "中国旅行必备应用",
+    "alipay": "外国游客支付宝指南",
+    "payment": "中国支付指南",
+    "emergency": "中国紧急电话号码"
+  },
+  "disclaimer": "ChinaEase Buddy 是独立旅行工具，不是政府、移民、签证、医疗、酒店预订或交通主管机构。变化中的要求请向有关官方机构或服务提供方确认。",
+  "privacy": "隐私政策",
+  "terms": "使用条款",
+  "contact": "联系我们"
+}

@@ -1,4 +1,5 @@
 import { getAttributionContext } from './analytics';
+import { getCampaignAttribution } from './campaignAttribution';
 
 export interface TripLeadPayload {
   email: string;
@@ -50,6 +51,7 @@ export async function submitTripLead(
   payload: TripLeadPayload,
 ): Promise<TripLeadResult> {
   const attr = getAttributionContext();
+  const campaign = getCampaignAttribution();
   try {
     const res = await fetch('/api/leads/trip', {
       method: 'POST',
@@ -79,6 +81,13 @@ export async function submitTripLead(
         utmMedium: attr.utm_medium,
         utmCampaign: attr.utm_campaign,
         utmContent: attr.utm_content,
+        partnerId: campaign.partner_id,
+        partnerType: campaign.partner_type,
+        campaignChannel: campaign.channel,
+        campaignName: campaign.campaign,
+        landingVariant: campaign.landing_variant,
+        firstTouchSource: campaign.first_touch_source,
+        lastTouchSource: campaign.last_touch_source,
         website: '',
       }),
     });

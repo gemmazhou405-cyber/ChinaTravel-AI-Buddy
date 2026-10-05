@@ -1,0 +1,93 @@
+{
+  "brandHome": "ChinaEase Buddy home",
+  "language": "Language",
+  "recommendedBy": "Shared by {{name}}",
+  "helpEyebrow": "Useful right now",
+  "openHelp": "Open help",
+  "planEyebrow": "Free trip starter",
+  "hostel": {
+    "eyebrow": "Local help for guests in China",
+    "title": "In China now? Get the practical help you need next.",
+    "description": "Pay, take a taxi, show your hotel address, order food and find emergency help without guessing.",
+    "primaryCta": "Get my free local China travel plan",
+    "toolkitCta": "Open China travel toolkit",
+    "buddyCta": "Ask Buddy",
+    "microcopy": "Practical help · Clear English · Built for foreign visitors",
+    "helpTitle": "Solve the next travel problem in a few taps",
+    "helpDescription": "Choose the situation you are dealing with now. Each guide or tool opens directly, with no long setup.",
+    "cards": {
+      "payment": {"title": "Pay in China", "description": "Set up Alipay or WeChat Pay and keep a backup payment method ready."},
+      "taxi": {"title": "Take a taxi or DiDi", "description": "Book rides, confirm pickup points and avoid address confusion."},
+      "hotel": {"title": "Show your hotel address", "description": "Keep your hotel name and address ready in Chinese for drivers."},
+      "emergency": {"title": "Emergency contacts", "description": "Find key numbers and practical steps for urgent situations."},
+      "phrases": {"title": "Useful Chinese phrases", "description": "Show clear phrases to drivers, hotel staff and restaurant teams."},
+      "food": {"title": "Food and allergy help", "description": "Explain dietary needs and confirm ingredients directly with staff."}
+    },
+    "planTitle": "Want help planning what to do nearby or next?",
+    "planDescription": "Tell us your cities, dates and interests. The existing Free Trip Starter creates a useful first-day preview and sends the full plan by email.",
+    "planButton": "Build my free local plan",
+    "planPoints": ["Choose up to three cities", "Get an immediate Day 1 preview", "Receive the full plan by email"]
+  },
+  "visa": {
+    "eyebrow": "Before-you-fly China check",
+    "title": "Check your China entry requirements, then finish the essentials.",
+    "description": "Start with the Visa-Free Checker, then prepare payments, internet, apps and airport arrival basics.",
+    "primaryCta": "Check my China travel requirements",
+    "planCta": "Get a free China trip plan",
+    "microcopy": "Free check · No email required for the result · Official sources linked",
+    "helpTitle": "Your pre-flight checklist, in the right order",
+    "helpDescription": "Entry rules depend on more than nationality. Check your passport, dates, purpose and itinerary before moving on to the practical setup.",
+    "cards": {
+      "visa": {"title": "Visa-Free Checker", "description": "See which policy may apply to your passport, travel date and route."},
+      "checklist": {"title": "Before-you-fly checklist", "description": "Review documents, bookings, payments, mobile data and arrival details."},
+      "payment": {"title": "Payments", "description": "Prepare Alipay, WeChat Pay, cards and a realistic backup option."},
+      "internet": {"title": "Internet and eSIM", "description": "Compare eSIM and physical SIM choices before you land."},
+      "apps": {"title": "Essential apps", "description": "Set up maps, transport, payments and translation in advance."},
+      "arrival": {"title": "Airport arrival basics", "description": "Plan mobile data, transport and your first address before departure."}
+    },
+    "planTitle": "Once the entry check is done, plan the actual trip.",
+    "planDescription": "Use the Free Trip Starter to turn your dates, cities and interests into a practical route preview.",
+    "planButton": "Get my free China trip plan",
+    "planPoints": ["No payment required", "Plan around your real dates", "Keep entry and travel planning in one place"]
+  },
+  "firstTrip": {
+    "eyebrow": "First trip to China",
+    "title": "Not sure where to start? Start with what matters.",
+    "description": "Get the basics for payments, internet, transport, hotels, food, language, safety and itinerary planning in one clear place.",
+    "primaryCta": "Start my free China trip plan",
+    "guideCta": "Read the first-trip guide",
+    "toolkitCta": "Open travel toolkit",
+    "microcopy": "Simple steps · Foreign-visitor focused · No unnecessary setup",
+    "helpTitle": "Everything a first-time visitor should prepare",
+    "helpDescription": "Work through the essentials at your own pace. Open only what you need and return to the toolkit whenever a new situation comes up.",
+    "cards": {
+      "checklist": {"title": "First-trip checklist", "description": "See what to prepare before departure and what to keep accessible."},
+      "payment": {"title": "Payments", "description": "Set up mobile payment and keep cards or cash as a backup."},
+      "internet": {"title": "Internet", "description": "Choose an eSIM or physical SIM that suits your trip."},
+      "transport": {"title": "Transport", "description": "Use DiDi, metro and trains with fewer language surprises."},
+      "hotels": {"title": "Hotels", "description": "Choose a practical area and keep your address ready in Chinese."},
+      "food": {"title": "Food", "description": "Order more confidently and explain dietary needs clearly."},
+      "language": {"title": "Language", "description": "Use practical phrases for real travel situations."},
+      "safety": {"title": "Safety", "description": "Save emergency numbers and know the first steps if something goes wrong."}
+    },
+    "planTitle": "Turn the checklist into a trip that fits you.",
+    "planDescription": "Choose your cities, dates and interests to get a free Day 1 preview and a personalised route by email.",
+    "planButton": "Start my free trip plan",
+    "planPoints": ["Choose up to three destinations", "See a Day 1 preview immediately", "Adjust the details before you travel"]
+  },
+  "resources": {
+    "title": "Keep planning with ChinaEase Buddy",
+    "description": "Direct links to the practical tools and guides most foreign visitors need.",
+    "plan": "Free Trip Starter",
+    "firstTrip": "First Trip to China guide",
+    "checklist": "China travel checklist",
+    "apps": "Essential China travel apps",
+    "alipay": "Alipay for foreign visitors",
+    "payment": "China payment guide",
+    "emergency": "China emergency numbers"
+  },
+  "disclaimer": "ChinaEase Buddy is an independent travel toolkit, not a government, immigration, visa, medical, hotel-booking or transport authority. Confirm changing requirements with the relevant official authority or service provider.",
+  "privacy": "Privacy",
+  "terms": "Terms",
+  "contact": "Contact"
+}

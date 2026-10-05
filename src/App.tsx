@@ -19,6 +19,8 @@ import PassDashboard from './components/PassDashboard';
 import { usePass } from './hooks/usePass';
 import { useTranslation } from 'react-i18next';
 import { initAttribution, trackEvent, trackEventOnce, markFunnelOnce } from './lib/analytics';
+import CampaignLandingPage from './components/campaign/CampaignLandingPage';
+import { getCampaignVariant } from './data/campaignLandings';
 
 export type TabId = 'before' | 'stay' | 'food' | 'transport' | 'emergency' | 'pay';
 export type JourneyId = 'before' | 'now' | 'emergency';
@@ -71,6 +73,7 @@ export default function App() {
   const { t } = useTranslation();
   const policyPageType = getPolicyPageType(window.location.pathname);
   const isPlanPage = window.location.pathname.replace(/\/+$/, '') === '/plan';
+  const campaignVariant = getCampaignVariant(window.location.pathname);
   const landing = parseLandingParams();
   const [activeTab, setActiveTab] = useState<TabId>(landing.tab ?? 'food');
   const [chatOpen, setChatOpen] = useState(false);
@@ -154,6 +157,10 @@ export default function App() {
 
   if (isPlanPage) {
     return <PlanLanding />;
+  }
+
+  if (campaignVariant) {
+    return <CampaignLandingPage variant={campaignVariant} />;
   }
 
   if (policyPageType) {

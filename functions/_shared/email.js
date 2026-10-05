@@ -61,6 +61,16 @@ function buildHtml(lead) {
     ['Locale', escapeHtml(lead.locale)],
     ['Source path', escapeHtml(lead.sourcePath)],
     ['UTM source', escapeHtml(lead.utmSource)],
+    ['UTM medium', escapeHtml(lead.utmMedium)],
+    ['UTM campaign', escapeHtml(lead.utmCampaign)],
+    ['UTM content', escapeHtml(lead.utmContent)],
+    ['Landing variant', escapeHtml(lead.landingVariant)],
+    ['Partner ID', escapeHtml(lead.partnerId)],
+    ['Partner type', escapeHtml(lead.partnerType)],
+    ['Campaign channel', escapeHtml(lead.campaignChannel)],
+    ['Campaign name', escapeHtml(lead.campaignName)],
+    ['First-touch source', escapeHtml(lead.firstTouchSource)],
+    ['Last-touch source', escapeHtml(lead.lastTouchSource)],
   ];
   const trs = rows
     .map(
@@ -97,6 +107,16 @@ function buildText(lead) {
     `Locale:       ${textVal(lead.locale)}`,
     `Source path:  ${textVal(lead.sourcePath)}`,
     `UTM source:   ${textVal(lead.utmSource)}`,
+    `UTM medium:   ${textVal(lead.utmMedium)}`,
+    `UTM campaign: ${textVal(lead.utmCampaign)}`,
+    `UTM content:  ${textVal(lead.utmContent)}`,
+    `Landing:      ${textVal(lead.landingVariant)}`,
+    `Partner ID:   ${textVal(lead.partnerId)}`,
+    `Partner type: ${textVal(lead.partnerType)}`,
+    `Channel:      ${textVal(lead.campaignChannel)}`,
+    `Campaign:     ${textVal(lead.campaignName)}`,
+    `First source: ${textVal(lead.firstTouchSource)}`,
+    `Last source:  ${textVal(lead.lastTouchSource)}`,
   ].join('\n');
 }
 
