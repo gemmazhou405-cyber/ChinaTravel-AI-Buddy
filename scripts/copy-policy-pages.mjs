@@ -49,6 +49,7 @@ const pageMeta = {
       ['China Visa-Free Checker', 'Compare verified ordinary-passport, 30-day, transit, mutual-agreement, and Hainan rules for a planned route.', '/china-visa-free-checker/'],
       ['TenPayGo for Tourists', 'Read confirmed launch facts, funding methods, a cautious setup checklist, limits, and payment backups.', '/tenpaygo-for-tourists/'],
       ['China Visa-Free Travel Guide', 'Compare 30-day visa-free entry, 240-hour visa-free transit, and the documents each route requires.', '/china-visa-free-travel-guide/'],
+      ['China Arrival Card Online 2026', 'Use the free official NIA form, check exemptions, and prepare your entry details.', '/china-online-arrival-card-2026/'],
       ['China Airport Arrival Guide', 'Follow immigration, baggage, customs, mobile data, payment, and airport-transfer steps after landing.', '/china-airport-arrival-guide/'],
       ['China Hotels for Foreigners', 'Book with a foreign passport, check in smoothly, understand registration, and handle common hotel problems.', '/china-hotels-for-foreigners/'],
       ['China Food Ordering Guide', 'Use QR and photo menus, explain dietary needs, handle serious food allergies, and pay.', '/china-food-ordering-guide/'],
@@ -231,10 +232,10 @@ const pageMeta = {
     ],
   },
   'china-airport-arrival-guide': {
-    title: 'China Airport Arrival Guide: eSIM, Alipay & Metro QR in 30 Minutes (2026)',
+    title: 'China Airport Arrival Guide 2026: Immigration to City Transfer',
     heading: 'Just Landed in China? Do These 5 Things in 30 Minutes',
     description:
-      'Landed in Beijing/Shanghai? 30-min checklist: Buy eSIM with built-in VPN, activate Alipay Transport QR, register stay via 12367 app. No Chinese needed.',
+      'After landing in China, follow immigration, baggage and customs, connect your phone, prepare a payment backup, and choose an official airport transfer.',
     quickAnswer:
       'Before flying, confirm the entry rules for your exact passport, route, purpose, and travel dates, then complete China\'s free official online arrival card if it applies to you. Keep your passport, visa or other entry basis, accommodation details, and onward booking accessible offline. After landing, follow the airport signs through immigration, baggage claim, and Customs; connect your phone, test a payment backup, and use an official airport train, metro, taxi queue, or verified ride-hailing pickup. The arrival card is not a visa or permission to enter, and the final entry decision belongs to the immigration authorities.',
     lastReviewed: 'September 29, 2026',
@@ -1077,10 +1078,10 @@ const pageMeta = {
     description: 'Unsubscribe from occasional ChinaEase Buddy travel updates.',
   },
   'china-travel-apps': {
-    title: '15 China Travel Apps That Actually Work for Foreigners (No Chinese Phone Needed) [2026]',
-    heading: '15 Apps You Must Download Before Landing in China',
+    title: 'China Travel Apps for Foreigners (2026): Payments, Maps & Rides',
+    heading: 'Essential China Travel Apps to Set Up Before Arrival',
     description:
-      'Alipay, WeChat, Amap, DiDi mini-program, Trip.com, 12306. Which needs +86 number and which doesn\'t. Download before arrival list.',
+      'Prepare Alipay, WeChat, AMap, DiDi and a train-booking option before China. Compare setup needs, payment backups and offline translation tools.',
     quickAnswer:
       'Before flying to mainland China, prepare a small core stack: Alipay for payments, WeChat for communication and backup payments, AMap Global for maps and public transport, DiDi for rides, Trip.com or Railway 12306 for trains, and an offline translation tool. Arrange an eSIM or roaming plan separately. Install from official stores, keep access to your home number for verification, save your hotel address in Chinese, and do not rely on Google or any single app as your only option.',
     lastReviewed: 'September 29, 2026',
@@ -1302,10 +1303,10 @@ const pageMeta = {
     ],
   },
   'didi-in-china-for-foreigners': {
-    title: 'How to Use DiDi in China Without Chinese Phone Number (2026 Alipay Guide)',
+    title: 'How to Use DiDi in China (2026): Phone, Payment & Pickup',
     heading: 'How to Use DiDi Without a Chinese Phone Number',
     description:
-      'DiDi app needs +86 number but DiDi mini-program in Alipay works with foreign Visa. Step-by-step: Alipay -> Search DiDi -> Link card -> Ride. No Chinese needed.',
+      'Use DiDi in China with a supported international number or wallet route. Set up payment, choose the correct pickup point, verify the car and keep a backup.',
     quickAnswer:
       'Foreign visitors can use the DiDi China ride-hailing app with an international mobile number and an English interface, or access DiDi through supported WeChat and Alipay routes. Before requesting a car, save the exact destination in Chinese, confirm the pickup pin and meeting point, compare the service type and estimated fare, and prepare a payment method shown in your version. When the car arrives, match the licence plate and vehicle details before entering.',
     lastReviewed: 'September 29, 2026',
@@ -4294,6 +4295,110 @@ for (const [slug, content] of Object.entries(focusedPageContent)) {
   Object.assign(pageMeta[slug], content);
 }
 
+pageMeta['china-online-arrival-card-2026'] = {
+  "title": "China Arrival Card Online 2026: Official Link, QR Code & Who Needs It",
+  "heading": "How to Fill in China's Online Arrival Card in 2026",
+  "description": "Use China's free official online arrival card. Find the NIA link, who needs to submit it, what to prepare, and what to do if you cannot complete it before landing.",
+  "quickAnswer": "Foreign visitors who need an arrival card can submit their entry information for free on the National Immigration Administration's official website, via NIA 12367, or through its WeChat or Alipay mini program before reaching China. The official web form is https://s.nia.gov.cn/ArrivalCardFillingPC/. Save the confirmation shown by the service. If advance submission is unavailable, NIA says travelers can complete it at the port by QR code, on-site device, or paper card. The arrival card does not replace a visa or determine admission.",
+  "lastReviewed": "October 5, 2026",
+  "lastModified": "2026-10-05",
+  "article": true,
+  "featuredFaqCount": 3,
+  "ctaBeforeFeaturedFaqs": true,
+  "contentSections": [
+    {
+      "title": "Use the official, free form",
+      "ordered": true,
+      "items": [
+        "Open the NIA government form at https://s.nia.gov.cn/ArrivalCardFillingPC/ or reach it through the NIA government service portal. Check that the address ends in nia.gov.cn before entering passport details.",
+        "You may also use the NIA 12367 app or the official NIA mini program in WeChat or Alipay. Follow the fields and prompts in the current version of the service.",
+        "Submit the entry details and retain the confirmation or QR code shown. Keep a screenshot available offline alongside your passport and accommodation address.",
+        "NIA states the service is free. A lookalike website requesting an arrival-card processing fee is not the official form."
+      ]
+    },
+    {
+      "title": "What to prepare before starting",
+      "items": [
+        "Have the passport you will use for entry, your flight or other arrival details, and the address of your first stay available.",
+        "Enter names and document details as shown on your travel document. Check dates and the port of entry before submission.",
+        "Keep the visa, visa-free basis or eligible transit documents for your route separately. An arrival card is an information form, not an entry permit.",
+        "If the form asks a question that does not fit your situation, use the official instructions or NIA 12367 support instead of inventing an answer."
+      ]
+    },
+    {
+      "title": "Who may be exempt",
+      "items": [
+        "NIA lists specific exemptions, including holders of a Chinese Foreign Permanent Resident ID Card, qualifying group entry, direct transit within 24 hours without leaving the port's restricted area, and entry through fast lanes.",
+        "Other listed categories include certain cruise passengers, foreign transport staff, and holders of the Mainland Travel Permit for Hong Kong and Macao Residents (Non-Chinese Citizens).",
+        "An ordinary tourist should not assume that visa-free entry also removes the arrival-card requirement. Check the NIA notice for the exact exemption.",
+        "An airline or port officer may request travel or accommodation information even when a separate arrival card is not required."
+      ]
+    },
+    {
+      "title": "If you cannot complete it online",
+      "items": [
+        "NIA says eligible travelers can fill it in after arrival at the immigration checkpoint using the official QR code, an on-site device, or a paper form.",
+        "Allow extra time if you must complete the form at the airport; do not buy a tight onward connection on the assumption that pre-filling guarantees faster immigration.",
+        "If a third-party page asks for payment, close it and use the NIA link above. Do not enter passport or payment information into an unverified site.",
+        "If you submitted the wrong information or cannot access your confirmation, follow the official service's current correction instructions or ask staff at the port."
+      ]
+    },
+    {
+      "title": "After the card: plan the first hour",
+      "items": [
+        "Keep the first hotel's Chinese address and your onward transfer plan on your phone and offline.",
+        "Follow signs for immigration, baggage and customs. Use an official taxi queue, airport train, metro or a verified ride-hailing pickup.",
+        "A hotel normally registers guests at check-in. A private or other non-hotel stay may require a separate accommodation-registration step; that is a different process from the arrival card.",
+        "Use the airport arrival guide for mobile data, payment backups and the trip into the city."
+      ]
+    }
+  ],
+  "faqs": [
+    [
+      "Is China's online arrival card free?",
+      "Yes. The National Immigration Administration says official online arrival-card submission is free; use its government website or official app and mini programs."
+    ],
+    [
+      "What is the official China arrival card link?",
+      "The NIA has identified https://s.nia.gov.cn/ArrivalCardFillingPC/ as the official web form. Verify the domain before entering passport details."
+    ],
+    [
+      "Do I need an arrival card if I enter China visa-free?",
+      "Visa-free entry and the arrival card are separate. Check NIA's listed exemptions for your exact route; do not assume visa-free entry is itself an exemption."
+    ],
+    [
+      "Can I fill in the arrival card after landing?",
+      "NIA says travelers unable to submit in advance can complete it at the port with an official QR code, on-site device or paper card."
+    ],
+    [
+      "Is the arrival card a visa?",
+      "No. It records entry information and does not replace required visa or transit eligibility. Immigration officers decide admission."
+    ],
+    [
+      "Do I need NIA 12367 accommodation registration as well?",
+      "An arrival card and stay registration are different. Hotels normally handle guest registration at check-in; private stays have separate procedures."
+    ]
+  ],
+  "sourceLinks": [
+    [
+      "National Immigration Administration: online arrival card notice",
+      "https://en.nia.gov.cn/n147418/n147468/c187308/content.html"
+    ],
+    [
+      "National Immigration Administration: official form and fraud warning",
+      "https://www.nia.gov.cn/n741440/n741577/c1755806/content.html"
+    ],
+    [
+      "National Immigration Administration: free service warning",
+      "https://en.nia.gov.cn/n147418/n147463/c191530/content.html"
+    ],
+    [
+      "Shanghai government: online arrival card service",
+      "https://english.shanghai.gov.cn/en-Individuals-ImmigrationandVisas-Onlinearrivalcard/20260904/093853180bd944f890424b546485181b.html"
+    ]
+  ]
+};
+
 const pages = Object.keys(pageMeta);
 const noindexPages = new Set(['about', 'plan', 'pricing', 'refund']);
 
@@ -4329,6 +4434,7 @@ const staticCtas = {
   unsubscribe: ['Contact support', '/contact/'],
   'china-travel-apps': ['Get my free China itinerary', '/#trip-plan'],
   'china-visa-free-travel-guide': ['Get my free China itinerary', '/#trip-plan'],
+  'china-online-arrival-card-2026': ['Plan my arrival and first China days', '/#trip-plan'],
   'china-airport-arrival-guide': ['Get my free China itinerary', '/#trip-plan'],
   'china-hotels-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
   'china-food-ordering-guide': ['Get my free China itinerary', '/#trip-plan'],
@@ -4403,6 +4509,7 @@ const relatedLinks = [
   ['TenPayGo for tourists', '/tenpaygo-for-tourists/'],
   ['China eSIM & internet guide', '/china-esim-internet-guide/'],
   ['China visa-free travel guide', '/china-visa-free-travel-guide/'],
+  ['China online arrival card', '/china-online-arrival-card-2026/'],
   ['China airport arrival guide', '/china-airport-arrival-guide/'],
   ['China hotels for foreigners', '/china-hotels-for-foreigners/'],
   ['How to order food in China', '/china-food-ordering-guide/'],
@@ -4832,7 +4939,15 @@ const pageRelatedLinks = {
     ['China eSIM & internet guide', '/china-esim-internet-guide/'],
     ['China airport arrival guide', '/china-airport-arrival-guide/'],
   ],
+  'china-online-arrival-card-2026': [
+    ['China airport arrival guide', '/china-airport-arrival-guide/'],
+    ['China visa-free checker', '/china-visa-free-checker/'],
+    ['China hotels for foreigners', '/china-hotels-for-foreigners/'],
+    ['First trip to China', '/first-trip-to-china/'],
+    ['Get my free China itinerary', '/#trip-plan'],
+  ],
   'china-airport-arrival-guide': [
+    ['China online arrival card', '/china-online-arrival-card-2026/'],
     ['China visa-free checker', '/china-visa-free-checker/'],
     ['Register a non-hotel stay with NIA 12367', '/nia-12367-online-accommodation-registration-guide/'],
     ['Beijing Airport to City Guide', '/beijing-airport-to-city-guide/'],
