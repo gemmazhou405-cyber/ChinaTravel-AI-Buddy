@@ -75,6 +75,26 @@ interface VisaFreeCheckerToolProps {
   onResultChange?: (result: VisaCheckerResult | null) => void;
 }
 
+type ValidationField = keyof VisaCheckerInput;
+
+function validateInput(input: VisaCheckerInput): { field: ValidationField; message: string } | null {
+  if (!input.nationalityCode) return { field: 'nationalityCode', message: 'Please select your passport nationality.' };
+  if (!input.passportType) return { field: 'passportType', message: 'Please select your passport type.' };
+  if (!input.entryDate) return { field: 'entryDate', message: 'Please select your planned entry date.' };
+  if (!input.purpose) return { field: 'purpose', message: 'Please select the purpose of your visit.' };
+  if (!Number.isFinite(input.stayDays) || input.stayDays < 1 || input.stayDays > 180) {
+    return { field: 'stayDays', message: 'Please enter a planned stay between 1 and 180 days.' };
+  }
+  if (!input.tripType) return { field: 'tripType', message: 'Please select your trip type.' };
+  if (input.tripType === 'transit' && !input.originCountryOrRegion.trim()) {
+    return { field: 'originCountryOrRegion', message: 'Please enter the country or region before Mainland China.' };
+  }
+  if (input.tripType === 'transit' && !input.onwardCountryOrRegion.trim()) {
+    return { field: 'onwardCountryOrRegion', message: 'Please enter the next country or region after Mainland China.' };
+  }
+  return null;
+}
+
 export default function VisaFreeCheckerTool({
   id = 'visa-checker-form',
   compact = false,
@@ -83,7 +103,9 @@ export default function VisaFreeCheckerTool({
   const [input, setInput] = useState<VisaCheckerInput>(initialInput);
   const [result, setResult] = useState<VisaCheckerResult | null>(null);
   const [copyStatus, setCopyStatus] = useState('');
+  const [validation, setValidation] = useState<{ field: ValidationField; message: string } | null>(null);
   const startedRef = useRef(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const update = <K extends keyof VisaCheckerInput>(key: K, value: VisaCheckerInput[K]) => {
     if (!startedRef.current) {
@@ -94,10 +116,20 @@ export default function VisaFreeCheckerTool({
     setResult(null);
     onResultChange?.(null);
     setCopyStatus('');
+    if (validation?.field === key) setValidation(null);
   };
 
   const handleCheck = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const validationError = validateInput(input);
+    if (validationError) {
+      setValidation(validationError);
+      requestAnimationFrame(() => {
+        formRef.current?.querySelector<HTMLElement>(`[data-field="${validationError.field}"]`)?.focus();
+      });
+      return;
+    }
+    setValidation(null);
     const next = evaluateVisaFree(input);
     setResult(next);
     onResultChange?.(next);
@@ -123,6 +155,7 @@ export default function VisaFreeCheckerTool({
     setResult(null);
     onResultChange?.(null);
     setCopyStatus('');
+    setValidation(null);
     startedRef.current = false;
   };
 
@@ -131,7 +164,9 @@ export default function VisaFreeCheckerTool({
   return (
     <div id={id} className="min-w-0 max-w-full scroll-mt-5">
       <form
+        ref={formRef}
         onSubmit={handleCheck}
+        noValidate
         aria-labelledby={`${id}-heading`}
         className={`min-w-0 max-w-full ${compact ? '' : 'rounded-2xl border border-[#155e63]/15 bg-[#f8fbfa] p-4 md:p-6'}`}
       >
@@ -145,32 +180,32 @@ export default function VisaFreeCheckerTool({
 
         <div className={`grid min-w-0 gap-4 ${compact ? 'sm:grid-cols-2' : 'mt-5 md:grid-cols-2'}`}>
           <label className="min-w-0 text-sm font-semibold text-gray-800">Passport nationality
-            <select required value={input.nationalityCode} onChange={(event) => update('nationalityCode', event.target.value)} className={inputClass}>
+            <select required name="nationalityCode" data-field="nationalityCode" aria-invalid={validation?.field === 'nationalityCode'} value={input.nationalityCode} onChange={(event) => update('nationalityCode', event.target.value)} className={inputClass}>
               <option value="">Select nationality</option>
               {CHECKER_COUNTRY_OPTIONS.map((country) => <option key={country.code} value={country.code}>{country.name}</option>)}
             </select>
           </label>
           <label className="min-w-0 text-sm font-semibold text-gray-800">Passport type
-            <select required value={input.passportType} onChange={(event) => update('passportType', event.target.value as PassportType)} className={inputClass}>
+            <select required name="passportType" data-field="passportType" aria-invalid={validation?.field === 'passportType'} value={input.passportType} onChange={(event) => update('passportType', event.target.value as PassportType)} className={inputClass}>
               <option value="">Select passport type</option>
               <option value="ordinary">Ordinary passport</option>
               <option value="other">Diplomatic/service/official/other</option>
             </select>
           </label>
           <label className="min-w-0 text-sm font-semibold text-gray-800">Planned entry date
-            <input required type="date" value={input.entryDate} onChange={(event) => update('entryDate', event.target.value)} className={inputClass} />
+            <input required name="entryDate" data-field="entryDate" aria-invalid={validation?.field === 'entryDate'} type="date" value={input.entryDate} onChange={(event) => update('entryDate', event.target.value)} className={inputClass} />
           </label>
           <label className="min-w-0 text-sm font-semibold text-gray-800">Purpose of visit
-            <select required value={input.purpose} onChange={(event) => update('purpose', event.target.value as VisaPurpose)} className={inputClass}>
+            <select required name="purpose" data-field="purpose" aria-invalid={validation?.field === 'purpose'} value={input.purpose} onChange={(event) => update('purpose', event.target.value as VisaPurpose)} className={inputClass}>
               <option value="">Select purpose</option>
               {purposeOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
             </select>
           </label>
           <label className="min-w-0 text-sm font-semibold text-gray-800">Planned stay (days)
-            <input required type="number" min="1" max="180" value={input.stayDays} onChange={(event) => update('stayDays', Number(event.target.value))} className={inputClass} />
+            <input required name="stayDays" data-field="stayDays" aria-invalid={validation?.field === 'stayDays'} type="number" min="1" max="180" value={input.stayDays} onChange={(event) => update('stayDays', Number(event.target.value))} className={inputClass} />
           </label>
           <label className="min-w-0 text-sm font-semibold text-gray-800">Trip type
-            <select required value={input.tripType} onChange={(event) => update('tripType', event.target.value as TripType)} className={inputClass}>
+            <select required name="tripType" data-field="tripType" aria-invalid={validation?.field === 'tripType'} value={input.tripType} onChange={(event) => update('tripType', event.target.value as TripType)} className={inputClass}>
               <option value="">Select trip type</option>
               {tripTypeOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
             </select>
@@ -181,14 +216,16 @@ export default function VisaFreeCheckerTool({
           <fieldset className={`mt-5 grid min-w-0 gap-4 border-t border-gray-200 pt-5 ${compact ? 'sm:grid-cols-2' : 'md:grid-cols-2'}`}>
             <legend className="px-2 text-sm font-bold text-gray-950">Third-country transit route</legend>
             <label className="min-w-0 text-sm font-semibold text-gray-800">Country or region before Mainland China
-              <input required value={input.originCountryOrRegion} onChange={(event) => update('originCountryOrRegion', event.target.value)} autoComplete="off" className={inputClass} />
+              <input required name="originCountryOrRegion" data-field="originCountryOrRegion" aria-invalid={validation?.field === 'originCountryOrRegion'} value={input.originCountryOrRegion} onChange={(event) => update('originCountryOrRegion', event.target.value)} autoComplete="off" className={inputClass} />
             </label>
             <label className="min-w-0 text-sm font-semibold text-gray-800">Next country or region after Mainland China
-              <input required value={input.onwardCountryOrRegion} onChange={(event) => update('onwardCountryOrRegion', event.target.value)} autoComplete="off" className={inputClass} />
+              <input required name="onwardCountryOrRegion" data-field="onwardCountryOrRegion" aria-invalid={validation?.field === 'onwardCountryOrRegion'} value={input.onwardCountryOrRegion} onChange={(event) => update('onwardCountryOrRegion', event.target.value)} autoComplete="off" className={inputClass} />
             </label>
             <p className={`text-xs leading-5 text-gray-500 ${compact ? 'sm:col-span-2' : 'md:col-span-2'}`}>Do not enter passport numbers, identity numbers or other sensitive personal information.</p>
           </fieldset>
         )}
+
+        {validation && <p role="alert" className="mt-4 rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-sm font-semibold text-rose-700">{validation.message}</p>}
 
         <button type="submit" className="mt-5 w-full rounded-xl bg-[#155e63] px-5 py-3 font-bold text-white transition hover:bg-[#104c50] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#155e63]">
           Check my China visa policy
