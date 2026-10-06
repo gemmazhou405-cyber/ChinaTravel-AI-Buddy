@@ -3915,29 +3915,6 @@ pageMeta['china-visa-free-checker'] = {
 
 // Give focused search pages their own answer instead of reusing a broader guide's sections.
 const focusedPageContent = {
-  "nia-12367-online-accommodation-registration-guide": {
-    "contentSections": [
-      {
-        "title": "Choose the right registration route",
-        "items": [
-          "A hotel normally handles guest registration at check-in; a private stay needs a different route.",
-          "Ask the host who will submit the details and save the confirmation.",
-          "Use the official NIA 12367 channel or local police guidance for the address where you stay."
-        ]
-      },
-      {
-        "title": "Prepare the stay details",
-        "items": [
-          "Keep the passport, host contact, full address and arrival date available.",
-          "Check the current time limit and available online channel with the local authority.",
-          "If the online form fails, contact the local police station rather than assuming submission succeeded."
-        ]
-      }
-    ],
-    "lastReviewed": "October 5, 2026",
-    "lastModified": "2026-10-05",
-    "article": true
-  },
   "amap-english-mode-guide-2026": {
     "contentSections": [
       {

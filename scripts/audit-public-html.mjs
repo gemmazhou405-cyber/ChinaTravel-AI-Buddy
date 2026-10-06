@@ -46,7 +46,7 @@ const pages = [
   },
   {
     path: '/china-airport-arrival-guide/',
-    h1: /Just Landed in China.*5 Things.*30 Minutes/i,
+    h1: /China Airport Arrival.*Entry.*Baggage.*Payment.*Transfer/i,
     keywords: ['arrival card', 'Immigration', 'Baggage', 'Customs', 'eSIM', 'airport transfer'],
     links: ['/#trip-plan', '/china-visa-free-travel-guide/', '/china-hotels-for-foreigners/', '/first-trip-to-china/', '/china-esim-internet-guide/', '/china-payment-guide/', '/china-metro-guide/', '/didi-in-china-for-foreigners/'],
   },
@@ -82,7 +82,7 @@ const pages = [
   },
   {
     path: '/china-travel-apps/',
-    h1: /15 Apps You Must Download Before Landing in China/i,
+    h1: /Essential China Travel Apps to Set Up Before Arrival/i,
     keywords: ['Alipay', 'WeChat', 'AMap Global', 'DiDi', 'Trip.com', 'Railway 12306', 'offline translation'],
     links: ['/#trip-plan', '/china-airport-arrival-guide/', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/china-esim-internet-guide/', '/alipay-for-foreigners/', '/china-food-ordering-guide/', '/chinese-travel-phrases/', '/china-travel-safety-guide/', '/china-travel-budget/', '/china-travel-checklist/'],
   },
