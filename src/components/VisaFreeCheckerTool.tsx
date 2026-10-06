@@ -9,6 +9,8 @@ import {
 } from '../data/chinaVisaPolicies';
 import { trackEvent } from '../lib/analytics';
 import { evaluateVisaFree, type VisaCheckerInput, type VisaCheckerResult } from '../lib/visaChecker';
+import { useVisaAccount } from '../hooks/useVisaAccount';
+import VisaAccountGate from './VisaAccountGate';
 
 const purposeOptions: Array<{ value: VisaPurpose; label: string }> = [
   { value: 'tourism', label: 'Tourism' },
@@ -104,8 +106,23 @@ export default function VisaFreeCheckerTool({
   const [result, setResult] = useState<VisaCheckerResult | null>(null);
   const [copyStatus, setCopyStatus] = useState('');
   const [validation, setValidation] = useState<{ field: ValidationField; message: string } | null>(null);
+  const [authOpen, setAuthOpen] = useState(false);
+  const [pendingResult, setPendingResult] = useState<VisaCheckerResult | null>(null);
   const startedRef = useRef(false);
   const formRef = useRef<HTMLFormElement>(null);
+  const { user, loading: authLoading, signup, login, loginWithGoogle, resetPassword } = useVisaAccount();
+
+  const revealResult = (next: VisaCheckerResult) => {
+    setResult(next);
+    setPendingResult(null);
+    onResultChange?.(next);
+    setCopyStatus('');
+    void trackEvent('visa_checker_complete', {
+      resultCategory: next.category,
+      policyType: next.policyType,
+      completed: true,
+    });
+  };
 
   const update = <K extends keyof VisaCheckerInput>(key: K, value: VisaCheckerInput[K]) => {
     if (!startedRef.current) {
@@ -131,14 +148,12 @@ export default function VisaFreeCheckerTool({
     }
     setValidation(null);
     const next = evaluateVisaFree(input);
-    setResult(next);
-    onResultChange?.(next);
-    setCopyStatus('');
-    void trackEvent('visa_checker_complete', {
-      resultCategory: next.category,
-      policyType: next.policyType,
-      completed: true,
-    });
+    if (!user) {
+      setPendingResult(next);
+      setAuthOpen(true);
+      return;
+    }
+    revealResult(next);
   };
 
   const copyText = async (text: string, successMessage: string) => {
@@ -175,7 +190,7 @@ export default function VisaFreeCheckerTool({
           <h2 id={`${id}-heading`} className={compact ? 'mt-1.5 text-xl font-bold text-ink' : 'text-xl font-bold text-gray-950'}>
             Check your planned trip
           </h2>
-          {compact && <p className="mt-1 text-xs leading-5 text-ink-secondary">Enter your details below. Results appear on this page.</p>}
+          {compact && <p className="mt-1 text-xs leading-5 text-ink-secondary">Complete the check, then create a free account to view your result.</p>}
         </div>
 
         <div className={`grid min-w-0 gap-4 ${compact ? 'sm:grid-cols-2' : 'mt-5 md:grid-cols-2'}`}>
@@ -227,11 +242,24 @@ export default function VisaFreeCheckerTool({
 
         {validation && <p role="alert" className="mt-4 rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-sm font-semibold text-rose-700">{validation.message}</p>}
 
-        <button type="submit" className="mt-5 w-full rounded-xl bg-[#155e63] px-5 py-3 font-bold text-white transition hover:bg-[#104c50] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#155e63]">
-          Check my China visa policy
+        <button type="submit" disabled={authLoading} className="mt-5 w-full rounded-xl bg-[#155e63] px-5 py-3 font-bold text-white transition hover:bg-[#104c50] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#155e63] disabled:cursor-wait disabled:opacity-60">
+          {authLoading ? 'Checking account...' : 'Check my China visa policy'}
         </button>
-        <p className="mt-2 text-center text-[11px] font-medium text-gray-500">Free · No account needed · Results appear immediately</p>
+        <p className="mt-2 text-center text-[11px] font-medium text-gray-500">Free account required · Takes less than 1 minute</p>
       </form>
+
+      {authOpen && (
+        <VisaAccountGate
+          onClose={() => setAuthOpen(false)}
+          onAuthenticated={() => {
+            if (pendingResult) revealResult(pendingResult);
+          }}
+          signup={signup}
+          login={login}
+          loginWithGoogle={loginWithGoogle}
+          resetPassword={resetPassword}
+        />
+      )}
 
       {result && (
         <section aria-live="polite" aria-atomic="true" className={`mt-5 rounded-2xl border p-4 ${resultTone[result.category]}`}>

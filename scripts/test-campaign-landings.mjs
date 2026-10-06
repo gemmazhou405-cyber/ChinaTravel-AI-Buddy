@@ -12,7 +12,7 @@ const requiredLinks = [
 ];
 const checks = [
   ['dist/partners/hostel-china-travel-help/index.html', '/partners/hostel-china-travel-help/', ['In China now?', 'Take a taxi or DiDi']],
-  ['dist/partners/china-visa-checker/index.html', '/partners/china-visa-checker/', ['Check if you may need a visa for China', 'Check my China visa policy', 'Takes less than 1 minute', 'Passport nationality', 'Passport type', 'Planned entry date', 'Purpose of visit', 'Planned stay (days)', 'Trip type', 'Results appear on this page.', 'Why check before you fly?']],
+  ['dist/partners/china-visa-checker/index.html', '/partners/china-visa-checker/', ['Check if you may need a visa for China', 'Check my China visa policy', 'Takes less than 1 minute', 'Passport nationality', 'Passport type', 'Planned entry date', 'Purpose of visit', 'Planned stay (days)', 'Trip type', 'Create a free account to reveal your result.', 'Why check before you fly?']],
   ['dist/partners/first-trip-to-china/index.html', '/partners/first-trip-to-china/', ['Not sure where to start?', 'Everything a first-time visitor should prepare']],
 ];
 
@@ -23,6 +23,9 @@ for (const [file, route, needles] of checks) {
   if ((html.match(/<h1>/g) || []).length !== 1) failures.push(`${route} must contain one static H1`);
   for (const needle of [...needles, ...requiredLinks]) {
     if (!html.includes(needle)) failures.push(`${route} missing ${needle}`);
+  }
+  if (route === '/partners/china-visa-checker/' && html.includes('No account needed')) {
+    failures.push(`${route} still claims that no account is needed`);
   }
 }
 
