@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import ChatModal from '../ChatModal';
+import VisaFreeCheckerTool from '../VisaFreeCheckerTool';
 import { usePass } from '../../hooks/usePass';
 import { campaignLandings, type CampaignCta, type CampaignIcon } from '../../data/campaignLandings';
 import { getCampaignPartner, type CampaignLandingVariant } from '../../data/campaignPartners';
@@ -138,8 +139,8 @@ export default function CampaignLandingPage({ variant }: { variant: CampaignLand
         {isVisaLanding ? (
           <section className="relative overflow-hidden border-b border-hairline bg-[#F2F7F5] py-8 sm:py-12 md:py-16">
             <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-jade-wash to-transparent" aria-hidden="true" />
-            <div className="relative mx-auto grid max-w-container gap-8 px-4 sm:px-6 md:grid-cols-[1.05fr_0.95fr] md:items-center md:px-8">
-              <div>
+            <div className="relative mx-auto grid w-full min-w-0 max-w-container gap-8 px-4 sm:px-6 md:grid-cols-[1.05fr_0.95fr] md:items-center md:px-8">
+              <div className="min-w-0">
                 <p className="inline-flex rounded-full border border-jade/20 bg-white px-3.5 py-2 text-[11px] font-bold uppercase tracking-[0.14em] text-jade shadow-sm">
                   {t('visa.eyebrow')}
                 </p>
@@ -160,7 +161,7 @@ export default function CampaignLandingPage({ variant }: { variant: CampaignLand
                 )}
                 <div className="mt-6">
                   {renderCta(
-                    config.primary,
+                    { ...config.primary, href: '#visa-checker-form' },
                     'inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-xl bg-jade px-7 py-4 text-base font-bold text-white shadow-soft transition hover:bg-jade-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade sm:w-auto',
                     'hero_primary',
                   )}
@@ -168,38 +169,8 @@ export default function CampaignLandingPage({ variant }: { variant: CampaignLand
                 <p className="mt-3 text-xs font-semibold text-ink-tertiary">{t('visa.microcopy')}</p>
               </div>
 
-              <aside className="rounded-2xl border border-jade/15 bg-white p-5 shadow-soft sm:p-6" aria-label={t('visa.preview.ariaLabel')}>
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-jade">{t('visa.preview.eyebrow')}</p>
-                    <h2 className="mt-1.5 text-xl font-bold text-ink">{t('visa.preview.title')}</h2>
-                  </div>
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-jade-wash text-jade">
-                    <MapPinned className="h-5 w-5" aria-hidden="true" />
-                  </span>
-                </div>
-                <p className="mt-3 rounded-lg bg-jade-wash px-3 py-2 text-xs font-semibold leading-relaxed text-jade">
-                  {t('visa.preview.note')}
-                </p>
-                <dl className="mt-4 divide-y divide-hairline border-y border-hairline">
-                  {(t('visa.preview.fields', { returnObjects: true }) as Array<{ label: string; value: string }>).map((field, index) => (
-                    <div key={field.label} className="grid grid-cols-[2rem_1fr] items-center gap-3 py-3">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-surface text-xs font-bold text-jade" aria-hidden="true">{index + 1}</span>
-                      <div className="min-w-0">
-                        <dt className="text-[11px] font-bold uppercase tracking-[0.1em] text-ink-tertiary">{field.label}</dt>
-                        <dd className="mt-0.5 text-sm font-semibold text-ink">{field.value}</dd>
-                      </div>
-                    </div>
-                  ))}
-                </dl>
-                <div className="mt-4 rounded-xl border border-jade/15 bg-jade-wash p-4">
-                  <p className="text-xs font-bold uppercase tracking-[0.12em] text-jade">{t('visa.preview.resultLabel')}</p>
-                  <div className="mt-2 flex flex-wrap gap-2">
-                    {(t('visa.preview.results', { returnObjects: true }) as string[]).map((result) => (
-                      <span key={result} className="rounded-full border border-jade/15 bg-white px-3 py-1.5 text-xs font-semibold text-ink-secondary">{result}</span>
-                    ))}
-                  </div>
-                </div>
+              <aside className="min-w-0 max-w-full overflow-hidden rounded-2xl border border-jade/15 bg-white p-5 shadow-soft sm:p-6" aria-label="Free China visa policy checker">
+                <VisaFreeCheckerTool id="visa-checker-form" compact />
               </aside>
             </div>
           </section>
