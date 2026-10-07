@@ -716,7 +716,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'First-time China itineraries', href: '/china-itinerary-first-time-7-10-14-days/' },
       { label: 'Is China safe for tourists?', href: '/is-china-safe-for-tourists-2026/' },
       { label: 'Best apps for China travel', href: '/best-apps-for-china-travel-2026/' },
-      { label: 'How to use DiDi in China', href: '/how-to-use-didi-in-china-foreigners/' },
+      { label: 'How to use DiDi in China', href: '/didi-in-china-for-foreigners/' },
       { label: 'Beijing and Shanghai layover guide', href: '/beijing-shanghai-layover-240-hour-guide/' },
       { label: 'China travel budget', href: '/china-travel-budget/' },
       { label: 'China hotels without rejection', href: '/china-hotels-for-foreigners-no-rejection-guide/' },
@@ -1671,25 +1671,25 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'china-travel-safety-guide': {
     path: '/china-travel-safety-guide/',
-    title: 'Is China Safe to Travel? Safety Guide for Tourists (2026)',
+    title: 'Is It Safe to Travel to China in 2026?',
     intro:
       'A practical, evidence-based safety guide for crime, scams, solo and female travel, transport, local laws, health, weather, and emergencies in mainland China.',
-    metaTitle: 'Is China Safe to Travel? Tourist Safety Guide (2026)',
+    metaTitle: 'Is It Safe to Travel to China? Tourist Safety Guide (2026)',
     metaDescription:
-      'Plan a safer China trip. Understand crime, tourist scams, solo and female travel, taxis, local laws, health, weather, emergency numbers, and what to prepare.',
+      'Is China safe to visit in 2026? Understand tourist scams, solo travel, transport, local laws, health, weather, emergency numbers and practical precautions.',
     quickAnswer:
-      'Many tourists visit mainland China without serious safety problems, and official UK and US guidance says serious or violent crime against foreign visitors is relatively uncommon. That does not make any trip risk-free. The most practical concerns are protecting belongings in crowded places, avoiding tea-house and bar scams, using verified transport, following local laws, preparing mobile data and payment backups, monitoring weather, and knowing how to get medical or police help. Government advisories also highlight broad national-security laws, possible exit bans, and restrictions in sensitive areas, so check the current advice issued for your own nationality and itinerary before departure.',
+      'Many tourists visit mainland China without serious incidents, and UK guidance says serious crime against foreign nationals is relatively rare. That does not make every trip risk-free. Use verified transport, avoid common tourist scams, follow local laws, prepare payment and mobile-data backups, and know how to contact emergency services. Government advisories also highlight broad national-security laws, possible exit bans, and restrictions in sensitive areas, so check the current advice for your nationality and itinerary before departure.',
     ctaLabel: 'Get my free China itinerary',
     ctaHref: '/#trip-plan',
-    lastReviewed: 'September 20, 2026',
-    lastModified: '2026-09-20',
+    lastReviewed: 'October 7, 2026',
+    lastModified: '2026-10-07',
     isArticle: true,
     sections: [
       {
-        title: 'Understand the risk picture',
+        title: 'Is it safe to travel to China right now?',
         items: [
           'Separate everyday tourist safety from legal and geopolitical risk. Street crime may be relatively uncommon while laws, restricted areas, business disputes, or a traveler\'s professional background can create different risks.',
-          'As reviewed on 20 September 2026, the US Department of State rates mainland China Level 2, “Exercise increased caution,” citing enforcement of local laws, exit bans, and detention risks.',
+          'As reviewed on 7 October 2026, the US Department of State rates mainland China Level 2, “Exercise increased caution,” citing arbitrary enforcement of local laws, exit bans, and the risk of unjust arrest or detention.',
           'UK guidance says serious crime against foreign nationals is relatively rare, but isolated violent incidents have occurred and ordinary precautions remain necessary.',
           'Travel advice varies by nationality and can change quickly. Read the current government advisory for your passport, not only social-media accounts or an old travel video.',
           'Hong Kong and Macao have separate entry, legal, emergency, and travel-advisory pages. Do not treat a mainland China guide as complete advice for either place.',
@@ -1792,9 +1792,9 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     ],
     faqs: [
       {
-        question: 'Is China safe for tourists in 2026?',
+        question: 'Is it safe to travel to China in 2026?',
         answer:
-          'Many tourists travel without serious incidents, and official UK and US guidance describes serious or violent crime against foreign visitors as relatively uncommon. Travelers should still protect belongings, avoid scams, use verified transport, follow local laws, and check current government advice for their nationality and route.',
+          'Many tourists travel without serious incidents, and UK guidance says serious crime against foreign nationals is relatively rare. Travelers should still protect belongings, avoid scams, use verified transport, follow local laws, and check current government advice for their nationality and route.',
       },
       {
         question: 'Is China safe for solo female travelers?',
@@ -2738,17 +2738,17 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'didi-in-china-for-foreigners': {
     path: '/didi-in-china-for-foreigners/',
-    title: 'How to Use DiDi Without a Chinese Phone Number',
+    title: 'How to Use DiDi in China as a Foreigner',
     intro: 'A practical ride-hailing guide for app setup, pickup points, car verification, driver messages, payment, and common problems.',
-    metaTitle: 'How to Use DiDi in China Without Chinese Phone Number (2026 Alipay Guide)',
+    metaTitle: 'How to Use DiDi in China as a Foreigner (2026)',
     metaDescription:
-      'DiDi app needs +86 number but DiDi mini-program in Alipay works with foreign Visa. Step-by-step: Alipay -> Search DiDi -> Link card -> Ride. No Chinese needed.',
+      'Learn how foreigners can use DiDi in China with an international phone number, English interface, Alipay or WeChat, safe pickup checks and payment backups.',
     quickAnswer:
       'Foreign visitors can use the DiDi China ride-hailing app with an international mobile number and an English interface, or access DiDi through supported WeChat and Alipay routes. Before requesting a car, save the exact destination in Chinese, confirm the pickup pin and meeting point, compare the service type and estimated fare, and prepare a payment method shown in your version. When the car arrives, match the licence plate and vehicle details before entering.',
     ctaLabel: 'Get my free China itinerary',
     ctaHref: '/#trip-plan',
-    lastReviewed: 'September 29, 2026',
-    lastModified: '2026-09-29',
+    lastReviewed: 'October 7, 2026',
+    lastModified: '2026-10-07',
     isArticle: true,
     sections: [
       {
@@ -5884,7 +5884,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { question: 'Can I search places in English?', answer: 'Major places often work in English. Keep the Chinese name or address for small or ambiguous destinations.' },
       { question: 'Is Amap better than Google Maps in China?', answer: 'Amap uses current local data and is designed for mainland navigation. Google services are generally unavailable on ordinary mainland connections.' },
     ],
-    related: [{ label: 'Google Maps alternative guide', href: '/does-google-maps-work-in-china-amap-guide/' }, { label: 'Full Amap guide', href: '/amap-in-english/' }, { label: 'DiDi guide', href: '/how-to-use-didi-in-china-foreigners/' }],
+    related: [{ label: 'Google Maps alternative guide', href: '/does-google-maps-work-in-china-amap-guide/' }, { label: 'Full Amap guide', href: '/amap-in-english/' }, { label: 'DiDi guide', href: '/didi-in-china-for-foreigners/' }],
     sources: [{ label: 'Shanghai government: multilingual Amap services', href: 'https://english.shanghai.gov.cn/en-EasyShanghai/20260713/379bcea6e1bd4defaa7db2451d68d3dd.html' }],
   },
   'alipay-metro-qr-transport-code-guide': {
@@ -6039,7 +6039,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { question: 'Does Apple Maps work in China?', answer: 'Apple Maps is commonly usable in mainland China and can be a convenient English-language option, though local feature availability varies.' },
       { question: 'Should I use Baidu Maps?', answer: 'Baidu Maps has strong local coverage, but Amap Global or Apple Maps is usually easier for visitors who need an English interface.' },
     ],
-    related: [{ label: 'Full Amap English guide', href: '/amap-in-english/' }, { label: 'Best China travel apps', href: '/best-apps-for-china-travel-2026/' }, { label: 'DiDi guide', href: '/how-to-use-didi-in-china-foreigners/' }],
+    related: [{ label: 'Full Amap English guide', href: '/amap-in-english/' }, { label: 'Best China travel apps', href: '/best-apps-for-china-travel-2026/' }, { label: 'DiDi guide', href: '/didi-in-china-for-foreigners/' }],
     sources: [{ label: 'Shanghai government: Amap English map', href: 'https://english.shanghai.gov.cn/en-InFocus/20250123/78d115a256af4c29a607b3d326ac2d8a.html' }, { label: 'Shanghai government: multilingual Amap services', href: 'https://english.shanghai.gov.cn/en-EasyShanghai/20260713/379bcea6e1bd4defaa7db2451d68d3dd.html' }],
   },
   'how-to-visit-great-wall-from-beijing-2026': {
@@ -6173,7 +6173,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { question: 'Does Google Maps work in China?', answer: 'Google services are generally unavailable on ordinary mainland connections, and local map data can be unsuitable for navigation. Use Amap or Apple Maps in mainland China.' },
       { question: 'Can I use Uber in China?', answer: 'Uber is not the standard ride-hailing option in mainland China. Use DiDi or an official taxi service.' },
     ],
-    related: [{ label: 'Full China travel apps guide', href: '/china-travel-apps/' }, { label: 'DiDi guide for foreigners', href: '/how-to-use-didi-in-china-foreigners/' }, { label: 'China eSIM guide', href: '/china-esim-internet-vpn-guide/' }],
+    related: [{ label: 'Full China travel apps guide', href: '/china-travel-apps/' }, { label: 'DiDi guide for foreigners', href: '/didi-in-china-for-foreigners/' }, { label: 'China eSIM guide', href: '/china-esim-internet-vpn-guide/' }],
   },
   'how-to-use-didi-in-china-foreigners': {
     path: '/how-to-use-didi-in-china-foreigners/',

@@ -70,7 +70,7 @@ const pages = [
   },
   {
     path: '/china-travel-safety-guide/',
-    h1: /Is China Safe to Travel.*Safety Guide for Tourists.*2026/i,
+    h1: /Is It Safe to Travel to China.*2026/i,
     keywords: ['Level 2', 'tea-house', 'unmarked', 'original passport', 'tap water', 'Typhoons', '110', '120', '119'],
     links: ['/#trip-plan', '/is-china-safe-for-tourists-2026/', '/china-emergency-numbers/', '/chinese-travel-phrases/', '/china-travel-apps/', '/didi-in-china-for-foreigners/', '/china-hotels-for-foreigners/', '/china-food-ordering-guide/', '/china-payment-guide/', '/china-airport-arrival-guide/', '/first-trip-to-china/'],
   },
@@ -106,7 +106,7 @@ const pages = [
   },
   {
     path: '/didi-in-china-for-foreigners/',
-    h1: /How to Use DiDi Without a Chinese Phone Number/i,
+    h1: /How to Use DiDi in China as a Foreigner/i,
     keywords: ['international mobile number', 'English interface', 'licence plate', 'ride-hailing pickup point', 'bilingual', 'lost item'],
     links: ['/#trip-plan', '/china-airport-arrival-guide/', '/first-trip-to-china/', '/china-travel-apps/', '/amap-in-english/', '/china-metro-guide/', '/china-train-travel-guide/', '/10-day-china-itinerary/', '/china-payment-guide/'],
   },
@@ -438,8 +438,9 @@ try {
   const redirectSources = [
     '/how-much-does-china-trip-cost-2026-calculator/',
     '/how-to-pay-in-china-as-foreigner/',
+    '/how-to-use-didi-in-china-foreigners/',
   ];
-  const canonicalDestinations = ['/china-travel-budget/', '/china-payment-guide/'];
+  const canonicalDestinations = ['/china-travel-budget/', '/china-payment-guide/', '/didi-in-china-for-foreigners/'];
   results.push({ path: '/sitemap.xml', name: 'HTTP 200', pass: sitemapResponse.status === 200, detail: `status ${sitemapResponse.status}` });
   for (const path of redirectSources) {
     results.push({ path: '/sitemap.xml', name: 'redirect excluded', pass: !sitemap.includes(`<loc>${ORIGIN}${path}</loc>`), detail: path });

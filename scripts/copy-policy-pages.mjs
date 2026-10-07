@@ -758,21 +758,21 @@ const pageMeta = {
     ],
   },
   'china-travel-safety-guide': {
-    title: 'Is China Safe to Travel? Tourist Safety Guide (2026)',
-    heading: 'Is China Safe to Travel? Safety Guide for Tourists (2026)',
+    title: 'Is It Safe to Travel to China? Tourist Safety Guide (2026)',
+    heading: 'Is It Safe to Travel to China in 2026?',
     description:
-      'Plan a safer China trip. Understand crime, tourist scams, solo and female travel, taxis, local laws, health, weather, emergency numbers, and what to prepare.',
+      'Is China safe to visit in 2026? Understand tourist scams, solo travel, transport, local laws, health, weather, emergency numbers and practical precautions.',
     quickAnswer:
-      'Many tourists visit mainland China without serious safety problems, and official UK and US guidance says serious or violent crime against foreign visitors is relatively uncommon. That does not make any trip risk-free. The most practical concerns are protecting belongings in crowded places, avoiding tea-house and bar scams, using verified transport, following local laws, preparing mobile data and payment backups, monitoring weather, and knowing how to get medical or police help. Government advisories also highlight broad national-security laws, possible exit bans, and restrictions in sensitive areas, so check the current advice issued for your own nationality and itinerary before departure.',
-    lastReviewed: 'September 20, 2026',
-    lastModified: '2026-09-20',
+      'Many tourists visit mainland China without serious incidents, and UK guidance says serious crime against foreign nationals is relatively rare. That does not make every trip risk-free. Use verified transport, avoid common tourist scams, follow local laws, prepare payment and mobile-data backups, and know how to contact emergency services. Government advisories also highlight broad national-security laws, possible exit bans, and restrictions in sensitive areas, so check the current advice for your nationality and itinerary before departure.',
+    lastReviewed: 'October 7, 2026',
+    lastModified: '2026-10-07',
     article: true,
     contentSections: [
       {
-        title: 'Understand the risk picture',
+        title: 'Is it safe to travel to China right now?',
         items: [
           'Separate everyday tourist safety from legal and geopolitical risk. Street crime may be relatively uncommon while laws, restricted areas, business disputes, or a traveler\'s professional background can create different risks.',
-          'As reviewed on 20 September 2026, the US Department of State rates mainland China Level 2, “Exercise increased caution,” citing enforcement of local laws, exit bans, and detention risks.',
+          'As reviewed on 7 October 2026, the US Department of State rates mainland China Level 2, “Exercise increased caution,” citing arbitrary enforcement of local laws, exit bans, and the risk of unjust arrest or detention.',
           'UK guidance says serious crime against foreign nationals is relatively rare, but isolated violent incidents have occurred and ordinary precautions remain necessary.',
           'Travel advice varies by nationality and can change quickly. Read the current government advisory for your passport, not only social-media accounts or an old travel video.',
           'Hong Kong and Macao have separate entry, legal, emergency, and travel-advisory pages. Do not treat a mainland China guide as complete advice for either place.',
@@ -874,7 +874,7 @@ const pageMeta = {
       },
     ],
     faqs: [
-      ['Is China safe for tourists in 2026?', 'Many tourists travel without serious incidents, and official UK and US guidance describes serious or violent crime against foreign visitors as relatively uncommon. Travelers should still protect belongings, avoid scams, use verified transport, follow local laws, and check current government advice for their nationality and route.'],
+      ['Is it safe to travel to China in 2026?', 'Many tourists travel without serious incidents, and UK guidance says serious crime against foreign nationals is relatively rare. Travelers should still protect belongings, avoid scams, use verified transport, follow local laws, and check current government advice for their nationality and route.'],
       ['Is China safe for solo female travelers?', 'Many women travel independently in China, but normal solo-travel precautions still matter. Keep control of drinks and transport, meet new contacts in public, share plans, avoid isolated places at night, and leave if a person or venue makes you uncomfortable.'],
       ['What scams should tourists watch for in China?', 'Common warnings include tea-house, massage, bar, and “practice English” invitations that end with an inflated bill. Also check QR codes, payment amounts, ATM equipment, suspicious links, and anyone asking you to carry a parcel.'],
       ['Should I carry my passport in China?', 'Official UK guidance advises carrying the original passport because police may conduct identity checks and may not accept a printed copy. Store a secure copy separately and check the current advice for your nationality and situation.'],
@@ -1303,14 +1303,14 @@ const pageMeta = {
     ],
   },
   'didi-in-china-for-foreigners': {
-    title: 'How to Use DiDi in China (2026): Phone, Payment & Pickup',
-    heading: 'How to Use DiDi Without a Chinese Phone Number',
+    title: 'How to Use DiDi in China as a Foreigner (2026)',
+    heading: 'How to Use DiDi in China as a Foreigner',
     description:
-      'Use DiDi in China with a supported international number or wallet route. Set up payment, choose the correct pickup point, verify the car and keep a backup.',
+      'Learn how foreigners can use DiDi in China with an international phone number, English interface, Alipay or WeChat, safe pickup checks and payment backups.',
     quickAnswer:
       'Foreign visitors can use the DiDi China ride-hailing app with an international mobile number and an English interface, or access DiDi through supported WeChat and Alipay routes. Before requesting a car, save the exact destination in Chinese, confirm the pickup pin and meeting point, compare the service type and estimated fare, and prepare a payment method shown in your version. When the car arrives, match the licence plate and vehicle details before entering.',
-    lastReviewed: 'September 29, 2026',
-    lastModified: '2026-09-29',
+    lastReviewed: 'October 7, 2026',
+    lastModified: '2026-10-07',
     article: true,
     contentSections: [
       {
@@ -4557,7 +4557,7 @@ const relatedLinks = [
   ['China itineraries', '/china-itinerary-first-time-7-10-14-days/'],
   ['China tourist safety 2026', '/is-china-safe-for-tourists-2026/'],
   ['Best apps for China travel', '/best-apps-for-china-travel-2026/'],
-  ['DiDi for foreigners', '/how-to-use-didi-in-china-foreigners/'],
+  ['DiDi for foreigners', '/didi-in-china-for-foreigners/'],
   ['Beijing and Shanghai layover guide', '/beijing-shanghai-layover-240-hour-guide/'],
   ['China travel budget', '/china-travel-budget/'],
   ['China hotels without rejection', '/china-hotels-for-foreigners-no-rejection-guide/'],
