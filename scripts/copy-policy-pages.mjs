@@ -91,7 +91,7 @@ const pageMeta = {
       ['China Travel Checklist', 'A first-time visitor checklist for apps, payments, hotels, phrases, and emergency basics.', '/china-travel-checklist/'],
       ['Emergency Numbers in China', 'Know 110, 120, and 119, plus simple phrases for urgent situations.', '/china-emergency-numbers/'],
       ['China Visa-Free Guide 2026', 'Compare the 30-day policy and the A-China-C requirement for 240-hour transit.', '/china-visa-free-guide-2026/'],
-      ['Paying in China', 'Set up Alipay and WeChat Pay, understand fees, and prepare backups.', '/how-to-pay-in-china-as-foreigner/'],
+      ['Paying in China', 'Set up Alipay and WeChat Pay, understand fees, and prepare backups.', '/china-payment-guide/'],
       ['China eSIM and Internet', 'Keep Google, WhatsApp, and Instagram available with the right travel connection.', '/china-esim-internet-vpn-guide/'],
       ['China Train Booking', 'Register on 12306 with a foreign passport and board with an e-ticket.', '/china-train-booking-foreigners-12306/'],
       ['First-Time China Itineraries', 'Choose a practical 7, 10, or 14-day route.', '/china-itinerary-first-time-7-10-14-days/'],
@@ -3697,12 +3697,12 @@ Object.assign(pageMeta, {
   },
   'is-china-safe-for-tourists-2026': {
     ...pageMeta['china-travel-safety-guide'],
-    title: 'Is China Safe for Tourists in 2026? Honest Guide for Americans',
-    heading: "Is China Safe for Tourists in 2026? Yes, with Important Caveats.",
-    description: 'Is China safe for American tourists? Serious crime against visitors is relatively uncommon. Understand the Level 2 advisory, local laws, scams, and safety tips.',
-    quickAnswer: 'Many visitors travel through China without serious incidents. The current US Level 2 advisory means Exercise Increased Caution and focuses on arbitrary enforcement of local laws, exit bans, and detention risk. Everyday precautions and respect for local laws still matter.',
-    lastReviewed: 'September 26, 2026',
-    lastModified: '2026-09-26',
+    title: 'Is China Safe for US Citizens in 2026? Travel Advice',
+    heading: 'Is China Safe for US Citizens in 2026?',
+    description: 'Is China safe for US citizens in 2026? Understand the US Level 2 advisory, local laws, exit-ban risks, common scams and practical tourist precautions.',
+    quickAnswer: 'Many US citizens visit China without serious incidents. The US Department of State currently rates mainland China Level 2, Exercise Increased Caution, because of arbitrary enforcement of local laws, exit bans, and the risk of unjust arrest or detention. This is not a guarantee that any trip is risk-free. Review the current advisory, follow local laws, use verified transport, and keep a practical emergency plan.',
+    lastReviewed: 'October 7, 2026',
+    lastModified: '2026-10-07',
   },
   'best-apps-for-china-travel-2026': {
     ...pageMeta['china-travel-apps'],
@@ -4148,9 +4148,10 @@ const focusedPageContent = {
   "is-china-safe-for-tourists-2026": {
     "contentSections": [
       {
-        "title": "Prepare for the trip",
+        "title": "What US travelers should know about the Level 2 advisory",
         "items": [
-          "Read the current travel advice from your own government and the rules for your route.",
+          "The US Department of State currently rates mainland China Level 2, Exercise Increased Caution, because of arbitrary enforcement of local laws, exit bans, and the risk of unjust arrest or detention.",
+          "Level 2 is not the same as a recommendation to avoid all travel, but US citizens should read the complete current advisory and consider whether their work, disputes, or professional background creates additional risk.",
           "Keep copies of key documents and your hotel's address offline.",
           "Arrange a reliable way to contact your accommodation and emergency services."
         ]
@@ -4164,10 +4165,28 @@ const focusedPageContent = {
         ]
       }
     ],
-    "lastReviewed": "October 5, 2026",
-    "lastModified": "2026-10-05",
+    "lastReviewed": "October 7, 2026",
+    "lastModified": "2026-10-07",
     "article": true,
-    "quickAnswer": "Many visitors travel in China without serious incidents, but conditions and official travel advice can change. Check your own government's current advisory, follow local rules, use reputable transport and booking channels, and keep emergency contacts and document copies accessible."
+    "quickAnswer": "Many US citizens visit China without serious incidents. The US Department of State currently rates mainland China Level 2, Exercise Increased Caution, because of arbitrary enforcement of local laws, exit bans, and the risk of unjust arrest or detention. Review the current advisory, follow local laws, use reputable transport, and keep emergency contacts and document copies accessible.",
+    "faqs": [
+      [
+        "Is China safe for US citizens in 2026?",
+        "Many US citizens visit without serious incidents. The current US advisory is Level 2, Exercise Increased Caution, because of arbitrary enforcement of local laws, exit-ban risks, and the risk of unjust arrest or detention. Read the full current advisory, consider your individual circumstances, and follow local laws."
+      ],
+      [
+        "Is China safe for solo female travelers?",
+        "Many women travel independently in China, but standard precautions still apply: share plans, use verified transport, keep control of drinks, avoid isolated areas, and leave situations that feel unsafe."
+      ],
+      [
+        "Is China safe for children and families?",
+        "China can be practical for family travel. Plan for crowds, carry medicine and hotel details, use child-appropriate restraints where available, and agree on a meeting point."
+      ],
+      [
+        "What emergency numbers should I save?",
+        "Save 110 for police, 120 for ambulance, and 119 for fire. Ask hotel, station, or attraction staff to help call if language is a barrier."
+      ]
+    ]
   },
   "best-apps-for-china-travel-2026": {
     "contentSections": [
@@ -5000,6 +5019,7 @@ const pageRelatedLinks = {
     ['Open the free phrase tools', '/?journey=china'],
   ],
   'china-travel-safety-guide': [
+    ['Is China safe for US citizens?', '/is-china-safe-for-tourists-2026/'],
     ['Emergency numbers in China', '/china-emergency-numbers/'],
     ['Essential Chinese travel phrases', '/chinese-travel-phrases/'],
     ['China travel apps', '/china-travel-apps/'],
@@ -5341,7 +5361,19 @@ await Promise.all(
   }),
 );
 
-const sitemapPages = [''].concat(pages.filter((page) => !noindexPages.has(page)));
+const redirectsSource = await readFile('public/_redirects', 'utf8');
+const permanentRedirectSources = new Set(
+  redirectsSource
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) => line && !line.startsWith('#'))
+    .map((line) => line.split(/\s+/))
+    .filter((parts) => parts.length >= 3 && parts.at(-1) === '301')
+    .map(([sourcePath]) => sourcePath.replace(/^\//, '').replace(/\/$/, '')),
+);
+const sitemapPages = [''].concat(
+  pages.filter((page) => !noindexPages.has(page) && !permanentRedirectSources.has(page)),
+);
 const homepageLastmod = '2026-09-29';
 const defaultLastmod = '2026-09-26';
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

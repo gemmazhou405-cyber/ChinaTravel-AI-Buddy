@@ -72,7 +72,13 @@ const pages = [
     path: '/china-travel-safety-guide/',
     h1: /Is China Safe to Travel.*Safety Guide for Tourists.*2026/i,
     keywords: ['Level 2', 'tea-house', 'unmarked', 'original passport', 'tap water', 'Typhoons', '110', '120', '119'],
-    links: ['/#trip-plan', '/china-emergency-numbers/', '/chinese-travel-phrases/', '/china-travel-apps/', '/didi-in-china-for-foreigners/', '/china-hotels-for-foreigners/', '/china-food-ordering-guide/', '/china-payment-guide/', '/china-airport-arrival-guide/', '/first-trip-to-china/'],
+    links: ['/#trip-plan', '/is-china-safe-for-tourists-2026/', '/china-emergency-numbers/', '/chinese-travel-phrases/', '/china-travel-apps/', '/didi-in-china-for-foreigners/', '/china-hotels-for-foreigners/', '/china-food-ordering-guide/', '/china-payment-guide/', '/china-airport-arrival-guide/', '/first-trip-to-china/'],
+  },
+  {
+    path: '/is-china-safe-for-tourists-2026/',
+    h1: /Is China Safe for US Citizens.*2026/i,
+    keywords: ['US citizens', 'Level 2', 'exit bans', '110', '120', '119'],
+    links: ['/china-travel-safety-guide/', '/china-emergency-numbers/', '/best-apps-for-china-travel-2026/'],
   },
   {
     path: '/china-travel-budget/',
@@ -422,6 +428,27 @@ for (const page of pages) {
   for (const [name, pass, detail] of checks) {
     results.push({ path: page.path, name, pass, detail });
   }
+}
+
+try {
+  const sitemapResponse = await fetch(`${REQUEST_ORIGIN}/sitemap.xml`, {
+    headers: { 'User-Agent': 'ChinaEaseBuddyLaunchAudit/1.0 (+https://chinaeasebuddy.com)' },
+  });
+  const sitemap = await sitemapResponse.text();
+  const redirectSources = [
+    '/how-much-does-china-trip-cost-2026-calculator/',
+    '/how-to-pay-in-china-as-foreigner/',
+  ];
+  const canonicalDestinations = ['/china-travel-budget/', '/china-payment-guide/'];
+  results.push({ path: '/sitemap.xml', name: 'HTTP 200', pass: sitemapResponse.status === 200, detail: `status ${sitemapResponse.status}` });
+  for (const path of redirectSources) {
+    results.push({ path: '/sitemap.xml', name: 'redirect excluded', pass: !sitemap.includes(`<loc>${ORIGIN}${path}</loc>`), detail: path });
+  }
+  for (const path of canonicalDestinations) {
+    results.push({ path: '/sitemap.xml', name: 'canonical included', pass: sitemap.includes(`<loc>${ORIGIN}${path}</loc>`), detail: path });
+  }
+} catch (error) {
+  results.push({ path: '/sitemap.xml', name: 'HTTP 200', pass: false, detail: error instanceof Error ? error.message : 'fetch failed' });
 }
 
 const pad = (value, len) => String(value).padEnd(len, ' ');
