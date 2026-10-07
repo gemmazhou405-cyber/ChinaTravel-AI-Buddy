@@ -2890,6 +2890,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
+      { label: 'How to pay for DiDi in China', href: '/didi-payment-for-foreigners/' },
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
       { label: 'Apps to download before China', href: '/china-travel-apps/' },
       { label: 'AMap in English', href: '/amap-in-english/' },

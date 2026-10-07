@@ -214,7 +214,7 @@ const pages = [
   },
   {
     path: '/china-golden-week-2026-travel-guide/',
-    h1: /China Golden Week 2026 Survival Guide/i,
+    h1: /China Golden Week 2026.*Dates.*Crowds.*Travel Tips/i,
     keywords: ['October 1', 'October 7', 'Mid-Autumn Festival', '12306', 'hotel', 'National Day'],
     links: ['/#trip-plan', '/best-time-to-visit-china/', '/china-train-travel-guide/', '/china-hotels-for-foreigners/', '/china-travel-budget/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/first-trip-to-china/'],
   },

@@ -4626,7 +4626,7 @@ const pageRelatedLinks = {
     ['Get a free China itinerary', '/#trip-plan'],
   ],
   'didi-in-china-for-foreigners': [
-    ['DiDi Payment for Foreigners', '/didi-payment-for-foreigners/'],
+    ['How to pay for DiDi in China', '/didi-payment-for-foreigners/'],
     ['China airport arrival guide', '/china-airport-arrival-guide/'],
     ['Apps to download before China', '/china-travel-apps/'],
     ['AMap in English', '/amap-in-english/'],
