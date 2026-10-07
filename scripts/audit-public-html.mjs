@@ -76,7 +76,7 @@ const pages = [
   },
   {
     path: '/china-travel-budget/',
-    h1: /China Travel Budget.*How Much Does a Trip Cost.*2026/i,
+    h1: /How Much Does a Trip to China Cost.*2026 Budget Guide/i,
     keywords: ['RMB 350', 'RMB 800', 'RMB 1,800', 'international flights', '12306', 'peak', 'solo travelers'],
     links: ['/#trip-plan', '/china-hotels-for-foreigners/', '/china-food-ordering-guide/', '/china-payment-guide/', '/china-train-travel-guide/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-esim-internet-guide/', '/china-travel-apps/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/best-time-to-visit-china/', '/first-trip-to-china/'],
   },

@@ -718,7 +718,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'Best apps for China travel', href: '/best-apps-for-china-travel-2026/' },
       { label: 'How to use DiDi in China', href: '/how-to-use-didi-in-china-foreigners/' },
       { label: 'Beijing and Shanghai layover guide', href: '/beijing-shanghai-layover-240-hour-guide/' },
-      { label: 'China trip cost calculator', href: '/how-much-does-china-trip-cost-2026-calculator/' },
+      { label: 'China travel budget', href: '/china-travel-budget/' },
       { label: 'China hotels without rejection', href: '/china-hotels-for-foreigners-no-rejection-guide/' },
       { label: 'Google Maps and Amap guide', href: '/does-google-maps-work-in-china-amap-guide/' },
       { label: 'Great Wall from Beijing', href: '/how-to-visit-great-wall-from-beijing-2026/' },
@@ -1849,18 +1849,18 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'china-travel-budget': {
     path: '/china-travel-budget/',
-    title: 'China Travel Budget: How Much Does a Trip Cost? (2026)',
+    title: 'How Much Does a Trip to China Cost? 2026 Budget Guide',
     intro:
       'A practical RMB budget for hotels, food, local transport, trains, attractions, mobile data, and 5-, 10-, or 14-day trips in mainland China.',
-    metaTitle: 'China Travel Budget: Trip Costs for 2026 | ChinaEase Buddy',
+    metaTitle: 'How Much Does a Trip to China Cost? 2026 Travel Budget',
     metaDescription:
-      'Estimate your China travel budget in RMB. Compare budget, mid-range, and comfortable daily costs plus realistic 5-, 10-, and 14-day trip totals.',
+      'Plan a China travel budget in RMB. Compare daily costs and realistic 5-, 10-, and 14-day totals for hotels, food, transport and attractions.',
     quickAnswer:
       'For planning, allow roughly RMB 350–650 per person per day for a budget trip, RMB 800–1,500 for a mid-range trip, or RMB 1,800–3,000+ for a comfortable trip. These are ChinaEase planning ranges, not official averages or fixed prices. They exclude international flights and assume normal travel dates; your route, room-sharing, city, booking date, exchange rate, and holiday demand can change the total substantially. Check exact hotel, attraction, airline, and China Railway 12306 prices before booking.',
     ctaLabel: 'Get my free China itinerary',
     ctaHref: '/#trip-plan',
-    lastReviewed: 'September 20, 2026',
-    lastModified: '2026-09-20',
+    lastReviewed: 'October 7, 2026',
+    lastModified: '2026-10-07',
     isArticle: true,
     sections: [
       {
@@ -5933,7 +5933,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { question: 'What information should I provide?', answer: 'Provide dates, cities, interests, budget, pace, mobility needs, and fixed bookings. Do not provide passport numbers, card details, or other unnecessary sensitive data.' },
       { question: 'Can Buddy create Chinese addresses and phrases?', answer: 'Yes. Buddy can format destination names, hotel messages, pickup phrases, and planning notes for local apps.' },
     ],
-    related: [{ label: '7, 10 and 14-day itinerary guide', href: '/china-itinerary-first-time-7-10-14-days/' }, { label: 'China trip cost calculator', href: '/how-much-does-china-trip-cost-2026-calculator/' }, { label: 'China train booking guide', href: '/china-train-booking-foreigners-12306/' }],
+    related: [{ label: '7, 10 and 14-day itinerary guide', href: '/china-itinerary-first-time-7-10-14-days/' }, { label: 'China travel budget', href: '/china-travel-budget/' }, { label: 'China train booking guide', href: '/china-train-booking-foreigners-12306/' }],
   },
   '240-hour-transit-zone-map-high-speed-rail': {
     path: '/240-hour-transit-zone-map-high-speed-rail/',

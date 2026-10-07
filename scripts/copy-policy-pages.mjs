@@ -891,14 +891,14 @@ const pageMeta = {
     ],
   },
   'china-travel-budget': {
-    title: 'China Travel Budget: Trip Costs for 2026 | ChinaEase Buddy',
-    heading: 'China Travel Budget: How Much Does a Trip Cost? (2026)',
+    title: 'How Much Does a Trip to China Cost? 2026 Travel Budget',
+    heading: 'How Much Does a Trip to China Cost? 2026 Budget Guide',
     description:
-      'Estimate your China travel budget in RMB. Compare budget, mid-range, and comfortable daily costs plus realistic 5-, 10-, and 14-day trip totals.',
+      'Plan a China travel budget in RMB. Compare daily costs and realistic 5-, 10-, and 14-day totals for hotels, food, transport and attractions.',
     quickAnswer:
       'For planning, allow roughly RMB 350–650 per person per day for a budget trip, RMB 800–1,500 for a mid-range trip, or RMB 1,800–3,000+ for a comfortable trip. These are ChinaEase planning ranges, not official averages or fixed prices. They exclude international flights and assume normal travel dates; your route, room-sharing, city, booking date, exchange rate, and holiday demand can change the total substantially. Check exact hotel, attraction, airline, and China Railway 12306 prices before booking.',
-    lastReviewed: 'September 20, 2026',
-    lastModified: '2026-09-20',
+    lastReviewed: 'October 7, 2026',
+    lastModified: '2026-10-07',
     article: true,
     contentSections: [
       {
@@ -4540,7 +4540,7 @@ const relatedLinks = [
   ['Best apps for China travel', '/best-apps-for-china-travel-2026/'],
   ['DiDi for foreigners', '/how-to-use-didi-in-china-foreigners/'],
   ['Beijing and Shanghai layover guide', '/beijing-shanghai-layover-240-hour-guide/'],
-  ['China trip cost calculator', '/how-much-does-china-trip-cost-2026-calculator/'],
+  ['China travel budget', '/china-travel-budget/'],
   ['China hotels without rejection', '/china-hotels-for-foreigners-no-rejection-guide/'],
   ['Google Maps and Amap guide', '/does-google-maps-work-in-china-amap-guide/'],
   ['Great Wall from Beijing', '/how-to-visit-great-wall-from-beijing-2026/'],
