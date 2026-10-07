@@ -1125,18 +1125,18 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'china-hotels-for-foreigners': {
     path: '/china-hotels-for-foreigners/',
-    title: 'China Hotels for Foreigners: Booking and Check-In Guide',
+    title: 'Can Foreigners Stay in Any Hotel in China? (2026 Guide)',
     intro:
       'A practical hotel guide for foreign-passport booking, check-in, accommodation registration, payments, late arrivals, and front-desk problems.',
-    metaTitle: 'China Hotels for Foreigners (2026): Booking & Check-In Guide',
+    metaTitle: 'Can Foreigners Stay in Any Hotel in China? (2026)',
     metaDescription:
-      'Book a China hotel with a foreign passport, confirm registration before arrival, and handle common check-in problems without relying on a misleading foreign-hotel licence list.',
+      'Can foreigners stay in any hotel in China? Learn the current rule, how to book with a foreign passport, confirm registration and handle check-in refusal.',
     quickAnswer:
       'Foreign visitors can book and stay in hotels in China using a valid passport. In 2024, China\'s public security, commerce, and immigration authorities said hotels must not refuse overseas guests merely because the property claims to lack a special foreign-guest qualification. In practice, some front desks may still be unfamiliar with passport registration, especially at small or newly opened properties. Before a non-refundable booking, confirm the exact property can register your passport, save the written confirmation, enter every guest\'s name exactly as shown on the passport, and notify the hotel if you will arrive late. A hotel normally completes the accommodation registration for its guests; a private or non-hotel stay follows separate local registration procedures.',
     ctaLabel: 'Get my free China itinerary',
     ctaHref: '/#trip-plan',
-    lastReviewed: 'October 1, 2026',
-    lastModified: '2026-10-01',
+    lastReviewed: 'October 7, 2026',
+    lastModified: '2026-10-07',
     isArticle: true,
     sections: [
       {
@@ -1150,7 +1150,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
         ],
       },
       {
-        title: 'Check these details before booking',
+        title: 'How to book a China hotel with a foreign passport',
         ordered: true,
         items: [
           'Confirm the exact hotel name, branch, street address, and city. Chinese chains can have several properties with almost identical English names.',
@@ -1191,7 +1191,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
         ],
       },
       {
-        title: 'What happens at hotel check-in?',
+        title: 'China hotel check-in with a foreign passport',
         ordered: true,
         items: [
           'Show the original passport for every guest and the reservation confirmation. Staff may scan or manually enter passport and entry information.',
@@ -1250,6 +1250,16 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
         question: 'Can foreigners stay in any hotel in China?',
         answer:
           'National authorities have said hotels must not refuse overseas guests merely because they lack a special foreign-guest qualification. However, room availability, property policy, local conditions, and staff familiarity can still affect a specific stay, so confirm before a restrictive booking.',
+      },
+      {
+        question: 'Which hotels in China accept foreigners?',
+        answer:
+          'National authorities have said hotels must not reject overseas guests merely because they lack a special foreign-guest qualification. In practice, choose a property that can register your passport, confirm the exact branch in writing, and prefer flexible cancellation when staff experience is uncertain.',
+      },
+      {
+        question: 'How can I confirm a China hotel accepts my foreign passport?',
+        answer:
+          'Message the exact property before booking and ask whether it can check in your passport nationality and document type. Save the reply, use every guest\'s passport name, confirm reception hours, and avoid a non-refundable rate when the answer is unclear.',
       },
       {
         question: 'Do Chinese hotels need a special licence to accept foreigners?',
@@ -5441,19 +5451,28 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     path: '/wechat-pay-for-foreigners/',
     title: 'How to Use WeChat Pay in China as a Foreigner (2026)',
     intro: 'A practical setup, QR payment, and troubleshooting guide for first-time visitors using an international bank card.',
-    metaTitle: 'WeChat Pay for Foreigners: Setup Guide (2026) | ChinaEase Buddy',
+    metaTitle: 'How to Use WeChat Pay in China as a Foreigner (2026)',
     metaDescription:
-      'Set up WeChat Pay for China: register with an overseas number, add an eligible international card, pay by QR code, and troubleshoot common failures.',
+      'Learn how foreigners can set up WeChat Pay or Weixin Pay in China, link an eligible international card, pay by QR code and fix common payment failures.',
     quickAnswer:
-      'Foreign visitors can use WeChat Pay in mainland China when the payment feature is available on their account and an eligible international card passes identity and issuer checks. Register the standard WeChat app with a mobile number you can access, open the payment or wallet area shown in your version, add the card, and complete any requested verification. Set it up before departure and keep Alipay, a physical card, and some RMB as backups.',
+      'Yes, foreign visitors can use WeChat Pay in mainland China when the payment feature is available on their account and an eligible international card passes identity, issuer, and transaction checks. Register the standard WeChat app with a mobile number you can access, open the payment or wallet area shown in your version, add the card, and complete any requested verification. Set it up before departure and keep Alipay, a physical card, and some RMB as backups.',
     ctaLabel: 'Get my free China itinerary',
     ctaHref: '/#trip-plan',
-    lastReviewed: 'September 18, 2026',
-    lastModified: '2026-09-18',
+    lastReviewed: 'October 7, 2026',
+    lastModified: '2026-10-07',
     isArticle: true,
     sections: [
       {
-        title: 'What you need before setup',
+        title: 'Can foreigners use WeChat Pay in China?',
+        items: [
+          'Eligible foreign visitors can use WeChat Pay for supported merchant purchases after completing the account, identity, card, and issuer checks shown in the app.',
+          'A Chinese bank account is not always required for eligible merchant payments funded by a supported international card.',
+          'Availability can vary by account, card issuer, merchant, transaction type, app version, and current risk controls.',
+          'Personal transfers, red packets, balance functions, and some mini-program payments may remain unavailable even when ordinary merchant payments work.',
+        ],
+      },
+      {
+        title: 'What foreigners need to set up WeChat Pay',
         items: [
           'The standard WeChat app from an official app store, rather than a separate regional wallet product.',
           'A mobile number that can receive verification messages while you travel.',
@@ -5548,6 +5567,11 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
         question: 'Do I need a Chinese bank account for WeChat Pay?',
         answer:
           'Foreign visitors may be able to fund eligible merchant payments with a supported international card, so a Chinese bank account is not always required. Follow the options shown in your account.',
+      },
+      {
+        question: 'Is Weixin Pay the same as WeChat Pay for foreign visitors?',
+        answer:
+          'Weixin Pay is the mainland payment service within the Weixin and WeChat ecosystem. The name and menu shown can depend on your app version, account region, and product. Regional wallets such as WeChat Pay HK have separate eligibility and cross-border rules.',
       },
       {
         question: 'Can I set up WeChat Pay before arriving in China?',

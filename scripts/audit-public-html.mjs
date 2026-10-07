@@ -52,8 +52,8 @@ const pages = [
   },
   {
     path: '/china-hotels-for-foreigners/',
-    h1: /China Hotels for Foreigners.*Booking and Check-In Guide/i,
-    keywords: ['foreign passport', 'foreign-related qualification', 'accommodation registration', 'late arrival', 'deposit', '24 hours'],
+    h1: /Can Foreigners Stay in Any Hotel in China.*2026 Guide/i,
+    keywords: ['foreign passport', 'foreign-related qualification', 'Which hotels in China accept foreigners', 'accommodation registration', 'late arrival', 'deposit', '24 hours'],
     links: ['/#trip-plan', '/china-visa-free-travel-guide/', '/china-airport-arrival-guide/', '/first-trip-to-china/', '/china-payment-guide/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/10-day-china-itinerary/'],
   },
   {
@@ -257,7 +257,7 @@ const pages = [
   {
     path: '/wechat-pay-for-foreigners/',
     h1: /WeChat Pay in China as a Foreigner.*2026/i,
-    keywords: ['international card', 'QR code', 'person-to-person transfers', 'payment feature', 'Weixin Pay', 'payment failed'],
+    keywords: ['international card', 'QR code', 'Chinese bank account', 'person-to-person transfers', 'payment feature', 'Weixin Pay', 'payment failed'],
     links: ['/#trip-plan', '/first-trip-to-china/', '/alipay-for-foreigners/', '/china-payment-guide/', '/china-travel-apps/'],
   },
   {
