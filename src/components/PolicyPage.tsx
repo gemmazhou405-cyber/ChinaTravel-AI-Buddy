@@ -640,7 +640,6 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'China Emergency Numbers: 110, 120, 119, and simple emergency phrases.',
           'China Visa-Free Guide 2026: compare the 30-day policy with 240-hour transit.',
           'How to Pay in China: set up Alipay and WeChat Pay with practical backups.',
-          'China eSIM and Internet Guide: prepare access to Google, WhatsApp, and Instagram.',
           'China Train Booking: register on 12306 and travel with a foreign passport.',
           'First-Time China Itineraries: choose a practical 7, 10, or 14-day route.',
           'China Tourist Safety 2026: understand everyday risks and the US Level 2 advisory.',
@@ -711,7 +710,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'Emergency numbers in China', href: '/china-emergency-numbers/' },
       { label: 'China visa-free guide 2026', href: '/china-visa-free-guide-2026/' },
       { label: 'How to pay in China', href: '/china-payment-guide/' },
-      { label: 'China eSIM and internet guide', href: '/china-esim-internet-vpn-guide/' },
+      { label: 'China eSIM and internet guide', href: '/china-esim-internet-guide/' },
       { label: 'China train booking', href: '/china-train-booking-foreigners-12306/' },
       { label: 'First-time China itineraries', href: '/china-itinerary-first-time-7-10-14-days/' },
       { label: 'Is China safe for tourists?', href: '/is-china-safe-for-tourists-2026/' },
@@ -5000,20 +4999,31 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'china-esim-internet-guide': {
     path: '/china-esim-internet-guide/',
-    title: 'China eSIM & Internet Guide for Tourists (2026)',
+    title: 'How to Get an eSIM in China (2026 Internet Guide)',
     intro:
       'A practical, provider-neutral guide to choosing, installing, activating, and troubleshooting mobile data for a trip to mainland China.',
-    metaTitle: 'China eSIM & Internet Guide for Tourists (2026)',
+    metaTitle: 'How to Get an eSIM in China: Tourist Guide (2026)',
     metaDescription:
-      'Choose and set up a China travel eSIM, avoid roaming charges, understand internet restrictions, and fix mobile data problems after arrival.',
+      'Learn how to get an eSIM for China, check phone compatibility, install it before departure, activate data after landing and fix common connection problems.',
     quickAnswer:
-      'For most short trips, an international travel eSIM is the simplest way to get mobile data in mainland China if your phone is unlocked and eSIM-compatible. Buy and install it on reliable Wi-Fi before your flight, follow the provider\'s activation timing, select it for cellular data after landing, and keep your home line from using roaming data. Do not assume every China eSIM gives access to Google or other restricted services: routing, phone-number support, hotspot rules, speed limits, and activation policies differ by plan.',
+      'To get an eSIM for China, first confirm that your phone is carrier-unlocked and eSIM-compatible. Choose a travel plan that explicitly covers mainland China, buy and install it on reliable Wi-Fi before your flight, then follow the provider\'s activation timing and select it for mobile data after landing. Do not assume every China eSIM gives access to Google or other restricted services: routing, phone-number support, hotspot rules, speed limits, and activation policies differ by plan.',
     ctaLabel: 'Get my free China itinerary',
     ctaHref: '/#trip-plan',
-    lastReviewed: 'September 17, 2026',
-    lastModified: '2026-09-17',
+    lastReviewed: 'October 7, 2026',
+    lastModified: '2026-10-07',
     isArticle: true,
     sections: [
+      {
+        title: 'How to get an eSIM for China',
+        ordered: true,
+        items: [
+          'Check that your exact phone model supports eSIM and is not locked to your home carrier.',
+          'Compare provider plans that explicitly include mainland China, the trip dates, data allowance, network coverage, hotspot rules, and support channel you need.',
+          'Confirm whether the plan is data-only and whether it supports the international services you rely on; do not infer either point from the word eSIM.',
+          'Buy and install the plan on reliable Wi-Fi before departure, then save its QR code, order number, APN details, and setup instructions offline.',
+          'After landing, enable the travel line and any provider-required data roaming, select it for mobile data, and test maps, messaging, and a normal website.',
+        ],
+      },
       {
         title: 'Which connection option fits your trip?',
         table: {
@@ -5110,6 +5120,11 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     faqs: [
+      {
+        question: 'How do I get an eSIM in China?',
+        answer:
+          'Buy a travel eSIM that explicitly covers mainland China before departure, after confirming that your phone is unlocked and eSIM-compatible. Install it on reliable Wi-Fi, follow the provider\'s activation timing, and save the QR code and setup instructions offline.',
+      },
       {
         question: 'Does eSIM work in mainland China?',
         answer:
@@ -6197,7 +6212,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { question: 'Does Google Maps work in China?', answer: 'Google services are generally unavailable on ordinary mainland connections, and local map data can be unsuitable for navigation. Use Amap or Apple Maps in mainland China.' },
       { question: 'Can I use Uber in China?', answer: 'Uber is not the standard ride-hailing option in mainland China. Use DiDi or an official taxi service.' },
     ],
-    related: [{ label: 'Full China travel apps guide', href: '/china-travel-apps/' }, { label: 'DiDi guide for foreigners', href: '/didi-in-china-for-foreigners/' }, { label: 'China eSIM guide', href: '/china-esim-internet-vpn-guide/' }],
+    related: [{ label: 'Full China travel apps guide', href: '/china-travel-apps/' }, { label: 'DiDi guide for foreigners', href: '/didi-in-china-for-foreigners/' }, { label: 'China eSIM guide', href: '/china-esim-internet-guide/' }],
   },
   'how-to-use-didi-in-china-foreigners': {
     path: '/how-to-use-didi-in-china-foreigners/',
@@ -6370,7 +6385,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { question: 'Is cash accepted in China?', answer: 'RMB cash remains legal tender, but QR payment is the practical default in many places. Carry small notes because some merchants may not have change.' },
       { question: 'Why did my foreign card payment fail?', answer: 'Common causes include identity verification, bank fraud controls, unsupported card settings, merchant restrictions, or limits. Try your backup wallet or card and contact your issuer.' },
     ],
-    related: [{ label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' }, { label: 'China eSIM and internet', href: '/china-esim-internet-vpn-guide/' }, { label: 'China travel apps', href: '/china-travel-apps/' }],
+    related: [{ label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' }, { label: 'China eSIM and internet', href: '/china-esim-internet-guide/' }, { label: 'China travel apps', href: '/china-travel-apps/' }],
   },
   'china-esim-internet-vpn-guide': {
     path: '/china-esim-internet-vpn-guide/',
@@ -6450,7 +6465,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { question: 'Should I add Guilin or Chengdu to a 14-day trip?', answer: 'Choose Guilin for landscapes and outdoor time. Choose Chengdu for pandas, Sichuan food, and a more relaxed city experience.' },
       { question: 'Should I book trains or flights between Chinese cities?', answer: 'Use high-speed rail when the journey is under about five hours. Compare total door-to-door time rather than the scheduled flight duration alone.' },
     ],
-    related: [{ label: 'China train booking guide', href: '/china-train-booking-foreigners-12306/' }, { label: 'China visa-free guide', href: '/china-visa-free-guide-2026/' }, { label: 'China eSIM guide', href: '/china-esim-internet-vpn-guide/' }],
+    related: [{ label: 'China train booking guide', href: '/china-train-booking-foreigners-12306/' }, { label: 'China visa-free guide', href: '/china-visa-free-guide-2026/' }, { label: 'China eSIM guide', href: '/china-esim-internet-guide/' }],
   },
   faq: {
     path: '/faq/',

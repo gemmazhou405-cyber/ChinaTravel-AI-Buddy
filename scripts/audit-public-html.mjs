@@ -220,7 +220,7 @@ const pages = [
   },
   {
     path: '/china-golden-week-2026-travel-guide/',
-    h1: /China Golden Week 2026.*Dates.*Crowds.*Travel Tips/i,
+    h1: /China Golden Week 2026.*October 1.*7 Dates.*Travel Tips/i,
     keywords: ['October 1', 'October 7', 'Mid-Autumn Festival', '12306', 'hotel', 'National Day'],
     links: ['/#trip-plan', '/best-time-to-visit-china/', '/china-train-travel-guide/', '/china-hotels-for-foreigners/', '/china-travel-budget/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/first-trip-to-china/'],
   },
@@ -244,8 +244,8 @@ const pages = [
   },
   {
     path: '/china-esim-internet-guide/',
-    h1: /China eSIM.*Internet Guide.*2026/i,
-    keywords: ['travel eSIM', 'data roaming', 'mainland China', 'Google', 'APN'],
+    h1: /How to Get an eSIM in China.*2026 Internet Guide/i,
+    keywords: ['How do I get an eSIM in China?', 'travel eSIM', 'data roaming', 'mainland China', 'Google', 'APN'],
     links: ['/#trip-plan', '/china-airport-arrival-guide/', '/first-trip-to-china/', '/china-travel-apps/'],
   },
   {
@@ -439,8 +439,9 @@ try {
     '/how-much-does-china-trip-cost-2026-calculator/',
     '/how-to-pay-in-china-as-foreigner/',
     '/how-to-use-didi-in-china-foreigners/',
+    '/china-esim-internet-vpn-guide/',
   ];
-  const canonicalDestinations = ['/china-travel-budget/', '/china-payment-guide/', '/didi-in-china-for-foreigners/'];
+  const canonicalDestinations = ['/china-travel-budget/', '/china-payment-guide/', '/didi-in-china-for-foreigners/', '/china-esim-internet-guide/'];
   results.push({ path: '/sitemap.xml', name: 'HTTP 200', pass: sitemapResponse.status === 200, detail: `status ${sitemapResponse.status}` });
   for (const path of redirectSources) {
     results.push({ path: '/sitemap.xml', name: 'redirect excluded', pass: !sitemap.includes(`<loc>${ORIGIN}${path}</loc>`), detail: path });

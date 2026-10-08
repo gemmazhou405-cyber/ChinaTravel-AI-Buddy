@@ -92,7 +92,6 @@ const pageMeta = {
       ['Emergency Numbers in China', 'Know 110, 120, and 119, plus simple phrases for urgent situations.', '/china-emergency-numbers/'],
       ['China Visa-Free Guide 2026', 'Compare the 30-day policy and the A-China-C requirement for 240-hour transit.', '/china-visa-free-guide-2026/'],
       ['Paying in China', 'Set up Alipay and WeChat Pay, understand fees, and prepare backups.', '/china-payment-guide/'],
-      ['China eSIM and Internet', 'Keep Google, WhatsApp, and Instagram available with the right travel connection.', '/china-esim-internet-vpn-guide/'],
       ['China Train Booking', 'Register on 12306 with a foreign passport and board with an e-ticket.', '/china-train-booking-foreigners-12306/'],
       ['First-Time China Itineraries', 'Choose a practical 7, 10, or 14-day route.', '/china-itinerary-first-time-7-10-14-days/'],
       ['NIA 12367 Accommodation Registration', 'Register a private or non-hotel stay through the currently available official channels.', '/nia-12367-online-accommodation-registration-guide/'],
@@ -3013,15 +3012,26 @@ const pageMeta = {
     ],
   },
   'china-esim-internet-guide': {
-    title: 'China eSIM & Internet Guide for Tourists (2026)',
+    title: 'How to Get an eSIM in China (2026 Internet Guide)',
     description:
-      'Choose and set up a China travel eSIM, avoid roaming charges, understand internet restrictions, and fix mobile data problems after arrival.',
+      'Learn how to get an eSIM for China, check phone compatibility, install it before departure, activate data after landing and fix common connection problems.',
     quickAnswer:
-      'For most short trips, an international travel eSIM is the simplest way to get mobile data in mainland China if your phone is unlocked and eSIM-compatible. Buy and install it on reliable Wi-Fi before your flight, follow the provider\'s activation timing, select it for cellular data after landing, and keep your home line from using roaming data. Do not assume every China eSIM gives access to Google or other restricted services: routing, phone-number support, hotspot rules, speed limits, and activation policies differ by plan.',
-    lastReviewed: 'September 17, 2026',
-    lastModified: '2026-09-17',
+      'To get an eSIM for China, first confirm that your phone is carrier-unlocked and eSIM-compatible. Choose a travel plan that explicitly covers mainland China, buy and install it on reliable Wi-Fi before your flight, then follow the provider\'s activation timing and select it for mobile data after landing. Do not assume every China eSIM gives access to Google or other restricted services: routing, phone-number support, hotspot rules, speed limits, and activation policies differ by plan.',
+    lastReviewed: 'October 7, 2026',
+    lastModified: '2026-10-07',
     article: true,
     contentSections: [
+      {
+        title: 'How to get an eSIM for China',
+        ordered: true,
+        items: [
+          'Check that your exact phone model supports eSIM and is not locked to your home carrier.',
+          'Compare provider plans that explicitly include mainland China, the trip dates, data allowance, network coverage, hotspot rules, and support channel you need.',
+          'Confirm whether the plan is data-only and whether it supports the international services you rely on; do not infer either point from the word eSIM.',
+          'Buy and install the plan on reliable Wi-Fi before departure, then save its QR code, order number, APN details, and setup instructions offline.',
+          'After landing, enable the travel line and any provider-required data roaming, select it for mobile data, and test maps, messaging, and a normal website.',
+        ],
+      },
       {
         title: 'Choose between a travel eSIM, roaming, and a local SIM',
         items: [
@@ -3108,6 +3118,7 @@ const pageMeta = {
       },
     ],
     faqs: [
+      ['How do I get an eSIM in China?', 'Buy a travel eSIM that explicitly covers mainland China before departure, after confirming that your phone is unlocked and eSIM-compatible. Install it on reliable Wi-Fi, follow the provider\'s activation timing, and save the QR code and setup instructions offline.'],
       ['Does eSIM work in mainland China?', 'Yes, if your phone is unlocked and eSIM-compatible and the plan explicitly includes mainland China. Apple also lists worldwide providers offering prepaid travel eSIM plans for visitors to mainland China.'],
       ['Will a China eSIM let me use Google, WhatsApp, or Instagram?', 'Sometimes, but not because it is an eSIM. Access depends on how that specific provider routes traffic. Confirm each required service with the provider before purchase and keep an offline backup.'],
       ['Should I install the eSIM before arriving in China?', 'Usually yes. Install it on reliable Wi-Fi before departure, but follow the provider\'s instructions about when validity starts and whether the line should remain off until arrival.'],
@@ -4564,7 +4575,7 @@ const relatedLinks = [
   ['China travel checklist', '/china-travel-checklist/'],
   ['China emergency numbers', '/china-emergency-numbers/'],
   ['China visa-free guide', '/china-visa-free-guide-2026/'],
-  ['China eSIM guide', '/china-esim-internet-vpn-guide/'],
+  ['China eSIM guide', '/china-esim-internet-guide/'],
   ['China train booking', '/china-train-booking-foreigners-12306/'],
   ['China itineraries', '/china-itinerary-first-time-7-10-14-days/'],
   ['China tourist safety 2026', '/is-china-safe-for-tourists-2026/'],
