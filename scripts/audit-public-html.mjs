@@ -232,8 +232,8 @@ const pages = [
   },
   {
     path: '/chengdu-panda-base-guide/',
-    h1: /How to See Baby Pandas Without Waiting 3 Hours/i,
-    keywords: ['real-name', 'passport', 'South Gate', 'West Gate', 'sightseeing bus', 'pandas'],
+    h1: /Chengdu Panda Base Guide.*Tickets.*Route.*Visiting Tips.*2026/i,
+    keywords: ['CNY 55', 'CNY 30', 'real-name', '14 days', 'passport', 'South Gate', 'West Gate', 'sightseeing bus', 'Sun Nursery House', 'pandas'],
     links: ['/#trip-plan', '/3-day-chengdu-itinerary/', '/14-day-china-itinerary/', '/china-train-travel-guide/', '/china-hotels-for-foreigners/', '/china-golden-week-2026-travel-guide/', '/first-trip-to-china/'],
   },
   {

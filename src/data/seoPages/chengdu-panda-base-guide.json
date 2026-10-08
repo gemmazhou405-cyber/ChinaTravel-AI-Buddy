@@ -1,12 +1,23 @@
 {
-  "title": "Chengdu Panda Base 2026: Tickets, South vs West Gate & Route",
-  "heading": "How to See Baby Pandas Without Waiting 3 Hours",
-  "description": "Plan a Chengdu Panda Base visit: check the official ticket and entry session, compare South and West Gates, and choose a route with realistic walking time.",
-  "quickAnswer": "Book a real-name ticket through the Chengdu Panda Base's official or authorised channel for your actual date and morning or afternoon entry session. Bring the identity document used to reserve, confirm whether your transport arrives at the South or West Gate, and choose a manageable route through the large park. The official site says entry is limited to the reserved session and the sightseeing bus is a separate service. Seeing active pandas is never guaranteed: animals may rest or be off view, especially when weather or husbandry requires it.",
-  "lastReviewed": "September 29, 2026",
-  "lastModified": "2026-09-29",
+  "title": "Chengdu Panda Base Guide 2026: Tickets, Price & Route",
+  "heading": "Chengdu Panda Base Guide: Tickets, Route and Visiting Tips (2026)",
+  "description": "Plan a Chengdu Panda Base visit with the official CNY 55 adult ticket, opening hours, passport entry rules, South and West Gate routes, and sightseeing bus details.",
+  "quickAnswer": "The official Chengdu Panda Base ticket page currently lists an adult ticket at CNY 55 and requires real-name online reservation, with tickets available up to 14 days ahead while quotas remain. Bring the original passport or other identity document used for the booking. Choose South or West Gate according to your transport and route; the separate sightseeing bus currently costs CNY 30. Opening starts at 7:30 from March to October and 8:00 from November to February. Recheck the official notice before travel because prices, sessions, routes, and access can change.",
+  "lastReviewed": "October 8, 2026",
+  "lastModified": "2026-10-08",
   "article": true,
   "contentSections": [
+    {
+      "title": "Chengdu Panda Base ticket price and opening hours",
+      "table": {"headers": ["Item", "Current official information", "Planning note"], "rows": [
+        ["Adult admission", "CNY 55", "One entry on the reserved date and morning or afternoon session"],
+        ["Eligible student ticket", "CNY 27", "Official eligibility and supporting documents apply"],
+        ["Sightseeing bus", "CNY 30", "Separate from admission; check the current route and queue"],
+        ["March to October", "Entry from 7:30; afternoon entry ends at 17:00", "Park clearance begins at 18:00"],
+        ["November to February", "Entry from 8:00; afternoon entry ends at 16:30", "Park clearance begins at 17:30"]
+      ]},
+      "items": ["The official ticket page says reservations can be made up to 14 days ahead and sales stop when the daily quota is full.", "The listed prices and hours were checked on October 8, 2026. Recheck the official ticket and opening-hours pages for your date before paying.", "A Chengdu Panda Base ticket does not include the separate Dujiangyan Panda Valley."]
+    },
     {
       "title": "Book the right ticket before you travel",
       "ordered": true,
@@ -22,13 +33,17 @@
       "items": ["The base's official transport page distinguishes South and West Gate approaches. Save the gate name in Chinese for the driver or map app.", "The park is large; do not assume a sightseeing bus instantly takes you to every enclosure or that queues disappear.", "If your route ends at the other gate, calculate how to reach your next stop or hotel from that gate before leaving."]
     },
     {
-      "title": "A half-day route that leaves room to look",
+      "title": "Chengdu Panda Base route for a half-day visit",
       "ordered": true,
       "items": ["Enter in your reserved session and photograph the park map or use the official map before choosing an area.", "Prioritise a small number of panda viewing areas, then walk between them at a comfortable pace. Check staff signs for temporary closures.", "Allow time for queues and for moments when an enclosure is quiet. Do not plan the visit around a promised feeding or animal appearance.", "Take a break in the shade or at an official rest area. In warm weather, pandas may spend more time indoors or resting.", "Leave enough time for the correct gate, booked transport and a relaxed afternoon in Chengdu. Add one nearby food or tea block rather than another distant attraction."]
     },
     {
       "title": "Sightseeing bus: when it helps",
-      "items": ["The official base lists a separate sightseeing-bus service with its own stops, hours and fare. Check the current route and whether your desired stop is served.", "The bus can reduce walking for a large park or mixed-ability group, but you may still need to queue, walk between habitats and buy a separate ticket.", "Check the direction: a South-to-West route is not identical to a West-to-South route, and the official site describes different stops.", "Do not purchase it automatically if you only plan a compact walking route near your entry gate.", "For limited mobility, verify accessibility, gradients and available assistance with the base rather than assuming every viewing area has the same access."]
+      "table": {"headers": ["Direction", "Official bus corridor"], "rows": [
+        ["South to West", "South Gate, Panda Villa, Sun Nursery House, Panda Reception Hall, Bamboo Tower, Star Nursery House, Panda Creek Valley, West Gate"],
+        ["West to South", "West Gate, Panda Creek Valley, Star Nursery House, Bamboo Tower, Panda Villa No. 1, Sun Nursery House, Swan Lake, South Gate"]
+      ]},
+      "items": ["The official base lists a separate sightseeing-bus service with its own stops, hours and CNY 30 fare. Check the current route and whether your desired stop is served.", "The bus can reduce walking for a large park or mixed-ability group, but you may still need to queue and walk between habitats.", "Check the direction: the South-to-West route is not identical to the West-to-South route.", "Do not purchase it automatically if you only plan a compact walking route near your entry gate.", "For limited mobility, verify accessibility, gradients and available assistance with the base rather than assuming every viewing area has the same access."]
     },
     {
       "title": "Panda welfare and respectful viewing",
@@ -46,6 +61,7 @@
     }
   ],
   "faqs": [
+    ["How much is the Chengdu Panda Base ticket?", "The official ticket page currently lists adult admission at CNY 55 and an eligible student ticket at CNY 27. The sightseeing bus is a separate CNY 30 service. Check the official page again for your date because prices, eligibility, and sales arrangements can change."],
     ["Do I need to book Chengdu Panda Base tickets in advance?", "The official ticket page describes real-name online reservations and a reserved entry session. Check availability and the accepted booking channels for your date."],
     ["Can a foreign visitor use a passport?", "Follow the base's official accepted-ID and booking rules. Enter the required passport details accurately and bring the original document used for the reservation."],
     ["Which gate should I use?", "Choose South or West Gate according to your ticket, route and transport. The park's official transport information distinguishes them; save your actual gate name."],
@@ -54,9 +70,10 @@
     ["Can ChinaEase Buddy combine this with Chengdu sightseeing?", "Yes. Share your ticket session, gate, hotel, walking pace and food interests for a practical Chengdu day."]
   ],
   "sourceLinks": [
-    ["Chengdu Panda Base: official tickets", "https://m.panda.org.cn/en/service/ticket/"],
+    ["Chengdu Panda Base: official tickets", "https://www.panda.org.cn/en/service/ticket/"],
+    ["Chengdu Panda Base: official opening hours", "https://m.panda.org.cn/en/service/"],
     ["Chengdu Panda Base: transportation", "https://m.panda.org.cn/en/service/transit/"],
-    ["Chengdu Panda Base: sightseeing bus", "https://m.panda.org.cn/en/service/sightseeingbus/"],
+    ["Chengdu Panda Base: sightseeing bus", "https://www.panda.org.cn/en/service/sightseeingbus/"],
     ["Chengdu Panda Base official website", "https://m.panda.org.cn/en/"]
   ]
 }
