@@ -16,8 +16,8 @@ const pages = [
   },
   {
     path: '/didi-payment-for-foreigners/',
-    h1: /How to Pay for DiDi in China as a Foreigner.*2026/i,
-    keywords: ['foreign bank card', 'payment', 'trip receipt', 'backup'],
+    h1: /DiDi Pay for Foreigners.*How to Pay for DiDi in China/i,
+    keywords: ['foreign bank card', 'Alipay', 'WeChat Pay', 'trip receipt', 'backup'],
     links: ['/didi-in-china-for-foreigners/', '/alipay-for-foreigners/', '/#trip-plan'],
   },
   {
@@ -36,7 +36,7 @@ const pages = [
     path: '/china-payment-guide/',
     h1: /How to Pay in China as a Foreigner/i,
     keywords: ['Alipay', 'WeChat Pay', 'foreign card', 'payment fails'],
-    links: ['/?journey=china&tool=pay', '/alipay-for-foreigners/', '/wechat-pay-for-foreigners/', '/china-food-ordering-guide/'],
+    links: ['/?journey=china&tool=pay', '/alipay-for-foreigners/', '/wechat-pay-for-foreigners/', '/didi-payment-for-foreigners/', '/china-food-ordering-guide/'],
   },
   {
     path: '/china-visa-free-travel-guide/',
@@ -90,7 +90,7 @@ const pages = [
     path: '/china-travel-apps/',
     h1: /Essential China Travel Apps to Set Up Before Arrival/i,
     keywords: ['Alipay', 'WeChat', 'AMap Global', 'DiDi', 'Trip.com', 'Railway 12306', 'offline translation'],
-    links: ['/#trip-plan', '/china-airport-arrival-guide/', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/china-train-travel-guide/', '/china-esim-internet-guide/', '/alipay-for-foreigners/', '/china-food-ordering-guide/', '/chinese-travel-phrases/', '/china-travel-safety-guide/', '/china-travel-budget/', '/china-travel-checklist/'],
+    links: ['/#trip-plan', '/china-airport-arrival-guide/', '/amap-in-english/', '/china-metro-guide/', '/didi-in-china-for-foreigners/', '/didi-payment-for-foreigners/', '/china-train-travel-guide/', '/china-esim-internet-guide/', '/alipay-for-foreigners/', '/china-food-ordering-guide/', '/chinese-travel-phrases/', '/china-travel-safety-guide/', '/china-travel-budget/', '/china-travel-checklist/'],
   },
   {
     path: '/amap-in-english/',
@@ -108,7 +108,7 @@ const pages = [
     path: '/didi-in-china-for-foreigners/',
     h1: /How to Use DiDi in China as a Foreigner/i,
     keywords: ['international mobile number', 'English interface', 'licence plate', 'ride-hailing pickup point', 'bilingual', 'lost item'],
-    links: ['/#trip-plan', '/china-airport-arrival-guide/', '/first-trip-to-china/', '/china-travel-apps/', '/amap-in-english/', '/china-metro-guide/', '/china-train-travel-guide/', '/10-day-china-itinerary/', '/china-payment-guide/'],
+    links: ['/#trip-plan', '/china-airport-arrival-guide/', '/first-trip-to-china/', '/china-travel-apps/', '/amap-in-english/', '/china-metro-guide/', '/china-train-travel-guide/', '/10-day-china-itinerary/', '/china-payment-guide/', '/didi-payment-for-foreigners/'],
   },
   {
     path: '/china-train-travel-guide/',
