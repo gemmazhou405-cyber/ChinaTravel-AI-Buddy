@@ -256,8 +256,8 @@ const pages = [
   },
   {
     path: '/wechat-pay-for-foreigners/',
-    h1: /WeChat Pay in China as a Foreigner.*2026/i,
-    keywords: ['international card', 'QR code', 'Chinese bank account', 'person-to-person transfers', 'payment feature', 'Weixin Pay', 'payment failed'],
+    h1: /WeChat Pay for Foreigners.*Setup and Payment Guide.*2026/i,
+    keywords: ['international card', 'QR code', 'Chinese bank account', 'person-to-person transfers', 'US citizens', 'charging standards', 'cross-border', 'Weixin Pay', 'payment failed'],
     links: ['/#trip-plan', '/first-trip-to-china/', '/alipay-for-foreigners/', '/china-payment-guide/', '/china-travel-apps/'],
   },
   {
