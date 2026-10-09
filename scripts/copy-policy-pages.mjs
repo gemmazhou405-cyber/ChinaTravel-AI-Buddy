@@ -39,9 +39,14 @@ const pageMeta = {
   `,
   },
   guides: {
-    title: 'China Travel Guides | ChinaEase Buddy',
+    title: 'China Travel Guides for Foreign Visitors | ChinaEase Buddy',
+    heading: 'China Travel Guides for Foreign Visitors',
     description:
-      'Practical China travel guides for foreign visitors: essential apps, Alipay, payments, checklists, emergency numbers, and frequently asked questions.',
+      'Plan a first trip to China with practical guides for entry rules, payments, apps, transport, hotels, food, safety, itineraries, and emergency help.',
+    quickAnswer:
+      'Start with the China visa-free checker and arrival guides before booking, then prepare mobile data, payments, transport, hotels, food, and emergency information. City itineraries help you choose a realistic route without turning every day into a transfer day.',
+    lastReviewed: 'October 9, 2026',
+    lastModified: '2026-10-09',
     sections: [
       ['China eSIM & Internet Guide', 'Choose, install, activate, and troubleshoot mobile data for a trip to mainland China.', '/china-esim-internet-guide/'],
       ['China SIM Card for Foreigners', 'Compare eSIM and physical SIM options, passport registration, mainland carriers, airport purchase, and top-ups.', '/china-sim-card-for-foreigners/'],
@@ -90,7 +95,6 @@ const pageMeta = {
       ['China Payment Guide', 'Practical payment reminders for Alipay, WeChat Pay, cards, and cash backup.', '/china-payment-guide/'],
       ['China Travel Checklist', 'A first-time visitor checklist for apps, payments, hotels, phrases, and emergency basics.', '/china-travel-checklist/'],
       ['Emergency Numbers in China', 'Know 110, 120, and 119, plus simple phrases for urgent situations.', '/china-emergency-numbers/'],
-      ['China Visa-Free Guide 2026', 'Compare the 30-day policy and the A-China-C requirement for 240-hour transit.', '/china-visa-free-guide-2026/'],
       ['Paying in China', 'Set up Alipay and WeChat Pay, understand fees, and prepare backups.', '/china-payment-guide/'],
       ['China Train Booking', 'Register on 12306 with a foreign passport and board with an e-ticket.', '/china-train-booking-foreigners-12306/'],
       ['First-Time China Itineraries', 'Choose a practical 7, 10, or 14-day route.', '/china-itinerary-first-time-7-10-14-days/'],
@@ -4175,27 +4179,48 @@ const focusedPageContent = {
   "is-china-safe-for-tourists-2026": {
     "contentSections": [
       {
-        "title": "What US travelers should know about the Level 2 advisory",
+        "title": "Is China safe for US citizens right now?",
         "items": [
-          "The US Department of State currently rates mainland China Level 2, Exercise Increased Caution, because of arbitrary enforcement of local laws, exit bans, and the risk of unjust arrest or detention.",
-          "Level 2 is not the same as a recommendation to avoid all travel, but US citizens should read the complete current advisory and consider whether their work, disputes, or professional background creates additional risk.",
-          "Keep copies of key documents and your hotel's address offline.",
-          "Arrange a reliable way to contact your accommodation and emergency services."
+          "Many US citizens visit mainland China without a serious incident, but that does not make every trip risk-free or suitable for every traveler.",
+          "The US Department of State currently rates mainland China Level 2, Exercise Increased Caution. The current advisory was reissued on September 4, 2026 and highlights arbitrary enforcement of local laws, exit bans, and the risk of unjust arrest or detention.",
+          "Level 2 is not the same as Level 3, Reconsider Travel, or Level 4, Do Not Travel. It means travelers should understand the named risks, read the complete current advisory, and prepare accordingly.",
+          "The advisory treats mainland China, Hong Kong, and Macau separately. Check the current advice for every jurisdiction on your route rather than applying the mainland rating to the entire trip."
         ]
       },
       {
-        "title": "Everyday precautions",
+        "title": "Who should read the advisory especially carefully?",
         "items": [
-          "Use licensed transport and official booking channels where possible.",
-          "Protect passports and accounts, and be wary of requests for payment or verification codes.",
-          "Follow local rules at attractions, border areas and sensitive sites; ask an official source when uncertain."
+          "The advisory identifies additional concerns for people involved in business or family disputes, research, journalism, government-funded programs, and current or former government, military, law-enforcement, or intelligence work.",
+          "US citizens of Chinese heritage, former Chinese citizens, dual nationals, and travelers using Chinese-issued identity or travel documents should read the nationality and consular-assistance sections closely.",
+          "A leisure tourist does not automatically share every higher-risk circumstance, but no online guide can assess an individual's legal, professional, family, or personal exposure."
+        ]
+      },
+      {
+        "title": "Before a US citizen travels to China",
+        "ordered": true,
+        "items": [
+          "Read the current US Department of State China Travel Advisory and China country information again shortly before departure because wording and risk levels can change.",
+          "Consider enrolling in the free Smart Traveler Enrollment Program (STEP) to receive embassy or consulate alerts and make emergency contact easier.",
+          "Confirm entry documents, travel insurance, prescriptions, accommodation registration, and emergency contacts for the exact cities and activities in the itinerary.",
+          "Save the hotel name and address in Chinese, passport and insurance copies, transport bookings, and emergency numbers offline without storing sensitive documents in a publicly accessible place.",
+          "Discuss business disputes, dual-nationality questions, prior government work, journalism, research, or other higher-risk circumstances with an appropriate official or qualified adviser before travel."
+        ]
+      },
+      {
+        "title": "Everyday precautions in mainland China",
+        "items": [
+          "Use licensed transport and official booking channels, verify the licence plate before entering a ride, and keep control of your passport, phone, payment accounts, and verification codes.",
+          "Follow local laws and instructions at attractions, border areas, demonstrations, government facilities, and places where photography or access may be restricted.",
+          "Avoid carrying packages for strangers, paying an unexpected bill without reviewing it, or sharing SMS, wallet, or account-recovery codes.",
+          "Save 110 for police, 120 for ambulance, and 119 for fire. Ask hotel, station, or attraction staff to call when language is a barrier.",
+          "For detention, a lost passport, a serious dispute, or another consular emergency, contact the nearest US embassy or consulate and follow its current instructions."
         ]
       }
     ],
-    "lastReviewed": "October 7, 2026",
-    "lastModified": "2026-10-07",
+    "lastReviewed": "October 9, 2026",
+    "lastModified": "2026-10-09",
     "article": true,
-    "quickAnswer": "Many US citizens visit China without serious incidents. The US Department of State currently rates mainland China Level 2, Exercise Increased Caution, because of arbitrary enforcement of local laws, exit bans, and the risk of unjust arrest or detention. Review the current advisory, follow local laws, use reputable transport, and keep emergency contacts and document copies accessible.",
+    "quickAnswer": "Many US citizens visit mainland China without serious incidents, but the US Department of State currently rates mainland China Level 2, Exercise Increased Caution. Its September 4, 2026 advisory highlights arbitrary enforcement of local laws, exit bans, and the risk of unjust arrest or detention. Read the complete current advisory, consider your individual circumstances, follow local laws, and keep a practical emergency plan.",
     "faqs": [
       [
         "Is China safe for US citizens in 2026?",
@@ -4213,6 +4238,11 @@ const focusedPageContent = {
         "What emergency numbers should I save?",
         "Save 110 for police, 120 for ambulance, and 119 for fire. Ask hotel, station, or attraction staff to help call if language is a barrier."
       ]
+    ],
+    "sourceLinks": [
+      ["US Department of State: China Travel Advisory", "https://travel.state.gov/en/international-travel/travel-advisories/china.html"],
+      ["US Department of State: Smart Traveler Enrollment Program", "https://travel.state.gov/en/international-travel/travel-advisories/smart-traveler-enrollment-program.html"],
+      ["CDC: China traveler health guidance", "https://wwwnc.cdc.gov/travel/destinations/traveler/none/china"]
     ]
   },
   "best-apps-for-china-travel-2026": {
@@ -4578,7 +4608,7 @@ const relatedLinks = [
   ['China payment guide', '/china-payment-guide/'],
   ['China travel checklist', '/china-travel-checklist/'],
   ['China emergency numbers', '/china-emergency-numbers/'],
-  ['China visa-free guide', '/china-visa-free-guide-2026/'],
+  ['China 240-hour visa-free transit guide', '/china-240-hour-visa-free-transit-2026/'],
   ['China eSIM guide', '/china-esim-internet-guide/'],
   ['China train booking', '/china-train-booking-foreigners-12306/'],
   ['China itineraries', '/china-itinerary-first-time-7-10-14-days/'],
@@ -5059,6 +5089,14 @@ const pageRelatedLinks = {
     ['China airport arrival guide', '/china-airport-arrival-guide/'],
     ['First trip to China', '/first-trip-to-china/'],
     ['Get a free China itinerary', '/#trip-plan'],
+  ],
+  'is-china-safe-for-tourists-2026': [
+    ['China travel safety guide', '/china-travel-safety-guide/'],
+    ['Emergency numbers in China', '/china-emergency-numbers/'],
+    ['China visa-free checker', '/china-visa-free-checker/'],
+    ['China hotels for foreigners', '/china-hotels-for-foreigners/'],
+    ['Essential China travel apps', '/best-apps-for-china-travel-2026/'],
+    ['First trip to China', '/first-trip-to-china/'],
   ],
   'china-travel-budget': [
     ['China hotels for foreigners', '/china-hotels-for-foreigners/'],

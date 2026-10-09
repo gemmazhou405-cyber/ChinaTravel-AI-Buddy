@@ -77,8 +77,8 @@ const pages = [
   {
     path: '/is-china-safe-for-tourists-2026/',
     h1: /Is China Safe for US Citizens.*2026/i,
-    keywords: ['US citizens', 'Level 2', 'exit bans', '110', '120', '119'],
-    links: ['/china-travel-safety-guide/', '/china-emergency-numbers/', '/best-apps-for-china-travel-2026/'],
+    keywords: ['US citizens', 'Level 2', 'September 4, 2026', 'exit bans', 'Smart Traveler Enrollment Program', '110', '120', '119'],
+    links: ['/china-travel-safety-guide/', '/china-emergency-numbers/', '/china-visa-free-checker/', '/china-hotels-for-foreigners/', '/best-apps-for-china-travel-2026/', '/first-trip-to-china/'],
   },
   {
     path: '/china-travel-budget/',
@@ -440,8 +440,9 @@ try {
     '/how-to-pay-in-china-as-foreigner/',
     '/how-to-use-didi-in-china-foreigners/',
     '/china-esim-internet-vpn-guide/',
+    '/china-visa-free-guide-2026/',
   ];
-  const canonicalDestinations = ['/china-travel-budget/', '/china-payment-guide/', '/didi-in-china-for-foreigners/', '/china-esim-internet-guide/'];
+  const canonicalDestinations = ['/china-travel-budget/', '/china-payment-guide/', '/didi-in-china-for-foreigners/', '/china-esim-internet-guide/', '/china-visa-free-travel-guide/'];
   results.push({ path: '/sitemap.xml', name: 'HTTP 200', pass: sitemapResponse.status === 200, detail: `status ${sitemapResponse.status}` });
   for (const path of redirectSources) {
     results.push({ path: '/sitemap.xml', name: 'redirect excluded', pass: !sitemap.includes(`<loc>${ORIGIN}${path}</loc>`), detail: path });
