@@ -914,6 +914,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
+      { label: '240-hour visa-free transit guide', href: '/china-240-hour-visa-free-transit-2026/' },
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
       { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
       { label: 'First trip to China', href: '/first-trip-to-china/' },
@@ -946,15 +947,15 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     title: 'Just Landed in China? Do These 5 Things in 30 Minutes',
     intro:
       'A step-by-step arrival plan for immigration, baggage, Customs, mobile data, payment, airport transfers, hotel check-in, and late-night backups.',
-    metaTitle: 'China Airport Arrival Guide: eSIM, Alipay & Metro QR in 30 Minutes (2026)',
+    metaTitle: 'China Airport Arrival Guide 2026: What to Do After Landing',
     metaDescription:
-      'Landed in Beijing/Shanghai? 30-min checklist: Buy eSIM with built-in VPN, activate Alipay Transport QR, register stay via 12367 app. No Chinese needed.',
+      'Follow China airport arrival step by step: arrival card, immigration, baggage, customs, eSIM, payments, taxi, metro and hotel check-in.',
     quickAnswer:
       'Before flying, confirm the entry rules for your exact passport, route, purpose, and travel dates, then complete China\'s free official online arrival card if it applies to you. Keep your passport, visa or other entry basis, accommodation details, and onward booking accessible offline. After landing, follow the airport signs through immigration, baggage claim, and Customs; connect your phone, test a payment backup, and use an official airport train, metro, taxi queue, or verified ride-hailing pickup. The arrival card is not a visa or permission to enter, and the final entry decision belongs to the immigration authorities.',
     ctaLabel: 'Get my free China itinerary',
     ctaHref: '/#trip-plan',
     lastReviewed: 'September 29, 2026',
-    lastModified: '2026-09-29',
+    lastModified: '2026-10-09',
     isArticle: true,
     sections: [
       {
@@ -1090,6 +1091,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
+      { label: '240-hour visa-free transit guide', href: '/china-240-hour-visa-free-transit-2026/' },
       { label: 'China visa-free travel guide', href: '/china-visa-free-travel-guide/' },
       { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
       { label: 'First trip to China', href: '/first-trip-to-china/' },
@@ -5005,15 +5007,15 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     title: 'How to Get an eSIM in China (2026 Internet Guide)',
     intro:
       'A practical, provider-neutral guide to choosing, installing, activating, and troubleshooting mobile data for a trip to mainland China.',
-    metaTitle: 'How to Get an eSIM in China: Tourist Guide (2026)',
+    metaTitle: 'China eSIM for Tourists (2026): Buy, Install & Get Online',
     metaDescription:
-      'Learn how to get an eSIM for China, check phone compatibility, install it before departure, activate data after landing and fix common connection problems.',
+      'Choose a China eSIM for tourists, check phone compatibility, install it before departure, activate data after landing, and troubleshoot no service.',
     quickAnswer:
       'To get an eSIM for China, first confirm that your phone is carrier-unlocked and eSIM-compatible. Choose a travel plan that explicitly covers mainland China, buy and install it on reliable Wi-Fi before your flight, then follow the provider\'s activation timing and select it for mobile data after landing. Do not assume every China eSIM gives access to Google or other restricted services: routing, phone-number support, hotspot rules, speed limits, and activation policies differ by plan.',
     ctaLabel: 'Get my free China itinerary',
     ctaHref: '/#trip-plan',
     lastReviewed: 'October 7, 2026',
-    lastModified: '2026-10-07',
+    lastModified: '2026-10-09',
     isArticle: true,
     sections: [
       {

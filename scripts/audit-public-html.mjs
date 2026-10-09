@@ -42,13 +42,13 @@ const pages = [
     path: '/china-visa-free-travel-guide/',
     h1: /China Visa-Free Travel Guide for Tourists.*2026/i,
     keywords: ['Ordinary visa-free entry', '240-hour visa-free transit', 'third country or region', 'approved port', 'confirmed onward', 'border inspection'],
-    links: ['/#trip-plan', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/first-trip-to-china/', '/china-travel-checklist/', '/china-train-travel-guide/', '/10-day-china-itinerary/'],
+    links: ['/#trip-plan', '/china-240-hour-visa-free-transit-2026/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/first-trip-to-china/', '/china-travel-checklist/', '/china-train-travel-guide/', '/10-day-china-itinerary/'],
   },
   {
     path: '/china-airport-arrival-guide/',
     h1: /China Airport Arrival.*Entry.*Baggage.*Payment.*Transfer/i,
     keywords: ['arrival card', 'Immigration', 'Baggage', 'Customs', 'eSIM', 'airport transfer'],
-    links: ['/#trip-plan', '/china-visa-free-travel-guide/', '/china-hotels-for-foreigners/', '/first-trip-to-china/', '/china-esim-internet-guide/', '/china-payment-guide/', '/china-metro-guide/', '/didi-in-china-for-foreigners/'],
+    links: ['/#trip-plan', '/china-240-hour-visa-free-transit-2026/', '/china-visa-free-travel-guide/', '/china-hotels-for-foreigners/', '/first-trip-to-china/', '/china-esim-internet-guide/', '/china-payment-guide/', '/china-metro-guide/', '/didi-in-china-for-foreigners/'],
   },
   {
     path: '/china-hotels-for-foreigners/',
