@@ -6935,6 +6935,16 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
   return (
     <PageShell title={page.title} intro={page.intro}>
       <div className="space-y-6">
+        {type !== 'guides' && (
+          <nav aria-label="Breadcrumb" className="text-sm">
+            <a
+              href="/guides/"
+              className="font-semibold text-[#155e63] underline decoration-[#155e63]/25 underline-offset-4 transition hover:decoration-[#155e63] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#155e63] focus-visible:ring-offset-2"
+            >
+              Browse all China travel guides
+            </a>
+          </nav>
+        )}
         <section className="rounded-2xl border border-[#155e63]/15 bg-[#155e63]/5 p-4 md:p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-[#155e63]">Quick answer</p>
           <p className="mt-2 text-sm leading-relaxed text-gray-700 md:text-base">{page.quickAnswer}</p>

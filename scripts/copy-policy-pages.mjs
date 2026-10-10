@@ -5228,6 +5228,13 @@ function staticPageContent(page, meta) {
   return `
     <main id="static-seo-content" style="max-width: 960px; margin: 0 auto; padding: 48px 20px; color: #122022; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
       <p style="margin: 0 0 10px; color: #155e63; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;">ChinaEase Buddy</p>
+      ${page !== 'guides' && !noindexPages.has(page) ? `
+        <nav aria-label="Breadcrumb" style="margin: 0 0 18px; font-size: 0.9rem;">
+          <a href="/" style="color: #536365; text-decoration: none;">Home</a>
+          <span aria-hidden="true" style="margin: 0 8px; color: #9aa5a6;">/</span>
+          <a href="/guides/" style="color: #155e63; font-weight: 700; text-underline-offset: 4px;">China travel guides</a>
+        </nav>
+      ` : ''}
       <h1 style="margin: 0 0 18px; font-size: clamp(2rem, 6vw, 3.75rem); line-height: 1.05; letter-spacing: -0.03em;">${escapeHtml(heading)}</h1>
       <section aria-labelledby="quick-answer" style="margin: 0 0 24px; padding: 22px; border: 1px solid rgba(21, 94, 99, 0.14); border-radius: 22px; background: #fffdf8;">
         <h2 id="quick-answer" style="margin: 0 0 10px; font-size: 1.25rem;">Quick answer</h2>

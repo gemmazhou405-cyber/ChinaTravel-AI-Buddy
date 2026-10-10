@@ -412,6 +412,10 @@ for (const page of pages) {
       && !html.includes(`href='${encoded}'`);
   });
   checks.push(['internal links', missingLinks.length === 0, missingLinks.length ? `missing: ${missingLinks.join(', ')}` : 'ok']);
+  const requiresGuideHubLink = !page.noindex && page.path !== '/' && page.path !== '/guides/';
+  if (requiresGuideHubLink) {
+    checks.push(['guide hub backlink', html.includes('href="/guides/"') || html.includes("href='/guides/'"), '/guides/']);
+  }
 
   let jsonLdOk = scripts.length > 0;
   let jsonLdDetail = scripts.length ? `${scripts.length} block(s)` : 'missing';
