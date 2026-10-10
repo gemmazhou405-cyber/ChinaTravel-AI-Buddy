@@ -122,6 +122,11 @@ interface GuidePageData {
   sections: Array<{
     title: string;
     items?: string[];
+    links?: Array<{
+      label: string;
+      description: string;
+      href: string;
+    }>;
     ordered?: boolean;
     table?: {
       headers: string[];
@@ -592,75 +597,58 @@ guidePages['3-day-shenzhen-itinerary'].ctaLabel = 'Get this as custom itinerary'
 const guidePages: Record<GuidePageType, GuidePageData> = {
   guides: {
     path: '/guides/',
-    title: 'China Travel Guides for Foreign Visitors',
-    intro: 'Plan entry, arrival, payments, apps, transport, hotels, food, safety, and a realistic route for a first trip to China.',
-    metaTitle: 'China Travel Guides for Foreign Visitors | ChinaEase Buddy',
+    title: 'China Travel Guides for Foreigners: Start Here',
+    intro: 'Choose the right guide for entry rules, arrival, payments, apps, transport, hotels, food, safety, or a realistic first-trip route.',
+    metaTitle: 'China Travel Guides for Foreigners: Visas, Apps & Itineraries',
     metaDescription:
-      'Plan a first trip to China with practical guides for entry rules, payments, apps, transport, hotels, food, safety, itineraries, and emergency help.',
+      'Plan a China trip with practical guides for visa-free entry, airport arrival, payments, apps, transport, hotels, food, safety and itineraries.',
     quickAnswer:
-      'Start with the China visa-free checker and arrival guides before booking, then prepare mobile data, payments, transport, hotels, food, and emergency information. City itineraries help you choose a realistic route without turning every day into a transfer day.',
-    reviewed: 'October 9, 2026',
-    lastModified: '2026-10-09',
+      'Before booking, check entry rules and your arrival plan. Next, prepare mobile data, payments, maps and transport. Then choose a 7-, 10- or 14-day route and open the city guides that match your trip. Each section below links directly to the relevant guide or free tool.',
+    reviewed: 'October 10, 2026',
+    lastModified: '2026-10-10',
     ctaLabel: 'Open the free toolkit',
     ctaHref: '/',
     sections: [
       {
-        title: 'Current guide pages',
-        items: [
-          'China eSIM & Internet Guide: choose, install, activate, and troubleshoot mobile data.',
-          'China SIM Card for Foreigners: compare eSIM and physical SIM options, airport purchase, passport registration, and top-ups.',
-          'China 240-Hour Visa-Free Transit 2026: check 57 eligible countries, 65 designated ports, permitted areas, route rules, and the official 10-day clock.',
-          'China Visa-Free Checker: compare selected verified ordinary entry, transit, temporary, mutual, and Hainan rules for a planned route.',
-          'TenPayGo for Tourists: understand the confirmed launch facts, supported funding methods, cautious setup checklist, and payment backups.',
-          'China Visa-Free Travel Guide: compare 30-day visa-free entry, 240-hour transit, routes, ports, and documents.',
-          'China Airport Arrival Guide: immigration, baggage, customs, mobile data, payment, and airport transfers.',
-          'China Hotels for Foreigners: passport booking, check-in, registration, deposits, and problem solving.',
-          'China Food Ordering Guide: use QR and photo menus, explain dietary needs, handle allergies, and pay.',
-          'Chinese Travel Phrases: save practical Mandarin for transport, hotels, food, payment, and emergencies.',
-          'China Travel Safety Guide: understand crime, scams, transport, local laws, health, and emergency planning.',
-          'China Travel Budget: estimate daily costs, trip totals, transport, food, hotels, and seasonal price changes.',
-          'China Travel Apps: prepare Alipay, WeChat, Amap, Didi, and Trip.com.',
-          'AMap in English: search places, plan routes, and navigate stations and entrances.',
-          'China Metro Guide: buy tickets, transfer lines, and choose the correct exit.',
-          'DiDi in China for Foreigners: book rides, verify the car, communicate, and pay.',
-          'China Train Travel Guide: book with a foreign passport and navigate the station.',
-          '7-Day China Itinerary: compare a fast three-city route with a more relaxed two-city trip.',
-          '10-Day China Itinerary: follow a practical Beijing, Xi\'an, and Shanghai route.',
-          '14-Day China Itinerary: build a balanced two-week route through Beijing, Xi\'an, Chengdu, and Shanghai.',
-          'Beijing vs Shanghai: choose the better first stop based on history, city style, trip length, flights, and onward route.',
-          '3-Day Beijing Itinerary: plan the Palace Museum, Great Wall, Temple of Heaven, hutongs, bookings, and transport.',
-          '3-Day Shanghai Itinerary: group the Bund, Yuyuan Garden, Wukang Road, Pudong, museums, food, and transport.',
-          '3-Day Xi\'an Itinerary: plan the Terracotta Army, city wall, Muslim Quarter, museums, pagodas, and transport.',
-          '3-Day Shenzhen Itinerary: plan Futian, Shenzhen Museum, Lianhuashan Park, OCT-LOFT, Shenzhen Bay, Nantou Ancient Town, and a flexible coast or theme-park day.',
-          '3-Day Guangzhou Itinerary: plan Chen Clan Ancestral Hall, Yongqingfang, Shamian, Canton Tower, museums, dim sum, hotels, and transport.',
-          '3-Day Hangzhou Itinerary: plan West Lake, Lingyin, Longjing tea, the Grand Canal, Hefang Street, hotels, trains, and weather alternatives.',
-          'Best Time to Visit China: compare seasons, months, regions, crowds, public holidays, and weather risks.',
-          'Alipay for Foreigners: understand setup reminders and backup options.',
-          'WeChat Pay for Foreigners: add an eligible international card and pay by QR code.',
-          'China Payment Guide: practical notes for Alipay, WeChat Pay, cards, and cash.',
-          'China Travel Checklist: first-time visitor preparation before arrival.',
-          'China Emergency Numbers: 110, 120, 119, and simple emergency phrases.',
-          'China 240-Hour Visa-Free Transit Guide: check the third-country route, ports, permitted areas, and onward ticket.',
-          'How to Pay in China: set up Alipay and WeChat Pay with practical backups.',
-          'China Train Booking: register on 12306 and travel with a foreign passport.',
-          'First-Time China Itineraries: choose a practical 7, 10, or 14-day route.',
-          'China Tourist Safety 2026: understand everyday risks and the US Level 2 advisory.',
-          'Best Apps for China Travel: prepare payments, maps, rides, and bookings.',
-          'DiDi for Foreigners: book rides with an international number or mini-program.',
-          'Beijing and Shanghai Layovers: plan eligible 240-hour transit routes.',
-          'China Trip Cost Calculator: estimate realistic daily and total budgets.',
-          'China Hotels Without Rejection: understand registration and handle check-in problems.',
-          'Google Maps Alternatives: set up Amap Global and navigation backups.',
-          'Great Wall from Beijing: compare Badaling and Mutianyu independently.',
-          'What to Eat in China: choose 15 approachable regional dishes.',
-          'WeChat for Foreigners: prepare registration, payments, and mini-programs.',
-          'NIA 12367 Accommodation Registration: register private and non-hotel stays through the current official channels.',
-          'Amap English Mode: switch languages, search destinations, and save China-ready addresses.',
-          'Alipay Metro QR: activate city-specific transport codes and prepare ticket backups.',
-          'China Travel AI Itinerary Generator: turn dates, interests, pace, and budget into a practical route.',
-          '240-Hour Transit and High-Speed Rail: validate ports, permitted areas, and every domestic segment.',
-          'WeChat Verification Without a Friend: use official registration and account-recovery paths safely.',
-          'FAQ: concise answers about ChinaEase Buddy and service limitations.',
+        title: 'Entry rules and arrival',
+        links: [
+          { label: 'China Visa-Free Checker', description: 'Check which verified policy may apply to your passport, date and route.', href: '/china-visa-free-checker/' },
+          { label: 'China Visa-Free Travel Guide', description: 'Compare ordinary visa-free entry with third-country transit rules.', href: '/china-visa-free-travel-guide/' },
+          { label: '240-Hour Visa-Free Transit', description: 'Check eligible countries, designated ports and permitted areas.', href: '/china-240-hour-visa-free-transit-2026/' },
+          { label: 'China Airport Arrival Guide', description: 'Prepare immigration, baggage, customs, data and onward transport.', href: '/china-airport-arrival-guide/' },
+          { label: 'Beijing Airport to City', description: 'Compare PEK and PKX express trains, taxis and late arrivals.', href: '/beijing-airport-to-city-guide/' },
+          { label: '12367 Accommodation Registration', description: 'Understand online registration for private and non-hotel stays.', href: '/nia-12367-online-accommodation-registration-guide/' },
+        ],
+      },
+      {
+        title: 'Payments, apps and daily essentials',
+        links: [
+          { label: 'China Payment Guide', description: 'Prepare Alipay, WeChat Pay, cards and an RMB cash backup.', href: '/china-payment-guide/' },
+          { label: 'China eSIM and Internet Guide', description: 'Choose, install and troubleshoot mobile data before arrival.', href: '/china-esim-internet-guide/' },
+          { label: 'Essential China Travel Apps', description: 'Set up payments, maps, rides, trains and translation tools.', href: '/china-travel-apps/' },
+          { label: 'China Food Ordering Guide', description: 'Use menus, explain dietary needs and handle payment.', href: '/china-food-ordering-guide/' },
+          { label: 'Hotels for Foreigners', description: 'Book with a passport and understand accommodation registration.', href: '/china-hotels-for-foreigners/' },
+          { label: 'China Travel Safety Guide', description: 'Prepare for scams, transport, local rules and emergencies.', href: '/china-travel-safety-guide/' },
+        ],
+      },
+      {
+        title: 'Transport and navigation',
+        links: [
+          { label: 'DiDi in China for Foreigners', description: 'Set up rides, pickup points, payment and safety checks.', href: '/didi-in-china-for-foreigners/' },
+          { label: 'China Train Travel Guide', description: 'Book high-speed rail with a foreign passport and board correctly.', href: '/china-train-travel-guide/' },
+          { label: 'China Metro Guide', description: 'Buy tickets, transfer lines and find the correct station exit.', href: '/china-metro-guide/' },
+          { label: 'AMap in English', description: 'Search places and navigate China with English map support.', href: '/amap-in-english/' },
+        ],
+      },
+      {
+        title: 'First-trip routes and city itineraries',
+        links: [
+          { label: 'Compare 7, 10 and 14-Day Routes', description: 'Choose a realistic trip length and avoid unnecessary transfers.', href: '/china-itinerary-first-time-7-10-14-days/' },
+          { label: '7-Day China Itinerary', description: 'Plan a focused two-city or faster three-city first trip.', href: '/7-day-china-itinerary/' },
+          { label: '10-Day China Itinerary', description: 'Follow a balanced Beijing, Xi\'an and Shanghai route.', href: '/10-day-china-itinerary/' },
+          { label: '14-Day China Itinerary', description: 'Add Chengdu, Guilin or another slower regional stop.', href: '/14-day-china-itinerary/' },
+          { label: '3-Day Dali Itinerary', description: 'Plan Dali Old Town, Erhai Lake, Xizhou and Cangshan.', href: '/3-day-dali-itinerary/' },
+          { label: 'China Golden Week 2026', description: 'Check October 1–7 dates, crowds, trains and booking priorities.', href: '/china-golden-week-2026-travel-guide/' },
         ],
       },
     ],
@@ -2754,9 +2742,9 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     path: '/didi-in-china-for-foreigners/',
     title: 'How to Use DiDi in China as a Foreigner',
     intro: 'A practical ride-hailing guide for app setup, pickup points, car verification, driver messages, payment, and common problems.',
-    metaTitle: 'How to Use DiDi in China as a Foreigner (2026)',
+    metaTitle: 'DiDi in China for Foreigners: App, Payment & Rides (2026)',
     metaDescription:
-      'Learn how foreigners can use DiDi in China with an international phone number, English interface, Alipay or WeChat, safe pickup checks and payment backups.',
+      'Use DiDi in China with an international number, English interface, Alipay or WeChat Pay, safe pickup checks, driver messages and payment backups.',
     quickAnswer:
       'Foreign visitors can use the DiDi China ride-hailing app with an international mobile number and an English interface, or access DiDi through supported WeChat and Alipay routes. Before requesting a car, save the exact destination in Chinese, confirm the pickup pin and meeting point, compare the service type and estimated fare, and prepare a payment method shown in your version. When the car arrives, match the licence plate and vehicle details before entering.',
     ctaLabel: 'Get my free China itinerary',
@@ -6985,6 +6973,20 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
             >
               <h2 className="text-lg font-bold text-gray-950">{section.title}</h2>
               {section.countryGroups && <FilterableCountryChecklist groups={section.countryGroups} />}
+              {section.links && section.links.length > 0 && (
+                <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                  {section.links.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      className="group rounded-xl border border-[#155e63]/15 bg-[#155e63]/5 p-3 transition hover:border-[#155e63]/30 hover:bg-[#155e63]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#155e63] focus-visible:ring-offset-2"
+                    >
+                      <h3 className="text-sm font-bold text-gray-950 group-hover:text-[#155e63]">{link.label}</h3>
+                      <p className="mt-1 text-xs leading-relaxed text-gray-600">{link.description}</p>
+                    </a>
+                  ))}
+                </div>
+              )}
               {section.table && (
                 <div className="mt-3 overflow-x-auto">
                   <table className="w-full text-sm text-left">

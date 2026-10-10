@@ -39,14 +39,14 @@ const pageMeta = {
   `,
   },
   guides: {
-    title: 'China Travel Guides for Foreign Visitors | ChinaEase Buddy',
-    heading: 'China Travel Guides for Foreign Visitors',
+    title: 'China Travel Guides for Foreigners: Visas, Apps & Itineraries',
+    heading: 'China Travel Guides for Foreigners: Start Here',
     description:
-      'Plan a first trip to China with practical guides for entry rules, payments, apps, transport, hotels, food, safety, itineraries, and emergency help.',
+      'Plan a China trip with practical guides for visa-free entry, airport arrival, payments, apps, transport, hotels, food, safety and itineraries.',
     quickAnswer:
-      'Start with the China visa-free checker and arrival guides before booking, then prepare mobile data, payments, transport, hotels, food, and emergency information. City itineraries help you choose a realistic route without turning every day into a transfer day.',
-    lastReviewed: 'October 9, 2026',
-    lastModified: '2026-10-09',
+      'Before booking, check entry rules and your arrival plan. Next, prepare mobile data, payments, maps and transport. Then choose a 7-, 10- or 14-day route and open the city guides that match your trip. Each section below links directly to the relevant guide or free tool.',
+    lastReviewed: 'October 10, 2026',
+    lastModified: '2026-10-10',
     sections: [
       ['China eSIM & Internet Guide', 'Choose, install, activate, and troubleshoot mobile data for a trip to mainland China.', '/china-esim-internet-guide/'],
       ['China SIM Card for Foreigners', 'Compare eSIM and physical SIM options, passport registration, mainland carriers, airport purchase, and top-ups.', '/china-sim-card-for-foreigners/'],
@@ -1308,10 +1308,10 @@ const pageMeta = {
     ],
   },
   'didi-in-china-for-foreigners': {
-    title: 'How to Use DiDi in China as a Foreigner (2026)',
+    title: 'DiDi in China for Foreigners: App, Payment & Rides (2026)',
     heading: 'How to Use DiDi in China as a Foreigner',
     description:
-      'Learn how foreigners can use DiDi in China with an international phone number, English interface, Alipay or WeChat, safe pickup checks and payment backups.',
+      'Use DiDi in China with an international number, English interface, Alipay or WeChat Pay, safe pickup checks, driver messages and payment backups.',
     quickAnswer:
       'Foreign visitors can use the DiDi China ride-hailing app with an international mobile number and an English interface, or access DiDi through supported WeChat and Alipay routes. Before requesting a car, save the exact destination in Chinese, confirm the pickup pin and meeting point, compare the service type and estimated fare, and prepare a payment method shown in your version. When the car arrives, match the licence plate and vehicle details before entering.',
     lastReviewed: 'October 7, 2026',
@@ -5188,6 +5188,24 @@ function staticRelatedGuidesForForeigners() {
   `;
 }
 
+function groupGuideHubSections(sections) {
+  const groups = [
+    { title: 'Entry rules and arrival', pattern: /(visa|arrival|12367|travel-checklist)/, items: [] },
+    { title: 'Payments and daily essentials', pattern: /(payment|alipay|wechat|tenpay|esim|sim-card|travel-apps|food|phrases|emergency|safety|hotels)/, items: [] },
+    { title: 'Transport and navigation', pattern: /(amap|maps|metro|didi|train|airport-to-city)/, items: [] },
+    { title: 'Routes, timing and itineraries', pattern: /(itinerary|beijing-vs|golden-week|great-wall|panda|best-time|budget|layover|trip-cost)/, items: [] },
+    { title: 'More China travel help', pattern: /.*/, items: [] },
+  ];
+
+  for (const item of sections) {
+    const href = item[2].toLowerCase();
+    const group = groups.find(({ pattern }) => pattern.test(href));
+    group.items.push(item);
+  }
+
+  return groups.filter((group) => group.items.length > 0);
+}
+
 function staticPageContent(page, meta) {
   if (meta.customBody) return meta.customBody;
   const heading = meta.heading || meta.title.split('|')[0].trim();
@@ -5216,7 +5234,23 @@ function staticPageContent(page, meta) {
         <p style="margin: 0; color: #536365; line-height: 1.7;">${escapeHtml(meta.quickAnswer || meta.description)}</p>
       </section>
       <p style="margin: 0 0 20px; color: #6b7678; font-size: 0.9rem;">Last reviewed: ${escapeHtml(meta.lastReviewed || 'June 12, 2026')}</p>
-      ${meta.sections ? `
+      ${meta.sections && page === 'guides' ? `
+        <nav aria-label="China travel guide categories" style="margin: 0 0 24px;">
+          ${groupGuideHubSections(meta.sections).map((group, groupIndex) => `
+            <section aria-labelledby="guide-group-${groupIndex}" style="margin: 0 0 28px;">
+              <h2 id="guide-group-${groupIndex}" style="margin: 0 0 12px; font-size: 1.35rem;">${escapeHtml(group.title)}</h2>
+              <div style="display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                ${group.items.map(([title, summary, href]) => `
+                  <a href="${escapeAttr(href)}" style="display: block; min-height: 120px; border: 1px solid rgba(21, 94, 99, 0.14); border-radius: 20px; background: #fffdf8; padding: 18px; text-decoration: none;">
+                    <h3 style="margin: 0 0 8px; color: #122022; font-size: 1rem;">${escapeHtml(title)}</h3>
+                    <p style="margin: 0; color: #536365; line-height: 1.6; font-size: 0.92rem;">${escapeHtml(summary)}</p>
+                  </a>
+                `).join('')}
+              </div>
+            </section>
+          `).join('')}
+        </nav>
+      ` : meta.sections ? `
         <section aria-labelledby="guide-list" style="margin: 0 0 24px;">
           <h2 id="guide-list" style="margin: 0 0 12px; font-size: 1.25rem;">Available guides</h2>
           <div style="display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
