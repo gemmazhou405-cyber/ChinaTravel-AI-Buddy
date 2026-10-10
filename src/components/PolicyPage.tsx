@@ -3127,6 +3127,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
+      { label: 'Compare 7, 10 and 14-day China itineraries', href: '/china-itinerary-first-time-7-10-14-days/' },
       { label: '3-day Xi\'an itinerary', href: '/3-day-xian-itinerary/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
       { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
@@ -3294,6 +3295,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
+      { label: 'Compare 7, 10 and 14-day China itineraries', href: '/china-itinerary-first-time-7-10-14-days/' },
       { label: '3-day Xi\'an itinerary', href: '/3-day-xian-itinerary/' },
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
       { label: 'First trip to China', href: '/first-trip-to-china/' },
@@ -3523,6 +3525,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
+      { label: 'Compare 7, 10 and 14-day China itineraries', href: '/china-itinerary-first-time-7-10-14-days/' },
       { label: '3-day Xi\'an itinerary', href: '/3-day-xian-itinerary/' },
       { label: '3-day Beijing itinerary', href: '/3-day-beijing-itinerary/' },
       { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
@@ -6460,16 +6463,17 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'china-itinerary-first-time-7-10-14-days': {
     path: '/china-itinerary-first-time-7-10-14-days/',
-    title: 'The Perfect China Itinerary for Your First Trip',
+    title: 'China Itinerary for First-Time Visitors: 7, 10 or 14 Days',
     intro: 'Choose two cities in seven days, the Beijing-Xi\'an-Shanghai golden triangle in ten, or add one nature or food destination for a well-paced fourteen-day first visit.',
-    metaTitle: 'Best China Itinerary for First Time: 7, 10 & 14 Days Routes (2026)',
-    metaDescription: "First time in China? 7 days = 2 cities, 10 days = Beijing-Xi'an-Shanghai golden triangle, 14 days = add Guilin or Chengdu. AI-custom plan by Buddy.",
+    metaTitle: 'China Itinerary for First-Timers: 7, 10 or 14 Days (2026)',
+    metaDescription: "Compare practical 7-, 10- and 14-day China itineraries, including Beijing, Xi'an, Shanghai, Chengdu and Guilin, with realistic transfer advice.",
     quickAnswer: "For seven days, choose Beijing plus Xi'an or Shanghai. With ten days, follow the classic Beijing-Xi'an-Shanghai route. With fourteen days, add Guilin for landscapes or Chengdu for food and pandas without turning the trip into a daily transfer marathon.",
-    ctaLabel: 'Generate my China route with Buddy',
+    ctaLabel: 'Get my free personalised China itinerary',
     midCtaLabel: 'Personalize this route for my interests',
-    ctaHref: '/',
+    ctaHref: '/#trip-plan',
     buddyPrompt: 'Build my first China itinerary. I have [7/10/14] days, I like [history/food/nature], my budget is [budget], and I arrive in [city].',
     reviewed: 'September 26, 2026',
+    lastModified: '2026-10-10',
     sections: [
       { title: 'Quick Picker', table: { headers: ['Days', 'Cities', 'Pace', 'Best for'], rows: [['7 days', '2 cities', 'Focused', 'A first look with minimal transfers'], ['10 days', '3 cities', 'Balanced', "Beijing, Xi'an, and Shanghai highlights"], ['14 days', '4-5 destinations', 'Varied', 'Adding nature, pandas, or regional food']] } },
       { title: 'Route 1: The Golden Triangle', items: ['Beijing: 3 days for the Forbidden City, Great Wall, hutongs, and imperial history.', "Xi'an: 2 days for the Terracotta Warriors, city wall, and Muslim Quarter.", 'Shanghai: 3 days for the Bund, neighborhoods, museums, and modern city life.', 'Add a Suzhou day trip when your schedule has at least one flexible Shanghai day.'] },
@@ -6483,7 +6487,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { question: 'Should I add Guilin or Chengdu to a 14-day trip?', answer: 'Choose Guilin for landscapes and outdoor time. Choose Chengdu for pandas, Sichuan food, and a more relaxed city experience.' },
       { question: 'Should I book trains or flights between Chinese cities?', answer: 'Use high-speed rail when the journey is under about five hours. Compare total door-to-door time rather than the scheduled flight duration alone.' },
     ],
-    related: [{ label: 'China train booking guide', href: '/china-train-booking-foreigners-12306/' }, { label: 'China visa-free travel guide', href: '/china-visa-free-travel-guide/' }, { label: 'China eSIM guide', href: '/china-esim-internet-guide/' }],
+    related: [{ label: '7-day China itinerary', href: '/7-day-china-itinerary/' }, { label: '10-day China itinerary', href: '/10-day-china-itinerary/' }, { label: '14-day China itinerary', href: '/14-day-china-itinerary/' }, { label: 'First trip to China guide', href: '/first-trip-to-china/' }, { label: 'China train booking guide', href: '/china-train-booking-foreigners-12306/' }, { label: 'China travel budget', href: '/china-travel-budget/' }, { label: 'China visa-free travel guide', href: '/china-visa-free-travel-guide/' }, { label: 'China eSIM guide', href: '/china-esim-internet-guide/' }],
   },
   faq: {
     path: '/faq/',

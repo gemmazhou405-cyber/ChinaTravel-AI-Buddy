@@ -117,22 +117,28 @@ const pages = [
     links: ['/#trip-plan', '/first-trip-to-china/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/china-travel-apps/', '/china-metro-guide/', '/china-esim-internet-guide/'],
   },
   {
+    path: '/china-itinerary-first-time-7-10-14-days/',
+    h1: /China Itinerary for First-Time Visitors.*7.*10.*14 Days/i,
+    keywords: ['Quick Picker', 'Golden Triangle', 'Culture Plus Nature', 'Pandas and Mountains', 'Train or Flight?'],
+    links: ['/#trip-plan', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/first-trip-to-china/', '/china-train-booking-foreigners-12306/', '/china-travel-budget/'],
+  },
+  {
     path: '/7-day-china-itinerary/',
     h1: /7-Day China Itinerary for First-Time Visitors.*2026/i,
     keywords: ['open-jaw', 'Beijing', 'Xi\'an', 'Shanghai', 'Palace Museum', 'Terracotta Warriors', 'RMB 350', '12306'],
-    links: ['/#trip-plan', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/best-time-to-visit-china/', '/china-travel-budget/', '/china-train-travel-guide/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/china-esim-internet-guide/', '/china-payment-guide/', '/first-trip-to-china/'],
+    links: ['/#trip-plan', '/china-itinerary-first-time-7-10-14-days/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/best-time-to-visit-china/', '/china-travel-budget/', '/china-train-travel-guide/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/china-esim-internet-guide/', '/china-payment-guide/', '/first-trip-to-china/'],
   },
   {
     path: '/10-day-china-itinerary/',
     h1: /10-Day China Itinerary for First-Time Visitors/i,
     keywords: ['Beijing', 'Xi\'an', 'Shanghai', 'Palace Museum', 'Terracotta Warriors', 'high-speed train'],
-    links: ['/#trip-plan', '/first-trip-to-china/', '/7-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/best-time-to-visit-china/', '/china-travel-budget/', '/china-train-travel-guide/', '/china-travel-apps/'],
+    links: ['/#trip-plan', '/china-itinerary-first-time-7-10-14-days/', '/first-trip-to-china/', '/7-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/best-time-to-visit-china/', '/china-travel-budget/', '/china-train-travel-guide/', '/china-travel-apps/'],
   },
   {
     path: '/14-day-china-itinerary/',
     h1: /14-Day China Itinerary for First-Time Visitors.*2026/i,
     keywords: ['two-week', 'Beijing', 'Xi\'an', 'Chengdu', 'Shanghai', 'Guilin', 'Panda Base', 'RMB 6,500', '12306'],
-    links: ['/#trip-plan', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/beijing-vs-shanghai/', '/best-time-to-visit-china/', '/china-travel-budget/', '/china-train-travel-guide/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-food-ordering-guide/', '/china-travel-apps/', '/china-esim-internet-guide/', '/first-trip-to-china/'],
+    links: ['/#trip-plan', '/china-itinerary-first-time-7-10-14-days/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/beijing-vs-shanghai/', '/best-time-to-visit-china/', '/china-travel-budget/', '/china-train-travel-guide/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-food-ordering-guide/', '/china-travel-apps/', '/china-esim-internet-guide/', '/first-trip-to-china/'],
   },
   {
     path: '/beijing-vs-shanghai/',
