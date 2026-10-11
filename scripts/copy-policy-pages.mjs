@@ -3703,9 +3703,86 @@ Object.assign(pageMeta, {
     title: 'Why Hotels in China Refuse Foreign Guests (and How to Avoid It) [2026]',
     heading: "Why Some Hotels in China Refuse Foreign Guests, and What to Do Next",
     description: 'Can foreigners stay in any hotel in China? Learn why rejection still happens, how hotel registration works, what to confirm before arrival, and when to call 12367.',
-    quickAnswer: 'Authorities have instructed departments and platforms not to restrict accommodation operators from receiving foreign guests based on qualification requirements. Hotels register foreign guests; private and other non-hotel stays follow a separate registration process.',
-    lastReviewed: 'September 27, 2026',
-    lastModified: '2026-09-27',
+    quickAnswer: 'Chinese authorities have instructed local departments and booking platforms not to restrict accommodation operators from receiving foreign guests based on qualification requirements, and operators may not illegally advertise that they refuse foreigners. This does not mean every reservation must be accepted regardless of room availability, booking details, identity checks, payment, or lawful property rules. If check-in is refused, identify the exact reason, ask a manager to review it, contact the booking platform, and prioritize safe replacement accommodation.',
+    lastReviewed: 'October 11, 2026',
+    lastModified: '2026-10-11',
+    contentSections: [
+      {
+        title: 'First identify why check-in was refused',
+        table: {
+          headers: ['Reason given', 'What it means for your next step'],
+          rows: [
+            ['“We cannot accept foreigners” or “we lack foreign-related qualification”', 'Ask a manager to review the booking and foreign-passport registration process. Save the reason in writing and contact the booking platform if the property will not reconsider.'],
+            ['No room or the hotel is overbooked', 'Treat this as a failure to honor the reservation, not automatically as nationality discrimination. Ask the hotel or platform for immediate relocation and any refund due under the booking terms.'],
+            ['Name, passport, guest count, date, or room details do not match', 'Compare the reservation with every guest’s original passport and correct the mismatch through the booking platform before arguing about foreign-guest policy.'],
+            ['Payment, deposit, late arrival, or property-rule problem', 'Ask for the exact charge, deadline, or rule in writing. Check the reservation terms and use a prepared payment method or platform support where appropriate.'],
+          ],
+        },
+        items: [
+          'Do not assume every refusal has the same legal or practical cause. The written reason determines whether the fastest solution is manager review, booking correction, relocation, or a refund request.',
+        ],
+      },
+      {
+        title: 'What to do at the front desk, in order',
+        ordered: true,
+        items: [
+          'Stay calm and ask for the specific reason the confirmed booking cannot be checked in. Distinguish a foreign-passport registration concern from no vacancy, a booking mismatch, payment, or another operational issue.',
+          'Show the reservation and any written message confirming foreign-passport check-in. Ask for the duty manager or an experienced employee who knows the accommodation-registration process.',
+          'Ask the property to put its reason in the booking-platform chat. Avoid a prolonged confrontation or photographing staff without permission.',
+          'Contact the booking platform while you are still at the property. Request immediate relocation first when you need a room that night, then address refund or compensation through the booking terms.',
+          'If the issue is not resolved quickly, move to a safe staffed alternative. Keep transport and replacement-hotel receipts for the later claim.',
+        ],
+      },
+      {
+        title: 'Short messages to copy and show',
+        items: [
+          '请告诉我无法办理入住的具体原因。是订单、房态，还是外国护照登记问题？ — Please tell me the specific reason check-in cannot be completed. Is it the booking, room availability, or foreign-passport registration?',
+          '这是我的预订确认和护照。请让值班经理帮忙处理。 — Here are my booking confirmation and passport. Please ask the duty manager to help.',
+          '请在预订平台的消息里写明拒绝入住的原因。 — Please state the reason for refusing check-in in the booking-platform message.',
+          '如果酒店无法履行订单，请帮我免费改订到安全的同等住宿。 — If the hotel cannot honor the booking, please relocate me to safe, equivalent accommodation without an extra charge.',
+          '如果无法改订，请在平台上确认取消和退款。 — If relocation is not possible, please confirm the cancellation and refund through the platform.',
+        ],
+      },
+      {
+        title: 'Evidence to save for relocation or refund support',
+        items: [
+          'The reservation number, exact property and branch, booked dates, room type, guest names, payment status, cancellation terms, and the original listing.',
+          'Platform messages showing any pre-arrival confirmation that the property could check in the passport holders on the reservation.',
+          'A written platform or hotel message stating the refusal reason, plus the time of arrival and the role of the staff member or manager you spoke with.',
+          'Receipts for prepaid accommodation, replacement lodging, and necessary transport to the replacement property.',
+          'Screenshots of platform support conversations and the final relocation, cancellation, or refund decision. Do not publish staff or guest personal information.',
+        ],
+      },
+      {
+        title: 'How to ask the booking platform for help',
+        ordered: true,
+        items: [
+          'Open support from the exact reservation so the agent can see the property, payment, cancellation conditions, and previous messages.',
+          'State the immediate need clearly: confirmed guest refused at check-in, exact reason given, current local time, and whether safe accommodation is needed tonight.',
+          'Request relocation to comparable safe accommodation before accepting a cancellation that leaves you without a room. Ask who pays any price difference and transport.',
+          'If relocation is unavailable, request the refund or cancellation remedy supported by the reservation terms and the platform’s failure-to-honor process.',
+          'Keep the case number and written outcome. A refund route is a booking and payment matter; the NIA 12367 hotline is for immigration and accommodation-registration guidance, not platform refund decisions.',
+        ],
+      },
+      {
+        title: 'Accommodation registration still applies',
+        items: [
+          'A hotel that checks in a foreign guest must register the stay and submit the required accommodation information to the local public security authority.',
+          'A private home or another non-hotel stay follows a separate process: the visitor or host generally completes accommodation registration within 24 hours.',
+          'Use the separate 12367 accommodation-registration guide for the current online and in-person routes. A hotel refusal does not remove the registration requirement for the replacement stay.',
+        ],
+      },
+    ],
+    faqs: [
+      ['Can a hotel refuse me only because I have a foreign passport?', 'Chinese authorities have instructed local departments and booking platforms not to impose blanket foreign-guest qualification restrictions on accommodation operators. That does not remove normal booking, identity, room-availability, payment, safety, or property rules, so ask for the exact reason in writing.'],
+      ['What should I do if I am refused late at night?', 'Prioritize a safe staffed replacement rather than a prolonged front-desk dispute. Ask the booking platform for immediate relocation, confirm who covers any price difference and transport, and keep the original booking, refusal message, replacement receipt, and support case number.'],
+      ['What evidence should I keep for a hotel refund request?', 'Keep the reservation, payment and cancellation terms, written passport check-in confirmation, refusal reason, platform messages, case number, and receipts for replacement lodging and necessary transport. Ask the hotel or platform to record the decision in writing.'],
+      ['Can 12367 arrange my hotel refund?', '12367 provides National Immigration Administration guidance, including accommodation-registration questions. Refunds, relocation, and failure-to-honor remedies should be handled with the hotel and booking platform under the reservation terms.'],
+    ],
+    sourceLinks: [
+      ['Chinese government: facilitating accommodation for foreign travelers', 'https://english.www.gov.cn/news/202407/26/content_WS66a2d827c6d0868f4e8e975c.html'],
+      ['NIA: hotel and non-hotel accommodation registration rules', 'https://english.www.gov.cn/services/visitchina/202603/21/content_WS69ce124cc6d00ca5f9a0a368.html'],
+    ],
   },
   'does-google-maps-work-in-china-amap-guide': {
     ...pageMeta['amap-in-english'],
@@ -4127,29 +4204,6 @@ const focusedPageContent = {
           "Try the official in-app instructions and account recovery options shown to you.",
           "Keep access to the phone number used for registration and check for SMS delivery.",
           "Use official WeChat support if verification remains blocked; prepare another payment method for travel."
-        ]
-      }
-    ],
-    "lastReviewed": "October 5, 2026",
-    "lastModified": "2026-10-05",
-    "article": true
-  },
-  "china-hotels-for-foreigners-no-rejection-guide": {
-    "contentSections": [
-      {
-        "title": "Before paying",
-        "items": [
-          "Confirm the property can register your passport at check-in.",
-          "Ask for the exact property address, arrival time and late check-in procedure.",
-          "Keep written confirmation of the booking terms and cancellation window."
-        ]
-      },
-      {
-        "title": "If check-in is refused",
-        "items": [
-          "Ask the desk for the reason and whether a manager can resolve the registration issue.",
-          "Contact the booking platform while you still have the reservation details.",
-          "Keep a backup property with verified availability; do not assume every refusal has the same cause."
         ]
       }
     ],
@@ -4700,6 +4754,12 @@ const relatedLinks = [
 ];
 
 const pageRelatedLinks = {
+  'china-hotels-for-foreigners-no-rejection-guide': [
+    ['Full China hotels guide', '/china-hotels-for-foreigners/'],
+    ['12367 accommodation registration guide', '/nia-12367-online-accommodation-registration-guide/'],
+    ['China airport arrival guide', '/china-airport-arrival-guide/'],
+    ['China travel safety guide', '/china-travel-safety-guide/'],
+  ],
   'china-240-hour-visa-free-transit-2026': [
     ['240-hour transit calculator', '/china-240-hour-transit-calculator/'],
     ['China visa-free checker', '/china-visa-free-checker/'],
