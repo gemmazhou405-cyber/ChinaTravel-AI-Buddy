@@ -66,7 +66,7 @@ function setCampaignMeta(variant: CampaignLandingVariant) {
     node.content = value;
   };
   setMeta('meta[name="description"]', config.description);
-  setMeta('meta[name="robots"]', 'index, follow');
+  setMeta('meta[name="robots"]', 'noindex, follow');
   setMeta('meta[property="og:title"]', config.title);
   setMeta('meta[property="og:description"]', config.description);
   setMeta('meta[property="og:url"]', `https://chinaeasebuddy.com${config.path}`);

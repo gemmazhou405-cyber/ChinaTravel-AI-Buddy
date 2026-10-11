@@ -4456,7 +4456,7 @@ pageMeta['china-online-arrival-card-2026'] = {
 };
 
 const pages = Object.keys(pageMeta);
-const noindexPages = new Set(['about', 'plan', 'pricing', 'refund']);
+const noindexPages = new Set(['about', 'plan', 'pricing', 'refund', 'unsubscribe']);
 
 function pagePath(page) {
   return `/${page}/`;

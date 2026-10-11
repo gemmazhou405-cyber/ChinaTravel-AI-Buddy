@@ -114,24 +114,11 @@ for (const page of pages) {
   html = metaTag(html, 'twitter:title', page.title);
   html = metaTag(html, 'twitter:description', page.description);
   html = html.replace(/<meta name="robots"[^>]*>/g, '');
-  html = html.replace('</head>', '    <meta name="robots" content="index, follow" />\n</head>');
+  html = html.replace('</head>', '    <meta name="robots" content="noindex, follow" />\n</head>');
   html = html.replace(/<div id="root">[\s\S]*<\/div>\s*<\/body>/, `<div id="root">${body}</div>\n  </body>`);
   const target = path.join('dist', page.route);
   await mkdir(target, { recursive: true });
   await writeFile(path.join(target, 'index.html'), html);
 }
-
-const sitemapPath = 'dist/sitemap.xml';
-let sitemap = await readFile(sitemapPath, 'utf8');
-for (const page of pages) {
-  const url = `${site}/${page.route}/`;
-  if (!sitemap.includes(`<loc>${url}</loc>`)) {
-    sitemap = sitemap.replace(
-      '</urlset>',
-      `  <url>\n    <loc>${url}</loc>\n    <lastmod>2026-10-05</lastmod>\n  </url>\n</urlset>`,
-    );
-  }
-}
-await writeFile(sitemapPath, sitemap);
 
 console.log('Campaign landing pages generated');

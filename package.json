@@ -12,6 +12,7 @@
     "test:buddy": "node scripts/test-buddy-phase1.mjs",
     "test:visa-checker": "node scripts/test-visa-checker.mjs",
     "audit:public-html": "node scripts/audit-public-html.mjs",
+    "audit:seo-inventory": "node scripts/audit-seo-inventory.mjs",
     "audit:p0-buddy-menu": "node scripts/audit-p0-buddy-menu.mjs",
     "audit:growth-release": "node scripts/audit-growth-release.mjs",
     "test:campaign-landings": "node scripts/test-campaign-landings.mjs",
