@@ -11,6 +11,7 @@
     "typecheck": "node scripts/check-i18n-parity.mjs && tsc --noEmit -p tsconfig.app.json",
     "test:buddy": "node scripts/test-buddy-phase1.mjs",
     "test:visa-checker": "node scripts/test-visa-checker.mjs",
+    "test:transit-calculator": "node scripts/test-transit-calculator.mjs",
     "audit:public-html": "node scripts/audit-public-html.mjs",
     "audit:seo-inventory": "node scripts/audit-seo-inventory.mjs",
     "audit:p0-buddy-menu": "node scripts/audit-p0-buddy-menu.mjs",

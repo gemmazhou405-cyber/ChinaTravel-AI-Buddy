@@ -18,7 +18,6 @@ import {
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import ChatModal from '../ChatModal';
-import VisaFreeCheckerTool from '../VisaFreeCheckerTool';
 import { usePass } from '../../hooks/usePass';
 import { campaignLandings, type CampaignCta, type CampaignIcon } from '../../data/campaignLandings';
 import { getCampaignPartner, type CampaignLandingVariant } from '../../data/campaignPartners';
@@ -90,6 +89,12 @@ export default function CampaignLandingPage({ variant }: { variant: CampaignLand
   const rawPartner = sanitizeCampaignValue(params.get('partner') || params.get('ref'), 40);
   const partner = getCampaignPartner(rawPartner, variant);
   const isVisaLanding = variant === 'visa';
+  const visaPreviewFields = isVisaLanding
+    ? t('visa.preview.fields', { returnObjects: true }) as Array<{ label: string; value: string }>
+    : [];
+  const visaPreviewResults = isVisaLanding
+    ? t('visa.preview.results', { returnObjects: true }) as string[]
+    : [];
 
   const trackCta = (cta: CampaignCta, placement: string) => {
     void trackEvent('campaign_primary_cta_click', {
@@ -161,7 +166,7 @@ export default function CampaignLandingPage({ variant }: { variant: CampaignLand
                 )}
                 <div className="mt-6">
                   {renderCta(
-                    { ...config.primary, href: '#visa-checker-form' },
+                    config.primary,
                     'inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-xl bg-jade px-7 py-4 text-base font-bold text-white shadow-soft transition hover:bg-jade-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade sm:w-auto',
                     'hero_primary',
                   )}
@@ -169,8 +174,31 @@ export default function CampaignLandingPage({ variant }: { variant: CampaignLand
                 <p className="mt-3 text-xs font-semibold text-ink-tertiary">{t('visa.microcopy')}</p>
               </div>
 
-              <aside className="min-w-0 max-w-full overflow-hidden rounded-2xl border border-jade/15 bg-white p-5 shadow-soft sm:p-6" aria-label="Free China visa policy checker">
-                <VisaFreeCheckerTool id="visa-checker-form" compact />
+              <aside className="min-w-0 max-w-full overflow-hidden rounded-2xl border border-jade/15 bg-white p-5 shadow-soft sm:p-6" aria-label={t('visa.preview.ariaLabel')}>
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-jade">{t('visa.preview.eyebrow')}</p>
+                    <h2 className="mt-2 text-2xl font-bold text-ink">{t('visa.preview.title')}</h2>
+                  </div>
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-jade-wash text-jade" aria-hidden="true">
+                    <MapPinned className="h-5 w-5" />
+                  </span>
+                </div>
+                <div className="mt-5 grid gap-3">
+                  {visaPreviewFields.map((field) => (
+                    <div key={field.label} className="flex min-h-12 items-center justify-between gap-4 rounded-xl border border-hairline bg-surface px-4 py-3">
+                      <span className="text-sm text-ink-tertiary">{field.label}</span>
+                      <span className="text-right text-sm font-bold text-ink">{field.value}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 rounded-xl border border-jade/15 bg-jade-wash p-4">
+                  <p className="text-xs font-bold uppercase tracking-[0.13em] text-jade">{t('visa.preview.resultLabel')}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {visaPreviewResults.map((item) => <span key={item} className="rounded-full border border-jade/15 bg-white px-3 py-1.5 text-xs font-semibold text-ink-secondary">{item}</span>)}
+                  </div>
+                </div>
+                <p className="mt-4 text-xs leading-5 text-ink-tertiary">{t('visa.preview.note')}</p>
               </aside>
             </div>
           </section>

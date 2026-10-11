@@ -12,7 +12,7 @@ const requiredLinks = [
 ];
 const checks = [
   ['dist/partners/hostel-china-travel-help/index.html', '/partners/hostel-china-travel-help/', ['In China now?', 'Take a taxi or DiDi']],
-  ['dist/partners/china-visa-checker/index.html', '/partners/china-visa-checker/', ['Check if you may need a visa for China', 'Check my China visa policy', 'Takes less than 1 minute', 'Passport nationality', 'Passport type', 'Planned entry date', 'Purpose of visit', 'Planned stay (days)', 'Trip type', 'Create a free account to reveal your result.', 'Why check before you fly?']],
+  ['dist/partners/china-visa-checker/index.html', '/partners/china-visa-checker/', ['Free China visa policy check', 'Check if you may need a visa for China', 'href="/china-visa-free-checker/"', 'Check my China visa policy', 'Takes less than 1 minute', 'What the live checker asks', 'Possible result', 'This is an example, not a form.', 'Why check before you fly?']],
   ['dist/partners/first-trip-to-china/index.html', '/partners/first-trip-to-china/', ['Not sure where to start?', 'Everything a first-time visitor should prepare']],
 ];
 
@@ -26,6 +26,9 @@ for (const [file, route, needles] of checks) {
   }
   if (route === '/partners/china-visa-checker/' && html.includes('No account needed')) {
     failures.push(`${route} still claims that no account is needed`);
+  }
+  if (route === '/partners/china-visa-checker/' && html.includes('id="visa-checker-form"')) {
+    failures.push(`${route} still embeds the full checker in the landing-page hero`);
   }
 }
 

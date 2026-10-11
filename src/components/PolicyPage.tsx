@@ -17,6 +17,7 @@ import tenPayGoGuide from '../data/seoPages/tenpaygo-for-tourists.json';
 import accommodationRegistrationGuide from '../data/seoPages/china-online-accommodation-registration-12367.json';
 import visaFreeCheckerGuide from '../data/seoPages/china-visa-free-checker.json';
 import VisaFreeCheckerPage from './VisaFreeCheckerPage';
+import TransitCalculatorPage from './TransitCalculatorPage';
 
 type LegalPageType = 'terms' | 'privacy' | 'refund' | 'contact' | 'about' | 'unsubscribe';
 type GuidePageType =
@@ -89,7 +90,7 @@ type GuidePageType =
   | '240-hour-transit-zone-map-high-speed-rail'
   | 'wechat-verification-without-friend-qr-2026'
   | 'faq';
-type PageType = 'pricing' | LegalPageType | GuidePageType;
+type PageType = 'pricing' | 'china-240-hour-transit-calculator' | LegalPageType | GuidePageType;
 
 interface Props {
   type: PageType;
@@ -2749,10 +2750,24 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       'Foreign visitors can use the DiDi China ride-hailing app with an international mobile number and an English interface, or access DiDi through supported WeChat and Alipay routes. Before requesting a car, save the exact destination in Chinese, confirm the pickup pin and meeting point, compare the service type and estimated fare, and prepare a payment method shown in your version. When the car arrives, match the licence plate and vehicle details before entering.',
     ctaLabel: 'Get my free China itinerary',
     ctaHref: '/#trip-plan',
-    lastReviewed: 'October 7, 2026',
-    lastModified: '2026-10-07',
+    lastReviewed: 'October 11, 2026',
+    lastModified: '2026-10-11',
     isArticle: true,
     sections: [
+      {
+        title: 'Quick answers: payment and driver contact',
+        table: {
+          headers: ['Question', 'What to do'],
+          rows: [
+            ['Which payment method can I use?', 'Use the payment options shown in the route where you booked. The DiDi app, Alipay, and WeChat can present different choices, so verify one before requesting the ride and keep a backup.'],
+            ['What if payment fails?', 'Do not repeatedly approve the same charge. Reopen the completed trip, check its payment status or outstanding fare, try another option offered in that booking route, and use trip-specific support if the issue remains unresolved.'],
+            ['What if the driver calls?', 'Use bilingual in-app messaging where available and send the exact zone, gate, floor, or landmark. Ask nearby staff for brief help if needed, and review any cancellation fee before cancelling.'],
+          ],
+        },
+        items: [
+          'Payment choices and account availability can vary by app version, account, card issuer, and transaction. Keep a second wallet, a physical card, and some RMB as practical backups.',
+        ],
+      },
       {
         title: 'Choose how you will open DiDi',
         table: {
@@ -6588,7 +6603,10 @@ guidePages['china-airport-arrival-guide'].related.unshift({ label: 'Register a n
 guidePages['china-airport-arrival-guide'].related.unshift({ label: 'China visa-free checker', href: '/china-visa-free-checker/' });
 guidePages['nia-12367-online-accommodation-registration-guide'].related.unshift({ label: 'China visa-free checker', href: '/china-visa-free-checker/' });
 guidePages['china-visa-free-travel-guide'].related.unshift({ label: 'China visa-free checker', href: '/china-visa-free-checker/' });
-guidePages['china-240-hour-visa-free-transit-2026'].related.unshift({ label: 'China visa-free checker', href: '/china-visa-free-checker/' });
+guidePages['china-240-hour-visa-free-transit-2026'].related.unshift(
+  { label: '240-hour transit calculator', href: '/china-240-hour-transit-calculator/' },
+  { label: 'China visa-free checker', href: '/china-visa-free-checker/' },
+);
 
 function setMetaContent(selector: string, attr: 'content', value: string) {
   let element = document.head.querySelector<HTMLMetaElement>(selector);
@@ -7230,6 +7248,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/amap-vs-google-maps-china')) return 'amap-vs-google-maps-china';
   if (cleanPath.endsWith('/best-time-to-visit-china')) return 'best-time-to-visit-china';
   if (cleanPath.endsWith('/china-sim-card-for-foreigners')) return 'china-sim-card-for-foreigners';
+  if (cleanPath.endsWith('/china-240-hour-transit-calculator')) return 'china-240-hour-transit-calculator';
   if (cleanPath.endsWith('/china-240-hour-visa-free-transit-2026')) return 'china-240-hour-visa-free-transit-2026';
   if (cleanPath.endsWith('/tenpaygo-for-tourists')) return 'tenpaygo-for-tourists';
   if (cleanPath.endsWith('/china-visa-free-checker')) return 'china-visa-free-checker';
@@ -7267,6 +7286,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
 export default function PolicyPage({ type, userId, onAskBuddy }: Props) {
   if (type === 'pricing') return <PricingPage />;
   if (type === 'china-visa-free-checker') return <VisaFreeCheckerPage />;
+  if (type === 'china-240-hour-transit-calculator') return <TransitCalculatorPage />;
   if (type in guidePages) return <GuidePage type={type as GuidePageType} userId={userId} onAskBuddy={onAskBuddy} />;
   return <LegalPage type={type as LegalPageType} />;
 }

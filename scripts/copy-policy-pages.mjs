@@ -1314,10 +1314,24 @@ const pageMeta = {
       'Use DiDi in China with an international number, English interface, Alipay or WeChat Pay, safe pickup checks, driver messages and payment backups.',
     quickAnswer:
       'Foreign visitors can use the DiDi China ride-hailing app with an international mobile number and an English interface, or access DiDi through supported WeChat and Alipay routes. Before requesting a car, save the exact destination in Chinese, confirm the pickup pin and meeting point, compare the service type and estimated fare, and prepare a payment method shown in your version. When the car arrives, match the licence plate and vehicle details before entering.',
-    lastReviewed: 'October 7, 2026',
-    lastModified: '2026-10-07',
+    lastReviewed: 'October 11, 2026',
+    lastModified: '2026-10-11',
     article: true,
     contentSections: [
+      {
+        title: 'Quick answers: payment and driver contact',
+        table: {
+          headers: ['Question', 'What to do'],
+          rows: [
+            ['Which payment method can I use?', 'Use the payment options shown in the route where you booked. The DiDi app, Alipay, and WeChat can present different choices, so verify one before requesting the ride and keep a backup.'],
+            ['What if payment fails?', 'Do not repeatedly approve the same charge. Reopen the completed trip, check its payment status or outstanding fare, try another option offered in that booking route, and use trip-specific support if the issue remains unresolved.'],
+            ['What if the driver calls?', 'Use bilingual in-app messaging where available and send the exact zone, gate, floor, or landmark. Ask nearby staff for brief help if needed, and review any cancellation fee before cancelling.'],
+          ],
+        },
+        items: [
+          'Payment choices and account availability can vary by app version, account, card issuer, and transaction. Keep a second wallet, a physical card, and some RMB as practical backups.',
+        ],
+      },
       {
         title: 'Choose how you will open DiDi',
         items: [
@@ -3946,6 +3960,52 @@ pageMeta['china-visa-free-checker'] = {
   application: true,
 };
 
+pageMeta['china-240-hour-transit-calculator'] = {
+  heading: 'China 240-Hour Visa-Free Transit Calculator',
+  title: 'China 240-Hour Transit Calculator: Latest Departure Time',
+  description: 'Calculate the latest departure time under China’s 240-hour visa-free transit clock, then verify your nationality, port, route and permitted stay area.',
+  quickAnswer: 'Enter your local arrival date and time in Mainland China. Under the current National Immigration Administration rule, the 240-hour period starts at 00:00 on the day after entry. The calculator shows the China Standard Time boundary, but it does not confirm eligibility, a designated port or a permitted stay area.',
+  lastReviewed: 'October 11, 2026',
+  lastModified: '2026-10-11',
+  application: true,
+  contentSections: [
+    {
+      title: 'How the calculator works',
+      items: [
+        'Enter the scheduled local arrival date and time in Mainland China, the entry city, the country or region before Mainland China, and the onward destination.',
+        'The calculator starts the official 240-hour clock at 00:00 China Standard Time on the day after entry and adds 240 hours.',
+        'The displayed planning time is one minute before the exact boundary. Travelers should leave a practical buffer for transport, check-in, security and exit inspection.',
+      ],
+    },
+    {
+      title: 'What the result cannot confirm',
+      items: [
+        'A city name does not prove that the exact airport, railway port or seaport is a designated port under the current policy.',
+        'Eligibility also depends on nationality, ordinary-passport status, a confirmed onward ticket, a different-country-or-region route, permitted stay area and the policy in force on the travel date.',
+        'Chinese border inspection authorities make the final temporary-entry and admission decision. The actual immigration entry record controls if it differs from the scheduled arrival.',
+      ],
+    },
+    {
+      title: 'Checks to complete before booking',
+      items: [
+        'Confirm that the passport nationality appears on the current official list and that the passport is an ordinary passport.',
+        'Confirm the exact entry port, exit port and permitted area using the latest National Immigration Administration information.',
+        'Keep a confirmed onward ticket with a departure date and seat, and avoid a simple return to the same country or region of origin.',
+      ],
+    },
+  ],
+  faqs: [
+    ['When does the 240-hour clock start?', 'Under the current National Immigration Administration rule, the 240-hour period is calculated from 00:00 on the day after entry. This calculator uses China Standard Time. Your immigration record and the border authority’s calculation control, so leave a practical buffer before the displayed boundary.'],
+    ['Does this calculator confirm that I qualify?', 'No. It calculates the time window only. Eligibility also depends on your passport nationality, ordinary-passport status, confirmed onward ticket, third-country or region route, designated entry and exit ports, permitted stay area, purpose of travel and the policy in force on your travel date.'],
+    ['Can I return to the same country or region I departed from?', 'A simple route such as United States to Mainland China to United States does not meet the third-country or region transit pattern. The origin and onward destination normally need to be different. Airlines and border authorities should confirm complex routes before travel.'],
+    ['Does every airport or port qualify?', 'No. The policy applies through designated ports and within permitted areas. Selecting an entry city here does not verify a particular terminal, airport, railway port or seaport. Check the latest official port list and confirm your planned entry and exit points.'],
+    ['Which time zone does the calculator use?', 'All results use China Standard Time, UTC+8. The date and time you enter should be the local scheduled arrival time in Mainland China. Flight changes, immigration processing and the actual entry record can affect planning, so do not schedule departure at the exact final minute.'],
+  ],
+  sourceLinks: [
+    ['National Immigration Administration: 240-hour visa-free transit policy', 'https://en.nia.gov.cn/n147418/n147463/c183412/content.html'],
+  ],
+};
+
 
 // Give focused search pages their own answer instead of reusing a broader guide's sections.
 const focusedPageContent = {
@@ -4528,6 +4588,7 @@ const staticCtas = {
   'china-esim-internet-guide': ['Get my free China itinerary', '/#trip-plan'],
   'china-sim-card-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
   'china-240-hour-visa-free-transit-2026': ['Check my visa-free transit itinerary', '/#trip-plan'],
+  'china-240-hour-transit-calculator': ['Get my free China trip plan', '/plan/'],
   'china-visa-free-checker': ['Get my free trip starter', '/#trip-plan'],
   'tenpaygo-for-tourists': ['Get my free China trip starter', '/#trip-plan'],
   'alipay-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
@@ -4630,6 +4691,7 @@ const relatedLinks = [
 
 const pageRelatedLinks = {
   'china-240-hour-visa-free-transit-2026': [
+    ['240-hour transit calculator', '/china-240-hour-transit-calculator/'],
     ['China visa-free checker', '/china-visa-free-checker/'],
     ['7-day China itinerary', '/7-day-china-itinerary/'],
     ['10-day China itinerary', '/10-day-china-itinerary/'],
@@ -5148,12 +5210,19 @@ const pageRelatedLinks = {
     ['China payment guide', '/china-payment-guide/'],
   ],
   'china-visa-free-checker': [
+    ['240-hour transit calculator', '/china-240-hour-transit-calculator/'],
     ['240-hour transit guide', '/china-240-hour-visa-free-transit-2026/'],
     ['China visa-free travel guide', '/china-visa-free-travel-guide/'],
     ['China airport arrival guide', '/china-airport-arrival-guide/'],
     ['China travel checklist', '/china-travel-checklist/'],
     ['NIA 12367 accommodation registration', '/nia-12367-online-accommodation-registration-guide/'],
     ['First trip to China', '/first-trip-to-china/'],
+  ],
+  'china-240-hour-transit-calculator': [
+    ['240-hour transit guide', '/china-240-hour-visa-free-transit-2026/'],
+    ['China visa-free checker', '/china-visa-free-checker/'],
+    ['China airport arrival guide', '/china-airport-arrival-guide/'],
+    ['China travel checklist', '/china-travel-checklist/'],
   ],
   pricing: [
     ['Home', '/'],
