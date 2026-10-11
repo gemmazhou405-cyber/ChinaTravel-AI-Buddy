@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { TRANSIT_240_COUNTRY_CODES } from '../src/data/chinaVisaPolicies.ts';
-import { calculateTransitDeadline } from '../src/lib/transitCalculator.ts';
+import { COMMON_TRANSIT_ROUTE_EXAMPLES, calculateTransitDeadline } from '../src/lib/transitCalculator.ts';
 
 const mayResult = calculateTransitDeadline({
   arrivalLocal: '2026-05-01T14:30',
@@ -49,8 +49,13 @@ assert.equal(new Set(TRANSIT_240_COUNTRY_CODES).size, 57);
 assert.equal(TRANSIT_240_COUNTRY_CODES.includes('GB'), true);
 assert.equal(TRANSIT_240_COUNTRY_CODES.includes('AF'), false);
 
+assert.deepEqual(
+  COMMON_TRANSIT_ROUTE_EXAMPLES.map(({ passportNationalityCode, originRegion, onwardRegion }) => [passportNationalityCode, originRegion, onwardRegion]),
+  [['GB', 'GB', 'JP'], ['US', 'US', 'HK'], ['SG', 'SG', 'KR'], ['AU', 'AU', 'TH']],
+);
+
 const component = await readFile('src/components/TransitCalculatorPage.tsx', 'utf8');
-for (const required of ['FAQPage', 'WebApplication', '/plan/', 'aria-live="polite"', 'OFFICIAL_VISA_SOURCES.transit240', 'Passport nationality', 'current public NIA policy', 'This calculator does not confirm final eligibility.']) {
+for (const required of ['FAQPage', 'WebApplication', '/plan/', 'aria-live="polite"', 'OFFICIAL_VISA_SOURCES.transit240', 'Passport nationality', 'current public NIA policy', 'This calculator does not confirm final eligibility.', 'Common route examples', 'transit_calculator_calculate', 'transit_calculator_result_shown', 'transit_calculator_plan_cta_click']) {
   assert.ok(component.includes(required), `component missing ${required}`);
 }
 

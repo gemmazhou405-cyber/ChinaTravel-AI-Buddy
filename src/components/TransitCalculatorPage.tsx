@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { AlertCircle, AlertTriangle, ArrowLeft, Calculator, CheckCircle2, ExternalLink, RotateCcw } from 'lucide-react';
 import { CHECKER_COUNTRY_OPTIONS, normalizeNationalityToIso, OFFICIAL_VISA_SOURCES } from '../data/chinaVisaPolicies';
 import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
-import { calculateTransitDeadline, type TransitCalculatorResult } from '../lib/transitCalculator';
+import { COMMON_TRANSIT_ROUTE_EXAMPLES, calculateTransitDeadline, type TransitCalculatorResult, type TransitRouteExample } from '../lib/transitCalculator';
 
 const siteUrl = 'https://chinaeasebuddy.com';
 const path = '/china-240-hour-transit-calculator/';
@@ -90,12 +90,16 @@ export default function TransitCalculatorPage() {
       const passportNationalityCode = passportNationality.trim() ? normalizeNationalityToIso(passportNationality) : '';
       const nextResult = calculateTransitDeadline({ arrivalLocal, entryCity, passportNationalityCode, originRegion, onwardRegion });
       setResult(nextResult);
+      void trackEvent('transit_calculator_calculate', { resultType: nextResult.eligibilityStatus });
       void trackEvent('visa_checker_complete', {
         resultCategory: nextResult.eligibilityStatus,
         policyType: 'transit_240_hour',
         completed: true,
       });
-      requestAnimationFrame(() => resultRef.current?.focus());
+      requestAnimationFrame(() => {
+        void trackEvent('transit_calculator_result_shown', { resultType: nextResult.eligibilityStatus });
+        resultRef.current?.focus();
+      });
     } catch {
       setResult(null);
       setError('Complete all fields with a valid arrival date and time.');
@@ -108,6 +112,14 @@ export default function TransitCalculatorPage() {
     setPassportNationality('');
     setOriginRegion('');
     setOnwardRegion('');
+    setResult(null);
+    setError('');
+  };
+
+  const applyRouteExample = (example: TransitRouteExample) => {
+    setPassportNationality(example.passportNationality);
+    setOriginRegion(example.originRegion);
+    setOnwardRegion(example.onwardRegion);
     setResult(null);
     setError('');
   };
@@ -161,9 +173,29 @@ export default function TransitCalculatorPage() {
               </div>
               <p className="mt-5 text-sm font-semibold leading-6 text-gray-800">This calculator does not confirm final eligibility.</p>
               <ul className="mt-2 list-disc space-y-2 pl-5 text-sm leading-6 text-gray-700"><li>Use your actual immigration entry record if it differs from the scheduled arrival.</li><li>Verify passport nationality, ordinary-passport status, designated entry and exit ports, a confirmed onward ticket, permitted stay area, and the actual border inspection decision.</li><li>Do not plan to complete exit inspection at the exact boundary; allow a practical buffer.</li></ul>
-              <a href="/plan/" onClick={() => void trackEvent('visa_checker_cta_click', { resultCategory: result.eligibilityStatus, policyType: 'transit_240_hour', completed: true })} className="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#0f4c4a] px-5 py-3 text-center font-bold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0f4c4a]">Get my free China trip plan</a>
+              <a href="/plan/" onClick={() => { void trackEvent('visa_checker_cta_click', { resultCategory: result.eligibilityStatus, policyType: 'transit_240_hour', completed: true }); void trackEvent('transit_calculator_plan_cta_click', { resultType: result.eligibilityStatus, destinationUrl: '/plan/' }); }} className="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#0f4c4a] px-5 py-3 text-center font-bold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0f4c4a]">Get my free China trip plan</a>
               <button type="button" onClick={reset} className="mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-[#155e63]/25 bg-white px-4 py-2 text-sm font-bold text-[#155e63]"><RotateCcw className="h-4 w-4" aria-hidden="true" /> Calculate another route</button>
             </> : <div className="flex min-h-[360px] flex-col justify-center"><p className="text-xs font-bold uppercase tracking-[0.14em] text-[#155e63]">Your result</p><h2 className="mt-3 text-2xl font-bold">See the China Standard Time boundary</h2><p className="mt-3 text-sm leading-7 text-gray-600">Add your route and passport nationality to calculate the 240-hour boundary and compare the basic nationality and third-country-or-region requirements.</p><div className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-950"><strong>Important:</strong> The calculator cannot confirm final eligibility, your exact port or permitted stay area.</div></div>}
+          </div>
+        </section>
+
+        <section className="mt-10" aria-labelledby="common-route-examples">
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#155e63]">Try a route pattern</p>
+            <h2 id="common-route-examples" className="mt-2 text-2xl font-bold">Common route examples</h2>
+            <p className="mt-2 text-sm leading-6 text-gray-600">Choose an example to prefill passport nationality, origin and onward destination. Examples do not confirm eligibility, a designated port or a permitted stay area.</p>
+          </div>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            {COMMON_TRANSIT_ROUTE_EXAMPLES.map((example) => (
+              <button
+                key={example.id}
+                type="button"
+                onClick={() => applyRouteExample(example)}
+                className="min-h-12 rounded-2xl border border-[#155e63]/20 bg-white px-4 py-3 text-left text-sm font-bold text-[#123f42] transition hover:border-[#155e63]/45 hover:bg-[#edf5f2] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#155e63]"
+              >
+                {example.label}
+              </button>
+            ))}
           </div>
         </section>
 

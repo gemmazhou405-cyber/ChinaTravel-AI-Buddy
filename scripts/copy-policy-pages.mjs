@@ -3970,6 +3970,16 @@ pageMeta['china-240-hour-transit-calculator'] = {
   application: true,
   contentSections: [
     {
+      title: 'Common route examples',
+      items: [
+        'UK → Mainland China → Japan',
+        'US → Mainland China → Hong Kong',
+        'Singapore → Mainland China → South Korea',
+        'Australia → Mainland China → Thailand',
+        'These are route-pattern examples only. They do not confirm eligibility, a designated port or a permitted stay area.',
+      ],
+    },
+    {
       title: 'How the calculator works',
       items: [
         'Enter the scheduled local arrival date and time in Mainland China, the entry city, the country or region before Mainland China, and the onward destination.',

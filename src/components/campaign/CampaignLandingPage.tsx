@@ -104,6 +104,9 @@ export default function CampaignLandingPage({ variant }: { variant: CampaignLand
       destinationPath: cta.href || 'ask-buddy',
       placement,
     });
+    if (isVisaLanding && placement === 'hero_primary' && cta.href) {
+      void trackEvent('visa_landing_cta_click', { destinationUrl: cta.href });
+    }
   };
 
   useEffect(() => {

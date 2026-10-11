@@ -37,14 +37,32 @@ if (
   || first.lastTouch?.channel !== 'hostel'
   || first.partner_id !== 'hostel-demo'
   || first.campaign !== 'first_trip_china'
+  || first.first_touch_medium !== 'referral'
+  || first.first_touch_campaign !== 'china_partner_landing'
 ) throw new Error('Initial channel attribution was not captured');
 
 location.search = '?partner=creator-2&channel=creator&utm_source=youtube&campaign=visa_video';
 attribution.captureCampaignAttribution('visa');
 const updated = attribution.getCampaignAttribution();
-if (updated.firstTouch?.partner_id !== 'hostel-demo' || updated.lastTouch?.partner_id !== 'creator-2') {
+if (
+  updated.firstTouch?.partner_id !== 'hostel-demo'
+  || updated.lastTouch?.partner_id !== 'creator-2'
+  || updated.first_touch_source !== 'partner'
+  || updated.last_touch_source !== 'youtube'
+  || updated.last_touch_campaign !== 'visa_video'
+) {
   throw new Error('New valid source did not preserve first touch and update last touch');
 }
+
+location.search = '';
+location.pathname = '/plan/';
+attribution.captureCampaignAttribution(null);
+const afterInternalNavigation = attribution.getCampaignAttribution();
+if (
+  afterInternalNavigation.first_touch_source !== 'partner'
+  || afterInternalNavigation.last_touch_source !== 'youtube'
+  || afterInternalNavigation.last_touch_campaign !== 'visa_video'
+) throw new Error('Same-tab internal navigation lost first-touch or last-touch attribution');
 
 if (localStorage.writes !== 0 || localStorage.length !== 0) throw new Error('Attribution wrote persistent storage');
 
@@ -71,5 +89,29 @@ if (serverCapture.touch !== null || serverRead.partner_id || serverRead.firstTou
 const analyticsSource = await readFile('src/lib/analytics.ts', 'utf8');
 if (!analyticsSource.includes("const session = safeStorage('sessionStorage');")) throw new Error('Analytics session storage guard is missing');
 if (/getAnonymousSessionId\(\)[\s\S]{0,180}safeStorage\('localStorage'\)/.test(analyticsSource)) throw new Error('Anonymous ID still persists across sessions');
+
+const eventsEndpointSource = await readFile('functions/api/events.js', 'utf8');
+for (const eventName of [
+  'visa_landing_cta_click',
+  'transit_calculator_calculate',
+  'transit_calculator_result_shown',
+  'transit_calculator_plan_cta_click',
+  'free_trip_starter_submit',
+]) {
+  if (!analyticsSource.includes(`'${eventName}'`) || !eventsEndpointSource.includes(`'${eventName}'`)) {
+    throw new Error(`${eventName} is missing from the client or server analytics allowlist`);
+  }
+}
+for (const field of ['pagePath', 'source', 'medium', 'campaign', 'referrer', 'resultType', 'destinationUrl']) {
+  if (!eventsEndpointSource.includes(field)) throw new Error(`Events endpoint does not preserve ${field}`);
+}
+
+const tripLeadSource = await readFile('src/lib/tripLead.ts', 'utf8');
+const tripLeadEndpointSource = await readFile('functions/api/leads/trip.js', 'utf8');
+for (const field of ['firstTouchSource', 'firstTouchMedium', 'firstTouchCampaign', 'lastTouchSource', 'lastTouchMedium', 'lastTouchCampaign']) {
+  if (!tripLeadSource.includes(field) || !tripLeadEndpointSource.includes(field)) {
+    throw new Error(`Trip lead attribution field ${field} is not preserved end to end`);
+  }
+}
 
 console.log('campaign attribution session-only, first/last touch, source validation and storage fallback tests passed');

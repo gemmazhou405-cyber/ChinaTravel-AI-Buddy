@@ -31,6 +31,11 @@ const ALLOWED_EVENTS = new Set([
   'campaign_landing_view',
   'campaign_primary_cta_click',
   'outbound_tool_click',
+  'visa_landing_cta_click',
+  'transit_calculator_calculate',
+  'transit_calculator_result_shown',
+  'transit_calculator_plan_cta_click',
+  'free_trip_starter_submit',
 ]);
 
 const ALLOWED_DEVICE_CATEGORIES = new Set(['mobile', 'tablet', 'desktop', 'unknown']);
@@ -48,6 +53,12 @@ const ALLOWED_HOMEPAGE_RESOURCES = new Set([
   'guides',
 ]);
 const ALLOWED_LANDING_VARIANTS = new Set(['hostel', 'visa', 'first-trip']);
+const ALLOWED_TRANSIT_RESULTS = new Set([
+  'basic_requirements_match',
+  'nationality_not_eligible',
+  'route_pattern_invalid',
+  'nationality_required',
+]);
 
 // Per-isolate best-effort rate limit. Not shared across Cloudflare isolates — V1 acceptable.
 const _ipRateMap = new Map();
@@ -171,12 +182,17 @@ export async function onRequestPost({ request, env }) {
     return ALLOWED_LOCALE_PREFIXES.has(v.slice(0, 2).toLowerCase()) ? v : null;
   })();
   const sourcePath = clampStr(body.sourcePath, 500);
+  const pagePath = clampStr(body.pagePath, 500);
   const utmSource = clampStr(body.utmSource, 80);
   const utmMedium = clampStr(body.utmMedium, 80);
   const utmCampaign = clampStr(body.utmCampaign, 120);
   const utmContent = clampStr(body.utmContent, 80);
   const utmTerm = clampStr(body.utmTerm, 80);
   const referrerDomain = clampStr(body.referrerDomain, 100);
+  const source = clampStr(body.source, 80);
+  const medium = clampStr(body.medium, 80);
+  const campaign = clampStr(body.campaign, 120);
+  const referrer = clampStr(body.referrer, 100);
   const landingPath = (() => { const r = clampStr(body.landingPath, 200); return r ? r.split('?')[0].split('#')[0] || null : null; })();
   const plan = ALLOWED_PLANS.has(body.plan) ? body.plan : null;
   // Non-PII trip shape for plan_form_submit. sourcePath already carries "/" vs "/plan".
@@ -208,6 +224,11 @@ export async function onRequestPost({ request, env }) {
     const value = clampStr(body.destinationPath, 160);
     return value && (value.startsWith('/') || value.startsWith('#')) ? value.split('?')[0] : null;
   })();
+  const resultType = ALLOWED_TRANSIT_RESULTS.has(body.resultType) ? body.resultType : null;
+  const destinationUrl = (() => {
+    const value = clampStr(body.destinationUrl, 200);
+    return value?.startsWith('/') ? value.split('?')[0] : null;
+  })();
   const deviceCategory = ALLOWED_DEVICE_CATEGORIES.has(body.deviceCategory)
     ? body.deviceCategory
     : 'unknown';
@@ -222,12 +243,17 @@ export async function onRequestPost({ request, env }) {
   };
   if (locale) doc.locale = locale;
   if (sourcePath) doc.sourcePath = sourcePath;
+  if (pagePath) doc.pagePath = pagePath;
   if (utmSource) doc.utmSource = utmSource;
   if (utmMedium) doc.utmMedium = utmMedium;
   if (utmCampaign) doc.utmCampaign = utmCampaign;
   if (utmContent) doc.utmContent = utmContent;
   if (utmTerm) doc.utmTerm = utmTerm;
   if (referrerDomain) doc.referrerDomain = referrerDomain;
+  if (source) doc.source = source;
+  if (medium) doc.medium = medium;
+  if (campaign) doc.campaign = campaign;
+  if (referrer) doc.referrer = referrer;
   if (landingPath) doc.landingPath = landingPath;
   if (plan && eventName === 'gumroad_click') doc.plan = plan;
   if (eventName === 'plan_form_submit' || eventName === 'trip_form_submit') {
@@ -251,8 +277,19 @@ export async function onRequestPost({ request, env }) {
     doc.resourceSlug = resourceSlug;
   }
   if ([
+    'visa_landing_cta_click',
+    'transit_calculator_calculate',
+    'transit_calculator_result_shown',
+    'transit_calculator_plan_cta_click',
+  ].includes(eventName)) {
+    if (resultType) doc.resultType = resultType;
+    if (destinationUrl) doc.destinationUrl = destinationUrl;
+  }
+  if ([
     'campaign_landing_view', 'campaign_primary_cta_click', 'outbound_tool_click',
-    'trip_form_start', 'trip_form_submit',
+    'trip_form_start', 'trip_form_submit', 'free_trip_starter_submit',
+    'visa_landing_cta_click', 'transit_calculator_calculate',
+    'transit_calculator_result_shown', 'transit_calculator_plan_cta_click',
   ].includes(eventName)) {
     if (landingVariant) doc.landingVariant = landingVariant;
     if (partnerId) doc.partnerId = partnerId;

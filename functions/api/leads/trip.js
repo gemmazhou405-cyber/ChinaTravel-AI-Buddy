@@ -371,7 +371,19 @@ export async function onRequestPost({ request, env }) {
   const campaignName = safeCampaignSlug(body.campaignName, 120);
   const landingVariant = ['hostel', 'visa', 'first-trip'].includes(body.landingVariant) ? body.landingVariant : null;
   const firstTouchSource = clampStr(body.firstTouchSource, 80);
+  const firstTouchMedium = clampStr(body.firstTouchMedium, 80);
+  const firstTouchCampaign = clampStr(body.firstTouchCampaign, 120);
   const lastTouchSource = clampStr(body.lastTouchSource, 80);
+  const lastTouchMedium = clampStr(body.lastTouchMedium, 80);
+  const lastTouchCampaign = clampStr(body.lastTouchCampaign, 120);
+  const referrer = (() => {
+    const value = clampStr(body.referrer, 200);
+    if (!value) return null;
+    try {
+      const url = new URL(value);
+      return `${url.origin}${url.pathname}`.slice(0, 200);
+    } catch { return null; }
+  })();
 
   const emailHash = await sha256(emailRaw);
   const createdAt = Date.now();
@@ -455,7 +467,12 @@ export async function onRequestPost({ request, env }) {
       campaignName,
       landingVariant,
       firstTouchSource,
+      firstTouchMedium,
+      firstTouchCampaign,
       lastTouchSource,
+      lastTouchMedium,
+      lastTouchCampaign,
+      referrer,
       consentVersion,
       source: 'buddy_trip_lead',
       status: 'new',
@@ -511,7 +528,12 @@ export async function onRequestPost({ request, env }) {
     campaignName,
     landingVariant,
     firstTouchSource,
+    firstTouchMedium,
+    firstTouchCampaign,
     lastTouchSource,
+    lastTouchMedium,
+    lastTouchCampaign,
+    referrer,
     createdAt,
   };
 

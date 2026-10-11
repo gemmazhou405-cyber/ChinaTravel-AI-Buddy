@@ -87,7 +87,12 @@ export async function submitTripLead(
         campaignName: campaign.campaign,
         landingVariant: campaign.landing_variant,
         firstTouchSource: campaign.first_touch_source,
+        firstTouchMedium: campaign.first_touch_medium,
+        firstTouchCampaign: campaign.first_touch_campaign,
         lastTouchSource: campaign.last_touch_source,
+        lastTouchMedium: campaign.last_touch_medium,
+        lastTouchCampaign: campaign.last_touch_campaign,
+        referrer: attr.referrer,
         website: '',
       }),
     });

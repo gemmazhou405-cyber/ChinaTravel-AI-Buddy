@@ -26,6 +26,22 @@ export type TransitCalculatorResult = {
   eligibilityStatus: TransitEligibilityStatus;
 };
 
+export type TransitRouteExample = {
+  id: string;
+  label: string;
+  passportNationality: string;
+  passportNationalityCode: string;
+  originRegion: string;
+  onwardRegion: string;
+};
+
+export const COMMON_TRANSIT_ROUTE_EXAMPLES: readonly TransitRouteExample[] = [
+  { id: 'uk-japan', label: 'UK → Mainland China → Japan', passportNationality: 'United Kingdom', passportNationalityCode: 'GB', originRegion: 'GB', onwardRegion: 'JP' },
+  { id: 'us-hong-kong', label: 'US → Mainland China → Hong Kong', passportNationality: 'United States', passportNationalityCode: 'US', originRegion: 'US', onwardRegion: 'HK' },
+  { id: 'singapore-south-korea', label: 'Singapore → Mainland China → South Korea', passportNationality: 'Singapore', passportNationalityCode: 'SG', originRegion: 'SG', onwardRegion: 'KR' },
+  { id: 'australia-thailand', label: 'Australia → Mainland China → Thailand', passportNationality: 'Australia', passportNationalityCode: 'AU', originRegion: 'AU', onwardRegion: 'TH' },
+];
+
 const CHINA_TIME_ZONE = 'Asia/Shanghai';
 const HOURS_240_MS = 240 * 60 * 60 * 1000;
 

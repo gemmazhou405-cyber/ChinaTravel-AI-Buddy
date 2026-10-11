@@ -176,6 +176,7 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
         setPlanPreview(result.planPreview);
         setSuccess(true);
         trackGa4Event('form_submit_success', { cities });
+        void trackEvent('free_trip_starter_submit', {});
         void trackEvent('lead_submit_success', { trigger: 'homepage_trip_plan', planGenerated: result.planGenerated });
         if (result.planPreview?.days?.[0]) {
           trackEventOnce(`trip-day1:${result.planPreview.title}`, 'trip_result_day1_view', { form: 'free_trip_starter' });

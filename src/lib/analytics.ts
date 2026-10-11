@@ -66,6 +66,11 @@ const FUNNEL_EVENTS = new Set([
   'campaign_landing_view',
   'campaign_primary_cta_click',
   'outbound_tool_click',
+  'visa_landing_cta_click',
+  'transit_calculator_calculate',
+  'transit_calculator_result_shown',
+  'transit_calculator_plan_cta_click',
+  'free_trip_starter_submit',
 ]);
 
 const utmKeys: UtmKey[] = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
@@ -144,6 +149,7 @@ export function getAttributionContext() {
   const session = safeStorage('sessionStorage');
   const sessionAttribution = readJson<Attribution>(session, SESSION_ATTR_KEY);
   const firstTouch = readJson<Attribution>(session, FIRST_TOUCH_KEY);
+  const campaignAttribution = getCampaignAttribution();
   // Use session attribution if it carries any UTM signal; otherwise fall back to first-touch.
   // Checking any field avoids the edge case where utm_source is absent but another UTM is present.
   const hasSessionUtms = !!(
@@ -154,11 +160,12 @@ export function getAttributionContext() {
     sessionAttribution?.utm_term
   );
   const attribution = (hasSessionUtms ? sessionAttribution : firstTouch) || parseAttribution();
+  const latestCampaignTouch = campaignAttribution.lastTouch;
   return {
-    utm_source: attribution.utm_source || '',
-    utm_medium: attribution.utm_medium || '',
-    utm_campaign: attribution.utm_campaign || '',
-    utm_content: attribution.utm_content || '',
+    utm_source: hasSessionUtms ? (attribution.utm_source || '') : (latestCampaignTouch?.utm_source || attribution.utm_source || ''),
+    utm_medium: hasSessionUtms ? (attribution.utm_medium || '') : (latestCampaignTouch?.utm_medium || attribution.utm_medium || ''),
+    utm_campaign: hasSessionUtms ? (attribution.utm_campaign || '') : (latestCampaignTouch?.utm_campaign || attribution.utm_campaign || ''),
+    utm_content: hasSessionUtms ? (attribution.utm_content || '') : (latestCampaignTouch?.utm_content || attribution.utm_content || ''),
     utm_term: attribution.utm_term || '',
     referrer: attribution.referrer || '',
     landingPath: attribution.landingPath || '',
@@ -243,22 +250,36 @@ export async function trackEvent(eventName: string, payload: AnalyticsPayload = 
   if (!FUNNEL_EVENTS.has(eventName)) return;
 
   const attr = getAttributionContext();
+  const campaignAttribution = getCampaignAttribution();
   const body: Record<string, string> = {
     event: eventName,
     environment: getEnvironment(),
     deviceCategory: getDeviceCategory(),
     locale: getClientLocale(),
     sourcePath: window.location.pathname.slice(0, 500),
+    pagePath: window.location.pathname.slice(0, 500),
+    source: (attr.utm_source || campaignAttribution.last_touch_source || 'direct').slice(0, 80),
+    medium: (attr.utm_medium || campaignAttribution.last_touch_medium || campaignAttribution.channel || 'none').slice(0, 80),
+    campaign: (attr.utm_campaign || campaignAttribution.last_touch_campaign || campaignAttribution.campaign || 'none').slice(0, 120),
   };
-  if (attr.utm_source) body.utmSource = attr.utm_source.slice(0, 80);
-  if (attr.utm_medium) body.utmMedium = attr.utm_medium.slice(0, 80);
-  if (attr.utm_campaign) body.utmCampaign = attr.utm_campaign.slice(0, 120);
+  if (attr.utm_source) {
+    body.utmSource = attr.utm_source.slice(0, 80);
+  }
+  if (attr.utm_medium) {
+    body.utmMedium = attr.utm_medium.slice(0, 80);
+  }
+  if (attr.utm_campaign) {
+    body.utmCampaign = attr.utm_campaign.slice(0, 120);
+  }
   if (attr.utm_content) body.utmContent = attr.utm_content.slice(0, 80);
   if (attr.utm_term) body.utmTerm = attr.utm_term.slice(0, 80);
   const referrerDomain = (() => {
     try { return attr.referrer ? new URL(attr.referrer).hostname : ''; } catch { return ''; }
   })();
-  if (referrerDomain) body.referrerDomain = referrerDomain.slice(0, 100);
+  if (referrerDomain) {
+    body.referrerDomain = referrerDomain.slice(0, 100);
+  }
+  body.referrer = (referrerDomain || 'direct').slice(0, 100);
   const landingPath = attr.landingPath ? attr.landingPath.split('?')[0] : '';
   if (landingPath) body.landingPath = landingPath.slice(0, 200);
   if (eventName === 'gumroad_click') {
@@ -287,6 +308,24 @@ export async function trackEvent(eventName: string, payload: AnalyticsPayload = 
     if (allowedPolicyTypes.has(policyType)) body.policyType = policyType;
     if (typeof payload.completed === 'boolean') body.completed = String(payload.completed);
   }
+  if ([
+    'visa_landing_cta_click',
+    'transit_calculator_calculate',
+    'transit_calculator_result_shown',
+    'transit_calculator_plan_cta_click',
+    'free_trip_starter_submit',
+  ].includes(eventName)) {
+    const allowedResultTypes = new Set([
+      'basic_requirements_match',
+      'nationality_not_eligible',
+      'route_pattern_invalid',
+      'nationality_required',
+    ]);
+    const resultType = typeof payload.resultType === 'string' ? payload.resultType : '';
+    const destinationUrl = typeof payload.destinationUrl === 'string' ? payload.destinationUrl : '';
+    if (allowedResultTypes.has(resultType)) body.resultType = resultType;
+    if (destinationUrl.startsWith('/')) body.destinationUrl = destinationUrl.split('?')[0].slice(0, 200);
+  }
   if (eventName === 'homepage_visa_checker_click' || eventName === 'homepage_resource_click') {
     const placement = typeof payload.placement === 'string' ? payload.placement : '';
     const allowedPlacements = new Set(['header_navigation', 'hero_secondary_link', 'planning_tools_section']);
@@ -305,21 +344,22 @@ export async function trackEvent(eventName: string, payload: AnalyticsPayload = 
   }
   if ([
     'campaign_landing_view', 'campaign_primary_cta_click', 'outbound_tool_click',
-    'trip_form_start', 'trip_form_submit',
+    'trip_form_start', 'trip_form_submit', 'free_trip_starter_submit',
+    'visa_landing_cta_click', 'transit_calculator_calculate',
+    'transit_calculator_result_shown', 'transit_calculator_plan_cta_click',
   ].includes(eventName)) {
-    const campaign = getCampaignAttribution();
-    const landingVariant = typeof payload.landingVariant === 'string' ? payload.landingVariant : campaign.landing_variant;
-    const partnerId = typeof payload.partnerId === 'string' ? payload.partnerId : campaign.partner_id;
-    const partnerType = typeof payload.partnerType === 'string' ? payload.partnerType : campaign.partner_type;
+    const landingVariant = typeof payload.landingVariant === 'string' ? payload.landingVariant : campaignAttribution.landing_variant;
+    const partnerId = typeof payload.partnerId === 'string' ? payload.partnerId : campaignAttribution.partner_id;
+    const partnerType = typeof payload.partnerType === 'string' ? payload.partnerType : campaignAttribution.partner_type;
     const destinationPath = typeof payload.destinationPath === 'string' ? payload.destinationPath : '';
     if (landingVariant) body.landingVariant = landingVariant.slice(0, 32);
     if (partnerId) body.partnerId = partnerId.slice(0, 40);
     if (partnerType) body.partnerType = partnerType.slice(0, 24);
-    if (campaign.channel) body.campaignChannel = campaign.channel.slice(0, 40);
-    if (campaign.campaign) body.campaignName = campaign.campaign.slice(0, 120);
+    if (campaignAttribution.channel) body.campaignChannel = campaignAttribution.channel.slice(0, 40);
+    if (campaignAttribution.campaign) body.campaignName = campaignAttribution.campaign.slice(0, 120);
     if (destinationPath && (destinationPath.startsWith('/') || destinationPath.startsWith('#'))) body.destinationPath = destinationPath.split('?')[0].slice(0, 160);
-    if (campaign.first_touch_source) body.firstTouchSource = campaign.first_touch_source.slice(0, 80);
-    if (campaign.last_touch_source) body.lastTouchSource = campaign.last_touch_source.slice(0, 80);
+    if (campaignAttribution.first_touch_source) body.firstTouchSource = campaignAttribution.first_touch_source.slice(0, 80);
+    if (campaignAttribution.last_touch_source) body.lastTouchSource = campaignAttribution.last_touch_source.slice(0, 80);
   }
 
   // Fire-and-forget: analytics failure must never surface to the user.
