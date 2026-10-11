@@ -19,7 +19,8 @@ const checks = [
 for (const [file, route, needles] of checks) {
   const html = await readFile(file, 'utf8');
   if (!html.includes(`https://chinaeasebuddy.com${route}`)) failures.push(`${route} missing canonical`);
-  if (!html.includes('<meta name="robots" content="noindex, follow"')) failures.push(`${route} must be noindex, follow`);
+  const expectedRobots = route === '/partners/china-visa-checker/' ? 'index, follow' : 'noindex, follow';
+  if (!html.includes(`<meta name="robots" content="${expectedRobots}"`)) failures.push(`${route} must be ${expectedRobots}`);
   if ((html.match(/<h1>/g) || []).length !== 1) failures.push(`${route} must contain one static H1`);
   for (const needle of [...needles, ...requiredLinks]) {
     if (!html.includes(needle)) failures.push(`${route} missing ${needle}`);
@@ -34,7 +35,9 @@ for (const [file, route, needles] of checks) {
 
 const sitemap = await readFile('dist/sitemap.xml', 'utf8');
 for (const [, route] of checks) {
-  if (sitemap.includes(`https://chinaeasebuddy.com${route}`)) failures.push(`${route} must be excluded from sitemap`);
+  const included = sitemap.includes(`https://chinaeasebuddy.com${route}`);
+  if (route === '/partners/china-visa-checker/' && !included) failures.push(`${route} must be included in sitemap`);
+  if (route !== '/partners/china-visa-checker/' && included) failures.push(`${route} must be excluded from sitemap`);
 }
 if (sitemap.includes('https://chinaeasebuddy.com/partners/</loc>')) failures.push('obsolete B2B /partners/ URL remains in sitemap');
 
@@ -47,4 +50,4 @@ if (failures.length) {
   console.error(failures.map((item) => `FAIL ${item}`).join('\n'));
   process.exit(1);
 }
-console.log('three traveler campaign landing pages, static links, noindex metadata and sitemap exclusion checks passed');
+console.log('three traveler campaign landing pages, static links, robots metadata and sitemap checks passed');

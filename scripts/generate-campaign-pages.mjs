@@ -114,7 +114,8 @@ for (const page of pages) {
   html = metaTag(html, 'twitter:title', page.title);
   html = metaTag(html, 'twitter:description', page.description);
   html = html.replace(/<meta name="robots"[^>]*>/g, '');
-  html = html.replace('</head>', '    <meta name="robots" content="noindex, follow" />\n</head>');
+  const robots = page.kind === 'visa' ? 'index, follow' : 'noindex, follow';
+  html = html.replace('</head>', `    <meta name="robots" content="${robots}" />\n</head>`);
   html = html.replace(/<div id="root">[\s\S]*<\/div>\s*<\/body>/, `<div id="root">${body}</div>\n  </body>`);
   const target = path.join('dist', page.route);
   await mkdir(target, { recursive: true });

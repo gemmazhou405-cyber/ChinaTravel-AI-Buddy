@@ -5567,8 +5567,10 @@ const permanentRedirectSources = new Set(
     .filter((parts) => parts.length >= 3 && parts.at(-1) === '301')
     .map(([sourcePath]) => sourcePath.replace(/^\//, '').replace(/\/$/, '')),
 );
+const indexableCampaignPages = ['partners/china-visa-checker'];
 const sitemapPages = [''].concat(
   pages.filter((page) => !noindexPages.has(page) && !permanentRedirectSources.has(page)),
+  indexableCampaignPages,
 );
 const homepageLastmod = '2026-09-29';
 const defaultLastmod = '2026-09-26';
@@ -5576,7 +5578,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemapPages.map((page) => `  <url>
     <loc>${page ? pageUrl(page) : `${siteUrl}/`}</loc>
-    <lastmod>${page ? pageMeta[page]?.lastModified || defaultLastmod : homepageLastmod}</lastmod>
+    <lastmod>${page ? pageMeta[page]?.lastModified || (indexableCampaignPages.includes(page) ? '2026-10-11' : defaultLastmod) : homepageLastmod}</lastmod>
   </url>`).join('\n')}
 </urlset>
 `;
