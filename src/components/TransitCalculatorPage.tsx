@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
-import { AlertTriangle, ArrowLeft, Calculator, CheckCircle2, ExternalLink, RotateCcw } from 'lucide-react';
-import { CHECKER_COUNTRY_OPTIONS, OFFICIAL_VISA_SOURCES } from '../data/chinaVisaPolicies';
+import { AlertCircle, AlertTriangle, ArrowLeft, Calculator, CheckCircle2, ExternalLink, RotateCcw } from 'lucide-react';
+import { CHECKER_COUNTRY_OPTIONS, normalizeNationalityToIso, OFFICIAL_VISA_SOURCES } from '../data/chinaVisaPolicies';
 import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
 import { calculateTransitDeadline, type TransitCalculatorResult } from '../lib/transitCalculator';
 
@@ -34,6 +34,7 @@ function setMeta(selector: string, value: string) {
 export default function TransitCalculatorPage() {
   const [arrivalLocal, setArrivalLocal] = useState('');
   const [entryCity, setEntryCity] = useState('');
+  const [passportNationality, setPassportNationality] = useState('');
   const [originRegion, setOriginRegion] = useState('');
   const [onwardRegion, setOnwardRegion] = useState('');
   const [result, setResult] = useState<TransitCalculatorResult | null>(null);
@@ -86,10 +87,11 @@ export default function TransitCalculatorPage() {
     setError('');
     void trackEvent('visa_checker_start', { policyType: 'transit_240_hour', completed: false });
     try {
-      const nextResult = calculateTransitDeadline({ arrivalLocal, entryCity, originRegion, onwardRegion });
+      const passportNationalityCode = passportNationality.trim() ? normalizeNationalityToIso(passportNationality) : '';
+      const nextResult = calculateTransitDeadline({ arrivalLocal, entryCity, passportNationalityCode, originRegion, onwardRegion });
       setResult(nextResult);
       void trackEvent('visa_checker_complete', {
-        resultCategory: nextResult.hasThirdRegionRoutePattern ? 'route_pattern_ok' : 'route_pattern_invalid',
+        resultCategory: nextResult.eligibilityStatus,
         policyType: 'transit_240_hour',
         completed: true,
       });
@@ -103,6 +105,7 @@ export default function TransitCalculatorPage() {
   const reset = () => {
     setArrivalLocal('');
     setEntryCity('');
+    setPassportNationality('');
     setOriginRegion('');
     setOnwardRegion('');
     setResult(null);
@@ -126,6 +129,8 @@ export default function TransitCalculatorPage() {
               <label className="grid gap-2 text-sm font-bold">Arrival date and time in Mainland China<input required type="datetime-local" value={arrivalLocal} onChange={(event) => setArrivalLocal(event.target.value)} className="min-h-12 w-full rounded-xl border border-gray-300 bg-white px-3 text-base font-normal focus:border-[#155e63] focus:outline-none focus:ring-2 focus:ring-[#155e63]/20" /></label>
               <label className="grid gap-2 text-sm font-bold">Entry city<input required list="china-entry-cities" value={entryCity} onChange={(event) => setEntryCity(event.target.value)} placeholder="For example, Shanghai" className="min-h-12 w-full rounded-xl border border-gray-300 bg-white px-3 text-base font-normal focus:border-[#155e63] focus:outline-none focus:ring-2 focus:ring-[#155e63]/20" /><span className="text-xs font-normal leading-5 text-gray-500">A city selection does not confirm that your exact port qualifies.</span></label>
               <datalist id="china-entry-cities"><option value="Beijing" /><option value="Shanghai" /><option value="Guangzhou" /><option value="Shenzhen" /><option value="Chengdu" /><option value="Chongqing" /><option value="Xi'an" /><option value="Hangzhou" /><option value="Nanjing" /><option value="Xiamen" /></datalist>
+              <label className="grid gap-2 text-sm font-bold">Passport nationality<input list="transit-passport-nationalities" value={passportNationality} onChange={(event) => setPassportNationality(event.target.value)} placeholder="Search nationality" autoComplete="off" className="min-h-12 w-full rounded-xl border border-gray-300 bg-white px-3 text-base font-normal focus:border-[#155e63] focus:outline-none focus:ring-2 focus:ring-[#155e63]/20" /><span className="text-xs font-normal leading-5 text-gray-500">Checked against the current public NIA 240-hour policy list.</span></label>
+              <datalist id="transit-passport-nationalities">{CHECKER_COUNTRY_OPTIONS.filter((country) => country.code !== 'CN' && country.code !== 'ZZ').map((country) => <option key={`nationality-${country.code}`} value={country.name} />)}</datalist>
               <label className="grid gap-2 text-sm font-bold">Country or region before Mainland China<select required value={originRegion} onChange={(event) => setOriginRegion(event.target.value)} className="min-h-12 w-full rounded-xl border border-gray-300 bg-white px-3 text-base font-normal focus:border-[#155e63] focus:outline-none focus:ring-2 focus:ring-[#155e63]/20"><option value="">Select origin</option>{CHECKER_COUNTRY_OPTIONS.map((country) => <option key={`origin-${country.code}`} value={country.code}>{country.name}</option>)}</select></label>
               <label className="grid gap-2 text-sm font-bold">Onward country or region after Mainland China<select required value={onwardRegion} onChange={(event) => setOnwardRegion(event.target.value)} className="min-h-12 w-full rounded-xl border border-gray-300 bg-white px-3 text-base font-normal focus:border-[#155e63] focus:outline-none focus:ring-2 focus:ring-[#155e63]/20"><option value="">Select onward destination</option>{CHECKER_COUNTRY_OPTIONS.map((country) => <option key={`onward-${country.code}`} value={country.code}>{country.name}</option>)}</select></label>
             </div>
@@ -142,14 +147,23 @@ export default function TransitCalculatorPage() {
                 <div><dt className="font-semibold text-gray-500">240-hour clock starts</dt><dd className="mt-1 font-bold">{result.clockStartLabel}</dd></div>
                 <div><dt className="font-semibold text-gray-500">Exact 240-hour boundary</dt><dd className="mt-1 font-bold">{result.deadlineExclusiveLabel}</dd></div>
               </dl>
-              <div className={`mt-5 flex items-start gap-3 rounded-2xl border p-4 ${result.hasThirdRegionRoutePattern ? 'border-emerald-200 bg-emerald-50 text-emerald-950' : 'border-amber-200 bg-amber-50 text-amber-950'}`}>
-                {result.hasThirdRegionRoutePattern ? <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" /> : <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />}
-                <p className="text-sm leading-6">{result.hasThirdRegionRoutePattern ? 'Your origin and onward destination form a different-country-or-region route pattern. This does not confirm eligibility.' : 'This route does not show the required third-country or region pattern. A simple return to the same origin does not qualify as transit.'}</p>
+              <div className={`mt-5 flex items-start gap-3 rounded-2xl border p-4 ${result.eligibilityStatus === 'basic_requirements_match' ? 'border-[#155e63]/25 bg-white text-[#123f42]' : result.eligibilityStatus === 'nationality_not_eligible' ? 'border-red-200 bg-red-50 text-red-950' : 'border-amber-200 bg-amber-50 text-amber-950'}`}>
+                {result.eligibilityStatus === 'basic_requirements_match' ? <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#155e63]" aria-hidden="true" /> : result.eligibilityStatus === 'nationality_not_eligible' ? <AlertCircle className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" /> : <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />}
+                <p className="text-sm leading-6">{
+                  result.eligibilityStatus === 'basic_requirements_match'
+                    ? 'Your passport nationality and route pattern appear to match the basic public requirements for China’s 240-hour visa-free transit. This is not a final eligibility decision.'
+                    : result.eligibilityStatus === 'nationality_not_eligible'
+                      ? 'Your passport nationality does not appear to be listed for China’s 240-hour visa-free transit under the current public NIA policy. You may need a Chinese visa or another visa-free policy.'
+                      : result.eligibilityStatus === 'route_pattern_invalid'
+                        ? 'Your origin and onward destination do not appear to form a third-country or third-region transit route.'
+                        : 'Add your passport nationality to check whether this route may fit the 240-hour policy.'
+                }</p>
               </div>
-              <ul className="mt-5 list-disc space-y-2 pl-5 text-sm leading-6 text-gray-700"><li>Use your actual immigration entry record if it differs from the scheduled arrival.</li><li>Verify nationality, ordinary-passport status, onward ticket, designated entry and exit ports, and permitted stay area.</li><li>Do not plan to complete exit inspection at the exact boundary; allow a practical buffer.</li></ul>
-              <a href="/plan/" onClick={() => void trackEvent('visa_checker_cta_click', { resultCategory: result.hasThirdRegionRoutePattern ? 'route_pattern_ok' : 'route_pattern_invalid', policyType: 'transit_240_hour', completed: true })} className="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#0f4c4a] px-5 py-3 text-center font-bold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0f4c4a]">Get my free China trip plan</a>
+              <p className="mt-5 text-sm font-semibold leading-6 text-gray-800">This calculator does not confirm final eligibility.</p>
+              <ul className="mt-2 list-disc space-y-2 pl-5 text-sm leading-6 text-gray-700"><li>Use your actual immigration entry record if it differs from the scheduled arrival.</li><li>Verify passport nationality, ordinary-passport status, designated entry and exit ports, a confirmed onward ticket, permitted stay area, and the actual border inspection decision.</li><li>Do not plan to complete exit inspection at the exact boundary; allow a practical buffer.</li></ul>
+              <a href="/plan/" onClick={() => void trackEvent('visa_checker_cta_click', { resultCategory: result.eligibilityStatus, policyType: 'transit_240_hour', completed: true })} className="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#0f4c4a] px-5 py-3 text-center font-bold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0f4c4a]">Get my free China trip plan</a>
               <button type="button" onClick={reset} className="mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-[#155e63]/25 bg-white px-4 py-2 text-sm font-bold text-[#155e63]"><RotateCcw className="h-4 w-4" aria-hidden="true" /> Calculate another route</button>
-            </> : <div className="flex min-h-[360px] flex-col justify-center"><p className="text-xs font-bold uppercase tracking-[0.14em] text-[#155e63]">Your result</p><h2 className="mt-3 text-2xl font-bold">See the China Standard Time boundary</h2><p className="mt-3 text-sm leading-7 text-gray-600">Complete the four fields to calculate when the official 240-hour clock starts and ends. The result will also flag whether your route follows the basic different-country-or-region pattern.</p><div className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-950"><strong>Important:</strong> The calculator cannot verify your exact port or permitted stay area.</div></div>}
+            </> : <div className="flex min-h-[360px] flex-col justify-center"><p className="text-xs font-bold uppercase tracking-[0.14em] text-[#155e63]">Your result</p><h2 className="mt-3 text-2xl font-bold">See the China Standard Time boundary</h2><p className="mt-3 text-sm leading-7 text-gray-600">Add your route and passport nationality to calculate the 240-hour boundary and compare the basic nationality and third-country-or-region requirements.</p><div className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-950"><strong>Important:</strong> The calculator cannot confirm final eligibility, your exact port or permitted stay area.</div></div>}
           </div>
         </section>
 

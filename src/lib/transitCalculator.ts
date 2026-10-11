@@ -1,9 +1,18 @@
+import { TRANSIT_240_COUNTRY_CODES } from '../data/chinaVisaPolicies.ts';
+
 export type TransitCalculatorInput = {
   arrivalLocal: string;
   entryCity: string;
+  passportNationalityCode: string;
   originRegion: string;
   onwardRegion: string;
 };
+
+export type TransitEligibilityStatus =
+  | 'basic_requirements_match'
+  | 'nationality_not_eligible'
+  | 'route_pattern_invalid'
+  | 'nationality_required';
 
 export type TransitCalculatorResult = {
   clockStartIso: string;
@@ -13,6 +22,8 @@ export type TransitCalculatorResult = {
   deadlineExclusiveLabel: string;
   planningLatestLabel: string;
   hasThirdRegionRoutePattern: boolean;
+  isPassportNationalityEligible: boolean | null;
+  eligibilityStatus: TransitEligibilityStatus;
 };
 
 const CHINA_TIME_ZONE = 'Asia/Shanghai';
@@ -63,6 +74,16 @@ export function calculateTransitDeadline(input: TransitCalculatorInput): Transit
     input.originRegion !== input.onwardRegion &&
     input.originRegion !== 'CN' &&
     input.onwardRegion !== 'CN';
+  const isPassportNationalityEligible = input.passportNationalityCode
+    ? (TRANSIT_240_COUNTRY_CODES as readonly string[]).includes(input.passportNationalityCode)
+    : null;
+  const eligibilityStatus: TransitEligibilityStatus = !hasThirdRegionRoutePattern
+    ? 'route_pattern_invalid'
+    : isPassportNationalityEligible === null
+      ? 'nationality_required'
+      : isPassportNationalityEligible
+        ? 'basic_requirements_match'
+        : 'nationality_not_eligible';
 
   return {
     clockStartIso: clockStart.toISOString(),
@@ -72,5 +93,7 @@ export function calculateTransitDeadline(input: TransitCalculatorInput): Transit
     deadlineExclusiveLabel: formatChinaDateTime(deadlineExclusive),
     planningLatestLabel: formatChinaDateTime(planningLatest),
     hasThirdRegionRoutePattern,
+    isPassportNationalityEligible,
+    eligibilityStatus,
   };
 }
