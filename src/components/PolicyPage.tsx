@@ -6146,7 +6146,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     intro: 'Google services are generally unavailable on ordinary mainland connections, and Google Maps is not designed around current local navigation data. Amap Global now offers English and multilingual navigation for international visitors.',
     metaTitle: 'Does Google Maps Work in China? Use Amap English Instead [2026]',
     metaDescription: 'Google Maps is generally unavailable on ordinary mainland connections. Use Amap Global in English or Apple Maps for accurate China navigation, transit, and ride-hailing.',
-    quickAnswer: 'Download Amap Global before departure and switch to English or another supported language. It provides driving, walking, cycling, public-transit routes, translated place names, traffic information, and ride-hailing. Apple Maps is a practical alternative for many iPhone users. Save your hotel name and address in Chinese as a final backup.',
+    quickAnswer: 'Google Maps is generally unavailable on ordinary mainland China connections, and its local navigation data may be incomplete even if you can open it. Download Amap Global before departure and select English or another supported language; Apple Maps is another option for many iPhone users. Save your hotel address in Chinese and verify the exact entrance or station before you travel.',
     ctaLabel: 'Convert my destination for China maps',
     midCtaLabel: 'Create my navigation backup',
     ctaHref: '/',
