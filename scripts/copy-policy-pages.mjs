@@ -4294,6 +4294,29 @@ const focusedPageContent = {
     "lastModified": "2026-10-13",
     "article": true
   },
+  "what-to-eat-in-china-first-time-guide": {
+    "contentSections": [
+      {
+        "title": "A first-timer tasting list",
+        "items": [
+          "Try jianbing for breakfast, dumplings or noodles for a simple lunch, and a regional dinner.",
+          "Choose Peking duck in Beijing, xiaolongbao around Shanghai, or hot pot in Sichuan and Chongqing when they fit your route.",
+          "Ask about spice, peanuts, pork and shellfish before ordering if relevant to your diet."
+        ]
+      },
+      {
+        "title": "Order without guessing",
+        "items": [
+          "Save dish names in Chinese and show them to the server.",
+          "Check whether portions are shared and whether a menu price is per item or by weight.",
+          "Choose a busy, clearly priced restaurant and keep a translation fallback."
+        ]
+      }
+    ],
+    "lastReviewed": "October 5, 2026",
+    "lastModified": "2026-10-05",
+    "article": true
+  },
   "how-to-use-wechat-as-foreigner-2026": {
     "contentSections": [
       {
@@ -4476,6 +4499,32 @@ const focusedPageContent = {
     "lastModified": "2026-10-13",
     "article": true
   },
+  "how-much-does-china-trip-cost-2026-calculator": {
+    "contentSections": [
+      {
+        "title": "Calculate a planning total",
+        "items": [
+          "Multiply your per-person daily range by the number of travelers and days.",
+          "Add intercity train or flight tickets, international flights, visas where needed, insurance and a contingency separately.",
+          "For two people sharing a room, enter the actual room total instead of doubling the hotel cost."
+        ]
+      },
+      {
+        "title": "Worked examples, excluding major travel",
+        "items": [
+          "Seven budget days at RMB 350–650 per person per day: RMB 2,450–4,550 per person.",
+          "Ten mid-range days at RMB 800–1,500: RMB 8,000–15,000 per person.",
+          "Fourteen comfortable days at RMB 1,800–3,000+: RMB 25,200–42,000+ per person."
+        ]
+      }
+    ],
+    "lastReviewed": "October 5, 2026",
+    "lastModified": "2026-10-05",
+    "article": true,
+    "title": "China Trip Cost 2026: 7, 10 & 14-Day Budget Examples",
+    "heading": "China Trip Cost in 2026: Calculate Your Budget",
+    "description": "Estimate a China trip budget with daily spending ranges and worked 7, 10 and 14-day examples. Add trains, flights, insurance and other costs separately."
+  }
 };
 for (const [slug, content] of Object.entries(focusedPageContent)) {
   Object.assign(pageMeta[slug], content);
