@@ -4258,27 +4258,40 @@ const focusedPageContent = {
     "contentSections": [
       {
         "title": "Badaling or Mutianyu: choose the transport first",
-        "what-to-eat-in-china-first-time-guide": {
-    "contentSections": [
-      {
-        "title": "A first-timer tasting list",
+        "table": {
+          "headers": ["Section", "Independent route", "Trade-off"],
+          "rows": [
+            ["Badaling", "High-speed train from Beijing North or Qinghe to Badaling Great Wall station", "Reserve a suitable return train; popular dates can be crowded"],
+            ["Mutianyu", "Verified tourist bus, public-bus connection, or booked road transfer", "Confirm the scenic-area entrance, shuttle, and return pickup point"]
+          ]
+        },
         "items": [
-          "Try jianbing for breakfast, dumplings or noodles for a simple lunch, and a regional dinner.",
-          "Choose Peking duck in Beijing, xiaolongbao around Shanghai, or hot pot in Sichuan and Chongqing when they fit your route.",
-          "Ask about spice, peanuts, pork and shellfish before ordering if relevant to your diet."
+          "Choose Badaling if simple rail access matters most. Consider Mutianyu if you prefer its walking route and can arrange the more complex transfer.",
+          "Check official admission, operating hours and any cableway or shuttle products for the exact date; do not assume the same arrangements apply every season."
         ]
       },
       {
-        "title": "Order without guessing",
+        "title": "Book an independent day trip step by step",
+        "ordered": true,
         "items": [
-          "Save dish names in Chinese and show them to the server.",
-          "Check whether portions are shared and whether a menu price is per item or by weight.",
-          "Choose a busy, clearly priced restaurant and keep a translation fallback."
+          "Check the train station or bus pickup point against your hotel location; Beijing North and Qinghe are different stations.",
+          "Reserve admission and any required train or bus seat through the official operator or a clearly authorized seller.",
+          "Save the station name, departure time, entrance, and return pickup instructions offline. Carry the passport used for reservations.",
+          "Allow time for ticket checks, any internal shuttle, and a few hours of walking before the return journey."
+        ]
+      },
+      {
+        "title": "Walking, weather and return backups",
+        "items": [
+          "Restored sections still have steep stairs; wear shoes with grip and choose cableway assistance according to your mobility and the day's weather.",
+          "Wind, ice or maintenance may affect cable cars and other facilities. Verify live notices before departure.",
+          "Check the final return train or bus before leaving Beijing. Keep an alternative verified transport option if the planned return is unavailable.",
+          "Avoid unverified private-car offers and closed or unrestored wall sections."
         ]
       }
     ],
     "lastReviewed": "October 5, 2026",
-    "lastModified": "2026-10-05",
+    "lastModified": "2026-10-13",
     "article": true
   },
   "how-to-use-wechat-as-foreigner-2026": {
@@ -4436,32 +4449,33 @@ const focusedPageContent = {
       },
       {
         "title": "Match the city plan to the time available",
-        "how-much-does-china-trip-cost-2026-calculator": {
-    "contentSections": [
-      {
-        "title": "Calculate a planning total",
+        "table": {
+          "headers": ["Time between flights", "Practical scope", "Plan around"],
+          "rows": [
+            ["About 10 hours", "One nearby district only, if entry and transport times permit", "Immigration, baggage, airport-city travel, security and check-in"],
+            ["About 24 hours", "One city with an overnight stay or a carefully planned day", "Hotel registration and airport return transfer"],
+            ["Several days", "A multi-city route only within permitted areas", "Every domestic segment, designated port and onward departure"]
+          ]
+        },
         "items": [
-          "Multiply your per-person daily range by the number of travelers and days.",
-          "Add intercity train or flight tickets, international flights, visas where needed, insurance and a contingency separately.",
-          "For two people sharing a room, enter the actual room total instead of doubling the hotel cost."
+          "Choose one compact area in Beijing or Shanghai for a short stop; do not combine an airport layover with a distant Great Wall excursion.",
+          "Keep a generous return buffer based on the actual airport and terminal, not just the scheduled flight time."
         ]
       },
       {
-        "title": "Worked examples, excluding major travel",
+        "title": "Beijing, Shanghai and onward travel",
         "items": [
-          "Seven budget days at RMB 350–650 per person per day: RMB 2,450–4,550 per person.",
-          "Ten mid-range days at RMB 800–1,500: RMB 8,000–15,000 per person.",
-          "Fourteen comfortable days at RMB 1,800–3,000+: RMB 25,200–42,000+ per person."
+          "Beijing Capital (PEK) and Beijing Daxing (PKX) have different city transfers. Confirm the airport and terminal before choosing a district.",
+          "Shanghai Pudong (PVG) is not in the central city. Check the operating hours and transfer time of your chosen rail or road option.",
+          "Domestic train travel may be possible within the permitted areas, but the route does not override entry-port, onward-ticket or regional conditions.",
+          "Keep your passport, entry documents, hotel details and confirmed onward ticket available during the stopover."
         ]
       }
     ],
     "lastReviewed": "October 5, 2026",
-    "lastModified": "2026-10-05",
-    "article": true,
-    "title": "China Trip Cost 2026: 7, 10 & 14-Day Budget Examples",
-    "heading": "China Trip Cost in 2026: Calculate Your Budget",
-    "description": "Estimate a China trip budget with daily spending ranges and worked 7, 10 and 14-day examples. Add trains, flights, insurance and other costs separately."
-  }
+    "lastModified": "2026-10-13",
+    "article": true
+  },
 };
 for (const [slug, content] of Object.entries(focusedPageContent)) {
   Object.assign(pageMeta[slug], content);
