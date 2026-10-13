@@ -1,8 +1,8 @@
 import { createDoc, getDoc, patchDoc } from '../../_shared/firestore.js';
 
 // GET requests (e.g. Firebase OAuth redirect fallback) go home
-export function onRequestGet() {
-  return Response.redirect('/', 302);
+export function onRequestGet({ request }) {
+  return Response.redirect(new URL('/', request.url).toString(), 302);
 }
 
 export async function onRequestPost({ request, env }) {
