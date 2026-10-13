@@ -3798,7 +3798,7 @@ Object.assign(pageMeta, {
     title: 'How to Visit the Great Wall from Beijing Without a Tour (2026 Guide)',
     heading: 'How to Visit the Great Wall from Beijing Without a Tour',
     description: 'Compare Badaling and Mutianyu Great Wall, transport from Beijing, tickets, walking difficulty, crowds, cable cars, and a realistic independent day trip.',
-    quickAnswer: 'Choose Badaling for the simplest high-speed rail connection or Mutianyu for a scenic day with cable-car, chairlift, and toboggan options. Reserve transport and admission before departure.',
+    quickAnswer: 'You can visit the Great Wall from Beijing without a tour. Badaling has a high-speed train connection from Beijing North or Qinghe to Badaling Great Wall station. Mutianyu usually needs a bus connection or a verified road transfer. Choose your section first, check the official ticket and transport options for your date, and secure a realistic return trip before leaving Beijing.',,
     lastReviewed: 'September 27, 2026',
     lastModified: '2026-09-27',
   },
@@ -3852,7 +3852,7 @@ Object.assign(pageMeta, {
     title: 'Beijing & Shanghai Layover Guide 2026: 240-Hour Visa-Free Transit Explained',
     heading: 'Beijing and Shanghai Layovers: Turn Transit Time into a Real Trip',
     description: 'Plan a Beijing or Shanghai layover with China 240-hour visa-free transit. Check the third-country route, 65 ports, allowed areas, and realistic itineraries.',
-    quickAnswer: 'The 240-hour policy currently covers eligible nationals from 57 countries entering through 65 designated ports in 24 provincial-level areas. A confirmed onward ticket to a different country or region is required, and travel must remain inside permitted areas.',
+    quickAnswer: 'For a short Beijing or Shanghai layover, plan at most one nearby city area after allowing for immigration, airport transport, security and check-in. For a longer stop, eligible ordinary-passport holders may use China\'s 240-hour visa-free transit policy with a confirmed onward ticket to a different country or region, a designated entry and exit port, and travel only within the officially permitted areas. Check the current rules for your exact route before booking.',,
     lastReviewed: 'September 26, 2026',
     lastModified: '2026-09-26',
   },
@@ -4257,27 +4257,8 @@ const focusedPageContent = {
   "how-to-visit-great-wall-from-beijing-2026": {
     "contentSections": [
       {
-        "title": "Pick a section first",
-        "items": [
-          "Compare Mutianyu and Badaling by travel time, walking effort and transport you can actually book.",
-          "Check the operator's current opening, ticket and cableway arrangements.",
-          "Allow for queues and weather rather than stacking a tight evening connection."
-        ]
-      },
-      {
-        "title": "Plan the return",
-        "items": [
-          "Identify your return bus, train or driver arrangement before leaving Beijing.",
-          "Use the exact boarding location and final departure shown by the operator.",
-          "Keep enough time to exit the site and reach the station or pickup point."
-        ]
-      }
-    ],
-    "lastReviewed": "October 5, 2026",
-    "lastModified": "2026-10-05",
-    "article": true
-  },
-  "what-to-eat-in-china-first-time-guide": {
+        "title": "Badaling or Mutianyu: choose the transport first",
+        "what-to-eat-in-china-first-time-guide": {
     "contentSections": [
       {
         "title": "A first-timer tasting list",
@@ -4444,27 +4425,18 @@ const focusedPageContent = {
   "beijing-shanghai-layover-240-hour-guide": {
     "contentSections": [
       {
-        "title": "Confirm the transit route",
+        "title": "Check entry eligibility before planning a city visit",
+        "ordered": true,
         "items": [
-          "Check the official eligibility rules for your passport, entry port and onward country or region.",
-          "Verify the permitted stay area and the tickets on both sides of the stopover.",
-          "Leave enough time for immigration and airport transfers; entry is decided by the authorities."
+          "Check the National Immigration Administration's current eligible-nationality list and confirm you hold the required ordinary passport.",
+          "Confirm your itinerary goes from one country or region through mainland China to a different country or region, with a confirmed onward ticket and departure date.",
+          "Check the designated entry and exit ports and every city or province on your route against the officially permitted areas. A 240-hour allowance is not permission to travel anywhere in China.",
+          "A short connection does not guarantee permission to leave the airport. Verify the applicable entry route with the authorities; final admission is decided at the border."
         ]
       },
       {
-        "title": "Choose a realistic city plan",
-        "items": [
-          "For a short Beijing stop, favor one compact district rather than several distant landmarks.",
-          "For Shanghai, keep a route near one transit line and a flexible return window.",
-          "Book timed attractions only after you know your arrival and departure constraints."
-        ]
-      }
-    ],
-    "lastReviewed": "October 5, 2026",
-    "lastModified": "2026-10-05",
-    "article": true
-  },
-  "how-much-does-china-trip-cost-2026-calculator": {
+        "title": "Match the city plan to the time available",
+        "how-much-does-china-trip-cost-2026-calculator": {
     "contentSections": [
       {
         "title": "Calculate a planning total",
