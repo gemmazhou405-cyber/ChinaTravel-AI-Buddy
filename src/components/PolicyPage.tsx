@@ -18,6 +18,8 @@ import accommodationRegistrationGuide from '../data/seoPages/china-online-accomm
 import visaFreeCheckerGuide from '../data/seoPages/china-visa-free-checker.json';
 import VisaFreeCheckerPage from './VisaFreeCheckerPage';
 import TransitCalculatorPage from './TransitCalculatorPage';
+import TransitAnswerPage from './TransitAnswerPage';
+import { isTransitAnswerSlug, type TransitAnswerSlug } from '../lib/transitAnswers';
 
 type LegalPageType = 'terms' | 'privacy' | 'refund' | 'contact' | 'about' | 'unsubscribe';
 type GuidePageType =
@@ -90,7 +92,7 @@ type GuidePageType =
   | '240-hour-transit-zone-map-high-speed-rail'
   | 'wechat-verification-without-friend-qr-2026'
   | 'faq';
-type PageType = 'pricing' | 'china-240-hour-transit-calculator' | LegalPageType | GuidePageType;
+type PageType = 'pricing' | 'china-240-hour-transit-calculator' | TransitAnswerSlug | LegalPageType | GuidePageType;
 
 interface Props {
   type: PageType;
@@ -7311,6 +7313,8 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/best-time-to-visit-china')) return 'best-time-to-visit-china';
   if (cleanPath.endsWith('/china-sim-card-for-foreigners')) return 'china-sim-card-for-foreigners';
   if (cleanPath.endsWith('/china-240-hour-transit-calculator')) return 'china-240-hour-transit-calculator';
+  const lastSegment = cleanPath.split('/').pop() || '';
+  if (isTransitAnswerSlug(lastSegment)) return lastSegment;
   if (cleanPath.endsWith('/china-240-hour-visa-free-transit-2026')) return 'china-240-hour-visa-free-transit-2026';
   if (cleanPath.endsWith('/tenpaygo-for-tourists')) return 'tenpaygo-for-tourists';
   if (cleanPath.endsWith('/china-visa-free-checker')) return 'china-visa-free-checker';
@@ -7349,6 +7353,7 @@ export default function PolicyPage({ type, userId, onAskBuddy }: Props) {
   if (type === 'pricing') return <PricingPage />;
   if (type === 'china-visa-free-checker') return <VisaFreeCheckerPage />;
   if (type === 'china-240-hour-transit-calculator') return <TransitCalculatorPage />;
+  if (isTransitAnswerSlug(type)) return <TransitAnswerPage slug={type} />;
   if (type in guidePages) return <GuidePage type={type as GuidePageType} userId={userId} onAskBuddy={onAskBuddy} />;
   return <LegalPage type={type as LegalPageType} />;
 }

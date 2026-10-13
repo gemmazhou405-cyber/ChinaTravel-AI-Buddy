@@ -1,0 +1,242 @@
+{
+  "lastUpdated": "October 13, 2026",
+  "lastModified": "2026-10-13",
+  "calculatorPath": "/china-240-hour-transit-calculator/",
+  "officialSource": {
+    "label": "Shanghai Municipal People's Government: 240-hour visa-free transit update (August 20, 2026)",
+    "href": "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20260820/bcaad9737db44e6ab788dfd785832b6b.html"
+  },
+  "niaSource": {
+    "label": "National Immigration Administration: current visa-free transit policy, countries and ports",
+    "href": "https://en.nia.gov.cn/n147418/n147463/c183412/content.html"
+  },
+  "workedExample": {
+    "arrive": "Arrive 15 Oct 22:30",
+    "start": "clock starts 16 Oct 00:00",
+    "leave": "must leave by 25 Oct 23:59",
+    "text": "Arrive 15 Oct 22:30 → clock starts 16 Oct 00:00 → must leave by 25 Oct 23:59"
+  },
+  "pages": [
+    {
+      "slug": "china-240-hour-transit-clock-start",
+      "question": "When does the China 240-hour transit clock start?",
+      "shortLabel": "When does the 240-hour clock start?",
+      "title": "When Does the China 240-Hour Transit Clock Start? (Worked Example)",
+      "description": "The China 240-hour visa-free transit clock starts at 00:00 on the day after you enter, not when you land. Worked example: arrive 15 Oct 22:30, leave by 25 Oct 23:59.",
+      "answer": [
+        "The 240-hour clock starts at 00:00 (midnight, China Standard Time) on the day after you enter mainland China, not at the moment your flight lands.",
+        "So if you arrive on 15 October at 22:30, the clock starts at 00:00 on 16 October and you must leave by 23:59 on 25 October."
+      ],
+      "example": {
+        "title": "Worked example",
+        "intro": "Three travelers land on the same day at very different times. Because the clock only starts at midnight, all three get the same deadline.",
+        "headers": ["Entry into mainland China", "240-hour clock starts", "Latest time to leave"],
+        "rows": [
+          ["15 Oct, 00:10", "16 Oct, 00:00", "25 Oct, 23:59"],
+          ["15 Oct, 22:30", "16 Oct, 00:00", "25 Oct, 23:59"],
+          ["15 Oct, 23:50", "16 Oct, 00:00", "25 Oct, 23:59"]
+        ],
+        "note": "The traveler who lands at 00:10 effectively gets almost a full extra day in China on top of the 240 hours. A late-evening arrival loses nothing either: the arrival day itself is never counted."
+      },
+      "sections": [
+        {
+          "title": "Which time counts: landing or immigration?",
+          "items": [
+            "The date that matters is the date immigration records your entry, not the scheduled landing time on your ticket.",
+            "Scenario: your flight is scheduled to land at 23:30 on 15 October but you clear immigration at 00:20 on 16 October. Your entry date is 16 October, so the clock starts at 00:00 on 17 October and the latest time to leave becomes 23:59 on 26 October.",
+            "All times are China Standard Time (UTC+8), whatever time zone you flew from."
+          ]
+        },
+        {
+          "title": "How the 240 hours run out",
+          "ordered": true,
+          "items": [
+            "Take the date immigration records your entry.",
+            "Start the clock at 00:00 on the next day.",
+            "Add 240 hours, which is exactly 10 days of 24 hours.",
+            "The 240-hour point falls at 00:00 on the eleventh day, so the last minute you can still be in China is 23:59 the night before."
+          ]
+        },
+        {
+          "title": "Leave a buffer",
+          "items": [
+            "Leaving by 23:59 means clearing exit inspection by then, not just having a flight that departs before midnight.",
+            "Book your onward flight earlier on the last day, or on the day before, so a delay or a long security queue does not push you over the limit.",
+            "If the date on your entry record is unclear, ask the border officer or call the China Immigration Service hotline 12367."
+          ]
+        }
+      ],
+      "faqs": [
+        ["Does the day I land count towards the 240 hours?", "No. The arrival day is not counted. The 240 hours begin at 00:00 on the day after your entry is recorded."],
+        ["What if my flight lands just after midnight?", "Then your entry date is that new day, and the clock starts at 00:00 on the following day. Landing at 00:10 on 15 October gives the same deadline as landing at 23:50 on 15 October: leave by 23:59 on 25 October."],
+        ["Is 240 hours the same as 10 days?", "Yes. 240 hours is exactly 10 days of 24 hours, counted from midnight after your entry day. In practice that means 10 full calendar days plus whatever is left of your arrival day."],
+        ["Which time zone is used?", "China Standard Time (UTC+8). Convert your onward flight time to China time when you check the deadline."]
+      ],
+      "sources": ["officialSource", "niaSource"]
+    },
+    {
+      "slug": "china-240-hour-transit-us-citizens",
+      "question": "Can US citizens use China's 240-hour visa-free transit?",
+      "shortLabel": "Can US citizens use 240-hour transit?",
+      "title": "Can US Citizens Use China's 240-Hour Visa-Free Transit? (2026)",
+      "description": "Yes: US citizens with an ordinary passport are on China's 57-country 240-hour transit list, but only if they fly on to a third country or region. A US to China to US trip does not qualify.",
+      "answer": [
+        "Yes. US citizens with an ordinary passport are on China's list of 57 countries eligible for 240-hour visa-free transit, so you can spend up to 240 hours in China without a visa if you fly on to a third country or region.",
+        "The catch is the route: flying US → China → US does not qualify, but US → Shanghai → Tokyo or US → Beijing → Hong Kong can."
+      ],
+      "example": {
+        "title": "Example: Los Angeles → Shanghai → Tokyo",
+        "intro": "A US passport holder flies Los Angeles to Shanghai Pudong, spends a week in Shanghai and Hangzhou, then flies on to Tokyo.",
+        "headers": ["Step", "Detail"],
+        "rows": [
+          ["Lands at Shanghai Pudong", "3 Nov, 14:20 (Pudong is one of the 65 designated ports)"],
+          ["240-hour clock starts", "4 Nov, 00:00"],
+          ["Latest time to leave", "13 Nov, 23:59"],
+          ["Onward ticket", "Confirmed flight Shanghai → Tokyo on 12 Nov, so the route is United States → China → Japan"],
+          ["Result", "Fits the published conditions; the border officer makes the final decision"]
+        ],
+        "note": "If the same traveler instead booked Shanghai → Los Angeles on 12 Nov, the trip would not qualify, because the onward destination is the same country they came from. They would need a Chinese visa."
+      },
+      "sections": [
+        {
+          "title": "What US travelers need at the border",
+          "items": [
+            "An ordinary US passport.",
+            "A confirmed onward ticket (with a date and seat) to a different country or region, departing within 240 hours.",
+            "Entry through one of the 65 designated ports, such as Beijing Capital, Shanghai Pudong, Guangzhou Baiyun or Chengdu Tianfu.",
+            "A plan that keeps you inside the permitted stay areas.",
+            "A permitted purpose: tourism, business, visiting people or transit. Work, study and journalism still need the right visa."
+          ]
+        },
+        {
+          "title": "Why US citizens rely on this route",
+          "items": [
+            "The United States is not on China's 30-day unilateral visa-free list, so a trip that starts and ends in the US needs a Chinese visa.",
+            "240-hour transit is the main way for a US passport holder to visit without a visa, which is why the onward ticket matters so much."
+          ]
+        },
+        {
+          "title": "Hong Kong, Macao and Taiwan count as separate regions",
+          "items": [
+            "For the third-country rule, Hong Kong, Macao and Taiwan count as regions separate from mainland China.",
+            "So Los Angeles → Beijing → Hong Kong can satisfy the route rule, even if you later fly home from Hong Kong."
+          ]
+        }
+      ],
+      "faqs": [
+        ["Can I fly from the US to China and back to the US visa-free?", "No. A US → China → US trip does not meet the third-country rule. You would need a Chinese visa for that itinerary."],
+        ["Does a stop in Hong Kong count as a third region?", "Yes. Hong Kong, Macao and Taiwan count as separate regions for this policy, so US → Shanghai → Hong Kong can qualify."],
+        ["Do US green card holders qualify?", "Eligibility is based on the nationality of your passport, not your residence. A green card holder travelling on a passport from one of the 57 listed countries can qualify; one travelling on a passport from an unlisted country cannot."],
+        ["How long can a US citizen stay?", "Up to 240 hours, counted from 00:00 on the day after entry. Use the calculator to get your exact deadline in China time."]
+      ],
+      "sources": ["officialSource", "niaSource"]
+    },
+    {
+      "slug": "china-240-hour-transit-round-trip-ticket",
+      "question": "Does a round-trip ticket count for China 240-hour transit?",
+      "shortLabel": "Does a round-trip ticket count?",
+      "title": "Does a Round-Trip Ticket Count for China 240-Hour Transit? The Third-Country Rule",
+      "description": "A simple round trip back to where you came from does not qualify for China's 240-hour visa-free transit. It only works if each entry into China is between two different countries or regions.",
+      "answer": [
+        "Not on its own. A round trip that brings you back to the country you came from, such as London → Beijing → London, breaks the third-country rule and does not qualify for 240-hour visa-free transit.",
+        "A round-trip ticket can still work if every time you enter mainland China you arrive from one country or region and leave for a different one, for example London → Beijing → Seoul, then Seoul → Beijing → London."
+      ],
+      "example": {
+        "title": "Route check: which itineraries pass the third-country rule?",
+        "intro": "The rule is always the same: country or region A → mainland China → a different country or region B.",
+        "headers": ["Itinerary", "Passes the rule?", "Why"],
+        "rows": [
+          ["London → Beijing → London", "No", "You leave China for the same country you arrived from"],
+          ["London → Beijing → Seoul", "Yes", "Arrive from the UK, leave for South Korea"],
+          ["London → Shanghai → Hong Kong", "Yes", "Hong Kong counts as a separate region"],
+          ["Round-trip London ⇄ Beijing, plus a separate Beijing ⇄ Seoul ticket: London → Beijing → Seoul → Beijing → London", "Yes, for each entry", "Entry 1 is UK → China → Korea; entry 2 is Korea → China → UK. Each entry is checked on its own and gets its own 240-hour clock"],
+          ["London → Beijing, onward ticket \"open\" or not yet booked", "No", "You need a confirmed onward ticket with a date and seat"]
+        ],
+        "note": "Each entry into mainland China is assessed separately. On the double-entry route above, your second 240 hours start at 00:00 on the day after you re-enter from Seoul."
+      },
+      "sections": [
+        {
+          "title": "What the third-country rule actually checks",
+          "items": [
+            "Where you flew in from immediately before mainland China, and where your confirmed ticket takes you next.",
+            "Those two places must be different countries or regions. Hong Kong, Macao and Taiwan count as regions separate from mainland China.",
+            "Your passport nationality does not matter for this part: a British traveler can fly in from Singapore and on to Japan."
+          ]
+        },
+        {
+          "title": "What your airline will ask for at check-in",
+          "items": [
+            "Airlines usually check the transit conditions before letting you board, so carry a printout or screenshot of the onward booking.",
+            "The onward ticket must have a confirmed date and seat and depart within your 240 hours.",
+            "If your trip uses connections in other countries, ask the airline how they read your route before you pay. Complex routes can be judged case by case, and the border officer has the final say."
+          ]
+        },
+        {
+          "title": "If your trip is a simple round trip",
+          "items": [
+            "Check whether your passport qualifies for China's 30-day visa-free entry instead, which does not need a third country.",
+            "If it does not, either add a genuine third-country leg (for example a few days in Seoul, Tokyo or Hong Kong) or apply for a Chinese visa."
+          ]
+        }
+      ],
+      "faqs": [
+        ["Can I use a round-trip ticket for China 240-hour transit?", "Only if each entry into mainland China is between two different countries or regions. London → Beijing → London does not qualify; London → Beijing → Seoul → Beijing → London can, with each entry checked separately."],
+        ["Does Hong Kong count as a third country?", "Yes. For this policy, Hong Kong, Macao and Taiwan count as regions separate from mainland China, so arriving from London and leaving for Hong Kong passes the rule."],
+        ["Is an open or flexible onward ticket enough?", "No. You need a confirmed onward ticket with a date and seat that leaves within the 240 hours."],
+        ["Do I get a new 240 hours if I re-enter China?", "Each entry is assessed on its own. If the second entry also meets all the conditions, its clock starts at 00:00 on the day after that entry."]
+      ],
+      "sources": ["officialSource", "niaSource"]
+    },
+    {
+      "slug": "china-240-hour-transit-ports-provinces",
+      "question": "Which ports can I enter through for China 240-hour transit, and can I travel outside that province?",
+      "shortLabel": "Which ports, and can I leave the province?",
+      "title": "China 240-Hour Transit Ports: Can You Travel Outside the Province? (65 Ports)",
+      "description": "Enter through one of 65 designated ports in 24 provincial-level regions. You can travel across provinces, but only inside the permitted stay areas; some regions only allow named cities.",
+      "answer": [
+        "You must enter through one of 65 designated ports (international airports, seaports and rail ports) in 24 provincial-level regions, including Beijing Capital and Daxing, Shanghai Pudong and Hongqiao, Guangzhou Baiyun and Chengdu Tianfu.",
+        "Yes, you can travel outside the province you entered, but only within the permitted stay areas of those 24 regions; some regions only allow specific cities, and everywhere else is off-limits."
+      ],
+      "example": {
+        "title": "Two routes, two answers",
+        "intro": "Read the port and the permitted area together for every place you plan to sleep or visit.",
+        "headers": ["Planned route", "Allowed?", "Why"],
+        "rows": [
+          ["Enter Shanghai Pudong → high-speed train to Hangzhou (Zhejiang) → fly out of Hangzhou Xiaoshan to Seoul", "Yes", "Shanghai and Zhejiang are both permitted areas, and both airports are designated ports"],
+          ["Enter Beijing Capital → train to Taiyuan (Shanxi) → day trip to Pingyao Ancient City", "No for Pingyao", "In Shanxi only Taiyuan and Datong are permitted; Pingyao is in Jinzhong, outside the permitted area"],
+          ["Enter Chengdu Tianfu → visit Leshan Giant Buddha", "Yes", "Leshan is one of the Sichuan cities in the permitted area"],
+          ["Enter Guangzhou Baiyun → fly to Lhasa", "No", "Tibet is not one of the 24 regions in the policy"]
+        ],
+        "note": "Plan your exit through a designated port too. Using a different designated port to leave than the one you entered through is common on multi-city routes, but confirm your exact combination with the 12367 hotline before booking."
+      },
+      "sections": [
+        {
+          "title": "Regions where only certain cities are allowed",
+          "items": [
+            "Shanxi: Taiyuan and Datong only.",
+            "Heilongjiang: Harbin only.",
+            "Jiangxi: Nanchang and Jingdezhen only.",
+            "Guangxi: Nanning, Liuzhou, Guilin, Wuzhou, Beihai, Fangchenggang, Qinzhou, Guigang, Yulin, Hezhou, Hechi and Laibin.",
+            "Sichuan: Chengdu, Zigong, Luzhou, Deyang, Suining, Neijiang, Leshan, Yibin, Ya'an, Meishan and Ziyang.",
+            "Yunnan: Kunming, Yuxi, Chuxiong, Honghe, Wenshan, Pu'er, Xishuangbanna, Dali and Lijiang.",
+            "In the other 18 regions, the whole province or municipality is permitted."
+          ]
+        },
+        {
+          "title": "Regions not covered at all",
+          "items": [
+            "Seven provincial-level regions are not part of the policy: Inner Mongolia, Jilin, Tibet, Gansu, Qinghai, Ningxia and Xinjiang. You cannot enter, stay overnight or travel there on 240-hour transit."
+          ]
+        }
+      ],
+      "portsTable": true,
+      "faqs": [
+        ["Can I enter China for 240-hour transit at any international airport?", "No. Only the 65 designated ports listed for the policy qualify, in 24 provincial-level regions. Check the exact airport, seaport or rail port before booking."],
+        ["Can I travel to another province during 240-hour transit?", "Yes, as long as every place you visit is inside the permitted stay areas of the 24 regions. Some regions, such as Shanxi, Heilongjiang and Jiangxi, only permit named cities."],
+        ["Can I enter and leave through different airports?", "Multi-city routes often use a different designated port to leave, for example arriving in Shanghai and leaving from Hangzhou. Both must be designated ports; confirm your exact plan with the 12367 hotline."],
+        ["Can I visit Tibet or Xinjiang on 240-hour transit?", "No. Tibet, Xinjiang, Inner Mongolia, Jilin, Gansu, Qinghai and Ningxia are not covered by the policy."]
+      ],
+      "sources": ["officialSource", "niaSource"]
+    }
+  ]
+}

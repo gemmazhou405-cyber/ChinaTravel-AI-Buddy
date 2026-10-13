@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { AlertCircle, AlertTriangle, ArrowLeft, Calculator, CheckCircle2, ExternalLink, RotateCcw } from 'lucide-react';
-import { CHECKER_COUNTRY_OPTIONS, normalizeNationalityToIso, OFFICIAL_VISA_SOURCES } from '../data/chinaVisaPolicies';
+import { CHECKER_COUNTRY_OPTIONS, normalizeNationalityToIso, OFFICIAL_VISA_SOURCES, TRANSIT_240_COUNTRY_CODES } from '../data/chinaVisaPolicies';
+import transitAnswers from '../data/transitAnswers.json';
+import transit240Guide from '../data/seoPages/china-240-hour-visa-free-transit-2026.json';
 import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
 import { COMMON_TRANSIT_ROUTE_EXAMPLES, calculateTransitDeadline, type TransitCalculatorResult, type TransitRouteExample } from '../lib/transitCalculator';
 
@@ -8,7 +10,19 @@ const siteUrl = 'https://chinaeasebuddy.com';
 const path = '/china-240-hour-transit-calculator/';
 const title = 'China 240-Hour Transit Calculator: Latest Departure Time';
 const description = 'Calculate the latest departure time under China’s 240-hour visa-free transit clock, then verify your nationality, port, route and permitted stay area.';
-const lastVerified = 'October 11, 2026';
+const lastVerified = transitAnswers.lastUpdated;
+
+// Policy facts shown on the page, derived from the data files so the numbers cannot drift from the lists.
+const portRows = (transit240Guide.contentSections.find((section) => 'table' in section && section.title.includes('ports')) as { table: { rows: string[][] } }).table.rows;
+const ELIGIBLE_COUNTRY_COUNT = TRANSIT_240_COUNTRY_CODES.length; // 57, including Vietnam and Kyrgyzstan (added August 2026)
+const DESIGNATED_PORT_COUNT = portRows.length; // 65
+const PROVINCE_COUNT = new Set(portRows.map((row) => row[0])).size; // 24
+
+// Links shown under every result: the four answer pages plus the Alipay guide.
+const RESULT_LINKS: [string, string][] = [
+  ...transitAnswers.pages.map((page): [string, string] => [page.shortLabel, `/${page.slug}/`]),
+  ['Set up Alipay before you land', '/alipay-for-foreigners/'],
+];
 
 const faqs = [
   ['When does the 240-hour clock start?', 'Under the current National Immigration Administration rule, the 240-hour period is calculated from 00:00 on the day after entry. This calculator uses China Standard Time. Your immigration record and the border authority’s calculation control, so leave a practical buffer before the displayed boundary.'],
@@ -66,7 +80,7 @@ export default function TransitCalculatorPage() {
     schema.textContent = JSON.stringify({
       '@context': 'https://schema.org',
       '@graph': [
-        { '@type': 'WebPage', '@id': `${siteUrl}${path}#webpage`, url: `${siteUrl}${path}`, name: title, description, dateModified: '2026-10-11' },
+        { '@type': 'WebPage', '@id': `${siteUrl}${path}#webpage`, url: `${siteUrl}${path}`, name: title, description, dateModified: transitAnswers.lastModified },
         { '@type': 'WebApplication', '@id': `${siteUrl}${path}#application`, name: 'China 240-Hour Transit Calculator', url: `${siteUrl}${path}`, applicationCategory: 'TravelApplication', operatingSystem: 'Web', description, offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
         { '@type': 'BreadcrumbList', '@id': `${siteUrl}${path}#breadcrumb`, itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
@@ -132,6 +146,11 @@ export default function TransitCalculatorPage() {
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#155e63]">Free planning tool · Last policy check {lastVerified}</p>
           <h1 className="mt-3 font-display text-4xl leading-tight text-gray-950 md:text-6xl">China 240-Hour Visa-Free Transit Calculator</h1>
           <p className="mt-4 text-base leading-7 text-gray-600 md:text-lg">Enter your planned arrival and route to calculate the 240-hour clock in China Standard Time. This is a timing tool, not an eligibility or admission decision.</p>
+          <ul aria-label="Current policy at a glance" className="mt-5 flex flex-wrap gap-2 text-sm font-semibold text-[#123f42]">
+            <li className="rounded-full border border-[#155e63]/20 bg-white px-3 py-1.5">{ELIGIBLE_COUNTRY_COUNT} eligible countries, including Vietnam and Kyrgyzstan (added August 2026)</li>
+            <li className="rounded-full border border-[#155e63]/20 bg-white px-3 py-1.5">{DESIGNATED_PORT_COUNT} designated ports in {PROVINCE_COUNT} provincial-level regions</li>
+            <li className="rounded-full border border-[#155e63]/20 bg-white px-3 py-1.5">Clock starts 00:00 the day after entry</li>
+          </ul>
         </header>
 
         <section className="mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start" aria-labelledby="calculator-title">
@@ -175,6 +194,14 @@ export default function TransitCalculatorPage() {
               <ul className="mt-2 list-disc space-y-2 pl-5 text-sm leading-6 text-gray-700"><li>Use your actual immigration entry record if it differs from the scheduled arrival.</li><li>Verify passport nationality, ordinary-passport status, designated entry and exit ports, a confirmed onward ticket, permitted stay area, and the actual border inspection decision.</li><li>Do not plan to complete exit inspection at the exact boundary; allow a practical buffer.</li></ul>
               <a href="/plan/" onClick={() => { void trackEvent('visa_checker_cta_click', { resultCategory: result.eligibilityStatus, policyType: 'transit_240_hour', completed: true }); void trackEvent('transit_calculator_plan_cta_click', { resultType: result.eligibilityStatus, destinationUrl: '/plan/' }); }} className="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#0f4c4a] px-5 py-3 text-center font-bold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0f4c4a]">Get my free China trip plan</a>
               <button type="button" onClick={reset} className="mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-[#155e63]/25 bg-white px-4 py-2 text-sm font-bold text-[#155e63]"><RotateCcw className="h-4 w-4" aria-hidden="true" /> Calculate another route</button>
+              <nav aria-label="Questions about your result" className="mt-6 border-t border-[#155e63]/15 pt-5">
+                <h3 className="text-sm font-bold uppercase tracking-[0.12em] text-[#155e63]">Questions about your result</h3>
+                <ul className="mt-3 grid gap-2 text-sm">
+                  {RESULT_LINKS.map(([label, href]) => (
+                    <li key={href}><a href={href} onClick={() => void trackEvent('transit_calculator_result_link_click', { destinationUrl: href })} className="font-semibold text-[#155e63] underline underline-offset-4">{label}</a></li>
+                  ))}
+                </ul>
+              </nav>
             </> : <div className="flex min-h-[360px] flex-col justify-center"><p className="text-xs font-bold uppercase tracking-[0.14em] text-[#155e63]">Your result</p><h2 className="mt-3 text-2xl font-bold">See the China Standard Time boundary</h2><p className="mt-3 text-sm leading-7 text-gray-600">Add your route and passport nationality to calculate the 240-hour boundary and compare the basic nationality and third-country-or-region requirements.</p><div className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-950"><strong>Important:</strong> The calculator cannot confirm final eligibility, your exact port or permitted stay area.</div></div>}
           </div>
         </section>
@@ -199,11 +226,28 @@ export default function TransitCalculatorPage() {
           </div>
         </section>
 
+        <section className="mt-10 rounded-3xl border border-[#155e63]/15 bg-white p-5 md:p-7" aria-labelledby="worked-example">
+          <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#155e63]">Worked example</p>
+          <h2 id="worked-example" className="mt-2 text-2xl font-bold">How the clock works on a late arrival</h2>
+          <p className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-lg font-bold text-[#123f42]">
+            <span>{transitAnswers.workedExample.arrive}</span><span aria-hidden="true">→</span>
+            <span>{transitAnswers.workedExample.start}</span><span aria-hidden="true">→</span>
+            <span className="text-[#155e63]">{transitAnswers.workedExample.leave}</span>
+          </p>
+          <p className="mt-3 text-sm leading-6 text-gray-600">The arrival day is never counted. Landing at 00:10 or at 23:50 on 15 October gives the same deadline. <a href="/china-240-hour-transit-clock-start/" className="font-semibold text-[#155e63] underline underline-offset-4">When does the 240-hour clock start?</a></p>
+        </section>
+
         <section className="mt-10 grid gap-5 md:grid-cols-2" aria-labelledby="how-it-works"><div className="rounded-2xl border border-gray-200 bg-white p-5"><h2 id="how-it-works" className="text-xl font-bold">How the calculation works</h2><ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-7 text-gray-600"><li>Read the local arrival date in Mainland China.</li><li>Start the clock at 00:00 on the following day.</li><li>Add 240 hours using China Standard Time.</li><li>Display one minute before the boundary as the latest planning time.</li></ol></div><div className="rounded-2xl border border-gray-200 bg-white p-5"><h2 className="text-xl font-bold">What you still need to verify</h2><ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-7 text-gray-600"><li>Your nationality is on the current eligible list.</li><li>Your entry and exit points are designated ports.</li><li>Your route continues to a different country or region.</li><li>Your travel remains inside the permitted area.</li></ul></div></section>
 
         <section className="mt-10" aria-labelledby="transit-faq"><h2 id="transit-faq" className="text-2xl font-bold">Frequently asked questions</h2><div className="mt-4 grid gap-4 md:grid-cols-2">{faqs.map(([question, answer]) => <article key={question} className="rounded-2xl border border-gray-200 bg-white p-5"><h3 className="font-bold">{question}</h3><p className="mt-2 text-sm leading-6 text-gray-600">{answer}</p></article>)}</div></section>
 
         <section className="mt-10 border-t border-gray-300 pt-6"><h2 className="text-xl font-bold">Official source and related checks</h2><div className="mt-4 flex flex-wrap gap-3"><a href={OFFICIAL_VISA_SOURCES.transit240} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-[#155e63]/25 bg-white px-4 py-2 text-sm font-bold text-[#155e63]">NIA 240-hour transit policy <ExternalLink className="h-4 w-4" aria-hidden="true" /></a><a href="/china-240-hour-visa-free-transit-2026/" className="inline-flex min-h-11 items-center rounded-xl border border-[#155e63]/25 bg-white px-4 py-2 text-sm font-bold text-[#155e63]">Read the full transit guide</a><a href="/china-visa-free-checker/" className="inline-flex min-h-11 items-center rounded-xl border border-[#155e63]/25 bg-white px-4 py-2 text-sm font-bold text-[#155e63]">Check visa-free policies</a></div><p className="mt-5 max-w-3xl text-sm leading-6 text-gray-500">Policy and port practice can change. Confirm the latest official rules before booking. Chinese border inspection authorities make the final admission and temporary-entry decision.</p></section>
+
+        <nav className="mt-10" aria-labelledby="transit-questions"><h2 id="transit-questions" className="text-xl font-bold">240-hour transit questions</h2><ul className="mt-3 grid gap-2 text-sm sm:grid-cols-2">{RESULT_LINKS.map(([label, href]) => <li key={`q-${href}`}><a href={href} className="font-semibold text-[#155e63] underline underline-offset-4">{label}</a></li>)}</ul></nav>
+
+        <footer className="mt-10 border-t border-gray-300 pt-6 text-sm leading-6 text-gray-600">
+          <p>Last updated: {lastVerified}. Official source: <a href={transitAnswers.officialSource.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#155e63] underline underline-offset-4">{transitAnswers.officialSource.label}</a></p>
+        </footer>
       </div>
     </main>
   );

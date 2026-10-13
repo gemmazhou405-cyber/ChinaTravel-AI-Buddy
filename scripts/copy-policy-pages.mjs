@@ -17,6 +17,8 @@ const transit240Guide = JSON.parse(await readFile('src/data/seoPages/china-240-h
 const tenPayGoGuide = JSON.parse(await readFile('src/data/seoPages/tenpaygo-for-tourists.json', 'utf8'));
 const accommodationRegistrationGuide = JSON.parse(await readFile('src/data/seoPages/china-online-accommodation-registration-12367.json', 'utf8'));
 const visaFreeCheckerGuide = JSON.parse(await readFile('src/data/seoPages/china-visa-free-checker.json', 'utf8'));
+// 240-hour transit question pages; the same file feeds src/components/TransitAnswerPage.tsx
+const transitAnswers = JSON.parse(await readFile('src/data/transitAnswers.json', 'utf8'));
 
 const pageMeta = {
   plan: {
@@ -4037,15 +4039,38 @@ pageMeta['china-visa-free-checker'] = {
   application: true,
 };
 
+const transit240PortRows = transit240Guide.contentSections.find((section) => section.table && section.title.includes('ports')).table.rows;
+const transit240CountryCount = transit240Guide.contentSections
+  .find((section) => section.countryGroups)
+  .countryGroups.reduce((total, group) => total + group.countries.length, 0);
+const transit240ProvinceCount = new Set(transit240PortRows.map((row) => row[0])).size;
+const transitAnswerLinks = transitAnswers.pages.map((page) => [page.question, `/${page.slug}/`]);
+
 pageMeta['china-240-hour-transit-calculator'] = {
   heading: 'China 240-Hour Visa-Free Transit Calculator',
   title: 'China 240-Hour Transit Calculator: Latest Departure Time',
   description: 'Calculate the latest departure time under China’s 240-hour visa-free transit clock, then verify your nationality, port, route and permitted stay area.',
   quickAnswer: 'Enter your passport nationality, local arrival date and time, entry city, origin, and onward destination. Under the current National Immigration Administration rule, the 240-hour period starts at 00:00 on the day after entry. The calculator checks the published nationality list and basic third-country route pattern, but it does not confirm final eligibility, a designated port or a permitted stay area.',
-  lastReviewed: 'October 11, 2026',
-  lastModified: '2026-10-11',
+  lastReviewed: transitAnswers.lastUpdated,
+  lastModified: transitAnswers.lastModified,
+  lastUpdatedFooter: true,
   application: true,
   contentSections: [
+    {
+      title: 'Current policy at a glance',
+      items: [
+        `${transit240CountryCount} eligible countries, including Vietnam and Kyrgyzstan (added August 2026).`,
+        `${transit240PortRows.length} designated ports in ${transit240ProvinceCount} provincial-level regions.`,
+        'The 240-hour clock starts at 00:00 on the day after entry, in China Standard Time.',
+      ],
+    },
+    {
+      title: 'Worked example',
+      items: [
+        transitAnswers.workedExample.text,
+        'The arrival day is never counted. Landing at 00:10 or at 23:50 on 15 October gives the same deadline.',
+      ],
+    },
     {
       title: 'Common route examples',
       items: [
@@ -4089,9 +4114,95 @@ pageMeta['china-240-hour-transit-calculator'] = {
     ['Which time zone does the calculator use?', 'All results use China Standard Time, UTC+8. The date and time you enter should be the local scheduled arrival time in Mainland China. Flight changes, immigration processing and the actual entry record can affect planning, so do not schedule departure at the exact final minute.'],
   ],
   sourceLinks: [
+    [transitAnswers.officialSource.label, transitAnswers.officialSource.href],
     ['National Immigration Administration: 240-hour visa-free transit policy', 'https://en.nia.gov.cn/n147418/n147463/c183412/content.html'],
   ],
 };
+
+// ---- 240-hour transit answer pages: one question each, answer in the first two sentences ----
+function transitAnswerBody(page) {
+  const others = transitAnswers.pages.filter((item) => item.slug !== page.slug);
+  const sources = page.sources.map((key) => transitAnswers[key]);
+  const linkStyle = 'color: #155e63; font-weight: 700; text-underline-offset: 4px;';
+  const cta = `<p style="margin: 20px 0;"><a href="${escapeAttr(transitAnswers.calculatorPath)}" style="display: flex; justify-content: space-between; gap: 12px; border-radius: 18px; background: #155e63; color: #fffdf8; padding: 16px 20px; font-weight: 700; text-decoration: none;">Calculate your exact 240-hour deadline <span aria-hidden="true">&rarr;</span></a></p>`;
+  const table = (headers, rows, minWidth = 520) => `
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; min-width: ${minWidth}px; border-collapse: collapse; background: #fff; color: #536365; font-size: 0.92rem;">
+            <thead><tr>${headers.map((header) => `<th scope="col" style="border-bottom: 2px solid rgba(21, 94, 99, 0.2); padding: 10px; text-align: left; color: #122022;">${escapeHtml(header)}</th>`).join('')}</tr></thead>
+            <tbody>${rows.map((row) => `<tr>${row.map((cell) => `<td style="border-bottom: 1px solid rgba(21, 94, 99, 0.1); padding: 10px; vertical-align: top;">${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody>
+          </table>
+        </div>`;
+  const portGroups = new Map();
+  for (const [province, port, area] of transit240PortRows) {
+    const group = portGroups.get(province) || { ports: [], area };
+    group.ports.push(port);
+    portGroups.set(province, group);
+  }
+  return `
+    <main id="static-seo-content" style="max-width: 768px; margin: 0 auto; padding: 32px 20px 48px; color: #122022; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+      <article>
+        <p style="margin: 0 0 18px;"><a href="${escapeAttr(transitAnswers.calculatorPath)}" style="${linkStyle}">&larr; 240-hour transit calculator</a></p>
+        <p style="margin: 0 0 10px; color: #155e63; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;">China 240-hour visa-free transit &middot; Updated ${escapeHtml(transitAnswers.lastUpdated)}</p>
+        <h1 style="margin: 0 0 20px; font-size: clamp(1.9rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.02em;">${escapeHtml(page.question)}</h1>
+        <section aria-labelledby="short-answer" style="padding: 22px; border: 1px solid rgba(21, 94, 99, 0.2); border-radius: 22px; background: #fffdf8;">
+          <h2 id="short-answer" style="margin: 0; color: #155e63; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;">Short answer</h2>
+          ${page.answer.map((sentence) => `<p style="margin: 12px 0 0; font-size: 1.12rem; line-height: 1.7;">${escapeHtml(sentence)}</p>`).join('')}
+        </section>
+        ${cta}
+        <section aria-labelledby="worked-example" style="margin: 28px 0; padding: 22px; border-radius: 22px; background: #edf5f2;">
+          <h2 id="worked-example" style="margin: 0 0 8px; font-size: 1.4rem;">${escapeHtml(page.example.title)}</h2>
+          <p style="margin: 0 0 14px; color: #536365; line-height: 1.6;">${escapeHtml(page.example.intro)}</p>
+          ${table(page.example.headers, page.example.rows)}
+          <p style="margin: 14px 0 0; color: #536365; line-height: 1.6;">${escapeHtml(page.example.note)}</p>
+        </section>
+        ${page.sections.map((section, index) => `
+        <section aria-labelledby="answer-section-${index}" style="margin: 28px 0;">
+          <h2 id="answer-section-${index}" style="margin: 0 0 10px; font-size: 1.4rem;">${escapeHtml(section.title)}</h2>
+          <${section.ordered ? 'ol' : 'ul'} style="margin: 0; padding-left: 20px; color: #536365; line-height: 1.8;">${section.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</${section.ordered ? 'ol' : 'ul'}>
+        </section>`).join('')}
+        ${page.portsTable ? `
+        <section aria-labelledby="ports-table" style="margin: 28px 0;">
+          <h2 id="ports-table" style="margin: 0 0 12px; font-size: 1.4rem;">All ${transit240PortRows.length} designated ports by region</h2>
+          ${table(['Province or region', 'Designated ports', 'Where you may travel in this region'], [...portGroups.entries()].map(([province, group]) => [province, group.ports.join('; '), group.area]), 640)}
+        </section>` : ''}
+        <section aria-labelledby="answer-faq" style="margin: 32px 0;">
+          <h2 id="answer-faq" style="margin: 0 0 12px; font-size: 1.4rem;">Related questions</h2>
+          ${page.faqs.map(([question, answer]) => `
+          <div style="margin: 0 0 12px; padding: 18px; border: 1px solid rgba(21, 94, 99, 0.12); border-radius: 18px; background: #fff;">
+            <h3 style="margin: 0 0 8px; font-size: 1rem;">${escapeHtml(question)}</h3>
+            <p style="margin: 0; color: #536365; line-height: 1.7;">${escapeHtml(answer)}</p>
+          </div>`).join('')}
+        </section>
+        ${cta}
+        <nav aria-labelledby="more-answers" style="margin: 32px 0;">
+          <h2 id="more-answers" style="margin: 0 0 10px; font-size: 1.2rem;">More 240-hour transit answers</h2>
+          <ul style="margin: 0; padding-left: 20px; line-height: 1.9;">
+            ${others.map((item) => `<li><a href="/${escapeAttr(item.slug)}/" style="${linkStyle}">${escapeHtml(item.question)}</a></li>`).join('')}
+            <li><a href="/china-240-hour-visa-free-transit-2026/" style="${linkStyle}">Full guide: China 240-hour visa-free transit (57 countries, 65 ports)</a></li>
+          </ul>
+        </nav>
+        <footer style="margin: 32px 0 0; padding-top: 20px; border-top: 1px solid rgba(18, 32, 34, 0.15); color: #536365; line-height: 1.7; font-size: 0.92rem;">
+          <h2 style="margin: 0 0 8px; color: #122022; font-size: 1rem;">Official sources</h2>
+          <ul style="margin: 0 0 12px; padding-left: 20px;">${sources.map((source) => `<li><a href="${escapeAttr(source.href)}" rel="noopener noreferrer" style="${linkStyle}">${escapeHtml(source.label)}</a></li>`).join('')}</ul>
+          <p style="margin: 0;">Last updated: ${escapeHtml(transitAnswers.lastUpdated)}. Rules can change; Chinese border inspection makes the final decision on entry.</p>
+        </footer>
+      </article>
+    </main>
+  `;
+}
+
+for (const page of transitAnswers.pages) {
+  pageMeta[page.slug] = {
+    heading: page.question,
+    title: page.title,
+    description: page.description,
+    lastReviewed: transitAnswers.lastUpdated,
+    lastModified: transitAnswers.lastModified,
+    // FAQPage JSON-LD: the page's own question with its two-sentence answer, then the related questions
+    faqs: [[page.question, page.answer.join(' ')], ...page.faqs],
+    customBody: transitAnswerBody(page),
+  };
+}
 
 
 // Give focused search pages their own answer instead of reusing a broader guide's sections.
@@ -5344,6 +5455,8 @@ const pageRelatedLinks = {
     ['First trip to China', '/first-trip-to-china/'],
   ],
   'china-240-hour-transit-calculator': [
+    ...transitAnswerLinks,
+    ['Alipay for foreigners: set up before you land', '/alipay-for-foreigners/'],
     ['240-hour transit guide', '/china-240-hour-visa-free-transit-2026/'],
     ['China visa-free checker', '/china-visa-free-checker/'],
     ['China airport arrival guide', '/china-airport-arrival-guide/'],
@@ -5533,6 +5646,7 @@ function staticPageContent(page, meta) {
         </ul>
       </section>
       <p style="margin: 0; color: #6b7678; font-size: 0.9rem; line-height: 1.7;">${escapeHtml(standardDisclaimer)}</p>
+      ${meta.lastUpdatedFooter && meta.sourceLinks ? `<p style="margin: 16px 0 0; color: #536365; font-size: 0.9rem; line-height: 1.7;">Last updated: ${escapeHtml(meta.lastReviewed)}. Official source: <a href="${escapeAttr(meta.sourceLinks[0][1])}" style="color: #155e63;">${escapeHtml(meta.sourceLinks[0][0])}</a></p>` : ''}
     </main>
   `;
 }
