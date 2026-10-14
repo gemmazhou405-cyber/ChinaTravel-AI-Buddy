@@ -140,6 +140,9 @@ const LONG_DAY_TRIP_RE = /great wall|mutianyu|badaling|jinshanling|simatai|jiank
 const BANNED_SENTENCE_RE = /\bvpns?\b|virtual private network|covid|coronavirus|pandemic|\bpcr\b|health code|quarantine|nucleic acid/i;
 const ABSOLUTE_RE = /\bguarantee[sd]?\b|\b100\s?%|\bnever sells? out\b|\balways open\b|\bno risk\b|\brisk-free\b/i;
 const FORBIDDEN_CITY_RE = /forbidden city|palace museum/i;
+const TIANANMEN_RE = /tian'?anmen square|天安门广场/i;
+// Meals are not activities: they never count towards the travel-day limit and are never "optional".
+const MEAL_RE = /\b(breakfast|brunch|lunch|dinner|supper)\b/i;
 const ACTIVITY_FIELDS = ['morning', 'afternoon', 'evening', 'transport', 'food', 'notes'];
 
 function cleanSentences(text) {
@@ -239,6 +242,32 @@ function swapWholeDays(days, i, j) {
   return [buildDay(days[i], a, b), buildDay(days[j], b, a)];
 }
 
+/**
+ * Tiananmen Square needs a real-name booking made at least a day ahead, which is hard to do
+ * before arriving, so it never stays on the arrival day. It moves to the first non-travel day,
+ * preferably the Forbidden City day (the two are next to each other).
+ */
+function moveTiananmenOffArrivalDay(days) {
+  if (days.length < 3) return null;
+  const arrival = days[0];
+  const fields = [...SLOT_FIELDS, 'optional'].filter((field) => TIANANMEN_RE.test(arrival[field] || ''));
+  if (!fields.length) return null;
+  const middle = days.map((_, index) => index).slice(1, -1).filter((index) => sameCity(days[index], arrival));
+  const pool = middle.length ? middle : days.map((_, index) => index).slice(1, -1);
+  const target = pool.find((index) => FORBIDDEN_CITY_RE.test(dayActivityText(days[index]))) ?? pool[0];
+  const day = days[target];
+  for (const field of fields) {
+    const text = arrival[field];
+    arrival[field] = '';
+    const palaceField = SLOT_FIELDS.find((slot) => FORBIDDEN_CITY_RE.test(day[slot] || ''));
+    const emptyField = SLOT_FIELDS.find((slot) => !day[slot]);
+    if (palaceField) day[palaceField] = `${text} ${day[palaceField]}`;
+    else if (emptyField) day[emptyField] = text;
+    else day.morning = `${text} ${day.morning}`;
+  }
+  return target;
+}
+
 function isEdgeDay(days, index) {
   return index === 0 || index === days.length - 1;
 }
@@ -250,7 +279,7 @@ function dayViolations(days, index, dates) {
   return issues;
 }
 
-const OPTIONAL_SKIP_RE = new RegExp(`${LONG_DAY_TRIP_RE.source}|^(?:return|head back|get back)`, 'i');
+const OPTIONAL_SKIP_RE = new RegExp(`${LONG_DAY_TRIP_RE.source}|^(?:return|head back|get back)|${MEAL_RE.source}`, 'i');
 
 // An optional extra needs a free part of the day: after landing on the arrival day, before
 // leaving on the departure day.
@@ -271,7 +300,7 @@ function hasRoomForOptional(day, role) {
 function lightenDay(day, role) {
   const extras = [...(day.overflow || [])];
   if (role) {
-    const activityFields = SLOT_FIELDS.filter((field) => day[field] && !LOGISTICS_RE.test(day[field]));
+    const activityFields = SLOT_FIELDS.filter((field) => day[field] && !LOGISTICS_RE.test(day[field]) && !MEAL_RE.test(day[field]));
     for (const field of activityFields.slice(1)) {
       extras.push(day[field]);
       day[field] = '';
@@ -374,7 +403,13 @@ export function enforcePlanRules(plan, lead) {
     adjustments.push(`${before}: no safe swap, replaced with a lighter plan on ${days[index].day || `day ${index + 1}`}`);
   }
 
-  // 3. Arrival and departure days: at most one light activity, plus one optional extra.
+  // 3. Tiananmen Square never on the arrival day.
+  const tiananmenTarget = moveTiananmenOffArrivalDay(days);
+  if (tiananmenTarget !== null) {
+    adjustments.push(`moved Tiananmen Square from ${days[0].day || 'day 1'} to ${days[tiananmenTarget].day || `day ${tiananmenTarget + 1}`}`);
+  }
+
+  // 4. Arrival and departure days: at most one light activity (meals don't count), plus one optional extra.
   days.forEach((day, index) => {
     const role = days.length === 1 ? 'both' : index === 0 ? 'arrival' : index === days.length - 1 ? 'departure' : null;
     const dropped = lightenDay(day, role);
@@ -383,7 +418,7 @@ export function enforcePlanRules(plan, lead) {
     if (dropped.length) adjustments.push(`${label}: dropped ${dropped.map((text) => `"${text}"`).join(', ')}`);
   });
 
-  // 4. Keep the wording consistent with the final order.
+  // 5. Keep the wording consistent with the final order.
   days.forEach((day, index) => {
     if (fixReturnWording(day)) adjustments.push(`${day.day || `day ${index + 1}`}: removed "return to the city" wording (no day trip that day)`);
   });

@@ -205,13 +205,10 @@ function tripSummaryLine(lead, plan) {
  * Tiananmen Square booking note, computed in code. The square is free but needs a real-name
  * reservation made 1-7 days ahead; there is no same-day booking or walk-up entry.
  */
-export function tiananmenNote(day, index) {
+export function tiananmenNote(day) {
   const text = [day.morning, day.afternoon, day.evening, day.optional].filter(Boolean).join(' ');
   if (!TIANANMEN_RE.test(text)) return '';
-  const note = 'Free, but you must book a real-name slot 1–7 days in advance in the WeChat mini program "天安门广场预约参观" (Tiananmen Square visit booking). New slots open every day at 12:00 Beijing time. Same-day booking and walk-up entry aren\'t possible. Foreign phone numbers often fail verification, so you can ask your hotel front desk to book for you. Bring your original passport on the day.';
-  return index === 0
-    ? `${note} This is on your arrival day, so make sure your booking is confirmed before you fly.`
-    : note;
+  return 'Free, but you must book a real-name slot 1–7 days in advance in the WeChat mini program "天安门广场预约参观" (Tiananmen Square visit booking). New slots open every day at 12:00 Beijing time. Same-day booking and walk-up entry aren\'t possible. Foreign phone numbers often fail verification, so ask your hotel front desk to book it for you when you check in — booking a day ahead is enough. Bring your original passport on the day.';
 }
 
 function dayHeading(day, index, dates) {
@@ -260,7 +257,7 @@ export function renderItineraryEmail(lead, plan, { now = Date.now() } = {}) {
       day.transport && `<span style="${muted}">Getting around: ${esc(day.transport)}</span>`,
       day.food && `<span style="${muted}">Food: ${esc(day.food)}</span>`,
       day.notes && `<span style="${muted}">Note: ${esc(day.notes)}</span>`,
-      tiananmenNote(day, index) && `<span style="${muted}">Tiananmen Square: ${esc(tiananmenNote(day, index))}</span>`,
+      tiananmenNote(day) && `<span style="${muted}">Tiananmen Square: ${esc(tiananmenNote(day))}</span>`,
     ].filter(Boolean);
     return `<p style="${p}"><strong>${esc(dayHeading(day, index, dates))}</strong><br>${lines.join('<br>')}</p>`;
   }).join('\n');
@@ -303,7 +300,7 @@ ${bodyHtml}
       ...(day.transport ? [`Getting around: ${day.transport}`] : []),
       ...(day.food ? [`Food: ${day.food}`] : []),
       ...(day.notes ? [`Note: ${day.notes}`] : []),
-      ...(tiananmenNote(day, index) ? [`Tiananmen Square: ${tiananmenNote(day, index)}`] : []),
+      ...(tiananmenNote(day) ? [`Tiananmen Square: ${tiananmenNote(day)}`] : []),
       '',
     ]),
     'A FEW QUESTIONS SO I CAN FINE-TUNE THIS',

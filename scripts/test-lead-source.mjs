@@ -178,11 +178,41 @@ for (const day of enforced.plan.daily_itinerary) {
     assert.doesNotMatch(`${day.morning} ${day.afternoon} ${day.evening}`, /return to the city/i, `${day.day}: no return without leaving`);
   }
 }
-// Arrival day: one activity after landing; the dinner becomes optional.
-assert.match(day1.afternoon, /Tiananmen Square/);
-assert.equal(day1.evening, '');
-assert.equal(day1.optional, 'Peking duck dinner near Qianmen.');
+// Arrival day: Tiananmen Square moves to the Forbidden City day; dinner is a meal, not an activity.
+assert.equal(day1.afternoon, '');
+assert.equal(day1.evening, 'Peking duck dinner near Qianmen.', 'meals stay and are never marked optional');
+assert.equal(day1.optional, '');
+const day2 = enforced.plan.daily_itinerary[1];
+assert.equal(day2.morning, 'Walk around Tiananmen Square and Qianmen Street. Forbidden City (Palace Museum), entering from Meridian Gate.');
+assert.ok(enforced.adjustments.includes('moved Tiananmen Square from Day 1 to Day 2'));
 assert.ok(enforced.adjustments.some((item) => item.includes('dropped')), 'dropped extras are reported');
+
+// Meals don't count towards the one-activity limit; a second real activity becomes optional.
+const mealPlan = enforcePlanRules({ ...samplePlan, daily_itinerary: [
+  { day: 'Day 1', city: 'Beijing', morning: 'Arrive and check in near Wangfujing.', afternoon: 'Wangfujing food street.', evening: 'Dinner at a local hot pot place.', transport: '', food: '', notes: '' },
+  ...samplePlan.daily_itinerary.slice(1, 3),
+  { day: 'Day 4', city: 'Beijing', morning: 'Breakfast at the hotel.', afternoon: 'Lama Temple.', evening: 'Fly home.', transport: '', food: '', notes: '' },
+] }, usLead).plan.daily_itinerary;
+assert.equal(mealPlan[0].afternoon, 'Wangfujing food street.');
+assert.equal(mealPlan[0].evening, 'Dinner at a local hot pot place.');
+assert.equal(mealPlan[0].optional, '');
+assert.equal(mealPlan[3].morning, 'Breakfast at the hotel.');
+assert.equal(mealPlan[3].afternoon, 'Lama Temple.');
+const twoActivities = enforcePlanRules({ ...samplePlan, daily_itinerary: [
+  { day: 'Day 1', city: 'Beijing', morning: 'Arrive and check in.', afternoon: 'Jingshan Park.', evening: 'Hutong walk around Nanluoguxiang.', transport: '', food: '', notes: '' },
+  ...samplePlan.daily_itinerary.slice(1),
+] }, usLead).plan.daily_itinerary[0];
+assert.equal(twoActivities.evening, '');
+assert.equal(twoActivities.optional, 'Hutong walk around Nanluoguxiang.');
+
+// Tiananmen with no Forbidden City day: first non-travel day, in an empty slot if there is one.
+const noPalace = enforcePlanRules({ ...samplePlan, daily_itinerary: [
+  samplePlan.daily_itinerary[0],
+  { day: 'Day 2', city: 'Beijing', morning: 'Temple of Heaven.', afternoon: '', evening: 'Acrobatics show.', transport: '', food: '', notes: '' },
+  { day: 'Day 3', city: 'Beijing', morning: 'Summer Palace.', afternoon: 'Pack.', evening: 'Fly home.', transport: '', food: '', notes: '' },
+] }, { ...usLead, tripLength: 3 }).plan.daily_itinerary;
+assert.equal(noPalace[1].afternoon, 'Walk around Tiananmen Square and Qianmen Street.');
+assert.doesNotMatch(JSON.stringify(noPalace[0]), /Tiananmen/);
 
 // A summary that names specific days is trimmed after a swap.
 const dayRefPlan = enforcePlanRules({ ...samplePlan, summary: 'Relaxed history trip. The Great Wall is on your last day.' }, usLead);
@@ -245,7 +275,6 @@ assert.match(indiaSoon.text, /Your trip is 13 days away, so check the visa centr
 // Tiananmen Square later in the trip: no arrival-day reminder.
 const laterSquare = renderItineraryEmail(usLead, { ...samplePlan, daily_itinerary: [samplePlan.daily_itinerary[1], { ...samplePlan.daily_itinerary[0], morning: 'Hotel breakfast.' }] }, { now: SAMPLE_NOW });
 assert.match(laterSquare.text, /Tiananmen Square: Free/);
-assert.doesNotMatch(laterSquare.text, /This is on your arrival day/);
 assert.doesNotMatch(renderItineraryEmail(usLead, { ...samplePlan, daily_itinerary: [samplePlan.daily_itinerary[2]] }, { now: SAMPLE_NOW }).text, /Tiananmen Square:/);
 
 // Passport country from the form wins over the departure country; without it, departure is a stated guess.
@@ -267,7 +296,9 @@ for (const email of [us, uk, unknown]) {
   assert.match(email.text, /There's no ticket office at the gate\./);
   assert.match(email.text, /Tiananmen Square: Free, but you must book a real-name slot 1–7 days in advance in the WeChat mini program "天安门广场预约参观"/);
   assert.match(email.text, /New slots open every day at 12:00 Beijing time\. Same-day booking and walk-up entry aren't possible\./);
-  assert.match(email.text, /ask your hotel front desk to book for you\. Bring your original passport on the day\. This is on your arrival day/);
+  assert.match(email.text, /so ask your hotel front desk to book it for you when you check in — booking a day ahead is enough\. Bring your original passport on the day\./);
+  assert.doesNotMatch(email.text, /arrival day, so make sure|before you fly\.\n/);
+  assert.doesNotMatch(email.text.split('Day 2 ·')[0].split('Day 1 ·')[1], /Tiananmen Square/, 'not on the arrival day');
   assert.doesNotMatch(email.text, /Allow several weeks/);
   assert.match(email.text, /What time do your flights land and leave/);
   assert.doesNotMatch(email.text, /\bvpn\b|covid|guaranteed|100%/i);
