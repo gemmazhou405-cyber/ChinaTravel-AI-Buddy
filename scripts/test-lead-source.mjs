@@ -316,4 +316,10 @@ const noDates = renderItineraryEmail({ ...usLead, travelDate: null }, samplePlan
 assert.match(noDates.text, /7 days before each visit date at 20:00 Beijing time/);
 assert.match(noDates.text, /What dates are you travelling\?/);
 
+// The AI is told up front to keep Tiananmen Square off the arrival day; code still moves it if not.
+assert.match(itinerarySource, /'Never schedule Tiananmen Square on the arrival day \(Day 1\)/);
+const policySource = readFileSync('src/components/PolicyPage.tsx', 'utf8');
+assert.match(policySource, /const contactEmail = 'lin@chinaeasebuddy\.com'/);
+assert.doesNotMatch(readFileSync('index.html', 'utf8') + policySource, /chinaeastbuddy@gmail\.com/);
+
 console.log('Lead source attribution, itinerary rules and computed email facts tests passed.');

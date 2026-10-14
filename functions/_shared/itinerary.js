@@ -130,6 +130,7 @@ const PLAN_RULES = [
   'Do not mention COVID-19, PCR tests, health codes or any pandemic-era entry requirements.',
   'Do not use absolute wording such as "guaranteed", "guarantee", "100%", "always open" or "never sells out".',
   'The Forbidden City (Palace Museum) is closed on Mondays; never place it on a Monday.',
+  'Never schedule Tiananmen Square on the arrival day (Day 1); it needs a booking made at least a day ahead. Put it on a later day, ideally the same day as the Forbidden City.',
   'On the arrival day and the departure day, plan at most one light activity close to the hotel.',
   'If a day trip leaves the base city, plan the whole day around it, including the trip back.',
   'Do not state visa rules, ticket release times, booking rules (Forbidden City, Tiananmen Square) or prices; those are added separately.',
