@@ -130,7 +130,9 @@ const PLAN_RULES = [
   'Do not mention COVID-19, PCR tests, health codes or any pandemic-era entry requirements.',
   'Do not use absolute wording such as "guaranteed", "guarantee", "100%", "always open" or "never sells out".',
   'The Forbidden City (Palace Museum) is closed on Mondays; never place it on a Monday.',
-  'Do not state visa rules, ticket release times or prices; those are added separately.',
+  'On the arrival day and the departure day, plan at most one light activity close to the hotel.',
+  'If a day trip leaves the base city, plan the whole day around it, including the trip back.',
+  'Do not state visa rules, ticket release times, booking rules (Forbidden City, Tiananmen Square) or prices; those are added separately.',
 ];
 
 // Day trips that take more than ~1.5 hours each way from the usual base city.
@@ -156,16 +158,85 @@ function sameCity(a, b) {
 }
 
 // Arrival/departure logistics ("land", "check in", "pack", "fly home") stay on their own day when
-// activities are swapped between days.
+// days are swapped.
 const LOGISTICS_RE = /\b(arriv\w*|land(s|ing)?|check[- ]?(in|out)|fly|flight|depart\w*|airport|pack(ing)?|leave for)\b/i;
+const SLOT_FIELDS = ['morning', 'afternoon', 'evening'];
+const EXTRA_FIELDS = ['transport', 'food', 'notes'];
+const KNOWN_CITIES = 'beijing|shanghai|xi\'?an|chengdu|guilin|hangzhou|chongqing|zhangjiajie|guangzhou|shenzhen|suzhou';
 
-function swapActivities(days, i, j) {
-  const a = days[i];
-  const b = days[j];
-  for (const field of ACTIVITY_FIELDS) {
-    if (LOGISTICS_RE.test(a[field] || '') || LOGISTICS_RE.test(b[field] || '')) continue;
-    [a[field], b[field]] = [b[field], a[field]];
+function capitalise(text) {
+  return text ? text.charAt(0).toUpperCase() + text.slice(1) : text;
+}
+
+// "Return to the city", "head back to Beijing", ... A trip back into the base city only makes
+// sense on the day of an out-of-town day trip.
+function returnClauseRe(city) {
+  const names = [KNOWN_CITIES, city ? city.trim().toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&') : ''].filter(Boolean).join('|');
+  return new RegExp(`\\b(?:return(?:ing)?|head(?:ing)? back|get(?:ting)? back|driv(?:e|ing) back|com(?:e|ing) back|travel(?:ling)? back)\\s+(?:to|into)\\s+(?:the\\s+)?(?:city(?:\\s+(?:centre|center))?|town|downtown|${names})\\b[^.;,]*?(?=\\s+(?:and|then)\\s+|[.;,]|$)`, 'i');
+}
+
+/** Split "Return to the city and pack." into the return clause and the rest ("Pack."). */
+function splitReturnClause(text, city) {
+  const match = returnClauseRe(city).exec(text || '');
+  if (!match) return { clause: '', rest: text };
+  let rest = `${text.slice(0, match.index)}${text.slice(match.index + match[0].length)}`
+    .replace(/^\s*(?:,|and|then)\s*/i, '')
+    .replace(/\s+(?:and|then)\s*(?=[.;,]|$)/i, '')
+    .trim();
+  if (/^[\s.;,]*$/.test(rest)) rest = '';
+  if (/^pack\.?$/i.test(rest)) rest = 'Pack and get ready to leave.';
+  return { clause: `${capitalise(match[0].trim())}.`, rest: capitalise(rest) };
+}
+
+function isTripDay(day) {
+  return LONG_DAY_TRIP_RE.test(dayActivityText(day));
+}
+
+/** Logistics that stay on this day, and everything else that moves with the day's plan. */
+function dayParts(day) {
+  const tripDay = isTripDay(day);
+  const logistics = {};
+  const activities = [];
+  for (const field of SLOT_FIELDS) {
+    const text = day[field];
+    if (!text) continue;
+    if (!LOGISTICS_RE.test(text)) {
+      activities.push(text);
+      continue;
+    }
+    // "Return to the city and pack": the return belongs to the day trip, packing to this day.
+    const { clause, rest } = tripDay ? splitReturnClause(text, day.city) : { clause: '', rest: text };
+    if (clause) activities.push(clause);
+    if (rest) logistics[field] = rest;
   }
+  const stayingExtras = {};
+  const movingExtras = {};
+  for (const field of EXTRA_FIELDS) {
+    if (!day[field]) continue;
+    (LOGISTICS_RE.test(day[field]) ? stayingExtras : movingExtras)[field] = day[field];
+  }
+  return { logistics, activities: [...activities, ...(day.optional ? [day.optional] : [])], stayingExtras, movingExtras };
+}
+
+function buildDay(base, own, incoming) {
+  const day = { day: base.day, city: base.city };
+  const queue = [...incoming.activities];
+  for (const field of SLOT_FIELDS) {
+    day[field] = own.logistics[field] || (queue.length ? queue.shift() : '');
+  }
+  for (const field of EXTRA_FIELDS) {
+    day[field] = [own.stayingExtras[field], incoming.movingExtras[field]].filter(Boolean).join(' ');
+  }
+  day.optional = '';
+  day.overflow = queue;
+  return day;
+}
+
+/** Swap two whole days, keeping each day's own arrival/departure logistics in place. */
+function swapWholeDays(days, i, j) {
+  const a = dayParts(days[i]);
+  const b = dayParts(days[j]);
+  return [buildDay(days[i], a, b), buildDay(days[j], b, a)];
 }
 
 function isEdgeDay(days, index) {
@@ -179,6 +250,56 @@ function dayViolations(days, index, dates) {
   return issues;
 }
 
+const OPTIONAL_SKIP_RE = new RegExp(`${LONG_DAY_TRIP_RE.source}|^(?:return|head back|get back)`, 'i');
+
+// An optional extra needs a free part of the day: after landing on the arrival day, before
+// leaving on the departure day.
+function hasRoomForOptional(day, role) {
+  const logisticsIndexes = SLOT_FIELDS.map((field, i) => (day[field] && LOGISTICS_RE.test(day[field]) ? i : -1)).filter((i) => i >= 0);
+  const free = SLOT_FIELDS.map((field, i) => (day[field] ? -1 : i)).filter((i) => i >= 0);
+  if (!free.length) return false;
+  if (!logisticsIndexes.length || role === 'both' || !role) return true;
+  return role === 'arrival'
+    ? free.some((i) => i > Math.max(...logisticsIndexes))
+    : free.some((i) => i < Math.min(...logisticsIndexes));
+}
+
+/**
+ * Arrival and departure days keep at most one light activity. The first extra becomes
+ * "Optional if you have time" when there is room for it; anything else is dropped.
+ */
+function lightenDay(day, role) {
+  const extras = [...(day.overflow || [])];
+  if (role) {
+    const activityFields = SLOT_FIELDS.filter((field) => day[field] && !LOGISTICS_RE.test(day[field]));
+    for (const field of activityFields.slice(1)) {
+      extras.push(day[field]);
+      day[field] = '';
+    }
+  }
+  if (day.optional) extras.unshift(day.optional);
+  delete day.overflow;
+  const optional = hasRoomForOptional(day, role) ? extras.find((text) => !OPTIONAL_SKIP_RE.test(text)) || '' : '';
+  day.optional = optional;
+  return extras.filter((text) => text !== optional);
+}
+
+/** Remove "return to the city" wording from days that never leave the city. */
+function fixReturnWording(day) {
+  if (isTripDay(day)) return false;
+  let changed = false;
+  for (const field of SLOT_FIELDS) {
+    const { clause, rest } = splitReturnClause(day[field], day.city);
+    if (clause) {
+      day[field] = rest;
+      changed = true;
+    }
+  }
+  return changed;
+}
+
+const DAY_REFERENCE_RE = /\bday\s*\d+\b|\b(?:first|last|final|arrival|departure)\s+day\b/i;
+
 /**
  * Enforce PLAN_RULES on a normalised plan. Returns a new plan plus a list of the adjustments
  * made, which are reported in the internal lead notification.
@@ -187,7 +308,7 @@ export function enforcePlanRules(plan, lead) {
   if (!plan) return { plan, adjustments: [] };
   const next = JSON.parse(JSON.stringify(plan));
   const adjustments = [];
-  const days = next.daily_itinerary;
+  let days = next.daily_itinerary;
 
   // 1. Wording rules (VPN, COVID, absolute claims) on every string.
   let removedSentences = 0;
@@ -210,8 +331,10 @@ export function enforcePlanRules(plan, lead) {
   }
   if (removedSentences) adjustments.push(`removed ${removedSentences} sentence(s) mentioning VPN/COVID or absolute claims`);
 
-  // 2. Scheduling rules: move long day trips off arrival/departure days and the Forbidden City off Mondays.
+  // 2. Scheduling rules: move long day trips off arrival/departure days and the Forbidden City
+  //    off Mondays by swapping whole days (each day keeps its own arrival/departure logistics).
   const dates = tripDayDates(lead, days.length);
+  let swapped = false;
   for (let index = 0; index < days.length; index += 1) {
     if (!dayViolations(days, index, dates).length) continue;
     const before = dayViolations(days, index, dates).join(', ');
@@ -219,21 +342,24 @@ export function enforcePlanRules(plan, lead) {
     const candidates = days.map((_, j) => j)
       .filter((j) => j !== index && sameCity(days[j], days[index]))
       .sort((a, b) => Math.abs(a - index) - Math.abs(b - index));
+    let swappedDays = null;
     const target = candidates.find((j) => {
-      swapActivities(days, index, j);
-      const ok = !dayViolations(days, index, dates).length && !dayViolations(days, j, dates).length;
-      swapActivities(days, index, j);
+      const trial = [...days];
+      [trial[index], trial[j]] = swapWholeDays(days, index, j);
+      const ok = !dayViolations(trial, index, dates).length && !dayViolations(trial, j, dates).length;
+      if (ok) swappedDays = trial;
       return ok;
     }) ?? -1;
     if (target >= 0) {
-      swapActivities(days, index, target);
-      adjustments.push(`${before}: swapped ${days[index].day || `day ${index + 1}`} with ${days[target].day || `day ${target + 1}`}`);
+      days = swappedDays;
+      swapped = true;
+      adjustments.push(`${before}: swapped the plans for ${days[index].day || `day ${index + 1}`} and ${days[target].day || `day ${target + 1}`}`);
       continue;
     }
     // No safe swap: replace the offending activities with a light plan for that day.
     const issues = dayViolations(days, index, dates);
     const isArrival = index === 0;
-    for (const field of ['morning', 'afternoon', 'evening']) {
+    for (const field of SLOT_FIELDS) {
       const text = days[index][field] || '';
       const longTrip = issues.includes('long_day_trip_on_travel_day') && LONG_DAY_TRIP_RE.test(text);
       const mondayPalace = issues.includes('forbidden_city_on_monday') && FORBIDDEN_CITY_RE.test(text);
@@ -248,6 +374,29 @@ export function enforcePlanRules(plan, lead) {
     adjustments.push(`${before}: no safe swap, replaced with a lighter plan on ${days[index].day || `day ${index + 1}`}`);
   }
 
+  // 3. Arrival and departure days: at most one light activity, plus one optional extra.
+  days.forEach((day, index) => {
+    const role = days.length === 1 ? 'both' : index === 0 ? 'arrival' : index === days.length - 1 ? 'departure' : null;
+    const dropped = lightenDay(day, role);
+    const label = day.day || `day ${index + 1}`;
+    if (day.optional) adjustments.push(`${label}: marked "${day.optional}" as optional`);
+    if (dropped.length) adjustments.push(`${label}: dropped ${dropped.map((text) => `"${text}"`).join(', ')}`);
+  });
+
+  // 4. Keep the wording consistent with the final order.
+  days.forEach((day, index) => {
+    if (fixReturnWording(day)) adjustments.push(`${day.day || `day ${index + 1}`}: removed "return to the city" wording (no day trip that day)`);
+  });
+  if (swapped && next.summary) {
+    const sentences = next.summary.split(/(?<=[.!?])\s+/);
+    const kept = sentences.filter((sentence) => !DAY_REFERENCE_RE.test(sentence));
+    if (kept.length !== sentences.length) {
+      next.summary = kept.join(' ').trim();
+      adjustments.push('removed summary sentence(s) that referred to specific days');
+    }
+  }
+
+  next.daily_itinerary = days;
   return { plan: next, adjustments };
 }
 

@@ -120,6 +120,8 @@ export function visaFacts(lead, now = Date.now()) {
     onwardCountryOrRegion: '',
   });
   const transitEligible = TRANSIT_240_COUNTRY_CODES.includes(code);
+  // Whole days from today (China calendar) to the first trip day.
+  const daysUntilTrip = start ? Math.round((start.getTime() - Date.parse(`${todayIso(now)}T00:00:00Z`)) / DAY_MS) : null;
   const base = {
     code,
     countryName,
@@ -131,6 +133,7 @@ export function visaFacts(lead, now = Date.now()) {
     sourceUrl: result.sources[0]?.url || null,
     transitEligible,
     basis: fromPassport ? 'passport' : 'departure',
+    daysUntilTrip,
   };
   if (result.category === 'likely_eligible') {
     return { ...base, status: result.policyType === 'mutual_agreement' ? 'visa_free_mutual' : 'visa_free_30' };

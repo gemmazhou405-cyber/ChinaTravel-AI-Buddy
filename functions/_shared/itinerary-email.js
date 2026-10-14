@@ -9,6 +9,8 @@ const SITE_URL = 'https://chinaeasebuddy.com';
 const TRANSIT_GUIDE_URL = `${SITE_URL}/china-240-hour-visa-free-transit-2026/`;
 const ALIPAY_GUIDE_URL = `${SITE_URL}/alipay-for-foreigners/`;
 const FAMILY_RE = /family|kid|child|children|baby|toddler/i;
+const TIANANMEN_RE = /tian'?anmen square|天安门广场/i;
+const VISA_URGENT_DAYS = 21;
 
 function esc(value) {
   return String(value ?? '')
@@ -91,19 +93,34 @@ function visaItem(visa, lead) {
       body: `${country} passports are currently visa-free for 30 days, but the policy is only confirmed ${visa.policyValidity.replace(/^Verified /, '')}, which is before your trip starts. Don't rely on it until an extension is announced; if none is, you'll need a visa. ${assumption}`,
     };
   }
+  const timing = visaTiming(visa, country);
   if (visa.status === 'stay_too_long') {
     return {
       title: 'Your stay is longer than the visa-free limit',
-      body: `${country} passports can visit visa-free for a limited stay (${visa.maximumStay.toLowerCase()}), and your ${visa.stayDays}-day trip is longer than that, so you'll need a tourist (L) visa before you fly. ${assumption}`,
+      body: `${country} passports can visit visa-free for a limited stay (${visa.maximumStay.toLowerCase()}), and your ${visa.stayDays}-day trip is longer than that, so you'll need a tourist (L) visa before you fly. ${timing} ${assumption}`,
     };
   }
-  const transit = visa.transitEligible
-    ? ` One exception: if you're flying on to a different country afterwards (not back to where you started), the 240-hour visa-free transit may cover a stay of up to 10 days: ${TRANSIT_GUIDE_URL}`
-    : '';
   return {
     title: 'Apply for a Chinese visa first',
-    body: `${country} passports are not on China's 30-day visa-free list, so for this trip you'll need a tourist (L) visa before you fly. Allow several weeks for the application.${transit} ${assumption}`,
+    body: `${country} passports are not on China's 30-day visa-free list, so for this trip you'll need a tourist (L) visa before you fly. ${timing} ${assumption}`,
   };
+}
+
+/** How urgent the visa application is, from the trip start date, plus the 240-hour transit option. */
+function visaTiming(visa, country) {
+  const days = visa.daysUntilTrip;
+  const transitOption = `If you're flying on to a different country afterwards (not back to where you started), the 240-hour visa-free transit may cover a stay of up to 10 days without a visa: ${TRANSIT_GUIDE_URL}`;
+  const transit = visa.transitEligible
+    ? transitOption
+    : `The 240-hour visa-free transit isn't available on ${country} passports, so a visa is the only option.`;
+  if (days === null || days === undefined) {
+    return `Check the visa centre's current processing times before you book flights.${visa.transitEligible ? ` ${transitOption}` : ''}`;
+  }
+  const away = days <= 0 ? 'Your trip starts today' : `Your trip is ${days} day${days === 1 ? '' : 's'} away`;
+  if (days < VISA_URGENT_DAYS) {
+    return `${away}, so check the visa centre's current processing times today. ${transit}`;
+  }
+  return `${away}; check the visa centre's current processing times and apply soon.${visa.transitEligible ? ` ${transitOption}` : ''}`;
 }
 
 function forbiddenCityItem(palace, plan) {
@@ -111,7 +128,7 @@ function forbiddenCityItem(palace, plan) {
   if (!palace.visitDate) {
     return {
       title: 'Know when Forbidden City tickets open',
-      body: 'Tickets go on sale 7 days before each visit date at 20:00 Beijing time and popular days sell out fast. The museum is closed on Mondays. Send me your dates and I\'ll tell you exactly when to book.',
+      body: 'Tickets go on sale 7 days before each visit date at 20:00 Beijing time and popular days sell out fast. The museum is closed on Mondays. Send me your dates and I\'ll tell you exactly when to book. There\'s no ticket office at the gate.',
     };
   }
   const dayLabel = plan.daily_itinerary[palace.dayIndex]?.day || `Day ${palace.dayIndex + 1}`;
@@ -121,12 +138,12 @@ function forbiddenCityItem(palace, plan) {
   if (palace.alreadyOnSale) {
     return {
       title: 'Book your Forbidden City tickets now',
-      body: `Your draft has the Forbidden City on ${dayLabel} (${shortDate(palace.visitDate)}). Tickets for that day are already on sale and popular days sell out, so book as soon as you can, using the passport you'll carry on the day.${monday}`,
+      body: `Your draft has the Forbidden City on ${dayLabel} (${shortDate(palace.visitDate)}). Tickets for that day are already on sale and popular days sell out, so book as soon as you can, using the passport you'll carry on the day.${monday} There's no ticket office at the gate.`,
     };
   }
   return {
     title: `Book Forbidden City tickets on ${shortDate(palace.releaseDate)} at 20:00 Beijing time`,
-    body: `Your draft has the Forbidden City on ${dayLabel} (${shortDate(palace.visitDate)}). Tickets for that day go on sale 7 days earlier: ${longDate(palace.releaseDate)} at 20:00 Beijing time (12:00 UTC). Popular days sell out quickly, so set a reminder, and book with the passport you'll carry on the day.${monday}`,
+    body: `Your draft has the Forbidden City on ${dayLabel} (${shortDate(palace.visitDate)}). Tickets for that day go on sale 7 days earlier: ${longDate(palace.releaseDate)} at 20:00 Beijing time (12:00 UTC). Popular days sell out quickly, so set a reminder, and book with the passport you'll carry on the day.${monday} There's no ticket office at the gate.`,
   };
 }
 
@@ -162,7 +179,7 @@ export function followUpQuestions(lead, plan, facts) {
   const lastDay = tripDays(lead, plan);
   questions.push(`What time do your flights land and leave, and at which airports? I'll fit Day 1${lastDay && lastDay > 1 ? ` and Day ${lastDay}` : ''} around them.`);
   if (isFamilyTrip(lead)) {
-    questions.push('How old are the children? It changes which activities, ticket types and travel times make sense.');
+    questions.push('Are any children travelling with you? If so, how old are they? It changes which activities, ticket types and travel times make sense.');
   }
   questions.push('Have you booked any hotels yet? If so, which area? I\'ll plan each day around where you\'re staying.');
   return questions.slice(0, 4);
@@ -182,6 +199,19 @@ function tripSummaryLine(lead, plan) {
   if (interests.length) parts.push(`interests: ${interests.join(', ')}`);
   if (lead.departureCountry) parts.push(`flying from ${oneLine(lead.departureCountry, 60)}`);
   return parts.join(' · ');
+}
+
+/**
+ * Tiananmen Square booking note, computed in code. The square is free but needs a real-name
+ * reservation made 1-7 days ahead; there is no same-day booking or walk-up entry.
+ */
+export function tiananmenNote(day, index) {
+  const text = [day.morning, day.afternoon, day.evening, day.optional].filter(Boolean).join(' ');
+  if (!TIANANMEN_RE.test(text)) return '';
+  const note = 'Free, but you must book a real-name slot 1–7 days in advance in the WeChat mini program "天安门广场预约参观" (Tiananmen Square visit booking). New slots open every day at 12:00 Beijing time. Same-day booking and walk-up entry aren\'t possible. Foreign phone numbers often fail verification, so you can ask your hotel front desk to book for you. Bring your original passport on the day.';
+  return index === 0
+    ? `${note} This is on your arrival day, so make sure your booking is confirmed before you fly.`
+    : note;
 }
 
 function dayHeading(day, index, dates) {
@@ -226,9 +256,11 @@ export function renderItineraryEmail(lead, plan, { now = Date.now() } = {}) {
       day.morning && `<strong>Morning:</strong> ${esc(day.morning)}`,
       day.afternoon && `<strong>Afternoon:</strong> ${esc(day.afternoon)}`,
       day.evening && `<strong>Evening:</strong> ${esc(day.evening)}`,
+      day.optional && `<strong>Optional if you have time:</strong> ${esc(day.optional)}`,
       day.transport && `<span style="${muted}">Getting around: ${esc(day.transport)}</span>`,
       day.food && `<span style="${muted}">Food: ${esc(day.food)}</span>`,
       day.notes && `<span style="${muted}">Note: ${esc(day.notes)}</span>`,
+      tiananmenNote(day, index) && `<span style="${muted}">Tiananmen Square: ${esc(tiananmenNote(day, index))}</span>`,
     ].filter(Boolean);
     return `<p style="${p}"><strong>${esc(dayHeading(day, index, dates))}</strong><br>${lines.join('<br>')}</p>`;
   }).join('\n');
@@ -267,9 +299,11 @@ ${bodyHtml}
       ...(day.morning ? [`Morning: ${day.morning}`] : []),
       ...(day.afternoon ? [`Afternoon: ${day.afternoon}`] : []),
       ...(day.evening ? [`Evening: ${day.evening}`] : []),
+      ...(day.optional ? [`Optional if you have time: ${day.optional}`] : []),
       ...(day.transport ? [`Getting around: ${day.transport}`] : []),
       ...(day.food ? [`Food: ${day.food}`] : []),
       ...(day.notes ? [`Note: ${day.notes}`] : []),
+      ...(tiananmenNote(day, index) ? [`Tiananmen Square: ${tiananmenNote(day, index)}`] : []),
       '',
     ]),
     'A FEW QUESTIONS SO I CAN FINE-TUNE THIS',

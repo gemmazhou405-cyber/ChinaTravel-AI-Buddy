@@ -160,6 +160,34 @@ assert.match(lastDay.evening, /Fly home/, 'departure logistics stay on the depar
 assert.doesNotMatch(enforced.plan.daily_itinerary[0].morning, /great wall/i);
 assert.ok(enforced.adjustments.some((item) => item.includes('long_day_trip_on_travel_day')));
 
+// Whole-day swap: the Great Wall day moves to Day 3 together with its return trip, transport and lunch.
+const [day1, , day3, day4] = enforced.plan.daily_itinerary;
+assert.match(day3.morning, /Great Wall at Mutianyu/);
+assert.equal(day3.afternoon, 'Return to the city.');
+assert.match(day3.transport, /Private car to Mutianyu/);
+assert.match(day3.food, /Lunch near the Wall/);
+assert.doesNotMatch(`${day3.afternoon} ${day3.evening}`, /Summer Palace|Temple of Heaven|Acrobatics/, 'Day 3 is not overloaded');
+// Departure day: logistics stay, one light activity, no "return to the city" without a day trip.
+assert.equal(day4.morning, 'Temple of Heaven early, when locals exercise.');
+assert.equal(day4.afternoon, 'Pack and get ready to leave.');
+assert.equal(day4.evening, 'Fly home.');
+assert.equal(day4.optional, '', 'no room for an optional extra before leaving');
+assert.match(day4.transport, /DiDi/);
+for (const day of enforced.plan.daily_itinerary) {
+  if (!/great wall|mutianyu/i.test(`${day.morning} ${day.afternoon} ${day.evening}`)) {
+    assert.doesNotMatch(`${day.morning} ${day.afternoon} ${day.evening}`, /return to the city/i, `${day.day}: no return without leaving`);
+  }
+}
+// Arrival day: one activity after landing; the dinner becomes optional.
+assert.match(day1.afternoon, /Tiananmen Square/);
+assert.equal(day1.evening, '');
+assert.equal(day1.optional, 'Peking duck dinner near Qianmen.');
+assert.ok(enforced.adjustments.some((item) => item.includes('dropped')), 'dropped extras are reported');
+
+// A summary that names specific days is trimmed after a swap.
+const dayRefPlan = enforcePlanRules({ ...samplePlan, summary: 'Relaxed history trip. The Great Wall is on your last day.' }, usLead);
+assert.equal(dayRefPlan.plan.summary, 'Relaxed history trip.');
+
 const covidPlan = { ...samplePlan, summary: 'Bring a negative PCR test. Enjoy the trip.', daily_itinerary: samplePlan.daily_itinerary.slice(0, 2) };
 assert.equal(enforcePlanRules(covidPlan, usLead).plan.summary, 'Enjoy the trip.');
 
@@ -205,6 +233,21 @@ assert.match(unknown.text, /Which passport\(s\) will you be travelling on\?/);
 
 assert.match(us.text, /This is based on the United States passport you selected/);
 
+// Visa urgency from the start date (SAMPLE_NOW is 14 Oct, the trip starts 27 Oct).
+assert.match(us.text, /Your trip is 13 days away, so check the visa centre's current processing times today\. If you're flying on to a different country afterwards/);
+const usLater = render({ ...usLead, travelDate: '2026-12-01' });
+assert.match(usLater.text, /Your trip is 48 days away; check the visa centre's current processing times and apply soon\./);
+const usNoDate = render({ ...usLead, travelDate: null });
+assert.match(usNoDate.text, /Check the visa centre's current processing times before you book flights\./);
+const indiaSoon = render({ ...usLead, passportCountry: 'IN' });
+assert.match(indiaSoon.text, /Your trip is 13 days away, so check the visa centre's current processing times today\. The 240-hour visa-free transit isn't available on India passports/);
+
+// Tiananmen Square later in the trip: no arrival-day reminder.
+const laterSquare = renderItineraryEmail(usLead, { ...samplePlan, daily_itinerary: [samplePlan.daily_itinerary[1], { ...samplePlan.daily_itinerary[0], morning: 'Hotel breakfast.' }] }, { now: SAMPLE_NOW });
+assert.match(laterSquare.text, /Tiananmen Square: Free/);
+assert.doesNotMatch(laterSquare.text, /This is on your arrival day/);
+assert.doesNotMatch(renderItineraryEmail(usLead, { ...samplePlan, daily_itinerary: [samplePlan.daily_itinerary[2]] }, { now: SAMPLE_NOW }).text, /Tiananmen Square:/);
+
 // Passport country from the form wins over the departure country; without it, departure is a stated guess.
 const passportWins = render({ ...customerScenarios[1].lead, departureCountry: 'United States' });
 assert.match(passportWins.text, /United Kingdom passport holders can visit mainland China visa-free/);
@@ -219,7 +262,13 @@ assert.match(tripFormSource, /passportCountry: passportCountry \|\| undefined/);
 
 for (const email of [us, uk, unknown]) {
   assert.ok(email.items.length >= 2 && email.items.length <= 3, '2-3 "do these first" items');
-  assert.match(email.text, /How old are the children\?/);
+  assert.match(email.text, /Are any children travelling with you\? If so, how old are they\?/);
+  assert.doesNotMatch(email.text, /How old are the children/);
+  assert.match(email.text, /There's no ticket office at the gate\./);
+  assert.match(email.text, /Tiananmen Square: Free, but you must book a real-name slot 1–7 days in advance in the WeChat mini program "天安门广场预约参观"/);
+  assert.match(email.text, /New slots open every day at 12:00 Beijing time\. Same-day booking and walk-up entry aren't possible\./);
+  assert.match(email.text, /ask your hotel front desk to book for you\. Bring your original passport on the day\. This is on your arrival day/);
+  assert.doesNotMatch(email.text, /Allow several weeks/);
   assert.match(email.text, /What time do your flights land and leave/);
   assert.doesNotMatch(email.text, /\bvpn\b|covid|guaranteed|100%/i);
   assert.ok(email.text.indexOf('DO THESE FIRST') < email.text.indexOf('YOUR DAY-BY-DAY DRAFT'));
