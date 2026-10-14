@@ -1342,6 +1342,9 @@
         "interestTitle": "What do you like?",
         "interestHelp": "Choose as many as you like.",
         "travelersLabel": "How many travellers?",
+        "passportLabel": "Passport country (optional)",
+        "passportHelp": "Lets us check visa-free entry for you. Country only — never your passport number.",
+        "passportSkip": "Skip / not sure",
         "travelersPreviewLabel": "Travellers",
         "travelers": {
           "1": "1 traveller",

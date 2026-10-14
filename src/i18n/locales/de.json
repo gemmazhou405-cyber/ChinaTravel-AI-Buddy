@@ -1342,6 +1342,9 @@
         "interestTitle": "Was gefällt dir?",
         "interestHelp": "Wähle beliebig viele Optionen.",
         "travelersLabel": "Wie viele Reisende?",
+        "passportLabel": "Reisepass-Land (optional)",
+        "passportHelp": "Damit wir die visumfreie Einreise für dich prüfen können. Nur das Land – niemals deine Passnummer.",
+        "passportSkip": "Überspringen / nicht sicher",
         "travelersPreviewLabel": "Reisende",
         "travelers": {
           "1": "1 Person",

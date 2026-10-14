@@ -21,6 +21,8 @@ import { generateTripPlan } from '../../_shared/itinerary.js';
 import { sendWhatsAppTripReminder } from '../../_shared/whatsapp.js';
 import { activePassForId } from '../../_shared/entitlements.js';
 import { verifySessionCookie } from '../../_shared/session.js';
+import { sanitizeTouch } from '../../../src/lib/leadSource.ts';
+import { COUNTRY_NAMES } from '../../../src/data/chinaVisaPolicies.ts';
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
@@ -312,7 +314,7 @@ export async function onRequestOptions({ request, env }) {
 
 export async function onRequestPost({ request, env }) {
   const contentLength = parseInt(request.headers.get('content-length') || '0', 10);
-  if (contentLength > 8192) return errorResponse(request, env, 413, 'payload_too_large', 'Request too large.');
+  if (contentLength > 12288) return errorResponse(request, env, 413, 'payload_too_large', 'Request too large.');
 
   const body = await parseJson(request);
   if (!body) return errorResponse(request, env, 400, 'invalid_json', 'Invalid JSON body.');
@@ -363,6 +365,11 @@ export async function onRequestPost({ request, env }) {
     return Number.isNaN(v) || v < 1 || v > 60 ? null : v;
   })();
   const departureCountry = clampStr(body.departureCountry, 80);
+  // Optional ISO 3166-1 alpha-2 code of the passport-issuing country (never a passport number).
+  const passportCountry = (() => {
+    const code = typeof body.passportCountry === 'string' ? body.passportCountry.trim().toUpperCase() : '';
+    return /^[A-Z]{2}$/.test(code) && code !== 'ZZ' && COUNTRY_NAMES[code] ? code : null;
+  })();
   const arrivalCity = clampStr(body.arrivalCity, 80);
   const destinationCitiesInput = parseStringArray(body.destinationCities);
   const destinationCities = destinationCitiesInput.length > 0 ? destinationCitiesInput : cities;
@@ -399,6 +406,16 @@ export async function onRequestPost({ request, env }) {
       return `${url.origin}${url.pathname}`.slice(0, 200);
     } catch { return null; }
   })();
+
+  // Visit source (first touch kept 30 days in the browser, last touch per visit). Re-sanitised and
+  // re-classified here so only host/path referrers and allowlisted values are stored.
+  const leadSourceRaw = body.leadSource && typeof body.leadSource === 'object' ? body.leadSource : {};
+  const lastTouch = sanitizeTouch(leadSourceRaw.lastTouch);
+  const firstTouch = sanitizeTouch(leadSourceRaw.firstTouch) ?? lastTouch;
+  const sourceTouch = lastTouch ?? firstTouch;
+  const leadChannel = sourceTouch?.channel ?? null;
+  const leadChannelDetail = sourceTouch?.channelDetail || null;
+  const landingPage = sourceTouch?.landingPage || null;
 
   const emailHash = await sha256(emailRaw);
   const createdAt = Date.now();
@@ -499,6 +516,7 @@ export async function onRequestPost({ request, env }) {
       travelers,
       tripLength,
       departureCountry,
+      passportCountry,
       arrivalCity,
       destinationCities,
       priorities,
@@ -524,6 +542,11 @@ export async function onRequestPost({ request, env }) {
       lastTouchMedium,
       lastTouchCampaign,
       referrer,
+      firstTouch,
+      lastTouch,
+      leadChannel,
+      leadChannelDetail,
+      landingPage,
       consentVersion,
       source: 'buddy_trip_lead',
       status: 'new',
@@ -561,6 +584,7 @@ export async function onRequestPost({ request, env }) {
     travelers,
     tripLength,
     departureCountry,
+    passportCountry,
     arrivalCity,
     destinationCities,
     priorities,
@@ -586,6 +610,11 @@ export async function onRequestPost({ request, env }) {
     lastTouchMedium,
     lastTouchCampaign,
     referrer,
+    firstTouch,
+    lastTouch,
+    leadChannel,
+    leadChannelDetail,
+    landingPage,
     createdAt,
   };
 
@@ -603,7 +632,7 @@ export async function onRequestPost({ request, env }) {
     await patchDoc(env, `tripLeads/${docId}`, {
       planGenerationStatus: planResult.ok ? 'succeeded' : 'failed',
       ...(planResult.ok
-        ? { generatedPlan: plan, planGeneratedAt: Date.now() }
+        ? { generatedPlan: plan, planGeneratedAt: Date.now(), planAdjustments: planResult.adjustments || [] }
         : { planGenerationErrorCode: planResult.errorCode || 'unknown_error' }),
     });
   } catch (patchErr) {
@@ -652,6 +681,8 @@ export async function onRequestPost({ request, env }) {
         ? null
         : confirmResult.errorCode,
       whatsappReminderStatus,
+      planAdjustments: planResult.ok ? (planResult.adjustments || []) : [],
+      customerEmail: confirmResult.email || null,
     });
   } catch {
     adminResult = { ok: false, errorCode: 'unknown_error' };
@@ -683,6 +714,7 @@ export async function onRequestPost({ request, env }) {
       confirmationEmailStatus: customerItineraryEmailStatus,
       customerItineraryEmailStatus,
       whatsappReminderStatus,
+      ...(confirmResult.email ? { customerItineraryEmailSubject: confirmResult.email.subject, customerItineraryEmailFrom: confirmResult.email.from } : {}),
       ...(adminResult.ok
         ? { notificationAcceptedAt: Date.now(), ...(adminResult.providerId ? { notificationProviderId: adminResult.providerId } : {}) }
         : { notificationErrorCode: adminResult.errorCode }),

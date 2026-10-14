@@ -13,6 +13,8 @@
     "test:visa-checker": "node scripts/test-visa-checker.mjs",
     "test:transit-calculator": "node scripts/test-transit-calculator.mjs",
     "test:trip-email-flow": "node scripts/test-trip-email-flow.mjs",
+    "test:lead-source": "node scripts/test-lead-source.mjs",
+    "email:samples": "node scripts/send-trip-email-samples.mjs",
     "audit:public-html": "node scripts/audit-public-html.mjs",
     "audit:seo-inventory": "node scripts/audit-seo-inventory.mjs",
     "audit:p0-buddy-menu": "node scripts/audit-p0-buddy-menu.mjs",

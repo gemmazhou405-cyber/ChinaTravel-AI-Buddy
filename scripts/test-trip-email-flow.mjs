@@ -65,11 +65,21 @@ try {
   assert.equal(confirmation.providerId, 'resend-1');
   const customerPayload = calls[0].payload;
   assert.equal(customerPayload.to, lead.email);
-  assert.equal(customerPayload.reply_to, 'chinaeastbuddy@gmail.com');
-  assert.equal(customerPayload.subject, 'Your 4-day Beijing Bcc: unsafe@example.com itinerary from ChinaEase Buddy');
+  assert.equal(customerPayload.from, 'Lin from ChinaEase Buddy <lin@chinaeasebuddy.com>');
+  assert.equal(customerPayload.reply_to, 'lin@chinaeasebuddy.com');
+  assert.equal(customerPayload.subject, 'Your 4-day Beijing plan (first draft)');
+  const injected = await sendTripLeadConfirmation(env, { ...lead, requestId: undefined, destinationCities: [] }, plan);
+  assert.doesNotMatch(injected.email.subject, /[\r\n]/, 'subject strips header-breaking newlines');
+  calls.pop();
   assert.doesNotMatch(customerPayload.subject, /[\r\n]/, 'subject strips header-breaking newlines');
-  assert.match(customerPayload.html, /Four family-friendly days in Beijing/);
+  assert.match(customerPayload.html, /A history-focused route with a manageable pace/);
   assert.match(customerPayload.html, /Visit the Forbidden City/);
+  assert.match(customerPayload.text, /^Hi,/);
+  assert.match(customerPayload.text, /first draft I put together with our trip-planning tool/);
+  assert.match(customerPayload.text, /within 48 hours/);
+  assert.match(customerPayload.text, /\nLin\nChinaEase Buddy\nhttps:\/\/chinaeasebuddy\.com\n/);
+  assert.doesNotMatch(customerPayload.html, /<table/, 'form-data table is no longer at the top of the customer email');
+  assert.equal(confirmation.email.subject, customerPayload.subject, 'rendered email is returned for the admin notification');
   assert.doesNotMatch(customerPayload.html, /could not generate your personalised plan/);
   assert.doesNotMatch(customerPayload.text, /will review the details and follow up/);
 
@@ -82,7 +92,7 @@ try {
   assert.equal(admin.ok, true);
   const adminPayload = calls[1].payload;
   assert.equal(adminPayload.to, 'chinaeastbuddy@gmail.com');
-  assert.equal(adminPayload.subject, 'ChinaEase trip lead: itinerary email accepted');
+  assert.equal(adminPayload.subject, 'ChinaEase trip lead: itinerary email accepted · unknown');
   assert.match(adminPayload.text, /Plan generation:\s+Succeeded/);
   assert.match(adminPayload.text, /Customer itinerary email: Accepted by email provider/);
   assert.match(adminPayload.text, /Customer email ID:\s+resend-1/);
@@ -93,7 +103,8 @@ try {
     customerItineraryEmailStatus: 'not_attempted',
     whatsappReminderStatus: 'not_attempted',
   });
-  assert.equal(calls[2].payload.subject, 'ChinaEase trip lead: action required');
+  assert.equal(calls[2].payload.subject, 'ChinaEase trip lead: action required · unknown');
+  assert.match(calls[2].payload.text, /The customer received nothing: no itinerary was generated/);
   assert.match(calls[2].payload.text, /Plan error code:\s+provider_timeout/);
   assert.match(calls[2].payload.text, /Customer itinerary email: Not attempted/);
 

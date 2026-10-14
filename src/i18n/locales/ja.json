@@ -1344,6 +1344,9 @@
         "interestTitle": "何に興味がありますか？",
         "interestHelp": "複数選択できます。",
         "travelersLabel": "旅行者は何人ですか？",
+        "passportLabel": "パスポートの発行国（任意）",
+        "passportHelp": "ビザ免除で入国できるか確認するために使います。国名のみで、旅券番号は不要です。",
+        "passportSkip": "スキップ / わからない",
         "travelersPreviewLabel": "旅行者",
         "travelers": {
           "1": "1名",

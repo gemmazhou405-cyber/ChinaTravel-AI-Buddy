@@ -1,5 +1,6 @@
 import { getAttributionContext } from './analytics';
 import { getCampaignAttribution } from './campaignAttribution';
+import { getLeadSource } from './leadSource';
 
 export interface TripLeadPayload {
   email: string;
@@ -7,6 +8,8 @@ export interface TripLeadPayload {
   travelers?: number;
   tripLength?: number;
   departureCountry?: string;
+  /** ISO 3166-1 alpha-2 code of the passport-issuing country; optional. */
+  passportCountry?: string;
   arrivalCity?: string;
   destinationCities?: string[];
   priorities?: string[];
@@ -52,6 +55,7 @@ export async function submitTripLead(
 ): Promise<TripLeadResult> {
   const attr = getAttributionContext();
   const campaign = getCampaignAttribution();
+  const leadSource = getLeadSource();
   try {
     const res = await fetch('/api/leads/trip', {
       method: 'POST',
@@ -63,6 +67,7 @@ export async function submitTripLead(
         travelers: payload.travelers ?? '',
         tripLength: payload.tripLength ?? '',
         departureCountry: payload.departureCountry ?? '',
+        passportCountry: payload.passportCountry ?? '',
         arrivalCity: payload.arrivalCity ?? '',
         destinationCities: payload.destinationCities ?? [],
         priorities: payload.priorities ?? [],
@@ -93,6 +98,7 @@ export async function submitTripLead(
         lastTouchMedium: campaign.last_touch_medium,
         lastTouchCampaign: campaign.last_touch_campaign,
         referrer: attr.referrer,
+        leadSource,
         website: '',
       }),
     });
