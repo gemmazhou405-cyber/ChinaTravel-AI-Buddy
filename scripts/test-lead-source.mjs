@@ -1,0 +1,224 @@
+// Lead source attribution, itinerary rules and computed email facts.
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import {
+  FIRST_TOUCH_TTL_MS,
+  LEAD_SOURCE_FIRST_TOUCH_KEY,
+  LEAD_SOURCE_LAST_TOUCH_KEY,
+  buildTouch,
+  captureLeadSource,
+  classifyChannel,
+  getLeadSource,
+  resetLeadSourceCaptureForTests,
+  sanitizeReferrer,
+  sanitizeTouch,
+} from '../src/lib/leadSource.ts';
+import { sendTripLeadNotification, sourceSummaryLine } from '../functions/_shared/email.js';
+import { enforcePlanRules } from '../functions/_shared/itinerary.js';
+import { renderItineraryEmail } from '../functions/_shared/itinerary-email.js';
+import { forbiddenCityFacts } from '../functions/_shared/trip-facts.js';
+import { SAMPLE_NOW, customerScenarios, leadForSource, samplePlan, sourceScenarios } from './trip-email-samples.mjs';
+
+// --- Channel classification -------------------------------------------------------------------
+const channelOf = (referrer) => classifyChannel({ referrer: sanitizeReferrer(referrer) });
+for (const host of ['https://www.google.com/', 'https://www.google.co.uk/', 'https://www.bing.com/', 'https://duckduckgo.com/', 'https://search.yahoo.com/']) {
+  assert.equal(channelOf(host).channel, 'organic_search', host);
+}
+for (const host of ['https://chatgpt.com/', 'https://chat.openai.com/', 'https://www.perplexity.ai/search', 'https://claude.ai/chat/x', 'https://gemini.google.com/app', 'https://copilot.microsoft.com/']) {
+  assert.equal(channelOf(host).channel, 'ai_assistant', host);
+}
+for (const [url, platform] of [
+  ['https://l.facebook.com/', 'facebook'], ['https://l.instagram.com/', 'instagram'], ['https://www.reddit.com/r/x/', 'reddit'],
+  ['https://www.quora.com/q', 'quora'], ['https://www.trip.com/moments/', 'trip.com'], ['https://m.youtube.com/', 'youtube'],
+  ['https://www.tiktok.com/', 'tiktok'], ['https://www.pinterest.co.uk/', 'pinterest'],
+]) {
+  assert.deepEqual(channelOf(url), { channel: 'social', channelDetail: platform }, url);
+}
+assert.deepEqual(channelOf(''), { channel: 'direct', channelDetail: '' });
+assert.deepEqual(channelOf('https://travelblog.example/post'), { channel: 'referral', channelDetail: 'travelblog.example' });
+assert.deepEqual(
+  classifyChannel({ referrer: 'google.com', utmSource: 'newsletter', utmMedium: 'email' }),
+  { channel: 'utm', channelDetail: 'newsletter / email' },
+  'UTM wins over the referrer',
+);
+
+// Referrers keep host + path only; internal navigation does not count.
+assert.equal(sanitizeReferrer('https://www.reddit.com/r/china/comments/1/?utm=x&email=a@b.com#top'), 'reddit.com/r/china/comments/1/');
+assert.equal(sanitizeReferrer('https://chinaeasebuddy.com/guides/'), '');
+assert.equal(sanitizeReferrer('https://www.chinaeasebuddy.com/guides/'), '');
+assert.equal(sanitizeReferrer('https://chinaease-buddy.pages.dev/'), '');
+assert.equal(sanitizeReferrer('https://mail.example.com/u/person@example.com/inbox'), 'mail.example.com/u/_/inbox');
+assert.equal(sanitizeReferrer('javascript:alert(1)'), '');
+
+const utmTouch = buildTouch({ href: 'https://chinaeasebuddy.com/plan/?utm_source=reddit&utm_medium=social&email=x@y.com', referrer: '', now: 1 });
+assert.equal(utmTouch.landingPage, '/plan/');
+assert.ok(!JSON.stringify(utmTouch).includes('@'), 'no email-like values are stored');
+
+// Server re-classifies instead of trusting the posted channel.
+const tampered = sanitizeTouch({ ...utmTouch, utmSource: '', utmMedium: '', channel: 'ai_assistant', channelDetail: '<script>', referrer: 'google.com/search' });
+assert.equal(tampered.channel, 'organic_search');
+assert.equal(tampered.channelDetail, 'google.com');
+assert.equal(sanitizeTouch('nonsense'), null);
+
+// --- Browser storage: first touch kept 30 days, last touch per visit --------------------------
+class MemoryStorage {
+  constructor() { this.values = new Map(); }
+  getItem(key) { return this.values.has(key) ? this.values.get(key) : null; }
+  setItem(key, value) { this.values.set(key, String(value)); }
+  removeItem(key) { this.values.delete(key); }
+}
+const localStorage = new MemoryStorage();
+let sessionStorage = new MemoryStorage();
+const location = { href: '' };
+const documentStub = { referrer: '' };
+globalThis.window = { location, get localStorage() { return localStorage; }, get sessionStorage() { return sessionStorage; } };
+globalThis.document = documentStub;
+
+function visit(href, referrer, now, { newSession = false } = {}) {
+  if (newSession) sessionStorage = new MemoryStorage();
+  location.href = href;
+  documentStub.referrer = referrer;
+  resetLeadSourceCaptureForTests();
+  captureLeadSource(now);
+  return getLeadSource(now);
+}
+
+const day = 24 * 60 * 60 * 1000;
+const t0 = Date.parse('2026-10-01T00:00:00Z');
+let state = visit('https://chinaeasebuddy.com/china-240-hour-transit-calculator/', 'https://www.google.com/', t0, { newSession: true });
+assert.equal(state.firstTouch.channel, 'organic_search');
+assert.equal(state.lastTouch.landingPage, '/china-240-hour-transit-calculator/');
+
+state = visit('https://chinaeasebuddy.com/', 'https://chinaeasebuddy.com/china-240-hour-transit-calculator/', t0 + 60_000);
+assert.equal(state.lastTouch.channel, 'organic_search', 'internal navigation keeps the last touch');
+
+state = visit('https://chinaeasebuddy.com/', '', t0 + 120_000);
+assert.equal(state.lastTouch.channel, 'organic_search', 'a reload in the same session keeps the last touch');
+
+state = visit('https://chinaeasebuddy.com/alipay-for-foreigners/', 'https://chatgpt.com/', t0 + 3 * day, { newSession: true });
+assert.equal(state.firstTouch.channel, 'organic_search', 'first touch is not overwritten');
+assert.equal(state.lastTouch.channel, 'ai_assistant', 'last touch updates on a new visit');
+
+state = visit('https://chinaeasebuddy.com/', '', t0 + 5 * day, { newSession: true });
+assert.equal(state.lastTouch.channel, 'direct', 'a new direct session updates the last touch');
+assert.equal(state.firstTouch.channel, 'organic_search');
+
+state = visit('https://chinaeasebuddy.com/plan/?utm_source=partner&utm_medium=referral', '', t0 + FIRST_TOUCH_TTL_MS + day, { newSession: true });
+assert.equal(state.firstTouch.channel, 'utm', 'first touch is replaced after 30 days');
+const stored = JSON.parse(localStorage.getItem(LEAD_SOURCE_FIRST_TOUCH_KEY));
+assert.equal(stored.expiresAt, t0 + FIRST_TOUCH_TTL_MS + day + FIRST_TOUCH_TTL_MS);
+assert.ok(localStorage.getItem(LEAD_SOURCE_LAST_TOUCH_KEY));
+const storedText = [...localStorage.values.values()].join('');
+assert.ok(!/anonymous|session|uid|email/i.test(storedText), 'no identifier is persisted');
+
+delete globalThis.window;
+delete globalThis.document;
+assert.deepEqual(getLeadSource(), { firstTouch: null, lastTouch: null }, 'safe without a browser');
+
+// --- Admin notification: four entry scenarios ---------------------------------------------------
+const realFetch = globalThis.fetch;
+const sent = [];
+globalThis.fetch = async (_url, options) => {
+  sent.push(JSON.parse(options.body));
+  return new Response(JSON.stringify({ id: `resend-${sent.length}` }), { status: 200 });
+};
+try {
+  for (const scenario of sourceScenarios) {
+    const lead = leadForSource(scenario);
+    assert.equal(sourceSummaryLine(lead), scenario.expect, scenario.label);
+    const { plan } = enforcePlanRules(samplePlan, lead);
+    const rendered = renderItineraryEmail(lead, plan, { now: SAMPLE_NOW });
+    await sendTripLeadNotification({ RESEND_API_KEY: 'test' }, lead, {
+      planGenerationStatus: 'succeeded',
+      customerItineraryEmailStatus: 'accepted',
+      customerItineraryEmailProviderId: 'resend-x',
+      customerEmail: { from: 'Lin from ChinaEase Buddy <lin@chinaeasebuddy.com>', subject: rendered.subject, text: rendered.text, bodyHtml: rendered.bodyHtml },
+    });
+    const payload = sent[sent.length - 1];
+    assert.ok(payload.text.startsWith(scenario.expect), `${scenario.label}: summary is the first line`);
+    assert.ok(payload.html.indexOf(scenario.expect.replace(/&/g, '&amp;')) < payload.html.indexOf('First touch'), `${scenario.label}: summary sits above the details`);
+    assert.match(payload.text, /FIRST TOUCH[\s\S]*LAST TOUCH/);
+    assert.match(payload.text, /Sending status: Accepted by email provider/);
+    assert.match(payload.text, /----- customer email start -----[\s\S]*Your day-by-day draft|YOUR DAY-BY-DAY DRAFT/);
+    assert.ok(payload.html.includes(rendered.bodyHtml), `${scenario.label}: admin email embeds the exact customer body`);
+    assert.ok(!payload.text.includes('share_id') && !payload.text.includes('?model'), 'referrer query strings never appear');
+  }
+} finally {
+  globalThis.fetch = realFetch;
+}
+
+// --- Itinerary rules -----------------------------------------------------------------------------
+const usLead = customerScenarios[0].lead;
+const enforced = enforcePlanRules(samplePlan, usLead);
+const planText = JSON.stringify(enforced.plan);
+assert.doesNotMatch(planText, /vpn/i, 'VPN advice is removed');
+assert.doesNotMatch(planText, /guaranteed|100\s?%/i, 'absolute claims are removed');
+const lastDay = enforced.plan.daily_itinerary.at(-1);
+assert.doesNotMatch(`${lastDay.morning} ${lastDay.afternoon} ${lastDay.evening}`, /great wall|mutianyu/i, 'no long day trip on the departure day');
+assert.match(lastDay.evening, /Fly home/, 'departure logistics stay on the departure day');
+assert.doesNotMatch(enforced.plan.daily_itinerary[0].morning, /great wall/i);
+assert.ok(enforced.adjustments.some((item) => item.includes('long_day_trip_on_travel_day')));
+
+const covidPlan = { ...samplePlan, summary: 'Bring a negative PCR test. Enjoy the trip.', daily_itinerary: samplePlan.daily_itinerary.slice(0, 2) };
+assert.equal(enforcePlanRules(covidPlan, usLead).plan.summary, 'Enjoy the trip.');
+
+// Great Wall on a 1-day trip: no safe swap, so it is replaced with a light plan.
+const oneDay = enforcePlanRules({ ...samplePlan, daily_itinerary: [{ ...samplePlan.daily_itinerary[3] }] }, { ...usLead, tripLength: 1 });
+assert.doesNotMatch(oneDay.plan.daily_itinerary[0].morning, /great wall/i);
+
+// Forbidden City on a Monday (trip starting Sunday 25 Oct 2026 → Day 2 is Monday 26 Oct).
+const mondayLead = { ...usLead, travelDate: '2026-10-25' };
+const mondayFixed = enforcePlanRules(samplePlan, mondayLead);
+const palaceAfter = forbiddenCityFacts(mondayLead, mondayFixed.plan, SAMPLE_NOW);
+assert.equal(palaceAfter.isMonday, false, 'Forbidden City moved off Monday');
+assert.ok(mondayFixed.adjustments.some((item) => item.includes('forbidden_city_on_monday')));
+const palaceRaw = forbiddenCityFacts(mondayLead, samplePlan, SAMPLE_NOW);
+assert.equal(palaceRaw.visitDateIso, '2026-10-26');
+assert.equal(palaceRaw.isMonday, true);
+assert.equal(palaceRaw.releaseDateIso, '2026-10-19');
+assert.equal(palaceRaw.releaseAtUtcIso, '2026-10-19T12:00:00.000Z', '20:00 Beijing time is 12:00 UTC');
+
+const itinerarySource = await readFile('functions/_shared/itinerary.js', 'utf8');
+for (const rule of ['1.5 hours', 'roaming eSIM', 'COVID-19', '"guaranteed"', 'closed on Mondays']) {
+  assert.ok(itinerarySource.includes(rule), `prompt states rule: ${rule}`);
+}
+assert.match(itinerarySource, /enforcePlanRules\(result\.plan, lead\)/, 'generated plans are enforced in code');
+
+// --- Customer email: computed facts per passport ----------------------------------------------
+const render = (lead) => renderItineraryEmail(lead, enforcePlanRules(samplePlan, lead).plan, { now: SAMPLE_NOW });
+const us = render(customerScenarios[0].lead);
+assert.equal(us.subject, 'Your 4-day Beijing plan (first draft)');
+assert.match(us.text, /United States passports are not on China's 30-day visa-free list/);
+assert.match(us.text, /tourist \(L\) visa/);
+assert.match(us.text, /Book Forbidden City tickets on Wed 21 Oct at 20:00 Beijing time/);
+assert.match(us.text, /Wednesday 21 Oct 2026 at 20:00 Beijing time \(12:00 UTC\)/);
+assert.doesNotMatch(us.text, /Which passport/);
+
+const uk = render(customerScenarios[1].lead);
+assert.match(uk.text, /United Kingdom passport holders can visit mainland China visa-free for up to 30 days/);
+assert.doesNotMatch(uk.text, /tourist \(L\) visa/);
+
+const unknown = render(customerScenarios[2].lead);
+assert.doesNotMatch(unknown.text, /visa-free list|You can skip the visa/);
+assert.match(unknown.text, /Which passport\(s\) will you be travelling on\?/);
+
+for (const email of [us, uk, unknown]) {
+  assert.ok(email.items.length >= 2 && email.items.length <= 3, '2-3 "do these first" items');
+  assert.match(email.text, /How old are the children\?/);
+  assert.match(email.text, /What time do your flights land and leave/);
+  assert.doesNotMatch(email.text, /\bvpn\b|covid|guaranteed|100%/i);
+  assert.ok(email.text.indexOf('DO THESE FIRST') < email.text.indexOf('YOUR DAY-BY-DAY DRAFT'));
+  assert.ok(email.text.indexOf('YOUR DAY-BY-DAY DRAFT') < email.text.indexOf('A FEW QUESTIONS'));
+  assert.ok(email.text.indexOf('A FEW QUESTIONS') < email.text.indexOf('\nLin\n'));
+  assert.ok(email.text.indexOf('\nLin\n') < email.text.indexOf('What you told us:'), 'form summary sits at the end');
+}
+
+// Already on sale: visit date less than 7 days away.
+const soon = renderItineraryEmail({ ...usLead, travelDate: '2026-10-15' }, samplePlan, { now: SAMPLE_NOW });
+assert.match(soon.text, /already on sale/);
+// No dates: generic booking-window advice and a date question.
+const noDates = renderItineraryEmail({ ...usLead, travelDate: null }, samplePlan, { now: SAMPLE_NOW });
+assert.match(noDates.text, /7 days before each visit date at 20:00 Beijing time/);
+assert.match(noDates.text, /What dates are you travelling\?/);
+
+console.log('Lead source attribution, itinerary rules and computed email facts tests passed.');

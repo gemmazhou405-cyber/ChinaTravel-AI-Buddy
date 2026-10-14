@@ -1,5 +1,8 @@
+import { CUSTOMER_FROM_DEFAULT, LIN_EMAIL, renderItineraryEmail } from './itinerary-email.js';
+
 const EMAIL_TIMEOUT_MS = 5000;
 const CHINAEASE_CONTACT_EMAIL = 'chinaeastbuddy@gmail.com';
+const ADMIN_FROM_DEFAULT = 'ChinaEase Buddy <leads@notify.chinaeasebuddy.com>';
 
 function escapeHtml(str) {
   if (str === null || str === undefined) return 'Not provided';
@@ -23,242 +26,176 @@ function listVal(value) {
   return Array.isArray(value) && value.length ? value.join(', ') : 'Not provided';
 }
 
-function buildStarterRoute(lead) {
-  const cities = Array.isArray(lead.destinationCities) && lead.destinationCities.length
-    ? lead.destinationCities.slice(0, 6)
-    : (lead.arrivalCity ? [lead.arrivalCity] : []);
-  const days = Number(lead.tripLength) || 7;
-  if (!cities.length) return ['We will suggest a route after reviewing your dates and interests.'];
-  const usableDays = Math.max(days, cities.length);
-  const baseDays = Math.floor(usableDays / cities.length);
-  const extraDays = usableDays % cities.length;
-  let day = 1;
-  return cities.map((city, index) => {
-    const cityDays = baseDays + (index < extraDays ? 1 : 0);
-    const start = day;
-    const end = day + cityDays - 1;
-    day = end + 1;
-    const focus = listVal(lead.priorities) === 'Not provided' ? 'a relaxed first look at the city' : listVal(lead.priorities).toLowerCase();
-    return `Days ${start}–${end}: ${city} — build the day around ${focus}.`;
-  });
-}
-
 function outcomeLabel(value, labels) {
   return labels[value] || 'Not attempted';
 }
 
-function buildHtml(lead, outcome = {}) {
-  const submittedAt = lead.createdAt ? new Date(lead.createdAt).toISOString() : null;
-  const planStatus = outcomeLabel(outcome.planGenerationStatus, {
-    succeeded: 'Succeeded',
-    failed: 'Failed',
-  });
-  const customerEmailStatus = outcomeLabel(outcome.customerItineraryEmailStatus, {
-    accepted: 'Accepted by email provider',
-    failed: 'Failed',
-  });
-  const whatsappStatus = outcomeLabel(outcome.whatsappReminderStatus, {
-    accepted: 'Accepted by WhatsApp provider',
-    failed: 'Failed',
-    not_requested: 'Not requested',
-  });
-  const rows = [
-    ['Plan generation', escapeHtml(planStatus)],
-    ['Customer itinerary email', escapeHtml(customerEmailStatus)],
-    ['Customer email ID', escapeHtml(outcome.customerItineraryEmailProviderId)],
-    ['Plan error code', escapeHtml(outcome.planGenerationErrorCode)],
-    ['Customer email error code', escapeHtml(outcome.customerItineraryEmailErrorCode)],
-    ['WhatsApp reminder', escapeHtml(whatsappStatus)],
-    ['Submitted at', escapeHtml(submittedAt)],
-    ['Email', escapeHtml(lead.email)],
-    ['Travel date', escapeHtml(lead.travelDate)],
-    ['Travelers', escapeHtml(lead.travelers)],
-    ['Trip length', escapeHtml(lead.tripLength ? `${lead.tripLength} days` : null)],
-    ['Departure country', escapeHtml(lead.departureCountry)],
-    ['Arrival city', escapeHtml(lead.arrivalCity)],
-    ['Cities considered', escapeHtml(listVal(lead.destinationCities))],
-    ['Priorities', escapeHtml(listVal(lead.priorities))],
-    ['Concerns', escapeHtml(listVal(lead.concerns))],
-    ['Help needed', escapeHtml(lead.helpWith)],
-    ['Preferred contact', escapeHtml(lead.contactMethod)],
-    ['WhatsApp', escapeHtml(lead.whatsapp)],
-    ['Locale', escapeHtml(lead.locale)],
-    ['Source path', escapeHtml(lead.sourcePath)],
-    ['UTM source', escapeHtml(lead.utmSource)],
-    ['UTM medium', escapeHtml(lead.utmMedium)],
-    ['UTM campaign', escapeHtml(lead.utmCampaign)],
-    ['UTM content', escapeHtml(lead.utmContent)],
-    ['Landing variant', escapeHtml(lead.landingVariant)],
-    ['Partner ID', escapeHtml(lead.partnerId)],
-    ['Partner type', escapeHtml(lead.partnerType)],
-    ['Campaign channel', escapeHtml(lead.campaignChannel)],
-    ['Campaign name', escapeHtml(lead.campaignName)],
-    ['First-touch source', escapeHtml(lead.firstTouchSource)],
-    ['Last-touch source', escapeHtml(lead.lastTouchSource)],
+function pathOnly(value) {
+  return typeof value === 'string' && value ? value.split(/[?#]/)[0] || '/' : '';
+}
+
+function channelLabel(touch) {
+  if (!touch) return 'unknown';
+  return touch.channelDetail ? `${touch.channel} (${touch.channelDetail})` : touch.channel;
+}
+
+/** "Channel: organic_search (google.com) · Landing page: /x/ · Submitted on: /" (last touch). */
+export function sourceSummaryLine(lead) {
+  const touch = lead.lastTouch || lead.firstTouch;
+  return [
+    `Channel: ${channelLabel(touch)}`,
+    `Landing page: ${touch?.landingPage || 'unknown'}`,
+    `Submitted on: ${pathOnly(lead.sourcePath) || 'unknown'}`,
+  ].join(' · ');
+}
+
+function touchDetails(touch) {
+  if (!touch) return [['Recorded', 'No source data (storage blocked or older page version)']];
+  const utm = [
+    touch.utmSource && `source=${touch.utmSource}`,
+    touch.utmMedium && `medium=${touch.utmMedium}`,
+    touch.utmCampaign && `campaign=${touch.utmCampaign}`,
+    touch.utmContent && `content=${touch.utmContent}`,
+  ].filter(Boolean).join(', ');
+  return [
+    ['Channel', channelLabel(touch)],
+    ['Referrer', touch.referrer || 'none (direct)'],
+    ['Landing page', touch.landingPage || 'unknown'],
+    ['UTM', utm || 'none'],
+    ['Partner', touch.partner || 'none'],
+    ['Recorded at', touch.capturedAt ? new Date(touch.capturedAt).toISOString() : 'unknown'],
   ];
-  const trs = rows
-    .map(
-      ([label, value]) =>
-        `<tr><td style="padding:4px 12px 4px 0;font-weight:600;white-space:nowrap;vertical-align:top;">${label}</td><td style="padding:4px 0;">${value}</td></tr>`,
-    )
-    .join('\n');
-  return `<!DOCTYPE html><html><head><meta charset="utf-8"></head><body style="font-family:sans-serif;font-size:14px;color:#111;max-width:600px;margin:0 auto;padding:24px;">
-<h2 style="margin:0 0 16px;font-size:16px;">New trip planning enquiry</h2>
-<table style="border-collapse:collapse;width:100%;">
-${trs}
-</table>
+}
+
+function statusLabels(outcome) {
+  return {
+    planStatus: outcomeLabel(outcome.planGenerationStatus, { succeeded: 'Succeeded', failed: 'Failed' }),
+    customerEmailStatus: outcomeLabel(outcome.customerItineraryEmailStatus, {
+      accepted: 'Accepted by email provider',
+      failed: 'Failed',
+    }),
+    whatsappStatus: outcomeLabel(outcome.whatsappReminderStatus, {
+      accepted: 'Accepted by WhatsApp provider',
+      failed: 'Failed',
+      not_requested: 'Not requested',
+    }),
+  };
+}
+
+function leadRows(lead) {
+  return [
+    ['Submitted at', lead.createdAt ? new Date(lead.createdAt).toISOString() : null],
+    ['Email', lead.email],
+    ['Travel date', lead.travelDate],
+    ['Travelers', lead.travelers],
+    ['Trip length', lead.tripLength ? `${lead.tripLength} days` : null],
+    ['Departure country', lead.departureCountry],
+    ['Arrival city', lead.arrivalCity],
+    ['Cities considered', listVal(lead.destinationCities)],
+    ['Priorities', listVal(lead.priorities)],
+    ['Concerns', listVal(lead.concerns)],
+    ['Help needed', lead.helpWith],
+    ['Preferred contact', lead.contactMethod],
+    ['WhatsApp', lead.whatsapp],
+    ['Locale', lead.locale],
+    ['Source path', lead.sourcePath],
+    ['UTM source', lead.utmSource],
+    ['UTM medium', lead.utmMedium],
+    ['UTM campaign', lead.utmCampaign],
+    ['UTM content', lead.utmContent],
+    ['Landing variant', lead.landingVariant],
+    ['Partner ID', lead.partnerId],
+    ['Partner type', lead.partnerType],
+    ['Campaign channel', lead.campaignChannel],
+    ['Campaign name', lead.campaignName],
+  ];
+}
+
+function customerEmailSection(outcome) {
+  const email = outcome.customerEmail;
+  if (!email) {
+    const reason = outcome.planGenerationStatus === 'failed'
+      ? 'no itinerary was generated, so no email was sent'
+      : 'no itinerary email was sent';
+    return { html: `<p style="margin:0 0 16px;"><strong>The customer received nothing:</strong> ${escapeHtml(reason)}.</p>`, text: [`The customer received nothing: ${reason}.`] };
+  }
+  const { customerEmailStatus } = statusLabels(outcome);
+  const meta = [
+    ['Sending status', customerEmailStatus],
+    ['From', email.from],
+    ['Subject', email.subject],
+    ['Resend email ID', outcome.customerItineraryEmailProviderId],
+    ['Error code', outcome.customerItineraryEmailErrorCode],
+  ];
+  return {
+    html: `<table style="border-collapse:collapse;margin:0 0 12px;">${meta.map(([label, value]) => `<tr><td style="padding:2px 12px 2px 0;font-weight:600;white-space:nowrap;">${label}</td><td style="padding:2px 0;">${escapeHtml(value)}</td></tr>`).join('')}</table>
+<div style="border:1px solid #d0d7de;border-radius:8px;padding:16px;background:#fafafa;font-size:14px;">${email.bodyHtml}</div>`,
+    text: [
+      ...meta.map(([label, value]) => `${label}: ${textVal(value)}`),
+      '',
+      '----- customer email start -----',
+      email.text,
+      '----- customer email end -----',
+    ],
+  };
+}
+
+function buildHtml(lead, outcome = {}) {
+  const { planStatus, customerEmailStatus, whatsappStatus } = statusLabels(outcome);
+  const statusRows = [
+    ['Plan generation', planStatus],
+    ['Customer itinerary email', customerEmailStatus],
+    ['Customer email ID', outcome.customerItineraryEmailProviderId],
+    ['Plan error code', outcome.planGenerationErrorCode],
+    ['Customer email error code', outcome.customerItineraryEmailErrorCode],
+    ['Plan adjustments', outcome.planAdjustments?.length ? outcome.planAdjustments.join('; ') : 'None'],
+    ['WhatsApp reminder', whatsappStatus],
+  ];
+  const table = (rows) => `<table style="border-collapse:collapse;width:100%;margin:0 0 16px;">${rows
+    .map(([label, value]) => `<tr><td style="padding:4px 12px 4px 0;font-weight:600;white-space:nowrap;vertical-align:top;">${label}</td><td style="padding:4px 0;">${escapeHtml(value)}</td></tr>`)
+    .join('\n')}</table>`;
+  const customer = customerEmailSection(outcome);
+  return `<!DOCTYPE html><html><head><meta charset="utf-8"></head><body style="font-family:sans-serif;font-size:14px;color:#111;max-width:680px;margin:0 auto;padding:24px;">
+<div style="background:#edf5f2;border:1px solid #155e63;border-radius:8px;padding:12px 14px;margin:0 0 18px;font-size:15px;"><strong>${escapeHtml(sourceSummaryLine(lead))}</strong></div>
+<h2 style="margin:0 0 8px;font-size:15px;">First touch</h2>
+${table(touchDetails(lead.firstTouch))}
+<h2 style="margin:0 0 8px;font-size:15px;">Last touch</h2>
+${table(touchDetails(lead.lastTouch))}
+<h2 style="margin:0 0 8px;font-size:15px;">Delivery status</h2>
+${table(statusRows)}
+<h2 style="margin:0 0 8px;font-size:15px;">What the customer received</h2>
+${customer.html}
+<h2 style="margin:24px 0 8px;font-size:15px;">Form details</h2>
+${table(leadRows(lead))}
 </body></html>`;
 }
 
 function buildText(lead, outcome = {}) {
-  const submittedAt = lead.createdAt ? new Date(lead.createdAt).toISOString() : null;
-  const planStatus = outcomeLabel(outcome.planGenerationStatus, {
-    succeeded: 'Succeeded',
-    failed: 'Failed',
-  });
-  const customerEmailStatus = outcomeLabel(outcome.customerItineraryEmailStatus, {
-    accepted: 'Accepted by email provider',
-    failed: 'Failed',
-  });
-  const whatsappStatus = outcomeLabel(outcome.whatsappReminderStatus, {
-    accepted: 'Accepted by WhatsApp provider',
-    failed: 'Failed',
-    not_requested: 'Not requested',
-  });
+  const { planStatus, customerEmailStatus, whatsappStatus } = statusLabels(outcome);
+  const block = (rows) => rows.map(([label, value]) => `${`${label}:`.padEnd(26)}${textVal(value)}`);
   return [
-    'New trip planning enquiry',
+    sourceSummaryLine(lead),
     '',
+    'FIRST TOUCH',
+    ...block(touchDetails(lead.firstTouch)),
+    '',
+    'LAST TOUCH',
+    ...block(touchDetails(lead.lastTouch)),
+    '',
+    'DELIVERY STATUS',
     `Plan generation:          ${planStatus}`,
     `Customer itinerary email: ${customerEmailStatus}`,
     `Customer email ID:        ${textVal(outcome.customerItineraryEmailProviderId)}`,
     `Plan error code:          ${textVal(outcome.planGenerationErrorCode)}`,
     `Customer email error:     ${textVal(outcome.customerItineraryEmailErrorCode)}`,
+    `Plan adjustments:         ${outcome.planAdjustments?.length ? outcome.planAdjustments.join('; ') : 'None'}`,
     `WhatsApp reminder:        ${whatsappStatus}`,
     '',
-    `Submitted at: ${textVal(submittedAt)}`,
-    `Email:        ${textVal(lead.email)}`,
-    `Travel date:  ${textVal(lead.travelDate)}`,
-    `Travelers:    ${textVal(lead.travelers)}`,
-    `Trip length:  ${lead.tripLength ? `${lead.tripLength} days` : 'Not provided'}`,
-    `From:         ${textVal(lead.departureCountry)}`,
-    `Arrival city: ${textVal(lead.arrivalCity)}`,
-    `Cities:       ${listVal(lead.destinationCities)}`,
-    `Priorities:   ${listVal(lead.priorities)}`,
-    `Concerns:     ${listVal(lead.concerns)}`,
-    `Help needed:  ${textVal(lead.helpWith)}`,
-    `Contact:      ${textVal(lead.contactMethod)}`,
-    `WhatsApp:     ${textVal(lead.whatsapp)}`,
-    `Locale:       ${textVal(lead.locale)}`,
-    `Source path:  ${textVal(lead.sourcePath)}`,
-    `UTM source:   ${textVal(lead.utmSource)}`,
-    `UTM medium:   ${textVal(lead.utmMedium)}`,
-    `UTM campaign: ${textVal(lead.utmCampaign)}`,
-    `UTM content:  ${textVal(lead.utmContent)}`,
-    `Landing:      ${textVal(lead.landingVariant)}`,
-    `Partner ID:   ${textVal(lead.partnerId)}`,
-    `Partner type: ${textVal(lead.partnerType)}`,
-    `Channel:      ${textVal(lead.campaignChannel)}`,
-    `Campaign:     ${textVal(lead.campaignName)}`,
-    `First source: ${textVal(lead.firstTouchSource)}`,
-    `Last source:  ${textVal(lead.lastTouchSource)}`,
-  ].join('\n');
-}
-
-function planHtml(plan) {
-  if (!plan) return '';
-  const days = plan.daily_itinerary.map((item) => `<li style="margin:0 0 12px;"><strong>${escapeHtml(item.day)} · ${escapeHtml(item.city)}</strong><br>${escapeHtml(item.morning)}${item.afternoon ? ` · ${escapeHtml(item.afternoon)}` : ''}${item.evening ? ` · ${escapeHtml(item.evening)}` : ''}${item.transport ? `<br><span style="color:#555;">Transport: ${escapeHtml(item.transport)}</span>` : ''}${item.food ? `<br><span style="color:#555;">Food: ${escapeHtml(item.food)}</span>` : ''}${item.notes ? `<br><span style="color:#555;">Note: ${escapeHtml(item.notes)}</span>` : ''}</li>`).join('');
-  const section = (title, items) => Array.isArray(items) && items.length ? `<h3 style="font-size:15px;margin:18px 0 8px;">${title}</h3><ul style="margin:0 0 16px;padding-left:20px;">${items.map((item) => `<li style="margin:0 0 6px;">${escapeHtml(item)}</li>`).join('')}</ul>` : '';
-  return `<h3 style="font-size:15px;margin:18px 0 8px;">${escapeHtml(plan.title)}</h3><p style="margin:0 0 12px;">${escapeHtml(plan.summary)}</p><ol style="margin:0 0 16px;padding-left:20px;">${days}</ol>${section('Transport notes', plan.transport)}${section('Prepare before you go', plan.preparation)}${section('Personalised notes', plan.personalised_notes)}${section('Check before booking', plan.verify_before_booking)}`;
-}
-
-function planText(plan) {
-  if (!plan) return [];
-  const lines = [plan.title, plan.summary, '', 'Daily itinerary:'];
-  for (const item of plan.daily_itinerary) {
-    lines.push(`${item.day} · ${item.city}`);
-    if (item.morning) lines.push(`Morning: ${item.morning}`);
-    if (item.afternoon) lines.push(`Afternoon: ${item.afternoon}`);
-    if (item.evening) lines.push(`Evening: ${item.evening}`);
-    if (item.transport) lines.push(`Transport: ${item.transport}`);
-    if (item.food) lines.push(`Food: ${item.food}`);
-    if (item.notes) lines.push(`Note: ${item.notes}`);
-    lines.push('');
-  }
-  for (const [title, items] of [['Transport notes', plan.transport], ['Prepare before you go', plan.preparation], ['Personalised notes', plan.personalised_notes], ['Check before booking', plan.verify_before_booking]]) {
-    if (items?.length) { lines.push(`${title}:`, ...items.map((item) => `- ${item}`), ''); }
-  }
-  return lines;
-}
-
-function buildConfirmationHtml(lead, plan) {
-  const travelDate = escapeHtml(lead.travelDate);
-  const travelers = escapeHtml(lead.travelers);
-  // Escape HTML first, then convert newlines to <br> for multi-line display
-  const helpWithEscaped = escapeHtml(lead.helpWith);
-  const helpWith =
-    helpWithEscaped === 'Not provided' ? helpWithEscaped : helpWithEscaped.replace(/\n/g, '<br>');
-  const rows = [
-    ['Trip date', travelDate],
-    ['Travelers', travelers],
-    ['Trip length', escapeHtml(lead.tripLength ? `${lead.tripLength} days` : null)],
-    ['Arrival city', escapeHtml(lead.arrivalCity)],
-    ['Cities considered', escapeHtml(listVal(lead.destinationCities))],
-    ['Trip focus', escapeHtml(listVal(lead.priorities))],
-    ['Help needed', helpWith],
-    ['Preferred contact', escapeHtml(lead.contactMethod)],
-  ];
-  const trs = rows
-    .map(
-      ([label, value]) =>
-        `<tr><td style="padding:4px 12px 4px 0;font-weight:600;white-space:nowrap;vertical-align:top;">${label}</td><td style="padding:4px 0;word-break:break-word;">${value}</td></tr>`,
-    )
-    .join('\n');
-  const content = `<p style="margin:0 0 16px;">Here is the personalised first draft generated from the details you shared.</p>${planHtml(plan)}`;
-  return `<!DOCTYPE html><html><head><meta charset="utf-8"></head><body style="font-family:sans-serif;font-size:14px;color:#111;max-width:600px;margin:0 auto;padding:24px;">
-<p style="margin:0 0 12px;">Hi,</p>
-<p style="margin:0 0 12px;">Thanks for sharing your China trip details with ChinaEase Buddy.</p>
-<table style="border-collapse:collapse;width:100%;margin:0 0 16px;">
-${trs}
-</table>
-${content}
-<p style="margin:0 0 12px;">This message does not subscribe you to our newsletter.</p>
-<p style="margin:0 0 16px;">Please do not reply with passport details, payment card information, or sensitive medical information.</p>
-<p style="margin:0;">ChinaEase Buddy<br><a href="https://chinaeasebuddy.com" style="color:#0066cc;">https://chinaeasebuddy.com</a></p>
-</body></html>`;
-}
-
-function buildConfirmationText(lead, plan) {
-  return [
-    'Hi,',
+    'WHAT THE CUSTOMER RECEIVED',
+    ...customerEmailSection(outcome).text,
     '',
-    'Thanks for sharing your China trip details with ChinaEase Buddy.',
-    '',
-    'Here is the personalised first draft generated from the details you shared.',
-    '',
-    `Trip date:\n${textVal(lead.travelDate)}`,
-    '',
-    `Travelers:\n${textVal(lead.travelers)}`,
-    '',
-    `Trip length:\n${lead.tripLength ? `${lead.tripLength} days` : 'Not provided'}`,
-    '',
-    `Arrival city:\n${textVal(lead.arrivalCity)}`,
-    '',
-    `Cities considered:\n${listVal(lead.destinationCities)}`,
-    '',
-    `Trip focus:\n${listVal(lead.priorities)}`,
-    '',
-    `Help needed:\n${textVal(lead.helpWith)}`,
-    '',
-    `Preferred contact:\n${textVal(lead.contactMethod)}`,
-    '',
-    ...planText(plan),
-    '',
-    'Use this as a starting point and verify time-sensitive details before booking. This message does not subscribe you to our newsletter.',
-    '',
-    'Please do not reply with passport details, payment card information, or sensitive medical information.',
-    '',
-    'ChinaEase Buddy',
-    'https://chinaeasebuddy.com',
+    'FORM DETAILS',
+    ...block(leadRows(lead)),
   ].join('\n');
 }
 
@@ -266,14 +203,6 @@ function emailSubjectValue(value, fallback) {
   if (value === null || value === undefined) return fallback;
   const safe = String(value).replace(/[\r\n]+/g, ' ').trim().slice(0, 60);
   return safe || fallback;
-}
-
-function buildItinerarySubject(lead) {
-  const days = Number.isFinite(Number(lead.tripLength))
-    ? `${Math.max(1, Math.min(60, Number(lead.tripLength)))}-day`
-    : 'personalised';
-  const destination = emailSubjectValue(lead.arrivalCity, 'China');
-  return `Your ${days} ${destination} itinerary from ChinaEase Buddy`;
 }
 
 function classifyHttpError(status) {
@@ -339,16 +268,18 @@ export async function sendTripLeadNotification(env, lead, outcome = {}) {
   if (!env.RESEND_API_KEY) {
     return { ok: false, errorCode: 'missing_config' };
   }
-  const from = env.TRIP_LEAD_FROM_EMAIL || 'ChinaEase Buddy <leads@notify.chinaeasebuddy.com>';
+  const from = env.TRIP_LEAD_FROM_EMAIL || ADMIN_FROM_DEFAULT;
+  const touch = lead.lastTouch || lead.firstTouch;
+  const status = outcome.planGenerationStatus === 'failed' || outcome.customerItineraryEmailStatus === 'failed'
+    ? 'action required'
+    : 'itinerary email accepted';
   return sendResendEmail(
     env,
     {
       from,
       to: CHINAEASE_CONTACT_EMAIL,
       reply_to: lead.email,
-      subject: outcome.planGenerationStatus === 'failed' || outcome.customerItineraryEmailStatus === 'failed'
-        ? 'ChinaEase trip lead: action required'
-        : 'ChinaEase trip lead: itinerary email accepted',
+      subject: `ChinaEase trip lead: ${status} · ${emailSubjectValue(channelLabel(touch), 'unknown')}`,
       html: buildHtml(lead, outcome),
       text: buildText(lead, outcome),
     },
@@ -356,31 +287,39 @@ export async function sendTripLeadNotification(env, lead, outcome = {}) {
   );
 }
 
-export async function sendTripLeadConfirmation(env, lead, plan = null) {
-  if (!env.RESEND_API_KEY) {
-    return { ok: false, errorCode: 'missing_config' };
-  }
+/**
+ * Send the itinerary to the traveller from Lin. Returns the provider result plus `email`
+ * (from, subject, text, bodyHtml) so the internal notification can show exactly what was sent.
+ * TRIP_CUSTOMER_FROM_EMAIL can override the sender without a code change (e.g. to roll back).
+ */
+export async function sendTripLeadConfirmation(env, lead, plan = null, options = {}) {
   if (!plan) return { ok: false, errorCode: 'missing_plan' };
-  const from = env.TRIP_LEAD_FROM_EMAIL || 'ChinaEase Buddy <leads@notify.chinaeasebuddy.com>';
-  return sendResendEmail(
+  const from = env.TRIP_CUSTOMER_FROM_EMAIL || CUSTOMER_FROM_DEFAULT;
+  const rendered = renderItineraryEmail(lead, plan, options);
+  const email = { from, subject: rendered.subject, text: rendered.text, bodyHtml: rendered.bodyHtml };
+  if (!env.RESEND_API_KEY) {
+    return { ok: false, errorCode: 'missing_config', email };
+  }
+  const result = await sendResendEmail(
     env,
     {
       from,
       to: lead.email,
-      reply_to: CHINAEASE_CONTACT_EMAIL,
-      subject: buildItinerarySubject(lead),
-      html: buildConfirmationHtml(lead, plan),
-      text: buildConfirmationText(lead, plan),
+      reply_to: LIN_EMAIL,
+      subject: rendered.subject,
+      html: rendered.html,
+      text: rendered.text,
     },
     { idempotencyKey: lead.requestId ? `trip-lead-customer-${lead.requestId}` : undefined },
   );
+  return { ...result, email };
 }
 
 export async function sendTripEmailDeliveryAlert(env, lead, delivery) {
   if (!env.RESEND_API_KEY) {
     return { ok: false, errorCode: 'missing_config' };
   }
-  const from = env.TRIP_LEAD_FROM_EMAIL || 'ChinaEase Buddy <leads@notify.chinaeasebuddy.com>';
+  const from = env.TRIP_LEAD_FROM_EMAIL || ADMIN_FROM_DEFAULT;
   const eventType = emailSubjectValue(delivery.eventType, 'email.failure');
   const providerId = emailSubjectValue(delivery.providerId, 'Not provided');
   const requestId = emailSubjectValue(lead.requestId || lead.id, 'Not provided');
