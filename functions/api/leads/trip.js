@@ -22,6 +22,7 @@ import { sendWhatsAppTripReminder } from '../../_shared/whatsapp.js';
 import { activePassForId } from '../../_shared/entitlements.js';
 import { verifySessionCookie } from '../../_shared/session.js';
 import { sanitizeTouch } from '../../../src/lib/leadSource.ts';
+import { COUNTRY_NAMES } from '../../../src/data/chinaVisaPolicies.ts';
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
@@ -364,6 +365,11 @@ export async function onRequestPost({ request, env }) {
     return Number.isNaN(v) || v < 1 || v > 60 ? null : v;
   })();
   const departureCountry = clampStr(body.departureCountry, 80);
+  // Optional ISO 3166-1 alpha-2 code of the passport-issuing country (never a passport number).
+  const passportCountry = (() => {
+    const code = typeof body.passportCountry === 'string' ? body.passportCountry.trim().toUpperCase() : '';
+    return /^[A-Z]{2}$/.test(code) && code !== 'ZZ' && COUNTRY_NAMES[code] ? code : null;
+  })();
   const arrivalCity = clampStr(body.arrivalCity, 80);
   const destinationCitiesInput = parseStringArray(body.destinationCities);
   const destinationCities = destinationCitiesInput.length > 0 ? destinationCitiesInput : cities;
@@ -510,6 +516,7 @@ export async function onRequestPost({ request, env }) {
       travelers,
       tripLength,
       departureCountry,
+      passportCountry,
       arrivalCity,
       destinationCities,
       priorities,
@@ -577,6 +584,7 @@ export async function onRequestPost({ request, env }) {
     travelers,
     tripLength,
     departureCountry,
+    passportCountry,
     arrivalCity,
     destinationCities,
     priorities,

@@ -61,9 +61,9 @@ const baseLead = {
 };
 
 export const customerScenarios = [
-  { id: 'us-passport-beijing', label: 'US passport, Beijing', lead: { ...baseLead, requestId: '00000000-0000-4000-8000-000000000001', departureCountry: 'United States' } },
-  { id: 'uk-passport-beijing', label: 'UK passport, Beijing', lead: { ...baseLead, requestId: '00000000-0000-4000-8000-000000000002', departureCountry: 'United Kingdom' } },
-  { id: 'no-country', label: 'Departure country not given', lead: { ...baseLead, requestId: '00000000-0000-4000-8000-000000000003', departureCountry: null } },
+  { id: 'us-passport-beijing', label: 'US passport, Beijing', lead: { ...baseLead, requestId: '00000000-0000-4000-8000-000000000001', passportCountry: 'US' } },
+  { id: 'uk-passport-beijing', label: 'UK passport, Beijing', lead: { ...baseLead, requestId: '00000000-0000-4000-8000-000000000002', passportCountry: 'GB' } },
+  { id: 'no-country', label: 'Passport country not given', lead: { ...baseLead, requestId: '00000000-0000-4000-8000-000000000003', passportCountry: null } },
 ];
 
 const page = 'https://chinaeasebuddy.com';

@@ -1342,6 +1342,9 @@
         "interestTitle": "Qu'aimez-vous ?",
         "interestHelp": "Choisissez autant d'options que vous le souhaitez.",
         "travelersLabel": "Combien de voyageurs ?",
+        "passportLabel": "Pays du passeport (facultatif)",
+        "passportHelp": "Pour vérifier si vous pouvez entrer sans visa. Le pays uniquement, jamais votre numéro de passeport.",
+        "passportSkip": "Passer / je ne sais pas",
         "travelersPreviewLabel": "Voyageurs",
         "travelers": {
           "1": "1 voyageur",

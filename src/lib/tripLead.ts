@@ -8,6 +8,8 @@ export interface TripLeadPayload {
   travelers?: number;
   tripLength?: number;
   departureCountry?: string;
+  /** ISO 3166-1 alpha-2 code of the passport-issuing country; optional. */
+  passportCountry?: string;
   arrivalCity?: string;
   destinationCities?: string[];
   priorities?: string[];
@@ -65,6 +67,7 @@ export async function submitTripLead(
         travelers: payload.travelers ?? '',
         tripLength: payload.tripLength ?? '',
         departureCountry: payload.departureCountry ?? '',
+        passportCountry: payload.passportCountry ?? '',
         arrivalCity: payload.arrivalCity ?? '',
         destinationCities: payload.destinationCities ?? [],
         priorities: payload.priorities ?? [],

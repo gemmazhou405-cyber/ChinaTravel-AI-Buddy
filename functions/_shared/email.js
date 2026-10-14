@@ -90,6 +90,7 @@ function leadRows(lead) {
     ['Travelers', lead.travelers],
     ['Trip length', lead.tripLength ? `${lead.tripLength} days` : null],
     ['Departure country', lead.departureCountry],
+    ['Passport country', lead.passportCountry],
     ['Arrival city', lead.arrivalCity],
     ['Cities considered', listVal(lead.destinationCities)],
     ['Priorities', listVal(lead.priorities)],

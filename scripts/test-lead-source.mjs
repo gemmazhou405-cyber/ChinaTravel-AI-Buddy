@@ -1,5 +1,6 @@
 // Lead source attribution, itinerary rules and computed email facts.
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import {
   FIRST_TOUCH_TTL_MS,
@@ -201,6 +202,20 @@ assert.doesNotMatch(uk.text, /tourist \(L\) visa/);
 const unknown = render(customerScenarios[2].lead);
 assert.doesNotMatch(unknown.text, /visa-free list|You can skip the visa/);
 assert.match(unknown.text, /Which passport\(s\) will you be travelling on\?/);
+
+assert.match(us.text, /This is based on the United States passport you selected/);
+
+// Passport country from the form wins over the departure country; without it, departure is a stated guess.
+const passportWins = render({ ...customerScenarios[1].lead, departureCountry: 'United States' });
+assert.match(passportWins.text, /United Kingdom passport holders can visit mainland China visa-free/);
+const departureGuess = render({ ...customerScenarios[2].lead, departureCountry: 'United Kingdom' });
+assert.match(departureGuess.text, /I've assumed everyone is travelling on a United Kingdom passport because that's where you're flying from/);
+
+const tripEndpointSource = readFileSync('functions/api/leads/trip.js', 'utf8');
+assert.match(tripEndpointSource, /code !== 'ZZ' && COUNTRY_NAMES\[code\] \? code : null/, 'passport country is validated against the visa data');
+const tripFormSource = readFileSync('src/components/home/TripPlanForm.tsx', 'utf8');
+assert.match(tripFormSource, /<option value="">\{t\('lead\.progressive\.passportSkip'\)\}<\/option>/, 'passport country can be skipped');
+assert.match(tripFormSource, /passportCountry: passportCountry \|\| undefined/);
 
 for (const email of [us, uk, unknown]) {
   assert.ok(email.items.length >= 2 && email.items.length <= 3, '2-3 "do these first" items');

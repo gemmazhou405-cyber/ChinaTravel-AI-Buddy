@@ -63,7 +63,11 @@ function isFamilyTrip(lead) {
 function visaItem(visa, lead) {
   if (!visa || ['unknown', 'not_applicable'].includes(visa.status)) return null;
   const country = visa.countryName;
-  const assumption = Number(lead.travelers) > 1
+  const assumption = visa.basis === 'passport'
+    ? Number(lead.travelers) > 1
+      ? `This is based on the ${country} passport you selected. If anyone in your group holds a different passport, let me know and I'll check theirs too.`
+      : `This is based on the ${country} passport you selected.`
+    : Number(lead.travelers) > 1
     ? `I've assumed everyone is travelling on a ${country} passport because that's where you're flying from. Let me know if anyone isn't.`
     : `I've assumed you're travelling on a ${country} passport because that's where you're flying from. Let me know if that's not right.`;
   const validity = visa.policyValidity && visa.policyValidity.startsWith('Verified through')

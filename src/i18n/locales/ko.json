@@ -1344,6 +1344,9 @@
         "interestTitle": "무엇을 좋아하시나요?",
         "interestHelp": "여러 항목을 선택할 수 있습니다.",
         "travelersLabel": "여행자는 몇 명인가요?",
+        "passportLabel": "여권 발급 국가 (선택)",
+        "passportHelp": "무비자 입국 가능 여부를 확인하는 데 사용합니다. 국가만 선택하며 여권 번호는 받지 않습니다.",
+        "passportSkip": "건너뛰기 / 잘 모르겠음",
         "travelersPreviewLabel": "여행자",
         "travelers": {
           "1": "1명",

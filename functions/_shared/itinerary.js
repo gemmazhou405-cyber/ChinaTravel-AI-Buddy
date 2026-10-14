@@ -266,6 +266,7 @@ export async function generateTripPlan(env, lead) {
     travelers: lead.travelers || null,
     trip_length_days: lead.tripLength || null,
     departure_country: lead.departureCountry || null,
+    passport_country: lead.passportCountry || null,
     first_arrival_city: lead.arrivalCity || null,
     cities_considered: lead.destinationCities || [],
     priorities: lead.priorities || [],

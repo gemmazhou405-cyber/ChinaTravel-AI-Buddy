@@ -93,13 +93,12 @@ function todayIso(now) {
 }
 
 /**
- * Visa status from the departure country on the form. The form does not ask for passport
- * nationality, so the email states that assumption and asks the traveller to confirm it.
+ * Visa status from the optional passport country on the form. Without one, the departure
+ * country is used as a guess, and the email states that assumption so it can be corrected.
  */
 export function visaFacts(lead, now = Date.now()) {
-  const raw = typeof lead.passportCountry === 'string' && lead.passportCountry.trim()
-    ? lead.passportCountry
-    : lead.departureCountry;
+  const fromPassport = typeof lead.passportCountry === 'string' && Boolean(lead.passportCountry.trim());
+  const raw = fromPassport ? lead.passportCountry : lead.departureCountry;
   if (typeof raw !== 'string' || !raw.trim()) return { status: 'unknown' };
   const code = normalizeNationalityToIso(raw);
   if (!code || code === 'ZZ') return { status: 'unknown', input: raw.trim().slice(0, 60) };
@@ -131,6 +130,7 @@ export function visaFacts(lead, now = Date.now()) {
     policyValidity: result.policyValidity,
     sourceUrl: result.sources[0]?.url || null,
     transitEligible,
+    basis: fromPassport ? 'passport' : 'departure',
   };
   if (result.category === 'likely_eligible') {
     return { ...base, status: result.policyType === 'mutual_agreement' ? 'visa_free_mutual' : 'visa_free_30' };

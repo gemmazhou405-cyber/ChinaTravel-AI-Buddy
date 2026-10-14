@@ -1,9 +1,10 @@
-import { FormEvent, useEffect, useRef, useState } from 'react';
+import { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, CalendarDays, Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { submitTripLead } from '../../lib/tripLead';
 import type { TripPlanPreview } from '../../lib/tripLead';
 import { trackEvent, trackEventOnce } from '../../lib/analytics';
+import { CHECKER_COUNTRY_OPTIONS } from '../../data/chinaVisaPolicies';
 
 const CITY_OPTIONS = [
   'beijing', 'shanghai', 'chengdu', 'xian', 'guilin', 'zhangjiajie', 'hangzhou', 'chongqing',
@@ -31,13 +32,30 @@ function tripLengthFromDates(startDate: string, endDate: string) {
   return Math.min(Math.max(Math.round((end - start) / 86_400_000) + 1, 1), 60);
 }
 
+// Same country list as the visa-free checker, minus its "Other / not listed" entry:
+// skipping the field is the way to say "not sure".
+function passportCountryOptions(language: string) {
+  let displayNames: Intl.DisplayNames | null = null;
+  if (!language.startsWith('en')) {
+    try {
+      displayNames = new Intl.DisplayNames([language], { type: 'region' });
+    } catch {
+      displayNames = null;
+    }
+  }
+  return CHECKER_COUNTRY_OPTIONS
+    .filter((country) => country.code !== 'ZZ')
+    .map((country) => ({ code: country.code, name: displayNames?.of(country.code) ?? country.name }))
+    .sort((a, b) => a.name.localeCompare(b.name, language));
+}
+
 function travelerCount(option: TravelerOption) {
   if (option === '3-4' || option === 'family') return 4;
   return Number(option);
 }
 
 export default function TripPlanForm({ embedded = false }: { embedded?: boolean }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [cities, setCities] = useState<CityId[]>([]);
   const [dates, setDates] = useState('');
@@ -46,6 +64,7 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
   const [datePickerOpen, setDatePickerOpen] = useState(false);
   const [interests, setInterests] = useState<InterestId[]>([]);
   const [travelers, setTravelers] = useState<TravelerOption>('1');
+  const [passportCountry, setPassportCountry] = useState('');
   const [email, setEmail] = useState('');
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -55,6 +74,7 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
   const submitInFlight = useRef(false);
   const formRoot = useRef<HTMLDivElement | null>(null);
   const todayIso = new Date().toISOString().slice(0, 10);
+  const countryOptions = useMemo(() => passportCountryOptions(i18n.language || 'en'), [i18n.language]);
 
   useEffect(() => {
     const element = formRoot.current;
@@ -155,6 +175,7 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
         cities,
         dates: dates.trim(),
         travelers: travelerCount(travelers),
+        passportCountry: passportCountry || undefined,
         interests,
         travelDate: startDate || undefined,
         tripLength: tripLengthFromDates(startDate, endDate),
@@ -319,6 +340,14 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
                         <option key={option} value={option}>{t(`lead.progressive.travelers.${option}`)}</option>
                       ))}
                     </select>
+                    <label htmlFor="trip-passport-country" className="mt-6 block text-sm font-semibold text-ink">{t('lead.progressive.passportLabel')}</label>
+                    <select id="trip-passport-country" value={passportCountry} onChange={(event) => setPassportCountry(event.target.value)} aria-describedby="trip-passport-country-help" className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20">
+                      <option value="">{t('lead.progressive.passportSkip')}</option>
+                      {countryOptions.map((country) => (
+                        <option key={country.code} value={country.code}>{country.name}</option>
+                      ))}
+                    </select>
+                    <p id="trip-passport-country-help" className="mt-1.5 text-xs text-ink-secondary">{t('lead.progressive.passportHelp')}</p>
                   </div>
                 )}
 
