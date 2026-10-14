@@ -1368,6 +1368,8 @@
         "successTitle": "Your request is on its way",
         "freePlanUsed": "A free itinerary has already been requested from this email or connection. Please check your inbox.",
         "paidPlanLimitReached": "This travel pass has reached its limit of 20 itineraries.",
+        "requestInProgress": "Your itinerary is still being prepared. Please wait a moment and check your inbox before trying again.",
+        "planGenerationFailed": "We couldn't generate your itinerary. Your free request was not used, so please try again shortly.",
         "emailDeliveryFailed": "We couldn't email your itinerary. Please try again shortly.",
         "cities": {
           "beijing": "Beijing",

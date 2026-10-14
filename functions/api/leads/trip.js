@@ -291,6 +291,21 @@ function parseStringArray(value, maxItems = 12, maxLength = 80) {
     .slice(0, maxItems);
 }
 
+function buildPlanPreview(plan) {
+  if (!plan || !Array.isArray(plan.daily_itinerary)) return null;
+  return {
+    title: plan.title,
+    summary: plan.summary,
+    days: plan.daily_itinerary.slice(0, 1).map((item) => ({
+      day: item.day,
+      city: item.city,
+      morning: item.morning,
+      afternoon: item.afternoon,
+      evening: item.evening,
+    })),
+  };
+}
+
 export async function onRequestOptions({ request, env }) {
   return optionsResponse(request, env);
 }
@@ -391,7 +406,43 @@ export async function onRequestPost({ request, env }) {
   // Idempotency: if this requestId already exists, skip re-processing
   const existing = await getDoc(env, `tripLeads/${docId}`).catch(() => null);
   if (existing) {
-    return withCors(jsonResponse({ status: 'received', alreadyProcessed: true }), request, env);
+    if (existing.planGenerationStatus === 'failed') {
+      return errorResponse(
+        request,
+        env,
+        503,
+        'plan_generation_failed',
+        'We could not generate your itinerary. Your free request was not used; please try again shortly.',
+      );
+    }
+    const existingEmailStatus = existing.customerItineraryEmailStatus || existing.confirmationEmailStatus;
+    if (['failed', 'bounced', 'suppressed', 'complained'].includes(existingEmailStatus)) {
+      return errorResponse(
+        request,
+        env,
+        503,
+        'email_delivery_failed',
+        'We could not email your itinerary. Please try again shortly.',
+      );
+    }
+    const planSucceeded = ['succeeded', 'sent'].includes(existing.planGenerationStatus);
+    const emailAccepted = ['accepted', 'sent', 'delivered'].includes(existingEmailStatus);
+    if (planSucceeded && emailAccepted) {
+      return withCors(jsonResponse({
+        status: 'received',
+        alreadyProcessed: true,
+        planGenerated: true,
+        planPreview: buildPlanPreview(existing.generatedPlan),
+        whatsappReminderSent: ['accepted', 'sent'].includes(existing.whatsappReminderStatus),
+      }), request, env);
+    }
+    return errorResponse(
+      request,
+      env,
+      409,
+      'request_in_progress',
+      'This itinerary request is still being processed. Please wait a moment before trying again.',
+    );
   }
 
   // Paid pass holders can generate new plans. Free visitors get one successful
@@ -480,6 +531,7 @@ export async function onRequestPost({ request, env }) {
       createdAt,
       notificationStatus: 'pending',
       confirmationEmailStatus: 'pending',
+      customerItineraryEmailStatus: 'pending',
       planGenerationStatus: 'pending',
       whatsappReminderStatus: contactMethod === 'whatsapp' ? 'pending' : 'not_requested',
     });
@@ -537,121 +589,156 @@ export async function onRequestPost({ request, env }) {
     createdAt,
   };
 
-  // Generate a real, personalised draft before the customer confirmation email.
-  // If the provider is unavailable, the email explicitly promises a later review instead of sending a fake route.
-  const planResult = await generateTripPlan(env, lead);
+  // A request is complete only when a real itinerary exists and the customer
+  // email provider has accepted that itinerary email. Never consume a quota for
+  // a generic receipt or send a reminder for an email that was not accepted.
+  let planResult;
+  try {
+    planResult = await generateTripPlan(env, lead);
+  } catch {
+    planResult = { ok: false, errorCode: 'unknown_error' };
+  }
   const plan = planResult.ok ? planResult.plan : null;
   try {
     await patchDoc(env, `tripLeads/${docId}`, {
-      planGenerationStatus: planResult.ok ? 'sent' : 'failed',
-      ...(planResult.ok ? { generatedPlan: plan, planGeneratedAt: Date.now() } : { planGenerationErrorCode: planResult.errorCode }),
+      planGenerationStatus: planResult.ok ? 'succeeded' : 'failed',
+      ...(planResult.ok
+        ? { generatedPlan: plan, planGeneratedAt: Date.now() }
+        : { planGenerationErrorCode: planResult.errorCode || 'unknown_error' }),
     });
   } catch (patchErr) {
     console.error('[leads/trip] plan_status_update_failed', String(patchErr?.message).slice(0, 80));
   }
 
-  // Send notifications in parallel — each result is recorded independently.
-  const [adminSettled, confirmSettled, whatsappSettled] = await Promise.allSettled([
-    sendTripLeadNotification(env, lead),
-    sendTripLeadConfirmation(env, lead, plan),
-    sendWhatsAppTripReminder(env, lead),
-  ]);
-  const adminResult =
-    adminSettled.status === 'fulfilled'
-      ? adminSettled.value
-      : { ok: false, errorCode: 'unknown_error' };
-  const confirmResult =
-    confirmSettled.status === 'fulfilled'
-      ? confirmSettled.value
-      : { ok: false, errorCode: 'unknown_error' };
-  const whatsappResult =
-    whatsappSettled.status === 'fulfilled'
-      ? whatsappSettled.value
-      : { ok: false, errorCode: 'unknown_error' };
+  let confirmResult = { ok: false, errorCode: 'not_attempted' };
+  let whatsappResult = {
+    ok: false,
+    errorCode: contactMethod === 'whatsapp' ? 'not_attempted' : 'not_requested',
+  };
 
-  // Update admin notification status
-  try {
-    if (adminResult.ok) {
-      await patchDoc(env, `tripLeads/${docId}`, {
-        notificationStatus: 'sent',
-        notificationSentAt: Date.now(),
-      });
-    } else {
-      console.error('[leads/trip] notification_failed', { errorCode: adminResult.errorCode, rid: docId.slice(0, 8) });
-      await patchDoc(env, `tripLeads/${docId}`, {
-        notificationStatus: 'failed',
-        notificationErrorCode: adminResult.errorCode,
-      });
+  if (planResult.ok) {
+    try {
+      confirmResult = await sendTripLeadConfirmation(env, lead, plan);
+    } catch {
+      confirmResult = { ok: false, errorCode: 'unknown_error' };
     }
-  } catch (patchErr) {
-    console.error('[leads/trip] admin_status_update_failed', String(patchErr?.message).slice(0, 60));
-  }
-
-  // Update customer confirmation status
-  try {
     if (confirmResult.ok) {
-      await patchDoc(env, `tripLeads/${docId}`, {
-        confirmationEmailStatus: 'sent',
-        confirmationEmailSentAt: Date.now(),
-      });
-    } else {
-      console.error('[leads/trip] confirmation_failed', {
-        errorCode: confirmResult.errorCode,
-        providerStatus: confirmResult.providerStatus ?? null,
-        providerErrorType: confirmResult.providerErrorType ?? null,
-        providerMessage: confirmResult.providerMessage ?? null,
-        rid: docId.slice(0, 8),
-      });
-      await patchDoc(env, `tripLeads/${docId}`, {
-        confirmationEmailStatus: 'failed',
-        confirmationEmailErrorCode: confirmResult.errorCode,
-      });
+      try {
+        whatsappResult = await sendWhatsAppTripReminder(env, lead);
+      } catch {
+        whatsappResult = { ok: false, errorCode: 'unknown_error' };
+      }
     }
-  } catch (patchErr) {
-    console.error('[leads/trip] confirm_status_update_failed', String(patchErr?.message).slice(0, 60));
   }
 
-  await recordEmailDispatchEvent(
-    request,
-    env,
-    docId,
-    confirmResult.ok ? 'email_dispatch_success' : 'email_dispatch_failure',
-    lead,
-  );
+  const customerItineraryEmailStatus = !planResult.ok
+    ? 'not_attempted'
+    : confirmResult.ok ? 'accepted' : 'failed';
+  const whatsappReminderStatus = whatsappResult.ok
+    ? 'accepted'
+    : whatsappResult.errorCode === 'not_requested' ? 'not_requested'
+      : whatsappResult.errorCode === 'not_attempted' ? 'not_attempted' : 'failed';
 
-  // A free itinerary is consumed only when the customer email provider accepts
-  // the message. Failed delivery attempts remain retryable.
-  await finishFreePlanClaim(env, freePlanClaimPaths, confirmResult.ok ? 'used' : 'failed');
+  // Send the internal notification last so it reports the actual generation
+  // and customer-email outcomes instead of only the submitted form fields.
+  let adminResult;
+  try {
+    adminResult = await sendTripLeadNotification(env, lead, {
+      planGenerationStatus: planResult.ok ? 'succeeded' : 'failed',
+      planGenerationErrorCode: planResult.ok ? null : (planResult.errorCode || 'unknown_error'),
+      customerItineraryEmailStatus,
+      customerItineraryEmailProviderId: confirmResult.providerId || null,
+      customerItineraryEmailErrorCode: confirmResult.ok || confirmResult.errorCode === 'not_attempted'
+        ? null
+        : confirmResult.errorCode,
+      whatsappReminderStatus,
+    });
+  } catch {
+    adminResult = { ok: false, errorCode: 'unknown_error' };
+  }
+
+  if (!adminResult.ok) {
+    console.error('[leads/trip] notification_failed', { errorCode: adminResult.errorCode, rid: docId.slice(0, 8) });
+  }
+  if (planResult.ok && !confirmResult.ok) {
+    console.error('[leads/trip] itinerary_email_failed', {
+      errorCode: confirmResult.errorCode,
+      providerStatus: confirmResult.providerStatus ?? null,
+      providerErrorType: confirmResult.providerErrorType ?? null,
+      providerMessage: confirmResult.providerMessage ?? null,
+      rid: docId.slice(0, 8),
+    });
+  }
+  if (whatsappReminderStatus === 'failed') {
+    console.error('[leads/trip] whatsapp_reminder_failed', { errorCode: whatsappResult.errorCode, rid: docId.slice(0, 8) });
+  }
+
+  try {
+    const statusPatch = {
+      planGenerationStatus: planResult.ok ? 'succeeded' : 'failed',
+      ...(planResult.ok
+        ? { generatedPlan: plan, planGeneratedAt: Date.now() }
+        : { planGenerationErrorCode: planResult.errorCode || 'unknown_error' }),
+      notificationStatus: adminResult.ok ? 'accepted' : 'failed',
+      confirmationEmailStatus: customerItineraryEmailStatus,
+      customerItineraryEmailStatus,
+      whatsappReminderStatus,
+      ...(adminResult.ok
+        ? { notificationAcceptedAt: Date.now(), ...(adminResult.providerId ? { notificationProviderId: adminResult.providerId } : {}) }
+        : { notificationErrorCode: adminResult.errorCode }),
+      ...(confirmResult.ok
+        ? {
+            confirmationEmailAcceptedAt: Date.now(),
+            customerItineraryEmailAcceptedAt: Date.now(),
+            ...(confirmResult.providerId
+              ? {
+                  confirmationEmailProviderId: confirmResult.providerId,
+                  customerItineraryEmailProviderId: confirmResult.providerId,
+                }
+              : {}),
+          }
+        : confirmResult.errorCode === 'not_attempted'
+          ? {}
+          : {
+              confirmationEmailErrorCode: confirmResult.errorCode,
+              customerItineraryEmailErrorCode: confirmResult.errorCode,
+            }),
+      ...(whatsappResult.ok ? { whatsappReminderAcceptedAt: Date.now() } : {}),
+    };
+    await patchDoc(env, `tripLeads/${docId}`, statusPatch);
+  } catch (patchErr) {
+    console.error('[leads/trip] delivery_status_update_failed', String(patchErr?.message).slice(0, 60));
+  }
+
+  if (planResult.ok) {
+    await recordEmailDispatchEvent(
+      request,
+      env,
+      docId,
+      confirmResult.ok ? 'email_dispatch_success' : 'email_dispatch_failure',
+      lead,
+    );
+  }
+
+  const itineraryCompleted = planResult.ok && confirmResult.ok;
+  await finishFreePlanClaim(env, freePlanClaimPaths, itineraryCompleted ? 'used' : 'failed');
   if (paidPlanClaim) {
-    await finishPaidItinerary(env, paidPlanClaim, confirmResult.ok).catch((error) => {
+    await finishPaidItinerary(env, paidPlanClaim, itineraryCompleted).catch((error) => {
       console.error('[leads/trip] paid_claim_finalize_failed', String(error?.message).slice(0, 80));
     });
   }
 
-  try {
-    if (whatsappResult.ok) {
-      await patchDoc(env, `tripLeads/${docId}`, { whatsappReminderStatus: 'sent', whatsappReminderSentAt: Date.now() });
-    } else if (whatsappResult.errorCode !== 'not_requested') {
-      console.error('[leads/trip] whatsapp_reminder_failed', { errorCode: whatsappResult.errorCode, rid: docId.slice(0, 8) });
-      await patchDoc(env, `tripLeads/${docId}`, { whatsappReminderStatus: 'failed', whatsappReminderErrorCode: whatsappResult.errorCode });
-    }
-  } catch (patchErr) {
-    console.error('[leads/trip] whatsapp_status_update_failed', String(patchErr?.message).slice(0, 60));
-  }
+  const planPreview = buildPlanPreview(plan);
 
-  const planPreview = plan
-    ? {
-        title: plan.title,
-        summary: plan.summary,
-        days: plan.daily_itinerary.slice(0, 1).map((item) => ({
-          day: item.day,
-          city: item.city,
-          morning: item.morning,
-          afternoon: item.afternoon,
-          evening: item.evening,
-        })),
-      }
-    : null;
+  if (!planResult.ok) {
+    return errorResponse(
+      request,
+      env,
+      503,
+      'plan_generation_failed',
+      'We could not generate your itinerary. Your free request was not used; please try again shortly.',
+    );
+  }
 
   if (!confirmResult.ok) {
     return errorResponse(
@@ -665,8 +752,8 @@ export async function onRequestPost({ request, env }) {
 
   return withCors(jsonResponse({
     status: 'received',
-    planGenerated: Boolean(plan),
-    planErrorCode: plan ? null : planResult.errorCode,
+    planGenerated: true,
+    planErrorCode: null,
     planPreview,
     whatsappReminderSent: Boolean(whatsappResult.ok),
   }), request, env);

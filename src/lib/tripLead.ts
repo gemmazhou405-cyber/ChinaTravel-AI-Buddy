@@ -38,7 +38,7 @@ export interface TripPlanPreview {
 
 export type TripLeadResult =
   | { status: 'success'; planGenerated: boolean; planPreview: TripPlanPreview | null; whatsappReminderSent: boolean }
-  | { status: 'free_plan_used' | 'paid_plan_limit_reached' | 'email_delivery_failed' | 'too_many' | 'error'; planGenerated: false; planPreview: null; whatsappReminderSent: false };
+  | { status: 'free_plan_used' | 'paid_plan_limit_reached' | 'request_in_progress' | 'plan_generation_failed' | 'email_delivery_failed' | 'too_many' | 'error'; planGenerated: false; planPreview: null; whatsappReminderSent: false };
 
 export function isValidWhatsApp(value: string) {
   const trimmed = value.trim();
@@ -104,10 +104,16 @@ export async function submitTripLead(
       if (data?.error === 'paid_plan_limit_reached') {
         return { status: 'paid_plan_limit_reached', planGenerated: false, planPreview: null, whatsappReminderSent: false };
       }
+      if (data?.error === 'request_in_progress') {
+        return { status: 'request_in_progress', planGenerated: false, planPreview: null, whatsappReminderSent: false };
+      }
     }
     if (res.status === 429) return { status: 'too_many', planGenerated: false, planPreview: null, whatsappReminderSent: false };
     if (res.status === 503) {
       const data = await res.json().catch(() => ({}));
+      if (data?.error === 'plan_generation_failed') {
+        return { status: 'plan_generation_failed', planGenerated: false, planPreview: null, whatsappReminderSent: false };
+      }
       if (data?.error === 'email_delivery_failed') {
         return { status: 'email_delivery_failed', planGenerated: false, planPreview: null, whatsappReminderSent: false };
       }

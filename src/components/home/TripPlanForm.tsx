@@ -190,6 +190,10 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
           ? 'lead.progressive.freePlanUsed'
           : result.status === 'paid_plan_limit_reached'
             ? 'lead.progressive.paidPlanLimitReached'
+          : result.status === 'request_in_progress'
+            ? 'lead.progressive.requestInProgress'
+          : result.status === 'plan_generation_failed'
+            ? 'lead.progressive.planGenerationFailed'
           : result.status === 'email_delivery_failed'
             ? 'lead.progressive.emailDeliveryFailed'
           : 'lead.errorGeneric';

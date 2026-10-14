@@ -1,4 +1,5 @@
 const EMAIL_TIMEOUT_MS = 5000;
+const CHINAEASE_CONTACT_EMAIL = 'chinaeastbuddy@gmail.com';
 
 function escapeHtml(str) {
   if (str === null || str === undefined) return 'Not provided';
@@ -42,9 +43,32 @@ function buildStarterRoute(lead) {
   });
 }
 
-function buildHtml(lead) {
+function outcomeLabel(value, labels) {
+  return labels[value] || 'Not attempted';
+}
+
+function buildHtml(lead, outcome = {}) {
   const submittedAt = lead.createdAt ? new Date(lead.createdAt).toISOString() : null;
+  const planStatus = outcomeLabel(outcome.planGenerationStatus, {
+    succeeded: 'Succeeded',
+    failed: 'Failed',
+  });
+  const customerEmailStatus = outcomeLabel(outcome.customerItineraryEmailStatus, {
+    accepted: 'Accepted by email provider',
+    failed: 'Failed',
+  });
+  const whatsappStatus = outcomeLabel(outcome.whatsappReminderStatus, {
+    accepted: 'Accepted by WhatsApp provider',
+    failed: 'Failed',
+    not_requested: 'Not requested',
+  });
   const rows = [
+    ['Plan generation', escapeHtml(planStatus)],
+    ['Customer itinerary email', escapeHtml(customerEmailStatus)],
+    ['Customer email ID', escapeHtml(outcome.customerItineraryEmailProviderId)],
+    ['Plan error code', escapeHtml(outcome.planGenerationErrorCode)],
+    ['Customer email error code', escapeHtml(outcome.customerItineraryEmailErrorCode)],
+    ['WhatsApp reminder', escapeHtml(whatsappStatus)],
     ['Submitted at', escapeHtml(submittedAt)],
     ['Email', escapeHtml(lead.email)],
     ['Travel date', escapeHtml(lead.travelDate)],
@@ -86,10 +110,30 @@ ${trs}
 </body></html>`;
 }
 
-function buildText(lead) {
+function buildText(lead, outcome = {}) {
   const submittedAt = lead.createdAt ? new Date(lead.createdAt).toISOString() : null;
+  const planStatus = outcomeLabel(outcome.planGenerationStatus, {
+    succeeded: 'Succeeded',
+    failed: 'Failed',
+  });
+  const customerEmailStatus = outcomeLabel(outcome.customerItineraryEmailStatus, {
+    accepted: 'Accepted by email provider',
+    failed: 'Failed',
+  });
+  const whatsappStatus = outcomeLabel(outcome.whatsappReminderStatus, {
+    accepted: 'Accepted by WhatsApp provider',
+    failed: 'Failed',
+    not_requested: 'Not requested',
+  });
   return [
     'New trip planning enquiry',
+    '',
+    `Plan generation:          ${planStatus}`,
+    `Customer itinerary email: ${customerEmailStatus}`,
+    `Customer email ID:        ${textVal(outcome.customerItineraryEmailProviderId)}`,
+    `Plan error code:          ${textVal(outcome.planGenerationErrorCode)}`,
+    `Customer email error:     ${textVal(outcome.customerItineraryEmailErrorCode)}`,
+    `WhatsApp reminder:        ${whatsappStatus}`,
     '',
     `Submitted at: ${textVal(submittedAt)}`,
     `Email:        ${textVal(lead.email)}`,
@@ -169,9 +213,7 @@ function buildConfirmationHtml(lead, plan) {
         `<tr><td style="padding:4px 12px 4px 0;font-weight:600;white-space:nowrap;vertical-align:top;">${label}</td><td style="padding:4px 0;word-break:break-word;">${value}</td></tr>`,
     )
     .join('\n');
-  const content = plan
-    ? `<p style="margin:0 0 16px;">We generated a personalised first draft from the details you shared. Our team can refine it and send any final practical notes within 48 hours.</p>${planHtml(plan)}`
-    : `<p style="margin:0 0 16px;">We received your request, but we could not generate your personalised plan this time. Please submit the form again in a few minutes.</p>`;
+  const content = `<p style="margin:0 0 16px;">Here is the personalised first draft generated from the details you shared.</p>${planHtml(plan)}`;
   return `<!DOCTYPE html><html><head><meta charset="utf-8"></head><body style="font-family:sans-serif;font-size:14px;color:#111;max-width:600px;margin:0 auto;padding:24px;">
 <p style="margin:0 0 12px;">Hi,</p>
 <p style="margin:0 0 12px;">Thanks for sharing your China trip details with ChinaEase Buddy.</p>
@@ -191,7 +233,7 @@ function buildConfirmationText(lead, plan) {
     '',
     'Thanks for sharing your China trip details with ChinaEase Buddy.',
     '',
-    ...(plan ? ['We generated a personalised first draft from the details you shared. Our team can refine it and send any final practical notes within 48 hours.'] : ['We received your request, but we could not generate your personalised plan this time. Please submit the form again in a few minutes.']),
+    'Here is the personalised first draft generated from the details you shared.',
     '',
     `Trip date:\n${textVal(lead.travelDate)}`,
     '',
@@ -209,15 +251,29 @@ function buildConfirmationText(lead, plan) {
     '',
     `Preferred contact:\n${textVal(lead.contactMethod)}`,
     '',
-    ...(plan ? planText(plan) : []),
+    ...planText(plan),
     '',
-    'Our team will review the details and follow up with practical transport, arrival, and preparation notes. This message does not subscribe you to our newsletter.',
+    'Use this as a starting point and verify time-sensitive details before booking. This message does not subscribe you to our newsletter.',
     '',
     'Please do not reply with passport details, payment card information, or sensitive medical information.',
     '',
     'ChinaEase Buddy',
     'https://chinaeasebuddy.com',
   ].join('\n');
+}
+
+function emailSubjectValue(value, fallback) {
+  if (value === null || value === undefined) return fallback;
+  const safe = String(value).replace(/[\r\n]+/g, ' ').trim().slice(0, 60);
+  return safe || fallback;
+}
+
+function buildItinerarySubject(lead) {
+  const days = Number.isFinite(Number(lead.tripLength))
+    ? `${Math.max(1, Math.min(60, Number(lead.tripLength)))}-day`
+    : 'personalised';
+  const destination = emailSubjectValue(lead.arrivalCity, 'China');
+  return `Your ${days} ${destination} itinerary from ChinaEase Buddy`;
 }
 
 function classifyHttpError(status) {
@@ -279,8 +335,8 @@ async function sendResendEmail(env, payload, options = {}) {
   }
 }
 
-export async function sendTripLeadNotification(env, lead) {
-  if (!env.RESEND_API_KEY || !env.TRIP_LEAD_NOTIFY_EMAIL) {
+export async function sendTripLeadNotification(env, lead, outcome = {}) {
+  if (!env.RESEND_API_KEY) {
     return { ok: false, errorCode: 'missing_config' };
   }
   const from = env.TRIP_LEAD_FROM_EMAIL || 'ChinaEase Buddy <leads@notify.chinaeasebuddy.com>';
@@ -288,31 +344,67 @@ export async function sendTripLeadNotification(env, lead) {
     env,
     {
       from,
-      to: env.TRIP_LEAD_NOTIFY_EMAIL,
+      to: CHINAEASE_CONTACT_EMAIL,
       reply_to: lead.email,
-      subject: 'New ChinaEase trip lead',
-      html: buildHtml(lead),
-      text: buildText(lead),
+      subject: outcome.planGenerationStatus === 'failed' || outcome.customerItineraryEmailStatus === 'failed'
+        ? 'ChinaEase trip lead: action required'
+        : 'ChinaEase trip lead: itinerary email accepted',
+      html: buildHtml(lead, outcome),
+      text: buildText(lead, outcome),
     },
     { idempotencyKey: lead.requestId ? `trip-lead-admin-${lead.requestId}` : undefined },
   );
 }
 
 export async function sendTripLeadConfirmation(env, lead, plan = null) {
-  if (!env.RESEND_API_KEY || !env.TRIP_LEAD_NOTIFY_EMAIL) {
+  if (!env.RESEND_API_KEY) {
     return { ok: false, errorCode: 'missing_config' };
   }
+  if (!plan) return { ok: false, errorCode: 'missing_plan' };
   const from = env.TRIP_LEAD_FROM_EMAIL || 'ChinaEase Buddy <leads@notify.chinaeasebuddy.com>';
   return sendResendEmail(
     env,
     {
       from,
       to: lead.email,
-      reply_to: env.TRIP_LEAD_NOTIFY_EMAIL,
-      subject: "We've received your China trip details",
+      reply_to: CHINAEASE_CONTACT_EMAIL,
+      subject: buildItinerarySubject(lead),
       html: buildConfirmationHtml(lead, plan),
       text: buildConfirmationText(lead, plan),
     },
     { idempotencyKey: lead.requestId ? `trip-lead-customer-${lead.requestId}` : undefined },
+  );
+}
+
+export async function sendTripEmailDeliveryAlert(env, lead, delivery) {
+  if (!env.RESEND_API_KEY) {
+    return { ok: false, errorCode: 'missing_config' };
+  }
+  const from = env.TRIP_LEAD_FROM_EMAIL || 'ChinaEase Buddy <leads@notify.chinaeasebuddy.com>';
+  const eventType = emailSubjectValue(delivery.eventType, 'email.failure');
+  const providerId = emailSubjectValue(delivery.providerId, 'Not provided');
+  const requestId = emailSubjectValue(lead.requestId || lead.id, 'Not provided');
+  const recipient = emailSubjectValue(lead.email, 'Not provided');
+  const text = [
+    'A customer itinerary email reported a delivery problem.',
+    '',
+    `Event: ${eventType}`,
+    `Recipient: ${recipient}`,
+    `Trip lead ID: ${requestId}`,
+    `Resend email ID: ${providerId}`,
+    '',
+    'Check the Resend email log before contacting the traveler manually.',
+  ].join('\n');
+  return sendResendEmail(
+    env,
+    {
+      from,
+      to: CHINAEASE_CONTACT_EMAIL,
+      reply_to: CHINAEASE_CONTACT_EMAIL,
+      subject: `ChinaEase itinerary delivery problem: ${eventType}`,
+      text,
+      html: `<p><strong>A customer itinerary email reported a delivery problem.</strong></p><p>Event: ${escapeHtml(eventType)}<br>Recipient: ${escapeHtml(recipient)}<br>Trip lead ID: ${escapeHtml(requestId)}<br>Resend email ID: ${escapeHtml(providerId)}</p><p>Check the Resend email log before contacting the traveler manually.</p>`,
+    },
+    { idempotencyKey: `trip-email-alert-${eventType}-${providerId}`.slice(0, 240) },
   );
 }

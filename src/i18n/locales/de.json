@@ -1368,6 +1368,8 @@
         "successTitle": "Deine Anfrage ist unterwegs",
         "freePlanUsed": "Für diese E-Mail-Adresse oder Verbindung wurde bereits eine kostenlose Reiseroute angefordert. Bitte prüfe deinen Posteingang.",
         "paidPlanLimitReached": "Dieser Reisepass hat sein Limit von 20 Reiseplänen erreicht.",
+        "requestInProgress": "Deine Reiseroute wird noch erstellt. Bitte warte einen Moment und prüfe deinen Posteingang, bevor du es erneut versuchst.",
+        "planGenerationFailed": "Wir konnten deine Reiseroute nicht erstellen. Deine kostenlose Anfrage wurde nicht verbraucht; bitte versuche es gleich noch einmal.",
         "emailDeliveryFailed": "Wir konnten deine Reiseroute nicht per E-Mail senden. Bitte versuche es gleich noch einmal.",
         "cities": {
           "beijing": "Peking",

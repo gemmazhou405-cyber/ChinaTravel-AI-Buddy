@@ -1368,6 +1368,8 @@
         "successTitle": "Votre demande est en route",
         "freePlanUsed": "Un itinéraire gratuit a déjà été demandé avec cet e-mail ou cette connexion. Vérifiez votre boîte de réception.",
         "paidPlanLimitReached": "Ce pass voyage a atteint sa limite de 20 itinéraires.",
+        "requestInProgress": "Votre itinéraire est toujours en cours de préparation. Attendez un instant et vérifiez votre boîte de réception avant de réessayer.",
+        "planGenerationFailed": "Nous n'avons pas pu générer votre itinéraire. Votre demande gratuite n'a pas été utilisée ; veuillez réessayer dans quelques instants.",
         "emailDeliveryFailed": "Nous n'avons pas pu envoyer votre itinéraire par e-mail. Veuillez réessayer dans quelques instants.",
         "cities": {
           "beijing": "Pékin",
