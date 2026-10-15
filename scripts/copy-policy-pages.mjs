@@ -3524,13 +3524,11 @@ const pageMeta = {
   },
   'china-esim-internet-vpn-guide': {
     heading: 'Stay Connected Without Losing Google',
-    title: 'China eSIM & Google Access (2026): Check Routing Before You Buy',
-    description: 'A China travel eSIM may allow Google and WhatsApp without a separate VPN if the plan routes data overseas. Check your phone, provider terms, and backup before buying.',
-    lastReviewed: 'October 15, 2026',
-    lastModified: '2026-10-15',
+    title: 'China eSIM for Tourists 2026: Use Google, WhatsApp & Instagram Without VPN',
+    description: 'WhatsApp & Google blocked in China? Get a China eSIM with built-in VPN on China Unicom. 5G, activates on arrival, no VPN app needed.',
     sections: [
       ['What Is Blocked?', 'Google, Gmail, YouTube, Instagram, WhatsApp, Facebook, and Google Maps are generally blocked on hotel Wi-Fi and ordinary local SIM data.', '#what-is-blocked'],
-      ['Compare Your Connection Options', 'Compare travel eSIM, home-carrier roaming, and local SIM by coverage, routing, activation, data limits, and phone-number needs. Overseas services depend on the exact plan.', '#compare-your-connection-options'],
+      ['Travel eSIM with Overseas Routing', 'Choose a plan that explicitly routes China data through a foreign gateway such as Hong Kong or Singapore.', '#best-solution-in-2026-travel-esim-with-overseas-routing'],
       ['Local SIM Plus VPN', 'Install and sign in before landing, and do not depend on one connection for critical travel documents.', '#local-sim-plus-vpn-app-the-older-route'],
       ['Check Your Phone', 'Confirm exact-model eSIM support and carrier-unlocked status before buying.', '#check-your-phone-before-buying'],
     ],
