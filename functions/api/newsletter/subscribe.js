@@ -1,5 +1,6 @@
 import { createDoc, getDoc, patchDoc } from '../../_shared/firestore.js';
 import { clientIp, errorResponse, jsonResponse, optionsResponse, parseJson, withCors } from '../../_shared/http.js';
+import { hashIp } from '../../_shared/ip-hash.js';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -41,7 +42,7 @@ export async function onRequestPost({ request, env }) {
       status: 'active',
       subscribedAt: existing?.subscribedAt || now,
       updatedAt: now,
-      ipHash: await sha256(clientIp(request)),
+      ipHash: await hashIp(env, clientIp(request)),
       unsubscribeTokenHash,
     };
 

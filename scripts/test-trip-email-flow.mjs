@@ -154,7 +154,7 @@ assert.ok(
 assert.match(flow, /if \(planResult\.ok\) \{[\s\S]*?sendTripLeadConfirmation\(env, lead, plan\)/);
 assert.match(flow, /if \(confirmResult\.ok\) \{[\s\S]*?sendWhatsAppTripReminder\(env, lead\)/);
 assert.match(flow, /const itineraryCompleted = planResult\.ok && confirmResult\.ok;/);
-assert.match(flow, /finishFreePlanClaim\(env, freePlanClaimPaths, itineraryCompleted \? 'used' : 'failed'\)/);
+assert.match(flow, /finishFreePlanClaim\(env, freePlanClaim, itineraryCompleted \? 'used' : 'failed'\)/);
 assert.match(flow, /finishPaidItinerary\(env, paidPlanClaim, itineraryCompleted\)/);
 assert.match(flow, /'plan_generation_failed'/);
 assert.match(tripSource, /'request_in_progress'/);

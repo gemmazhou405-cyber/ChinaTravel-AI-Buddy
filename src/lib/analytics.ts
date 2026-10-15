@@ -71,6 +71,11 @@ const FUNNEL_EVENTS = new Set([
   'transit_calculator_result_shown',
   'transit_calculator_plan_cta_click',
   'free_trip_starter_submit',
+  'cta_clicked',
+  'transit_calculator_result_link_click',
+  'transit_answer_calculator_click',
+  'quota_exhausted',
+  'newsletter_subscribed',
 ]);
 
 const utmKeys: UtmKey[] = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
@@ -362,11 +367,38 @@ export async function trackEvent(eventName: string, payload: AnalyticsPayload = 
     if (campaignAttribution.last_touch_source) body.lastTouchSource = campaignAttribution.last_touch_source.slice(0, 80);
   }
 
-  // Fire-and-forget: analytics failure must never surface to the user.
+  if (eventName === 'cta_clicked') {
+    const ctaName = typeof payload.ctaName === 'string' ? payload.ctaName : '';
+    const destination = typeof payload.destination === 'string' ? payload.destination : '';
+    const tool = typeof payload.tool === 'string' ? payload.tool : '';
+    if (ctaName) body.ctaName = ctaName.slice(0, 120);
+    if (destination) body.destination = destination.split('?')[0].slice(0, 200);
+    if (tool) body.tool = tool.slice(0, 80);
+  }
+  if (eventName === 'transit_calculator_result_link_click') {
+    const destinationUrl = typeof payload.destinationUrl === 'string' ? payload.destinationUrl : '';
+    if (destinationUrl.startsWith('/')) body.destinationUrl = destinationUrl.split('?')[0].slice(0, 200);
+  }
+  if (eventName === 'transit_answer_calculator_click') {
+    const slug = typeof payload.slug === 'string' ? payload.slug : '';
+    const placement = typeof payload.placement === 'string' ? payload.placement : '';
+    if (slug) body.answerSlug = slug.slice(0, 120);
+    if (placement) body.ctaPlacement = placement.slice(0, 40);
+  }
+  if (eventName === 'quota_exhausted') {
+    const code = typeof payload.code === 'string' ? payload.code : '';
+    const tier = typeof payload.tier === 'string' ? payload.tier : '';
+    if (code) body.quotaCode = code.slice(0, 40);
+    if (tier) body.tier = tier.slice(0, 20);
+  }
+
+  // Fire-and-forget: analytics failure must never surface to the user. keepalive lets the
+  // request finish when the click navigates away (CTA links, outbound tools, form redirects).
   fetch('/api/events', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
+    keepalive: true,
   }).catch(() => {});
 }
 

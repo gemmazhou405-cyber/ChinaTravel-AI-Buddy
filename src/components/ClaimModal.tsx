@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { getDeviceId } from '../lib/deviceId';
 
 type Tab = 'claim' | 'recover';
 type ClaimScreen = 'form' | 'success';
@@ -55,15 +56,15 @@ export default function ClaimModal({ initialTab = 'claim', onClose, onPassActiva
   };
 
   const claimErrorKey = (code: string) => {
-    if (code === 'not_found') return t('pass.claim.errorNotFound');
-    if (code === 'already_claimed') return t('pass.claim.errorAlreadyClaimed');
-    if (code === 'max_devices') return t('pass.claim.errorMaxDevices');
+    // Error codes returned by functions/api/claim.js
+    if (code === 'invalid_sale') return t('pass.claim.errorNotFound');
     return t('pass.claim.errorGeneric');
   };
 
   const recoverErrorKey = (code: string) => {
-    if (code === 'not_found') return t('pass.recover.errorNotFound');
-    if (code === 'max_devices') return t('pass.recover.errorMaxDevices');
+    // Error codes returned by functions/api/recover.js
+    if (code === 'invalid_code') return t('pass.recover.errorNotFound');
+    if (code === 'max_devices_reached') return t('pass.recover.errorMaxDevices');
     if (code === 'rate_limited') return t('pass.recover.errorRateLimited');
     return t('pass.recover.errorGeneric');
   };
@@ -79,11 +80,19 @@ export default function ClaimModal({ initialTab = 'claim', onClose, onPassActiva
         method: 'POST',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ saleId: id }),
+        body: JSON.stringify({ saleId: id, deviceId: getDeviceId() }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
         setClaimError(claimErrorKey(data?.error ?? ''));
+        return;
+      }
+      if (data.alreadyClaimed) {
+        // The sale was activated before: this device is now bound, but the recovery code is
+        // only ever shown once, so show the "restored" screen instead of an empty code.
+        await onPassActivated();
+        setTab('recover');
+        setRecoverSuccess(true);
         return;
       }
       setRecoveryCode(data.recoveryCode ?? '');
@@ -107,7 +116,7 @@ export default function ClaimModal({ initialTab = 'claim', onClose, onPassActiva
         method: 'POST',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ recoveryCode: code }),
+        body: JSON.stringify({ code, deviceId: getDeviceId() }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
