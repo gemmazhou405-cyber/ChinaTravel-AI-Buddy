@@ -3525,7 +3525,7 @@ const pageMeta = {
   'china-esim-internet-vpn-guide': {
     heading: 'Stay Connected Without Losing Google',
     title: 'China eSIM & Google Access (2026): Check Routing Before You Buy',
-    description: 'A China travel eSIM may allow Google and WhatsApp without a separate VPN if the plan routes data overseas. Check your phone, provider terms, and backup before buying.'
+    description: 'A China travel eSIM may allow Google and WhatsApp without a separate VPN if the plan routes data overseas. Check your phone, provider terms, and backup before buying.',
     lastReviewed: 'October 15, 2026',
     lastModified: '2026-10-15',
     sections: [
