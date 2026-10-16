@@ -261,7 +261,8 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
         }
         if (data?.error === 'free_quota_exhausted') { pushBuddy(t('chat.freeQuotaExhausted'), 'error'); return; }
         if (data?.error === 'rate_limited') { pushBuddy(t('chat.rateLimited'), 'error'); return; }
-        if (data?.error === 'service_unavailable' || data?.error === 'upstream_error' || data?.error === 'upstream_timeout') {
+        // free_quota_unavailable: the free-quota counter could not be checked, so the request was refused.
+        if (data?.error === 'service_unavailable' || data?.error === 'upstream_error' || data?.error === 'upstream_timeout' || data?.error === 'free_quota_unavailable') {
           pushBuddy(t('chat.serviceUnavailable'), 'error', { text: trimmedText, requestId });
           return;
         }

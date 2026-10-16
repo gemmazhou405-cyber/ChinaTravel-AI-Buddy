@@ -2,6 +2,7 @@ import { clientIp, errorResponse, jsonResponse, optionsResponse, withCors } from
 import { getDoc, patchDoc } from '../../_shared/firestore.js';
 import { verifySessionCookie } from '../../_shared/session.js';
 import { hashIp } from '../../_shared/ip-hash.js';
+import { FREE_CHAT_DAILY_LIMIT, releaseFreeChatMessage, reserveFreeChatMessage } from '../../_shared/free-chat-quota.js';
 
 const REQUEST_ID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const MAX_MESSAGE_CHARS = 1200;
@@ -15,7 +16,6 @@ const CLEANUP_TIMEOUT_MS = 2500;
 const MAX_REPLY_CHARS = 5000;
 const IP_RATE_WINDOW_MS = 60000;
 const IP_RATE_LIMIT = 40;
-const FREE_DAILY_LIMIT = 10;
 
 const ipHits = new Map();
 
@@ -124,18 +124,6 @@ function normalizeContext(context) {
     }
   }
   return total <= MAX_CONTEXT_CHARS ? normalized : null;
-}
-
-async function checkFreeQuota(env, ipHash) {
-  if (!env.RATE_LIMIT) return { ok: true };
-  const today = new Date().toISOString().slice(0, 10);
-  const key = `free:ip:${ipHash}:${today}`;
-  const count = Number(await env.RATE_LIMIT.get(key).catch(() => null) ?? 0);
-  if (count >= FREE_DAILY_LIMIT) {
-    return { ok: false, status: 429, code: 'free_quota_exhausted' };
-  }
-  await env.RATE_LIMIT.put(key, String(count + 1), { expirationTtl: 25 * 60 * 60 }).catch(() => {});
-  return { ok: true };
 }
 
 async function reservePassUsage(env, passId) {
@@ -320,6 +308,7 @@ async function handlePost(request, env, deadlineAt) {
   // Authenticate — session cookie for pass holders, IP quota for free users
   const session = await verifySessionCookie(request.headers.get('Cookie'), env.SESSION_SECRET);
   let reservation = null;
+  let freeReservation = null;
   let userId;
   let usageTier;
 
@@ -348,19 +337,39 @@ async function handlePost(request, env, deadlineAt) {
     userId = `pass:${session.passId.slice(0, 16)}`;
     usageTier = reservation.pass.tier;
   } else {
-    // Free tier path — IP-based daily quota
-    // Keyed by a salted hash so raw IP addresses never reach KV or usage records.
+    // Free tier path: FREE_CHAT_DAILY_LIMIT messages per salted IP hash per UTC day, counted in
+    // a Firestore transaction. Firestore is the only source of truth; if it is unavailable the
+    // request is refused so AI calls are never unmetered.
     const ipHash = await hashIp(env, ip);
-    const freeCheck = await checkFreeQuota(env, ipHash);
-    if (!freeCheck.ok) {
+    freeReservation = await reserveFreeChatMessage(env, ipHash);
+    if (!freeReservation.ok && freeReservation.code === 'free_quota_exhausted') {
       return withCors(jsonResponse({
         error: 'free_quota_exhausted',
+        limit: FREE_CHAT_DAILY_LIMIT,
         message: 'Daily free quota reached. Get a pass to continue.',
       }, { status: 429 }), request, env);
+    }
+    if (!freeReservation.ok) {
+      logBuddy('error', 'free_quota_unavailable');
+      return withCors(jsonResponse({
+        error: 'free_quota_unavailable',
+        message: 'Buddy is busy right now. Please try again in a few minutes.',
+      }, { status: 503 }), request, env);
     }
     userId = `free:${ipHash.slice(0, 32)}`;
     usageTier = 'free';
   }
+
+  // Called only when the AI failed or timed out before any reply content was sent.
+  const refundUsage = async () => {
+    const rollbackBudget = Math.max(500, Math.min(CLEANUP_TIMEOUT_MS, remainingMs(deadlineAt) - 500));
+    if (session && reservation?.ok) {
+      await withTimeout(rollbackPassUsage(env, session.passId, reservation.before), rollbackBudget, 'rollback_timeout').catch(() => {});
+    }
+    if (freeReservation?.ok) {
+      await withTimeout(releaseFreeChatMessage(env, freeReservation), rollbackBudget, 'rollback_timeout').catch(() => {});
+    }
+  };
 
   const usageInfo = session && reservation
     ? {
@@ -369,7 +378,12 @@ async function handlePost(request, env, deadlineAt) {
       messageAllowance: reservation.pass.messageAllowance,
       remaining: Math.max(0, (reservation.pass.messageAllowance ?? 0) - (reservation.before + 1)),
     }
-    : { tier: 'free' };
+    : {
+      tier: 'free',
+      messagesUsed: freeReservation?.count,
+      messageAllowance: FREE_CHAT_DAILY_LIMIT,
+      remaining: Math.max(0, FREE_CHAT_DAILY_LIMIT - (freeReservation?.count ?? 0)),
+    };
 
   if (wantsStream) {
     let workerRes;
@@ -377,10 +391,7 @@ async function handlePost(request, env, deadlineAt) {
       workerRes = await callCozeStream(env, userId, message, context, deadlineAt);
     } catch (error) {
       // Worker returned non-200 before stream started — safe to roll back quota
-      if (session && reservation?.ok) {
-        const rollbackBudget = Math.max(500, Math.min(CLEANUP_TIMEOUT_MS, remainingMs(deadlineAt) - 500));
-        await withTimeout(rollbackPassUsage(env, session.passId, reservation.before), rollbackBudget, 'rollback_timeout').catch(() => {});
-      }
+      await refundUsage();
       const reason = error instanceof Error && error.message === 'upstream_timeout'
         ? 'upstream_timeout'
         : error instanceof Error && error.message?.startsWith('service_unavailable')
@@ -447,15 +458,8 @@ async function handlePost(request, env, deadlineAt) {
       errorCode: error instanceof Error ? error.message.split(':').slice(0, 2).join(':') : 'unknown',
     });
 
-    // Roll back pass usage on failure
-    if (session && reservation?.ok) {
-      const rollbackBudget = Math.max(500, Math.min(CLEANUP_TIMEOUT_MS, remainingMs(deadlineAt) - 500));
-      await withTimeout(
-        rollbackPassUsage(env, session.passId, reservation.before),
-        rollbackBudget,
-        'rollback_timeout',
-      ).catch(() => {});
-    }
+    // No answer was returned, so give the message back (pass or free quota).
+    await refundUsage();
 
     return errorResponse(
       request,
