@@ -37,8 +37,7 @@ const blocked = getDeviceId();
 assert.equal(getDeviceId(), blocked, 'storage blocked: stable for the page lifetime');
 
 // 3. Payment copy is Gumroad only; the free AI quota matches functions/api/buddy/chat.js.
-const chat = read('functions/api/buddy/chat.js');
-const freeLimit = Number(chat.match(/const FREE_DAILY_LIMIT = (\d+);/)[1]);
+const freeLimit = Number(read('functions/_shared/free-chat-quota.js').match(/export const FREE_CHAT_DAILY_LIMIT = (\d+);/)[1]);
 assert.equal(freeLimit, 10);
 for (const file of readdirSync('src/i18n/locales')) {
   const text = read(`src/i18n/locales/${file}`);
