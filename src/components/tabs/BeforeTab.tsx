@@ -52,11 +52,10 @@ import religionGuide from '../../data/cultureGuides/religion.json';
 interface ChecklistItem { id: string; task: string; detail: string; priority: string; }
 interface ChecklistCategory { id: string; title: string; description: string; items: ChecklistItem[]; }
 
-interface VisaStep { step: number; title: string; detail: string; }
 interface CustomsRule { item: string; limit: string; }
+// Visa rules live only in the visa-free checker; these guides keep customs and arrival notes.
 interface VisaGuide {
-  id: string; country: string; disclaimer: string; visaRequired: boolean;
-  visaFreeNote?: string; applicationSteps: VisaStep[]; requiredDocuments: string[];
+  id: string; country: string; visaCheck: string;
   arrivalTips: string[]; customsRules: CustomsRule[];
 }
 
@@ -172,35 +171,11 @@ function TipRow({ tip }: { tip: CultureTip }) {
 function VisaContent({ data }: { data: VisaGuide }) {
   return (
     <div className="space-y-3">
-      <div className={`rounded-2xl p-3 text-center border ${data.visaRequired ? 'bg-amber-50 border-amber-100' : 'bg-green-50 border-green-100'}`}>
-        <p className={`text-sm font-bold ${data.visaRequired ? 'text-amber-700' : 'text-green-700'}`}>
-          {data.visaRequired ? '⚠️ Visa Required' : '✅ Visa-Free Entry May Apply'}
+      <div className="rounded-2xl p-3 border bg-amber-50 border-amber-100">
+        <p className="text-xs text-amber-800 leading-relaxed">
+          {data.visaCheck}{' '}
+          <a href="/china-visa-free-checker/" className="font-semibold text-[#155e63] underline underline-offset-2">Open the visa-free checker →</a>
         </p>
-        {data.visaFreeNote && <p className="text-xs text-gray-500 mt-1 leading-relaxed">{data.visaFreeNote}</p>}
-      </div>
-
-      <div className="bg-white rounded-2xl p-4 shadow-sm">
-        <p className="text-xs font-semibold text-[#155e63] uppercase tracking-wide mb-3">Application Steps</p>
-        <div className="space-y-2.5">
-          {data.applicationSteps.map((s) => (
-            <div key={s.step} className="flex gap-2.5">
-              <span className="w-5 h-5 rounded-full bg-[#155e63]/10 text-[#155e63] text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{s.step}</span>
-              <div>
-                <p className="text-xs font-semibold text-gray-800">{s.title}</p>
-                <p className="text-xs text-gray-500 leading-relaxed mt-0.5">{s.detail}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="bg-white rounded-2xl p-4 shadow-sm">
-        <p className="text-xs font-semibold text-[#155e63] uppercase tracking-wide mb-2">Required Documents</p>
-        <ul className="space-y-1.5">
-          {data.requiredDocuments.map((doc, i) => (
-            <li key={i} className="flex gap-1.5 text-xs text-gray-500"><span className="text-[#155e63] shrink-0">•</span>{doc}</li>
-          ))}
-        </ul>
       </div>
 
       <div className="bg-white rounded-2xl p-4 shadow-sm">
@@ -427,13 +402,13 @@ export default function BeforeTab({ passState, onAskBuddy, onUpgradeClick, deepT
       {/* Visa & Entry Guide */}
       <ToolDisclosure
         title="Visa & Entry Guide"
-        subtitle="Requirements by nationality — select your passport"
+        subtitle="Customs and arrival notes by passport · visa rules in the visa-free checker"
         icon={<Globe className="w-4 h-4" />}
         defaultOpen={deepTool === 'visa'}
         onOpen={() => onToolOpened?.('visa')}
       >
         <div className="bg-amber-50 border border-amber-100 rounded-2xl p-3 mb-4">
-          <p className="text-xs text-amber-700 leading-relaxed">Visa policies change frequently. Always verify current requirements with the official Chinese Embassy or Consulate before traveling.</p>
+          <p className="text-xs text-amber-700 leading-relaxed">Visa rules change often. Use the <a href="/china-visa-free-checker/" className="font-semibold underline underline-offset-2">China Visa-Free Checker</a> for your passport, dates and route.</p>
         </div>
 
         <div className="grid grid-cols-5 gap-1.5 mb-4">
@@ -443,7 +418,7 @@ export default function BeforeTab({ passState, onAskBuddy, onUpgradeClick, deepT
             return (
               <button
                 key={c.id}
-                onClick={() => locked ? onUpgradeClick('Unlock all 10 visa guides with Trip Pass.') : setSelectedVisa(active ? null : c.id)}
+                onClick={() => locked ? onUpgradeClick('Unlock all 10 entry guides with Trip Pass.') : setSelectedVisa(active ? null : c.id)}
                 className={`relative flex flex-col items-center p-2 rounded-xl border transition-all ${active ? 'border-[#155e63] bg-[#155e63]/5' : 'border-gray-100 bg-white'} ${locked ? 'opacity-60' : 'hover:border-[#155e63]/30'}`}
               >
                 {locked && <Lock className="absolute top-0.5 right-0.5 w-2.5 h-2.5 text-gray-300" />}

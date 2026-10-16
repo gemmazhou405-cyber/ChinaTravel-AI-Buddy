@@ -15,6 +15,7 @@ import mapsComparisonGuide from '../data/seoPages/amap-vs-google-maps-china.json
 import transit240Guide from '../data/seoPages/china-240-hour-visa-free-transit-2026.json';
 import tenPayGoGuide from '../data/seoPages/tenpaygo-for-tourists.json';
 import accommodationRegistrationGuide from '../data/seoPages/china-online-accommodation-registration-12367.json';
+import arrivalCardGuide from '../data/seoPages/china-online-arrival-card-2026.json';
 import visaFreeCheckerGuide from '../data/seoPages/china-visa-free-checker.json';
 import VisaFreeCheckerPage from './VisaFreeCheckerPage';
 import TransitCalculatorPage from './TransitCalculatorPage';
@@ -86,6 +87,7 @@ type GuidePageType =
   | 'what-to-eat-in-china-first-time-guide'
   | 'how-to-use-wechat-as-foreigner-2026'
   | 'nia-12367-online-accommodation-registration-guide'
+  | 'china-online-arrival-card-2026'
   | 'amap-english-mode-guide-2026'
   | 'alipay-metro-qr-transport-code-guide'
   | 'china-travel-ai-itinerary-generator'
@@ -206,7 +208,7 @@ const pricingPlans = [
     features: [
       'Essential apps, payments, transport, food, hotel and emergency tools',
       'Basic phrase cards and travel guides',
-      '5 Buddy AI messages',
+      '10 Buddy AI messages per day',
       'No payment required',
     ],
     cta: 'Start Free',
@@ -296,7 +298,7 @@ const legalCopy = {
       {
         title: 'Buddy AI Conversations',
         body:
-          'Buddy AI conversation content may be processed by ChinaEase Buddy service providers, including Coze, Cloudflare, Firebase, and Firestore, to provide the requested travel assistance, maintain service quality, and troubleshoot the service. Menu photo help is in private testing and is not sold as an active entitlement.',
+          'Buddy AI conversation content may be processed by ChinaEase Buddy service providers, including DeepSeek (the AI model that answers Buddy chat messages), Coze (a backup AI provider), Cloudflare, Firebase, and Firestore, to provide the requested travel assistance, maintain service quality, and troubleshoot the service. The messages you send in a chat are passed to DeepSeek to generate a reply. Menu photo help is in private testing and is not sold as an active entitlement.',
       },
       {
         title: 'Payments and Entitlements',
@@ -311,7 +313,7 @@ const legalCopy = {
       {
         title: 'Trip Planning Enquiries',
         body:
-          'If you submit a trip planning enquiry through ChinaEase Buddy, we may collect your email address, approximate travel date, number of travelers, any information you choose to provide about the trip help you need, an optional passport country (the issuing country only, never a passport number) so we can check visa-free entry rules for you, and an optional WhatsApp number if you ask us to reply there. This information is used only to review, process, and respond to your enquiry, and to provide help related to that specific trip. WhatsApp contact is optional and does not involve an automated verification code. Submitting a trip planning enquiry does not subscribe you to newsletters or marketing communications. Please do not submit passport numbers or other passport details beyond the issuing country, payment card details, sensitive health or medical information, or other sensitive personal information you do not need to share for trip planning purposes. Trip planning enquiries are processed server-side. We may record a hashed version of your IP address for abuse prevention and security purposes. We do not store full Buddy conversation content as part of a trip planning submission. Trip enquiry data is retained for as long as needed to process your enquiry and for reasonable business record purposes. You may request access, correction, or deletion of your submitted information by contacting us. Trip planning enquiries may be reviewed by authorised team members to process and respond to your request. We may use a third-party email delivery service to send administrative notifications when a new enquiry is received. That provider processes only the information necessary to deliver the notification and is not used to send marketing communications to you. When you submit a trip planning enquiry, we may also send a transactional confirmation email to the address you provided to acknowledge receipt and to support any necessary follow-up communication. This email does not subscribe you to our newsletter or marketing communications. The email delivery service provider processes only the information necessary to deliver this confirmation.',
+          'If you submit a trip planning enquiry through ChinaEase Buddy, we may collect your email address, approximate travel date, number of travelers, any information you choose to provide about the trip help you need, an optional passport country (the issuing country only, never a passport number) so we can check visa-free entry rules for you, and an optional WhatsApp number if you ask us to reply there. This information is used only to review, process, and respond to your enquiry, and to provide help related to that specific trip. WhatsApp contact is optional and does not involve an automated verification code. If you choose WhatsApp as your contact method, we send one automated WhatsApp message to the number you gave, after your itinerary email has been sent, to tell you it is on its way; this message is delivered through the WhatsApp Business Platform operated by Meta Platforms, which receives your WhatsApp number to deliver it. Submitting a trip planning enquiry does not subscribe you to newsletters or marketing communications. Please do not submit passport numbers or other passport details beyond the issuing country, payment card details, sensitive health or medical information, or other sensitive personal information you do not need to share for trip planning purposes. Trip planning enquiries are processed server-side. To write your itinerary, the trip details you submit (such as dates, number of travelers, trip length, departure and passport country, cities, interests and the help you ask for) are sent to DeepSeek, an AI model provider; your email address and WhatsApp number are not sent to DeepSeek. We may record a salted, one-way hash of your IP address (keyed with a secret value, so the address cannot be recovered from it) for abuse prevention, security, and to limit free itineraries to five per IP address per day; we do not store the IP address itself. We do not store full Buddy conversation content as part of a trip planning submission. Trip enquiry data is retained for as long as needed to process your enquiry and for reasonable business record purposes. You may request access, correction, or deletion of your submitted information by contacting us. Trip planning enquiries may be reviewed by authorised team members to process and respond to your request. We use Resend, an email delivery service, to send your itinerary email and to send administrative notifications when a new enquiry is received. That provider processes only the information necessary to deliver the notification and is not used to send marketing communications to you. When you submit a trip planning enquiry, we may also send a transactional confirmation email to the address you provided to acknowledge receipt and to support any necessary follow-up communication. This email does not subscribe you to our newsletter or marketing communications. The email delivery service provider processes only the information necessary to deliver this confirmation.',
       },
       {
         title: 'Analytics and Service Improvement',
@@ -5909,6 +5911,21 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'FAQ', href: '/faq/' },
     ],
   },
+  'china-online-arrival-card-2026': {
+    ...guideFromArticle(
+      arrivalCardGuide,
+      '/china-online-arrival-card-2026/',
+      'Plan my arrival and first China days',
+      [
+        { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
+        { label: 'China visa-free checker', href: '/china-visa-free-checker/' },
+        { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+        { label: 'First trip to China', href: '/first-trip-to-china/' },
+      ],
+    ),
+    featuredFaqCount: 3,
+    ctaBeforeFeaturedFaqs: true,
+  },
   'nia-12367-online-accommodation-registration-guide': {
     path: '/nia-12367-online-accommodation-registration-guide/',
     title: 'How to Register a Non-Hotel Stay with NIA 12367',
@@ -5993,10 +6010,10 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     metaTitle: 'China Travel AI Itinerary Generator: Build a Personal Route in 30 Seconds (2026)',
     metaDescription: 'Generate a personalized China itinerary with Buddy AI. Enter days, cities, interests, budget, pace, and mobility needs for a practical route and booking checklist.',
     quickAnswer: 'Tell Buddy your dates, arrival and departure cities, interests, budget, pace, mobility needs, and must-see places. It can draft a day-by-day route, suggest train-versus-flight choices, produce Chinese addresses and travel phrases, and identify bookings to make first. Treat the output as planning support and verify time-sensitive information with official providers.',
-    ctaLabel: 'Generate my China itinerary',
+    ctaLabel: 'Get my free itinerary',
     midCtaLabel: 'Start with my trip details',
-    ctaHref: '/',
-    buddyPrompt: 'Build my China itinerary. I have [days] days, arrive in [city], depart from [city], like [interests], have a [budget] budget, and prefer a [slow/balanced/fast] pace.',
+    // The itinerary CTAs go to the trip form, not the chat.
+    ctaHref: '/plan/',
     reviewed: 'September 27, 2026',
     sections: [
       { title: 'What to Tell the Planner', items: ['Exact travel dates and international arrival and departure airports.', 'Cities or sights that are fixed, optional, or unwanted.', 'History, food, nature, family, nightlife, shopping, or other interests.', 'Budget, hotel style, preferred pace, mobility limits, and tolerance for early departures.', 'Passport and visa-free context when it affects the route. Do not submit passport numbers or sensitive identifiers.'] },
@@ -6544,10 +6561,10 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     metaTitle: 'China Itinerary for First-Timers: 7, 10 or 14 Days (2026)',
     metaDescription: "Compare practical 7-, 10- and 14-day China itineraries, including Beijing, Xi'an, Shanghai, Chengdu and Guilin, with realistic transfer advice.",
     quickAnswer: "For seven days, choose Beijing plus Xi'an or Shanghai. With ten days, follow the classic Beijing-Xi'an-Shanghai route. With fourteen days, add Guilin for landscapes or Chengdu for food and pandas without turning the trip into a daily transfer marathon.",
-    ctaLabel: 'Get my free personalised China itinerary',
+    ctaLabel: 'Get my free itinerary',
     midCtaLabel: 'Personalize this route for my interests',
-    ctaHref: '/#trip-plan',
-    buddyPrompt: 'Build my first China itinerary. I have [7/10/14] days, I like [history/food/nature], my budget is [budget], and I arrive in [city].',
+    // The itinerary CTAs go to the trip form, not the chat.
+    ctaHref: '/plan/',
     reviewed: 'September 26, 2026',
     lastModified: '2026-10-10',
     sections: [
@@ -7349,6 +7366,7 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/what-to-eat-in-china-first-time-guide')) return 'what-to-eat-in-china-first-time-guide';
   if (cleanPath.endsWith('/how-to-use-wechat-as-foreigner-2026')) return 'how-to-use-wechat-as-foreigner-2026';
   if (cleanPath.endsWith('/nia-12367-online-accommodation-registration-guide')) return 'nia-12367-online-accommodation-registration-guide';
+  if (cleanPath.endsWith('/china-online-arrival-card-2026')) return 'china-online-arrival-card-2026';
   if (cleanPath.endsWith('/amap-english-mode-guide-2026')) return 'amap-english-mode-guide-2026';
   if (cleanPath.endsWith('/alipay-metro-qr-transport-code-guide')) return 'alipay-metro-qr-transport-code-guide';
   if (cleanPath.endsWith('/china-travel-ai-itinerary-generator')) return 'china-travel-ai-itinerary-generator';

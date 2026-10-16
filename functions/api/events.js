@@ -1,9 +1,11 @@
 import { createDoc } from '../_shared/firestore.js';
 import { parseJson } from '../_shared/http.js';
+import { hashIp } from '../_shared/ip-hash.js';
 
 const PRODUCTION_ORIGIN = 'https://chinaeasebuddy.com';
 const PREVIEW_SUFFIX = '.chinaease-buddy.pages.dev';
 
+const ALLOWED_TIERS = new Set(['free', 'trip', 'group']);
 const ALLOWED_EVENTS = new Set([
   'buddy_opened',
   'buddy_question_sent',
@@ -36,6 +38,11 @@ const ALLOWED_EVENTS = new Set([
   'transit_calculator_result_shown',
   'transit_calculator_plan_cta_click',
   'free_trip_starter_submit',
+  'cta_clicked',
+  'transit_calculator_result_link_click',
+  'transit_answer_calculator_click',
+  'quota_exhausted',
+  'newsletter_subscribed',
 ]);
 
 const ALLOWED_DEVICE_CATEGORIES = new Set(['mobile', 'tablet', 'desktop', 'unknown']);
@@ -71,11 +78,6 @@ function checkRateLimit(ipHash) {
   if (prev.length >= RATE_MAX) return false;
   _ipRateMap.set(ipHash, [...prev, now]);
   return true;
-}
-
-async function sha256(input) {
-  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(input));
-  return Array.from(new Uint8Array(digest)).map((b) => b.toString(16).padStart(2, '0')).join('');
 }
 
 // Returns true for allowed request origins; false for everything else.
@@ -170,7 +172,7 @@ export async function onRequestPost({ request, env }) {
 
   // IP used only for rate limiting — hash is never written to the analytics document.
   const ip = request.headers.get('CF-Connecting-IP') || request.headers.get('X-Forwarded-For') || 'unknown';
-  const ipHash = await sha256(ip);
+  const ipHash = await hashIp(env, ip);
   if (!checkRateLimit(ipHash)) {
     return jsonErr(429, 'too_many_requests', 'Too many requests.', origin);
   }
@@ -229,6 +231,18 @@ export async function onRequestPost({ request, env }) {
     const value = clampStr(body.destinationUrl, 200);
     return value?.startsWith('/') ? value.split('?')[0] : null;
   })();
+  const ctaName = clampStr(body.ctaName, 120);
+  const tool = clampStr(body.tool, 80);
+  const answerSlug = (() => {
+    const value = clampStr(body.answerSlug, 120);
+    return value && /^[a-z0-9][a-z0-9-]*$/.test(value) ? value : null;
+  })();
+  const ctaPlacement = (() => {
+    const value = clampStr(body.ctaPlacement, 40);
+    return value && /^[a-z0-9][a-z0-9_-]*$/i.test(value) ? value : null;
+  })();
+  const quotaCode = ['quota_exhausted', 'pass_expired', 'free_quota_exhausted'].includes(body.quotaCode) ? body.quotaCode : null;
+  const tier = ALLOWED_TIERS.has(body.tier) ? body.tier : null;
   const deviceCategory = ALLOWED_DEVICE_CATEGORIES.has(body.deviceCategory)
     ? body.deviceCategory
     : 'unknown';
@@ -299,6 +313,21 @@ export async function onRequestPost({ request, env }) {
     if (firstTouchSource) doc.firstTouchSource = firstTouchSource;
     if (lastTouchSource) doc.lastTouchSource = lastTouchSource;
     if (destinationPath) doc.destinationPath = destinationPath;
+  }
+
+  if (eventName === 'cta_clicked') {
+    if (ctaName) doc.ctaName = ctaName;
+    if (destination) doc.destination = destination.split('?')[0];
+    if (tool) doc.tool = tool;
+  }
+  if (eventName === 'transit_calculator_result_link_click' && destinationUrl) doc.destinationUrl = destinationUrl;
+  if (eventName === 'transit_answer_calculator_click') {
+    if (answerSlug) doc.answerSlug = answerSlug;
+    if (ctaPlacement) doc.ctaPlacement = ctaPlacement;
+  }
+  if (eventName === 'quota_exhausted') {
+    if (quotaCode) doc.quotaCode = quotaCode;
+    if (tier) doc.tier = tier;
   }
 
   // Firestore write failure is non-fatal — analytics must never break the user experience.

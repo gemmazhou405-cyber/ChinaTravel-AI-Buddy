@@ -1,6 +1,7 @@
 import { clientIp, errorResponse, jsonResponse, optionsResponse, withCors } from '../../_shared/http.js';
 import { getDoc, patchDoc } from '../../_shared/firestore.js';
 import { verifySessionCookie } from '../../_shared/session.js';
+import { hashIp } from '../../_shared/ip-hash.js';
 
 const REQUEST_ID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const MAX_MESSAGE_CHARS = 1200;
@@ -125,10 +126,10 @@ function normalizeContext(context) {
   return total <= MAX_CONTEXT_CHARS ? normalized : null;
 }
 
-async function checkFreeQuota(env, ip) {
+async function checkFreeQuota(env, ipHash) {
   if (!env.RATE_LIMIT) return { ok: true };
   const today = new Date().toISOString().slice(0, 10);
-  const key = `free:ip:${ip}:${today}`;
+  const key = `free:ip:${ipHash}:${today}`;
   const count = Number(await env.RATE_LIMIT.get(key).catch(() => null) ?? 0);
   if (count >= FREE_DAILY_LIMIT) {
     return { ok: false, status: 429, code: 'free_quota_exhausted' };
@@ -348,14 +349,16 @@ async function handlePost(request, env, deadlineAt) {
     usageTier = reservation.pass.tier;
   } else {
     // Free tier path — IP-based daily quota
-    const freeCheck = await checkFreeQuota(env, ip);
+    // Keyed by a salted hash so raw IP addresses never reach KV or usage records.
+    const ipHash = await hashIp(env, ip);
+    const freeCheck = await checkFreeQuota(env, ipHash);
     if (!freeCheck.ok) {
       return withCors(jsonResponse({
         error: 'free_quota_exhausted',
         message: 'Daily free quota reached. Get a pass to continue.',
       }, { status: 429 }), request, env);
     }
-    userId = `free:${ip.replace(/[^0-9a-f.:]/gi, '').slice(0, 32)}`;
+    userId = `free:${ipHash.slice(0, 32)}`;
     usageTier = 'free';
   }
 

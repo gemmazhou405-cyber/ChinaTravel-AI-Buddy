@@ -1,5 +1,6 @@
 import { getDoc, patchDoc, queryOneWithId } from '../_shared/firestore.js';
 import { sessionCookieHeader, sha256hex, signSessionToken } from '../_shared/session.js';
+import { hashIp } from '../_shared/ip-hash.js';
 
 const TIERS = {
   trip:  { maxDevices: 2 },
@@ -28,7 +29,7 @@ export async function onRequestPost({ request, env }) {
   // IP-based rate limit: max 5 recovery attempts per hour per IP
   const ip = request.headers.get('CF-Connecting-IP') || request.headers.get('X-Forwarded-For') || 'unknown';
   if (env.RATE_LIMIT) {
-    const hourKey = `recover:ip:${ip}:${Math.floor(Date.now() / 3_600_000)}`;
+    const hourKey = `recover:ip:${await hashIp(env, ip)}:${Math.floor(Date.now() / 3_600_000)}`;
     const count = Number(await env.RATE_LIMIT.get(hourKey).catch(() => null) ?? 0);
     if (count >= 5) return json({ error: 'rate_limited' }, 429);
     await env.RATE_LIMIT.put(hourKey, String(count + 1), { expirationTtl: 7200 }).catch(() => {});

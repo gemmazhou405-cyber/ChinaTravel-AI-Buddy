@@ -67,9 +67,22 @@ function touchDetails(touch) {
   ];
 }
 
+const FREE_PLAN_BLOCK_REASONS = {
+  email: 'this email address has already received its free itinerary',
+  ip: 'this IP address has reached its 5 free itineraries for today',
+  email_or_ip: 'a request from the same email address or IP address was being processed at the same time',
+};
+
+function freePlanBlockText(outcome) {
+  if (!outcome.freePlanBlockedReason) return null;
+  return FREE_PLAN_BLOCK_REASONS[outcome.freePlanBlockedReason] || 'the free plan was already used';
+}
+
 function statusLabels(outcome) {
   return {
-    planStatus: outcomeLabel(outcome.planGenerationStatus, { succeeded: 'Succeeded', failed: 'Failed' }),
+    planStatus: outcome.freePlanBlockedReason
+      ? 'Not attempted (free plan already used)'
+      : outcomeLabel(outcome.planGenerationStatus, { succeeded: 'Succeeded', failed: 'Failed' }),
     customerEmailStatus: outcomeLabel(outcome.customerItineraryEmailStatus, {
       accepted: 'Accepted by email provider',
       failed: 'Failed',
@@ -115,9 +128,12 @@ function leadRows(lead) {
 function customerEmailSection(outcome) {
   const email = outcome.customerEmail;
   if (!email) {
-    const reason = outcome.planGenerationStatus === 'failed'
-      ? 'no itinerary was generated, so no email was sent'
-      : 'no itinerary email was sent';
+    const blocked = freePlanBlockText(outcome);
+    const reason = blocked
+      ? `${blocked}, so no itinerary was generated or emailed. The visitor was shown the "free plan used" message and may need a manual reply`
+      : outcome.planGenerationStatus === 'failed'
+        ? 'no itinerary was generated, so no email was sent'
+        : 'no itinerary email was sent';
     return { html: `<p style="margin:0 0 16px;"><strong>The customer received nothing:</strong> ${escapeHtml(reason)}.</p>`, text: [`The customer received nothing: ${reason}.`] };
   }
   const { customerEmailStatus } = statusLabels(outcome);
@@ -144,6 +160,7 @@ function customerEmailSection(outcome) {
 function buildHtml(lead, outcome = {}) {
   const { planStatus, customerEmailStatus, whatsappStatus } = statusLabels(outcome);
   const statusRows = [
+    ...(outcome.freePlanBlockedReason ? [['Free plan check', `Blocked: ${freePlanBlockText(outcome)}`]] : []),
     ['Plan generation', planStatus],
     ['Customer itinerary email', customerEmailStatus],
     ['Customer email ID', outcome.customerItineraryEmailProviderId],
@@ -184,6 +201,7 @@ function buildText(lead, outcome = {}) {
     ...block(touchDetails(lead.lastTouch)),
     '',
     'DELIVERY STATUS',
+    ...(outcome.freePlanBlockedReason ? [`Free plan check:          Blocked: ${freePlanBlockText(outcome)}`] : []),
     `Plan generation:          ${planStatus}`,
     `Customer itinerary email: ${customerEmailStatus}`,
     `Customer email ID:        ${textVal(outcome.customerItineraryEmailProviderId)}`,
@@ -271,9 +289,11 @@ export async function sendTripLeadNotification(env, lead, outcome = {}) {
   }
   const from = env.TRIP_LEAD_FROM_EMAIL || ADMIN_FROM_DEFAULT;
   const touch = lead.lastTouch || lead.firstTouch;
-  const status = outcome.planGenerationStatus === 'failed' || outcome.customerItineraryEmailStatus === 'failed'
-    ? 'action required'
-    : 'itinerary email accepted';
+  const status = outcome.freePlanBlockedReason
+    ? 'free plan already used'
+    : outcome.planGenerationStatus === 'failed' || outcome.customerItineraryEmailStatus === 'failed'
+      ? 'action required'
+      : 'itinerary email accepted';
   return sendResendEmail(
     env,
     {

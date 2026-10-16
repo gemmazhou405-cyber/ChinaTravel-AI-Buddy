@@ -429,9 +429,7 @@
       "currency": "Convertisseur de devises",
       "currencyLive": "USD · EUR · GBP · AUD → RMB en direct",
       "open": "Ouvrir",
-      "secure": "Paiement sécurisé via PayPal",
       "bannerAlt": "Votre aventure en Chine commence maintenant",
-      "paymentSoon": "Les pass payants sont des pass de voyage numériques à paiement unique traités via PayPal lorsque le paiement est activé. L’accès commence après capture vérifiée du paiement.",
       "plans": {
         "free": {
           "name": "Gratuit",
@@ -439,7 +437,7 @@
           "cta": "Commencer gratuitement",
           "features": [
             "Boîte à outils complète : apps, paiements, nourriture, transport et urgences",
-            "10 réponses Buddy AI",
+            "10 messages Buddy AI par jour",
             "Cartes de phrases et guides de voyage inclus"
           ]
         },
@@ -539,92 +537,11 @@
       "paymentPhraseCards": "Cartes de phrases paiement",
       "paymentCardsSubtitle": "{{count}} cartes Alipay, WeChat Pay, carte et espèces",
       "setupShort": "Liez une carte avant l’arrivée.",
-      "earlyAccess": {
-        "title": "Paiement sécurisé via PayPal",
-        "body": "Trip Pass et Group Pass sont traités en toute sécurité via PayPal lorsque le paiement est activé. L’accès commence après capture vérifiée du paiement.",
-        "options": "Utilisez la même adresse e-mail que votre compte ChinaEase Buddy.",
-        "safety": "ChinaEase Buddy ne collecte pas les données de carte directement sur ce site.",
-        "modalTitle": "Paiement manuel",
-        "modalSubtitle": "Continuez avec le paiement PayPal. L’accès commence après capture vérifiée du paiement.",
-        "email": "Adresse e-mail",
-        "plan": "Choix du forfait",
-        "travelDate": "Date de voyage facultative",
-        "message": "Message facultatif",
-        "messagePlaceholder": "Quelque chose à savoir sur votre voyage ?",
-        "submit": "Continuer",
-        "contactEmail": "Nous contacter par e-mail",
-        "confirmation": "L’accès commence après capture vérifiée du paiement.",
-        "noCard": "Aucune donnée de carte n’est collectée sur ce site.",
-        "sameEmail": "Utilisez la même adresse e-mail que celle de votre compte ChinaEase Buddy.",
-        "createAccount": "Créez d’abord un compte gratuit pour une activation plus rapide.",
-        "emailRequired": "Veuillez d’abord saisir votre e-mail.",
-        "mailReady": "Veuillez continuer avec le lien de paiement."
-      },
       "freeToolkitReady": "La boîte à outils gratuite est prête. Aucun paiement nécessaire.",
-      "manualPayment": {
-        "title": "Les pass payants sont optionnels.",
-        "body": "Les paiements sont traités par PayPal. En mode sandbox, l’accès est activé après capture et vérification du paiement. Les liens PayPal manuels restent seulement une solution de secours.",
-        "note": "ChinaEase Buddy ne voit ni ne stocke vos données de carte. Le paiement est traité en toute sécurité par PayPal.",
-        "safety": "",
-        "paidNote": ""
-      },
-      "claim": {
-        "signInFirst": "Veuillez d’abord vous connecter afin que le pass soit appliqué à votre compte.",
-        "kicker": "Activation manuelle",
-        "title": "Paiement {{plan}}",
-        "accountLabel": "Compte ChinaEase Buddy",
-        "accountHelp": "L’accès sera appliqué à ce compte après confirmation du paiement.",
-        "openPaypal": "Ouvrir le paiement PayPal",
-        "requestActivation": "J’ai payé — demander l’activation",
-        "afterPaymentHelp": "Après un paiement via lien PayPal manuel, envoyez les détails de transaction pour examen par le support.",
-        "transactionId": "ID de transaction PayPal",
-        "transactionPlaceholder": "Exemple : 1AB23456CD789012E",
-        "paypalEmail": "E-mail de paiement PayPal (facultatif)",
-        "paypalEmailPlaceholder": "Si différent de l’e-mail du compte",
-        "transactionRequired": "Veuillez saisir votre ID de transaction PayPal.",
-        "submit": "Envoyer la demande d’activation",
-        "submitting": "Envoi...",
-        "submitted": "Demande d’activation envoyée. Le support la vérifiera manuellement.",
-        "submitError": "Impossible d’envoyer la demande. Réessayez ou contactez le support.",
-        "noCards": "Ne saisissez pas de numéros de carte ni d’informations de paiement sensibles."
-      },
       "checkout": {
-        "sandboxBadge": "Paiement test — aucun argent réel ne sera facturé.",
-        "secureCheckout": "Paiement sécurisé via PayPal",
-        "modeHelp": "Les paiements sont traités en toute sécurité par PayPal.",
         "activePass": "Vous avez déjà un pass de voyage actif.",
         "activeButton": "Pass actif",
-        "expires": "Expire le {{date}}",
-        "title": "Paiement {{plan}}",
-        "accountHelp": "L’accès sera appliqué à ce compte ChinaEase Buddy après vérification du paiement.",
-        "tripValidity": "50 messages Buddy AI · 7 jours",
-        "groupValidity": "200 messages Buddy AI · 14 jours · un compte partagé",
-        "acknowledgement": "Je comprends qu’il s’agit d’un pass de voyage numérique à paiement unique lié à mon compte ChinaEase Buddy actuel, et que l’accès commence après un paiement réussi.",
-        "openPaypal": "Ouvrir le paiement PayPal",
-        "creating": "Création de la commande...",
-        "confirmPayment": "J’ai approuvé le paiement — confirmer",
-        "capturing": "Confirmation du paiement...",
-        "reopenPaypal": "Rouvrir la fenêtre de paiement PayPal",
-        "success": "Paiement confirmé. Votre pass de voyage est actif.",
-        "pending": "Nous confirmons votre paiement. Veuillez ne pas payer à nouveau.",
-        "createError": "Impossible de créer la commande.",
-        "captureError": "Impossible de confirmer le paiement.",
-        "legalLinks": "Consultez les Conditions, la Politique de confidentialité et les informations de remboursement avant de payer.",
-        "trip": {
-          "features": [
-            "50 messages Buddy AI",
-            "Valable 7 jours",
-            "Un compte · pas de renouvellement automatique"
-          ]
-        },
-        "group": {
-          "features": [
-            "200 messages Buddy AI",
-            "Valable 14 jours",
-            "Un compte partagé pour un petit groupe"
-          ]
-        },
-        "opening": "Ouverture…"
+        "expires": "Expire le {{date}}"
       },
       "upgradePrompt": "Passez à la version supérieure pour plus de messages Buddy AI."
     },
@@ -669,7 +586,7 @@
       "loginBtn": "Connexion",
       "loading": "Veuillez patienter...",
       "error": "Une erreur est survenue",
-      "freeNote": "Le forfait gratuit inclut 5 messages Buddy AI. Aucune carte bancaire requise.",
+      "freeNote": "Le forfait gratuit inclut 10 messages Buddy AI par jour. Aucune carte bancaire requise.",
       "continueWithGoogle": "Continuer avec Google",
       "or": "ou",
       "forgotPassword": "Mot de passe oublié ?",
@@ -1085,7 +1002,7 @@
         "header": "Un pass. Tout le voyage.",
         "note": "Paiement unique. Pas d'abonnement, pas de renouvellement automatique.",
         "trip": {
-          "line1": "50 réponses Buddy AI sur 7 jours",
+          "line1": "50 réponses Buddy AI sur 14 jours",
           "line2": "Cartes taxi, cartes de phrases et outils essentiels",
           "line3": "De l'aide pour un voyageur, tout le séjour"
         },

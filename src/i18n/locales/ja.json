@@ -429,9 +429,7 @@
       "currency": "通貨換算",
       "currencyLive": "USD · EUR · GBP · AUD → RMB en direct",
       "open": "開く",
-      "secure": "PayPal セキュア決済",
       "bannerAlt": "中国での旅がここから始まります",
-      "paymentSoon": "有料パスは、決済が有効な場合に PayPal で処理される1回払いのデジタルトラベルパスです。アクセスは支払いキャプチャ確認後に開始されます。",
       "plans": {
         "free": {
           "name": "無料",
@@ -439,7 +437,7 @@
           "cta": "無料で始める",
           "features": [
             "完全ツールキット：アプリ、支払い、食事、交通、緊急時",
-            "Buddy AI回答10件",
+            "Buddy AIメッセージ1日10件",
             "フレーズカードと旅行ガイド付き"
           ]
         },
@@ -539,94 +537,11 @@
       "paymentPhraseCards": "支払いフレーズカード",
       "paymentCardsSubtitle": "Alipay、WeChat Pay、カード、現金カード {{count}}枚",
       "setupShort": "到着前にカードを連携してください。",
-      "earlyAccess": {
-        "title": "PayPal セキュア決済",
-        "body": "Trip Pass と Group Pass は、決済が有効な場合に PayPal で安全に処理されます。アクセスは支払いキャプチャ確認後に開始されます。",
-        "options": "ChinaEase Buddy アカウントと同じメールを使用してください。",
-        "safety": "ChinaEase Buddy はこのサイト上でカード情報を直接収集しません。",
-        "modalTitle": "手動支払い",
-        "modalSubtitle": "PayPal 決済に進んでください。アクセスは支払いキャプチャ確認後に開始されます。",
-        "email": "メールアドレス",
-        "plan": "プラン選択",
-        "travelDate": "旅行日（任意）",
-        "message": "メッセージ（任意）",
-        "messagePlaceholder": "旅行について伝えておきたいことはありますか？",
-        "submit": "続行",
-        "contactEmail": "メールで問い合わせる",
-        "confirmation": "アクセスは支払いキャプチャ確認後に開始されます。",
-        "noCard": "このサイトではカード情報を収集しません。",
-        "sameEmail": "ChinaEase Buddy アカウントと同じメールを使用してください。",
-        "createAccount": "より早い有効化のため、先に無料アカウントを作成してください。",
-        "emailRequired": "先にメールアドレスを入力してください。",
-        "mailReady": "支払いリンクに進んでください。"
-      },
       "freeToolkitReady": "無料ツールキットを利用できます。支払いは不要です。",
-      "manualPayment": {
-        "title": "有料パスは任意です。",
-        "body": "支払いは PayPal が処理します。Sandbox 決済では、支払いキャプチャの確認後にアクセスが有効化されます。手動 PayPal リンクは予備手段としてのみ残しています。",
-        "note": "ChinaEase Buddy はカード情報を見たり保存したりしません。支払いは PayPal が安全に処理します。",
-        "safety": "",
-        "paidNote": ""
-      },
-      "claim": {
-        "signInFirst": "パスをアカウントに適用するため、先にサインインしてください。",
-        "kicker": "手動有効化",
-        "title": "{{plan}} の支払い",
-        "accountLabel": "ChinaEase Buddy アカウント",
-        "accountHelp": "支払い確認後、このアカウントにアクセスを適用します。",
-        "openPaypal": "PayPal 支払いを開く",
-        "requestActivation": "支払い済み — 有効化を申請",
-        "afterPaymentHelp": "手動 PayPal リンクで支払った場合は、サポート確認のため取引情報を送信してください。",
-        "transactionId": "PayPal 取引ID",
-        "transactionPlaceholder": "例: 1AB23456CD789012E",
-        "paypalEmail": "PayPal 支払いメール（任意）",
-        "paypalEmailPlaceholder": "アカウントのメールと異なる場合",
-        "transactionRequired": "PayPal 取引IDを入力してください。",
-        "submit": "有効化申請を送信",
-        "submitting": "送信中...",
-        "submitted": "有効化申請を送信しました。サポートが手動で確認します。",
-        "submitError": "申請を送信できませんでした。再試行するかサポートへ連絡してください。",
-        "noCards": "カード番号や機密性の高い支払い情報は入力しないでください。"
-      },
       "checkout": {
-        "sandboxBadge": "テスト決済 — 実際の課金は発生しません。",
-        "secureCheckout": "PayPal セキュア決済",
-        "modeHelp": "支払いは PayPal が安全に処理します。",
         "activePass": "有効なトラベルパスがすでにあります。",
         "activeButton": "有効なパス",
-        "expires": "{{date}}まで有効",
-        "title": "{{plan}}の決済",
-        "accountHelp": "支払い確認後、このChinaEase Buddyアカウントにアクセスが付与されます。",
-        "tripValidity": "Buddy AI 50メッセージ · 7日間",
-        "groupValidity": "Buddy AI 200メッセージ · 14日間 · 1つの共有アカウント",
-        "acknowledgement": "これは現在のChinaEase Buddyアカウントに紐づく1回払いのデジタルトラベルパスであり、支払い成功後にアクセスが開始されることを理解しています。",
-        "openPaypal": "PayPal決済を開く",
-        "creating": "注文を作成中...",
-        "confirmPayment": "支払いを承認しました — 確認",
-        "capturing": "支払いを確認中...",
-        "reopenPaypal": "PayPal決済画面を再度開く",
-        "success": "支払いが確認されました。トラベルパスが有効です。",
-        "pending": "支払いを確認中です。再度支払わないでください。",
-        "createError": "注文を作成できませんでした。",
-        "captureError": "支払いを確認できませんでした。",
-        "legalLinks": "支払い前に利用規約、プライバシーポリシー、返金情報をご確認ください。",
-        "trip": {
-          "features": [
-            "Buddy AI 50メッセージ",
-            "メニュー/写真スキャン20回",
-            "7日間有効",
-            "1アカウント · 自動更新なし"
-          ]
-        },
-        "group": {
-          "features": [
-            "Buddy AI 200メッセージ",
-            "メニュー/写真スキャン100回",
-            "14日間有効",
-            "小規模旅行グループ用の1つの共有アカウント"
-          ]
-        },
-        "opening": "開いています…"
+        "expires": "{{date}}まで有効"
       },
       "upgradePrompt": "Buddy AIのメッセージをさらに使うにはアップグレードしてください。"
     },
@@ -671,7 +586,7 @@
       "loginBtn": "ログイン",
       "loading": "お待ちください...",
       "error": "問題が発生しました",
-      "freeNote": "無料プランにはBuddy AI 5メッセージが含まれます。カード登録は不要です。",
+      "freeNote": "無料プランではBuddy AIメッセージを1日10件まで利用できます。カード登録は不要です。",
       "continueWithGoogle": "Googleで続行",
       "or": "または",
       "forgotPassword": "パスワードをお忘れですか？",
@@ -1087,7 +1002,7 @@
         "header": "ひとつのパスで、旅のすべてを。",
         "note": "一回払い。サブスクリプションや自動更新はありません。",
         "trip": {
-          "line1": "7日間でBuddy AIの回答50回",
+          "line1": "14日間でBuddy AIの回答50回",
           "line2": "タクシーカード、フレーズカード、主要ツール機能",
           "line3": "旅行者1名を旅の間ずっとサポート"
         },
