@@ -3644,14 +3644,18 @@ Object.assign(pageMeta, {
     title: 'Amap English Guide: How to Switch Language & Search in English (2026)',
     heading: 'Amap English Guide: Set Up Search and Navigation',
     description: 'Set up Amap Global in English, search China destinations, save Chinese hotel addresses, plan metro routes, and use local navigation and ride-hailing.',
-    quickAnswer: 'Download Amap Global before arrival and select a supported language during setup or in settings. Search major destinations in English, but keep the Chinese name or address for small businesses, apartment compounds, entrances, and pickup points.',
+    quickAnswer: 'To switch Amap to English, update the official app, open your profile or settings, look for Language (语言), and select English if your version offers it. Some versions ask for a language during first setup. If the option is missing, check your app and phone language, then use Chinese destination names until the option appears. The interface language does not guarantee that every place name or search result is translated.',
     faqs: [
-      ['Is Amap available in English?', 'Yes. Amap Global provides English and other supported languages for overseas users.'],
-      ['Can I search places in English?', 'Major places often work in English. Keep the Chinese name or address for small or ambiguous destinations.'],
-      ['Is Amap better than Google Maps in China?', 'Amap uses current local data and is designed for mainland navigation. Google services are generally unavailable on ordinary mainland connections.'],
+      ['How do I switch Amap to English?', 'Update the official app, then use its first-run language picker or look for Language (语言) under your profile or settings. Select English if your version offers it. The exact menu can vary by device and version.'],
+      ['Why is my Amap still in Chinese?', 'Check for an app update and a Language setting, then review the phone or app-specific language. Some business names and services remain in Chinese even when the interface is English. Keep the destination’s Chinese address.'],
+      ['Can I search places in English?', 'Many major places work in English, but results vary. For a small business or ambiguous location, paste its Chinese name or address and verify the district, photos, and entrance.'],
     ],
-    lastReviewed: 'September 27, 2026',
-    lastModified: '2026-09-27',
+    sourceLinks: [
+      ['Shanghai government: multilingual Amap services', 'https://english.shanghai.gov.cn/en-EasyShanghai/20260713/379bcea6e1bd4defaa7db2451d68d3dd.html'],
+      ['Shanghai government: a guide to AMap in English', 'https://english.shanghai.gov.cn/en-UsefulApps/20241213/59a549d4bdf1440c8e86251d5ac7d5a9.html'],
+    ],
+    lastReviewed: 'October 16, 2026',
+    lastModified: '2026-10-16',
   },
   'alipay-metro-qr-transport-code-guide': {
     ...pageMeta['china-metro-guide'],
@@ -4221,24 +4225,34 @@ const focusedPageContent = {
   "amap-english-mode-guide-2026": {
     "contentSections": [
       {
-        "title": "Set the app language",
+        "title": "Switch Amap to English",
+        "ordered": true,
         "items": [
-          "Update AMap from the official store, then check its language settings.",
-          "Interface labels can vary by app version and phone region.",
-          "Save the destination's Chinese name and address even when your interface is in English."
+          "Update the official Amap app and open it while connected to reliable data.",
+          "If a language picker appears during first setup, select English. Otherwise open your profile or settings and look for Language (语言); the menu position can differ by version and phone region.",
+          "Select English if offered, return to the map, and search one familiar destination to test the interface and results.",
+          "If the app follows your phone language, check its app-specific or system language setting. Do not assume changing the interface translates every local business name."
         ]
       },
       {
-        "title": "Test a route before departure",
+        "title": "If English is missing or only part of the map changes",
         "items": [
-          "Search the hotel and arrival station while you have reliable data.",
-          "Compare public transport, walking and ride options for the exact time.",
-          "Keep a screenshot of the Chinese address in case a driver or station attendant needs it."
+          "Confirm you installed the current official app and check whether your version offers a language option. Avoid third-party downloads promising an English build.",
+          "Some place names, business listings, driver messages, and local services can remain in Chinese. Paste the Chinese name or address from your hotel or booking.",
+          "Test the exact hotel branch, station, terminal, and entrance before travel; compare district and photos when several results share a name.",
+          "Save Chinese addresses and screenshots outside the app so a staff member or driver can help even if the interface remains partly Chinese."
+        ]
+      },
+      {
+        "title": "Use the full navigation guide after setup",
+        "items": [
+          "For walking routes, metro exits, airports, station pickup points, and offline backups, follow the separate AMap in English guide.",
+          "This page answers the language-setting and English search questions; the full guide covers route planning and navigation."
         ]
       }
     ],
-    "lastReviewed": "October 5, 2026",
-    "lastModified": "2026-10-05",
+    "lastReviewed": "October 16, 2026",
+    "lastModified": "2026-10-16",
     "article": true
   },
   "alipay-metro-qr-transport-code-guide": {
