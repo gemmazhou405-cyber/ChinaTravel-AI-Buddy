@@ -239,16 +239,27 @@ const pageMeta = {
     ],
   },
   'china-airport-arrival-guide': {
-    title: 'China Airport Arrival Guide 2026: What to Do After Landing',
-    heading: 'China Airport Arrival: Entry, Baggage, Payment and Transfer',
+    title: 'China Airport Arrival Guide 2026: Immigration to Hotel',
+    heading: 'China Airport Arrival: From Immigration to Your Hotel',
     description:
-      'Follow China airport arrival step by step: arrival card, immigration, baggage, customs, eSIM, payments, taxi, metro and hotel check-in.',
+      'After landing in China, clear immigration, collect bags and pass Customs. Then check mobile data and payment before taking an official ride or airport train.',
     quickAnswer:
       'Before flying, confirm the entry rules for your exact passport, route, purpose, and travel dates, then complete China\'s free official online arrival card if it applies to you. Keep your passport, visa or other entry basis, accommodation details, and onward booking accessible offline. After landing, follow the airport signs through immigration, baggage claim, and Customs; connect your phone, test a payment backup, and use an official airport train, metro, taxi queue, or verified ride-hailing pickup. The arrival card is not a visa or permission to enter, and the final entry decision belongs to the immigration authorities.',
-    lastReviewed: 'September 29, 2026',
-    lastModified: '2026-10-09',
+    lastReviewed: 'October 18, 2026',
+    lastModified: '2026-10-18',
     article: true,
     contentSections: [
+      {
+        title: 'After landing: five steps before leaving the airport',
+        ordered: true,
+        items: [
+          'Follow International Arrivals to immigration. Have your passport, applicable entry documents and arrival-card details ready; the time needed varies by airport and queue.',
+          'Collect your checked bags and report any missing or damaged luggage to the airline before leaving the baggage area.',
+          'Follow the Customs signs and declare goods when required. Ask a Customs officer if you are unsure which channel applies.',
+          'In the public arrivals area, connect your phone and check a usable payment method. Keep your hotel address in Chinese and a backup payment method accessible.',
+          'Choose an official airport train, metro, taxi queue or verified ride-hailing pickup that works for your terminal, luggage and arrival time.',
+        ],
+      },
       {
         title: 'Before your flight: prepare the arrival file',
         ordered: true,
