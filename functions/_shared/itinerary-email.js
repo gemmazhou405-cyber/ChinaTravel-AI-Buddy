@@ -8,6 +8,8 @@ export const CUSTOMER_FROM_DEFAULT = `Lin from ChinaEase Buddy <${LIN_EMAIL}>`;
 const SITE_URL = 'https://chinaeasebuddy.com';
 const TRANSIT_GUIDE_URL = `${SITE_URL}/china-240-hour-visa-free-transit-2026/`;
 const ALIPAY_GUIDE_URL = `${SITE_URL}/alipay-for-foreigners/`;
+const TRIP_PLAN_URL = 'https://chinaeasebuddy.gumroad.com/l/aajhsx?utm_source=itinerary_email';
+const TRIP_PLAN_INTRO = 'My review is a quick read with notes. If you\'d rather hand the whole thing over, I\'ll rewrite this into a finalized plan: exact booking times for things that sell out, train choices between cities, and a pre-departure checklist for your passport, with 2 rounds of revisions by email.';
 const FAMILY_RE = /family|kid|child|children|baby|toddler/i;
 const TIANANMEN_RE = /tian'?anmen square|天安门广场/i;
 const VISA_URGENT_DAYS = 21;
@@ -276,6 +278,9 @@ ${plan.summary ? `<p style="${p}">${esc(plan.summary)}</p>\n` : ''}${dayHtml}
 ${questions.map((question) => `<li style="margin:0 0 8px;">${esc(question)}</li>`).join('\n')}
 </ol>
 <p style="${p}">Just reply with whatever you know so far. Rough answers are fine.</p>
+<h3 style="${h}">Want me to take it further?</h3>
+<p style="${p}">${esc(TRIP_PLAN_INTRO)}</p>
+<p style="${p}">That's my Trip Plan service, $39 — <a href="${TRIP_PLAN_URL}" style="color:#155e63;">see what's included</a>.</p>
 <p style="margin:22px 0 22px;">Lin<br>ChinaEase Buddy<br><a href="${SITE_URL}" style="color:#155e63;">${SITE_URL}</a></p>
 <p style="margin:0 0 6px;font-size:12px;${muted}">What you told us: ${esc(summaryLine || 'no trip details yet')}</p>
 <p style="margin:0;font-size:12px;${muted}">Please don't email passport numbers or payment card details. This email doesn't sign you up to any newsletter.</p>`;
@@ -307,6 +312,11 @@ ${bodyHtml}
     ...questions.map((question, index) => `${index + 1}. ${question}`),
     '',
     'Just reply with whatever you know so far. Rough answers are fine.',
+    '',
+    'WANT ME TO TAKE IT FURTHER?',
+    TRIP_PLAN_INTRO,
+    '',
+    `That's my Trip Plan service, $39 — see what's included: ${TRIP_PLAN_URL}`,
     '',
     'Lin',
     'ChinaEase Buddy',
