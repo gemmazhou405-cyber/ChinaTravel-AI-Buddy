@@ -1228,6 +1228,7 @@
       "consent": "We'll only use your details to help with your trip.",
       "consentLink": "Privacy Policy",
       "success": "Thanks — we've received your trip details.",
+      "tripPlanCta": "Want Lin to finalize it for you? Trip Plan — $39 →",
       "errorGeneric": "Could not send your details right now. Please try again.",
       "errorTooMany": "Too many requests. Please try again later.",
       "errorEmail": "Please enter a valid email address.",

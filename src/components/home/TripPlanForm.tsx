@@ -18,6 +18,10 @@ type CityId = (typeof CITY_OPTIONS)[number];
 type InterestId = (typeof INTEREST_OPTIONS)[number];
 type TravelerOption = '1' | '2' | '3-4' | 'family';
 
+// Paid follow-up shown after a successful free-plan request. GA4 only: the Firestore event
+// allowlist does not include this event name.
+const TRIP_PLAN_URL = 'https://chinaeasebuddy.gumroad.com/l/aajhsx?utm_source=plan_success';
+
 function trackGa4Event(name: string, params?: Record<string, unknown>) {
   if (typeof window === 'undefined') return;
   const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
@@ -267,6 +271,15 @@ export default function TripPlanForm({ embedded = false }: { embedded?: boolean 
               </span>
               <h3 className="mt-5 font-display text-2xl text-ink">{t('lead.progressive.successTitle')}</h3>
               <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-ink-secondary">{t('lead.success')}</p>
+              <a
+                href={TRIP_PLAN_URL}
+                target="_blank"
+                rel="noopener"
+                onClick={() => trackGa4Event('trip_plan_cta_click', { location: 'plan_success' })}
+                className="mt-2 inline-flex min-h-11 items-center rounded-lg px-1 py-2 text-sm font-bold leading-relaxed text-jade underline decoration-jade/25 underline-offset-4 transition hover:decoration-jade focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade"
+              >
+                {t('lead.tripPlanCta')}
+              </a>
               {planPreview?.days?.[0] && (
                 <div className="mt-5 rounded-2xl border border-blue-100 bg-blue-50 p-4 text-left">
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-700">{t('lead.progressive.dayOnePreview')}</p>

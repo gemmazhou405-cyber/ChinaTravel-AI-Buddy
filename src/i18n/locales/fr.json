@@ -1228,6 +1228,7 @@
       "consent": "Nous utiliserons vos coordonnées uniquement pour vous aider dans votre voyage.",
       "consentLink": "Politique de confidentialité",
       "success": "Merci — nous avons bien reçu vos informations de voyage.",
+      "tripPlanCta": "Vous voulez que Lin finalise votre plan ? Trip Plan — 39 $ →",
       "errorGeneric": "Impossible d'envoyer vos informations pour le moment. Veuillez réessayer.",
       "errorTooMany": "Trop de demandes. Veuillez réessayer plus tard.",
       "errorEmail": "Veuillez saisir une adresse email valide.",
