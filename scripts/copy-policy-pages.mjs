@@ -3738,16 +3738,16 @@ Object.assign(pageMeta, {
     ...pageMeta['wechat-pay-for-foreigners'],
     title: 'WeChat Verification Without a Friend: Safe Registration Options (2026)',
     heading: 'WeChat Verification Without a Friend: Use Only Official Recovery Paths',
-    description: 'Learn safe WeChat registration and verification options when you do not have an eligible friend. Use official prompts, support, and recovery instead of paid QR sellers.',
-    quickAnswer: 'There is no guaranteed bypass for WeChat security verification. Complete the exact official flow shown for the account, keep the registered phone number available, use Help Center or account recovery when offered, and avoid paid verification sellers or public QR exchanges.',
+    description: 'No friend to scan your WeChat QR code? Check the exact in-app verification or appeal options, contact official support if blocked, and avoid paid scans.',
+    quickAnswer: 'No friend to scan your WeChat registration QR code? First read the exact prompt and use any alternative or appeal offered inside your app. If it requires another user and offers no alternative, ask someone you genuinely know who is willing and eligible, or contact official WeChat support. There is no guaranteed bypass. Do not pay strangers, publish your QR code or share an SMS code or password. If your trip is near, prepare payment and contact methods that do not depend on WeChat.',
     faqs: [
       ['Can I bypass WeChat friend verification?', 'There is no guaranteed safe bypass. Use the official alternatives, appeal, or support options shown for your account.'],
       ['Should I pay someone online to scan the QR code?', 'No. Paid or unknown verification services can lead to fraud, account compromise, or later restrictions.'],
       ['Can a university or employer help?', 'A trusted institution or real-life contact may help if the official flow permits it and they are comfortable doing so.'],
       ['Can I travel in China without WeChat?', 'Yes, although WeChat is useful. Prepare Alipay, mobile data, email, hotel contacts, Trip.com or 12306, and other direct booking channels.'],
     ],
-    lastReviewed: 'September 27, 2026',
-    lastModified: '2026-09-27',
+    lastReviewed: 'October 19, 2026',
+    lastModified: '2026-10-19',
   },
   'china-hotels-for-foreigners-no-rejection-guide': {
     ...pageMeta['china-hotels-for-foreigners'],
@@ -4361,6 +4361,19 @@ const focusedPageContent = {
   "wechat-verification-without-friend-qr-2026": {
     "contentSections": [
       {
+        "title": "No friend to scan? Check the screen first",
+        "table": {
+          "headers": ["What the app shows", "Safe next step"],
+          "rows": [
+            ["An alternative verification or appeal button", "Use that exact in-app flow; available options differ by account and may change."],
+            ["A request for help from an existing user, with no alternative shown", "Ask a real-life contact only if they are comfortable and the app accepts their account; otherwise use official support."],
+            ["A login or account-recovery prompt for an existing account", "Follow account recovery instead of creating another account to avoid the check."],
+            ["You cannot finish before departure", "Use Alipay or another payment backup, and save hotel, transport and booking contacts outside WeChat."]
+          ]
+        },
+        "items": ["Registration, login recovery and WeChat Pay identity checks are different flows. Match the instructions to the prompt actually on your screen; no third-party QR service can promise access."]
+      },
+      {
         "title": "What the screen is asking",
         "items": [
           "Read the exact security prompt shown for your own WeChat account.",
@@ -4377,8 +4390,8 @@ const focusedPageContent = {
         ]
       }
     ],
-    "lastReviewed": "October 5, 2026",
-    "lastModified": "2026-10-05",
+    "lastReviewed": "October 19, 2026",
+    "lastModified": "2026-10-19",
     "article": true
   },
   "does-google-maps-work-in-china-amap-guide": {
