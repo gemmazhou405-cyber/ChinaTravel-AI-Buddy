@@ -1218,11 +1218,11 @@ const pageMeta = {
     title: 'China High-Speed Train Guide for Foreigners: 12306 Without Chinese ID (2026)',
     heading: 'How to Book China High-Speed Trains Without Chinese ID',
     description:
-      'Foreigners can now verify 12306 passport online - no station visit. How to book with foreign name, avoid name error, pick seats. Beijing-Shanghai 4.5h $80.',
+      'Book China trains with a foreign passport on 12306 or at a station. Check online identity verification, exact station names and e-ticket boarding steps.',
     quickAnswer:
-      'Foreign visitors can buy China train tickets with a valid passport through the official Railway 12306 system, an authorised booking service such as Trip.com, or a station ticket counter. Enter the passenger name and passport number exactly as shown on the passport, check the full station name because many cities have several stations, and carry the same original passport to enter, board, and exit. Most journeys use an e-ticket, so an itinerary sheet or screenshot is useful for reference but does not replace the passport used for booking.',
-    lastReviewed: 'September 29, 2026',
-    lastModified: '2026-09-29',
+      'Foreign visitors can buy China train tickets with a valid passport through the official Railway 12306 system, a booking service such as Trip.com, or a station ticket counter. Online passport identity verification is available, but if it fails, follow the current 12306 instructions or ask at a staffed counter. Enter the passenger name and passport number exactly as shown on the document, check the full station name, and carry the same original passport to enter, board, and exit. Most journeys use an e-ticket; an itinerary sheet or screenshot does not replace the passport used for booking.',
+    lastReviewed: 'October 19, 2026',
+    lastModified: '2026-10-19',
     article: true,
     contentSections: [
       {
@@ -1319,6 +1319,7 @@ const pageMeta = {
     sourceLinks: [
       ['Railway 12306 English website', 'https://www.12306.cn/en/index.html'],
       ['Railway 12306 official English FAQ', 'https://www.12306.cn/en/faq.html'],
+      ['China Government: passport online identity verification', 'https://english.www.gov.cn/news/202311/28/content_WS6565e903c6d0868f4e8e1b58.html'],
       ['Trip.com official website', 'https://www.trip.com/'],
     ],
   },
