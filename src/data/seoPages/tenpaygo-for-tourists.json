@@ -1,10 +1,10 @@
 {
   "heading": "TenPayGo for Tourists Visiting China",
   "title": "TenPayGo for Tourists: Setup & Payment Guide (2026)",
-  "description": "A factual TenPayGo guide for international visitors to China: confirmed payment methods, setup checklist, limits, comparisons, and troubleshooting.",
-  "quickAnswer": "Tencent launched TenPayGo on September 24, 2026 for international visitors to China. Shenzhen Government Online says the app can connect supported international bank cards, overseas digital wallets, or Apple Pay and can pay at merchants that accept WeChat Pay. Availability still depends on the user's market, device, payment method, verification, and the merchant transaction. Registration steps, fees, and every supported issuer have not been independently tested by ChinaEase Buddy.",
-  "lastReviewed": "October 1, 2026",
-  "lastModified": "2026-10-01",
+  "description": "TenPayGo has official Tencent listings on iPhone and Android. Check your store region, supported card or wallet, fees and payment backup before a China trip.",
+  "quickAnswer": "TenPayGo has official Tencent listings in Apple's App Store for iPhone and Google Play for Android. Check whether the app is offered to your store account and device before traveling. Shenzhen Government Online says the app can connect supported international bank cards, overseas digital wallets, or Apple Pay and pay at merchants accepting WeChat Pay. A store listing does not guarantee your card, verification, region, or transaction will work; keep a backup payment method.",
+  "lastReviewed": "October 19, 2026",
+  "lastModified": "2026-10-19",
   "contentSections": [
     {
       "title": "What is TenPayGo?",
@@ -12,6 +12,14 @@
         "TenPayGo is a Tencent payment and travel-service app designed for international visitors to China and launched on September 24, 2026.",
         "The confirmed public description focuses on connecting supported overseas payment methods and paying through the merchant network that accepts WeChat Pay.",
         "It is a new option, not proof that every traveler should replace Alipay, WeChat Pay, cash, or a physical card. Keep at least one backup."
+      ]
+    },
+    {
+      "title": "Is TenPayGo available for iPhone and Android?",
+      "items": [
+        "iPhone — Apple's App Store lists TenPayGo by Tencent Technology (Shenzhen) Company Limited as an iPhone app. Check the listing for your Apple account's store region and your device's compatibility before travel.",
+        "Android — Google Play lists TenPayGo by Tencent Technology (Shenzhen) Company Ltd. Check the listing with your own Google Play account and device; a visible listing does not establish availability in every country.",
+        "Use the official store links under Sources below, verify the developer name, then check available payment methods and fees in the app. Do not assume that downloading the app means a particular card or merchant payment will be approved."
       ]
     },
     {
@@ -38,8 +46,7 @@
         "Reported by early users — TenPayGo appears as a standalone, mainly English-language payment tool for international visitors, without the chat or social-feed features found in WeChat.",
         "Reported by early users — Some users were able to register with an email address without providing a Chinese mobile number. Gmail, Outlook, and iCloud registrations have all been reported as successful by some users.",
         "Reported by early users — Some users did not encounter facial recognition during registration. Verification requirements may vary by user, account, email provider, and region.",
-        "Reported by early users — Early users mainly downloaded TenPayGo through Apple's App Store.",
-        "Not yet confirmed — Current Android availability. Early discussions suggest Android access may still be in testing or rolling out, so travelers should verify availability in the official app store for their device and region.",
+        "Official store listings — Tencent's TenPayGo appears in Apple's App Store for iPhone and in Google Play for Android. These listings supersede older early-user reports about download availability; check your own store region and device.",
         "Reported by early users — Some users linked cards issued outside mainland China or paid with a card already held in Apple Pay. Reported card brands include Visa, Mastercard, American Express, JCB, Discover, Diners Club, and some overseas-issued UnionPay cards.",
         "Reported by early users — Card compatibility may depend on the issuer, issuing country, card BIN, card type, and TenPayGo risk-control checks. Some users report that their account currently accepts only one linked bank card.",
         "Reported by early users — Payments to standard merchant QR codes appear more reliable than payments to personal receiving codes. Early users report mixed results when paying personal QR codes.",
@@ -99,11 +106,14 @@
     }
   ],
   "faqs": [
+    ["Is TenPayGo available on Android and iPhone?", "Yes, official Tencent TenPayGo listings are visible on Google Play for Android and Apple's App Store for iPhone. Whether you can install or use it depends on your store account, region, device and verification. Check the linked official listing before your trip."],
     ["Can every foreign tourist use TenPayGo?", "No universal availability has been confirmed. The launch information says TenPayGo is designed for international visitors and supports specified overseas payment routes, but app availability, country, device, identity checks, card issuer, wallet, and merchant transaction can still affect whether it works for you."],
     ["Does TenPayGo work everywhere WeChat Pay is accepted?", "The official launch report says users can pay within the merchant network that accepts WeChat Pay. That does not guarantee every merchant, category, amount, card, wallet, or transaction will be approved. Carry another payment method and test a small purchase first."],
     ["Is the USD 5,000 payment limit a new TenPayGo rule?", "No. The USD 5,000 single-transaction figure was reported in a 2024 China Government guide as a broader increase for overseas visitors using mobile-payment platforms. Check TenPayGo's current in-app limit and your card or wallet provider's separate limits before paying."]
   ],
   "sourceLinks": [
+    ["Tencent TenPayGo on Google Play (Android)", "https://play.google.com/store/apps/details?id=com.tencent.wxpai"],
+    ["Tencent TenPayGo on Apple's App Store (iPhone)", "https://apps.apple.com/us/app/tenpaygo/id6778755338"],
     ["Shenzhen Government Online: Tencent launches TenPayGo", "https://www.sz.gov.cn/en_szgov/aboutsz/videos/content/post_13000672.html"],
     ["China Government: payment service guide for overseas visitors", "https://english.www.gov.cn/news/202404/11/content_WS6617c858c6d0868f4e8e5f4d.html"]
   ]
