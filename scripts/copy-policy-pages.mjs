@@ -3179,14 +3179,29 @@ const pageMeta = {
     title: 'China SIM Card for Foreigners (2026): Passport Guide',
     heading: 'China SIM Card for Foreigners (2026): How to Buy & Use Without Chinese ID',
     description:
-      'Compare China eSIM and physical SIM options, buy a local SIM with a passport at PVG, PEK, or CAN, choose a carrier, and top up with Alipay.',
+      'Foreign visitors can buy a China SIM card with a passport at an official carrier outlet. Check airport counters, phone compatibility and plans before paying.',
     quickAnswer:
-      'Foreign visitors can use a travel eSIM on a compatible unlocked phone or buy a physical prepaid SIM from a staffed carrier counter using a valid passport. You normally do not need a Chinese national ID, but the carrier must complete real-name registration and may require the original passport. Airport stock, opening hours, plan availability, phone compatibility, and English-language support vary, so keep roaming or an eSIM as an arrival backup.',
-    lastReviewed: 'September 30, 2026',
-    lastModified: '2026-09-30',
+      'Foreign visitors can buy a physical China SIM card at an official staffed carrier outlet using a valid passport; a Chinese national ID is not normally required. Confirm that your phone is unlocked, ask the carrier to complete real-name registration, and test the plan before leaving the counter. Beijing Capital, Beijing Daxing and Shanghai Pudong publish airport SIM services, but check your terminal, opening hours and stock before relying on an airport purchase. A travel eSIM or home roaming can be an arrival backup if your phone and plan support it.',
+    lastReviewed: 'October 19, 2026',
+    lastModified: '2026-10-19',
     article: true,
     featuredFaqCount: 3,
     contentSections: [
+      {
+        title: 'Buy a physical China SIM with a passport',
+        table: {
+          headers: ['Where', 'What to bring or verify', 'If unavailable'],
+          rows: [
+            ['Official China Mobile, China Unicom or China Telecom outlet', 'Original passport, unlocked phone, plan details and total price', 'Try another staffed branch or use roaming until one opens'],
+            ['Beijing Capital or Daxing airport service counter', 'Official Beijing guidance lists airport SIM services; confirm the exact terminal, counter and hours', 'Use an official city outlet after arrival'],
+            ['Shanghai Pudong international traveler service center', 'Official Shanghai guidance describes short-term China Telecom SIM service with passport ID', 'Keep a travel eSIM or roaming backup'],
+          ],
+        },
+        items: [
+          'Ask whether the plan includes a Chinese +86 number, voice and SMS, how much high-speed data it contains, when it expires and how to top up. Do not infer the price or included service from another airport or city.',
+          'Have the staff complete identity registration and activate the SIM, then test mobile data and a required SMS before leaving. An airport service listing does not guarantee your arrival-time availability or your phone model compatibility.',
+        ],
+      },
       {
         title: 'eSIM vs physical SIM at the airport',
         table: {
@@ -3220,10 +3235,10 @@ const pageMeta = {
         ],
       },
       {
-        title: 'How to buy with a passport at PVG, PEK, or CAN',
+        title: 'How to buy at an official carrier counter',
         ordered: true,
         items: [
-          'At Shanghai Pudong (PVG), Beijing Capital (PEK), or Guangzhou Baiyun (CAN), ask the official airport information desk for the currently operating China Mobile, China Unicom, or China Telecom counter. Counter locations, opening hours, and stock can change.',
+          'At an airport, check the official service directory and ask the information desk for a staffed SIM counter. Beijing Capital, Beijing Daxing and Shanghai Pudong publish visitor services; for other airports, confirm a counter before travel. Locations, opening hours and stock can change.',
           'Present the original passport you used to enter China. The carrier may photograph or scan the document and your face to complete legally required real-name registration.',
           'Show the trip length, cities, expected data use, and whether you need a Chinese number, voice calls, SMS, hotspot use, or only mobile data.',
           'Ask the staff to confirm the total price, included allowance, validity, top-up method, and whether the number expires or enters a grace period after the plan ends.',
@@ -3259,6 +3274,9 @@ const pageMeta = {
       ['Can I keep my existing phone number while using a China SIM?', 'Usually yes if your phone supports dual SIM or eSIM plus a physical SIM. Keep the home line active for important verification messages, select the China line for mobile data, and disable home-line data roaming unless included. Check whether receiving calls or texts on the home line creates charges.'],
     ],
     sourceLinks: [
+      ['China government: SIM cards for foreigners', 'https://english.www.gov.cn/2025special/bizexpatsinchina2025'],
+      ['Beijing government: SIM card application locations', 'https://english.beijing.gov.cn/quickguideservices/purchasingsimcards/'],
+      ['Shanghai government: Pudong international traveler services', 'https://english.shanghai.gov.cn/en-Latest-WhatsNew/20260424/88cde5e96ef242daa534102069450a03.html'],
       ['China Mobile official website', 'https://www.10086.cn/'],
       ['China Unicom official website', 'https://www.10010.com/'],
       ['China Telecom official website', 'https://www.189.cn/'],
