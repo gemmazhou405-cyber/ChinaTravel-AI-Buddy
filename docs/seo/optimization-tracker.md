@@ -4,12 +4,13 @@ Use this log for every change intended to affect organic search. The date of a c
 
 ## Changes and pre-change baselines
 
-The performance baseline below comes from the GSC `sc-domain:chinaeasebuddy.com` Web search export downloaded on 2026-10-16. Its 28 complete daily rows cover **2026-09-16 through 2026-10-13**. These are **page-level** metrics, not keyword search volumes. The export's separate `Queries` sheet is site-wide; it cannot attribute a query to either page.
+The performance baseline below comes from the GSC `sc-domain:chinaeasebuddy.com` Web search export downloaded on 2026-10-16. Its 28 complete daily rows cover **2026-09-16 through 2026-10-13**. These are **page-level** metrics, not keyword search volumes. The export's separate `Queries` sheet is site-wide; it cannot attribute a query to a particular page.
 
 | Change ID | Live date / commit | Canonical page | Hypothesis and changed surface | GSC baseline: clicks / impressions / CTR / avg position | GSC URL Inspection baseline | Page-filtered query baseline | Next observation |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | SEO-2026-10-16-AMAP | 2026-10-16 / `3e04e79` | `/amap-english-mode-guide-2026/` | Answer English-setting steps and partial translation problems on the existing guide; keep URL and canonical. | 0 / 69 / 0% / 13.97 | Not recorded; inspect exact canonical URL | Not available in this workbook; do not assign site-wide `amap english` queries to this page | Record URL Inspection status, last crawl, Google canonical, then page-filtered Queries and page totals for complete 7- and 28-day periods. |
 | SEO-2026-10-18-AIRPORT | 2026-10-18 / `5a0f404`, `a6ac34b` | `/china-airport-arrival-guide/` | Clarify search title and description; align static HTML and React H1; lead with immigration-to-hotel checklist; remove unsupported 30-minute promise. | 0 / 27 / 0% / 9.07 | Not recorded; inspect exact canonical URL | Not available in this workbook; do not assign site-wide `china arrivals` to this page | Record URL Inspection status, last crawl, Google canonical, then page-filtered Queries and page totals for complete 7- and 28-day periods. |
+| SEO-2026-10-19-SIM | 2026-10-19 / `57068f1`, `a965bed` | `/china-sim-card-for-foreigners/` | Put the physical SIM/passport answer before eSIM, clarify official store and documented airport options, remove unverified CAN airport promise from the snippet; unchanged title, URL and canonical. | 0 / 31 / 0% / 25.23 | Not recorded; inspect exact canonical URL | Not available in this workbook; site-wide `china sim card` (5 impressions, avg position 49.2) and `sim card for china` (2, position 51) are intent clues only, not proven page-query pairs | Record URL Inspection status and last crawl, then export Queries filtered to this exact page for complete 7- and 28-day windows. |
 
 The 2026-10-13 end date means the baseline is **not** an immediately adjacent pre-change window. Use it as a reference, not a controlled before/after comparison. Save the export name and exact dates for each later snapshot.
 
@@ -21,6 +22,7 @@ Append one row per **change ID and observation date**. Never overwrite a prior s
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | SEO-2026-10-16-AMAP | Pending | Unknown | Unknown | Unknown | Unknown | Pending | Pending | Pending | Pending | Wait for dated GSC evidence. |
 | SEO-2026-10-18-AIRPORT | Pending | Unknown | Unknown | Unknown | Unknown | Pending | Pending | Pending | Pending | Wait for dated GSC evidence. |
+| SEO-2026-10-19-SIM | Pending | Unknown | Unknown | Unknown | Unknown | Pending | Pending | Pending | Pending | Wait for dated GSC evidence. |
 
 ## Collection steps for each SEO change
 
