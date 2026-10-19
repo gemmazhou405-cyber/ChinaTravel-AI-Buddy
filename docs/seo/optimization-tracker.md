@@ -16,6 +16,17 @@ The performance baseline below comes from the GSC `sc-domain:chinaeasebuddy.com`
 
 The 2026-10-13 end date means the baseline is **not** an immediately adjacent pre-change window. Use it as a reference, not a controlled before/after comparison. Save the export name and exact dates for each later snapshot.
 
+## Next page decision: DiDi query ownership
+
+The site-wide `Queries` sheet does not show which page received each query. The main DiDi guide was last changed on 2026-10-11, so do not change both DiDi pages again before measuring the current result. These figures refer to the same 2026-09-16–2026-10-13 workbook, and are **not** keyword search volumes.
+
+| Candidate | Page clicks / impressions / CTR / avg position | Relevant site-wide query clue | Current decision | Evidence needed |
+| --- | --- | --- | --- | --- |
+| `/didi-in-china-for-foreigners/` | 0 / 104 / 0% / 26.51 | `didi pay`: 19 impressions / position 7.89; `didi chuxing`: 9 / 1.11. Neither is attributable to this page from this workbook. | Hold the existing title and October 11 quick-answer changes. | Page-filtered Queries export, indexed status and last Google crawl. |
+| `/didi-payment-for-foreigners/` | 0 / 22 / 0% / 8.45 | The same site-wide `didi pay` clue may belong here, the main page, or both. | Keep the distinct payment intent; do not merge or redirect on these aggregates. | Page-filtered Queries export in the exact same dates as the main guide. |
+
+For both exact URLs, export **Performance → Search results → Web → 28 complete days → Page: exact URL → Queries**, plus the preceding non-overlapping 28 days with identical filters. Preserve each export's date range. If `didi pay` appears for both, compare each page's impressions and position on that same query before deciding whether to narrow their content or internal links; if it appears only for one, optimize that page's answer and snippet. Do not infer keyword competition or monthly volume from GSC impressions alone.
+
 ## Observation records
 
 Append one row per **change ID and observation date**. Never overwrite a prior snapshot. `Unknown` is a valid value; leave no field that could be mistaken for a confirmed index state.
