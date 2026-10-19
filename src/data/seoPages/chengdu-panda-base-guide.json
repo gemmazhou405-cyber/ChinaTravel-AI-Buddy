@@ -1,10 +1,10 @@
 {
   "title": "Chengdu Panda Base Guide 2026: Tickets, Price & Route",
   "heading": "Chengdu Panda Base Guide: Tickets, Route and Visiting Tips (2026)",
-  "description": "Plan a Chengdu Panda Base visit with the official CNY 55 adult ticket, opening hours, passport entry rules, South and West Gate routes, and sightseeing bus details.",
-  "quickAnswer": "The official Chengdu Panda Base ticket page currently lists an adult ticket at CNY 55 and requires real-name online reservation, with tickets available up to 14 days ahead while quotas remain. Bring the original passport or other identity document used for the booking. Choose South or West Gate according to your transport and route; the separate sightseeing bus currently costs CNY 30. Opening starts at 7:30 from March to October and 8:00 from November to February. Recheck the official notice before travel because prices, sessions, routes, and access can change.",
-  "lastReviewed": "October 8, 2026",
-  "lastModified": "2026-10-08",
+  "description": "Chengdu Panda Base adult tickets are CNY 55. Book with passport details via official channels; see options without a Chinese number, gate routes and hours.",
+  "quickAnswer": "The Chengdu Panda Base lists a CNY 55 adult ticket and real-name reservations up to 14 days ahead while quotas remain. A passport is an accepted ID; bring the original used for booking. Without a Chinese phone number, check the officially authorized Trip.com channel; on-site payment help is conditional on tickets remaining. The base describes an ID-photo verification channel if you lack the original document, but allow extra time and do not rely on it. Choose South or West Gate for your route and check the official hours for your date.",
+  "lastReviewed": "October 19, 2026",
+  "lastModified": "2026-10-19",
   "article": true,
   "contentSections": [
     {
@@ -16,12 +16,22 @@
         ["March to October", "Entry from 7:30; afternoon entry ends at 17:00", "Park clearance begins at 18:00"],
         ["November to February", "Entry from 8:00; afternoon entry ends at 16:30", "Park clearance begins at 17:30"]
       ]},
-      "items": ["The official ticket page says reservations can be made up to 14 days ahead and sales stop when the daily quota is full.", "The listed prices and hours were checked on October 8, 2026. Recheck the official ticket and opening-hours pages for your date before paying.", "A Chengdu Panda Base ticket does not include the separate Dujiangyan Panda Valley."]
+      "items": ["The official ticket page says reservations can be made up to 14 days ahead and sales stop when the daily quota is full.", "The listed prices and hours were checked on October 19, 2026. Recheck the official ticket and opening-hours pages for your date before paying.", "A Chengdu Panda Base ticket does not include the separate Dujiangyan Panda Valley."]
+    },
+    {
+      "title": "Booking with a foreign passport or without a Chinese phone number",
+      "ordered": true,
+      "items": [
+        "The base accepts passports as booking and entry identity documents. Enter the name and passport details as required by the chosen official or authorized reservation channel; confirm the date and morning or afternoon entry session.",
+        "The base lists its official WeChat account and mini program, plus authorized platforms including Trip.com. Its 2026 holiday notice specifically directs visitors unable to book online without a Chinese mobile number to Trip.com or the Cash and Cards service window when tickets remain. Check the current arrangement for your visit date; a walk-up ticket is not guaranteed.",
+        "Bring the original document used in the reservation. The base also describes a separate verification channel for visitors without the original document who have a photo of their own ID; allow extra time and verify with staff rather than assuming automatic entry.",
+        "If online payment fails, the base's current ticket page mentions on-site ticket windows for special circumstances subject to availability. During some peak periods separate notices may require advance online reservations, so confirm the latest rule before heading there."
+      ]
     },
     {
       "title": "Book the right ticket before you travel",
       "ordered": true,
-      "items": ["Start from the Chengdu Research Base of Giant Panda Breeding's official ticket page and read the current date, entry session, real-name and accepted-document rules.", "Use the exact passport or other valid document details required by the reservation. The base says visitors must present the original document used for booking at entry.", "Check whether you booked a morning or afternoon slot; an afternoon ticket does not mean you can enter during the morning session.", "A ticket for the base, a sightseeing bus ticket, a guide and transport from your hotel are different products. Compare only what each one actually includes.", "Save your booking and gate name offline. If the ticket system or passport entry is unclear, use the official visitor contact or authorised booking channel before travel."]
+      "items": ["Start from the Chengdu Research Base of Giant Panda Breeding's official ticket page and read the current date, entry session, real-name and accepted-document rules.", "Use the exact passport or other valid document details required by the reservation. Bring the original for the standard entry channel; the official ticket page also describes a photo-of-ID verification channel if the original is unavailable.", "Check whether you booked a morning or afternoon slot; an afternoon ticket does not mean you can enter during the morning session.", "A ticket for the base, a sightseeing bus ticket, a guide and transport from your hotel are different products. Compare only what each one actually includes.", "Save your booking and gate name offline. If the ticket system or passport entry is unclear, use the official visitor contact or authorised booking channel before travel."]
     },
     {
       "title": "South Gate or West Gate?",
@@ -63,7 +73,8 @@
   "faqs": [
     ["How much is the Chengdu Panda Base ticket?", "The official ticket page currently lists adult admission at CNY 55 and an eligible student ticket at CNY 27. The sightseeing bus is a separate CNY 30 service. Check the official page again for your date because prices, eligibility, and sales arrangements can change."],
     ["Do I need to book Chengdu Panda Base tickets in advance?", "The official ticket page describes real-name online reservations and a reserved entry session. Check availability and the accepted booking channels for your date."],
-    ["Can a foreign visitor use a passport?", "Follow the base's official accepted-ID and booking rules. Enter the required passport details accurately and bring the original document used for the reservation."],
+    ["Can a foreign visitor use a passport?", "Yes. The base lists passports among accepted admission documents. Enter matching details when booking and bring the original for the standard entry channel. If it is unavailable, the official ticket page describes a separate channel with a photo of your own ID and staff verification; entry is not automatic."],
+    ["How can I book Panda Base tickets without a Chinese phone number?", "The base lists Trip.com as an authorized booking platform and named it for foreign visitors without a Chinese mobile number in a 2026 holiday notice. A Cash and Cards window may help when tickets remain, but walk-up access is not guaranteed. Check your date's latest official notice."],
     ["Which gate should I use?", "Choose South or West Gate according to your ticket, route and transport. The park's official transport information distinguishes them; save your actual gate name."],
     ["Is the sightseeing bus included?", "Treat it as a separate service unless your purchased product explicitly includes it. Check the current official route, price and operating hours."],
     ["Will I definitely see pandas?", "No specific animal sighting can be guaranteed. Panda behaviour, animal care, weather and closures can change what is visible."],
@@ -71,6 +82,7 @@
   ],
   "sourceLinks": [
     ["Chengdu Panda Base: official tickets", "https://www.panda.org.cn/en/service/ticket/"],
+    ["Chengdu Panda Base: 2026 holiday notice for visitors without a Chinese phone number", "https://www.panda.org.cn/cn/news/notice/2026-04-18/8861.html"],
     ["Chengdu Panda Base: official opening hours", "https://m.panda.org.cn/en/service/"],
     ["Chengdu Panda Base: transportation", "https://m.panda.org.cn/en/service/transit/"],
     ["Chengdu Panda Base: sightseeing bus", "https://www.panda.org.cn/en/service/sightseeingbus/"],
