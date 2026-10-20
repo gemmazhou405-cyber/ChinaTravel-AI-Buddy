@@ -6437,13 +6437,14 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     title: 'How Much Does a China Trip Cost in 2026? Real Planning Numbers',
     intro: 'Build a realistic daily budget for accommodation, food, local transport, attractions, and intercity travel, then adjust it for your cities, dates, room sharing, and travel style.',
     metaTitle: 'How Much Does a China Trip Cost in 2026? Daily Budget Calculator',
-    metaDescription: 'Plan China trip costs for 2026. Compare budget, mid-range, and comfortable daily spending for hotels, food, transport, attractions, and trains.',
+    metaDescription: 'China trip cost in 2026: budget RMB 350–650 or mid-range RMB 800–1,500 per person daily. Estimate your total by days and travelers; add flights separately.',
     quickAnswer: 'A useful planning range is RMB 350-650 per person per day for budget travel, RMB 800-1,500 for mid-range travel, or RMB 1,800-3,000+ for a comfortable trip. These ranges exclude international flights and are not fixed prices. Holidays, central hotels, private tours, room sharing, and late booking can change the total substantially.',
     ctaLabel: 'Calculate my China budget with Buddy',
     midCtaLabel: 'Estimate my trip total',
     ctaHref: '/',
     buddyPrompt: 'Estimate my China trip budget. I have [days] days, will visit [cities], travel in [month], prefer [budget/mid-range/comfortable] hotels, and travel with [number] people.',
     reviewed: 'September 26, 2026',
+    lastModified: '2026-10-20',
     sections: [
       { title: 'Daily Budget at a Glance', table: { headers: ['Travel style', 'Per person/day', 'Typical approach'], rows: [['Budget', 'RMB 350-650', 'Hostel or simple room, local meals, metro, selective paid sights'], ['Mid-range', 'RMB 800-1,500', 'Comfortable hotel, mixed dining, metro plus some DiDi, several paid sights'], ['Comfortable', 'RMB 1,800-3,000+', 'Higher-grade hotel, frequent taxis, premium meals, tours or shows']] }, items: ['International flights and major intercity journeys are excluded from these daily ranges.', 'Two people sharing one room may spend less per person than a solo traveler.'] },
       { title: 'Where the Money Goes', table: { headers: ['Category', 'Budget approach', 'Mid-range approach', 'Comfortable approach'], rows: [['Hotel', 'Hostel or simple local room', 'Well-reviewed 3-4 star hotel', 'Premium or landmark hotel'], ['Food', 'Local restaurants and simple meals', 'Mixed local and destination dining', 'Premium restaurants and hotel dining'], ['City transport', 'Metro and bus', 'Metro plus some DiDi', 'Frequent DiDi or private transfer'], ['Attractions', 'Free areas and selected tickets', 'Several major paid sights', 'Tours, shows, cable cars, or private guide']] } },
@@ -7055,6 +7056,49 @@ function FilterableCountryChecklist({ groups }: { groups: Array<{ region: string
   );
 }
 
+function ChinaTripCostEstimator() {
+  const [days, setDays] = useState('10');
+  const [travelers, setTravelers] = useState('1');
+  const [style, setStyle] = useState<'budget' | 'mid-range' | 'comfortable'>('mid-range');
+  const dailyRanges = { budget: [350, 650], 'mid-range': [800, 1500], comfortable: [1800, 3000] } as const;
+  const boundedCount = (value: string, max: number) => {
+    const parsed = Number(value);
+    return Number.isFinite(parsed) ? Math.min(max, Math.max(1, Math.trunc(parsed))) : 1;
+  };
+  const validDays = boundedCount(days, 60);
+  const validTravelers = boundedCount(travelers, 20);
+  const [minimum, maximum] = dailyRanges[style];
+  const upperSuffix = style === 'comfortable' ? '+' : '';
+  const formatRmb = (amount: number) => `RMB ${amount.toLocaleString('en-US')}`;
+
+  return (
+    <section id="cost-estimator" className="rounded-2xl border border-[#155e63]/20 bg-white p-4 shadow-sm md:p-5" aria-labelledby="cost-estimator-title">
+      <h2 id="cost-estimator-title" className="text-xl font-bold text-gray-950">Estimate your China trip cost</h2>
+      <p className="mt-2 text-sm text-gray-600">Choose a planning range. Figures are per person per day, before major intercity journeys and international flights.</p>
+      <div className="mt-4 grid gap-3 sm:grid-cols-3">
+        <label className="text-sm font-semibold text-gray-800">Days
+          <input className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2" type="number" min="1" max="60" step="1" value={days} onChange={(event) => setDays(event.target.value)} onBlur={() => setDays(String(validDays))} />
+        </label>
+        <label className="text-sm font-semibold text-gray-800">Travelers
+          <input className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2" type="number" min="1" max="20" step="1" value={travelers} onChange={(event) => setTravelers(event.target.value)} onBlur={() => setTravelers(String(validTravelers))} />
+        </label>
+        <label className="text-sm font-semibold text-gray-800">Travel style
+          <select className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2" value={style} onChange={(event) => setStyle(event.target.value as typeof style)}>
+            <option value="budget">Budget</option>
+            <option value="mid-range">Mid-range</option>
+            <option value="comfortable">Comfortable</option>
+          </select>
+        </label>
+      </div>
+      <div className="mt-4 rounded-xl bg-[#155e63]/5 p-4" aria-live="polite">
+        <p className="text-sm font-semibold text-gray-700">Estimated daily spending: {formatRmb(minimum)}–{formatRmb(maximum)}{upperSuffix} per person</p>
+        <p className="mt-1 text-xl font-bold text-[#155e63]">Trip estimate: {formatRmb(minimum * validDays * validTravelers)}–{formatRmb(maximum * validDays * validTravelers)}{upperSuffix}</p>
+        <p className="mt-2 text-xs leading-relaxed text-gray-600">For {validDays} day{validDays === 1 ? '' : 's'} and {validTravelers} traveler{validTravelers === 1 ? '' : 's'}. The upper end of the comfortable range is open-ended. Add actual intercity trains or flights, international flights, insurance, visa fees when applicable and a contingency. Shared rooms can lower the per-person total; holiday prices may raise it.</p>
+      </div>
+    </section>
+  );
+}
+
 function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?: string | null; onAskBuddy?: (prefill?: string) => void }) {
   const page = guidePages[type];
   const isItineraryPage = type.includes('itinerary') && type !== 'china-travel-ai-itinerary-generator';
@@ -7117,9 +7161,14 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
           )}
         </section>
 
+        {type === 'how-much-does-china-trip-cost-2026-calculator' && <ChinaTripCostEstimator />}
+
         <nav className="rounded-2xl border border-gray-100 bg-white/70 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">On this page</p>
           <div className="mt-3 flex flex-wrap gap-2">
+            {type === 'how-much-does-china-trip-cost-2026-calculator' && (
+              <a href="#cost-estimator" className="rounded-full border border-[#155e63]/15 bg-[#155e63]/5 px-3 py-1.5 text-xs font-semibold text-[#155e63]">Cost estimator</a>
+            )}
             {page.sections.map((section) => (
               <a key={section.title} href={`#${section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} className="rounded-full border border-[#155e63]/15 bg-[#155e63]/5 px-3 py-1.5 text-xs font-semibold text-[#155e63]">
                 {section.title}
