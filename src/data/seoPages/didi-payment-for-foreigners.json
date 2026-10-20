@@ -1,10 +1,10 @@
 {
   "title": "DiDi Pay in China for Foreigners (2026): Cards & Wallets",
   "heading": "DiDi Pay for Foreigners: How to Pay for DiDi in China",
-  "description": "Learn how foreigners can pay for DiDi in China using an available in-app card, Alipay or WeChat Pay, plus what to do when a ride payment fails.",
+  "description": "Foreign visitors can pay for DiDi using methods offered at checkout: an eligible card, Alipay or WeChat Pay. Check the ride receipt before paying again.",
   "quickAnswer": "Foreign visitors should check the payment methods shown in the exact DiDi booking route they plan to use. Depending on the account and ride flow, payment may be available through an eligible in-app foreign bank card, Alipay, or WeChat Pay. Acceptance varies by card issuer, account verification, ride product, and app version. Set up the method on reliable Wi-Fi before booking, keep another way to pay, and check the completed trip receipt before paying a driver separately.",
-  "lastReviewed": "October 8, 2026",
-  "lastModified": "2026-10-08",
+  "lastReviewed": "October 20, 2026",
+  "lastModified": "2026-10-20",
   "article": true,
   "contentSections": [
     {"title":"How DiDi Pay works for foreign visitors","items":["The standalone DiDi app, a DiDi mini-program, and a ride-hailing entry inside another app can show different payment choices. Use the method displayed for the actual ride you are booking.","An eligible foreign card may be offered directly or may fund an Alipay or WeChat Pay wallet used in the ride flow. A card being saved successfully does not guarantee that every ride transaction will be approved.","Check the selected method before confirming the ride, keep mobile data available until the trip closes, and retain the completed trip record if a charge needs support."]},
