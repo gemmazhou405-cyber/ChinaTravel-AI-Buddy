@@ -5037,13 +5037,13 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       'A practical, provider-neutral guide to choosing, installing, activating, and troubleshooting mobile data for a trip to mainland China.',
     metaTitle: 'China eSIM for Tourists (2026): Buy, Install & Get Online',
     metaDescription:
-      'Choose a China eSIM for tourists, check phone compatibility, install it before departure, activate data after landing, and troubleshoot no service.',
+      'Get a China travel eSIM: check your unlocked phone, buy a plan covering mainland China, install on Wi-Fi before departure and activate data after landing.',
     quickAnswer:
       'To get an eSIM for China, first confirm that your phone is carrier-unlocked and eSIM-compatible. Choose a travel plan that explicitly covers mainland China, buy and install it on reliable Wi-Fi before your flight, then follow the provider\'s activation timing and select it for mobile data after landing. Do not assume every China eSIM gives access to Google or other restricted services: routing, phone-number support, hotspot rules, speed limits, and activation policies differ by plan.',
     ctaLabel: 'Get my free China itinerary',
     ctaHref: '/#trip-plan',
-    lastReviewed: 'October 15, 2026',
-    lastModified: '2026-10-15',
+    lastReviewed: 'October 20, 2026',
+    lastModified: '2026-10-20',
     isArticle: true,
     sections: [
       {
@@ -5075,7 +5075,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
         title: 'Travel eSIM or mainland carrier eSIM?',
         items: [
           'An international travel eSIM and a mainland carrier eSIM are separate products. Check mainland China coverage, whether the travel plan is data-only, and when its validity starts.',
-          'Apple says mainland carrier eSIM activation requires an eligible iPhone model and a visit to a carrier store. Do not assume a travel-plan QR code and a local carrier plan follow the same setup process.',
+          'For a mainland carrier eSIM, Apple requires an eligible iPhone model and a visit to a carrier store. Apple says an iPhone purchased outside mainland China cannot use an eSIM from a mainland carrier. A travel eSIM from an international provider follows that provider’s compatibility and activation rules instead.',
           'iPhone eSIM capability can differ by exact model and country of purchase. Check Apple’s current model guidance before paying for a non-refundable plan.',
         ],
       },
@@ -5172,6 +5172,11 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'A travel eSIM can work if your exact phone supports eSIM, is unlocked, and the plan covers mainland China. A mainland carrier eSIM is a different product with its own device and in-store activation requirements. Check both before buying.',
       },
       {
+        question: 'Can I get a mainland carrier eSIM on an iPhone bought abroad?',
+        answer:
+          'Apple says no: an iPhone purchased outside mainland China cannot use an eSIM from a mainland carrier. An international travel eSIM is a separate product; check your exact phone and plan before buying. If you need a +86 number, compare a registered physical SIM.',
+      },
+      {
         question: 'Will a China eSIM let me use Google, WhatsApp, or Instagram?',
         answer:
           'Sometimes, but not because it is an eSIM. Access depends on how that specific provider routes traffic. Confirm each required service with the provider before purchase and keep an offline backup.',
@@ -5198,6 +5203,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
+      { label: 'Physical China SIM card with a passport', href: '/china-sim-card-for-foreigners/' },
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
       { label: 'First trip to China', href: '/first-trip-to-china/' },
       { label: 'Apps to download before China', href: '/china-travel-apps/' },
