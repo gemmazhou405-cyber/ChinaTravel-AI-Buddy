@@ -10,6 +10,10 @@
     "label": "National Immigration Administration: current visa-free transit policy, countries and ports",
     "href": "https://en.nia.gov.cn/n147418/n147463/c183412/content.html"
   },
+  "hainanSource": {
+    "label": "National Immigration Administration: Hainan regional visa-free entry policy",
+    "href": "https://en.nia.gov.cn/n147418/n147463/c180637/content.html"
+  },
   "workedExample": {
     "arrive": "Arrive 15 Oct 22:30",
     "start": "clock starts 16 Oct 00:00",
@@ -79,10 +83,12 @@
       "question": "Can US citizens use China's 240-hour visa-free transit?",
       "shortLabel": "Can US citizens use 240-hour transit?",
       "title": "Can US Citizens Use China's 240-Hour Visa-Free Transit? (2026)",
-      "description": "Yes: US citizens with an ordinary passport are on China's 57-country 240-hour transit list, but only if they fly on to a third country or region. A US to China to US trip does not qualify.",
+      "description": "US passport holders can use China's 240-hour visa-free transit on a qualifying third-region route, such as US → Shanghai → Japan. Check tickets, ports and stay areas.",
+      "lastUpdated": "October 20, 2026",
+      "lastModified": "2026-10-20",
       "answer": [
-        "Yes. US citizens with an ordinary passport are on China's list of 57 countries eligible for 240-hour visa-free transit, so you can spend up to 240 hours in China without a visa if you fly on to a third country or region.",
-        "The catch is the route: flying US → China → US does not qualify, but US → Shanghai → Tokyo or US → Beijing → Hong Kong can."
+        "Yes. US citizens with ordinary passports are on China's 57-country list and may enter for up to 240 hours on a qualifying route from one country or region through mainland China to a different one.",
+        "US → Shanghai → Tokyo or US → Beijing → Hong Kong can meet the route rule if the ticket, port and permitted-area conditions are also met. US → China → US fails this transit rule; a separate entry policy may still apply to a different trip."
       ],
       "example": {
         "title": "Example: Los Angeles → Shanghai → Tokyo",
@@ -95,7 +101,7 @@
           ["Onward ticket", "Confirmed flight Shanghai → Tokyo on 12 Nov, so the route is United States → China → Japan"],
           ["Result", "Fits the published conditions; the border officer makes the final decision"]
         ],
-        "note": "If the same traveler instead booked Shanghai → Los Angeles on 12 Nov, the trip would not qualify, because the onward destination is the same country they came from. They would need a Chinese visa."
+        "note": "If the same traveler instead booked Shanghai → Los Angeles on 12 Nov, the trip would not qualify for 240-hour transit because the onward destination is the same country they came from. Check any other applicable entry policy or obtain a visa."
       },
       "sections": [
         {
@@ -109,10 +115,10 @@
           ]
         },
         {
-          "title": "Why US citizens rely on this route",
+          "title": "How this differs from other visa-free routes",
           "items": [
-            "The United States is not on China's 30-day unilateral visa-free list, so a trip that starts and ends in the US needs a Chinese visa.",
-            "240-hour transit is the main way for a US passport holder to visit without a visa, which is why the onward ticket matters so much."
+            "The United States is not on China's general 30-day unilateral visa-free list. A same-country round trip does not meet the 240-hour transit rule.",
+            "US ordinary-passport holders are on the separate Hainan regional visa-free list for eligible stays of up to 30 days within Hainan. Its conditions and permitted area differ from 240-hour transit; check the official Hainan policy for a Hainan-only trip."
           ]
         },
         {
@@ -124,12 +130,12 @@
         }
       ],
       "faqs": [
-        ["Can I fly from the US to China and back to the US visa-free?", "No. A US → China → US trip does not meet the third-country rule. You would need a Chinese visa for that itinerary."],
+        ["Can I fly from the US to China and back to the US visa-free?", "That route does not qualify for 240-hour transit. US ordinary-passport holders may instead qualify for Hainan's separate regional exemption on a Hainan-only trip; otherwise check any other applicable policy or visa requirement."],
         ["Does a stop in Hong Kong count as a third region?", "Yes. Hong Kong, Macao and Taiwan count as separate regions for this policy, so US → Shanghai → Hong Kong can qualify."],
         ["Do US green card holders qualify?", "Eligibility is based on the nationality of your passport, not your residence. A green card holder travelling on a passport from one of the 57 listed countries can qualify; one travelling on a passport from an unlisted country cannot."],
         ["How long can a US citizen stay?", "Up to 240 hours, counted from 00:00 on the day after entry. Use the calculator to get your exact deadline in China time."]
       ],
-      "sources": ["officialSource", "niaSource"]
+      "sources": ["officialSource", "niaSource", "hainanSource"]
     },
     {
       "slug": "china-240-hour-transit-round-trip-ticket",
