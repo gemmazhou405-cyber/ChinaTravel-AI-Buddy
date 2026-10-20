@@ -1873,13 +1873,13 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       'A practical RMB budget for hotels, food, local transport, trains, attractions, mobile data, and 5-, 10-, or 14-day trips in mainland China.',
     metaTitle: 'How Much Does a Trip to China Cost? 2026 Travel Budget',
     metaDescription:
-      'Plan a China travel budget in RMB. Compare daily costs and realistic 5-, 10-, and 14-day totals for hotels, food, transport and attractions.',
+      'Plan RMB 350–650/day for budget travel or RMB 800–1,500/day mid-range per person in China, excluding international flights. Compare 5-, 10- and 14-day totals.',
     quickAnswer:
       'For planning, allow roughly RMB 350–650 per person per day for a budget trip, RMB 800–1,500 for a mid-range trip, or RMB 1,800–3,000+ for a comfortable trip. These are ChinaEase planning ranges, not official averages or fixed prices. They exclude international flights and assume normal travel dates; your route, room-sharing, city, booking date, exchange rate, and holiday demand can change the total substantially. Check exact hotel, attraction, airline, and China Railway 12306 prices before booking.',
     ctaLabel: 'Get my free China itinerary',
     ctaHref: '/#trip-plan',
     lastReviewed: 'October 7, 2026',
-    lastModified: '2026-10-07',
+    lastModified: '2026-10-20',
     isArticle: true,
     sections: [
       {
