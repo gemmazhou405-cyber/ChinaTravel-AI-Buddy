@@ -4177,6 +4177,7 @@ pageMeta['china-240-hour-transit-calculator'] = {
 function transitAnswerBody(page) {
   const others = transitAnswers.pages.filter((item) => item.slug !== page.slug);
   const sources = page.sources.map((key) => transitAnswers[key]);
+  const lastUpdated = page.lastUpdated || transitAnswers.lastUpdated;
   const linkStyle = 'color: #155e63; font-weight: 700; text-underline-offset: 4px;';
   const cta = `<p style="margin: 20px 0;"><a href="${escapeAttr(transitAnswers.calculatorPath)}" style="display: flex; justify-content: space-between; gap: 12px; border-radius: 18px; background: #155e63; color: #fffdf8; padding: 16px 20px; font-weight: 700; text-decoration: none;">Calculate your exact 240-hour deadline <span aria-hidden="true">&rarr;</span></a></p>`;
   const table = (headers, rows, minWidth = 520) => `
@@ -4196,7 +4197,7 @@ function transitAnswerBody(page) {
     <main id="static-seo-content" style="max-width: 768px; margin: 0 auto; padding: 32px 20px 48px; color: #122022; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
       <article>
         <p style="margin: 0 0 18px;"><a href="${escapeAttr(transitAnswers.calculatorPath)}" style="${linkStyle}">&larr; 240-hour transit calculator</a></p>
-        <p style="margin: 0 0 10px; color: #155e63; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;">China 240-hour visa-free transit &middot; Updated ${escapeHtml(transitAnswers.lastUpdated)}</p>
+        <p style="margin: 0 0 10px; color: #155e63; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;">China 240-hour visa-free transit &middot; Updated ${escapeHtml(lastUpdated)}</p>
         <h1 style="margin: 0 0 20px; font-size: clamp(1.9rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.02em;">${escapeHtml(page.question)}</h1>
         <section aria-labelledby="short-answer" style="padding: 22px; border: 1px solid rgba(21, 94, 99, 0.2); border-radius: 22px; background: #fffdf8;">
           <h2 id="short-answer" style="margin: 0; color: #155e63; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;">Short answer</h2>
@@ -4238,7 +4239,7 @@ function transitAnswerBody(page) {
         <footer style="margin: 32px 0 0; padding-top: 20px; border-top: 1px solid rgba(18, 32, 34, 0.15); color: #536365; line-height: 1.7; font-size: 0.92rem;">
           <h2 style="margin: 0 0 8px; color: #122022; font-size: 1rem;">Official sources</h2>
           <ul style="margin: 0 0 12px; padding-left: 20px;">${sources.map((source) => `<li><a href="${escapeAttr(source.href)}" rel="noopener noreferrer" style="${linkStyle}">${escapeHtml(source.label)}</a></li>`).join('')}</ul>
-          <p style="margin: 0;">Last updated: ${escapeHtml(transitAnswers.lastUpdated)}. Rules can change; Chinese border inspection makes the final decision on entry.</p>
+          <p style="margin: 0;">Last updated: ${escapeHtml(lastUpdated)}. Rules can change; Chinese border inspection makes the final decision on entry.</p>
         </footer>
       </article>
     </main>
@@ -4250,8 +4251,8 @@ for (const page of transitAnswers.pages) {
     heading: page.question,
     title: page.title,
     description: page.description,
-    lastReviewed: transitAnswers.lastUpdated,
-    lastModified: transitAnswers.lastModified,
+    lastReviewed: page.lastUpdated || transitAnswers.lastUpdated,
+    lastModified: page.lastModified || transitAnswers.lastModified,
     // FAQPage JSON-LD: the page's own question with its two-sentence answer, then the related questions
     faqs: [[page.question, page.answer.join(' ')], ...page.faqs],
     customBody: transitAnswerBody(page),
