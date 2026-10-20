@@ -4,6 +4,16 @@ Use this log for every change intended to affect organic search. The date of a c
 
 ## Changes and pre-change baselines
 
+### Priority: 240-hour transit calculator
+
+- Change ID: `SEO-2026-10-20-TRANSIT-CALC`; canonical URL: `https://chinaeasebuddy.com/china-240-hour-transit-calculator/`.
+- Status: pending publication. Change hypothesis: add the precise visa-free-transit intent to the search title, answer the midnight clock rule in the description and first paragraph, and make route examples available before the long form. Keep the calculation algorithm, canonical, eligibility qualifications and existing analytics events.
+- Primary outcome: organic clicks; supporting measures: CTR, impressions, page-filtered relevant query coverage and same-query ranking. Tool calculations and trip-plan CTA clicks are separate conversion measures, not GSC clicks.
+- Baseline: GSC Web export downloaded 2026-10-19, complete window 2026-09-20–2026-10-17: **0 clicks / 10 impressions / 0% CTR / average position 22.5**. The older 2026-09-16–2026-10-13 window was 0 / 7 / 0% / 31.14. The windows overlap; do not attribute their difference to this change or infer keyword volume/low competition.
+- URL Inspection indexed state, last crawl and Google-selected canonical: **Unknown**. Page-filtered Queries: **Unknown**. Existing `transit_calculator_calculate`, `transit_calculator_result_shown`, `transit_calculator_plan_cta_click` events are implemented; actual counts are **Unknown** until analytics data is available.
+- Source check: NIA's August 20, 2026 policy page and Shanghai government's August 20 explanation support the current country/port counts and next-day midnight rule. Preserve the existing October 13 policy review label; October 20 is the content modification date, not a new all-policy review.
+- Next observation: inspect the exact URL in GSC; record Google recrawl after publication. Obtain exact-page Queries and page totals in complete 7-day, then 28-day windows, with matching non-overlapping previous windows. With only 10 baseline impressions, 0 clicks alone is inconclusive. Do not repeatedly revise the title before collecting evidence.
+
 The performance baseline below comes from the GSC `sc-domain:chinaeasebuddy.com` Web search export downloaded on 2026-10-16. Its 28 complete daily rows cover **2026-09-16 through 2026-10-13**. These are **page-level** metrics, not keyword search volumes. The export's separate `Queries` sheet is site-wide; it cannot attribute a query to a particular page.
 
 | Change ID | Live date / commit | Canonical page | Hypothesis and changed surface | GSC baseline: clicks / impressions / CTR / avg position | GSC URL Inspection baseline | Page-filtered query baseline | Next observation |
