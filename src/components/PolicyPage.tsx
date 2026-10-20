@@ -6437,14 +6437,13 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     title: 'How Much Does a China Trip Cost in 2026? Real Planning Numbers',
     intro: 'Build a realistic daily budget for accommodation, food, local transport, attractions, and intercity travel, then adjust it for your cities, dates, room sharing, and travel style.',
     metaTitle: 'How Much Does a China Trip Cost in 2026? Daily Budget Calculator',
-    metaDescription: 'China trip cost in 2026: budget RMB 350–650 or mid-range RMB 800–1,500 per person daily. Estimate your total by days and travelers; add flights separately.',
+    metaDescription: 'Plan China trip costs for 2026. Compare budget, mid-range, and comfortable daily spending for hotels, food, transport, attractions, and trains.',
     quickAnswer: 'A useful planning range is RMB 350-650 per person per day for budget travel, RMB 800-1,500 for mid-range travel, or RMB 1,800-3,000+ for a comfortable trip. These ranges exclude international flights and are not fixed prices. Holidays, central hotels, private tours, room sharing, and late booking can change the total substantially.',
     ctaLabel: 'Calculate my China budget with Buddy',
     midCtaLabel: 'Estimate my trip total',
     ctaHref: '/',
     buddyPrompt: 'Estimate my China trip budget. I have [days] days, will visit [cities], travel in [month], prefer [budget/mid-range/comfortable] hotels, and travel with [number] people.',
     reviewed: 'September 26, 2026',
-    lastModified: '2026-10-20',
     sections: [
       { title: 'Daily Budget at a Glance', table: { headers: ['Travel style', 'Per person/day', 'Typical approach'], rows: [['Budget', 'RMB 350-650', 'Hostel or simple room, local meals, metro, selective paid sights'], ['Mid-range', 'RMB 800-1,500', 'Comfortable hotel, mixed dining, metro plus some DiDi, several paid sights'], ['Comfortable', 'RMB 1,800-3,000+', 'Higher-grade hotel, frequent taxis, premium meals, tours or shows']] }, items: ['International flights and major intercity journeys are excluded from these daily ranges.', 'Two people sharing one room may spend less per person than a solo traveler.'] },
       { title: 'Where the Money Goes', table: { headers: ['Category', 'Budget approach', 'Mid-range approach', 'Comfortable approach'], rows: [['Hotel', 'Hostel or simple local room', 'Well-reviewed 3-4 star hotel', 'Premium or landmark hotel'], ['Food', 'Local restaurants and simple meals', 'Mixed local and destination dining', 'Premium restaurants and hotel dining'], ['City transport', 'Metro and bus', 'Metro plus some DiDi', 'Frequent DiDi or private transfer'], ['Attractions', 'Free areas and selected tickets', 'Several major paid sights', 'Tours, shows, cable cars, or private guide']] } },
@@ -7161,12 +7160,12 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
           )}
         </section>
 
-        {type === 'how-much-does-china-trip-cost-2026-calculator' && <ChinaTripCostEstimator />}
+        {type === 'china-travel-budget' && <ChinaTripCostEstimator />}
 
         <nav className="rounded-2xl border border-gray-100 bg-white/70 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">On this page</p>
           <div className="mt-3 flex flex-wrap gap-2">
-            {type === 'how-much-does-china-trip-cost-2026-calculator' && (
+            {type === 'china-travel-budget' && (
               <a href="#cost-estimator" className="rounded-full border border-[#155e63]/15 bg-[#155e63]/5 px-3 py-1.5 text-xs font-semibold text-[#155e63]">Cost estimator</a>
             )}
             {page.sections.map((section) => (
