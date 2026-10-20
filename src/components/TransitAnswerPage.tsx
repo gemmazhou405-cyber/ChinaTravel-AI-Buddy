@@ -67,6 +67,7 @@ export default function TransitAnswerPage({ slug }: { slug: TransitAnswerSlug })
 
   const sources = (page.sources as SourceKey[]).map((key) => transitAnswers[key]);
   const example = page.example;
+  const lastUpdated = 'lastUpdated' in page && typeof page.lastUpdated === 'string' ? page.lastUpdated : transitAnswers.lastUpdated;
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#f7f3ea] px-4 py-8 text-[#122022] md:px-6">
@@ -74,7 +75,7 @@ export default function TransitAnswerPage({ slug }: { slug: TransitAnswerSlug })
         <a href={transitAnswers.calculatorPath} className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-[#155e63]">
           <ArrowLeft className="h-4 w-4" aria-hidden="true" /> 240-hour transit calculator
         </a>
-        <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#155e63]">China 240-hour visa-free transit · Updated {transitAnswers.lastUpdated}</p>
+        <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#155e63]">China 240-hour visa-free transit · Updated {lastUpdated}</p>
         <h1 className="mt-3 font-display text-3xl leading-tight text-gray-950 md:text-5xl">{page.question}</h1>
 
         <section aria-labelledby="short-answer" className="mt-6 rounded-3xl border border-[#155e63]/20 bg-white p-5 md:p-7">
@@ -161,7 +162,7 @@ export default function TransitAnswerPage({ slug }: { slug: TransitAnswerSlug })
               <li key={source.href}><a href={source.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-semibold text-[#155e63] underline underline-offset-4">{source.label} <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" /></a></li>
             ))}
           </ul>
-          <p className="mt-4">Last updated: {transitAnswers.lastUpdated}. Rules can change; Chinese border inspection makes the final decision on entry.</p>
+          <p className="mt-4">Last updated: {lastUpdated}. Rules can change; Chinese border inspection makes the final decision on entry.</p>
         </footer>
       </article>
     </main>
