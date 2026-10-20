@@ -8,8 +8,9 @@ import { COMMON_TRANSIT_ROUTE_EXAMPLES, calculateTransitDeadline, type TransitCa
 
 const siteUrl = 'https://chinaeasebuddy.com';
 const path = '/china-240-hour-transit-calculator/';
-const title = 'China 240-Hour Transit Calculator: Latest Departure Time';
-const description = 'Calculate the latest departure time under China’s 240-hour visa-free transit clock, then verify your nationality, port, route and permitted stay area.';
+const title = 'China 240-Hour Visa-Free Transit Calculator | Exit Deadline';
+const description = 'China’s 240-hour transit clock starts at midnight after entry. Use this free calculator for your exit deadline in China time, plus basic passport and route checks.';
+const contentModified = '2026-10-20';
 const lastVerified = transitAnswers.lastUpdated;
 
 // Policy facts shown on the page, derived from the data files so the numbers cannot drift from the lists.
@@ -80,7 +81,7 @@ export default function TransitCalculatorPage() {
     schema.textContent = JSON.stringify({
       '@context': 'https://schema.org',
       '@graph': [
-        { '@type': 'WebPage', '@id': `${siteUrl}${path}#webpage`, url: `${siteUrl}${path}`, name: title, description, dateModified: transitAnswers.lastModified },
+        { '@type': 'WebPage', '@id': `${siteUrl}${path}#webpage`, url: `${siteUrl}${path}`, name: title, description, dateModified: contentModified },
         { '@type': 'WebApplication', '@id': `${siteUrl}${path}#application`, name: 'China 240-Hour Transit Calculator', url: `${siteUrl}${path}`, applicationCategory: 'TravelApplication', operatingSystem: 'Web', description, offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
         { '@type': 'BreadcrumbList', '@id': `${siteUrl}${path}#breadcrumb`, itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
@@ -145,13 +146,23 @@ export default function TransitCalculatorPage() {
         <header className="max-w-3xl">
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#155e63]">Free planning tool · Last policy check {lastVerified}</p>
           <h1 className="mt-3 font-display text-4xl leading-tight text-gray-950 md:text-6xl">China 240-Hour Visa-Free Transit Calculator</h1>
-          <p className="mt-4 text-base leading-7 text-gray-600 md:text-lg">Enter your planned arrival and route to calculate the 240-hour clock in China Standard Time. This is a timing tool, not an eligibility or admission decision.</p>
+          <p className="mt-4 text-base leading-7 text-gray-600 md:text-lg">China’s 240-hour visa-free transit clock starts at 00:00 on the day after entry, in China Standard Time (UTC+8). Enter your arrival and route below to calculate the exit deadline and check the basic passport and route pattern. Final eligibility and the permitted stay are decided by border inspection authorities.</p>
+          <p className="mt-3 text-sm leading-6 text-gray-600"><a href={transitAnswers.officialSource.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#155e63] underline underline-offset-4">Official timing rule</a> · <a href="#calculator-title" className="font-semibold text-[#155e63] underline underline-offset-4">Calculate my departure deadline</a></p>
           <ul aria-label="Current policy at a glance" className="mt-5 flex flex-wrap gap-2 text-sm font-semibold text-[#123f42]">
-            <li className="rounded-full border border-[#155e63]/20 bg-white px-3 py-1.5">{ELIGIBLE_COUNTRY_COUNT} eligible countries, including Vietnam and Kyrgyzstan (added August 2026)</li>
+            <li className="rounded-full border border-[#155e63]/20 bg-white px-3 py-1.5">{ELIGIBLE_COUNTRY_COUNT} eligible passport countries</li>
             <li className="rounded-full border border-[#155e63]/20 bg-white px-3 py-1.5">{DESIGNATED_PORT_COUNT} designated ports in {PROVINCE_COUNT} provincial-level regions</li>
-            <li className="rounded-full border border-[#155e63]/20 bg-white px-3 py-1.5">Clock starts 00:00 the day after entry</li>
           </ul>
         </header>
+
+        <section className="mt-6" aria-labelledby="common-route-examples">
+          <h2 id="common-route-examples" className="text-lg font-bold">Common route examples</h2>
+          <p className="mt-2 text-sm leading-6 text-gray-600">Choose an example to fill the passport and route fields, then add your arrival date and entry city. Examples do not confirm eligibility, a designated port or a permitted stay area.</p>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            {COMMON_TRANSIT_ROUTE_EXAMPLES.map((example) => (
+              <button key={example.id} type="button" onClick={() => applyRouteExample(example)} className="min-h-12 rounded-2xl border border-[#155e63]/20 bg-white px-4 py-3 text-left text-sm font-bold text-[#123f42] transition hover:border-[#155e63]/45 hover:bg-[#edf5f2] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#155e63]">{example.label}</button>
+            ))}
+          </div>
+        </section>
 
         <section className="mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start" aria-labelledby="calculator-title">
           <form onSubmit={submit} className="rounded-3xl border border-[#155e63]/15 bg-white p-5 shadow-sm md:p-7">
@@ -203,26 +214,6 @@ export default function TransitCalculatorPage() {
                 </ul>
               </nav>
             </> : <div className="flex min-h-[360px] flex-col justify-center"><p className="text-xs font-bold uppercase tracking-[0.14em] text-[#155e63]">Your result</p><h2 className="mt-3 text-2xl font-bold">See the China Standard Time boundary</h2><p className="mt-3 text-sm leading-7 text-gray-600">Add your route and passport nationality to calculate the 240-hour boundary and compare the basic nationality and third-country-or-region requirements.</p><div className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-950"><strong>Important:</strong> The calculator cannot confirm final eligibility, your exact port or permitted stay area.</div></div>}
-          </div>
-        </section>
-
-        <section className="mt-10" aria-labelledby="common-route-examples">
-          <div className="max-w-3xl">
-            <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#155e63]">Try a route pattern</p>
-            <h2 id="common-route-examples" className="mt-2 text-2xl font-bold">Common route examples</h2>
-            <p className="mt-2 text-sm leading-6 text-gray-600">Choose an example to prefill passport nationality, origin and onward destination. Examples do not confirm eligibility, a designated port or a permitted stay area.</p>
-          </div>
-          <div className="mt-5 grid gap-3 sm:grid-cols-2">
-            {COMMON_TRANSIT_ROUTE_EXAMPLES.map((example) => (
-              <button
-                key={example.id}
-                type="button"
-                onClick={() => applyRouteExample(example)}
-                className="min-h-12 rounded-2xl border border-[#155e63]/20 bg-white px-4 py-3 text-left text-sm font-bold text-[#123f42] transition hover:border-[#155e63]/45 hover:bg-[#edf5f2] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#155e63]"
-              >
-                {example.label}
-              </button>
-            ))}
           </div>
         </section>
 
