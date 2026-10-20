@@ -5571,6 +5571,7 @@ function staticPageContent(page, meta) {
       ${meta.contentSections ? meta.contentSections.map((section, sectionIndex) => `
         <section aria-labelledby="guide-section-${sectionIndex}" style="margin: 0 0 24px; padding: 20px; border: 1px solid rgba(21, 94, 99, 0.12); border-radius: 20px; background: rgba(255, 253, 248, 0.72);">
           <h2 id="guide-section-${sectionIndex}" style="margin: 0 0 12px; font-size: 1.25rem;">${escapeHtml(section.title)}</h2>
+          ${((page === 'china-visa-free-travel-guide' && section.title === '240-hour visa-free transit: the route is essential') || (page === 'china-240-hour-visa-free-transit-2026' && section.title === 'How the 10-day clock is calculated')) ? `<p style="color: #536365; line-height: 1.7;">To work out your departure date, use the <a href="/china-240-hour-transit-calculator/" style="color: #155e63; font-weight: 700; text-underline-offset: 4px;">China 240-hour visa-free transit calculator</a>. It calculates the next-day midnight clock in China time and checks the basic passport and route pattern; confirm the final permitted stay with border inspection.</p>` : ''}
           ${section.countryGroups ? `
             <div aria-label="Eligible nationalities" style="display: grid; gap: 16px; margin: 0 0 16px;">
               ${section.countryGroups.map((group) => `
