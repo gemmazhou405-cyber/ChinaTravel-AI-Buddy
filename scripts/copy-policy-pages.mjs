@@ -376,11 +376,11 @@ const pageMeta = {
     title: 'Can Foreigners Stay in Any Hotel in China? (2026)',
     heading: 'Can Foreigners Stay in Any Hotel in China? (2026 Guide)',
     description:
-      'Can foreigners stay in any hotel in China? Learn the current rule, how to book with a foreign passport, confirm registration and handle check-in refusal.',
+      'Hotels should not refuse foreigners solely because the property lacks a foreign-guest qualification. Book with passport details; the hotel registers your stay.',
     quickAnswer:
       'Foreign visitors can book and stay in hotels in China using a valid passport. In 2024, China\'s public security, commerce, and immigration authorities said hotels must not refuse overseas guests merely because the property claims to lack a special foreign-guest qualification. In practice, some front desks may still be unfamiliar with passport registration, especially at small or newly opened properties. Before a non-refundable booking, confirm the exact property can register your passport, save the written confirmation, enter every guest\'s name exactly as shown on the passport, and notify the hotel if you will arrive late. A hotel normally completes the accommodation registration for its guests; a private or non-hotel stay follows separate local registration procedures.',
-    lastReviewed: 'October 7, 2026',
-    lastModified: '2026-10-07',
+    lastReviewed: 'October 20, 2026',
+    lastModified: '2026-10-20',
     article: true,
     contentSections: [
       {
@@ -501,7 +501,7 @@ const pageMeta = {
       ['What should I do if a hotel refuses me at check-in?', 'Ask for a manager, show the written confirmation, request the exact reason in writing, and contact the booking platform for a refund and replacement. Prioritize safe alternative accommodation instead of prolonging a late-night dispute.'],
     ],
     sourceLinks: [
-      ['Gansu government: official response on hotel access for overseas travelers', 'https://www.gansu.gov.cn/gsszf/c100199/202406/173933391.shtml'],
+      ['Government response: hotels and overseas guests', 'https://www.tljq.gov.cn/jqrmzf/zdhy/pc/content/content_1798623211000737792.html'],
       ['National Immigration Administration: nationwide online non-hotel registration', 'https://www.nia.gov.cn/n897453/c1806111/content.html'],
       ['People\'s Bank of China: payment guide for visitors', 'https://english.www.gov.cn/news/202403/15/content_WS65f3b5d9c6d0868f4e8e52ea.html'],
     ],
