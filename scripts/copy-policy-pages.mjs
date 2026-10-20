@@ -3880,10 +3880,10 @@ Object.assign(pageMeta, {
     ...pageMeta['china-travel-safety-guide'],
     title: 'Is China Safe for US Citizens in 2026? Travel Advice',
     heading: 'Is China Safe for US Citizens in 2026?',
-    description: 'Is China safe for US citizens in 2026? Understand the US Level 2 advisory, local laws, exit-ban risks, common scams and practical tourist precautions.',
+    description: 'The US State Department rates mainland China Level 2 (Exercise Increased Caution). See exit-ban risks, who needs extra care and a before-departure checklist.',
     quickAnswer: 'Many US citizens visit China without serious incidents. The US Department of State currently rates mainland China Level 2, Exercise Increased Caution, because of arbitrary enforcement of local laws, exit bans, and the risk of unjust arrest or detention. This is not a guarantee that any trip is risk-free. Review the current advisory, follow local laws, use verified transport, and keep a practical emergency plan.',
-    lastReviewed: 'October 7, 2026',
-    lastModified: '2026-10-07',
+    lastReviewed: 'October 20, 2026',
+    lastModified: '2026-10-20',
   },
   'best-apps-for-china-travel-2026': {
     ...pageMeta['china-travel-apps'],
@@ -4578,8 +4578,8 @@ const focusedPageContent = {
         ]
       }
     ],
-    "lastReviewed": "October 9, 2026",
-    "lastModified": "2026-10-09",
+    "lastReviewed": "October 20, 2026",
+    "lastModified": "2026-10-20",
     "article": true,
     "quickAnswer": "Many US citizens visit mainland China without serious incidents, but the US Department of State currently rates mainland China Level 2, Exercise Increased Caution. Its September 4, 2026 advisory highlights arbitrary enforcement of local laws, exit bans, and the risk of unjust arrest or detention. Read the complete current advisory, consider your individual circumstances, follow local laws, and keep a practical emergency plan.",
     "faqs": [
