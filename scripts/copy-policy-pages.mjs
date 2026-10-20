@@ -3694,17 +3694,21 @@ Object.assign(pageMeta, {
   },
   'alipay-metro-qr-transport-code-guide': {
     ...pageMeta['china-metro-guide'],
-    title: 'How to Ride China Metro With Alipay as a Foreigner (Transport QR Guide 2026)',
+    title: 'Alipay Metro QR in China: Setup for Foreigners (2026)',
     heading: 'How to Ride China Metros with an Alipay Transport QR Code',
-    description: 'Set up an Alipay transport QR code for China metro systems. Select the city, activate the supported transit service, scan at gates, and prepare ticket backups.',
-    quickAnswer: 'Open Alipay, search Transport, select the current city, and activate the local metro or transit service shown. The exact product is city-specific, so use a single-journey ticket, local transit card, or eligible contactless card if activation fails.',
+    description: 'Yes, foreigners can use a local Alipay metro QR where offered. Select your city under Transport, activate Metro, and scan the ride code—not your payment QR.',
+    quickAnswer: 'Yes. Beijing and Shanghai publish Alipay metro-code options for visitors. In Alipay, open Transport or Travel, select your city and Metro, then complete any activation and payment authorization. Scan the local ride code at the metro gate; the QR for paying a shop is different. If your code or card fails, use a station ticket or a locally accepted contactless card instead.',
     faqs: [
       ['Can foreigners use Alipay for the metro?', 'Often yes, after activating the city-specific transport service. Availability and card authorization vary by city and account.'],
       ['Does one Alipay metro QR work across China?', 'No. Select the city and activate the local service. Products and rules differ between metro systems.'],
       ['What if the QR code does not work?', 'Use a staffed gate, single-journey ticket, local transit card, or eligible contactless bank card rather than repeatedly scanning.'],
     ],
-    lastReviewed: 'September 27, 2026',
-    lastModified: '2026-09-27',
+    sourceLinks: [
+      ['Beijing government: Alipay metro QR and ticket choices', 'https://english.beijing.gov.cn/specials/beijinglifeonthesubway/noticeforpassengers/202206/t20220623_2749418.html'],
+      ['Shanghai government: metro payment and ticket choices', 'https://english.shanghai.gov.cn/en-Individuals-Transportation-PublicTransport/20260813/f257d5c373db4da3a8bde717b9f46b27.html'],
+    ],
+    lastReviewed: 'October 20, 2026',
+    lastModified: '2026-10-20',
   },
   'china-travel-ai-itinerary-generator': {
     ...pageMeta['10-day-china-itinerary'],
@@ -4295,22 +4299,30 @@ const focusedPageContent = {
       {
         "title": "Activate the correct city code",
         "items": [
-          "Open Alipay's transport or metro area and select the city you are in.",
-          "Complete any account or payment verification shown before entering the station.",
-          "A payment QR used in shops is different from the city's transit code."
+          "Open Alipay's Transport or Travel area and select your city. Beijing's official guide shows Travel, Metro, then Claim now; app wording can vary.",
+          "Review the local service terms and complete any account or payment verification shown before entering the station.",
+          "Display the dynamic metro ride code at the gate. A merchant payment QR used in shops is not the city's transit code."
+        ]
+      },
+      {
+        "title": "Beijing and Shanghai examples",
+        "items": [
+          "Beijing publishes Alipay metro QR setup steps and accepts eligible overseas Visa or Mastercard contactless cards at metro gates as an alternative.",
+          "Shanghai says the local metro service can be accessed in Alipay or WeChat; its Metro Daduhui app and station tickets are other options.",
+          "These examples do not make one Alipay transport code valid in every city. Select your current city and confirm the service and gate signage."
         ]
       },
       {
         "title": "At the gate",
         "items": [
           "Use the same account for entry and exit where the system requires it.",
-          "If the code is unavailable, use a ticket machine, staffed counter or local transit card.",
+          "If the code is unavailable, use a ticket machine, staffed counter, local transit card or eligible contactless card at a marked gate.",
           "Check the city's current transit payment options before relying on a foreign card."
         ]
       }
     ],
-    "lastReviewed": "October 5, 2026",
-    "lastModified": "2026-10-05",
+    "lastReviewed": "October 20, 2026",
+    "lastModified": "2026-10-20",
     "article": true
   },
   "china-travel-ai-itinerary-generator": {
