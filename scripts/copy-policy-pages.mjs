@@ -4103,11 +4103,11 @@ const transitAnswerLinks = transitAnswers.pages.map((page) => [page.question, `/
 
 pageMeta['china-240-hour-transit-calculator'] = {
   heading: 'China 240-Hour Visa-Free Transit Calculator',
-  title: 'China 240-Hour Transit Calculator: Latest Departure Time',
-  description: 'Calculate the latest departure time under China’s 240-hour visa-free transit clock, then verify your nationality, port, route and permitted stay area.',
-  quickAnswer: 'Enter your passport nationality, local arrival date and time, entry city, origin, and onward destination. Under the current National Immigration Administration rule, the 240-hour period starts at 00:00 on the day after entry. The calculator checks the published nationality list and basic third-country route pattern, but it does not confirm final eligibility, a designated port or a permitted stay area.',
+  title: 'China 240-Hour Visa-Free Transit Calculator | Exit Deadline',
+  description: 'China’s 240-hour transit clock starts at midnight after entry. Use this free calculator for your exit deadline in China time, plus basic passport and route checks.',
+  quickAnswer: 'China’s 240-hour visa-free transit clock starts at 00:00 on the day after entry, in China Standard Time (UTC+8). Enter your arrival and route to calculate the exit deadline and check the basic passport and route pattern. Final eligibility and the permitted stay are decided by border inspection authorities.',
   lastReviewed: transitAnswers.lastUpdated,
-  lastModified: transitAnswers.lastModified,
+  lastModified: '2026-10-20',
   lastUpdatedFooter: true,
   application: true,
   contentSections: [
