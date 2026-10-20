@@ -3917,7 +3917,7 @@ Object.assign(pageMeta, {
     ...pageMeta['china-travel-budget'],
     title: 'How Much Does a China Trip Cost in 2026? Daily Budget Calculator',
     heading: 'How Much Does a China Trip Cost in 2026? Real Planning Numbers',
-    description: 'Plan China trip costs for 2026. Compare budget, mid-range, and comfortable daily spending for hotels, food, transport, attractions, and trains.',
+    description: 'China trip cost in 2026: budget RMB 350–650 or mid-range RMB 800–1,500 per person daily. Estimate your total by days and travelers; add flights separately.',
     quickAnswer: 'Plan roughly RMB 350-650 per person per day for budget travel, RMB 800-1,500 for mid-range travel, or RMB 1,800-3,000+ for a comfortable trip, excluding international flights.',
     lastReviewed: 'September 26, 2026',
     lastModified: '2026-09-26',
@@ -4717,11 +4717,11 @@ const focusedPageContent = {
       }
     ],
     "lastReviewed": "October 5, 2026",
-    "lastModified": "2026-10-05",
+    "lastModified": "2026-10-20",
     "article": true,
     "title": "China Trip Cost 2026: 7, 10 & 14-Day Budget Examples",
     "heading": "China Trip Cost in 2026: Calculate Your Budget",
-    "description": "Estimate a China trip budget with daily spending ranges and worked 7, 10 and 14-day examples. Add trains, flights, insurance and other costs separately."
+    "description": "China trip cost in 2026: budget RMB 350–650 or mid-range RMB 800–1,500 per person daily. Estimate your total by days and travelers; add flights separately."
   }
 };
 for (const [slug, content] of Object.entries(focusedPageContent)) {
