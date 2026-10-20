@@ -7187,6 +7187,10 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
               className={`rounded-2xl border border-gray-100 bg-white/80 p-4 shadow-sm${section.table ? ' md:col-span-2' : ''}`}
             >
               <h2 className="text-lg font-bold text-gray-950">{section.title}</h2>
+              {((type === 'china-visa-free-travel-guide' && section.title === '240-hour visa-free transit: the route is essential') ||
+                (type === 'china-240-hour-visa-free-transit-2026' && section.title === 'How the 10-day clock is calculated')) && (
+                <p className="mt-3 text-sm leading-relaxed text-gray-600">To work out your departure date, use the <a href="/china-240-hour-transit-calculator/" className="font-semibold text-[#155e63] underline underline-offset-4">China 240-hour visa-free transit calculator</a>. It calculates the next-day midnight clock in China time and checks the basic passport and route pattern; confirm the final permitted stay with border inspection.</p>
+              )}
               {section.countryGroups && <FilterableCountryChecklist groups={section.countryGroups} />}
               {section.links && section.links.length > 0 && (
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
