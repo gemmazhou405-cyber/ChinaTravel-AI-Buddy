@@ -250,5 +250,41 @@
     "urlCount": 76,
     "exactCalculatorUrlCount": 1,
     "note": "Public fetch only; not evidence that GSC has processed this sitemap or the latest page changes."
-  }
+  },
+  "performanceObservations": [
+    {
+      "observedOn": "2026-10-21",
+      "source": {
+        "type": "user_supplied_gsc_comparison_export",
+        "filename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
+        "sha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+        "searchType": "Web (text-based)",
+        "pageFilter": null,
+        "recentPeriodLabel": "Last 28 days",
+        "previousPeriodLabel": "Previous 28 days",
+        "recentPeriodStart": null,
+        "recentPeriodEnd": null,
+        "previousPeriodStart": null,
+        "previousPeriodEnd": null,
+        "exactDatesRecorded": false,
+        "note": "The workbook has comparison columns but no Chart sheet or explicit date boundaries; do not derive exact dates from the download date."
+      },
+      "page": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+      "recent": {
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0.0,
+        "averagePosition": 22.5
+      },
+      "previous": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0.0,
+        "averagePosition": null
+      },
+      "pageFilteredQueriesAvailable": false,
+      "postChangeOutcomeEstablished": false,
+      "note": "Append-only observation from the Pages sheet. Global Queries cannot be attributed to this calculator. Previous zero impressions do not mean rank zero; dates and post-change crawl are unconfirmed. Preserve the earlier page-filtered baseline separately."
+    }
+  ]
 }
