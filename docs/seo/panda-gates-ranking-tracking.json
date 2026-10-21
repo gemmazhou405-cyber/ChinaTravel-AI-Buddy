@@ -3,9 +3,11 @@
   "changeId": "SEO-2026-10-21-PANDA-GATES",
   "page": "https://chinaeasebuddy.com/chengdu-panda-base-guide/",
   "primaryOutcome": "strongly_relevant_google_organic_clicks",
-  "status": "local_verified_pending_publication",
+  "status": "published_production_pending",
   "liveDate": null,
-  "codeCommits": [],
+  "codeCommits": [
+    "2f8d7d057884bfb9e18b2a89c0066117c134174b"
+  ],
   "baseline": {
     "observedOn": "2026-10-21",
     "sourceFile": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
@@ -102,9 +104,13 @@
     "onlyTargetLastmodChanged": true,
     "production": {
       "newContentVerified": false,
-      "checkedAt": null,
+      "checkedAt": "2026-10-21T14:44:12Z",
       "googleRecrawlConfirmed": false,
-      "rankingOrClickGainConfirmed": false
+      "rankingOrClickGainConfirmed": false,
+      "observedVersion": "Previous gate section; no Metro and shuttle routes heading in plain or fresh-query formal-domain checks",
+      "githubCheckRuns": 0,
+      "deploymentStatus": "No deployment check or commit status recorded yet; publication is not production verification.",
+      "note": "Do not set a live date or start the post-change observation window until formal-domain new content is verified. Root cause and deployment timing unknown."
     }
   },
   "followUp": {
