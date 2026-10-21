@@ -175,10 +175,12 @@
     },
     {
       "id": "SEO-2026-10-21-HOMEPAGE-LASTMOD",
-      "status": "validated_pending_publication",
-      "liveDate": null,
+      "status": "live_verified",
+      "liveDate": "2026-10-21",
       "scope": "Correct sitemap homepage lastmod from 2026-09-29 to 2026-10-21 to reflect the real calculator-link addition; URL set and all other sitemap entries unchanged",
-      "codeCommits": [],
+      "codeCommits": [
+        "fa71944ceb68f2cc7ea0e685445e7289ecbc730e"
+      ],
       "before": "2026-09-29",
       "after": "2026-10-21",
       "hypothesis": "Accurate crawl-discovery metadata; not evidence of a crawl problem or a ranking gain",
@@ -189,6 +191,16 @@
         "sitemapUrls": 76,
         "urlSetUnchanged": true,
         "onlyHomepageLastmodChanged": true
+      },
+      "productionVerification": {
+        "observedOn": "2026-10-21",
+        "sitemapFetch": "HTTP 200, parseable XML",
+        "urlCount": 76,
+        "urlSetUnchanged": true,
+        "onlyHomepageLastmodChanged": true,
+        "homepageLastmod": "2026-10-21",
+        "deploymentStatus": "Vercel success",
+        "googleRecrawlConfirmed": false
       }
     }
   ],
