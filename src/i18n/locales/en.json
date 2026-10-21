@@ -1028,6 +1028,7 @@
         "title": "Free tools for planning your China trip",
         "subtitle": "Check entry rules, transit options, accommodation registration and payments before you fly.",
         "browseAll": "Browse all China travel guides →",
+        "transitCalculator": "China 240-hour visa-free transit calculator: check your exit deadline",
         "cards": {
           "china-visa-free-checker": { "label": "Interactive tool", "title": "China Visa-Free Checker", "description": "Check which visa-free policy may apply to your passport, travel date and itinerary.", "cta": "Check my trip →" },
           "china-240-hour-visa-free-transit-2026": { "label": "Transit guide", "title": "240-Hour Visa-Free Transit", "description": "Understand the third-country route, designated-port and permitted-area requirements.", "cta": "Read the transit guide →" },
