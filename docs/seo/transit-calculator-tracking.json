@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "observedOn": "2026-10-21",
+  "page": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+  "primaryOutcome": "google_organic_clicks_to_exact_page",
+  "source": {
+    "type": "user_supplied_gsc_export",
+    "filename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21.xlsx",
+    "sha256": "87a516029794bd797241642148d251ccc125946b9c7b257190ca512a5f31e3b9",
+    "searchType": "Web (text-based)",
+    "pageFilter": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+    "dateFilter": "Last 3 months",
+    "availableDailyRows": 57,
+    "periodStart": "2026-08-23",
+    "periodEnd": "2026-10-18",
+    "countryFilter": null,
+    "deviceFilter": null,
+    "comparisonExport": false
+  },
+  "pageBaseline": {
+    "clicks": 0,
+    "impressions": 10,
+    "ctr": 0,
+    "averagePosition": 22.5,
+    "visibleQueryImpressions": 2,
+    "impressionsWithoutDisclosedQuery": 8,
+    "historicalSearchAppearanceConfirmed": true,
+    "postChangeOutcome": false
+  },
+  "indexObservation": {
+    "status": "awaiting_indexed_url_inspection_report",
+    "inspectedOn": null,
+    "indexed": null,
+    "lastGoogleCrawl": null,
+    "googleSelectedCanonical": null,
+    "recrawledAfterLatestChange": null,
+    "indexingRequestConfirmedOn": null,
+    "note": "Public HTTP 200, self-canonical, historical impressions and a successful live test do not establish the current indexed report or its last crawl."
+  },
+  "queryTracking": [
+    {
+      "query": "transit through mainland",
+      "status": "observed_in_page_filtered_export",
+      "priorityForCalculator": false,
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "averagePosition": 4,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null,
+      "note": "One impression is not a stable top-four ranking or evidence of significant demand."
+    },
+    {
+      "query": "visa free china",
+      "status": "observed_in_page_filtered_export",
+      "priorityForCalculator": false,
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "averagePosition": 193,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null,
+      "note": "Broad entry-policy intent belongs primarily to the existing visa-free guide."
+    },
+    {
+      "query": "china 240 hour transit calculator",
+      "status": "candidate_coverage_unconfirmed",
+      "priorityForCalculator": true,
+      "clicks": null,
+      "impressions": null,
+      "ctr": null,
+      "averagePosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    },
+    {
+      "query": "china twov calculator",
+      "status": "candidate_coverage_unconfirmed",
+      "priorityForCalculator": true,
+      "clicks": null,
+      "impressions": null,
+      "ctr": null,
+      "averagePosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    },
+    {
+      "query": "china 10 day visa free transit calculator",
+      "status": "candidate_coverage_unconfirmed",
+      "priorityForCalculator": true,
+      "clicks": null,
+      "impressions": null,
+      "ctr": null,
+      "averagePosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    },
+    {
+      "query": "china transit departure deadline calculator",
+      "status": "candidate_coverage_unconfirmed",
+      "priorityForCalculator": true,
+      "clicks": null,
+      "impressions": null,
+      "ctr": null,
+      "averagePosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    },
+    {
+      "query": "when does my 240 hour twov expire",
+      "status": "candidate_coverage_unconfirmed",
+      "priorityForCalculator": true,
+      "clicks": null,
+      "impressions": null,
+      "ctr": null,
+      "averagePosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    }
+  ],
+  "changes": [
+    {
+      "id": "SEO-2026-10-20-TRANSIT-CALC",
+      "liveDate": "2026-10-20",
+      "scope": "Calculator title, description, direct answer and route examples",
+      "codeCommits": ["bac7809", "4be78a4"]
+    },
+    {
+      "id": "SEO-2026-10-20-TRANSIT-LINKS",
+      "liveDate": "2026-10-20",
+      "scope": "Contextual calculator links in the visa-free guide and 240-hour policy guide",
+      "codeCommits": ["93f9bf6", "541f705"]
+    },
+    {
+      "id": "SEO-2026-10-21-TRANSIT-EXPIRY",
+      "liveDate": "2026-10-21",
+      "scope": "TWOV and 10-day FAQs plus normal, month-end and year-end examples",
+      "codeCommits": ["e507fc9", "c62dcd5", "0fe22c9", "c9b711f"]
+    },
+    {
+      "id": "SEO-2026-10-21-TRANSIT-HUBS",
+      "liveDate": "2026-10-21",
+      "scope": "Direct calculator links on the homepage and guide hub",
+      "codeCommits": ["a9100f5", "7f5fd21", "5e74e65", "193c211"]
+    }
+  ],
+  "reviewWindows": [
+    {
+      "days": 7,
+      "periodStart": "2026-10-22",
+      "periodEnd": "2026-10-28",
+      "referenceStart": "2026-10-14",
+      "referenceEnd": "2026-10-20",
+      "status": "awaiting_future_finalized_data",
+      "note": "The reference includes the October 20 intervention and is not an untreated control. October 19-20 are absent from the supplied export."
+    },
+    {
+      "days": 28,
+      "periodStart": "2026-10-22",
+      "periodEnd": "2026-11-18",
+      "referenceStart": "2026-09-23",
+      "referenceEnd": "2026-10-20",
+      "status": "awaiting_future_finalized_data",
+      "note": "Allow reporting delay, record recrawl and keep identical page, search type, country and device filters."
+    }
+  ],
+  "comparisonRules": [
+    "Unknown metrics remain null; absence from visible queries is not zero impressions or a rank of zero.",
+    "Preserve each export as a separate observation with its dates and filters; do not overwrite the baseline.",
+    "Compare the same exact page and query under matching filters and non-overlapping periods.",
+    "Positive old position minus new position means an improvement, but sparse observations do not establish a stable trend.",
+    "With no baseline impression denominator, leave CTR unavailable; do not calculate percentage click growth from zero.",
+    "Page average position is a mixture of queries; do not assign it to a target query.",
+    "Search result order and snippet estimates are not Google ranks or keyword search volumes.",
+    "Homepage resource clicks, calculator use and itinerary CTA clicks are separate from Google organic clicks.",
+    "The October 20-21 changes form a combined intervention; do not attribute gains to a single change."
+  ],
+  "automationCreated": false,
+  "keywordMetricsAccess": {
+    "provider": "Ahrefs MCP",
+    "connectionAvailable": true,
+    "requestResult": "Insufficient plan",
+    "metricsRetrieved": false
+  }
+}
