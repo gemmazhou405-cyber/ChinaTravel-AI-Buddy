@@ -3,9 +3,11 @@
   "changeId": "SEO-2026-10-21-WECHAT-HELP",
   "page": "https://chinaeasebuddy.com/wechat-verification-without-friend-qr-2026/",
   "primaryOutcome": "strongly_relevant_google_organic_clicks",
-  "status": "local_verified_pending_publication",
-  "liveDate": null,
-  "codeCommits": [],
+  "status": "live_verified",
+  "liveDate": "2026-10-21",
+  "codeCommits": [
+    "ff3463deffe140f6c18b23a03f98ea3ae9b87a56"
+  ],
   "baseline": {
     "observedOn": "2026-10-21",
     "sourceFilename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
@@ -73,7 +75,23 @@
     "publicHtmlAuditLocal": "PASS",
     "targetHtmlChecks": "PASS",
     "diffCheck": "PASS",
-    "production": null
+    "production": {
+      "observedOn": "2026-10-21",
+      "formalUrl": "https://chinaeasebuddy.com/wechat-verification-without-friend-qr-2026/",
+      "deploymentStatus": "Vercel success",
+      "deploymentUrl": "https://vercel.com/gemma-s-projects529/china-travel-ai-buddy/EFLiWt4ALzGyUsMADvR9VphogoFM",
+      "formalHtmlRetrieved": true,
+      "newH1AndFullSharedContent": "PASS",
+      "fiveFaqsAndSourceLinks": "PASS",
+      "jsonLd": "PASS",
+      "titleDescriptionCanonicalUnchanged": "PASS",
+      "noNoindex": "PASS",
+      "sitemapUrlSetUnchanged": true,
+      "sitemapUrlCount": 76,
+      "onlyTargetLastmodChanged": true,
+      "googleRecrawlConfirmed": false,
+      "rankingOrClickGainConfirmed": false
+    }
   },
   "sourceReview": {
     "date": "2026-10-21",
