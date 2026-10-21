@@ -202,6 +202,16 @@
         "deploymentStatus": "Vercel success",
         "googleRecrawlConfirmed": false
       }
+    },
+    {
+      "id": "SEO-2026-10-21-CLOCK-ENTRY-DATE",
+      "status": "local_verified_pending_publication",
+      "liveDate": null,
+      "codeCommits": [],
+      "scope": "Correct scheduled-landing versus entry-record copy in calculator form/FAQ/example and clock guide; algorithm, calculator search title/description/canonical and global policy-review date retained. Clock page description/FAQ/date updated.",
+      "reason": "Correctness follow-up after a confirmed wording contradiction; not a speculative ranking rewrite.",
+      "detailRecord": "clock-entry-ranking-tracking.json",
+      "rankingOrClickGainConfirmed": false
     }
   ],
   "reviewWindows": [

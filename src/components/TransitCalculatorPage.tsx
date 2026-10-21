@@ -32,7 +32,7 @@ const faqs = [
   ['Does this calculator confirm that I qualify?', 'No. It calculates the time window only. Eligibility also depends on your passport nationality, ordinary-passport status, confirmed onward ticket, third-country or region route, designated entry and exit ports, permitted stay area, purpose of travel and the policy in force on your travel date.'],
   ['Can I return to the same country or region I departed from?', 'A simple route such as United States to Mainland China to United States does not meet the third-country or region transit pattern. The origin and onward destination normally need to be different. Airlines and border authorities should confirm complex routes before travel.'],
   ['Does every airport or port qualify?', 'No. The policy applies through designated ports and within permitted areas. Selecting an entry city here does not verify a particular terminal, airport, railway port or seaport. Check the latest official port list and confirm your planned entry and exit points.'],
-  ['Which time zone does the calculator use?', 'All results use China Standard Time, UTC+8. The date and time you enter should be the local scheduled arrival time in Mainland China. Flight changes, immigration processing and the actual entry record can affect planning, so do not schedule departure at the exact final minute.'],
+  ['Which time zone does the calculator use?', transitAnswers.clockInputCopy.timeZoneAnswer],
 ] as const;
 
 function setMeta(selector: string, value: string) {
@@ -119,7 +119,7 @@ export default function TransitCalculatorPage() {
       });
     } catch {
       setResult(null);
-      setError('Complete all fields with a valid arrival date and time.');
+      setError(transitAnswers.clockInputCopy.error);
     }
   };
 
@@ -148,7 +148,7 @@ export default function TransitCalculatorPage() {
         <header className="max-w-3xl">
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#155e63]">Free planning tool · Last policy check {lastVerified}</p>
           <h1 className="mt-3 font-display text-4xl leading-tight text-gray-950 md:text-6xl">China 240-Hour Visa-Free Transit Calculator</h1>
-          <p className="mt-4 text-base leading-7 text-gray-600 md:text-lg">China’s 240-hour visa-free transit clock starts at 00:00 on the day after entry, in China Standard Time (UTC+8). Enter your arrival and route below to calculate the exit deadline and check the basic passport and route pattern. Final eligibility and the permitted stay are decided by border inspection authorities.</p>
+          <p className="mt-4 text-base leading-7 text-gray-600 md:text-lg">China’s 240-hour visa-free transit clock starts at 00:00 on the day after entry, in China Standard Time (UTC+8). Enter your expected or recorded entry date and route below to calculate the exit deadline and check the basic passport and route pattern. Final eligibility and the permitted stay are decided by border inspection authorities.</p>
           <p className="mt-3 text-sm leading-6 text-gray-600"><a href={transitAnswers.officialSource.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#155e63] underline underline-offset-4">Official timing rule</a> · <a href="#calculator-title" className="font-semibold text-[#155e63] underline underline-offset-4">Calculate my departure deadline</a></p>
           <ul aria-label="Current policy at a glance" className="mt-5 flex flex-wrap gap-2 text-sm font-semibold text-[#123f42]">
             <li className="rounded-full border border-[#155e63]/20 bg-white px-3 py-1.5">{ELIGIBLE_COUNTRY_COUNT} eligible passport countries</li>
@@ -158,7 +158,7 @@ export default function TransitCalculatorPage() {
 
         <section className="mt-6" aria-labelledby="common-route-examples">
           <h2 id="common-route-examples" className="text-lg font-bold">Common route examples</h2>
-          <p className="mt-2 text-sm leading-6 text-gray-600">Choose an example to fill the passport and route fields, then add your arrival date and entry city. Examples do not confirm eligibility, a designated port or a permitted stay area.</p>
+          <p className="mt-2 text-sm leading-6 text-gray-600">{transitAnswers.clockInputCopy.exampleHelp}</p>
           <div className="mt-3 grid gap-3 sm:grid-cols-2">
             {COMMON_TRANSIT_ROUTE_EXAMPLES.map((example) => (
               <button key={example.id} type="button" onClick={() => applyRouteExample(example)} className="min-h-12 rounded-2xl border border-[#155e63]/20 bg-white px-4 py-3 text-left text-sm font-bold text-[#123f42] transition hover:border-[#155e63]/45 hover:bg-[#edf5f2] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#155e63]">{example.label}</button>
@@ -170,7 +170,7 @@ export default function TransitCalculatorPage() {
           <form onSubmit={submit} className="rounded-3xl border border-[#155e63]/15 bg-white p-5 shadow-sm md:p-7">
             <div className="flex items-center gap-3"><span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#e9f4f1] text-[#155e63]"><Calculator className="h-5 w-5" aria-hidden="true" /></span><div><p className="text-xs font-bold uppercase tracking-[0.12em] text-[#155e63]">240-hour clock</p><h2 id="calculator-title" className="text-xl font-bold">Calculate your departure boundary</h2></div></div>
             <div className="mt-6 grid gap-5">
-              <label className="grid gap-2 text-sm font-bold">Arrival date and time in Mainland China<input required type="datetime-local" value={arrivalLocal} onChange={(event) => setArrivalLocal(event.target.value)} className="min-h-12 w-full rounded-xl border border-gray-300 bg-white px-3 text-base font-normal focus:border-[#155e63] focus:outline-none focus:ring-2 focus:ring-[#155e63]/20" /></label>
+              <label className="grid gap-2 text-sm font-bold">{transitAnswers.clockInputCopy.label}<input required type="datetime-local" aria-describedby="transit-entry-date-help" value={arrivalLocal} onChange={(event) => setArrivalLocal(event.target.value)} className="min-h-12 w-full rounded-xl border border-gray-300 bg-white px-3 text-base font-normal focus:border-[#155e63] focus:outline-none focus:ring-2 focus:ring-[#155e63]/20" /><span id="transit-entry-date-help" className="text-xs font-normal leading-5 text-gray-600">{transitAnswers.clockInputCopy.help}</span></label>
               <label className="grid gap-2 text-sm font-bold">Entry city<input required list="china-entry-cities" value={entryCity} onChange={(event) => setEntryCity(event.target.value)} placeholder="For example, Shanghai" className="min-h-12 w-full rounded-xl border border-gray-300 bg-white px-3 text-base font-normal focus:border-[#155e63] focus:outline-none focus:ring-2 focus:ring-[#155e63]/20" /><span className="text-xs font-normal leading-5 text-gray-500">A city selection does not confirm that your exact port qualifies.</span></label>
               <datalist id="china-entry-cities"><option value="Beijing" /><option value="Shanghai" /><option value="Guangzhou" /><option value="Shenzhen" /><option value="Chengdu" /><option value="Chongqing" /><option value="Xi'an" /><option value="Hangzhou" /><option value="Nanjing" /><option value="Xiamen" /></datalist>
               <label className="grid gap-2 text-sm font-bold">Passport nationality<input list="transit-passport-nationalities" value={passportNationality} onChange={(event) => setPassportNationality(event.target.value)} placeholder="Search nationality" autoComplete="off" className="min-h-12 w-full rounded-xl border border-gray-300 bg-white px-3 text-base font-normal focus:border-[#155e63] focus:outline-none focus:ring-2 focus:ring-[#155e63]/20" /><span className="text-xs font-normal leading-5 text-gray-500">Checked against the current public NIA 240-hour policy list.</span></label>
@@ -241,10 +241,10 @@ export default function TransitCalculatorPage() {
             <span>{transitAnswers.workedExample.start}</span><span aria-hidden="true">→</span>
             <span className="text-[#155e63]">{transitAnswers.workedExample.leave}</span>
           </p>
-          <p className="mt-3 text-sm leading-6 text-gray-600">The arrival day is never counted. Landing at 00:10 or at 23:50 on 15 October gives the same deadline. <a href="/china-240-hour-transit-clock-start/" className="font-semibold text-[#155e63] underline underline-offset-4">When does the 240-hour clock start?</a></p>
+          <p className="mt-3 text-sm leading-6 text-gray-600">{transitAnswers.workedExample.note} <a href="/china-240-hour-transit-clock-start/" className="font-semibold text-[#155e63] underline underline-offset-4">When does the 240-hour clock start?</a></p>
         </section>
 
-        <section className="mt-10 grid gap-5 md:grid-cols-2" aria-labelledby="how-it-works"><div className="rounded-2xl border border-gray-200 bg-white p-5"><h2 id="how-it-works" className="text-xl font-bold">How the calculation works</h2><ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-7 text-gray-600"><li>Read the local arrival date in Mainland China.</li><li>Start the clock at 00:00 on the following day.</li><li>Add 240 hours using China Standard Time.</li><li>Display one minute before the boundary as the latest planning time.</li></ol></div><div className="rounded-2xl border border-gray-200 bg-white p-5"><h2 className="text-xl font-bold">What you still need to verify</h2><ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-7 text-gray-600"><li>Your nationality is on the current eligible list.</li><li>Your entry and exit points are designated ports.</li><li>Your route continues to a different country or region.</li><li>Your travel remains inside the permitted area.</li></ul></div></section>
+        <section className="mt-10 grid gap-5 md:grid-cols-2" aria-labelledby="how-it-works"><div className="rounded-2xl border border-gray-200 bg-white p-5"><h2 id="how-it-works" className="text-xl font-bold">How the calculation works</h2><ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-7 text-gray-600"><li>{transitAnswers.clockInputCopy.firstStep}</li><li>Start the clock at 00:00 on the following day.</li><li>Add 240 hours using China Standard Time.</li><li>Display one minute before the boundary as the latest planning time.</li></ol></div><div className="rounded-2xl border border-gray-200 bg-white p-5"><h2 className="text-xl font-bold">What you still need to verify</h2><ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-7 text-gray-600"><li>Your nationality is on the current eligible list.</li><li>Your entry and exit points are designated ports.</li><li>Your route continues to a different country or region.</li><li>Your travel remains inside the permitted area.</li></ul></div></section>
 
         <section className="mt-10" aria-labelledby="transit-faq"><h2 id="transit-faq" className="text-2xl font-bold">Frequently asked questions</h2><div className="mt-4 grid gap-4 md:grid-cols-2">{faqs.map(([question, answer]) => <article key={question} className="rounded-2xl border border-gray-200 bg-white p-5"><h3 className="font-bold">{question}</h3><p className="mt-2 text-sm leading-6 text-gray-600">{answer}</p></article>)}</div></section>
 

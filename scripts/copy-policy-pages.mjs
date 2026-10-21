@@ -4107,7 +4107,7 @@ pageMeta['china-240-hour-transit-calculator'] = {
   heading: 'China 240-Hour Visa-Free Transit Calculator',
   title: 'China 240-Hour Visa-Free Transit Calculator | Exit Deadline',
   description: 'China’s 240-hour transit clock starts at midnight after entry. Use this free calculator for your exit deadline in China time, plus basic passport and route checks.',
-  quickAnswer: 'China’s 240-hour visa-free transit clock starts at 00:00 on the day after entry, in China Standard Time (UTC+8). Enter your arrival and route to calculate the exit deadline and check the basic passport and route pattern. Final eligibility and the permitted stay are decided by border inspection authorities.',
+  quickAnswer: 'China’s 240-hour visa-free transit clock starts at 00:00 on the day after entry, in China Standard Time (UTC+8). Enter your expected or recorded entry date and route to calculate the exit deadline and check the basic passport and route pattern. Final eligibility and the permitted stay are decided by border inspection authorities.',
   lastReviewed: transitAnswers.lastUpdated,
   lastModified: calculatorContent.modified,
   lastUpdatedFooter: true,
@@ -4133,7 +4133,8 @@ pageMeta['china-240-hour-transit-calculator'] = {
       title: 'Worked example',
       items: [
         transitAnswers.workedExample.text,
-        'The arrival day is never counted. Landing at 00:10 or at 23:50 on 15 October gives the same deadline.',
+        transitAnswers.workedExample.note,
+        transitAnswers.clockInputCopy.help,
       ],
     },
     {
@@ -4177,7 +4178,7 @@ pageMeta['china-240-hour-transit-calculator'] = {
     ['Does this calculator confirm that I qualify?', 'No. It calculates the time window only. Eligibility also depends on your passport nationality, ordinary-passport status, confirmed onward ticket, third-country or region route, designated entry and exit ports, permitted stay area, purpose of travel and the policy in force on your travel date.'],
     ['Can I return to the same country or region I departed from?', 'A simple route such as United States to Mainland China to United States does not meet the third-country or region transit pattern. The origin and onward destination normally need to be different. Airlines and border authorities should confirm complex routes before travel.'],
     ['Does every airport or port qualify?', 'No. The policy applies through designated ports and within permitted areas. Selecting an entry city here does not verify a particular terminal, airport, railway port or seaport. Check the latest official port list and confirm your planned entry and exit points.'],
-    ['Which time zone does the calculator use?', 'All results use China Standard Time, UTC+8. The date and time you enter should be the local scheduled arrival time in Mainland China. Flight changes, immigration processing and the actual entry record can affect planning, so do not schedule departure at the exact final minute.'],
+    ['Which time zone does the calculator use?', transitAnswers.clockInputCopy.timeZoneAnswer],
   ],
   sourceLinks: [
     [transitAnswers.officialSource.label, transitAnswers.officialSource.href],

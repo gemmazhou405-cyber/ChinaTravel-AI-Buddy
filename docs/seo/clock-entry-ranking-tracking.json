@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "changeId": "SEO-2026-10-21-CLOCK-ENTRY-DATE",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks",
+  "status": "local_verified_pending_publication",
+  "liveDate": null,
+  "codeCommits": [],
+  "pages": [
+    "https://chinaeasebuddy.com/china-240-hour-transit-clock-start/",
+    "https://chinaeasebuddy.com/china-240-hour-transit-calculator/"
+  ],
+  "baseline": {
+    "observedOn": "2026-10-21",
+    "sourceFilename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
+    "sourceSha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+    "searchType": "Web (text-based)",
+    "periodLabel": "Last 28 days",
+    "periodStart": null,
+    "periodEnd": null,
+    "clockPage": {
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0.0,
+      "averagePosition": 9.0,
+      "pageFilteredQueries": null
+    },
+    "calculator": {
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "averagePosition": 22.5,
+      "exactPageEvidence": "See transit-calculator-tracking.json for separate exact-page export and disclosed queries."
+    }
+  },
+  "indexObservations": {
+    "clockPage": {
+      "indexed": null,
+      "lastReportedGoogleCrawl": null
+    },
+    "calculator": "Existing screenshot confirms indexed; last reported crawl October 13 2026 08:57:32 (timezone unspecified), predating October 20-21 edits. No new inspection performed."
+  },
+  "queryCandidates": [
+    {
+      "query": "when does china 240 hour transit start",
+      "evidenceScope": "editorial_candidate_not_confirmed_covered",
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null,
+      "pageSpecificPosition": null
+    },
+    {
+      "query": "china 240 hour transit midnight rule",
+      "evidenceScope": "editorial_candidate_not_confirmed_covered",
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null,
+      "pageSpecificPosition": null
+    }
+  ],
+  "reason": "Correct a confirmed inconsistency: calculator FAQ told users to enter scheduled landing time, while newer examples used recorded entry dates; both calculator and clock guide asserted same-day landings always share a deadline. Preserve current algorithm and recent search titles rather than invent a new policy or churn the tool for ranking.",
+  "hypothesis": "Accurate, coherent input guidance may make the timing pages more useful and trustworthy for transit-planning intent. Two clock-page impressions are not evidence of strong demand, low competition or a ranking problem, and this correction alone is not a proven ranking lever.",
+  "scope": [
+    "Update only the clock question object and shared calculator input/example copy in transitAnswers.json; retain global policy-review date and all other answer objects",
+    "Clock guide: expected versus recorded entry date, conditional midnight-crossing example, exact boundary versus planning label, revised four FAQs and description; retain title and canonical",
+    "Calculator: clarify input label/help, time-zone FAQ, worked-example note, one procedure step and matching static copy; retain title, meta description, canonical, calculation algorithm, route examples and analytics",
+    "Set only clock page reviewed/modified to October 21; calculator lastmod already October 21 and global source-review date remains October 13",
+    "Sitemap URL set unchanged; expected only clock page lastmod moves from October 13 to October 21"
+  ],
+  "sourceReview": {
+    "date": "2026-10-21",
+    "sources": [
+      "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20260820/bcaad9737db44e6ab788dfd785832b6b.html",
+      "https://en.nia.gov.cn/n147418/n147463/c183412/content.html"
+    ],
+    "supportingTimingOnlySource": "https://www.csair.com/mcms/mcms/CN/zh/2024/20241230_2/",
+    "limitations": "Airline page contains old country/port counts and is not used for current eligibility. Published sources support next-day midnight and final border approval. No retrieved source settles every flight-landing versus processing-date edge case; the midnight scenario is conditional on the official record, not a promise of an extra day or legal entitlement. Final permitted deadline must be confirmed with border inspection. No live border/airport test."
+  },
+  "verification": {
+    "typecheck": "PASS",
+    "i18nParity": "PASS",
+    "calculatorTests": "PASS",
+    "build": "PASS",
+    "publicHtmlAuditLocal": "PASS",
+    "targetHtmlChecks": "PASS",
+    "diffCheck": "PASS",
+    "production": null,
+    "otherAnswerObjectsAndGlobalReviewUnchanged": "PASS",
+    "algorithmUnchanged": "PASS"
+  },
+  "nextObservation": "Combine this clarification with October 20-21 calculator interventions; no isolated causal attribution. Obtain a post-change crawl observation and completed exact-page Queries/Page windows. Compare relevant organic clicks and same-query rankings, keeping hidden-query relevance unknown and unavailable coverage distinct from zero. Do not infer keyword volume or stable top-ten ranking from two page impressions.",
+  "performanceObservations": []
+}

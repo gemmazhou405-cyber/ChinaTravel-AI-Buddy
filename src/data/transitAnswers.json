@@ -15,10 +15,11 @@
     "href": "https://en.nia.gov.cn/n147418/n147463/c180637/content.html"
   },
   "workedExample": {
-    "arrive": "Arrive 15 Oct 22:30",
+    "arrive": "Entry recorded 15 Oct 22:30",
     "start": "clock starts 16 Oct 00:00",
-    "leave": "must leave by 25 Oct 23:59",
-    "text": "Arrive 15 Oct 22:30 → clock starts 16 Oct 00:00 → must leave by 25 Oct 23:59"
+    "leave": "planning label: 25 Oct 23:59",
+    "text": "Entry recorded 15 Oct 22:30 → clock starts 16 Oct 00:00 → planning label: 25 Oct 23:59",
+    "note": "The equal-deadline example assumes the entry record uses 15 October. A scheduled landing date alone cannot settle a near-midnight case. Check the date and permitted deadline recorded by border inspection; the calculator is a planning aid."
   },
   "pages": [
     {
@@ -26,57 +27,90 @@
       "question": "When does the China 240-hour transit clock start?",
       "shortLabel": "When does the 240-hour clock start?",
       "title": "When Does the China 240-Hour Transit Clock Start? (Worked Example)",
-      "description": "The China 240-hour visa-free transit clock starts at 00:00 on the day after you enter, not when you land. Worked example: arrive 15 Oct 22:30, leave by 25 Oct 23:59.",
+      "description": "China’s 240-hour transit clock starts at 00:00 after the entry date. See midnight-crossing examples, then check the deadline on your temporary-entry permission.",
       "answer": [
-        "The 240-hour clock starts at 00:00 (midnight, China Standard Time) on the day after you enter mainland China, not at the moment your flight lands.",
-        "So if you arrive on 15 October at 22:30, the clock starts at 00:00 on 16 October and you must leave by 23:59 on 25 October."
+        "The published 240-hour transit clock starts at 00:00 on the day after entry, in China Standard Time (UTC+8). Use your expected entry date for planning, then check the entry record and permitted deadline issued by border inspection.",
+        "For an entry date of 15 October, the calculation starts at 00:00 on 16 October and reaches 240 hours at 00:00 on 26 October. The guide shows 25 October at 23:59 as a planning label, not a promise of permission to remain until that minute."
       ],
       "example": {
-        "title": "Worked example",
-        "intro": "Three travelers land on the same day at very different times. Because the clock only starts at midnight, all three get the same deadline.",
-        "headers": ["Entry into mainland China", "240-hour clock starts", "Latest time to leave"],
-        "rows": [
-          ["15 Oct, 00:10", "16 Oct, 00:00", "25 Oct, 23:59"],
-          ["15 Oct, 22:30", "16 Oct, 00:00", "25 Oct, 23:59"],
-          ["15 Oct, 23:50", "16 Oct, 00:00", "25 Oct, 23:59"]
+        "title": "Same recorded entry date, same calculated boundary",
+        "intro": "These three examples all assume that border inspection records the entry date as 15 October. Different flight landing dates or processing times do not replace the date and deadline on your entry permission.",
+        "headers": [
+          "Recorded entry (China time)",
+          "Calculated clock start",
+          "Planning label"
         ],
-        "note": "The traveler who lands at 00:10 effectively gets almost a full extra day in China on top of the 240 hours. A late-evening arrival loses nothing either: the arrival day itself is never counted."
+        "rows": [
+          [
+            "15 Oct, 00:10",
+            "16 Oct, 00:00",
+            "25 Oct, 23:59"
+          ],
+          [
+            "15 Oct, 22:30",
+            "16 Oct, 00:00",
+            "25 Oct, 23:59"
+          ],
+          [
+            "15 Oct, 23:50",
+            "16 Oct, 00:00",
+            "25 Oct, 23:59"
+          ]
+        ],
+        "note": "The exact 240-hour boundary for these assumptions is 26 October at 00:00. The 23:59 label is one minute earlier for planning. Follow any earlier permitted deadline and leave time for your flight, airport procedures and exit inspection."
       },
       "sections": [
         {
-          "title": "Which time counts: landing or immigration?",
+          "title": "What if landing and entry fall on different dates?",
           "items": [
-            "The date that matters is the date immigration records your entry, not the scheduled landing time on your ticket.",
-            "Scenario: your flight is scheduled to land at 23:30 on 15 October but you clear immigration at 00:20 on 16 October. Your entry date is 16 October, so the clock starts at 00:00 on 17 October and the latest time to leave becomes 23:59 on 26 October.",
-            "All times are China Standard Time (UTC+8), whatever time zone you flew from."
+            "Check the entry date and permitted deadline recorded by border inspection. Do not use a flight schedule to assume that border processing on another date grants an extra day.",
+            "Conditional example: a flight is scheduled for 15 October at 23:30. If the entry record uses 16 October, calculating from that date gives a clock start of 17 October at 00:00 and a boundary of 27 October at 00:00, with a 26 October 23:59 planning label. Confirm the actual permission rather than assuming this outcome.",
+            "All calculation dates are in China Standard Time (UTC+8). For a flight delay, a date mismatch or an unclear permit, ask border inspection or NIA 12367 to confirm the applicable deadline."
           ]
         },
         {
-          "title": "How the 240 hours run out",
+          "title": "Count ten full days, then check the permission",
           "ordered": true,
           "items": [
-            "Take the date immigration records your entry.",
-            "Start the clock at 00:00 on the next day.",
-            "Add 240 hours, which is exactly 10 days of 24 hours.",
-            "The 240-hour point falls at 00:00 on the eleventh day, so the last minute you can still be in China is 23:59 the night before."
+            "Use the expected entry date for a pre-trip estimate; after entry, check the date in the official record.",
+            "Calculate midnight at the beginning of the next day in China time.",
+            "Add 240 hours, equal to ten complete 24-hour periods.",
+            "Treat one minute before that mathematical boundary as the calculator’s planning label. It is not a substitute for the permitted deadline."
           ]
         },
         {
-          "title": "Leave a buffer",
+          "title": "Keep a departure buffer",
           "items": [
-            "Leaving by 23:59 means clearing exit inspection by then, not just having a flight that departs before midnight.",
-            "Book your onward flight earlier on the last day, or on the day before, so a delay or a long security queue does not push you over the limit.",
-            "If the date on your entry record is unclear, ask the border officer or call the China Immigration Service hotline 12367."
+            "Plan an earlier departure that allows time for airport travel, check-in, security and exit inspection. A 23:59 planning label is not a recommended airport arrival time.",
+            "If your flight changes or departure may be delayed beyond the permitted stay, contact the airline and immigration authorities promptly. Do not assume an automatic extension.",
+            "Keep your onward booking and temporary-entry permission accessible, and resolve any unclear date with the issuing authority."
           ]
         }
       ],
       "faqs": [
-        ["Does the day I land count towards the 240 hours?", "No. The arrival day is not counted. The 240 hours begin at 00:00 on the day after your entry is recorded."],
-        ["What if my flight lands just after midnight?", "Then your entry date is that new day, and the clock starts at 00:00 on the following day. Landing at 00:10 on 15 October gives the same deadline as landing at 23:50 on 15 October: leave by 23:59 on 25 October."],
-        ["Is 240 hours the same as 10 days?", "Yes. 240 hours is exactly 10 days of 24 hours, counted from midnight after your entry day. In practice that means 10 full calendar days plus whatever is left of your arrival day."],
-        ["Which time zone is used?", "China Standard Time (UTC+8). Convert your onward flight time to China time when you check the deadline."]
+        [
+          "Does the day I land count towards the 240 hours?",
+          "The published clock begins at midnight on the day after entry. Near midnight, a landing date alone does not settle the date or deadline used by border inspection. Check your entry record and temporary-entry permission rather than assuming the arrival day always gives extra time."
+        ],
+        [
+          "What if my flight lands just before or after midnight?",
+          "Use the expected entry date only for planning, then confirm the date and permitted deadline in your entry record. If the recorded date is 16 October, the calculation starts at 00:00 on 17 October. Do not assume that landing or waiting across midnight automatically changes your permission."
+        ],
+        [
+          "Is 240 hours the same as 10 days?",
+          "Yes: 240 hours equals ten complete 24-hour periods. Start the calculation at midnight on the day after the entry date. This gives a mathematical boundary, while border inspection determines the permitted stay. Keep a departure buffer instead of planning around the final minute."
+        ],
+        [
+          "Which time zone is used?",
+          "China Standard Time (UTC+8). Use China-local dates for the entry and onward departure when planning, then check the actual permitted deadline. A time displayed in your home time zone can fall on a different calendar date in China."
+        ]
       ],
-      "sources": ["officialSource", "niaSource"]
+      "sources": [
+        "officialSource",
+        "niaSource"
+      ],
+      "lastUpdated": "October 21, 2026",
+      "lastModified": "2026-10-21"
     },
     {
       "slug": "china-240-hour-transit-us-citizens",
@@ -244,5 +278,13 @@
       ],
       "sources": ["officialSource", "niaSource"]
     }
-  ]
+  ],
+  "clockInputCopy": {
+    "label": "Expected or recorded entry date and time (China time)",
+    "help": "Before travel, use your expected entry date for an estimate. After entry, compare the calculation with your immigration record and temporary-entry permission. Near midnight, do not assume the flight’s landing date settles the permitted deadline.",
+    "error": "Complete all fields with a valid expected or recorded entry date and time.",
+    "exampleHelp": "Choose an example to fill the passport and route fields, then add your expected or recorded entry date and entry city. Examples do not confirm eligibility, a designated port or a permitted stay area.",
+    "timeZoneAnswer": "All results use China Standard Time, UTC+8. Use an expected entry date only as a pre-trip estimate. After entry, check the immigration record and permitted deadline, especially when landing and border processing are around midnight. Do not schedule departure at the final planning minute.",
+    "firstStep": "Read the expected or recorded entry date in China Standard Time; confirm it against your entry permission."
+  }
 }
