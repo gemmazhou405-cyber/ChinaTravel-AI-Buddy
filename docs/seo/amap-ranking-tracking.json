@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "changeId": "SEO-2026-10-21-AMAP-SETUP",
+  "page": "https://chinaeasebuddy.com/amap-english-mode-guide-2026/",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks",
+  "status": "validated_pending_publication",
+  "liveDate": null,
+  "codeCommits": [],
+  "baseline": {
+    "observedOn": "2026-10-21",
+    "sourceFilename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
+    "sourceSha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+    "searchType": "Web (text-based)",
+    "periodLabel": "Last 28 days",
+    "periodStart": null,
+    "periodEnd": null,
+    "clicks": 1,
+    "impressions": 95,
+    "ctr": 0.0105,
+    "averagePosition": 14.17,
+    "pageFilteredQueries": null,
+    "strongRelevanceOfClickVerified": false
+  },
+  "indexObservation": {
+    "indexed": null,
+    "lastReportedGoogleCrawl": null,
+    "googleSelectedCanonical": null,
+    "note": "Historical impressions and public HTTP 200 do not establish current indexed report or post-change recrawl."
+  },
+  "queryCandidates": [
+    {
+      "query": "amap english",
+      "evidenceScope": "full_site_query_export_not_confirmed_page_query_pair",
+      "impressions": 6,
+      "averagePosition": 34.83,
+      "pageSpecificPosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    },
+    {
+      "query": "how to switch amap to english",
+      "evidenceScope": "full_site_query_export_not_confirmed_page_query_pair",
+      "impressions": 2,
+      "averagePosition": 31.5,
+      "pageSpecificPosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    },
+    {
+      "query": "amap english setting",
+      "evidenceScope": "full_site_query_export_not_confirmed_page_query_pair",
+      "impressions": 2,
+      "averagePosition": 31.5,
+      "pageSpecificPosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    },
+    {
+      "query": "how to change amap language to english",
+      "evidenceScope": "full_site_query_export_not_confirmed_page_query_pair",
+      "impressions": 2,
+      "averagePosition": 34,
+      "pageSpecificPosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    }
+  ],
+  "hypothesis": "A focused answer to language-setting queries with supported iPhone/Android branches, Chinese menu translations, official downloads and destination verification examples may better satisfy traveler intent and support ranking. This is a content-quality hypothesis, not a demonstrated ranking or CTR effect.",
+  "scope": [
+    "H1 focused on changing Amap to English on iPhone and Android",
+    "Eight dedicated sections with official downloads, conditional setup steps, menu vocabulary, troubleshooting and English/Chinese search examples",
+    "Five task-specific FAQs",
+    "One shared content file used by React and static HTML",
+    "Retain existing title, meta description, canonical, CTA and URL",
+    "Sitemap retains 76 URLs; only this page lastmod advances from October 16 to October 21"
+  ],
+  "verification": {
+    "typecheck": "PASS",
+    "i18nParity": "PASS",
+    "build": "PASS",
+    "publicHtmlAuditLocal": "PASS",
+    "targetHtmlChecks": "PASS",
+    "diffCheck": "PASS",
+    "production": null
+  },
+  "firsthandDeviceTestPerformed": false,
+  "sourcesReviewedOn": "2026-10-21",
+  "sourceUrls": [
+    "https://apps.apple.com/us/app/amap-global/id461703208",
+    "https://play.google.com/store/apps/details?id=com.autonavi.minimap",
+    "https://support.google.com/android/answer/12395118?hl=en",
+    "https://developer.apple.com/localization/",
+    "https://english.shanghai.gov.cn/en-EasyShanghai/20260713/379bcea6e1bd4defaa7db2451d68d3dd.html",
+    "https://english.shanghai.gov.cn/en-UsefulApps/20241213/59a549d4bdf1440c8e86251d5ac7d5a9.html"
+  ],
+  "nextObservation": "Obtain the exact page Queries comparison with actual period boundaries and indexed report crawl time; review October 22-28 after finalized reporting, then same-query changes and relevant organic clicks. No ranking gain is currently established. October 16 and October 21 edits cannot be cleanly separated without dated recrawl and outcomes.",
+  "performanceObservations": []
+}
