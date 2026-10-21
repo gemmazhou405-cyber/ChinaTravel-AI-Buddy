@@ -3,6 +3,14 @@ import { readFile } from 'node:fs/promises';
 import { TRANSIT_240_COUNTRY_CODES } from '../src/data/chinaVisaPolicies.ts';
 import { COMMON_TRANSIT_ROUTE_EXAMPLES, calculateTransitDeadline } from '../src/lib/transitCalculator.ts';
 
+const calculatorContent = JSON.parse(await readFile('src/data/transitCalculatorContent.json', 'utf8'));
+for (const example of calculatorContent.examples) {
+  const result = calculateTransitDeadline({ arrivalLocal: example.arrivalLocal, entryCity: 'Shanghai', passportNationalityCode: 'US', originRegion: 'US', onwardRegion: 'HK' });
+  for (const [resultKey, exampleKey] of [['clockStartIso', 'clockStartChina'], ['planningLatestIso', 'planningLatestChina'], ['deadlineExclusiveIso', 'deadlineExclusiveChina']]) {
+    assert.equal(result[resultKey], new Date(`${example[exampleKey]}:00+08:00`).toISOString(), `${example.label}: ${resultKey}`);
+  }
+}
+
 const mayResult = calculateTransitDeadline({
   arrivalLocal: '2026-05-01T14:30',
   entryCity: 'Shanghai',
