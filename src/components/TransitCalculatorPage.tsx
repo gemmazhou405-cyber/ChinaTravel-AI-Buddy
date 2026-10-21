@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { AlertCircle, AlertTriangle, ArrowLeft, Calculator, CheckCircle2, ExternalLink, RotateCcw } from 'lucide-react';
 import { CHECKER_COUNTRY_OPTIONS, normalizeNationalityToIso, OFFICIAL_VISA_SOURCES, TRANSIT_240_COUNTRY_CODES } from '../data/chinaVisaPolicies';
 import transitAnswers from '../data/transitAnswers.json';
+import calculatorContent from '../data/transitCalculatorContent.json';
 import transit240Guide from '../data/seoPages/china-240-hour-visa-free-transit-2026.json';
 import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
 import { COMMON_TRANSIT_ROUTE_EXAMPLES, calculateTransitDeadline, type TransitCalculatorResult, type TransitRouteExample } from '../lib/transitCalculator';
@@ -10,7 +11,7 @@ const siteUrl = 'https://chinaeasebuddy.com';
 const path = '/china-240-hour-transit-calculator/';
 const title = 'China 240-Hour Visa-Free Transit Calculator | Exit Deadline';
 const description = 'China’s 240-hour transit clock starts at midnight after entry. Use this free calculator for your exit deadline in China time, plus basic passport and route checks.';
-const contentModified = '2026-10-20';
+const contentModified = calculatorContent.modified;
 const lastVerified = transitAnswers.lastUpdated;
 
 // Policy facts shown on the page, derived from the data files so the numbers cannot drift from the lists.
@@ -26,6 +27,7 @@ const RESULT_LINKS: [string, string][] = [
 ];
 
 const faqs = [
+  ...calculatorContent.faqs,
   ['When does the 240-hour clock start?', 'Under the current National Immigration Administration rule, the 240-hour period is calculated from 00:00 on the day after entry. This calculator uses China Standard Time. Your immigration record and the border authority’s calculation control, so leave a practical buffer before the displayed boundary.'],
   ['Does this calculator confirm that I qualify?', 'No. It calculates the time window only. Eligibility also depends on your passport nationality, ordinary-passport status, confirmed onward ticket, third-country or region route, designated entry and exit ports, permitted stay area, purpose of travel and the policy in force on your travel date.'],
   ['Can I return to the same country or region I departed from?', 'A simple route such as United States to Mainland China to United States does not meet the third-country or region transit pattern. The origin and onward destination normally need to be different. Airlines and border authorities should confirm complex routes before travel.'],
@@ -215,6 +217,20 @@ export default function TransitCalculatorPage() {
               </nav>
             </> : <div className="flex min-h-[360px] flex-col justify-center"><p className="text-xs font-bold uppercase tracking-[0.14em] text-[#155e63]">Your result</p><h2 className="mt-3 text-2xl font-bold">See the China Standard Time boundary</h2><p className="mt-3 text-sm leading-7 text-gray-600">Add your route and passport nationality to calculate the 240-hour boundary and compare the basic nationality and third-country-or-region requirements.</p><div className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-950"><strong>Important:</strong> The calculator cannot confirm final eligibility, your exact port or permitted stay area.</div></div>}
           </div>
+        </section>
+
+        <section className="mt-10 rounded-3xl border border-[#155e63]/15 bg-white p-5 md:p-7" aria-labelledby="expiry-examples">
+          <h2 id="expiry-examples" className="text-2xl font-bold">{calculatorContent.heading}</h2>
+          <p className="mt-3 text-sm leading-6 text-gray-600">{calculatorContent.intro}</p>
+          <div className="mt-4 overflow-x-auto">
+            <table className="w-full min-w-[700px] text-left text-sm">
+              <caption className="pb-3 text-left text-xs text-gray-500">All dates use YYYY-MM-DD and China Standard Time (UTC+8).</caption>
+              <thead><tr>{['Recorded entry', '240-hour clock starts', 'Planning label', 'Exact boundary'].map((label) => <th key={label} scope="col" className="border-b border-gray-200 p-3 font-bold">{label}</th>)}</tr></thead>
+              <tbody>{calculatorContent.examples.map((example) => <tr key={example.arrivalLocal}>{[example.arrivalLocal, example.clockStartChina, example.planningLatestChina, example.deadlineExclusiveChina].map((value, index) => <td key={index} className="border-b border-gray-100 p-3 align-top">{index === 0 && <span className="mb-1 block font-semibold">{example.label}</span>}{value.replace('T', ' ')}</td>)}</tr>)}</tbody>
+            </table>
+          </div>
+          <p className="mt-3 text-sm leading-6 text-gray-600">{calculatorContent.note}</p>
+          <p className="mt-3 text-sm"><a href="#calculator-title" className="font-semibold text-[#155e63] underline underline-offset-4">Calculate the deadline for your own entry date</a> · <a href={transitAnswers.officialSource.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#155e63] underline underline-offset-4">Official clock rule</a></p>
         </section>
 
         <section className="mt-10 rounded-3xl border border-[#155e63]/15 bg-white p-5 md:p-7" aria-labelledby="worked-example">
