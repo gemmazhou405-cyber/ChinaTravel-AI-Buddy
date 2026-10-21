@@ -103,6 +103,15 @@ export default function PlanningTools() {
         </div>
 
         <div className="motion-reveal-item mt-8 text-center" style={{ '--reveal-index': 5 } as CSSProperties}>
+          <p className="mb-2">
+            <a
+              href="/china-240-hour-transit-calculator/"
+              onClick={() => trackResource('china-240-hour-transit-calculator')}
+              className="inline-flex min-h-11 items-center rounded-lg px-3 py-2 text-sm font-bold text-jade underline decoration-jade/25 underline-offset-4 transition hover:decoration-jade focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jade"
+            >
+              {t('home.planningTools.transitCalculator')}
+            </a>
+          </p>
           <a
             href="/guides/"
             onClick={() => trackResource('guides')}
