@@ -3,8 +3,8 @@
   "changeId": "SEO-2026-10-21-DIDI-APP-SETUP",
   "page": "https://chinaeasebuddy.com/didi-in-china-for-foreigners/",
   "primaryOutcome": "strongly_relevant_google_organic_clicks",
-  "status": "preview_verified_production_pending",
-  "liveDate": null,
+  "status": "live_verified",
+  "liveDate": "2026-10-21",
   "codeCommits": [
     "274b132463ec1352492b27cd721733e45c9f76fe"
   ],
@@ -112,15 +112,20 @@
     "production": {
       "observedOn": "2026-10-21",
       "formalUrl": "https://chinaeasebuddy.com/didi-in-china-for-foreigners/",
-      "newContentVerified": false,
-      "observedVersion": "Previous content, with no Download DiDi China and switch to English section",
+      "newContentVerified": true,
+      "observedVersion": "New official-store downloads, English setup and troubleshooting sections served by the formal domain",
       "projectAlias": "https://chinaease-buddy.pages.dev/didi-in-china-for-foreigners/",
-      "projectAliasNewContentVerified": false,
+      "projectAliasNewContentVerified": true,
       "vercelStatus": "success",
       "cloudflareCheckStatus": "success",
-      "note": "Successful deployment checks and a verified immutable preview do not establish that the formal domain serves this version. Cause of alias/domain mismatch is unconfirmed. No Cloudflare administrative connection or local Wrangler is available.",
+      "note": "Earlier checks returned previous content; subsequent fresh-query and plain-URL checks verified the new formal-domain version. Domain/alias propagation cause is unconfirmed. Google recrawl, query rankings and clicks have not yet been verified.",
       "googleRecrawlConfirmed": false,
-      "rankingOrClickGainConfirmed": false
+      "rankingOrClickGainConfirmed": false,
+      "firstVerifiedAtUtc": "2026-10-21T13:50:57Z",
+      "targetHtmlChecks": "PASS",
+      "sitemapUrlCount": 76,
+      "onlyTargetDateChanged": true,
+      "xRobotsTag": null
     },
     "existingAmapAndLayoverSectionLinks": "PASS",
     "preview": {
