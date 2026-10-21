@@ -1,0 +1,180 @@
+{
+  "heading": "Beijing & Shanghai Layovers: Airport Transfers & City Plans",
+  "intro": "Start with the airport code, work backwards from your required airport return time, then choose one compact city stop. A short connection and a multi-day 240-hour transit stay need different plans.",
+  "quickAnswer": "A Beijing or Shanghai layover is only useful for sightseeing if you have permission to enter and enough time after airport formalities and both transfers. Check whether your ticket says PEK, PKX, PVG or SHA, then work backwards from the airport return time required by your airline. Choose one compact area for a short city visit. A 240-hour departure-deadline calculation is for an eligible multi-day stay, not a flight-connection safety check.",
+  "modified": "2026-10-21",
+  "reviewed": "October 21, 2026",
+  "sections": [
+    {
+      "title": "Can you leave the airport during this layover?",
+      "items": [
+        "Confirm which entry permission applies to your passport and itinerary before planning sightseeing. A connecting ticket alone is not entry permission.",
+        "Under 24-hour visa-free transit, leaving the restricted port area requires a temporary entry permit from border inspection. The final entry decision belongs to the authorities.",
+        "For 240-hour transit, check the eligible passport, third-country or region route, confirmed onward ticket, designated ports and permitted areas. Use the policy guide for the full conditions."
+      ]
+    },
+    {
+      "title": "PEK, PKX, PVG or SHA: choose the correct transfer",
+      "table": {
+        "headers": [
+          "Airport on your ticket",
+          "Chinese name to save",
+          "Rail option to check",
+          "Main planning mistake"
+        ],
+        "rows": [
+          [
+            "PEK — Beijing Capital",
+            "北京首都国际机场",
+            "Capital Airport Express, then the city connection for your chosen district.",
+            "Following Daxing Airport Express signs or returning to PKX."
+          ],
+          [
+            "PKX — Beijing Daxing",
+            "北京大兴国际机场",
+            "Daxing Airport Express; check your onward city interchange.",
+            "Using a Capital Airport transfer estimate for Daxing."
+          ],
+          [
+            "PVG — Shanghai Pudong",
+            "上海浦东国际机场",
+            "Metro Line 2, or Maglev to Longyang Road with an onward Metro transfer.",
+            "Treating the Maglev ride alone as the whole trip to the Bund."
+          ],
+          [
+            "SHA — Shanghai Hongqiao",
+            "上海虹桥国际机场",
+            "Terminal 1: Metro Line 10. Terminal 2: Lines 2 or 10.",
+            "Selecting Hongqiao Railway Station instead of the correct airport terminal."
+          ]
+        ]
+      },
+      "items": [
+        "The Shanghai Airport Link Line connects the Pudong T1&2 and Hongqiao T2 airport stations. It is an airport-to-airport option, not a direct stop at the Bund. Add station walks, waiting, terminal connections and airport formalities to the train ride.",
+        "Check current operating hours in both directions. An overnight layover may fall outside rail service; compare an official taxi, a suitable overnight hotel or staying in the terminal."
+      ]
+    },
+    {
+      "title": "Work backwards from your airport return cutoff",
+      "ordered": true,
+      "items": [
+        "Ask your airline when you must be back at the correct terminal for your onward flight, including baggage recheck, document checks and security. Do not use boarding time as the time to reach the airport.",
+        "Subtract the full city-to-terminal journey, including transfers and walking, then subtract an extra margin for delays. This gives your latest time to leave the city stop.",
+        "After immigration, baggage and the outbound transfer, compare your actual city arrival time with that cutoff. If little time remains, shorten the visit or stay at the airport.",
+        "Illustrative planning example, not an airport travel-time quote: if your airline requires airport arrival at 15:00, you allow 90 minutes for the full return journey and 30 minutes extra, leave the city by 13:00. Reaching the city at 11:00 leaves two sightseeing hours."
+      ]
+    },
+    {
+      "title": "Choose a city visit that fits the usable hours",
+      "table": {
+        "headers": [
+          "Time between flights",
+          "Suggested scope after entry and transfer checks",
+          "When to scale back"
+        ],
+        "rows": [
+          [
+            "About 8 hours",
+            "Treat staying at the airport as the starting plan; consider a city stop only if the actual usable-time calculation supports it.",
+            "Entry queues, baggage collection, an airport change or an uncertain return route."
+          ],
+          [
+            "About 12 hours",
+            "One compact area: a meal and short walk, with the return cutoff set first.",
+            "An attraction needs a reservation, closes early or requires another long transfer."
+          ],
+          [
+            "About 24 hours",
+            "One city day plus rest, or an overnight near the route that fits your next flight.",
+            "The onward flight is early, rail has stopped or hotel check-in takes away most of the visit."
+          ]
+        ]
+      },
+      "items": [
+        "Beijing option: after checking the transfer, keep a hutong walk and a meal in one neighbourhood. Do not attach a Great Wall excursion to a short airport connection. Tiananmen-area and Palace Museum visits need their own access and booking checks.",
+        "Shanghai option: keep the Bund and nearby riverfront streets as one city-area visit rather than adding distant museums and another district. Check the actual Metro exit and return route before walking away.",
+        "These are editorial planning scopes, not a promise that a particular connection is long enough. If the inbound flight is late, recalculate before leaving."
+      ]
+    },
+    {
+      "title": "When to keep the layover at the airport",
+      "items": [
+        "Entry permission has not been granted, or an airline/airport instruction requires you to remain in the transit process.",
+        "You must collect and recheck bags, change airports or terminals, or complete a self-transfer with little room for delay.",
+        "The return route depends on a last train, an uncertain road transfer or a reservation you cannot confirm.",
+        "You cannot leave enough time for the airline’s required return cutoff, or would need to rush to make the plan work."
+      ]
+    },
+    {
+      "title": "Several days in transit: calculate the departure deadline",
+      "items": [
+        "For an eligible multi-day stop, the 240-hour calculator estimates a departure deadline. It does not grant entry, check an airline’s connection rules or decide how many sightseeing hours you have today. Keep the airport-return plan separate from the immigration stay limit."
+      ],
+      "links": [
+        {
+          "label": "Calculate a 240-hour transit departure deadline",
+          "description": "Use for an eligible multi-day stay; this is separate from a short layover return cutoff.",
+          "href": "/china-240-hour-transit-calculator/"
+        },
+        {
+          "label": "Check the full 240-hour transit conditions",
+          "description": "Confirm the route, passport, ports and permitted areas before booking.",
+          "href": "/china-240-hour-visa-free-transit-2026/"
+        },
+        {
+          "label": "Plan a Beijing airport-to-city transfer",
+          "description": "Compare Capital and Daxing arrival options in the dedicated guide.",
+          "href": "/beijing-airport-to-city-guide/"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can I leave Beijing or Shanghai airport on an 8-hour layover?",
+      "answer": "Do not decide from the flight gap alone. You need applicable entry permission and usable time after immigration, baggage, both transfers and your airline’s return requirement. If those checks leave little time, stay at the airport. An eight-hour connection does not guarantee a city visit."
+    },
+    {
+      "question": "Are Beijing Capital and Beijing Daxing the same airport?",
+      "answer": "No. PEK is Beijing Capital and PKX is Beijing Daxing. They use different airport rail routes and terminal arrangements. Check both airport codes on your tickets. If your connection changes airports, plan that transfer first before considering sightseeing."
+    },
+    {
+      "question": "Are Shanghai Pudong and Hongqiao the same airport?",
+      "answer": "No. PVG is Pudong and SHA is Hongqiao. At Hongqiao, Terminal 1 is served by Metro Line 10, while Terminal 2 has Lines 2 and 10. Hongqiao Railway Station is another distinct destination. Save the exact airport terminal for your return."
+    },
+    {
+      "question": "Does Shanghai’s Airport Link Line go directly to the Bund?",
+      "answer": "No. It connects the airport stations at Pudong T1&2 and Hongqiao T2, with other stops on the route. A Bund visit needs a separately planned city connection. Compare the full door-to-door journey rather than using the airport train’s running time alone."
+    },
+    {
+      "question": "What time should I leave the city to return to the airport?",
+      "answer": "Start with the time your airline requires you to be at the correct terminal. Subtract the complete return journey and a delay margin. Recheck after arrival delays. A train’s advertised journey time does not include reaching the station, waiting, transfers or walking to check-in."
+    },
+    {
+      "question": "Can the 240-hour calculator tell me whether a short layover is safe?",
+      "answer": "No. It estimates an immigration departure deadline for an eligible multi-day transit stay. A short layover needs a separate calculation using airport formalities, actual transport, baggage arrangements and the airline’s return requirement. Satisfying a stay limit does not guarantee you will catch a flight."
+    }
+  ],
+  "sources": [
+    {
+      "label": "National Immigration Administration: visa-free transit and temporary entry permission",
+      "href": "https://en.nia.gov.cn/n147418/n147463/c183412/content.html"
+    },
+    {
+      "label": "Beijing Government: Capital Airport transport",
+      "href": "https://english.beijing.gov.cn/specials/beijingservice/pek/trafficsix/"
+    },
+    {
+      "label": "Beijing Government: Daxing Airport transport",
+      "href": "https://english.beijing.gov.cn/specials/beijingservice/pkx/trafficsix/"
+    },
+    {
+      "label": "Shanghai Government: airport transport and terminal Metro lines (updated June 2026)",
+      "href": "https://english.shanghai.gov.cn/en-Transportation/20231214/649e06ea38f74aaeb573fa2debbe97d3.html"
+    },
+    {
+      "label": "Shanghai Government: Airport Link Line (updated March 2026)",
+      "href": "https://english.shanghai.gov.cn/en-Transportation/20241231/f66f14bbd4b549ab88e6f3aec375790c.html"
+    }
+  ]
+}

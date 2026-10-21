@@ -25,6 +25,7 @@ const calculatorContent = JSON.parse(await readFile('src/data/transitCalculatorC
 const amapEnglishSetup = JSON.parse(await readFile('src/data/amapEnglishSetup.json', 'utf8'));
 const wechatVerificationHelp = JSON.parse(await readFile('src/data/wechatVerificationHelp.json', 'utf8'));
 const shenzhenItineraryPlanning = JSON.parse(await readFile('src/data/shenzhenItineraryPlanning.json', 'utf8'));
+const layoverAirportPlanning = JSON.parse(await readFile('src/data/layoverAirportPlanning.json', 'utf8'));
 
 const pageMeta = {
   plan: {
@@ -3905,11 +3906,14 @@ Object.assign(pageMeta, {
   'beijing-shanghai-layover-240-hour-guide': {
     ...pageMeta['china-visa-free-travel-guide'],
     title: 'Beijing & Shanghai Layover Guide 2026: 240-Hour Visa-Free Transit Explained',
-    heading: 'Beijing and Shanghai Layovers: Turn Transit Time into a Real Trip',
+    heading: layoverAirportPlanning.heading,
     description: 'Plan a Beijing or Shanghai layover with China 240-hour visa-free transit. Check the third-country route, 65 ports, allowed areas, and realistic itineraries.',
-    quickAnswer: 'For a short Beijing or Shanghai layover, plan at most one nearby city area after allowing for immigration, airport transport, security and check-in. For a longer stop, eligible ordinary-passport holders may use China\'s 240-hour visa-free transit policy with a confirmed onward ticket to a different country or region, a designated entry and exit port, and travel only within the officially permitted areas. Check the current rules for your exact route before booking.',
-    lastReviewed: 'September 26, 2026',
-    lastModified: '2026-09-26',
+    intro: layoverAirportPlanning.intro,
+    quickAnswer: layoverAirportPlanning.quickAnswer,
+    faqs: layoverAirportPlanning.faqs.map(({ question, answer }) => [question, answer]),
+    sourceLinks: layoverAirportPlanning.sources.map(({ label, href }) => [label, href]),
+    lastReviewed: layoverAirportPlanning.reviewed,
+    lastModified: layoverAirportPlanning.modified,
   },
   'how-much-does-china-trip-cost-2026-calculator': {
     ...pageMeta['china-travel-budget'],
@@ -4607,45 +4611,10 @@ const focusedPageContent = {
     "article": true
   },
   "beijing-shanghai-layover-240-hour-guide": {
-    "contentSections": [
-      {
-        "title": "Check entry eligibility before planning a city visit",
-        "ordered": true,
-        "items": [
-          "Check the National Immigration Administration's current eligible-nationality list and confirm you hold the required ordinary passport.",
-          "Confirm your itinerary goes from one country or region through mainland China to a different country or region, with a confirmed onward ticket and departure date.",
-          "Check the designated entry and exit ports and every city or province on your route against the officially permitted areas. A 240-hour allowance is not permission to travel anywhere in China.",
-          "A short connection does not guarantee permission to leave the airport. Verify the applicable entry route with the authorities; final admission is decided at the border."
-        ]
-      },
-      {
-        "title": "Match the city plan to the time available",
-        "table": {
-          "headers": ["Time between flights", "Practical scope", "Plan around"],
-          "rows": [
-            ["About 10 hours", "One nearby district only, if entry and transport times permit", "Immigration, baggage, airport-city travel, security and check-in"],
-            ["About 24 hours", "One city with an overnight stay or a carefully planned day", "Hotel registration and airport return transfer"],
-            ["Several days", "A multi-city route only within permitted areas", "Every domestic segment, designated port and onward departure"]
-          ]
-        },
-        "items": [
-          "Choose one compact area in Beijing or Shanghai for a short stop; do not combine an airport layover with a distant Great Wall excursion.",
-          "Keep a generous return buffer based on the actual airport and terminal, not just the scheduled flight time."
-        ]
-      },
-      {
-        "title": "Beijing, Shanghai and onward travel",
-        "items": [
-          "Beijing Capital (PEK) and Beijing Daxing (PKX) have different city transfers. Confirm the airport and terminal before choosing a district.",
-          "Shanghai Pudong (PVG) is not in the central city. Check the operating hours and transfer time of your chosen rail or road option.",
-          "Domestic train travel may be possible within the permitted areas, but the route does not override entry-port, onward-ticket or regional conditions.",
-          "Keep your passport, entry documents, hotel details and confirmed onward ticket available during the stopover."
-        ]
-      }
-    ],
-    "lastReviewed": "October 5, 2026",
-    "lastModified": "2026-10-13",
-    "article": true
+    contentSections: layoverAirportPlanning.sections,
+    lastReviewed: layoverAirportPlanning.reviewed,
+    lastModified: layoverAirportPlanning.modified,
+    article: true,
   },
   "how-much-does-china-trip-cost-2026-calculator": {
     "contentSections": [
@@ -5547,7 +5516,7 @@ function staticPageContent(page, meta) {
               ${section.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
             </${section.ordered ? 'ol' : 'ul'}>
           ` : ''}
-          ${page === 'amap-english-mode-guide-2026' && section.links ? `
+          ${['amap-english-mode-guide-2026', 'beijing-shanghai-layover-240-hour-guide'].includes(page) && section.links ? `
             <ul style="margin: 12px 0 0; padding-left: 20px; color: #536365; line-height: 1.8;">
               ${section.links.map(({ label, description, href }) => `<li><a href="${escapeAttr(href)}" rel="noopener noreferrer" style="color: #155e63; text-underline-offset: 4px;">${escapeHtml(label)}</a>: ${escapeHtml(description)}</li>`).join('')}
             </ul>

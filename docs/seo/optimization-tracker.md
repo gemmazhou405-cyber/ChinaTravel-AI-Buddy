@@ -1,5 +1,15 @@
 # SEO optimization tracker
 
+### October 21: Beijing/Shanghai airport layover planning
+
+Change `SEO-2026-10-21-LAYOVER-AIRPORTS`, locally verified, pending publication. `/beijing-shanghai-layover-240-hour-guide/` baseline: **0 clicks / 20 impressions / 0% CTR / page-average position 17.35**, prior period no impressions. Source: October 21 full-site comparison workbook, SHA-256 `711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1`; actual dates and page-filtered Queries absent. The site-wide `layover beijing` row (1 impression / position 75) is not a confirmed page-query pair. Other target phrases, volume and difficulty remain unverified. Current index status and post-change Google crawl unknown.
+
+Existing production HTML (last modified October 13, reviewed October 5) has three general sections, seven inherited visa FAQs and no exact calculator link. Rewrite this existing guide around a four-airport comparison, usable-time method with a clearly hypothetical example, conditional 8/12/24-hour city plans, when to stay at the airport and six layover-specific FAQs. Use shared content for React and static HTML. Add one contextual calculator link for eligible multi-day stays, clearly distinct from short-connection timing, plus policy and Beijing airport guide links. Keep search title, description, canonical, URL and CTA. Focus H1 and first answer on the actual airport task. No new pages or policy promises. Source review: current NIA visa-free transit page and accessible Beijing/Shanghai government airport guidance, checked October 21. No firsthand airport test, measured queues or guaranteed transfer times. This is an intent/usefulness hypothesis, not a demonstrated ranking or click effect.
+
+Typecheck including i18n parity, build, local public HTML audit, focused content/metadata/schema/CTA/link checks and diff check passed. Existing Amap section links retained after extending the scoped static link renderer. Generated sitemap keeps 76 URLs; only this page lastmod changes from October 13 to October 21.
+
+[Structured baseline and release/outcome record](layover-ranking-tracking.json). Prioritize relevant Google clicks and same-query ranking after finalized data and a confirmed newer crawl. The internal calculator link is a discovery/conversion path, not itself a Google organic click or proof of higher calculator rankings.
+
 ### October 21: Shenzhen itinerary route planning
 
 Change `SEO-2026-10-21-SHENZHEN-ROUTE`, live and production-verified October 21; code commit `b2b55a54a9f83434272dd1f35ce00b3225ebd9f0`. `/3-day-shenzhen-itinerary/` baseline: **1 click / 30 impressions / 3.33% CTR / page-average position 23.37**, compared with no impressions in the preceding period. Source: October 21 full-site comparison workbook, SHA-256 `711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1`; exact date boundaries and page-query pairs absent. Site-wide clues `shenzhen trip planner` (4 impressions / 65.75), `how many days in shenzhen` (2 / 62), `shenzhen itinerary` (1 / 73) are not attributable page-query pairs, monthly volume or difficulty measures. Current index state and newer Google crawl remain unknown.

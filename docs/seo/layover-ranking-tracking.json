@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "changeId": "SEO-2026-10-21-LAYOVER-AIRPORTS",
+  "page": "https://chinaeasebuddy.com/beijing-shanghai-layover-240-hour-guide/",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks",
+  "status": "local_verified_pending_publication",
+  "liveDate": null,
+  "codeCommits": [],
+  "baseline": {
+    "observedOn": "2026-10-21",
+    "sourceFilename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
+    "sourceSha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+    "searchType": "Web (text-based)",
+    "periodLabel": "Last 28 days",
+    "periodStart": null,
+    "periodEnd": null,
+    "clicks": 0,
+    "impressions": 20,
+    "ctr": 0.0,
+    "averagePosition": 17.35,
+    "previousPeriodClicks": 0,
+    "previousPeriodImpressions": 0,
+    "previousPeriodAveragePosition": null,
+    "pageFilteredQueries": null
+  },
+  "indexObservation": {
+    "indexed": null,
+    "lastReportedGoogleCrawl": null,
+    "googleSelectedCanonical": null
+  },
+  "queryCandidates": [
+    {
+      "query": "layover beijing",
+      "evidenceScope": "full_site_query_export_not_confirmed_page_query_pair",
+      "impressions": 1,
+      "averagePosition": 75,
+      "pageSpecificPosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    },
+    {
+      "query": "beijing layover guide",
+      "evidenceScope": "editorial_candidate_not_confirmed_covered",
+      "impressions": null,
+      "averagePosition": null,
+      "pageSpecificPosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    },
+    {
+      "query": "shanghai layover guide",
+      "evidenceScope": "editorial_candidate_not_confirmed_covered",
+      "impressions": null,
+      "averagePosition": null,
+      "pageSpecificPosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    }
+  ],
+  "priorityReason": "An existing guide has 20 impressions and page-average position 17.35. Its last published modification was October 13, while several other opportunity pages were changed October 19-21. Improve a confirmed airport-logistics content gap and provide a relevant path to the priority calculator without changing that tool again.",
+  "hypothesis": "Airport-specific transport, a usable-time planning example and task-specific FAQs may better satisfy layover search intent and support relevant clicks and same-query ranking. This is not proof that the old content caused the current metrics.",
+  "scope": [
+    "Preserve search title, meta description, URL, canonical and CTA; focus H1 and direct answer on airport layovers",
+    "Replace the three summarized static sections with six shared task-specific sections in React and static HTML",
+    "Replace seven inherited general visa FAQs in static HTML and four older React FAQs with the same six layover FAQs",
+    "Add one contextual calculator link, clearly separated from short-connection timing; link full transit policy and existing Beijing airport guide",
+    "Add five official source links; set reviewed/modified October 21 after checking scoped entry and transport advice",
+    "Keep sitemap URL set; only target lastmod should move from October 13 to October 21"
+  ],
+  "sourceReview": {
+    "date": "2026-10-21",
+    "sourceUrls": [
+      "https://en.nia.gov.cn/n147418/n147463/c183412/content.html",
+      "https://english.beijing.gov.cn/specials/beijingservice/pek/trafficsix/",
+      "https://english.beijing.gov.cn/specials/beijingservice/pkx/trafficsix/",
+      "https://english.shanghai.gov.cn/en-Transportation/20231214/649e06ea38f74aaeb573fa2debbe97d3.html",
+      "https://english.shanghai.gov.cn/en-Transportation/20241231/f66f14bbd4b549ab88e6f3aec375790c.html"
+    ],
+    "entrySourceDate": "2026-08-20",
+    "shanghaiTransportUpdated": "2026-06-04",
+    "shanghaiAirportLinkUpdated": "2026-03-31",
+    "airportOperatorPagesUnavailable": [
+      "https://www.shairport.com/ensh/gdjt/index.html",
+      "https://en.bcia.com.cn/WZWSREL2xrem5kZC5odG1s",
+      "https://wechat.bdia.com.cn/fastTrack"
+    ],
+    "firsthandAirportTestPerformed": false,
+    "limitations": "Use accessible official NIA and city-government material. Current live operating hours, queue lengths, airline cutoffs and road times are not measured. 8/12/24-hour scopes and the 15:00/90-minute/30-minute example are clearly labeled editorial planning assumptions, not travel-time or entry guarantees."
+  },
+  "verification": {
+    "typecheck": "PASS",
+    "i18nParity": "PASS",
+    "build": "PASS",
+    "publicHtmlAuditLocal": "PASS",
+    "targetHtmlChecks": "PASS",
+    "diffCheck": "PASS",
+    "production": null,
+    "amapExistingSectionLinks": "PASS"
+  },
+  "nextObservation": "Request exact-page Queries and a dated URL Inspection crawl observation when the user next supplies data. Review completed post-release 7-day then 28-day windows against equal complete earlier windows. Same query and URL must be confirmed before reporting ranking improvement. Main outcome is relevant Google organic clicks, not internal calculator-link clicks; hidden-query relevance remains unknown. No percent click-growth calculation from a zero-click baseline.",
+  "performanceObservations": []
+}

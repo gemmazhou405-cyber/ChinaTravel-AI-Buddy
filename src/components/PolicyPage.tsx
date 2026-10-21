@@ -20,6 +20,7 @@ import visaFreeCheckerGuide from '../data/seoPages/china-visa-free-checker.json'
 import amapEnglishSetup from '../data/amapEnglishSetup.json';
 import wechatVerificationHelp from '../data/wechatVerificationHelp.json';
 import shenzhenItineraryPlanning from '../data/shenzhenItineraryPlanning.json';
+import layoverAirportPlanning from '../data/layoverAirportPlanning.json';
 import VisaFreeCheckerPage from './VisaFreeCheckerPage';
 import TransitCalculatorPage from './TransitCalculatorPage';
 import TransitAnswerPage from './TransitAnswerPage';
@@ -6390,31 +6391,21 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'beijing-shanghai-layover-240-hour-guide': {
     path: '/beijing-shanghai-layover-240-hour-guide/',
-    title: 'Beijing and Shanghai Layovers: Turn Transit Time into a Real Trip',
-    intro: 'Use a short airport layover for one realistic city highlight, or use eligible 240-hour visa-free transit for a longer route within the officially permitted areas.',
+    title: layoverAirportPlanning.heading,
+    intro: layoverAirportPlanning.intro,
     metaTitle: 'Beijing & Shanghai Layover Guide 2026: 240-Hour Visa-Free Transit Explained',
     metaDescription: 'Plan a Beijing or Shanghai layover with China 240-hour visa-free transit. Check the third-country route, 65 ports, allowed areas, and realistic itineraries.',
-    quickAnswer: 'For a short Beijing or Shanghai layover, plan at most one nearby city area after allowing for immigration, airport transport, security and check-in. For a longer stop, eligible ordinary-passport holders may use China\'s 240-hour visa-free transit policy with a confirmed onward ticket to a different country or region, a designated entry and exit port, and travel only within the officially permitted areas. Check the current rules for your exact route before booking.',
+    quickAnswer: layoverAirportPlanning.quickAnswer,
     ctaLabel: 'Plan my layover with Buddy',
     midCtaLabel: 'Check whether my route qualifies',
     ctaHref: '/',
     buddyPrompt: 'Plan my China layover. I arrive at [airport] on [date/time], depart from [airport] to [country/region] on [date/time], hold a [country] passport, and want to see [interests].',
-    reviewed: 'September 26, 2026',
-    sections: [
-      { title: 'Who Qualifies for 240-Hour Transit?', items: ['You must hold an eligible ordinary passport and travel from country or region A through mainland China to a different country or region C.', 'You need a confirmed onward ticket with a departure date within the permitted stay.', 'Entry and exit must use designated ports, and every overnight stop and domestic journey must remain inside the currently permitted areas.', 'A return such as United States -> China -> United States is not third-country transit. Hong Kong and Macao can count as separate regions for route analysis, subject to all other conditions.'] },
-      { title: 'Choose an Itinerary That Fits the Clock', table: { headers: ['Available time', 'Practical scope', 'Important buffer'], rows: [['About 10 hours', 'One nearby city area only; avoid ambitious cross-city plans', 'Allow immigration, baggage, transport, security, and return to the airport'], ['About 24 hours', 'One city with an overnight stay or one carefully planned day trip', 'Confirm hotel registration and airport transfer timing'], ['72-240 hours', 'A multi-city route may be possible inside permitted areas', 'Verify each province, port, domestic ticket, and onward departure']] } },
-      { title: 'Beijing Layover Ideas', items: ['For a short layover, choose one cluster such as Tiananmen and the hutong area rather than combining it with the Great Wall.', 'For a full day or overnight stay, pre-book the Palace Museum or choose a Great Wall section with reliable transport.', 'PEK and PKX are far from central sights. Build airport transfer time and a large return buffer into the plan.'] },
-      { title: 'Shanghai Layover Ideas', items: ['For a short city visit, focus on the Bund, Nanjing Road, or one neighborhood rather than crossing the city repeatedly.', 'A longer stay can add the Former French Concession, museums, Pudong, or an eligible Yangtze Delta side trip.', 'PVG is far from central Shanghai. Check the last practical metro, Maglev connection, or DiDi timing for your flight.'] },
-      { title: 'Can You Take a Train During Transit?', items: ['Yes, domestic rail can be used when the journey remains entirely within the officially permitted areas and your entry and exit ports comply.', 'The policy allows cross-province travel within permitted areas in 24 provincial-level regions; it does not mean unrestricted travel everywhere in mainland China.', 'Carry your passport, temporary entry documentation, domestic bookings, hotel details, and confirmed onward international ticket.'] },
-    ],
-    faqs: [
-      { question: 'Does a US passport holder qualify for 240-hour visa-free transit?', answer: 'US citizens are on the current eligible-nationality list, but the passport, third-country route, ports, dates, tickets, and permitted-area conditions must all be met.' },
-      { question: 'Can I fly to China and return to the same country?', answer: 'Not under the 240-hour transit route. The destination after mainland China must be a different country or region from the place you entered from.' },
-      { question: 'Can I take a bullet train between cities?', answer: 'Yes, when every part of the domestic journey remains within the officially permitted areas and the entry and exit arrangements comply with the policy.' },
-      { question: 'Is a 10-hour layover enough to leave the airport?', answer: 'Sometimes, but only after allowing for immigration, baggage, airport-city travel, security, and airline check-in. A single nearby area is safer than a multi-stop itinerary.' },
-    ],
+    reviewed: layoverAirportPlanning.reviewed,
+    lastModified: layoverAirportPlanning.modified,
+    sections: layoverAirportPlanning.sections,
+    faqs: layoverAirportPlanning.faqs,
     related: [{ label: 'Complete visa-free transit guide', href: '/china-visa-free-travel-guide/' }, { label: 'China train booking', href: '/china-train-booking-foreigners-12306/' }, { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' }],
-    sources: [{ label: 'National Immigration Administration: visa-free transit policy', href: 'https://en.nia.gov.cn/n147418/n147463/c183412/content.html' }, { label: 'Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' }],
+    sources: layoverAirportPlanning.sources,
   },
   'how-much-does-china-trip-cost-2026-calculator': {
     path: '/how-much-does-china-trip-cost-2026-calculator/',
