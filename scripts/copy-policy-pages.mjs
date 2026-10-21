@@ -51,12 +51,13 @@ const pageMeta = {
     quickAnswer:
       'Before booking, check entry rules and your arrival plan. Next, prepare mobile data, payments, maps and transport. Then choose a 7-, 10- or 14-day route and open the city guides that match your trip. Each section below links directly to the relevant guide or free tool.',
     lastReviewed: 'October 10, 2026',
-    lastModified: '2026-10-10',
+    lastModified: '2026-10-21',
     sections: [
       ['China eSIM & Internet Guide', 'Choose, install, activate, and troubleshoot mobile data for a trip to mainland China.', '/china-esim-internet-guide/'],
       ['China SIM Card for Foreigners', 'Compare eSIM and physical SIM options, passport registration, mainland carriers, airport purchase, and top-ups.', '/china-sim-card-for-foreigners/'],
       ['China 240-Hour Visa-Free Transit 2026', 'Check 57 eligible countries, 65 designated ports, permitted stay areas, route rules, and the official 10-day clock.', '/china-240-hour-visa-free-transit-2026/'],
       ['China Visa-Free Checker', 'Compare verified ordinary-passport, 30-day, transit, mutual-agreement, and Hainan rules for a planned route.', '/china-visa-free-checker/'],
+      ['China 240-Hour Visa-Free Transit Calculator', 'Enter your recorded entry date to calculate the transit exit deadline in China time. Check eligibility separately.', '/china-240-hour-transit-calculator/'],
       ['TenPayGo for Tourists', 'Read confirmed launch facts, funding methods, a cautious setup checklist, limits, and payment backups.', '/tenpaygo-for-tourists/'],
       ['China Visa-Free Travel Guide', 'Compare 30-day visa-free entry, 240-hour visa-free transit, and the documents each route requires.', '/china-visa-free-travel-guide/'],
       ['China Arrival Card Online 2026', 'Use the free official NIA form, check exemptions, and prepare your entry details.', '/china-online-arrival-card-2026/'],
@@ -5498,7 +5499,7 @@ function staticRelatedGuidesForForeigners() {
 
 function groupGuideHubSections(sections) {
   const groups = [
-    { title: 'Entry rules and arrival', pattern: /(visa|arrival|12367|travel-checklist)/, items: [] },
+    { title: 'Entry rules and arrival', pattern: /(visa|arrival|12367|travel-checklist|240-hour-transit-calculator)/, items: [] },
     { title: 'Payments and daily essentials', pattern: /(payment|alipay|wechat|tenpay|esim|sim-card|travel-apps|food|phrases|emergency|safety|hotels)/, items: [] },
     { title: 'Transport and navigation', pattern: /(amap|maps|metro|didi|train|airport-to-city)/, items: [] },
     { title: 'Routes, timing and itineraries', pattern: /(itinerary|beijing-vs|golden-week|great-wall|panda|best-time|budget|layover|trip-cost)/, items: [] },
