@@ -3,9 +3,11 @@
   "changeId": "SEO-2026-10-21-AMAP-SETUP",
   "page": "https://chinaeasebuddy.com/amap-english-mode-guide-2026/",
   "primaryOutcome": "strongly_relevant_google_organic_clicks",
-  "status": "validated_pending_publication",
-  "liveDate": null,
-  "codeCommits": [],
+  "status": "live_verified",
+  "liveDate": "2026-10-21",
+  "codeCommits": [
+    "79000eb43b1626029e39646e607b6f7a88617a69"
+  ],
   "baseline": {
     "observedOn": "2026-10-21",
     "sourceFilename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
@@ -81,7 +83,22 @@
     "publicHtmlAuditLocal": "PASS",
     "targetHtmlChecks": "PASS",
     "diffCheck": "PASS",
-    "production": null
+    "production": {
+      "observedOn": "2026-10-21",
+      "formalUrl": "https://chinaeasebuddy.com/amap-english-mode-guide-2026/",
+      "deploymentStatus": "Vercel success",
+      "deploymentUrl": "https://vercel.com/gemma-s-projects529/china-travel-ai-buddy/4pa2sKV2jdFmqz6W7EPseQzJC3VW",
+      "newH1AndSections": "PASS",
+      "officialDownloadAndGuideLinks": "PASS",
+      "faqAndJsonLd": "PASS",
+      "titleDescriptionCanonicalUnchanged": "PASS",
+      "noNoindex": "PASS",
+      "sitemapUrlSetUnchanged": true,
+      "sitemapUrlCount": 76,
+      "onlyTargetLastmodChanged": true,
+      "googleRecrawlConfirmed": false,
+      "rankingOrClickGainConfirmed": false
+    }
   },
   "firsthandDeviceTestPerformed": false,
   "sourcesReviewedOn": "2026-10-21",
