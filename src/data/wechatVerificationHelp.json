@@ -1,0 +1,132 @@
+{
+  "heading": "WeChat Verification Without a Friend: Registration & QR Help",
+  "intro": "Find the next step for your exact WeChat registration screen: no eligible friend, a rejected helper, an expired QR code or an SMS problem. Account recovery and WeChat Pay identity checks need different instructions.",
+  "quickAnswer": "You cannot rely on a guaranteed way to skip WeChat friend verification. Use an alternative or appeal only if your registration screen offers it. If an eligible person you trust is elsewhere, check whether the current flow permits remote assistance; having nobody nearby is different from knowing no eligible helper. If neither route is available, ask official support which options apply to your registration. Keep another payment and contact method ready for your trip.",
+  "reviewed": "October 21, 2026",
+  "modified": "2026-10-21",
+  "sections": [
+    {
+      "title": "Match the verification screen to the next step",
+      "table": {
+        "headers": [
+          "What you see",
+          "What to check next"
+        ],
+        "rows": [
+          [
+            "New registration asks another user to help",
+            "Read the helper conditions on your own screen. Use any alternative offered there, or ask a trusted eligible contact."
+          ],
+          [
+            "Your friend is not nearby",
+            "Look for a remote assistance option in the current flow; see the helper checklist below."
+          ],
+          [
+            "A helper is rejected or the QR code expires",
+            "Save the exact error text. Check helper eligibility or refresh the code only as instructed; do not assume a new scan removes the restriction."
+          ],
+          [
+            "The SMS code never arrives",
+            "Confirm the country code and number, check that the registered line can receive SMS, and follow the resend timer."
+          ],
+          [
+            "You already have an account but cannot log in",
+            "Use the login or account-recovery flow offered for that account rather than following new-registration instructions."
+          ],
+          [
+            "You are asked for a passport after opening WeChat Pay",
+            "This is payment identity verification, not the same as friend-assisted account registration. Follow the wallet instructions."
+          ]
+        ]
+      },
+      "items": [
+        "Keep the exact message visible while troubleshooting. A guide for a different country, account or registration screen may describe options you do not have."
+      ]
+    },
+    {
+      "title": "Can someone help without being beside you?",
+      "ordered": true,
+      "items": [
+        "Contact a person you already know by phone, email or another existing channel. Ask whether they are willing to help through WeChat itself.",
+        "Check the eligibility conditions shown during your registration. Do not assume every established account qualifies.",
+        "A Tsinghua event registration guide describes a remote route through WeChat Team → Account → Help Friend Register, with the registering number and region code. Use this only if the current app offers it and its instructions match your screen; menu names and availability may differ.",
+        "If that option is absent or the helper is rejected, use the support or alternative option actually offered. A university or employer may be a trusted contact, but cannot guarantee approval."
+      ]
+    },
+    {
+      "title": "QR code, helper and SMS problems",
+      "table": {
+        "headers": [
+          "Problem",
+          "Practical check"
+        ],
+        "rows": [
+          [
+            "The QR code is expired",
+            "Return to the registration flow and follow its refresh instructions. Ask your trusted helper to use the current code through the authorized flow."
+          ],
+          [
+            "The helper does not meet the conditions",
+            "Compare the rejection with your screen’s eligibility rules. There is no universal account-age or monthly-help threshold promised by this guide."
+          ],
+          [
+            "No SMS, including while abroad",
+            "Check the full international number and whether that SIM or line still receives texts. If delivery is blocked, ask your mobile provider about receiving service messages; do not share a one-time code with a helper."
+          ],
+          [
+            "The app says to wait or try later",
+            "Respect the displayed wait period. Record the message for support rather than repeatedly changing numbers, devices or accounts."
+          ]
+        ]
+      }
+    },
+    {
+      "title": "What to send official WeChat support",
+      "items": [
+        "Use help offered in your registration or login screen, or the official WeChat Help Center linked under Sources. Available support routes can differ; no response time or approval is guaranteed.",
+        "Prepare your phone country code, app version, phone system, the step that failed, exact error wording, approximate time and steps already tried. Send account details only through the official flow when requested; redact passwords, SMS codes, QR codes and personal documents from anything posted publicly.",
+        "Copy and adapt: “I am registering WeChat with an overseas number before a trip to China. The app says: [exact message]. I do not know an eligible user who can help. Which official verification option is available for this registration? Country code: […]. App version and phone system: […]. Steps already tried: […].”"
+      ]
+    },
+    {
+      "title": "If registration is unfinished before departure",
+      "items": [
+        "Save hotel and booking contacts by email or phone, keep booking confirmations outside WeChat and prepare mobile data before arrival.",
+        "Set up another available payment method and carry a physical card and some RMB cash. Payment acceptance varies; do not make a successful WeChat registration your only arrival plan.",
+        "After registration succeeds, use the separate WeChat Pay guide for card setup. Do not buy an account, pay unknown QR scanners or give anyone remote control of your phone."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can I verify WeChat without a friend?",
+      "answer": "Some registration screens offer another method or an appeal; use it if shown. If your screen requires an eligible user and offers no alternative, this guide cannot bypass it. Ask official support what options apply to your account. Do not pay a stranger for promised approval."
+    },
+    {
+      "question": "Can a friend verify WeChat remotely?",
+      "answer": "A Tsinghua registration guide describes remote help through WeChat Team, but your current app must offer the relevant option. The helper must meet the conditions shown for your registration. If the menu is absent or assistance is rejected, follow your own screen or contact official support."
+    },
+    {
+      "question": "Why is my friend not eligible to verify my WeChat account?",
+      "answer": "Use the rejection message and eligibility rules on your registration screen. Conditions can differ, so account age or help limits quoted in another guide may not apply. An active WeChat account does not by itself guarantee the person can assist your registration."
+    },
+    {
+      "question": "What if my WeChat verification QR code expires?",
+      "answer": "Follow the registration screen to refresh or restart that verification step, then ask your trusted helper to use the current official flow. A new QR code does not guarantee eligibility or approval. Keep the error wording if it fails again and use official help."
+    },
+    {
+      "question": "Is WeChat Pay passport verification the same as friend verification?",
+      "answer": "No. Friend-assisted verification concerns access to the WeChat account. A passport or other identity request inside WeChat Pay concerns the wallet. Follow the instructions for the screen you actually see; successful registration does not automatically complete payment identity checks or card setup."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Official WeChat Help Center",
+      "href": "https://help.wechat.com/cgi-bin/newreadtemplate?t=help_center/index&lang=en&Channel=helpcenter"
+    },
+    {
+      "label": "Tsinghua event guidance: WeChat registration and remote assistance (PDF; follow current in-app conditions)",
+      "href": "https://indico-cdex.ep.tsinghua.edu.cn/event/175/attachments/735/958/WechatRegistration.pdf"
+    }
+  ]
+}

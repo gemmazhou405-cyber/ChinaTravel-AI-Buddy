@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "changeId": "SEO-2026-10-21-WECHAT-HELP",
+  "page": "https://chinaeasebuddy.com/wechat-verification-without-friend-qr-2026/",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks",
+  "status": "local_verified_pending_publication",
+  "liveDate": null,
+  "codeCommits": [],
+  "baseline": {
+    "observedOn": "2026-10-21",
+    "sourceFilename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
+    "sourceSha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+    "searchType": "Web (text-based)",
+    "periodLabel": "Last 28 days",
+    "periodStart": null,
+    "periodEnd": null,
+    "clicks": 1,
+    "impressions": 62,
+    "ctr": 0.0161,
+    "averagePosition": 6.73,
+    "previousPeriodImpressions": 0,
+    "previousPeriodAveragePosition": null,
+    "pageFilteredQueries": null,
+    "strongRelevanceOfClickVerified": false
+  },
+  "indexObservation": {
+    "indexed": null,
+    "lastReportedGoogleCrawl": null,
+    "googleSelectedCanonical": null,
+    "note": "Historical impressions do not establish current indexed state or post-change recrawl."
+  },
+  "queryCandidates": [
+    {
+      "query": "wechat verification without friend 2026",
+      "evidenceScope": "full_site_query_export_not_confirmed_page_query_pair",
+      "impressions": 4,
+      "averagePosition": 9.25,
+      "pageSpecificPosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    },
+    {
+      "query": "wechat qr code verification",
+      "evidenceScope": "full_site_query_export_not_confirmed_page_query_pair",
+      "impressions": 1,
+      "averagePosition": 14,
+      "pageSpecificPosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    },
+    {
+      "query": "wechat verification without friend",
+      "evidenceScope": "full_site_query_export_not_confirmed_page_query_pair",
+      "impressions": 1,
+      "averagePosition": 18,
+      "pageSpecificPosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    }
+  ],
+  "hypothesis": "Specific registration troubleshooting, a conditional remote-helper path and a support-message template may satisfy verification search intent better than general warnings. This is not evidence that missing content caused current rankings.",
+  "scope": [
+    "Focused registration/QR H1; preserve existing search title, meta description, URL, canonical and CTA",
+    "Five sections: screen triage, remote helper, QR/SMS errors, support checklist/template, pre-travel backup",
+    "Five task-specific FAQs and relevant source links",
+    "Share content between React and static HTML",
+    "No new URLs; generated sitemap updates only the target lastmod"
+  ],
+  "verification": {
+    "typecheck": "PASS",
+    "i18nParity": "PASS",
+    "build": "PASS",
+    "publicHtmlAuditLocal": "PASS",
+    "targetHtmlChecks": "PASS",
+    "diffCheck": "PASS",
+    "production": null
+  },
+  "sourceReview": {
+    "date": "2026-10-21",
+    "universityGuide": "https://indico-cdex.ep.tsinghua.edu.cn/event/175/attachments/735/958/WechatRegistration.pdf",
+    "officialHelpUrl": "https://help.wechat.com/cgi-bin/newreadtemplate?t=help_center/index&lang=en&Channel=helpcenter",
+    "officialHelpContentRetrieved": false,
+    "limitation": "Official help returned Site Unavailable. University participant guidance is an example, not a universal current WeChat policy. Remote path is explicitly conditional on current app availability and screen rules. No firsthand registration test or approval guarantee."
+  },
+  "nextObservation": "Obtain exact-page Queries with actual date boundaries and URL Inspection crawl time. Review completed post-release 7-day then 28-day windows against equal complete previous windows; confirm same query and URL before calling ranking improvement. October 19 and October 21 edits overlap and cannot be isolated causally. Low counts require caution; missing queries remain unknown.",
+  "performanceObservations": []
+}

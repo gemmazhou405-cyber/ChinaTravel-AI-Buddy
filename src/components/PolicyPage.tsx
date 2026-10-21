@@ -18,6 +18,7 @@ import accommodationRegistrationGuide from '../data/seoPages/china-online-accomm
 import arrivalCardGuide from '../data/seoPages/china-online-arrival-card-2026.json';
 import visaFreeCheckerGuide from '../data/seoPages/china-visa-free-checker.json';
 import amapEnglishSetup from '../data/amapEnglishSetup.json';
+import wechatVerificationHelp from '../data/wechatVerificationHelp.json';
 import VisaFreeCheckerPage from './VisaFreeCheckerPage';
 import TransitCalculatorPage from './TransitCalculatorPage';
 import TransitAnswerPage from './TransitAnswerPage';
@@ -6092,35 +6093,20 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'wechat-verification-without-friend-qr-2026': {
     path: '/wechat-verification-without-friend-qr-2026/',
-    title: 'WeChat Verification Without a Friend: Use Only Official Recovery Paths',
-    intro: 'Some registrations request assistance from an existing user, while others use different security checks. Avoid paid “verification” sellers and public QR sharing that can expose or compromise the account.',
+    title: wechatVerificationHelp.heading,
+    intro: wechatVerificationHelp.intro,
     metaTitle: 'WeChat Verification Without a Friend: Safe Registration Options (2026)',
     metaDescription: 'No friend to scan your WeChat QR code? Check the exact in-app verification or appeal options, contact official support if blocked, and avoid paid scans.',
-    quickAnswer: 'No friend to scan your WeChat registration QR code? First read the exact prompt and use any alternative or appeal offered inside your app. If it requires another user and offers no alternative, ask someone you genuinely know who is willing and eligible, or contact official WeChat support. There is no guaranteed bypass. Do not pay strangers, publish your QR code or share an SMS code or password. If your trip is near, prepare payment and contact methods that do not depend on WeChat.',
+    quickAnswer: wechatVerificationHelp.quickAnswer,
     ctaLabel: 'Troubleshoot my WeChat verification',
     midCtaLabel: 'Build my safe recovery checklist',
     ctaHref: '/',
     buddyPrompt: 'Help me understand this WeChat verification screen and list safe official next steps. The message says: [paste the message without phone numbers, codes, or personal data].',
-    reviewed: 'October 19, 2026',
-    lastModified: '2026-10-19',
-    sections: [
-      { title: 'No friend to scan? Check the screen first', table: { headers: ['What the app shows', 'Safe next step'], rows: [
-        ['An alternative verification or appeal button', 'Use that exact in-app flow; available options differ by account and may change.'],
-        ['A request for help from an existing user, with no alternative shown', 'Ask a real-life contact only if they are comfortable and the app accepts their account; otherwise use official support.'],
-        ['A login or account-recovery prompt for an existing account', 'Follow account recovery instead of creating another account to avoid the check.'],
-        ['You cannot finish before departure', 'Use Alipay or another payment backup, and save hotel, transport and booking contacts outside WeChat.'],
-      ] }, items: ['Registration, login recovery and WeChat Pay identity checks are different flows. Match the instructions to the prompt actually on your screen; no third-party QR service can promise access.'] },
-      { title: 'Why Verification Appears', items: ['WeChat uses security checks to reduce automated registrations, spam, fraud, and account abuse.', 'The exact flow can differ by country, phone number, device, network, account history, and current risk controls.', 'Not every new user sees friend-assisted verification, and another person’s experience may not match yours.'] },
-      { title: 'Safe Options When You Have No WeChat Friend', ordered: true, items: ['Read the complete in-app message and use any official alternate verification or appeal option displayed.', 'Confirm the phone number, country code, app version, and SMS access, then retry only as instructed.', 'Contact official WeChat support through the app or official help channels.', 'If assistance from an existing user remains required, ask a trusted real-life contact, employer, university office, host, or business counterpart who is comfortable using the official flow.', 'If verification cannot be completed before travel, keep Alipay and ordinary phone, email, hotel, and booking channels ready.'] },
-      { title: 'What Not to Do', items: ['Do not pay an unknown “verification service” or buy an account.', 'Do not publish the verification QR code, phone number, SMS code, password, or identity documents in a public group.', 'Do not repeatedly create accounts with multiple numbers or devices to evade security checks.', 'Do not give remote-control access to your phone or let a stranger bind payment details.'] },
-      { title: 'After the Account Opens', items: ['Add an available recovery email or trusted recovery method.', 'Review login devices, privacy settings, and payment security.', 'Link an eligible card to WeChat Pay only through the official wallet flow.', 'Prepare Alipay, a physical card, and RMB cash so WeChat is not a single point of failure.'] },
-    ],
-    faqs: [
-      { question: 'Can I bypass WeChat friend verification?', answer: 'There is no guaranteed safe bypass. Use the official alternatives, appeal, or support options shown for your account.' },
-      { question: 'Should I pay someone online to scan the QR code?', answer: 'No. Paid or unknown verification services can lead to fraud, account compromise, or later restrictions.' },
-      { question: 'Can a university or employer help?', answer: 'A trusted institution or real-life contact may help if the official flow permits it and they are comfortable doing so.' },
-      { question: 'Can I travel in China without WeChat?', answer: 'Yes, although WeChat is useful. Prepare Alipay, mobile data, email, hotel contacts, Trip.com or 12306, and other direct booking channels.' },
-    ],
+    reviewed: wechatVerificationHelp.reviewed,
+    lastModified: wechatVerificationHelp.modified,
+    sections: wechatVerificationHelp.sections,
+    faqs: wechatVerificationHelp.faqs,
+    sources: wechatVerificationHelp.sources,
     related: [{ label: 'Complete WeChat setup guide', href: '/how-to-use-wechat-as-foreigner-2026/' }, { label: 'WeChat Pay guide', href: '/wechat-pay-for-foreigners/' }, { label: 'Best China travel apps', href: '/best-apps-for-china-travel-2026/' }],
   },
   'china-hotels-for-foreigners-no-rejection-guide': {

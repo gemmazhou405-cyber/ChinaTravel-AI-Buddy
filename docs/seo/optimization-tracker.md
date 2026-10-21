@@ -1,5 +1,15 @@
 # SEO optimization tracker
 
+### October 21: WeChat verification task help
+
+Change `SEO-2026-10-21-WECHAT-HELP`, locally verified, pending publication. Exact URL `/wechat-verification-without-friend-qr-2026/`. Baseline from the October 21 full-site comparison: **1 click / 62 impressions / 1.61% CTR / page-average position 6.73**; prior period had no impressions. Exact dates and page-filtered queries are unavailable. Site-wide query clues (`wechat verification without friend 2026`, `wechat qr code verification`, `wechat verification without friend`) are not confirmed query–page pairs, search volume or competition measures. Index state and post-change crawl remain unknown.
+
+Replace general guidance with a screen decision table, conditional remote-helper path, QR/helper/SMS troubleshooting, a support checklist and copyable request, and travel backups. Five FAQs and relevant sources come from one shared content file used by React and static HTML. Preserve the October 19 search title/description, URL, canonical and CTA. No new page or sitemap URL changes. This is a search-intent hypothesis, not a demonstrated ranking effect. Tsinghua's event guide supports an example remote flow and country-specific conditions; official help returned Site Unavailable during this review, so current menu availability/eligibility is not independently verified and instructions explicitly defer to the app. No firsthand registration test performed.
+
+Typecheck including i18n parity, build, local public HTML audit and focused target-page checks passed. Generated HTML contains the full shared sections, five FAQs, source links and valid JSON-LD; title/description/canonical retained. Generated sitemap retains 76 URLs with only the target lastmod changed.
+
+[Structured baseline and outcome tracking](wechat-verification-ranking-tracking.json). Compare relevant organic clicks and same-query ranking after finalized reporting and a confirmed newer crawl. Keep the October 19 intervention in the history; do not assign causality to this edit alone.
+
 Use this log for every change intended to affect organic search. The date of a code commit is **not** a Google recrawl date. A successful live URL test is **not** proof that Google indexed the page.
 
 ## Changes and pre-change baselines
