@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "changeId": "SEO-2026-10-21-PANDA-GATES",
+  "page": "https://chinaeasebuddy.com/chengdu-panda-base-guide/",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks",
+  "status": "local_verified_pending_publication",
+  "liveDate": null,
+  "codeCommits": [],
+  "baseline": {
+    "observedOn": "2026-10-21",
+    "sourceFile": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
+    "sourceSha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+    "searchType": "Web (text-based)",
+    "exportScope": "whole_site",
+    "periods": "Last 28 days vs Previous 28 days; actual date boundaries absent",
+    "page": {
+      "current": {
+        "clicks": 0,
+        "impressions": 72,
+        "ctr": 0,
+        "averagePosition": 16.68
+      },
+      "previous": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": null,
+        "averagePosition": null
+      }
+    },
+    "queryClues": [
+      {
+        "query": "chengdu panda base west or south gate",
+        "clicks": 0,
+        "impressions": 1,
+        "averagePosition": 10,
+        "scope": "site_wide_not_attributable_to_this_page"
+      },
+      {
+        "query": "tourist routes in the giant panda base",
+        "clicks": 0,
+        "impressions": 2,
+        "averagePosition": 84,
+        "scope": "site_wide_not_attributable_to_this_page"
+      }
+    ],
+    "exactPageQueries": null,
+    "searchVolume": null,
+    "keywordDifficulty": null,
+    "limitations": [
+      "Page averages are not exact-query rankings.",
+      "One gate-query impression does not establish stable rank or demand.",
+      "Hidden queries are not inferred; missing values are not zero.",
+      "No post-change Google recrawl or performance result is available."
+    ]
+  },
+  "indexObservation": {
+    "indexed": null,
+    "lastGoogleCrawl": null,
+    "googleSelectedCanonical": null,
+    "source": null
+  },
+  "change": {
+    "hypothesis": "Replacing generic gate advice with official metro and shuttle connections better answers transport and gate-planning intent on an existing page with impressions. Ranking and relevant-click benefit remains unproven.",
+    "implemented": [
+      "Replace existing gate table with South Gate Line 3 / Panda Avenue Exit A / shuttle 408, and West Gate Line 3 / Junqu General Hospital Exit B / shuttle 409.",
+      "Distinguish outside metro shuttles from inside-park sightseeing bus; retain return-gate planning.",
+      "Replace the existing gate FAQ with a direct route answer; retain eight FAQs.",
+      "Add an October 21 transport-section check date; retain October 19 whole-guide review date."
+    ],
+    "preserved": [
+      "search title",
+      "description",
+      "H1",
+      "quick answer and passport booking content",
+      "source links",
+      "internal links and CTA",
+      "URL and canonical",
+      "sitemap URL set"
+    ],
+    "lastModified": "2026-10-21",
+    "noFirsthandVisitClaim": true,
+    "sources": [
+      {
+        "url": "https://www.panda.org.cn/en/service/transit/",
+        "checkedOn": "2026-10-21",
+        "supports": "official station, exit and outside shuttle connections"
+      },
+      {
+        "url": "https://www.panda.org.cn/en/service/sightseeingbus/",
+        "checkedOn": "2026-10-21",
+        "supports": "separate inside-park sightseeing bus service and CNY30 price"
+      }
+    ]
+  },
+  "verification": {
+    "typecheck": "PASS",
+    "i18nParity": "PASS",
+    "build": "PASS",
+    "publicHtmlAuditLocal": "PASS",
+    "targetHtmlAndSitemap": "PASS",
+    "sitemapUrlCount": 76,
+    "onlyTargetLastmodChanged": true,
+    "production": {
+      "newContentVerified": false,
+      "checkedAt": null,
+      "googleRecrawlConfirmed": false,
+      "rankingOrClickGainConfirmed": false
+    }
+  },
+  "followUp": {
+    "firstCompleteWindow": [
+      "2026-10-22",
+      "2026-10-28"
+    ],
+    "referenceWindow": [
+      "2026-10-14",
+      "2026-10-20"
+    ],
+    "referenceWindowLimitations": "The October 19 passport-booking change is inside the reference window; not a clean control. Exact dates and complete exports still required.",
+    "longerWindow": [
+      "2026-10-22",
+      "2026-11-18"
+    ],
+    "longerReference": [
+      "2026-09-23",
+      "2026-10-20"
+    ],
+    "requiredEvidence": [
+      "URL Inspection indexed state, reported crawl time and Google canonical",
+      "Exact-page Queries export with actual comparison dates, matching country/device/search filters",
+      "Page totals and strongly relevant disclosed query clicks, same-query ranks and impressions"
+    ],
+    "attribution": "October 19 booking update and October 21 gate update must be assessed together unless later evidence supports separating them. Do not claim a causal result from aggregate before/after changes.",
+    "zeroClickBaseline": "Report absolute click gain; no percentage increase from zero.",
+    "indexingRequest": "Not submitted by this environment."
+  },
+  "performanceObservations": []
+}

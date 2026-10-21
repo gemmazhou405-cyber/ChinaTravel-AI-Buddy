@@ -4,7 +4,7 @@
   "description": "Chengdu Panda Base adult tickets are CNY 55. Book with passport details via official channels; see options without a Chinese number, gate routes and hours.",
   "quickAnswer": "The Chengdu Panda Base lists a CNY 55 adult ticket and real-name reservations up to 14 days ahead while quotas remain. A passport is an accepted ID; bring the original used for booking. Without a Chinese phone number, check the officially authorized Trip.com channel; on-site payment help is conditional on tickets remaining. The base describes an ID-photo verification channel if you lack the original document, but allow extra time and do not rely on it. Choose South or West Gate for your route and check the official hours for your date.",
   "lastReviewed": "October 19, 2026",
-  "lastModified": "2026-10-19",
+  "lastModified": "2026-10-21",
   "article": true,
   "contentSections": [
     {
@@ -34,13 +34,13 @@
       "items": ["Start from the Chengdu Research Base of Giant Panda Breeding's official ticket page and read the current date, entry session, real-name and accepted-document rules.", "Use the exact passport or other valid document details required by the reservation. Bring the original for the standard entry channel; the official ticket page also describes a photo-of-ID verification channel if the original is unavailable.", "Check whether you booked a morning or afternoon slot; an afternoon ticket does not mean you can enter during the morning session.", "A ticket for the base, a sightseeing bus ticket, a guide and transport from your hotel are different products. Compare only what each one actually includes.", "Save your booking and gate name offline. If the ticket system or passport entry is unclear, use the official visitor contact or authorised booking channel before travel."]
     },
     {
-      "title": "South Gate or West Gate?",
-      "table": {"headers": ["Gate", "Planning use", "Verify"], "rows": [
-        ["South Gate", "A common starting point for classic panda viewing areas", "Actual drop-off and the walking route from your arrival"],
-        ["West Gate", "A useful starting point for a different park section or a shuttle-based route", "Your taxi or shuttle's exact destination and the return exit"],
-        ["Either gate", "A valid option when the route and transport match", "The park map, internal distances and exit plan"]
+      "title": "South Gate or West Gate? Metro and shuttle routes",
+      "table": {"headers": ["Gate", "Official metro connection", "Plan before arrival"], "rows": [
+        ["South Gate", "Metro Line 3 to Panda Avenue, Exit A; then shuttle 408 to South Gate", "Choose this connection for a route starting at South Gate; save the same gate in your map or ride booking"],
+        ["West Gate", "Metro Line 3 to Junqu General Hospital, Exit B; then shuttle 409 to West Gate", "Choose this connection for a route starting at West Gate; do not get off at Panda Avenue for this shuttle"],
+        ["Your return gate", "Check the connection from the gate where you actually finish", "Tell a booked driver if you change gates; do not assume the return pickup moves with you"]
       ]},
-      "items": ["The base's official transport page distinguishes South and West Gate approaches. Save the gate name in Chinese for the driver or map app.", "The park is large; do not assume a sightseeing bus instantly takes you to every enclosure or that queues disappear.", "If your route ends at the other gate, calculate how to reach your next stop or hotel from that gate before leaving."]
+      "items": ["Transport connections checked against the base's official page on October 21, 2026. Recheck current services before travel; neither metro station is the park entrance.", "The 408 and 409 shuttles connect the metro to the gates. The separate CNY 30 sightseeing bus runs inside the park; check that product's stops and queues rather than treating all buses as one service.", "If your route ends at the other gate, calculate how to reach your next stop or hotel from that gate before leaving. Neither gate guarantees shorter queues or a particular panda sighting."]
     },
     {
       "title": "Chengdu Panda Base route for a half-day visit",
@@ -75,7 +75,7 @@
     ["Do I need to book Chengdu Panda Base tickets in advance?", "The official ticket page describes real-name online reservations and a reserved entry session. Check availability and the accepted booking channels for your date."],
     ["Can a foreign visitor use a passport?", "Yes. The base lists passports among accepted admission documents. Enter matching details when booking and bring the original for the standard entry channel. If it is unavailable, the official ticket page describes a separate channel with a photo of your own ID and staff verification; entry is not automatic."],
     ["How can I book Panda Base tickets without a Chinese phone number?", "The base lists Trip.com as an authorized booking platform and named it for foreign visitors without a Chinese mobile number in a 2026 holiday notice. A Cash and Cards window may help when tickets remain, but walk-up access is not guaranteed. Check your date's latest official notice."],
-    ["Which gate should I use?", "Choose South or West Gate according to your ticket, route and transport. The park's official transport information distinguishes them; save your actual gate name."],
+    ["Chengdu Panda Base: West or South Gate?", "Match the gate to your route and transport. The official metro connections are Line 3 to Panda Avenue Exit A plus shuttle 408 for South Gate, or Junqu General Hospital Exit B plus shuttle 409 for West Gate. Check current services and arrange your return from the gate where you finish."],
     ["Is the sightseeing bus included?", "Treat it as a separate service unless your purchased product explicitly includes it. Check the current official route, price and operating hours."],
     ["Will I definitely see pandas?", "No specific animal sighting can be guaranteed. Panda behaviour, animal care, weather and closures can change what is visible."],
     ["Can ChinaEase Buddy combine this with Chengdu sightseeing?", "Yes. Share your ticket session, gate, hotel, walking pace and food interests for a practical Chengdu day."]
