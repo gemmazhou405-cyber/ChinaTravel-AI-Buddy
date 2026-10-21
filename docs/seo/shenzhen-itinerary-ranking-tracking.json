@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "changeId": "SEO-2026-10-21-SHENZHEN-ROUTE",
+  "page": "https://chinaeasebuddy.com/3-day-shenzhen-itinerary/",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks",
+  "status": "local_verified_pending_publication",
+  "liveDate": null,
+  "codeCommits": [],
+  "baseline": {
+    "observedOn": "2026-10-21",
+    "sourceFilename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
+    "sourceSha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+    "searchType": "Web (text-based)",
+    "periodLabel": "Last 28 days",
+    "periodStart": null,
+    "periodEnd": null,
+    "clicks": 1,
+    "impressions": 30,
+    "ctr": 0.0333,
+    "averagePosition": 23.37,
+    "previousPeriodClicks": 0,
+    "previousPeriodImpressions": 0,
+    "previousPeriodAveragePosition": null,
+    "pageFilteredQueries": null,
+    "strongRelevanceOfClickVerified": false
+  },
+  "indexObservation": {
+    "indexed": null,
+    "lastReportedGoogleCrawl": null,
+    "googleSelectedCanonical": null
+  },
+  "queryCandidates": [
+    {
+      "query": "shenzhen trip planner",
+      "evidenceScope": "full_site_query_export_not_confirmed_page_query_pair",
+      "impressions": 4,
+      "averagePosition": 65.75,
+      "pageSpecificPosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    },
+    {
+      "query": "how many days in shenzhen",
+      "evidenceScope": "full_site_query_export_not_confirmed_page_query_pair",
+      "impressions": 2,
+      "averagePosition": 62,
+      "pageSpecificPosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    },
+    {
+      "query": "shenzhen itinerary",
+      "evidenceScope": "full_site_query_export_not_confirmed_page_query_pair",
+      "impressions": 1,
+      "averagePosition": 73,
+      "pageSpecificPosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    }
+  ],
+  "priorityReason": "A previously clicked itinerary has 30 page impressions and has not been modified since September 30. Unlike the recently revised calculator and payment pages, a concrete route-planning gap can be addressed without immediately changing those pages again. This is a small additional opportunity, not a higher priority than the calculator or proof of low competition.",
+  "hypothesis": "Duration choices and Chinese map pins with official Metro anchors may make the existing itinerary more useful for first-time visitors and improve relevant query ranking and clicks. Existing data does not establish that these omissions caused rank or CTR.",
+  "scope": [
+    "Add a 1/2/3-full-day choice table and a partial-arrival/departure alternative",
+    "Add five bilingual route stops with Metro lines and selected official approaches",
+    "Distinguish OCT-LOFT, OCT Harbor and Window of the World; explain transfers between Nanshan stops",
+    "Update one duration FAQ; retain the existing FAQ count",
+    "Share additions between React and static HTML; retain search title, description, H1, canonical, CTA, existing itinerary and September 30 full-guide review date",
+    "Advance actual modification date to October 21; preserve sitemap URL set"
+  ],
+  "sourceReview": {
+    "routingReferencesCheckedOn": "2026-10-21",
+    "fullGuideLastReviewedRetained": "2026-09-30",
+    "firsthandRouteTestPerformed": false,
+    "sourceUrls": [
+      {
+        "label": "Shenzhen Government: Nanshan attractions and Metro approaches",
+        "href": "https://www.sz.gov.cn/en_szgov/news/infocus/SZCitywalk/Explore/Districts/NanshanDistrict/content/post_11884972.html"
+      },
+      {
+        "label": "Shenzhen Transport Bureau: Metro lines and station names",
+        "href": "https://jtys.sz.gov.cn/ydmh/jtcx/dtcx_180970/dtxl/content/post_12601090.html"
+      },
+      {
+        "label": "Shenzhen Government: Lianhuashan Park and access",
+        "href": "https://www.sz.gov.cn/szzt2010/gysz/csgy/content/post_10776567.html"
+      },
+      {
+        "label": "Shenzhen Metro: Line 9 and Shenzhen Bay Park station",
+        "href": "https://www.szmc.net/szmc_en/Time_Table/Line9/202003/75592.html"
+      }
+    ],
+    "limitations": "Station/approach references are official published guidance, not a live service guarantee. No travel-time, fare or opening guarantee added. Duration choices are editorial suggestions.",
+    "existingStaticExtensionRetained": "Production September 30 extension adds foreigner essentials and four FAQs (11 total); retain those additions and their review date. Align React review date with the existing production date. Update the later static metadata override to use the actual October 21 modification date."
+  },
+  "verification": {
+    "typecheck": "PASS",
+    "i18nParity": "PASS",
+    "build": "PASS",
+    "publicHtmlAuditLocal": "PASS",
+    "targetHtmlChecks": "PASS",
+    "diffCheck": "PASS",
+    "production": null
+  },
+  "nextObservation": "Keep the released version until post-change data is available. Obtain exact-page Queries and URL Inspection last crawl with actual date boundaries. Compare completed post-release 7-day then 28-day periods against equal previous periods, using same query, URL and search filters. Record page-topic clicks separately from confirmed query-page relevant clicks. With one baseline click, do not call normal count variation a proven effect.",
+  "performanceObservations": []
+}

@@ -1,0 +1,103 @@
+{
+  "modified": "2026-10-21",
+  "durationSection": {
+    "title": "How many days in Shenzhen: 1, 2 or 3?",
+    "table": {
+      "headers": [
+        "Time available",
+        "Suggested plan",
+        "What to leave out"
+      ],
+      "rows": [
+        [
+          "One full day",
+          "Choose Futian for the civic district and Lianhuashan Park, or Nanshan for design and the bay.",
+          "Combining both districts with Dapeng or a theme park."
+        ],
+        [
+          "Two full days",
+          "Follow the Futian day and Nanshan day below.",
+          "The optional third-day excursion."
+        ],
+        [
+          "Three full days",
+          "Add one interest day: theme park, Dapeng, technology/shopping or Shekou.",
+          "Several distant third-day options in one day."
+        ]
+      ]
+    },
+    "items": [
+      "Count sightseeing hours after hotel and transport arrangements. Arriving late on Day 1 and leaving early on Day 3 does not give you three full days: keep one main district day and use the partial days near your hotel or departure point."
+    ]
+  },
+  "metroSection": {
+    "title": "Chinese map pins and Metro stops for this route",
+    "table": {
+      "headers": [
+        "Route stop",
+        "Search this Chinese name",
+        "Metro starting point",
+        "Before walking"
+      ],
+      "rows": [
+        [
+          "Day 1: Lianhuashan Park",
+          "莲花山公园",
+          "Children’s Palace / 少年宫, Lines 3 or 4",
+          "Use the park approach by Exit F1; the hilltop viewpoint still requires walking."
+        ],
+        [
+          "Day 2: OCT-LOFT",
+          "华侨城创意文化园",
+          "Qiaocheng East / 侨城东, Line 1; or Qiaocheng North / 侨城北, Line 2",
+          "City guidance lists Exit A at Qiaocheng East and Exit B at Qiaocheng North. Choose for your intended gallery or entrance."
+        ],
+        [
+          "Day 2: Nantou Ancient Town",
+          "南头古城",
+          "Nantou Ancient City / 南头古城, Line 12",
+          "Pin the old-town entrance you want, then check the walk from the station."
+        ],
+        [
+          "Day 2: Shenzhen Bay Park",
+          "深圳湾公园",
+          "Shenzhen Bay Park / 深圳湾公园, Line 9",
+          "Pick a specific waterfront entrance; this station is not the start of every section of the long park."
+        ],
+        [
+          "Optional Day 3: Shekou Sea World",
+          "海上世界",
+          "Sea World / 海上世界, Lines 2 or 12",
+          "Choose this as the relaxed third-day option rather than automatically adding it to Day 2."
+        ]
+      ]
+    },
+    "items": [
+      "These are route-planning anchors, not a promise that the nearest exit or service will be open. Check current Metro notices, the walking route and your return train before setting out.",
+      "OCT-LOFT (华侨城创意文化园), OCT Harbor (欢乐海岸) and Window of the World (世界之窗) are different destinations. Save the exact Chinese pin rather than choosing the first result containing “OCT.”",
+      "The three Nanshan stops make a suggested day, not a continuous short walk. Use live routing between them and drop a stop if transfers or venue visits take longer than expected."
+    ]
+  },
+  "durationFaq": {
+    "question": "How many days do I need in Shenzhen?",
+    "answer": "Two full days cover the Futian and Nanshan city routes in this guide. Three full days add one theme park, coastal excursion or slower interest day. For one day, choose one district. Count usable sightseeing time: two nights with late arrival and early departure is a shorter visit."
+  },
+  "sources": [
+    {
+      "label": "Shenzhen Government: Nanshan attractions and Metro approaches",
+      "href": "https://www.sz.gov.cn/en_szgov/news/infocus/SZCitywalk/Explore/Districts/NanshanDistrict/content/post_11884972.html"
+    },
+    {
+      "label": "Shenzhen Transport Bureau: Metro lines and station names",
+      "href": "https://jtys.sz.gov.cn/ydmh/jtcx/dtcx_180970/dtxl/content/post_12601090.html"
+    },
+    {
+      "label": "Shenzhen Government: Lianhuashan Park and access",
+      "href": "https://www.sz.gov.cn/szzt2010/gysz/csgy/content/post_10776567.html"
+    },
+    {
+      "label": "Shenzhen Metro: Line 9 and Shenzhen Bay Park station",
+      "href": "https://www.szmc.net/szmc_en/Time_Table/Line9/202003/75592.html"
+    }
+  ]
+}
