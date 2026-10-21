@@ -42,7 +42,7 @@ The five retained tool-intent directions are the primary calculator phrase, TWOV
 
 Change ID: `SEO-2026-10-21-TRANSIT-EXPIRY`.
 
-Status: pending production verification.
+Status: live 2026-10-21. Content commits: `e507fc9`, `c62dcd5`, `0fe22c9`; example regression commit: `c9b711f`. Vercel deployment succeeded. Production raw HTML returned HTTP 200 with the exact self-canonical and new example heading, year-end result, TWOV FAQ and October 21 modification date. Typecheck, build, calculator regression and public HTML audit passed. Title and description remain the October 20 version. No current Google recrawl or ranking outcome has been verified.
 
 - Add one original example table for ordinary, month-end and year-end recorded entries. All three cases are checked against the existing calculator algorithm by the regression script.
 - Explain TWOV and the relationship between 240 hours and ten full days in two concise FAQs. Keep actual-entry records, permitted-stay instructions and departure buffers explicit.
