@@ -3,9 +3,11 @@
   "changeId": "SEO-2026-10-21-DIDI-APP-SETUP",
   "page": "https://chinaeasebuddy.com/didi-in-china-for-foreigners/",
   "primaryOutcome": "strongly_relevant_google_organic_clicks",
-  "status": "local_verified_pending_publication",
+  "status": "preview_verified_production_pending",
   "liveDate": null,
-  "codeCommits": [],
+  "codeCommits": [
+    "274b132463ec1352492b27cd721733e45c9f76fe"
+  ],
   "baseline": {
     "observedOn": "2026-10-21",
     "sourceFilename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
@@ -71,7 +73,14 @@
   "indexObservation": {
     "indexed": null,
     "lastReportedGoogleCrawl": null,
-    "googleSelectedCanonical": null
+    "googleSelectedCanonical": null,
+    "historicalUserReport": {
+      "observedOn": "2026-10-11",
+      "indexed": true,
+      "lastReportedCrawl": "2026-09-29 23:16:08",
+      "timezone": null,
+      "evidence": "User-pasted October 11 GSC snapshot summary; not a new inspection."
+    }
   },
   "hypothesis": "Direct official download links, supported English-menu guidance and scoped setup troubleshooting may help visitors who search how to use or install DiDi in China. Existing data does not establish that this gap caused low clicks or that any candidate is high-volume/low-competition.",
   "scope": [
@@ -100,9 +109,31 @@
     "publicHtmlAuditLocal": "PASS",
     "targetHtmlChecks": "PASS",
     "diffCheck": "PASS",
-    "production": null,
-    "existingAmapAndLayoverSectionLinks": "PASS"
+    "production": {
+      "observedOn": "2026-10-21",
+      "formalUrl": "https://chinaeasebuddy.com/didi-in-china-for-foreigners/",
+      "newContentVerified": false,
+      "observedVersion": "Previous content, with no Download DiDi China and switch to English section",
+      "projectAlias": "https://chinaease-buddy.pages.dev/didi-in-china-for-foreigners/",
+      "projectAliasNewContentVerified": false,
+      "vercelStatus": "success",
+      "cloudflareCheckStatus": "success",
+      "note": "Successful deployment checks and a verified immutable preview do not establish that the formal domain serves this version. Cause of alias/domain mismatch is unconfirmed. No Cloudflare administrative connection or local Wrangler is available.",
+      "googleRecrawlConfirmed": false,
+      "rankingOrClickGainConfirmed": false
+    },
+    "existingAmapAndLayoverSectionLinks": "PASS",
+    "preview": {
+      "cloudflareCheck": "success",
+      "deploymentId": "6043ab24-b094-4da4-aac5-80913cf7ca2f",
+      "url": "https://6043ab24.chinaease-buddy.pages.dev/didi-in-china-for-foreigners/",
+      "newContentFaqsMetadataAndSitemap": "PASS",
+      "appStoreLinksInBody": "PASS",
+      "sitemapUrlCount": 76,
+      "onlyTargetDateChanged": true
+    }
   },
   "nextObservation": "Obtain exact-page Queries and Google crawl time, plus actual date boundaries. Compare completed same-length, non-overlapping windows after a newer crawl. Track relevant Google organic clicks and same-query rankings; app-store outbound clicks are not Google search clicks. Keep the payment page and old redirect URL separately attributed. Page-average rank changes alone may reflect query mix. No percentage click-growth claim from this zero-click baseline.",
-  "performanceObservations": []
+  "performanceObservations": [],
+  "deployedDate": "2026-10-21"
 }
