@@ -205,13 +205,24 @@
     },
     {
       "id": "SEO-2026-10-21-CLOCK-ENTRY-DATE",
-      "status": "local_verified_pending_publication",
-      "liveDate": null,
-      "codeCommits": [],
+      "status": "live_verified",
+      "liveDate": "2026-10-21",
+      "codeCommits": [
+        "4a9fe1bb3aa596c3fe111df5ea716d5895b2479e"
+      ],
       "scope": "Correct scheduled-landing versus entry-record copy in calculator form/FAQ/example and clock guide; algorithm, calculator search title/description/canonical and global policy-review date retained. Clock page description/FAQ/date updated.",
       "reason": "Correctness follow-up after a confirmed wording contradiction; not a speculative ranking rewrite.",
       "detailRecord": "clock-entry-ranking-tracking.json",
-      "rankingOrClickGainConfirmed": false
+      "rankingOrClickGainConfirmed": false,
+      "productionVerification": {
+        "observedOn": "2026-10-21",
+        "formalHtml": "PASS: shared input/time-zone/example clarification, title/description/canonical/links retained",
+        "clockGuide": "PASS: new description, conditional examples and permission qualifications",
+        "sitemap": "PASS: 76 URLs; only clock-guide date advanced",
+        "algorithmChanged": false,
+        "googleRecrawlConfirmed": false,
+        "rankingOrClickGainConfirmed": false
+      }
     }
   ],
   "reviewWindows": [

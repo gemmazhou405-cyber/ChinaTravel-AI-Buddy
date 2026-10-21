@@ -2,9 +2,11 @@
   "schemaVersion": 1,
   "changeId": "SEO-2026-10-21-CLOCK-ENTRY-DATE",
   "primaryOutcome": "strongly_relevant_google_organic_clicks",
-  "status": "local_verified_pending_publication",
-  "liveDate": null,
-  "codeCommits": [],
+  "status": "live_verified",
+  "liveDate": "2026-10-21",
+  "codeCommits": [
+    "4a9fe1bb3aa596c3fe111df5ea716d5895b2479e"
+  ],
   "pages": [
     "https://chinaeasebuddy.com/china-240-hour-transit-clock-start/",
     "https://chinaeasebuddy.com/china-240-hour-transit-calculator/"
@@ -81,7 +83,25 @@
     "publicHtmlAuditLocal": "PASS",
     "targetHtmlChecks": "PASS",
     "diffCheck": "PASS",
-    "production": null,
+    "production": {
+      "observedOn": "2026-10-21",
+      "deploymentStatus": "Vercel success",
+      "deploymentUrl": "https://vercel.com/gemma-s-projects529/china-travel-ai-buddy/D9CxnJy4npHkBHoAWZHxFdHZaWBp",
+      "cleanFormalUrlsVerified": [
+        "https://chinaeasebuddy.com/china-240-hour-transit-clock-start/",
+        "https://chinaeasebuddy.com/china-240-hour-transit-calculator/"
+      ],
+      "clockGuideNewDescriptionAndContent": "PASS",
+      "calculatorSharedInputAndExampleCopyInStaticHtml": "PASS",
+      "titlesH1CanonicalsCalculatorDescriptionAndLinksRetained": "PASS",
+      "jsonLdAndRobots": "PASS",
+      "sitemapUrlCount": 76,
+      "sitemapUrlSetUnchanged": true,
+      "onlyClockPageLastmodChanged": true,
+      "calculatorAlgorithmChanged": false,
+      "googleRecrawlConfirmed": false,
+      "rankingOrClickGainConfirmed": false
+    },
     "otherAnswerObjectsAndGlobalReviewUnchanged": "PASS",
     "algorithmUnchanged": "PASS"
   },
