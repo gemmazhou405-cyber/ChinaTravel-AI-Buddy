@@ -610,7 +610,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     quickAnswer:
       'Before booking, check entry rules and your arrival plan. Next, prepare mobile data, payments, maps and transport. Then choose a 7-, 10- or 14-day route and open the city guides that match your trip. Each section below links directly to the relevant guide or free tool.',
     reviewed: 'October 10, 2026',
-    lastModified: '2026-10-10',
+    lastModified: '2026-10-21',
     ctaLabel: 'Open the free toolkit',
     ctaHref: '/',
     sections: [
@@ -618,6 +618,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
         title: 'Entry rules and arrival',
         links: [
           { label: 'China Visa-Free Checker', description: 'Check which verified policy may apply to your passport, date and route.', href: '/china-visa-free-checker/' },
+          { label: 'China 240-Hour Visa-Free Transit Calculator', description: 'Enter your recorded entry date to calculate the transit exit deadline in China time. Check eligibility separately.', href: '/china-240-hour-transit-calculator/' },
           { label: 'China Visa-Free Travel Guide', description: 'Compare ordinary visa-free entry with third-country transit rules.', href: '/china-visa-free-travel-guide/' },
           { label: '240-Hour Visa-Free Transit', description: 'Check eligible countries, designated ports and permitted areas.', href: '/china-240-hour-visa-free-transit-2026/' },
           { label: 'China Airport Arrival Guide', description: 'Prepare immigration, baggage, customs, data and onward transport.', href: '/china-airport-arrival-guide/' },
