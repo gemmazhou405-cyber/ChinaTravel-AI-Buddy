@@ -1028,6 +1028,7 @@
         "title": "Kostenlose Tools für Ihre China-Reise",
         "subtitle": "Prüfen Sie Einreisebestimmungen, Transitoptionen, Unterkunftsregistrierung und Zahlungen vor dem Abflug.",
         "browseAll": "Alle China-Reiseführer ansehen →",
+        "transitCalculator": "Rechner für 240 Stunden visumfreien Transit in China: Ausreisefrist berechnen",
         "cards": {
           "china-visa-free-checker": { "label": "Interaktives Tool", "title": "China Visa-Check", "description": "Prüfen Sie, welche Visumfrei-Regel für Ihren Reisepass, Ihr Einreisedatum und Ihre Route gelten könnte.", "cta": "Reise prüfen →" },
           "china-240-hour-visa-free-transit-2026": { "label": "Transitführer", "title": "240 Stunden visumfreier Transit", "description": "Verstehen Sie die Anforderungen an Drittlandroute, ausgewiesene Einreisehäfen und erlaubte Aufenthaltsgebiete.", "cta": "Transitführer lesen →" },
