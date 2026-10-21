@@ -1,0 +1,15 @@
+{
+  "modified": "2026-10-21",
+  "heading": "240-hour TWOV expiry examples: normal, month-end and year-end arrivals",
+  "intro": "TWOV means transit without visa. Under the 240-hour (10-day) rule, count ten full days from midnight after the recorded entry date. These worked examples show the calculated clock boundary in China Standard Time (UTC+8); your temporary-entry permit and border inspection instructions control the permitted stay.",
+  "note": "The planning label is one minute before the mathematical boundary, not an airport arrival target or a guarantee that a flight is suitable. Allow time for check-in, security and exit inspection, and follow any earlier deadline on your entry permit.",
+  "examples": [
+    { "label": "Evening entry", "arrivalLocal": "2026-11-01T22:30", "clockStartChina": "2026-11-02T00:00", "planningLatestChina": "2026-11-11T23:59", "deadlineExclusiveChina": "2026-11-12T00:00" },
+    { "label": "Month-end entry", "arrivalLocal": "2026-11-28T08:15", "clockStartChina": "2026-11-29T00:00", "planningLatestChina": "2026-12-08T23:59", "deadlineExclusiveChina": "2026-12-09T00:00" },
+    { "label": "Year-end entry", "arrivalLocal": "2026-12-31T23:55", "clockStartChina": "2027-01-01T00:00", "planningLatestChina": "2027-01-10T23:59", "deadlineExclusiveChina": "2027-01-11T00:00" }
+  ],
+  "faqs": [
+    ["What is a China TWOV expiry calculator?", "TWOV means transit without visa. This free tool calculates the 240-hour transit clock and its departure boundary in China Standard Time. It also compares your passport and third-country route with basic public requirements, while the border authority decides eligibility and the permitted stay."],
+    ["Is 240-hour visa-free transit the same as a 10-day stay?", "240 hours equals ten full 24-hour periods. For this policy the clock starts at midnight on the day after entry, so adding 240 hours to your flight's landing time can give the wrong boundary. Use the recorded entry date, check your permit, and allow a departure buffer."]
+  ]
+}
