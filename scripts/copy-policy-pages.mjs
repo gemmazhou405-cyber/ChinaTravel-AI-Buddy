@@ -26,6 +26,7 @@ const amapEnglishSetup = JSON.parse(await readFile('src/data/amapEnglishSetup.js
 const wechatVerificationHelp = JSON.parse(await readFile('src/data/wechatVerificationHelp.json', 'utf8'));
 const shenzhenItineraryPlanning = JSON.parse(await readFile('src/data/shenzhenItineraryPlanning.json', 'utf8'));
 const layoverAirportPlanning = JSON.parse(await readFile('src/data/layoverAirportPlanning.json', 'utf8'));
+const didiAppSetup = JSON.parse(await readFile('src/data/didiAppSetup.json', 'utf8'));
 
 const pageMeta = {
   plan: {
@@ -1337,7 +1338,7 @@ const pageMeta = {
     quickAnswer:
       'Foreign visitors can use the DiDi China ride-hailing app with an international mobile number and an English interface, or access DiDi through supported WeChat and Alipay routes. Before requesting a car, save the exact destination in Chinese, confirm the pickup pin and meeting point, compare the service type and estimated fare, and prepare a payment method shown in your version. When the car arrives, match the licence plate and vehicle details before entering.',
     lastReviewed: 'October 11, 2026',
-    lastModified: '2026-10-11',
+    lastModified: didiAppSetup.modified,
     article: true,
     contentSections: [
       {
@@ -1363,6 +1364,8 @@ const pageMeta = {
           'Menus, services, and payment choices can vary by phone, region, account, and app version. Set up and test the route you plan to use before arrival.',
         ],
       },
+      didiAppSetup.downloadSection,
+      didiAppSetup.problemSection,
       {
         title: 'Prepare before requesting your first ride',
         ordered: true,
@@ -1453,8 +1456,9 @@ const pageMeta = {
     ],
     faqs: [
       ['Can foreigners use DiDi in China?', 'Yes. The official DiDi China app advertises an English interface and global mobile-number login for inbound visitors. DiDi may also be available through supported Alipay and WeChat routes.'],
-      ['Can I register for DiDi with a foreign phone number?', 'The official DiDi China store listings state that global mobile-number login is supported. Keep access to that number for verification and trip communication.'],
-      ['Is DiDi available in English?', 'The DiDi China app offers an English interface for inbound users, and English availability may also depend on the Alipay or WeChat route and version you use.'],
+      [didiAppSetup.downloadFaq.question, didiAppSetup.downloadFaq.answer],
+      [didiAppSetup.foreignNumberFaq.question, didiAppSetup.foreignNumberFaq.answer],
+      [didiAppSetup.englishFaq.question, didiAppSetup.englishFaq.answer],
       ['How do I pay for DiDi in China?', 'Follow the payment choices shown in the booking route you use. The DiDi app, Alipay, and WeChat can present different options, so prepare and verify your payment method before requesting a car.'],
       ['How do I find my DiDi at an airport or railway station?', 'Check the terminal or station exit first, then follow the app to the designated ride-hailing zone. Send the driver the floor, gate, zone, or pillar number and verify the licence plate at pickup.'],
       ['What if the DiDi driver calls me in Chinese?', 'Use the app\'s bilingual messaging where available, send a short pickup description, or ask nearby staff to help with a brief call. Save essential pickup phrases in Chinese before traveling.'],
@@ -5517,7 +5521,7 @@ function staticPageContent(page, meta) {
               ${section.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
             </${section.ordered ? 'ol' : 'ul'}>
           ` : ''}
-          ${['amap-english-mode-guide-2026', 'beijing-shanghai-layover-240-hour-guide'].includes(page) && section.links ? `
+          ${['amap-english-mode-guide-2026', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners'].includes(page) && section.links ? `
             <ul style="margin: 12px 0 0; padding-left: 20px; color: #536365; line-height: 1.8;">
               ${section.links.map(({ label, description, href }) => `<li><a href="${escapeAttr(href)}" rel="noopener noreferrer" style="color: #155e63; text-underline-offset: 4px;">${escapeHtml(label)}</a>: ${escapeHtml(description)}</li>`).join('')}
             </ul>

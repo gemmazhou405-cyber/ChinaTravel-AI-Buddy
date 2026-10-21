@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "changeId": "SEO-2026-10-21-DIDI-APP-SETUP",
+  "page": "https://chinaeasebuddy.com/didi-in-china-for-foreigners/",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks",
+  "status": "local_verified_pending_publication",
+  "liveDate": null,
+  "codeCommits": [],
+  "baseline": {
+    "observedOn": "2026-10-21",
+    "sourceFilename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
+    "sourceSha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+    "searchType": "Web (text-based)",
+    "periodLabel": "Last 28 days",
+    "periodStart": null,
+    "periodEnd": null,
+    "clicks": 0,
+    "impressions": 89,
+    "ctr": 0.0,
+    "averagePosition": 34.83,
+    "previousPeriodClicks": 0,
+    "previousPeriodImpressions": 42,
+    "previousPeriodAveragePosition": 15.57,
+    "pageFilteredQueries": null
+  },
+  "oldAliasObservation": {
+    "page": "https://chinaeasebuddy.com/how-to-use-didi-in-china-foreigners/",
+    "clicks": 1,
+    "impressions": 29,
+    "averagePosition": 44.62,
+    "treatment": "Keep this historical redirected URL separate; do not assign its click or query ranking to the current canonical page. No redirect change in this intervention."
+  },
+  "queryCandidates": [
+    {
+      "query": "how to use didi in china",
+      "evidenceScope": "full_site_query_export_not_confirmed_page_query_pair",
+      "impressions": 11,
+      "averagePosition": 79.36,
+      "pageSpecificPosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    },
+    {
+      "query": "didi app china",
+      "evidenceScope": "full_site_query_export_not_confirmed_page_query_pair",
+      "impressions": 4,
+      "averagePosition": 71.0,
+      "pageSpecificPosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    },
+    {
+      "query": "didi china app",
+      "evidenceScope": "full_site_query_export_not_confirmed_page_query_pair",
+      "impressions": 1,
+      "averagePosition": 43.0,
+      "pageSpecificPosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    },
+    {
+      "query": "didi taxi app china",
+      "evidenceScope": "full_site_query_export_not_confirmed_page_query_pair",
+      "impressions": 1,
+      "averagePosition": 54.0,
+      "pageSpecificPosition": null,
+      "monthlySearchVolume": null,
+      "keywordDifficulty": null
+    }
+  ],
+  "indexObservation": {
+    "indexed": null,
+    "lastReportedGoogleCrawl": null,
+    "googleSelectedCanonical": null
+  },
+  "hypothesis": "Direct official download links, supported English-menu guidance and scoped setup troubleshooting may help visitors who search how to use or install DiDi in China. Existing data does not establish that this gap caused low clicks or that any candidate is high-volume/low-competition.",
+  "scope": [
+    "Add two shared sections: official app downloads/English setup and installation/SMS/language troubleshooting",
+    "Add one download FAQ and update existing foreign-number/English FAQs; eight FAQs total",
+    "Retain search title, meta description, H1, URL, canonical, CTA and all payment sections",
+    "Keep separate DiDi payment guide, redirect configuration and previous October 11 quick answers unchanged",
+    "Use shared JSON in React/static HTML and extend the existing scoped link renderer only to the main DiDi page",
+    "Retain full-guide review date October 11; mark actual modification October 21. New setup sources checked October 21. No new sitemap URLs."
+  ],
+  "sourceReview": {
+    "date": "2026-10-21",
+    "sourceUrls": [
+      "https://apps.apple.com/us/app/didi-china-ride-hailing/id554499054",
+      "https://play.google.com/store/apps/details?id=com.sdu.didi.psnger",
+      "https://english.shanghai.gov.cn/en-UsefulApps/20240206/976515bc601f4803b9ce2f64ae9f0cd3.html"
+    ],
+    "shanghaiGuideUpdated": "2026-07-21",
+    "firsthandAppTestPerformed": false,
+    "limitations": "Publisher listings support English and global mobile-number login; no guarantee for every country, SMS delivery, device, store account or payment card. City-guide menu path is conditional on the controls shown. Do not treat an alternate wallet route as a verification bypass. User reviews were not used as factual product-policy evidence."
+  },
+  "verification": {
+    "typecheck": "PASS",
+    "i18nParity": "PASS",
+    "build": "PASS",
+    "publicHtmlAuditLocal": "PASS",
+    "targetHtmlChecks": "PASS",
+    "diffCheck": "PASS",
+    "production": null,
+    "existingAmapAndLayoverSectionLinks": "PASS"
+  },
+  "nextObservation": "Obtain exact-page Queries and Google crawl time, plus actual date boundaries. Compare completed same-length, non-overlapping windows after a newer crawl. Track relevant Google organic clicks and same-query rankings; app-store outbound clicks are not Google search clicks. Keep the payment page and old redirect URL separately attributed. Page-average rank changes alone may reflect query mix. No percentage click-growth claim from this zero-click baseline.",
+  "performanceObservations": []
+}

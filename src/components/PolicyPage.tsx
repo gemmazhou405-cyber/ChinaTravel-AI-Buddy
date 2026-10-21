@@ -21,6 +21,7 @@ import amapEnglishSetup from '../data/amapEnglishSetup.json';
 import wechatVerificationHelp from '../data/wechatVerificationHelp.json';
 import shenzhenItineraryPlanning from '../data/shenzhenItineraryPlanning.json';
 import layoverAirportPlanning from '../data/layoverAirportPlanning.json';
+import didiAppSetup from '../data/didiAppSetup.json';
 import VisaFreeCheckerPage from './VisaFreeCheckerPage';
 import TransitCalculatorPage from './TransitCalculatorPage';
 import TransitAnswerPage from './TransitAnswerPage';
@@ -2772,7 +2773,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     ctaLabel: 'Get my free China itinerary',
     ctaHref: '/#trip-plan',
     lastReviewed: 'October 11, 2026',
-    lastModified: '2026-10-11',
+    lastModified: didiAppSetup.modified,
     isArticle: true,
     sections: [
       {
@@ -2803,6 +2804,8 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'Menus, services, and payment choices can vary by phone, region, account, and app version. Set up and test the route you plan to use before arrival.',
         ],
       },
+      didiAppSetup.downloadSection,
+      didiAppSetup.problemSection,
       {
         title: 'Prepare before requesting your first ride',
         ordered: true,
@@ -2897,16 +2900,9 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
         answer:
           'Yes. The official DiDi China app advertises an English interface and global mobile-number login for inbound visitors. DiDi may also be available through supported Alipay and WeChat routes.',
       },
-      {
-        question: 'Can I register for DiDi with a foreign phone number?',
-        answer:
-          'The official DiDi China store listings state that global mobile-number login is supported. Keep access to that number for verification and trip communication.',
-      },
-      {
-        question: 'Is DiDi available in English?',
-        answer:
-          'The DiDi China app offers an English interface for inbound users, and English availability may also depend on the Alipay or WeChat route and version you use.',
-      },
+      didiAppSetup.downloadFaq,
+      didiAppSetup.foreignNumberFaq,
+      didiAppSetup.englishFaq,
       {
         question: 'How do I pay for DiDi in China?',
         answer:
