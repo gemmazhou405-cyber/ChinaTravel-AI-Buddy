@@ -3,9 +3,11 @@
   "changeId": "SEO-2026-10-21-LAYOVER-AIRPORTS",
   "page": "https://chinaeasebuddy.com/beijing-shanghai-layover-240-hour-guide/",
   "primaryOutcome": "strongly_relevant_google_organic_clicks",
-  "status": "local_verified_pending_publication",
-  "liveDate": null,
-  "codeCommits": [],
+  "status": "live_verified",
+  "liveDate": "2026-10-21",
+  "codeCommits": [
+    "d5b9b9bae6433772a334a1d57909e9fb3717231d"
+  ],
   "baseline": {
     "observedOn": "2026-10-21",
     "sourceFilename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
@@ -94,7 +96,25 @@
     "publicHtmlAuditLocal": "PASS",
     "targetHtmlChecks": "PASS",
     "diffCheck": "PASS",
-    "production": null,
+    "production": {
+      "observedOn": "2026-10-21",
+      "formalUrl": "https://chinaeasebuddy.com/beijing-shanghai-layover-240-hour-guide/",
+      "deploymentStatus": "Vercel success",
+      "deploymentUrl": "https://vercel.com/gemma-s-projects529/china-travel-ai-buddy/ADJNKLktS6uwXzZGkxVjJTQMgxxB",
+      "formalHtmlRetrieved": true,
+      "newH1DirectAnswerAndFullSixSections": "PASS",
+      "sixTaskSpecificFaqsAndSources": "PASS",
+      "calculatorContextualLinkCount": 1,
+      "calculatorLinkCountBefore": 0,
+      "titleDescriptionCanonicalCtaUnchanged": "PASS",
+      "jsonLdAndModifiedDate": "PASS",
+      "noNoindex": "PASS",
+      "sitemapUrlSetUnchanged": true,
+      "sitemapUrlCount": 76,
+      "onlyTargetLastmodChanged": true,
+      "googleRecrawlConfirmed": false,
+      "rankingOrClickGainConfirmed": false
+    },
     "amapExistingSectionLinks": "PASS"
   },
   "nextObservation": "Request exact-page Queries and a dated URL Inspection crawl observation when the user next supplies data. Review completed post-release 7-day then 28-day windows against equal complete earlier windows. Same query and URL must be confirmed before reporting ranking improvement. Main outcome is relevant Google organic clicks, not internal calculator-link clicks; hidden-query relevance remains unknown. No percent click-growth calculation from a zero-click baseline.",
