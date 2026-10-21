@@ -3,9 +3,11 @@
   "changeId": "SEO-2026-10-21-SHENZHEN-ROUTE",
   "page": "https://chinaeasebuddy.com/3-day-shenzhen-itinerary/",
   "primaryOutcome": "strongly_relevant_google_organic_clicks",
-  "status": "local_verified_pending_publication",
-  "liveDate": null,
-  "codeCommits": [],
+  "status": "live_verified",
+  "liveDate": "2026-10-21",
+  "codeCommits": [
+    "b2b55a54a9f83434272dd1f35ce00b3225ebd9f0"
+  ],
   "baseline": {
     "observedOn": "2026-10-21",
     "sourceFilename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
@@ -100,7 +102,24 @@
     "publicHtmlAuditLocal": "PASS",
     "targetHtmlChecks": "PASS",
     "diffCheck": "PASS",
-    "production": null
+    "production": {
+      "observedOn": "2026-10-21",
+      "formalUrl": "https://chinaeasebuddy.com/3-day-shenzhen-itinerary/",
+      "deploymentStatus": "Vercel success",
+      "deploymentUrl": "https://vercel.com/gemma-s-projects529/china-travel-ai-buddy/GjubWihq2i1tQ2QfibV19wAGN3dW",
+      "newSectionsAndAllSharedCells": "PASS",
+      "updatedFaqAndExistingFaqCount": "PASS (11 static FAQs retained)",
+      "titleDescriptionH1CanonicalCtaUnchanged": "PASS",
+      "retainedReviewDate": "2026-09-30",
+      "jsonLdAndModifiedDate": "PASS",
+      "noNoindex": "PASS",
+      "sitemapUrlSetUnchanged": true,
+      "sitemapUrlCount": 76,
+      "onlyTargetLastmodChanged": true,
+      "cacheObservation": "Initial formal-domain fetch returned old content despite successful deployment. A fresh query-string fetch and a subsequent clean formal-URL fetch confirmed new content.",
+      "googleRecrawlConfirmed": false,
+      "rankingOrClickGainConfirmed": false
+    }
   },
   "nextObservation": "Keep the released version until post-change data is available. Obtain exact-page Queries and URL Inspection last crawl with actual date boundaries. Compare completed post-release 7-day then 28-day periods against equal previous periods, using same query, URL and search filters. Record page-topic clicks separately from confirmed query-page relevant clicks. With one baseline click, do not call normal count variation a proven effect.",
   "performanceObservations": []
