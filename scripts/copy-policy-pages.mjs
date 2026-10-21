@@ -5814,7 +5814,7 @@ const sitemapPages = [''].concat(
   pages.filter((page) => !noindexPages.has(page) && !permanentRedirectSources.has(page)),
   indexableCampaignPages,
 );
-const homepageLastmod = '2026-09-29';
+const homepageLastmod = '2026-10-21';
 const defaultLastmod = '2026-09-26';
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
