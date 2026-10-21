@@ -6,9 +6,24 @@ Primary URL: https://chinaeasebuddy.com/china-240-hour-transit-calculator/
 
 Primary outcome is Google organic clicks to that exact URL. Same-page, same-query ranking, relevant impressions and CTR explain progress. Passing a build, a live test or a working form does not prove ranking gains.
 
-Latest available GSC export: downloaded 2026-10-19, window 2026-09-20–2026-10-17, calculator 0 clicks / 10 impressions / 0% CTR / average page position 22.5. The earlier window 2026-09-16–2026-10-13 was 0 / 7 / 0% / 31.14. They overlap and predate the October 20 intervention; neither measures today's changes. Separate Pages and Queries sheets do not identify page-query pairs. No new export was found locally on October 21.
+Latest available GSC export: supplied 2026-10-21 as `chinaeasebuddy.com-Performance-on-Search-2026-10-21.xlsx`. Filters are Web (text-based), Last 3 months and the exact calculator URL. Its 57 daily rows cover 2026-08-23–2026-10-18. Page totals are 0 clicks / 10 impressions / 0% CTR / average position 22.5. Unlike the earlier site-wide exports, this export's Queries sheet is page-filtered and establishes the two visible page-query pairs below. It is not a two-period comparison and ends before the October 20–21 changes. The older September 20–October 17 reference also had 0 / 10 / 0% / 22.5; their overlapping windows are not evidence of improvement or deterioration.
 
-Current URL Inspection indexed state, Google-selected canonical and last Google crawl: **Unknown**. A connected Search Console data reader is unavailable in this session. Windsor.ai was found unconnected and had already been suggested on October 18; it was not suggested again. Ahrefs is also unconnected and was suggested for keyword/ranking data. No credentials, analytics totals, search volumes or keyword difficulty were inferred.
+Current URL Inspection indexed state, Google-selected canonical and last Google crawl: **Unknown**. Historical GSC impressions show the URL has appeared in search, but do not establish its current indexed state. Ahrefs is now installed and its data interfaces are available. Actual requests for projects, account usage, exact-page organic keywords and candidate keyword metrics all returned `Insufficient plan`. Official Ahrefs documentation says MCP access requires Lite or higher. This is a plan restriction, not a website verification failure. No search volume, keyword difficulty or Ahrefs ranking data was retrieved. A direct GSC reader remains unavailable; the supplied export is the evidence source.
+
+## Page-filtered query baseline supplied October 21
+
+| Query | Clicks | Impressions | CTR | Average position | Decision |
+| --- | --- | --- | --- | --- | --- |
+| transit through mainland | 0 | 1 | 0% | 4.0 | Broad transit intent; one impression does not establish a stable top-four rank or keyword demand. Do not retitle the calculator around it. |
+| visa free china | 0 | 1 | 0% | 193.0 | Broad entry-policy intent; retain the visa-free guide as the intended owner rather than widening the calculator. |
+
+Visible queries account for 2 of 10 page impressions. The remaining 8 impressions have no disclosed query in this export; do not infer their wording, country or rank. The country and device tables each cover only 2 impressions, so do not treat those tables as complete audience distributions. Calculator/TWOV/deadline candidates are absent from the visible queries; this means their coverage is unconfirmed, not proven absent.
+
+All nonzero daily impressions precede the latest changes: October 11 has 6 impressions at average position 36.0, October 12 has 1 at 2.0, and October 16 has 3 at 2.3. These are mixed-query daily averages, not a progression in the rank of one keyword. Ten impressions and zero clicks are too little evidence to blame the title or estimate a reliable CTR lift.
+
+Decision: retain the October 20 title/description and October 21 content while collecting post-change evidence. Record exact-URL Inspection status, crawl time and Google-selected canonical next. Inspect the first complete post-change seven-day window October 22–28 only after GSC reports it, and interpret outcomes in light of recrawl. Do not create another calculator, merge it into a policy guide or claim the recent changes succeeded or failed. No website content changes were made during this export review.
+
+Sources: user-supplied GSC workbook (Filters, Chart, Pages, Queries, Countries and Devices); https://help.ahrefs.com/en/articles/13913559-getting-started-with-ahrefs-mcp .
 
 ## Search-intent research
 
@@ -63,4 +78,4 @@ Official rule checks today: [Shanghai government, August 20 explanation](https:/
 | Observation | Exact window | Indexed / last crawl / Google canonical | Page clicks / impressions / CTR / position | Page-filtered queries | Interpretation |
 | --- | --- | --- | --- | --- | --- |
 | Available pre-change reference | 2026-09-20–2026-10-17 | Unknown / Unknown / Unknown | 0 / 10 / 0% / 22.5 | Unknown | Predates October 20–21 changes |
-| 2026-10-21 | No newer GSC export | Unknown / Unknown / Unknown | Unknown | Unknown | Search research and release verification only; no measured SEO improvement yet |
+| 2026-10-21 export review | 2026-08-23–2026-10-18; Last 3 months filter, no period comparison | Current state Unknown / Unknown / Unknown; historical search appearances confirmed | 0 / 10 / 0% / 22.5 | transit through mainland: 0/1/0%/4.0; visa free china: 0/1/0%/193.0; 8 impressions lack disclosed queries | Pre-change baseline only; no October 20–21 outcome data |
