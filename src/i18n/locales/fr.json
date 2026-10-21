@@ -1028,6 +1028,7 @@
         "title": "Outils gratuits pour préparer votre voyage en Chine",
         "subtitle": "Vérifiez les règles d’entrée, les options de transit, l’enregistrement du séjour et les paiements avant de partir.",
         "browseAll": "Voir tous les guides de voyage en Chine →",
+        "transitCalculator": "Calculateur de transit sans visa de 240 heures en Chine : vérifiez votre date limite de sortie",
         "cards": {
           "china-visa-free-checker": { "label": "Outil interactif", "title": "Vérificateur d’exemption de visa", "description": "Vérifiez quelle politique d’exemption peut s’appliquer à votre passeport, votre date de voyage et votre itinéraire.", "cta": "Vérifier mon voyage →" },
           "china-240-hour-visa-free-transit-2026": { "label": "Guide de transit", "title": "Transit sans visa de 240 heures", "description": "Comprenez les règles concernant le pays tiers, les ports désignés et les zones de séjour autorisées.", "cta": "Lire le guide de transit →" },
