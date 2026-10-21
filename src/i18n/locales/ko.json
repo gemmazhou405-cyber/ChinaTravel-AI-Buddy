@@ -1028,6 +1028,7 @@
         "title": "중국 여행 계획을 위한 무료 도구",
         "subtitle": "출발 전에 입국 규정, 환승 조건, 숙박 등록과 결제 방법을 확인하세요.",
         "browseAll": "모든 중국 여행 가이드 보기 →",
+        "transitCalculator": "중국 240시간 무비자 환승 계산기: 출국 기한 확인",
         "cards": {
           "china-visa-free-checker": { "label": "대화형 도구", "title": "중국 무비자 확인 도구", "description": "여권, 입국 날짜와 여행 일정에 적용될 수 있는 무비자 정책을 확인하세요.", "cta": "내 여행 확인 →" },
           "china-240-hour-visa-free-transit-2026": { "label": "환승 가이드", "title": "240시간 무비자 환승", "description": "제3국 경로, 지정 입국항과 허용 체류 지역 요건을 확인하세요.", "cta": "환승 가이드 읽기 →" },
