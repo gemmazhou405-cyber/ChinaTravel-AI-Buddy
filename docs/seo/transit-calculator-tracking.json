@@ -28,14 +28,28 @@
     "postChangeOutcome": false
   },
   "indexObservation": {
-    "status": "awaiting_indexed_url_inspection_report",
-    "inspectedOn": null,
-    "indexed": null,
-    "lastGoogleCrawl": null,
-    "googleSelectedCanonical": null,
+    "status": "indexed_report_verified",
+    "inspectedOn": "2026-10-21",
+    "indexed": true,
+    "lastGoogleCrawl": "Oct 13, 2026, 8:57:32 AM",
+    "lastGoogleCrawlTimezone": null,
+    "googleSelectedCanonical": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+    "googleSelectedCanonicalReported": "Inspected URL",
+    "userDeclaredCanonical": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
     "recrawledAfterLatestChange": null,
+    "reportedCrawlPredatesLatestChanges": true,
+    "crawlAllowed": true,
+    "indexingAllowed": true,
+    "pageFetch": "Successful",
+    "crawler": "Googlebot smartphone",
+    "sitemapsReported": "Temporary processing error",
+    "referringPageReported": "None detected",
     "indexingRequestConfirmedOn": null,
-    "note": "Public HTTP 200, self-canonical, historical impressions and a successful live test do not establish the current indexed report or its last crawl."
+    "source": {
+      "type": "user_supplied_gsc_url_inspection_screenshot",
+      "filename": "image(20261021-034258).png"
+    },
+    "note": "The indexed report confirms indexing and self-canonical selection. Its reported crawl predates the October 20-21 changes; report lag is possible, so actual recrawl after publication remains unconfirmed. Preserve the raw crawl time because the screenshot does not specify its timezone. Temporary sitemap processing and absent referring-page data do not establish a website fault."
   },
   "queryTracking": [
     {
@@ -123,25 +137,41 @@
       "id": "SEO-2026-10-20-TRANSIT-CALC",
       "liveDate": "2026-10-20",
       "scope": "Calculator title, description, direct answer and route examples",
-      "codeCommits": ["bac7809", "4be78a4"]
+      "codeCommits": [
+        "bac7809",
+        "4be78a4"
+      ]
     },
     {
       "id": "SEO-2026-10-20-TRANSIT-LINKS",
       "liveDate": "2026-10-20",
       "scope": "Contextual calculator links in the visa-free guide and 240-hour policy guide",
-      "codeCommits": ["93f9bf6", "541f705"]
+      "codeCommits": [
+        "93f9bf6",
+        "541f705"
+      ]
     },
     {
       "id": "SEO-2026-10-21-TRANSIT-EXPIRY",
       "liveDate": "2026-10-21",
       "scope": "TWOV and 10-day FAQs plus normal, month-end and year-end examples",
-      "codeCommits": ["e507fc9", "c62dcd5", "0fe22c9", "c9b711f"]
+      "codeCommits": [
+        "e507fc9",
+        "c62dcd5",
+        "0fe22c9",
+        "c9b711f"
+      ]
     },
     {
       "id": "SEO-2026-10-21-TRANSIT-HUBS",
       "liveDate": "2026-10-21",
       "scope": "Direct calculator links on the homepage and guide hub",
-      "codeCommits": ["a9100f5", "7f5fd21", "5e74e65", "193c211"]
+      "codeCommits": [
+        "a9100f5",
+        "7f5fd21",
+        "5e74e65",
+        "193c211"
+      ]
     }
   ],
   "reviewWindows": [
@@ -181,5 +211,14 @@
     "connectionAvailable": true,
     "requestResult": "Insufficient plan",
     "metricsRetrieved": false
+  },
+  "publicSitemapObservation": {
+    "observedOn": "2026-10-21",
+    "url": "https://chinaeasebuddy.com/sitemap.xml",
+    "httpStatus": 200,
+    "parseableXml": true,
+    "urlCount": 76,
+    "exactCalculatorUrlCount": 1,
+    "note": "Public fetch only; not evidence that GSC has processed this sitemap or the latest page changes."
   }
 }

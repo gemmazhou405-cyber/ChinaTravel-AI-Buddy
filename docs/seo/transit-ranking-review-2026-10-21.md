@@ -8,7 +8,7 @@ Primary outcome is Google organic clicks to that exact URL. Same-page, same-quer
 
 Latest available GSC export: supplied 2026-10-21 as `chinaeasebuddy.com-Performance-on-Search-2026-10-21.xlsx`. Filters are Web (text-based), Last 3 months and the exact calculator URL. Its 57 daily rows cover 2026-08-23–2026-10-18. Page totals are 0 clicks / 10 impressions / 0% CTR / average position 22.5. Unlike the earlier site-wide exports, this export's Queries sheet is page-filtered and establishes the two visible page-query pairs below. It is not a two-period comparison and ends before the October 20–21 changes. The older September 20–October 17 reference also had 0 / 10 / 0% / 22.5; their overlapping windows are not evidence of improvement or deterioration.
 
-Current URL Inspection indexed state, Google-selected canonical and last Google crawl: **Unknown**. Historical GSC impressions show the URL has appeared in search, but do not establish its current indexed state. Ahrefs is now installed and its data interfaces are available. Actual requests for projects, account usage, exact-page organic keywords and candidate keyword metrics all returned `Insufficient plan`. Official Ahrefs documentation says MCP access requires Lite or higher. This is a plan restriction, not a website verification failure. No search volume, keyword difficulty or Ahrefs ranking data was retrieved. A direct GSC reader remains unavailable; the supplied export is the evidence source.
+URL Inspection observation supplied October 21 (`image(20261021-034258).png`): **Page is indexed**, Google-selected canonical **Inspected URL** (the exact calculator URL), last reported crawl **Oct 13, 2026, 8:57:32 AM**; the screenshot does not specify timezone. Googlebot smartphone fetched successfully, with crawling and indexing allowed. This reported crawl predates the October 20–21 changes; a later crawl is not yet confirmed, and reporting lag is possible. No indexing request acknowledgement has been supplied. The screenshot reports Sitemaps **Temporary processing error** and Referring page **None detected**. Google describes these as unavailable reporting data, not proof of a broken sitemap or missing links. A separate October 21 public check returned HTTP 200 and parseable sitemap XML with 76 URLs, including this exact calculator URL once; this does not prove GSC processed the sitemap. Source: https://support.google.com/webmasters/answer/9012289?hl=en . Ahrefs is now installed and its data interfaces are available. Actual requests for projects, account usage, exact-page organic keywords and candidate keyword metrics all returned `Insufficient plan`. Official Ahrefs documentation says MCP access requires Lite or higher. This is a plan restriction, not a website verification failure. No search volume, keyword difficulty or Ahrefs ranking data was retrieved. A direct GSC reader remains unavailable; the supplied export is the evidence source.
 
 ## Page-filtered query baseline supplied October 21
 
@@ -21,7 +21,7 @@ Visible queries account for 2 of 10 page impressions. The remaining 8 impression
 
 All nonzero daily impressions precede the latest changes: October 11 has 6 impressions at average position 36.0, October 12 has 1 at 2.0, and October 16 has 3 at 2.3. These are mixed-query daily averages, not a progression in the rank of one keyword. Ten impressions and zero clicks are too little evidence to blame the title or estimate a reliable CTR lift.
 
-Decision: retain the October 20 title/description and October 21 content while collecting post-change evidence. Record exact-URL Inspection status, crawl time and Google-selected canonical next. Inspect the first complete post-change seven-day window October 22–28 only after GSC reports it, and interpret outcomes in light of recrawl. Do not create another calculator, merge it into a policy guide or claim the recent changes succeeded or failed. No website content changes were made during this export review.
+Decision: retain the October 20 title/description and October 21 content while collecting post-change evidence. The indexed report is now recorded; next run a live test and, if it passes and no request was made today, request indexing once and save the acknowledgement. Then check for a newer reported crawl. Inspect the first complete post-change seven-day window October 22–28 only after GSC reports it, and interpret outcomes in light of recrawl. Do not create another calculator, merge it into a policy guide or claim the recent changes succeeded or failed. No website content changes were made during this export review.
 
 Sources: user-supplied GSC workbook (Filters, Chart, Pages, Queries, Countries and Devices); https://help.ahrefs.com/en/articles/13913559-getting-started-with-ahrefs-mcp .
 
@@ -79,3 +79,12 @@ Official rule checks today: [Shanghai government, August 20 explanation](https:/
 | --- | --- | --- | --- | --- | --- |
 | Available pre-change reference | 2026-09-20–2026-10-17 | Unknown / Unknown / Unknown | 0 / 10 / 0% / 22.5 | Unknown | Predates October 20–21 changes |
 | 2026-10-21 export review | 2026-08-23–2026-10-18; Last 3 months filter, no period comparison | Current state Unknown / Unknown / Unknown; historical search appearances confirmed | 0 / 10 / 0% / 22.5 | transit through mainland: 0/1/0%/4.0; visa free china: 0/1/0%/193.0; 8 impressions lack disclosed queries | Pre-change baseline only; no October 20–21 outcome data |
+
+## Indexed-report observation, October 21
+
+| Evidence | Result | Interpretation |
+| --- | --- | --- |
+| User screenshot `image(20261021-034258).png` | Indexed; self-canonical; successful smartphone crawl; last reported crawl Oct 13, 2026, 8:57:32 AM, timezone unspecified | Confirms indexing, not processing of the October 20–21 changes or ranking improvement. |
+| Public sitemap fetch | HTTP 200; parseable XML; 76 URLs; exact calculator URL once | No demonstrated public sitemap fault; separate from GSC processing. |
+
+This is an index observation only. The performance baseline above still ends October 18; no new post-change click or ranking data was supplied.
