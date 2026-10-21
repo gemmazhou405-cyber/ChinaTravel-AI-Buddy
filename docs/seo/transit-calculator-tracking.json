@@ -285,6 +285,76 @@
       "pageFilteredQueriesAvailable": false,
       "postChangeOutcomeEstablished": false,
       "note": "Append-only observation from the Pages sheet. Global Queries cannot be attributed to this calculator. Previous zero impressions do not mean rank zero; dates and post-change crawl are unconfirmed. Preserve the earlier page-filtered baseline separately."
+    },
+    {
+      "id": "GSC-2026-10-21-CALCULATOR-28D-COMPARISON",
+      "observedOn": "2026-10-21",
+      "source": {
+        "type": "user_supplied_page_filtered_gsc_comparison_export",
+        "filename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (2).xlsx",
+        "sha256": "7045dd42495f7e1ff4cf7f13a201babb4a5b3cb0cffc16df235bb37d4f1febbc",
+        "searchType": "Web (text-based)",
+        "pageFilter": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+        "recentPeriodLabel": "Last 28 days",
+        "previousPeriodLabel": "Previous 28 days",
+        "recentPeriodStart": null,
+        "recentPeriodEnd": null,
+        "previousPeriodStart": null,
+        "previousPeriodEnd": null,
+        "exactDatesRecorded": false
+      },
+      "page": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+      "recent": {
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0.0,
+        "averagePosition": 22.5
+      },
+      "previous": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": null,
+        "averagePosition": null
+      },
+      "pageFilteredQueriesAvailable": true,
+      "queries": [
+        {
+          "key": "transit through mainland",
+          "recent": {
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0.0,
+            "averagePosition": 4.0
+          },
+          "previous": {
+            "clicks": 0,
+            "impressions": 0,
+            "ctr": null,
+            "averagePosition": null
+          }
+        },
+        {
+          "key": "visa free china",
+          "recent": {
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0.0,
+            "averagePosition": 193.0
+          },
+          "previous": {
+            "clicks": 0,
+            "impressions": 0,
+            "ctr": null,
+            "averagePosition": null
+          }
+        }
+      ],
+      "visibleQueryImpressions": 2,
+      "impressionsWithoutDisclosedQuery": 8,
+      "countryTableImpressions": 2,
+      "deviceTableImpressions": 2,
+      "postChangeOutcomeEstablished": false,
+      "note": "Correct calculator filter and comparison headers verified. No explicit date boundaries or Chart sheet. Previous zero impressions mean rank and CTR unavailable, not rank zero. Countries/Devices each account for only 2 of 10 page impressions and must not replace the Pages total. Target calculator/TWOV queries remain coverage-unconfirmed; absence from disclosed queries is not zero demand or zero ranking. Matching aggregates across earlier exports do not prove post-change success or failure. No website changes or indexing requests during this review."
     }
   ]
 }
