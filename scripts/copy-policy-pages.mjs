@@ -21,6 +21,7 @@ const visaFreeCheckerGuide = JSON.parse(await readFile('src/data/seoPages/china-
 const arrivalCardGuide = JSON.parse(await readFile('src/data/seoPages/china-online-arrival-card-2026.json', 'utf8'));
 // 240-hour transit question pages; the same file feeds src/components/TransitAnswerPage.tsx
 const transitAnswers = JSON.parse(await readFile('src/data/transitAnswers.json', 'utf8'));
+const calculatorContent = JSON.parse(await readFile('src/data/transitCalculatorContent.json', 'utf8'));
 
 const pageMeta = {
   plan: {
@@ -4107,7 +4108,7 @@ pageMeta['china-240-hour-transit-calculator'] = {
   description: 'China’s 240-hour transit clock starts at midnight after entry. Use this free calculator for your exit deadline in China time, plus basic passport and route checks.',
   quickAnswer: 'China’s 240-hour visa-free transit clock starts at 00:00 on the day after entry, in China Standard Time (UTC+8). Enter your arrival and route to calculate the exit deadline and check the basic passport and route pattern. Final eligibility and the permitted stay are decided by border inspection authorities.',
   lastReviewed: transitAnswers.lastUpdated,
-  lastModified: '2026-10-20',
+  lastModified: calculatorContent.modified,
   lastUpdatedFooter: true,
   application: true,
   contentSections: [
@@ -4118,6 +4119,14 @@ pageMeta['china-240-hour-transit-calculator'] = {
         `${transit240PortRows.length} designated ports in ${transit240ProvinceCount} provincial-level regions.`,
         'The 240-hour clock starts at 00:00 on the day after entry, in China Standard Time.',
       ],
+    },
+    {
+      title: calculatorContent.heading,
+      items: [calculatorContent.intro, calculatorContent.note],
+      table: {
+        headers: ['Recorded entry (China time)', '240-hour clock starts', 'Planning label', 'Exact boundary'],
+        rows: calculatorContent.examples.map((example) => [example.arrivalLocal, example.clockStartChina, example.planningLatestChina, example.deadlineExclusiveChina].map((value) => value.replace('T', ' '))),
+      },
     },
     {
       title: 'Worked example',
@@ -4162,6 +4171,7 @@ pageMeta['china-240-hour-transit-calculator'] = {
     },
   ],
   faqs: [
+    ...calculatorContent.faqs,
     ['When does the 240-hour clock start?', 'Under the current National Immigration Administration rule, the 240-hour period is calculated from 00:00 on the day after entry. This calculator uses China Standard Time. Your immigration record and the border authority’s calculation control, so leave a practical buffer before the displayed boundary.'],
     ['Does this calculator confirm that I qualify?', 'No. It calculates the time window only. Eligibility also depends on your passport nationality, ordinary-passport status, confirmed onward ticket, third-country or region route, designated entry and exit ports, permitted stay area, purpose of travel and the policy in force on your travel date.'],
     ['Can I return to the same country or region I departed from?', 'A simple route such as United States to Mainland China to United States does not meet the third-country or region transit pattern. The origin and onward destination normally need to be different. Airlines and border authorities should confirm complex routes before travel.'],
