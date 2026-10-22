@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "changeId": "SEO-2026-10-22-NANJING-BOOKINGS",
+  "classification": "scoped_tourist_planning_content_test",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks",
+  "status": "validated_pending_publication",
+  "page": "https://chinaeasebuddy.com/3-day-nanjing-itinerary/",
+  "codeCommits": [],
+  "baseline": {
+    "source": {
+      "filename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
+      "sha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+      "searchType": "Web",
+      "periodLabel": "Last 28 days vs previous 28 days",
+      "actualDateBounds": null,
+      "postChangeResult": false
+    },
+    "current": {
+      "clicks": 0,
+      "impressions": 14,
+      "ctr": 0.0,
+      "pageAveragePosition": 16.07
+    },
+    "exactPageQueries": null,
+    "indexingState": null,
+    "latestGoogleCrawl": null,
+    "googleSelectedCanonical": null,
+    "siteWideQueryClues": [
+      {
+        "query": "nanjing 3 days itinerary",
+        "clicks": 0,
+        "impressions": 1,
+        "averagePosition": 49.0,
+        "scope": "site_wide_not_assigned_to_page"
+      }
+    ],
+    "marketMonthlyVolume": null,
+    "keywordDifficulty": null
+  },
+  "selectionEvidence": {
+    "tourismIntent": "A duration-specific destination plan for prospective Nanjing visitors arranging museum and memorial visits. Topic-based inference, not verified visitor identity.",
+    "demand": "14 historical page impressions and one separately scoped whole-site query impression. Monthly market volume is unknown.",
+    "ranking": "16.07 is the page-average position. The visible whole-site trip query averages 49 and cannot be assigned to this page. No confirmed near-top-ten target query.",
+    "confirmedGap": "The formal page has generic entry checks but no foreign-passport service-centre instructions, named exhibition-area/entrance comparison or Monday alternative.",
+    "publicPageBefore": {
+      "url": "https://chinaeasebuddy.com/3-day-nanjing-itinerary/",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-22T14:18:04+00:00",
+      "sha256": "8ac64a93049bd9d73d5ac7d1a0da3b3f1b7758b113d9ac265c8b9a540719c15f",
+      "hasServiceCentreWorkflow": false,
+      "hasMuseumOfficialSource": false,
+      "hasMondayAlternative": false
+    },
+    "competitiveCheck": {
+      "url": "https://simplechinatrip.com/nanjing/",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-22T14:19:58+00:00",
+      "sha256": "c99ce86fa08adfa0d143a4191ae72b38c714cd6d625769b2ac9261a9b4b48a2c",
+      "bytes": 93170,
+      "observation": "An established publisher already compares reservation channels for Nanjing sights. The topic has practical competing content, not a demonstrated empty search market.",
+      "scope": "Visible publisher content only; not live market-specific Google top-ten results, monthly volume, keyword difficulty or backlinks."
+    },
+    "decision": "Small source-backed tourist-planning content test. Not a proven high-volume, low-competition or highest-return keyword opportunity.",
+    "whyNow": "The September 25 guide has no prior recorded body action; its venue-specific planning gap is distinct from recently edited destination and national-route pages, which remain stable."
+  },
+  "candidateQueries": [
+    "nanjing itinerary 3 days",
+    "nanjing 3 days itinerary",
+    "nanjing museum reservation foreigners",
+    "nanjing itinerary monday",
+    "nanjing massacre memorial hall reservation"
+  ],
+  "queryCaution": "Candidate phrases only. Exact-page ownership, country/device ranking, monthly volume, competition and relevance-filtered clicks remain unknown. Retain the same-session Ahrefs insufficient-plan result; no substitute metrics or repeated login request.",
+  "change": {
+    "sharedSource": "src/data/seoPages/3-day-nanjing-itinerary.json",
+    "scope": "Add two sections and three FAQs; update two Day 2 booking pointers and append a quick-answer pointer. Static page and React already consume the same source.",
+    "originalSectionsRetained": 7,
+    "totalSections": 9,
+    "originalFaqsRetained": 6,
+    "totalFaqCount": 9,
+    "newSourceLinks": 3,
+    "modified": "2026-10-22",
+    "wholeGuideReviewedRetained": "September 25, 2026",
+    "retained": [
+      "Search title, description, H1, URL, canonical and CTA",
+      "Original related links, six FAQs and four source links",
+      "Other page bodies and tool algorithms",
+      "76 sitemap URLs; only target actual lastmod changes"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://www.njmuseum.com/zh/visitIndex",
+      "publisher": "Nanjing Museum",
+      "indexedPrimaryTextUrl": "https://www.njmuseum.org.cn/zh/visitIndex",
+      "indexedTextRetrievedOn": "2026-10-22",
+      "indexedPageCrawlLabel": "last month",
+      "retrieval": "Full search-indexed primary visitor instructions; direct .com and .org.cn responses are identical SPA shells, not the rendered visitor rules.",
+      "supports": "Real-name WeChat booking, original foreign passport and reservation proof at the service-centre green-channel window; ordinary Monday closure and 09:00–17:00/16:00 last entry.",
+      "directPageAttempt": {
+        "url": "https://www.njmuseum.com/zh/visitIndex",
+        "httpStatus": 200,
+        "checkedAt": "2026-10-22T14:20:02+00:00",
+        "sha256": "d10bdf5a39f9afb1b362ab4b556564c1d7ca9d1bf4da52e8006816eb94a63155",
+        "bytes": 7661,
+        "renderedVisitorRulesPresent": false
+      },
+      "lastFullLiveRuleVerificationAt": null,
+      "freshnessLimitation": "Do not label the shell HTTP 200 as full current-rule validation. Recheck the rendered official instructions and temporary notices; full live-rule freshness remains unconfirmed."
+    },
+    {
+      "url": "https://www.19371213.com.cn/en/guide/how/",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-22T14:18:37+00:00",
+      "sha256": "d5ef984c55a3c8fb744af3387425490e420659f60bf3063939e2bbd4d899a323",
+      "bytes": 104153,
+      "publisher": "The Memorial Hall of the Victims in Nanjing Massacre by Japanese Invaders",
+      "retrieval": "Full public primary HTML retrieved directly",
+      "supports": "Ordinary hours, Monday/statutory-holiday rule, real-name reservations, passports and separately reserved exhibition areas."
+    },
+    {
+      "url": "https://www.19371213.com.cn/guide/how/",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-22T14:20:05+00:00",
+      "sha256": "b4046326b08398a069ce6e365bf391f93cfa45736f9dcc73eb005412e9f93362",
+      "bytes": 74294,
+      "publisher": "The Memorial Hall of the Victims in Nanjing Massacre by Japanese Invaders",
+      "retrieval": "Full public primary HTML retrieved directly",
+      "supports": "Chinese visitor guide corroborates the ordinary rule and separate reservations."
+    },
+    {
+      "url": "https://www.19371213.com.cn/information/notices/202610/t20261008_5921665.html",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-22T14:20:34+00:00",
+      "sha256": "cef1998a9f1c4973f8b1b843abda0aacd44a26d0caebb15db06053e77e589dcf",
+      "bytes": 75547,
+      "publisher": "The Memorial Hall of the Victims in Nanjing Massacre by Japanese Invaders",
+      "retrieval": "Full public primary HTML retrieved directly",
+      "supports": "October holiday FAQ identifies adjacent Yunjin Road areas, different entrances and the distant Liji Lane venue near Daxinggong. Only venue/entrance distinctions are used; October 1–7 extended hours are not applied to ordinary dates."
+    }
+  ],
+  "sourceConflictHandling": "Use the Memorial Hall ordinary visitor guide for ordinary hours. The October FAQ gives extended hours only for October 1–7; do not generalise them. Do not publish conflicting account/cancellation quotas, fixed ticket-release times, precise exit numbers, live slot availability or a blanket walk-in promise. Nanjing Museum rules are supported by a search-indexed official visitor page; direct requests returned a shell, so full live-rule verification is explicitly unknown.",
+  "editorialInference": "The Monday–Wednesday reorder, keeping two visits only when bookings and transfers fit, and shortening Zhongshan if necessary are editorial route suggestions, not operator-promised travel times.",
+  "hypothesis": "Clearer venue, document and weekday planning may answer first-visit trip questions better. Ranking and relevant-click gains remain untested.",
+  "relatedRecentChanges": {
+    "caution": "Other site pages changed on October 22. Preserve those versions and do not isolate this body change causally from aggregate site results."
+  },
+  "validation": {
+    "local": {
+      "sections": 9,
+      "faqPairs": 9,
+      "sharedSourceParity": true,
+      "retainedOriginalMetadata": true,
+      "retainedOriginalRelatedLinks": true,
+      "sitemapUrlCount": 76,
+      "onlyLastmodChanges": {
+        "https://chinaeasebuddy.com/3-day-nanjing-itinerary/": [
+          "2026-09-25",
+          "2026-10-22"
+        ]
+      },
+      "browserVisualQA": "unavailable_no_executable"
+    },
+    "typecheck": "pass including i18n parity",
+    "lint": "pass with one pre-existing PricingPlans fast-refresh warning",
+    "build": "pass",
+    "publicHtmlAudit": "complete existing audit suite passed",
+    "mobileVisualQA": "unavailable_no_browser_executable",
+    "finalLocalContentVerification": {
+      "url": "https://chinaeasebuddy.com/3-day-nanjing-itinerary/",
+      "checkedAt": "2026-10-22T14:29:28+00:00",
+      "httpStatus": null,
+      "htmlSha256": "c4ba30503a629f6c183c163d6edfd977eab15db96808a7d9e73b7536192002a4",
+      "sections": 9,
+      "faqSchemaPairs": 9,
+      "newSourceLinks": [
+        "https://www.njmuseum.com/zh/visitIndex",
+        "https://www.19371213.com.cn/guide/how/",
+        "https://www.19371213.com.cn/information/notices/202610/t20261008_5921665.html"
+      ],
+      "allFormerRelatedLinksRetained": true,
+      "newPassportVenueAndMondayContent": true,
+      "ordinaryAndDateSpecificHoursDistinguished": true,
+      "searchMetadataMatchesBeforeFormalPage": true,
+      "canonical": "exact_self_reference",
+      "singleH1": true,
+      "noNoindex": true,
+      "sitemap": {
+        "httpStatus": null,
+        "exactlyMatchesValidatedBuild": true,
+        "urlCount": 76,
+        "targetLastmod": "2026-10-22"
+      },
+      "browserVisualQA": "unavailable_no_executable"
+    }
+  },
+  "publication": {
+    "status": "pending",
+    "codeCommit": null,
+    "firstFormalVerifiedAt": null
+  },
+  "review": {
+    "decision": "awaiting_evidence",
+    "postChangePerformance": "not_available",
+    "googlePostChangeCrawl": null,
+    "samePageSameQueryRanking": null,
+    "stronglyRelevantClicks": null,
+    "provisional7DayWindow": [
+      "2026-10-23",
+      "2026-10-29"
+    ],
+    "provisional28DayWindow": [
+      "2026-10-23",
+      "2026-11-19"
+    ],
+    "reference7DayWindow": [
+      "2026-10-16",
+      "2026-10-22"
+    ],
+    "reference28DayWindow": [
+      "2026-09-25",
+      "2026-10-22"
+    ],
+    "earliest7DayAvailabilityCheck": "2026-10-30",
+    "earliest28DayAvailabilityCheck": "2026-11-20",
+    "referenceWindowCaution": "Publication windows remain provisional until formal verification. Reference end date includes this publication and other edits, not a clean causal control. Historical export actual dates remain unknown. Use property reporting dates and complete matched GSC data; add recrawl-based windows if Google processes later.",
+    "rule": "Use complete adjacent equal non-overlapping GSC windows with matching Web, exact page, country and device filters. Data completeness and sample adequacy govern conclusions.",
+    "referenceToExistingEvidencePriority": "Calculator indexed URL Inspection and budget exact-page Queries remain first; no new immediate export request."
+  },
+  "serviceNoticeWatch": {
+    "lastPrimaryCheckOn": null,
+    "partialPrimaryCheckOn": "2026-10-22",
+    "checkAtEveryScheduledReview": true,
+    "sources": [
+      "https://www.njmuseum.com/zh/visitIndex",
+      "https://www.19371213.com.cn/en/guide/how/",
+      "https://www.19371213.com.cn/guide/how/",
+      "https://www.19371213.com.cn/information/notices/202610/t20261008_5921665.html"
+    ],
+    "museumFullLiveRuleVerificationAt": null,
+    "museumIndexedTextCheckedOn": "2026-10-22",
+    "memorialFullPrimaryCheckedOn": "2026-10-22",
+    "watchFor": [
+      "Museum foreign-passport and reservation instructions",
+      "Normal, school-holiday, national-holiday and temporary opening notices",
+      "Memorial exhibition-area bookings, entrances and temporary access"
+    ],
+    "failureRule": "A shell HTTP 200 is not full visitor-rule evidence. If rendered primary content cannot be retrieved, retain unknown/old full-check dates. Do not silently refresh all-source verification or claim unchanged operations from cached content."
+  },
+  "observations": [
+    {
+      "at": "2026-10-22T14:28:07+00:00",
+      "type": "selection_and_local_validation",
+      "summary": "Old formal-page gap verified. Museum entry instructions retrieved as indexed official text; direct page is a shell. Full Memorial Hall primary guides and date-limited October FAQ retrieved. Shared content passes types, build, parity, nine FAQ schema pairs and the complete HTML audit suite. No new Google search outcomes."
+    }
+  ]
+}

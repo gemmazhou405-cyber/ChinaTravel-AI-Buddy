@@ -1573,6 +1573,45 @@
         "basis": "page/topic inference, not verified visitor identity",
         "asOf": "2026-10-22"
       }
+    },
+    {
+      "url": "https://chinaeasebuddy.com/3-day-nanjing-itinerary/",
+      "changeIds": [
+        "SEO-2026-10-22-NANJING-BOOKINGS"
+      ],
+      "sourceRecords": [
+        "docs/seo/nanjing-itinerary-ranking-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-22"
+      ],
+      "latestConfirmedLiveDate": null,
+      "priority": 2,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "formal publication verification",
+        "current indexed URL Inspection crawl/canonical",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": [
+        "2026-10-23",
+        "2026-10-29"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-23",
+        "2026-11-19"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-30",
+      "earliest28DayAvailabilityCheck": "2026-11-20",
+      "windowCaution": "Publication windows remain provisional until formal verification. Reference end date includes this publication and other edits, not a clean causal control. Historical export actual dates remain unknown. Use property reporting dates and complete matched GSC data; add recrawl-based windows if Google processes later.",
+      "nextAction": "Verify formal publication, then retain the scoped planning content for complete-window search follow-up. Recheck museum rendered visitor rules; direct shell retrieval is not full verification. Calculator and budget evidence remain first.",
+      "audienceIntent": {
+        "classification": "direct_destination_trip_planning",
+        "basis": "page/topic inference, not verified visitor identity",
+        "asOf": "2026-10-22"
+      }
     }
   ],
   "observations": [
@@ -1862,6 +1901,14 @@
       "changeId": "SEO-2026-10-22-CHONGQING-MUSEUM-PLAN",
       "decision": "awaiting_evidence",
       "summary": "Code 6f37d1a0e153be4c42e18aa6c76f88a66728f4ed and Cloudflare a50b13c2-587d-4a3f-81b5-c5f5590fd86a formally verified; prior observations preserved. No new search-outcome evidence."
+    },
+    {
+      "at": "2026-10-22T14:28:07+00:00",
+      "type": "nanjing_booking_test_selected",
+      "url": "https://chinaeasebuddy.com/3-day-nanjing-itinerary/",
+      "changeId": "SEO-2026-10-22-NANJING-BOOKINGS",
+      "decision": "awaiting_evidence",
+      "summary": "Scoped venue/document/Monday planning test validated locally. Museum indexed-source freshness limit recorded; publication and search outcomes remain unverified. Prior observations preserved."
     }
   ],
   "priorityPolicy": "docs/seo/tourist-intent-priorities.json",

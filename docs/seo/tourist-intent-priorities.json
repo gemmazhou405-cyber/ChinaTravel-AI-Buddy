@@ -261,6 +261,19 @@
         "pageAveragePosition": 13.27
       },
       "exactPageQueryIntentConfirmed": false
+    },
+    {
+      "url": "https://chinaeasebuddy.com/3-day-nanjing-itinerary/",
+      "priority": 2,
+      "reason": "Direct destination planning with 14 historical impressions and specific missing venue/document steps; not a quantified keyword opportunity.",
+      "workState": "Shared venue, entry-document and Monday content validated locally; await publication and complete-window search evidence. Museum full live-rule verification remains unknown.",
+      "baseline": {
+        "clicks": 0,
+        "impressions": 14,
+        "ctr": 0.0,
+        "pageAveragePosition": 16.07
+      },
+      "exactPageQueryIntentConfirmed": false
     }
   ],
   "nextEvidencePriority": [
@@ -357,6 +370,11 @@
       "date": "2026-10-22",
       "type": "chongqing_museum_test_formally_verified",
       "summary": "Scoped Chongqing planning test live with ten sections and ten FAQs; calculator priority and recent body observations retained."
+    },
+    {
+      "date": "2026-10-22",
+      "type": "nanjing_booking_test_selected",
+      "summary": "Small source-backed practical-planning test; source freshness limits and calculator priority retained."
     }
   ],
   "keywordEvidence": "docs/seo/keyword-opportunities-2026-10-22.json",

@@ -614,6 +614,68 @@
         "status": "live_verified",
         "postChangeSearchEffect": "awaiting_evidence"
       }
+    },
+    {
+      "date": "2026-10-22",
+      "candidateUrl": "https://chinaeasebuddy.com/3-day-nanjing-itinerary/",
+      "actionId": "SEO-2026-10-22-NANJING-BOOKINGS",
+      "selectionEvidence": {
+        "tourismIntent": "A duration-specific destination plan for prospective Nanjing visitors arranging museum and memorial visits. Topic-based inference, not verified visitor identity.",
+        "demand": "14 historical page impressions and one separately scoped whole-site query impression. Monthly market volume is unknown.",
+        "ranking": "16.07 is the page-average position. The visible whole-site trip query averages 49 and cannot be assigned to this page. No confirmed near-top-ten target query.",
+        "confirmedGap": "The formal page has generic entry checks but no foreign-passport service-centre instructions, named exhibition-area/entrance comparison or Monday alternative.",
+        "publicPageBefore": {
+          "url": "https://chinaeasebuddy.com/3-day-nanjing-itinerary/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-22T14:18:04+00:00",
+          "sha256": "8ac64a93049bd9d73d5ac7d1a0da3b3f1b7758b113d9ac265c8b9a540719c15f",
+          "hasServiceCentreWorkflow": false,
+          "hasMuseumOfficialSource": false,
+          "hasMondayAlternative": false
+        },
+        "competitiveCheck": {
+          "url": "https://simplechinatrip.com/nanjing/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-22T14:19:58+00:00",
+          "sha256": "c99ce86fa08adfa0d143a4191ae72b38c714cd6d625769b2ac9261a9b4b48a2c",
+          "bytes": 93170,
+          "observation": "An established publisher already compares reservation channels for Nanjing sights. The topic has practical competing content, not a demonstrated empty search market.",
+          "scope": "Visible publisher content only; not live market-specific Google top-ten results, monthly volume, keyword difficulty or backlinks."
+        },
+        "decision": "Small source-backed tourist-planning content test. Not a proven high-volume, low-competition or highest-return keyword opportunity.",
+        "whyNow": "The September 25 guide has no prior recorded body action; its venue-specific planning gap is distinct from recently edited destination and national-route pages, which remain stable."
+      },
+      "candidateQueries": [
+        "nanjing itinerary 3 days",
+        "nanjing 3 days itinerary",
+        "nanjing museum reservation foreigners",
+        "nanjing itinerary monday",
+        "nanjing massacre memorial hall reservation"
+      ],
+      "queryObservations": [
+        {
+          "query": "nanjing 3 days itinerary",
+          "clicks": 0,
+          "impressions": 1,
+          "averagePosition": 49.0,
+          "scope": "site_wide_not_assigned_to_page"
+        }
+      ],
+      "pageBaseline": {
+        "clicks": 0,
+        "impressions": 14,
+        "ctr": 0.0,
+        "pageAveragePosition": 16.07
+      },
+      "marketMonthlyVolume": null,
+      "keywordDifficulty": null,
+      "sourceRecord": "docs/seo/nanjing-itinerary-ranking-tracking.json",
+      "decision": "Scoped tourist-planning content test, with museum indexed-source freshness limitation recorded. No high-volume or low-competition claim.",
+      "publication": {
+        "status": "pending",
+        "codeCommit": null,
+        "firstFormalVerifiedAt": null
+      }
     }
   ]
 }

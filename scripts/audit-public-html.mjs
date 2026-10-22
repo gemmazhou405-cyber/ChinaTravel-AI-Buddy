@@ -237,8 +237,8 @@ const pages = [
   {
     path: '/3-day-nanjing-itinerary/',
     h1: /3-Day Nanjing Itinerary for First-Time Visitors.*2026/i,
-    keywords: ['Sun Yat-sen Mausoleum', 'Ming Xiaoling', 'Nanjing Museum', 'Nanjing Massacre Memorial Hall', 'Qinhuai River', 'Nanjing South', '12306'],
-    links: ['/#trip-plan', '/3-day-shanghai-itinerary/', '/3-day-suzhou-itinerary/', '/10-day-china-itinerary/', '/china-train-travel-guide/', '/china-hotels-for-foreigners/', '/china-metro-guide/', '/first-trip-to-china/'],
+    keywords: ['Sun Yat-sen Mausoleum', 'Ming Xiaoling', 'Nanjing Museum', 'Nanjing Massacre Memorial Hall', 'Qinhuai River', 'Nanjing South', '12306', 'Nanjing Museum and the Memorial Hall: separate reservations', 'service centre green-channel window', 'A Monday–Wednesday Nanjing itinerary alternative', 'Yunjin Road', 'Daxinggong'],
+    links: ['https://www.njmuseum.com/zh/visitIndex', 'https://www.19371213.com.cn/guide/how/', 'https://www.19371213.com.cn/information/notices/202610/t20261008_5921665.html', '/#trip-plan', '/3-day-shanghai-itinerary/', '/3-day-suzhou-itinerary/', '/10-day-china-itinerary/', '/china-train-travel-guide/', '/china-hotels-for-foreigners/', '/china-metro-guide/', '/first-trip-to-china/'],
   },
   {
     path: '/3-day-dali-itinerary/',

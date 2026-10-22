@@ -93,3 +93,12 @@ Ahrefs的项目列表和关键词概览本轮均返回 `Insufficient plan`，未
 竞品 https://chongqing.guide/en/guides/liziba-train/ 已有乘车与拍照区分及线路说明；未据此推断 Google 前十、低竞争或高搜索量。此项为游客规划内容测试，保留最近修改页面。共享 2 新增/总 10 节，3 新增/总 10 FAQ；原搜索 metadata、内链、全指南审核日期保留。详见 `chongqing-itinerary-ranking-tracking.json`，发布和 Google 搜索结果分开核验。
 
 重庆补记：代码 `6f37d1a0e153be4c42e18aa6c76f88a66728f4ed`、Cloudflare 部署 `a50b13c2-587d-4a3f-81b5-c5f5590fd86a` 成功；2026-10-22T13:54:45+00:00 正式 HTTP 200 核验 10 节、10 FAQ/schema、来源、改排与轨道指引、自引用 canonical 和原搜索 metadata。正式 sitemap 匹配 76 URL 构建。首个完整 7 天暂定 Oct23–29、28 天 Oct23–Nov19；参考窗口含发布和其他改动，不作干净因果对照。Google 抓取、收录、同页词排名与强相关点击仍待验证。
+
+
+## 后续筛选：南京三日的预约、证件与周一改排
+
+`/3-day-nanjing-itinerary/` 历史 0 点击、14 展示、页面平均位置 16.07；全站 `nanjing 3 days itinerary` 仅 1 展示、平均 49，未归属本页。月搜索量、KD 与市场/设备同词位置未知，不能称接近前十的已确认机会。竞品 https://simplechinatrip.com/nanjing/ 已有景点预约比较，不能据此推断低竞争。
+
+正式旧页缺少外籍护照服务中心流程、具体展区/入口区别和周一改排。新增两节、三 FAQ，总九节/九 FAQ；原搜索 metadata、六 FAQ、内链及全指南审核日期保留。南京博物院流程来自搜索索引中的官方参观页全文；直接官网只返回前端外壳，不能当作当前规则全文重新核验。纪念馆中英文指南及十月 FAQ 全文直接读取成功；仅采用后者展区位置/入口区别，不把 Oct1–7 延时开放写成常规时间。服务时效的这一限制在来源与复查记录中保留。
+
+这是游客规划内容探索，不是已证实的量化排名机会。详见 `nanjing-itinerary-ranking-tracking.json`。最近版本保留观察，计算器抓取与预算精确查询证据优先，不新增立即导出要求。
