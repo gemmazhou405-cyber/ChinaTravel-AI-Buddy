@@ -2,9 +2,11 @@
   "schemaVersion": 1,
   "batchId": "SEO-2026-10-22-STATIC-BODIES",
   "primaryOutcome": "strongly_relevant_google_organic_clicks",
-  "status": "local_verified_pending_publication",
-  "liveDate": null,
-  "codeCommits": [],
+  "status": "live_verified",
+  "liveDate": "2026-10-22",
+  "codeCommits": [
+    "6aa771560d54d5cfdc9797360fdfb1b12cbefbdf"
+  ],
   "pages": [
     {
       "changeId": "SEO-2026-10-22-TRAIN-STATIC",
@@ -70,10 +72,15 @@
         "reviewDateMeaning": "Railway registration/identity/e-ticket sources checked October22."
       },
       "production": {
-        "newContentVerified": false,
-        "checkedAt": null,
+        "newContentVerified": true,
+        "checkedAt": "2026-10-22T01:37:07Z",
         "googleRecrawlConfirmed": false,
-        "rankingOrClickGainConfirmed": false
+        "rankingOrClickGainConfirmed": false,
+        "httpStatus": 200,
+        "xRobotsTag": null,
+        "staticBodyAndAnchorChecks": "PASS",
+        "metadataRetained": "PASS",
+        "structuredData": "PASS"
       },
       "performanceObservations": []
     },
@@ -141,10 +148,15 @@
         "reviewDateMeaning": "Original itinerary review date retained; this is a rendering/content-alignment fix."
       },
       "production": {
-        "newContentVerified": false,
-        "checkedAt": null,
+        "newContentVerified": true,
+        "checkedAt": "2026-10-22T01:37:07Z",
         "googleRecrawlConfirmed": false,
-        "rankingOrClickGainConfirmed": false
+        "rankingOrClickGainConfirmed": false,
+        "httpStatus": 200,
+        "xRobotsTag": null,
+        "staticBodyAndAnchorChecks": "PASS",
+        "metadataRetained": "PASS",
+        "structuredData": "PASS"
       },
       "performanceObservations": []
     }
@@ -159,7 +171,8 @@
     "targetHtmlAndSitemap": "PASS: nine sections/anchors, four FAQs each, train HowTo; unchanged metadata and calculator; same76URLs, only two target dates changed",
     "sitemapUrlCount": 76,
     "calculatorUnchanged": "PASS",
-    "diffCheck": "PASS"
+    "diffCheck": "PASS",
+    "production": "PASS: formal train and itinerary pages, nine section IDs/anchors, all shared content, FAQ/HowTo, metadata, no X-Robots-Tag and sitemap checked 2026-10-22T01:37:07Z"
   },
   "sources": [
     {
@@ -197,5 +210,23 @@
     "hiddenQueries": "Keep unreported query values unknown. No site-wide query is attributed to either page.",
     "indexingRequests": "Not submitted by this environment."
   },
-  "releaseObservations": []
+  "releaseObservations": [
+    {
+      "observedOn": "2026-10-22",
+      "checkedAt": "2026-10-22T01:36:14Z",
+      "stage": "Build in progress; both formal pages still served previous content."
+    },
+    {
+      "observedOn": "2026-10-22",
+      "checkedAt": "2026-10-22T01:37:07Z",
+      "stage": "Both formal pages verified with complete shared body and working section anchors; no search-performance outcome confirmed."
+    }
+  ],
+  "release": {
+    "cloudflareStatus": "success",
+    "deploymentId": "d883198f-5c9b-45ff-baa1-ac2c2db3852e",
+    "deploymentUrl": "https://d883198f.chinaease-buddy.pages.dev",
+    "formalContentVerified": true,
+    "verifiedAtUtc": "2026-10-22T01:37:07Z"
+  }
 }
