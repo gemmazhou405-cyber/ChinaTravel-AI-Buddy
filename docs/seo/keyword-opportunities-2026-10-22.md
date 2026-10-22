@@ -69,3 +69,5 @@ Ahrefs的项目列表和关键词概览本轮均返回 `Insufficient plan`，未
 `/10-day-china-itinerary/`历史0点击/9展示/页面平均83.44；全站`china 10 day itinerary`3展示/78.67、`china itinerary 10 days`3/87.67、`10 day china itinerary`2/83、`10 day china trip`1/86，不归属本页，不能称为接近前十的词。月搜索量/KD未知。
 
 直接正式HTTP200确认旧quick answer4+3+3=10晚，却Day10离境；西安至上海换城时间模糊。修正为4+2+3=9晚，Day5/7明确换城，补充4+3+2历史方案及5+4慢行方案和城市/订票/预算入口。14天页4+3+3+3=13晚已一致，不修改；近期7天等版本保留观察。竞品https://chinatrailhead.com/itineraries/10-days-china/已有9晚与换城日安排，不能据此声称低竞争。此为准确性修复及小范围规划内容测试，搜索收益待验证。细节见`ten-day-itinerary-ranking-tracking.json`；计算器和预算证据请求仍优先。
+
+10天行程补记：`2d01e91`已正式生效，Oct22 08:36:32UTC直接HTTP200核验11章节、8FAQ/schema、9晚说明与两次换城日、内链、self-canonical和搜索metadata。正式sitemap精确匹配76URL版本，仅目标lastmod改变。Cloudflare部署`42095696-7c77-4650-9da1-d27a143d7824`成功。手机视觉QA因缺少浏览器未完成。完整7天暂定Oct23–29，28天Oct23–Nov19，收录/修改后抓取/同词排名/相关点击仍待验证。

@@ -465,7 +465,13 @@
       "marketMonthlyVolume": null,
       "keywordDifficulty": null,
       "sourceRecord": "docs/seo/ten-day-itinerary-ranking-tracking.json",
-      "decision": "Fix concrete itinerary accuracy and test clearertravel blocks;not a quantifiedranking opportunity."
+      "decision": "Fix concrete itinerary accuracy and test clearertravel blocks;not a quantifiedranking opportunity.",
+      "publication": {
+        "codeCommit": "2d01e91994ba9fcb3222d1c8b480445e2ad6e141",
+        "firstFormalVerifiedAt": "2026-10-22T08:36:32+00:00",
+        "status": "live_verified",
+        "postChangeSearchEffect": "awaiting_evidence"
+      }
     }
   ]
 }

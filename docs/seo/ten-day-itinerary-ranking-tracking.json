@@ -3,9 +3,11 @@
   "changeId": "SEO-2026-10-22-TEN-DAY-ROUTE",
   "classification": "tourist_itinerary_accuracy_fix_and_scoped_content_test",
   "primaryOutcome": "strongly_relevant_google_organic_clicks",
-  "status": "validated_ready_to_publish",
+  "status": "live_verified",
   "page": "https://chinaeasebuddy.com/10-day-china-itinerary/",
-  "codeCommits": [],
+  "codeCommits": [
+    "2d01e91994ba9fcb3222d1c8b480445e2ad6e141"
+  ],
   "baseline": {
     "source": {
       "filename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
@@ -119,11 +121,52 @@
     "searchMetadata": "exactly_matches_captured_before_formal_HTML",
     "sitemap": "76URLs_same_inventory_only_targetlastmod_changes",
     "mobileBrowserQA": "not_completed_environment_lacks_Chromium_executable",
-    "formalDomain": "pending"
+    "formalDomain": "passed_directHTTP200_all11sections_8FAQschema_pairs_links_canonical_metadata_and76URL_sitemap"
   },
   "publication": {
-    "status": "not_published",
-    "firstFormalVerifiedAt": null
+    "status": "live_verified",
+    "firstFormalVerifiedAt": "2026-10-22T08:36:32+00:00",
+    "codeCommit": "2d01e91994ba9fcb3222d1c8b480445e2ad6e141",
+    "cloudflare": {
+      "status": "success",
+      "deploymentId": "42095696-7c77-4650-9da1-d27a143d7824",
+      "completedAt": "2026-10-22T08:35:22Z",
+      "checkRunId": 119724065469,
+      "previewUrl": "https://42095696.chinaease-buddy.pages.dev"
+    },
+    "formalVerification": {
+      "url": "https://chinaeasebuddy.com/10-day-china-itinerary/",
+      "checkedAt": "2026-10-22T08:36:32+00:00",
+      "httpStatus": 200,
+      "htmlSha256": "cba80d26825d425715137e28423e47c3a8e3d9e0501dfa69d6d1bfb93c24082f",
+      "canonical": "exact_self_reference",
+      "singleH1": true,
+      "noNoindex": true,
+      "sections": 11,
+      "faqSchemaPairs": 8,
+      "overnightSplit": "4Beijing+2Xian+3Shanghai=9",
+      "explicitTransferDays": [
+        5,
+        7
+      ],
+      "oldTenNightSentenceAbsent": true,
+      "contextualLinks": [
+        "/3-day-beijing-itinerary/",
+        "/3-day-xian-itinerary/",
+        "/3-day-shanghai-itinerary/",
+        "/china-train-booking-foreigners-12306/",
+        "/china-travel-budget/#cost-estimator",
+        "/#trip-plan"
+      ],
+      "searchMetadataMatchesBeforeFormalPage": true,
+      "sitemap": {
+        "httpStatus": 200,
+        "exactlyMatchesValidatedBuild": true,
+        "urlCount": 76,
+        "targetLastmod": "2026-10-22"
+      },
+      "browserVisualQA": "unavailable_no_executable"
+    }
   },
   "review": {
     "decision": "awaiting_evidence",
@@ -131,10 +174,27 @@
     "googlePostChangeCrawl": null,
     "samePageSameQueryRanking": null,
     "stronglyRelevantClicks": null,
-    "provisional7DayWindow": null,
-    "provisional28DayWindow": null,
+    "provisional7DayWindow": [
+      "2026-10-23",
+      "2026-10-29"
+    ],
+    "provisional28DayWindow": [
+      "2026-10-23",
+      "2026-11-19"
+    ],
     "rule": "Start provisional complete windows after formal verification. Add crawl-based windows if Google recrawls later;use adjacent,equal,nonoverlapping windows and matchingWeb/page/country/device filters. No conclusion solely from a deadline or one-day movement.",
-    "referenceToExistingEvidencePriority": "Calculator indexed report and budget exact-page Queries remain first;no additional immediate export request."
+    "referenceToExistingEvidencePriority": "Calculator indexed report and budget exact-page Queries remain first;no additional immediate export request.",
+    "earliest7DayAvailabilityCheck": "2026-10-30",
+    "earliest28DayAvailabilityCheck": "2026-11-20",
+    "reference7DayWindow": [
+      "2026-10-16",
+      "2026-10-22"
+    ],
+    "reference28DayWindow": [
+      "2026-09-25",
+      "2026-10-22"
+    ],
+    "referenceWindowCaution": "Publication-based provisional windows only. Reference last date contains this change and other site edits;not a clean causal control. Historical export actual bounds remain unknown. Save additional crawl-based windows if later Google processing is confirmed;complete matched GSC evidence required."
   },
   "observations": [
     {
@@ -146,6 +206,11 @@
       "at": "2026-10-22T08:34:04+00:00",
       "type": "local_validation",
       "summary": "Initial generated artifact was stale. Regenerated with complete production pipeline and immediately asserted target content in same process;all11sections,8FAQ/schema pairs,nightmath,metadata andfullHTMLaudit pass. No browser visual pass claimed."
+    },
+    {
+      "at": "2026-10-22T08:36:32+00:00",
+      "type": "formal_live_verification",
+      "summary": "Formal rawHTTP200 shows11shared sections/8FAQschema pairs,default9night split,Day5/7transfers,old10night sentence removed,contextual links,unchanged metadata andself-canonical. Sitemap exactlymatches76URLbuild. No newGooglecrawl,index,queryrank orstronglyrelevantclick evidence;mobile visual QAunavailable."
     }
   ]
 }

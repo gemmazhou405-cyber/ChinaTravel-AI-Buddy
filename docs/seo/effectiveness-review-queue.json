@@ -1471,24 +1471,32 @@
       "recordedChangeDates": [
         "2026-10-22"
       ],
-      "latestConfirmedLiveDate": null,
+      "latestConfirmedLiveDate": "2026-10-22",
       "priority": 2,
-      "decision": "verify_publication_then_observe",
+      "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
-        "formal version verification",
         "current indexed URL Inspection crawl/canonical",
         "complete exact-page Queries comparison with actual dates",
         "strong-relevance clicks and same-query ranking outcomes"
       ],
-      "provisional7DayWindow": null,
-      "provisional28DayWindow": null,
-      "nextAction": "Validate/publish nine-night route test,then retain for complete-window outcomes. Calculator/budget evidence requests remain first.",
+      "provisional7DayWindow": [
+        "2026-10-23",
+        "2026-10-29"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-23",
+        "2026-11-19"
+      ],
+      "nextAction": "Retain verifiednine-night route test. ReviewGooglepost-change crawl/canonical andcomplete exact-page relevant-query clicks/ranks;calculator andbudget evidence requests remain first.",
       "audienceIntent": {
         "classification": "direct_china_trip_duration_planning",
         "basis": "page/topic inference,not verified visitor identity",
         "asOf": "2026-10-22"
-      }
+      },
+      "earliest7DayAvailabilityCheck": "2026-10-30",
+      "earliest28DayAvailabilityCheck": "2026-11-20",
+      "windowCaution": "Publication-based provisional windows only. Reference last date contains this change and other site edits;not a clean causal control. Historical export actual bounds remain unknown. Save additional crawl-based windows if later Google processing is confirmed;complete matched GSC evidence required."
     }
   ],
   "observations": [
@@ -1738,6 +1746,14 @@
       "changeId": "SEO-2026-10-22-TEN-DAY-ROUTE",
       "decision": "verify_publication_then_observe",
       "summary": "Correct old10-night/Day10departure mismatch and make both transfers explicit. Recent7/14-day versions retained;no measuredsearch uplift."
+    },
+    {
+      "at": "2026-10-22T08:36:32+00:00",
+      "type": "ten_day_route_formal_verification",
+      "url": "https://chinaeasebuddy.com/10-day-china-itinerary/",
+      "changeId": "SEO-2026-10-22-TEN-DAY-ROUTE",
+      "decision": "awaiting_evidence",
+      "summary": "Code2d01e91994ba9fcb3222d1c8b480445e2ad6e141 andCloudflare42095696-7c77-4650-9da1-d27a143d7824 formallyverified. Preservehistoric baselines/windows;noGoogle orsearchoutcome evidence."
     }
   ],
   "priorityPolicy": "docs/seo/tourist-intent-priorities.json",
