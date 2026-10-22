@@ -314,3 +314,10 @@ Reviewed all30URLs/36actionIDs and14source tracking records under tourist-intent
 `SEO-2026-10-22-SHANGHAI-OPENING-DAYS`：原页0点击/10展示/页面平均36.8，精确页面查询与月量/KD未知。针对已核实的运营方信息补周一至三改排、上博东馆与人民广场馆区别、日期化展期提示及3FAQ/3官方源，React和原始HTML共享新增内容；保留原8节/7FAQ及搜索metadata。新总10节/10FAQ，类型/i18n、lint（原有warning）、构建、原始HTML及schema一致性审计通过；sitemap76URL仅本页lastmod变动。手机视觉QA缺浏览器未完成。
 
 7/10天页Oct22已增加入链，复盘需考虑共同影响。后续跟踪修改后Google抓取、精确同页词和强相关点击；维护`serviceNoticeWatch`，来源无法读取时保留未知，不自动延长核验日期。不把发布或事实补齐当作搜索收益。
+
+
+### 2026-10-22 上海场馆与闭馆日正式核验
+
+代码`72d63347fd47de9796e02c17e98292a41a137620`，Cloudflare部署`abc2481f-6775-48c4-a661-7dc596f8dd98`成功；10:18:06UTC正式原始HTTP200核验两新增/总10节、3新增/总10FAQ及schema、3运营方源、日期化信息与节假日例外、原内链、self-canonical及原搜索metadata。正式sitemap精确匹配76URL构建，仅目标lastmod改动。构建、类型/i18n、lint（原有warning）和HTML审计通过；手机视觉QA未完成。
+
+动作`SEO-2026-10-22-SHANGHAI-OPENING-DAYS`完整7天暂定Oct23–29、28天Oct23–Nov19，参考Oct16–22及Sep25–Oct22并非干净因果对照：7/10天页同日增加入链。Google抓取更晚时追加窗口；以实际完整GSC数据为准。现34精确URL、40唯一动作ID（45动作引用）。收录/修改后抓取、同页同词排名、强相关点击结果均无新证据；保留版本待验证并复核运营公告。

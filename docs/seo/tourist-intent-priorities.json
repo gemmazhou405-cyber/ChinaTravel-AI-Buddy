@@ -240,7 +240,7 @@
       "url": "https://chinaeasebuddy.com/3-day-shanghai-itinerary/",
       "priority": 2,
       "reason": "Direct city-trip planning with10historical impressions andverified operator-backed venue/day gaps;not a quantifiedsearch opportunity.",
-      "workState": "Oct22scoped venue/opening-day content testvalidated;publication pending.",
+      "workState": "Oct22venue/weekday content formallyverified10:18:06UTC;retain forcomplete-window searchfollow-up andserviceNoticeWatch in shanghai-itinerary-ranking-tracking.json. Noquantifiedvolume/KD opportunity claimed.",
       "baseline": {
         "clicks": 0,
         "impressions": 10,
@@ -329,6 +329,11 @@
       "date": "2026-10-22",
       "type": "shanghai_venue_scoped_test",
       "summary": "PrepareMonday–Wednesday andMuseumEast/People'sSquare guidance fromoperator sources;keepcalculator first andallrecentbody versions."
+    },
+    {
+      "date": "2026-10-22",
+      "type": "shanghai_venue_test_formally_verified",
+      "summary": "Shanghai scopedvenue/weekday test live,10sections/10FAQs;calculator priorityandrecent body observations retained."
     }
   ],
   "keywordEvidence": "docs/seo/keyword-opportunities-2026-10-22.json",

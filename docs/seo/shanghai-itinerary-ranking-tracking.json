@@ -3,9 +3,11 @@
   "changeId": "SEO-2026-10-22-SHANGHAI-OPENING-DAYS",
   "classification": "scoped_tourist_planning_content_test_and_dated_venue_update",
   "primaryOutcome": "strongly_relevant_google_organic_clicks",
-  "status": "validated_ready_to_publish",
+  "status": "live_verified",
   "page": "https://chinaeasebuddy.com/3-day-shanghai-itinerary/",
-  "codeCommits": [],
+  "codeCommits": [
+    "72d63347fd47de9796e02c17e98292a41a137620"
+  ],
   "baseline": {
     "source": {
       "filename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
@@ -157,11 +159,46 @@
       }
     },
     "mobileBrowserQA": "not_completed_known_missing_Chromium_executable",
-    "formalDomain": "pending"
+    "formalDomain": "passed_directHTTP200_10sections_10FAQschema_pairs_sources_original_links_metadata_canonical_and76URL_sitemap"
   },
   "publication": {
-    "status": "not_published",
-    "firstFormalVerifiedAt": null
+    "status": "live_verified",
+    "firstFormalVerifiedAt": "2026-10-22T10:18:06+00:00",
+    "codeCommit": "72d63347fd47de9796e02c17e98292a41a137620",
+    "cloudflare": {
+      "status": "success",
+      "deploymentId": "abc2481f-6775-48c4-a661-7dc596f8dd98",
+      "completedAt": "2026-10-22T10:16:00Z",
+      "checkRunId": 119767509942,
+      "previewUrl": "https://abc2481f.chinaease-buddy.pages.dev"
+    },
+    "formalVerification": {
+      "url": "https://chinaeasebuddy.com/3-day-shanghai-itinerary/",
+      "checkedAt": "2026-10-22T10:18:06+00:00",
+      "httpStatus": 200,
+      "htmlSha256": "cdf087ece2cf44b4e7b987411a180075ab30e903ab76599ece776260497e2450",
+      "sections": 10,
+      "faqSchemaPairs": 10,
+      "sourceLinks": [
+        "https://www.yugarden.com.cn/page/articleview/message.html",
+        "https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-east",
+        "https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-west"
+      ],
+      "allFormerRelatedLinksRetained": true,
+      "newWeekdayAndVenueContent": true,
+      "datedProgrammeAndHolidayExceptionsVisible": true,
+      "searchMetadataMatchesBeforeFormalPage": true,
+      "canonical": "exact_self_reference",
+      "singleH1": true,
+      "noNoindex": true,
+      "sitemap": {
+        "httpStatus": 200,
+        "exactlyMatchesValidatedBuild": true,
+        "urlCount": 76,
+        "targetLastmod": "2026-10-22"
+      },
+      "browserVisualQA": "unavailable_no_executable"
+    }
   },
   "review": {
     "decision": "awaiting_evidence",
@@ -169,11 +206,28 @@
     "googlePostChangeCrawl": null,
     "samePageSameQueryRanking": null,
     "stronglyRelevantClicks": null,
-    "provisional7DayWindow": null,
-    "provisional28DayWindow": null,
+    "provisional7DayWindow": [
+      "2026-10-23",
+      "2026-10-29"
+    ],
+    "provisional28DayWindow": [
+      "2026-10-23",
+      "2026-11-19"
+    ],
     "rule": "After formal verification use complete adjacent,equal,nonoverlapping windows withmatchingWeb/page/country/device filters. Add later crawl-based windows if needed;data completeness andsample adequacy govern decisions.",
     "attributionCaution": "Incoming links from7-day/10-day pages changedonOct22. Treat the body andrecent link exposure as overlapping influences;do not isolate a causalbody effect from aggregate outcomes.",
-    "referenceToExistingEvidencePriority": "Calculator indexed report andbudget exact-pageQueries remain first;no new immediate export request."
+    "referenceToExistingEvidencePriority": "Calculator indexed report andbudget exact-pageQueries remain first;no new immediate export request.",
+    "earliest7DayAvailabilityCheck": "2026-10-30",
+    "earliest28DayAvailabilityCheck": "2026-11-20",
+    "reference7DayWindow": [
+      "2026-10-16",
+      "2026-10-22"
+    ],
+    "reference28DayWindow": [
+      "2026-09-25",
+      "2026-10-22"
+    ],
+    "referenceWindowCaution": "Provisional publication windows only. Reference last date includes this body publication and recent incoming-link/site edits;not a clean causal control. Historical export date bounds remain unknown. Save additional recrawl-based windows if Google processes later;matched complete GSC data required."
   },
   "serviceNoticeWatch": {
     "lastPrimaryCheckOn": "2026-10-22",
@@ -200,6 +254,11 @@
       "at": "2026-10-22T10:13:19+00:00",
       "type": "selection_and_local_validation",
       "summary": "DirectformalHTTP200 confirms missing venue/day guidance. Newprimary-source content passesbuild,types,parity,FAQschema andfullHTMLaudit. No newGSCoutcome evidence."
+    },
+    {
+      "at": "2026-10-22T10:18:06+00:00",
+      "type": "formal_live_verification",
+      "summary": "Raw formalHTTP200 confirms both newplanning sections,10FAQ/schema pairs,operator links,dated programme andholiday exceptions,original relatedlinks,self-canonical andunchangedsearchmetadata. Formal sitemap matches76URLbuild. Googlepost-change crawl,index,queryranks andstrongly relevant clicks remainunknown;visualQA unavailable."
     }
   ]
 }

@@ -545,7 +545,13 @@
       "marketMonthlyVolume": null,
       "keywordDifficulty": null,
       "sourceRecord": "docs/seo/shanghai-itinerary-ranking-tracking.json",
-      "decision": "Scoped datedvenue/weekday test withtourist intent andprimary-source gap;not a high-volume/low-competition claim."
+      "decision": "Scoped datedvenue/weekday test withtourist intent andprimary-source gap;not a high-volume/low-competition claim.",
+      "publication": {
+        "codeCommit": "72d63347fd47de9796e02c17e98292a41a137620",
+        "firstFormalVerifiedAt": "2026-10-22T10:18:06+00:00",
+        "status": "live_verified",
+        "postChangeSearchEffect": "awaiting_evidence"
+      }
     }
   ]
 }
