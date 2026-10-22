@@ -1081,6 +1081,39 @@
       "earliest28DayAvailabilityCheck": "2026-11-20",
       "nextAction": "Retain verified version; check Google crawl/index and complete exact-page query/click outcomes. BudgetOct20/22interventions interpreted together; contextual-link attribution unproven.",
       "windowCaution": "Page topic is strong trip intent but query relevance and link/click attribution remain unproven."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/3-day-beijing-itinerary/",
+      "changeIds": [
+        "SEO-2026-10-22-BEIJING-3DAY"
+      ],
+      "sourceRecords": [
+        "docs/seo/beijing-itinerary-ranking-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-22"
+      ],
+      "latestConfirmedLiveDate": null,
+      "priority": 2,
+      "audienceIntent": {
+        "classification": "direct_trip_planning",
+        "basis": "Page-topic/wording inference,not verified traveler identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      },
+      "decision": "awaiting_publication",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "confirmed production-live date",
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": null,
+      "provisional28DayWindow": null,
+      "earliest7DayAvailabilityCheck": null,
+      "earliest28DayAvailabilityCheck": null,
+      "nextAction": "Verify formal Beijing route/Monday/booking content and metadata,then retain for complete-window review.",
+      "windowCaution": "Planning improvement is not a measured ranking/click effect;source/destination task-link outcomes and other changes limit attribution."
     }
   ],
   "observations": [
@@ -1245,6 +1278,12 @@
         "SEO-2026-10-22-14DAY-BUDGET-LINK"
       ],
       "summary": "Both formal pages/examples/context link/metadata/sitemap and301alias verified; queue29URLs/34IDs, provisional windows set, no GSC gains established."
+    },
+    {
+      "date": "2026-10-22",
+      "type": "tourist_itinerary_action_added",
+      "changeId": "SEO-2026-10-22-BEIJING-3DAY",
+      "summary": "Beijing three-day route/calendar/booking content locally verified;queue30URLs/35IDs. No new GSC outcome or public page added."
     }
   ],
   "priorityPolicy": "docs/seo/tourist-intent-priorities.json"

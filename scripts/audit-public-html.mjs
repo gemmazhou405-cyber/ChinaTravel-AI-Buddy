@@ -158,8 +158,8 @@ const pages = [
   {
     path: '/3-day-beijing-itinerary/',
     h1: /3-Day Beijing Itinerary for First-Time Visitors.*2026/i,
-    keywords: ['Palace Museum', 'Great Wall', 'Temple of Heaven', 'Tiananmen', 'Wangfujing', 'Qianmen', 'Railway 12306'],
-    links: ['/#trip-plan', '/3-day-shanghai-itinerary/', '/beijing-vs-shanghai/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/best-time-to-visit-china/', '/china-train-travel-guide/', '/china-metro-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/first-trip-to-china/'],
+    keywords: ['Palace Museum', 'Great Wall', 'Temple of Heaven', 'Tiananmen', 'Wangfujing', 'Qianmen', 'Railway 12306', 'If your three days include a Monday', '20:00 China time', 'seven days ahead', 'separately charged attractions', 'Wumen', 'Dashilan'],
+    links: ['/beijing-airport-to-city-guide/', '/how-to-visit-great-wall-from-beijing-2026/', '/china-travel-budget/#cost-estimator', '/#trip-plan', '/3-day-shanghai-itinerary/', '/beijing-vs-shanghai/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/best-time-to-visit-china/', '/china-train-travel-guide/', '/china-metro-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/first-trip-to-china/'],
   },
   {
     path: '/3-day-shanghai-itinerary/',

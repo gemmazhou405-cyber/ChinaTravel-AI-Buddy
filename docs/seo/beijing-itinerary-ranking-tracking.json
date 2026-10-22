@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "changeId": "SEO-2026-10-22-BEIJING-3DAY",
+  "url": "https://chinaeasebuddy.com/3-day-beijing-itinerary/",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks_from_china_trip_intent",
+  "status": "local_verified_pending_publication",
+  "liveDate": null,
+  "codeCommits": [],
+  "baseline": {
+    "source": "User-provided October21 full-site GSC comparison workbook",
+    "sha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+    "filters": "Web;last28days vs previous28days;actual date bounds not supplied",
+    "current": {
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "pageAveragePosition": 21.77
+    },
+    "previous": {
+      "clicks": 0,
+      "impressions": 0,
+      "ctr": null,
+      "pageAveragePosition": null
+    },
+    "exactPageQueries": null,
+    "searchVolume": null,
+    "keywordDifficulty": null,
+    "indexingState": null,
+    "latestGoogleCrawl": null,
+    "googleSelectedCanonical": null,
+    "siteWideQueryClue": {
+      "query": "beijing itinerary 3 days",
+      "clicks": 0,
+      "impressions": 2,
+      "averagePosition": 83.5,
+      "attribution": "Site-wide clue only;not assigned to this page or treated as market demand."
+    }
+  },
+  "intentSelection": "Defined destination and sightseeing duration provide direct tourist-planning intent. This is a topic/wording inference,not verified visitor identity or proof of low competition.",
+  "confirmedGap": {
+    "formalObservedAtUtc": "2026-10-22T03:55:47Z",
+    "httpStatus": 200,
+    "xRobotsTag": null,
+    "description": "Existing eight-section route used generic Monday/calendar advice and offered Summer Palace after Temple/hutongs. It lacked a concrete Monday alternative, specific Palace Museum booking/gate facts, Temple park-versus-charged-sights distinction and in-body transport/budget task links. Main body was already served in HTML;this is a planning-content improvement,not an indexing/rendering fault."
+  },
+  "change": {
+    "sharedSource": "src/data/beijingThreeDayPlanning.json",
+    "sections": 9,
+    "faqs": 8,
+    "sources": 7,
+    "description": "Rework day table and specific booking/entry steps;add a conditional Monday–Wednesday example,group Temple/Qianmen/Dashilan for a lighter city day,link airport/Great Wall transport/cost tasks from relevant sections.",
+    "taskLinks": [
+      "/beijing-airport-to-city-guide/",
+      "/how-to-visit-great-wall-from-beijing-2026/",
+      "/china-travel-budget/#cost-estimator"
+    ],
+    "wholeGuideReviewRetained": "September21,2026",
+    "bookingClosureSourcesChecked": "October22,2026",
+    "lastModified": "2026-10-22"
+  },
+  "retained": [
+    "Search title/description/H1/URL/canonical/CTA",
+    "All existing internal links",
+    "Whole-guide review date;new source check is scoped to booking/closure details",
+    "Other recently changed pages and calculator algorithm",
+    "76sitemapURLs;only this page actual modification date changes"
+  ],
+  "sources": [
+    {
+      "url": "https://young.dpm.org.cn/en/category/279",
+      "checkedOn": "2026-10-22",
+      "supports": "Palace Museum Monday/statutory-holiday rule,passport-matched advance reservation,20:00seven-days-ahead release,no same-day sale,Wumen entrance."
+    },
+    {
+      "url": "https://english.beijing.gov.cn/travellinginbeijing/parks/202603/t20260320_4562532.html",
+      "checkedOn": "2026-10-22",
+      "supports": "Temple of Heaven park and charged-attraction access differ;charged sights Monday closure/statutory-holiday exception."
+    },
+    {
+      "url": "https://intl.dpm.org.cn/index.html",
+      "checkedOn": "2026-10-22",
+      "supports": "Official museum visitor and booking channels."
+    }
+  ],
+  "sourceScope": "Do not claim live ticket availability,guaranteed entry,fares,transfer times or firsthand visits. Monday table is our conditional route proposal;live booking/operations/weather override it. Existing unrelated whole-guide facts were not all re-reviewed.",
+  "hypothesis": "More specific calendar-aware planning answers and coherent city grouping can better satisfy three-day Beijing visitors and support relevant-query performance. No coverage,rank or click gain is established.",
+  "candidateQueries": [
+    "3 day beijing itinerary",
+    "3 days in beijing with great wall",
+    "beijing itinerary including monday"
+  ],
+  "queryCaution": "Candidates only;exact-page coverage/volume/KD unknown. Page-average21.77 is not a specific query rank;hidden queries remain unknown.",
+  "verification": {
+    "typecheck": "PASS",
+    "i18nParity": "PASS",
+    "build": "PASS",
+    "lint": "PASS,one existing Fast Refresh warning",
+    "publicHtmlLocal": "PASS,full audit",
+    "oldFormalFixtureRejection": "PASS:new Monday/booking/task-link acceptance rejects captured older version",
+    "focusedHtmlSitemap": "PASS:nine sections/cells/items,eight visible/schemaFAQs,seven sources,three valid generated destinations and calculator fragment;metadata/CTA/review retained;76URLs,only target lastmod changes",
+    "diffCheck": "PASS",
+    "production": "pending"
+  },
+  "production": {
+    "newContentVerified": false,
+    "checkedAt": null,
+    "googleRecrawlConfirmed": false,
+    "rankingOrClickGainConfirmed": false
+  },
+  "followUp": {
+    "provisionalFirstCompleteWindow": [
+      "2026-10-23",
+      "2026-10-29"
+    ],
+    "provisional28DayWindow": [
+      "2026-10-23",
+      "2026-11-19"
+    ],
+    "referenceWindow": [
+      "2026-10-16",
+      "2026-10-22"
+    ],
+    "windowRule": "Confirm formal date before beginning windows;adjust if delayed. Require complete GSC days/actual dates and same canonical URL,search,country/device filters.",
+    "limitations": "Other site interventions overlap;no clean causal attribution. Source page and task-link destinations measured separately;small sample cannot establish trend.",
+    "nextEvidence": [
+      "URL Inspection:current index/crawl/canonical and modification-after-crawl evidence",
+      "Exact-page Queries with actual dates for same-query ranking/coverage/relevant impressions",
+      "Absolute new relevant clicks from zero baseline;hidden-query clicks remain unclassified"
+    ],
+    "dataRequestPriority": "Existing calculator crawl and canonical budget exact-query requests remain first;do not repeatedly request extra exports just because another action was added.",
+    "indexingRequests": "Not submitted by this environment."
+  },
+  "performanceObservations": [],
+  "releaseObservations": [
+    {
+      "observedOn": "2026-10-22",
+      "stage": "Local acceptance checks pass;formal publication and search outcomes pending."
+    }
+  ]
+}
