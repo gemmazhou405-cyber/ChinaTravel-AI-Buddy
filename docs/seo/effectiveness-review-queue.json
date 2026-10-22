@@ -862,6 +862,34 @@
       "earliest28DayAvailabilityCheck": null,
       "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
       "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/china-emergency-numbers/",
+      "changeIds": [
+        "SEO-2026-10-22-EMERGENCY-STATIC"
+      ],
+      "sourceRecords": [
+        "docs/seo/emergency-ranking-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-22"
+      ],
+      "latestConfirmedLiveDate": null,
+      "priority": 4,
+      "decision": "awaiting_publication",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "confirmed production-live date",
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": null,
+      "provisional28DayWindow": null,
+      "earliest7DayAvailabilityCheck": null,
+      "earliest28DayAvailabilityCheck": null,
+      "nextAction": "Verify formal-domain emergency body and metadata after publication, then set provisional windows.",
+      "windowCaution": "Publication is not evidence of Google processing or ranking/click gains; one-impression baseline is sparse."
     }
   ],
   "observations": [
@@ -869,6 +897,12 @@
       "date": "2026-10-22",
       "type": "workflow_initialized",
       "summary": "Daily review schedule confirmed, legacy/new change references collected; no new post-change GSC outcomes supplied."
+    },
+    {
+      "date": "2026-10-22",
+      "type": "technical_repair_added",
+      "changeId": "SEO-2026-10-22-EMERGENCY-STATIC",
+      "summary": "Emergency raw-HTML body mismatch repaired locally; queue now28exactURLs/32distinctIDs, publication and GSC outcome pending."
     }
   ]
 }

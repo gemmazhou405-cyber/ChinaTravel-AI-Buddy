@@ -283,8 +283,8 @@ const pages = [
   {
     path: '/china-emergency-numbers/',
     h1: /Emergency Numbers in China/i,
-    keywords: ['110 Police', '120 Ambulance', '119 Fire', 'Hospital phrases'],
-    links: ['/?journey=emergency', '/faq/'],
+    keywords: ['Mainland China emergency numbers', 'What to show locals', 'Details to give when calling', '请帮我报警。', '请帮我叫救护车。'],
+    links: ['/?journey=emergency', '/faq/', 'tel:110', 'tel:120', 'tel:119', 'tel:122'],
   },
   {
     path: '/faq/',

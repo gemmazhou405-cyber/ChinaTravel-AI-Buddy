@@ -11,6 +11,7 @@ const goldenWeekGuide = JSON.parse(await readFile('src/data/seoPages/china-golde
 const greatWallGuide = JSON.parse(await readFile('src/data/seoPages/great-wall-of-china-day-trip-from-beijing.json', 'utf8'));
 const greatWallTransport = JSON.parse(await readFile('src/data/greatWallTransport.json', 'utf8'));
 const trainBookingContent = JSON.parse(await readFile('src/data/trainBookingContent.json', 'utf8'));
+const emergencyGuideContent = JSON.parse(await readFile('src/data/emergencyGuideContent.json', 'utf8'));
 const firstTimeItineraryContent = JSON.parse(await readFile('src/data/firstTimeItineraryContent.json', 'utf8'));
 const pandaBaseGuide = JSON.parse(await readFile('src/data/seoPages/chengdu-panda-base-guide.json', 'utf8'));
 const didiPaymentGuide = JSON.parse(await readFile('src/data/seoPages/didi-payment-for-foreigners.json', 'utf8'));
@@ -3544,11 +3545,14 @@ const pageMeta = {
     title: 'Emergency Numbers in China for Travelers | ChinaEase Buddy',
     description:
       'Know China emergency numbers for travelers: 110 police, 120 ambulance, 119 fire, plus hospital phrases, police help, and lost passport reminders.',
-    faqs: [
-      ['What are the emergency numbers in China?', 'Travelers should know 110 for police, 120 for ambulance, and 119 for fire. These are reference numbers and should be used according to the situation.'],
-      ['What should I do if I need a hospital in China?', 'For urgent medical emergencies, call 120 or ask nearby staff to help. ChinaEase Buddy can show simple Chinese phrases, but it does not provide medical advice.'],
-      ['What should I do if I lose my passport in China?', 'First handle immediate safety needs. Then contact local police if needed and reach your embassy or consulate for passport replacement guidance.'],
-    ],
+    heading: 'Emergency Numbers in China for Travelers',
+    quickAnswer: emergencyGuideContent.quickAnswer,
+    contentSections: emergencyGuideContent.sections,
+    faqs: emergencyGuideContent.faqs.map(({ question, answer }) => [question, answer]),
+    sourceLinks: emergencyGuideContent.sources.map(({ label, href }) => [label, href]),
+    lastReviewed: emergencyGuideContent.reviewed,
+    lastModified: emergencyGuideContent.modified,
+    article: true,
   },
   'china-visa-free-guide-2026': {
     heading: 'Do You Need a Visa for China in 2026? Probably Not.',
@@ -5477,7 +5481,7 @@ function staticPageContent(page, meta) {
               ${section.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
             </${section.ordered ? 'ol' : 'ul'}>
           ` : ''}
-          ${['amap-english-mode-guide-2026', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners'].includes(page) && section.links ? `
+          ${['amap-english-mode-guide-2026', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers'].includes(page) && section.links ? `
             <ul style="margin: 12px 0 0; padding-left: 20px; color: #536365; line-height: 1.8;">
               ${section.links.map(({ label, description, href }) => `<li><a href="${escapeAttr(href)}" rel="noopener noreferrer" style="color: #155e63; text-underline-offset: 4px;">${escapeHtml(label)}</a>: ${escapeHtml(description)}</li>`).join('')}
             </ul>

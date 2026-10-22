@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "changeId": "SEO-2026-10-22-EMERGENCY-STATIC",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks",
+  "url": "https://chinaeasebuddy.com/china-emergency-numbers/",
+  "status": "local_verified_pending_publication",
+  "liveDate": null,
+  "codeCommits": [],
+  "baseline": {
+    "source": "User-provided October21 whole-site GSC comparison workbook",
+    "sha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+    "filters": "Web; last28days vs previous28days; actual start/end dates absent",
+    "current": {
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "pageAveragePosition": 4.0
+    },
+    "previous": {
+      "clicks": 0,
+      "impressions": 0,
+      "ctr": null,
+      "pageAveragePosition": null
+    },
+    "exactPageQueries": null,
+    "searchVolume": null,
+    "keywordDifficulty": null,
+    "indexingState": null,
+    "latestGoogleCrawl": null,
+    "googleSelectedCanonical": null,
+    "separateHistoricalAlias": {
+      "url": "https://chinaeasebuddy.com/china-emergency-numbers",
+      "currentImpressions": 0,
+      "previousImpressions": 1,
+      "previousPageAveragePosition": 6.0
+    },
+    "limitations": [
+      "One impression does not establish stable top-four ranking or a high-demand opportunity.",
+      "No visible emergency-related queries or exact-page query pairs; do not attribute site-wide queries.",
+      "Old non-trailing-slash row remains separate; previous zero impressions have no usable rank/CTR.",
+      "Page-average position is not a keyword rank; no post-change GSC data."
+    ]
+  },
+  "confirmedProblem": {
+    "observedAtUtc": "2026-10-22T02:26:23.099126Z",
+    "formalStatus": 200,
+    "xRobotsTag": null,
+    "staticDedicatedSections": 0,
+    "staticPhoneLinks": 0,
+    "staticFaqs": 3,
+    "reactDedicatedSections": 3,
+    "reactFaqs": 4,
+    "description": "Formal raw HTML served generic practical tips instead of the React emergency body. A publishing mismatch, not proof that Google failed to render JavaScript or the cause of rankings."
+  },
+  "change": {
+    "sharedSource": "src/data/emergencyGuideContent.json",
+    "dedicatedSections": 4,
+    "phoneLinks": [
+      "tel:110",
+      "tel:120",
+      "tel:119",
+      "tel:122"
+    ],
+    "bilingualPhrases": 6,
+    "faqs": 4,
+    "reviewed": "October22,2026",
+    "lastModified": "2026-10-22",
+    "description": "Serve mainland emergency-number table, bilingual help phrases, call-location checklist and passport/report guidance in both React and static HTML, from one shared source.",
+    "retained": [
+      "search title",
+      "description",
+      "H1",
+      "URL",
+      "canonical",
+      "CTA",
+      "internal links"
+    ],
+    "scopeNotes": [
+      "No new URL, keyword-retargeting or calculator change.",
+      "Only target sitemap lastmod changes; all76URLs retained.",
+      "No calls placed during testing; phone hrefs/markup checked only.",
+      "No guaranteed connection, language, response time, free service or medical assessment."
+    ]
+  },
+  "hypothesis": "Consistent directly served task answers remove a verified static-content gap. Ranking, coverage and relevant-click gains remain unproven.",
+  "sources": [
+    {
+      "url": "https://en.nhc.gov.cn/2019-03/05/c_74520.htm",
+      "checkedOn": "2026-10-22",
+      "supports": "Mainland police110,ambulance120,fire119,traffic122"
+    },
+    {
+      "url": "https://www.gov.uk/foreign-travel-advice/china/getting-help",
+      "checkedOn": "2026-10-22",
+      "supports": "Emergency numbers, police/PSB loss report, insurer/provider assistance"
+    },
+    {
+      "url": "https://english.beijing.gov.cn/travellinginbeijing/quickguideontravelservices/traveltips/202108/t20210811_2466839.html",
+      "checkedOn": "2026-10-22",
+      "supports": "Location and incident details for emergency calls"
+    }
+  ],
+  "verification": {
+    "typecheck": "PASS",
+    "i18nParity": "PASS",
+    "build": "PASS",
+    "publicHtmlAuditLocal": "PASS",
+    "oldProductionFixtureRejection": "PASS: enhanced audit rejects captured old body lacking required sections/phrases/phone links",
+    "targetHtmlAndSitemap": "PASS: four sections/phone hrefs, six phrases, four FAQ/JSON-LD entries and sources; metadata/CTA/internal links retained; same76URLs, only target lastmod changed",
+    "diffCheck": "PASS",
+    "production": "pending"
+  },
+  "production": {
+    "newContentVerified": false,
+    "checkedAt": null,
+    "googleRecrawlConfirmed": false,
+    "rankingOrClickGainConfirmed": false
+  },
+  "followUp": {
+    "provisionalFirstCompleteWindow": [
+      "2026-10-23",
+      "2026-10-29"
+    ],
+    "provisional28DayWindow": [
+      "2026-10-23",
+      "2026-11-19"
+    ],
+    "referenceWindow": [
+      "2026-10-16",
+      "2026-10-22"
+    ],
+    "windowRule": "Provisional only if formal version verified October22; adjust for publication delay. Require complete GSC days and matching exact-page/search/country/device filters with actual dates.",
+    "referenceLimitations": "Reference includes other site changes; no clean causal control. One-impression baseline is too sparse to infer a ranking trend.",
+    "nextEvidence": [
+      "URL Inspection: index state, reported crawl and Google-selected canonical",
+      "Exact-page Queries plus page totals, with actual comparison dates",
+      "Disclosed relevant-query clicks and same-query ranking; report absolute gains from zero clicks"
+    ],
+    "hiddenQueries": "Unknown; do not infer missing keywords.",
+    "indexingRequests": "Not submitted by this environment."
+  },
+  "performanceObservations": [],
+  "releaseObservations": [
+    {
+      "observedOn": "2026-10-22",
+      "stage": "Local build/audit/focused checks pass; formal publication and outcome still pending."
+    }
+  ]
+}

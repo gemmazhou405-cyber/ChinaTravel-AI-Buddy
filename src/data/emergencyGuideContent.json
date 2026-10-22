@@ -1,0 +1,152 @@
+{
+  "reviewed": "October 22, 2026",
+  "modified": "2026-10-22",
+  "quickAnswer": "In mainland China, call 110 for police, 120 for an ambulance, 119 for fire and 122 for traffic police. Give the exact location and describe what happened. If your phone cannot connect or you need language help, ask nearby staff to make the call. This website cannot dispatch emergency assistance.",
+  "sections": [
+    {
+      "title": "Mainland China emergency numbers",
+      "table": {
+        "headers": [
+          "Service",
+          "Number",
+          "Show local staff"
+        ],
+        "rows": [
+          [
+            "Police",
+            "110",
+            "报警 / Police"
+          ],
+          [
+            "Ambulance",
+            "120",
+            "急救 / Ambulance"
+          ],
+          [
+            "Fire",
+            "119",
+            "火警 / Fire"
+          ],
+          [
+            "Traffic police",
+            "122",
+            "交通事故 / Traffic accident"
+          ]
+        ]
+      },
+      "items": [
+        "Numbers checked against the National Health Commission and UK government travel advice on October 22, 2026.",
+        "The links below can open a phone dialer when supported. You still need to place the call; opening this page does not contact a dispatcher."
+      ],
+      "links": [
+        {
+          "label": "Call police: 110",
+          "description": "For police assistance in mainland China.",
+          "href": "tel:110"
+        },
+        {
+          "label": "Call ambulance: 120",
+          "description": "For an urgent medical emergency in mainland China.",
+          "href": "tel:120"
+        },
+        {
+          "label": "Call fire service: 119",
+          "description": "For a fire emergency in mainland China.",
+          "href": "tel:119"
+        },
+        {
+          "label": "Call traffic police: 122",
+          "description": "For traffic-accident assistance in mainland China.",
+          "href": "tel:122"
+        }
+      ]
+    },
+    {
+      "title": "What to show locals",
+      "table": {
+        "headers": [
+          "English",
+          "Chinese"
+        ],
+        "rows": [
+          [
+            "Please help me call the police.",
+            "请帮我报警。"
+          ],
+          [
+            "Please help me call an ambulance.",
+            "请帮我叫救护车。"
+          ],
+          [
+            "There is a fire. Please call 119.",
+            "着火了，请拨打119。"
+          ],
+          [
+            "My location is ____.",
+            "我的位置是____。"
+          ],
+          [
+            "I lost my passport.",
+            "我的护照丢了。"
+          ],
+          [
+            "I lost my phone.",
+            "我的手机丢了。"
+          ]
+        ]
+      },
+      "items": [
+        "Show the relevant phrase and the exact location to a nearby person who can help. Keep your hotel or destination name in Chinese available offline."
+      ]
+    },
+    {
+      "title": "Details to give when calling",
+      "ordered": true,
+      "items": [
+        "Give the city, street address and a useful landmark; use the Chinese hotel or building name if you have it.",
+        "Describe the incident or symptoms plainly and answer the operator's questions.",
+        "If you cannot connect or communicate, ask nearby staff, hotel reception or another person with a working phone to help place the call."
+      ]
+    },
+    {
+      "title": "Hospital and passport reminders",
+      "items": [
+        "For an urgent medical emergency, use 120 and follow the dispatcher's instructions. Ask local staff for help if needed.",
+        "For a lost or stolen passport, report the loss to local police or the Public Security Bureau, then contact your own embassy or consulate for replacement guidance.",
+        "If involved in a serious incident, contact your travel provider and insurer for assistance when immediate help has been arranged."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What are the emergency numbers in mainland China?",
+      "answer": "Police 110, ambulance 120, fire 119 and traffic police 122. Give the exact location and describe the problem. Ask nearby staff for help if you cannot connect or communicate."
+    },
+    {
+      "question": "What should I do if I need a hospital in China?",
+      "answer": "For an urgent medical emergency, call 120 or ask nearby staff to help place the call, then follow the dispatcher's instructions. This page provides reference numbers and phrases, not medical assessment."
+    },
+    {
+      "question": "What should I do if I lose my passport in China?",
+      "answer": "Handle immediate safety needs, then report the loss to local police or the Public Security Bureau. Contact your own embassy or consulate for replacement instructions; keep any report they require."
+    },
+    {
+      "question": "Can ChinaEase Buddy contact emergency services for me?",
+      "answer": "No. This website cannot dispatch help. A call link may open your device's dialer, but you or someone assisting you must place the call and speak with the service."
+    }
+  ],
+  "sources": [
+    {
+      "label": "National Health Commission: mainland emergency numbers",
+      "href": "https://en.nhc.gov.cn/2019-03/05/c_74520.htm"
+    },
+    {
+      "label": "UK government: emergency services and getting help in China",
+      "href": "https://www.gov.uk/foreign-travel-advice/china/getting-help"
+    },
+    {
+      "label": "Beijing government: what to report in an emergency call",
+      "href": "https://english.beijing.gov.cn/travellinginbeijing/quickguideontravelservices/traveltips/202108/t20210811_2466839.html"
+    }
+  ]
+}

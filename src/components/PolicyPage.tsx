@@ -10,6 +10,7 @@ import goldenWeekGuide from '../data/seoPages/china-golden-week-2026-travel-guid
 import greatWallGuide from '../data/seoPages/great-wall-of-china-day-trip-from-beijing.json';
 import greatWallTransport from '../data/greatWallTransport.json';
 import trainBookingContent from '../data/trainBookingContent.json';
+import emergencyGuideContent from '../data/emergencyGuideContent.json';
 import firstTimeItineraryContent from '../data/firstTimeItineraryContent.json';
 import pandaBaseGuide from '../data/seoPages/chengdu-panda-base-guide.json';
 import didiPaymentGuide from '../data/seoPages/didi-payment-for-foreigners.json';
@@ -5901,55 +5902,14 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     metaTitle: 'Emergency Numbers in China for Travelers | ChinaEase Buddy',
     metaDescription:
       'Know China emergency numbers for travelers: 110 police, 120 ambulance, 119 fire, plus hospital phrases, police help, and lost passport reminders.',
-    quickAnswer:
-      'The key emergency numbers in China are 110 for police, 120 for ambulance, and 119 for fire. In urgent situations, contact local emergency services and ask nearby staff, hotel reception, or authorities for help.',
+    quickAnswer: emergencyGuideContent.quickAnswer,
     ctaLabel: 'View emergency help',
     ctaHref: '/?journey=emergency',
-    sections: [
-      {
-        title: 'Numbers to know',
-        items: ['110 Police', '120 Ambulance', '119 Fire'],
-      },
-      {
-        title: 'What to show locals',
-        items: [
-          'Please help me call the police. / 请帮我报警。',
-          'Please help me call an ambulance. / 请帮我叫救护车。',
-          'I lost my passport. / 我的护照丢了。',
-          'I lost my phone. / 我的手机丢了。',
-        ],
-      },
-      {
-        title: 'Hospital and police reminders',
-        items: [
-          'Use 120 for ambulance emergencies and ask hotel staff for nearby hospital help.',
-          'For theft, loss, or immediate safety issues, contact police or local authorities.',
-          'For lost passport issues, contact your embassy or consulate after urgent safety needs are handled.',
-        ],
-      },
-    ],
-    faqs: [
-      {
-        question: 'What are the emergency numbers in China?',
-        answer:
-          'Travelers should know 110 for police, 120 for ambulance, and 119 for fire. These are reference numbers and should be used according to the situation.',
-      },
-      {
-        question: 'What should I do if I need a hospital in China?',
-        answer:
-          'For urgent medical emergencies, call 120 or ask nearby staff to help. ChinaEase Buddy can show simple Chinese phrases, but it does not provide medical advice.',
-      },
-      {
-        question: 'What should I do if I lose my passport in China?',
-        answer:
-          'First handle immediate safety needs. Then contact local police if needed and reach your embassy or consulate for passport replacement guidance.',
-      },
-      {
-        question: 'Can ChinaEase Buddy contact emergency services for me?',
-        answer:
-          'No. ChinaEase Buddy provides reference numbers and phrases. Travelers must contact emergency services, local authorities, or qualified professionals directly.',
-      },
-    ],
+    reviewed: emergencyGuideContent.reviewed,
+    lastModified: emergencyGuideContent.modified,
+    isArticle: true,
+    sections: emergencyGuideContent.sections,
+    faqs: emergencyGuideContent.faqs,
     related: [
       { label: 'China travel checklist', href: '/china-travel-checklist/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
@@ -5958,6 +5918,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China travel safety guide', href: '/china-travel-safety-guide/' },
       { label: 'FAQ', href: '/faq/' },
     ],
+    sources: emergencyGuideContent.sources,
   },
   'china-online-arrival-card-2026': {
     ...guideFromArticle(
