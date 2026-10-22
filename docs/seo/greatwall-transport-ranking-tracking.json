@@ -3,9 +3,11 @@
   "changeId": "SEO-2026-10-22-GREATWALL-TRANSPORT",
   "page": "https://chinaeasebuddy.com/how-to-visit-great-wall-from-beijing-2026/",
   "primaryOutcome": "strongly_relevant_google_organic_clicks",
-  "status": "local_verified_pending_publication",
-  "liveDate": null,
-  "codeCommits": [],
+  "status": "live_verified",
+  "liveDate": "2026-10-22",
+  "codeCommits": [
+    "b77eb46ccd4d9b67c6b1901c779cebb1b1d2853c"
+  ],
   "baseline": {
     "collectedOn": "2026-10-21",
     "reviewedOn": "2026-10-22",
@@ -116,10 +118,22 @@
     "sitemapUrlCount": 76,
     "onlyTargetLastmodChanged": true,
     "production": {
-      "newContentVerified": false,
-      "checkedAt": null,
+      "newContentVerified": true,
+      "checkedAt": "2026-10-22T01:16:32Z",
+      "httpStatus": 200,
+      "formalUrl": "https://chinaeasebuddy.com/how-to-visit-great-wall-from-beijing-2026/",
+      "xRobotsTag": null,
+      "targetHtmlFaqMetadataAndSitemap": "PASS",
+      "sitemapUrlCount": 76,
+      "onlyTargetLastmodChanged": true,
       "googleRecrawlConfirmed": false,
-      "rankingOrClickGainConfirmed": false
+      "rankingOrClickGainConfirmed": false,
+      "cloudflareStatus": "success",
+      "cloudflareDeploymentId": "a58bacf5-e2ab-4eb4-82a0-673d13597818",
+      "previewUrl": "https://a58bacf5.chinaease-buddy.pages.dev/how-to-visit-great-wall-from-beijing-2026/",
+      "previewHtmlAndSitemap": "PASS",
+      "previewXRobotsTag": "noindex",
+      "note": "Formal domain serves all six sections and FAQs with retained search metadata, quick answer, CTA and internal links. Preview noindex is separate from formal domain, which returned no X-Robots-Tag. Publication does not establish Google recrawl, indexing, same-query ranking or relevant clicks."
     }
   },
   "followUp": {
@@ -141,6 +155,19 @@
     "causality": "Version publication, Google recrawl, ranking change and click change are separate observations.",
     "requestIndexing": "Not submitted by this environment."
   },
-  "releaseObservations": [],
+  "releaseObservations": [
+    {
+      "observedOn": "2026-10-22",
+      "checkedAt": "2026-10-22T01:15:35Z",
+      "newContentVerified": false,
+      "observedVersion": "Previous content while Cloudflare build was in progress."
+    },
+    {
+      "observedOn": "2026-10-22",
+      "checkedAt": "2026-10-22T01:16:32Z",
+      "newContentVerified": true,
+      "observedVersion": "All six shared sections and six FAQs, official sources, metadata and sitemap passed on formal domain."
+    }
+  ],
   "performanceObservations": []
 }
