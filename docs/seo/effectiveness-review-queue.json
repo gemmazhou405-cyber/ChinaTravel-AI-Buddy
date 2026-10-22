@@ -51,7 +51,12 @@
       "earliest28DayAvailabilityCheck": "2026-11-19",
       "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
       "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
-      "roleNote": "Includes support-link experiments; evaluate their intended calculator destination outcome separately from source-page traffic."
+      "roleNote": "Includes support-link experiments; evaluate their intended calculator destination outcome separately from source-page traffic.",
+      "audienceIntent": {
+        "classification": "transit_planning_tool",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/amap-english-mode-guide-2026/",
@@ -65,42 +70,6 @@
       ],
       "recordedChangeDates": [
         "2026-10-16",
-        "2026-10-21"
-      ],
-      "latestConfirmedLiveDate": "2026-10-21",
-      "priority": 2,
-      "decision": "awaiting_evidence",
-      "postChangePerformance": "not_available",
-      "missingEvidence": [
-        "current URL Inspection and modification-after-crawl evidence",
-        "complete exact-page Queries comparison with actual dates",
-        "strong-relevance clicks and same-query ranking outcomes"
-      ],
-      "provisional7DayWindow": [
-        "2026-10-22",
-        "2026-10-28"
-      ],
-      "provisional28DayWindow": [
-        "2026-10-22",
-        "2026-11-18"
-      ],
-      "earliest7DayAvailabilityCheck": "2026-10-29",
-      "earliest28DayAvailabilityCheck": "2026-11-19",
-      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
-    },
-    {
-      "url": "https://chinaeasebuddy.com/wechat-verification-without-friend-qr-2026/",
-      "changeIds": [
-        "SEO-2026-10-19-WECHAT-VERIFY",
-        "SEO-2026-10-21-WECHAT-HELP"
-      ],
-      "sourceRecords": [
-        "docs/seo/optimization-tracker.md",
-        "docs/seo/wechat-verification-ranking-tracking.json"
-      ],
-      "recordedChangeDates": [
-        "2026-10-19",
         "2026-10-21"
       ],
       "latestConfirmedLiveDate": "2026-10-21",
@@ -123,7 +92,53 @@
       "earliest7DayAvailabilityCheck": "2026-10-29",
       "earliest28DayAvailabilityCheck": "2026-11-19",
       "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "china_trip_preparation_with_possible_non_tourist_audience",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
+    },
+    {
+      "url": "https://chinaeasebuddy.com/wechat-verification-without-friend-qr-2026/",
+      "changeIds": [
+        "SEO-2026-10-19-WECHAT-VERIFY",
+        "SEO-2026-10-21-WECHAT-HELP"
+      ],
+      "sourceRecords": [
+        "docs/seo/optimization-tracker.md",
+        "docs/seo/wechat-verification-ranking-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-19",
+        "2026-10-21"
+      ],
+      "latestConfirmedLiveDate": "2026-10-21",
+      "priority": 5,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": [
+        "2026-10-22",
+        "2026-10-28"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-22",
+        "2026-11-18"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-29",
+      "earliest28DayAvailabilityCheck": "2026-11-19",
+      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "broad_help_with_mixed_audience",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/",
@@ -157,7 +172,12 @@
       "earliest7DayAvailabilityCheck": "2026-10-29",
       "earliest28DayAvailabilityCheck": "2026-11-19",
       "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "site_hub",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/3-day-guilin-yangshuo-itinerary/",
@@ -171,7 +191,7 @@
         "2026-10-19"
       ],
       "latestConfirmedLiveDate": null,
-      "priority": 4,
+      "priority": 2,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -185,7 +205,12 @@
       "earliest7DayAvailabilityCheck": null,
       "earliest28DayAvailabilityCheck": null,
       "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "direct_trip_planning",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/3-day-shenzhen-itinerary/",
@@ -199,7 +224,7 @@
         "2026-10-21"
       ],
       "latestConfirmedLiveDate": "2026-10-21",
-      "priority": 4,
+      "priority": 2,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -218,7 +243,12 @@
       "earliest7DayAvailabilityCheck": "2026-10-29",
       "earliest28DayAvailabilityCheck": "2026-11-19",
       "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "direct_trip_planning",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/alipay-metro-qr-transport-code-guide/",
@@ -232,7 +262,7 @@
         "2026-10-20"
       ],
       "latestConfirmedLiveDate": null,
-      "priority": 4,
+      "priority": 3,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -246,7 +276,12 @@
       "earliest7DayAvailabilityCheck": null,
       "earliest28DayAvailabilityCheck": null,
       "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "china_trip_preparation_with_possible_non_tourist_audience",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/beijing-shanghai-layover-240-hour-guide/",
@@ -260,7 +295,7 @@
         "2026-10-21"
       ],
       "latestConfirmedLiveDate": "2026-10-21",
-      "priority": 4,
+      "priority": 3,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -279,7 +314,12 @@
       "earliest7DayAvailabilityCheck": "2026-10-29",
       "earliest28DayAvailabilityCheck": "2026-11-19",
       "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "china_trip_preparation_with_possible_non_tourist_audience",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/chengdu-panda-base-guide/",
@@ -296,7 +336,7 @@
         "2026-10-22"
       ],
       "latestConfirmedLiveDate": "2026-10-22",
-      "priority": 4,
+      "priority": 2,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -315,7 +355,12 @@
       "earliest7DayAvailabilityCheck": "2026-10-30",
       "earliest28DayAvailabilityCheck": "2026-11-20",
       "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "direct_trip_planning",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/china-240-hour-transit-clock-start/",
@@ -330,7 +375,7 @@
         "2026-10-21"
       ],
       "latestConfirmedLiveDate": "2026-10-21",
-      "priority": 4,
+      "priority": 3,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -349,7 +394,12 @@
       "earliest7DayAvailabilityCheck": "2026-10-29",
       "earliest28DayAvailabilityCheck": "2026-11-19",
       "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "china_trip_preparation_with_possible_non_tourist_audience",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/china-240-hour-transit-us-citizens/",
@@ -363,7 +413,7 @@
         "2026-10-20"
       ],
       "latestConfirmedLiveDate": null,
-      "priority": 4,
+      "priority": 3,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -377,7 +427,12 @@
       "earliest7DayAvailabilityCheck": null,
       "earliest28DayAvailabilityCheck": null,
       "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "china_trip_preparation_with_possible_non_tourist_audience",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/china-240-hour-visa-free-transit-2026/",
@@ -391,7 +446,7 @@
         "2026-10-20"
       ],
       "latestConfirmedLiveDate": "2026-10-20",
-      "priority": 4,
+      "priority": 3,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -410,7 +465,12 @@
       "earliest7DayAvailabilityCheck": "2026-10-28",
       "earliest28DayAvailabilityCheck": "2026-11-18",
       "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "china_trip_preparation_with_possible_non_tourist_audience",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/china-airport-arrival-guide/",
@@ -424,7 +484,7 @@
         "2026-10-18"
       ],
       "latestConfirmedLiveDate": null,
-      "priority": 4,
+      "priority": 3,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -438,7 +498,12 @@
       "earliest7DayAvailabilityCheck": null,
       "earliest28DayAvailabilityCheck": null,
       "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "china_trip_preparation_with_possible_non_tourist_audience",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/china-esim-internet-guide/",
@@ -452,7 +517,7 @@
         "2026-10-20"
       ],
       "latestConfirmedLiveDate": null,
-      "priority": 4,
+      "priority": 3,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -466,7 +531,12 @@
       "earliest7DayAvailabilityCheck": null,
       "earliest28DayAvailabilityCheck": null,
       "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "china_trip_preparation_with_possible_non_tourist_audience",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/china-hotels-for-foreigners/",
@@ -480,7 +550,7 @@
         "2026-10-20"
       ],
       "latestConfirmedLiveDate": null,
-      "priority": 4,
+      "priority": 3,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -494,7 +564,12 @@
       "earliest7DayAvailabilityCheck": null,
       "earliest28DayAvailabilityCheck": null,
       "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "china_trip_preparation_with_possible_non_tourist_audience",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/china-itinerary-first-time-7-10-14-days/",
@@ -508,7 +583,7 @@
         "2026-10-22"
       ],
       "latestConfirmedLiveDate": "2026-10-22",
-      "priority": 4,
+      "priority": 2,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -527,7 +602,12 @@
       "earliest7DayAvailabilityCheck": "2026-10-30",
       "earliest28DayAvailabilityCheck": "2026-11-20",
       "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "direct_trip_planning",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/china-sim-card-for-foreigners/",
@@ -541,7 +621,7 @@
         "2026-10-19"
       ],
       "latestConfirmedLiveDate": null,
-      "priority": 4,
+      "priority": 3,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -555,7 +635,12 @@
       "earliest7DayAvailabilityCheck": null,
       "earliest28DayAvailabilityCheck": null,
       "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "china_trip_preparation_with_possible_non_tourist_audience",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/china-train-booking-foreigners-12306/",
@@ -569,7 +654,7 @@
         "2026-10-22"
       ],
       "latestConfirmedLiveDate": "2026-10-22",
-      "priority": 4,
+      "priority": 3,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -588,7 +673,12 @@
       "earliest7DayAvailabilityCheck": "2026-10-30",
       "earliest28DayAvailabilityCheck": "2026-11-20",
       "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "china_trip_preparation_with_possible_non_tourist_audience",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/china-train-travel-guide/",
@@ -602,7 +692,7 @@
         "2026-10-19"
       ],
       "latestConfirmedLiveDate": null,
-      "priority": 4,
+      "priority": 3,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -616,7 +706,12 @@
       "earliest7DayAvailabilityCheck": null,
       "earliest28DayAvailabilityCheck": null,
       "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "china_trip_preparation_with_possible_non_tourist_audience",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/china-travel-budget/",
@@ -631,7 +726,7 @@
         "2026-10-20"
       ],
       "latestConfirmedLiveDate": null,
-      "priority": 4,
+      "priority": 2,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -645,7 +740,12 @@
       "earliest7DayAvailabilityCheck": null,
       "earliest28DayAvailabilityCheck": null,
       "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "direct_trip_planning",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/china-visa-free-travel-guide/",
@@ -659,7 +759,7 @@
         "2026-10-20"
       ],
       "latestConfirmedLiveDate": "2026-10-20",
-      "priority": 4,
+      "priority": 3,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -678,7 +778,12 @@
       "earliest7DayAvailabilityCheck": "2026-10-28",
       "earliest28DayAvailabilityCheck": "2026-11-18",
       "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "china_trip_preparation_with_possible_non_tourist_audience",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/didi-in-china-for-foreigners/",
@@ -692,7 +797,7 @@
         "2026-10-21"
       ],
       "latestConfirmedLiveDate": "2026-10-21",
-      "priority": 4,
+      "priority": 3,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -711,7 +816,12 @@
       "earliest7DayAvailabilityCheck": "2026-10-29",
       "earliest28DayAvailabilityCheck": "2026-11-19",
       "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "china_trip_preparation_with_possible_non_tourist_audience",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/didi-payment-for-foreigners/",
@@ -725,7 +835,7 @@
         "2026-10-20"
       ],
       "latestConfirmedLiveDate": null,
-      "priority": 4,
+      "priority": 3,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -739,7 +849,12 @@
       "earliest7DayAvailabilityCheck": null,
       "earliest28DayAvailabilityCheck": null,
       "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "china_trip_preparation_with_possible_non_tourist_audience",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/guides/",
@@ -772,7 +887,12 @@
       "earliest7DayAvailabilityCheck": "2026-10-29",
       "earliest28DayAvailabilityCheck": "2026-11-19",
       "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "site_hub",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/how-to-visit-great-wall-from-beijing-2026/",
@@ -786,7 +906,7 @@
         "2026-10-22"
       ],
       "latestConfirmedLiveDate": "2026-10-22",
-      "priority": 4,
+      "priority": 2,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -805,7 +925,12 @@
       "earliest7DayAvailabilityCheck": "2026-10-30",
       "earliest28DayAvailabilityCheck": "2026-11-20",
       "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "direct_trip_planning",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/is-china-safe-for-tourists-2026/",
@@ -819,7 +944,7 @@
         "2026-10-20"
       ],
       "latestConfirmedLiveDate": null,
-      "priority": 4,
+      "priority": 3,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -833,7 +958,12 @@
       "earliest7DayAvailabilityCheck": null,
       "earliest28DayAvailabilityCheck": null,
       "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "china_trip_preparation_with_possible_non_tourist_audience",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/tenpaygo-for-tourists/",
@@ -847,7 +977,7 @@
         "2026-10-19"
       ],
       "latestConfirmedLiveDate": null,
-      "priority": 4,
+      "priority": 3,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -861,7 +991,12 @@
       "earliest7DayAvailabilityCheck": null,
       "earliest28DayAvailabilityCheck": null,
       "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
-      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "audienceIntent": {
+        "classification": "china_trip_preparation_with_possible_non_tourist_audience",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/china-emergency-numbers/",
@@ -875,7 +1010,7 @@
         "2026-10-22"
       ],
       "latestConfirmedLiveDate": "2026-10-22",
-      "priority": 4,
+      "priority": 5,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
@@ -894,7 +1029,12 @@
       "earliest7DayAvailabilityCheck": "2026-10-30",
       "earliest28DayAvailabilityCheck": "2026-11-20",
       "nextAction": "Check evidence/data completeness at the appropriate review; retain version pending supported decision. One-impression baseline is sparse.",
-      "windowCaution": "Publication is not evidence of Google processing or ranking/click gains; one-impression baseline is sparse."
+      "windowCaution": "Publication is not evidence of Google processing or ranking/click gains; one-impression baseline is sparse.",
+      "audienceIntent": {
+        "classification": "broad_help_with_mixed_audience",
+        "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      }
     }
   ],
   "observations": [
@@ -915,6 +1055,132 @@
       "type": "formal_publication_verified",
       "changeId": "SEO-2026-10-22-EMERGENCY-STATIC",
       "summary": "Emergency body and phone links verified on formal domain; queue28URLs/32IDs, provisional review windows set; no GSC outcomes supplied."
+    },
+    {
+      "date": "2026-10-22",
+      "type": "audience_priority_revised",
+      "userDirection": "Prioritize pages most likely to reach people planning travel in China.",
+      "previousPriorities": [
+        {
+          "url": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+          "priority": 1
+        },
+        {
+          "url": "https://chinaeasebuddy.com/amap-english-mode-guide-2026/",
+          "priority": 2
+        },
+        {
+          "url": "https://chinaeasebuddy.com/wechat-verification-without-friend-qr-2026/",
+          "priority": 3
+        },
+        {
+          "url": "https://chinaeasebuddy.com/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/3-day-guilin-yangshuo-itinerary/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/3-day-shenzhen-itinerary/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/alipay-metro-qr-transport-code-guide/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/beijing-shanghai-layover-240-hour-guide/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/chengdu-panda-base-guide/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/china-240-hour-transit-clock-start/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/china-240-hour-transit-us-citizens/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/china-240-hour-visa-free-transit-2026/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/china-airport-arrival-guide/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/china-esim-internet-guide/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/china-hotels-for-foreigners/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/china-itinerary-first-time-7-10-14-days/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/china-sim-card-for-foreigners/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/china-train-booking-foreigners-12306/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/china-train-travel-guide/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/china-travel-budget/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/china-visa-free-travel-guide/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/didi-in-china-for-foreigners/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/didi-payment-for-foreigners/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/guides/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/how-to-visit-great-wall-from-beijing-2026/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/is-china-safe-for-tourists-2026/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/tenpaygo-for-tourists/",
+          "priority": 4
+        },
+        {
+          "url": "https://chinaeasebuddy.com/china-emergency-numbers/",
+          "priority": 4
+        }
+      ],
+      "summary": "Calculator retained first; trip-budget/itinerary/attraction logistics promoted; travel-use tools require query-intent checks; generic WeChat verification and emergency help demoted for growth work. All28URLs/32changeIDs, prior evidence, review dates and decisions retained. This is resource allocation, not measured rank/audience improvement."
+    },
+    {
+      "date": "2026-10-22",
+      "type": "automation_priority_prompt_updated",
+      "summary": "Existing daily review task prompt updated to tourist-intent selection and current data priorities; schedule unchanged."
     }
-  ]
+  ],
+  "priorityPolicy": "docs/seo/tourist-intent-priorities.json"
 }

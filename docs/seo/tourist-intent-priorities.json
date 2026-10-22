@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-22",
+  "userDirection": "优先优化最可能展示在想来中国旅游的用户面前的网页。",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks_from_china_trip_intent",
+  "selectionOrder": [
+    "First qualify China-trip, transit itinerary, destination visit or concrete visitor-preparation intent.",
+    "Within qualified intent, assess real demand evidence: exact-page relevant impressions and independently verified search volume where available.",
+    "Then assess same-query ranking/CTR opportunity, content gap, implementation cost and current observation window."
+  ],
+  "tiers": {
+    "1": "User-designated240hour calculator.",
+    "2": "Direct travel planning: trip cost, itinerary, destination/attraction logistics.",
+    "3": "Concrete China visitor readiness: SIM/eSIM, payments, hotels, train, arrivals, navigation and transit-policy support. Query intent must distinguish residents, brands and corporate topics.",
+    "4": "Hubs/supporting discovery; assess destination outcomes as well as source traffic.",
+    "5": "Broad help with mixed audience: generic account verification/emergency assistance; maintenance and outcome tracking retained."
+  },
+  "scopeRule": "Audience relevance gates growth selection; priority does not mandate an edit today. Confirmed urgent technical/accuracy regressions may be fixed on any page.",
+  "queryExamples": {
+    "planning_candidates_not_verified_target_metrics": [
+      "china 240 hour transit calculator",
+      "china trip cost calculator",
+      "14 day china itinerary",
+      "beijing itinerary 3 days",
+      "chengdu panda base south or west gate"
+    ],
+    "visitor_preparation_candidates_not_verified_target_metrics": [
+      "china esim for tourists",
+      "how to use didi in china",
+      "wechat pay for tourists"
+    ],
+    "exclude_or_separate": [
+      "driver recruitment",
+      "corporate finance/integration",
+      "account trading",
+      "generic verification with no China-trip context",
+      "unrelated brand queries"
+    ]
+  },
+  "measurementRules": [
+    "These intent classes are judgments from topics/wording, not measured audience identities or a guarantee of appearing to travelers.",
+    "Existing page clicks are proxy metrics until query×page evidence supports relevance.",
+    "GSC impressions are not market monthly search volume; page averages are not specific keyword ranks.",
+    "No exact-page query pairs for most pages; hidden queries and Ahrefs volume/KD remain unknown.",
+    "No universal rewrite from foreigner to tourist; serve distinct real intent and preserve truthful page scope.",
+    "Keep all previous action IDs, baselines, dates, states and observations; evaluate complete7/28day windows.",
+    "Current-year seasonal pages require prospective demand evidence before growth work; no automatic next-year URL/retitling."
+  ],
+  "baselineSource": {
+    "file": "User-provided October21 whole-site comparison workbook",
+    "sha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+    "period": "last28days vs previous28days; actual date bounds absent",
+    "postChangeEffect": "not established"
+  },
+  "candidates": [
+    {
+      "url": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+      "priority": 1,
+      "reason": "User-designated priority; determines a concrete transit itinerary deadline.",
+      "workState": "Retain current tested version; obtain modification-after-crawl evidence and exact-page tool-query outcomes.",
+      "baseline": {
+        "clicks": 0.0,
+        "impressions": 10.0,
+        "pageAveragePosition": 22.5
+      },
+      "exactPageQueryIntentConfirmed": false
+    },
+    {
+      "url": "https://chinaeasebuddy.com/china-travel-budget/",
+      "priority": 2,
+      "reason": "China-trip spending is direct planning intent;109historical impressions provide a page-level opportunity clue.",
+      "workState": "Recently modified; obtain exact-page queries and complete outcomes before another targeted rewrite.",
+      "baseline": {
+        "clicks": 0.0,
+        "impressions": 109.0,
+        "pageAveragePosition": 27.02
+      },
+      "exactPageQueryIntentConfirmed": false
+    },
+    {
+      "url": "https://chinaeasebuddy.com/how-much-does-china-trip-cost-2026-calculator/",
+      "priority": 2,
+      "reason": "Interactive trip-cost task is direct planning intent;17historical impressions, sparse evidence.",
+      "workState": "Review existing optimization and production record, then exact-page budget queries; page average6.88 is not a target keyword rank.",
+      "baseline": {
+        "clicks": 0.0,
+        "impressions": 17.0,
+        "pageAveragePosition": 6.88
+      },
+      "exactPageQueryIntentConfirmed": false
+    },
+    {
+      "url": "https://chinaeasebuddy.com/chengdu-panda-base-guide/",
+      "priority": 2,
+      "reason": "Planning a specific attraction visit is stronger tourism intent than generic app assistance.",
+      "workState": "Gate content newly verified; hold and review after complete window.",
+      "baseline": {
+        "clicks": 0.0,
+        "impressions": 72.0,
+        "pageAveragePosition": 16.68
+      },
+      "exactPageQueryIntentConfirmed": false
+    },
+    {
+      "url": "https://chinaeasebuddy.com/3-day-shenzhen-itinerary/",
+      "priority": 2,
+      "reason": "Specific city and trip length indicate route planning; one historical page click is not query-confirmed tourist identity.",
+      "workState": "Recently modified; hold and review exact-page itinerary queries.",
+      "baseline": {
+        "clicks": 1.0,
+        "impressions": 30.0,
+        "pageAveragePosition": 23.37
+      },
+      "exactPageQueryIntentConfirmed": false
+    },
+    {
+      "url": "https://chinaeasebuddy.com/14-day-china-itinerary/",
+      "priority": 2,
+      "reason": "Specific China-trip duration is direct planning intent; one historical page click.",
+      "workState": "Candidate only: inspect existing content, index/technical state and exact-page queries before editing; no new optimization action claimed.",
+      "baseline": {
+        "clicks": 1.0,
+        "impressions": 10.0,
+        "pageAveragePosition": 27.0
+      },
+      "exactPageQueryIntentConfirmed": false
+    },
+    {
+      "url": "https://chinaeasebuddy.com/3-day-beijing-itinerary/",
+      "priority": 2,
+      "reason": "Specific destination and duration indicate route planning.",
+      "workState": "Candidate only: review actual content and exact-page query opportunity before editing.",
+      "baseline": {
+        "clicks": 0.0,
+        "impressions": 22.0,
+        "pageAveragePosition": 21.77
+      },
+      "exactPageQueryIntentConfirmed": false
+    },
+    {
+      "url": "https://chinaeasebuddy.com/china-itinerary-first-time-7-10-14-days/",
+      "priority": 2,
+      "reason": "Explicit first-visit route planning.",
+      "workState": "Static-body repair just verified; retain version and review evidence.",
+      "baseline": {
+        "clicks": 0.0,
+        "impressions": 3.0,
+        "pageAveragePosition": 88.0
+      },
+      "exactPageQueryIntentConfirmed": false
+    },
+    {
+      "url": "https://chinaeasebuddy.com/how-to-visit-great-wall-from-beijing-2026/",
+      "priority": 2,
+      "reason": "Concrete attraction-transport task.",
+      "workState": "Transport content just verified; retain version and review evidence.",
+      "baseline": {
+        "clicks": 0.0,
+        "impressions": 13.0,
+        "pageAveragePosition": 72.08
+      },
+      "exactPageQueryIntentConfirmed": false
+    },
+    {
+      "url": "https://chinaeasebuddy.com/amap-english-mode-guide-2026/",
+      "priority": 3,
+      "reason": "Relevant China-navigation support, but app-language searches may include residents or general users.",
+      "workState": "Current setup version retained; classify exact-page queries before treating clicks as tourist-related.",
+      "baseline": {
+        "clicks": 1.0,
+        "impressions": 95.0,
+        "pageAveragePosition": 14.17
+      },
+      "exactPageQueryIntentConfirmed": false
+    },
+    {
+      "url": "https://chinaeasebuddy.com/didi-in-china-for-foreigners/",
+      "priority": 3,
+      "reason": "Travel transport support; brand/driver/corporate searches can be unrelated.",
+      "workState": "Retain recent version; prioritize China-visitor use queries over generic brand clicks.",
+      "baseline": {
+        "clicks": 0.0,
+        "impressions": 89.0,
+        "pageAveragePosition": 34.83
+      },
+      "exactPageQueryIntentConfirmed": false
+    },
+    {
+      "url": "https://chinaeasebuddy.com/wechat-verification-without-friend-qr-2026/",
+      "priority": 5,
+      "reason": "Generic account verification does not establish intent to visit China.",
+      "workState": "Retain and continue tracking; no growth rewrite priority merely for low page-average position.",
+      "baseline": {
+        "clicks": 1.0,
+        "impressions": 62.0,
+        "pageAveragePosition": 6.73
+      },
+      "exactPageQueryIntentConfirmed": false
+    },
+    {
+      "url": "https://chinaeasebuddy.com/china-emergency-numbers/",
+      "priority": 5,
+      "reason": "Useful travel-support resource, broad demand and one-impression baseline do not make it a growth lead.",
+      "workState": "Technical repair complete; retain/tracking only unless regression or relevant query evidence emerges.",
+      "baseline": {
+        "clicks": 0.0,
+        "impressions": 1.0,
+        "pageAveragePosition": 4.0
+      },
+      "exactPageQueryIntentConfirmed": false
+    }
+  ],
+  "nextEvidencePriority": [
+    "Calculator: latest indexed-report crawl/canonical evidence; already received baseline need not be resubmitted.",
+    "China travel budget: exact-page Queries comparison with actual dates and matching filters; previously requested Amap/WeChat data remains useful but lower in the audience-first queue."
+  ],
+  "references": [
+    {
+      "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "checkedOn": "2026-10-22",
+      "supports": "Serve an intended audience and primary site purpose; these numerical priorities are our allocation judgment, not a Google ranking rule."
+    }
+  ],
+  "siteContentChangesThisRevision": false,
+  "automationPromptUpdate": {
+    "status": "confirmed",
+    "date": "2026-10-22",
+    "taskId": "6ad478cc72188191aed60e564ebb1b16",
+    "note": "Audience-first priorities and evidence requests updated; existing daily schedule retained."
+  }
+}

@@ -1,5 +1,11 @@
 # SEO optimization tracker
 
+### October 22: Audience-first growth priority
+
+User explicitly prioritizes reaching people who want to travel in China. Reordered growth allocation: calculator first; trip budget/cost tools, defined itineraries and attraction logistics next; China-visitor readiness tools require relevant-query checks. Generic WeChat account verification and emergency help are lower growth priority, while maintenance and action follow-up continue. Policy and candidate baselines: `tourist-intent-priorities.json`. These are topic-intent judgments, not verified visitor identities, market search volume, low-competition labels or measured SEO gains.
+
+Updated the existing28URL/32action queue without altering historical baselines, live dates, decisions or review windows; saved the previous priority snapshot in observations. Newly listed14-day/Beijing/cost-tool candidates are candidate reviews, not newly implemented optimization actions. No public copy, title, link, canonical, URL or sitemap change in this priority revision. Calculator retains its observation version. Existing full-site/calculator baselines remain valid historical inputs; exact-page budget queries and calculator post-change crawl evidence now lead data collection. Policy follows Google's intended-audience guidance, with practical allocation decided for this business. Existing daily automation prompt has been updated successfully to read and apply this priority order; schedule retained.
+
 ### October 22: Emergency guide static-body repair
 
 Change `SEO-2026-10-22-EMERGENCY-STATIC`, formal-domain production verified October22 02:37:00 UTC. Code commit `7f2d0af400bfec23252adb4a2683891146dc00ee`. `/china-emergency-numbers/`: **0 clicks / 1 impression / 0% CTR / page-average position4.0** in the October21 full-site workbook (SHA-256 `711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1`). Previous zero impressions: no usable previous rank/CTR. The old no-slash row remains separate. One impression is not a stable top-four ranking or proof of high demand. No attributable queries, monthly volume, KD or current Google crawl/index evidence.
