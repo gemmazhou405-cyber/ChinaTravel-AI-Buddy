@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "changeId": "SEO-2026-10-22-GREATWALL-TRANSPORT",
+  "page": "https://chinaeasebuddy.com/how-to-visit-great-wall-from-beijing-2026/",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks",
+  "status": "local_verified_pending_publication",
+  "liveDate": null,
+  "codeCommits": [],
+  "baseline": {
+    "collectedOn": "2026-10-21",
+    "reviewedOn": "2026-10-22",
+    "sourceFile": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
+    "sourceSha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+    "exportScope": "whole_site",
+    "searchType": "Web (text-based)",
+    "periods": "Last 28 days vs Previous 28 days; actual dates absent",
+    "page": {
+      "current": {
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "averagePosition": 72.08
+      },
+      "previous": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": null,
+        "averagePosition": null
+      }
+    },
+    "relatedMainGuide": {
+      "url": "https://chinaeasebuddy.com/great-wall-of-china-day-trip-from-beijing/",
+      "clicks": 0,
+      "impressions": 24,
+      "averagePosition": 39.29,
+      "decision": "Leave unchanged; compare exact page-query pairs before any merge or further rewrite."
+    },
+    "siteWideQueryClues": [
+      {
+        "query": "beijing to great wall",
+        "clicks": 0,
+        "impressions": 4,
+        "averagePosition": 48.25
+      },
+      {
+        "query": "how to visit the great wall from beijing",
+        "clicks": 0,
+        "impressions": 4,
+        "averagePosition": 87
+      },
+      {
+        "query": "beijing to badaling great wall",
+        "clicks": 0,
+        "impressions": 3,
+        "averagePosition": 44.67
+      },
+      {
+        "query": "train from beijing to great wall",
+        "clicks": 0,
+        "impressions": 1,
+        "averagePosition": 49
+      }
+    ],
+    "exactPageQueries": null,
+    "searchVolume": null,
+    "keywordDifficulty": null,
+    "limitations": [
+      "Site-wide query clues are not attributable to this page or the main guide.",
+      "Impressions are not monthly search volume; low competition is not established.",
+      "Page-average rank is not a query rank.",
+      "Small baseline and unknown period dates prevent a controlled before-after comparison.",
+      "No post-change Google crawl, indexing or click/ranking outcome is available."
+    ]
+  },
+  "indexObservation": {
+    "indexed": null,
+    "lastGoogleCrawl": null,
+    "googleSelectedCanonical": null,
+    "source": null
+  },
+  "change": {
+    "hypothesis": "Concrete train station, Mutianyu connection and return steps can better satisfy independent transport intent than generic advice. Relevant-click and ranking benefit remains unproven.",
+    "content": [
+      "Shared JSON for six transport/booking sections, six FAQs and seven official sources",
+      "Badaling exact departure/destination station names and 12306 identity guidance",
+      "Mutianyu published 916 Express/local connections, operator-specific pickup checks and local shuttle distinction",
+      "Separate transport, admission and lift products; practical return planning and weather checks"
+    ],
+    "preserved": [
+      "URL",
+      "canonical",
+      "search title",
+      "meta description",
+      "H1",
+      "quick answer",
+      "CTA",
+      "internal links",
+      "main Great Wall guide"
+    ],
+    "reviewed": "2026-10-22",
+    "modified": "2026-10-22",
+    "noFirsthandVisitClaim": true,
+    "sourcesCheckedOn": "2026-10-22",
+    "sources": "src/data/greatWallTransport.json",
+    "sourceLimitations": "Mutianyu operator transport articles are dated 2024 and visitor notice 2023; read October22 but not live schedule confirmations. No fixed departure times, fares, seat availability or queue promises added.",
+    "mainGuideBoundary": "Keep main guide as section/day-trip planning overview; this page explains independent train/bus logistics. Not proof that overlap or keyword competition has been solved."
+  },
+  "verification": {
+    "typecheck": "PASS",
+    "i18nParity": "PASS",
+    "build": "PASS",
+    "publicHtmlAuditLocal": "PASS",
+    "targetHtmlFaqMetadataAndSitemap": "PASS",
+    "mainGuideUnchanged": "PASS",
+    "diffCheck": "PASS",
+    "sitemapUrlCount": 76,
+    "onlyTargetLastmodChanged": true,
+    "production": {
+      "newContentVerified": false,
+      "checkedAt": null,
+      "googleRecrawlConfirmed": false,
+      "rankingOrClickGainConfirmed": false
+    }
+  },
+  "followUp": {
+    "provisionalFirstCompleteWindow": [
+      "2026-10-23",
+      "2026-10-29"
+    ],
+    "referenceWindow": [
+      "2026-10-16",
+      "2026-10-22"
+    ],
+    "windowRule": "Begin after formal-domain version verification; move the start if publication is delayed. Require complete GSC days, matching search/country/device filters and actual date boundaries.",
+    "nextData": [
+      "URL Inspection: indexed state, last reported crawl and Google canonical",
+      "Exact page Queries comparison for this URL and the main Great Wall guide in identical windows",
+      "Retain page totals, relevant disclosed query clicks, same-query ranks and impressions; hidden queries unknown"
+    ],
+    "zeroClickBaseline": "Report absolute change, not percentage growth from zero.",
+    "causality": "Version publication, Google recrawl, ranking change and click change are separate observations.",
+    "requestIndexing": "Not submitted by this environment."
+  },
+  "releaseObservations": [],
+  "performanceObservations": []
+}

@@ -3,8 +3,8 @@
   "changeId": "SEO-2026-10-21-PANDA-GATES",
   "page": "https://chinaeasebuddy.com/chengdu-panda-base-guide/",
   "primaryOutcome": "strongly_relevant_google_organic_clicks",
-  "status": "published_production_pending",
-  "liveDate": null,
+  "status": "live_verified",
+  "liveDate": "2026-10-22",
   "codeCommits": [
     "2f8d7d057884bfb9e18b2a89c0066117c134174b"
   ],
@@ -103,26 +103,28 @@
     "sitemapUrlCount": 76,
     "onlyTargetLastmodChanged": true,
     "production": {
-      "newContentVerified": false,
-      "checkedAt": "2026-10-21T14:44:12Z",
+      "newContentVerified": true,
+      "checkedAt": "2026-10-22T01:08:58Z",
       "googleRecrawlConfirmed": false,
       "rankingOrClickGainConfirmed": false,
-      "observedVersion": "Previous gate section; no Metro and shuttle routes heading in plain or fresh-query formal-domain checks",
-      "githubCheckRuns": 0,
-      "deploymentStatus": "No deployment check or commit status recorded yet; publication is not production verification.",
-      "note": "Do not set a live date or start the post-change observation window until formal-domain new content is verified. Root cause and deployment timing unknown."
+      "observedVersion": "New Metro and shuttle routes section, 408/409 connections, updated gate FAQ and retained passport guidance",
+      "deploymentStatus": "Formal-domain HTML and sitemap verified; first actual publication time is unknown.",
+      "note": "October22 is the first verified-live date, not a proven deployment timestamp. Previous October21 pending observation is preserved. Google recrawl and performance outcomes remain unverified.",
+      "targetHtmlAndSitemap": "PASS",
+      "httpStatus": 200,
+      "xRobotsTag": null
     }
   },
   "followUp": {
     "firstCompleteWindow": [
-      "2026-10-22",
-      "2026-10-28"
+      "2026-10-23",
+      "2026-10-29"
     ],
     "referenceWindow": [
-      "2026-10-14",
-      "2026-10-20"
+      "2026-10-16",
+      "2026-10-22"
     ],
-    "referenceWindowLimitations": "The October 19 passport-booking change is inside the reference window; not a clean control. Exact dates and complete exports still required.",
+    "referenceWindowLimitations": "Includes earlier booking and gate changes. This is a descriptive reference, not a clean control. Conservative post-verification window begins the day after first verified-live date.",
     "longerWindow": [
       "2026-10-22",
       "2026-11-18"
@@ -138,7 +140,36 @@
     ],
     "attribution": "October 19 booking update and October 21 gate update must be assessed together unless later evidence supports separating them. Do not claim a causal result from aggregate before/after changes.",
     "zeroClickBaseline": "Report absolute click gain; no percentage increase from zero.",
-    "indexingRequest": "Not submitted by this environment."
+    "indexingRequest": "Not submitted by this environment.",
+    "originallyPlannedFirstCompleteWindow": [
+      "2026-10-22",
+      "2026-10-28"
+    ]
   },
-  "performanceObservations": []
+  "performanceObservations": [],
+  "releaseObservations": [
+    {
+      "newContentVerified": false,
+      "checkedAt": "2026-10-21T14:44:12Z",
+      "googleRecrawlConfirmed": false,
+      "rankingOrClickGainConfirmed": false,
+      "observedVersion": "Previous gate section; no Metro and shuttle routes heading in plain or fresh-query formal-domain checks",
+      "githubCheckRuns": 0,
+      "deploymentStatus": "No deployment check or commit status recorded yet; publication is not production verification.",
+      "note": "Do not set a live date or start the post-change observation window until formal-domain new content is verified. Root cause and deployment timing unknown."
+    },
+    {
+      "newContentVerified": true,
+      "checkedAt": "2026-10-22T01:08:58Z",
+      "googleRecrawlConfirmed": false,
+      "rankingOrClickGainConfirmed": false,
+      "observedVersion": "New Metro and shuttle routes section, 408/409 connections, updated gate FAQ and retained passport guidance",
+      "deploymentStatus": "Formal-domain HTML and sitemap verified; first actual publication time is unknown.",
+      "note": "October22 is the first verified-live date, not a proven deployment timestamp. Previous October21 pending observation is preserved. Google recrawl and performance outcomes remain unverified.",
+      "targetHtmlAndSitemap": "PASS",
+      "httpStatus": 200,
+      "xRobotsTag": null
+    }
+  ],
+  "liveDateMeaning": "First verified new content on formal domain; actual publication time unknown."
 }

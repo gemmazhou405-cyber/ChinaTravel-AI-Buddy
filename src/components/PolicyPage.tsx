@@ -8,6 +8,7 @@ import nanjingGuide from '../data/seoPages/3-day-nanjing-itinerary.json';
 import daliGuide from '../data/seoPages/3-day-dali-itinerary.json';
 import goldenWeekGuide from '../data/seoPages/china-golden-week-2026-travel-guide.json';
 import greatWallGuide from '../data/seoPages/great-wall-of-china-day-trip-from-beijing.json';
+import greatWallTransport from '../data/greatWallTransport.json';
 import pandaBaseGuide from '../data/seoPages/chengdu-panda-base-guide.json';
 import didiPaymentGuide from '../data/seoPages/didi-payment-for-foreigners.json';
 import beijingAirportGuide from '../data/seoPages/beijing-airport-to-city-guide.json';
@@ -6236,20 +6237,13 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     midCtaLabel: 'Choose Badaling or Mutianyu for me',
     ctaHref: '/',
     buddyPrompt: 'Plan my independent Great Wall day from Beijing. I travel on [date], stay near [hotel/area], have [fitness level], and prefer [easy transport/fewer crowds/scenery/toboggan].',
-    reviewed: 'September 27, 2026',
-    sections: [
-      { title: 'Badaling vs Mutianyu', table: { headers: ['Section', 'Best for', 'Transport trade-off'], rows: [['Badaling', 'First-time visitors prioritizing simple rail access and extensive facilities', 'Fast train is convenient but popular departures can sell out'], ['Mutianyu', 'Scenery, families, cable-car options, and a less compressed visit outside peaks', 'Requires a bus, shuttle, taxi, or private transfer']] } },
-      { title: 'Independent Transport Options', items: ['Badaling: book the high-speed train from Beijing North or Qinghe to Badaling Great Wall station through Railway 12306; confirm the exact station and return train.', 'Mutianyu: use an authorized tourist bus, a public-bus combination, or a verified car service. Confirm where the internal scenic-area shuttle begins.', 'Avoid accepting an unverified “direct bus” or private car offer near a station without checking the operator, destination, and return terms.'] },
-      { title: 'A Realistic Day Plan', ordered: true, items: ['Leave central Beijing early and carry your passport, booking confirmations, water, and weather protection.', 'Allow time for the station, bus transfer, ticket check, and any internal shuttle.', 'Spend roughly three to four hours on the wall, choosing cable-car assistance based on weather and mobility.', 'Start the return before late afternoon and keep the final train or bus details available offline.'] },
-      { title: 'Tickets, Weather, and Walking', items: ['Reserve required admission and transport through official or clearly authorized channels.', 'Wear shoes with grip; restored sections still include steep and uneven stairs.', 'Cable cars, chairlifts, and the Mutianyu toboggan can close because of wind, ice, maintenance, or other conditions.', 'Avoid unrestored or closed wild-wall sections unless you have lawful access and appropriate specialist support.'] },
-    ],
-    faqs: [
-      { question: 'Can I visit the Great Wall without a tour?', answer: 'Yes. Badaling is accessible by high-speed rail, while Mutianyu can be reached by authorized bus, public transport plus shuttle, taxi, or private transfer.' },
-      { question: 'Is Badaling or Mutianyu better?', answer: 'Choose Badaling for easier rail access and extensive facilities. Choose Mutianyu for scenery and cable-car or toboggan options, accepting a more complex transfer.' },
-      { question: 'How long should I spend at the Great Wall?', answer: 'Most independent visitors should allow a full day from central Beijing, including transfers, ticket checks, and roughly three to four hours at the wall.' },
-      { question: 'Do I need to book in advance?', answer: 'Advance booking is strongly recommended for admission and train or tourist-bus seats, especially on weekends and holidays.' },
-    ],
+    reviewed: greatWallTransport.reviewed,
+    lastModified: greatWallTransport.modified,
+    isArticle: true,
+    sections: greatWallTransport.sections,
+    faqs: greatWallTransport.faqs,
     related: [{ label: 'Full Great Wall day-trip guide', href: '/great-wall-of-china-day-trip-from-beijing/' }, { label: '3-day Beijing itinerary', href: '/3-day-beijing-itinerary/' }, { label: 'China train booking guide', href: '/china-train-booking-foreigners-12306/' }],
+    sources: greatWallTransport.sources,
   },
   'what-to-eat-in-china-first-time-guide': {
     path: '/what-to-eat-in-china-first-time-guide/',

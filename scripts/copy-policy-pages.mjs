@@ -9,6 +9,7 @@ const nanjingGuide = JSON.parse(await readFile('src/data/seoPages/3-day-nanjing-
 const daliGuide = JSON.parse(await readFile('src/data/seoPages/3-day-dali-itinerary.json', 'utf8'));
 const goldenWeekGuide = JSON.parse(await readFile('src/data/seoPages/china-golden-week-2026-travel-guide.json', 'utf8'));
 const greatWallGuide = JSON.parse(await readFile('src/data/seoPages/great-wall-of-china-day-trip-from-beijing.json', 'utf8'));
+const greatWallTransport = JSON.parse(await readFile('src/data/greatWallTransport.json', 'utf8'));
 const pandaBaseGuide = JSON.parse(await readFile('src/data/seoPages/chengdu-panda-base-guide.json', 'utf8'));
 const didiPaymentGuide = JSON.parse(await readFile('src/data/seoPages/didi-payment-for-foreigners.json', 'utf8'));
 const beijingAirportGuide = JSON.parse(await readFile('src/data/seoPages/beijing-airport-to-city-guide.json', 'utf8'));
@@ -4412,44 +4413,12 @@ const focusedPageContent = {
     "article": true
   },
   "how-to-visit-great-wall-from-beijing-2026": {
-    "contentSections": [
-      {
-        "title": "Badaling or Mutianyu: choose the transport first",
-        "table": {
-          "headers": ["Section", "Independent route", "Trade-off"],
-          "rows": [
-            ["Badaling", "High-speed train from Beijing North or Qinghe to Badaling Great Wall station", "Reserve a suitable return train; popular dates can be crowded"],
-            ["Mutianyu", "Verified tourist bus, public-bus connection, or booked road transfer", "Confirm the scenic-area entrance, shuttle, and return pickup point"]
-          ]
-        },
-        "items": [
-          "Choose Badaling if simple rail access matters most. Consider Mutianyu if you prefer its walking route and can arrange the more complex transfer.",
-          "Check official admission, operating hours and any cableway or shuttle products for the exact date; do not assume the same arrangements apply every season."
-        ]
-      },
-      {
-        "title": "Book an independent day trip step by step",
-        "ordered": true,
-        "items": [
-          "Check the train station or bus pickup point against your hotel location; Beijing North and Qinghe are different stations.",
-          "Reserve admission and any required train or bus seat through the official operator or a clearly authorized seller.",
-          "Save the station name, departure time, entrance, and return pickup instructions offline. Carry the passport used for reservations.",
-          "Allow time for ticket checks, any internal shuttle, and a few hours of walking before the return journey."
-        ]
-      },
-      {
-        "title": "Walking, weather and return backups",
-        "items": [
-          "Restored sections still have steep stairs; wear shoes with grip and choose cableway assistance according to your mobility and the day's weather.",
-          "Wind, ice or maintenance may affect cable cars and other facilities. Verify live notices before departure.",
-          "Check the final return train or bus before leaving Beijing. Keep an alternative verified transport option if the planned return is unavailable.",
-          "Avoid unverified private-car offers and closed or unrestored wall sections."
-        ]
-      }
-    ],
-    "lastReviewed": "October 5, 2026",
-    "lastModified": "2026-10-13",
-    "article": true
+    contentSections: greatWallTransport.sections,
+    faqs: greatWallTransport.faqs.map(({ question, answer }) => [question, answer]),
+    sourceLinks: greatWallTransport.sources.map(({ label, href }) => [label, href]),
+    lastReviewed: greatWallTransport.reviewed,
+    lastModified: greatWallTransport.modified,
+    article: true,
   },
   "what-to-eat-in-china-first-time-guide": {
     "contentSections": [
