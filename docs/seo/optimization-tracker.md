@@ -197,6 +197,8 @@ The DiDi payment page's public HTML showed the new October 20 review date after 
 
 | SEO-2026-10-22-CALC-STATIC-ENTRY | 2026-10-22 / `6ce91de`; formal verified07:13:49UTC | `/china-240-hour-transit-calculator/` | Replace stale static scheduled-arrival instruction with existing shared entry-date guidance;add calculator HTML/stale-copy audit. Maintenance consistency repair,not a proven ranking opportunity. | Historical exact-page0clicks/10impressions/pageavg22.5;target tool-query coverage/volume/KDunknown | Historical indexed report,last reported crawlOct13;post-change crawl unknown | Four-group evidence matrix in `keyword-opportunities-2026-10-22.json`;no new GSC outcome | Verify production,then complete same-query7/28day windows and absolute relevant-click changes;retain recent metadata/algorithm. |
 
+| SEO-2026-10-22-ZHANGJIAJIE-TIANMEN | Oct22;local verification passed,pending release | `/3-day-zhangjiajie-itinerary/` | One dated route-planning section,two FAQs/source links in shared JSON;retain metadata. Exploratory tourist-intent content test. | Historical0clicks/15impressions/pageavg28.6;actual dates absent | Unknown,no new URL Inspection | Site-wide planner query3/91.67 not page-attributed;candidate coverage/volume/KDunknown | Verify publication,maintain source watch,and evaluate complete same-query/relevant-click windows. |
+
 ## Next page decision: DiDi query ownership
 
 The site-wide `Queries` sheet does not show which page received each query. The main DiDi guide was last changed on 2026-10-11, so do not change both DiDi pages again before measuring the current result. These figures refer to the same 2026-09-16–2026-10-13 workbook, and are **not** keyword search volumes.

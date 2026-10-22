@@ -196,6 +196,19 @@
         "pageAveragePosition": 4.0
       },
       "exactPageQueryIntentConfirmed": false
+    },
+    {
+      "url": "https://chinaeasebuddy.com/3-day-zhangjiajie-itinerary/",
+      "priority": 2,
+      "reason": "Direct destination/duration planning with15historical impressions and a documented source-backed answer gap;not proven keyword demand or low competition.",
+      "workState": "Scoped dated-content test locally accepted;formal verification and query/click outcomes pending.",
+      "baseline": {
+        "clicks": 0,
+        "impressions": 15,
+        "ctr": 0,
+        "pageAveragePosition": 28.6
+      },
+      "exactPageQueryIntentConfirmed": false
     }
   ],
   "nextEvidencePriority": [

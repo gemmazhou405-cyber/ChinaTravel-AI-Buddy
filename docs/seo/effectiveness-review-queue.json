@@ -1383,6 +1383,39 @@
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
+    },
+    {
+      "url": "https://chinaeasebuddy.com/3-day-zhangjiajie-itinerary/",
+      "changeIds": [
+        "SEO-2026-10-22-ZHANGJIAJIE-TIANMEN"
+      ],
+      "sourceRecords": [
+        "docs/seo/zhangjiajie-itinerary-ranking-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-22"
+      ],
+      "latestConfirmedLiveDate": null,
+      "priority": 2,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "formal new-version verification",
+        "current indexed URL Inspection crawl/canonical",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": null,
+      "provisional28DayWindow": null,
+      "earliest7DayAvailabilityCheck": null,
+      "earliest28DayAvailabilityCheck": null,
+      "nextAction": "Verify dated planning update on formal domain;observe relevant query/click outcomes and maintain serviceNoticeWatch. Existing calculator/budget evidence requests stay first.",
+      "windowCaution": "Provisional publication windows do not establish Google processing or causal effect.",
+      "audienceIntent": {
+        "classification": "direct_destination_trip_planning",
+        "basis": "page/topic inference,not verified visitor identity",
+        "asOf": "2026-10-22"
+      }
     }
   ],
   "observations": [
@@ -1595,6 +1628,12 @@
       "reason": "No new attributable post-change outcome or complete-window evidence. Do not rewrite/revert based on missing evidence or partial-day results. Preserve current versions and previous baselines/windows.",
       "publicVerificationLimit": "Direct HTTP request received environment HTTP403; not proof of origin failure. Public retrieval displayed calculator shared entry sentence, but budget retrieval was marked crawled yesterday and omitted new tool; fresh-query retrieval inaccessible. No new raw-HTML/canonical/header pass or live regression claimed; previous verified production observations retained.",
       "nextEvidence": "Existing outstanding requests unchanged: calculator indexed-report crawl and Google-selected canonical; budget exact-URL Queries with actual comparison dates. Amap/WeChat gaps retained at lower collection priority. No duplicate request issued."
+    },
+    {
+      "date": "2026-10-22",
+      "type": "scoped_tourist_planning_test_added",
+      "changeId": "SEO-2026-10-22-ZHANGJIAJIE-TIANMEN",
+      "summary": "Older Zhangjiajie itinerary has documented source-backed answer gap;one section/two FAQs added locally.31URLs/37IDs. No new GSC result or high-volume/low-competition claim."
     }
   ],
   "priorityPolicy": "docs/seo/tourist-intent-priorities.json",

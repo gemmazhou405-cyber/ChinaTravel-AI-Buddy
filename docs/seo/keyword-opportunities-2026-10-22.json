@@ -303,5 +303,35 @@
       },
       "googleIndexState": "not_established_by_public_fetch"
     }
+  ],
+  "followOnReviews": [
+    {
+      "date": "2026-10-22",
+      "candidateUrl": "https://chinaeasebuddy.com/3-day-zhangjiajie-itinerary/",
+      "actionId": "SEO-2026-10-22-ZHANGJIAJIE-TIANMEN",
+      "selectionEvidence": {
+        "tourismIntent": "Existing destination+duration planning page,not generic account support.",
+        "demand": "15observed page impressions and a separately scoped site-wide topic-query clue;not monthly demand or proof of a strong target keyword.",
+        "ranking": "Page average28.6 is a page-level signal only,target-query positions unknown.",
+        "confirmedGap": "Formal September22 version only provided generic route-product advice;no dated operator route notice or route-specific FAQ. Confirmed by public HTML capture2026-10-22T07:27:54Z.",
+        "competitiveCheck": {
+          "url": "https://www.discoverzhangjiajie.org/en/travel-guide/3-day-itinerary/",
+          "observedOn": "2026-10-22",
+          "observation": "Detailed three-day route and date-specific booking caution already exist;its displayed source references an earlier maintenance notice. Existing competition rules out claiming an empty market.",
+          "scope": "First-party visible content only;not a live Google SERP position or quantified difficulty."
+        },
+        "decision": "Small exploratory content test supported by direct tourism intent,existing exposure and a concrete source-backed answer gap. Not selected as a proven high-volume/low-competition or highest-return keyword.",
+        "whyNow": "This older page has no recent action in queue;avoid re-editing the newly published calculator,budget and Beijing content."
+      },
+      "candidateQueries": [
+        "3 day zhangjiajie itinerary",
+        "tianmen mountain cable car closed october 2026",
+        "tianmen mountain line c 2026"
+      ],
+      "marketMonthlyVolume": null,
+      "keywordDifficulty": null,
+      "sourceRecord": "docs/seo/zhangjiajie-itinerary-ranking-tracking.json",
+      "decision": "Select one narrow exploratory content test;four earlier candidates remain in observation. This does not establish high volume,low competition or new rank gains."
+    }
   ]
 }

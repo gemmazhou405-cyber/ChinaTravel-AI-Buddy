@@ -205,8 +205,8 @@ const pages = [
   {
     path: '/3-day-zhangjiajie-itinerary/',
     h1: /3-Day Zhangjiajie Itinerary for First-Time Visitors.*2026/i,
-    keywords: ['Wulingyuan', 'Zhangjiajie National Forest Park', 'Tianmen Mountain', 'Yuanjiajie', 'Tianzi Mountain', 'Zhangjiajie West', 'Railway 12306'],
-    links: ['/#trip-plan', '/3-day-guilin-yangshuo-itinerary/', '/3-day-chengdu-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/best-time-to-visit-china/', '/china-train-travel-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/first-trip-to-china/'],
+    keywords: ['Wulingyuan', 'Zhangjiajie National Forest Park', 'Tianmen Mountain', 'Yuanjiajie', 'Tianzi Mountain', 'Zhangjiajie West', 'Railway 12306', 'Tianmen Mountain cable car closure: October 2026 route update', 'Tianmen Cave Express Cableway', 'October 13', 'Route sources checked October 22, 2026'],
+    links: ["https://hunan.voc.com.cn/news/202610/33962893.html", "https://feng.ifeng.com/c/8x6kU0WWUpE", '/#trip-plan', '/3-day-guilin-yangshuo-itinerary/', '/3-day-chengdu-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/best-time-to-visit-china/', '/china-train-travel-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/first-trip-to-china/'],
   },
   {
     path: '/3-day-shenzhen-itinerary/',

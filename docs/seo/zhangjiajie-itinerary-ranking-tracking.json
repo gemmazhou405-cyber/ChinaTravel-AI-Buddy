@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "changeId": "SEO-2026-10-22-ZHANGJIAJIE-TIANMEN",
+  "classification": "scoped_tourist_planning_content_test",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks",
+  "status": "local_checks_passed_pending_release",
+  "page": "https://chinaeasebuddy.com/3-day-zhangjiajie-itinerary/",
+  "codeCommits": [],
+  "baseline": {
+    "source": {
+      "filename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
+      "sha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+      "searchType": "Web",
+      "periodLabel": "Last28days vs previous28days",
+      "actualDateBounds": null,
+      "postChangeResult": false
+    },
+    "current": {
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "pageAveragePosition": 28.6
+    },
+    "exactPageQueries": null,
+    "indexingState": null,
+    "latestGoogleCrawl": null,
+    "googleSelectedCanonical": null,
+    "siteWideQueryClue": {
+      "query": "zhangjiajie trip planner",
+      "clicks": 0,
+      "impressions": 3,
+      "averagePosition": 91.67,
+      "scope": "site-wide;not assigned to this page"
+    },
+    "marketMonthlyVolume": null,
+    "keywordDifficulty": null
+  },
+  "selectionEvidence": {
+    "tourismIntent": "Existing destination+duration planning page,not generic account support.",
+    "demand": "15observed page impressions and a separately scoped site-wide topic-query clue;not monthly demand or proof of a strong target keyword.",
+    "ranking": "Page average28.6 is a page-level signal only,target-query positions unknown.",
+    "confirmedGap": "Formal September22 version only provided generic route-product advice;no dated operator route notice or route-specific FAQ. Confirmed by public HTML capture2026-10-22T07:27:54Z.",
+    "competitiveCheck": {
+      "url": "https://www.discoverzhangjiajie.org/en/travel-guide/3-day-itinerary/",
+      "observedOn": "2026-10-22",
+      "observation": "Detailed three-day route and date-specific booking caution already exist;its displayed source references an earlier maintenance notice. Existing competition rules out claiming an empty market.",
+      "scope": "First-party visible content only;not a live Google SERP position or quantified difficulty."
+    },
+    "decision": "Small exploratory content test supported by direct tourism intent,existing exposure and a concrete source-backed answer gap. Not selected as a proven high-volume/low-competition or highest-return keyword.",
+    "whyNow": "This older page has no recent action in queue;avoid re-editing the newly published calculator,budget and Beijing content."
+  },
+  "candidateQueries": [
+    "3 day zhangjiajie itinerary",
+    "tianmen mountain cable car closed october 2026",
+    "tianmen mountain line c 2026"
+  ],
+  "queryCaution": "Candidates only:coverage,monthly volume,KD and exact-page keyword positions unconfirmed. The existing site-wide clue cannot establish query ownership.",
+  "change": {
+    "sharedSource": "src/data/zhangjiajieTianmenUpdate.json",
+    "scope": "Add one dated route-planning section,two FAQs and two clearly attributed source links;point existing quick answer/Day3 to the update.",
+    "newFaqCount": 2,
+    "totalFaqCount": 9,
+    "modified": "2026-10-22",
+    "wholeGuideReviewedRetained": "September22,2026",
+    "retained": [
+      "Search title,description,H1,URL,canonical and CTA",
+      "Original eight planning sections and seven FAQs,apart from scoped pointers in quick answer/Day3",
+      "All previous internal links",
+      "Other public pages and calculator algorithm",
+      "76sitemapURLs;only this itinerary actual modification date changes"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://feng.ifeng.com/c/8x6kU0WWUpE",
+      "label": "Tianmen operator notice (October 10), reproduced by Zhangjiajie local media",
+      "checkedOn": "2026-10-22"
+    },
+    {
+      "url": "https://hunan.voc.com.cn/news/202610/33962893.html",
+      "label": "Voice of Hunan: Tianmen route adjustment (October 12, 2026)",
+      "checkedOn": "2026-10-22"
+    }
+  ],
+  "sourceLimitations": "Operator website unavailable through public retrieval;use attributed operator-notice reproduction cross-checked with Voice of Hunan reporting. No live booking,ride,walk,ticket availability or on-site validation. Dated notice is not a guarantee of present/future operation;never copy expired maintenance hours or current prices.",
+  "hypothesis": "A dated,actionable answer to an immediate visit-planning question may improve relevant long-tail matching and clicks. This is a prospective hypothesis,not a demonstrated ranking lever or claim of unique coverage.",
+  "verification": {
+    "metadataRetained": true,
+    "wholeGuideReviewRetained": true,
+    "sharedSectionAndSourceLinks": "PASS",
+    "oldInternalLinksRetained": true,
+    "faqCount": 9,
+    "newFaqs": 2,
+    "jsonLd": "PASS",
+    "sitemapURLs": 76,
+    "lastmodChanges": {
+      "https://chinaeasebuddy.com/3-day-zhangjiajie-itinerary/": [
+        "2026-09-22",
+        "2026-10-22"
+      ]
+    },
+    "publicHtmlAudit": "PASS",
+    "capturedOldFixtureRejection": "PASS",
+    "build": "PASS",
+    "typecheck": "PASS",
+    "i18nParity": "PASS",
+    "lint": "PASS,one existing Fast Refresh warning",
+    "diffCheck": "PASS"
+  },
+  "production": {
+    "verified": false,
+    "googleRecrawlConfirmed": false,
+    "rankingOrClickGainConfirmed": false
+  },
+  "serviceNoticeWatch": {
+    "sourceUrls": [
+      "https://feng.ifeng.com/c/8x6kU0WWUpE",
+      "https://hunan.voc.com.cn/news/202610/33962893.html"
+    ],
+    "lastCheckedOn": "2026-10-22",
+    "nextSourceReviewBy": "2026-10-29",
+    "rule": "Recheck dated public sources and look for a newer operator reopening/route notice;do not assume no change from an inaccessible source. Confirmed newer instructions require updating the shared section/FAQs. Keep prior notice date and source observations;do not silently renew checkedOn.",
+    "liveOperationsConfirmed": false
+  },
+  "followUp": {
+    "first7DayWindow": null,
+    "first28DayWindow": null,
+    "windowRule": "Set from day after formal publication confirmation;complete GSC days with exact dates and same page/query/country/device/search filters. Preserve later post-recrawl windows separately.",
+    "outcomes": [
+      "Google indexing and modification-after-crawl",
+      "First disclosed relevant candidate queries;hidden queries remain unknown",
+      "Same-query ranking/impression/CTR direction",
+      "Absolute new relevant organic clicks from zero baseline"
+    ],
+    "dataPriority": "Existing calculator crawl/canonical and canonical budget Page→Queries requests remain first. Do not add another immediate export request solely because this page was modified.",
+    "indexRequestSubmitted": false
+  },
+  "releaseObservations": [
+    {
+      "observedOn": "2026-10-22",
+      "stage": "Local checks passed;formal publication and Google outcomes pending."
+    },
+    {
+      "observedOn": "2026-10-22",
+      "stage": "Initial expected-head update safely rejected after daily-review commits advanced main;rebased local work onto latest head,retained all new observations. Tested website source bytes unchanged.",
+      "parentBeforeMerge": "f953120705b4b9e479b77b1de17a9eddbc176173",
+      "retainedNewParent": "a4ce89d301ae0d9a499c47cb40ded01ea9dc1e4f"
+    }
+  ],
+  "performanceObservations": []
+}
