@@ -1,0 +1,874 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-22",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks",
+  "policy": "docs/seo/effectiveness-review-policy.md",
+  "dataState": "No new post-change GSC outcome supplied as of this snapshot. Historical baselines remain in source records.",
+  "automationState": {
+    "status": "enabled",
+    "frequency": "daily",
+    "existingScheduleTimeRetained": "13:00",
+    "timezone": "Asia/Calcutta",
+    "confirmedOn": "2026-10-22",
+    "note": "Existing weekly task updated successfully; not a direct GSC connection."
+  },
+  "entries": [
+    {
+      "url": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+      "changeIds": [
+        "SEO-2026-10-21-CLOCK-ENTRY-DATE",
+        "SEO-2026-10-20-TRANSIT-CALC",
+        "SEO-2026-10-21-TRANSIT-EXPIRY",
+        "SEO-2026-10-20-TRANSIT-LINKS",
+        "SEO-2026-10-21-TRANSIT-HUBS"
+      ],
+      "sourceRecords": [
+        "docs/seo/clock-entry-ranking-tracking.json",
+        "docs/seo/transit-calculator-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-21",
+        "2026-10-20"
+      ],
+      "latestConfirmedLiveDate": "2026-10-21",
+      "priority": 1,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": [
+        "2026-10-22",
+        "2026-10-28"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-22",
+        "2026-11-18"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-29",
+      "earliest28DayAvailabilityCheck": "2026-11-19",
+      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+      "roleNote": "Includes support-link experiments; evaluate their intended calculator destination outcome separately from source-page traffic."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/amap-english-mode-guide-2026/",
+      "changeIds": [
+        "SEO-2026-10-16-AMAP",
+        "SEO-2026-10-21-AMAP-SETUP"
+      ],
+      "sourceRecords": [
+        "docs/seo/optimization-tracker.md",
+        "docs/seo/amap-ranking-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-16",
+        "2026-10-21"
+      ],
+      "latestConfirmedLiveDate": "2026-10-21",
+      "priority": 2,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": [
+        "2026-10-22",
+        "2026-10-28"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-22",
+        "2026-11-18"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-29",
+      "earliest28DayAvailabilityCheck": "2026-11-19",
+      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/wechat-verification-without-friend-qr-2026/",
+      "changeIds": [
+        "SEO-2026-10-19-WECHAT-VERIFY",
+        "SEO-2026-10-21-WECHAT-HELP"
+      ],
+      "sourceRecords": [
+        "docs/seo/optimization-tracker.md",
+        "docs/seo/wechat-verification-ranking-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-19",
+        "2026-10-21"
+      ],
+      "latestConfirmedLiveDate": "2026-10-21",
+      "priority": 3,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": [
+        "2026-10-22",
+        "2026-10-28"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-22",
+        "2026-11-18"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-29",
+      "earliest28DayAvailabilityCheck": "2026-11-19",
+      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/",
+      "changeIds": [
+        "SEO-2026-10-21-TRANSIT-HUBS",
+        "SEO-2026-10-21-HOMEPAGE-LASTMOD"
+      ],
+      "sourceRecords": [
+        "docs/seo/transit-calculator-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-21"
+      ],
+      "latestConfirmedLiveDate": "2026-10-21",
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": [
+        "2026-10-22",
+        "2026-10-28"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-22",
+        "2026-11-18"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-29",
+      "earliest28DayAvailabilityCheck": "2026-11-19",
+      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/3-day-guilin-yangshuo-itinerary/",
+      "changeIds": [
+        "SEO-2026-10-19-YANGSHUO"
+      ],
+      "sourceRecords": [
+        "docs/seo/optimization-tracker.md"
+      ],
+      "recordedChangeDates": [
+        "2026-10-19"
+      ],
+      "latestConfirmedLiveDate": null,
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "confirmed production-live date",
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": null,
+      "provisional28DayWindow": null,
+      "earliest7DayAvailabilityCheck": null,
+      "earliest28DayAvailabilityCheck": null,
+      "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/3-day-shenzhen-itinerary/",
+      "changeIds": [
+        "SEO-2026-10-21-SHENZHEN-ROUTE"
+      ],
+      "sourceRecords": [
+        "docs/seo/shenzhen-itinerary-ranking-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-21"
+      ],
+      "latestConfirmedLiveDate": "2026-10-21",
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": [
+        "2026-10-22",
+        "2026-10-28"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-22",
+        "2026-11-18"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-29",
+      "earliest28DayAvailabilityCheck": "2026-11-19",
+      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/alipay-metro-qr-transport-code-guide/",
+      "changeIds": [
+        "SEO-2026-10-20-ALIPAY-METRO"
+      ],
+      "sourceRecords": [
+        "docs/seo/optimization-tracker.md"
+      ],
+      "recordedChangeDates": [
+        "2026-10-20"
+      ],
+      "latestConfirmedLiveDate": null,
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "confirmed production-live date",
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": null,
+      "provisional28DayWindow": null,
+      "earliest7DayAvailabilityCheck": null,
+      "earliest28DayAvailabilityCheck": null,
+      "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/beijing-shanghai-layover-240-hour-guide/",
+      "changeIds": [
+        "SEO-2026-10-21-LAYOVER-AIRPORTS"
+      ],
+      "sourceRecords": [
+        "docs/seo/layover-ranking-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-21"
+      ],
+      "latestConfirmedLiveDate": "2026-10-21",
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": [
+        "2026-10-22",
+        "2026-10-28"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-22",
+        "2026-11-18"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-29",
+      "earliest28DayAvailabilityCheck": "2026-11-19",
+      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/chengdu-panda-base-guide/",
+      "changeIds": [
+        "SEO-2026-10-19-PANDA",
+        "SEO-2026-10-21-PANDA-GATES"
+      ],
+      "sourceRecords": [
+        "docs/seo/optimization-tracker.md",
+        "docs/seo/panda-gates-ranking-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-19",
+        "2026-10-22"
+      ],
+      "latestConfirmedLiveDate": "2026-10-22",
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": [
+        "2026-10-23",
+        "2026-10-29"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-23",
+        "2026-11-19"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-30",
+      "earliest28DayAvailabilityCheck": "2026-11-20",
+      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/china-240-hour-transit-clock-start/",
+      "changeIds": [
+        "SEO-2026-10-21-CLOCK-ENTRY-DATE"
+      ],
+      "sourceRecords": [
+        "docs/seo/clock-entry-ranking-tracking.json",
+        "docs/seo/transit-calculator-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-21"
+      ],
+      "latestConfirmedLiveDate": "2026-10-21",
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": [
+        "2026-10-22",
+        "2026-10-28"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-22",
+        "2026-11-18"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-29",
+      "earliest28DayAvailabilityCheck": "2026-11-19",
+      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/china-240-hour-transit-us-citizens/",
+      "changeIds": [
+        "SEO-2026-10-20-US-TRANSIT"
+      ],
+      "sourceRecords": [
+        "docs/seo/optimization-tracker.md"
+      ],
+      "recordedChangeDates": [
+        "2026-10-20"
+      ],
+      "latestConfirmedLiveDate": null,
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "confirmed production-live date",
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": null,
+      "provisional28DayWindow": null,
+      "earliest7DayAvailabilityCheck": null,
+      "earliest28DayAvailabilityCheck": null,
+      "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/china-240-hour-visa-free-transit-2026/",
+      "changeIds": [
+        "SEO-2026-10-20-TRANSIT-LINKS"
+      ],
+      "sourceRecords": [
+        "docs/seo/transit-calculator-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-20"
+      ],
+      "latestConfirmedLiveDate": "2026-10-20",
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": [
+        "2026-10-21",
+        "2026-10-27"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-21",
+        "2026-11-17"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-28",
+      "earliest28DayAvailabilityCheck": "2026-11-18",
+      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/china-airport-arrival-guide/",
+      "changeIds": [
+        "SEO-2026-10-18-AIRPORT"
+      ],
+      "sourceRecords": [
+        "docs/seo/optimization-tracker.md"
+      ],
+      "recordedChangeDates": [
+        "2026-10-18"
+      ],
+      "latestConfirmedLiveDate": null,
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "confirmed production-live date",
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": null,
+      "provisional28DayWindow": null,
+      "earliest7DayAvailabilityCheck": null,
+      "earliest28DayAvailabilityCheck": null,
+      "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/china-esim-internet-guide/",
+      "changeIds": [
+        "SEO-2026-10-20-ESIM"
+      ],
+      "sourceRecords": [
+        "docs/seo/optimization-tracker.md"
+      ],
+      "recordedChangeDates": [
+        "2026-10-20"
+      ],
+      "latestConfirmedLiveDate": null,
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "confirmed production-live date",
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": null,
+      "provisional28DayWindow": null,
+      "earliest7DayAvailabilityCheck": null,
+      "earliest28DayAvailabilityCheck": null,
+      "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/china-hotels-for-foreigners/",
+      "changeIds": [
+        "SEO-2026-10-20-HOTELS"
+      ],
+      "sourceRecords": [
+        "docs/seo/optimization-tracker.md"
+      ],
+      "recordedChangeDates": [
+        "2026-10-20"
+      ],
+      "latestConfirmedLiveDate": null,
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "confirmed production-live date",
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": null,
+      "provisional28DayWindow": null,
+      "earliest7DayAvailabilityCheck": null,
+      "earliest28DayAvailabilityCheck": null,
+      "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/china-itinerary-first-time-7-10-14-days/",
+      "changeIds": [
+        "SEO-2026-10-22-ITINERARY-STATIC"
+      ],
+      "sourceRecords": [
+        "docs/seo/static-body-ranking-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-22"
+      ],
+      "latestConfirmedLiveDate": "2026-10-22",
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": [
+        "2026-10-23",
+        "2026-10-29"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-23",
+        "2026-11-19"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-30",
+      "earliest28DayAvailabilityCheck": "2026-11-20",
+      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/china-sim-card-for-foreigners/",
+      "changeIds": [
+        "SEO-2026-10-19-SIM"
+      ],
+      "sourceRecords": [
+        "docs/seo/optimization-tracker.md"
+      ],
+      "recordedChangeDates": [
+        "2026-10-19"
+      ],
+      "latestConfirmedLiveDate": null,
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "confirmed production-live date",
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": null,
+      "provisional28DayWindow": null,
+      "earliest7DayAvailabilityCheck": null,
+      "earliest28DayAvailabilityCheck": null,
+      "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/china-train-booking-foreigners-12306/",
+      "changeIds": [
+        "SEO-2026-10-22-TRAIN-STATIC"
+      ],
+      "sourceRecords": [
+        "docs/seo/static-body-ranking-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-22"
+      ],
+      "latestConfirmedLiveDate": "2026-10-22",
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": [
+        "2026-10-23",
+        "2026-10-29"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-23",
+        "2026-11-19"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-30",
+      "earliest28DayAvailabilityCheck": "2026-11-20",
+      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/china-train-travel-guide/",
+      "changeIds": [
+        "SEO-2026-10-19-TRAIN"
+      ],
+      "sourceRecords": [
+        "docs/seo/optimization-tracker.md"
+      ],
+      "recordedChangeDates": [
+        "2026-10-19"
+      ],
+      "latestConfirmedLiveDate": null,
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "confirmed production-live date",
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": null,
+      "provisional28DayWindow": null,
+      "earliest7DayAvailabilityCheck": null,
+      "earliest28DayAvailabilityCheck": null,
+      "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/china-travel-budget/",
+      "changeIds": [
+        "SEO-2026-10-20-BUDGET",
+        "SEO-2026-10-20-BUDGET-CALC"
+      ],
+      "sourceRecords": [
+        "docs/seo/optimization-tracker.md"
+      ],
+      "recordedChangeDates": [
+        "2026-10-20"
+      ],
+      "latestConfirmedLiveDate": null,
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "confirmed production-live date",
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": null,
+      "provisional28DayWindow": null,
+      "earliest7DayAvailabilityCheck": null,
+      "earliest28DayAvailabilityCheck": null,
+      "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/china-visa-free-travel-guide/",
+      "changeIds": [
+        "SEO-2026-10-20-TRANSIT-LINKS"
+      ],
+      "sourceRecords": [
+        "docs/seo/transit-calculator-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-20"
+      ],
+      "latestConfirmedLiveDate": "2026-10-20",
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": [
+        "2026-10-21",
+        "2026-10-27"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-21",
+        "2026-11-17"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-28",
+      "earliest28DayAvailabilityCheck": "2026-11-18",
+      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/didi-in-china-for-foreigners/",
+      "changeIds": [
+        "SEO-2026-10-21-DIDI-APP-SETUP"
+      ],
+      "sourceRecords": [
+        "docs/seo/didi-app-ranking-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-21"
+      ],
+      "latestConfirmedLiveDate": "2026-10-21",
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": [
+        "2026-10-22",
+        "2026-10-28"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-22",
+        "2026-11-18"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-29",
+      "earliest28DayAvailabilityCheck": "2026-11-19",
+      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/didi-payment-for-foreigners/",
+      "changeIds": [
+        "SEO-2026-10-20-DIDI-PAY"
+      ],
+      "sourceRecords": [
+        "docs/seo/optimization-tracker.md"
+      ],
+      "recordedChangeDates": [
+        "2026-10-20"
+      ],
+      "latestConfirmedLiveDate": null,
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "confirmed production-live date",
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": null,
+      "provisional28DayWindow": null,
+      "earliest7DayAvailabilityCheck": null,
+      "earliest28DayAvailabilityCheck": null,
+      "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/guides/",
+      "changeIds": [
+        "SEO-2026-10-21-TRANSIT-HUBS"
+      ],
+      "sourceRecords": [
+        "docs/seo/transit-calculator-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-21"
+      ],
+      "latestConfirmedLiveDate": "2026-10-21",
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": [
+        "2026-10-22",
+        "2026-10-28"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-22",
+        "2026-11-18"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-29",
+      "earliest28DayAvailabilityCheck": "2026-11-19",
+      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/how-to-visit-great-wall-from-beijing-2026/",
+      "changeIds": [
+        "SEO-2026-10-22-GREATWALL-TRANSPORT"
+      ],
+      "sourceRecords": [
+        "docs/seo/greatwall-transport-ranking-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-22"
+      ],
+      "latestConfirmedLiveDate": "2026-10-22",
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": [
+        "2026-10-23",
+        "2026-10-29"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-23",
+        "2026-11-19"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-30",
+      "earliest28DayAvailabilityCheck": "2026-11-20",
+      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/is-china-safe-for-tourists-2026/",
+      "changeIds": [
+        "SEO-2026-10-20-US-SAFETY"
+      ],
+      "sourceRecords": [
+        "docs/seo/optimization-tracker.md"
+      ],
+      "recordedChangeDates": [
+        "2026-10-20"
+      ],
+      "latestConfirmedLiveDate": null,
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "confirmed production-live date",
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": null,
+      "provisional28DayWindow": null,
+      "earliest7DayAvailabilityCheck": null,
+      "earliest28DayAvailabilityCheck": null,
+      "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/tenpaygo-for-tourists/",
+      "changeIds": [
+        "SEO-2026-10-19-TENPAYGO"
+      ],
+      "sourceRecords": [
+        "docs/seo/optimization-tracker.md"
+      ],
+      "recordedChangeDates": [
+        "2026-10-19"
+      ],
+      "latestConfirmedLiveDate": null,
+      "priority": 4,
+      "decision": "awaiting_evidence",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "confirmed production-live date",
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": null,
+      "provisional28DayWindow": null,
+      "earliest7DayAvailabilityCheck": null,
+      "earliest28DayAvailabilityCheck": null,
+      "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
+      "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes."
+    }
+  ],
+  "observations": [
+    {
+      "date": "2026-10-22",
+      "type": "workflow_initialized",
+      "summary": "Daily review schedule confirmed, legacy/new change references collected; no new post-change GSC outcomes supplied."
+    }
+  ]
+}

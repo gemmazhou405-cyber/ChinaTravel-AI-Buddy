@@ -1,5 +1,13 @@
 # SEO optimization tracker
 
+### October 22: Continuous effectiveness review
+
+User requires follow-through on every optimization and evidence-based adjustment. Existing weekly SEO task has been successfully updated to daily, retaining its 13:00 Asia/Calcutta schedule. This is a review workflow, not a direct GSC connection. The current queue covers **27 exact URLs and31 distinct change IDs**, including supporting links and batched page repairs; it does not mean31 measured successes.
+
+Process: `effectiveness-review-policy.md`. Current queue: `effectiveness-review-queue.json`. Initial dated review: `reviews/2026-10-22.md`. Check publication/technical evidence and newly supplied GSC data at each run; evaluate complete7/28-day windows when available. Append index/crawl/query/ranking/click observations to the corresponding source records. End each review with retain/revise/revert/wait and its evidence. Preserve existing versions when no new outcome supports another content change; repair confirmed technical/accuracy regressions promptly. No website content is changed in this workflow update.
+
+Missing current evidence remains explicit. Amap/WeChat exact-page Queries and actual comparison dates are still pending, and calculator modification-after-crawl evidence is unconfirmed. Do not reclassify old data as a current result or repeatedly demand the already received full-site/calculator baselines. Public-page verification and keyword/ranking/click gains remain separate.
+
 ### October 22: Missing static bodies and broken section links
 
 Batch `SEO-2026-10-22-STATIC-BODIES`, formal-domain production verified October22. Code commit `6aa771560d54d5cfdc9797360fdfb1b12cbefbdf`. Train booking (`SEO-2026-10-22-TRAIN-STATIC`): `/china-train-booking-foreigners-12306/`, **0 clicks / 21 impressions / page-average position 33.33**. First-time itinerary (`SEO-2026-10-22-ITINERARY-STATIC`): `/china-itinerary-first-time-7-10-14-days/`, **0 / 3 / 88**. October21 full-site comparison workbook SHA-256 `711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1`; previous impressions zero, previous ranking/CTR unavailable. No exact-page query pairs, current indexing/crawl, monthly search volumes or KD established.
