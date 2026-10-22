@@ -1,5 +1,15 @@
 # SEO optimization tracker
 
+### October 22: Tourist trip-budget calculator and itinerary connection
+
+Batch `SEO-2026-10-22-TRAVEL-BUDGET`, locally verified, formal publication pending. Budget target `SEO-2026-10-22-BUDGET-TOOL`: `/china-travel-budget/` **0clicks/109impressions/0%CTR/page-average27.02**. Context-link source `SEO-2026-10-22-14DAY-BUDGET-LINK`: `/14-day-china-itinerary/` **1/10/10%/27.0**. October21 comparison workbook SHA-256 `711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1`, actual date bounds and exact-page query pairs absent. These are page baselines, not confirmed tourist identities, keyword rankings, monthly demand or low-competition evidence.
+
+Formal budget HTML lacked the React calculator and all calculation examples. Improve this concrete planning task with shared computation, per-person/group daily-cost subtotals,7/10/14-day presets, nine directly served one-person examples, explicit separate transport costs and one shared FAQ. Add a contextual normal HTML link from the14-day itinerary budget section to `/china-travel-budget/#cost-estimator`. Preserve titles/descriptions/H1/URL/canonical/CTAs, existing rates and full-trip envelopes. Budget price-reviewOctober7 and itinerary whole-guide reviewSeptember21 retained; actual modification datesOctober22. No live-price/child/shared-room discount assumptions added.
+
+Canonical check: `/how-much-does-china-trip-cost-2026-calculator/` remains301to budget guide. Its0clicks/17impressions/page-average6.88 historical row is separate, not a current independent page. Corrected the earlier candidate listing accordingly; no new URL or redirect change. BudgetOctober20edits and this change require combined interpretation.
+
+Typecheck/i18n/build/lint pass (one existing Fast Refresh warning). Calculation acceptance, final built local headless UI,390pxmobile visual/overflow, no-JS examples,14-day link, local public HTML audit and focused metadata/FAQ/JSON-LD/sitemap checks pass. Captured old pages are rejected by improved calculator/link checks. Sitemap retains76URLs, only two actual lastmods change. No cloud browser/login; external requests blocked in local UI tests. Per-action evidence and follow-up: `budget-calculator-ranking-tracking.json`; queue29URLs/34distinctIDs. Formal publication, Google recrawl/index, query coverage, ranking and relevant-click effects remain unconfirmed.
+
 ### October 22: Audience-first growth priority
 
 User explicitly prioritizes reaching people who want to travel in China. Reordered growth allocation: calculator first; trip budget/cost tools, defined itineraries and attraction logistics next; China-visitor readiness tools require relevant-query checks. Generic WeChat account verification and emergency help are lower growth priority, while maintenance and action follow-up continue. Policy and candidate baselines: `tourist-intent-priorities.json`. These are topic-intent judgments, not verified visitor identities, market search volume, low-competition labels or measured SEO gains.

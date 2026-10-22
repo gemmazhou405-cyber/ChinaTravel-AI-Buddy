@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "batchId": "SEO-2026-10-22-TRAVEL-BUDGET",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks_from_china_trip_intent",
+  "status": "local_verified_pending_publication",
+  "liveDate": null,
+  "codeCommits": [],
+  "pages": [
+    {
+      "changeId": "SEO-2026-10-22-BUDGET-TOOL",
+      "url": "https://chinaeasebuddy.com/china-travel-budget/",
+      "baseline": {
+        "source": "User-provided October21 full-site comparison workbook",
+        "sha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+        "filters": "Web; last28days vs previous28days, actual date bounds unavailable",
+        "exactPageQueries": null,
+        "searchVolume": null,
+        "keywordDifficulty": null,
+        "indexedState": null,
+        "latestGoogleCrawl": null,
+        "googleSelectedCanonical": null,
+        "current": {
+          "clicks": 0,
+          "impressions": 109,
+          "ctr": 0,
+          "pageAveragePosition": 27.02
+        },
+        "previous": {
+          "clicks": 0,
+          "impressions": 0,
+          "ctr": null,
+          "pageAveragePosition": null
+        }
+      },
+      "role": "Canonical travel-budget guide and cost calculator; main ranking/click target",
+      "previousChanges": [
+        "SEO-2026-10-20-BUDGET",
+        "SEO-2026-10-20-BUDGET-CALC"
+      ],
+      "change": "Serve calculator heading, default result, nine7/10/14-day daily-spending examples and assumptions directly in HTML; share calculations with React, show per-person/group subtotals, presets and an explanatory FAQ.",
+      "reviewDateRetained": "October7,2026",
+      "modified": "2026-10-22"
+    },
+    {
+      "changeId": "SEO-2026-10-22-14DAY-BUDGET-LINK",
+      "url": "https://chinaeasebuddy.com/14-day-china-itinerary/",
+      "baseline": {
+        "source": "User-provided October21 full-site comparison workbook",
+        "sha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+        "filters": "Web; last28days vs previous28days, actual date bounds unavailable",
+        "exactPageQueries": null,
+        "searchVolume": null,
+        "keywordDifficulty": null,
+        "indexedState": null,
+        "latestGoogleCrawl": null,
+        "googleSelectedCanonical": null,
+        "current": {
+          "clicks": 1,
+          "impressions": 10,
+          "ctr": 0.1,
+          "pageAveragePosition": 27.0
+        },
+        "previous": {
+          "clicks": 0,
+          "impressions": 0,
+          "ctr": null,
+          "pageAveragePosition": null
+        }
+      },
+      "role": "Explicit14-day itinerary; supporting contextual route-to-budget task",
+      "change": "Add a normal HTML link in the two-week budget section to the canonical calculator fragment; retain route/budget content, metadata and existing links.",
+      "reviewDateRetained": "September21,2026",
+      "modified": "2026-10-22"
+    }
+  ],
+  "confirmedGap": {
+    "formalObservedAtUtc": "2026-10-22T02:48:22Z",
+    "rawBudgetHtmlHadEstimator": false,
+    "reactHadEstimator": true,
+    "description": "Existing calculator only in React, without per-person multi-day subtotal/example table/preset buttons. A task/completeness and publishing gap; not proof Google failed to render it or the cause of current rankings."
+  },
+  "alias": {
+    "url": "https://chinaeasebuddy.com/how-much-does-china-trip-cost-2026-calculator/",
+    "observedStatus": 301,
+    "location": "/china-travel-budget/",
+    "retained": true,
+    "currentHistoricalRow": {
+      "clicks": 0,
+      "impressions": 17,
+      "pageAveragePosition": 6.88
+    },
+    "note": "Historical alias data stays separate. Not an independently available calculator page or a current keyword rank; do not add this alias to sitemap or sum it into canonical metrics."
+  },
+  "hypothesis": "A concrete trip-planning tool with legible per-person/group outputs, directly served length examples and an itinerary context link better serves cost-planning visitors. Exact-query coverage, ranking and relevant-click gains require GSC evidence.",
+  "candidateQueries": [
+    "china trip cost calculator",
+    "china trip cost for two people",
+    "7 day china travel budget",
+    "10 day china trip cost",
+    "14 day china travel budget"
+  ],
+  "queryEvidence": "Candidates only; no page-query join or keyword volume/KD obtained. Do not claim newly covered keywords, high demand, low competition or tourist identity from page totals.",
+  "retained": [
+    "Search titles/descriptions/H1/URLs/canonicals/primaryCTAs",
+    "Existing daily ranges and full-trip envelopes; no live price verification claimed",
+    "Price/whole-guide review labels",
+    "76sitemapURLs and301alias",
+    "Calculator240hour algorithm and recent observation versions"
+  ],
+  "calculationScope": "Same per-person daily ranges: budget350–650,mid800–1500,comfortable1800–3000+ RMB. Multiply by1–60days and1–20travelers; no automatic room-sharing/child discount. City-to-city and international transport, insurance/visa/shopping/fees/contingency added separately. No new airfare/fare/rate estimates.",
+  "verification": {
+    "typecheck": "PASS",
+    "i18nParity": "PASS",
+    "build": "PASS",
+    "lint": "PASS,one existing PricingPlans Fast Refresh warning",
+    "calculationAcceptance": "PASS:couple7daybudget4900–9100group/2450–4550perperson,midrange3travelers,comfortableopenupperend,clamps/invalidinputs",
+    "localHeadlessUi": "PASS:presets,labels,style selection,group/perperson outputs,blur bounds,14-day link,390pxviewport no page overflow and no-JS example table",
+    "visualReview": "PASS:mobile calculator screenshot inspected",
+    "publicHtmlLocal": "PASS,all pages",
+    "oldFormalFixtureRejection": "PASS:previous budget lacks estimator examples/anchor;previous14day lacks context link",
+    "focusedHtmlSitemap": "PASS:ninecomputed examples,sharedFAQ and JSON-LD,metadata/oldlinks/reviewdates retained;76URLs,only2lastmods change",
+    "diffCheck": "PASS",
+    "production": "pending"
+  },
+  "testNotes": [
+    "UI test used locally downloaded headless Chromium and localhost build; external requests blocked; no cloud browser or account login.",
+    "Initial lint/build concurrency collided with a temporary Vite file; lint rerun after build passed.",
+    "Initial UI label lookup found an ambiguous wrapped select label; added an explicit Travel style accessible name and final built UI passed.",
+    "Browser installer CDN download failed; official Google browser archive was fetched successfully for local testing."
+  ],
+  "sources": [
+    {
+      "url": "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics",
+      "checkedOn": "2026-10-22",
+      "supports": "Google renders JavaScript;pre-rendered content useful without guaranteeing SEO outcomes."
+    },
+    {
+      "url": "https://www.12306.cn/en/",
+      "checkedOn": "2026-10-22",
+      "supports": "Official route/date search channel for separate actual rail quotes, not an endorsement of planning ranges."
+    }
+  ],
+  "production": {
+    "newContentVerified": false,
+    "checkedAt": null,
+    "googleRecrawlConfirmed": false,
+    "rankingOrClickGainConfirmed": false
+  },
+  "followUp": {
+    "provisionalFirstCompleteWindow": [
+      "2026-10-23",
+      "2026-10-29"
+    ],
+    "provisional28DayWindow": [
+      "2026-10-23",
+      "2026-11-19"
+    ],
+    "referenceWindow": [
+      "2026-10-16",
+      "2026-10-22"
+    ],
+    "windowRule": "Set actual live date after formal verification; adjust if delayed, use complete GSC days/actual dates and matching exact page/search/country/device filters.",
+    "causalLimitations": "Budget page also changedOct20; evaluate combined interventions. Page/link outcomes not causally isolated. One-page average is not a query rank.",
+    "nextEvidence": [
+      "Canonical budget exact-page Queries comparison and actual dates",
+      "Current index/crawl/canonical per changed page, with modification-after-crawl evidence",
+      "Relevant disclosed-query clicks, relevant impressions, query coverage and same-query ranks in complete windows"
+    ],
+    "zeroBaseline": "Budget uses absolute newly gained clicks, not a percentage lift.",
+    "aliasMeasurement": "Inspect redirect/migration separately; do not treat old alias as active page.",
+    "indexingRequests": "Not submitted by this environment."
+  },
+  "performanceObservations": [],
+  "releaseObservations": [
+    {
+      "observedOn": "2026-10-22",
+      "stage": "Local verification complete; publication pending."
+    }
+  ]
+}

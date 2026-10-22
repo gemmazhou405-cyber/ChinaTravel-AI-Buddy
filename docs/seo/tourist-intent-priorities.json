@@ -69,23 +69,11 @@
       "url": "https://chinaeasebuddy.com/china-travel-budget/",
       "priority": 2,
       "reason": "China-trip spending is direct planning intent;109historical impressions provide a page-level opportunity clue.",
-      "workState": "Recently modified; obtain exact-page queries and complete outcomes before another targeted rewrite.",
+      "workState": "Canonical guide/calculator;Oct22tool/examples enhancement locally verified,pending publication; evaluate withOct20changes.",
       "baseline": {
         "clicks": 0.0,
         "impressions": 109.0,
         "pageAveragePosition": 27.02
-      },
-      "exactPageQueryIntentConfirmed": false
-    },
-    {
-      "url": "https://chinaeasebuddy.com/how-much-does-china-trip-cost-2026-calculator/",
-      "priority": 2,
-      "reason": "Interactive trip-cost task is direct planning intent;17historical impressions, sparse evidence.",
-      "workState": "Review existing optimization and production record, then exact-page budget queries; page average6.88 is not a target keyword rank.",
-      "baseline": {
-        "clicks": 0.0,
-        "impressions": 17.0,
-        "pageAveragePosition": 6.88
       },
       "exactPageQueryIntentConfirmed": false
     },
@@ -117,7 +105,7 @@
       "url": "https://chinaeasebuddy.com/14-day-china-itinerary/",
       "priority": 2,
       "reason": "Specific China-trip duration is direct planning intent; one historical page click.",
-      "workState": "Candidate only: inspect existing content, index/technical state and exact-page queries before editing; no new optimization action claimed.",
+      "workState": "Oct22contextual budget-calculator link locally verified,pending publication; new action recorded.",
       "baseline": {
         "clicks": 1.0,
         "impressions": 10.0,
@@ -227,5 +215,28 @@
     "date": "2026-10-22",
     "taskId": "6ad478cc72188191aed60e564ebb1b16",
     "note": "Audience-first priorities and evidence requests updated; existing daily schedule retained."
-  }
+  },
+  "historicalAliases": [
+    {
+      "url": "https://chinaeasebuddy.com/how-much-does-china-trip-cost-2026-calculator/",
+      "priority": null,
+      "reason": "Interactive trip-cost task is direct planning intent;17historical impressions, sparse evidence.",
+      "workState": "Confirmed301alias to canonical budget guide; not a separate optimization target.",
+      "baseline": {
+        "clicks": 0.0,
+        "impressions": 17.0,
+        "pageAveragePosition": 6.88
+      },
+      "exactPageQueryIntentConfirmed": false,
+      "canonicalOptimizationUrl": "https://chinaeasebuddy.com/china-travel-budget/",
+      "httpStatus": 301
+    }
+  ],
+  "observations": [
+    {
+      "date": "2026-10-22",
+      "type": "canonical_target_verified",
+      "summary": "Corrected prior candidate listing: cost-calculator URL is a301alias; active work targets/china-travel-budget/. Historical alias data retained separately."
+    }
+  ]
 }

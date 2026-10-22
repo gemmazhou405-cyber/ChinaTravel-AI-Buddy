@@ -1,5 +1,6 @@
 import { mkdir, copyFile, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { TRIP_COST_STYLES, estimateTripCost, formatTripCostRange } from '../src/lib/tripCostEstimate.mjs';
 
 const siteUrl = 'https://chinaeasebuddy.com';
 const distDir = 'dist';
@@ -12,6 +13,7 @@ const greatWallGuide = JSON.parse(await readFile('src/data/seoPages/great-wall-o
 const greatWallTransport = JSON.parse(await readFile('src/data/greatWallTransport.json', 'utf8'));
 const trainBookingContent = JSON.parse(await readFile('src/data/trainBookingContent.json', 'utf8'));
 const emergencyGuideContent = JSON.parse(await readFile('src/data/emergencyGuideContent.json', 'utf8'));
+const tripCostEstimatorContent = JSON.parse(await readFile('src/data/tripCostEstimatorContent.json', 'utf8'));
 const firstTimeItineraryContent = JSON.parse(await readFile('src/data/firstTimeItineraryContent.json', 'utf8'));
 const pandaBaseGuide = JSON.parse(await readFile('src/data/seoPages/chengdu-panda-base-guide.json', 'utf8'));
 const didiPaymentGuide = JSON.parse(await readFile('src/data/seoPages/didi-payment-for-foreigners.json', 'utf8'));
@@ -929,7 +931,7 @@ const pageMeta = {
     quickAnswer:
       'For planning, allow roughly RMB 350–650 per person per day for a budget trip, RMB 800–1,500 for a mid-range trip, or RMB 1,800–3,000+ for a comfortable trip. These are ChinaEase planning ranges, not official averages or fixed prices. They exclude international flights and assume normal travel dates; your route, room-sharing, city, booking date, exchange rate, and holiday demand can change the total substantially. Check exact hotel, attraction, airline, and China Railway 12306 prices before booking.',
     lastReviewed: 'October 7, 2026',
-    lastModified: '2026-10-20',
+    lastModified: '2026-10-22',
     article: true,
     contentSections: [
       {
@@ -1057,6 +1059,7 @@ const pageMeta = {
       },
     ],
     faqs: [
+      [tripCostEstimatorContent.faq.question, tripCostEstimatorContent.faq.answer],
       ['How much money do I need per day in China?', 'As a planning range, allow about RMB 350–650 for budget travel, RMB 800–1,500 for mid-range travel, or RMB 1,800–3,000+ for comfortable travel per person per day. These are not official averages or fixed prices.'],
       ['Is China cheap for tourists?', 'Local food and public transport can be inexpensive, while central hotels, premium attractions, private tours, nightlife, and fast multi-city travel can raise the total quickly.'],
       ['How much should I budget for 10 days in China?', 'A useful planning envelope is RMB 4,500–8,000 for a budget trip, RMB 9,000–18,000 for mid-range travel, or RMB 20,000–36,000+ for a comfortable trip. This excludes international flights.'],
@@ -2002,7 +2005,7 @@ const pageMeta = {
     quickAnswer:
       'For a first 14-day trip to China, limit the route to four bases: four nights in Beijing, three in Xi\'an, three in Chengdu, and three in Shanghai, with the final day reserved for departure. This gives you imperial history and the Great Wall, the Terracotta Warriors, Sichuan food and pandas, then historic and modern Shanghai. If landscapes matter more than pandas and food, replace Chengdu with Guilin and Yangshuo rather than adding a fifth destination. Use an open-jaw international ticket so you arrive in Beijing and depart from Shanghai, and verify every long-distance leg against the live 12306 or airline schedule before booking.',
     lastReviewed: 'September 21, 2026',
-    lastModified: '2026-09-21',
+    lastModified: '2026-10-22',
     article: true,
     contentSections: [
       {
@@ -5388,6 +5391,36 @@ function groupGuideHubSections(sections) {
   return groups.filter((group) => group.items.length > 0);
 }
 
+function staticTripCostEstimator() {
+  const content = tripCostEstimatorContent;
+  const styles = Object.entries(TRIP_COST_STYLES);
+  const result = estimateTripCost(10, 1, 'mid-range');
+  return `
+    <nav aria-label="Budget calculator" style="margin: 0 0 16px;"><a href="#cost-estimator" style="color: #155e63; font-weight: 700;">Cost calculator and 7, 10, 14-day examples</a></nav>
+    <section id="cost-estimator" aria-labelledby="cost-estimator-title" style="margin: 0 0 24px; padding: 20px; border: 1px solid rgba(21,94,99,0.2); border-radius: 20px; background: #fffdf8;">
+      <h2 id="cost-estimator-title" style="margin: 0 0 12px; font-size: 1.25rem;">${escapeHtml(content.heading)}</h2>
+      <p style="color: #536365; line-height: 1.7;">${escapeHtml(content.intro)}</p>
+      <p>Use the interactive calculator to change days, travelers and style. The examples below are a planning reference.</p>
+      <div style="padding: 16px; background: rgba(21,94,99,0.05); border-radius: 12px;">
+        <p>Mid-range: ${escapeHtml(formatTripCostRange(result.dailyMinimum, result.dailyMaximum))} per person per day</p>
+        <p><strong>Per person for 10 days: ${escapeHtml(formatTripCostRange(result.perPersonMinimum, result.perPersonMaximum))}</strong></p>
+        <p><strong>All 1 traveler for 10 days: ${escapeHtml(formatTripCostRange(result.groupMinimum, result.groupMaximum))}</strong></p>
+        <p>Daily-cost subtotals. Add separate trip costs below.</p>
+      </div>
+      <p style="color: #536365; line-height: 1.7;">${escapeHtml(content.assumptions)}</p>
+      <p style="color: #536365; line-height: 1.7;">${escapeHtml(content.excludedCosts)}</p>
+      <p style="color: #536365; line-height: 1.7;">${escapeHtml(content.roomNote)}</p>
+      <h3>${escapeHtml(content.examplesHeading)}</h3>
+      <p style="color: #536365; line-height: 1.7;">${escapeHtml(content.examplesNote)}</p>
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; min-width: 520px; border-collapse: collapse;">
+          <thead><tr><th scope="col" style="padding: 10px; text-align: left;">Days / one person</th>${styles.map(([, range]) => `<th scope="col" style="padding: 10px; text-align: left;">${escapeHtml(range.label)}</th>`).join('')}</tr></thead>
+          <tbody>${content.exampleDays.map((days) => `<tr><th scope="row" style="padding: 10px; text-align: left;">${days} days</th>${styles.map(([style]) => { const example = estimateTripCost(days, 1, style); return `<td style="padding: 10px;">${escapeHtml(formatTripCostRange(example.perPersonMinimum, example.perPersonMaximum, example.openEnded))}</td>`; }).join('')}</tr>`).join('')}</tbody>
+        </table>
+      </div>
+    </section>`;
+}
+
 function staticPageContent(page, meta) {
   if (meta.customBody) return meta.customBody;
   const heading = meta.heading || meta.title.split('|')[0].trim();
@@ -5423,6 +5456,7 @@ function staticPageContent(page, meta) {
         <p style="margin: 0; color: #536365; line-height: 1.7;">${escapeHtml(meta.quickAnswer || meta.description)}</p>
       </section>
       <p style="margin: 0 0 20px; color: #6b7678; font-size: 0.9rem;">Last reviewed: ${escapeHtml(meta.lastReviewed || 'June 12, 2026')}</p>
+      ${page === 'china-travel-budget' ? staticTripCostEstimator() : ''}
       ${meta.sections && page === 'guides' ? `
         <nav aria-label="China travel guide categories" style="margin: 0 0 24px;">
           ${groupGuideHubSections(meta.sections).map((group, groupIndex) => `
@@ -5456,6 +5490,7 @@ function staticPageContent(page, meta) {
         <section aria-labelledby="${['china-train-booking-foreigners-12306', 'china-itinerary-first-time-7-10-14-days'].includes(page) ? escapeAttr(section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')) : `guide-section-${sectionIndex}`}" style="margin: 0 0 24px; padding: 20px; border: 1px solid rgba(21, 94, 99, 0.12); border-radius: 20px; background: rgba(255, 253, 248, 0.72);">
           <h2 id="${['china-train-booking-foreigners-12306', 'china-itinerary-first-time-7-10-14-days'].includes(page) ? escapeAttr(section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')) : `guide-section-${sectionIndex}`}" style="margin: 0 0 12px; font-size: 1.25rem;">${escapeHtml(section.title)}</h2>
           ${((page === 'china-visa-free-travel-guide' && section.title === '240-hour visa-free transit: the route is essential') || (page === 'china-240-hour-visa-free-transit-2026' && section.title === 'How the 10-day clock is calculated')) ? `<p style="color: #536365; line-height: 1.7;">To work out your departure date, use the <a href="/china-240-hour-transit-calculator/" style="color: #155e63; font-weight: 700; text-underline-offset: 4px;">China 240-hour visa-free transit calculator</a>. It calculates the next-day midnight clock in China time and checks the basic passport and route pattern; confirm the final permitted stay with border inspection.</p>` : ''}
+          ${page === '14-day-china-itinerary' && section.title === 'Estimated budget for two weeks' ? `<p style="color: #536365; line-height: 1.7;"><a href="/china-travel-budget/#cost-estimator" style="color: #155e63; font-weight: 700;">${escapeHtml(tripCostEstimatorContent.itineraryLinkLabel)}</a>. ${escapeHtml(tripCostEstimatorContent.itineraryLinkText)}</p>` : ''}
           ${section.countryGroups ? `
             <div aria-label="Eligible nationalities" style="display: grid; gap: 16px; margin: 0 0 16px;">
               ${section.countryGroups.map((group) => `

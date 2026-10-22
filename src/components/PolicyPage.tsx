@@ -11,6 +11,8 @@ import greatWallGuide from '../data/seoPages/great-wall-of-china-day-trip-from-b
 import greatWallTransport from '../data/greatWallTransport.json';
 import trainBookingContent from '../data/trainBookingContent.json';
 import emergencyGuideContent from '../data/emergencyGuideContent.json';
+import tripCostEstimatorContent from '../data/tripCostEstimatorContent.json';
+import ChinaTripCostEstimator from './ChinaTripCostEstimator';
 import firstTimeItineraryContent from '../data/firstTimeItineraryContent.json';
 import pandaBaseGuide from '../data/seoPages/chengdu-panda-base-guide.json';
 import didiPaymentGuide from '../data/seoPages/didi-payment-for-foreigners.json';
@@ -1889,7 +1891,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     ctaLabel: 'Get my free China itinerary',
     ctaHref: '/#trip-plan',
     lastReviewed: 'October 7, 2026',
-    lastModified: '2026-10-20',
+    lastModified: '2026-10-22',
     isArticle: true,
     sections: [
       {
@@ -2035,6 +2037,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     faqs: [
+      tripCostEstimatorContent.faq,
       {
         question: 'How much money do I need per day in China?',
         answer:
@@ -3354,7 +3357,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     ctaLabel: 'Get my personalised 14-day itinerary',
     ctaHref: '/#trip-plan',
     lastReviewed: 'September 21, 2026',
-    lastModified: '2026-09-21',
+    lastModified: '2026-10-22',
     isArticle: true,
     sections: [
       {
@@ -6967,49 +6970,6 @@ function FilterableCountryChecklist({ groups }: { groups: Array<{ region: string
   );
 }
 
-function ChinaTripCostEstimator() {
-  const [days, setDays] = useState('10');
-  const [travelers, setTravelers] = useState('1');
-  const [style, setStyle] = useState<'budget' | 'mid-range' | 'comfortable'>('mid-range');
-  const dailyRanges = { budget: [350, 650], 'mid-range': [800, 1500], comfortable: [1800, 3000] } as const;
-  const boundedCount = (value: string, max: number) => {
-    const parsed = Number(value);
-    return Number.isFinite(parsed) ? Math.min(max, Math.max(1, Math.trunc(parsed))) : 1;
-  };
-  const validDays = boundedCount(days, 60);
-  const validTravelers = boundedCount(travelers, 20);
-  const [minimum, maximum] = dailyRanges[style];
-  const upperSuffix = style === 'comfortable' ? '+' : '';
-  const formatRmb = (amount: number) => `RMB ${amount.toLocaleString('en-US')}`;
-
-  return (
-    <section id="cost-estimator" className="rounded-2xl border border-[#155e63]/20 bg-white p-4 shadow-sm md:p-5" aria-labelledby="cost-estimator-title">
-      <h2 id="cost-estimator-title" className="text-xl font-bold text-gray-950">Estimate your China trip cost</h2>
-      <p className="mt-2 text-sm text-gray-600">Choose a planning range. Figures are per person per day, before major intercity journeys and international flights.</p>
-      <div className="mt-4 grid gap-3 sm:grid-cols-3">
-        <label className="text-sm font-semibold text-gray-800">Days
-          <input className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2" type="number" min="1" max="60" step="1" value={days} onChange={(event) => setDays(event.target.value)} onBlur={() => setDays(String(validDays))} />
-        </label>
-        <label className="text-sm font-semibold text-gray-800">Travelers
-          <input className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2" type="number" min="1" max="20" step="1" value={travelers} onChange={(event) => setTravelers(event.target.value)} onBlur={() => setTravelers(String(validTravelers))} />
-        </label>
-        <label className="text-sm font-semibold text-gray-800">Travel style
-          <select className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2" value={style} onChange={(event) => setStyle(event.target.value as typeof style)}>
-            <option value="budget">Budget</option>
-            <option value="mid-range">Mid-range</option>
-            <option value="comfortable">Comfortable</option>
-          </select>
-        </label>
-      </div>
-      <div className="mt-4 rounded-xl bg-[#155e63]/5 p-4" aria-live="polite">
-        <p className="text-sm font-semibold text-gray-700">Estimated daily spending: {formatRmb(minimum)}–{formatRmb(maximum)}{upperSuffix} per person</p>
-        <p className="mt-1 text-xl font-bold text-[#155e63]">Trip estimate: {formatRmb(minimum * validDays * validTravelers)}–{formatRmb(maximum * validDays * validTravelers)}{upperSuffix}</p>
-        <p className="mt-2 text-xs leading-relaxed text-gray-600">For {validDays} day{validDays === 1 ? '' : 's'} and {validTravelers} traveler{validTravelers === 1 ? '' : 's'}. The upper end of the comfortable range is open-ended. Add actual intercity trains or flights, international flights, insurance, visa fees when applicable and a contingency. Shared rooms can lower the per-person total; holiday prices may raise it.</p>
-      </div>
-    </section>
-  );
-}
-
 function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?: string | null; onAskBuddy?: (prefill?: string) => void }) {
   const page = guidePages[type];
   const isItineraryPage = type.includes('itinerary') && type !== 'china-travel-ai-itinerary-generator';
@@ -7102,6 +7062,9 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
               {((type === 'china-visa-free-travel-guide' && section.title === '240-hour visa-free transit: the route is essential') ||
                 (type === 'china-240-hour-visa-free-transit-2026' && section.title === 'How the 10-day clock is calculated')) && (
                 <p className="mt-3 text-sm leading-relaxed text-gray-600">To work out your departure date, use the <a href="/china-240-hour-transit-calculator/" className="font-semibold text-[#155e63] underline underline-offset-4">China 240-hour visa-free transit calculator</a>. It calculates the next-day midnight clock in China time and checks the basic passport and route pattern; confirm the final permitted stay with border inspection.</p>
+              )}
+              {type === '14-day-china-itinerary' && section.title === 'Estimated budget for two weeks' && (
+                <p className="mt-3 text-sm leading-relaxed text-gray-600"><a href="/china-travel-budget/#cost-estimator" className="font-semibold text-[#155e63] underline underline-offset-4">{tripCostEstimatorContent.itineraryLinkLabel}</a>. {tripCostEstimatorContent.itineraryLinkText}</p>
               )}
               {section.countryGroups && <FilterableCountryChecklist groups={section.countryGroups} />}
               {section.links && section.links.length > 0 && (

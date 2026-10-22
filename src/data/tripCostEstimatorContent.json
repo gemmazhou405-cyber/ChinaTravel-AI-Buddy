@@ -1,0 +1,16 @@
+{
+  "heading": "China trip cost calculator: 7, 10 and 14-day estimates",
+  "intro": "Choose your travel days, number of travelers and travel style. Compare the daily-spending subtotal per person with the subtotal for your whole group.",
+  "assumptions": "Uses this guide's existing ChinaEase planning ranges for accommodation, meals, local transport, ordinary attractions and small daily expenses. These are estimates, not live prices or official averages.",
+  "excludedCosts": "Add intercity trains or domestic flights, international flights, insurance, visa costs where applicable, shopping, fees and a contingency separately. Daily-cost subtotals differ from the full-trip envelopes further down, which include a broad intercity allowance.",
+  "roomNote": "The group estimate applies the same per-person range to every traveler. It does not calculate a shared-room discount or child price. Replace assumptions with actual room and ticket quotes before booking.",
+  "examplesHeading": "7, 10 and 14-day daily-spending examples",
+  "examplesNote": "Each cell is for one person over the full number of days shown, excluding the separate costs listed above. The comfortable range has an open upper end.",
+  "exampleDays": [7, 10, 14],
+  "itineraryLinkLabel": "Calculate your 14-day China travel budget",
+  "itineraryLinkText": "Choose 14 days and your group size, then add the live prices for your intercity route and flights separately.",
+  "faq": {
+    "question": "How can I calculate a China travel budget for two people?",
+    "answer": "Choose your days, travel style and two travelers in the calculator. It shows both per-person and group daily-spending subtotals. Accommodation is already part of the daily range; use actual shared-room quotes to refine it, then add intercity tickets, international flights and other excluded costs separately."
+  }
+}

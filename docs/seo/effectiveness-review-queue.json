@@ -717,17 +717,20 @@
       "url": "https://chinaeasebuddy.com/china-travel-budget/",
       "changeIds": [
         "SEO-2026-10-20-BUDGET",
-        "SEO-2026-10-20-BUDGET-CALC"
+        "SEO-2026-10-20-BUDGET-CALC",
+        "SEO-2026-10-22-BUDGET-TOOL"
       ],
       "sourceRecords": [
-        "docs/seo/optimization-tracker.md"
+        "docs/seo/optimization-tracker.md",
+        "docs/seo/budget-calculator-ranking-tracking.json"
       ],
       "recordedChangeDates": [
-        "2026-10-20"
+        "2026-10-20",
+        "2026-10-22"
       ],
       "latestConfirmedLiveDate": null,
       "priority": 2,
-      "decision": "awaiting_evidence",
+      "decision": "awaiting_publication",
       "postChangePerformance": "not_available",
       "missingEvidence": [
         "confirmed production-live date",
@@ -739,7 +742,7 @@
       "provisional28DayWindow": null,
       "earliest7DayAvailabilityCheck": null,
       "earliest28DayAvailabilityCheck": null,
-      "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
+      "nextAction": "Verify formal canonical calculator/examples/metadata and retained301alias, then evaluate combinedOct20/22 changes.",
       "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
       "audienceIntent": {
         "classification": "direct_trip_planning",
@@ -1035,6 +1038,39 @@
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
       }
+    },
+    {
+      "url": "https://chinaeasebuddy.com/14-day-china-itinerary/",
+      "changeIds": [
+        "SEO-2026-10-22-14DAY-BUDGET-LINK"
+      ],
+      "sourceRecords": [
+        "docs/seo/budget-calculator-ranking-tracking.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-22"
+      ],
+      "latestConfirmedLiveDate": null,
+      "priority": 2,
+      "audienceIntent": {
+        "classification": "direct_trip_planning",
+        "basis": "page-topic inference,not verified visitor identity or exact-page query intent",
+        "asOf": "2026-10-22"
+      },
+      "decision": "awaiting_publication",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "confirmed production-live date",
+        "current URL Inspection and modification-after-crawl evidence",
+        "complete exact-page Queries comparison with actual dates",
+        "strong-relevance clicks and same-query ranking outcomes"
+      ],
+      "provisional7DayWindow": null,
+      "provisional28DayWindow": null,
+      "earliest7DayAvailabilityCheck": null,
+      "earliest28DayAvailabilityCheck": null,
+      "nextAction": "Verify contextual calculator link on formal page, then retain for complete-window review.",
+      "windowCaution": "Page topic is strong trip intent but query relevance and link/click attribution remain unproven."
     }
   ],
   "observations": [
@@ -1180,6 +1216,15 @@
       "date": "2026-10-22",
       "type": "automation_priority_prompt_updated",
       "summary": "Existing daily review task prompt updated to tourist-intent selection and current data priorities; schedule unchanged."
+    },
+    {
+      "date": "2026-10-22",
+      "type": "travel_intent_actions_added",
+      "changeIds": [
+        "SEO-2026-10-22-BUDGET-TOOL",
+        "SEO-2026-10-22-14DAY-BUDGET-LINK"
+      ],
+      "summary": "Canonical budget tool/examples and14-day context link locally verified; queue29URLs/34distinctIDs. Old cost-calculator route confirmed301; historical alias metrics remain separate. Publication and GSC effect pending."
     }
   ],
   "priorityPolicy": "docs/seo/tourist-intent-priorities.json"
