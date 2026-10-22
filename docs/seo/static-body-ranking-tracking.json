@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "batchId": "SEO-2026-10-22-STATIC-BODIES",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks",
+  "status": "local_verified_pending_publication",
+  "liveDate": null,
+  "codeCommits": [],
+  "pages": [
+    {
+      "changeId": "SEO-2026-10-22-TRAIN-STATIC",
+      "page": "https://chinaeasebuddy.com/china-train-booking-foreigners-12306/",
+      "baseline": {
+        "source": {
+          "sourceFile": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
+          "sourceSha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+          "collectedOn": "2026-10-21",
+          "reviewedOn": "2026-10-22",
+          "scope": "whole_site",
+          "searchType": "Web (text-based)",
+          "periods": "Last 28 days vs Previous 28 days; actual dates absent"
+        },
+        "current": {
+          "clicks": 0,
+          "impressions": 21,
+          "ctr": 0,
+          "averagePosition": 33.33
+        },
+        "previous": {
+          "clicks": 0,
+          "impressions": 0,
+          "ctr": null,
+          "averagePosition": null
+        },
+        "exactPageQueries": null,
+        "searchVolume": null,
+        "keywordDifficulty": null
+      },
+      "indexObservation": {
+        "indexed": null,
+        "lastGoogleCrawl": null,
+        "googleSelectedCanonical": null
+      },
+      "technicalBefore": {
+        "observedOn": "2026-10-22",
+        "httpStatus": 200,
+        "missingLocalAnchorTargets": 4,
+        "dedicatedStaticBodySections": 0,
+        "reactBodySections": 4,
+        "captureSha256": "672dda5bdca4640bc87ec76adb831a7a3248bd4868213941cdfd98ed849807e5",
+        "causeObserved": "Static metadata supplies directory cards but no contentSections; fallback practical tips rendered instead. React has the dedicated body.",
+        "googleRenderingUnknown": "No evidence establishes whether Google rendered the full React body or that this defect caused the measured rank."
+      },
+      "change": {
+        "sharedSource": "src/data/trainBookingContent.json",
+        "staticBodySections": 4,
+        "resolvedLocalAnchorTargets": 4,
+        "faqCount": 4,
+        "howToSteps": 3,
+        "preserved": [
+          "search title",
+          "description",
+          "H1",
+          "URL",
+          "canonical",
+          "CTA",
+          "other-page section IDs"
+        ],
+        "additionalContentCorrection": "Remove unsupported fixed third-party fee and fixed route-time claims from the train guide; replace the itinerary fixed rail-time claim with actual schedule checks.",
+        "reviewDate": "2026-10-22",
+        "reviewDateMeaning": "Railway registration/identity/e-ticket sources checked October22."
+      },
+      "production": {
+        "newContentVerified": false,
+        "checkedAt": null,
+        "googleRecrawlConfirmed": false,
+        "rankingOrClickGainConfirmed": false
+      },
+      "performanceObservations": []
+    },
+    {
+      "changeId": "SEO-2026-10-22-ITINERARY-STATIC",
+      "page": "https://chinaeasebuddy.com/china-itinerary-first-time-7-10-14-days/",
+      "baseline": {
+        "source": {
+          "sourceFile": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
+          "sourceSha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+          "collectedOn": "2026-10-21",
+          "reviewedOn": "2026-10-22",
+          "scope": "whole_site",
+          "searchType": "Web (text-based)",
+          "periods": "Last 28 days vs Previous 28 days; actual dates absent"
+        },
+        "current": {
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "averagePosition": 88
+        },
+        "previous": {
+          "clicks": 0,
+          "impressions": 0,
+          "ctr": null,
+          "averagePosition": null
+        },
+        "exactPageQueries": null,
+        "searchVolume": null,
+        "keywordDifficulty": null
+      },
+      "indexObservation": {
+        "indexed": null,
+        "lastGoogleCrawl": null,
+        "googleSelectedCanonical": null
+      },
+      "technicalBefore": {
+        "observedOn": "2026-10-22",
+        "httpStatus": 200,
+        "missingLocalAnchorTargets": 5,
+        "dedicatedStaticBodySections": 0,
+        "reactBodySections": 5,
+        "captureSha256": "a18fec08101a674e054380b131357ace7dc68b6b0e450576a501fb0e8da2ac34",
+        "causeObserved": "Static metadata supplies directory cards but no contentSections; fallback practical tips rendered instead. React has the dedicated body.",
+        "googleRenderingUnknown": "No evidence establishes whether Google rendered the full React body or that this defect caused the measured rank."
+      },
+      "change": {
+        "sharedSource": "src/data/firstTimeItineraryContent.json",
+        "staticBodySections": 5,
+        "resolvedLocalAnchorTargets": 5,
+        "faqCount": 4,
+        "howToSteps": null,
+        "preserved": [
+          "search title",
+          "description",
+          "H1",
+          "URL",
+          "canonical",
+          "CTA",
+          "other-page section IDs"
+        ],
+        "additionalContentCorrection": "Remove unsupported fixed third-party fee and fixed route-time claims from the train guide; replace the itinerary fixed rail-time claim with actual schedule checks.",
+        "reviewDate": "2026-09-26",
+        "reviewDateMeaning": "Original itinerary review date retained; this is a rendering/content-alignment fix."
+      },
+      "production": {
+        "newContentVerified": false,
+        "checkedAt": null,
+        "googleRecrawlConfirmed": false,
+        "rankingOrClickGainConfirmed": false
+      },
+      "performanceObservations": []
+    }
+  ],
+  "hypothesis": "Serving the dedicated guide body and valid section links directly in HTML reduces dependence on later JavaScript rendering and gives consistent task answers. Ranking/relevant-click gains remain unproven.",
+  "verification": {
+    "typecheck": "PASS",
+    "i18nParity": "PASS",
+    "build": "PASS",
+    "publicHtmlAuditLocal": "PASS",
+    "oldProductionFixtureRejection": "PASS: both old captures rejected by enhanced section-anchor checks",
+    "targetHtmlAndSitemap": "PASS: nine sections/anchors, four FAQs each, train HowTo; unchanged metadata and calculator; same76URLs, only two target dates changed",
+    "sitemapUrlCount": 76,
+    "calculatorUnchanged": "PASS",
+    "diffCheck": "PASS"
+  },
+  "sources": [
+    {
+      "url": "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics",
+      "checkedOn": "2026-10-22",
+      "supports": "Google may render JavaScript; pre-rendered content remains useful. This is not proof of a Google indexing failure."
+    },
+    {
+      "url": "https://www.12306.cn/en/register.html",
+      "checkedOn": "2026-10-22",
+      "supports": "English registration and foreign-passport fields"
+    },
+    {
+      "url": "https://www.12306.cn/en/faq.html",
+      "checkedOn": "2026-10-22",
+      "supports": "Identity, e-ticket and boarding guidance"
+    }
+  ],
+  "followUp": {
+    "provisionalFirstCompleteWindow": [
+      "2026-10-23",
+      "2026-10-29"
+    ],
+    "referenceWindow": [
+      "2026-10-16",
+      "2026-10-22"
+    ],
+    "windowRule": "Adjust if production verification is delayed. Require complete GSC days and actual start/end dates with matching search/country/device filters.",
+    "referenceLimitations": "Reference includes recent site changes; no clean causal control. Page averages are not keyword ranks.",
+    "nextEvidence": [
+      "URL Inspection per changed URL: indexed state, reported crawl, Google-selected canonical",
+      "Exact page Queries comparison for relevant disclosed queries and page totals",
+      "Absolute clicks gained from zero baseline, relevant impressions and same-query ranking"
+    ],
+    "hiddenQueries": "Keep unreported query values unknown. No site-wide query is attributed to either page.",
+    "indexingRequests": "Not submitted by this environment."
+  },
+  "releaseObservations": []
+}

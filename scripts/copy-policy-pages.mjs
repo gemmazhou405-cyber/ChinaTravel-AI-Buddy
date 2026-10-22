@@ -10,6 +10,8 @@ const daliGuide = JSON.parse(await readFile('src/data/seoPages/3-day-dali-itiner
 const goldenWeekGuide = JSON.parse(await readFile('src/data/seoPages/china-golden-week-2026-travel-guide.json', 'utf8'));
 const greatWallGuide = JSON.parse(await readFile('src/data/seoPages/great-wall-of-china-day-trip-from-beijing.json', 'utf8'));
 const greatWallTransport = JSON.parse(await readFile('src/data/greatWallTransport.json', 'utf8'));
+const trainBookingContent = JSON.parse(await readFile('src/data/trainBookingContent.json', 'utf8'));
+const firstTimeItineraryContent = JSON.parse(await readFile('src/data/firstTimeItineraryContent.json', 'utf8'));
 const pandaBaseGuide = JSON.parse(await readFile('src/data/seoPages/chengdu-panda-base-guide.json', 'utf8'));
 const didiPaymentGuide = JSON.parse(await readFile('src/data/seoPages/didi-payment-for-foreigners.json', 'utf8'));
 const beijingAirportGuide = JSON.parse(await readFile('src/data/seoPages/beijing-airport-to-city-guide.json', 'utf8'));
@@ -3603,47 +3605,32 @@ const pageMeta = {
     heading: "China's 350 km/h Trains Are Open to Foreigners",
     title: 'How to Book China High-Speed Train Tickets as a Foreigner: 12306 English Guide',
     description: 'Foreigners can buy China bullet train tickets on 12306 English with passport. No Chinese ID needed. E-ticket linked to passport, scan to board.',
-    sections: [
-      ['12306 vs Trip.com', '12306 has official inventory and no booking fee; Trip.com offers easier English support but usually adds a ¥20-50 service fee.', '#12306-vs-trip-com'],
-      ['Register on 12306 English', 'Download the app, switch to English, register with your passport and email, then complete identity or face verification.', '#how-to-register-on-12306-english'],
-      ['Boarding Without a Paper Ticket', 'The passport linked to the reservation is your ticket. Use a staffed channel if the automated gate cannot read it.', '#boarding-no-paper-ticket'],
-      ['Popular Routes', 'Beijing-Shanghai and Beijing-Xian take about 4.5 hours on the fastest trains; Shanghai-Hangzhou takes about 45 minutes.', '#top-routes-to-book'],
-    ],
+    quickAnswer: trainBookingContent.quickAnswer,
+    sections: trainBookingContent.sections.map((section) => [section.title, section.summary, `#${section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`]),
+    contentSections: trainBookingContent.sections,
     howTo: {
-      name: 'How to register on Railway 12306 English with a foreign passport',
-      description: 'Create and verify a Railway 12306 account to book China train tickets with a foreign passport.',
-      steps: [
-        ['Download and switch language', 'Download the official Railway 12306 app and switch the interface to English.'],
-        ['Register your passport', 'Create an account with your email and passport number. Enter your name exactly as printed in your passport.'],
-        ['Complete verification', 'Follow the in-app identity or face-verification instructions before booking.'],
-      ],
+      name: trainBookingContent.howTo.name,
+      description: trainBookingContent.howTo.description,
+      steps: trainBookingContent.howTo.steps.map(({ name, text }) => [name, text]),
     },
-    faqs: [
-      ['Can foreigners book China trains on 12306?', 'Yes. Foreign passport holders can register, verify their passenger details, and buy tickets on Railway 12306.'],
-      ['Do I need a Chinese ID card?', 'No. Use the foreign passport entered during registration and carry that physical passport when traveling.'],
-      ['Do I need to collect a paper ticket?', 'Usually no. The e-ticket is linked to your passport. Use a staffed gate if necessary.'],
-      ['When should I book?', 'Book when sales open for popular dates, especially around national holidays and weekends.'],
-    ],
+    faqs: trainBookingContent.faqs.map(({ question, answer }) => [question, answer]),
+    sourceLinks: trainBookingContent.sources.map(({ label, href }) => [label, href]),
+    lastReviewed: trainBookingContent.reviewed,
+    lastModified: trainBookingContent.modified,
+    article: true,
   },
   'china-itinerary-first-time-7-10-14-days': {
     heading: 'China Itinerary for First-Time Visitors: 7, 10 or 14 Days',
     title: 'China Itinerary for First-Timers: 7, 10 or 14 Days (2026)',
     description: "Compare practical 7-, 10- and 14-day China itineraries, including Beijing, Xi'an, Shanghai, Chengdu and Guilin, with realistic transfer advice.",
-    lastReviewed: 'September 26, 2026',
-    lastModified: '2026-10-10',
-    sections: [
-      ['Quick Picker', 'Seven days suits two cities, ten days fits three, and fourteen days gives room for four or five destinations.', '#quick-picker'],
-      ['Golden Triangle', 'Beijing for 3 days, Xian for 2, and Shanghai for 3, with a possible Suzhou day trip.', '#route-1-the-golden-triangle'],
-      ['Culture Plus Nature', 'Combine Beijing and Xian with Guilin and the Li River.', '#route-2-culture-plus-nature'],
-      ['Pandas and Mountains', 'Pair Chengdu with Zhangjiajie and keep a buffer for the longer transfer and mountain weather.', '#route-3-pandas-and-mountains'],
-      ['Train or Flight?', 'Take high-speed rail when the fastest journey is under about five hours; compare total door-to-door time.', '#train-or-flight'],
-    ],
-    faqs: [
-      ['Is seven days enough for a first trip to China?', 'Yes, if you choose two cities. Beijing plus Xian emphasizes history; Beijing plus Shanghai contrasts old and new.'],
-      ['What is the best 10-day China itinerary?', 'The classic first-time route is Beijing, Xian, and Shanghai with time for transfers and a possible Suzhou day trip.'],
-      ['Should I add Guilin or Chengdu?', 'Choose Guilin for landscapes and Chengdu for pandas, Sichuan food, and a relaxed city experience.'],
-      ['Should I book trains or flights?', 'Use high-speed rail when the journey is under about five hours, comparing total door-to-door time.'],
-    ],
+    lastReviewed: firstTimeItineraryContent.reviewed,
+    lastModified: firstTimeItineraryContent.modified,
+    quickAnswer: firstTimeItineraryContent.quickAnswer,
+    sections: firstTimeItineraryContent.sections.map((section) => [section.title, section.summary, `#${section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`]),
+    contentSections: firstTimeItineraryContent.sections,
+    faqs: firstTimeItineraryContent.faqs.map(({ question, answer }) => [question, answer]),
+    sourceLinks: firstTimeItineraryContent.sources.map(({ label, href }) => [label, href]),
+    article: true,
   },
   faq: {
     title: 'ChinaEase Buddy FAQ | China Travel Tools for Foreign Visitors',
@@ -5462,8 +5449,8 @@ function staticPageContent(page, meta) {
         </section>
       ` : ''}
       ${meta.contentSections ? meta.contentSections.map((section, sectionIndex) => `
-        <section aria-labelledby="guide-section-${sectionIndex}" style="margin: 0 0 24px; padding: 20px; border: 1px solid rgba(21, 94, 99, 0.12); border-radius: 20px; background: rgba(255, 253, 248, 0.72);">
-          <h2 id="guide-section-${sectionIndex}" style="margin: 0 0 12px; font-size: 1.25rem;">${escapeHtml(section.title)}</h2>
+        <section aria-labelledby="${['china-train-booking-foreigners-12306', 'china-itinerary-first-time-7-10-14-days'].includes(page) ? escapeAttr(section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')) : `guide-section-${sectionIndex}`}" style="margin: 0 0 24px; padding: 20px; border: 1px solid rgba(21, 94, 99, 0.12); border-radius: 20px; background: rgba(255, 253, 248, 0.72);">
+          <h2 id="${['china-train-booking-foreigners-12306', 'china-itinerary-first-time-7-10-14-days'].includes(page) ? escapeAttr(section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')) : `guide-section-${sectionIndex}`}" style="margin: 0 0 12px; font-size: 1.25rem;">${escapeHtml(section.title)}</h2>
           ${((page === 'china-visa-free-travel-guide' && section.title === '240-hour visa-free transit: the route is essential') || (page === 'china-240-hour-visa-free-transit-2026' && section.title === 'How the 10-day clock is calculated')) ? `<p style="color: #536365; line-height: 1.7;">To work out your departure date, use the <a href="/china-240-hour-transit-calculator/" style="color: #155e63; font-weight: 700; text-underline-offset: 4px;">China 240-hour visa-free transit calculator</a>. It calculates the next-day midnight clock in China time and checks the basic passport and route pattern; confirm the final permitted stay with border inspection.</p>` : ''}
           ${section.countryGroups ? `
             <div aria-label="Eligible nationalities" style="display: grid; gap: 16px; margin: 0 0 16px;">

@@ -9,6 +9,8 @@ import daliGuide from '../data/seoPages/3-day-dali-itinerary.json';
 import goldenWeekGuide from '../data/seoPages/china-golden-week-2026-travel-guide.json';
 import greatWallGuide from '../data/seoPages/great-wall-of-china-day-trip-from-beijing.json';
 import greatWallTransport from '../data/greatWallTransport.json';
+import trainBookingContent from '../data/trainBookingContent.json';
+import firstTimeItineraryContent from '../data/firstTimeItineraryContent.json';
 import pandaBaseGuide from '../data/seoPages/chengdu-panda-base-guide.json';
 import didiPaymentGuide from '../data/seoPages/didi-payment-for-foreigners.json';
 import beijingAirportGuide from '../data/seoPages/beijing-airport-to-city-guide.json';
@@ -6547,26 +6549,19 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     intro: 'Foreign passport holders can book high-speed rail tickets through the official 12306 website or app. Your verified passport is linked to the e-ticket, so no Chinese ID is required.',
     metaTitle: 'How to Book China High-Speed Train Tickets as a Foreigner: 12306 English Guide',
     metaDescription: 'Foreigners can buy China bullet train tickets on 12306 English with passport. No Chinese ID needed. E-ticket linked to passport, scan to board.',
-    quickAnswer: 'Use the official Railway 12306 app for real-time inventory with no booking fee, or Trip.com for easier English support with a service fee. Register the passenger name exactly as shown on the passport. At the station, the passport linked to the booking is your ticket.',
+    quickAnswer: trainBookingContent.quickAnswer,
     ctaLabel: 'Ask Buddy to plan my train booking',
     midCtaLabel: 'Get help with my route and booking date',
     ctaHref: '/',
     buddyPrompt: 'Help me book a China train. My route is [city] to [city], travel date is [date], passenger passport country is [country], and I prefer [fastest/cheapest/most comfortable].',
-    reviewed: 'September 26, 2026',
-    howTo: { name: 'How to register on Railway 12306 English with a foreign passport', description: 'Create and verify a Railway 12306 account so you can book China train tickets with a foreign passport.', steps: [{ name: 'Download and switch language', text: 'Download the official Railway 12306 app and switch the interface to English.' }, { name: 'Register your passport', text: 'Create an account with your email and passport number. Enter your name exactly as printed in your passport.' }, { name: 'Complete verification', text: 'Follow the in-app identity or face-verification instructions and wait for passenger verification before booking.' }] },
-    sections: [
-      { title: '12306 vs Trip.com', table: { headers: ['Option', 'Advantages', 'Trade-off'], rows: [['Railway 12306', 'Official inventory, real seats, no booking fee', 'Registration and verification can take more effort'], ['Trip.com', 'English support, foreign-card checkout, easier interface', 'Usually adds a booking fee of about ¥20-50']] } },
-      { title: 'How to Register on 12306 English', ordered: true, items: ['Download the official Railway 12306 app and switch the interface to English.', 'Register with your email and foreign passport number. Enter the passenger name exactly as it appears on the passport.', 'Complete the requested identity or face verification. Do this before tickets for your travel date go on sale.'] },
-      { title: 'Boarding: No Paper Ticket', items: ['Your verified passport is linked to the e-ticket and acts as your ticket.', 'At an automated gate that reads foreign passports, scan the passport used for the booking.', 'If the gate does not accept the passport, use the staffed channel; do not buy a duplicate ticket.', 'Arrive 45-60 minutes early at a large station for security, navigation, and passport checks.'] },
-      { title: 'Top Routes to Book', table: { headers: ['Route', 'Typical fastest time', 'Why take the train'], rows: [['Beijing -> Shanghai', 'About 4.5 hours', 'City-center travel with frequent departures'], ["Beijing -> Xi'an", 'About 4.5 hours', 'Faster door to door than flying for many trips'], ['Shanghai -> Hangzhou', 'About 45 minutes', 'Easy day trip or onward connection']] } },
-    ],
-    faqs: [
-      { question: 'Can foreigners book China trains on 12306?', answer: 'Yes. Foreign passport holders recognized by the system can register, verify passenger details, and buy tickets on the official Railway 12306 platform.' },
-      { question: 'Do I need a Chinese ID card?', answer: 'No. Use the foreign passport entered during registration and carry the same physical passport when traveling.' },
-      { question: 'Do I need to collect a paper ticket?', answer: 'Usually no. The booking is an e-ticket linked to your passport. Use the passport at the gate or ask staff to use the manual channel.' },
-      { question: 'When should I book popular routes?', answer: 'Book when sales open for your date, especially around national holidays and weekends. Current sale windows and schedules can change, so check 12306.' },
-    ],
+    reviewed: trainBookingContent.reviewed,
+    lastModified: trainBookingContent.modified,
+    isArticle: true,
+    howTo: trainBookingContent.howTo,
+    sections: trainBookingContent.sections,
+    faqs: trainBookingContent.faqs,
     related: [{ label: 'China itinerary planner', href: '/china-itinerary-first-time-7-10-14-days/' }, { label: 'China visa-free travel guide', href: '/china-visa-free-travel-guide/' }, { label: 'China payment guide', href: '/china-payment-guide/' }],
+    sources: trainBookingContent.sources,
   },
   'china-itinerary-first-time-7-10-14-days': {
     path: '/china-itinerary-first-time-7-10-14-days/',
@@ -6574,27 +6569,18 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     intro: 'Choose two cities in seven days, the Beijing-Xi\'an-Shanghai golden triangle in ten, or add one nature or food destination for a well-paced fourteen-day first visit.',
     metaTitle: 'China Itinerary for First-Timers: 7, 10 or 14 Days (2026)',
     metaDescription: "Compare practical 7-, 10- and 14-day China itineraries, including Beijing, Xi'an, Shanghai, Chengdu and Guilin, with realistic transfer advice.",
-    quickAnswer: "For seven days, choose Beijing plus Xi'an or Shanghai. With ten days, follow the classic Beijing-Xi'an-Shanghai route. With fourteen days, add Guilin for landscapes or Chengdu for food and pandas without turning the trip into a daily transfer marathon.",
+    quickAnswer: firstTimeItineraryContent.quickAnswer,
     ctaLabel: 'Get my free itinerary',
     midCtaLabel: 'Personalize this route for my interests',
     // The itinerary CTAs go to the trip form, not the chat.
     ctaHref: '/plan/',
-    reviewed: 'September 26, 2026',
-    lastModified: '2026-10-10',
-    sections: [
-      { title: 'Quick Picker', table: { headers: ['Days', 'Cities', 'Pace', 'Best for'], rows: [['7 days', '2 cities', 'Focused', 'A first look with minimal transfers'], ['10 days', '3 cities', 'Balanced', "Beijing, Xi'an, and Shanghai highlights"], ['14 days', '4-5 destinations', 'Varied', 'Adding nature, pandas, or regional food']] } },
-      { title: 'Route 1: The Golden Triangle', items: ['Beijing: 3 days for the Forbidden City, Great Wall, hutongs, and imperial history.', "Xi'an: 2 days for the Terracotta Warriors, city wall, and Muslim Quarter.", 'Shanghai: 3 days for the Bund, neighborhoods, museums, and modern city life.', 'Add a Suzhou day trip when your schedule has at least one flexible Shanghai day.'] },
-      { title: 'Route 2: Culture Plus Nature', items: ["Begin with Beijing and Xi'an for China’s essential historical arc.", 'Continue to Guilin and Yangshuo for the Li River, karst landscapes, and a slower finish.', 'Use this route when scenery matters more than finishing in Shanghai.'] },
-      { title: 'Route 3: Pandas and Mountains', items: ['Base in Chengdu for pandas, Sichuan food, teahouses, and a relaxed urban pace.', 'Continue to Zhangjiajie for dramatic sandstone peaks and hiking viewpoints.', 'Allow a buffer day because the transfer is longer and mountain weather can affect plans.'] },
-      { title: 'Train or Flight?', items: ['If the fastest high-speed train takes under five hours, take the train in most cases.', "Beijing to Xi'an is a good example: the train takes about 4.5 hours and is often faster door to door after airport travel, check-in, and security.", 'Fly when the rail journey is long, the flight schedule is substantially better, or you are connecting distant regions.', 'Avoid one-night city stops. Two or three nights per major destination makes a first trip more enjoyable.'] },
-    ],
-    faqs: [
-      { question: 'Is seven days enough for a first trip to China?', answer: 'Yes, if you choose two cities. Beijing plus Xi\'an emphasizes history; Beijing plus Shanghai gives a stronger old-and-new contrast.' },
-      { question: 'What is the best 10-day China itinerary?', answer: "The classic first-time route is Beijing for three days, Xi'an for two, and Shanghai for three, using the remaining time for transfers and a Suzhou day trip." },
-      { question: 'Should I add Guilin or Chengdu to a 14-day trip?', answer: 'Choose Guilin for landscapes and outdoor time. Choose Chengdu for pandas, Sichuan food, and a more relaxed city experience.' },
-      { question: 'Should I book trains or flights between Chinese cities?', answer: 'Use high-speed rail when the journey is under about five hours. Compare total door-to-door time rather than the scheduled flight duration alone.' },
-    ],
+    reviewed: firstTimeItineraryContent.reviewed,
+    lastModified: firstTimeItineraryContent.modified,
+    isArticle: true,
+    sections: firstTimeItineraryContent.sections,
+    faqs: firstTimeItineraryContent.faqs,
     related: [{ label: '7-day China itinerary', href: '/7-day-china-itinerary/' }, { label: '10-day China itinerary', href: '/10-day-china-itinerary/' }, { label: '14-day China itinerary', href: '/14-day-china-itinerary/' }, { label: 'First trip to China guide', href: '/first-trip-to-china/' }, { label: 'China train booking guide', href: '/china-train-booking-foreigners-12306/' }, { label: 'China travel budget', href: '/china-travel-budget/' }, { label: 'China visa-free travel guide', href: '/china-visa-free-travel-guide/' }, { label: 'China eSIM guide', href: '/china-esim-internet-guide/' }],
+    sources: firstTimeItineraryContent.sources,
   },
   faq: {
     path: '/faq/',

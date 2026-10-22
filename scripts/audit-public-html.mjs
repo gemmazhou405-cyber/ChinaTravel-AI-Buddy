@@ -3,6 +3,13 @@ const REQUEST_ORIGIN = process.env.AUDIT_ORIGIN || ORIGIN;
 
 const pages = [
   {
+    path: '/china-train-booking-foreigners-12306/',
+    h1: /China.*350 km\/h Trains.*Foreigners/i,
+    keywords: ['passport', 'verification', 'Boarding: No Paper Ticket', 'Top Routes to Book'],
+    links: ['/guides/', '/china-itinerary-first-time-7-10-14-days/'],
+    checkLocalAnchors: true,
+  },
+  {
     path: '/',
     h1: /AI Travel Assistant.*Works in China/i,
     keywords: ['ChinaEase Buddy', 'Travel Passes', 'itinerary', 'Free tools for planning your China trip'],
@@ -121,6 +128,7 @@ const pages = [
     h1: /China Itinerary for First-Time Visitors.*7.*10.*14 Days/i,
     keywords: ['Quick Picker', 'Golden Triangle', 'Culture Plus Nature', 'Pandas and Mountains', 'Train or Flight?'],
     links: ['/#trip-plan', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/first-trip-to-china/', '/china-train-booking-foreigners-12306/', '/china-travel-budget/'],
+    checkLocalAnchors: true,
   },
   {
     path: '/7-day-china-itinerary/',
@@ -412,6 +420,12 @@ for (const page of pages) {
       && !html.includes(`href='${encoded}'`);
   });
   checks.push(['internal links', missingLinks.length === 0, missingLinks.length ? `missing: ${missingLinks.join(', ')}` : 'ok']);
+  if (page.checkLocalAnchors) {
+    const targets = [...html.matchAll(/<a\b[^>]*\bhref=["']#([^"']+)["']/gi)].map((match) => match[1]);
+    const ids = new Set([...html.matchAll(/\bid=["']([^"']+)["']/gi)].map((match) => match[1]));
+    const unresolved = targets.filter((target) => !ids.has(target));
+    checks.push(['section anchors', targets.length > 0 && unresolved.length === 0, unresolved.length ? `missing targets: ${unresolved.join(', ')}` : `${targets.length} links resolve`]);
+  }
   const requiresGuideHubLink = !page.noindex && page.path !== '/' && page.path !== '/guides/';
   if (requiresGuideHubLink) {
     checks.push(['guide hub backlink', html.includes('href="/guides/"') || html.includes("href='/guides/'"), '/guides/']);

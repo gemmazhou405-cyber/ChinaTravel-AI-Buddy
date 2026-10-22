@@ -1,0 +1,101 @@
+{
+  "reviewed": "September 26, 2026",
+  "modified": "2026-10-22",
+  "quickAnswer": "For seven days, choose Beijing plus Xi'an or Shanghai. With ten days, follow the classic Beijing-Xi'an-Shanghai route. With fourteen days, add Guilin for landscapes or Chengdu for food and pandas without turning the trip into a daily transfer marathon.",
+  "sections": [
+    {
+      "title": "Quick Picker",
+      "summary": "Choose two cities for seven days, three for ten, or add nature and regional stops with fourteen.",
+      "table": {
+        "headers": [
+          "Days",
+          "Cities",
+          "Pace",
+          "Best for"
+        ],
+        "rows": [
+          [
+            "7 days",
+            "2 cities",
+            "Focused",
+            "A first look with minimal transfers"
+          ],
+          [
+            "10 days",
+            "3 cities",
+            "Balanced",
+            "Beijing, Xi'an, and Shanghai highlights"
+          ],
+          [
+            "14 days",
+            "4-5 destinations",
+            "Varied",
+            "Adding nature, pandas, or regional food"
+          ]
+        ]
+      }
+    },
+    {
+      "title": "Route 1: The Golden Triangle",
+      "summary": "Combine Beijing, Xi'an and Shanghai, leaving time between the sightseeing blocks for travel.",
+      "items": [
+        "Beijing: 3 days for the Forbidden City, Great Wall, hutongs, and imperial history.",
+        "Xi'an: 2 days for the Terracotta Warriors, city wall, and Muslim Quarter.",
+        "Shanghai: 3 days for the Bund, neighborhoods, museums, and modern city life.",
+        "Add a Suzhou day trip when your schedule has at least one flexible Shanghai day."
+      ]
+    },
+    {
+      "title": "Route 2: Culture Plus Nature",
+      "summary": "Combine Beijing and Xi'an with Guilin and Yangshuo for a landscape-focused finish.",
+      "items": [
+        "Begin with Beijing and Xi'an for China’s essential historical arc.",
+        "Continue to Guilin and Yangshuo for the Li River, karst landscapes, and a slower finish.",
+        "Use this route when scenery matters more than finishing in Shanghai."
+      ]
+    },
+    {
+      "title": "Route 3: Pandas and Mountains",
+      "summary": "Combine Chengdu and Zhangjiajie with enough time for the transfer and mountain weather.",
+      "items": [
+        "Base in Chengdu for pandas, Sichuan food, teahouses, and a relaxed urban pace.",
+        "Continue to Zhangjiajie for dramatic sandstone peaks and hiking viewpoints.",
+        "Allow a buffer day because the transfer is longer and mountain weather can affect plans."
+      ]
+    },
+    {
+      "title": "Train or Flight?",
+      "summary": "Compare the complete hotel-to-hotel journey rather than flight or train duration alone.",
+      "items": [
+        "When a direct high-speed train fits your schedule and takes under about five hours, compare it with flying using total door-to-door time.",
+        "Check the actual train, stations and journey duration on Railway 12306. Include transfers, station or airport checks and the arrival time before deciding.",
+        "Fly when the rail journey is long, the flight schedule is substantially better, or you are connecting distant regions.",
+        "Avoid one-night city stops. Two or three nights per major destination makes a first trip more enjoyable."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is seven days enough for a first trip to China?",
+      "answer": "Yes, if you choose two cities. Beijing plus Xi'an emphasizes history; Beijing plus Shanghai gives a stronger old-and-new contrast."
+    },
+    {
+      "question": "What is the best 10-day China itinerary?",
+      "answer": "The classic first-time route is Beijing for three days, Xi'an for two, and Shanghai for three, using the remaining time for transfers and a Suzhou day trip."
+    },
+    {
+      "question": "Should I add Guilin or Chengdu to a 14-day trip?",
+      "answer": "Choose Guilin for landscapes and outdoor time. Choose Chengdu for pandas, Sichuan food, and a more relaxed city experience."
+    },
+    {
+      "question": "Should I book trains or flights between Chinese cities?",
+      "answer": "Use high-speed rail when the journey is under about five hours. Compare total door-to-door time rather than the scheduled flight duration alone."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Railway 12306 official train schedules and booking",
+      "href": "https://www.12306.cn/en/index.html"
+    }
+  ]
+}
