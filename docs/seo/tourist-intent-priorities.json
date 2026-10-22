@@ -253,7 +253,7 @@
       "url": "https://chinaeasebuddy.com/3-day-chongqing-itinerary/",
       "priority": 2,
       "reason": "Direct destination-trip planning with 11 historical impressions and verified museum-entry/weekday gaps; not a quantified keyword opportunity.",
-      "workState": "Scoped shared visitor content validated locally; await publication and complete-window search evidence.",
+      "workState": "October 22 shared entry/weekday/rail content formally verified at 2026-10-22T13:54:45+00:00; retain for complete-window search follow-up and serviceNoticeWatch. No quantified volume/difficulty opportunity claimed.",
       "baseline": {
         "clicks": 0,
         "impressions": 11,
@@ -352,6 +352,11 @@
       "date": "2026-10-22",
       "type": "chongqing_museum_test_selected",
       "summary": "Small primary-backed planning test; retain calculator priority and recently edited bodies."
+    },
+    {
+      "date": "2026-10-22",
+      "type": "chongqing_museum_test_formally_verified",
+      "summary": "Scoped Chongqing planning test live with ten sections and ten FAQs; calculator priority and recent body observations retained."
     }
   ],
   "keywordEvidence": "docs/seo/keyword-opportunities-2026-10-22.json",

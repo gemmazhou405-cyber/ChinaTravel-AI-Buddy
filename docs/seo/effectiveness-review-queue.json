@@ -1547,12 +1547,11 @@
       "recordedChangeDates": [
         "2026-10-22"
       ],
-      "latestConfirmedLiveDate": null,
+      "latestConfirmedLiveDate": "2026-10-22",
       "priority": 2,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
-        "formal publication verification",
         "current indexed URL Inspection crawl/canonical",
         "complete exact-page Queries comparison with actual dates",
         "strong-relevance clicks and same-query ranking outcomes"
@@ -1567,8 +1566,8 @@
       ],
       "earliest7DayAvailabilityCheck": "2026-10-30",
       "earliest28DayAvailabilityCheck": "2026-11-20",
-      "windowCaution": "Publication windows remain provisional until formal verification. The reference end date includes this publication and other site edits; it is not a clean causal control. The historical export has unknown actual date bounds.",
-      "nextAction": "Verify formal publication, then retain the scoped visitor-planning content for complete-window search follow-up and source-notice checks. Calculator and budget evidence remain first.",
+      "windowCaution": "Provisional publication windows only. Reference end date includes this body publication and other site edits; it is not a clean causal control. Historical export actual dates remain unknown. Use property reporting dates and complete matched GSC data; add later recrawl-based windows if needed.",
+      "nextAction": "Retain verified museum-entry, weekday and rail-planning content for complete-window search follow-up and service-notice checks. Track post-change indexed crawl, exact-page same-query ranks and strongly relevant clicks. Calculator and budget evidence remain first.",
       "audienceIntent": {
         "classification": "direct_destination_trip_planning",
         "basis": "page/topic inference, not verified visitor identity",
@@ -1855,6 +1854,14 @@
       "changeId": "SEO-2026-10-22-CHONGQING-MUSEUM-PLAN",
       "decision": "awaiting_evidence",
       "summary": "Primary-backed Monday, entry and Line 2 planning test validated locally; publication and search outcomes remain unverified. Prior observations preserved."
+    },
+    {
+      "at": "2026-10-22T13:54:45+00:00",
+      "type": "chongqing_museum_test_formal_verification",
+      "url": "https://chinaeasebuddy.com/3-day-chongqing-itinerary/",
+      "changeId": "SEO-2026-10-22-CHONGQING-MUSEUM-PLAN",
+      "decision": "awaiting_evidence",
+      "summary": "Code 6f37d1a0e153be4c42e18aa6c76f88a66728f4ed and Cloudflare a50b13c2-587d-4a3f-81b5-c5f5590fd86a formally verified; prior observations preserved. No new search-outcome evidence."
     }
   ],
   "priorityPolicy": "docs/seo/tourist-intent-priorities.json",

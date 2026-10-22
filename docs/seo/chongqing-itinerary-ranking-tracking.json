@@ -3,9 +3,11 @@
   "changeId": "SEO-2026-10-22-CHONGQING-MUSEUM-PLAN",
   "classification": "scoped_tourist_planning_content_test_and_dated_visitor_information",
   "primaryOutcome": "strongly_relevant_google_organic_clicks",
-  "status": "validated_pending_publication",
+  "status": "live_verified",
   "page": "https://chinaeasebuddy.com/3-day-chongqing-itinerary/",
-  "codeCommits": [],
+  "codeCommits": [
+    "6f37d1a0e153be4c42e18aa6c76f88a66728f4ed"
+  ],
   "baseline": {
     "source": {
       "filename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
@@ -138,12 +140,57 @@
     "lint": "pass with one pre-existing PricingPlans fast-refresh warning",
     "build": "pass",
     "publicHtmlAudit": "pass across the full existing inventory",
-    "mobileVisualQA": "unavailable_no_browser_executable"
+    "mobileVisualQA": "unavailable_no_browser_executable",
+    "sitemapChange": {
+      "checkedAt": "2026-10-22T13:50:51+00:00",
+      "httpStatus": 200,
+      "urlCount": 76,
+      "onlyLastmodChanges": {
+        "https://chinaeasebuddy.com/3-day-chongqing-itinerary/": [
+          "2026-09-22",
+          "2026-10-22"
+        ]
+      }
+    }
   },
   "publication": {
-    "status": "pending",
-    "codeCommit": null,
-    "firstFormalVerifiedAt": null
+    "status": "live_verified",
+    "firstFormalVerifiedAt": "2026-10-22T13:54:45+00:00",
+    "codeCommit": "6f37d1a0e153be4c42e18aa6c76f88a66728f4ed",
+    "cloudflare": {
+      "status": "success",
+      "deploymentId": "a50b13c2-587d-4a3f-81b5-c5f5590fd86a",
+      "completedAt": "2026-10-22T13:53:33Z",
+      "checkRunId": 119866377772,
+      "previewUrl": "https://a50b13c2.chinaease-buddy.pages.dev"
+    },
+    "formalVerification": {
+      "url": "https://chinaeasebuddy.com/3-day-chongqing-itinerary/",
+      "checkedAt": "2026-10-22T13:54:45+00:00",
+      "httpStatus": 200,
+      "htmlSha256": "6393f81a62c90e7518dba2f14a918172501c78da5c94c8f62c70d8157426de1a",
+      "sections": 10,
+      "faqSchemaPairs": 10,
+      "sourceLinks": [
+        "https://whlyw.cq.gov.cn/zwxx_221/bmdt/tzgg/202511/t20251103_15136009.html",
+        "https://www.cq.gov.cn/zjcq/cycq/jplyxl/dsy/dsjp/202608/t20260826_15982331.html",
+        "https://english.cq.gov.cn/specials/explore/PhotoPerfectSpots/202608/t20260810_15912642.html"
+      ],
+      "allFormerRelatedLinksRetained": true,
+      "newMondayEntryAndRailContent": true,
+      "datedNoticeAndHolidayExceptionsVisible": true,
+      "searchMetadataMatchesBeforeFormalPage": true,
+      "canonical": "exact_self_reference",
+      "singleH1": true,
+      "noNoindex": true,
+      "sitemap": {
+        "httpStatus": 200,
+        "exactlyMatchesValidatedBuild": true,
+        "urlCount": 76,
+        "targetLastmod": "2026-10-22"
+      },
+      "browserVisualQA": "unavailable_no_executable"
+    }
   },
   "review": {
     "decision": "awaiting_evidence",
@@ -169,7 +216,7 @@
     ],
     "earliest7DayAvailabilityCheck": "2026-10-30",
     "earliest28DayAvailabilityCheck": "2026-11-20",
-    "referenceWindowCaution": "Publication windows remain provisional until formal verification. The reference end date includes this publication and other site edits; it is not a clean causal control. The historical export has unknown actual date bounds.",
+    "referenceWindowCaution": "Provisional publication windows only. Reference end date includes this body publication and other site edits; it is not a clean causal control. Historical export actual dates remain unknown. Use property reporting dates and complete matched GSC data; add later recrawl-based windows if needed.",
     "rule": "Use complete adjacent equal non-overlapping GSC windows with matching Web, exact-page, country and device filters. Add later recrawl-based windows if Google processes later; completeness and sample adequacy govern conclusions.",
     "referenceToExistingEvidencePriority": "Calculator indexed URL Inspection and budget exact-page Queries remain first; no new immediate export request."
   },
@@ -194,6 +241,11 @@
       "at": "2026-10-22T13:50:51+00:00",
       "type": "selection_and_local_validation",
       "summary": "Formal old-page gap and three primary sources verified by direct HTTP 200; new shared content passes types, build, parity, FAQ schema and full HTML audit. No new Google search-outcome evidence."
+    },
+    {
+      "at": "2026-10-22T13:54:45+00:00",
+      "type": "formal_live_verification",
+      "summary": "Code and successful Cloudflare deployment verified. Formal HTTP 200 confirms both new planning sections, ten visible/schema FAQ pairs, dated official sources, holiday exceptions, prior related links and unchanged search metadata. Sitemap exactly matches the validated 76-URL build. Google post-change crawl, indexing, same-page query ranks and relevant clicks remain unknown; mobile visual QA unavailable."
     }
   ]
 }
