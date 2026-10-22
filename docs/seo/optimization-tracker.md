@@ -197,7 +197,7 @@ The DiDi payment page's public HTML showed the new October 20 review date after 
 
 | SEO-2026-10-22-CALC-STATIC-ENTRY | 2026-10-22 / `6ce91de`; formal verified07:13:49UTC | `/china-240-hour-transit-calculator/` | Replace stale static scheduled-arrival instruction with existing shared entry-date guidance;add calculator HTML/stale-copy audit. Maintenance consistency repair,not a proven ranking opportunity. | Historical exact-page0clicks/10impressions/pageavg22.5;target tool-query coverage/volume/KDunknown | Historical indexed report,last reported crawlOct13;post-change crawl unknown | Four-group evidence matrix in `keyword-opportunities-2026-10-22.json`;no new GSC outcome | Verify production,then complete same-query7/28day windows and absolute relevant-click changes;retain recent metadata/algorithm. |
 
-| SEO-2026-10-22-ZHANGJIAJIE-TIANMEN | Oct22;local verification passed,pending release | `/3-day-zhangjiajie-itinerary/` | One dated route-planning section,two FAQs/source links in shared JSON;retain metadata. Exploratory tourist-intent content test. | Historical0clicks/15impressions/pageavg28.6;actual dates absent | Unknown,no new URL Inspection | Site-wide planner query3/91.67 not page-attributed;candidate coverage/volume/KDunknown | Verify publication,maintain source watch,and evaluate complete same-query/relevant-click windows. |
+| SEO-2026-10-22-ZHANGJIAJIE-TIANMEN | Oct22 / `ad0580b`;formal verified07:38:53UTC | `/3-day-zhangjiajie-itinerary/` | One dated route-planning section,two FAQs/source links in shared JSON;retain metadata. Exploratory tourist-intent content test. | Historical0clicks/15impressions/pageavg28.6;actual dates absent | Unknown,no new URL Inspection | Site-wide planner query3/91.67 not page-attributed;candidate coverage/volume/KDunknown | Verify publication,maintain source watch,and evaluate complete same-query/relevant-click windows. |
 
 ## Next page decision: DiDi query ownership
 
@@ -275,3 +275,9 @@ Oct22 06:59:37UTC，正式阳朔页HTTP200、自引用canonical、Oct19的阳朔
 ### October22 07:27:10UTC: Daily evidence availability review
 
 Reviewed all30URLs/36actionIDs and14source tracking records under tourist-intent policy. Latest located named GSC exports remainOctober21; no new URL Inspection or complete post-change performance evidence. Append review observations without replacing baselines/windows. Hold existing versions; no new growth rewrite or rollback justified. Raw live verification unavailable this run (environment403 and fresh retrieval failure); older retrieved budget content is not proof of regression, prior formal checks retained. No duplicate missing-data request. See `reviews/2026-10-22.md` for exact provisional equal/non-overlapping windows, limitations and per-group decisions. Google post-change crawl/canonical, same-query coverage/rank and strongly relevant clicks remain awaiting evidence.
+
+### 2026-10-22 张家界行程内容测试发布核验
+
+代码 `ad0580b42238b267d26dd2481d9e37de7a433b3f`，Cloudflare部署 `2847ee62-06ca-46ef-8058-5ab44feb23c7` 成功；07:38:53UTC正式目标页HTTP200、共享日期化内容、来源链接、两条新增/总计九条FAQ及schema通过。搜索metadata、全指南原审核日、旧内链保留；sitemap76URLs只更新本页实际lastmod。构建、类型/i18n、lint（原有warning）、本地全套HTML审计及旧版负例通过。发布期间合并每日复查任务新增记录，未覆盖其历史观察。
+
+当前31URL/37项动作；本动作完整7天暂定Oct23–29、28天Oct23–Nov19，等待GSC完整且匹配条件的数据。相关关键词/排名/点击仍待验证；后续来源时效与搜索效果分开复核。不得把日期化内容发布当作现时运营保证或SEO收益。

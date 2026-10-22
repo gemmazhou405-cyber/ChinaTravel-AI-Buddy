@@ -1395,21 +1395,26 @@
       "recordedChangeDates": [
         "2026-10-22"
       ],
-      "latestConfirmedLiveDate": null,
+      "latestConfirmedLiveDate": "2026-10-22",
       "priority": 2,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
-        "formal new-version verification",
         "current indexed URL Inspection crawl/canonical",
         "complete exact-page Queries comparison with actual dates",
         "strong-relevance clicks and same-query ranking outcomes"
       ],
-      "provisional7DayWindow": null,
-      "provisional28DayWindow": null,
-      "earliest7DayAvailabilityCheck": null,
-      "earliest28DayAvailabilityCheck": null,
-      "nextAction": "Verify dated planning update on formal domain;observe relevant query/click outcomes and maintain serviceNoticeWatch. Existing calculator/budget evidence requests stay first.",
+      "provisional7DayWindow": [
+        "2026-10-23",
+        "2026-10-29"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-23",
+        "2026-11-19"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-30",
+      "earliest28DayAvailabilityCheck": "2026-11-20",
+      "nextAction": "Retain published scoped content test;maintain serviceNoticeWatch and assess Google crawl/exact-query/relevant-click outcomes after complete windows. Calculator/budget evidence requests remain first.",
       "windowCaution": "Provisional publication windows do not establish Google processing or causal effect.",
       "audienceIntent": {
         "classification": "direct_destination_trip_planning",
@@ -1634,6 +1639,13 @@
       "type": "scoped_tourist_planning_test_added",
       "changeId": "SEO-2026-10-22-ZHANGJIAJIE-TIANMEN",
       "summary": "Older Zhangjiajie itinerary has documented source-backed answer gap;one section/two FAQs added locally.31URLs/37IDs. No new GSC result or high-volume/low-competition claim."
+    },
+    {
+      "date": "2026-10-22",
+      "checkedAtUtc": "2026-10-22T07:38:53Z",
+      "type": "formal_publication_verified",
+      "changeId": "SEO-2026-10-22-ZHANGJIAJIE-TIANMEN",
+      "summary": "Dated Zhangjiajie planning section/two FAQs/sources formally verified;76sitemapURLs,only target lastmod changed;31URLs/37IDs. New search outcomes unconfirmed."
     }
   ],
   "priorityPolicy": "docs/seo/tourist-intent-priorities.json",

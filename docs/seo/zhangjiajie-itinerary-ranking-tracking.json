@@ -3,9 +3,11 @@
   "changeId": "SEO-2026-10-22-ZHANGJIAJIE-TIANMEN",
   "classification": "scoped_tourist_planning_content_test",
   "primaryOutcome": "strongly_relevant_google_organic_clicks",
-  "status": "local_checks_passed_pending_release",
+  "status": "live_verified",
   "page": "https://chinaeasebuddy.com/3-day-zhangjiajie-itinerary/",
-  "codeCommits": [],
+  "codeCommits": [
+    "ad0580b42238b267d26dd2481d9e37de7a433b3f"
+  ],
   "baseline": {
     "source": {
       "filename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
@@ -105,12 +107,34 @@
     "typecheck": "PASS",
     "i18nParity": "PASS",
     "lint": "PASS,one existing Fast Refresh warning",
-    "diffCheck": "PASS"
+    "diffCheck": "PASS",
+    "production": "PASS:formal body/table/two new FAQs+9schema FAQs/source links/metadata/original internal links/robots/sitemap"
   },
   "production": {
-    "verified": false,
+    "verified": true,
     "googleRecrawlConfirmed": false,
-    "rankingOrClickGainConfirmed": false
+    "rankingOrClickGainConfirmed": false,
+    "checkedAtUtc": "2026-10-22T07:38:53Z",
+    "url": "https://chinaeasebuddy.com/3-day-zhangjiajie-itinerary/",
+    "httpStatus": 200,
+    "sharedDatedSection": "PASS",
+    "sourceLinks": "PASS",
+    "visibleAndSchemaFaqs": 9,
+    "newFaqs": 2,
+    "jsonLd": "PASS",
+    "searchMetadataRetained": true,
+    "wholeGuideReviewRetained": true,
+    "oldInternalLinksRetained": true,
+    "noindex": false,
+    "sitemapURLs": 76,
+    "lastmodChanges": {
+      "https://chinaeasebuddy.com/3-day-zhangjiajie-itinerary/": [
+        "2026-09-22",
+        "2026-10-22"
+      ]
+    },
+    "googleIndexOrRecrawlEstablished": false,
+    "rankingOrClickGainEstablished": false
   },
   "serviceNoticeWatch": {
     "sourceUrls": [
@@ -123,8 +147,14 @@
     "liveOperationsConfirmed": false
   },
   "followUp": {
-    "first7DayWindow": null,
-    "first28DayWindow": null,
+    "first7DayWindow": [
+      "2026-10-23",
+      "2026-10-29"
+    ],
+    "first28DayWindow": [
+      "2026-10-23",
+      "2026-11-19"
+    ],
     "windowRule": "Set from day after formal publication confirmation;complete GSC days with exact dates and same page/query/country/device/search filters. Preserve later post-recrawl windows separately.",
     "outcomes": [
       "Google indexing and modification-after-crawl",
@@ -133,7 +163,16 @@
       "Absolute new relevant organic clicks from zero baseline"
     ],
     "dataPriority": "Existing calculator crawl/canonical and canonical budget Page→Queries requests remain first. Do not add another immediate export request solely because this page was modified.",
-    "indexRequestSubmitted": false
+    "indexRequestSubmitted": false,
+    "reference7DayWindow": [
+      "2026-10-16",
+      "2026-10-22"
+    ],
+    "reference28DayWindow": [
+      "2026-09-25",
+      "2026-10-22"
+    ],
+    "referenceCaution": "Reference dates are planned collection windows,not reassigned dates for the historical workbook. Other site changes occurred;no clean attribution."
   },
   "releaseObservations": [
     {
@@ -145,7 +184,20 @@
       "stage": "Initial expected-head update safely rejected after daily-review commits advanced main;rebased local work onto latest head,retained all new observations. Tested website source bytes unchanged.",
       "parentBeforeMerge": "f953120705b4b9e479b77b1de17a9eddbc176173",
       "retainedNewParent": "a4ce89d301ae0d9a499c47cb40ded01ea9dc1e4f"
+    },
+    {
+      "observedOn": "2026-10-22",
+      "checkedAtUtc": "2026-10-22T07:38:53Z",
+      "codeCommit": "ad0580b42238b267d26dd2481d9e37de7a433b3f",
+      "stage": "Cloudflare successful;formal page/new content+FAQ/source links/metadata/sitemap verified.No Google indexing,query,rank or click gain established."
     }
   ],
-  "performanceObservations": []
+  "performanceObservations": [],
+  "liveDate": "2026-10-22",
+  "release": {
+    "cloudflareStatus": "success",
+    "deploymentId": "2847ee62-06ca-46ef-8058-5ab44feb23c7",
+    "deploymentUrl": "https://2847ee62.chinaease-buddy.pages.dev",
+    "verifiedAtUtc": "2026-10-22T07:38:53Z"
+  }
 }
