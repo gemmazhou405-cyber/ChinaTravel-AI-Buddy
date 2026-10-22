@@ -1,0 +1,119 @@
+{
+  "modified": "2026-10-22",
+  "checkedOn": "October 22, 2026",
+  "quickAnswer": "With three full days in Shanghai, group the old-city sights and the Bund on Day 1, walk the former French Concession and central neighbourhoods on Day 2, then use Day 3 for Pudong plus a museum, riverfront, or carefully chosen day trip. Shanghai is compact compared with Beijing, but transfers, queues, heat, rain, and large museums can still make an overfilled plan tiring. Check live opening hours and reservation rules, save every destination in Chinese, and keep one indoor alternative for poor weather. Use the opening-day and museum-venue checks below before fixing the order.",
+  "gardenNote": "Start in the Yuyuan Garden and City God Temple area after checking the garden's live opening, ticket, and entry arrangements. Go earlier if you prefer quieter lanes. If this falls on a Monday, use the alternative order below rather than assuming the ticketed garden will open.",
+  "museumNote": "Choose the actual museum venue from the comparison above. Allow its transfer and visit to replace a substantial part of the Pudong day instead of squeezing it between several skyline stops.",
+  "sections": [
+    {
+      "title": "A Monday–Wednesday Shanghai itinerary alternative",
+      "table": {
+        "headers": [
+          "Day",
+          "Suggested focus",
+          "Before you commit"
+        ],
+        "rows": [
+          [
+            "Monday",
+            "Shanghai Museum East, then one manageable Pudong stop",
+            "Check the East venue; allow its transfer rather than assuming it is next to Lujiazui"
+          ],
+          [
+            "Tuesday",
+            "Yu Garden and the Bund route",
+            "Confirm garden access; the museum East normally closes on Tuesdays"
+          ],
+          [
+            "Wednesday",
+            "Wukang Road and central neighbourhoods",
+            "Choose a museum or cultural stop that fits your interests and its current programme"
+          ]
+        ]
+      },
+      "items": [
+        "This is an alternative order for three full sightseeing days on an ordinary Monday–Wednesday, not three extra days. Adjust it around your actual dates, bookings, weather and mobility.",
+        "Yu Garden normally closes on Mondays, except national holidays. Check the ticketed historic garden separately from the surrounding shopping and temple area.",
+        "Holiday opening and temporary notices can change the ordinary pattern. Check the official visitor pages before choosing timed activities."
+      ],
+      "links": [
+        {
+          "label": "Yu Garden official visitor information",
+          "description": "Check the garden opening day, admission and gate for your visit.",
+          "href": "https://www.yugarden.com.cn/page/articleview/message.html"
+        }
+      ]
+    },
+    {
+      "title": "Shanghai Museum East vs People's Square: choose the right venue",
+      "table": {
+        "headers": [
+          "Museum",
+          "Map address",
+          "Usual closed day",
+          "Choose it for"
+        ],
+        "rows": [
+          [
+            "Shanghai Museum East / 上海博物馆东馆",
+            "1952 Century Avenue, Pudong",
+            "Tuesday, except national holidays",
+            "Permanent collections; allow a separate museum block in Pudong"
+          ],
+          [
+            "Shanghai Museum on People's Square / 上海博物馆",
+            "201 Renmin Avenue, Huangpu",
+            "Monday, except national holidays",
+            "The current special exhibition; check the programme and ticket"
+          ]
+        ]
+      },
+      "items": [
+        "Checked October 22, 2026: the operator says the People's Square venue is devoted to its Americas civilisations exhibition from July 9, 2026 to November 14, 2027, with no other displays. Use East for permanent collections during that arrangement.",
+        "East currently allows individual visits without a general advance reservation. Carry original valid ID; the Curio-City, Digital Gallery and ticketed exhibitions have separate booking or admission conditions.",
+        "East is in Pudong, but it still needs its own transfer from the Lujiazui skyline area. Choose one principal museum visit and reduce the other stops to match your available time.",
+        "Use the chosen venue's current entry deadline and exhibition instructions. Special sessions and temporary changes may differ from an old general museum guide."
+      ],
+      "links": [
+        {
+          "label": "Shanghai Museum East: official visit guide",
+          "description": "Check opening, ID, individual entry and special reservations.",
+          "href": "https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-east"
+        },
+        {
+          "label": "Shanghai Museum on People's Square: official visit guide",
+          "description": "Check the current exhibition, admission and entry session.",
+          "href": "https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-west"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can I visit Yu Garden on a Monday?",
+      "answer": "The historic garden normally closes on Mondays, except national holidays. Use the Monday alternative above and check official notices for your date; garden access is separate from the surrounding area."
+    },
+    {
+      "question": "Which Shanghai Museum should I choose for permanent collections?",
+      "answer": "Choose Shanghai Museum East under the current arrangement. The People's Square venue is dedicated to an Americas exhibition from July 9, 2026 to November 14, 2027. Recheck the operator's programme before visiting."
+    },
+    {
+      "question": "Is Shanghai Museum East open on Tuesday?",
+      "answer": "East normally closes on Tuesdays, except national holidays. The People's Square venue usually closes on Mondays, so choose the venue and programme before setting the day."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Yu Garden official visitor information",
+      "href": "https://www.yugarden.com.cn/page/articleview/message.html"
+    },
+    {
+      "label": "Shanghai Museum East official visit guide",
+      "href": "https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-east"
+    },
+    {
+      "label": "Shanghai Museum on People's Square official visit guide",
+      "href": "https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-west"
+    }
+  ]
+}

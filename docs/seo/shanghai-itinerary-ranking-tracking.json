@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "changeId": "SEO-2026-10-22-SHANGHAI-OPENING-DAYS",
+  "classification": "scoped_tourist_planning_content_test_and_dated_venue_update",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks",
+  "status": "validated_ready_to_publish",
+  "page": "https://chinaeasebuddy.com/3-day-shanghai-itinerary/",
+  "codeCommits": [],
+  "baseline": {
+    "source": {
+      "filename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
+      "sha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+      "searchType": "Web",
+      "periodLabel": "Last 28 days vs previous 28 days",
+      "actualDateBounds": null,
+      "postChangeResult": false
+    },
+    "current": {
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0.0,
+      "pageAveragePosition": 36.8
+    },
+    "exactPageQueries": null,
+    "indexingState": null,
+    "latestGoogleCrawl": null,
+    "googleSelectedCanonical": null,
+    "siteWideQueryClues": [
+      {
+        "query": "3 days in shanghai",
+        "clicks": 0,
+        "impressions": 1,
+        "averagePosition": 75.0,
+        "scope": "site_wide_not_assigned_to_page"
+      },
+      {
+        "query": "what to do in shanghai for 3 days",
+        "clicks": 0,
+        "impressions": 1,
+        "averagePosition": 76.0,
+        "scope": "site_wide_not_assigned_to_page"
+      },
+      {
+        "query": "shanghai itinerary 3 days",
+        "clicks": 0,
+        "impressions": 1,
+        "averagePosition": 79.0,
+        "scope": "site_wide_not_assigned_to_page"
+      },
+      {
+        "query": "shanghai 3 days itinerary",
+        "clicks": 0,
+        "impressions": 1,
+        "averagePosition": 81.0,
+        "scope": "site_wide_not_assigned_to_page"
+      }
+    ],
+    "marketMonthlyVolume": null,
+    "keywordDifficulty": null
+  },
+  "selectionEvidence": {
+    "tourismIntent": "Destination and duration planning for visitors choosing Shanghai sightseeing days and a museum venue. Topic-based intent inference,not measured visitor identity.",
+    "demand": "10historical page impressions plus4separately scoped whole-site trip-query clues;not monthly market demand or proof of large volume.",
+    "ranking": "36.8 is page-average position;the four visible whole-site queries average75–81 and cannot be attributed to this page. No confirmed near-top-ten keyword.",
+    "confirmedGap": "Formal page has no Monday notice or named East/People's Square comparison. Generic museum advice misses different closure days and current dated venue programme.",
+    "publicPageBefore": {
+      "url": "https://chinaeasebuddy.com/3-day-shanghai-itinerary/",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-22T10:04:35+00:00",
+      "sha256": "0d6917d439ad2b2bc10262d0462ccffabc6c959ede67dcdd4e4ce9c8058d8876",
+      "hasMondayNotice": false,
+      "hasMuseumVenueNames": false
+    },
+    "competitiveCheck": {
+      "url": "https://siyechina.com/destinations/shanghai-travel-guide/",
+      "checkedOn": "2026-10-22",
+      "observation": "Publisher already has a detailed3-day first-timer itinerary including Museum East andbooking checks. This is an established content topic,not an empty search market.",
+      "scope": "Visible first-party content only;not live market-specificGoogle top ten,DR/backlinks,KD or search volume."
+    },
+    "decision": "Small source-backed tourist-planning content test anddated venue update. Not a proven high-volume,low-competition or highest-return keyword opportunity.",
+    "whyNow": "September21body has no existing action/window;newly revised calculator,budget,7/10/14-day anddestination bodies remain unchanged."
+  },
+  "candidateQueries": [
+    "shanghai itinerary 3 days",
+    "3 days in shanghai",
+    "shanghai itinerary monday",
+    "shanghai museum east vs people's square",
+    "yu garden closed monday"
+  ],
+  "queryCaution": "Candidates only. Exact-page coverage,monthly volume,KD,country/device positions and query relevance remain unknown. Previously recorded same-session Ahrefs insufficient-plan result retained;no substituted values or repeated login request.",
+  "change": {
+    "sharedSource": "src/data/shanghaiVisitPlanning.json",
+    "scope": "Add2shared planning sections,3FAQs and3operator sources;append quick-answer pointer andreplace2generic day pointers. Date venue notice andgive Monday–Wednesday alternative.",
+    "originalSectionsRetained": 8,
+    "totalSections": 10,
+    "originalFaqsRetained": 7,
+    "totalFaqCount": 10,
+    "modified": "2026-10-22",
+    "wholeGuideReviewedRetained": "September21,2026",
+    "retained": [
+      "Search title,description,H1,URL,canonical andCTA",
+      "All formerrelated links and4source links",
+      "Other public page bodies and tool algorithms",
+      "76sitemapURLs;only targetactual lastmod changes"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://www.yugarden.com.cn/page/articleview/message.html",
+      "checkedOn": "2026-10-22",
+      "kind": "operator_primary",
+      "supports": "Garden Monday closure with national-holiday exceptions;distinguish historic garden from surroundings."
+    },
+    {
+      "url": "https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-east",
+      "checkedOn": "2026-10-22",
+      "kind": "operator_primary",
+      "supports": "East address,normal Tuesday closure,individual admission and separate special reservations."
+    },
+    {
+      "url": "https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-west",
+      "checkedOn": "2026-10-22",
+      "kind": "operator_primary",
+      "supports": "People's Square Monday closure,address and dated Americas-only exhibition arrangement;permanent displays directed to East."
+    }
+  ],
+  "sourceConflictHandling": "The operator's current People's Square page has a2026exhibition programme andentry-session details that differ from an older2025municipal summary. Do not apply that older blanket no-reservation/general-hours guidance to both venues. No fixedlast-entry time or universally free/no-booking museum claim added.",
+  "hypothesis": "A correct venue and opening-day choice may better answer practical first-visit Shanghai planning. Ranking andclick gains untested.",
+  "relatedRecentChanges": [
+    {
+      "changeId": "SEO-2026-10-22-SEVEN-DAY-ROUTE",
+      "codeCommit": "d2d6360124de36a55841ed9f61d3e7ae24e342e3",
+      "relationship": "Added an incoming city-guide link onOct22."
+    },
+    {
+      "changeId": "SEO-2026-10-22-TEN-DAY-ROUTE",
+      "codeCommit": "2d01e91994ba9fcb3222d1c8b480445e2ad6e141",
+      "relationship": "Added an incoming city-guide link onOct22."
+    }
+  ],
+  "validation": {
+    "typecheck": "passed_i18n_andTypeScript",
+    "lint": "passed_with_one_preexisting_PricingPlans_fast_refresh_warning",
+    "build": "passed_full_production_pipeline",
+    "reactStaticParity": "passed10identicalsections_and10FAQpairs",
+    "publicHtmlAudit": "passed_all_built_HTML_checks",
+    "sharedContentAndFaqSchema": "passed10matchingFAQpairs_andnewdatedsections_inrawHTML",
+    "searchMetadata": "matches_captured_formal_before_HTML",
+    "sitemap": {
+      "urlCount": 76,
+      "inventoryUnchanged": true,
+      "changedLastmodOnly": {
+        "https://chinaeasebuddy.com/3-day-shanghai-itinerary/": [
+          "2026-09-21",
+          "2026-10-22"
+        ]
+      }
+    },
+    "mobileBrowserQA": "not_completed_known_missing_Chromium_executable",
+    "formalDomain": "pending"
+  },
+  "publication": {
+    "status": "not_published",
+    "firstFormalVerifiedAt": null
+  },
+  "review": {
+    "decision": "awaiting_evidence",
+    "postChangePerformance": "not_available",
+    "googlePostChangeCrawl": null,
+    "samePageSameQueryRanking": null,
+    "stronglyRelevantClicks": null,
+    "provisional7DayWindow": null,
+    "provisional28DayWindow": null,
+    "rule": "After formal verification use complete adjacent,equal,nonoverlapping windows withmatchingWeb/page/country/device filters. Add later crawl-based windows if needed;data completeness andsample adequacy govern decisions.",
+    "attributionCaution": "Incoming links from7-day/10-day pages changedonOct22. Treat the body andrecent link exposure as overlapping influences;do not isolate a causalbody effect from aggregate outcomes.",
+    "referenceToExistingEvidencePriority": "Calculator indexed report andbudget exact-pageQueries remain first;no new immediate export request."
+  },
+  "serviceNoticeWatch": {
+    "lastPrimaryCheckOn": "2026-10-22",
+    "checkAtEveryScheduledReview": true,
+    "sources": [
+      "https://www.yugarden.com.cn/page/articleview/message.html",
+      "https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-east",
+      "https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-west"
+    ],
+    "watchFor": [
+      "Weekly closures andholiday overrides",
+      "East individual/special-entry instructions",
+      "People's Square programme changes andpermanent-display availability"
+    ],
+    "datedProgrammeWindow": [
+      "2026-07-09",
+      "2027-11-14"
+    ],
+    "doNotAssumeRestoredCollectionsAfterDate": true,
+    "failureRule": "If a source cannot be retrieved,retain uncertainty andoldcheckdate. Do not claim unchanged operations orrefresh verification without new primary evidence."
+  },
+  "observations": [
+    {
+      "at": "2026-10-22T10:13:19+00:00",
+      "type": "selection_and_local_validation",
+      "summary": "DirectformalHTTP200 confirms missing venue/day guidance. Newprimary-source content passesbuild,types,parity,FAQschema andfullHTMLaudit. No newGSCoutcome evidence."
+    }
+  ]
+}

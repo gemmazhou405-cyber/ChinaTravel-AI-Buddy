@@ -71,3 +71,12 @@ Ahrefs的项目列表和关键词概览本轮均返回 `Insufficient plan`，未
 直接正式HTTP200确认旧quick answer4+3+3=10晚，却Day10离境；西安至上海换城时间模糊。修正为4+2+3=9晚，Day5/7明确换城，补充4+3+2历史方案及5+4慢行方案和城市/订票/预算入口。14天页4+3+3+3=13晚已一致，不修改；近期7天等版本保留观察。竞品https://chinatrailhead.com/itineraries/10-days-china/已有9晚与换城日安排，不能据此声称低竞争。此为准确性修复及小范围规划内容测试，搜索收益待验证。细节见`ten-day-itinerary-ranking-tracking.json`；计算器和预算证据请求仍优先。
 
 10天行程补记：`2d01e91`已正式生效，Oct22 08:36:32UTC直接HTTP200核验11章节、8FAQ/schema、9晚说明与两次换城日、内链、self-canonical和搜索metadata。正式sitemap精确匹配76URL版本，仅目标lastmod改变。Cloudflare部署`42095696-7c77-4650-9da1-d27a143d7824`成功。手机视觉QA因缺少浏览器未完成。完整7天暂定Oct23–29，28天Oct23–Nov19，收录/修改后抓取/同词排名/相关点击仍待验证。
+
+
+## 后续筛选：上海三日的场馆与闭馆日
+
+`/3-day-shanghai-itinerary/`历史0点击/10展示/页面平均36.8。全站`3 days in shanghai`、`what to do in shanghai for 3 days`、`shanghai itinerary 3 days`、`shanghai 3 days itinerary`各1展示，平均75/76/79/81，未归属本页，不是接近前十或搜索量证据。月量/KD未知。
+
+正式原页没有周一提醒或两馆对照。原运营方资料确认豫园周一、上博东馆周二、人民广场馆周一的通常闭馆规则与节假日例外；人民广场馆当前展期安排另有日期，常设展应选东馆。补两节日期化规划、周一至三改排、三FAQ和三运营方链接，保留原8节/7FAQ、搜索metadata和内链。旧2025政府摘要与当前运营方门票/时段细节不同，不发布泛化免费/免预约或固定最晚入馆时间。
+
+竞品https://siyechina.com/destinations/shanghai-travel-guide/已有三日路线与东馆，不是空白市场。此为小范围游客规划内容测试，非已证实的低竞争高收益机会。Oct22新7/10天页已有指向本页的链接，后续结果不能单独归因于本文；详见`shanghai-itinerary-ranking-tracking.json`及运营公告复核规则。计算器与预算证据请求仍优先。

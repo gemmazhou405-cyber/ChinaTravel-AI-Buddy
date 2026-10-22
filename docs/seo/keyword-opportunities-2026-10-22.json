@@ -472,6 +472,80 @@
         "status": "live_verified",
         "postChangeSearchEffect": "awaiting_evidence"
       }
+    },
+    {
+      "date": "2026-10-22",
+      "candidateUrl": "https://chinaeasebuddy.com/3-day-shanghai-itinerary/",
+      "actionId": "SEO-2026-10-22-SHANGHAI-OPENING-DAYS",
+      "selectionEvidence": {
+        "tourismIntent": "Destination and duration planning for visitors choosing Shanghai sightseeing days and a museum venue. Topic-based intent inference,not measured visitor identity.",
+        "demand": "10historical page impressions plus4separately scoped whole-site trip-query clues;not monthly market demand or proof of large volume.",
+        "ranking": "36.8 is page-average position;the four visible whole-site queries average75–81 and cannot be attributed to this page. No confirmed near-top-ten keyword.",
+        "confirmedGap": "Formal page has no Monday notice or named East/People's Square comparison. Generic museum advice misses different closure days and current dated venue programme.",
+        "publicPageBefore": {
+          "url": "https://chinaeasebuddy.com/3-day-shanghai-itinerary/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-22T10:04:35+00:00",
+          "sha256": "0d6917d439ad2b2bc10262d0462ccffabc6c959ede67dcdd4e4ce9c8058d8876",
+          "hasMondayNotice": false,
+          "hasMuseumVenueNames": false
+        },
+        "competitiveCheck": {
+          "url": "https://siyechina.com/destinations/shanghai-travel-guide/",
+          "checkedOn": "2026-10-22",
+          "observation": "Publisher already has a detailed3-day first-timer itinerary including Museum East andbooking checks. This is an established content topic,not an empty search market.",
+          "scope": "Visible first-party content only;not live market-specificGoogle top ten,DR/backlinks,KD or search volume."
+        },
+        "decision": "Small source-backed tourist-planning content test anddated venue update. Not a proven high-volume,low-competition or highest-return keyword opportunity.",
+        "whyNow": "September21body has no existing action/window;newly revised calculator,budget,7/10/14-day anddestination bodies remain unchanged."
+      },
+      "candidateQueries": [
+        "shanghai itinerary 3 days",
+        "3 days in shanghai",
+        "shanghai itinerary monday",
+        "shanghai museum east vs people's square",
+        "yu garden closed monday"
+      ],
+      "queryObservations": [
+        {
+          "query": "3 days in shanghai",
+          "clicks": 0,
+          "impressions": 1,
+          "averagePosition": 75.0,
+          "scope": "site_wide_not_assigned_to_page"
+        },
+        {
+          "query": "what to do in shanghai for 3 days",
+          "clicks": 0,
+          "impressions": 1,
+          "averagePosition": 76.0,
+          "scope": "site_wide_not_assigned_to_page"
+        },
+        {
+          "query": "shanghai itinerary 3 days",
+          "clicks": 0,
+          "impressions": 1,
+          "averagePosition": 79.0,
+          "scope": "site_wide_not_assigned_to_page"
+        },
+        {
+          "query": "shanghai 3 days itinerary",
+          "clicks": 0,
+          "impressions": 1,
+          "averagePosition": 81.0,
+          "scope": "site_wide_not_assigned_to_page"
+        }
+      ],
+      "pageBaseline": {
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0.0,
+        "pageAveragePosition": 36.8
+      },
+      "marketMonthlyVolume": null,
+      "keywordDifficulty": null,
+      "sourceRecord": "docs/seo/shanghai-itinerary-ranking-tracking.json",
+      "decision": "Scoped datedvenue/weekday test withtourist intent andprimary-source gap;not a high-volume/low-competition claim."
     }
   ]
 }

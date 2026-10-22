@@ -18,6 +18,7 @@ const beijingThreeDayPlanning = JSON.parse(await readFile('src/data/beijingThree
 const zhangjiajieTianmenUpdate = JSON.parse(await readFile('src/data/zhangjiajieTianmenUpdate.json', 'utf8'));
 const sevenDayItineraryContent = JSON.parse(await readFile('src/data/sevenDayItineraryContent.json', 'utf8'));
 const tenDayItineraryContent = JSON.parse(await readFile('src/data/tenDayItineraryContent.json', 'utf8'));
+const shanghaiVisitPlanning = JSON.parse(await readFile('src/data/shanghaiVisitPlanning.json', 'utf8'));
 const firstTimeItineraryContent = JSON.parse(await readFile('src/data/firstTimeItineraryContent.json', 'utf8'));
 const pandaBaseGuide = JSON.parse(await readFile('src/data/seoPages/chengdu-panda-base-guide.json', 'utf8'));
 const didiPaymentGuide = JSON.parse(await readFile('src/data/seoPages/didi-payment-for-foreigners.json', 'utf8'));
@@ -2111,9 +2112,9 @@ const pageMeta = {
     title: '3-Day Shanghai Itinerary for First-Time Visitors (2026)',
     heading: '3-Day Shanghai Itinerary for First-Time Visitors (2026)',
     description: 'Plan three days in Shanghai with the Bund, Yuyuan Garden, Wukang Road, Pudong, museums, hotel areas, transport, food, costs, and alternatives.',
-    quickAnswer: 'With three full days in Shanghai, group the old-city sights and the Bund on Day 1, walk the former French Concession and central neighbourhoods on Day 2, then use Day 3 for Pudong plus a museum, riverfront, or carefully chosen day trip. Shanghai is compact compared with Beijing, but transfers, queues, heat, rain, and large museums can still make an overfilled plan tiring. Check live opening hours and reservation rules, save every destination in Chinese, and keep one indoor alternative for poor weather.',
+    quickAnswer: shanghaiVisitPlanning.quickAnswer,
     lastReviewed: 'September 21, 2026',
-    lastModified: '2026-09-21',
+    lastModified: shanghaiVisitPlanning.modified,
     article: true,
     contentSections: [
       {
@@ -2132,11 +2133,12 @@ const pageMeta = {
           'Do not add Suzhou, Hangzhou, Zhujiajiao, Shanghai Disney, and every central landmark to the same three-day visit. Each addition replaces a city day rather than fitting around it.',
         ],
       },
+      ...shanghaiVisitPlanning.sections,
       {
         title: 'Day 1: Yuyuan Garden, old Shanghai, and the Bund',
         ordered: true,
         items: [
-          'Start in the Yuyuan Garden and City God Temple area after checking the garden\'s live opening, ticket, and entry arrangements. Go earlier if you prefer quieter lanes.',
+          shanghaiVisitPlanning.gardenNote,
           'Allow time to distinguish the historic garden from the surrounding commercial streets; trying to photograph every lane can consume the whole morning.',
           'Continue toward the Bund and walk a focused section of the waterfront. The Shanghai municipal government describes it as a 1.5-kilometre protected historical district.',
           'Cross to or view Pudong when visibility is good, but save the deeper Pudong visit for Day 3 instead of repeatedly crossing the river.',
@@ -2159,7 +2161,7 @@ const pageMeta = {
         items: [
           'Visit Lujiazui and the Pudong riverfront for the contrast with the Bund. Choose one observation deck only if visibility and the live price justify it.',
           'The Oriental Pearl Tower is listed by Shanghai\'s municipal visitor pages as a combined sightseeing, dining, shopping, exhibition, and entertainment complex.',
-          'Add one nearby museum, riverside walk, or indoor attraction instead of moving repeatedly between both sides of the Huangpu River.',
+          shanghaiVisitPlanning.museumNote,
           'If modern Shanghai is not your priority, replace Pudong with the Shanghai Museum, an art district, a food-focused day, or a slower neighbourhood route.',
           'Keep the final evening near the hotel when departing early the next morning, and verify the complete airport or railway-station name and terminal before bed.',
         ],
@@ -2221,6 +2223,7 @@ const pageMeta = {
       },
     ],
     faqs: [
+      ...shanghaiVisitPlanning.faqs.map(({ question, answer }) => [question, answer]),
       ['Are three days enough for Shanghai?', 'Yes. Three full days are enough for the Bund and old city, central historic neighbourhoods, and Pudong or a major museum. Three hotel nights with a late arrival and early departure are not the same as three full sightseeing days.'],
       ['What should I not miss on a first Shanghai trip?', 'Prioritise the Bund, one old-city or traditional sight such as Yuyuan Garden, one historic neighbourhood walk, and the Pudong skyline contrast. Add museums, food, shopping, or nightlife according to your interests.'],
       ['Should I stay near the Bund or in the former French Concession?', 'Stay near the Bund or People\'s Square for classic sights and central connections; choose the former French Concession area for neighbourhood walks and cafés. The exact hotel-to-metro distance and passport check-in matter more than the label.'],
@@ -2230,6 +2233,7 @@ const pageMeta = {
       ['Can ChinaEase Buddy personalise this Shanghai itinerary?', 'Yes. Share your dates, flights or trains, hotel, group, interests, walking ability, budget, and fixed bookings to receive a route adapted to the real trip.'],
     ],
     sourceLinks: [
+      ...shanghaiVisitPlanning.sources.map(({ label, href }) => [label, href]),
       ['Shanghai Municipal Government: scenic spots', 'https://english.shanghai.gov.cn/en-ScenicSpots/'],
       ['Shanghai Municipal Government: transportation', 'https://english.shanghai.gov.cn/en-Transportation/'],
       ['Shanghai Municipal Government: museums and galleries', 'https://english.shanghai.gov.cn/en-MuseumsGalleries/'],
@@ -5167,7 +5171,7 @@ function staticPageContent(page, meta) {
               ${section.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
             </${section.ordered ? 'ol' : 'ul'}>
           ` : ''}
-          ${['amap-english-mode-guide-2026', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary', '10-day-china-itinerary'].includes(page) && section.links ? `
+          ${['amap-english-mode-guide-2026', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary', '10-day-china-itinerary', '3-day-shanghai-itinerary'].includes(page) && section.links ? `
             <ul style="margin: 12px 0 0; padding-left: 20px; color: #536365; line-height: 1.8;">
               ${section.links.map(({ label, description, href }) => `<li><a href="${escapeAttr(href)}" rel="noopener noreferrer" style="color: #155e63; text-underline-offset: 4px;">${escapeHtml(label)}</a>: ${escapeHtml(description)}</li>`).join('')}
             </ul>

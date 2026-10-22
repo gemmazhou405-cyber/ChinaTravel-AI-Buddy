@@ -16,6 +16,7 @@ import beijingThreeDayPlanning from '../data/beijingThreeDayPlanning.json';
 import zhangjiajieTianmenUpdate from '../data/zhangjiajieTianmenUpdate.json';
 import sevenDayItineraryContent from '../data/sevenDayItineraryContent.json';
 import tenDayItineraryContent from '../data/tenDayItineraryContent.json';
+import shanghaiVisitPlanning from '../data/shanghaiVisitPlanning.json';
 import ChinaTripCostEstimator from './ChinaTripCostEstimator';
 import firstTimeItineraryContent from '../data/firstTimeItineraryContent.json';
 import pandaBaseGuide from '../data/seoPages/chengdu-panda-base-guide.json';
@@ -3525,12 +3526,11 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     metaTitle: '3-Day Shanghai Itinerary for First-Time Visitors (2026)',
     metaDescription:
       'Plan three days in Shanghai with the Bund, Yuyuan Garden, Wukang Road, Pudong, museums, hotel areas, transport, food, costs, and alternatives.',
-    quickAnswer:
-      'With three full days in Shanghai, group the old-city sights and the Bund on Day 1, walk the former French Concession and central neighbourhoods on Day 2, then use Day 3 for Pudong plus a museum, riverfront, or carefully chosen day trip. Shanghai is compact compared with Beijing, but transfers, queues, heat, rain, and large museums can still make an overfilled plan tiring. Check live opening hours and reservation rules, save every destination in Chinese, and keep one indoor alternative for poor weather.',
+    quickAnswer: shanghaiVisitPlanning.quickAnswer,
     ctaLabel: 'Get my personalised Shanghai itinerary',
     ctaHref: '/#trip-plan',
     lastReviewed: 'September 21, 2026',
-    lastModified: '2026-09-21',
+    lastModified: shanghaiVisitPlanning.modified,
     isArticle: true,
     sections: [
       {
@@ -3549,11 +3549,12 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'Do not add Suzhou, Hangzhou, Zhujiajiao, Shanghai Disney, and every central landmark to the same three-day visit. Each addition replaces a city day rather than fitting around it.',
         ],
       },
+      ...shanghaiVisitPlanning.sections,
       {
         title: 'Day 1: Yuyuan Garden, old Shanghai, and the Bund',
         ordered: true,
         items: [
-          'Start in the Yuyuan Garden and City God Temple area after checking the garden\'s live opening, ticket, and entry arrangements. Go earlier if you prefer quieter lanes.',
+          shanghaiVisitPlanning.gardenNote,
           'Allow time to distinguish the historic garden from the surrounding commercial streets; trying to photograph every lane can consume the whole morning.',
           'Continue toward the Bund and walk a focused section of the waterfront. The Shanghai municipal government describes it as a 1.5-kilometre protected historical district.',
           'Cross to or view Pudong when visibility is good, but save the deeper Pudong visit for Day 3 instead of repeatedly crossing the river.',
@@ -3576,7 +3577,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
         items: [
           'Visit Lujiazui and the Pudong riverfront for the contrast with the Bund. Choose one observation deck only if visibility and the live price justify it.',
           'The Oriental Pearl Tower is listed by Shanghai\'s municipal visitor pages as a combined sightseeing, dining, shopping, exhibition, and entertainment complex.',
-          'Add one nearby museum, riverside walk, or indoor attraction instead of moving repeatedly between both sides of the Huangpu River.',
+          shanghaiVisitPlanning.museumNote,
           'If modern Shanghai is not your priority, replace Pudong with the Shanghai Museum, an art district, a food-focused day, or a slower neighbourhood route.',
           'Keep the final evening near the hotel when departing early the next morning, and verify the complete airport or railway-station name and terminal before bed.',
         ],
@@ -3638,6 +3639,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     faqs: [
+      ...shanghaiVisitPlanning.faqs,
       {
         question: 'Are three days enough for Shanghai?',
         answer:
@@ -3689,6 +3691,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'Get a personalised Shanghai itinerary', href: '/#trip-plan' },
     ],
     sources: [
+      ...shanghaiVisitPlanning.sources,
       { label: 'Shanghai Municipal Government: scenic spots', href: 'https://english.shanghai.gov.cn/en-ScenicSpots/' },
       { label: 'Shanghai Municipal Government: transportation', href: 'https://english.shanghai.gov.cn/en-Transportation/' },
       { label: 'Shanghai Municipal Government: museums and galleries', href: 'https://english.shanghai.gov.cn/en-MuseumsGalleries/' },

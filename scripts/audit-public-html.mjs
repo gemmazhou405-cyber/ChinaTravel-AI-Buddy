@@ -177,8 +177,8 @@ const pages = [
   {
     path: '/3-day-shanghai-itinerary/',
     h1: /3-Day Shanghai Itinerary for First-Time Visitors.*2026/i,
-    keywords: ['The Bund', 'Yuyuan Garden', 'Wukang Road', 'Pudong', 'People\'s Square', 'Hongqiao', 'Railway 12306'],
-    links: ['/#trip-plan', '/3-day-beijing-itinerary/', '/beijing-vs-shanghai/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/best-time-to-visit-china/', '/china-train-travel-guide/', '/china-metro-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/first-trip-to-china/'],
+    keywords: ['The Bund', 'Yuyuan Garden', 'Wukang Road', 'Pudong', 'People\'s Square', 'Hongqiao', 'Railway 12306', 'A Monday–Wednesday Shanghai itinerary alternative', 'Shanghai Museum East vs People\'s Square: choose the right venue', 'July 9, 2026 to November 14, 2027', 'Tuesday, except national holidays'],
+    links: ['https://www.yugarden.com.cn/page/articleview/message.html', 'https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-east', 'https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-west', '/#trip-plan', '/3-day-beijing-itinerary/', '/beijing-vs-shanghai/', '/7-day-china-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/best-time-to-visit-china/', '/china-train-travel-guide/', '/china-metro-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/first-trip-to-china/'],
   },
   {
     path: '/3-day-xian-itinerary/',

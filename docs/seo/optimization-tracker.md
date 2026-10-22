@@ -307,3 +307,10 @@ Reviewed all30URLs/36actionIDs and14source tracking records under tourist-intent
 代码`2d01e91994ba9fcb3222d1c8b480445e2ad6e141`，Cloudflare部署`42095696-7c77-4650-9da1-d27a143d7824`成功。08:36:32UTC正式原始HTTP200核验11节、8FAQ/schema、默认4+2+3=9晚、Day5/7换城与旧10晚句移除、城市/订票/预算入口、self-canonical及原搜索metadata；sitemap精确匹配76URL构建，仅目标实际lastmod改变。完整构建后立即检查新正文和全部HTML审计通过；手机视觉QA缺浏览器未完成。
 
 动作`SEO-2026-10-22-TEN-DAY-ROUTE`首个完整7天暂定Oct23–29、28天Oct23–Nov19。参考窗口Oct16–22及Sep25–Oct22，最后一天含发布及其他编辑，不作干净因果对照；若Google抓取更晚，追加抓取后窗口。当前33精确URL、39唯一动作ID（44动作引用）。没有新的Google抓取、关键词归属/覆盖、同词排名或强相关点击结果，结论待验证。计算器与预算证据请求优先。
+
+
+### 2026-10-22 上海三日场馆与星期安排待发布
+
+`SEO-2026-10-22-SHANGHAI-OPENING-DAYS`：原页0点击/10展示/页面平均36.8，精确页面查询与月量/KD未知。针对已核实的运营方信息补周一至三改排、上博东馆与人民广场馆区别、日期化展期提示及3FAQ/3官方源，React和原始HTML共享新增内容；保留原8节/7FAQ及搜索metadata。新总10节/10FAQ，类型/i18n、lint（原有warning）、构建、原始HTML及schema一致性审计通过；sitemap76URL仅本页lastmod变动。手机视觉QA缺浏览器未完成。
+
+7/10天页Oct22已增加入链，复盘需考虑共同影响。后续跟踪修改后Google抓取、精确同页词和强相关点击；维护`serviceNoticeWatch`，来源无法读取时保留未知，不自动延长核验日期。不把发布或事实补齐当作搜索收益。
