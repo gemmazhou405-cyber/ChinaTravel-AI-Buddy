@@ -874,21 +874,26 @@
       "recordedChangeDates": [
         "2026-10-22"
       ],
-      "latestConfirmedLiveDate": null,
+      "latestConfirmedLiveDate": "2026-10-22",
       "priority": 4,
-      "decision": "awaiting_publication",
+      "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
-        "confirmed production-live date",
         "current URL Inspection and modification-after-crawl evidence",
         "complete exact-page Queries comparison with actual dates",
         "strong-relevance clicks and same-query ranking outcomes"
       ],
-      "provisional7DayWindow": null,
-      "provisional28DayWindow": null,
-      "earliest7DayAvailabilityCheck": null,
-      "earliest28DayAvailabilityCheck": null,
-      "nextAction": "Verify formal-domain emergency body and metadata after publication, then set provisional windows.",
+      "provisional7DayWindow": [
+        "2026-10-23",
+        "2026-10-29"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-23",
+        "2026-11-19"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-30",
+      "earliest28DayAvailabilityCheck": "2026-11-20",
+      "nextAction": "Check evidence/data completeness at the appropriate review; retain version pending supported decision. One-impression baseline is sparse.",
       "windowCaution": "Publication is not evidence of Google processing or ranking/click gains; one-impression baseline is sparse."
     }
   ],
@@ -903,6 +908,13 @@
       "type": "technical_repair_added",
       "changeId": "SEO-2026-10-22-EMERGENCY-STATIC",
       "summary": "Emergency raw-HTML body mismatch repaired locally; queue now28exactURLs/32distinctIDs, publication and GSC outcome pending."
+    },
+    {
+      "date": "2026-10-22",
+      "checkedAtUtc": "2026-10-22T02:37:00Z",
+      "type": "formal_publication_verified",
+      "changeId": "SEO-2026-10-22-EMERGENCY-STATIC",
+      "summary": "Emergency body and phone links verified on formal domain; queue28URLs/32IDs, provisional review windows set; no GSC outcomes supplied."
     }
   ]
 }

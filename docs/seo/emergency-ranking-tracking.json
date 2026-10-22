@@ -3,9 +3,11 @@
   "changeId": "SEO-2026-10-22-EMERGENCY-STATIC",
   "primaryOutcome": "strongly_relevant_google_organic_clicks",
   "url": "https://chinaeasebuddy.com/china-emergency-numbers/",
-  "status": "local_verified_pending_publication",
-  "liveDate": null,
-  "codeCommits": [],
+  "status": "live_verified",
+  "liveDate": "2026-10-22",
+  "codeCommits": [
+    "7f2d0af400bfec23252adb4a2683891146dc00ee"
+  ],
   "baseline": {
     "source": "User-provided October21 whole-site GSC comparison workbook",
     "sha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
@@ -108,13 +110,18 @@
     "oldProductionFixtureRejection": "PASS: enhanced audit rejects captured old body lacking required sections/phrases/phone links",
     "targetHtmlAndSitemap": "PASS: four sections/phone hrefs, six phrases, four FAQ/JSON-LD entries and sources; metadata/CTA/internal links retained; same76URLs, only target lastmod changed",
     "diffCheck": "PASS",
-    "production": "pending"
+    "production": "PASS: formal HTTP200, no X-Robots-Tag, all shared sections/phone hrefs/phrases/FAQ/source links and JSON-LD; unchanged search metadata/CTA/internal links; same76sitemapURLs, only target date changed"
   },
   "production": {
-    "newContentVerified": false,
-    "checkedAt": null,
+    "newContentVerified": true,
+    "checkedAt": "2026-10-22T02:37:00Z",
     "googleRecrawlConfirmed": false,
-    "rankingOrClickGainConfirmed": false
+    "rankingOrClickGainConfirmed": false,
+    "httpStatus": 200,
+    "xRobotsTag": null,
+    "staticBodyAndPhoneChecks": "PASS",
+    "metadataRetained": "PASS",
+    "structuredData": "PASS"
   },
   "followUp": {
     "provisionalFirstCompleteWindow": [
@@ -144,6 +151,18 @@
     {
       "observedOn": "2026-10-22",
       "stage": "Local build/audit/focused checks pass; formal publication and outcome still pending."
+    },
+    {
+      "observedOn": "2026-10-22",
+      "checkedAt": "2026-10-22T02:37:00Z",
+      "stage": "Cloudflare deployment succeeded; formal raw HTML and sitemap verified. No Google processing or performance outcome established."
     }
-  ]
+  ],
+  "release": {
+    "cloudflareStatus": "success",
+    "deploymentId": "d2ffe4a8-3a6f-47b6-8699-c8ea60409d7f",
+    "deploymentUrl": "https://d2ffe4a8.chinaease-buddy.pages.dev",
+    "formalContentVerified": true,
+    "verifiedAtUtc": "2026-10-22T02:37:00Z"
+  }
 }
