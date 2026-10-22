@@ -1,0 +1,309 @@
+{
+  "modified": "2026-10-22",
+  "intro": "A 10-day, 9-night first China trip through Beijing, Xi'an and Shanghai, with both intercity travel days, nightly hotel bases and slower alternatives made explicit.",
+  "quickAnswer": "For ten calendar days in China, including arrival on Day 1 and departure on Day 10, start with four nights in Beijing, two in Xi'an and three in Shanghai: nine hotel nights in total. Keep Day 5 for the Beijing–Xi'an move and Day 7 for travel to Shanghai. That leaves six main full sightseeing days for imperial sights, the Great Wall, the Terracotta Warriors and Shanghai. Book around actual flights, 12306 services and attraction availability. For more Xi'an history, move one Shanghai night there; for slower travel, use only Beijing and Shanghai.",
+  "sections": [
+    {
+      "title": "10 days in China: 9 hotel nights and 2 transfer days",
+      "table": {
+        "headers": [
+          "Base",
+          "Hotel nights",
+          "Dates in this sample"
+        ],
+        "rows": [
+          [
+            "Beijing",
+            "4",
+            "Nights after Days 1–4"
+          ],
+          [
+            "Xi'an",
+            "2",
+            "Nights after Days 5–6"
+          ],
+          [
+            "Shanghai",
+            "3",
+            "Nights after Days 7–9"
+          ],
+          [
+            "Total",
+            "9",
+            "Arrive on Day 1 and depart on Day 10"
+          ]
+        ]
+      },
+      "items": [
+        "This plan counts ten calendar dates in China, including the arrival date and the departure date. Use the local dates on your flight tickets; the flight out of your home country may fall on a different date.",
+        "Days 5 and 7 are intercity travel days. The main full sightseeing days are Days 2, 3, 4, 6, 8 and 9; an arrival evening or a departure morning is extra time only if your actual flights allow it.",
+        "Ten hotel nights would normally require an eleventh calendar date. Confirm the nine actual hotel nights before booking the route below."
+      ]
+    },
+    {
+      "title": "The 10-day route at a glance",
+      "table": {
+        "headers": [
+          "Day",
+          "Overnight base",
+          "Main plan"
+        ],
+        "rows": [
+          [
+            "Day 1",
+            "Beijing",
+            "Arrive, check in, set up data and payments, and keep the evening light"
+          ],
+          [
+            "Day 2",
+            "Beijing",
+            "Palace Museum / Forbidden City and Jingshan, arranged around your confirmed booking"
+          ],
+          [
+            "Day 3",
+            "Beijing",
+            "One Great Wall section with outward and return transport planned"
+          ],
+          [
+            "Day 4",
+            "Beijing",
+            "Temple of Heaven and a nearby walking area, or choose the Summer Palace instead"
+          ],
+          [
+            "Day 5",
+            "Xi'an",
+            "Travel from Beijing to Xi'an; add a City Wall or Bell and Drum Tower walk only if the actual arrival time allows"
+          ],
+          [
+            "Day 6",
+            "Xi'an",
+            "Terracotta Warriors with return transport, followed by an easy evening"
+          ],
+          [
+            "Day 7",
+            "Shanghai",
+            "Travel from Xi'an to Shanghai; check in and keep any local walk optional"
+          ],
+          [
+            "Day 8",
+            "Shanghai",
+            "Yu Garden or the old-city area, the Bund and a manageable skyline-viewing route"
+          ],
+          [
+            "Day 9",
+            "Shanghai",
+            "Choose neighbourhoods, a museum, architecture or one nearby day trip"
+          ],
+          [
+            "Day 10",
+            "No hotel night included",
+            "Departure transfer to the correct airport and terminal; any local stop depends on the actual flight time"
+          ]
+        ]
+      },
+      "items": [
+        "The overnight column adds up to four Beijing nights, two Xi'an nights and three Shanghai nights: nine in total.",
+        "Arrange the Palace Museum date first, then reorder the Beijing days around the confirmed ticket, opening days and weather. Use the city guide for Monday alternatives.",
+        "This is a suggested route, not a confirmed set of train or attraction reservations. Arrival and departure buffers take priority over optional sightseeing."
+      ],
+      "links": [
+        {
+          "label": "Beijing sightseeing and booking details",
+          "description": "Choose the imperial, Great Wall and third city day around actual opening days.",
+          "href": "/3-day-beijing-itinerary/"
+        }
+      ]
+    },
+    {
+      "title": "Days 1–4: Beijing",
+      "items": [
+        "Day 1 should stay light. International arrival, immigration, airport transfer, payment setup, and jet lag can consume more time than expected.",
+        "On a suitable booked day, group the Palace Museum and Jingshan as a central sightseeing block. Check Tiananmen-area access separately instead of assuming one booking covers every site.",
+        "Give the Great Wall a full day. Transport time, security, walking, weather, and queues make it a poor fit for the same day as another major attraction.",
+        "Use Day 4 for the Temple of Heaven and hutongs, or choose the Summer Palace instead. Trying to cover every famous Beijing sight reduces the quality of the trip.",
+        "Stay near a useful metro line rather than choosing only by straight-line distance to one attraction."
+      ]
+    },
+    {
+      "title": "Days 5–6: Xi'an with one full sightseeing day",
+      "items": [
+        "Use Day 5 for the Beijing–Xi'an journey, hotel transfer and check-in. Check the exact departure and arrival stations on 12306 instead of planning around a generic city name.",
+        "If time and energy remain, choose a City Wall section or the Bell and Drum Tower area near a workable hotel route. Do not make a major timed attraction depend on an on-time train arrival.",
+        "Keep Day 6 for the Terracotta Warriors. Include outward and return transport, entry, walking and luggage arrangements rather than assuming it is a short city-centre visit.",
+        "The default route has only two Xi'an nights and one full sightseeing day. It does not promise the Terracotta Warriors, Shaanxi History Museum and several Tang-culture sites in the same day.",
+        "For more Xi'an museum time, use the history-focused nine-night split below or extend the trip. Day 7 is the Shanghai transfer, not another full Xi'an sightseeing day."
+      ],
+      "links": [
+        {
+          "label": "Xi'an sights and a longer city plan",
+          "description": "Use the three-day city guide to choose priorities; the complete plan requires more time than this two-night stop.",
+          "href": "/3-day-xian-itinerary/"
+        }
+      ]
+    },
+    {
+      "title": "Transfer days: Beijing to Xi'an and Xi'an to Shanghai",
+      "table": {
+        "headers": [
+          "Day and leg",
+          "Plan around",
+          "Keep optional"
+        ],
+        "rows": [
+          [
+            "Day 5: Beijing → Xi'an",
+            "Live train, exact stations, checkout, station access, security, arrival and hotel transfer",
+            "A nearby evening walk after check-in"
+          ],
+          [
+            "Day 7: Xi'an → Shanghai",
+            "Compare rail and air by total door-to-door time, baggage, fare and actual arrival hour",
+            "A short local walk; no promised full Bund-and-Yu-Garden day"
+          ]
+        ]
+      },
+      "items": [
+        "A longer train and a flight can use very different blocks of the day. Choose the service first, then decide whether any local sightseeing fits; this guide does not assume a particular train, fare or flight exists.",
+        "Keep the last intercity move on Day 7 rather than immediately before the Day 10 international departure. If you book a return flight from Beijing, budget another travel block and shorten the route."
+      ],
+      "links": [
+        {
+          "label": "12306 booking with a foreign passport",
+          "description": "Confirm the real station names, ticket details and boarding process before fixing the hotel dates.",
+          "href": "/china-train-booking-foreigners-12306/"
+        }
+      ]
+    },
+    {
+      "title": "Days 7–10: Shanghai arrival, two city days and departure",
+      "items": [
+        "Day 7 is the arrival and check-in day from Xi'an. Keep the evening flexible; it is not counted as a full Shanghai sightseeing day.",
+        "Use Day 8 for an old-city or Yu Garden block and the Bund, with a skyline view if conditions allow. Avoid repeated river crossings just to tick off more stops.",
+        "Use Day 9 for neighbourhoods, a museum, architecture, food or one nearby day trip. Choose a theme rather than adding all of them.",
+        "Day 10 is the departure date. Confirm the exact airport, terminal and transfer buffer before adding any short local stop; an early flight may leave no sightseeing time."
+      ],
+      "links": [
+        {
+          "label": "Shanghai routes by neighbourhood",
+          "description": "Select the two full city days that suit your interests and hotel location.",
+          "href": "/3-day-shanghai-itinerary/"
+        }
+      ]
+    },
+    {
+      "title": "Book these items before departure",
+      "ordered": true,
+      "items": [
+        "International flights and hotels with clear foreign-guest policies, flexible cancellation, and addresses saved in Chinese.",
+        "The Palace Museum through its official ticket channel, plus any other Beijing sites that currently require timed reservations.",
+        "Terracotta Warriors admission through the official museum or a clearly authorised sales channel.",
+        "Beijing–Xi'an and Xi'an–Shanghai transport when the relevant booking window opens; use the passport details exactly.",
+        "A mainland China eSIM or roaming plan, Alipay, WeChat, AMap Global, and an offline translation option.",
+        "Airport transfers or late-night arrival plans for any leg that ends after normal public-transport hours."
+      ]
+    },
+    {
+      "title": "How to pace the trip well",
+      "items": [
+        "Treat arrival and intercity travel as real itinerary time, not empty space between attractions.",
+        "Plan one major anchor experience per day and add nearby optional stops only when energy, weather, and queues allow.",
+        "Keep at least one flexible half-day. Weather, attraction closures, ticket availability, and fatigue can change the best plan.",
+        "Avoid changing hotels inside the same city unless the location problem is severe; packing and check-in cost more time than expected.",
+        "Use a personalised route if you have children, limited mobility, food allergies, a very early flight, or specialist interests."
+      ]
+    },
+    {
+      "title": "Useful route alternatives",
+      "items": [
+        "Nature priority: replace Shanghai with Guilin and Yangshuo, but allow for the additional transfer complexity.",
+        "Food and pandas: replace Shanghai with Chengdu, especially if a slower western-China finish suits the trip.",
+        "Open-jaw flights: arrive in Beijing and depart from Shanghai when fares and entry rules work, avoiding a return to the first city.",
+        "Choose a different split before booking the hotels. More nights in one base must replace nights elsewhere if departure stays on Day 10."
+      ],
+      "table": {
+        "headers": [
+          "Route style",
+          "Nine-night split",
+          "Trade-off"
+        ],
+        "rows": [
+          [
+            "Classic first trip",
+            "4 Beijing + 2 Xi'an + 3 Shanghai",
+            "Three Beijing sightseeing days, one Xi'an day and two Shanghai days"
+          ],
+          [
+            "More Xi'an history",
+            "4 Beijing + 3 Xi'an + 2 Shanghai",
+            "Move to Shanghai on Day 8; keep Day 9 for its main sights"
+          ],
+          [
+            "Slower two-city trip",
+            "5 Beijing + 4 Shanghai",
+            "Move on Day 6; fewer hotel changes and more room for rest or nearby outings"
+          ]
+        ]
+      }
+    },
+    {
+      "title": "Budget the 10 days and nine hotel nights",
+      "items": [
+        "Price the four Beijing, two Xi'an and three Shanghai hotel nights for the actual local check-in dates, including room occupancy and cancellation terms.",
+        "Keep intercity train or flight quotes separate from daily food, local transport, attractions and data. International flights and major intercity journeys are additional to the budget tool's daily-spending estimate.",
+        "Use the group and per-person calculator results as planning ranges, then replace accommodation and transport assumptions with actual quotes. Do not treat a daily estimate as a confirmed nine-night hotel package."
+      ],
+      "links": [
+        {
+          "label": "Estimate a 10-day China trip budget",
+          "description": "Choose ten days, group size and travel style, then check the nine actual hotel nights and add international and intercity travel.",
+          "href": "/china-travel-budget/#cost-estimator"
+        }
+      ]
+    },
+    {
+      "title": "Common first-trip mistakes",
+      "items": [
+        "Adding four or five major cities to a 10-day trip and spending too much of the holiday in transit.",
+        "Booking the wrong railway station or airport because only the city name was checked.",
+        "Leaving major attraction reservations until arrival during weekends or holiday periods.",
+        "Planning every day from early morning to late night without accounting for jet lag, walking, heat, cold, or queues.",
+        "Depending on one payment method, one map app, or constant internet access.",
+        "Using a generic itinerary without adjusting it for flight times, hotel location, pace, interests, and mobility."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is 10 days enough for a first trip to China?",
+      "answer": "Yes for a focused route through Beijing, Xi'an and Shanghai. With arrival on Day 1 and departure on Day 10, this sample uses nine hotel nights, two intercity travel days and six main full sightseeing days."
+    },
+    {
+      "question": "What is the best 10-day China route for first-time visitors?",
+      "answer": "A practical starting point is four Beijing nights, two Xi'an nights and three Shanghai nights. Travel to Xi'an on Day 5, to Shanghai on Day 7, and leave on Day 10. Choose the alternative split if you want more museum time or fewer cities."
+    },
+    {
+      "question": "Does a 10-day China itinerary mean 10 hotel nights?",
+      "answer": "Not if you arrive on Day 1 and depart on Day 10: that is nine hotel nights. Ten nights usually span eleven calendar dates. Check the local flight dates before booking hotels."
+    },
+    {
+      "question": "Should I take trains or flights between the cities?",
+      "answer": "A high-speed train works well from Beijing to Xi'an. For Xi'an to Shanghai, compare a longer train with a flight based on the live schedule, total door-to-door time, luggage, and your preferred pace."
+    },
+    {
+      "question": "Do I need to reserve attractions in advance?",
+      "answer": "Yes for major timed or capacity-controlled attractions. The Palace Museum and the Terracotta Warriors should be checked through their official channels before travel, and requirements can change."
+    },
+    {
+      "question": "How much should I plan to spend?",
+      "answer": "Costs depend heavily on season, hotel standard, room sharing, transport, and paid experiences. Build separate allowances for hotels, intercity travel, local transport, attractions, food, and mobile data rather than relying on one universal daily figure."
+    },
+    {
+      "question": "Can I add Chengdu, Guilin, or Zhangjiajie to this route?",
+      "answer": "You can replace one core city, but adding another major city usually makes a 10-day trip rushed. For four cities, extend the trip or accept fewer full sightseeing days."
+    },
+    {
+      "question": "How can ChinaEase Buddy personalise this itinerary?",
+      "answer": "Share your dates, arrival city, trip length, interests, group size, and practical concerns. ChinaEase Buddy can turn the sample route into a personalised plan that reflects your actual flights and priorities."
+    }
+  ]
+}

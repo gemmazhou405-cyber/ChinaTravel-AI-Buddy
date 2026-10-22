@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "changeId": "SEO-2026-10-22-TEN-DAY-ROUTE",
+  "classification": "tourist_itinerary_accuracy_fix_and_scoped_content_test",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks",
+  "status": "validated_ready_to_publish",
+  "page": "https://chinaeasebuddy.com/10-day-china-itinerary/",
+  "codeCommits": [],
+  "baseline": {
+    "source": {
+      "filename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
+      "sha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+      "searchType": "Web",
+      "periodLabel": "Last 28 days vs previous 28 days",
+      "actualDateBounds": null,
+      "postChangeResult": false
+    },
+    "current": {
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0.0,
+      "pageAveragePosition": 83.44
+    },
+    "exactPageQueries": null,
+    "indexingState": null,
+    "latestGoogleCrawl": null,
+    "googleSelectedCanonical": null,
+    "siteWideQueryClues": [
+      {
+        "query": "china 10 day itinerary",
+        "clicks": 0,
+        "impressions": 3,
+        "averagePosition": 78.67,
+        "scope": "site_wide_not_assigned_to_page"
+      },
+      {
+        "query": "china itinerary 10 days",
+        "clicks": 0,
+        "impressions": 3,
+        "averagePosition": 87.67,
+        "scope": "site_wide_not_assigned_to_page"
+      },
+      {
+        "query": "10 day china itinerary",
+        "clicks": 0,
+        "impressions": 2,
+        "averagePosition": 83.0,
+        "scope": "site_wide_not_assigned_to_page"
+      },
+      {
+        "query": "10 day china trip",
+        "clicks": 0,
+        "impressions": 1,
+        "averagePosition": 86.0,
+        "scope": "site_wide_not_assigned_to_page"
+      }
+    ],
+    "marketMonthlyVolume": null,
+    "keywordDifficulty": null
+  },
+  "selectionEvidence": {
+    "tourismIntent": "China trip-duration and city-route planning for first-time visitors. Audience intent is inferred from wording, not measured visitor identity.",
+    "demand": "Nine historical page impressions and four separately scoped whole-site query clues. Not monthly market volume or proof of large demand.",
+    "ranking": "Page-average83.44 and whole-site query averages78.67–87.67 do not establish exact-page target-query ranks or a near-top-ten opportunity.",
+    "confirmedGap": "Formal quick answer allocates4 Beijing+3 Xi'an+3 Shanghai=10hotel nights, while leaving on Day10. Day7/8 copy leaves Xi'an–Shanghai travel ambiguous and can promise a full Shanghai day after a transfer. React and static route overviews use different structures.",
+    "publicPageBefore": {
+      "url": "https://chinaeasebuddy.com/10-day-china-itinerary/",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-22T08:25:08+00:00",
+      "sha256": "ec9cda32e4974fb56a1dd08eadaaf3be2d32f9b182179f1e03c168d46a63df39",
+      "oldTenNightSplit": true
+    },
+    "competitiveCheck": {
+      "url": "https://chinatrailhead.com/itineraries/10-days-china/",
+      "checkedOn": "2026-10-22",
+      "observation": "Publisher has a ten-day,nine-night Beijing/Xi'an/Shanghai route and explicit transfer days. Our4+2+3night split is an editorial choice,not competitor copy. Established content means this is not an empty search market.",
+      "scope": "Visible first-party content only; no live target-country/device Google top-ten positions,volume,KD or link authority verified."
+    },
+    "decision": "Accuracy correction plus scoped visitor-planning content test. Not selected as a proven high-volume,low-competition or highest-return ranking opportunity.",
+    "whyNow": "September18 page has no existing action or observation window. Keep recent7-day,14-day,budget,calculator and destination versions;14-day13-night math was checked and is already consistent."
+  },
+  "candidateQueries": [
+    "10 day china itinerary",
+    "china itinerary 10 days",
+    "china 10 day itinerary",
+    "10 day china trip"
+  ],
+  "queryCaution": "Observed whole-site wording is not page ownership. Exact-page coverage,monthly volume,KD and country/device positions remain unknown. Previously recorded same-session Ahrefs insufficient-plan failures retained; no repeated login or numerical substitutes.",
+  "change": {
+    "sharedSource": "src/data/tenDayItineraryContent.json",
+    "scope": "Unify10local calendar days/9hotel nights. Default4Beijing+2Xi'an+3Shanghai;explicitDay5/7travel blocks;history4+3+2and slower5+4alternatives;nightly bases,city,booking and budget links. Remove old ambiguous extra-night travel wording.",
+    "sections": 11,
+    "totalFaqCount": 8,
+    "modified": "2026-10-22",
+    "wholeGuideReviewedRetained": "September18,2026",
+    "retained": [
+      "Search title,meta description,H1,URL,canonical and CTA",
+      "All previous related and source links",
+      "Budget quoted only by existing calculator;no new price or fixed timetable claims",
+      "All other public page content including7-day/14-dayversions",
+      "76sitemapURLs;only target actuallastmod changes"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://www.12306.cn/en/index.html",
+      "checkedOn": "2026-10-22",
+      "supports": "Official timetable/booking entry already verified in this session. No fixed train,fare,duration or service availability asserted."
+    }
+  ],
+  "hypothesis": "A route with matching night totals and explicit intercity days may answer ten-day first-trip planning more usefully;search uplift untested.",
+  "validation": {
+    "typecheck": "passed_i18n_and_TypeScript",
+    "build": "passed_full_production_pipeline_then_same_process_target_content_assertions",
+    "lint": "passed_with_one_preexisting_PricingPlans_fast_refresh_warning",
+    "publicHtmlAudit": "passed_all_built_HTML_checks_against_same_process_local_HTTP_server",
+    "routeNightCounts": "passed10dates9nights_default4+2+3_and_all3alternative_splits",
+    "sharedContentAndFaqSchema": "passed11sections8identical_FAQ_pairs",
+    "searchMetadata": "exactly_matches_captured_before_formal_HTML",
+    "sitemap": "76URLs_same_inventory_only_targetlastmod_changes",
+    "mobileBrowserQA": "not_completed_environment_lacks_Chromium_executable",
+    "formalDomain": "pending"
+  },
+  "publication": {
+    "status": "not_published",
+    "firstFormalVerifiedAt": null
+  },
+  "review": {
+    "decision": "awaiting_evidence",
+    "postChangePerformance": "not_available",
+    "googlePostChangeCrawl": null,
+    "samePageSameQueryRanking": null,
+    "stronglyRelevantClicks": null,
+    "provisional7DayWindow": null,
+    "provisional28DayWindow": null,
+    "rule": "Start provisional complete windows after formal verification. Add crawl-based windows if Google recrawls later;use adjacent,equal,nonoverlapping windows and matchingWeb/page/country/device filters. No conclusion solely from a deadline or one-day movement.",
+    "referenceToExistingEvidencePriority": "Calculator indexed report and budget exact-page Queries remain first;no additional immediate export request."
+  },
+  "observations": [
+    {
+      "at": "2026-10-22T08:29:56+00:00",
+      "type": "selection_and_local_implementation",
+      "summary": "Confirmed old10-night split from direct formalHTTP200. Shared11-section route prepared;no newGooglecrawl/query/rank/relevant-click evidence."
+    },
+    {
+      "at": "2026-10-22T08:34:04+00:00",
+      "type": "local_validation",
+      "summary": "Initial generated artifact was stale. Regenerated with complete production pipeline and immediately asserted target content in same process;all11sections,8FAQ/schema pairs,nightmath,metadata andfullHTMLaudit pass. No browser visual pass claimed."
+    }
+  ]
+}

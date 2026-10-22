@@ -394,6 +394,78 @@
         "status": "live_verified",
         "postChangeSearchEffect": "awaiting_evidence"
       }
+    },
+    {
+      "date": "2026-10-22",
+      "candidateUrl": "https://chinaeasebuddy.com/10-day-china-itinerary/",
+      "actionId": "SEO-2026-10-22-TEN-DAY-ROUTE",
+      "selectionEvidence": {
+        "tourismIntent": "China trip-duration and city-route planning for first-time visitors. Audience intent is inferred from wording, not measured visitor identity.",
+        "demand": "Nine historical page impressions and four separately scoped whole-site query clues. Not monthly market volume or proof of large demand.",
+        "ranking": "Page-average83.44 and whole-site query averages78.67–87.67 do not establish exact-page target-query ranks or a near-top-ten opportunity.",
+        "confirmedGap": "Formal quick answer allocates4 Beijing+3 Xi'an+3 Shanghai=10hotel nights, while leaving on Day10. Day7/8 copy leaves Xi'an–Shanghai travel ambiguous and can promise a full Shanghai day after a transfer. React and static route overviews use different structures.",
+        "publicPageBefore": {
+          "url": "https://chinaeasebuddy.com/10-day-china-itinerary/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-22T08:25:08+00:00",
+          "sha256": "ec9cda32e4974fb56a1dd08eadaaf3be2d32f9b182179f1e03c168d46a63df39",
+          "oldTenNightSplit": true
+        },
+        "competitiveCheck": {
+          "url": "https://chinatrailhead.com/itineraries/10-days-china/",
+          "checkedOn": "2026-10-22",
+          "observation": "Publisher has a ten-day,nine-night Beijing/Xi'an/Shanghai route and explicit transfer days. Our4+2+3night split is an editorial choice,not competitor copy. Established content means this is not an empty search market.",
+          "scope": "Visible first-party content only; no live target-country/device Google top-ten positions,volume,KD or link authority verified."
+        },
+        "decision": "Accuracy correction plus scoped visitor-planning content test. Not selected as a proven high-volume,low-competition or highest-return ranking opportunity.",
+        "whyNow": "September18 page has no existing action or observation window. Keep recent7-day,14-day,budget,calculator and destination versions;14-day13-night math was checked and is already consistent."
+      },
+      "candidateQueries": [
+        "10 day china itinerary",
+        "china itinerary 10 days",
+        "china 10 day itinerary",
+        "10 day china trip"
+      ],
+      "queryObservations": [
+        {
+          "query": "china 10 day itinerary",
+          "clicks": 0,
+          "impressions": 3,
+          "averagePosition": 78.67,
+          "scope": "site_wide_not_assigned_to_page"
+        },
+        {
+          "query": "china itinerary 10 days",
+          "clicks": 0,
+          "impressions": 3,
+          "averagePosition": 87.67,
+          "scope": "site_wide_not_assigned_to_page"
+        },
+        {
+          "query": "10 day china itinerary",
+          "clicks": 0,
+          "impressions": 2,
+          "averagePosition": 83.0,
+          "scope": "site_wide_not_assigned_to_page"
+        },
+        {
+          "query": "10 day china trip",
+          "clicks": 0,
+          "impressions": 1,
+          "averagePosition": 86.0,
+          "scope": "site_wide_not_assigned_to_page"
+        }
+      ],
+      "pageBaseline": {
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0.0,
+        "pageAveragePosition": 83.44
+      },
+      "marketMonthlyVolume": null,
+      "keywordDifficulty": null,
+      "sourceRecord": "docs/seo/ten-day-itinerary-ranking-tracking.json",
+      "decision": "Fix concrete itinerary accuracy and test clearertravel blocks;not a quantifiedranking opportunity."
     }
   ]
 }

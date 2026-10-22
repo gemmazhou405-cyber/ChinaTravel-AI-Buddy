@@ -17,6 +17,7 @@ const tripCostEstimatorContent = JSON.parse(await readFile('src/data/tripCostEst
 const beijingThreeDayPlanning = JSON.parse(await readFile('src/data/beijingThreeDayPlanning.json', 'utf8'));
 const zhangjiajieTianmenUpdate = JSON.parse(await readFile('src/data/zhangjiajieTianmenUpdate.json', 'utf8'));
 const sevenDayItineraryContent = JSON.parse(await readFile('src/data/sevenDayItineraryContent.json', 'utf8'));
+const tenDayItineraryContent = JSON.parse(await readFile('src/data/tenDayItineraryContent.json', 'utf8'));
 const firstTimeItineraryContent = JSON.parse(await readFile('src/data/firstTimeItineraryContent.json', 'utf8'));
 const pandaBaseGuide = JSON.parse(await readFile('src/data/seoPages/chengdu-panda-base-guide.json', 'utf8'));
 const didiPaymentGuide = JSON.parse(await readFile('src/data/seoPages/didi-payment-for-foreigners.json', 'utf8'));
@@ -1744,109 +1745,12 @@ const pageMeta = {
     heading: '10-Day China Itinerary for First-Time Visitors',
     description:
       'Plan a classic 10-day China trip through Beijing, Xi\'an, and Shanghai with daily highlights, train advice, booking tips, and flexible alternatives.',
-    quickAnswer:
-      'For a first 10-day trip to China, use a simple three-city route: four nights in Beijing for imperial history and the Great Wall, three nights in Xi\'an for the Terracotta Warriors and Tang-era culture, and three nights in Shanghai for the old city, the Bund, and modern China. Travel from Beijing to Xi\'an by high-speed train, then choose a flight or longer train to Shanghai. Reserve the Palace Museum and Terracotta Warriors in advance, keep the first arrival day light, and avoid adding a fourth major city unless you are comfortable with a faster pace.',
+    quickAnswer: tenDayItineraryContent.quickAnswer,
     lastReviewed: 'September 18, 2026',
-    lastModified: '2026-09-18',
+    lastModified: tenDayItineraryContent.modified,
     article: true,
-    contentSections: [
-      {
-        title: 'The 10-day route at a glance',
-        items: [
-          'Day 1 — Beijing: arrive, check in, set up mobile data and payments, and take a short local walk.',
-          'Day 2 — Beijing: Tiananmen area, the Palace Museum (Forbidden City), and Jingshan Park.',
-          'Day 3 — Beijing: Great Wall day trip; choose a section and transport plan that match your fitness and crowd tolerance.',
-          'Day 4 — Beijing: Temple of Heaven plus hutongs, or swap in the Summer Palace if gardens and architecture matter more to you.',
-          'Day 5 — Beijing to Xi\'an: high-speed train, hotel check-in, City Wall or Bell and Drum Tower area in the evening.',
-          'Day 6 — Xi\'an: Terracotta Warriors, then return to the city for an easy evening.',
-          'Day 7 — Xi\'an: Shaanxi history or Tang-culture sights, Giant Wild Goose Pagoda area, then evening travel or one more night.',
-          'Day 8 — Shanghai: old-city sights, Yu Garden area, the Bund, and the Pudong skyline after dark.',
-          'Day 9 — Shanghai: French Concession-style streets and a museum, neighbourhood, or nearby water-town day trip.',
-          'Day 10 — Shanghai: flexible final morning, shopping or a missed highlight, then airport transfer.',
-        ],
-      },
-      {
-        title: 'Days 1–4: Beijing',
-        items: [
-          'Day 1 should stay light. International arrival, immigration, airport transfer, payment setup, and jet lag can consume more time than expected.',
-          'On Day 2, group the Tiananmen area, Palace Museum, and Jingshan because they form one logical central route. Check each site\'s current reservation and entry rules before travel.',
-          'Give the Great Wall a full day. Transport time, security, walking, weather, and queues make it a poor fit for the same day as another major attraction.',
-          'Use Day 4 for the Temple of Heaven and hutongs, or choose the Summer Palace instead. Trying to cover every famous Beijing sight reduces the quality of the trip.',
-          'Stay near a useful metro line rather than choosing only by straight-line distance to one attraction.',
-        ],
-      },
-      {
-        title: 'Days 5–7: Xi\'an',
-        items: [
-          'Take a daytime high-speed train from Beijing to Xi\'an so you can experience China\'s rail system and avoid another airport transfer.',
-          'After arrival, keep Day 5 flexible: walk a section of the City Wall or explore the Bell and Drum Tower area if energy allows.',
-          'Reserve Day 6 for the Terracotta Warriors. The museum is outside central Xi\'an, so include the round-trip transport time and avoid stacking too many city attractions afterward.',
-          'On Day 7, choose the Shaanxi History Museum or another Tang-history focus, then visit the Giant Wild Goose Pagoda area. Confirm current reservation requirements.',
-          'Travel to Shanghai in the evening only if the schedule is comfortable. Otherwise leave the next morning and simplify Day 8.',
-        ],
-      },
-      {
-        title: 'Days 8–10: Shanghai',
-        items: [
-          'Use the first full day to contrast old and new Shanghai: Yu Garden or the old-city area, the Bund, and the Pudong skyline.',
-          'Use Day 9 for slower neighbourhood exploration, a museum, contemporary architecture, or a nearby water town. Pick one theme rather than crossing the city repeatedly.',
-          'Keep Day 10 partly open for weather changes, a missed attraction, shopping, or an unhurried airport transfer.',
-          'Shanghai has multiple airports and railway stations. Confirm the exact departure point and allow a realistic transfer buffer.',
-        ],
-      },
-      {
-        title: 'Book these items before departure',
-        ordered: true,
-        items: [
-          'International flights and hotels with clear foreign-guest policies, flexible cancellation, and addresses saved in Chinese.',
-          'The Palace Museum through its official ticket channel, plus any other Beijing sites that currently require timed reservations.',
-          'Terracotta Warriors admission through the official museum or a clearly authorised sales channel.',
-          'Beijing–Xi\'an and Xi\'an–Shanghai transport when the relevant booking window opens; use the passport details exactly.',
-          'A mainland China eSIM or roaming plan, Alipay, WeChat, AMap Global, and an offline translation option.',
-          'Airport transfers or late-night arrival plans for any leg that ends after normal public-transport hours.',
-        ],
-      },
-      {
-        title: 'How to pace the trip well',
-        items: [
-          'Treat arrival and intercity travel as real itinerary time, not empty space between attractions.',
-          'Plan one major anchor experience per day and add nearby optional stops only when energy, weather, and queues allow.',
-          'Keep at least one flexible half-day. Weather, attraction closures, ticket availability, and fatigue can change the best plan.',
-          'Avoid changing hotels inside the same city unless the location problem is severe; packing and check-in cost more time than expected.',
-          'Use a personalised route if you have children, limited mobility, food allergies, a very early flight, or specialist interests.',
-        ],
-      },
-      {
-        title: 'Useful route alternatives',
-        items: [
-          'Nature priority: replace Shanghai with Guilin and Yangshuo, but allow for the additional transfer complexity.',
-          'Food and pandas: replace Shanghai with Chengdu, especially if a slower western-China finish suits the trip.',
-          'Modern cities: replace Xi\'an with Shenzhen and Hong Kong only if entry documents and cross-border plans are already clear.',
-          'Slower travel: keep only Beijing and Shanghai and add day trips instead of moving through three cities.',
-          'Open-jaw flights: arrive in Beijing and depart from Shanghai when fares and entry rules work, avoiding a return to the first city.',
-        ],
-      },
-      {
-        title: 'Common first-trip mistakes',
-        items: [
-          'Adding four or five major cities to a 10-day trip and spending too much of the holiday in transit.',
-          'Booking the wrong railway station or airport because only the city name was checked.',
-          'Leaving major attraction reservations until arrival during weekends or holiday periods.',
-          'Planning every day from early morning to late night without accounting for jet lag, walking, heat, cold, or queues.',
-          'Depending on one payment method, one map app, or constant internet access.',
-          'Using a generic itinerary without adjusting it for flight times, hotel location, pace, interests, and mobility.',
-        ],
-      },
-    ],
-    faqs: [
-      ['Is 10 days enough for a first trip to China?', 'Yes. Ten days is enough for a focused first trip through Beijing, Xi\'an, and Shanghai if you limit hotel changes and treat intercity travel as part of the itinerary. It is not enough to see every major region comfortably.'],
-      ['What is the best 10-day China route for first-time visitors?', 'Beijing, Xi\'an, and Shanghai is the clearest classic route: imperial history and the Great Wall, the Terracotta Warriors and Tang culture, then historic and modern Shanghai.'],
-      ['Should I take trains or flights between the cities?', 'A high-speed train works well from Beijing to Xi\'an. For Xi\'an to Shanghai, compare a longer train with a flight based on the live schedule, total door-to-door time, luggage, and your preferred pace.'],
-      ['Do I need to reserve attractions in advance?', 'Yes for major timed or capacity-controlled attractions. The Palace Museum and the Terracotta Warriors should be checked through their official channels before travel, and requirements can change.'],
-      ['How much should I plan to spend?', 'Costs depend heavily on season, hotel standard, room sharing, transport, and paid experiences. Build separate allowances for hotels, intercity travel, local transport, attractions, food, and mobile data rather than relying on one universal daily figure.'],
-      ['Can I add Chengdu, Guilin, or Zhangjiajie to this route?', 'You can replace one core city, but adding another major city usually makes a 10-day trip rushed. For four cities, extend the trip or accept fewer full sightseeing days.'],
-      ['How can ChinaEase Buddy personalise this itinerary?', 'Share your dates, arrival city, trip length, interests, group size, and practical concerns. ChinaEase Buddy can turn the sample route into a personalised plan that reflects your actual flights and priorities.'],
-    ],
+    contentSections: tenDayItineraryContent.sections,
+    faqs: tenDayItineraryContent.faqs.map(({ question, answer }) => [question, answer]),
     sourceLinks: [
       ['The Palace Museum official international website', 'https://intl.dpm.org.cn/index.html'],
       ['Emperor Qinshihuang\'s Mausoleum Site Museum official website', 'https://www.bmy.com.cn/'],
@@ -4700,6 +4604,8 @@ const pageRelatedLinks = {
     ['Get a personalised China itinerary', '/#trip-plan'],
   ],
   '10-day-china-itinerary': [
+    ["3-day Shanghai itinerary", "/3-day-shanghai-itinerary/"],
+    ["3-day Beijing itinerary", "/3-day-beijing-itinerary/"],
     ['Compare 7, 10 and 14-day China itineraries', '/china-itinerary-first-time-7-10-14-days/'],
     ['3-day Xi\'an itinerary', '/3-day-xian-itinerary/'],
     ['First trip to China', '/first-trip-to-china/'],
@@ -5261,7 +5167,7 @@ function staticPageContent(page, meta) {
               ${section.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
             </${section.ordered ? 'ol' : 'ul'}>
           ` : ''}
-          ${['amap-english-mode-guide-2026', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary'].includes(page) && section.links ? `
+          ${['amap-english-mode-guide-2026', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary', '10-day-china-itinerary'].includes(page) && section.links ? `
             <ul style="margin: 12px 0 0; padding-left: 20px; color: #536365; line-height: 1.8;">
               ${section.links.map(({ label, description, href }) => `<li><a href="${escapeAttr(href)}" rel="noopener noreferrer" style="color: #155e63; text-underline-offset: 4px;">${escapeHtml(label)}</a>: ${escapeHtml(description)}</li>`).join('')}
             </ul>

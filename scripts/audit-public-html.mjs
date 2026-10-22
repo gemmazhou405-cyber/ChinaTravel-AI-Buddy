@@ -152,8 +152,9 @@ const pages = [
   {
     path: '/10-day-china-itinerary/',
     h1: /10-Day China Itinerary for First-Time Visitors/i,
-    keywords: ['Beijing', 'Xi\'an', 'Shanghai', 'Palace Museum', 'Terracotta Warriors', 'high-speed train'],
-    links: ['/#trip-plan', '/china-itinerary-first-time-7-10-14-days/', '/first-trip-to-china/', '/7-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/best-time-to-visit-china/', '/china-travel-budget/', '/china-train-travel-guide/', '/china-travel-apps/'],
+    keywords: ['Beijing', 'Xi\'an', 'Shanghai', 'Palace Museum', 'Terracotta Warriors', 'high-speed train', '10 days in China: 9 hotel nights and 2 transfer days', 'No hotel night included', 'Day 7 is the Shanghai transfer', 'six main full sightseeing days'],
+    forbiddenPhrases: ['three nights in Xi\'an for the Terracotta Warriors and Tang-era culture'],
+    links: ['/3-day-beijing-itinerary/', '/3-day-xian-itinerary/', '/3-day-shanghai-itinerary/', '/china-train-booking-foreigners-12306/', '/china-travel-budget/#cost-estimator', '/#trip-plan', '/china-itinerary-first-time-7-10-14-days/', '/first-trip-to-china/', '/7-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/best-time-to-visit-china/', '/china-travel-budget/', '/china-train-travel-guide/', '/china-travel-apps/'],
   },
   {
     path: '/14-day-china-itinerary/',

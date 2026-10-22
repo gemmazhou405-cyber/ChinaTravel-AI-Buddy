@@ -62,3 +62,10 @@ Ahrefs的项目列表和关键词概览本轮均返回 `Insufficient plan`，未
 标题摘要、网址、CTA和原费用区间保留；最近改动的其他页面保留观察。发布、Google重新抓取、同页同词和相关点击分别记录。详见`seven-day-itinerary-ranking-tracking.json`。已有计算器和预算数据请求仍优先，不立即新增第三项导出要求。
 
 7天行程补记：`d2d6360`已正式生效，Oct22 08:12:21UTC直接HTTP200核验12章节、8FAQ及schema、6晚说明、内链、自引用canonical和搜索metadata；旧7晚句消失。正式sitemap与本地76URL版本一致。Cloudflare部署`c962d7f1-6c5c-42ee-bf55-9c242d60b529`成功。手机视觉QA未完成（缺少浏览器），不声称通过；Google抓取与相关点击/同词排名仍待验证。
+
+
+## 后续筛选：10天行程的9晚与换城时间
+
+`/10-day-china-itinerary/`历史0点击/9展示/页面平均83.44；全站`china 10 day itinerary`3展示/78.67、`china itinerary 10 days`3/87.67、`10 day china itinerary`2/83、`10 day china trip`1/86，不归属本页，不能称为接近前十的词。月搜索量/KD未知。
+
+直接正式HTTP200确认旧quick answer4+3+3=10晚，却Day10离境；西安至上海换城时间模糊。修正为4+2+3=9晚，Day5/7明确换城，补充4+3+2历史方案及5+4慢行方案和城市/订票/预算入口。14天页4+3+3+3=13晚已一致，不修改；近期7天等版本保留观察。竞品https://chinatrailhead.com/itineraries/10-days-china/已有9晚与换城日安排，不能据此声称低竞争。此为准确性修复及小范围规划内容测试，搜索收益待验证。细节见`ten-day-itinerary-ranking-tracking.json`；计算器和预算证据请求仍优先。

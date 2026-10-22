@@ -222,6 +222,19 @@
         "pageAveragePosition": 31.5
       },
       "exactPageQueryIntentConfirmed": false
+    },
+    {
+      "url": "https://chinaeasebuddy.com/10-day-china-itinerary/",
+      "priority": 2,
+      "reason": "Direct trip-duration planning with a formally confirmed day/night mismatch;9historical impressions are a small clue,not high volume or near-top-ten proof.",
+      "workState": "Oct22nine-night route test prepared;validation/publication pending.",
+      "baseline": {
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0.0,
+        "pageAveragePosition": 83.44
+      },
+      "exactPageQueryIntentConfirmed": false
     }
   ],
   "nextEvidencePriority": [
@@ -288,6 +301,11 @@
       "date": "2026-10-22",
       "type": "seven_day_route_formally_verified",
       "summary": "One-week itinerary test live with unchanged metadata and76URL sitemap. Keep calculator first and all recent page observation windows."
+    },
+    {
+      "date": "2026-10-22",
+      "type": "ten_day_scoped_test",
+      "summary": "Prepare ten-day/nine-night accuracy and planning test;keepcalculator first andrecent7-day/14-day/budget versions unchanged."
     }
   ],
   "keywordEvidence": "docs/seo/keyword-opportunities-2026-10-22.json",

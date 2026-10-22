@@ -295,3 +295,8 @@ Reviewed all30URLs/36actionIDs and14source tracking records under tourist-intent
 代码`d2d6360124de36a55841ed9f61d3e7ae24e342e3`、Cloudflare部署`c962d7f1-6c5c-42ee-bf55-9c242d60b529`成功。08:12:21UTC正式目标页原始HTTP200核验12节、8FAQ/schema、逐晚住宿表、旧错误句移除、城市/订票/预算入口、self canonical、metadata与本地一致；正式sitemap精确匹配76URL，仅目标页实际lastmod更新。手机视觉QA因缺少浏览器未完成。
 
 `SEO-2026-10-22-SEVEN-DAY-ROUTE`完整7天暂定Oct23–29，28天Oct23–Nov19；参考窗口Oct16–22、Sep25–Oct22，最后一天含上线及其他改动，不能作干净因果对照。若Google后续抓取更晚，追加抓取后窗口；以GSC实际完整性和样本为准。队列32精确URL、38唯一动作ID（43动作引用）。没有Google修改后抓取、关键词归属/覆盖、同词排名或强相关点击新证据，结论待验证。
+
+
+### 2026-10-22 十天行程9晚与换城测试待发布
+
+`SEO-2026-10-22-TEN-DAY-ROUTE`：正式旧页4+3+3=10晚但Day10离境，西安至上海换城没有独立日期。改4北京+2西安+3上海=9晚，Day5/7换城、Day10离境；新增逐晚表、历史/慢行方案和城市/订票/预算入口，静态与React共享11节/8FAQ。历史0点击/9展示/页面平均83.44；全站10天查询线索不等于本页词排名，月量/KD未知。不宣称量化增长机会。14天13晚已一致、近期7天版本保留。待构建和正式核验后开始观察，无新Google抓取/排名/点击证据。
