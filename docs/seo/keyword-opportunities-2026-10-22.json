@@ -552,6 +552,67 @@
         "status": "live_verified",
         "postChangeSearchEffect": "awaiting_evidence"
       }
+    },
+    {
+      "date": "2026-10-22",
+      "candidateUrl": "https://chinaeasebuddy.com/3-day-chongqing-itinerary/",
+      "actionId": "SEO-2026-10-22-CHONGQING-MUSEUM-PLAN",
+      "selectionEvidence": {
+        "tourismIntent": "A destination-duration plan for prospective visitors choosing Chongqing sightseeing, museum entry and rail transfers. Topic-based inference, not verified visitor identity.",
+        "demand": "11 historical page impressions and one separately scoped whole-site query impression; monthly market demand is unknown.",
+        "ranking": "13.27 is a page-average position, not a target-query position. The visible whole-site trip query averages 79 and cannot be assigned to this page. No confirmed near-top-ten keyword.",
+        "confirmedGap": "The formal page has generic museum checks but no Monday closure or dated no-reservation notice, and no named rail approach linking Liziba to the museum.",
+        "publicPageBefore": {
+          "url": "https://chinaeasebuddy.com/3-day-chongqing-itinerary/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-22T13:38:48+00:00",
+          "sha256": "446589a382c6469b32ae0cfc2f71677c266c775a70c135631ec987efce6cf2d8",
+          "hasMondayNotice": false,
+          "hasZengjiayan": false,
+          "hasLizibaExitA": false
+        },
+        "competitiveCheck": {
+          "url": "https://chongqing.guide/en/guides/liziba-train/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-22T13:46:05+00:00",
+          "sha256": "698664987eec161739a221cc11c84a3c1d1f65cbd28ca40cd20ef4f9042950fb",
+          "observation": "An established publisher already distinguishes the Liziba ride and exterior photo, with Line 2 access and current-signage advice. The topic is not an empty content market.",
+          "scope": "Publisher page content only; not market-specific Google top-ten results, search volume, keyword difficulty or backlinks."
+        },
+        "decision": "Scoped tourist-planning content test supported by verified primary information. Not a proven high-volume, low-competition or highest-return keyword opportunity.",
+        "whyNow": "The September 22 body has no prior recorded content action; this fixes a verified practical gap while preserving recently edited calculator, budget, national-route and destination bodies."
+      },
+      "candidateQueries": [
+        "chongqing itinerary 3 days",
+        "chongqing 3 day itinerary",
+        "three gorges museum reservation",
+        "three gorges museum closed monday",
+        "liziba to three gorges museum"
+      ],
+      "queryObservations": [
+        {
+          "query": "chongqing 3 day itinerary",
+          "clicks": 0,
+          "impressions": 1,
+          "averagePosition": 79.0,
+          "scope": "site_wide_not_assigned_to_page"
+        }
+      ],
+      "pageBaseline": {
+        "clicks": 0,
+        "impressions": 11,
+        "ctr": 0.0,
+        "pageAveragePosition": 13.27
+      },
+      "marketMonthlyVolume": null,
+      "keywordDifficulty": null,
+      "sourceRecord": "docs/seo/chongqing-itinerary-ranking-tracking.json",
+      "decision": "Scoped tourist-planning content test with verified practical gaps; no high-volume or low-competition claim.",
+      "publication": {
+        "status": "pending",
+        "codeCommit": null,
+        "firstFormalVerifiedAt": null
+      }
     }
   ]
 }

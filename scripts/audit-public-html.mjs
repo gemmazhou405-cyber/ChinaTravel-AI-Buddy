@@ -189,8 +189,8 @@ const pages = [
   {
     path: '/3-day-chongqing-itinerary/',
     h1: /3-Day Chongqing Itinerary for First-Time Visitors.*2026/i,
-    keywords: ['Hongya Cave', 'Liziba', 'Three Gorges Museum', 'Jiefangbei', 'Ciqikou', 'Dazu Rock Carvings', 'Railway 12306'],
-    links: ['/#trip-plan', '/3-day-xian-itinerary/', '/3-day-beijing-itinerary/', '/3-day-shanghai-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/best-time-to-visit-china/', '/china-train-travel-guide/', '/china-metro-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/first-trip-to-china/'],
+    keywords: ['Hongya Cave', 'Liziba', 'Three Gorges Museum', 'Jiefangbei', 'Ciqikou', 'Dazu Rock Carvings', 'Railway 12306', 'Three Gorges Museum: entry rules and a Monday alternative', 'Monday, except national statutory holidays', 'November 3, 2025', 'Sunday–Tuesday', 'Zengjiayan', '236 Renmin Road'],
+    links: ['https://whlyw.cq.gov.cn/zwxx_221/bmdt/tzgg/202511/t20251103_15136009.html', 'https://www.cq.gov.cn/zjcq/cycq/jplyxl/dsy/dsjp/202608/t20260826_15982331.html', 'https://english.cq.gov.cn/specials/explore/PhotoPerfectSpots/202608/t20260810_15912642.html', '/#trip-plan', '/3-day-xian-itinerary/', '/3-day-beijing-itinerary/', '/3-day-shanghai-itinerary/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/best-time-to-visit-china/', '/china-train-travel-guide/', '/china-metro-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/first-trip-to-china/'],
   },
   {
     path: '/3-day-chengdu-itinerary/',

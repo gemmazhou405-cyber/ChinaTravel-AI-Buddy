@@ -82,3 +82,12 @@ Ahrefs的项目列表和关键词概览本轮均返回 `Insufficient plan`，未
 竞品https://siyechina.com/destinations/shanghai-travel-guide/已有三日路线与东馆，不是空白市场。此为小范围游客规划内容测试，非已证实的低竞争高收益机会。Oct22新7/10天页已有指向本页的链接，后续结果不能单独归因于本文；详见`shanghai-itinerary-ranking-tracking.json`及运营公告复核规则。计算器与预算证据请求仍优先。
 
 上海页补记：`72d6334`已正式生效，Oct22 10:18:06UTC直接原始HTTP200核验新两节、总10节/10FAQ及schema、3运营方链接、日期及节假日例外、原内链和搜索metadata、自引用canonical。正式sitemap匹配76URL构建，仅目标lastmod变化。Cloudflare部署`abc2481f-6775-48c4-a661-7dc596f8dd98`成功。已保留完整7/28天窗口与运营公告watch；Google修改后抓取、同词排名及相关点击仍待验证，不单独归因于本次正文。
+
+
+## 后续筛选：重庆三日行程的博物馆与轨道安排
+
+`/3-day-chongqing-itinerary/` 历史 0 点击、11 展示、页面平均位置 13.27；这是页面均值，不能称为某个词接近前十。全站 `chongqing 3 day itinerary` 仅 1 展示、平均 79，未归属此页。月搜索量与 KD 未知，已有 Ahrefs 方案不足结果不重复请求。
+
+正式旧页 HTTP 200 确认没有周一闭馆改排和具体轨道接驳。直接读取三份官方原文成功：馆方 2025-11-03 取消预约公告、政府 2026-08-26 博物馆地址/时间/交通指南、2026-08-10 李子坝介绍。补主馆免预约但需有效证件的日期化说明、通常周一闭馆及节假日例外、周日至周二改排、乘车与外部拍摄区别、2 号线曾家岩接驳。路线改排是编辑建议；不保证护照自动过闸或所有分馆免费。
+
+竞品 https://chongqing.guide/en/guides/liziba-train/ 已有乘车与拍照区分及线路说明；未据此推断 Google 前十、低竞争或高搜索量。此项为游客规划内容测试，保留最近修改页面。共享 2 新增/总 10 节，3 新增/总 10 FAQ；原搜索 metadata、内链、全指南审核日期保留。详见 `chongqing-itinerary-ranking-tracking.json`，发布和 Google 搜索结果分开核验。

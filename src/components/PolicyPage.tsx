@@ -17,6 +17,7 @@ import zhangjiajieTianmenUpdate from '../data/zhangjiajieTianmenUpdate.json';
 import sevenDayItineraryContent from '../data/sevenDayItineraryContent.json';
 import tenDayItineraryContent from '../data/tenDayItineraryContent.json';
 import shanghaiVisitPlanning from '../data/shanghaiVisitPlanning.json';
+import chongqingVisitPlanning from '../data/chongqingVisitPlanning.json';
 import ChinaTripCostEstimator from './ChinaTripCostEstimator';
 import firstTimeItineraryContent from '../data/firstTimeItineraryContent.json';
 import pandaBaseGuide from '../data/seoPages/chengdu-panda-base-guide.json';
@@ -3855,11 +3856,11 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     metaDescription:
       'Plan three days in Chongqing with Hongya Cave, Liziba monorail, Three Gorges Museum, hotpot, river views, hotels, transport, hills, and alternatives.',
     quickAnswer:
-      'With three full days in Chongqing, use one day for Jiefangbei, the river-confluence area, and Hongya Cave after dark; one for Liziba and the Three Gorges Museum; and one for Ciqikou or a focused day trip. Chongqing is a vertical mountain city, so a short distance on a map can hide steep stairs, several road levels, or an entrance on a different floor. Group stops by both district and elevation, save each destination in Chinese, and leave room for finding the correct entrance, pickup point, and viewing level.',
+      chongqingVisitPlanning.quickAnswer,
     ctaLabel: 'Get my personalised Chongqing itinerary',
     ctaHref: '/#trip-plan',
     lastReviewed: 'September 22, 2026',
-    lastModified: '2026-09-22',
+    lastModified: chongqingVisitPlanning.modified,
     isArticle: true,
     sections: [
       {
@@ -3878,6 +3879,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           'Keep one flexible block each day for weather, crowds, queues, and locating the correct building entrance.',
         ],
       },
+      ...chongqingVisitPlanning.sections,
       {
         title: 'Day 1: Jiefangbei, rivers, and Hongya Cave',
         ordered: true,
@@ -3893,8 +3895,8 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
         title: 'Day 2: Liziba and Chongqing history',
         ordered: true,
         items: [
-          'Ride Chongqing Rail Transit Line 2 to Liziba and use the designated viewing area rather than stopping in traffic or residential access points.',
-          'Continue to the Chongqing China Three Gorges Museum. Its official site lists permanent exhibitions including The Marvelous Three Gorges and Chongqing: City Evolution.',
+          chongqingVisitPlanning.lizibaNote,
+          chongqingVisitPlanning.museumNote,
           'Pair the museum with the People\'s Great Hall exterior and nearby public space, allowing time for security, galleries, and breaks.',
           'Use the evening for one neighbourhood, a river view, or hotpot. Do not stack Liziba, every museum gallery, a cableway queue, a cruise, and Hongya Cave into the same day.',
         ],
@@ -3939,7 +3941,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
         table: {
           headers: ['Item', 'What to confirm', 'When to check'],
           rows: [
-            ['Museum', 'Opening day, reservation or ID rules, exhibitions, last entry', 'Before fixing Day 2'],
+            chongqingVisitPlanning.bookingRow,
             ['Dazu excursion', 'Official opening information, selected carving site, tickets, return transport', 'Before choosing Day 3'],
             ['Train', 'Chongqing North, West, Shapingba, or another exact station', 'Before booking hotel transfers'],
             ['Airport transfer', 'Terminal, metro operating time, realistic luggage route', 'Before arrival and departure'],
@@ -3963,6 +3965,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     faqs: [
+      ...chongqingVisitPlanning.faqs,
       { question: 'Are three days enough for Chongqing?', answer: 'Yes. Three full days cover the central peninsula, Liziba and a museum day, plus either a slower neighbourhood day or one carefully planned excursion. Arrival and departure days should not be counted as full sightseeing days.' },
       { question: 'Is Chongqing difficult to walk around?', answer: 'It can be. Hills, stairs, lifts, bridges, and stacked roads make map distance misleading. Group sights by area and elevation, use the metro and ride-hailing strategically, and allow extra time.' },
       { question: 'When should I visit Hongya Cave?', answer: 'The illuminated exterior is the main reason many visitors go after dark. Arriving around dusk can make orientation easier before peak crowds, but check current lighting, access, weather, and transport on the day.' },
@@ -3986,6 +3989,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'Get a personalised Chongqing itinerary', href: '/#trip-plan' },
     ],
     sources: [
+      ...chongqingVisitPlanning.sources,
       { label: 'Chongqing Municipal Government English website', href: 'https://english.cq.gov.cn/' },
       { label: 'Chongqing Rail Transit official website', href: 'https://www.cqmetro.cn/' },
       { label: 'Chongqing China Three Gorges Museum official website', href: 'https://www.3gmuseum.cn/' },

@@ -321,3 +321,10 @@ Reviewed all30URLs/36actionIDs and14source tracking records under tourist-intent
 代码`72d63347fd47de9796e02c17e98292a41a137620`，Cloudflare部署`abc2481f-6775-48c4-a661-7dc596f8dd98`成功；10:18:06UTC正式原始HTTP200核验两新增/总10节、3新增/总10FAQ及schema、3运营方源、日期化信息与节假日例外、原内链、self-canonical及原搜索metadata。正式sitemap精确匹配76URL构建，仅目标lastmod改动。构建、类型/i18n、lint（原有warning）和HTML审计通过；手机视觉QA未完成。
 
 动作`SEO-2026-10-22-SHANGHAI-OPENING-DAYS`完整7天暂定Oct23–29、28天Oct23–Nov19，参考Oct16–22及Sep25–Oct22并非干净因果对照：7/10天页同日增加入链。Google抓取更晚时追加窗口；以实际完整GSC数据为准。现34精确URL、40唯一动作ID（45动作引用）。收录/修改后抓取、同页同词排名、强相关点击结果均无新证据；保留版本待验证并复核运营公告。
+
+
+### 2026-10-22 重庆三日博物馆与轨道安排待发布
+
+`SEO-2026-10-22-CHONGQING-MUSEUM-PLAN`：基于三份直接读取成功的官方原文，补主馆取消预约的日期化说明、周一/节假日安排、周日至周二改排，以及李子坝乘车/外部拍摄、2 号线曾家岩到博物馆指引。React 与静态页共享新增 2 节及 3 FAQ，总 10 节/10 FAQ；保留搜索 metadata、原内链和全指南审核日期。类型/i18n、构建、lint（原有 warning）、FAQ/schema 一致性与全部公开 HTML 审计通过；手机视觉 QA 缺浏览器未完成。
+
+历史 0 点击/11 展示/页面平均 13.27，不是精确查询排名。全站一个行程词仅 1 展示/平均 79，未归属本页；月量/KD 未知。作为小范围实用内容测试，不宣称高量低竞争机会或 SEO 收益。待正式验证后跟踪 Google 修改后抓取、同页同词和强相关点击；来源不可读取时不延长核验日期。计算器、预算证据请求优先。

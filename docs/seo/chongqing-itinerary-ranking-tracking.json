@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "changeId": "SEO-2026-10-22-CHONGQING-MUSEUM-PLAN",
+  "classification": "scoped_tourist_planning_content_test_and_dated_visitor_information",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks",
+  "status": "validated_pending_publication",
+  "page": "https://chinaeasebuddy.com/3-day-chongqing-itinerary/",
+  "codeCommits": [],
+  "baseline": {
+    "source": {
+      "filename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
+      "sha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+      "searchType": "Web",
+      "periodLabel": "Last 28 days vs previous 28 days",
+      "actualDateBounds": null,
+      "postChangeResult": false
+    },
+    "current": {
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0.0,
+      "pageAveragePosition": 13.27
+    },
+    "exactPageQueries": null,
+    "indexingState": null,
+    "latestGoogleCrawl": null,
+    "googleSelectedCanonical": null,
+    "siteWideQueryClues": [
+      {
+        "query": "chongqing 3 day itinerary",
+        "clicks": 0,
+        "impressions": 1,
+        "averagePosition": 79.0,
+        "scope": "site_wide_not_assigned_to_page"
+      }
+    ],
+    "marketMonthlyVolume": null,
+    "keywordDifficulty": null
+  },
+  "selectionEvidence": {
+    "tourismIntent": "A destination-duration plan for prospective visitors choosing Chongqing sightseeing, museum entry and rail transfers. Topic-based inference, not verified visitor identity.",
+    "demand": "11 historical page impressions and one separately scoped whole-site query impression; monthly market demand is unknown.",
+    "ranking": "13.27 is a page-average position, not a target-query position. The visible whole-site trip query averages 79 and cannot be assigned to this page. No confirmed near-top-ten keyword.",
+    "confirmedGap": "The formal page has generic museum checks but no Monday closure or dated no-reservation notice, and no named rail approach linking Liziba to the museum.",
+    "publicPageBefore": {
+      "url": "https://chinaeasebuddy.com/3-day-chongqing-itinerary/",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-22T13:38:48+00:00",
+      "sha256": "446589a382c6469b32ae0cfc2f71677c266c775a70c135631ec987efce6cf2d8",
+      "hasMondayNotice": false,
+      "hasZengjiayan": false,
+      "hasLizibaExitA": false
+    },
+    "competitiveCheck": {
+      "url": "https://chongqing.guide/en/guides/liziba-train/",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-22T13:46:05+00:00",
+      "sha256": "698664987eec161739a221cc11c84a3c1d1f65cbd28ca40cd20ef4f9042950fb",
+      "observation": "An established publisher already distinguishes the Liziba ride and exterior photo, with Line 2 access and current-signage advice. The topic is not an empty content market.",
+      "scope": "Publisher page content only; not market-specific Google top-ten results, search volume, keyword difficulty or backlinks."
+    },
+    "decision": "Scoped tourist-planning content test supported by verified primary information. Not a proven high-volume, low-competition or highest-return keyword opportunity.",
+    "whyNow": "The September 22 body has no prior recorded content action; this fixes a verified practical gap while preserving recently edited calculator, budget, national-route and destination bodies."
+  },
+  "candidateQueries": [
+    "chongqing itinerary 3 days",
+    "chongqing 3 day itinerary",
+    "three gorges museum reservation",
+    "three gorges museum closed monday",
+    "liziba to three gorges museum"
+  ],
+  "queryCaution": "Candidate phrases only. Exact-page query ownership, country/device rankings, volume and difficulty remain unknown. The same-session Ahrefs insufficient-plan result is retained; no substitute metrics or repeated login request.",
+  "change": {
+    "sharedSource": "src/data/chongqingVisitPlanning.json",
+    "scope": "Add two practical sections, three FAQs and three primary source links; replace two generic Day 2 pointers and the museum booking-check row; append a quick-answer pointer.",
+    "originalSectionsRetained": 8,
+    "totalSections": 10,
+    "originalFaqsRetained": 7,
+    "totalFaqCount": 10,
+    "modified": "2026-10-22",
+    "wholeGuideReviewedRetained": "September 22, 2026",
+    "retained": [
+      "Search title, description, H1, URL, canonical and CTA",
+      "All former related links and five source links",
+      "Other page bodies and tool algorithms",
+      "76 sitemap URLs; only the target actual lastmod changes"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://whlyw.cq.gov.cn/zwxx_221/bmdt/tzgg/202511/t20251103_15136009.html",
+      "publisher": "Chongqing Municipal Culture and Tourism Commission; author Chongqing China Three Gorges Museum",
+      "publishedOn": "2025-11-03",
+      "checkedAt": "2026-10-22T13:42:43+00:00",
+      "httpStatus": 200,
+      "retrieval": "Direct public HTTP GET; full primary HTML retrieved after the search-service open timed out.",
+      "savedUtf8HtmlSha256": "a0f45d621193f2122463cafcb9d1ec948c4324af9024287731837ea6dcc45794",
+      "supports": "Museum-authored announcement: main museum removes advance reservations and admits with valid identification; some affiliated venues still require tickets."
+    },
+    {
+      "url": "https://www.cq.gov.cn/zjcq/cycq/jplyxl/dsy/dsjp/202608/t20260826_15982331.html",
+      "publisher": "Chongqing Municipal Government",
+      "publishedOn": "2026-08-26",
+      "checkedAt": "2026-10-22T13:42:44+00:00",
+      "httpStatus": 200,
+      "retrieval": "Direct public HTTP GET; full primary HTML retrieved after the search-service open timed out.",
+      "savedUtf8HtmlSha256": "b754e3e3c53088c88a77497e58969f1f5da6e0bca56a6ae0e6de5811b40c9704",
+      "supports": "236 Renmin Road, 09:00–17:00, last entry 16:00, closed Monday except national statutory holidays; Line 2 Zengjiayan and Line 3 Niujiaotuo approaches."
+    },
+    {
+      "url": "https://english.cq.gov.cn/specials/explore/PhotoPerfectSpots/202608/t20260810_15912642.html",
+      "publisher": "Chongqing Municipal Government",
+      "publishedOn": "2026-08-10",
+      "checkedAt": "2026-10-22T13:42:45+00:00",
+      "httpStatus": 200,
+      "retrieval": "Direct public HTTP GET; full primary HTML retrieved after the search-service open timed out.",
+      "savedUtf8HtmlSha256": "a849cdbb52912c905c4cd4c0949269c3f9d9efaac7a79dd2858f0e53dc5e6843",
+      "supports": "Liziba is on Line 2 and has a dedicated exterior viewing platform."
+    }
+  ],
+  "sourceConflictHandling": "Older visitor guidance mentioned advance reservations. The museum-authored November 3, 2025 cancellation notice is later and more specific. Publish the dated main-venue rule with temporary-notice checks; do not promise automatic foreign-passport scanning, free access to all affiliated venues, fixed station exits or train-photo intervals.",
+  "editorialInference": "The Sunday–Tuesday city-day swap, taking Line 2 between Liziba and Zengjiayan, carrying a passport and allowing staff checks are route/visitor advice built from the primary facts, not operator-promised travel times or foreign-passport workflows.",
+  "hypothesis": "More usable opening-day, entry and rail-planning detail may answer first-visit trip questions better. Ranking and relevant-click gains remain untested.",
+  "relatedRecentChanges": {
+    "caution": "Other site pages changed on October 22. Keep those versions stable and do not isolate this body change causally from aggregate site outcomes."
+  },
+  "validation": {
+    "local": {
+      "sections": 10,
+      "faqPairs": 10,
+      "reactStaticParity": true,
+      "retainedOriginalMetadata": true,
+      "retainedOriginalRelatedLinks": true,
+      "sitemapUrlCount": 76,
+      "browserVisualQA": "unavailable_no_executable"
+    },
+    "typecheck": "pass including i18n parity",
+    "lint": "pass with one pre-existing PricingPlans fast-refresh warning",
+    "build": "pass",
+    "publicHtmlAudit": "pass across the full existing inventory",
+    "mobileVisualQA": "unavailable_no_browser_executable"
+  },
+  "publication": {
+    "status": "pending",
+    "codeCommit": null,
+    "firstFormalVerifiedAt": null
+  },
+  "review": {
+    "decision": "awaiting_evidence",
+    "postChangePerformance": "not_available",
+    "googlePostChangeCrawl": null,
+    "samePageSameQueryRanking": null,
+    "stronglyRelevantClicks": null,
+    "provisional7DayWindow": [
+      "2026-10-23",
+      "2026-10-29"
+    ],
+    "provisional28DayWindow": [
+      "2026-10-23",
+      "2026-11-19"
+    ],
+    "reference7DayWindow": [
+      "2026-10-16",
+      "2026-10-22"
+    ],
+    "reference28DayWindow": [
+      "2026-09-25",
+      "2026-10-22"
+    ],
+    "earliest7DayAvailabilityCheck": "2026-10-30",
+    "earliest28DayAvailabilityCheck": "2026-11-20",
+    "referenceWindowCaution": "Publication windows remain provisional until formal verification. The reference end date includes this publication and other site edits; it is not a clean causal control. The historical export has unknown actual date bounds.",
+    "rule": "Use complete adjacent equal non-overlapping GSC windows with matching Web, exact-page, country and device filters. Add later recrawl-based windows if Google processes later; completeness and sample adequacy govern conclusions.",
+    "referenceToExistingEvidencePriority": "Calculator indexed URL Inspection and budget exact-page Queries remain first; no new immediate export request."
+  },
+  "serviceNoticeWatch": {
+    "lastPrimaryCheckOn": "2026-10-22",
+    "checkAtEveryScheduledReview": true,
+    "sources": [
+      "https://whlyw.cq.gov.cn/zwxx_221/bmdt/tzgg/202511/t20251103_15136009.html",
+      "https://www.cq.gov.cn/zjcq/cycq/jplyxl/dsy/dsjp/202608/t20260826_15982331.html",
+      "https://english.cq.gov.cn/specials/explore/PhotoPerfectSpots/202608/t20260810_15912642.html"
+    ],
+    "watchFor": [
+      "Museum reservation and identity-document changes",
+      "Monday, national-holiday and temporary closure changes",
+      "Opening and last-entry times",
+      "Liziba viewing-platform access and museum rail approaches"
+    ],
+    "failureRule": "If a primary page cannot be retrieved, retain uncertainty and the old check date. Do not claim unchanged operations or refresh verification without new primary evidence."
+  },
+  "observations": [
+    {
+      "at": "2026-10-22T13:50:51+00:00",
+      "type": "selection_and_local_validation",
+      "summary": "Formal old-page gap and three primary sources verified by direct HTTP 200; new shared content passes types, build, parity, FAQ schema and full HTML audit. No new Google search-outcome evidence."
+    }
+  ]
+}
