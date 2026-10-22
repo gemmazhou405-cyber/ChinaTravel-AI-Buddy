@@ -74,7 +74,15 @@
             "2026-11-18"
           ]
         }
-      ]
+      ],
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/amap-english-mode-guide-2026/",
@@ -115,6 +123,14 @@
         "classification": "china_trip_preparation_with_possible_non_tourist_audience",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -156,6 +172,14 @@
         "classification": "broad_help_with_mixed_audience",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -195,6 +219,14 @@
         "classification": "site_hub",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -234,7 +266,15 @@
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
       },
-      "liveDateCaution": "October22 is conservative first recorded formal verification,not inferred original publish date;October19 modification retained."
+      "liveDateCaution": "October22 is conservative first recorded formal verification,not inferred original publish date;October19 modification retained.",
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/3-day-shenzhen-itinerary/",
@@ -272,6 +312,14 @@
         "classification": "direct_trip_planning",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -305,6 +353,14 @@
         "classification": "china_trip_preparation_with_possible_non_tourist_audience",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -343,6 +399,14 @@
         "classification": "china_trip_preparation_with_possible_non_tourist_audience",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -384,6 +448,14 @@
         "classification": "direct_trip_planning",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -423,6 +495,14 @@
         "classification": "china_trip_preparation_with_possible_non_tourist_audience",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -456,6 +536,14 @@
         "classification": "china_trip_preparation_with_possible_non_tourist_audience",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -494,6 +582,14 @@
         "classification": "china_trip_preparation_with_possible_non_tourist_audience",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -527,6 +623,14 @@
         "classification": "china_trip_preparation_with_possible_non_tourist_audience",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -560,6 +664,14 @@
         "classification": "china_trip_preparation_with_possible_non_tourist_audience",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -593,6 +705,14 @@
         "classification": "china_trip_preparation_with_possible_non_tourist_audience",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -631,6 +751,14 @@
         "classification": "direct_trip_planning",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -664,6 +792,14 @@
         "classification": "china_trip_preparation_with_possible_non_tourist_audience",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -702,6 +838,14 @@
         "classification": "china_trip_preparation_with_possible_non_tourist_audience",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -735,6 +879,14 @@
         "classification": "china_trip_preparation_with_possible_non_tourist_audience",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -777,6 +929,14 @@
         "classification": "direct_trip_planning",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -815,6 +975,14 @@
         "classification": "china_trip_preparation_with_possible_non_tourist_audience",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -853,6 +1021,14 @@
         "classification": "china_trip_preparation_with_possible_non_tourist_audience",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -886,6 +1062,14 @@
         "classification": "china_trip_preparation_with_possible_non_tourist_audience",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -924,6 +1108,14 @@
         "classification": "site_hub",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -962,6 +1154,14 @@
         "classification": "direct_trip_planning",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -995,6 +1195,14 @@
         "classification": "china_trip_preparation_with_possible_non_tourist_audience",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -1028,6 +1236,14 @@
         "classification": "china_trip_preparation_with_possible_non_tourist_audience",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -1066,6 +1282,14 @@
         "classification": "broad_help_with_mixed_audience",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
+      },
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
       }
     },
     {
@@ -1104,7 +1328,15 @@
       "earliest7DayAvailabilityCheck": "2026-10-30",
       "earliest28DayAvailabilityCheck": "2026-11-20",
       "nextAction": "Retain verified version; check Google crawl/index and complete exact-page query/click outcomes. BudgetOct20/22interventions interpreted together; contextual-link attribution unproven.",
-      "windowCaution": "Page topic is strong trip intent but query relevance and link/click attribution remain unproven."
+      "windowCaution": "Page topic is strong trip intent but query relevance and link/click attribution remain unproven.",
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
+      }
     },
     {
       "url": "https://chinaeasebuddy.com/3-day-beijing-itinerary/",
@@ -1142,7 +1374,15 @@
       "earliest7DayAvailabilityCheck": "2026-10-30",
       "earliest28DayAvailabilityCheck": "2026-11-20",
       "nextAction": "Retain formally verified route/calendar answers;check Google crawl/index and complete exact-page coverage/same-query ranking/relevant clicks. No keyword gain inferred from publication.",
-      "windowCaution": "Planning improvement is not a measured ranking/click effect;source/destination task-link outcomes and other changes limit attribution."
+      "windowCaution": "Planning improvement is not a measured ranking/click effect;source/destination task-link outcomes and other changes limit attribution.",
+      "lastEvidenceReview": {
+        "id": "SEO-REVIEW-2026-10-22T072710Z",
+        "checkedAtUtc": "2026-10-22T07:27:10Z",
+        "decision": "awaiting_evidence",
+        "newPostChangeGscEvidence": false,
+        "newUrlInspectionEvidence": false,
+        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
+      }
     }
   ],
   "observations": [
@@ -1339,6 +1579,22 @@
       "type": "formal_publication_verified",
       "changeId": "SEO-2026-10-22-CALC-STATIC-ENTRY",
       "summary": "Static entry guidance repair verified on formal domain;metadata/examples/FAQ/links/sitemap intact,30URLs/36IDs. Complete provisional windows updated and previous windows preserved. No Google/search outcome established."
+    },
+    {
+      "id": "SEO-REVIEW-2026-10-22T072710Z",
+      "observedOn": "2026-10-22",
+      "checkedAtUtc": "2026-10-22T07:27:10Z",
+      "type": "effectiveness_evidence_availability_review",
+      "evidenceScope": "Read current tracker, policy, all 30 queue entries / 36 distinct change IDs, tourist-intent priorities and 14 corresponding tracking records. Library filename search returned latest named GSC exports dated October21, already represented in historical source records; no newer named export located. No new URL Inspection evidence supplied/read in this run. Search does not prove no other differently named file exists.",
+      "googleIndexStatus": "No new evidence; retain historical reports without promoting them to current status.",
+      "postChangeCrawl": "修改后抓取待确认",
+      "exactPageQueryCoverage": null,
+      "sameQueryRankingChange": null,
+      "stronglyRelevantClickChange": null,
+      "decision": "awaiting_evidence",
+      "reason": "No new attributable post-change outcome or complete-window evidence. Do not rewrite/revert based on missing evidence or partial-day results. Preserve current versions and previous baselines/windows.",
+      "publicVerificationLimit": "Direct HTTP request received environment HTTP403; not proof of origin failure. Public retrieval displayed calculator shared entry sentence, but budget retrieval was marked crawled yesterday and omitted new tool; fresh-query retrieval inaccessible. No new raw-HTML/canonical/header pass or live regression claimed; previous verified production observations retained.",
+      "nextEvidence": "Existing outstanding requests unchanged: calculator indexed-report crawl and Google-selected canonical; budget exact-URL Queries with actual comparison dates. Amap/WeChat gaps retained at lower collection priority. No duplicate request issued."
     }
   ],
   "priorityPolicy": "docs/seo/tourist-intent-priorities.json",
