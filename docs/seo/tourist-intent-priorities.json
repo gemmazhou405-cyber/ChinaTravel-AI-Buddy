@@ -117,7 +117,7 @@
       "url": "https://chinaeasebuddy.com/3-day-beijing-itinerary/",
       "priority": 2,
       "reason": "Specific destination and duration indicate route planning.",
-      "workState": "Oct22Monday/booking/routing enhancement locally verified,pending publication;baseline and follow-up in beijing-itinerary-ranking-tracking.json.",
+      "workState": "Oct22Monday/booking/routing enhancement formally verified04:04:19UTC;retain for Google/index/query/click follow-up in beijing-itinerary-ranking-tracking.json.",
       "baseline": {
         "clicks": 0.0,
         "impressions": 22.0,
@@ -247,6 +247,11 @@
       "date": "2026-10-22",
       "type": "direct_itinerary_candidate_implemented_locally",
       "summary": "Beijing3day candidate received targeted route/calendar answers and task links;keyword coverage/rank/click effects unconfirmed."
+    },
+    {
+      "date": "2026-10-22",
+      "type": "direct_itinerary_content_live",
+      "summary": "Beijing3day route/calendar/task-link update formally verified;no keyword/ranking/relevant-click effect established."
     }
   ]
 }

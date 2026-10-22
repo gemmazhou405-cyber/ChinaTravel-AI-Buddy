@@ -1093,26 +1093,31 @@
       "recordedChangeDates": [
         "2026-10-22"
       ],
-      "latestConfirmedLiveDate": null,
+      "latestConfirmedLiveDate": "2026-10-22",
       "priority": 2,
       "audienceIntent": {
         "classification": "direct_trip_planning",
         "basis": "Page-topic/wording inference,not verified traveler identity or exact-page query intent",
         "asOf": "2026-10-22"
       },
-      "decision": "awaiting_publication",
+      "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
-        "confirmed production-live date",
         "current URL Inspection and modification-after-crawl evidence",
         "complete exact-page Queries comparison with actual dates",
         "strong-relevance clicks and same-query ranking outcomes"
       ],
-      "provisional7DayWindow": null,
-      "provisional28DayWindow": null,
-      "earliest7DayAvailabilityCheck": null,
-      "earliest28DayAvailabilityCheck": null,
-      "nextAction": "Verify formal Beijing route/Monday/booking content and metadata,then retain for complete-window review.",
+      "provisional7DayWindow": [
+        "2026-10-23",
+        "2026-10-29"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-23",
+        "2026-11-19"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-30",
+      "earliest28DayAvailabilityCheck": "2026-11-20",
+      "nextAction": "Retain formally verified route/calendar answers;check Google crawl/index and complete exact-page coverage/same-query ranking/relevant clicks. No keyword gain inferred from publication.",
       "windowCaution": "Planning improvement is not a measured ranking/click effect;source/destination task-link outcomes and other changes limit attribution."
     }
   ],
@@ -1284,6 +1289,13 @@
       "type": "tourist_itinerary_action_added",
       "changeId": "SEO-2026-10-22-BEIJING-3DAY",
       "summary": "Beijing three-day route/calendar/booking content locally verified;queue30URLs/35IDs. No new GSC outcome or public page added."
+    },
+    {
+      "date": "2026-10-22",
+      "checkedAtUtc": "2026-10-22T04:04:19Z",
+      "type": "formal_publication_verified",
+      "changeId": "SEO-2026-10-22-BEIJING-3DAY",
+      "summary": "Formal Beijing page/sitemap verified;queue30URLs/35IDs,provisional windows set;Google/search outcomes unconfirmed."
     }
   ],
   "priorityPolicy": "docs/seo/tourist-intent-priorities.json"

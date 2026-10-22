@@ -3,9 +3,11 @@
   "changeId": "SEO-2026-10-22-BEIJING-3DAY",
   "url": "https://chinaeasebuddy.com/3-day-beijing-itinerary/",
   "primaryOutcome": "strongly_relevant_google_organic_clicks_from_china_trip_intent",
-  "status": "local_verified_pending_publication",
-  "liveDate": null,
-  "codeCommits": [],
+  "status": "live_verified",
+  "liveDate": "2026-10-22",
+  "codeCommits": [
+    "9671410816b55cbae1dca937f1a26d69fc68f791"
+  ],
   "baseline": {
     "source": "User-provided October21 full-site GSC comparison workbook",
     "sha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
@@ -99,13 +101,18 @@
     "oldFormalFixtureRejection": "PASS:new Monday/booking/task-link acceptance rejects captured older version",
     "focusedHtmlSitemap": "PASS:nine sections/cells/items,eight visible/schemaFAQs,seven sources,three valid generated destinations and calculator fragment;metadata/CTA/review retained;76URLs,only target lastmod changes",
     "diffCheck": "PASS",
-    "production": "pending"
+    "production": "PASS:formal HTTP200/no X-Robots-Tag,nine sections/eight visible+schemaFAQs,seven sources,three valid task links,retained metadata/CTA/whole review;sitemap76URLs,only target actual lastmod changed"
   },
   "production": {
-    "newContentVerified": false,
-    "checkedAt": null,
+    "newContentVerified": true,
+    "checkedAt": "2026-10-22T04:04:19Z",
     "googleRecrawlConfirmed": false,
-    "rankingOrClickGainConfirmed": false
+    "rankingOrClickGainConfirmed": false,
+    "httpStatus": 200,
+    "xRobotsTag": null,
+    "planningContentAndTaskLinks": "PASS",
+    "metadataRetained": "PASS",
+    "structuredData": "PASS"
   },
   "followUp": {
     "provisionalFirstCompleteWindow": [
@@ -135,6 +142,18 @@
     {
       "observedOn": "2026-10-22",
       "stage": "Local acceptance checks pass;formal publication and search outcomes pending."
+    },
+    {
+      "observedOn": "2026-10-22",
+      "checkedAt": "2026-10-22T04:04:19Z",
+      "stage": "Cloudflare succeeded;formal Beijing planning body,FAQs,metadata,task links and sitemap verified. No Google/index/query/rank/click outcome established."
     }
-  ]
+  ],
+  "release": {
+    "cloudflareStatus": "success",
+    "deploymentId": "62837417-faaf-47e4-a7cc-f3ad701def10",
+    "deploymentUrl": "https://62837417.chinaease-buddy.pages.dev",
+    "formalContentVerified": true,
+    "verifiedAtUtc": "2026-10-22T04:04:19Z"
+  }
 }
