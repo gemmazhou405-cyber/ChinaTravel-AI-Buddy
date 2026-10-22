@@ -2,9 +2,11 @@
   "schemaVersion": 1,
   "batchId": "SEO-2026-10-22-TRAVEL-BUDGET",
   "primaryOutcome": "strongly_relevant_google_organic_clicks_from_china_trip_intent",
-  "status": "local_verified_pending_publication",
-  "liveDate": null,
-  "codeCommits": [],
+  "status": "live_verified",
+  "liveDate": "2026-10-22",
+  "codeCommits": [
+    "7b925085bdd1e295464051fe861f55705157fcbd"
+  ],
   "pages": [
     {
       "changeId": "SEO-2026-10-22-BUDGET-TOOL",
@@ -120,7 +122,7 @@
     "oldFormalFixtureRejection": "PASS:previous budget lacks estimator examples/anchor;previous14day lacks context link",
     "focusedHtmlSitemap": "PASS:ninecomputed examples,sharedFAQ and JSON-LD,metadata/oldlinks/reviewdates retained;76URLs,only2lastmods change",
     "diffCheck": "PASS",
-    "production": "pending"
+    "production": "PASS: both formal URLs HTTP200 without X-Robots-Tag; nine computed examples/sharedFAQ/default result/context link, retained metadata/oldlinks/reviewdates/JSON-LD; sitemap76URLs only two actual lastmods; old alias301destination unchanged"
   },
   "testNotes": [
     "UI test used locally downloaded headless Chromium and localhost build; external requests blocked; no cloud browser or account login.",
@@ -141,10 +143,16 @@
     }
   ],
   "production": {
-    "newContentVerified": false,
-    "checkedAt": null,
+    "newContentVerified": true,
+    "checkedAt": "2026-10-22T03:04:46Z",
     "googleRecrawlConfirmed": false,
-    "rankingOrClickGainConfirmed": false
+    "rankingOrClickGainConfirmed": false,
+    "httpStatus": 200,
+    "xRobotsTag": null,
+    "staticCalculatorAndContextLink": "PASS",
+    "metadataRetained": "PASS",
+    "structuredData": "PASS",
+    "alias301": "PASS"
   },
   "followUp": {
     "provisionalFirstCompleteWindow": [
@@ -175,6 +183,18 @@
     {
       "observedOn": "2026-10-22",
       "stage": "Local verification complete; publication pending."
+    },
+    {
+      "observedOn": "2026-10-22",
+      "checkedAt": "2026-10-22T03:04:46Z",
+      "stage": "Cloudflare succeeded; formal budget and14-day HTML/sitemap/301alias verified. No Google processing, keyword-coverage or search-performance outcome established."
     }
-  ]
+  ],
+  "release": {
+    "cloudflareStatus": "success",
+    "deploymentId": "7be98940-2911-4a0b-b699-407b23e04b62",
+    "deploymentUrl": "https://7be98940.chinaease-buddy.pages.dev",
+    "formalContentVerified": true,
+    "verifiedAtUtc": "2026-10-22T03:04:46Z"
+  }
 }

@@ -728,21 +728,26 @@
         "2026-10-20",
         "2026-10-22"
       ],
-      "latestConfirmedLiveDate": null,
+      "latestConfirmedLiveDate": "2026-10-22",
       "priority": 2,
-      "decision": "awaiting_publication",
+      "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
-        "confirmed production-live date",
         "current URL Inspection and modification-after-crawl evidence",
         "complete exact-page Queries comparison with actual dates",
         "strong-relevance clicks and same-query ranking outcomes"
       ],
-      "provisional7DayWindow": null,
-      "provisional28DayWindow": null,
-      "earliest7DayAvailabilityCheck": null,
-      "earliest28DayAvailabilityCheck": null,
-      "nextAction": "Verify formal canonical calculator/examples/metadata and retained301alias, then evaluate combinedOct20/22 changes.",
+      "provisional7DayWindow": [
+        "2026-10-23",
+        "2026-10-29"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-23",
+        "2026-11-19"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-30",
+      "earliest28DayAvailabilityCheck": "2026-11-20",
+      "nextAction": "Retain verified version; check Google crawl/index and complete exact-page query/click outcomes. BudgetOct20/22interventions interpreted together; contextual-link attribution unproven.",
       "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
       "audienceIntent": {
         "classification": "direct_trip_planning",
@@ -1050,26 +1055,31 @@
       "recordedChangeDates": [
         "2026-10-22"
       ],
-      "latestConfirmedLiveDate": null,
+      "latestConfirmedLiveDate": "2026-10-22",
       "priority": 2,
       "audienceIntent": {
         "classification": "direct_trip_planning",
         "basis": "page-topic inference,not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
       },
-      "decision": "awaiting_publication",
+      "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
-        "confirmed production-live date",
         "current URL Inspection and modification-after-crawl evidence",
         "complete exact-page Queries comparison with actual dates",
         "strong-relevance clicks and same-query ranking outcomes"
       ],
-      "provisional7DayWindow": null,
-      "provisional28DayWindow": null,
-      "earliest7DayAvailabilityCheck": null,
-      "earliest28DayAvailabilityCheck": null,
-      "nextAction": "Verify contextual calculator link on formal page, then retain for complete-window review.",
+      "provisional7DayWindow": [
+        "2026-10-23",
+        "2026-10-29"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-23",
+        "2026-11-19"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-30",
+      "earliest28DayAvailabilityCheck": "2026-11-20",
+      "nextAction": "Retain verified version; check Google crawl/index and complete exact-page query/click outcomes. BudgetOct20/22interventions interpreted together; contextual-link attribution unproven.",
       "windowCaution": "Page topic is strong trip intent but query relevance and link/click attribution remain unproven."
     }
   ],
@@ -1225,6 +1235,16 @@
         "SEO-2026-10-22-14DAY-BUDGET-LINK"
       ],
       "summary": "Canonical budget tool/examples and14-day context link locally verified; queue29URLs/34distinctIDs. Old cost-calculator route confirmed301; historical alias metrics remain separate. Publication and GSC effect pending."
+    },
+    {
+      "date": "2026-10-22",
+      "checkedAtUtc": "2026-10-22T03:04:46Z",
+      "type": "formal_publication_verified",
+      "changeIds": [
+        "SEO-2026-10-22-BUDGET-TOOL",
+        "SEO-2026-10-22-14DAY-BUDGET-LINK"
+      ],
+      "summary": "Both formal pages/examples/context link/metadata/sitemap and301alias verified; queue29URLs/34IDs, provisional windows set, no GSC gains established."
     }
   ],
   "priorityPolicy": "docs/seo/tourist-intent-priorities.json"
