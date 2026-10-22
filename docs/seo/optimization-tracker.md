@@ -195,7 +195,7 @@ Production verification is separate from Google indexing. The Panda Base update 
 The Alipay Metro page still showed its October 5 body in the public HTML immediately after the October 20 commits, despite a successful Vercel commit status. A later public fetch on October 20 confirmed the new title, first answer and review date on `chinaeasebuddy.com`. This is the production observation date, not evidence of a Google recrawl.
 The DiDi payment page's public HTML showed the new October 20 review date after the description-only commit. The generated HTML was also checked for the new meta description. A public text extraction alone does not expose the meta tag, so the production review-date observation and local meta check are recorded separately; neither proves Google has used the new snippet.
 
-| SEO-2026-10-22-CALC-STATIC-ENTRY | 2026-10-22; local repair pending release verification | `/china-240-hour-transit-calculator/` | Replace stale static scheduled-arrival instruction with existing shared entry-date guidance;add calculator HTML/stale-copy audit. Maintenance consistency repair,not a proven ranking opportunity. | Historical exact-page0clicks/10impressions/pageavg22.5;target tool-query coverage/volume/KDunknown | Historical indexed report,last reported crawlOct13;post-change crawl unknown | Four-group evidence matrix in `keyword-opportunities-2026-10-22.json`;no new GSC outcome | Verify production,then complete same-query7/28day windows and absolute relevant-click changes;retain recent metadata/algorithm. |
+| SEO-2026-10-22-CALC-STATIC-ENTRY | 2026-10-22 / `6ce91de`; formal verified07:13:49UTC | `/china-240-hour-transit-calculator/` | Replace stale static scheduled-arrival instruction with existing shared entry-date guidance;add calculator HTML/stale-copy audit. Maintenance consistency repair,not a proven ranking opportunity. | Historical exact-page0clicks/10impressions/pageavg22.5;target tool-query coverage/volume/KDunknown | Historical indexed report,last reported crawlOct13;post-change crawl unknown | Four-group evidence matrix in `keyword-opportunities-2026-10-22.json`;no new GSC outcome | Verify production,then complete same-query7/28day windows and absolute relevant-click changes;retain recent metadata/algorithm. |
 
 ## Next page decision: DiDi query ownership
 
@@ -263,3 +263,9 @@ Google documentation: [URL Inspection and live tests](https://support.google.com
 四组候选/竞品核对已保存于 `keyword-opportunities-2026-10-22.md`/JSON。Ahrefs项目列表与关键词概览仍为Insufficient plan；没有得到月搜索量/KD。公开页面不是目标国家/设备实时SERP；没有新的GSC结果。暂不据此重写新一页。
 
 Oct22 06:59:37UTC，正式阳朔页HTTP200、自引用canonical、Oct19的阳朔三日替代方案与Yangshuo Railway Station说明通过。队列采用保守首次核验日Oct22，保留原修改日，不声称原发布日或收录/排名变化。计算器新增独立发布一致性修复记录，30个精确URL/36项动作；效果仍待验证。
+
+### 2026-10-22 计算器静态步骤修复正式核验
+
+代码 `6ce91de58fe0c15f64aede45fc62d3768b067504`、Cloudflare部署 `6215aa19-cb1b-4ec0-9e3d-a8cff0ce1a2e` 成功。07:13:49UTC正式域名HTTP200、共享入境日期步骤出现、旧计划抵达步骤消失；title/description/H1/canonical、三个日期算例、可见/schemaFAQ、指南/签证工具链接均通过。sitemap仍76URL，只有本页lastmod从Oct21到Oct22；算法与政策审核日未改。
+
+构建、typecheck/i18n、计算器现有测试、lint（原有一条warning）、原始HTML全套审计与旧版负例通过。修复归类为发布一致性维护，不认定有搜索收益。队列30URL/36动作；本次完整7天暂定Oct23–29、28天Oct23–Nov19，GSC完整性与实际抓取另记，保留原窗口历史。新收录/抓取/工具词覆盖/同词排名/强相关点击无新证据。

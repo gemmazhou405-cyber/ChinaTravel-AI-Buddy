@@ -39,3 +39,5 @@ Ahrefs的项目列表和关键词概览本轮均返回 `Insufficient plan`，未
 最小证据缺口按原顺序保留：计算器最新URL Inspection报告；预算主页精确Page→Queries比较及实际日期。已收到的全站与计算器基线无需重交。获得新证据再决定下一项增长修改。
 
 机器可读明细见 `keyword-opportunities-2026-10-22.json`。原始GSC文件SHA、数据范围、竞品字段与正式检查时间均已保留。
+
+正式发布补记：计算器一致性修复已由 `6ce91de` 上线，Oct22 07:13:49UTC正式域名核验通过；Cloudflare部署 `6215aa19-cb1b-4ec0-9e3d-a8cff0ce1a2e`。构建、类型/计算测试、原始HTML审计和旧版负例通过。此为技术发布结果，未取得新的Google抓取或关键词/排名/点击结果。

@@ -3,9 +3,11 @@
   "changeId": "SEO-2026-10-22-CALC-STATIC-ENTRY",
   "classification": "maintenance_publishing_consistency_repair",
   "primaryOutcome": "strongly_relevant_google_organic_clicks",
-  "status": "local_checks_passed_pending_release",
+  "status": "live_verified",
   "page": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
-  "codeCommits": [],
+  "codeCommits": [
+    "6ce91de58fe0c15f64aede45fc62d3768b067504"
+  ],
   "reason": "Confirmed stale scheduled-arrival instruction in static How the calculator works differs from React/shared entry-date guidance. Previous clock-entry repair did not eliminate this separate static item.",
   "confirmedGap": {
     "checkedAtUtc": "2026-10-22T06:59:37Z",
@@ -73,25 +75,73 @@
     "initialAuditAttempt": "Local server in another command session was unreachable;no page content conclusion taken. Reran server and audit in one process context;new-build pass and old-fixture rejection confirmed.",
     "diffCheck": "PASS",
     "algorithmDiff": "No calculator math/input/route source changed",
-    "lint": "PASS,one existing Fast Refresh warning"
+    "lint": "PASS,one existing Fast Refresh warning",
+    "production": "PASS:formal shared instruction,old phrase absent,metadata/examples/FAQ/JSON-LD/links/noindex/sitemap verified"
   },
   "production": {
-    "verified": false,
+    "verified": true,
     "googleRecrawlConfirmed": false,
-    "rankingOrClickGainConfirmed": false
+    "rankingOrClickGainConfirmed": false,
+    "checkedAtUtc": "2026-10-22T07:13:49Z",
+    "url": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+    "httpStatus": 200,
+    "sharedInstruction": "PASS",
+    "oldInstructionAbsent": true,
+    "metadataUnchanged": true,
+    "workedExamples": 3,
+    "faqJsonLd": "PASS",
+    "guideAndToolLinks": "PASS",
+    "noindex": false,
+    "sitemapCount": 76,
+    "onlyLastmodChange": {
+      "https://chinaeasebuddy.com/china-240-hour-transit-calculator/": [
+        "2026-10-21",
+        "2026-10-22"
+      ]
+    },
+    "googleIndexOrRecrawlEstablished": false,
+    "rankingOrClickGainEstablished": false
   },
   "followUp": {
-    "first7DayWindow": null,
-    "first28DayWindow": null,
+    "first7DayWindow": [
+      "2026-10-23",
+      "2026-10-29"
+    ],
+    "first28DayWindow": [
+      "2026-10-23",
+      "2026-11-19"
+    ],
     "windowRule": "Set only after formal verification;combine recent calculator interventions and preserve earlier windows separately. Same-query,actual-date,country/device matching and complete GSC days required.",
     "nextEvidence": "Current URL Inspection crawl/canonical,then complete exact-page query/click outcomes;do not re-request existing baseline.",
-    "indexRequestSubmitted": false
+    "indexRequestSubmitted": false,
+    "reference7DayWindow": [
+      "2026-10-16",
+      "2026-10-22"
+    ],
+    "reference28DayWindow": [
+      "2026-09-25",
+      "2026-10-22"
+    ],
+    "referenceCaution": "Reference periods include other changes;not clean controls. Current supplied baseline lacks exact dates and cannot be relabeled as these reference periods."
   },
   "releaseObservations": [
     {
       "observedOn": "2026-10-22",
       "stage": "Local acceptance passed;formal release and Google outcomes pending."
+    },
+    {
+      "observedOn": "2026-10-22",
+      "checkedAtUtc": "2026-10-22T07:13:49Z",
+      "codeCommit": "6ce91de58fe0c15f64aede45fc62d3768b067504",
+      "stage": "Cloudflare success and formal custom-domain content/sitemap confirmed;not a Google indexing,rank or click result."
     }
   ],
-  "performanceObservations": []
+  "performanceObservations": [],
+  "liveDate": "2026-10-22",
+  "release": {
+    "cloudflareStatus": "success",
+    "deploymentId": "6215aa19-cb1b-4ec0-9e3d-a8cff0ce1a2e",
+    "deploymentUrl": "https://6215aa19.chinaease-buddy.pages.dev",
+    "verifiedAtUtc": "2026-10-22T07:13:49Z"
+  }
 }

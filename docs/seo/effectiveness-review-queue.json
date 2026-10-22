@@ -33,7 +33,7 @@
         "2026-10-20",
         "2026-10-22"
       ],
-      "latestConfirmedLiveDate": "2026-10-21",
+      "latestConfirmedLiveDate": "2026-10-22",
       "priority": 1,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
@@ -43,23 +43,38 @@
         "strong-relevance clicks and same-query ranking outcomes"
       ],
       "provisional7DayWindow": [
-        "2026-10-22",
-        "2026-10-28"
+        "2026-10-23",
+        "2026-10-29"
       ],
       "provisional28DayWindow": [
-        "2026-10-22",
-        "2026-11-18"
+        "2026-10-23",
+        "2026-11-19"
       ],
-      "earliest7DayAvailabilityCheck": "2026-10-29",
-      "earliest28DayAvailabilityCheck": "2026-11-19",
-      "nextAction": "Verify static-entry instruction repair in production;retain recent growth changes until new crawl/exact-query evidence. See keyword-opportunities-2026-10-22.json.",
+      "earliest7DayAvailabilityCheck": "2026-10-30",
+      "earliest28DayAvailabilityCheck": "2026-11-20",
+      "nextAction": "Retain calculator growth changes;obtain current indexed crawl/canonical evidence and complete exact-page tool-query/relevant-click windows. October22 action is publishing consistency maintenance,not proof of ranking growth.",
       "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
       "roleNote": "Includes support-link experiments; evaluate their intended calculator destination outcome separately from source-page traffic.",
       "audienceIntent": {
         "classification": "transit_planning_tool",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
-      }
+      },
+      "windowHistory": [
+        {
+          "recordedOn": "2026-10-22",
+          "basis": "Before the new static-instruction repair;retain previous provisional windows as historical reference,not completed outcomes.",
+          "latestConfirmedLiveDate": "2026-10-21",
+          "provisional7DayWindow": [
+            "2026-10-22",
+            "2026-10-28"
+          ],
+          "provisional28DayWindow": [
+            "2026-10-22",
+            "2026-11-18"
+          ]
+        }
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/amap-english-mode-guide-2026/",
@@ -1317,6 +1332,13 @@
       "type": "existing_formal_version_verified",
       "changeId": "SEO-2026-10-19-YANGSHUO",
       "summary": "October19 Yangshuo variant/station copy confirmed on formal domain. First recorded verification date only;not a new content edit or Google outcome."
+    },
+    {
+      "date": "2026-10-22",
+      "checkedAtUtc": "2026-10-22T07:13:49Z",
+      "type": "formal_publication_verified",
+      "changeId": "SEO-2026-10-22-CALC-STATIC-ENTRY",
+      "summary": "Static entry guidance repair verified on formal domain;metadata/examples/FAQ/links/sitemap intact,30URLs/36IDs. Complete provisional windows updated and previous windows preserved. No Google/search outcome established."
     }
   ],
   "priorityPolicy": "docs/seo/tourist-intent-priorities.json",
