@@ -137,7 +137,24 @@
     "dataRequestPriority": "Existing calculator crawl and canonical budget exact-query requests remain first;do not repeatedly request extra exports just because another action was added.",
     "indexingRequests": "Not submitted by this environment."
   },
-  "performanceObservations": [],
+  "performanceObservations": [
+    {
+      "id": "SEO-REVIEW-2026-10-22T072710Z",
+      "observedOn": "2026-10-22",
+      "checkedAtUtc": "2026-10-22T07:27:10Z",
+      "type": "effectiveness_evidence_availability_review",
+      "evidenceScope": "Read current tracker, policy, all 30 queue entries / 36 distinct change IDs, tourist-intent priorities and 14 corresponding tracking records. Library filename search returned latest named GSC exports dated October21, already represented in historical source records; no newer named export located. No new URL Inspection evidence supplied/read in this run. Search does not prove no other differently named file exists.",
+      "googleIndexStatus": "No new evidence; retain historical reports without promoting them to current status.",
+      "postChangeCrawl": "修改后抓取待确认",
+      "exactPageQueryCoverage": null,
+      "sameQueryRankingChange": null,
+      "stronglyRelevantClickChange": null,
+      "decision": "awaiting_evidence",
+      "reason": "No new attributable post-change outcome or complete-window evidence. Do not rewrite/revert based on missing evidence or partial-day results. Preserve current versions and previous baselines/windows.",
+      "publicVerificationLimit": "Direct HTTP request received environment HTTP403; not proof of origin failure. Public retrieval displayed calculator shared entry sentence, but budget retrieval was marked crawled yesterday and omitted new tool; fresh-query retrieval inaccessible. No new raw-HTML/canonical/header pass or live regression claimed; previous verified production observations retained.",
+      "nextEvidence": "Existing outstanding requests unchanged: calculator indexed-report crawl and Google-selected canonical; budget exact-URL Queries with actual comparison dates. Amap/WeChat gaps retained at lower collection priority. No duplicate request issued."
+    }
+  ],
   "releaseObservations": [
     {
       "observedOn": "2026-10-22",
