@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "changeId": "SEO-2026-10-22-SEVEN-DAY-ROUTE",
+  "classification": "tourist_itinerary_accuracy_fix_and_scoped_content_test",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks",
+  "status": "validated_ready_to_publish",
+  "page": "https://chinaeasebuddy.com/7-day-china-itinerary/",
+  "codeCommits": [],
+  "baseline": {
+    "source": {
+      "filename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
+      "sha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+      "searchType": "Web",
+      "periodLabel": "Last 28 days vs previous 28 days",
+      "actualDateBounds": null,
+      "postChangeResult": false
+    },
+    "current": {
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0.0,
+      "pageAveragePosition": 31.5
+    },
+    "exactPageQueries": null,
+    "indexingState": null,
+    "latestGoogleCrawl": null,
+    "googleSelectedCanonical": null,
+    "siteWideQueryClues": [
+      {
+        "query": "china itinerary 7 days",
+        "clicks": 0,
+        "impressions": 1,
+        "averagePosition": 81.0,
+        "scope": "site_wide_not_assigned_to_page"
+      },
+      {
+        "query": "china travel 7 day itinerary",
+        "clicks": 0,
+        "impressions": 1,
+        "averagePosition": 87.0,
+        "scope": "site_wide_not_assigned_to_page"
+      }
+    ],
+    "marketMonthlyVolume": null,
+    "keywordDifficulty": null
+  },
+  "selectionEvidence": {
+    "tourismIntent": "Specific trip duration and destination route planning for people considering a first visit to China.",
+    "demand": "Six historical page impressions and two separately scoped whole-site query clues. Very small sample; not monthly search demand.",
+    "ranking": "31.5 is the page-average position; exact-page query positions and query ownership remain unknown.",
+    "confirmedGap": "Formal public HTML quick answer allocates 3 Beijing + 2 Xi'an + 2 Shanghai hotel nights, while its table leaves China on Day 7. The faster route precedes the two-city version and does not identify each overnight base.",
+    "publicPageEvidence": {
+      "url": "https://chinaeasebuddy.com/7-day-china-itinerary/",
+      "retrievedOn": "2026-10-22",
+      "sourceReference": "Public raw page retrieved through search open; 133-line prior version, quick answer line 7 and Day 7 departure line 27."
+    },
+    "competitiveCheck": {
+      "url": "https://chinatravelroadmap.com/7-day-china-itinerary",
+      "checkedOn": "2026-10-22",
+      "observation": "Publisher already has a first-timer Beijing–Shanghai itinerary with an explicit six-night allocation. The opportunity is not an empty market. Route allocation is our editorial judgment, not copied competitor text.",
+      "scope": "Visible first-party content; not market-specific live Google top ten, KD, volume or backlink data."
+    },
+    "decision": "Correct the confirmed day/night mismatch and run a small planning-content test: lead with a 7-calendar-day, six-night two-city route. Not a proven high-volume/low-competition or highest-return keyword opportunity.",
+    "whyNow": "Older September20 page has no existing action or observation window in the queue. Retain recently changed calculator, budget, Beijing and Zhangjiajie versions."
+  },
+  "candidateQueries": [
+    "7 day china itinerary",
+    "china itinerary 7 days",
+    "china travel 7 day itinerary",
+    "7 days in china beijing shanghai"
+  ],
+  "queryCaution": "Candidate wording only. Exact-page coverage, monthly volume, KD, target-country/device positions and strongly relevant clicks are unconfirmed. No new Ahrefs request: same-session insufficient-plan failure already recorded; no new data or repeated login required.",
+  "change": {
+    "sharedSource": "src/data/sevenDayItineraryContent.json",
+    "scope": "Correct seven nights versus seven calendar days; lead with six-night two-city route; label fast alternative; name each overnight base; explain Day4 transfer and Monday swap; add contextual city, train-booking and budget links; keep full existing supporting advice.",
+    "sections": 12,
+    "totalFaqCount": 8,
+    "modified": "2026-10-22",
+    "wholeGuideReviewedRetained": "September 20, 2026",
+    "retained": [
+      "Search title, meta description, H1, canonical URL and CTA",
+      "Existing daily cost bands and exclusions",
+      "All previous related links and source links",
+      "All other page content and calculator behavior",
+      "Sitemap inventory; only target lastmod changes"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://young.dpm.org.cn/en/category/279",
+      "checkedOn": "2026-10-22",
+      "supports": "Normal Monday closure with statutory-holiday exception; official reservation channel. No new price or ticket-release claims added."
+    },
+    {
+      "url": "https://www.12306.cn/en/index.html",
+      "checkedOn": "2026-10-22",
+      "supports": "Official English timetable and booking entry; no fixed fare, duration or specific service availability claimed."
+    }
+  ],
+  "hypothesis": "A route whose six hotel nights, four main sightseeing days and travel blocks agree may answer first-trip one-week planning queries more usefully. Search uplift remains untested and no CTR or ranking gain is claimed.",
+  "validation": {
+    "typecheck": "passed",
+    "build": "passed",
+    "lint": "passed_with_one_preexisting_PricingPlans_fast_refresh_warning",
+    "publicHtmlAudit": "passed_all_checks_against_same_process_local_HTTP_server",
+    "routeNightCounts": "passed_both_routes_seven_dates_six_hotel_nights",
+    "sharedContentAndFaqSchema": "passed_12_sections_8_identical_FAQ_pairs",
+    "mobileBrowserQA": "not_completed_environment_has_no_Playwright_Chromium_executable",
+    "formalDomain": "pending"
+  },
+  "publication": {
+    "status": "not_published",
+    "firstFormalVerifiedAt": null
+  },
+  "review": {
+    "decision": "awaiting_evidence",
+    "postChangePerformance": "not_available",
+    "googlePostChangeCrawl": null,
+    "samePageSameQueryRanking": null,
+    "stronglyRelevantClicks": null,
+    "provisional7DayWindow": null,
+    "provisional28DayWindow": null,
+    "rule": "Start provisional complete windows after first formal verification; also save crawl-based windows if Google recrawls later. Compare adjacent nonoverlapping equal windows with identical Web/page/country/device filters. Data completion and sample adequacy govern decisions, not calendar dates alone.",
+    "referenceToExistingEvidencePriority": "Calculator indexed report and budget exact-page Queries remain first; no additional immediate export request for this test."
+  },
+  "observations": [
+    {
+      "at": "2026-10-22T08:01:05+00:00",
+      "type": "selection_and_local_implementation",
+      "summary": "Old seven-night quick answer confirmed against public page and both source renderers. Shared new content prepares a six-night default route; no new GSC or search effect evidence."
+    },
+    {
+      "at": "2026-10-22T08:06:40+00:00",
+      "type": "local_validation",
+      "summary": "Typecheck/i18n, production build, lint, built raw HTML audit and overnight/FAQ consistency checks pass. Local server needed to run in same command process. Browser layout QA could not launch because bundled Chromium executable is absent; no visual/mobile pass claimed."
+    }
+  ]
+}

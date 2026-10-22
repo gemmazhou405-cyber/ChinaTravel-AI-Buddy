@@ -332,6 +332,62 @@
       "keywordDifficulty": null,
       "sourceRecord": "docs/seo/zhangjiajie-itinerary-ranking-tracking.json",
       "decision": "Select one narrow exploratory content test;four earlier candidates remain in observation. This does not establish high volume,low competition or new rank gains."
+    },
+    {
+      "date": "2026-10-22",
+      "candidateUrl": "https://chinaeasebuddy.com/7-day-china-itinerary/",
+      "actionId": "SEO-2026-10-22-SEVEN-DAY-ROUTE",
+      "selectionEvidence": {
+        "tourismIntent": "Specific trip duration and destination route planning for people considering a first visit to China.",
+        "demand": "Six historical page impressions and two separately scoped whole-site query clues. Very small sample; not monthly search demand.",
+        "ranking": "31.5 is the page-average position; exact-page query positions and query ownership remain unknown.",
+        "confirmedGap": "Formal public HTML quick answer allocates 3 Beijing + 2 Xi'an + 2 Shanghai hotel nights, while its table leaves China on Day 7. The faster route precedes the two-city version and does not identify each overnight base.",
+        "publicPageEvidence": {
+          "url": "https://chinaeasebuddy.com/7-day-china-itinerary/",
+          "retrievedOn": "2026-10-22",
+          "sourceReference": "Public raw page retrieved through search open; 133-line prior version, quick answer line 7 and Day 7 departure line 27."
+        },
+        "competitiveCheck": {
+          "url": "https://chinatravelroadmap.com/7-day-china-itinerary",
+          "checkedOn": "2026-10-22",
+          "observation": "Publisher already has a first-timer Beijing–Shanghai itinerary with an explicit six-night allocation. The opportunity is not an empty market. Route allocation is our editorial judgment, not copied competitor text.",
+          "scope": "Visible first-party content; not market-specific live Google top ten, KD, volume or backlink data."
+        },
+        "decision": "Correct the confirmed day/night mismatch and run a small planning-content test: lead with a 7-calendar-day, six-night two-city route. Not a proven high-volume/low-competition or highest-return keyword opportunity.",
+        "whyNow": "Older September20 page has no existing action or observation window in the queue. Retain recently changed calculator, budget, Beijing and Zhangjiajie versions."
+      },
+      "candidateQueries": [
+        "7 day china itinerary",
+        "china itinerary 7 days",
+        "china travel 7 day itinerary",
+        "7 days in china beijing shanghai"
+      ],
+      "queryObservations": [
+        {
+          "query": "china itinerary 7 days",
+          "clicks": 0,
+          "impressions": 1,
+          "averagePosition": 81.0,
+          "scope": "site_wide_not_assigned_to_page"
+        },
+        {
+          "query": "china travel 7 day itinerary",
+          "clicks": 0,
+          "impressions": 1,
+          "averagePosition": 87.0,
+          "scope": "site_wide_not_assigned_to_page"
+        }
+      ],
+      "pageBaseline": {
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0.0,
+        "pageAveragePosition": 31.5
+      },
+      "marketMonthlyVolume": null,
+      "keywordDifficulty": null,
+      "sourceRecord": "docs/seo/seven-day-itinerary-ranking-tracking.json",
+      "decision": "Correct concrete route inconsistency and test a six-night two-city default; not selected as a quantified high-volume/low-competition ranking opportunity."
     }
   ]
 }

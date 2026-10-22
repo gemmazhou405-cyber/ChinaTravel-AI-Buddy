@@ -145,8 +145,9 @@ const pages = [
   {
     path: '/7-day-china-itinerary/',
     h1: /7-Day China Itinerary for First-Time Visitors.*2026/i,
-    keywords: ['open-jaw', 'Beijing', 'Xi\'an', 'Shanghai', 'Palace Museum', 'Terracotta Warriors', 'RMB 350', '12306'],
-    links: ['/#trip-plan', '/china-itinerary-first-time-7-10-14-days/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/best-time-to-visit-china/', '/china-travel-budget/', '/china-train-travel-guide/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/china-esim-internet-guide/', '/china-payment-guide/', '/first-trip-to-china/'],
+    keywords: ['open-jaw', 'Beijing', 'Xi\'an', 'Shanghai', 'Palace Museum', 'Terracotta Warriors', 'RMB 350', '12306', '7 days in China means 6 hotel nights', 'Recommended 7-day China itinerary: Beijing and Shanghai', 'No hotel night included', 'Day 4 is an intercity travel day', 'normally closes on Mondays'],
+    forbiddenPhrases: ['three nights in Beijing, two in Xi\'an, and two in Shanghai'],
+    links: ['/3-day-beijing-itinerary/', '/3-day-shanghai-itinerary/', '/china-travel-budget/#cost-estimator', '/china-train-booking-foreigners-12306/', 'https://young.dpm.org.cn/en/category/279', '/#trip-plan', '/china-itinerary-first-time-7-10-14-days/', '/10-day-china-itinerary/', '/14-day-china-itinerary/', '/beijing-vs-shanghai/', '/best-time-to-visit-china/', '/china-travel-budget/', '/china-train-travel-guide/', '/china-airport-arrival-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/', '/china-esim-internet-guide/', '/china-payment-guide/', '/first-trip-to-china/'],
   },
   {
     path: '/10-day-china-itinerary/',

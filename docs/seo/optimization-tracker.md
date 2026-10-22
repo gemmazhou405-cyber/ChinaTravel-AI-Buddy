@@ -281,3 +281,10 @@ Reviewed all30URLs/36actionIDs and14source tracking records under tourist-intent
 代码 `ad0580b42238b267d26dd2481d9e37de7a433b3f`，Cloudflare部署 `2847ee62-06ca-46ef-8058-5ab44feb23c7` 成功；07:38:53UTC正式目标页HTTP200、共享日期化内容、来源链接、两条新增/总计九条FAQ及schema通过。搜索metadata、全指南原审核日、旧内链保留；sitemap76URLs只更新本页实际lastmod。构建、类型/i18n、lint（原有warning）、本地全套HTML审计及旧版负例通过。发布期间合并每日复查任务新增记录，未覆盖其历史观察。
 
 当前31URL/37项动作；本动作完整7天暂定Oct23–29、28天Oct23–Nov19，等待GSC完整且匹配条件的数据。相关关键词/排名/点击仍待验证；后续来源时效与搜索效果分开复核。不得把日期化内容发布当作现时运营保证或SEO收益。
+
+
+### 2026-10-22 一周中国行程：6晚路线测试待发布
+
+`SEO-2026-10-22-SEVEN-DAY-ROUTE`：旧页quick answer安排7晚，但Day7离境。已统一7个当地日历日/6晚，北京3晚+上海3晚为首选，3+1+2晚三城为紧凑替代；逐日列住宿、换城块、周一改排与城市/订票/预算入口。静态与React共用12节、8FAQ；搜索标题摘要及原日预算未改。历史基线0点击/6展示/页面平均31.5；全站7天行程词线索未归属此页，月搜索量/KD未知。
+
+本地类型/i18n、构建、lint（原有warning）、原始HTML及逐晚/FAQ一致性检查通过。环境缺少Playwright浏览器，手机视觉检查未完成；不声称通过。待正式发布核验后再开始完整观察窗口；没有Google抓取/排名/相关点击新结果。计算器与预算证据优先级保留。详见`seven-day-itinerary-ranking-tracking.json`。

@@ -209,6 +209,19 @@
         "pageAveragePosition": 28.6
       },
       "exactPageQueryIntentConfirmed": false
+    },
+    {
+      "url": "https://chinaeasebuddy.com/7-day-china-itinerary/",
+      "priority": 2,
+      "reason": "Direct China-trip duration planning with a verified six-versus-seven hotel-night mismatch; six historical page impressions are a small exposure clue, not high demand.",
+      "workState": "Oct22 six-night route test prepared; pending validation and publication.",
+      "baseline": {
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0.0,
+        "pageAveragePosition": 31.5
+      },
+      "exactPageQueryIntentConfirmed": false
     }
   ],
   "nextEvidencePriority": [
@@ -265,6 +278,11 @@
       "date": "2026-10-22",
       "type": "direct_itinerary_content_live",
       "summary": "Beijing3day route/calendar/task-link update formally verified;no keyword/ranking/relevant-click effect established."
+    },
+    {
+      "date": "2026-10-22",
+      "type": "seven_day_scoped_test",
+      "summary": "Add one-week itinerary as a scoped accuracy correction and content test. No change to calculator priority or previous observation windows; no high-volume/low-competition claim."
     }
   ],
   "keywordEvidence": "docs/seo/keyword-opportunities-2026-10-22.json",
