@@ -18,7 +18,7 @@
     "periodEnd": null,
     "clicks": 0,
     "impressions": 89,
-    "ctr": 0.0,
+    "ctr": 0,
     "averagePosition": 34.83,
     "previousPeriodClicks": 0,
     "previousPeriodImpressions": 42,
@@ -46,7 +46,7 @@
       "query": "didi app china",
       "evidenceScope": "full_site_query_export_not_confirmed_page_query_pair",
       "impressions": 4,
-      "averagePosition": 71.0,
+      "averagePosition": 71,
       "pageSpecificPosition": null,
       "monthlySearchVolume": null,
       "keywordDifficulty": null
@@ -55,7 +55,7 @@
       "query": "didi china app",
       "evidenceScope": "full_site_query_export_not_confirmed_page_query_pair",
       "impressions": 1,
-      "averagePosition": 43.0,
+      "averagePosition": 43,
       "pageSpecificPosition": null,
       "monthlySearchVolume": null,
       "keywordDifficulty": null
@@ -64,7 +64,7 @@
       "query": "didi taxi app china",
       "evidenceScope": "full_site_query_export_not_confirmed_page_query_pair",
       "impressions": 1,
-      "averagePosition": 54.0,
+      "averagePosition": 54,
       "pageSpecificPosition": null,
       "monthlySearchVolume": null,
       "keywordDifficulty": null
@@ -139,6 +139,23 @@
     }
   },
   "nextObservation": "Obtain exact-page Queries and Google crawl time, plus actual date boundaries. Compare completed same-length, non-overlapping windows after a newer crawl. Track relevant Google organic clicks and same-query rankings; app-store outbound clicks are not Google search clicks. Keep the payment page and old redirect URL separately attributed. Page-average rank changes alone may reflect query mix. No percentage click-growth claim from this zero-click baseline.",
-  "performanceObservations": [],
+  "performanceObservations": [
+    {
+      "id": "SEO-REVIEW-2026-10-22T072710Z",
+      "observedOn": "2026-10-22",
+      "checkedAtUtc": "2026-10-22T07:27:10Z",
+      "type": "effectiveness_evidence_availability_review",
+      "evidenceScope": "Read current tracker, policy, all 30 queue entries / 36 distinct change IDs, tourist-intent priorities and 14 corresponding tracking records. Library filename search returned latest named GSC exports dated October21, already represented in historical source records; no newer named export located. No new URL Inspection evidence supplied/read in this run. Search does not prove no other differently named file exists.",
+      "googleIndexStatus": "No new evidence; retain historical reports without promoting them to current status.",
+      "postChangeCrawl": "修改后抓取待确认",
+      "exactPageQueryCoverage": null,
+      "sameQueryRankingChange": null,
+      "stronglyRelevantClickChange": null,
+      "decision": "awaiting_evidence",
+      "reason": "No new attributable post-change outcome or complete-window evidence. Do not rewrite/revert based on missing evidence or partial-day results. Preserve current versions and previous baselines/windows.",
+      "publicVerificationLimit": "Direct HTTP request received environment HTTP403; not proof of origin failure. Public retrieval displayed calculator shared entry sentence, but budget retrieval was marked crawled yesterday and omitted new tool; fresh-query retrieval inaccessible. No new raw-HTML/canonical/header pass or live regression claimed; previous verified production observations retained.",
+      "nextEvidence": "Existing outstanding requests unchanged: calculator indexed-report crawl and Google-selected canonical; budget exact-URL Queries with actual comparison dates. Amap/WeChat gaps retained at lower collection priority. No duplicate request issued."
+    }
+  ],
   "deployedDate": "2026-10-21"
 }
