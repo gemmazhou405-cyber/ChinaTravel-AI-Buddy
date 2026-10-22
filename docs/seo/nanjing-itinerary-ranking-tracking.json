@@ -3,9 +3,11 @@
   "changeId": "SEO-2026-10-22-NANJING-BOOKINGS",
   "classification": "scoped_tourist_planning_content_test",
   "primaryOutcome": "strongly_relevant_google_organic_clicks",
-  "status": "validated_pending_publication",
+  "status": "live_verified",
   "page": "https://chinaeasebuddy.com/3-day-nanjing-itinerary/",
-  "codeCommits": [],
+  "codeCommits": [
+    "71d18e6cd841eb160028b551d32fc80e6ea2c722"
+  ],
   "baseline": {
     "source": {
       "filename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
@@ -195,9 +197,43 @@
     }
   },
   "publication": {
-    "status": "pending",
-    "codeCommit": null,
-    "firstFormalVerifiedAt": null
+    "status": "live_verified",
+    "firstFormalVerifiedAt": "2026-10-22T14:32:14+00:00",
+    "codeCommit": "71d18e6cd841eb160028b551d32fc80e6ea2c722",
+    "cloudflare": {
+      "status": "success",
+      "deploymentId": "6b90ec36-19e0-49e1-8ba1-6ee02da33a50",
+      "completedAt": "2026-10-22T14:31:17Z",
+      "checkRunId": 119884393617,
+      "previewUrl": "https://6b90ec36.chinaease-buddy.pages.dev"
+    },
+    "formalVerification": {
+      "url": "https://chinaeasebuddy.com/3-day-nanjing-itinerary/",
+      "checkedAt": "2026-10-22T14:32:14+00:00",
+      "httpStatus": 200,
+      "htmlSha256": "eb07a292bcb485029bbcfd76374d241015406cc42da4ba7b98fb53ae64bd5b17",
+      "sections": 9,
+      "faqSchemaPairs": 9,
+      "newSourceLinks": [
+        "https://www.njmuseum.com/zh/visitIndex",
+        "https://www.19371213.com.cn/guide/how/",
+        "https://www.19371213.com.cn/information/notices/202610/t20261008_5921665.html"
+      ],
+      "allFormerRelatedLinksRetained": true,
+      "newPassportVenueAndMondayContent": true,
+      "ordinaryAndDateSpecificHoursDistinguished": true,
+      "searchMetadataMatchesBeforeFormalPage": true,
+      "canonical": "exact_self_reference",
+      "singleH1": true,
+      "noNoindex": true,
+      "sitemap": {
+        "httpStatus": 200,
+        "exactlyMatchesValidatedBuild": true,
+        "urlCount": 76,
+        "targetLastmod": "2026-10-22"
+      },
+      "browserVisualQA": "unavailable_no_executable"
+    }
   },
   "review": {
     "decision": "awaiting_evidence",
@@ -223,7 +259,7 @@
     ],
     "earliest7DayAvailabilityCheck": "2026-10-30",
     "earliest28DayAvailabilityCheck": "2026-11-20",
-    "referenceWindowCaution": "Publication windows remain provisional until formal verification. Reference end date includes this publication and other edits, not a clean causal control. Historical export actual dates remain unknown. Use property reporting dates and complete matched GSC data; add recrawl-based windows if Google processes later.",
+    "referenceWindowCaution": "Provisional publication windows only. Reference end date includes this publication and other edits, not a clean causal control. Historical export actual dates remain unknown. Use property reporting dates and complete matched GSC data; add recrawl-based windows if Google processes later.",
     "rule": "Use complete adjacent equal non-overlapping GSC windows with matching Web, exact page, country and device filters. Data completeness and sample adequacy govern conclusions.",
     "referenceToExistingEvidencePriority": "Calculator indexed URL Inspection and budget exact-page Queries remain first; no new immediate export request."
   },
@@ -252,6 +288,11 @@
       "at": "2026-10-22T14:28:07+00:00",
       "type": "selection_and_local_validation",
       "summary": "Old formal-page gap verified. Museum entry instructions retrieved as indexed official text; direct page is a shell. Full Memorial Hall primary guides and date-limited October FAQ retrieved. Shared content passes types, build, parity, nine FAQ schema pairs and the complete HTML audit suite. No new Google search outcomes."
+    },
+    {
+      "at": "2026-10-22T14:32:14+00:00",
+      "type": "formal_live_verification",
+      "summary": "Code and successful Cloudflare deployment verified. Formal HTTP 200 confirms two new sections, nine visible/schema FAQ pairs, three new official links, passport wording, venue/entrance distinctions, Monday reorder and unchanged search metadata. Sitemap exactly matches the validated 76-URL build. Museum full live-rule verification remains unknown; its indexed-primary-source limitation is retained. Google post-change crawl, indexing, same-page query ranks and relevant clicks remain unknown; mobile visual QA unavailable."
     }
   ]
 }

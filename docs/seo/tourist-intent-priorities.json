@@ -266,7 +266,7 @@
       "url": "https://chinaeasebuddy.com/3-day-nanjing-itinerary/",
       "priority": 2,
       "reason": "Direct destination planning with 14 historical impressions and specific missing venue/document steps; not a quantified keyword opportunity.",
-      "workState": "Shared venue, entry-document and Monday content validated locally; await publication and complete-window search evidence. Museum full live-rule verification remains unknown.",
+      "workState": "October 22 venue, passport and Monday content formally verified at 2026-10-22T14:32:14+00:00; retain for complete-window search follow-up. Museum source is indexed official text; full live-rule verification remains unknown. No quantified volume/difficulty opportunity claimed.",
       "baseline": {
         "clicks": 0,
         "impressions": 14,
@@ -375,6 +375,11 @@
       "date": "2026-10-22",
       "type": "nanjing_booking_test_selected",
       "summary": "Small source-backed practical-planning test; source freshness limits and calculator priority retained."
+    },
+    {
+      "date": "2026-10-22",
+      "type": "nanjing_booking_test_formally_verified",
+      "summary": "Scoped Nanjing planning test live with nine sections and nine FAQs; source freshness limits, calculator priority and recent body observations retained."
     }
   ],
   "keywordEvidence": "docs/seo/keyword-opportunities-2026-10-22.json",

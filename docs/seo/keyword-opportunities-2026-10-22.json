@@ -672,9 +672,10 @@
       "sourceRecord": "docs/seo/nanjing-itinerary-ranking-tracking.json",
       "decision": "Scoped tourist-planning content test, with museum indexed-source freshness limitation recorded. No high-volume or low-competition claim.",
       "publication": {
-        "status": "pending",
-        "codeCommit": null,
-        "firstFormalVerifiedAt": null
+        "codeCommit": "71d18e6cd841eb160028b551d32fc80e6ea2c722",
+        "firstFormalVerifiedAt": "2026-10-22T14:32:14+00:00",
+        "status": "live_verified",
+        "postChangeSearchEffect": "awaiting_evidence"
       }
     }
   ]
