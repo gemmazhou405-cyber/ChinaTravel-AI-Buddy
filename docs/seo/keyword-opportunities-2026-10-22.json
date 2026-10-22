@@ -387,7 +387,13 @@
       "marketMonthlyVolume": null,
       "keywordDifficulty": null,
       "sourceRecord": "docs/seo/seven-day-itinerary-ranking-tracking.json",
-      "decision": "Correct concrete route inconsistency and test a six-night two-city default; not selected as a quantified high-volume/low-competition ranking opportunity."
+      "decision": "Correct concrete route inconsistency and test a six-night two-city default; not selected as a quantified high-volume/low-competition ranking opportunity.",
+      "publication": {
+        "codeCommit": "d2d6360124de36a55841ed9f61d3e7ae24e342e3",
+        "firstFormalVerifiedAt": "2026-10-22T08:12:21+00:00",
+        "status": "live_verified",
+        "postChangeSearchEffect": "awaiting_evidence"
+      }
     }
   ]
 }

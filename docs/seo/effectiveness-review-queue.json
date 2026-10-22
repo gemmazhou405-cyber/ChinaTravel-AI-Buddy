@@ -1433,24 +1433,32 @@
       "recordedChangeDates": [
         "2026-10-22"
       ],
-      "latestConfirmedLiveDate": null,
+      "latestConfirmedLiveDate": "2026-10-22",
       "priority": 2,
-      "decision": "verify_publication_then_observe",
+      "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
-        "formal version verification",
         "current indexed URL Inspection crawl/canonical",
         "complete exact-page Queries comparison with actual dates",
         "strong-relevance clicks and same-query ranking outcomes"
       ],
-      "provisional7DayWindow": null,
-      "provisional28DayWindow": null,
-      "nextAction": "Validate and publish the scoped six-night route test, then hold for complete-window review. Calculator/budget evidence requests remain first.",
+      "provisional7DayWindow": [
+        "2026-10-23",
+        "2026-10-29"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-23",
+        "2026-11-19"
+      ],
+      "nextAction": "Retain the verified six-night route test. Check post-change Google crawl/canonical and complete exact-page relevant-query clicks/ranking;keep calculator and budget evidence requests first.",
       "audienceIntent": {
         "classification": "direct_china_trip_duration_planning",
         "basis": "page/topic inference, not verified visitor identity",
         "asOf": "2026-10-22"
-      }
+      },
+      "earliest7DayAvailabilityCheck": "2026-10-30",
+      "earliest28DayAvailabilityCheck": "2026-11-20",
+      "windowCaution": "Proposed equal, adjacent, nonoverlapping publication windows only. Reference last date includes this publication and other site changes; not a clean causal control. Historical export actual bounds remain unknown. Obtain matching full data and preserve additional recrawl-based windows if later."
     }
   ],
   "observations": [
@@ -1684,6 +1692,14 @@
       "url": "https://chinaeasebuddy.com/7-day-china-itinerary/",
       "decision": "verify_publication_then_observe",
       "summary": "Add an older one-week trip-planning page with a confirmed day/night mismatch; preserve all earlier baselines and windows. No post-change performance evidence."
+    },
+    {
+      "at": "2026-10-22T08:12:21+00:00",
+      "type": "seven_day_route_formal_verification",
+      "url": "https://chinaeasebuddy.com/7-day-china-itinerary/",
+      "changeId": "SEO-2026-10-22-SEVEN-DAY-ROUTE",
+      "decision": "awaiting_evidence",
+      "summary": "Content commit d2d6360124de36a55841ed9f61d3e7ae24e342e3 and Cloudflare success formally verified. Preserve all historic snapshots. Queue now32 exact URLs,38 unique action IDs(43 action references);no post-change search uplift established."
     }
   ],
   "priorityPolicy": "docs/seo/tourist-intent-priorities.json",

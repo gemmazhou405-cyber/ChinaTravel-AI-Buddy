@@ -60,3 +60,5 @@ Ahrefs的项目列表和关键词概览本轮均返回 `Insufficient plan`，未
 本轮将7个当地日历日/6晚作为明确口径，以北京3晚+上海3晚为首选；原三城路线保留为3+1+2晚的紧凑替代，写明适用条件。补充换城日、逐晚住宿、周一改排和上下游规划链接。既修正准确性，也作为小范围游客规划内容测试；不称为已证实的关键词排名机会。竞品https://chinatravelroadmap.com/7-day-china-itinerary 已有两城六晚方案，未据此推断竞争难度、Google前十或需求规模。故宫官方Monday说明和12306入口已核实；线路取舍是编辑建议。
 
 标题摘要、网址、CTA和原费用区间保留；最近改动的其他页面保留观察。发布、Google重新抓取、同页同词和相关点击分别记录。详见`seven-day-itinerary-ranking-tracking.json`。已有计算器和预算数据请求仍优先，不立即新增第三项导出要求。
+
+7天行程补记：`d2d6360`已正式生效，Oct22 08:12:21UTC直接HTTP200核验12章节、8FAQ及schema、6晚说明、内链、自引用canonical和搜索metadata；旧7晚句消失。正式sitemap与本地76URL版本一致。Cloudflare部署`c962d7f1-6c5c-42ee-bf55-9c242d60b529`成功。手机视觉QA未完成（缺少浏览器），不声称通过；Google抓取与相关点击/同词排名仍待验证。

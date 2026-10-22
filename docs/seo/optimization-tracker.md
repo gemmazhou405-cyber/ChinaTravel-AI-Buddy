@@ -288,3 +288,10 @@ Reviewed all30URLs/36actionIDs and14source tracking records under tourist-intent
 `SEO-2026-10-22-SEVEN-DAY-ROUTE`：旧页quick answer安排7晚，但Day7离境。已统一7个当地日历日/6晚，北京3晚+上海3晚为首选，3+1+2晚三城为紧凑替代；逐日列住宿、换城块、周一改排与城市/订票/预算入口。静态与React共用12节、8FAQ；搜索标题摘要及原日预算未改。历史基线0点击/6展示/页面平均31.5；全站7天行程词线索未归属此页，月搜索量/KD未知。
 
 本地类型/i18n、构建、lint（原有warning）、原始HTML及逐晚/FAQ一致性检查通过。环境缺少Playwright浏览器，手机视觉检查未完成；不声称通过。待正式发布核验后再开始完整观察窗口；没有Google抓取/排名/相关点击新结果。计算器与预算证据优先级保留。详见`seven-day-itinerary-ranking-tracking.json`。
+
+
+### 2026-10-22 一周行程正式发布核验
+
+代码`d2d6360124de36a55841ed9f61d3e7ae24e342e3`、Cloudflare部署`c962d7f1-6c5c-42ee-bf55-9c242d60b529`成功。08:12:21UTC正式目标页原始HTTP200核验12节、8FAQ/schema、逐晚住宿表、旧错误句移除、城市/订票/预算入口、self canonical、metadata与本地一致；正式sitemap精确匹配76URL，仅目标页实际lastmod更新。手机视觉QA因缺少浏览器未完成。
+
+`SEO-2026-10-22-SEVEN-DAY-ROUTE`完整7天暂定Oct23–29，28天Oct23–Nov19；参考窗口Oct16–22、Sep25–Oct22，最后一天含上线及其他改动，不能作干净因果对照。若Google后续抓取更晚，追加抓取后窗口；以GSC实际完整性和样本为准。队列32精确URL、38唯一动作ID（43动作引用）。没有Google修改后抓取、关键词归属/覆盖、同词排名或强相关点击新证据，结论待验证。

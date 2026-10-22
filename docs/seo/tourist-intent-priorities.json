@@ -214,7 +214,7 @@
       "url": "https://chinaeasebuddy.com/7-day-china-itinerary/",
       "priority": 2,
       "reason": "Direct China-trip duration planning with a verified six-versus-seven hotel-night mismatch; six historical page impressions are a small exposure clue, not high demand.",
-      "workState": "Oct22 six-night route test prepared; pending validation and publication.",
+      "workState": "Oct22six-night route test formally verified08:12:21UTC;retain for complete-window exact-query/relevant-click follow-up in seven-day-itinerary-ranking-tracking.json;not a proven high-volume/low-competition opportunity.",
       "baseline": {
         "clicks": 0,
         "impressions": 6,
@@ -283,6 +283,11 @@
       "date": "2026-10-22",
       "type": "seven_day_scoped_test",
       "summary": "Add one-week itinerary as a scoped accuracy correction and content test. No change to calculator priority or previous observation windows; no high-volume/low-competition claim."
+    },
+    {
+      "date": "2026-10-22",
+      "type": "seven_day_route_formally_verified",
+      "summary": "One-week itinerary test live with unchanged metadata and76URL sitemap. Keep calculator first and all recent page observation windows."
     }
   ],
   "keywordEvidence": "docs/seo/keyword-opportunities-2026-10-22.json",
