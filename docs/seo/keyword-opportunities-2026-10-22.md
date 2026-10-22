@@ -1,0 +1,41 @@
+# 2026-10-22 关键词机会核对
+
+本轮按“旅游意图 → 需求/曝光 → 同词排名机会 → 竞争页面与具体缺口”筛选。目的仍是强相关自然搜索点击。现有证据不支持把任一候选称为高流量低竞争词，也不支持再选一页反复改写。
+
+## 四组候选与决定
+
+以下数据均来自用户10月21日比较导出，不是本轮修改后的效果。周期标签为最近28天对比此前28天，实际起止日期未提供。页面数据格式：点击 / 展示 / 页面平均排名；查询数据另列且不混用。
+
+| 页面 | 页面基线 | 查询证据与范围 | 公开竞争页面核对 | 本轮决定 |
+| --- | --- | --- | --- | --- |
+| 240小时计算器 | 0 / 10 / 22.5 | 专属导出只有 `transit through mainland` 1展示/4、`visa free china` 1/193；其余8展示查询未披露。目标计算器词覆盖未知 | HelloChinaTrip已有口岸/日期工具；Visa-Free-China有国籍、路线、口岸、日期及文件确认输入 | 保持用户指定第一优先级；修复一处已确认的静态说明冲突，然后观察。不再改标题或算法 |
+| 旅行预算/费用计算器 | 0 / 109 / 27.02 | 全站 `china travel budget` 2/84、`trip to china cost` 2/95.5；不能归给本页 | 已存在城市/旅客/酒店/车辆估算工具及路线/季节/客房/额外费用估算工具 | 本页Oct22刚修改，等待精确页面Queries；不增加未经核实的细分价格 |
+| 桂林阳朔三日行程 | 0 / 44 / 59.05 | 全站 `yangshuo itinerary` 14/80.64、`guilin yangshuo itinerary` 12/81；无页面归属证据 | WanderInChina已有多天数、区域、末日行程、天气和轻松方案 | 正式HTML确认Oct19的阳朔方案/车站说明仍在；先补发布核验记录，保留观察 |
+| 中国最佳旅游时间 | 0 / 35 / 79.94 | 全站 `best time to visit china` 16/90.12；无页面归属证据 | ChinaTours已有月份/季节/目的地/假期/活动表 | 不能因可见查询展示最多就优先；目前不是已证实的接近前十机会 |
+
+旧费用计算器 `/how-much-does-china-trip-cost-2026-calculator/` 已301到预算主页，其历史行不作为独立现存页面机会。计算器页面平均22.5不等于计算器目标词排名22.5。其两个已披露查询也不证明目标工具词没有覆盖，隐藏数据保持未知。
+
+## 竞争证据来源与边界
+
+10月22日读取以下产品/编辑方公开页面，只记录可见结构与字段，未运行其计算器、核实报价或采用其政策数字/“官方”自称：
+
+- https://hellochinatrip.com/china-240h-visa-free-calculator/
+- https://www.visa-free-china.com/
+- https://hellochinatrip.com/china-travel-cost-calculator/
+- https://www.chinafornewcomers.com/budget.html
+- https://www.wanderinchina.com/destinations/guilin/itineraries/
+- https://www.chinatours.com/china-travel-insights/the-best-time-to-visit-china/
+
+公开检索样本不等于指定国家/设备的实时Google结果，不能据此填写前十位置、DR、外链或KD。竞品已有专门工具/详细内容，足以否定“没有同类页面”的假设，不能据此量化竞争难度。
+
+Ahrefs的项目列表和关键词概览本轮均返回 `Insufficient plan`，未取得任何数值。尝试US市场的三个工具候选词不代表本站已决定只做美国市场。月搜索量、KD及各国差异继续留未知，不以GSC展示冒充，也不要求用户重复登录或升级套餐。
+
+## 本轮可执行修复与跟踪
+
+计算器原始HTML的“How the calculator works”仍要求输入航班计划抵达时间，React同一位置已使用“预计或记录的入境日期，并核对入境许可”。静态生成改为复用同一共享文案；新增原始HTML审计覆盖并禁止旧句回归。只更新该页实际修改日，保留政策核验日期、数学逻辑和搜索metadata。此项归为发布一致性修复，不称为已证实的排名增长实验。
+
+当前仅能确认四页正式域名HTTP200、精确自引用canonical及对应正文；不代表Google已处理修改。后续记录同页同词排名、相关展示与绝对新增点击。完整7/28天窗口及GSC抓取证据仍遵循复盘政策。
+
+最小证据缺口按原顺序保留：计算器最新URL Inspection报告；预算主页精确Page→Queries比较及实际日期。已收到的全站与计算器基线无需重交。获得新证据再决定下一项增长修改。
+
+机器可读明细见 `keyword-opportunities-2026-10-22.json`。原始GSC文件SHA、数据范围、竞品字段与正式检查时间均已保留。

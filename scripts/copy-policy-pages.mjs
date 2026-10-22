@@ -4035,7 +4035,7 @@ pageMeta['china-240-hour-transit-calculator'] = {
     {
       title: 'How the calculator works',
       items: [
-        'Enter the scheduled local arrival date and time in Mainland China, the entry city, the country or region before Mainland China, and the onward destination.',
+        transitAnswers.clockInputCopy.firstStep,
         'The calculator starts the official 240-hour clock at 00:00 China Standard Time on the day after entry and adds 240 hours.',
         'The displayed planning time is one minute before the exact boundary. Travelers should leave a practical buffer for transport, check-in, security and exit inspection.',
       ],

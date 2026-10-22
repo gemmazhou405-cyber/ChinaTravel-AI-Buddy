@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-22",
+  "purpose": "Select evidence-supported ranking work for strongly relevant China-trip organic clicks. Research,maintenance and measured growth outcomes remain separate.",
+  "source": {
+    "filename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
+    "sha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+    "searchType": "Web",
+    "periodLabel": "Last 28 days vs previous 28 days",
+    "actualDateBounds": null,
+    "postChangeResult": false
+  },
+  "calculatorExactPageSource": {
+    "filename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (2).xlsx",
+    "sha256": "7045dd42495f7e1ff4cf7f13a201babb4a5b3cb0cffc16df235bb37d4f1febbc",
+    "exactPageFilter": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+    "actualDateBounds": null
+  },
+  "ahrefsAccess": {
+    "checkedOn": "2026-10-22",
+    "managementProjects": "Insufficient plan",
+    "keywordsExplorerOverview": "Insufficient plan",
+    "attemptedCountry": "us",
+    "attemptedKeywords": [
+      "china 240 hour transit calculator",
+      "china twov calculator",
+      "china trip cost calculator"
+    ],
+    "numericMetricsReceived": false,
+    "interpretation": "Unavailable metrics are unknown,not zero.No further login or paid-upgrade instruction."
+  },
+  "limitations": [
+    "Public search results are retrieval samples,not a target-country/device live Google SERP;no numeric ranking,DR,backlinks or KD inferred.",
+    "GSC impressions are observed exposure,not market monthly volume;site-wide query rows are not page-query pairs.",
+    "Page average position is not a target-query rank;hidden queries and relevance remain unknown.",
+    "Competitor feature observations do not validate policy,prices,official status,calculation accuracy or production functionality.",
+    "No new GSC outcome supplied;recent interventions overlap and cannot be assigned isolated causality."
+  ],
+  "candidates": [
+    {
+      "url": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+      "candidateQueries": [
+        "china 240 hour transit calculator",
+        "china twov calculator",
+        "when does my 240 hour twov expire"
+      ],
+      "pageBaseline": {
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "pageAveragePosition": 22.5
+      },
+      "queryObservations": [
+        {
+          "query": "transit through mainland",
+          "clicks": 0,
+          "impressions": 1,
+          "averagePosition": 4,
+          "scope": "exact_page_filtered"
+        },
+        {
+          "query": "visa free china",
+          "clicks": 0,
+          "impressions": 1,
+          "averagePosition": 193,
+          "scope": "exact_page_filtered"
+        }
+      ],
+      "marketMonthlyVolume": null,
+      "keywordDifficulty": null,
+      "targetCountryDevice": null,
+      "competitorEvidence": [
+        {
+          "url": "https://hellochinatrip.com/china-240h-visa-free-calculator/",
+          "checkedOn": "2026-10-22",
+          "observedPublicFeatures": [
+            "Port/date inputs and itinerary action"
+          ],
+          "validation": "Visible first-party page only;interactive results,policy claims,prices and live Google ranking not verified."
+        },
+        {
+          "url": "https://www.visa-free-china.com/",
+          "checkedOn": "2026-10-22",
+          "observedPublicFeatures": [
+            "Nationality,purpose,origin/onward route,ports,date-time and document/onward-ticket inputs"
+          ],
+          "validation": "Visible first-party page only;interactive results,policy claims,prices and live Google ranking not verified."
+        }
+      ],
+      "decision": "maintain_user_priority_repair_confirmed_inconsistency_then_observe",
+      "reason": "Dedicated tools exist;no proven low-competition gap. Target tool-query coverage unconfirmed;8 of10 page impressions have no disclosed query. Existing worked examples and midnight guidance already changed. One stale static instruction conflicts with shared React copy and can be repaired without altering math or metadata.",
+      "postChangeRankOrRelevantClickGain": null
+    },
+    {
+      "url": "https://chinaeasebuddy.com/china-travel-budget/",
+      "candidateQueries": [
+        "china trip cost calculator",
+        "china travel budget",
+        "trip to china cost"
+      ],
+      "pageBaseline": {
+        "clicks": 0,
+        "impressions": 109,
+        "ctr": 0,
+        "pageAveragePosition": 27.02
+      },
+      "queryObservations": [
+        {
+          "query": "china travel budget",
+          "clicks": 0,
+          "impressions": 2,
+          "averagePosition": 84,
+          "scope": "site_wide_not_assigned_to_page"
+        },
+        {
+          "query": "trip to china cost",
+          "clicks": 0,
+          "impressions": 2,
+          "averagePosition": 95.5,
+          "scope": "site_wide_not_assigned_to_page"
+        }
+      ],
+      "marketMonthlyVolume": null,
+      "keywordDifficulty": null,
+      "targetCountryDevice": null,
+      "competitorEvidence": [
+        {
+          "url": "https://hellochinatrip.com/china-travel-cost-calculator/",
+          "checkedOn": "2026-10-22",
+          "observedPublicFeatures": [
+            "Private-tour estimator with cities,days,group,rooms,hotel class,vehicle,guide and transfers"
+          ],
+          "validation": "Visible first-party page only;interactive results,policy claims,prices and live Google ranking not verified."
+        },
+        {
+          "url": "https://www.chinafornewcomers.com/budget.html",
+          "checkedOn": "2026-10-22",
+          "observedPublicFeatures": [
+            "Route/season/group/style inputs,separate rooms/night,activities and optional flight/visa/insurance costs"
+          ],
+          "validation": "Visible first-party page only;interactive results,policy claims,prices and live Google ranking not verified."
+        }
+      ],
+      "decision": "await_exact_page_queries_and_post_change_window",
+      "reason": "New per-person/group calculator presentation already verified October22. Existing competitors provide developed estimators;our daily-range calculator is not established as uniquely comprehensive or low competition. Do not add unverified prices or repeat edits without query evidence.",
+      "postChangeRankOrRelevantClickGain": null
+    },
+    {
+      "url": "https://chinaeasebuddy.com/3-day-guilin-yangshuo-itinerary/",
+      "candidateQueries": [
+        "yangshuo itinerary",
+        "guilin yangshuo itinerary",
+        "3 day guilin yangshuo itinerary"
+      ],
+      "pageBaseline": {
+        "clicks": 0,
+        "impressions": 44,
+        "ctr": 0,
+        "pageAveragePosition": 59.05
+      },
+      "queryObservations": [
+        {
+          "query": "yangshuo itinerary",
+          "clicks": 0,
+          "impressions": 14,
+          "averagePosition": 80.64,
+          "scope": "site_wide_not_assigned_to_page"
+        },
+        {
+          "query": "guilin yangshuo itinerary",
+          "clicks": 0,
+          "impressions": 12,
+          "averagePosition": 81.0,
+          "scope": "site_wide_not_assigned_to_page"
+        }
+      ],
+      "marketMonthlyVolume": null,
+      "keywordDifficulty": null,
+      "targetCountryDevice": null,
+      "competitorEvidence": [
+        {
+          "url": "https://www.wanderinchina.com/destinations/guilin/itineraries/",
+          "checkedOn": "2026-10-22",
+          "observedPublicFeatures": [
+            "2/3/4/5-day scopes,geographic distinctions,final-day constraints,weather and lighter variants"
+          ],
+          "validation": "Visible first-party page only;interactive results,policy claims,prices and live Google ranking not verified."
+        }
+      ],
+      "decision": "confirm_existing_live_version_then_observe",
+      "reason": "Site-wide queries give genuine observed topic exposure but no page ownership or low competition evidence. October19 Yangshuo-based route and station clarification now confirmed on formal domain October22;do not call the existing version a new content action.",
+      "postChangeRankOrRelevantClickGain": null
+    },
+    {
+      "url": "https://chinaeasebuddy.com/best-time-to-visit-china/",
+      "candidateQueries": [
+        "best time to visit china",
+        "when is the best time to visit china"
+      ],
+      "pageBaseline": {
+        "clicks": 0,
+        "impressions": 35,
+        "ctr": 0,
+        "pageAveragePosition": 79.94
+      },
+      "queryObservations": [
+        {
+          "query": "best time to visit china",
+          "clicks": 0,
+          "impressions": 16,
+          "averagePosition": 90.12,
+          "scope": "site_wide_not_assigned_to_page"
+        }
+      ],
+      "marketMonthlyVolume": null,
+      "keywordDifficulty": null,
+      "targetCountryDevice": null,
+      "competitorEvidence": [
+        {
+          "url": "https://www.chinatours.com/china-travel-insights/the-best-time-to-visit-china/",
+          "checkedOn": "2026-10-22",
+          "observedPublicFeatures": [
+            "Month/season/destination/holiday/event tables"
+          ],
+          "validation": "Visible first-party page only;interactive results,policy claims,prices and live Google ranking not verified."
+        }
+      ],
+      "decision": "hold_broad_term_not_supported_as_near_top_ten_opportunity",
+      "reason": "Highest visible topic-query impressions among this small sample do not prove high market volume. Query average near90,unknown page ownership and established broad content provide no evidence of an easy near-top-ten gain.",
+      "postChangeRankOrRelevantClickGain": null
+    }
+  ],
+  "decision": "No candidate is proven high-volume/low-competition and no new growth rewrite is selected on this evidence. Repair one confirmed calculator publishing inconsistency;retain recent content and obtain smallest missing evidence.",
+  "nextDataPriority": [
+    {
+      "url": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+      "needed": "Current indexed URL Inspection report with last Google crawl,Google-selected canonical and observation date;prior indexing report and baseline already received."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/china-travel-budget/",
+      "needed": "Exact canonical Page→Queries comparison export plus actual date bounds;do not resubmit already received whole-site/calculator baselines."
+    }
+  ],
+  "publicVersionChecks": [
+    {
+      "url": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+      "status": 200,
+      "finalUrl": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+      "checkedAtUtc": "2026-10-22T06:59:37Z",
+      "canonical": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+      "robots": null,
+      "xRobotsTag": null,
+      "contentChecks": {
+        "240-hour TWOV expiry examples": true,
+        "recorded entry date": true,
+        "2026-11-28 08:15": true,
+        "2026-12-31 23:55": true,
+        "2027-01-11 00:00": true
+      },
+      "googleIndexState": "not_established_by_public_fetch",
+      "checkCorrection": "Static example rows show dates rather than React-only example labels. Rechecked all three date rows;initial label probes did not establish a missing example."
+    },
+    {
+      "url": "https://chinaeasebuddy.com/china-travel-budget/",
+      "status": 200,
+      "finalUrl": "https://chinaeasebuddy.com/china-travel-budget/",
+      "checkedAtUtc": "2026-10-22T06:59:37Z",
+      "canonical": "https://chinaeasebuddy.com/china-travel-budget/",
+      "robots": null,
+      "xRobotsTag": null,
+      "contentChecks": {
+        "China trip cost calculator: 7, 10 and 14-day estimates": true,
+        "Per person for 10 days": true,
+        "All 1 traveler for 10 days": true
+      },
+      "googleIndexState": "not_established_by_public_fetch"
+    },
+    {
+      "url": "https://chinaeasebuddy.com/3-day-guilin-yangshuo-itinerary/",
+      "status": 200,
+      "finalUrl": "https://chinaeasebuddy.com/3-day-guilin-yangshuo-itinerary/",
+      "checkedAtUtc": "2026-10-22T06:59:37Z",
+      "canonical": "https://chinaeasebuddy.com/3-day-guilin-yangshuo-itinerary/",
+      "robots": null,
+      "xRobotsTag": null,
+      "contentChecks": {
+        "Three days based in Yangshuo instead": true,
+        "Yangshuo Railway Station": true,
+        "October 19, 2026": true
+      },
+      "googleIndexState": "not_established_by_public_fetch"
+    },
+    {
+      "url": "https://chinaeasebuddy.com/best-time-to-visit-china/",
+      "status": 200,
+      "finalUrl": "https://chinaeasebuddy.com/best-time-to-visit-china/",
+      "checkedAtUtc": "2026-10-22T06:59:37Z",
+      "canonical": "https://chinaeasebuddy.com/best-time-to-visit-china/",
+      "robots": null,
+      "xRobotsTag": null,
+      "contentChecks": {
+        "Best Time to Visit China": true
+      },
+      "googleIndexState": "not_established_by_public_fetch"
+    }
+  ]
+}

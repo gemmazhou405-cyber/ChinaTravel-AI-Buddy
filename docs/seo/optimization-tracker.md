@@ -195,6 +195,8 @@ Production verification is separate from Google indexing. The Panda Base update 
 The Alipay Metro page still showed its October 5 body in the public HTML immediately after the October 20 commits, despite a successful Vercel commit status. A later public fetch on October 20 confirmed the new title, first answer and review date on `chinaeasebuddy.com`. This is the production observation date, not evidence of a Google recrawl.
 The DiDi payment page's public HTML showed the new October 20 review date after the description-only commit. The generated HTML was also checked for the new meta description. A public text extraction alone does not expose the meta tag, so the production review-date observation and local meta check are recorded separately; neither proves Google has used the new snippet.
 
+| SEO-2026-10-22-CALC-STATIC-ENTRY | 2026-10-22; local repair pending release verification | `/china-240-hour-transit-calculator/` | Replace stale static scheduled-arrival instruction with existing shared entry-date guidance;add calculator HTML/stale-copy audit. Maintenance consistency repair,not a proven ranking opportunity. | Historical exact-page0clicks/10impressions/pageavg22.5;target tool-query coverage/volume/KDunknown | Historical indexed report,last reported crawlOct13;post-change crawl unknown | Four-group evidence matrix in `keyword-opportunities-2026-10-22.json`;no new GSC outcome | Verify production,then complete same-query7/28day windows and absolute relevant-click changes;retain recent metadata/algorithm. |
+
 ## Next page decision: DiDi query ownership
 
 The site-wide `Queries` sheet does not show which page received each query. The main DiDi guide was last changed on 2026-10-11, so do not change both DiDi pages again before measuring the current result. These figures refer to the same 2026-09-16–2026-10-13 workbook, and are **not** keyword search volumes.
@@ -255,3 +257,9 @@ The separate GSC Web export downloaded on 2026-10-19 covers **2026-09-20–2026-
 - Keep exports with the observation date and exact window in the filename; place review notes in this file. Do not publish user/account identifiers or raw private GSC exports in the public website build.
 
 Google documentation: [URL Inspection and live tests](https://support.google.com/webmasters/answer/9012289) and [performance filtering and anonymized queries](https://support.google.com/webmasters/answer/17011165).
+
+### 2026-10-22 关键词证据与历史发布核验
+
+四组候选/竞品核对已保存于 `keyword-opportunities-2026-10-22.md`/JSON。Ahrefs项目列表与关键词概览仍为Insufficient plan；没有得到月搜索量/KD。公开页面不是目标国家/设备实时SERP；没有新的GSC结果。暂不据此重写新一页。
+
+Oct22 06:59:37UTC，正式阳朔页HTTP200、自引用canonical、Oct19的阳朔三日替代方案与Yangshuo Railway Station说明通过。队列采用保守首次核验日Oct22，保留原修改日，不声称原发布日或收录/排名变化。计算器新增独立发布一致性修复记录，30个精确URL/36项动作；效果仍待验证。

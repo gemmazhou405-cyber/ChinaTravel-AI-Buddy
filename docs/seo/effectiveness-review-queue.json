@@ -20,15 +20,18 @@
         "SEO-2026-10-20-TRANSIT-CALC",
         "SEO-2026-10-21-TRANSIT-EXPIRY",
         "SEO-2026-10-20-TRANSIT-LINKS",
-        "SEO-2026-10-21-TRANSIT-HUBS"
+        "SEO-2026-10-21-TRANSIT-HUBS",
+        "SEO-2026-10-22-CALC-STATIC-ENTRY"
       ],
       "sourceRecords": [
         "docs/seo/clock-entry-ranking-tracking.json",
-        "docs/seo/transit-calculator-tracking.json"
+        "docs/seo/transit-calculator-tracking.json",
+        "docs/seo/calculator-entry-copy-tracking.json"
       ],
       "recordedChangeDates": [
         "2026-10-21",
-        "2026-10-20"
+        "2026-10-20",
+        "2026-10-22"
       ],
       "latestConfirmedLiveDate": "2026-10-21",
       "priority": 1,
@@ -49,7 +52,7 @@
       ],
       "earliest7DayAvailabilityCheck": "2026-10-29",
       "earliest28DayAvailabilityCheck": "2026-11-19",
-      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
+      "nextAction": "Verify static-entry instruction repair in production;retain recent growth changes until new crawl/exact-query evidence. See keyword-opportunities-2026-10-22.json.",
       "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
       "roleNote": "Includes support-link experiments; evaluate their intended calculator destination outcome separately from source-page traffic.",
       "audienceIntent": {
@@ -190,27 +193,33 @@
       "recordedChangeDates": [
         "2026-10-19"
       ],
-      "latestConfirmedLiveDate": null,
+      "latestConfirmedLiveDate": "2026-10-22",
       "priority": 2,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
-        "confirmed production-live date",
         "current URL Inspection and modification-after-crawl evidence",
         "complete exact-page Queries comparison with actual dates",
         "strong-relevance clicks and same-query ranking outcomes"
       ],
-      "provisional7DayWindow": null,
-      "provisional28DayWindow": null,
-      "earliest7DayAvailabilityCheck": null,
-      "earliest28DayAvailabilityCheck": null,
-      "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
+      "provisional7DayWindow": [
+        "2026-10-23",
+        "2026-10-29"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-23",
+        "2026-11-19"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-30",
+      "earliest28DayAvailabilityCheck": "2026-11-20",
+      "nextAction": "Observe existing October19 content,confirmed on formal domain October22;do not count as a new content modification.",
       "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
       "audienceIntent": {
         "classification": "direct_trip_planning",
         "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
         "asOf": "2026-10-22"
-      }
+      },
+      "liveDateCaution": "October22 is conservative first recorded formal verification,not inferred original publish date;October19 modification retained."
     },
     {
       "url": "https://chinaeasebuddy.com/3-day-shenzhen-itinerary/",
@@ -1296,7 +1305,20 @@
       "type": "formal_publication_verified",
       "changeId": "SEO-2026-10-22-BEIJING-3DAY",
       "summary": "Formal Beijing page/sitemap verified;queue30URLs/35IDs,provisional windows set;Google/search outcomes unconfirmed."
+    },
+    {
+      "date": "2026-10-22",
+      "type": "keyword_opportunity_evidence_review",
+      "summary": "Four candidate groups reviewed;no quantified high-volume/low-competition or new targeted growth rewrite supported. Ahrefs plan errors;new calculator consistency repair pending publication;30URLs/36IDs."
+    },
+    {
+      "date": "2026-10-22",
+      "checkedAtUtc": "2026-10-22T06:59:37Z",
+      "type": "existing_formal_version_verified",
+      "changeId": "SEO-2026-10-19-YANGSHUO",
+      "summary": "October19 Yangshuo variant/station copy confirmed on formal domain. First recorded verification date only;not a new content edit or Google outcome."
     }
   ],
-  "priorityPolicy": "docs/seo/tourist-intent-priorities.json"
+  "priorityPolicy": "docs/seo/tourist-intent-priorities.json",
+  "keywordEvidence": "docs/seo/keyword-opportunities-2026-10-22.json"
 }

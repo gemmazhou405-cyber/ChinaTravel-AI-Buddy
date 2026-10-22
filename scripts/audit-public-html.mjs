@@ -1,7 +1,18 @@
+import { readFileSync } from 'node:fs';
+
+const transitAnswers = JSON.parse(readFileSync(new URL('../src/data/transitAnswers.json', import.meta.url), 'utf8'));
+
 const ORIGIN = 'https://chinaeasebuddy.com';
 const REQUEST_ORIGIN = process.env.AUDIT_ORIGIN || ORIGIN;
 
 const pages = [
+  {
+    path: '/china-240-hour-transit-calculator/',
+    h1: /China 240-Hour Visa-Free Transit Calculator/i,
+    keywords: [transitAnswers.clockInputCopy.firstStep, 'China Standard Time', '240-hour TWOV expiry examples'],
+    forbiddenPhrases: ['Enter the scheduled local arrival date and time'],
+    links: ['/guides/', '/china-240-hour-visa-free-transit-2026/', '/china-visa-free-checker/'],
+  },
   {
     path: '/china-train-booking-foreigners-12306/',
     h1: /China.*350 km\/h Trains.*Foreigners/i,
@@ -411,6 +422,11 @@ for (const page of pages) {
 
   const missingKeywords = page.keywords.filter((keyword) => !text.toLowerCase().includes(keyword.toLowerCase()));
   checks.push(['page keywords', missingKeywords.length === 0, missingKeywords.length ? `missing: ${missingKeywords.join(', ')}` : 'ok']);
+
+  if (page.forbiddenPhrases) {
+    const stalePhrases = page.forbiddenPhrases.filter((phrase) => text.toLowerCase().includes(phrase.toLowerCase()));
+    checks.push(['no stale instructions', stalePhrases.length === 0, stalePhrases.length ? `found: ${stalePhrases.join(', ')}` : 'ok']);
+  }
 
   const escapedLink = (link) => link.replace(/&/g, '&amp;');
   const missingLinks = page.links.filter((link) => {

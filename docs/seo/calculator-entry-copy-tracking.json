@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "changeId": "SEO-2026-10-22-CALC-STATIC-ENTRY",
+  "classification": "maintenance_publishing_consistency_repair",
+  "primaryOutcome": "strongly_relevant_google_organic_clicks",
+  "status": "local_checks_passed_pending_release",
+  "page": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+  "codeCommits": [],
+  "reason": "Confirmed stale scheduled-arrival instruction in static How the calculator works differs from React/shared entry-date guidance. Previous clock-entry repair did not eliminate this separate static item.",
+  "confirmedGap": {
+    "checkedAtUtc": "2026-10-22T06:59:37Z",
+    "httpStatus": 200,
+    "oldText": "Enter the scheduled local arrival date and time in Mainland China, the entry city, the country or region before Mainland China, and the onward destination.",
+    "correctSharedKey": "transitAnswers.clockInputCopy.firstStep",
+    "scope": "Align to existing shared wording only;no new timing policy or edge-case interpretation."
+  },
+  "change": {
+    "files": [
+      "scripts/copy-policy-pages.mjs",
+      "src/data/transitCalculatorContent.json",
+      "scripts/audit-public-html.mjs"
+    ],
+    "modifiedDate": "2026-10-22",
+    "scope": "Use shared firstStep in static list;add calculator public-HTML audit profile and stale-instruction rejection.",
+    "retained": [
+      "Title,description,H1,URL,canonical",
+      "Calculator inputs,algorithm,route examples and all three worked examples",
+      "Policy lastVerified/global lastUpdated and reviewed labels",
+      "76 sitemap URLs;only calculator actual lastmod changes"
+    ]
+  },
+  "baseline": {
+    "source": {
+      "filename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (2).xlsx",
+      "sha256": "7045dd42495f7e1ff4cf7f13a201babb4a5b3cb0cffc16df235bb37d4f1febbc",
+      "exactPageFilter": "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+      "actualDateBounds": null
+    },
+    "clicks": 0,
+    "impressions": 10,
+    "pageAveragePosition": 22.5,
+    "queryObservations": [
+      {
+        "query": "transit through mainland",
+        "clicks": 0,
+        "impressions": 1,
+        "averagePosition": 4,
+        "scope": "exact_page_filtered"
+      },
+      {
+        "query": "visa free china",
+        "clicks": 0,
+        "impressions": 1,
+        "averagePosition": 193,
+        "scope": "exact_page_filtered"
+      }
+    ],
+    "monthlySearchVolume": null,
+    "keywordDifficulty": null,
+    "note": "Historical baseline only;not new outcomes.8 undisclosed-query impressions remain unknown."
+  },
+  "hypothesis": "Consistent instructions reduce a documented ambiguity for users and crawlers. No evidence establishes a ranking or click improvement from this repair.",
+  "opportunityEvidence": "docs/seo/keyword-opportunities-2026-10-22.json",
+  "verification": {
+    "build": "PASS",
+    "typecheck": "PASS",
+    "i18nParity": "PASS",
+    "transitCalculatorTests": "PASS:deadline,nationality,route,a11y,CTA/schema checks",
+    "publicHtmlLocal": "PASS:full audited page set including new calculator profile",
+    "capturedOldFixture": "PASS:old formal version rejected only on calculator shared instruction and stale-instruction checks",
+    "focusedHtml": "PASS:search metadata unchanged,three date examples and visible/schema FAQs retained",
+    "sitemap": "PASS:76URLs unchanged,only calculator lastmod2026-10-21→2026-10-22",
+    "initialAuditAttempt": "Local server in another command session was unreachable;no page content conclusion taken. Reran server and audit in one process context;new-build pass and old-fixture rejection confirmed.",
+    "diffCheck": "PASS",
+    "algorithmDiff": "No calculator math/input/route source changed",
+    "lint": "PASS,one existing Fast Refresh warning"
+  },
+  "production": {
+    "verified": false,
+    "googleRecrawlConfirmed": false,
+    "rankingOrClickGainConfirmed": false
+  },
+  "followUp": {
+    "first7DayWindow": null,
+    "first28DayWindow": null,
+    "windowRule": "Set only after formal verification;combine recent calculator interventions and preserve earlier windows separately. Same-query,actual-date,country/device matching and complete GSC days required.",
+    "nextEvidence": "Current URL Inspection crawl/canonical,then complete exact-page query/click outcomes;do not re-request existing baseline.",
+    "indexRequestSubmitted": false
+  },
+  "releaseObservations": [
+    {
+      "observedOn": "2026-10-22",
+      "stage": "Local acceptance passed;formal release and Google outcomes pending."
+    }
+  ],
+  "performanceObservations": []
+}
