@@ -123,7 +123,8 @@
         { "type": "p", "text": "Tap **GO** to start the route with a **get-off reminder**, so you don't miss your stop." },
         { "type": "p", "text": "Tap any station to see its entrances and exits, the fare range, first and last train times in each direction, and a live countdown to the next train with how crowded it is. [[shot:12]] For the whole network, use the **Subway Map** shortcut on the Home screen." },
         { "type": "note", "text": "When you take the metro, look carefully at which entrance you use. Most stations have elevators for luggage, so look out for them." },
-        { "type": "p", "text": "For walking routes, zoom in near big roads, footbridges and malls to check where the entrance actually is. More on metro tickets and gates: [China metro guide](/china-metro-guide/)." }
+        { "type": "p", "text": "For walking routes, zoom in near big roads, footbridges and malls to check where the entrance actually is. More on metro tickets and gates: [China metro guide](/china-metro-guide/)." },
+        { "type": "p", "text": "Before your first ride, check how to [pay for the metro with Alipay or your card](/alipay-metro-qr-transport-code-guide/)." }
       ]
     },
     {

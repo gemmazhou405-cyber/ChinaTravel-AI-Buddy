@@ -283,6 +283,16 @@
             "href": "/amap-english-mode-guide-2026/#metro"
           }
         ]
+      },
+      {
+        "section": "Choose a ticket or payment method",
+        "links": [
+          {
+            "label": "pay with the Alipay ride code or tap your card",
+            "description": "Which cities take Visa, Mastercard, Amex and JCB at the gate, and how to activate the Alipay ride code.",
+            "href": "/alipay-metro-qr-transport-code-guide/"
+          }
+        ]
       }
     ],
     "removeFaqs": []
@@ -317,6 +327,11 @@
             "label": "Use Amap in English",
             "description": "Switch the app to English and check metro entrances before you set out.",
             "href": "/amap-english-mode-guide-2026/"
+          },
+          {
+            "label": "tap your Visa at the metro gate",
+            "description": "Contactless Visa, Mastercard, Amex and JCB cards work at the metro gates; no app or ticket needed.",
+            "href": "/alipay-metro-qr-transport-code-guide/#card"
           }
         ]
       }
@@ -335,6 +350,86 @@
             "label": "Use Amap in English",
             "description": "Switch the app to English and check metro entrances before you set out.",
             "href": "/amap-english-mode-guide-2026/"
+          },
+          {
+            "label": "tap your Visa at the metro gate",
+            "description": "Contactless Visa, Mastercard, Amex and JCB cards work at the metro gates; no app or ticket needed.",
+            "href": "/alipay-metro-qr-transport-code-guide/#card"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "alipay-for-foreigners": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "How to pay at a merchant",
+        "links": [
+          {
+            "label": "use Alipay for the metro",
+            "description": "The metro needs the ride code, not the payment code you show in shops.",
+            "href": "/alipay-metro-qr-transport-code-guide/#alipay-ride-code"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "china-payment-guide": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": [
+          "Transport and attraction payments",
+          "Merchant QR codes and transport payments"
+        ],
+        "links": [
+          {
+            "label": "metro: Alipay ride code or card tap",
+            "description": "Tap a contactless card in Beijing, Shanghai, Guangzhou and Shenzhen, or set up the Alipay ride code.",
+            "href": "/alipay-metro-qr-transport-code-guide/"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "3-day-beijing-itinerary": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "Transport and daily pace",
+        "links": [
+          {
+            "label": "tap your Visa at the metro gate",
+            "description": "Contactless Visa, Mastercard, Amex and JCB cards work at the metro gates; no app or ticket needed.",
+            "href": "/alipay-metro-qr-transport-code-guide/#card"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "3-day-shanghai-itinerary": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "Transport, airports, and daily pace",
+        "links": [
+          {
+            "label": "tap your Visa at the metro gate",
+            "description": "Contactless Visa, Mastercard, Amex and JCB cards work at the metro gates; no app or ticket needed.",
+            "href": "/alipay-metro-qr-transport-code-guide/#card"
           }
         ]
       }

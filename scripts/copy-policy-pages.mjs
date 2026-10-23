@@ -4,7 +4,7 @@ import { TRIP_COST_STYLES, estimateTripCost, formatTripCostRange } from '../src/
 
 import { renderPlanningHelp } from './render-planning-help.mjs';
 import { createAmapGuideRenderer, renderAmapInline } from './render-amap-guide.mjs';
-import { plainText } from '../src/lib/amapGuideMarkup.mjs';
+import { plainText, quickAnswerText } from '../src/lib/amapGuideMarkup.mjs';
 const planningHelp = JSON.parse(await readFile('src/data/planningHelp.json', 'utf8'));
 const guideRelatedLinks = JSON.parse(await readFile('src/data/guideRelatedLinks.json', 'utf8'));
 
@@ -40,6 +40,7 @@ const arrivalCardGuide = JSON.parse(await readFile('src/data/seoPages/china-onli
 const transitAnswers = JSON.parse(await readFile('src/data/transitAnswers.json', 'utf8'));
 const calculatorContent = JSON.parse(await readFile('src/data/transitCalculatorContent.json', 'utf8'));
 const amapEnglishSetup = JSON.parse(await readFile('src/data/amapEnglishSetup.json', 'utf8'));
+const alipayMetroGuide = JSON.parse(await readFile('src/data/alipayMetroGuide.json', 'utf8'));
 const wechatVerificationHelp = JSON.parse(await readFile('src/data/wechatVerificationHelp.json', 'utf8'));
 const shenzhenItineraryPlanning = JSON.parse(await readFile('src/data/shenzhenItineraryPlanning.json', 'utf8'));
 const layoverAirportPlanning = JSON.parse(await readFile('src/data/layoverAirportPlanning.json', 'utf8'));
@@ -3200,22 +3201,15 @@ Object.assign(pageMeta, {
     lastModified: amapEnglishSetup.modified,
   },
   'alipay-metro-qr-transport-code-guide': {
-    ...pageMeta['china-metro-guide'],
-    title: 'Alipay Metro QR in China: Setup for Foreigners (2026)',
-    heading: 'How to Ride China Metros with an Alipay Transport QR Code',
-    description: 'Yes, foreigners can use a local Alipay metro QR where offered. Select your city under Transport, activate Metro, and scan the ride code—not your payment QR.',
-    quickAnswer: 'Yes. Beijing and Shanghai publish Alipay metro-code options for visitors. In Alipay, open Transport or Travel, select your city and Metro, then complete any activation and payment authorization. Scan the local ride code at the metro gate; the QR for paying a shop is different. If your code or card fails, use a station ticket or a locally accepted contactless card instead.',
-    faqs: [
-      ['Can foreigners use Alipay for the metro?', 'Often yes, after activating the city-specific transport service. Availability and card authorization vary by city and account.'],
-      ['Does one Alipay metro QR work across China?', 'No. Select the city and activate the local service. Products and rules differ between metro systems.'],
-      ['What if the QR code does not work?', 'Use a staffed gate, single-journey ticket, local transit card, or eligible contactless bank card rather than repeatedly scanning.'],
-    ],
-    sourceLinks: [
-      ['Beijing government: Alipay metro QR and ticket choices', 'https://english.beijing.gov.cn/specials/beijinglifeonthesubway/noticeforpassengers/202206/t20220623_2749418.html'],
-      ['Shanghai government: metro payment and ticket choices', 'https://english.shanghai.gov.cn/en-Individuals-Transportation-PublicTransport/20260813/f257d5c373db4da3a8bde717b9f46b27.html'],
-    ],
-    lastReviewed: 'October 20, 2026',
-    lastModified: '2026-10-20',
+    article: true,
+    title: alipayMetroGuide.metaTitle,
+    heading: alipayMetroGuide.heading,
+    description: alipayMetroGuide.metaDescription,
+    quickAnswer: quickAnswerText(alipayMetroGuide.quickAnswer),
+    faqs: alipayMetroGuide.faqs.map(({ question, answer }) => [question, plainText(answer)]),
+    sourceLinks: alipayMetroGuide.sources.map(({ label, href }) => [label, href]),
+    lastReviewed: alipayMetroGuide.reviewed,
+    lastModified: alipayMetroGuide.modified,
   },
   'china-travel-ai-itinerary-generator': {
     ...pageMeta['10-day-china-itinerary'],
@@ -3630,37 +3624,6 @@ for (const page of transitAnswers.pages) {
 
 // Give focused search pages their own answer instead of reusing a broader guide's sections.
 const focusedPageContent = {
-  "alipay-metro-qr-transport-code-guide": {
-    "contentSections": [
-      {
-        "title": "Activate the correct city code",
-        "items": [
-          "Open Alipay's Transport or Travel area and select your city. Beijing's official guide shows Travel, Metro, then Claim now; app wording can vary.",
-          "Review the local service terms and complete any account or payment verification shown before entering the station.",
-          "Display the dynamic metro ride code at the gate. A merchant payment QR used in shops is not the city's transit code."
-        ]
-      },
-      {
-        "title": "Beijing and Shanghai examples",
-        "items": [
-          "Beijing publishes Alipay metro QR setup steps and accepts eligible overseas Visa or Mastercard contactless cards at metro gates as an alternative.",
-          "Shanghai says the local metro service can be accessed in Alipay or WeChat; its Metro Daduhui app and station tickets are other options.",
-          "These examples do not make one Alipay transport code valid in every city. Select your current city and confirm the service and gate signage."
-        ]
-      },
-      {
-        "title": "At the gate",
-        "items": [
-          "Use the same account for entry and exit where the system requires it.",
-          "If the code is unavailable, use a ticket machine, staffed counter, local transit card or eligible contactless card at a marked gate.",
-          "Check the city's current transit payment options before relying on a foreign card."
-        ]
-      }
-    ],
-    "lastReviewed": "October 20, 2026",
-    "lastModified": "2026-10-20",
-    "article": true
-  },
   "china-travel-ai-itinerary-generator": {
     "contentSections": [
       {
@@ -3771,11 +3734,14 @@ for (const [slug, additions] of Object.entries(guideContentAdditions)) {
     requireIndex(meta.faqs.findIndex(([existing]) => existing === question), `${slug} / ${question}`);
   }
   meta.faqs = meta.faqs.filter(([question]) => !additions.removeFaqs.includes(question));
+  // `section` may list several titles when the static page and the app name the same section differently.
   for (const { section: title, links } of additions.sectionLinks) {
-    const index = requireIndex(meta.contentSections.findIndex((section) => section.title === title), `${slug} / ${title}`);
+    const titles = [title].flat();
+    const index = requireIndex(meta.contentSections.findIndex((section) => titles.includes(section.title)), `${slug} / ${titles.join(' | ')}`);
     meta.contentSections[index] = { ...meta.contentSections[index], links: [...(meta.contentSections[index].links || []), ...links] };
   }
-  meta.sourceLinks = [...(meta.sourceLinks || []), ...additions.sources.map(({ label, href }) => [label, href])];
+  // No added sources: keep the page's own list (or its default one).
+  if (additions.sources.length) meta.sourceLinks = [...(meta.sourceLinks || []), ...additions.sources.map(({ label, href }) => [label, href])];
   // Link-only additions leave the page's dates alone.
   if (additions.reviewed) Object.assign(meta, { lastReviewed: additions.reviewed, lastModified: additions.modified });
 }
@@ -3873,7 +3839,6 @@ const staticCtas = {
   'what-to-eat-in-china-first-time-guide': ['Ask Buddy what to order', '/'],
   'how-to-use-wechat-as-foreigner-2026': ['Build my WeChat setup checklist', '/'],
   'nia-12367-online-accommodation-registration-guide': ['Get your free personalized trip starter', '/#trip-plan'],
-  'alipay-metro-qr-transport-code-guide': ['Ask Buddy for my city metro setup', '/'],
   'china-travel-ai-itinerary-generator': ['Get my free itinerary', '/plan/'],
   'wechat-verification-without-friend-qr-2026': ['Review my WeChat verification options', '/'],
   faq: ['Open the free toolkit', '/'],
@@ -4551,6 +4516,11 @@ function staticTripCostEstimator() {
     </section>`;
 }
 
+const richGuides = {
+  'amap-english-mode-guide-2026': amapEnglishSetup,
+  'alipay-metro-qr-transport-code-guide': alipayMetroGuide,
+};
+
 function staticPageContent(page, meta) {
   if (meta.customBody) return page === 'plan' ? meta.customBody.replace('      <p style="margin: 0; color: #6b7678;', `${renderPlanningHelp(planningHelp, 'plan')}      <p style="margin: 0; color: #6b7678;`) : meta.customBody;
   const heading = meta.heading || meta.title.split('|')[0].trim();
@@ -4562,8 +4532,10 @@ function staticPageContent(page, meta) {
   const featuredFaqCount = meta.featuredFaqCount || 0;
   const featuredFaqItems = faqItems.slice(0, featuredFaqCount);
   const remainingFaqItems = featuredFaqCount > 0 ? faqItems.slice(featuredFaqCount) : faqItems;
-  const amapGuide = page === 'amap-english-mode-guide-2026' ? createAmapGuideRenderer(amapEnglishSetup) : null;
-  const amapAnswers = new Map(amapEnglishSetup.faqs.map(({ question, answer }) => [question, answer]));
+  // Pages written to a spec render their own byline, quick answer, CTA card, body and linked FAQ answers.
+  const guideContent = richGuides[page];
+  const amapGuide = guideContent ? createAmapGuideRenderer(guideContent) : null;
+  const amapAnswers = new Map((guideContent?.faqs || []).map(({ question, answer }) => [question, answer]));
   const renderFaqItems = (items) => items.map(([question, answer]) => `
           <article style="margin: 0 0 14px; padding: 18px; border: 1px solid rgba(21, 94, 99, 0.12); border-radius: 18px; background: rgba(248, 243, 234, 0.72);">
             <h3 style="margin: 0 0 8px; font-size: 1rem;">${escapeHtml(question)}</h3>
@@ -4652,7 +4624,7 @@ function staticPageContent(page, meta) {
               ${section.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
             </${section.ordered ? 'ol' : 'ul'}>
           ` : ''}
-          ${['china-travel-apps', 'amap-vs-google-maps-china', 'china-metro-guide', '3-day-shenzhen-itinerary', '3-day-guangzhou-itinerary', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary', '10-day-china-itinerary', '3-day-shanghai-itinerary', '3-day-chongqing-itinerary', 'china-airport-arrival-guide', 'china-food-ordering-guide', 'what-to-eat-in-china-first-time-guide'].includes(page) && section.links ? `
+          ${['china-travel-apps', 'amap-vs-google-maps-china', 'china-metro-guide', 'alipay-for-foreigners', 'china-payment-guide', '3-day-shenzhen-itinerary', '3-day-guangzhou-itinerary', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary', '10-day-china-itinerary', '3-day-shanghai-itinerary', '3-day-chongqing-itinerary', 'china-airport-arrival-guide', 'china-food-ordering-guide', 'what-to-eat-in-china-first-time-guide'].includes(page) && section.links ? `
             <ul style="margin: 12px 0 0; padding-left: 20px; color: #536365; line-height: 1.8;">
               ${section.links.map(({ label, description, href }) => `<li><a href="${escapeAttr(href)}"${href.startsWith('http') ? ' rel="noopener noreferrer"' : ''} style="color: #155e63; text-underline-offset: 4px;">${escapeHtml(label)}</a>: ${escapeHtml(description)}</li>`).join('')}
             </ul>

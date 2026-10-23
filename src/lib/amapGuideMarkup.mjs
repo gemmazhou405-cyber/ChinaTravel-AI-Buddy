@@ -1,4 +1,4 @@
-// Tiny markup used by the Amap guide copy: **bold**, *italic*, [label](href) and [[shot:N]] screenshot markers.
+// Tiny markup used by the guide copy (Amap, Alipay metro): **bold**, *italic*, [label](href) and [[shot:N]] screenshot markers.
 const INLINE = /\*\*(.+?)\*\*|\*(.+?)\*|\[([^\]]+)\]\(([^)]+)\)/g;
 const SHOT = /\s*\[\[shot:(\d+)\]\]\s*/g;
 
@@ -34,6 +34,12 @@ export function splitShots(text) {
 
 export function plainText(text) {
   return parseInline(text.replace(SHOT, ' ').trim()).map(({ text: value }) => value).join('');
+}
+
+// Quick answer entries are paragraphs or a list block; the schema and meta take them as one plain string.
+export function quickAnswerText(entries) {
+  return entries.flatMap((entry) => typeof entry === 'string' ? [entry] : entry.items.map((item, index) => `${index + 1}. ${item}`))
+    .map(plainText).join(' ');
 }
 
 // Screenshot ids in page order, from inline markers and standalone screenshot rows.

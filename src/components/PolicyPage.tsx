@@ -4,8 +4,8 @@ import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
 import { unsubscribeNewsletter } from '../lib/newsletter';
 import { RelatedGuidesForForeigners } from './RelatedGuidesForForeigners';
 import LinBox from './LinBox';
-import { AmapByline, AmapCtaCard, AmapFaqAnswer, AmapGuideBody, AmapQuickAnswer } from './AmapGuide';
-import { plainText } from '../lib/amapGuideMarkup.mjs';
+import { AmapByline, AmapCtaCard, AmapFaqAnswer, AmapGuideBody, AmapQuickAnswer, GuideProvider, type GuideContent } from './AmapGuide';
+import { plainText, quickAnswerText } from '../lib/amapGuideMarkup.mjs';
 import planningHelp from '../data/planningHelp.json';
 import guideRelatedLinks from '../data/guideRelatedLinks.json';
 import suzhouGuide from '../data/seoPages/3-day-suzhou-itinerary.json';
@@ -34,6 +34,7 @@ import accommodationRegistrationGuide from '../data/seoPages/china-online-accomm
 import arrivalCardGuide from '../data/seoPages/china-online-arrival-card-2026.json';
 import visaFreeCheckerGuide from '../data/seoPages/china-visa-free-checker.json';
 import amapEnglishSetup from '../data/amapEnglishSetup.json';
+import alipayMetroGuide from '../data/alipayMetroGuide.json';
 import wechatVerificationHelp from '../data/wechatVerificationHelp.json';
 import shenzhenItineraryPlanning from '../data/shenzhenItineraryPlanning.json';
 import layoverAirportPlanning from '../data/layoverAirportPlanning.json';
@@ -5390,28 +5391,21 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'alipay-metro-qr-transport-code-guide': {
     path: '/alipay-metro-qr-transport-code-guide/',
-    title: 'How to Ride China Metros with an Alipay Transport QR Code',
-    intro: 'Transport QR availability and activation vary by city. Alipay can be convenient for visitors, but single-journey tickets, transit cards, and contactless bank cards remain important backups.',
-    metaTitle: 'Alipay Metro QR in China: Setup for Foreigners (2026)',
-    metaDescription: 'Yes, foreigners can use a local Alipay metro QR where offered. Select your city under Transport, activate Metro, and scan the ride code—not your payment QR.',
-    quickAnswer: 'Yes. Beijing and Shanghai publish Alipay metro-code options for visitors. In Alipay, open Transport or Travel, select your city and Metro, then complete any activation and payment authorization. Scan the local ride code at the metro gate; the QR for paying a shop is different. If your code or card fails, use a station ticket or a locally accepted contactless card instead.',
-    ctaLabel: 'Ask Buddy for my city metro setup',
-    midCtaLabel: 'Show my activation steps',
-    ctaHref: '/',
-    buddyPrompt: 'Give me current metro payment setup steps for [city]. I use Alipay with a [card type] and need a backup if the transport QR does not activate.',
-    reviewed: 'October 20, 2026',
-    sections: [
-      { title: 'Activate the Transport Code', ordered: true, items: ['Open Alipay and search Transport or Travel. In Beijing, the official guide shows Travel → Metro → Claim now; wording can vary with app version and city.', 'Select the correct city before choosing metro, bus, or a combined local service.', 'Open the official service shown for that city, review its terms, then complete identity verification and payment authorization if requested.', 'Display the dynamic metro ride QR at a marked gate, and use the same account and service for exit. Do not scan your ordinary merchant-payment QR.'] },
-      { title: 'City Differences Matter', items: ['Shanghai says you can access its metro service in Alipay or WeChat; the separate Metro Daduhui app is another option.', 'Beijing publishes an Alipay metro QR setup and accepts eligible overseas Visa or Mastercard contactless cards for direct gate entry as an alternative.', 'Other cities may use a local transit card, local mini-program, or separate QR product even when reached through Alipay.', 'Always follow the current signage and service shown inside the app rather than assuming one national QR works everywhere.'] },
-      { title: 'Backup Options', items: ['Single-journey ticket from an English-language machine or staffed counter.', 'Physical local transit card or visitor pass where available.', 'Eligible contactless international bank card at gates that display its logo.', 'Small RMB cash for ticket machines or counters that accept it.'] },
-    ],
-    faqs: [
-      { question: 'Can foreigners use Alipay for the metro?', answer: 'Often yes, after activating the city-specific transport service. Availability and card authorization vary by city and account.' },
-      { question: 'Does one Alipay metro QR work across China?', answer: 'No. Select the city and activate the local service. Products and rules differ between metro systems.' },
-      { question: 'What if the QR code does not work?', answer: 'Use a staffed gate, single-journey ticket, local transit card, or eligible contactless bank card rather than repeatedly scanning.' },
-    ],
-    related: [{ label: 'China metro guide', href: '/china-metro-guide/' }, { label: 'Alipay setup guide', href: '/china-payment-guide/' }, { label: 'Amap English guide', href: '/amap-english-mode-guide-2026/' }],
-    sources: [{ label: 'Beijing government: Alipay metro QR and ticket choices', href: 'https://english.beijing.gov.cn/specials/beijinglifeonthesubway/noticeforpassengers/202206/t20220623_2749418.html' }, { label: 'Shanghai government: metro payment and ticket choices', href: 'https://english.shanghai.gov.cn/en-Individuals-Transportation-PublicTransport/20260813/f257d5c373db4da3a8bde717b9f46b27.html' }],
+    title: alipayMetroGuide.heading,
+    intro: '',
+    metaTitle: alipayMetroGuide.metaTitle,
+    metaDescription: alipayMetroGuide.metaDescription,
+    quickAnswer: quickAnswerText(alipayMetroGuide.quickAnswer),
+    // Rendered like the Amap guide (AmapGuide components); these fields feed the schema.
+    ctaLabel: alipayMetroGuide.cta.label,
+    ctaHref: alipayMetroGuide.cta.href,
+    reviewed: alipayMetroGuide.reviewed,
+    lastModified: alipayMetroGuide.modified,
+    isArticle: true,
+    sections: [],
+    faqs: alipayMetroGuide.faqs.map(({ question, answer }) => ({ question, answer: plainText(answer) })),
+    related: [{ label: 'China metro guide', href: '/china-metro-guide/' }, { label: 'Amap English guide', href: '/amap-english-mode-guide-2026/' }],
+    sources: alipayMetroGuide.sources,
   },
   'china-travel-ai-itinerary-generator': {
     path: '/china-travel-ai-itinerary-generator/',
@@ -5692,7 +5686,7 @@ type GuideContentAdditions = Record<string, {
   sections: Array<GuidePageData['sections'][number] & { after: string }>;
   faqs: Array<GuidePageData['faqs'][number] & { after: string }>;
   sources: NonNullable<GuidePageData['sources']>;
-  sectionLinks: Array<{ section: string; links: NonNullable<GuidePageData['sections'][number]['links']> }>;
+  sectionLinks: Array<{ section: string | string[]; links: NonNullable<GuidePageData['sections'][number]['links']> }>;
   removeFaqs: string[];
 }>;
 
@@ -5707,10 +5701,12 @@ for (const [type, additions] of Object.entries(guideContentAdditions as GuideCon
   }
   page.faqs = page.faqs.filter(({ question }) => !additions.removeFaqs.includes(question));
   page.sections = page.sections.map((section) => {
-    const extra = additions.sectionLinks.find((entry) => entry.section === section.title);
+    // `section` may list several titles when the static page and the app name the same section differently.
+    const extra = additions.sectionLinks.find((entry) => [entry.section].flat().includes(section.title));
     return extra ? { ...section, links: [...(section.links || []), ...extra.links] } : section;
   });
-  page.sources = [...(page.sources || []), ...additions.sources];
+  // No added sources: keep the page's own list (or its default one).
+  if (additions.sources.length) page.sources = [...(page.sources || []), ...additions.sources];
   // Link-only additions leave the page's dates alone.
   if (additions.reviewed) Object.assign(page, { reviewed: additions.reviewed, lastReviewed: additions.reviewed, lastModified: additions.modified });
 }
@@ -6027,9 +6023,16 @@ function FilterableCountryChecklist({ groups }: { groups: Array<{ region: string
   );
 }
 
+const richGuides: Partial<Record<GuidePageType, GuideContent>> = {
+  'amap-english-mode-guide-2026': amapEnglishSetup as GuideContent,
+  'alipay-metro-qr-transport-code-guide': alipayMetroGuide as GuideContent,
+};
+
 function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?: string | null; onAskBuddy?: (prefill?: string) => void }) {
   const page = guidePages[type];
-  const isAmapGuide = type === 'amap-english-mode-guide-2026';
+  // Guides written to a spec render their own byline, quick answer, CTA card, body and linked FAQ answers.
+  const richGuide = richGuides[type];
+  const isAmapGuide = Boolean(richGuide);
   const isItineraryPage = type.includes('itinerary') && type !== 'china-travel-ai-itinerary-generator';
   const featuredFaqs = page.featuredFaqCount ? page.faqs.slice(0, page.featuredFaqCount) : [];
   const remainingFaqs = page.featuredFaqCount ? page.faqs.slice(page.featuredFaqCount) : page.faqs;
@@ -6063,6 +6066,7 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
   }, [type, userId]);
 
   return (
+    <GuideProvider content={richGuide}>
     <PageShell title={page.title} intro={page.intro} planningByline={type !== 'guides'} byline={isAmapGuide ? <AmapByline /> : undefined}>
       <div className="space-y-6">
         {type !== 'guides' && (
@@ -6327,6 +6331,7 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
         </section>
       </div>
     </PageShell>
+    </GuideProvider>
   );
 }
 

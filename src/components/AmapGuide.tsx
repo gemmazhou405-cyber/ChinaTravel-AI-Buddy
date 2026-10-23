@@ -1,5 +1,4 @@
-import { Fragment } from 'react';
-import content from '../data/amapEnglishSetup.json';
+import { Fragment, createContext, useContext, type ReactNode } from 'react';
 import { parseInline, shotIds, shotMaxWidth, splitShots } from '../lib/amapGuideMarkup.mjs';
 
 type Block =
@@ -10,10 +9,24 @@ type Block =
   | { type: 'shots'; ids: string[]; labels?: string[] };
 type Section = { id: string; title: string; blocks: Block[]; subsections?: Section[] };
 type Shot = { src: string; width: number; height: number; alt: string };
+// Guides written to a spec (Amap, Alipay metro) share this layout; screenshots are optional.
+export type GuideContent = {
+  byline: { name: string; tested: string };
+  quickAnswer: Array<string | { type: 'ol' | 'ul'; items: string[] }>;
+  cta: { text: string; label: string; href: string; placement?: string };
+  screenshotCaption?: string;
+  screenshots?: Record<string, Shot>;
+  sections: Section[];
+  faqs: Array<{ question: string; answer: string }>;
+};
 
-const sections = content.sections as Section[];
-const screenshots = content.screenshots as Record<string, Shot>;
-const firstShotId = shotIds(content)[0];
+const GuideContext = createContext<GuideContent | null>(null);
+const useGuide = () => useContext(GuideContext) as GuideContent;
+
+// Pages without a spec'd guide pass undefined; only the guide components read the context.
+export function GuideProvider({ content, children }: { content: GuideContent | undefined; children: ReactNode }) {
+  return <GuideContext.Provider value={content ?? null}>{children}</GuideContext.Provider>;
+}
 
 export function AmapRichText({ text }: { text: string }) {
   return (
@@ -33,6 +46,9 @@ export function AmapRichText({ text }: { text: string }) {
 
 // Rows wrap on narrow screens and stay centred.
 function ShotRow({ ids, labels = [] }: { ids: string[]; labels?: string[] }) {
+  const content = useGuide();
+  const screenshots = content.screenshots ?? {};
+  const firstShotId = shotIds(content)[0];
   const maxWidth = shotMaxWidth(ids.length);
   return (
     <div className="my-3 flex flex-wrap justify-center gap-4">
@@ -107,6 +123,7 @@ function GuideBlock({ block }: { block: Block }) {
 }
 
 export function AmapByline() {
+  const content = useGuide();
   return (
     <p className="mt-2 text-sm text-gray-600">
       <a href="#lin-help" className="font-semibold text-[#155e63] underline underline-offset-4">{content.byline.name}</a> · {content.byline.tested}
@@ -115,18 +132,22 @@ export function AmapByline() {
 }
 
 export function AmapQuickAnswer() {
+  const content = useGuide();
   return (
     <div className="mt-2 space-y-3 text-sm leading-relaxed text-gray-700 md:text-base">
-      {content.quickAnswer.map((paragraph) => <p key={paragraph}><AmapRichText text={paragraph} /></p>)}
+      {content.quickAnswer.map((entry, index) => typeof entry === 'string'
+        ? <p key={index}><AmapRichText text={entry} /></p>
+        : <GuideBlock key={index} block={entry} />)}
     </div>
   );
 }
 
 export function AmapCtaCard() {
+  const content = useGuide();
   return (
     <aside aria-label="App setup help" className="rounded-2xl border border-[#155e63]/20 bg-[#155e63]/5 p-4 md:p-5">
       <p className="text-sm leading-relaxed text-gray-800 md:text-base"><AmapRichText text={content.cta.text} /></p>
-      <a href={content.cta.href} target="_blank" rel="noopener noreferrer" data-planning-help="fiverr" data-planning-placement="amap-setup" className="mt-3 inline-flex min-h-11 items-center rounded-full bg-[#155e63] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#0e4a4e]">
+      <a href={content.cta.href} target="_blank" rel="noopener noreferrer" data-planning-help="fiverr" data-planning-placement={content.cta.placement ?? 'amap-setup'} className="mt-3 inline-flex min-h-11 items-center rounded-full bg-[#155e63] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#0e4a4e]">
         {content.cta.label}
       </a>
     </aside>
@@ -134,6 +155,7 @@ export function AmapCtaCard() {
 }
 
 export function AmapGuideBody() {
+  const { sections } = useGuide();
   return (
     <div className="space-y-4">
       {sections.map((section) => (
@@ -152,8 +174,7 @@ export function AmapGuideBody() {
   );
 }
 
-const richAnswers = new Map(content.faqs.map(({ question, answer }) => [question, answer]));
-
 export function AmapFaqAnswer({ question }: { question: string }) {
-  return <AmapRichText text={richAnswers.get(question) ?? ''} />;
+  const { faqs } = useGuide();
+  return <AmapRichText text={faqs.find((faq) => faq.question === question)?.answer ?? ''} />;
 }

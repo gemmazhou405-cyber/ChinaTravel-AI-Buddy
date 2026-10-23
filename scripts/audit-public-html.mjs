@@ -112,6 +112,12 @@ const pages = [
     links: ["/amap-vs-google-maps-china/", "/china-esim-internet-guide/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/alipay-for-foreigners/", "/china-food-ordering-guide/", "/china-airport-arrival-guide/"],
   },
   {
+    path: '/alipay-metro-qr-transport-code-guide/',
+    h1: /How to Pay for the Metro in China: Alipay Ride Code or Tap Your Card/i,
+    keywords: ['Tap your bank card at the gate', 'Suburban Line S2', 'Tap to Ride', 'October 12, 2025', 'June 30, 2026', 'Ride code vs payment code', 'single-journey ticket'],
+    links: ["/alipay-for-foreigners/", "/china-metro-guide/", "/amap-english-mode-guide-2026/#metro", "/amap-english-mode-guide-2026/", "/china-payment-guide/", "/first-trip-to-china/"],
+  },
+  {
     path: '/china-metro-guide/',
     h1: /China Metro Guide for Foreigners.*2026/i,
     keywords: ['single-journey ticket', 'overseas bank card', 'security', 'transfer', 'station exit', 'last train'],

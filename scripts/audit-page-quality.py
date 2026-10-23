@@ -66,7 +66,11 @@ def load_json(path):
 
 help_copy = load_json('src/data/planningHelp.json')
 related = load_json('src/data/guideRelatedLinks.json')
-amap = load_json('src/data/amapEnglishSetup.json')
+# Pages written to a spec render their copy from these files; the checks below compare the built HTML with them.
+rich_guides = {
+    'amap-english-mode-guide-2026': ('Amap', load_json('src/data/amapEnglishSetup.json')),
+    'alipay-metro-qr-transport-code-guide': ('Alipay metro', load_json('src/data/alipayMetroGuide.json')),
+}
 locations = [node.text for node in ET.parse(DIST / 'sitemap.xml').getroot().iter() if node.tag.endswith('}loc')]
 paths = {urlparse(url).path for url in locations}
 audit_paths = paths | {'/', '/plan/', '/pricing/'}
@@ -130,13 +134,14 @@ for pathname in sorted(audit_paths):
         require(hrefs == expected and 5 <= len(hrefs) <= 8, f'{pathname}: wrong related links/count')
         require(len(set(hrefs)) == len(hrefs) and pathname not in hrefs, f'{pathname}: duplicate or self-related link')
         require(all(href in paths for href in hrefs), f'{pathname}: related link outside canonical sitemap')
-    if slug == 'amap-english-mode-guide-2026':
-        require(h1[0].text().strip() == amap['heading'], 'Amap: H1 differs from shared content')
+    if slug in rich_guides:
+        name, guide = rich_guides[slug]
+        require(h1[0].text().strip() == guide['heading'], f'{name}: H1 differs from shared content')
         body_text = document.find('main')[0].text()
-        require(amap['byline']['tested'] in ' '.join(body_text.split()), 'Amap: tested-on byline missing')
-        for section in amap['sections']:
+        require(guide['byline']['tested'] in ' '.join(body_text.split()), f'{name}: byline missing')
+        for section in guide['sections']:
             for section_id in [section['id'], *[sub['id'] for sub in section.get('subsections', [])]]:
-                require(section_id in ids, f'Amap: missing section {section_id}')
+                require(section_id in ids, f'{name}: missing section {section_id}')
         schemas = [json.loads(node.text()) for node in document.find('script', type='application/ld+json')]
         faqs = []
         for schema in schemas:
@@ -144,11 +149,11 @@ for pathname in sorted(audit_paths):
                 if item.get('@type') == 'FAQPage':
                     faqs.extend(item['mainEntity'])
         plain = lambda text: re.sub(r'\*\*(.+?)\*\*|\*(.+?)\*|\[([^\]]+)\]\([^)]+\)', lambda m: next(g for g in m.groups() if g is not None), text)
-        expected_faqs = [(item['question'], plain(item['answer'])) for item in amap['faqs']]
-        require([(q['name'], q['acceptedAnswer']['text']) for q in faqs] == expected_faqs, 'Amap: FAQ schema does not match shared visible answers')
+        expected_faqs = [(item['question'], plain(item['answer'])) for item in guide['faqs']]
+        require([(q['name'], q['acceptedAnswer']['text']) for q in faqs] == expected_faqs, f'{name}: FAQ schema does not match shared visible answers')
         flat_text = re.sub(r'\s+([.,;:])', r'\1', ' '.join(body_text.split()))
         for question, answer in expected_faqs:
-            require(question in flat_text and answer in flat_text, f'Amap: FAQ missing from visible HTML: {question}')
+            require(question in flat_text and answer in flat_text, f'{name}: FAQ missing from visible HTML: {question}')
 
 if errors:
     print('\n'.join(f'FAIL {error}' for error in errors))
