@@ -2,7 +2,7 @@
 
 ### October23: Personal service versus message-pass pricing
 
-Correct a reported conversion ambiguity: Lin/Fiverr personal itinerary services have separate prices;9.90/29.90 buy Buddy AI message passes and exclude personal reviews/reworks. Clarify all shared contact boxes, pricing cards, homepage and tool pass sections; preserve amounts and checkout links. No new service price inferred from screenshot. Validation passes; formal release pending. Details: `quality/2026-10-23-pricing-scope-fix.md`. No new search-outcome evidence; prior observation windows retained.
+Correct a reported conversion ambiguity: Lin/Fiverr personal itinerary services have separate prices;9.90/29.90 buy Buddy AI message passes and exclude personal reviews/reworks. Clarify all shared contact boxes, pricing cards, homepage and tool pass sections; preserve amounts and checkout links. No new service price inferred from screenshot. Validation and four formal Googlebot checks pass;live browser confirms distinct scopes. Code `4df0c0b686912c62451b3df668130940e78f6850`,Cloudflare `9010a791-71f3-4603-9090-af8c791777c9` succeeded;formal verification 2026-10-23T04:51:51.410380+00:00. Details: `quality/2026-10-23-pricing-scope-fix.md`. No new search-outcome evidence; prior observation windows retained.
 
 ### October 23: Deep Amap review and shared planning/navigation repair
 

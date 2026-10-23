@@ -6,4 +6,7 @@ Clarify two existing products, without changing prices, checkout destinations, f
 
 Validation: typecheck/i18n,build and78-page quality audit pass;lint passes with the existing PricingPlans Fast Refresh warning. Digital amounts remain9.90/29.90; no personal-service starting price is asserted. No new indexable URL or sitemap change, no ranking/enquiry/sale effect claimed. Existing SEO observation windows are retained; this is a pricing-scope correction, not a price experiment.
 
-Release: pending formal verification.
+Release: code `4df0c0b686912c62451b3df668130940e78f6850`; Cloudflare deployment `9010a791-71f3-4603-9090-af8c791777c9` succeeded. Four formal Googlebot HTML checks passed at 2026-10-23T04:51:51.410380+00:00: home, plan, pricing and Amap contain the new personal-service price scope, renamed Fiverr label and direct mailto. Pricing retains the correct9.90/29.90 AI-message descriptions and explicit personal-review exclusion. Live browser confirms both product sections and unchanged checkout destinations. No external Fiverr package price, platform fee or exchange-rate cause is asserted.
+
+
+![Live pricing page: separate personal service and AI message passes](pricing-service-scope-2026-10-23-1792731067867.jpg)
