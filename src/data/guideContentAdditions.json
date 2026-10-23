@@ -42,7 +42,9 @@
         "label": "US Department of State: Smart Traveler Enrollment Program",
         "href": "https://travel.state.gov/en/international-travel/travel-advisories/smart-traveler-enrollment-program.html"
       }
-    ]
+    ],
+    "sectionLinks": [],
+    "removeFaqs": []
   },
   "china-hotels-for-foreigners": {
     "reviewed": "October 23, 2026",
@@ -52,12 +54,27 @@
         "after": "Late-night arrival plan",
         "title": "First identify why check-in was refused",
         "table": {
-          "headers": ["Reason given", "What it means for your next step"],
+          "headers": [
+            "Reason given",
+            "What it means for your next step"
+          ],
           "rows": [
-            ["“We cannot accept foreigners” or “we lack foreign-related qualification”", "Ask a manager to review the booking and foreign-passport registration process. Save the reason in writing and contact the booking platform if the property will not reconsider."],
-            ["No room or the hotel is overbooked", "Treat this as a failure to honor the reservation, not automatically as nationality discrimination. Ask the hotel or platform for immediate relocation and any refund due under the booking terms."],
-            ["Name, passport, guest count, date, or room details do not match", "Compare the reservation with every guest’s original passport and correct the mismatch through the booking platform before arguing about foreign-guest policy."],
-            ["Payment, deposit, late arrival, or property-rule problem", "Ask for the exact charge, deadline, or rule in writing. Check the reservation terms and use a prepared payment method or platform support where appropriate."]
+            [
+              "“We cannot accept foreigners” or “we lack foreign-related qualification”",
+              "Ask a manager to review the booking and foreign-passport registration process. Save the reason in writing and contact the booking platform if the property will not reconsider."
+            ],
+            [
+              "No room or the hotel is overbooked",
+              "Treat this as a failure to honor the reservation, not automatically as nationality discrimination. Ask the hotel or platform for immediate relocation and any refund due under the booking terms."
+            ],
+            [
+              "Name, passport, guest count, date, or room details do not match",
+              "Compare the reservation with every guest’s original passport and correct the mismatch through the booking platform before arguing about foreign-guest policy."
+            ],
+            [
+              "Payment, deposit, late arrival, or property-rule problem",
+              "Ask for the exact charge, deadline, or rule in writing. Check the reservation terms and use a prepared payment method or platform support where appropriate."
+            ]
           ]
         },
         "items": [
@@ -121,7 +138,9 @@
         "label": "Chinese government: facilitating accommodation for foreign travelers",
         "href": "https://english.www.gov.cn/news/202407/26/content_WS66a2d827c6d0868f4e8e975c.html"
       }
-    ]
+    ],
+    "sectionLinks": [],
+    "removeFaqs": []
   },
   "china-travel-apps": {
     "reviewed": "October 23, 2026",
@@ -145,6 +164,60 @@
         "answer": "Uber is not the standard ride-hailing option in mainland China. Use DiDi, a ride-hailing service inside Alipay or WeChat, or an official taxi queue."
       }
     ],
-    "sources": []
+    "sources": [],
+    "sectionLinks": [],
+    "removeFaqs": []
+  },
+  "china-airport-arrival-guide": {
+    "reviewed": "October 23, 2026",
+    "modified": "2026-10-23",
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "China arrival card: use the official free service",
+        "links": [
+          {
+            "label": "China arrival card online 2026",
+            "description": "Who needs the card, the official link and QR code, and what to do if you could not fill it in before the flight.",
+            "href": "/china-online-arrival-card-2026/"
+          }
+        ]
+      },
+      {
+        "section": "Choose a verified airport transfer",
+        "links": [
+          {
+            "label": "Beijing airport to city centre",
+            "description": "Compare PEK and PKX express trains, taxis and late-arrival transfers.",
+            "href": "/beijing-airport-to-city-guide/"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": [
+      "Can I fill in the arrival card after landing?"
+    ]
+  },
+  "china-food-ordering-guide": {
+    "reviewed": "October 23, 2026",
+    "modified": "2026-10-23",
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "Shared dishes, rice, spice, and portions",
+        "links": [
+          {
+            "label": "What to eat in China",
+            "description": "Fifteen regional dishes to look for on a first visit, and where each is strongest.",
+            "href": "/what-to-eat-in-china-first-time-guide/"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
   }
 }

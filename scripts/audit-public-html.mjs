@@ -484,6 +484,7 @@ try {
     '/is-china-safe-for-tourists-2026/',
     '/china-hotels-for-foreigners-no-rejection-guide/',
     '/best-apps-for-china-travel-2026/',
+    '/240-hour-transit-zone-map-high-speed-rail/',
   ];
   const canonicalDestinations = ['/china-travel-budget/', '/china-payment-guide/', '/didi-in-china-for-foreigners/', '/china-esim-internet-guide/', '/china-visa-free-travel-guide/', '/amap-english-mode-guide-2026/', '/amap-vs-google-maps-china/', '/great-wall-of-china-day-trip-from-beijing/', '/china-travel-safety-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/'];
   results.push({ path: '/sitemap.xml', name: 'HTTP 200', pass: sitemapResponse.status === 200, detail: `status ${sitemapResponse.status}` });

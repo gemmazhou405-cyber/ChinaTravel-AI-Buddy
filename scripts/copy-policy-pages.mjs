@@ -15,7 +15,6 @@ const nanjingGuide = JSON.parse(await readFile('src/data/seoPages/3-day-nanjing-
 const daliGuide = JSON.parse(await readFile('src/data/seoPages/3-day-dali-itinerary.json', 'utf8'));
 const goldenWeekGuide = JSON.parse(await readFile('src/data/seoPages/china-golden-week-2026-travel-guide.json', 'utf8'));
 const greatWallGuide = JSON.parse(await readFile('src/data/seoPages/great-wall-of-china-day-trip-from-beijing.json', 'utf8'));
-const greatWallTransport = JSON.parse(await readFile('src/data/greatWallTransport.json', 'utf8'));
 const trainBookingContent = JSON.parse(await readFile('src/data/trainBookingContent.json', 'utf8'));
 const emergencyGuideContent = JSON.parse(await readFile('src/data/emergencyGuideContent.json', 'utf8'));
 const tripCostEstimatorContent = JSON.parse(await readFile('src/data/tripCostEstimatorContent.json', 'utf8'));
@@ -44,8 +43,9 @@ const wechatVerificationHelp = JSON.parse(await readFile('src/data/wechatVerific
 const shenzhenItineraryPlanning = JSON.parse(await readFile('src/data/shenzhenItineraryPlanning.json', 'utf8'));
 const layoverAirportPlanning = JSON.parse(await readFile('src/data/layoverAirportPlanning.json', 'utf8'));
 const didiAppSetup = JSON.parse(await readFile('src/data/didiAppSetup.json', 'utf8'));
-// Content folded in from guides that now 301 to these pages; src/components/PolicyPage.tsx applies the same file.
-const mergedGuideAdditions = JSON.parse(await readFile('src/data/mergedGuideAdditions.json', 'utf8'));
+// Extra sections, FAQs and in-body links (including content folded in from guides that now 301 here);
+// src/components/PolicyPage.tsx applies the same file.
+const guideContentAdditions = JSON.parse(await readFile('src/data/guideContentAdditions.json', 'utf8'));
 
 const pageMeta = {
   plan: {
@@ -133,7 +133,6 @@ const pageMeta = {
       ['Amap English Mode', 'Switch languages, search destinations, and save China-ready addresses.', '/amap-english-mode-guide-2026/'],
       ['Alipay Metro QR', 'Activate the city-specific transport service and prepare ticket backups.', '/alipay-metro-qr-transport-code-guide/'],
       ['China Travel AI Itinerary Generator', 'Turn dates, interests, pace, and budget into a practical route and booking checklist.', '/china-travel-ai-itinerary-generator/'],
-      ['240-Hour Transit and High-Speed Rail', 'Validate ports, permitted areas, and every domestic rail segment.', '/240-hour-transit-zone-map-high-speed-rail/'],
       ['WeChat Verification Without a Friend', 'Use official registration and account-recovery paths safely.', '/wechat-verification-without-friend-qr-2026/'],
       ['FAQ', 'Short answers about ChinaEase Buddy, paid passes, travel tools, and service limits.', '/faq/'],
     ],
@@ -1491,115 +1490,6 @@ const pageMeta = {
       ['DiDi China official Google Play listing', 'https://play.google.com/store/apps/details?id=com.sdu.didi.psnger'],
       ['DiDi China official Apple App Store listing', 'https://apps.apple.com/us/app/didi-china-ride-hailing/id554499054'],
       ['DiDi official customer-support direction', 'https://didiglobal.com/contact'],
-    ],
-  },
-  'amap-in-english': {
-    title: 'Amap China Navigation: Addresses, Metro & Walking Routes',
-    heading: 'How to Use Amap in China: Addresses, Metro & Routes',
-    description:
-      'Find the correct hotel branch, plan metro and walking routes, and check station entrances in Amap. Keep Chinese addresses ready for arrival.',
-    quickAnswer:
-      'Use Amap to choose the correct destination and plan the actual walking, metro or station transfer. First match the Chinese hotel name, branch, station or terminal to your booking. Then check the transport mode and final entrance, and save the destination details outside the app. Use the separate English-setup guide linked below if you still need to change the interface language.',
-    lastReviewed: 'September 18, 2026',
-    lastModified: '2026-10-23',
-    article: true,
-    contentSections: [
-      {
-        title: 'Download and prepare AMap before your trip',
-        links: [{ label: 'Set Amap to English on iPhone or Android', description: 'Complete language setup here, then return for routes, destinations and entrances.', href: '/amap-english-mode-guide-2026/' }],
-        ordered: true,
-        items: [
-          'Download AMap or AMap Global only from its official website or your phone\'s official app store. Check the publisher before installing.',
-          'Open the language settings and select English if it is not already active. Names and menu locations can change by phone, region, and app version.',
-          'Allow location access while using the app if you want live positioning and turn-by-turn guidance; review other permissions instead of accepting them automatically.',
-          'Search your first hotel, airport terminal, railway station, and key attractions while you still have reliable internet.',
-          'Save the destination name, Chinese address, phone number, and a screenshot outside the app so you can show them to staff or a driver.',
-          'Arrange mobile data and keep a charged phone or power bank. Live traffic, search, and route updates depend on connectivity.',
-        ],
-      },
-      {
-        title: 'Search for the correct place',
-        items: [
-          'Start with the full English place name, but use the Chinese name or address when English search returns no result or the wrong result.',
-          'For hotels, restaurants, shops, hospitals, and attractions with several branches, compare the district, street, phone number, photos, and distance.',
-          'For a large attraction, search for the ticket entrance or visitor entrance rather than the centre point of the entire site.',
-          'For a railway station or airport, confirm the complete station name, terminal, departure level, arrival level, or pickup area.',
-          'Do not assume the first search result is correct. Save the verified place before starting the route.',
-        ],
-      },
-      {
-        title: 'Plan walking and public-transport routes',
-        items: [
-          'Choose the route mode you actually need: walking, public transport, driving, cycling, or another option shown in your version.',
-          'For public transport, compare the departure time, total duration, number of transfers, walking distance, and last-service information shown in the app.',
-          'Check the named metro station entrance when entering and the recommended station exit at your destination. The wrong exit can add a long surface walk.',
-          'For walking routes, zoom in around large roads, elevated walkways, shopping centres, parks, and compounds to confirm the accessible entrance.',
-          'Route details and service availability can change. Follow official signs and staff instructions when they differ from the map.',
-        ],
-      },
-      {
-        title: 'Use AMap at airports and railway stations',
-        items: [
-          'Confirm the airport terminal or the full railway-station name before leaving your hotel; major cities can have several distant stations and terminals.',
-          'Search for the correct entrance, departure hall, metro connection, taxi queue, or ride-hailing pickup point instead of the general station pin.',
-          'Leave extra time for security, walking inside the complex, and finding the correct gate or waiting area.',
-          'Once inside, treat official signs, screens, tickets, and staff instructions as the final authority. Indoor routes and access controls may change faster than the map.',
-        ],
-      },
-      {
-        title: 'AMap maps and ride-hailing are different tasks',
-        items: [
-          'AMap is useful for place search, route planning, live traffic, and navigation. Some versions can also display ride-hailing services.',
-          'A ride-hailing entry inside AMap does not guarantee the same English support, payment methods, identity checks, or customer service as the standalone DiDi route.',
-          'Before ordering a car, confirm the pickup pin, destination, service category, estimated fare, payment method, and vehicle details shown on your screen.',
-          'For a dedicated step-by-step ride guide, use the separate DiDi in China for Foreigners page.',
-        ],
-      },
-      {
-        title: 'What to save for weak or missing mobile data',
-        items: [
-          'Take screenshots of the full route, key turns, metro line and transfer stations, destination entrance, and return route.',
-          'Keep your hotel name, Chinese address, phone number, and nearest metro station in your notes.',
-          'Assume that live search, traffic, and route recalculation require internet unless your exact app version clearly confirms an offline feature.',
-          'Carry a second data option or know where to find official station, hotel, or visitor-service help.',
-        ],
-      },
-      {
-        title: 'Common AMap problems and fixes',
-        items: [
-          'No English search result: paste the Chinese place name or full Chinese address from the hotel, booking, attraction, or official website.',
-          'Wrong branch: compare the district, street, phone number, photos, opening information, and distance before choosing.',
-          'Location appears wrong: check GPS and location permission, confirm mobile data, step outside dense buildings, and wait for the position to refresh.',
-          'Walking route ends at the wrong side: look for the named gate or entrance and zoom in for footbridges, tunnels, compounds, or road barriers.',
-          'Public-transport route is unavailable or no longer practical: check a later route, another station entrance, an official taxi queue, or DiDi.',
-        ],
-      },
-      {
-        title: 'Useful Chinese map phrases',
-        items: [
-          '这个地址在哪里？ — Where is this address?',
-          '请问最近的地铁站入口在哪里？ — Where is the nearest metro entrance?',
-          '我应该从哪个出口出去？ — Which exit should I use?',
-          '这是正确的火车站吗？ — Is this the correct railway station?',
-          '请带我到这个地址。 — Please take me to this address.',
-        ],
-      },
-    ],
-    faqs: [
-      ['Is AMap available in English?', 'Yes. AMap launched an English map experience for overseas users, with English interface and place information. Exact language coverage and menus can vary by app version and location.'],
-      ['Can foreigners use AMap in China?', 'Yes. Overseas users can download AMap from supported official app stores and use it for place search and route planning. Some account-based or transaction features may require additional setup.'],
-      ['Do I need a Chinese phone number for AMap?', 'Basic map search and route planning may be available without a Chinese number, but login, saved data, ride-hailing, or other account features can vary. Follow the requirements shown in your current version and keep access to your travel phone number.'],
-      ['Can AMap plan metro and walking routes?', 'Yes. AMap provides public-transport and walking route planning. Check the station entrance, destination exit, transfers, walking distance, and current service information before starting.'],
-      ['Does Google Maps work in mainland China?', 'Do not rely on Google Maps as your only map on an ordinary mainland China connection. Access to some international services can be restricted, so prepare AMap and save essential addresses and screenshots before travel.'],
-      ['Does AMap work offline?', 'Some capabilities can vary by device and version. Unless your version clearly confirms an offline feature, assume search, live traffic, and route recalculation need mobile data and save route screenshots as a backup.'],
-      ['Should I use AMap or DiDi?', 'Use AMap mainly for maps, place search, walking and public-transport routes, and navigation. Use DiDi when you want a dedicated ride-hailing flow with pickup, vehicle, trip, payment, and support details.'],
-    ],
-    sourceLinks: [
-      ['AMap official mobile website', 'https://mobile.amap.com/'],
-      ['AMap official Google Play listing', 'https://play.google.com/store/apps/details?id=com.autonavi.minimap'],
-      ['Shanghai city guide: AMap English launch', 'https://www.meet-in-shanghai.net/en/news/gaode-maps-launches-chinas-first-english-map-for-overseas-users-600989/'],
-      ['Shanghai government: essential apps for visitors', 'https://english.shanghai.gov.cn/en-UsefulApps/20231214/3cac2d8cc7f847da92a72252bae06705.html'],
-      ['UK travel advice: internet access in China', 'https://www.gov.uk/foreign-travel-advice/china/safety-and-security#internet-access'],
     ],
   },
   'china-metro-guide': {
@@ -3222,57 +3112,6 @@ const pageMeta = {
     lastModified: emergencyGuideContent.modified,
     article: true,
   },
-  'china-visa-free-guide-2026': {
-    heading: 'Do You Need a Visa for China in 2026? Probably Not.',
-    title: 'China Visa-Free Guide 2026: 45+ Countries, 30/60 Days & 240-Hour Transit Explained',
-    description: 'Check if you can visit China visa-free in 2026. Full list of 45+ countries, 30-day rules, 240-hour transit via 65 ports, and entry checklist. Ask ChinaEase Buddy AI.',
-    sections: [
-      ['Who Qualifies in 2026?', 'France, Germany, Italy, Spain, Malaysia, and other eligible passports can use the extended 30-day policy through December 31, 2026.', '#who-qualifies-in-2026'],
-      ['UK and Canada: Separate 2026 Policy', 'The United Kingdom and Canada were announced separately: up to 30 days from February 17, 2026 through December 31, 2026.', '#who-qualifies-in-2026'],
-      ['240-Hour Visa-Free Transit', 'Eligible travelers must fly country A to China to a different country or region C. They cannot return directly to the origin country.', '#240-hour-visa-free-transit-the-10-day-option'],
-      ['Entry Checklist', 'Carry your passport, onward ticket, accommodation details, and documents supporting the trip purpose.', '#entry-checklist-no-visa-still-needs-this'],
-    ],
-    faqs: [
-      ['Can I make multiple visa-free entries?', 'Each entry is assessed separately. Frequent or back-to-back visits may prompt questions about your purpose and itinerary.'],
-      ['Can I work in China during a visa-free stay?', 'No. Visa-free entry does not authorize employment.'],
-      ['Do I need to register with the police?', 'Hotels normally register guests. Private-home guests should complete temporary accommodation registration with the local authority within the required timeframe.'],
-      ['Can a US passport holder use 240-hour transit?', 'Potentially, if all conditions are met and the journey continues to a different country or region after China. United States to China to United States does not qualify.'],
-    ],
-  },
-  'how-to-pay-in-china-as-foreigner': {
-    heading: 'How to Pay in China When Cash Is No Longer the Default',
-    title: 'How to Pay in China as a Foreigner (2026): Alipay & WeChat Pay Setup Guide',
-    description: 'The easiest way to pay in China in 2026 is Alipay linked to Visa/Mastercard, with WeChat Pay as backup. Step-by-step setup, fees under ¥200 free.',
-    sections: [
-      ['Five-Minute Setup Before Landing', 'Download Alipay, complete passport and face verification, link a supported Visa or Mastercard, test the wallet, and set up WeChat Pay as backup.', '#the-5-minute-setup-you-must-do-before-landing'],
-      ['Alipay vs WeChat Pay', 'Use Alipay as the usual first choice and prepare WeChat Pay for merchants displaying only a WeChat QR code.', '#alipay-vs-wechat-pay-which-first'],
-      ['Fees You Must Know', 'International-card payments of ¥200 or less are generally free of the platform fee; a transaction over ¥200 typically carries about a 3% fee.', '#fees-you-must-know'],
-      ['When QR Payment Fails', 'Keep about ¥200 cash, a physical card, the second wallet, and Trip.com as booking backups.', '#what-if-a-qr-payment-fails'],
-    ],
-    faqs: [
-      ['Can foreigners use Alipay without a Chinese bank account?', 'Many foreign visitors can link supported international cards directly to Alipay. Complete setup before departure and keep backups.'],
-      ['Should I set up both Alipay and WeChat Pay?', 'Yes. Alipay is usually the easier primary wallet, while WeChat Pay is useful when a merchant accepts only its QR flow.'],
-      ['Is cash accepted in China?', 'RMB cash remains legal tender, but QR payment is the practical default in many places. Carry small notes.'],
-      ['Why did my foreign card payment fail?', 'Possible causes include identity checks, bank fraud controls, merchant restrictions, or limits. Try a backup and contact the card issuer.'],
-    ],
-  },
-  'china-esim-internet-vpn-guide': {
-    heading: 'Stay Connected Without Losing Google',
-    title: 'China eSIM for Tourists 2026: Use Google, WhatsApp & Instagram Without VPN',
-    description: 'WhatsApp & Google blocked in China? Get a China eSIM with built-in VPN on China Unicom. 5G, activates on arrival, no VPN app needed.',
-    sections: [
-      ['What Is Blocked?', 'Google, Gmail, YouTube, Instagram, WhatsApp, Facebook, and Google Maps are generally blocked on hotel Wi-Fi and ordinary local SIM data.', '#what-is-blocked'],
-      ['Travel eSIM with Overseas Routing', 'Choose a plan that explicitly routes China data through a foreign gateway such as Hong Kong or Singapore.', '#best-solution-in-2026-travel-esim-with-overseas-routing'],
-      ['Local SIM Plus VPN', 'Install and sign in before landing, and do not depend on one connection for critical travel documents.', '#local-sim-plus-vpn-app-the-older-route'],
-      ['Check Your Phone', 'Confirm exact-model eSIM support and carrier-unlocked status before buying.', '#check-your-phone-before-buying'],
-    ],
-    faqs: [
-      ['Does WhatsApp work in mainland China?', 'WhatsApp is generally blocked on hotel Wi-Fi and ordinary local mobile data. An appropriately routed international eSIM may preserve access.'],
-      ['Do I need a VPN with a China travel eSIM?', 'Not necessarily. A plan that routes through an overseas gateway may work without a separate VPN app. Confirm the plan details.'],
-      ['Can I activate the eSIM after arriving?', 'It may be possible, but installing it before departure and saving setup instructions offline is safer.'],
-      ['Will my phone support a China eSIM?', 'Support depends on exact model, market variant, and carrier lock. Check manufacturer specifications before purchase.'],
-    ],
-  },
   'china-train-booking-foreigners-12306': {
     heading: "China's 350 km/h Trains Are Open to Foreigners",
     title: 'How to Book China High-Speed Train Tickets as a Foreigner: 12306 English Guide',
@@ -3348,7 +3187,7 @@ Object.assign(pageMeta, {
     lastModified: '2026-09-27',
   },
   'amap-english-mode-guide-2026': {
-    ...pageMeta['amap-in-english'],
+    article: true,
     title: amapEnglishSetup.metaTitle,
     heading: amapEnglishSetup.heading,
     description: amapEnglishSetup.metaDescription,
@@ -3391,21 +3230,6 @@ Object.assign(pageMeta, {
     lastReviewed: 'September 27, 2026',
     lastModified: '2026-09-27',
   },
-  '240-hour-transit-zone-map-high-speed-rail': {
-    ...pageMeta['china-visa-free-travel-guide'],
-    title: '240-Hour Transit Zone Map: Can You Take High-Speed Rail? (2026)',
-    heading: 'Can You Take High-Speed Rail During 240-Hour Visa-Free Transit?',
-    description: 'Check whether a high-speed rail route is allowed during China 240-hour visa-free transit. Understand 57 eligible countries, 65 ports, permitted areas, and route limits.',
-    quickAnswer: 'High-speed rail is not automatically prohibited during eligible 240-hour transit, but every domestic segment must remain within the currently permitted areas. Check the passport, ports, onward third-country ticket, dates, cities, and latest NIA area table together.',
-    faqs: [
-      ['Can I take a high-speed train during 240-hour transit?', 'Yes, if the entire domestic route remains within the current permitted stay areas and all other passport, port, ticket, and third-country conditions are met.'],
-      ['Can I travel anywhere in China?', 'No. Travel is limited to the permitted areas published for the policy.'],
-      ['Can I travel from Shanghai to Beijing?', 'Do not decide from an old zone graphic alone. Check the latest NIA permitted-area table for both ports and the complete route, or call 12367 before booking.'],
-      ['Does a return to my origin country qualify?', 'No. The destination after mainland China must be a different country or region from the place of arrival.'],
-    ],
-    lastReviewed: 'September 27, 2026',
-    lastModified: '2026-09-27',
-  },
   'wechat-verification-without-friend-qr-2026': {
     ...pageMeta['wechat-pay-for-foreigners'],
     title: 'WeChat Verification Without a Friend: Safe Registration Options (2026)',
@@ -3418,118 +3242,19 @@ Object.assign(pageMeta, {
     lastReviewed: wechatVerificationHelp.reviewed,
     lastModified: wechatVerificationHelp.modified,
   },
-  'china-hotels-for-foreigners-no-rejection-guide': {
-    ...pageMeta['china-hotels-for-foreigners'],
-    title: 'Why Hotels in China Refuse Foreign Guests (and How to Avoid It) [2026]',
-    heading: "Why Some Hotels in China Refuse Foreign Guests, and What to Do Next",
-    description: 'Can foreigners stay in any hotel in China? Learn why rejection still happens, how hotel registration works, what to confirm before arrival, and when to call 12367.',
-    quickAnswer: 'Chinese authorities have instructed local departments and booking platforms not to restrict accommodation operators from receiving foreign guests based on qualification requirements, and operators may not illegally advertise that they refuse foreigners. This does not mean every reservation must be accepted regardless of room availability, booking details, identity checks, payment, or lawful property rules. If check-in is refused, identify the exact reason, ask a manager to review it, contact the booking platform, and prioritize safe replacement accommodation.',
-    lastReviewed: 'October 11, 2026',
-    lastModified: '2026-10-11',
-    contentSections: [
-      {
-        title: 'First identify why check-in was refused',
-        table: {
-          headers: ['Reason given', 'What it means for your next step'],
-          rows: [
-            ['“We cannot accept foreigners” or “we lack foreign-related qualification”', 'Ask a manager to review the booking and foreign-passport registration process. Save the reason in writing and contact the booking platform if the property will not reconsider.'],
-            ['No room or the hotel is overbooked', 'Treat this as a failure to honor the reservation, not automatically as nationality discrimination. Ask the hotel or platform for immediate relocation and any refund due under the booking terms.'],
-            ['Name, passport, guest count, date, or room details do not match', 'Compare the reservation with every guest’s original passport and correct the mismatch through the booking platform before arguing about foreign-guest policy.'],
-            ['Payment, deposit, late arrival, or property-rule problem', 'Ask for the exact charge, deadline, or rule in writing. Check the reservation terms and use a prepared payment method or platform support where appropriate.'],
-          ],
-        },
-        items: [
-          'Do not assume every refusal has the same legal or practical cause. The written reason determines whether the fastest solution is manager review, booking correction, relocation, or a refund request.',
-        ],
-      },
-      {
-        title: 'What to do at the front desk, in order',
-        ordered: true,
-        items: [
-          'Stay calm and ask for the specific reason the confirmed booking cannot be checked in. Distinguish a foreign-passport registration concern from no vacancy, a booking mismatch, payment, or another operational issue.',
-          'Show the reservation and any written message confirming foreign-passport check-in. Ask for the duty manager or an experienced employee who knows the accommodation-registration process.',
-          'Ask the property to put its reason in the booking-platform chat. Avoid a prolonged confrontation or photographing staff without permission.',
-          'Contact the booking platform while you are still at the property. Request immediate relocation first when you need a room that night, then address refund or compensation through the booking terms.',
-          'If the issue is not resolved quickly, move to a safe staffed alternative. Keep transport and replacement-hotel receipts for the later claim.',
-        ],
-      },
-      {
-        title: 'Short messages to copy and show',
-        items: [
-          '请告诉我无法办理入住的具体原因。是订单、房态，还是外国护照登记问题？ — Please tell me the specific reason check-in cannot be completed. Is it the booking, room availability, or foreign-passport registration?',
-          '这是我的预订确认和护照。请让值班经理帮忙处理。 — Here are my booking confirmation and passport. Please ask the duty manager to help.',
-          '请在预订平台的消息里写明拒绝入住的原因。 — Please state the reason for refusing check-in in the booking-platform message.',
-          '如果酒店无法履行订单，请帮我免费改订到安全的同等住宿。 — If the hotel cannot honor the booking, please relocate me to safe, equivalent accommodation without an extra charge.',
-          '如果无法改订，请在平台上确认取消和退款。 — If relocation is not possible, please confirm the cancellation and refund through the platform.',
-        ],
-      },
-      {
-        title: 'Evidence to save for relocation or refund support',
-        items: [
-          'The reservation number, exact property and branch, booked dates, room type, guest names, payment status, cancellation terms, and the original listing.',
-          'Platform messages showing any pre-arrival confirmation that the property could check in the passport holders on the reservation.',
-          'A written platform or hotel message stating the refusal reason, plus the time of arrival and the role of the staff member or manager you spoke with.',
-          'Receipts for prepaid accommodation, replacement lodging, and necessary transport to the replacement property.',
-          'Screenshots of platform support conversations and the final relocation, cancellation, or refund decision. Do not publish staff or guest personal information.',
-        ],
-      },
-      {
-        title: 'How to ask the booking platform for help',
-        ordered: true,
-        items: [
-          'Open support from the exact reservation so the agent can see the property, payment, cancellation conditions, and previous messages.',
-          'State the immediate need clearly: confirmed guest refused at check-in, exact reason given, current local time, and whether safe accommodation is needed tonight.',
-          'Request relocation to comparable safe accommodation before accepting a cancellation that leaves you without a room. Ask who pays any price difference and transport.',
-          'If relocation is unavailable, request the refund or cancellation remedy supported by the reservation terms and the platform’s failure-to-honor process.',
-          'Keep the case number and written outcome. A refund route is a booking and payment matter; the NIA 12367 hotline is for immigration and accommodation-registration guidance, not platform refund decisions.',
-        ],
-      },
-      {
-        title: 'Accommodation registration still applies',
-        items: [
-          'A hotel that checks in a foreign guest must register the stay and submit the required accommodation information to the local public security authority.',
-          'A private home or another non-hotel stay follows a separate process: the visitor or host generally completes accommodation registration within 24 hours.',
-          'Use the separate 12367 accommodation-registration guide for the current online and in-person routes. A hotel refusal does not remove the registration requirement for the replacement stay.',
-        ],
-      },
-    ],
-    faqs: [
-      ['Can a hotel refuse me only because I have a foreign passport?', 'Chinese authorities have instructed local departments and booking platforms not to impose blanket foreign-guest qualification restrictions on accommodation operators. That does not remove normal booking, identity, room-availability, payment, safety, or property rules, so ask for the exact reason in writing.'],
-      ['What should I do if I am refused late at night?', 'Prioritize a safe staffed replacement rather than a prolonged front-desk dispute. Ask the booking platform for immediate relocation, confirm who covers any price difference and transport, and keep the original booking, refusal message, replacement receipt, and support case number.'],
-      ['What evidence should I keep for a hotel refund request?', 'Keep the reservation, payment and cancellation terms, written passport check-in confirmation, refusal reason, platform messages, case number, and receipts for replacement lodging and necessary transport. Ask the hotel or platform to record the decision in writing.'],
-      ['Can 12367 arrange my hotel refund?', '12367 provides National Immigration Administration guidance, including accommodation-registration questions. Refunds, relocation, and failure-to-honor remedies should be handled with the hotel and booking platform under the reservation terms.'],
-    ],
-    sourceLinks: [
-      ['Chinese government: facilitating accommodation for foreign travelers', 'https://english.www.gov.cn/news/202407/26/content_WS66a2d827c6d0868f4e8e975c.html'],
-      ['NIA: hotel and non-hotel accommodation registration rules', 'https://english.www.gov.cn/services/visitchina/202603/21/content_WS69ce124cc6d00ca5f9a0a368.html'],
-    ],
-  },
-  'does-google-maps-work-in-china-amap-guide': {
-    ...pageMeta['amap-in-english'],
-    title: 'Does Google Maps Work in China? Use Amap English Instead [2026]',
-    heading: 'Google Maps Is Not the Best Navigation Choice in China. Use Amap Instead.',
-    description: 'Google Maps is generally unavailable on ordinary mainland connections. Use Amap Global in English or Apple Maps for accurate China navigation, transit, and ride-hailing.',
-    quickAnswer: 'Google Maps is generally unavailable on ordinary mainland China connections, and its local navigation data may be incomplete even if you can open it. Download Amap Global before departure and select English or another supported language; Apple Maps is another option for many iPhone users. Save your hotel address in Chinese and verify the exact entrance or station before you travel.',
-    lastReviewed: 'September 27, 2026',
-    lastModified: '2026-09-27',
-  },
-  'how-to-visit-great-wall-from-beijing-2026': {
-    ...pageMeta['great-wall-of-china-day-trip-from-beijing'],
-    title: 'How to Visit the Great Wall from Beijing Without a Tour (2026 Guide)',
-    heading: 'How to Visit the Great Wall from Beijing Without a Tour',
-    description: 'Compare Badaling and Mutianyu Great Wall, transport from Beijing, tickets, walking difficulty, crowds, cable cars, and a realistic independent day trip.',
-    quickAnswer: 'You can visit the Great Wall from Beijing without a tour. Badaling has a high-speed train connection from Beijing North or Qinghe to Badaling Great Wall station. Mutianyu usually needs a bus connection or a verified road transfer. Choose your section first, check the official ticket and transport options for your date, and secure a realistic return trip before leaving Beijing.',
-    lastReviewed: 'September 27, 2026',
-    lastModified: '2026-09-27',
-  },
   'what-to-eat-in-china-first-time-guide': {
     ...pageMeta['china-food-ordering-guide'],
     title: 'What to Eat in China: 15 Must-Try Dishes for First-Time Visitors',
     heading: 'What to Eat in China: 15 Dishes for a First Visit',
     description: 'Discover 15 dishes to try in China, including jianbing, xiaolongbao, Peking duck, hot pot, biangbiang noodles, dumplings, and regional specialties.',
     quickAnswer: 'Choose regional strengths: Peking duck in Beijing, xiaolongbao in Shanghai, biangbiang noodles in Xi’an, hot pot in Sichuan or Chongqing, plus jianbing, dumplings, noodles, and seasonal vegetables.',
-    lastReviewed: 'September 27, 2026',
-    lastModified: '2026-09-27',
+    // Its own questions; the spread above would otherwise copy the food-ordering guide's FAQs.
+    faqs: [
+      ["What food should I try first in China?", "Start with the regional specialties of your destination, such as Peking duck in Beijing, xiaolongbao in Shanghai, biangbiang noodles in Xi’an, or hot pot in Chengdu and Chongqing."],
+      ["Is Chinese street food safe?", "Risk varies. Choose busy vendors with clean preparation areas, food cooked thoroughly and served hot, and safe water and ice practices."],
+      ["Is it easy to eat vegetarian food in China?", "Vegetable dishes are common, but meat stock, lard, oyster sauce, or small meat pieces may be used. Show a precise Chinese request and confirm ingredients."],
+      ["How do I communicate a food allergy?", "Carry a detailed Chinese allergy card naming the allergen and the need to avoid sauces, broths, oils, and cross-contact. Seek professional medical advice for severe allergies."],
+    ],
   },
   'how-to-use-wechat-as-foreigner-2026': {
     ...pageMeta['wechat-pay-for-foreigners'],
@@ -3539,33 +3264,6 @@ Object.assign(pageMeta, {
     quickAnswer: 'Register with a reachable mobile number, complete the security verification shown for your account, add recovery options, and link an eligible international card to WeChat Pay when available.',
     lastReviewed: 'September 27, 2026',
     lastModified: '2026-09-27',
-  },
-  'is-china-safe-for-tourists-2026': {
-    ...pageMeta['china-travel-safety-guide'],
-    title: 'Is China Safe for US Citizens in 2026? Travel Advice',
-    heading: 'Is China Safe for US Citizens in 2026?',
-    description: 'The US State Department rates mainland China Level 2 (Exercise Increased Caution). See exit-ban risks, who needs extra care and a before-departure checklist.',
-    quickAnswer: 'Many US citizens visit China without serious incidents. The US Department of State currently rates mainland China Level 2, Exercise Increased Caution, because of arbitrary enforcement of local laws, exit bans, and the risk of unjust arrest or detention. This is not a guarantee that any trip is risk-free. Review the current advisory, follow local laws, use verified transport, and keep a practical emergency plan.',
-    lastReviewed: 'October 20, 2026',
-    lastModified: '2026-10-20',
-  },
-  'best-apps-for-china-travel-2026': {
-    ...pageMeta['china-travel-apps'],
-    title: '10 Best Apps for China Travel (2026): What to Download Before You Land',
-    heading: '10 Apps You Should Download Before Landing in China',
-    description: "Don't land without these 10 apps. Alipay and WeChat Pay for payment, DiDi for taxis, Amap for maps, 12306 for trains. Full setup guide for foreigners.",
-    quickAnswer: 'Prepare Alipay, WeChat, DiDi, Amap or Apple Maps, and Trip.com or Railway 12306 before departure. Then add metro, translation, food, and eSIM tools for your route.',
-    lastReviewed: 'September 26, 2026',
-    lastModified: '2026-09-26',
-  },
-  'how-to-use-didi-in-china-foreigners': {
-    ...pageMeta['didi-in-china-for-foreigners'],
-    title: 'How to Use DiDi in China as a Foreigner (No Chinese Number Needed)',
-    heading: 'How to Use DiDi in China Without a Chinese Phone Number',
-    description: 'Foreigners can use DiDi with a supported international number or through Alipay and WeChat. Enter destinations, verify the car, and pay in-app.',
-    quickAnswer: 'Use DiDi China or a supported Alipay or WeChat ride-hailing route. Confirm the pickup pin, search the destination, review the estimate, and verify the licence plate before entering.',
-    lastReviewed: 'September 26, 2026',
-    lastModified: '2026-09-26',
   },
   'beijing-shanghai-layover-240-hour-guide': {
     ...pageMeta['china-visa-free-travel-guide'],
@@ -3578,15 +3276,6 @@ Object.assign(pageMeta, {
     sourceLinks: layoverAirportPlanning.sources.map(({ label, href }) => [label, href]),
     lastReviewed: layoverAirportPlanning.reviewed,
     lastModified: layoverAirportPlanning.modified,
-  },
-  'how-much-does-china-trip-cost-2026-calculator': {
-    ...pageMeta['china-travel-budget'],
-    title: 'How Much Does a China Trip Cost in 2026? Daily Budget Calculator',
-    heading: 'How Much Does a China Trip Cost in 2026? Real Planning Numbers',
-    description: 'Plan China trip costs for 2026. Compare budget, mid-range, and comfortable daily spending for hotels, food, transport, attractions, and trains.',
-    quickAnswer: 'Plan roughly RMB 350-650 per person per day for budget travel, RMB 800-1,500 for mid-range travel, or RMB 1,800-3,000+ for a comfortable trip, excluding international flights.',
-    lastReviewed: 'September 26, 2026',
-    lastModified: '2026-09-26',
   },
 });
 
@@ -4000,84 +3689,10 @@ const focusedPageContent = {
     "lastModified": "2026-10-05",
     "article": true
   },
-  "240-hour-transit-zone-map-high-speed-rail": {
-    "contentSections": [
-      {
-        "title": "Check eligibility before mapping a route",
-        "items": [
-          "Confirm nationality, passport, entry port and onward destination with the National Immigration Administration.",
-          "A route map alone cannot establish eligibility for visa-free transit.",
-          "Check the latest permitted areas and ports before buying an onward ticket."
-        ]
-      },
-      {
-        "title": "Check each rail segment",
-        "items": [
-          "List every city, province and station on the proposed train route.",
-          "Confirm every segment stays inside the area permitted for your entry arrangement.",
-          "Choose a simpler route if an interchange or day trip crosses a boundary you cannot verify."
-        ]
-      }
-    ],
-    "lastReviewed": "October 5, 2026",
-    "lastModified": "2026-10-05",
-    "article": true
-  },
   "wechat-verification-without-friend-qr-2026": {
     contentSections: wechatVerificationHelp.sections,
     lastReviewed: wechatVerificationHelp.reviewed,
     lastModified: wechatVerificationHelp.modified,
-    article: true,
-  },
-  "does-google-maps-work-in-china-amap-guide": {
-    "contentSections": [
-      {
-        "title": "Why not rely on Google Maps in mainland China",
-        "items": [
-          "Google services are generally unavailable on ordinary mainland Wi-Fi and local mobile data. Connectivity through a travel plan may differ, but it does not guarantee dependable local map data.",
-          "Place listings, transit information and navigation can be incomplete or outdated even when the app opens.",
-          "Different map and satellite coordinate systems can create visible offsets. Confirm the actual entrance and route with a current local map."
-        ]
-      },
-      {
-        "title": "Set up Amap Global before departure",
-        "ordered": true,
-        "items": [
-          "Install Amap Global from your app store, select English or another supported language and allow location access while using the app.",
-          "Search your hotel, arrival station and first destinations while connected to reliable data. Save each place name and address in Chinese.",
-          "Compare walking, public transit and driving routes, then check the exact station exit, attraction entrance or ride-hailing pickup point."
-        ]
-      },
-      {
-        "title": "Amap, Apple Maps and Baidu Maps compared",
-        "table": {
-          "headers": ["Map", "Useful for", "Check before relying on it"],
-          "rows": [
-            ["Amap Global", "Local transit, traffic, walking directions and ride-hailing", "Some listings and service steps may still appear in Chinese"],
-            ["Apple Maps", "English navigation for many iPhone users", "Coverage and available features vary by place and travel mode"],
-            ["Baidu Maps", "Searching local places by Chinese name", "Chinese-language interface can be difficult for first-time visitors"]
-          ]
-        }
-      },
-      {
-        "title": "Keep a navigation backup",
-        "items": [
-          "Screenshot the hotel name and full address in Chinese, nearest metro station and exit number, and your airport pickup instructions.",
-          "Search both the English and Chinese place names when a result is ambiguous. A station name alone may point to the wrong building.",
-          "Show a driver the Chinese address rather than relying on an English map pin, and keep a second navigation option for the first transfer."
-        ]
-      }
-    ],
-    "lastReviewed": "October 5, 2026",
-    "lastModified": "2026-10-12",
-    "article": true
-  },
-  "how-to-visit-great-wall-from-beijing-2026": {
-    contentSections: greatWallTransport.sections,
-    faqs: greatWallTransport.faqs.map(({ question, answer }) => [question, answer]),
-    sourceLinks: greatWallTransport.sources.map(({ label, href }) => [label, href]),
-    lastReviewed: greatWallTransport.reviewed,
-    lastModified: greatWallTransport.modified,
     article: true,
   },
   "what-to-eat-in-china-first-time-guide": {
@@ -4096,11 +3711,12 @@ const focusedPageContent = {
           "Save dish names in Chinese and show them to the server.",
           "Check whether portions are shared and whether a menu price is per item or by weight.",
           "Choose a busy, clearly priced restaurant and keep a translation fallback."
-        ]
+        ],
+        "links": [{ "label": "How to order food in China", "description": "QR menus, dietary needs, serious allergies and paying at the table.", "href": "/china-food-ordering-guide/" }]
       }
     ],
-    "lastReviewed": "October 5, 2026",
-    "lastModified": "2026-10-05",
+    "lastReviewed": "October 23, 2026",
+    "lastModified": "2026-10-23",
     "article": true
   },
   "how-to-use-wechat-as-foreigner-2026": {
@@ -4126,167 +3742,27 @@ const focusedPageContent = {
     "lastModified": "2026-10-05",
     "article": true
   },
-  "is-china-safe-for-tourists-2026": {
-    "contentSections": [
-      {
-        "title": "Is China safe for US citizens right now?",
-        "items": [
-          "Many US citizens visit mainland China without a serious incident, but that does not make every trip risk-free or suitable for every traveler.",
-          "The US Department of State currently rates mainland China Level 2, Exercise Increased Caution. The current advisory was reissued on September 4, 2026 and highlights arbitrary enforcement of local laws, exit bans, and the risk of unjust arrest or detention.",
-          "Level 2 is not the same as Level 3, Reconsider Travel, or Level 4, Do Not Travel. It means travelers should understand the named risks, read the complete current advisory, and prepare accordingly.",
-          "The advisory treats mainland China, Hong Kong, and Macau separately. Check the current advice for every jurisdiction on your route rather than applying the mainland rating to the entire trip."
-        ]
-      },
-      {
-        "title": "Who should read the advisory especially carefully?",
-        "items": [
-          "The advisory identifies additional concerns for people involved in business or family disputes, research, journalism, government-funded programs, and current or former government, military, law-enforcement, or intelligence work.",
-          "US citizens of Chinese heritage, former Chinese citizens, dual nationals, and travelers using Chinese-issued identity or travel documents should read the nationality and consular-assistance sections closely.",
-          "A leisure tourist does not automatically share every higher-risk circumstance, but no online guide can assess an individual's legal, professional, family, or personal exposure."
-        ]
-      },
-      {
-        "title": "Before a US citizen travels to China",
-        "ordered": true,
-        "items": [
-          "Read the current US Department of State China Travel Advisory and China country information again shortly before departure because wording and risk levels can change.",
-          "Consider enrolling in the free Smart Traveler Enrollment Program (STEP) to receive embassy or consulate alerts and make emergency contact easier.",
-          "Confirm entry documents, travel insurance, prescriptions, accommodation registration, and emergency contacts for the exact cities and activities in the itinerary.",
-          "Save the hotel name and address in Chinese, passport and insurance copies, transport bookings, and emergency numbers offline without storing sensitive documents in a publicly accessible place.",
-          "Discuss business disputes, dual-nationality questions, prior government work, journalism, research, or other higher-risk circumstances with an appropriate official or qualified adviser before travel."
-        ]
-      },
-      {
-        "title": "Everyday precautions in mainland China",
-        "items": [
-          "Use licensed transport and official booking channels, verify the licence plate before entering a ride, and keep control of your passport, phone, payment accounts, and verification codes.",
-          "Follow local laws and instructions at attractions, border areas, demonstrations, government facilities, and places where photography or access may be restricted.",
-          "Avoid carrying packages for strangers, paying an unexpected bill without reviewing it, or sharing SMS, wallet, or account-recovery codes.",
-          "Save 110 for police, 120 for ambulance, and 119 for fire. Ask hotel, station, or attraction staff to call when language is a barrier.",
-          "For detention, a lost passport, a serious dispute, or another consular emergency, contact the nearest US embassy or consulate and follow its current instructions."
-        ]
-      }
-    ],
-    "lastReviewed": "October 20, 2026",
-    "lastModified": "2026-10-20",
-    "article": true,
-    "quickAnswer": "Many US citizens visit mainland China without serious incidents, but the US Department of State currently rates mainland China Level 2, Exercise Increased Caution. Its September 4, 2026 advisory highlights arbitrary enforcement of local laws, exit bans, and the risk of unjust arrest or detention. Read the complete current advisory, consider your individual circumstances, follow local laws, and keep a practical emergency plan.",
-    "faqs": [
-      [
-        "Is China safe for US citizens in 2026?",
-        "Many US citizens visit without serious incidents. The current US advisory is Level 2, Exercise Increased Caution, because of arbitrary enforcement of local laws, exit-ban risks, and the risk of unjust arrest or detention. Read the full current advisory, consider your individual circumstances, and follow local laws."
-      ],
-      [
-        "Is China safe for solo female travelers?",
-        "Many women travel independently in China, but standard precautions still apply: share plans, use verified transport, keep control of drinks, avoid isolated areas, and leave situations that feel unsafe."
-      ],
-      [
-        "Is China safe for children and families?",
-        "China can be practical for family travel. Plan for crowds, carry medicine and hotel details, use child-appropriate restraints where available, and agree on a meeting point."
-      ],
-      [
-        "What emergency numbers should I save?",
-        "Save 110 for police, 120 for ambulance, and 119 for fire. Ask hotel, station, or attraction staff to help call if language is a barrier."
-      ]
-    ],
-    "sourceLinks": [
-      ["US Department of State: China Travel Advisory", "https://travel.state.gov/en/international-travel/travel-advisories/china.html"],
-      ["US Department of State: Smart Traveler Enrollment Program", "https://travel.state.gov/en/international-travel/travel-advisories/smart-traveler-enrollment-program.html"],
-      ["CDC: China traveler health guidance", "https://wwwnc.cdc.gov/travel/destinations/traveler/none/china"]
-    ]
-  },
-  "best-apps-for-china-travel-2026": {
-    "contentSections": [
-      {
-        "title": "Five core app categories",
-        "items": [
-          "Payments: prepare Alipay and, if useful, WeChat Pay with a backup card.",
-          "Navigation: test AMap or another map that works for your route.",
-          "Transport: prepare a ride-hailing option and a railway booking route."
-        ]
-      },
-      {
-        "title": "Add tools for your trip",
-        "items": [
-          "Translation: save offline language help and the Chinese names of your destinations.",
-          "Connectivity: arrange data before arrival and check the provider's coverage.",
-          "Only install apps you will use; confirm the current features and account requirements in each official app."
-        ]
-      }
-    ],
-    "lastReviewed": "October 5, 2026",
-    "lastModified": "2026-10-05",
-    "article": true,
-    "title": "Essential Apps for China Travel (2026): Payments, Maps & Transport",
-    "heading": "Essential Apps for China Travel in 2026",
-    "description": "Prepare the essential China travel apps for payments, maps, transport, translation and connectivity. See what to set up before arrival and what backups to keep."
-  },
-  "how-to-use-didi-in-china-foreigners": {
-    "contentSections": [
-      {
-        "title": "Before your first ride",
-        "items": [
-          "Set up a supported number and payment option in the DiDi app or a supported wallet route.",
-          "Save the hotel's Chinese name and the correct terminal or railway exit.",
-          "Check the pickup pin and the estimated fare before requesting."
-        ]
-      },
-      {
-        "title": "At pickup and arrival",
-        "items": [
-          "Match the licence plate and vehicle details shown in the app.",
-          "Message the driver through the app or show the destination in Chinese if needed.",
-          "Check the final fare and use the app's help route if there is a dispute."
-        ]
-      }
-    ],
-    "lastReviewed": "October 5, 2026",
-    "lastModified": "2026-10-05",
-    "article": true
-  },
   "beijing-shanghai-layover-240-hour-guide": {
     contentSections: layoverAirportPlanning.sections,
     lastReviewed: layoverAirportPlanning.reviewed,
     lastModified: layoverAirportPlanning.modified,
     article: true,
   },
-  "how-much-does-china-trip-cost-2026-calculator": {
-    "contentSections": [
-      {
-        "title": "Calculate a planning total",
-        "items": [
-          "Multiply your per-person daily range by the number of travelers and days.",
-          "Add intercity train or flight tickets, international flights, visas where needed, insurance and a contingency separately.",
-          "For two people sharing a room, enter the actual room total instead of doubling the hotel cost."
-        ]
-      },
-      {
-        "title": "Worked examples, excluding major travel",
-        "items": [
-          "Seven budget days at RMB 350–650 per person per day: RMB 2,450–4,550 per person.",
-          "Ten mid-range days at RMB 800–1,500: RMB 8,000–15,000 per person.",
-          "Fourteen comfortable days at RMB 1,800–3,000+: RMB 25,200–42,000+ per person."
-        ]
-      }
-    ],
-    "lastReviewed": "October 5, 2026",
-    "lastModified": "2026-10-05",
-    "article": true,
-    "title": "China Trip Cost 2026: 7, 10 & 14-Day Budget Examples",
-    "heading": "China Trip Cost in 2026: Calculate Your Budget",
-    "description": "Estimate a China trip budget with daily spending ranges and worked 7, 10 and 14-day examples. Add trains, flights, insurance and other costs separately."
-  }
 };
 for (const [slug, content] of Object.entries(focusedPageContent)) {
   Object.assign(pageMeta[slug], content);
 }
 
-function insertAfter(list, index, item, label) {
-  if (index === -1) throw new Error(`mergedGuideAdditions: "${label}" not found`);
-  list.splice(index + 1, 0, item);
+function requireIndex(index, label) {
+  if (index === -1) throw new Error(`guideContentAdditions: "${label}" not found`);
+  return index;
 }
 
-for (const [slug, additions] of Object.entries(mergedGuideAdditions)) {
+function insertAfter(list, index, item, label) {
+  list.splice(requireIndex(index, label) + 1, 0, item);
+}
+
+for (const [slug, additions] of Object.entries(guideContentAdditions)) {
   const meta = pageMeta[slug];
   // Copy first: other pages spread these arrays from the same meta object.
   Object.assign(meta, { contentSections: [...meta.contentSections], faqs: [...meta.faqs] });
@@ -4295,6 +3771,14 @@ for (const [slug, additions] of Object.entries(mergedGuideAdditions)) {
   }
   for (const { after, question, answer } of additions.faqs) {
     insertAfter(meta.faqs, meta.faqs.findIndex(([existing]) => existing === after), [question, answer], `${slug} / ${after}`);
+  }
+  for (const question of additions.removeFaqs) {
+    requireIndex(meta.faqs.findIndex(([existing]) => existing === question), `${slug} / ${question}`);
+  }
+  meta.faqs = meta.faqs.filter(([question]) => !additions.removeFaqs.includes(question));
+  for (const { section: title, links } of additions.sectionLinks) {
+    const index = requireIndex(meta.contentSections.findIndex((section) => section.title === title), `${slug} / ${title}`);
+    meta.contentSections[index] = { ...meta.contentSections[index], links: [...(meta.contentSections[index].links || []), ...links] };
   }
   meta.sourceLinks = [...(meta.sourceLinks || []), ...additions.sources.map(({ label, href }) => [label, href])];
   Object.assign(meta, { lastReviewed: additions.reviewed, lastModified: additions.modified });
@@ -4349,7 +3833,6 @@ const staticCtas = {
   'chinese-travel-phrases': ['Open the free phrase tools', '/?journey=china'],
   'china-travel-safety-guide': ['Get my free China itinerary', '/#trip-plan'],
   'china-travel-budget': ['Get my free China itinerary', '/#trip-plan'],
-  'amap-in-english': ['Get my free China itinerary', '/#trip-plan'],
   'china-metro-guide': ['Get my free China itinerary', '/#trip-plan'],
   'didi-in-china-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
   'china-train-travel-guide': ['Get my free China itinerary', '/#trip-plan'],
@@ -4388,26 +3871,15 @@ const staticCtas = {
   'china-payment-guide': ['Get my free China itinerary', '/#trip-plan'],
   'china-travel-checklist': ['Get my free China itinerary', '/#trip-plan'],
   'china-emergency-numbers': ['View emergency help', '/?journey=emergency'],
-  'china-visa-free-guide-2026': ["Ask Buddy if you're visa-free", '/'],
-  'how-to-pay-in-china-as-foreigner': ['Build my China payment checklist', '/'],
-  'china-esim-internet-vpn-guide': ['Check my phone and connection', '/'],
   'china-train-booking-foreigners-12306': ['Plan my train booking', '/'],
   'china-itinerary-first-time-7-10-14-days': ['Get my free itinerary', '/plan/'],
-  'is-china-safe-for-tourists-2026': ['Ask Buddy for a city safety check', '/'],
-  'best-apps-for-china-travel-2026': ['Generate my personal app checklist', '/'],
-  'how-to-use-didi-in-china-foreigners': ['Translate my hotel address for DiDi', '/'],
   'beijing-shanghai-layover-240-hour-guide': ['Plan my layover with Buddy', '/'],
-  'how-much-does-china-trip-cost-2026-calculator': ['Calculate my China budget with Buddy', '/'],
-  'china-hotels-for-foreigners-no-rejection-guide': ['Ask Buddy to check my hotel plan', '/'],
-  'does-google-maps-work-in-china-amap-guide': ['Convert my destination for China maps', '/'],
-  'how-to-visit-great-wall-from-beijing-2026': ['Plan my Great Wall day with Buddy', '/'],
   'what-to-eat-in-china-first-time-guide': ['Ask Buddy what to order', '/'],
   'how-to-use-wechat-as-foreigner-2026': ['Build my WeChat setup checklist', '/'],
   'nia-12367-online-accommodation-registration-guide': ['Get your free personalized trip starter', '/#trip-plan'],
   'amap-english-mode-guide-2026': ['Convert my address into an Amap-ready search', '/'],
   'alipay-metro-qr-transport-code-guide': ['Ask Buddy for my city metro setup', '/'],
   'china-travel-ai-itinerary-generator': ['Get my free itinerary', '/plan/'],
-  '240-hour-transit-zone-map-high-speed-rail': ['Check my 240-hour rail route', '/'],
   'wechat-verification-without-friend-qr-2026': ['Review my WeChat verification options', '/'],
   faq: ['Open the free toolkit', '/'],
 };
@@ -4430,9 +3902,7 @@ const relatedLinks = [
   ['Amap English mode guide', '/amap-english-mode-guide-2026/'],
   ['Alipay metro QR guide', '/alipay-metro-qr-transport-code-guide/'],
   ['China travel AI itinerary generator', '/china-travel-ai-itinerary-generator/'],
-  ['240-hour transit and high-speed rail', '/240-hour-transit-zone-map-high-speed-rail/'],
   ['WeChat verification without a friend', '/wechat-verification-without-friend-qr-2026/'],
-  ['AMap in English', '/amap-english-mode-guide-2026/'],
   ['China metro guide', '/china-metro-guide/'],
   ['DiDi in China for foreigners', '/didi-in-china-for-foreigners/'],
   ['China train travel guide', '/china-train-travel-guide/'],
@@ -4482,12 +3952,6 @@ const relatedLinks = [
 ];
 
 const pageRelatedLinks = {
-  'china-hotels-for-foreigners-no-rejection-guide': [
-    ['Full China hotels guide', '/china-hotels-for-foreigners/'],
-    ['12367 accommodation registration guide', '/nia-12367-online-accommodation-registration-guide/'],
-    ['China airport arrival guide', '/china-airport-arrival-guide/'],
-    ['China travel safety guide', '/china-travel-safety-guide/'],
-  ],
   'china-240-hour-visa-free-transit-2026': [
     ['240-hour transit calculator', '/china-240-hour-transit-calculator/'],
     ['China visa-free checker', '/china-visa-free-checker/'],
@@ -4576,16 +4040,6 @@ const pageRelatedLinks = {
     ['10-day China itinerary', '/10-day-china-itinerary/'],
     ['China payment guide', '/china-payment-guide/'],
     ['First trip to China', '/first-trip-to-china/'],
-    ['Get a free China itinerary', '/#trip-plan'],
-  ],
-  'amap-in-english': [
-    ['AMap vs Google Maps in China', '/amap-vs-google-maps-china/'],
-    ['First trip to China', '/first-trip-to-china/'],
-    ['Apps to download before China', '/china-travel-apps/'],
-    ['China metro guide', '/china-metro-guide/'],
-    ['DiDi in China for foreigners', '/didi-in-china-for-foreigners/'],
-    ['China train travel guide', '/china-train-travel-guide/'],
-    ['China eSIM & internet guide', '/china-esim-internet-guide/'],
     ['Get a free China itinerary', '/#trip-plan'],
   ],
   'china-metro-guide': [
@@ -4974,14 +4428,6 @@ const pageRelatedLinks = {
     ['First trip to China', '/first-trip-to-china/'],
     ['Get a free China itinerary', '/#trip-plan'],
   ],
-  'is-china-safe-for-tourists-2026': [
-    ['China travel safety guide', '/china-travel-safety-guide/'],
-    ['Emergency numbers in China', '/china-emergency-numbers/'],
-    ['China visa-free checker', '/china-visa-free-checker/'],
-    ['China hotels for foreigners', '/china-hotels-for-foreigners/'],
-    ['Essential China travel apps', '/china-travel-apps/'],
-    ['First trip to China', '/first-trip-to-china/'],
-  ],
   'china-travel-budget': [
     ['China hotels for foreigners', '/china-hotels-for-foreigners/'],
     ['How to order food in China', '/china-food-ordering-guide/'],
@@ -5209,9 +4655,9 @@ function staticPageContent(page, meta) {
               ${section.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
             </${section.ordered ? 'ol' : 'ul'}>
           ` : ''}
-          ${['amap-english-mode-guide-2026', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary', '10-day-china-itinerary', '3-day-shanghai-itinerary', '3-day-chongqing-itinerary', 'amap-english-mode-guide-2026', 'amap-in-english'].includes(page) && section.links ? `
+          ${['amap-english-mode-guide-2026', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary', '10-day-china-itinerary', '3-day-shanghai-itinerary', '3-day-chongqing-itinerary', 'china-airport-arrival-guide', 'china-food-ordering-guide', 'what-to-eat-in-china-first-time-guide'].includes(page) && section.links ? `
             <ul style="margin: 12px 0 0; padding-left: 20px; color: #536365; line-height: 1.8;">
-              ${section.links.map(({ label, description, href }) => `<li><a href="${escapeAttr(href)}" rel="noopener noreferrer" style="color: #155e63; text-underline-offset: 4px;">${escapeHtml(label)}</a>: ${escapeHtml(description)}</li>`).join('')}
+              ${section.links.map(({ label, description, href }) => `<li><a href="${escapeAttr(href)}"${href.startsWith('http') ? ' rel="noopener noreferrer"' : ''} style="color: #155e63; text-underline-offset: 4px;">${escapeHtml(label)}</a>: ${escapeHtml(description)}</li>`).join('')}
             </ul>
           ` : ''}
         </section>
