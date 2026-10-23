@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-22",
+  "asOf": "2026-10-23",
   "userDirection": "优先优化最可能展示在想来中国旅游的用户面前的网页。",
   "primaryOutcome": "strongly_relevant_google_organic_clicks_from_china_trip_intent",
   "selectionOrder": [
@@ -380,8 +380,27 @@
       "date": "2026-10-22",
       "type": "nanjing_booking_test_formally_verified",
       "summary": "Scoped Nanjing planning test live with nine sections and nine FAQs; source freshness limits, calculator priority and recent body observations retained."
+    },
+    {
+      "date": "2026-10-23",
+      "type": "full_quality_review",
+      "sourceRecord": "docs/seo/quality/2026-10-23-amap-and-site-quality.json",
+      "newSearchOutcomeEvidence": false,
+      "priorityOrderRetained": true
     }
   ],
   "keywordEvidence": "docs/seo/keyword-opportunities-2026-10-22.json",
-  "growthSelectionGate": "Before growth rewrites,use documented query demand/rank/competition/gap evidence. Keep unknown metrics unknown;priority is not proof of opportunity. Maintenance consistency repairs tracked separately."
+  "growthSelectionGate": "Before growth rewrites,use documented query demand/rank/competition/gap evidence. Keep unknown metrics unknown;priority is not proof of opportunity. Maintenance consistency repairs tracked separately.",
+  "directionHistory": [
+    {
+      "date": "2026-10-23",
+      "userDirection": "每天整页深度打磨现有网页，目标相关查询1–5名，不追求网页数量；此前段落式优化太浅。",
+      "standard": "docs/seo/page-quality-standard.md"
+    }
+  ],
+  "pageQualityStandard": "docs/seo/page-quality-standard.md",
+  "targetRelevantExactQueryPositions": [
+    1,
+    5
+  ]
 }

@@ -678,5 +678,32 @@
         "postChangeSearchEffect": "awaiting_evidence"
       }
     }
+  ],
+  "subsequentQualityReviews": [
+    {
+      "date": "2026-10-23",
+      "url": "https://chinaeasebuddy.com/amap-english-mode-guide-2026/",
+      "record": "docs/seo/quality/2026-10-23-amap-and-site-quality.json",
+      "classification": "confirmed task-gap improvement under explicit full-quality instruction; historical metrics only",
+      "exactPageQueries": null,
+      "volume": null,
+      "difficulty": null,
+      "targetMarketTopFiveRanks": null,
+      "competingAnswersRead": [
+        {
+          "url": "https://sg.trip.com/guide/phone/amap.html/",
+          "readOn": "2026-10-23",
+          "scope": "retrieved comparison answer, not verified current Google rank",
+          "observation": "Presents one profile/settings/general/language sequence."
+        },
+        {
+          "url": "https://go2china.app/guide/how-to-use-amap/",
+          "readOn": "2026-10-23",
+          "scope": "retrieved comparison answer, not verified current Google rank",
+          "observation": "Distinguishes untranslated business names but presents a single interface-language sequence."
+        }
+      ],
+      "growthOutcomeEstablished": false
+    }
   ]
 }

@@ -24,7 +24,9 @@
     "audit:growth-release": "node scripts/audit-growth-release.mjs",
     "test:campaign-landings": "node scripts/test-campaign-landings.mjs",
     "test:campaign-attribution": "node scripts/test-campaign-attribution.mjs",
-    "test:campaign-redirects": "node scripts/test-campaign-redirects.mjs"
+    "test:campaign-redirects": "node scripts/test-campaign-redirects.mjs",
+    "test:amap-help": "node scripts/test-amap-language-help.mjs",
+    "audit:page-quality": "python scripts/audit-page-quality.py"
   },
   "dependencies": {
     "@fontsource-variable/fraunces": "^5.2.9",

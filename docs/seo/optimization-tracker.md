@@ -1,5 +1,15 @@
 # SEO optimization tracker
 
+### October 23: Deep Amap review and shared planning/navigation repair
+
+Batch `SEO-2026-10-23-PAGE-QUALITY`, implementation and local acceptance; formal publication pending. User requires full-page quality work towards relevant positions1–5, not article quantity or superficial paragraph additions. Adopt `page-quality-standard.md`. One full editorial review: Amap English setup; the navigation page gets partial intent clarification. Do not represent shared sitewide changes as70 completed editorial reviews.
+
+The setup page gains conditional device/symptom diagnosis (12 combinations), a no-JavaScript symptom table, ten shared task sections/eight FAQs, explicit interface/place-name distinctions, destination verification and pre-arrival success checks. Official store/platform sources reviewedOctober23; phone testing/screenshots remain unavailable. Navigation guide metadata/quick answer now focus addresses, metro and routes and link to setup. No new URL or speculative permanent merge.
+
+Visible Lin email/Fiverr contact is added to home,plan,pricing and guides; schema-only email does not satisfy acceptance. No invented biography/photo/author review/48-hour service promise/prices. Shared5–8-topic related links replace broad static fallbacks; semantic fragment targets match React and old numeric fragments remain supported. First-trip standalone contact has no client click analytics runtime; other contact clicks use existing safe CTA events and are not counted as enquiries or sales. Preserve full-guide review dates except the actually reviewed Amap page and retain76 sitemapURLs.
+
+Historical October21 baselines: Amap1click/95impressions/pageavg14.17;navigation0/58/19.14;home1/37/6.19. WorkbookSHA256 `711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1`;date boundaries/page-query ownership/volume/KD unknown. No post-change crawl,index,ranking or relevant-click outcome is established. Existing October16/21 edits and shared changes overlap. Full dimension-by-dimension review and release evidence: `quality/2026-10-23-amap-and-site-quality.md` and `.json`. Historical observations/windows retained.
+
 ### October 22: Three-day Beijing route, Monday and booking decisions
 
 Change `SEO-2026-10-22-BEIJING-3DAY`, formal production verifiedOctober22 04:04:19UTC. Code commit `9671410816b55cbae1dca937f1a26d69fc68f791`. `/3-day-beijing-itinerary/`: **0clicks/22impressions/0%CTR/page-average21.77**;previous zero impressions means no usable previous rank/CTR. October21 comparison workbook SHA-256 `711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1`;actual date bounds and exact-page query pairs unavailable. Site-wide `beijing itinerary 3 days`2impressions/83.5 is a clue,not attributed to this URL or market search volume. Specific destination/duration gives strong topic intent,not proof of visitor identity or low competition.

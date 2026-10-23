@@ -3,6 +3,9 @@ import { ArrowLeft, ArrowRight, Calculator, ExternalLink } from 'lucide-react';
 import transitAnswers from '../data/transitAnswers.json';
 import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
 import { groupedPortRows, type TransitAnswerSlug } from '../lib/transitAnswers';
+import LinBox from './LinBox';
+import planningHelp from '../data/planningHelp.json';
+import guideRelatedLinks from '../data/guideRelatedLinks.json';
 
 // 240-hour transit question pages. Content lives in src/data/transitAnswers.json and is shared with
 // scripts/copy-policy-pages.mjs, which writes the same text into the prerendered HTML (and the FAQPage JSON-LD).
@@ -44,7 +47,7 @@ function CalculatorCta({ slug, placement }: { slug: string; placement: string })
 export default function TransitAnswerPage({ slug }: { slug: TransitAnswerSlug }) {
   const page = transitAnswers.pages.find((item) => item.slug === slug) as AnswerPage;
   const path = `/${page.slug}/`;
-  const others = transitAnswers.pages.filter((item) => item.slug !== slug);
+  const related = (guideRelatedLinks as Record<string, Array<{ label: string; href: string }>>)[slug];
 
   useEffect(() => {
     document.title = page.title;
@@ -77,6 +80,7 @@ export default function TransitAnswerPage({ slug }: { slug: TransitAnswerSlug })
         </a>
         <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#155e63]">China 240-hour visa-free transit · Updated {lastUpdated}</p>
         <h1 className="mt-3 font-display text-3xl leading-tight text-gray-950 md:text-5xl">{page.question}</h1>
+        <p className="mt-3 text-sm"><a href="#lin-help" className="font-semibold text-[#155e63] underline underline-offset-4">{planningHelp.byline}</a></p>
 
         <section aria-labelledby="short-answer" className="mt-6 rounded-3xl border border-[#155e63]/20 bg-white p-5 md:p-7">
           <h2 id="short-answer" className="text-xs font-bold uppercase tracking-[0.14em] text-[#155e63]">Short answer</h2>
@@ -147,11 +151,11 @@ export default function TransitAnswerPage({ slug }: { slug: TransitAnswerSlug })
           <CalculatorCta slug={page.slug} placement="bottom" />
         </div>
 
-        <nav aria-labelledby="more-answers" className="mt-10">
+        <LinBox placement="guide" className="mt-10" />
+        <nav aria-labelledby="more-answers" aria-label="Related China travel guides" className="mt-10">
           <h2 id="more-answers" className="text-xl font-bold">More 240-hour transit answers</h2>
           <ul className="mt-3 grid gap-2">
-            {others.map((item) => <li key={item.slug}><a href={`/${item.slug}/`} className="font-semibold text-[#155e63] underline underline-offset-4">{item.question}</a></li>)}
-            <li><a href="/china-240-hour-visa-free-transit-2026/" className="font-semibold text-[#155e63] underline underline-offset-4">Full guide: China 240-hour visa-free transit (57 countries, 65 ports)</a></li>
+            {related.map(({ label, href }) => <li key={href}><a href={href} className="font-semibold text-[#155e63] underline underline-offset-4">{label}</a></li>)}
           </ul>
         </nav>
 

@@ -128,5 +128,20 @@
       "publicVerificationLimit": "Direct HTTP request received environment HTTP403; not proof of origin failure. Public retrieval displayed calculator shared entry sentence, but budget retrieval was marked crawled yesterday and omitted new tool; fresh-query retrieval inaccessible. No new raw-HTML/canonical/header pass or live regression claimed; previous verified production observations retained.",
       "nextEvidence": "Existing outstanding requests unchanged: calculator indexed-report crawl and Google-selected canonical; budget exact-URL Queries with actual comparison dates. Amap/WeChat gaps retained at lower collection priority. No duplicate request issued."
     }
+  ],
+  "subsequentQualityActions": [
+    {
+      "changeId": "SEO-2026-10-23-AMAP-QUALITY",
+      "date": "2026-10-23",
+      "sourceRecord": "docs/seo/quality/2026-10-23-amap-and-site-quality.json",
+      "status": "pending_formal_verification",
+      "historicalBaselineAndObservationsRetained": true,
+      "overlappingWith": [
+        "SEO-2026-10-16-AMAP",
+        "SEO-2026-10-21-AMAP-SETUP",
+        "SEO-2026-10-23-HUMAN-ENTRY",
+        "SEO-2026-10-23-RELATED-ANCHORS"
+      ]
+    }
   ]
 }

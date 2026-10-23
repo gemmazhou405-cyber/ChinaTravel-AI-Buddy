@@ -2,6 +2,11 @@ import { mkdir, copyFile, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { TRIP_COST_STYLES, estimateTripCost, formatTripCostRange } from '../src/lib/tripCostEstimate.mjs';
 
+import { renderPlanningHelp } from './render-planning-help.mjs';
+import { renderAmapLanguageHelp } from './render-amap-help.mjs';
+const planningHelp = JSON.parse(await readFile('src/data/planningHelp.json', 'utf8'));
+const guideRelatedLinks = JSON.parse(await readFile('src/data/guideRelatedLinks.json', 'utf8'));
+
 const siteUrl = 'https://chinaeasebuddy.com';
 const distDir = 'dist';
 const source = join(distDir, 'index.html');
@@ -42,6 +47,7 @@ const didiAppSetup = JSON.parse(await readFile('src/data/didiAppSetup.json', 'ut
 
 const pageMeta = {
   plan: {
+    lastModified: '2026-10-23',
     title: 'Get your free personalised China itinerary | ChinaEase Buddy',
     description:
       'Tell us your travel dates, cities and interests and get a free personalised China itinerary. Instant route preview, full day-by-day plan by email. No payment, no account.',
@@ -1080,8 +1086,9 @@ const pageMeta = {
     ],
   },
   pricing: {
+    lastModified: '2026-10-23',
     title: 'Pricing | ChinaEase Buddy',
-    description: 'ChinaEase Buddy pricing: Free, Trip Pass, and Group Pass for digital China travel tools.',
+    description: 'Choose personal China route-planning help from Lin, or optional Free, Trip Pass and Group Pass digital travel tools.',
     sections: [
       ['Free', 'Basic toolkit for apps, payments, transport, food, hotels, emergency help, and limited Buddy AI access.', '/?journey=china&tool=food'],
       ['Trip Pass', 'USD 9.90 one-time travel pass with 50 Buddy AI messages for 14 days.', '/pricing/'],
@@ -1485,18 +1492,19 @@ const pageMeta = {
     ],
   },
   'amap-in-english': {
-    title: 'AMap in English: China Map Guide (2026) | ChinaEase Buddy',
-    heading: 'How to Use AMap in English in China (2026)',
+    title: 'Amap China Navigation: Addresses, Metro & Walking Routes',
+    heading: 'How to Use Amap in China: Addresses, Metro & Routes',
     description:
-      'Use AMap in English for China travel. Learn setup, English place search, walking and metro routes, saved addresses, ride-hailing, and navigation fixes.',
+      'Find the correct hotel branch, plan metro and walking routes, and check station entrances in Amap. Keep Chinese addresses ready for arrival.',
     quickAnswer:
-      'AMap, also called Gaode Maps, offers an English version for overseas users and can plan walking, public-transport, driving, and other routes in mainland China. Download it from an official app store, test the English interface before departure, and save the Chinese name and address of every important destination. When searching, select the exact hotel branch, station building, terminal, entrance, or metro exit rather than relying on a general place name. Keep screenshots and a second navigation option in case mobile data, GPS, or place search fails.',
+      'Use Amap to choose the correct destination and plan the actual walking, metro or station transfer. First match the Chinese hotel name, branch, station or terminal to your booking. Then check the transport mode and final entrance, and save the destination details outside the app. Use the separate English-setup guide linked below if you still need to change the interface language.',
     lastReviewed: 'September 18, 2026',
-    lastModified: '2026-09-18',
+    lastModified: '2026-10-23',
     article: true,
     contentSections: [
       {
         title: 'Download and prepare AMap before your trip',
+        links: [{ label: 'Set Amap to English on iPhone or Android', description: 'Complete language setup here, then return for routes, destinations and entrances.', href: '/amap-english-mode-guide-2026/' }],
         ordered: true,
         items: [
           'Download AMap or AMap Global only from its official website or your phone\'s official app store. Check the publisher before installing.',
@@ -3339,9 +3347,9 @@ Object.assign(pageMeta, {
   },
   'amap-english-mode-guide-2026': {
     ...pageMeta['amap-in-english'],
-    title: 'Amap English Guide: How to Switch Language & Search in English (2026)',
+    title: amapEnglishSetup.metaTitle,
     heading: amapEnglishSetup.heading,
-    description: 'Set up Amap Global in English, search China destinations, save Chinese hotel addresses, plan metro routes, and use local navigation and ride-hailing.',
+    description: amapEnglishSetup.metaDescription,
     intro: amapEnglishSetup.intro,
     quickAnswer: amapEnglishSetup.quickAnswer,
     faqs: amapEnglishSetup.faqs.map(({ question, answer }) => [question, answer]),
@@ -3842,7 +3850,7 @@ pageMeta['china-240-hour-transit-calculator'] = {
 
 // ---- 240-hour transit answer pages: one question each, answer in the first two sentences ----
 function transitAnswerBody(page) {
-  const others = transitAnswers.pages.filter((item) => item.slug !== page.slug);
+  const related = guideRelatedLinks[page.slug];
   const sources = page.sources.map((key) => transitAnswers[key]);
   const lastUpdated = page.lastUpdated || transitAnswers.lastUpdated;
   const linkStyle = 'color: #155e63; font-weight: 700; text-underline-offset: 4px;';
@@ -3866,6 +3874,7 @@ function transitAnswerBody(page) {
         <p style="margin: 0 0 18px;"><a href="${escapeAttr(transitAnswers.calculatorPath)}" style="${linkStyle}">&larr; 240-hour transit calculator</a></p>
         <p style="margin: 0 0 10px; color: #155e63; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;">China 240-hour visa-free transit &middot; Updated ${escapeHtml(lastUpdated)}</p>
         <h1 style="margin: 0 0 20px; font-size: clamp(1.9rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.02em;">${escapeHtml(page.question)}</h1>
+        <p><a href="#lin-help" style="${linkStyle}">${escapeHtml(planningHelp.byline)}</a></p>
         <section aria-labelledby="short-answer" style="padding: 22px; border: 1px solid rgba(21, 94, 99, 0.2); border-radius: 22px; background: #fffdf8;">
           <h2 id="short-answer" style="margin: 0; color: #155e63; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;">Short answer</h2>
           ${page.answer.map((sentence) => `<p style="margin: 12px 0 0; font-size: 1.12rem; line-height: 1.7;">${escapeHtml(sentence)}</p>`).join('')}
@@ -3896,11 +3905,11 @@ function transitAnswerBody(page) {
           </div>`).join('')}
         </section>
         ${cta}
-        <nav aria-labelledby="more-answers" style="margin: 32px 0;">
+        ${renderPlanningHelp(planningHelp, 'guide')}
+        <nav aria-labelledby="more-answers" aria-label="Related China travel guides" style="margin: 32px 0;">
           <h2 id="more-answers" style="margin: 0 0 10px; font-size: 1.2rem;">More 240-hour transit answers</h2>
           <ul style="margin: 0; padding-left: 20px; line-height: 1.9;">
-            ${others.map((item) => `<li><a href="/${escapeAttr(item.slug)}/" style="${linkStyle}">${escapeHtml(item.question)}</a></li>`).join('')}
-            <li><a href="/china-240-hour-visa-free-transit-2026/" style="${linkStyle}">Full guide: China 240-hour visa-free transit (57 countries, 65 ports)</a></li>
+            ${related.map(({ label, href }) => `<li><a href="${escapeAttr(href)}" style="${linkStyle}">${escapeHtml(label)}</a></li>`).join('')}
           </ul>
         </nav>
         <footer style="margin: 32px 0 0; padding-top: 20px; border-top: 1px solid rgba(18, 32, 34, 0.15); color: #536365; line-height: 1.7; font-size: 0.92rem;">
@@ -5081,7 +5090,7 @@ function staticTripCostEstimator() {
 }
 
 function staticPageContent(page, meta) {
-  if (meta.customBody) return meta.customBody;
+  if (meta.customBody) return page === 'plan' ? meta.customBody.replace('</main>', `${renderPlanningHelp(planningHelp, 'plan')}</main>`) : meta.customBody;
   const heading = meta.heading || meta.title.split('|')[0].trim();
   const [ctaLabel, ctaHref] = staticCtas[page] || ['Open ChinaEase Buddy', '/'];
   const faqItems = meta.faqs || [
@@ -5110,11 +5119,14 @@ function staticPageContent(page, meta) {
         </nav>
       ` : ''}
       <h1 style="margin: 0 0 18px; font-size: clamp(2rem, 6vw, 3.75rem); line-height: 1.05; letter-spacing: -0.03em;">${escapeHtml(heading)}</h1>
+      ${!['guides', 'pricing', 'terms', 'privacy', 'refund', 'contact', 'about', 'unsubscribe'].includes(page) ? `<p style="margin:0 0 20px;"><a href="#lin-help" style="color:#155e63;font-weight:600;">${escapeHtml(planningHelp.byline)}</a></p>` : ''}
+      ${page === 'pricing' ? renderPlanningHelp(planningHelp, 'pricing') : ''}
       <section aria-labelledby="quick-answer" style="margin: 0 0 24px; padding: 22px; border: 1px solid rgba(21, 94, 99, 0.14); border-radius: 22px; background: #fffdf8;">
         <h2 id="quick-answer" style="margin: 0 0 10px; font-size: 1.25rem;">Quick answer</h2>
         <p style="margin: 0; color: #536365; line-height: 1.7;">${escapeHtml(meta.quickAnswer || meta.description)}</p>
       </section>
       <p style="margin: 0 0 20px; color: #6b7678; font-size: 0.9rem;">Last reviewed: ${escapeHtml(meta.lastReviewed || 'June 12, 2026')}</p>
+      ${page === 'amap-english-mode-guide-2026' ? renderAmapLanguageHelp(amapEnglishSetup) : ''}
       ${page === 'china-travel-budget' ? staticTripCostEstimator() : ''}
       ${meta.sections && page === 'guides' ? `
         <nav aria-label="China travel guide categories" style="margin: 0 0 24px;">
@@ -5146,8 +5158,9 @@ function staticPageContent(page, meta) {
         </section>
       ` : ''}
       ${meta.contentSections ? meta.contentSections.map((section, sectionIndex) => `
-        <section aria-labelledby="${['china-train-booking-foreigners-12306', 'china-itinerary-first-time-7-10-14-days'].includes(page) ? escapeAttr(section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')) : `guide-section-${sectionIndex}`}" style="margin: 0 0 24px; padding: 20px; border: 1px solid rgba(21, 94, 99, 0.12); border-radius: 20px; background: rgba(255, 253, 248, 0.72);">
-          <h2 id="${['china-train-booking-foreigners-12306', 'china-itinerary-first-time-7-10-14-days'].includes(page) ? escapeAttr(section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')) : `guide-section-${sectionIndex}`}" style="margin: 0 0 12px; font-size: 1.25rem;">${escapeHtml(section.title)}</h2>
+        <section aria-labelledby="${escapeAttr(section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-'))}" style="margin: 0 0 24px; padding: 20px; border: 1px solid rgba(21, 94, 99, 0.12); border-radius: 20px; background: rgba(255, 253, 248, 0.72);">
+          ${!['china-train-booking-foreigners-12306', 'china-itinerary-first-time-7-10-14-days'].includes(page) ? `<span id="guide-section-${sectionIndex}" aria-hidden="true"></span>` : ''}
+          <h2 id="${escapeAttr(section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-'))}" style="margin: 0 0 12px; font-size: 1.25rem;">${escapeHtml(section.title)}</h2>
           ${((page === 'china-visa-free-travel-guide' && section.title === '240-hour visa-free transit: the route is essential') || (page === 'china-240-hour-visa-free-transit-2026' && section.title === 'How the 10-day clock is calculated')) ? `<p style="color: #536365; line-height: 1.7;">To work out your departure date, use the <a href="/china-240-hour-transit-calculator/" style="color: #155e63; font-weight: 700; text-underline-offset: 4px;">China 240-hour visa-free transit calculator</a>. It calculates the next-day midnight clock in China time and checks the basic passport and route pattern; confirm the final permitted stay with border inspection.</p>` : ''}
           ${page === '14-day-china-itinerary' && section.title === 'Estimated budget for two weeks' ? `<p style="color: #536365; line-height: 1.7;"><a href="/china-travel-budget/#cost-estimator" style="color: #155e63; font-weight: 700;">${escapeHtml(tripCostEstimatorContent.itineraryLinkLabel)}</a>. ${escapeHtml(tripCostEstimatorContent.itineraryLinkText)}</p>` : ''}
           ${section.countryGroups ? `
@@ -5175,7 +5188,7 @@ function staticPageContent(page, meta) {
               ${section.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
             </${section.ordered ? 'ol' : 'ul'}>
           ` : ''}
-          ${['amap-english-mode-guide-2026', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary', '10-day-china-itinerary', '3-day-shanghai-itinerary', '3-day-chongqing-itinerary'].includes(page) && section.links ? `
+          ${['amap-english-mode-guide-2026', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary', '10-day-china-itinerary', '3-day-shanghai-itinerary', '3-day-chongqing-itinerary', 'amap-english-mode-guide-2026', 'amap-in-english'].includes(page) && section.links ? `
             <ul style="margin: 12px 0 0; padding-left: 20px; color: #536365; line-height: 1.8;">
               ${section.links.map(({ label, description, href }) => `<li><a href="${escapeAttr(href)}" rel="noopener noreferrer" style="color: #155e63; text-underline-offset: 4px;">${escapeHtml(label)}</a>: ${escapeHtml(description)}</li>`).join('')}
             </ul>
@@ -5206,10 +5219,11 @@ function staticPageContent(page, meta) {
           ${renderFaqItems(remainingFaqItems)}
         </section>
       ` : ''}
+      ${!['guides', 'pricing', 'terms', 'privacy', 'refund', 'contact', 'about', 'unsubscribe'].includes(page) ? renderPlanningHelp(planningHelp, 'guide') : ''}
       <nav aria-label="Related China travel guides" style="margin: 0 0 24px;">
         <h2 style="margin: 0 0 12px; font-size: 1.25rem;">Related guides</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-          ${(pageRelatedLinks[page] || relatedLinks).map(([label, href]) => `<a href="${escapeAttr(href)}" style="border: 1px solid rgba(21, 94, 99, 0.18); border-radius: 999px; color: #155e63; padding: 9px 12px; text-decoration: none;">${escapeHtml(label)}</a>`).join('')}
+          ${(guideRelatedLinks[page]?.map(({ label, href }) => [label, href]) || (pageRelatedLinks[page] || relatedLinks).slice(0, 8)).map(([label, href]) => `<a href="${escapeAttr(href)}" style="border: 1px solid rgba(21, 94, 99, 0.18); border-radius: 999px; color: #155e63; padding: 9px 12px; text-decoration: none;">${escapeHtml(label)}</a>`).join('')}
         </div>
       </nav>
       <section aria-labelledby="sources" style="margin: 0 0 24px;">
@@ -5361,7 +5375,9 @@ function withPageMeta(html, page, meta) {
   return next;
 }
 
-const html = await readFile(source, 'utf8');
+let html = await readFile(source, 'utf8');
+html = html.replace('<section aria-labelledby="itinerary-static"', `${renderPlanningHelp(planningHelp, 'home')}<section aria-labelledby="itinerary-static"`);
+await writeFile(source, html);
 
 await Promise.all(
   pages.map(async (page) => {
@@ -5386,7 +5402,7 @@ const sitemapPages = [''].concat(
   pages.filter((page) => !noindexPages.has(page) && !permanentRedirectSources.has(page)),
   indexableCampaignPages,
 );
-const homepageLastmod = '2026-10-21';
+const homepageLastmod = '2026-10-23';
 const defaultLastmod = '2026-09-26';
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

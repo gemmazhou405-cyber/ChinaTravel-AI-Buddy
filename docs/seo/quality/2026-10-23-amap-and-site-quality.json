@@ -1,0 +1,370 @@
+{
+  "schemaVersion": 1,
+  "batchId": "SEO-2026-10-23-PAGE-QUALITY",
+  "asOf": "2026-10-23",
+  "userDirection": "Deeply improve existing pages; relevant exact-query positions 1–5 are the objective, not a guaranteed outcome. No article-count target.",
+  "changeIds": [
+    "SEO-2026-10-23-AMAP-QUALITY",
+    "SEO-2026-10-23-AMAP-INTENT",
+    "SEO-2026-10-23-HUMAN-ENTRY",
+    "SEO-2026-10-23-RELATED-ANCHORS"
+  ],
+  "primaryPage": "https://chinaeasebuddy.com/amap-english-mode-guide-2026/",
+  "fullReviewPages": [
+    "https://chinaeasebuddy.com/amap-english-mode-guide-2026/"
+  ],
+  "partialIntentClarificationPages": [
+    "https://chinaeasebuddy.com/amap-in-english/"
+  ],
+  "narrative": "docs/seo/quality/2026-10-23-amap-and-site-quality.md",
+  "standard": "docs/seo/page-quality-standard.md",
+  "selection": {
+    "classification": "user_requested_full_quality_review_and_confirmed_task_conversion_rendering_gaps",
+    "newPostChangeRankingEvidence": false,
+    "baseline": {
+      "observedOn": "2026-10-21",
+      "sourceFilename": "chinaeasebuddy.com-Performance-on-Search-2026-10-21 (1).xlsx",
+      "sourceSha256": "711dde86cfbc0e56805034d3197d6c481fcad34de98cb3165ac076674ad20cd1",
+      "searchType": "Web (text-based)",
+      "periodLabel": "Last 28 days",
+      "periodStart": null,
+      "periodEnd": null,
+      "clicks": 1,
+      "impressions": 95,
+      "ctr": 0.0105,
+      "averagePosition": 14.17,
+      "pageFilteredQueries": null,
+      "strongRelevanceOfClickVerified": false
+    },
+    "wholeSiteQueryCluesNotPagePairs": [
+      "amap english",
+      "how to switch amap to english",
+      "amap english setting",
+      "how to change amap language to english"
+    ],
+    "monthlySearchVolume": null,
+    "keywordDifficulty": null,
+    "exactPageQueryPositions": null,
+    "targetCountryDeviceSerpTopFive": null
+  },
+  "pageBaselines": {
+    "https://chinaeasebuddy.com/amap-english-mode-guide-2026/": {
+      "clicks": 1,
+      "impressions": 95,
+      "ctr": 0.0105,
+      "pageAveragePosition": 14.17
+    },
+    "https://chinaeasebuddy.com/amap-in-english/": {
+      "clicks": 0,
+      "impressions": 58,
+      "ctr": 0,
+      "pageAveragePosition": 19.14
+    },
+    "https://chinaeasebuddy.com/": {
+      "clicks": 1,
+      "impressions": 37,
+      "ctr": 0.027,
+      "pageAveragePosition": 6.19
+    }
+  },
+  "comparisonAnswers": [
+    {
+      "url": "https://sg.trip.com/guide/phone/amap.html/",
+      "readOn": "2026-10-23",
+      "scope": "retrieved comparison answer, not verified current Google rank",
+      "observation": "Presents one profile/settings/general/language sequence."
+    },
+    {
+      "url": "https://go2china.app/guide/how-to-use-amap/",
+      "readOn": "2026-10-23",
+      "scope": "retrieved comparison answer, not verified current Google rank",
+      "observation": "Distinguishes untranslated business names but presents a single interface-language sequence."
+    }
+  ],
+  "primarySourcesReviewedOn": "2026-10-23",
+  "primarySourceUrls": [
+    "https://apps.apple.com/us/app/amap-global/id461703208",
+    "https://play.google.com/store/apps/details?id=com.autonavi.minimap",
+    "https://support.google.com/android/answer/12395118?hl=en",
+    "https://developer.apple.com/videos/play/wwdc2019/403/",
+    "https://english.shanghai.gov.cn/en-EasyShanghai/20260713/379bcea6e1bd4defaa7db2451d68d3dd.html",
+    "https://english.shanghai.gov.cn/en-UsefulApps/20241213/59a549d4bdf1440c8e86251d5ac7d5a9.html"
+  ],
+  "beforeAfter": {
+    "focusedPageSections": [
+      8,
+      10
+    ],
+    "focusedPageFaqs": [
+      5,
+      8
+    ],
+    "phoneSymptomPaths": [
+      0,
+      12
+    ],
+    "focusedStaticRelatedLinks": [
+      72,
+      7
+    ],
+    "visibleContactOnAuditedHomePlanPricingAmap": [
+      false,
+      true
+    ]
+  },
+  "sitewideInterventions": {
+    "affectedUrls": [
+      "https://chinaeasebuddy.com/",
+      "https://chinaeasebuddy.com/plan/",
+      "https://chinaeasebuddy.com/pricing/",
+      "https://chinaeasebuddy.com/china-visa-free-travel-guide/",
+      "https://chinaeasebuddy.com/china-airport-arrival-guide/",
+      "https://chinaeasebuddy.com/china-hotels-for-foreigners/",
+      "https://chinaeasebuddy.com/china-food-ordering-guide/",
+      "https://chinaeasebuddy.com/chinese-travel-phrases/",
+      "https://chinaeasebuddy.com/china-travel-safety-guide/",
+      "https://chinaeasebuddy.com/china-travel-budget/",
+      "https://chinaeasebuddy.com/china-travel-apps/",
+      "https://chinaeasebuddy.com/china-train-travel-guide/",
+      "https://chinaeasebuddy.com/didi-in-china-for-foreigners/",
+      "https://chinaeasebuddy.com/amap-in-english/",
+      "https://chinaeasebuddy.com/china-metro-guide/",
+      "https://chinaeasebuddy.com/7-day-china-itinerary/",
+      "https://chinaeasebuddy.com/10-day-china-itinerary/",
+      "https://chinaeasebuddy.com/14-day-china-itinerary/",
+      "https://chinaeasebuddy.com/beijing-vs-shanghai/",
+      "https://chinaeasebuddy.com/3-day-beijing-itinerary/",
+      "https://chinaeasebuddy.com/3-day-shanghai-itinerary/",
+      "https://chinaeasebuddy.com/3-day-xian-itinerary/",
+      "https://chinaeasebuddy.com/3-day-chongqing-itinerary/",
+      "https://chinaeasebuddy.com/3-day-chengdu-itinerary/",
+      "https://chinaeasebuddy.com/3-day-guilin-yangshuo-itinerary/",
+      "https://chinaeasebuddy.com/3-day-zhangjiajie-itinerary/",
+      "https://chinaeasebuddy.com/3-day-shenzhen-itinerary/",
+      "https://chinaeasebuddy.com/3-day-guangzhou-itinerary/",
+      "https://chinaeasebuddy.com/3-day-hangzhou-itinerary/",
+      "https://chinaeasebuddy.com/3-day-suzhou-itinerary/",
+      "https://chinaeasebuddy.com/3-day-nanjing-itinerary/",
+      "https://chinaeasebuddy.com/3-day-dali-itinerary/",
+      "https://chinaeasebuddy.com/china-golden-week-2026-travel-guide/",
+      "https://chinaeasebuddy.com/great-wall-of-china-day-trip-from-beijing/",
+      "https://chinaeasebuddy.com/chengdu-panda-base-guide/",
+      "https://chinaeasebuddy.com/didi-payment-for-foreigners/",
+      "https://chinaeasebuddy.com/beijing-airport-to-city-guide/",
+      "https://chinaeasebuddy.com/amap-vs-google-maps-china/",
+      "https://chinaeasebuddy.com/best-time-to-visit-china/",
+      "https://chinaeasebuddy.com/china-esim-internet-guide/",
+      "https://chinaeasebuddy.com/china-sim-card-for-foreigners/",
+      "https://chinaeasebuddy.com/alipay-for-foreigners/",
+      "https://chinaeasebuddy.com/wechat-pay-for-foreigners/",
+      "https://chinaeasebuddy.com/china-payment-guide/",
+      "https://chinaeasebuddy.com/china-travel-checklist/",
+      "https://chinaeasebuddy.com/china-emergency-numbers/",
+      "https://chinaeasebuddy.com/china-train-booking-foreigners-12306/",
+      "https://chinaeasebuddy.com/china-itinerary-first-time-7-10-14-days/",
+      "https://chinaeasebuddy.com/faq/",
+      "https://chinaeasebuddy.com/china-240-hour-visa-free-transit-2026/",
+      "https://chinaeasebuddy.com/nia-12367-online-accommodation-registration-guide/",
+      "https://chinaeasebuddy.com/amap-english-mode-guide-2026/",
+      "https://chinaeasebuddy.com/alipay-metro-qr-transport-code-guide/",
+      "https://chinaeasebuddy.com/china-travel-ai-itinerary-generator/",
+      "https://chinaeasebuddy.com/240-hour-transit-zone-map-high-speed-rail/",
+      "https://chinaeasebuddy.com/wechat-verification-without-friend-qr-2026/",
+      "https://chinaeasebuddy.com/china-hotels-for-foreigners-no-rejection-guide/",
+      "https://chinaeasebuddy.com/does-google-maps-work-in-china-amap-guide/",
+      "https://chinaeasebuddy.com/how-to-visit-great-wall-from-beijing-2026/",
+      "https://chinaeasebuddy.com/what-to-eat-in-china-first-time-guide/",
+      "https://chinaeasebuddy.com/how-to-use-wechat-as-foreigner-2026/",
+      "https://chinaeasebuddy.com/is-china-safe-for-tourists-2026/",
+      "https://chinaeasebuddy.com/best-apps-for-china-travel-2026/",
+      "https://chinaeasebuddy.com/beijing-shanghai-layover-240-hour-guide/",
+      "https://chinaeasebuddy.com/tenpaygo-for-tourists/",
+      "https://chinaeasebuddy.com/china-visa-free-checker/",
+      "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+      "https://chinaeasebuddy.com/china-240-hour-transit-clock-start/",
+      "https://chinaeasebuddy.com/china-240-hour-transit-us-citizens/",
+      "https://chinaeasebuddy.com/china-240-hour-transit-round-trip-ticket/",
+      "https://chinaeasebuddy.com/china-240-hour-transit-ports-provinces/",
+      "https://chinaeasebuddy.com/china-online-arrival-card-2026/",
+      "https://chinaeasebuddy.com/first-trip-to-china/"
+    ],
+    "guideRelatedUrls": [
+      "https://chinaeasebuddy.com/china-visa-free-travel-guide/",
+      "https://chinaeasebuddy.com/china-airport-arrival-guide/",
+      "https://chinaeasebuddy.com/china-hotels-for-foreigners/",
+      "https://chinaeasebuddy.com/china-food-ordering-guide/",
+      "https://chinaeasebuddy.com/chinese-travel-phrases/",
+      "https://chinaeasebuddy.com/china-travel-safety-guide/",
+      "https://chinaeasebuddy.com/china-travel-budget/",
+      "https://chinaeasebuddy.com/china-travel-apps/",
+      "https://chinaeasebuddy.com/china-train-travel-guide/",
+      "https://chinaeasebuddy.com/didi-in-china-for-foreigners/",
+      "https://chinaeasebuddy.com/amap-in-english/",
+      "https://chinaeasebuddy.com/china-metro-guide/",
+      "https://chinaeasebuddy.com/7-day-china-itinerary/",
+      "https://chinaeasebuddy.com/10-day-china-itinerary/",
+      "https://chinaeasebuddy.com/14-day-china-itinerary/",
+      "https://chinaeasebuddy.com/beijing-vs-shanghai/",
+      "https://chinaeasebuddy.com/3-day-beijing-itinerary/",
+      "https://chinaeasebuddy.com/3-day-shanghai-itinerary/",
+      "https://chinaeasebuddy.com/3-day-xian-itinerary/",
+      "https://chinaeasebuddy.com/3-day-chongqing-itinerary/",
+      "https://chinaeasebuddy.com/3-day-chengdu-itinerary/",
+      "https://chinaeasebuddy.com/3-day-guilin-yangshuo-itinerary/",
+      "https://chinaeasebuddy.com/3-day-zhangjiajie-itinerary/",
+      "https://chinaeasebuddy.com/3-day-shenzhen-itinerary/",
+      "https://chinaeasebuddy.com/3-day-guangzhou-itinerary/",
+      "https://chinaeasebuddy.com/3-day-hangzhou-itinerary/",
+      "https://chinaeasebuddy.com/3-day-suzhou-itinerary/",
+      "https://chinaeasebuddy.com/3-day-nanjing-itinerary/",
+      "https://chinaeasebuddy.com/3-day-dali-itinerary/",
+      "https://chinaeasebuddy.com/china-golden-week-2026-travel-guide/",
+      "https://chinaeasebuddy.com/great-wall-of-china-day-trip-from-beijing/",
+      "https://chinaeasebuddy.com/chengdu-panda-base-guide/",
+      "https://chinaeasebuddy.com/didi-payment-for-foreigners/",
+      "https://chinaeasebuddy.com/beijing-airport-to-city-guide/",
+      "https://chinaeasebuddy.com/amap-vs-google-maps-china/",
+      "https://chinaeasebuddy.com/best-time-to-visit-china/",
+      "https://chinaeasebuddy.com/china-esim-internet-guide/",
+      "https://chinaeasebuddy.com/china-sim-card-for-foreigners/",
+      "https://chinaeasebuddy.com/alipay-for-foreigners/",
+      "https://chinaeasebuddy.com/wechat-pay-for-foreigners/",
+      "https://chinaeasebuddy.com/china-payment-guide/",
+      "https://chinaeasebuddy.com/china-travel-checklist/",
+      "https://chinaeasebuddy.com/china-emergency-numbers/",
+      "https://chinaeasebuddy.com/china-train-booking-foreigners-12306/",
+      "https://chinaeasebuddy.com/china-itinerary-first-time-7-10-14-days/",
+      "https://chinaeasebuddy.com/faq/",
+      "https://chinaeasebuddy.com/china-240-hour-visa-free-transit-2026/",
+      "https://chinaeasebuddy.com/nia-12367-online-accommodation-registration-guide/",
+      "https://chinaeasebuddy.com/amap-english-mode-guide-2026/",
+      "https://chinaeasebuddy.com/alipay-metro-qr-transport-code-guide/",
+      "https://chinaeasebuddy.com/china-travel-ai-itinerary-generator/",
+      "https://chinaeasebuddy.com/240-hour-transit-zone-map-high-speed-rail/",
+      "https://chinaeasebuddy.com/wechat-verification-without-friend-qr-2026/",
+      "https://chinaeasebuddy.com/china-hotels-for-foreigners-no-rejection-guide/",
+      "https://chinaeasebuddy.com/does-google-maps-work-in-china-amap-guide/",
+      "https://chinaeasebuddy.com/how-to-visit-great-wall-from-beijing-2026/",
+      "https://chinaeasebuddy.com/what-to-eat-in-china-first-time-guide/",
+      "https://chinaeasebuddy.com/how-to-use-wechat-as-foreigner-2026/",
+      "https://chinaeasebuddy.com/is-china-safe-for-tourists-2026/",
+      "https://chinaeasebuddy.com/best-apps-for-china-travel-2026/",
+      "https://chinaeasebuddy.com/beijing-shanghai-layover-240-hour-guide/",
+      "https://chinaeasebuddy.com/tenpaygo-for-tourists/",
+      "https://chinaeasebuddy.com/china-visa-free-checker/",
+      "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+      "https://chinaeasebuddy.com/china-240-hour-transit-clock-start/",
+      "https://chinaeasebuddy.com/china-240-hour-transit-us-citizens/",
+      "https://chinaeasebuddy.com/china-240-hour-transit-round-trip-ticket/",
+      "https://chinaeasebuddy.com/china-240-hour-transit-ports-provinces/",
+      "https://chinaeasebuddy.com/china-online-arrival-card-2026/",
+      "https://chinaeasebuddy.com/first-trip-to-china/"
+    ],
+    "fullEditorialReviewsClaimed": false,
+    "sameEnglishHelpOnInteractiveLocales": true,
+    "sharedServiceChangeIsNotArticleAuthorship": true,
+    "oldNumericFragmentAliasesRetained": true,
+    "trackingEvent": "cta_clicked",
+    "trackingCtaNames": [
+      "planning_email_click",
+      "planning_fiverr_click"
+    ],
+    "contactClickIsEnquiryOrSale": false,
+    "standaloneFirstTripContactClickTracking": false
+  },
+  "redirects": {
+    "newRules": [],
+    "existingAlias301s": {
+      "/how-to-use-didi-in-china-foreigners/": "/didi-in-china-for-foreigners/",
+      "/how-to-pay-in-china-as-foreigner/": "/china-payment-guide/",
+      "/china-esim-internet-vpn-guide/": "/china-esim-internet-guide/",
+      "/how-much-does-china-trip-cost-2026-calculator/": "/china-travel-budget/"
+    },
+    "existingEmergencySlash308": "/china-emergency-numbers/",
+    "otherMergeDecision": "Retain distinct task pages; same subject is not proof of cannibalisation."
+  },
+  "sitemap": {
+    "urlCountBefore": 76,
+    "expectedUrlCountAfter": 76,
+    "newUrls": [],
+    "expectedChangedLastmods": [
+      "/",
+      "/amap-in-english/",
+      "/amap-english-mode-guide-2026/"
+    ],
+    "otherWholeGuideReviewDatesRetained": true
+  },
+  "validation": {
+    "typecheck": "PASS",
+    "build": "PASS",
+    "lint": "PASS with existing PricingPlans fast-refresh warning",
+    "amapDiagnostic": "PASS 12 paths and invalid states",
+    "planningClickTracking": "PASS mocked requests: single listener, valid action/placement, test/source context, no PII and no lead/sale event",
+    "sourceAttribution": "PASS",
+    "transitCalculator": "PASS",
+    "campaignLandings": "PASS",
+    "publicHtmlLocal": "PASS",
+    "pageQualityLocal": {
+      "status": "PASS",
+      "sitemapPages": 76,
+      "checkedPages": 78,
+      "visiblePlanningHelpPages": 73,
+      "curatedGuidePages": 70
+    },
+    "campaignRouteHttp": "PASS with in-process local HTTP server",
+    "actualBrowserInteraction": "pending"
+  },
+  "release": {
+    "status": "validated_pending_publication",
+    "baseCommit": "939f10dbe819ba3ad375f5377953974a60fbcb78",
+    "codeCommit": null,
+    "deployment": null,
+    "formalVerification": null
+  },
+  "outcomes": {
+    "currentIndexReport": null,
+    "postChangeGoogleCrawl": null,
+    "sameQueryRankChange": null,
+    "relevantOrganicClickChange": null,
+    "enquiries": null,
+    "sales": null,
+    "topFiveConfirmed": false
+  },
+  "limitations": [
+    "No owner phone screenshots, app/OS version record or firsthand app-flow test.",
+    "Mailbox forwarding and Fiverr listing/fulfilment have not been verified.",
+    "Existing October16/21 Amap and other recent experiments overlap with this sitewide batch."
+  ],
+  "provisionalWindows": {
+    "firstComplete7Days": [
+      "2026-10-24",
+      "2026-10-30"
+    ],
+    "adjacent7DayReference": [
+      "2026-10-17",
+      "2026-10-23"
+    ],
+    "firstComplete28Days": [
+      "2026-10-24",
+      "2026-11-20"
+    ],
+    "adjacent28DayReference": [
+      "2026-09-26",
+      "2026-10-23"
+    ],
+    "activeOnlyAfterFormalVerification": true,
+    "referenceIsCleanControl": false
+  },
+  "observations": [
+    {
+      "at": "2026-10-23T03:41:43.932513+00:00",
+      "type": "implementation_and_local_acceptance",
+      "searchOutcomeEvidenceAdded": false
+    }
+  ],
+  "dailyAutomation": {
+    "id": "6ad478cc72188191aed60e564ebb1b16",
+    "status": "prompt_update_pending",
+    "scheduleToRetain": "13:00 Asia/Calcutta daily"
+  }
+}

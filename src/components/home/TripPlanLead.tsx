@@ -1,4 +1,5 @@
 import { Map } from 'lucide-react';
+import planningHelp from '../../data/planningHelp.json';
 import type { CSSProperties } from 'react';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -79,11 +80,11 @@ export default function TripPlanLead({ standalone = false }: { standalone?: bool
               lineHeight: 1.02,
             }}
           >
-            {standalone ? 'Your first China trip, planned for you.' : 'The AI Travel Assistant That Actually Works in China'}
+            {standalone ? 'Your first China trip, planned for you.' : planningHelp.homeHeading}
           </IntroHeading>
 
           <p className="mt-4 text-base font-medium text-ink-secondary md:hidden">
-            Free personalised itinerary in 30 seconds.
+            Free automated itinerary preview. Personal route help is available below.
           </p>
           <p className="mt-4 hidden max-w-[33rem] text-lg font-medium leading-relaxed text-ink-secondary md:block md:text-xl">
             Get a free personalised route preview before you travel. We help with cities, transport, payments, food and the small details that make China easier.

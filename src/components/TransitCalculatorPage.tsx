@@ -1,4 +1,7 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
+import LinBox from './LinBox';
+import planningHelp from '../data/planningHelp.json';
+import guideRelatedLinks from '../data/guideRelatedLinks.json';
 import { AlertCircle, AlertTriangle, ArrowLeft, Calculator, CheckCircle2, ExternalLink, RotateCcw } from 'lucide-react';
 import { CHECKER_COUNTRY_OPTIONS, normalizeNationalityToIso, OFFICIAL_VISA_SOURCES, TRANSIT_240_COUNTRY_CODES } from '../data/chinaVisaPolicies';
 import transitAnswers from '../data/transitAnswers.json';
@@ -148,6 +151,7 @@ export default function TransitCalculatorPage() {
         <header className="max-w-3xl">
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#155e63]">Free planning tool · Last policy check {lastVerified}</p>
           <h1 className="mt-3 font-display text-4xl leading-tight text-gray-950 md:text-6xl">China 240-Hour Visa-Free Transit Calculator</h1>
+          <p className="mt-3 text-sm"><a href="#lin-help" className="font-semibold text-[#155e63] underline underline-offset-4">{planningHelp.byline}</a></p>
           <p className="mt-4 text-base leading-7 text-gray-600 md:text-lg">China’s 240-hour visa-free transit clock starts at 00:00 on the day after entry, in China Standard Time (UTC+8). Enter your expected or recorded entry date and route below to calculate the exit deadline and check the basic passport and route pattern. Final eligibility and the permitted stay are decided by border inspection authorities.</p>
           <p className="mt-3 text-sm leading-6 text-gray-600"><a href={transitAnswers.officialSource.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#155e63] underline underline-offset-4">Official timing rule</a> · <a href="#calculator-title" className="font-semibold text-[#155e63] underline underline-offset-4">Calculate my departure deadline</a></p>
           <ul aria-label="Current policy at a glance" className="mt-5 flex flex-wrap gap-2 text-sm font-semibold text-[#123f42]">
@@ -250,6 +254,8 @@ export default function TransitCalculatorPage() {
 
         <section className="mt-10 border-t border-gray-300 pt-6"><h2 className="text-xl font-bold">Official source and related checks</h2><div className="mt-4 flex flex-wrap gap-3"><a href={OFFICIAL_VISA_SOURCES.transit240} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-[#155e63]/25 bg-white px-4 py-2 text-sm font-bold text-[#155e63]">NIA 240-hour transit policy <ExternalLink className="h-4 w-4" aria-hidden="true" /></a><a href="/china-240-hour-visa-free-transit-2026/" className="inline-flex min-h-11 items-center rounded-xl border border-[#155e63]/25 bg-white px-4 py-2 text-sm font-bold text-[#155e63]">Read the full transit guide</a><a href="/china-visa-free-checker/" className="inline-flex min-h-11 items-center rounded-xl border border-[#155e63]/25 bg-white px-4 py-2 text-sm font-bold text-[#155e63]">Check visa-free policies</a></div><p className="mt-5 max-w-3xl text-sm leading-6 text-gray-500">Policy and port practice can change. Confirm the latest official rules before booking. Chinese border inspection authorities make the final admission and temporary-entry decision.</p></section>
 
+        <LinBox placement="guide" className="mt-10" />
+        <nav aria-label="Related China travel guides" className="mt-10"><h2 className="text-xl font-bold">Related entry guides</h2><ul className="mt-3 grid gap-2 text-sm sm:grid-cols-2">{guideRelatedLinks['china-240-hour-transit-calculator'].map(({ label, href }) => <li key={href}><a href={href} className="font-semibold text-[#155e63] underline underline-offset-4">{label}</a></li>)}</ul></nav>
         <nav className="mt-10" aria-labelledby="transit-questions"><h2 id="transit-questions" className="text-xl font-bold">240-hour transit questions</h2><ul className="mt-3 grid gap-2 text-sm sm:grid-cols-2">{RESULT_LINKS.map(([label, href]) => <li key={`q-${href}`}><a href={href} className="font-semibold text-[#155e63] underline underline-offset-4">{label}</a></li>)}</ul></nav>
 
         <footer className="mt-10 border-t border-gray-300 pt-6 text-sm leading-6 text-gray-600">

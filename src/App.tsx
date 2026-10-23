@@ -7,6 +7,7 @@ import ToolkitGrid from './components/home/ToolkitGrid';
 import BuddyDemo from './components/home/BuddyDemo';
 import HomePasses from './components/home/HomePasses';
 import TripPlanLead from './components/home/TripPlanLead';
+import LinBox from './components/LinBox';
 import PlanningTools from './components/home/PlanningTools';
 import ChatButton from './components/ChatButton';
 import ChatModal from './components/ChatModal';
@@ -210,6 +211,7 @@ export default function App() {
       />
 
       <TripPlanLead />
+      <div className="mx-auto max-w-container px-4 py-6 md:px-8"><LinBox placement="home" /></div>
 
       <PlanningTools />
 

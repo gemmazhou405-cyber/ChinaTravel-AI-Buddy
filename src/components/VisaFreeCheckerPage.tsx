@@ -5,6 +5,9 @@ import { POLICY_LAST_VERIFIED_LABEL } from '../data/chinaVisaPolicies';
 import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
 import type { VisaCheckerResult } from '../lib/visaChecker';
 import VisaFreeCheckerTool from './VisaFreeCheckerTool';
+import LinBox from './LinBox';
+import planningHelp from '../data/planningHelp.json';
+import guideRelatedLinks from '../data/guideRelatedLinks.json';
 
 const siteUrl = 'https://chinaeasebuddy.com';
 const path = '/china-visa-free-checker/';
@@ -74,6 +77,7 @@ export default function VisaFreeCheckerPage() {
         <article className="w-full min-w-0 max-w-full overflow-hidden rounded-3xl border border-[#155e63]/10 bg-white/90 p-5 shadow-sm md:p-8">
           <p className="break-words text-xs font-bold uppercase tracking-[0.14em] text-[#155e63]">Free planning tool · policy check {POLICY_LAST_VERIFIED_LABEL}</p>
           <h1 className="mt-3 max-w-3xl break-words text-3xl font-bold tracking-tight text-gray-950 md:text-5xl">China Visa-Free Checker</h1>
+          <p className="mt-3 text-sm"><a href="#lin-help" className="font-semibold text-[#155e63] underline underline-offset-4">{planningHelp.byline}</a></p>
           <p className="mt-4 max-w-3xl text-base leading-7 text-gray-600">Check which China visa-free policy may apply to your passport, travel date and itinerary.</p>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-gray-500">This is a policy screening tool, not a government visa decision. It does not guarantee admission, and final entry decisions are made by Chinese border inspection authorities.</p>
 
@@ -83,7 +87,8 @@ export default function VisaFreeCheckerPage() {
 
           <section aria-labelledby="visa-faq" className="mt-10"><h2 id="visa-faq" className="text-2xl font-bold">Frequently asked questions</h2><div className="mt-4 grid gap-4 md:grid-cols-2">{visaCheckerContent.faqs.map(([question, answer]) => <article key={question} className="rounded-2xl border border-gray-200 bg-white p-5"><h3 className="font-bold">{question}</h3><p className="mt-2 text-sm leading-6 text-gray-600">{answer}</p></article>)}</div></section>
 
-          <nav aria-label="Related China entry guides" className="mt-10"><h2 className="text-xl font-bold">Related entry guides</h2><div className="mt-3 flex flex-wrap gap-3 text-sm font-semibold text-[#155e63]"><a href="/china-240-hour-transit-calculator/">240-hour transit calculator</a><a href="/china-240-hour-visa-free-transit-2026/">240-hour transit guide</a><a href="/china-visa-free-travel-guide/">Visa-free travel guide</a><a href="/china-airport-arrival-guide/">Airport arrival guide</a><a href="/nia-12367-online-accommodation-registration-guide/">12367 accommodation registration guide</a><a href="/first-trip-to-china/">First trip to China</a></div></nav>
+          <LinBox placement="guide" className="mt-10" />
+          <nav aria-label="Related China travel guides" className="mt-10"><h2 className="text-xl font-bold">Related entry guides</h2><div className="mt-3 flex flex-wrap gap-3 text-sm font-semibold text-[#155e63]">{guideRelatedLinks['china-visa-free-checker'].map(({ label, href }) => <a key={href} href={href}>{label}</a>)}</div></nav>
 
           <section aria-labelledby="visa-sources" className="mt-10 border-t border-gray-200 pt-6"><h2 id="visa-sources" className="text-xl font-bold">Official sources</h2><ul className="mt-3 space-y-2 text-sm leading-6">{visaCheckerContent.sourceLinks.map(([label, href]) => <li key={href}><a href={href} target="_blank" rel="noopener noreferrer" onClick={() => void trackEvent('visa_checker_official_source_click', { resultCategory: result?.category ?? 'cannot_determine', policyType: result?.policyType ?? 'none', completed: Boolean(result) })} className="font-semibold text-[#155e63]">{label} <ExternalLink aria-hidden="true" className="inline h-3.5 w-3.5" /></a></li>)}</ul></section>
         </article>

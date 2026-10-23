@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-22",
+  "asOf": "2026-10-23",
   "primaryOutcome": "strongly_relevant_google_organic_clicks",
   "policy": "docs/seo/effectiveness-review-policy.md",
   "dataState": "No new post-change GSC outcome supplied as of this snapshot. Historical baselines remain in source records.",
@@ -82,21 +82,27 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/amap-english-mode-guide-2026/",
       "changeIds": [
         "SEO-2026-10-16-AMAP",
-        "SEO-2026-10-21-AMAP-SETUP"
+        "SEO-2026-10-21-AMAP-SETUP",
+        "SEO-2026-10-23-AMAP-QUALITY"
       ],
       "sourceRecords": [
         "docs/seo/optimization-tracker.md",
-        "docs/seo/amap-ranking-tracking.json"
+        "docs/seo/amap-ranking-tracking.json",
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
       ],
       "recordedChangeDates": [
         "2026-10-16",
-        "2026-10-21"
+        "2026-10-21",
+        "2026-10-23"
       ],
       "latestConfirmedLiveDate": "2026-10-21",
       "priority": 3,
@@ -117,7 +123,7 @@
       ],
       "earliest7DayAvailabilityCheck": "2026-10-29",
       "earliest28DayAvailabilityCheck": "2026-11-19",
-      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
+      "nextAction": "Verify current quality release, then preserve historical windows and record new complete windows; obtain exact-page query/crawl evidence. No search gain confirmed.",
       "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
       "audienceIntent": {
         "classification": "china_trip_preparation_with_possible_non_tourist_audience",
@@ -131,6 +137,14 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ],
+      "newQualityRelease": {
+        "changeId": "SEO-2026-10-23-AMAP-QUALITY",
+        "state": "pending_formal_verification",
+        "sourceRecord": "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
       }
     },
     {
@@ -180,19 +194,25 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/",
       "changeIds": [
         "SEO-2026-10-21-TRANSIT-HUBS",
-        "SEO-2026-10-21-HOMEPAGE-LASTMOD"
+        "SEO-2026-10-21-HOMEPAGE-LASTMOD",
+        "SEO-2026-10-23-HUMAN-ENTRY"
       ],
       "sourceRecords": [
-        "docs/seo/transit-calculator-tracking.json"
+        "docs/seo/transit-calculator-tracking.json",
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
       ],
       "recordedChangeDates": [
-        "2026-10-21"
+        "2026-10-21",
+        "2026-10-23"
       ],
       "latestConfirmedLiveDate": "2026-10-21",
       "priority": 4,
@@ -213,7 +233,7 @@
       ],
       "earliest7DayAvailabilityCheck": "2026-10-29",
       "earliest28DayAvailabilityCheck": "2026-11-19",
-      "nextAction": "Check new evidence and report completeness; retain version until a decision is supported.",
+      "nextAction": "Verify current quality release, then preserve historical windows and record new complete windows; obtain exact-page query/crawl evidence. No search gain confirmed.",
       "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
       "audienceIntent": {
         "classification": "site_hub",
@@ -227,6 +247,14 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ],
+      "newQualityRelease": {
+        "changeId": "SEO-2026-10-23-HUMAN-ENTRY",
+        "state": "pending_formal_verification",
+        "sourceRecord": "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
       }
     },
     {
@@ -274,7 +302,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/3-day-shenzhen-itinerary/",
@@ -320,7 +351,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/alipay-metro-qr-transport-code-guide/",
@@ -361,7 +395,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/beijing-shanghai-layover-240-hour-guide/",
@@ -407,7 +444,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/chengdu-panda-base-guide/",
@@ -456,7 +496,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/china-240-hour-transit-clock-start/",
@@ -503,7 +546,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/china-240-hour-transit-us-citizens/",
@@ -544,7 +590,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/china-240-hour-visa-free-transit-2026/",
@@ -590,7 +639,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/china-airport-arrival-guide/",
@@ -631,7 +683,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/china-esim-internet-guide/",
@@ -672,7 +727,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/china-hotels-for-foreigners/",
@@ -713,7 +771,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/china-itinerary-first-time-7-10-14-days/",
@@ -759,7 +820,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/china-sim-card-for-foreigners/",
@@ -800,7 +864,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/china-train-booking-foreigners-12306/",
@@ -846,7 +913,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/china-train-travel-guide/",
@@ -887,7 +957,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/china-travel-budget/",
@@ -937,7 +1010,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/china-visa-free-travel-guide/",
@@ -983,7 +1059,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/didi-in-china-for-foreigners/",
@@ -1029,7 +1108,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/didi-payment-for-foreigners/",
@@ -1070,7 +1152,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/guides/",
@@ -1162,7 +1247,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/is-china-safe-for-tourists-2026/",
@@ -1203,7 +1291,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/tenpaygo-for-tourists/",
@@ -1244,7 +1335,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/china-emergency-numbers/",
@@ -1290,7 +1384,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/14-day-china-itinerary/",
@@ -1336,7 +1433,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/3-day-beijing-itinerary/",
@@ -1382,7 +1482,10 @@
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
         "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/3-day-zhangjiajie-itinerary/",
@@ -1420,7 +1523,10 @@
         "classification": "direct_destination_trip_planning",
         "basis": "page/topic inference,not verified visitor identity",
         "asOf": "2026-10-22"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/7-day-china-itinerary/",
@@ -1458,7 +1564,10 @@
       },
       "earliest7DayAvailabilityCheck": "2026-10-30",
       "earliest28DayAvailabilityCheck": "2026-11-20",
-      "windowCaution": "Proposed equal, adjacent, nonoverlapping publication windows only. Reference last date includes this publication and other site changes; not a clean causal control. Historical export actual bounds remain unknown. Obtain matching full data and preserve additional recrawl-based windows if later."
+      "windowCaution": "Proposed equal, adjacent, nonoverlapping publication windows only. Reference last date includes this publication and other site changes; not a clean causal control. Historical export actual bounds remain unknown. Obtain matching full data and preserve additional recrawl-based windows if later.",
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/10-day-china-itinerary/",
@@ -1496,7 +1605,10 @@
       },
       "earliest7DayAvailabilityCheck": "2026-10-30",
       "earliest28DayAvailabilityCheck": "2026-11-20",
-      "windowCaution": "Publication-based provisional windows only. Reference last date contains this change and other site edits;not a clean causal control. Historical export actual bounds remain unknown. Save additional crawl-based windows if later Google processing is confirmed;complete matched GSC evidence required."
+      "windowCaution": "Publication-based provisional windows only. Reference last date contains this change and other site edits;not a clean causal control. Historical export actual bounds remain unknown. Save additional crawl-based windows if later Google processing is confirmed;complete matched GSC evidence required.",
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/3-day-shanghai-itinerary/",
@@ -1534,7 +1646,10 @@
       },
       "earliest7DayAvailabilityCheck": "2026-10-30",
       "earliest28DayAvailabilityCheck": "2026-11-20",
-      "windowCaution": "Provisional publication windows only. Reference last date includes this body publication and recent incoming-link/site edits;not a clean causal control. Historical export date bounds remain unknown. Save additional recrawl-based windows if Google processes later;matched complete GSC data required."
+      "windowCaution": "Provisional publication windows only. Reference last date includes this body publication and recent incoming-link/site edits;not a clean causal control. Historical export date bounds remain unknown. Save additional recrawl-based windows if Google processes later;matched complete GSC data required.",
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/3-day-chongqing-itinerary/",
@@ -1572,7 +1687,10 @@
         "classification": "direct_destination_trip_planning",
         "basis": "page/topic inference, not verified visitor identity",
         "asOf": "2026-10-22"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     },
     {
       "url": "https://chinaeasebuddy.com/3-day-nanjing-itinerary/",
@@ -1610,7 +1728,41 @@
         "classification": "direct_destination_trip_planning",
         "basis": "page/topic inference, not verified visitor identity",
         "asOf": "2026-10-22"
-      }
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
+    },
+    {
+      "url": "https://chinaeasebuddy.com/amap-in-english/",
+      "changeIds": [
+        "SEO-2026-10-23-AMAP-INTENT"
+      ],
+      "sourceRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ],
+      "recordedChangeDates": [
+        "2026-10-23"
+      ],
+      "latestConfirmedLiveDate": null,
+      "priority": 3,
+      "decision": "pending_formal_verification",
+      "postChangePerformance": "not_available",
+      "missingEvidence": [
+        "formal publication verification",
+        "post-change Google crawl/canonical",
+        "complete exact-page query and relevant-click comparison"
+      ],
+      "nextAction": "Verify navigation-focused metadata/answer/setup handoff, then observe together with focused Amap and sitewide changes.",
+      "baseline": {
+        "clicks": 0,
+        "impressions": 58,
+        "ctr": 0,
+        "pageAveragePosition": 19.14
+      },
+      "sharedInterventionRecords": [
+        "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ]
     }
   ],
   "observations": [
@@ -1916,8 +2068,106 @@
       "changeId": "SEO-2026-10-22-NANJING-BOOKINGS",
       "decision": "awaiting_evidence",
       "summary": "Code 71d18e6cd841eb160028b551d32fc80e6ea2c722 and Cloudflare 6b90ec36-19e0-49e1-8ba1-6ee02da33a50 verified. Prior observations and museum source-freshness limitation retained. No new search-outcome evidence."
+    },
+    {
+      "at": "2026-10-23T03:41:43.932513+00:00",
+      "type": "deep_quality_batch_implemented",
+      "sourceRecord": "docs/seo/quality/2026-10-23-amap-and-site-quality.json",
+      "status": "pending_formal_verification",
+      "newSearchOutcomeEvidence": false
     }
   ],
   "priorityPolicy": "docs/seo/tourist-intent-priorities.json",
-  "keywordEvidence": "docs/seo/keyword-opportunities-2026-10-22.json"
+  "keywordEvidence": "docs/seo/keyword-opportunities-2026-10-22.json",
+  "qualityStandard": "docs/seo/page-quality-standard.md",
+  "targetRelevantExactQueryPositions": [
+    1,
+    5
+  ],
+  "sharedInterventions": [
+    {
+      "changeIds": [
+        "SEO-2026-10-23-HUMAN-ENTRY",
+        "SEO-2026-10-23-RELATED-ANCHORS"
+      ],
+      "sourceRecord": "docs/seo/quality/2026-10-23-amap-and-site-quality.json",
+      "state": "pending_formal_verification",
+      "affectedUrls": [
+        "https://chinaeasebuddy.com/",
+        "https://chinaeasebuddy.com/plan/",
+        "https://chinaeasebuddy.com/pricing/",
+        "https://chinaeasebuddy.com/china-visa-free-travel-guide/",
+        "https://chinaeasebuddy.com/china-airport-arrival-guide/",
+        "https://chinaeasebuddy.com/china-hotels-for-foreigners/",
+        "https://chinaeasebuddy.com/china-food-ordering-guide/",
+        "https://chinaeasebuddy.com/chinese-travel-phrases/",
+        "https://chinaeasebuddy.com/china-travel-safety-guide/",
+        "https://chinaeasebuddy.com/china-travel-budget/",
+        "https://chinaeasebuddy.com/china-travel-apps/",
+        "https://chinaeasebuddy.com/china-train-travel-guide/",
+        "https://chinaeasebuddy.com/didi-in-china-for-foreigners/",
+        "https://chinaeasebuddy.com/amap-in-english/",
+        "https://chinaeasebuddy.com/china-metro-guide/",
+        "https://chinaeasebuddy.com/7-day-china-itinerary/",
+        "https://chinaeasebuddy.com/10-day-china-itinerary/",
+        "https://chinaeasebuddy.com/14-day-china-itinerary/",
+        "https://chinaeasebuddy.com/beijing-vs-shanghai/",
+        "https://chinaeasebuddy.com/3-day-beijing-itinerary/",
+        "https://chinaeasebuddy.com/3-day-shanghai-itinerary/",
+        "https://chinaeasebuddy.com/3-day-xian-itinerary/",
+        "https://chinaeasebuddy.com/3-day-chongqing-itinerary/",
+        "https://chinaeasebuddy.com/3-day-chengdu-itinerary/",
+        "https://chinaeasebuddy.com/3-day-guilin-yangshuo-itinerary/",
+        "https://chinaeasebuddy.com/3-day-zhangjiajie-itinerary/",
+        "https://chinaeasebuddy.com/3-day-shenzhen-itinerary/",
+        "https://chinaeasebuddy.com/3-day-guangzhou-itinerary/",
+        "https://chinaeasebuddy.com/3-day-hangzhou-itinerary/",
+        "https://chinaeasebuddy.com/3-day-suzhou-itinerary/",
+        "https://chinaeasebuddy.com/3-day-nanjing-itinerary/",
+        "https://chinaeasebuddy.com/3-day-dali-itinerary/",
+        "https://chinaeasebuddy.com/china-golden-week-2026-travel-guide/",
+        "https://chinaeasebuddy.com/great-wall-of-china-day-trip-from-beijing/",
+        "https://chinaeasebuddy.com/chengdu-panda-base-guide/",
+        "https://chinaeasebuddy.com/didi-payment-for-foreigners/",
+        "https://chinaeasebuddy.com/beijing-airport-to-city-guide/",
+        "https://chinaeasebuddy.com/amap-vs-google-maps-china/",
+        "https://chinaeasebuddy.com/best-time-to-visit-china/",
+        "https://chinaeasebuddy.com/china-esim-internet-guide/",
+        "https://chinaeasebuddy.com/china-sim-card-for-foreigners/",
+        "https://chinaeasebuddy.com/alipay-for-foreigners/",
+        "https://chinaeasebuddy.com/wechat-pay-for-foreigners/",
+        "https://chinaeasebuddy.com/china-payment-guide/",
+        "https://chinaeasebuddy.com/china-travel-checklist/",
+        "https://chinaeasebuddy.com/china-emergency-numbers/",
+        "https://chinaeasebuddy.com/china-train-booking-foreigners-12306/",
+        "https://chinaeasebuddy.com/china-itinerary-first-time-7-10-14-days/",
+        "https://chinaeasebuddy.com/faq/",
+        "https://chinaeasebuddy.com/china-240-hour-visa-free-transit-2026/",
+        "https://chinaeasebuddy.com/nia-12367-online-accommodation-registration-guide/",
+        "https://chinaeasebuddy.com/amap-english-mode-guide-2026/",
+        "https://chinaeasebuddy.com/alipay-metro-qr-transport-code-guide/",
+        "https://chinaeasebuddy.com/china-travel-ai-itinerary-generator/",
+        "https://chinaeasebuddy.com/240-hour-transit-zone-map-high-speed-rail/",
+        "https://chinaeasebuddy.com/wechat-verification-without-friend-qr-2026/",
+        "https://chinaeasebuddy.com/china-hotels-for-foreigners-no-rejection-guide/",
+        "https://chinaeasebuddy.com/does-google-maps-work-in-china-amap-guide/",
+        "https://chinaeasebuddy.com/how-to-visit-great-wall-from-beijing-2026/",
+        "https://chinaeasebuddy.com/what-to-eat-in-china-first-time-guide/",
+        "https://chinaeasebuddy.com/how-to-use-wechat-as-foreigner-2026/",
+        "https://chinaeasebuddy.com/is-china-safe-for-tourists-2026/",
+        "https://chinaeasebuddy.com/best-apps-for-china-travel-2026/",
+        "https://chinaeasebuddy.com/beijing-shanghai-layover-240-hour-guide/",
+        "https://chinaeasebuddy.com/tenpaygo-for-tourists/",
+        "https://chinaeasebuddy.com/china-visa-free-checker/",
+        "https://chinaeasebuddy.com/china-240-hour-transit-calculator/",
+        "https://chinaeasebuddy.com/china-240-hour-transit-clock-start/",
+        "https://chinaeasebuddy.com/china-240-hour-transit-us-citizens/",
+        "https://chinaeasebuddy.com/china-240-hour-transit-round-trip-ticket/",
+        "https://chinaeasebuddy.com/china-240-hour-transit-ports-provinces/",
+        "https://chinaeasebuddy.com/china-online-arrival-card-2026/",
+        "https://chinaeasebuddy.com/first-trip-to-china/"
+      ],
+      "causalCaution": "Shared service/navigation changes overlap all current page tests; historical windows retained."
+    }
+  ]
 }

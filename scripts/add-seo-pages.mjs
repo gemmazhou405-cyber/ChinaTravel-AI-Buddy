@@ -1,5 +1,11 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { renderPlanningHelp } from './render-planning-help.mjs';
+
+const planningHelp = JSON.parse(await readFile('src/data/planningHelp.json', 'utf8'));
+const related = JSON.parse(await readFile('src/data/guideRelatedLinks.json', 'utf8'))['first-trip-to-china'];
+
+const escapeHtml = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
 
 const seoUrl = 'https://chinaeasebuddy.com/first-trip-to-china/';
 const seoPath = '/first-trip-to-china/';
@@ -48,3 +54,10 @@ async function ensureGuidesInternalLink() {
 await ensureSitemapEntry();
 await ensureHomepageInternalLink();
 await ensureGuidesInternalLink();
+
+// This guide is a standalone HTML page, so it does not use the React GuidePage shell.
+const firstTripPath = join('dist', 'first-trip-to-china', 'index.html');
+let firstTripHtml = await readFile(firstTripPath, 'utf8');
+firstTripHtml = firstTripHtml.replace(/(<h1\b[^>]*>[\s\S]*?<\/h1>)/, `$1<p><a href="#lin-help">${escapeHtml(planningHelp.byline)}</a></p>`);
+firstTripHtml = firstTripHtml.replace(/<section>\s*<h2>Related China travel guides<\/h2>[\s\S]*?<\/section>/, `${renderPlanningHelp(planningHelp, 'guide')}<nav aria-label="Related China travel guides"><h2>Related China travel guides</h2><div class="related">${related.map(({ label, href }) => `<a href="${escapeHtml(href)}">${escapeHtml(label)}</a>`).join('')}</div></nav>`);
+await writeFile(firstTripPath, firstTripHtml);

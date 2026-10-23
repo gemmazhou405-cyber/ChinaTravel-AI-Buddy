@@ -1,9 +1,10 @@
+import LinBox from './LinBox';
 import { useEffect } from 'react';
 import TripPlanLead from './home/TripPlanLead';
 
 // Standalone landing page for TikTok / Instagram bio-link traffic.
-// Strictly: logo + one-line title + the free-itinerary form + footer. Nothing else —
-// no hero, no toolkit/scenario/pricing sections. Reuses the homepage <TripPlanLead>
+// Logo, free-itinerary form, personal planning contact and footer; no toolkit sections.
+// Reuses the homepage <TripPlanLead>
 // form in `standalone` mode so submission + itinerary + UTM logic stays in one place.
 export default function PlanLanding() {
   const assetBase = import.meta.env.BASE_URL;
@@ -32,6 +33,7 @@ export default function PlanLanding() {
       <main className="flex-1">
         {/* TripPlanLead (standalone) renders its own <h1> + one-line subtitle + CTA + form. */}
         <TripPlanLead standalone />
+        <div className="mx-auto max-w-2xl px-4 pb-8"><LinBox placement="plan" /></div>
       </main>
 
       <footer className="border-t border-hairline bg-surface">

@@ -132,6 +132,7 @@ function parseAttribution(): Attribution {
 }
 
 export function initAttribution() {
+  initPlanningLinkTracking();
   const session = safeStorage('sessionStorage');
   const legacyPersistent = safeStorage('localStorage');
   try {
@@ -148,6 +149,25 @@ export function initAttribution() {
   }
   getAnonymousSessionId();
   captureCampaignAttribution(getCampaignVariant(window.location.pathname));
+}
+
+let planningLinkTrackingInstalled = false;
+
+function initPlanningLinkTracking() {
+  if (typeof document === 'undefined' || typeof document.addEventListener !== 'function' || planningLinkTrackingInstalled) return;
+  planningLinkTrackingInstalled = true;
+  document.addEventListener('click', (event) => {
+    const anchor = event.target instanceof Element ? event.target.closest<HTMLAnchorElement>('a[data-planning-help]') : null;
+    const action = anchor?.dataset.planningHelp;
+    if (action !== 'email' && action !== 'fiverr') return;
+    const placement = anchor?.dataset.planningPlacement;
+    const safePlacement = placement && /^[a-z0-9_-]{1,24}$/.test(placement) ? placement : 'guide';
+    void trackEvent('cta_clicked', {
+      ctaName: action === 'email' ? 'planning_email_click' : 'planning_fiverr_click',
+      destination: action === 'email' ? 'email' : 'fiverr',
+      tool: `planning_help_${safePlacement}`,
+    });
+  });
 }
 
 export function getAttributionContext() {

@@ -3,6 +3,10 @@ import { ArrowLeft, Check } from 'lucide-react';
 import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
 import { unsubscribeNewsletter } from '../lib/newsletter';
 import { RelatedGuidesForForeigners } from './RelatedGuidesForForeigners';
+import LinBox from './LinBox';
+import AmapLanguageHelp from './AmapLanguageHelp';
+import planningHelp from '../data/planningHelp.json';
+import guideRelatedLinks from '../data/guideRelatedLinks.json';
 import suzhouGuide from '../data/seoPages/3-day-suzhou-itinerary.json';
 import nanjingGuide from '../data/seoPages/3-day-nanjing-itinerary.json';
 import daliGuide from '../data/seoPages/3-day-dali-itinerary.json';
@@ -2430,21 +2434,22 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'amap-in-english': {
     path: '/amap-in-english/',
-    title: 'How to Use AMap in English in China (2026)',
+    title: 'How to Use Amap in China: Addresses, Metro & Routes',
     intro: 'A practical map guide for English place search, walking and metro routes, stations, entrances, mobile data, and common navigation problems.',
-    metaTitle: 'AMap in English: China Map Guide (2026) | ChinaEase Buddy',
+    metaTitle: 'Amap China Navigation: Addresses, Metro & Walking Routes',
     metaDescription:
-      'Use AMap in English for China travel. Learn setup, English place search, walking and metro routes, saved addresses, ride-hailing, and navigation fixes.',
+      'Find the correct hotel branch, plan metro and walking routes, and check station entrances in Amap. Keep Chinese addresses ready for arrival.',
     quickAnswer:
-      'AMap, also called Gaode Maps, offers an English version for overseas users and can plan walking, public-transport, driving, and other routes in mainland China. Download it from an official app store, test the English interface before departure, and save the Chinese name and address of every important destination. When searching, select the exact hotel branch, station building, terminal, entrance, or metro exit rather than relying on a general place name. Keep screenshots and a second navigation option in case mobile data, GPS, or place search fails.',
+      'Use Amap to choose the correct destination and plan the actual walking, metro or station transfer. First match the Chinese hotel name, branch, station or terminal to your booking. Then check the transport mode and final entrance, and save the destination details outside the app. Use the separate English-setup guide linked below if you still need to change the interface language.',
     ctaLabel: 'Get my free China itinerary',
     ctaHref: '/#trip-plan',
     lastReviewed: 'September 18, 2026',
-    lastModified: '2026-09-18',
+    lastModified: '2026-10-23',
     isArticle: true,
     sections: [
       {
         title: 'Download and prepare AMap before your trip',
+        links: [{ label: 'Set Amap to English on iPhone or Android', description: 'Complete language setup here, then return for routes, destinations and entrances.', href: '/amap-english-mode-guide-2026/' }],
         ordered: true,
         items: [
           'Download AMap or AMap Global only from its official website or your phone\'s official app store. Check the publisher before installing.',
@@ -5538,8 +5543,8 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     path: '/amap-english-mode-guide-2026/',
     title: amapEnglishSetup.heading,
     intro: amapEnglishSetup.intro,
-    metaTitle: 'Amap English Guide: How to Switch Language & Search in English (2026)',
-    metaDescription: 'Set up Amap Global in English, search China destinations, save Chinese hotel addresses, plan metro routes, and use local navigation and ride-hailing.',
+    metaTitle: amapEnglishSetup.metaTitle,
+    metaDescription: amapEnglishSetup.metaDescription,
     quickAnswer: amapEnglishSetup.quickAnswer,
     ctaLabel: 'Convert my address into an Amap-ready search',
     midCtaLabel: 'Prepare my saved places',
@@ -5547,6 +5552,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     buddyPrompt: 'Convert these destinations into English and Chinese Amap-ready searches: [places/addresses]. Also give me short taxi messages.',
     reviewed: amapEnglishSetup.reviewed,
     lastModified: amapEnglishSetup.modified,
+    isArticle: true,
     sections: amapEnglishSetup.sections,
     faqs: amapEnglishSetup.faqs,
     related: [{ label: 'Full Amap navigation guide', href: '/amap-in-english/' }, { label: 'Google Maps alternative guide', href: '/does-google-maps-work-in-china-amap-guide/' }],
@@ -6353,7 +6359,7 @@ function useGuideSeo(page: GuidePageData) {
   }, [page]);
 }
 
-function PageShell({ title, intro, children }: { title: string; intro: string; children: ReactNode }) {
+function PageShell({ title, intro, children, planningByline = false }: { title: string; intro: string; children: ReactNode; planningByline?: boolean }) {
   const assetBase = import.meta.env.BASE_URL;
 
   return (
@@ -6370,6 +6376,7 @@ function PageShell({ title, intro, children }: { title: string; intro: string; c
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-[#155e63]">ChinaEase Buddy</p>
               <h1 className="text-3xl font-bold tracking-tight text-gray-950 md:text-4xl">{title}</h1>
+              {planningByline && <a href="#lin-help" className="mt-2 inline-block text-sm font-semibold text-[#155e63] underline underline-offset-4">{planningHelp.byline}</a>}
             </div>
           </div>
           <p className="mb-6 max-w-3xl text-sm leading-relaxed text-gray-500 md:text-base">{intro}</p>
@@ -6385,8 +6392,10 @@ function PricingPage() {
   return (
     <PageShell
       title="Pricing"
-      intro="ChinaEase Buddy starts with a free toolkit. Paid passes are optional one-time purchases processed securely through Gumroad."
+      intro="Choose personal route-planning help from Lin or optional digital travel passes. The free itinerary preview remains available."
     >
+      <LinBox placement="pricing" className="mb-6" />
+      <h2 className="mb-4 text-xl font-bold text-gray-950">Digital travel passes</h2>
       <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
         {pricingPlans.map((plan) => (
           <div
@@ -6574,7 +6583,7 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
   }, [type, userId]);
 
   return (
-    <PageShell title={page.title} intro={page.intro}>
+    <PageShell title={page.title} intro={page.intro} planningByline={type !== 'guides'}>
       <div className="space-y-6">
         {type !== 'guides' && (
           <nav aria-label="Breadcrumb" className="text-sm">
@@ -6601,6 +6610,10 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
           )}
         </section>
 
+        {type === 'amap-english-mode-guide-2026' && <>
+          <AmapLanguageHelp />
+          <p className="text-xs leading-relaxed text-gray-500">{amapEnglishSetup.evidenceNote}</p>
+        </>}
         {type === 'china-travel-budget' && <ChinaTripCostEstimator />}
 
         <nav className="rounded-2xl border border-gray-100 bg-white/70 p-4">
@@ -6621,12 +6634,13 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
         </nav>
 
         <div className="grid gap-4 md:grid-cols-2">
-          {page.sections.map((section) => (
+          {page.sections.map((section, sectionIndex) => (
             <section
               id={section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}
               key={section.title}
               className={`rounded-2xl border border-gray-100 bg-white/80 p-4 shadow-sm${section.table ? ' md:col-span-2' : ''}`}
             >
+              {!['china-train-booking-foreigners-12306', 'china-itinerary-first-time-7-10-14-days'].includes(type) && <span id={`guide-section-${sectionIndex}`} aria-hidden="true" />}
               <h2 className="text-lg font-bold text-gray-950">{section.title}</h2>
               {((type === 'china-visa-free-travel-guide' && section.title === '240-hour visa-free transit: the route is essential') ||
                 (type === 'china-240-hour-visa-free-transit-2026' && section.title === 'How the 10-day clock is calculated')) && (
@@ -6794,10 +6808,11 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
           </section>
         )}
 
+        {type !== 'guides' && <LinBox placement="guide" />}
         <section className="rounded-2xl border border-gray-100 bg-white/70 p-4">
           <h2 className="text-base font-bold text-gray-950">Related guides</h2>
           <div className="mt-3 flex flex-wrap gap-2">
-            {page.related.map((link) => (
+            {((guideRelatedLinks as Record<string, Array<{ label: string; href: string }>>)[type] || page.related.slice(0, 8)).map((link) => (
               <a key={link.href} href={link.href} className="rounded-full border border-[#155e63]/15 bg-white px-3 py-1.5 text-xs font-semibold text-[#155e63] hover:bg-[#155e63]/5">
                 {link.label}
               </a>
