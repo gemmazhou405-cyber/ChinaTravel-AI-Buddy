@@ -1,7 +1,9 @@
 const escape = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
 
 export function renderPlanningHelp(content, placement = 'guide') {
-  return `<section id="lin-help" aria-labelledby="lin-help-heading" data-planning-help-box style="margin: 24px 0; padding: 24px; border: 1px solid rgba(21,94,99,.2); border-radius: 20px; background: rgba(21,94,99,.05);">
+  // This public contact must also work without JavaScript. Exempt only this box
+  // from Cloudflare's HTML email rewriting; retain the zone's other settings.
+  return `<!--email_off--><section id="lin-help" aria-labelledby="lin-help-heading" data-planning-help-box style="margin: 24px 0; padding: 24px; border: 1px solid rgba(21,94,99,.2); border-radius: 20px; background: rgba(21,94,99,.05);">
     ${content.imagePath ? `<img src="${escape(content.imagePath)}" alt="Lin, ChinaEase Buddy trip-planning contact" width="88" height="88" loading="lazy" style="border-radius:12px;object-fit:cover;" />` : ''}
     <h2 id="lin-help-heading" style="margin: 0 0 12px; font-size: 1.4rem;">${escape(content.heading)}</h2>
     <p style="line-height:1.7;color:#374151;">${escape(content.body)}</p>
@@ -11,5 +13,5 @@ export function renderPlanningHelp(content, placement = 'guide') {
     </div>
     <p style="overflow-wrap:anywhere;user-select:all;font-weight:700;color:#155e63;">${escape(content.email)}</p>
     <p style="font-size:.8rem;line-height:1.6;color:#6b7280;">${escape(content.note)}</p>
-  </section>`;
+  </section><!--/email_off-->`;
 }
