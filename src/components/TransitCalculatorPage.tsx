@@ -13,7 +13,7 @@ import { COMMON_TRANSIT_ROUTE_EXAMPLES, calculateTransitDeadline, type TransitCa
 const siteUrl = 'https://chinaeasebuddy.com';
 const path = '/china-240-hour-transit-calculator/';
 const title = 'China 240-Hour Visa-Free Transit Calculator | Exit Deadline';
-const description = 'China’s 240-hour transit clock starts at midnight after entry. Use this free calculator for your exit deadline in China time, plus basic passport and route checks.';
+const description = 'China\'s 240-hour transit clock starts at midnight after your entry date. Use this free calculator to work out your exit deadline in China time.';
 const contentModified = calculatorContent.modified;
 const lastVerified = transitAnswers.lastUpdated;
 

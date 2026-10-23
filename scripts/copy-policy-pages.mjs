@@ -143,7 +143,7 @@ const pageMeta = {
     title: 'China Visa-Free Travel Guide (2026) | ChinaEase Buddy',
     heading: 'China Visa-Free Travel Guide for Tourists (2026)',
     description:
-      'Compare China\'s 30-day visa-free entry and 240-hour transit rules. Check passport, route, purpose, ports, documents, and common mistakes.',
+      'Eligible passport holders can visit China visa-free for up to 30 days, or use 240-hour transit en route to a third country. Compare the routes and ports.',
     quickAnswer:
       'First decide which policy fits your passport and route. China\'s ordinary visa-free entry lets eligible ordinary-passport holders visit for up to 30 days for approved purposes without needing a third-country itinerary. The separate 240-hour visa-free transit policy is available to eligible nationals only when they travel through mainland China to a third country or region, use an approved port, remain within the permitted area, and hold a confirmed onward ticket. A return trip such as London–Beijing–London is not third-country transit. Policies can change, and admission is still subject to border inspection, so verify your nationality, passport, purpose, route, ports, and exact dates with the official sources immediately before travel.',
     lastReviewed: 'September 20, 2026',
@@ -270,7 +270,7 @@ const pageMeta = {
     title: 'China Airport Arrival Guide 2026: Immigration to Hotel',
     heading: 'China Airport Arrival: From Immigration to Your Hotel',
     description:
-      'After landing in China, clear immigration, collect bags and pass Customs. Then check mobile data and payment before taking an official ride or airport train.',
+      'After landing in China, clear immigration, collect bags and pass Customs. Then check mobile data and payment before an official ride or airport train.',
     quickAnswer:
       'Before flying, confirm the entry rules for your exact passport, route, purpose, and travel dates, then complete China\'s free official online arrival card if it applies to you. Keep your passport, visa or other entry basis, accommodation details, and onward booking accessible offline. After landing, follow the airport signs through immigration, baggage claim, and Customs; connect your phone, test a payment backup, and use an official airport train, metro, taxi queue, or verified ride-hailing pickup. The arrival card is not a visa or permission to enter, and the final entry decision belongs to the immigration authorities.',
     lastReviewed: 'October 18, 2026',
@@ -404,7 +404,7 @@ const pageMeta = {
     title: 'Can Foreigners Stay in Any Hotel in China? (2026)',
     heading: 'Can Foreigners Stay in Any Hotel in China? (2026 Guide)',
     description:
-      'Hotels should not refuse foreigners solely because the property lacks a foreign-guest qualification. Book with passport details; the hotel registers your stay.',
+      'Yes. Hotels should not refuse foreigners just because they lack a foreign-guest qualification. Book with passport details; the hotel registers your stay.',
     quickAnswer:
       'Foreign visitors can book and stay in hotels in China using a valid passport. In 2024, China\'s public security, commerce, and immigration authorities said hotels must not refuse overseas guests merely because the property claims to lack a special foreign-guest qualification. In practice, some front desks may still be unfamiliar with passport registration, especially at small or newly opened properties. Before a non-refundable booking, confirm the exact property can register your passport, save the written confirmation, enter every guest\'s name exactly as shown on the passport, and notify the hotel if you will arrive late. A hotel normally completes the accommodation registration for its guests; a private or non-hotel stay follows separate local registration procedures.',
     lastReviewed: 'October 20, 2026',
@@ -538,7 +538,7 @@ const pageMeta = {
     title: 'How to Order Food in China (2026) | ChinaEase Buddy',
     heading: 'How to Order Food in China: Menu and Allergy Guide (2026)',
     description:
-      'Order food in China with confidence. Use photo and QR menus, explain allergies or dietary needs, pay, avoid common mistakes, and save useful Chinese phrases.',
+      'You can order food in China without speaking Chinese: use a QR or photo menu and point to the dish. Explain allergies or diet needs and save key phrases.',
     quickAnswer:
       'You can order without speaking Chinese by using a QR menu, a photo menu, or a translation app and pointing to the dish. Confirm the number of dishes, spice level, rice, drinks, and payment before finishing the order. If you have a serious food allergy, show a clinician-reviewed bilingual allergy card, name the exact allergen and its oils, sauces, stocks, and derivatives, ask about shared woks and utensils, and do not eat the dish when staff cannot confirm. A translation app or phrase card is useful communication support, but it is not a medical safeguard.',
     lastReviewed: 'September 20, 2026',
@@ -667,10 +667,10 @@ const pageMeta = {
     ],
   },
   'chinese-travel-phrases': {
-    title: 'Essential Chinese Travel Phrases (2026) | ChinaEase Buddy',
+    title: 'Chinese Phrases for Travelers: Essential Basics (2026)',
     heading: 'Essential Chinese Phrases for Travel in China (2026)',
     description:
-      'Save essential Chinese phrases for travel in China, with characters, pinyin, and English for taxis, hotels, food, payments, trains, directions, and emergencies.',
+      'Save essential Chinese phrases for travel, with characters, pinyin and English for taxis, hotels, food, payments, trains, directions and emergencies.',
     quickAnswer:
       'You do not need fluent Mandarin for a first trip to China, but you should save a compact set of phrases in Chinese characters. Show the Chinese sentence full-screen when pronunciation is difficult, keep the address or destination beside it, and download an offline translation tool before arrival. Pinyin helps you attempt the sound, but showing the characters is usually more reliable in a noisy station, taxi, restaurant, or emergency.',
     lastReviewed: 'September 20, 2026',
@@ -809,7 +809,7 @@ const pageMeta = {
     title: 'Is It Safe to Travel to China? Tourist Safety Guide (2026)',
     heading: 'Is It Safe to Travel to China in 2026?',
     description:
-      'Is China safe to visit in 2026? Understand tourist scams, solo travel, transport, local laws, health, weather, emergency numbers and practical precautions.',
+      'Many tourists visit mainland China without serious incidents; serious crime against foreigners is relatively rare. Learn scams, laws and emergency steps.',
     quickAnswer:
       'Many tourists visit mainland China without serious incidents, and UK guidance says serious crime against foreign nationals is relatively rare. That does not make every trip risk-free. Use verified transport, avoid common tourist scams, follow local laws, prepare payment and mobile-data backups, and know how to contact emergency services. Government advisories also highlight broad national-security laws, possible exit bans, and restrictions in sensitive areas, so check the current advice for your nationality and itinerary before departure.',
     lastReviewed: 'October 7, 2026',
@@ -939,10 +939,10 @@ const pageMeta = {
     ],
   },
   'china-travel-budget': {
-    title: 'How Much Does a Trip to China Cost? 2026 Travel Budget',
+    title: 'China Trip Cost 2026: Daily Budget & Cost Calculator',
     heading: 'How Much Does a Trip to China Cost? 2026 Budget Guide',
     description:
-      'Plan RMB 350–650/day for budget travel or RMB 800–1,500/day mid-range per person in China, excluding international flights. Compare 5-, 10- and 14-day totals.',
+      'A China trip costs about RMB 350–650 a day on a budget or RMB 800–1,500 mid-range per person, excluding flights. Compare 5-, 10- and 14-day totals.',
     quickAnswer:
       'For planning, allow roughly RMB 350–650 per person per day for a budget trip, RMB 800–1,500 for a mid-range trip, or RMB 1,800–3,000+ for a comfortable trip. These are ChinaEase planning ranges, not official averages or fixed prices. They exclude international flights and assume normal travel dates; your route, room-sharing, city, booking date, exchange rate, and holiday demand can change the total substantially. Check exact hotel, attraction, airline, and China Railway 12306 prices before booking.',
     lastReviewed: 'October 7, 2026',
@@ -1128,7 +1128,7 @@ const pageMeta = {
     description: 'Unsubscribe from occasional ChinaEase Buddy travel updates.',
   },
   'china-travel-apps': {
-    title: 'China Travel Apps for Foreigners (2026): Payments, Maps & Rides',
+    title: 'China Travel Apps for Foreigners (2026): Pay, Maps & Rides',
     heading: 'Essential China Travel Apps to Set Up Before Arrival',
     description:
       'Prepare Alipay, WeChat, AMap, DiDi and a train-booking option before China. Compare setup needs, payment backups and offline translation tools.',
@@ -1245,7 +1245,7 @@ const pageMeta = {
     ],
   },
   'china-train-travel-guide': {
-    title: 'China High-Speed Train Guide for Foreigners: 12306 Without Chinese ID (2026)',
+    title: 'China Train Travel for Foreigners: High-Speed Rail (2026)',
     heading: 'How to Book China High-Speed Trains Without Chinese ID',
     description:
       'Book China trains with a foreign passport on 12306 or at a station. Check online identity verification, exact station names and e-ticket boarding steps.',
@@ -1498,7 +1498,7 @@ const pageMeta = {
     title: 'China Metro Guide for Foreigners (2026) | ChinaEase Buddy',
     heading: 'China Metro Guide for Foreigners (2026)',
     description:
-      'Ride China metros with confidence. Learn tickets, overseas card and QR payment, security checks, transfers, station exits, luggage, and late-train tips.',
+      'Foreign visitors can ride China\'s metro with a single-journey ticket from an English machine; some cities also take transport QR codes or overseas cards.',
     quickAnswer:
       'Foreign visitors can use metro systems in major Chinese cities, but ticket and payment options vary by city. The most dependable first-ride method is to plan the route in AMap, note the destination station and exit, then buy a single-journey ticket from an English-language machine or staffed counter. Some cities also support Alipay or WeChat transport QR codes, local transit cards, or direct contactless payment with selected overseas bank cards. Check the signs on the machine and gate instead of assuming one payment method works nationwide, keep the same ticket, card, or QR method for entry and exit, and allow time for the security check.',
     lastReviewed: 'September 18, 2026',
@@ -1629,7 +1629,7 @@ const pageMeta = {
     title: '7-Day China Itinerary for First-Time Visitors (2026)',
     heading: '7-Day China Itinerary for First-Time Visitors (2026)',
     description:
-      'Plan 7 days in China with realistic Beijing, Xi\'an, and Shanghai routes, day-by-day timing, train advice, booking priorities, costs, and slower alternatives.',
+      'A 7-day China itinerary can cover Beijing, Xi\'an and Shanghai. See day-by-day timing, train advice, booking priorities, costs and alternatives.',
     quickAnswer: sevenDayItineraryContent.quickAnswer,
     lastReviewed: 'September 20, 2026',
     lastModified: sevenDayItineraryContent.modified,
@@ -1645,7 +1645,7 @@ const pageMeta = {
     ],
   },
   '10-day-china-itinerary': {
-    title: '10-Day China Itinerary for First-Time Visitors | ChinaEase Buddy',
+    title: '10-Day China Itinerary for First-Time Visitors',
     heading: '10-Day China Itinerary for First-Time Visitors',
     description:
       'Plan a classic 10-day China trip through Beijing, Xi\'an, and Shanghai with daily highlights, train advice, booking tips, and flexible alternatives.',
@@ -1666,7 +1666,7 @@ const pageMeta = {
     title: '14-Day China Itinerary for First-Time Visitors (2026)',
     heading: '14-Day China Itinerary for First-Time Visitors (2026)',
     description:
-      'Plan two weeks in China with a realistic Beijing, Xi\'an, Chengdu, and Shanghai route, transport advice, booking priorities, costs, and a Guilin alternative.',
+      'A 14-day China itinerary can cover Beijing, Xi\'an, Chengdu and Shanghai. See transport advice, booking priorities, costs and a Guilin alternative.',
     quickAnswer:
       'For a first 14-day trip to China, limit the route to four bases: four nights in Beijing, three in Xi\'an, three in Chengdu, and three in Shanghai, with the final day reserved for departure. This gives you imperial history and the Great Wall, the Terracotta Warriors, Sichuan food and pandas, then historic and modern Shanghai. If landscapes matter more than pandas and food, replace Chengdu with Guilin and Yangshuo rather than adding a fifth destination. Use an open-jaw international ticket so you arrive in Beijing and depart from Shanghai, and verify every long-distance leg against the live 12306 or airline schedule before booking.',
     lastReviewed: 'September 21, 2026',
@@ -1845,10 +1845,10 @@ const pageMeta = {
     ],
   },
   'beijing-vs-shanghai': {
-    title: 'Beijing vs Shanghai: Which Should You Visit? (2026)',
+    title: 'Beijing or Shanghai: Which Should You Visit? (2026)',
     heading: 'Beijing vs Shanghai: Which City Should You Visit First? (2026)',
     description:
-      'Compare Beijing and Shanghai for a first China trip: history, sights, food, pace, weather, airports, costs, trip length, and how to visit both.',
+      'Choose Beijing for imperial history and the Great Wall, or Shanghai for modern city life and waterfront architecture. With seven days or more, visit both.',
     quickAnswer:
       'Choose Beijing if your first priority is imperial history, the Palace Museum, the Great Wall, monumental landmarks, and a stronger sense of China\'s political and historical centre. Choose Shanghai if you prefer a more compact urban introduction, waterfront architecture, modern city life, neighbourhood walks, easier short stays, and convenient onward travel through eastern China. For a trip of seven days or more, the strongest answer is often both: enter through Beijing, spend three to four full days there, take a high-speed train to Shanghai, spend two to three full days there, and fly home from Shanghai. Check live flights, rail schedules, attraction reservations, weather, and entry rules before fixing the order.',
     lastReviewed: 'September 21, 2026',
@@ -2471,7 +2471,7 @@ const pageMeta = {
     title: 'Best Time to Visit China: Month-by-Month Guide (2026)',
     heading: 'Best Time to Visit China: Weather and Crowds by Month (2026)',
     description:
-      'Choose the best time to visit China in 2026. Compare months, seasons, regions, weather risks, crowds, public holidays, prices, and route ideas.',
+      'April to May and September to October are the easiest windows for a first China trip. Compare regions, weather risks, holiday crowds and prices by month.',
     quickAnswer:
       'For a classic first trip through Beijing, Xi\'an, and Shanghai, late spring and autumn usually offer the easiest balance of outdoor sightseeing and manageable temperatures. April to May and September to October are useful starting windows, but avoid assuming the whole country shares one climate and check the exact public-holiday dates before booking. Northern China, the humid east and south, high-altitude western regions, and tropical Hainan can need completely different timing. Choose the route first, then compare city-level climate, current forecasts, weather warnings, holiday crowds, and live prices for your exact dates.',
     lastReviewed: 'September 21, 2026',
@@ -2759,10 +2759,10 @@ const pageMeta = {
     ],
   },
   'china-sim-card-for-foreigners': {
-    title: 'China SIM Card for Foreigners (2026): Passport Guide',
+    title: 'China SIM Card for Tourists (2026): Passport Guide',
     heading: 'China SIM Card for Foreigners (2026): How to Buy & Use Without Chinese ID',
     description:
-      'Foreign visitors can buy a China SIM card with a passport at an official carrier outlet. Check airport counters, phone compatibility and plans before paying.',
+      'Tourists can buy a China SIM card with a passport at an official carrier outlet. Check airport counters, phone compatibility and the plan before you pay.',
     quickAnswer:
       'Foreign visitors can buy a physical China SIM card at an official staffed carrier outlet using a valid passport; a Chinese national ID is not normally required. Confirm that your phone is unlocked, ask the carrier to complete real-name registration, and test the plan before leaving the counter. Beijing Capital, Beijing Daxing and Shanghai Pudong publish airport SIM services, but check your terminal, opening hours and stock before relying on an airport purchase. A travel eSIM or home roaming can be an arrival backup if your phone and plan support it.',
     lastReviewed: 'October 19, 2026',
@@ -2964,7 +2964,7 @@ const pageMeta = {
     title: 'WeChat Pay for Foreigners (2026): Cards, Fees & Setup',
     heading: 'WeChat Pay for Foreigners: Setup and Payment Guide (2026)',
     description:
-      'Learn how tourists can use WeChat Pay or Weixin Pay in China with an eligible international card, understand fees, scan merchant QR codes and fix payment failures.',
+      'Foreigners can use WeChat Pay in China by linking an eligible international card. Learn the fees, how to scan merchant QR codes and fix failed payments.',
     quickAnswer:
       'Foreign visitors, including US citizens, may be able to use WeChat Pay in mainland China when the payment feature is available on their account and an eligible international card passes identity, issuer, and transaction checks. Register the standard WeChat app with a mobile number you can access, open the payment or wallet area shown in your version, add the card, and complete any requested verification. Set it up before departure and keep Alipay, a physical card, and some RMB as backups.',
     lastReviewed: 'October 8, 2026',
@@ -3084,7 +3084,7 @@ const pageMeta = {
   'china-payment-guide': {
     title: 'How to Pay in China as a Foreigner | ChinaEase Buddy',
     description:
-      'Practical guide to paying in China as a foreign visitor: Alipay, WeChat Pay, foreign cards, cash backup, and payment failure phrases.',
+      'To pay in China as a foreigner, set up Alipay or WeChat Pay with an eligible international card, and carry a Visa or Mastercard and some cash as backup.',
     faqs: [
       ['What is the best way for foreigners to pay in China?', 'There is no single best method for every traveler. Many visitors prepare Alipay or WeChat Pay, keep a foreign card, and carry a small cash backup.'],
       ['Can tourists use WeChat Pay in China?', 'Some tourists may be able to use WeChat Pay with supported cards and verification. Setup and availability may vary, so prepare alternatives.'],
@@ -3094,7 +3094,7 @@ const pageMeta = {
   'china-travel-checklist': {
     title: 'China Travel Checklist for First-Time Visitors | ChinaEase Buddy',
     description:
-      'Prepare for China with this first-time visitor checklist: apps, payment setup, Chinese hotel address, emergency numbers, offline phrases, passport, and train reminders.',
+      'Before a first trip to China, prepare travel apps, two payment methods, mobile data, Chinese hotel addresses, emergency numbers and passport details.',
     faqs: [
       ['What should first-time visitors prepare before going to China?', 'Prepare local apps, payment methods, Chinese hotel addresses, emergency numbers, offline phrases, passport details, and transport bookings.'],
       ['Should I save my hotel address in Chinese?', 'Yes. A Chinese hotel address is helpful for taxis, ride-hailing pickups, hotel returns, and asking locals for directions.'],
@@ -3116,7 +3116,7 @@ const pageMeta = {
   },
   'china-train-booking-foreigners-12306': {
     heading: "China's 350 km/h Trains Are Open to Foreigners",
-    title: 'How to Book China High-Speed Train Tickets as a Foreigner: 12306 English Guide',
+    title: '12306 for Foreigners: Book China Train Tickets in English',
     description: 'Foreigners can buy China bullet train tickets on 12306 English with passport. No Chinese ID needed. E-ticket linked to passport, scan to board.',
     quickAnswer: trainBookingContent.quickAnswer,
     sections: trainBookingContent.sections.map((section) => [section.title, section.summary, `#${section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`]),
@@ -3264,7 +3264,7 @@ Object.assign(pageMeta, {
     ...pageMeta['china-visa-free-travel-guide'],
     title: 'Beijing & Shanghai Layover Guide 2026: 240-Hour Visa-Free Transit Explained',
     heading: layoverAirportPlanning.heading,
-    description: 'Plan a Beijing or Shanghai layover with China 240-hour visa-free transit. Check the third-country route, 65 ports, allowed areas, and realistic itineraries.',
+    description: 'Plan a Beijing or Shanghai layover with China\'s 240-hour visa-free transit. Check the third-country route, 65 ports, allowed areas and realistic plans.',
     intro: layoverAirportPlanning.intro,
     quickAnswer: layoverAirportPlanning.quickAnswer,
     faqs: layoverAirportPlanning.faqs.map(({ question, answer }) => [question, answer]),
@@ -3454,7 +3454,7 @@ const transitAnswerLinks = transitAnswers.pages.map((page) => [page.question, `/
 pageMeta['china-240-hour-transit-calculator'] = {
   heading: 'China 240-Hour Visa-Free Transit Calculator',
   title: 'China 240-Hour Visa-Free Transit Calculator | Exit Deadline',
-  description: 'China’s 240-hour transit clock starts at midnight after entry. Use this free calculator for your exit deadline in China time, plus basic passport and route checks.',
+  description: 'China\'s 240-hour transit clock starts at midnight after your entry date. Use this free calculator to work out your exit deadline in China time.',
   quickAnswer: 'China’s 240-hour visa-free transit clock starts at 00:00 on the day after entry, in China Standard Time (UTC+8). Enter your expected or recorded entry date and route to calculate the exit deadline and check the basic passport and route pattern. Final eligibility and the permitted stay are decided by border inspection authorities.',
   lastReviewed: transitAnswers.lastUpdated,
   lastModified: calculatorContent.modified,
@@ -4624,7 +4624,7 @@ function staticPageContent(page, meta) {
               ${section.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
             </${section.ordered ? 'ol' : 'ul'}>
           ` : ''}
-          ${['china-travel-apps', 'amap-vs-google-maps-china', 'china-metro-guide', 'alipay-for-foreigners', 'china-payment-guide', '3-day-shenzhen-itinerary', '3-day-guangzhou-itinerary', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary', '10-day-china-itinerary', '3-day-shanghai-itinerary', '3-day-chongqing-itinerary', 'china-airport-arrival-guide', 'china-food-ordering-guide', 'what-to-eat-in-china-first-time-guide'].includes(page) && section.links ? `
+          ${['china-travel-apps', '7-day-china-itinerary', '14-day-china-itinerary', '10-day-china-itinerary', 'china-travel-budget', 'china-train-travel-guide', '3-day-suzhou-itinerary', 'amap-vs-google-maps-china', 'china-metro-guide', 'alipay-for-foreigners', 'china-payment-guide', '3-day-shenzhen-itinerary', '3-day-guangzhou-itinerary', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary', '10-day-china-itinerary', '3-day-shanghai-itinerary', '3-day-chongqing-itinerary', 'china-airport-arrival-guide', 'china-food-ordering-guide', 'what-to-eat-in-china-first-time-guide'].includes(page) && section.links ? `
             <ul style="margin: 12px 0 0; padding-left: 20px; color: #536365; line-height: 1.8;">
               ${section.links.map(({ label, description, href }) => `<li><a href="${escapeAttr(href)}"${href.startsWith('http') ? ' rel="noopener noreferrer"' : ''} style="color: #155e63; text-underline-offset: 4px;">${escapeHtml(label)}</a>: ${escapeHtml(description)}</li>`).join('')}
             </ul>

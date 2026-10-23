@@ -27,7 +27,7 @@
       "question": "When does the China 240-hour transit clock start?",
       "shortLabel": "When does the 240-hour clock start?",
       "title": "When Does the China 240-Hour Transit Clock Start? (Worked Example)",
-      "description": "China’s 240-hour transit clock starts at 00:00 after the entry date. See midnight-crossing examples, then check the deadline on your temporary-entry permission.",
+      "description": "China's 240-hour transit clock starts at 00:00 on the day after you enter. See midnight-crossing examples, then check the deadline on your entry permit.",
       "answer": [
         "The published 240-hour transit clock starts at 00:00 on the day after entry, in China Standard Time (UTC+8). Use your expected entry date for planning, then check the entry record and permitted deadline issued by border inspection.",
         "For an entry date of 15 October, the calculation starts at 00:00 on 16 October and reaches 240 hours at 00:00 on 26 October. The guide shows 25 October at 23:59 as a planning label, not a promise of permission to remain until that minute."
@@ -117,7 +117,7 @@
       "question": "Can US citizens use China's 240-hour visa-free transit?",
       "shortLabel": "Can US citizens use 240-hour transit?",
       "title": "Can US Citizens Use China's 240-Hour Visa-Free Transit? (2026)",
-      "description": "US passport holders can use China's 240-hour visa-free transit on a qualifying third-region route, such as US → Shanghai → Japan. Check tickets, ports and stay areas.",
+      "description": "Yes, US citizens can use China's 240-hour visa-free transit on a qualifying third-region route, such as US → Shanghai → Japan. Check ports and stay areas.",
       "lastUpdated": "October 20, 2026",
       "lastModified": "2026-10-20",
       "answer": [
@@ -176,7 +176,7 @@
       "question": "Does a round-trip ticket count for China 240-hour transit?",
       "shortLabel": "Does a round-trip ticket count?",
       "title": "Does a Round-Trip Ticket Count for China 240-Hour Transit? The Third-Country Rule",
-      "description": "A simple round trip back to where you came from does not qualify for China's 240-hour visa-free transit. It only works if each entry into China is between two different countries or regions.",
+      "description": "No. A round trip back to where you came from does not qualify for China's 240-hour transit; each entry must be between two different countries or regions.",
       "answer": [
         "Not on its own. A round trip that brings you back to the country you came from, such as London → Beijing → London, breaks the third-country rule and does not qualify for 240-hour visa-free transit.",
         "A round-trip ticket can still work if every time you enter mainland China you arrive from one country or region and leave for a different one, for example London → Beijing → Seoul, then Seoul → Beijing → London."
@@ -232,7 +232,7 @@
       "question": "Which ports can I enter through for China 240-hour transit, and can I travel outside that province?",
       "shortLabel": "Which ports, and can I leave the province?",
       "title": "China 240-Hour Transit Ports: Can You Travel Outside the Province? (65 Ports)",
-      "description": "Enter through one of 65 designated ports in 24 provincial-level regions. You can travel across provinces, but only inside the permitted stay areas; some regions only allow named cities.",
+      "description": "Enter via one of 65 designated ports in 24 provincial-level regions. You can cross provinces, but only inside permitted areas; some allow named cities.",
       "answer": [
         "You must enter through one of 65 designated ports (international airports, seaports and rail ports) in 24 provincial-level regions, including Beijing Capital and Daxing, Shanghai Pudong and Hongqiao, Guangzhou Baiyun and Chengdu Tianfu.",
         "Yes, you can travel outside the province you entered, but only within the permitted stay areas of those 24 regions; some regions only allow specific cities, and everywhere else is off-limits."

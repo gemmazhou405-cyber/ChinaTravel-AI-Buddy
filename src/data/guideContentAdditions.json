@@ -175,6 +175,16 @@
             "href": "/amap-english-mode-guide-2026/"
           }
         ]
+      },
+      {
+        "section": "Translation and offline information",
+        "links": [
+          {
+            "label": "Chinese phrases for travelers",
+            "description": "Characters, pinyin and English for taxis, hotels, food, payments, trains and emergencies.",
+            "href": "/chinese-travel-phrases/"
+          }
+        ]
       }
     ],
     "removeFaqs": []
@@ -430,6 +440,154 @@
             "label": "tap your Visa at the metro gate",
             "description": "Contactless Visa, Mastercard, Amex and JCB cards work at the metro gates; no app or ticket needed.",
             "href": "/alipay-metro-qr-transport-code-guide/#card"
+          }
+        ]
+      },
+      {
+        "section": "Adjust the itinerary for your trip",
+        "links": [
+          {
+            "label": "Beijing or Shanghai for a first China trip",
+            "description": "Choose Beijing for imperial history, Shanghai for modern city life, or both with seven days or more.",
+            "href": "/beijing-vs-shanghai/"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "7-day-china-itinerary": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "Choose the right 7-day route",
+        "links": [
+          {
+            "label": "Beijing or Shanghai: which to visit",
+            "description": "Choose Beijing for imperial history, Shanghai for modern city life, or both with seven days or more.",
+            "href": "/beijing-vs-shanghai/"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "14-day-china-itinerary": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "Days 8–10: Chengdu for pandas and food",
+        "links": [
+          {
+            "label": "3-day Chengdu itinerary",
+            "description": "Panda Base, People's Park, Sichuan food, museums, and Leshan or Sanxingdui alternatives.",
+            "href": "/3-day-chengdu-itinerary/"
+          }
+        ]
+      },
+      {
+        "section": "Book in this order",
+        "links": [
+          {
+            "label": "Chengdu Panda Base tickets and routes",
+            "description": "Adult tickets are CNY 55; book with passport details through official channels.",
+            "href": "/chengdu-panda-base-guide/"
+          }
+        ]
+      },
+      {
+        "section": "Nature alternative: replace Chengdu with Guilin and Yangshuo",
+        "links": [
+          {
+            "label": "3-day Guilin and Yangshuo itinerary",
+            "description": "Li River, Yulong River and Xingping routes, hotels and transfers.",
+            "href": "/3-day-guilin-yangshuo-itinerary/"
+          }
+        ]
+      },
+      {
+        "section": "Choose four cities, not every famous place",
+        "links": [
+          {
+            "label": "3-day Zhangjiajie itinerary",
+            "description": "Wulingyuan, the national forest park, Tianmen Mountain, park entrances and weather.",
+            "href": "/3-day-zhangjiajie-itinerary/"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "10-day-china-itinerary": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "Useful route alternatives",
+        "links": [
+          {
+            "label": "Guilin and Yangshuo itinerary for three days",
+            "description": "Li River, Yulong River and Xingping routes, hotels and transfers.",
+            "href": "/3-day-guilin-yangshuo-itinerary/"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "china-travel-budget": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "Accommodation: usually the biggest variable",
+        "links": [
+          {
+            "label": "3-day Shenzhen itinerary",
+            "description": "Futian, Shenzhen Bay, Nantou, food, hotels, Metro and airport transfers.",
+            "href": "/3-day-shenzhen-itinerary/"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "china-train-travel-guide": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "Prepare these details before searching",
+        "links": [
+          {
+            "label": "3-day Guangzhou itinerary",
+            "description": "Chen Clan Ancestral Hall, Shamian, Canton Tower, dim sum, Metro, airport and train advice.",
+            "href": "/3-day-guangzhou-itinerary/"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "3-day-suzhou-itinerary": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "Where to stay and how to arrive from Shanghai",
+        "links": [
+          {
+            "label": "3-day Nanjing itinerary",
+            "description": "Sun Yat-sen Mausoleum, Nanjing Museum, the Qinhuai River, city walls and train tips.",
+            "href": "/3-day-nanjing-itinerary/"
           }
         ]
       }
