@@ -297,7 +297,7 @@ Many guides tell you to download offline maps from **Me → Offline Maps**. In t
 1. AMap Global on the App Store: https://apps.apple.com/us/app/amap-global/id461703208
 2. AMap Global on Google Play: https://play.google.com/store/apps/details?id=com.autonavi.minimap
 3. Shanghai government — China's first multilingual map adds 14 new languages (July 2025): https://english.shanghai.gov.cn/en-Latest-WhatsNew/20250711/8f2fcf3c6b624a56a6b2c0d8152ea2f2.html
-4. Amap brings ride-hailing to international visitors in China (PR Newswire, August 2026): https://tirto.id/amap-brings-ride-hailing-to-international-visitors-in-china-hA5e
+4. Amap brings ride-hailing to international visitors in China (PR Newswire Asia, August 11, 2026): https://en.prnasia.com/releases/global/amap-brings-ride-hailing-to-international-visitors-in-china-543611.shtml
 5. Shanghai government — Amap for international visitors (July 2026): https://english.shanghai.gov.cn/en-EasyShanghai/20260713/379bcea6e1bd4defaa7db2451d68d3dd.html
 6. Google — change app language on Android: https://support.google.com/android/answer/12395118
 
