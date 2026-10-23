@@ -1,4 +1,5 @@
 import { Check } from 'lucide-react';
+import planningHelp from '../../data/planningHelp.json';
 import type { CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { PassState } from '../../hooks/usePass';
@@ -59,6 +60,7 @@ export default function HomePasses({ passState, showToast, onOpenToolkit }: Prop
         <h2 className="motion-reveal-item max-w-[26rem] font-display text-3xl font-normal leading-[1.1] tracking-[-0.01em] text-ink md:max-w-[34rem] md:text-[44px]">
           {t('home.passes.header')}
         </h2>
+        <p className="mt-4 max-w-3xl text-sm font-semibold leading-relaxed text-ink-secondary">{planningHelp.digitalHeading}. {planningHelp.digitalScope}</p>
         <div className="mt-10 grid gap-4 md:mt-14 md:grid-cols-3 md:gap-6">
           {PLANS.map(({ key, price, periodKey, highlighted }, planIndex) => {
             const isFree = key === 'free';

@@ -1088,14 +1088,14 @@ const pageMeta = {
   pricing: {
     lastModified: '2026-10-23',
     title: 'Pricing | ChinaEase Buddy',
-    description: 'Choose personal China route-planning help from Lin, or optional Free, Trip Pass and Group Pass digital travel tools.',
+    description: 'Personal itinerary reviews are priced separately on Fiverr. Compare optional Buddy AI message passes; digital passes do not include personal planning.',
     sections: [
       ['Free', 'Basic toolkit for apps, payments, transport, food, hotels, emergency help, and limited Buddy AI access.', '/?journey=china&tool=food'],
       ['Trip Pass', 'USD 9.90 one-time travel pass with 50 Buddy AI messages for 14 days.', '/pricing/'],
       ['Group Pass', 'USD 29.90 one-time travel pass with 200 Buddy AI messages for 14 days on one shared account.', '/pricing/'],
     ],
     faqs: [
-      ['How do paid passes work?', 'Paid passes are one-time digital travel passes purchased through Gumroad. Access is activated immediately after purchase using your sale ID.'],
+      ['How do paid passes work?', `Paid passes cover Buddy AI messages and are purchased through Gumroad. ${planningHelp.digitalScope} Access is activated after purchase using your sale ID.`],
       ['How is payment processed?', 'Payments are processed securely by Gumroad. ChinaEase Buddy never sees or stores your card details.'],
       ['Is there auto-renewal?', 'No. ChinaEase Buddy passes are one-time travel passes with no auto-renewal.'],
     ],
@@ -5120,7 +5120,7 @@ function staticPageContent(page, meta) {
       ` : ''}
       <h1 style="margin: 0 0 18px; font-size: clamp(2rem, 6vw, 3.75rem); line-height: 1.05; letter-spacing: -0.03em;">${escapeHtml(heading)}</h1>
       ${!['guides', 'pricing', 'terms', 'privacy', 'refund', 'contact', 'about', 'unsubscribe'].includes(page) ? `<p style="margin:0 0 20px;"><a href="#lin-help" style="color:#155e63;font-weight:600;">${escapeHtml(planningHelp.byline)}</a></p>` : ''}
-      ${page === 'pricing' ? renderPlanningHelp(planningHelp, 'pricing') : ''}
+      ${page === 'pricing' ? `${renderPlanningHelp(planningHelp, 'pricing')}<section aria-labelledby="digital-pass-scope"><h2 id="digital-pass-scope">${escapeHtml(planningHelp.digitalHeading)}</h2><p>${escapeHtml(planningHelp.digitalScope)}</p></section>` : ''}
       <section aria-labelledby="quick-answer" style="margin: 0 0 24px; padding: 22px; border: 1px solid rgba(21, 94, 99, 0.14); border-radius: 22px; background: #fffdf8;">
         <h2 id="quick-answer" style="margin: 0 0 10px; font-size: 1.25rem;">Quick answer</h2>
         <p style="margin: 0; color: #536365; line-height: 1.7;">${escapeHtml(meta.quickAnswer || meta.description)}</p>

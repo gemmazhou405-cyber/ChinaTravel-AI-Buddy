@@ -6395,7 +6395,8 @@ function PricingPage() {
       intro="Choose personal route-planning help from Lin or optional digital travel passes. The free itinerary preview remains available."
     >
       <LinBox placement="pricing" className="mb-6" />
-      <h2 className="mb-4 text-xl font-bold text-gray-950">Digital travel passes</h2>
+      <h2 className="mb-2 text-xl font-bold text-gray-950">{planningHelp.digitalHeading}</h2>
+      <p className="mb-5 text-sm leading-relaxed text-gray-700">{planningHelp.digitalScope}</p>
       <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
         {pricingPlans.map((plan) => (
           <div

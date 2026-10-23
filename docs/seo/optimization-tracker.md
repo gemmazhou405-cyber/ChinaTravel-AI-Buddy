@@ -1,5 +1,9 @@
 # SEO optimization tracker
 
+### October23: Personal service versus message-pass pricing
+
+Correct a reported conversion ambiguity: Lin/Fiverr personal itinerary services have separate prices;9.90/29.90 buy Buddy AI message passes and exclude personal reviews/reworks. Clarify all shared contact boxes, pricing cards, homepage and tool pass sections; preserve amounts and checkout links. No new service price inferred from screenshot. Validation passes; formal release pending. Details: `quality/2026-10-23-pricing-scope-fix.md`. No new search-outcome evidence; prior observation windows retained.
+
 ### October 23: Deep Amap review and shared planning/navigation repair
 
 Batch `SEO-2026-10-23-PAGE-QUALITY`, formal production verifiedOctober23 03:58:21UTC. Code commits `14daa28d2dedbadbda1fd1d64ff999563baea975` and `dc9a6e48f674736cd2c4bf217483d79111c54dfd`; final Cloudflare deployment `903f4dfb-313f-495d-9a1b-20325e998936` succeeded. User requires full-page quality work towards relevant positions1–5, not article quantity or superficial paragraph additions. Adopt `page-quality-standard.md`. One full editorial review: Amap English setup; the navigation page gets partial intent clarification. Do not represent shared sitewide changes as70 completed editorial reviews.

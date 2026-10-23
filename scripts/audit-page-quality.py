@@ -106,7 +106,7 @@ for pathname in sorted(audit_paths):
         with_help += 1
         box = boxes[0]
         text = ' '.join(box.text().split())
-        for key in ['heading', 'body', 'email', 'note']:
+        for key in ['heading', 'body', 'email', 'note', 'paidScope']:
             require(help_copy[key] in text, f'{pathname}: visible planning help missing {key}')
         require(not re.search(r'\bAI\b|lived abroad for years|within 48 hours|£249|£29', text), f'{pathname}: unverified planning promise')
         email_links = box.find('a', href=help_copy['emailHref'])
@@ -116,6 +116,9 @@ for pathname in sorted(audit_paths):
             require(paid_links[0].attrs.get('target') == '_blank' and {'noopener', 'noreferrer'} <= set(paid_links[0].attrs.get('rel', '').split()), f'{pathname}: paid link window protection missing')
         if slug not in {'', 'plan', 'pricing'}:
             require(len(document.find('a', href='#lin-help')) == 1, f'{pathname}: planning contact byline missing')
+    if slug == 'pricing':
+        pricing_text = document.find('main')[0].text()
+        require(help_copy['digitalHeading'] in pricing_text and help_copy['digitalScope'] in pricing_text, 'Pricing: personal services and message passes must have separate scopes')
     if slug in {'', 'plan', 'pricing'}:
         continue
     navs = document.find('nav', **{'aria-label': 'Related China travel guides'})

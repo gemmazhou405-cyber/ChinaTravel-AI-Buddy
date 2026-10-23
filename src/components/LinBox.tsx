@@ -15,6 +15,7 @@ export default function LinBox({ placement = 'guide', className = '' }: { placem
           <p className="mt-3 text-sm leading-relaxed text-gray-700 md:text-base">{planningHelp.body}</p>
         </div>
       </div>
+      <p className="mt-4 text-sm font-semibold leading-relaxed text-[#155e63]">{planningHelp.paidScope}</p>
       <div className="mt-5 flex flex-wrap gap-3">
         <a href={planningHelp.emailHref} data-planning-help="email" data-planning-placement={placement} className="inline-flex min-h-11 items-center justify-center rounded-xl bg-[#155e63] px-5 py-3 text-sm font-bold text-white hover:bg-[#0e4a4e]">{planningHelp.emailLabel}</a>
         <a href={planningHelp.paidHref} target="_blank" rel="noopener noreferrer" data-planning-help="fiverr" data-planning-placement={placement} className="inline-flex min-h-11 items-center justify-center rounded-xl border border-[#155e63]/25 px-5 py-3 text-sm font-bold text-[#155e63] hover:bg-white">{planningHelp.paidLabel}</a>

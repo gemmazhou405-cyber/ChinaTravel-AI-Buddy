@@ -1,4 +1,5 @@
 import { Check, Zap } from 'lucide-react';
+import planningHelp from '../data/planningHelp.json';
 import { useTranslation } from 'react-i18next';
 import type { PassState } from '../hooks/usePass';
 import { trackEvent, trackGumroadClick } from '../lib/analytics';
@@ -66,6 +67,8 @@ export default function PricingPlans({ passState, showToast, onCtaClick }: Props
         <Zap className="w-4 h-4 text-[#155e63]" />
         <h2 className="text-base font-semibold text-gray-900">{t('pay.plansTitle')}</h2>
       </div>
+
+      <p className="mb-5 text-sm font-semibold leading-relaxed text-gray-700">{planningHelp.digitalHeading}. {planningHelp.digitalScope}</p>
 
       {passState && passState.tier !== 'free' && !passState.expired && (
         <p className="text-xs text-gray-500 mb-3">

@@ -5,12 +5,15 @@
   "email": "lin@chinaeasebuddy.com",
   "emailLabel": "Email Lin your route",
   "emailHref": "mailto:lin@chinaeasebuddy.com?subject=My%20China%20route",
-  "paidLabel": "View planning service on Fiverr",
+  "paidLabel": "See personal planning prices on Fiverr",
   "paidHref": "https://www.fiverr.com/s/jyjZ6ma",
   "note": "Include your travel dates, cities and main questions. Please leave out passport numbers, payment details and other sensitive information.",
   "byline": "Planning help from Lin",
   "imagePath": null,
   "homeTitle": "China Trip Planning Help from a Local | ChinaEase Buddy",
   "homeHeading": "Plan your first China trip with local help.",
-  "homeDescription": "Plan your first China trip with practical guides, a free itinerary preview and personal route-planning help from Lin. Check entry, transport, payments and arrival details."
+  "homeDescription": "Plan your first China trip with practical guides, a free itinerary preview and personal route-planning help from Lin. Check entry, transport, payments and arrival details.",
+  "paidScope": "Personal itinerary reviews and reworks have separate prices on Fiverr. Digital message passes do not include this service.",
+  "digitalHeading": "Buddy AI message passes",
+  "digitalScope": "Paid passes cover Buddy AI messages only. Lin's personal itinerary review and rework are separate services, with prices shown on Fiverr."
 }
