@@ -11,3 +11,9 @@ Type/i18n, build, lint (existing warning), public HTML, 71-page quality audit, a
 Calculator/budget strategic priority and recent versions are retained. The historical payment-page 0 clicks /22 impressions /page-average 8.45 is not a keyword rank or a new outcome. No new GSC export or URL Inspection was read. Modified-after-crawl, same-query position and strongly relevant click changes remain pending. No ranking-gain claim or top-five deadline.
 
 Only this page's actual content review/modified dates advance. Existing merges, defaults for HTML caching and the API/proxy remain untouched. Contact/navigation edits and same-day consolidations overlap all recent experiments; preserve old windows. Provisional next full windows activate only after formal verification, with dates and evidence appended to the JSON.
+
+## Release evidence
+
+Code `397ad8b8eff912bb977efa75f76f84fba5be0971`, Cloudflare `e7fbbce7-7a0c-4118-8bd5-884765bb626e` succeeded. Queryless Googlebot formal HTML verified at 2026-10-23T07:48:42Z: nine sections, five state rows, five matching FAQ/schema pairs, valid local anchors, no duplicate IDs, HTTP200, DYNAMIC and public/max-age=0/must-revalidate. All69sitemap URLs plus plan/pricing downloaded and71-page quality acceptance passed. Sitemap equals tested build; no downloaded page links to a configured301URL. Public response hashes retained in the evidence JSON. No purge used.
+
+New complete provisional windows: Oct24–30 (reference Oct17–23) and Oct24–Nov20 (reference Sep26–Oct23). Reference periods include overlapping edits; Google processing and actual complete GSC still need separate evidence. Existing windows and baselines remain.

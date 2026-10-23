@@ -1,0 +1,313 @@
+{
+  "verifiedAtUtc": "2026-10-23T07:48:42.035130+00:00",
+  "requestUserAgent": "Googlebot",
+  "querylessUrl": "https://chinaeasebuddy.com/didi-payment-for-foreigners/",
+  "rawHtmlContainsNewBody": true,
+  "sections": 9,
+  "matrixRows": 5,
+  "faqSchemaPairs": 5,
+  "rawAnchorsAndDuplicateIds": "PASS",
+  "headers": {
+    "cache-control": "public, max-age=0, must-revalidate",
+    "cf-cache-status": "DYNAMIC"
+  },
+  "bodySha256": "8e75ab652129b356b05a31c0c92139e5294fed039af16857749ebddcb38ea206",
+  "sitewideQuality": {
+    "sitemapPages": 69,
+    "qualityAudit": "PASS",
+    "visiblePlanningHelpPages": 68,
+    "curatedGuidePages": 63,
+    "sitemapMatchesTestedBuild": true,
+    "internalLinksToConfigured301s": [],
+    "downloadedPagesWithoutCurlError": 71
+  },
+  "publicPageHashes": [
+    {
+      "path": "/",
+      "sha256": "5300156d34fff636f06a02401b94c78288440944c8441ffb6a8f1434d89b09e9"
+    },
+    {
+      "path": "/china-hotels-for-foreigners/",
+      "sha256": "b8e0236ef4412d5a2aed9259c0fc498f8fb4688265c9eb6e86020aec384387f6"
+    },
+    {
+      "path": "/china-metro-guide/",
+      "sha256": "a8dd6d4db90f8fe858a6443b34bdb32128bf0700d0d4e62cd7b260442c065f78"
+    },
+    {
+      "path": "/plan/",
+      "sha256": "4c4e5cd455edde2ff332b4172ed1ee32aefffac6feb88d26c9f49a2726b20262"
+    },
+    {
+      "path": "/china-train-travel-guide/",
+      "sha256": "2f32d07086b85de00eb7705bbc68765d170e408b5ac9a7157a5c84fa2080c94a"
+    },
+    {
+      "path": "/first-trip-to-china/",
+      "sha256": "b93b0fb2e4f0ecdba9806c4f5fa6cfce0134c5e9aea82c803c6293cbdae31543"
+    },
+    {
+      "path": "/beijing-airport-to-city-guide/",
+      "sha256": "457cca7042a6c09388b32f7ec81dd1ee5ee677b14ba15682d9f8962b7efae682"
+    },
+    {
+      "path": "/privacy/",
+      "sha256": "71a6d7ba6598f4ec8800090cbd5662726ac6449e1c3d61f791c95bc5ae7b9d45"
+    },
+    {
+      "path": "/how-to-use-wechat-as-foreigner-2026/",
+      "sha256": "eb3c453824d641b4855d44795bb491d7b85826f30762a06b112bab4f9f91399d"
+    },
+    {
+      "path": "/china-golden-week-2026-travel-guide/",
+      "sha256": "ed305c27af76bf1c7df8e328875b8895d9a5fc7bd52406b7a77a510030195579"
+    },
+    {
+      "path": "/china-food-ordering-guide/",
+      "sha256": "e9077bb67e7ec2fb1467165dc7cfbc194770a214a18bfa0e4b6875151f0c367c"
+    },
+    {
+      "path": "/china-payment-guide/",
+      "sha256": "fb5d8a3052693baf3e499aa4d4f95ce941f559f5dbd8d47a8604527367264713"
+    },
+    {
+      "path": "/3-day-shenzhen-itinerary/",
+      "sha256": "657090ceb018249c5beccd96d4d6fd3dc5309472de581497a2e7681b25f678dd"
+    },
+    {
+      "path": "/china-240-hour-transit-round-trip-ticket/",
+      "sha256": "d35c3e606963d150aefa221956fafd0167993e7c7ae133f8300a5606a7f1cbf9"
+    },
+    {
+      "path": "/china-itinerary-first-time-7-10-14-days/",
+      "sha256": "10b2ecce0ae24173a0555e18a044ca3d946ad636ab1930504dd895538ba30222"
+    },
+    {
+      "path": "/amap-english-mode-guide-2026/",
+      "sha256": "ee270a5ea7a0ad65cc9b14b195f7064f8b2fc5a9b2edc27470da785d913cbd68"
+    },
+    {
+      "path": "/china-visa-free-checker/",
+      "sha256": "4d36ec9d0afa7af2214367833268986f3eb7ab5c07f3ffbd7e26650b64bc3654"
+    },
+    {
+      "path": "/contact/",
+      "sha256": "5f63e27fb116b4013c53ee1970c2d4774518d64dd88902cd9efc0d6013289f15"
+    },
+    {
+      "path": "/great-wall-of-china-day-trip-from-beijing/",
+      "sha256": "a579279068e4ba5f0dd512d934d68135b6f3ef2abd5dbc822d921fb593fd2c81"
+    },
+    {
+      "path": "/chinese-travel-phrases/",
+      "sha256": "69d8cba3c5b8371174bdeae7223fd9a3566b974488d9409bfdd9440e2993c7fc"
+    },
+    {
+      "path": "/beijing-shanghai-layover-240-hour-guide/",
+      "sha256": "61963192d82923233c9821c359c3a0eaadfd2005661ebec0104faf7d160b921f"
+    },
+    {
+      "path": "/china-travel-ai-itinerary-generator/",
+      "sha256": "208387046424f9b510a173e289f0b5d9328939099e95bf6d839f918b261492a5"
+    },
+    {
+      "path": "/beijing-vs-shanghai/",
+      "sha256": "56c2256c47f531a40dc99bf09fdd48848557a7a9d66a28f727dcdbca09efab05"
+    },
+    {
+      "path": "/china-travel-checklist/",
+      "sha256": "c0dd33a0103234ff52020a886b509a8c646fb526fb19c20e534f2bc2db49b883"
+    },
+    {
+      "path": "/guides/",
+      "sha256": "8a983a021c526f3f64e89e3d885d1a6b0ede3739b833f8a929665a55c15d6319"
+    },
+    {
+      "path": "/what-to-eat-in-china-first-time-guide/",
+      "sha256": "ee462d6538b6828d28549f7a492fe246a5cf167c6677065e9e4dd1a68d3abf23"
+    },
+    {
+      "path": "/didi-in-china-for-foreigners/",
+      "sha256": "509af949ab0f83523c9f26a5a441844ccf39c1a877819216a33eb230c9eec10c"
+    },
+    {
+      "path": "/3-day-beijing-itinerary/",
+      "sha256": "f455f4a47637716a2d958e76d0c4ff97f352a37abf91e49f6c5990c4528093b9"
+    },
+    {
+      "path": "/3-day-guangzhou-itinerary/",
+      "sha256": "ed9ecb428e9ce2d1cbe42b64ce6726ff30344852aa8b37f37bbb309fa7b04861"
+    },
+    {
+      "path": "/china-online-arrival-card-2026/",
+      "sha256": "473fe59e47155dd812e5ff256dee0787f64957a8ad241f91820dd61b359d733a"
+    },
+    {
+      "path": "/china-240-hour-transit-clock-start/",
+      "sha256": "966c6e7df25cac41665712d143c60449e18aac765e7152db53539bc06bdd33d9"
+    },
+    {
+      "path": "/amap-vs-google-maps-china/",
+      "sha256": "79e8c935b83af374d0a72d5ab6782efb7330776d85e2a302c8c9c3e1a9073d78"
+    },
+    {
+      "path": "/3-day-nanjing-itinerary/",
+      "sha256": "3b031990a8ddad8a4af239059b1df9a47154b2e6f0444c391313722f8a3b0ed9"
+    },
+    {
+      "path": "/chengdu-panda-base-guide/",
+      "sha256": "6ec306dd8a3e57fa9933b5979b21f3ad9878621fa576de2b5c2672643aca1536"
+    },
+    {
+      "path": "/14-day-china-itinerary/",
+      "sha256": "879bf89348fd28d17ec381e97f1af083e92a4af268a9c3689e5013cc8130bf33"
+    },
+    {
+      "path": "/3-day-dali-itinerary/",
+      "sha256": "233c4a99c973f9e2bdc3d6e8fc6327c00d32bbdaf01ea7e155ed6b70fa3ec1c4"
+    },
+    {
+      "path": "/china-travel-budget/",
+      "sha256": "d678eee9318d022291e932c6dcf9d2bfc0ae84dd1d3477d5f1288d823caa1820"
+    },
+    {
+      "path": "/3-day-xian-itinerary/",
+      "sha256": "b121f0fa469edfb5f3c179b18e84ca5417a892189d10216589ad576c84b414c4"
+    },
+    {
+      "path": "/wechat-pay-for-foreigners/",
+      "sha256": "9e2da8774e05b72889b2c17eddd66c324cd231a17956cba5cf582fa177813b56"
+    },
+    {
+      "path": "/china-travel-safety-guide/",
+      "sha256": "442b8800491d0079e079f039639e9ae3edec0d9b99700b87af836f0a792442a0"
+    },
+    {
+      "path": "/7-day-china-itinerary/",
+      "sha256": "8eede8e098822846700c00bbe42d5c7273a462811da27461e7c72be12cbf35a2"
+    },
+    {
+      "path": "/didi-payment-for-foreigners/",
+      "sha256": "8e75ab652129b356b05a31c0c92139e5294fed039af16857749ebddcb38ea206"
+    },
+    {
+      "path": "/10-day-china-itinerary/",
+      "sha256": "0d4a9f8902e5ece587cbf17747027799f5e0c27865cdeee75394a26302ffa7be"
+    },
+    {
+      "path": "/faq/",
+      "sha256": "b8f380167e286cd234b47b7d45f0cff66bb8af1bf4402520fe0194fc9e74bb7a"
+    },
+    {
+      "path": "/3-day-chengdu-itinerary/",
+      "sha256": "f9ed44af76b89b16dbd252a0bd0443aa30e1ebaf9023f97e5a73bc974cabf49c"
+    },
+    {
+      "path": "/china-sim-card-for-foreigners/",
+      "sha256": "0b7c3cb85a4c3a3b5d6e7b16db19bdf55b3517b3ce1288168f0cf43c8d111833"
+    },
+    {
+      "path": "/china-airport-arrival-guide/",
+      "sha256": "308fe8caeff63c0f63d4bbc31bae46d5f15b2d9e0cdba39a6db06c15bc86c744"
+    },
+    {
+      "path": "/china-240-hour-visa-free-transit-2026/",
+      "sha256": "fdae5e51029692face898116ba143d23db39a4dc61b20891d2441f71f47464b4"
+    },
+    {
+      "path": "/alipay-metro-qr-transport-code-guide/",
+      "sha256": "d5cc45e64a9a0e420c4c8f6d58f3dba59046f4e204d3920a18e80df810c281f1"
+    },
+    {
+      "path": "/china-240-hour-transit-us-citizens/",
+      "sha256": "60caf80dd13146d6520527a70a700146a7825eeeb47dcbc427c87ab675a6b6d4"
+    },
+    {
+      "path": "/nia-12367-online-accommodation-registration-guide/",
+      "sha256": "d3040cfa7f9a6109e4958757982695986670026b341511e329582953e467d291"
+    },
+    {
+      "path": "/china-travel-apps/",
+      "sha256": "c70a12eb63a34eca06676f5b1acf1d3a7c02c8bd41a212ceaad3021f76088754"
+    },
+    {
+      "path": "/china-train-booking-foreigners-12306/",
+      "sha256": "947569c09548e14f03d14fabb5282901957fc5c29666001d29417d00ceaf3710"
+    },
+    {
+      "path": "/pricing/",
+      "sha256": "9b9d6869f409052c135a3a81f1e1c63a70af69621e7c3e9c497ab62ace3c600a"
+    },
+    {
+      "path": "/china-240-hour-transit-calculator/",
+      "sha256": "991514f35271230ed3392ce5e4d1114ba215164810ba3243ce22e9a0c54808cd"
+    },
+    {
+      "path": "/3-day-zhangjiajie-itinerary/",
+      "sha256": "65415f3a6278cc1a00d4ae1df85ca9937e0db56941356c50a8434ad7650b1a72"
+    },
+    {
+      "path": "/3-day-chongqing-itinerary/",
+      "sha256": "c90690b173cf28deaaf98d0a43e3f58a46ec724b5c704eb60171995313c367d5"
+    },
+    {
+      "path": "/terms/",
+      "sha256": "a7f7e0871b6cc3ea0d2933c7efff742ada358f8e71f8490075d4c7b3d732bf96"
+    },
+    {
+      "path": "/china-240-hour-transit-ports-provinces/",
+      "sha256": "d56879c40ed81782f74d4d41799312ae3c55a868e64aa70df9b7e42d46a24fb3"
+    },
+    {
+      "path": "/tenpaygo-for-tourists/",
+      "sha256": "54f096f665439b8b4aa4aa3fe233097af22b0197261f3690eaf461edb9ec32a5"
+    },
+    {
+      "path": "/china-visa-free-travel-guide/",
+      "sha256": "08505676b55988e331ea5cc8c5e1b88762bf542fd8cb40f551688993eacc9e6d"
+    },
+    {
+      "path": "/alipay-for-foreigners/",
+      "sha256": "179fba8aca951b259061ac38d6bb33a226d4c897755e4c07a13c2caf56d12d2d"
+    },
+    {
+      "path": "/wechat-verification-without-friend-qr-2026/",
+      "sha256": "87aa5d2bce1117dd9f96f1d352198c1e1a200995f278c072fec8c27dac8f13ea"
+    },
+    {
+      "path": "/china-esim-internet-guide/",
+      "sha256": "e8ef4fd1f6c20105764a735a80e99cd9192dcc29a402d9673e7356cdff5c5d39"
+    },
+    {
+      "path": "/3-day-shanghai-itinerary/",
+      "sha256": "d4e257f44528a2e69b995e9a3ce55588f113f627dd12e1ca76bdf44b37a10b02"
+    },
+    {
+      "path": "/3-day-suzhou-itinerary/",
+      "sha256": "65fb7302ecd47a1c7610eac96880dee14f455b8f5ff39dcc813825feabb2fa7b"
+    },
+    {
+      "path": "/china-emergency-numbers/",
+      "sha256": "cc23abb3523c0f9aa1c5fbf758b711b867582d700af6cb7fabf297aa9d884efb"
+    },
+    {
+      "path": "/best-time-to-visit-china/",
+      "sha256": "419ec2e1bf50572be4d86a1a9110367140e369a3954ce5cc7895cbaf22ae8b35"
+    },
+    {
+      "path": "/3-day-hangzhou-itinerary/",
+      "sha256": "06b5f56eb0e8c3a00e725b2b8683e7be973e265485b195c4a1cbffbd4cd2d0e7"
+    },
+    {
+      "path": "/3-day-guilin-yangshuo-itinerary/",
+      "sha256": "ee2887f4df5c199bde79f1d66758fd21c1181e24786ab3e2ebb6ae2bb573a8f2"
+    },
+    {
+      "path": "/partners/china-visa-checker/",
+      "sha256": "07d4d7bef425f786a2e104131a514d5a50eed11efd9c6fb77e875c19d5199371"
+    }
+  ],
+  "mobileVisual": "NOT VERIFIED",
+  "googleSearchOutcomeEstablished": false,
+  "httpStatus": 200
+}

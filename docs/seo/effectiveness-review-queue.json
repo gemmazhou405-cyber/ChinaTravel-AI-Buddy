@@ -1158,29 +1158,37 @@
     {
       "url": "https://chinaeasebuddy.com/didi-payment-for-foreigners/",
       "changeIds": [
-        "SEO-2026-10-20-DIDI-PAY"
+        "SEO-2026-10-20-DIDI-PAY",
+        "SEO-2026-10-23-DIDI-PAYMENT-STATUS"
       ],
       "sourceRecords": [
-        "docs/seo/optimization-tracker.md"
+        "docs/seo/optimization-tracker.md",
+        "docs/seo/quality/2026-10-23-didi-payment-full-review.json"
       ],
       "recordedChangeDates": [
-        "2026-10-20"
+        "2026-10-20",
+        "2026-10-23"
       ],
-      "latestConfirmedLiveDate": null,
+      "latestConfirmedLiveDate": "2026-10-23",
       "priority": 3,
       "decision": "awaiting_evidence",
       "postChangePerformance": "not_available",
       "missingEvidence": [
-        "confirmed production-live date",
         "current URL Inspection and modification-after-crawl evidence",
         "complete exact-page Queries comparison with actual dates",
         "strong-relevance clicks and same-query ranking outcomes"
       ],
-      "provisional7DayWindow": null,
-      "provisional28DayWindow": null,
-      "earliest7DayAvailabilityCheck": null,
-      "earliest28DayAvailabilityCheck": null,
-      "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
+      "provisional7DayWindow": [
+        "2026-10-24",
+        "2026-10-30"
+      ],
+      "provisional28DayWindow": [
+        "2026-10-24",
+        "2026-11-20"
+      ],
+      "earliest7DayAvailabilityCheck": "2026-10-31",
+      "earliest28DayAvailabilityCheck": "2026-11-21",
+      "nextAction": "Preserve published guide; review complete exact-page/query windows and later Google recrawl separately. Real mobile/payment test remains missing.",
       "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
       "audienceIntent": {
         "classification": "china_trip_preparation_with_possible_non_tourist_audience",
@@ -1188,15 +1196,22 @@
         "asOf": "2026-10-22"
       },
       "lastEvidenceReview": {
-        "id": "SEO-REVIEW-2026-10-22T072710Z",
-        "checkedAtUtc": "2026-10-22T07:27:10Z",
-        "decision": "awaiting_evidence",
+        "checkedAtUtc": "2026-10-23T07:48:42.035130+00:00",
         "newPostChangeGscEvidence": false,
         "newUrlInspectionEvidence": false,
-        "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
+        "decision": "awaiting_evidence",
+        "sourceReview": "docs/seo/reviews/2026-10-23-didi-payment.md"
       },
       "sharedInterventionRecords": [
         "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+      ],
+      "reference7DayWindow": [
+        "2026-10-17",
+        "2026-10-23"
+      ],
+      "reference28DayWindow": [
+        "2026-09-26",
+        "2026-10-23"
       ]
     },
     {
@@ -2149,6 +2164,63 @@
       "decision": "awaiting_evidence",
       "newPostChangeGscOrInspectionEvidence": false,
       "summary": "78pages200;73visible contacts;70curated guides;12browser diagnostic paths pass. Cloudflare raw-email rewriting corrected narrowly. Daily full-quality task verified, unchanged13:00Asia/Calcutta schedule."
+    },
+    {
+      "atUtc": "2026-10-23T07:48:42.035130+00:00",
+      "type": "full_page_review_formal_verification",
+      "changeId": "SEO-2026-10-23-DIDI-PAYMENT-STATUS",
+      "url": "https://chinaeasebuddy.com/didi-payment-for-foreigners/",
+      "codeCommit": "397ad8b8eff912bb977efa75f76f84fba5be0971",
+      "deploymentId": "e7fbbce7-7a0c-4118-8bd5-884765bb626e",
+      "sourceRecord": "docs/seo/quality/2026-10-23-didi-payment-full-review.json",
+      "formalEvidence": "docs/seo/quality/2026-10-23-didi-payment-live-evidence.json",
+      "newPostChangeGscEvidence": false,
+      "newUrlInspectionEvidence": false,
+      "decision": "awaiting_evidence",
+      "previousQueueEntry": {
+        "url": "https://chinaeasebuddy.com/didi-payment-for-foreigners/",
+        "changeIds": [
+          "SEO-2026-10-20-DIDI-PAY"
+        ],
+        "sourceRecords": [
+          "docs/seo/optimization-tracker.md"
+        ],
+        "recordedChangeDates": [
+          "2026-10-20"
+        ],
+        "latestConfirmedLiveDate": null,
+        "priority": 3,
+        "decision": "awaiting_evidence",
+        "postChangePerformance": "not_available",
+        "missingEvidence": [
+          "confirmed production-live date",
+          "current URL Inspection and modification-after-crawl evidence",
+          "complete exact-page Queries comparison with actual dates",
+          "strong-relevance clicks and same-query ranking outcomes"
+        ],
+        "provisional7DayWindow": null,
+        "provisional28DayWindow": null,
+        "earliest7DayAvailabilityCheck": null,
+        "earliest28DayAvailabilityCheck": null,
+        "nextAction": "Confirm formal-domain version against source record before setting a post-publication window.",
+        "windowCaution": "Provisional after verified publication, not evidence of Google processing. Save later post-recrawl windows separately; reference periods may include other changes.",
+        "audienceIntent": {
+          "classification": "china_trip_preparation_with_possible_non_tourist_audience",
+          "basis": "page-topic inference, not verified visitor identity or exact-page query intent",
+          "asOf": "2026-10-22"
+        },
+        "lastEvidenceReview": {
+          "id": "SEO-REVIEW-2026-10-22T072710Z",
+          "checkedAtUtc": "2026-10-22T07:27:10Z",
+          "decision": "awaiting_evidence",
+          "newPostChangeGscEvidence": false,
+          "newUrlInspectionEvidence": false,
+          "sourceReview": "docs/seo/reviews/2026-10-22.md#每日证据复查追加-072710-utc"
+        },
+        "sharedInterventionRecords": [
+          "docs/seo/quality/2026-10-23-amap-and-site-quality.json"
+        ]
+      }
     }
   ],
   "priorityPolicy": "docs/seo/tourist-intent-priorities.json",

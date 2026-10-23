@@ -2,7 +2,7 @@
   "changeId": "SEO-2026-10-23-DIDI-PAYMENT-STATUS",
   "url": "https://chinaeasebuddy.com/didi-payment-for-foreigners/",
   "reviewedOn": "2026-10-23",
-  "status": "local_verified_pending_release",
+  "status": "live_verified",
   "baseCommit": "4007961f414243ca2de22f356d5885c484d4bb36",
   "primaryJob": "Choose a payment route for a China ride, confirm settlement and resolve a conflicting trip/bank state without blind duplicate payment.",
   "selection": {
@@ -117,9 +117,40 @@
     "realDidiPhonePayment": "NOT VERIFIED"
   },
   "release": {
-    "codeCommit": null,
-    "deployment": null,
-    "formalVerification": null
+    "codeCommit": "397ad8b8eff912bb977efa75f76f84fba5be0971",
+    "deployment": {
+      "id": "e7fbbce7-7a0c-4118-8bd5-884765bb626e",
+      "status": "success",
+      "source": "GitHub Cloudflare Pages check run"
+    },
+    "formalVerification": {
+      "verifiedAtUtc": "2026-10-23T07:48:42.035130+00:00",
+      "requestUserAgent": "Googlebot",
+      "querylessUrl": "https://chinaeasebuddy.com/didi-payment-for-foreigners/",
+      "rawHtmlContainsNewBody": true,
+      "sections": 9,
+      "matrixRows": 5,
+      "faqSchemaPairs": 5,
+      "rawAnchorsAndDuplicateIds": "PASS",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-cache-status": "DYNAMIC"
+      },
+      "bodySha256": "8e75ab652129b356b05a31c0c92139e5294fed039af16857749ebddcb38ea206",
+      "sitewideQuality": {
+        "sitemapPages": 69,
+        "qualityAudit": "PASS",
+        "visiblePlanningHelpPages": 68,
+        "curatedGuidePages": 63,
+        "sitemapMatchesTestedBuild": true,
+        "internalLinksToConfigured301s": [],
+        "downloadedPagesWithoutCurlError": 71
+      },
+      "mobileVisual": "NOT VERIFIED",
+      "googleSearchOutcomeEstablished": false,
+      "httpStatus": 200
+    },
+    "evidenceRecord": "docs/seo/quality/2026-10-23-didi-payment-live-evidence.json"
   },
   "outcomes": {
     "newPostChangeGscEvidenceRead": false,
@@ -130,7 +161,16 @@
     "topFiveConfirmed": false
   },
   "overlap": "Shared contact/related changes and consolidation on October23 affect recent experiments. No clean causal attribution; old baselines/windows retained.",
-  "provisionalWindowsPendingFormalVerification": {
+  "nextPage": "Review Alipay metro payment task against actual current sources and recent changes; do not edit solely for daily quota.",
+  "observations": [
+    {
+      "atUtc": "2026-10-23T07:48:42.035130+00:00",
+      "type": "formal_html_verified",
+      "newSearchOutcomeEvidence": false,
+      "decision": "awaiting_evidence"
+    }
+  ],
+  "provisionalWindows": {
     "sevenDay": [
       "2026-10-24",
       "2026-10-30"
@@ -147,8 +187,7 @@
       "2026-09-26",
       "2026-10-23"
     ],
-    "referenceIsCleanControl": false
-  },
-  "nextPage": "Review Alipay metro payment task against actual current sources and recent changes; do not edit solely for daily quota.",
-  "observations": []
+    "referenceIsCleanControl": false,
+    "activatedAtUtc": "2026-10-23T07:48:42.035130+00:00"
+  }
 }
