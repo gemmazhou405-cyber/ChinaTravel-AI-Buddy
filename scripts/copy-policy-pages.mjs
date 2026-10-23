@@ -5219,7 +5219,7 @@ function staticPageContent(page, meta) {
           ${renderFaqItems(remainingFaqItems)}
         </section>
       ` : ''}
-      ${!['guides', 'pricing', 'terms', 'privacy', 'refund', 'contact', 'about', 'unsubscribe'].includes(page) ? renderPlanningHelp(planningHelp, 'guide') : ''}
+      ${!['pricing', 'terms', 'privacy', 'refund', 'contact', 'about', 'unsubscribe'].includes(page) ? renderPlanningHelp(planningHelp, 'guide') : ''}
       <nav aria-label="Related China travel guides" style="margin: 0 0 24px;">
         <h2 style="margin: 0 0 12px; font-size: 1.25rem;">Related guides</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 10px;">

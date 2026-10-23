@@ -24,6 +24,7 @@ import { getCampaignPartner, type CampaignLandingVariant } from '../../data/camp
 import { captureCampaignAttribution, sanitizeCampaignValue } from '../../lib/campaignAttribution';
 import { trackEvent, trackEventOnce } from '../../lib/analytics';
 import CampaignShell from './CampaignShell';
+import LinBox from '../LinBox';
 
 const icons: Record<CampaignIcon, LucideIcon> = {
   apps: AppWindow,
@@ -364,6 +365,7 @@ export default function CampaignLandingPage({ variant }: { variant: CampaignLand
         <section className="border-t border-hairline bg-surface py-7">
           <p className="mx-auto max-w-3xl px-4 text-xs leading-relaxed text-ink-tertiary sm:px-6">{t('disclaimer')}</p>
         </section>
+        <div className="mx-auto max-w-container px-4 sm:px-6 md:px-8"><LinBox placement="guide" /></div>
       </main>
 
       {chatOpen && (

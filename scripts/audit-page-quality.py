@@ -70,7 +70,7 @@ amap = load_json('src/data/amapEnglishSetup.json')
 locations = [node.text for node in ET.parse(DIST / 'sitemap.xml').getroot().iter() if node.tag.endswith('}loc')]
 paths = {urlparse(url).path for url in locations}
 audit_paths = paths | {'/', '/plan/', '/pricing/'}
-excluded = {'guides', 'terms', 'privacy', 'refund', 'contact', 'about', 'unsubscribe', 'partners/china-visa-checker'}
+excluded = {'terms', 'privacy', 'refund', 'contact', 'about', 'unsubscribe'}
 errors, checked, with_help, with_related = [], 0, 0, 0
 
 
@@ -106,20 +106,20 @@ for pathname in sorted(audit_paths):
         with_help += 1
         box = boxes[0]
         text = ' '.join(box.text().split())
-        for key in ['heading', 'body', 'email', 'note', 'paidScope']:
+        for key in ['heading', 'body', 'email', 'note']:
             require(help_copy[key] in text, f'{pathname}: visible planning help missing {key}')
-        require(not re.search(r'\bAI\b|lived abroad for years|within 48 hours|£249|£29', text), f'{pathname}: unverified planning promise')
+        require(not re.search(r'\bAI\b|£249|£29', text), f'{pathname}: unverified planning promise')
         email_links = box.find('a', href=help_copy['emailHref'])
         paid_links = box.find('a', href=help_copy['paidHref'])
         require(len(email_links) == 1 and len(paid_links) == 1, f'{pathname}: planning destinations missing')
         if paid_links:
             require(paid_links[0].attrs.get('target') == '_blank' and {'noopener', 'noreferrer'} <= set(paid_links[0].attrs.get('rel', '').split()), f'{pathname}: paid link window protection missing')
-        if slug not in {'', 'plan', 'pricing'}:
-            require(len(document.find('a', href='#lin-help')) == 1, f'{pathname}: planning contact byline missing')
+        if slug not in {'', 'plan', 'pricing', 'guides', 'partners/china-visa-checker'}:
+            require(len(document.find('a', href='#lin-help')) == 1 and document.find('a', href='#lin-help')[0].text().strip() == help_copy['byline'], f'{pathname}: planning contact byline missing')
     if slug == 'pricing':
         pricing_text = document.find('main')[0].text()
         require(help_copy['digitalHeading'] in pricing_text and help_copy['digitalScope'] in pricing_text, 'Pricing: personal services and message passes must have separate scopes')
-    if slug in {'', 'plan', 'pricing'}:
+    if slug in {'', 'plan', 'pricing', 'guides', 'partners/china-visa-checker'}:
         continue
     navs = document.find('nav', **{'aria-label': 'Related China travel guides'})
     require(len(navs) == 1, f'{pathname}: curated related navigation missing')

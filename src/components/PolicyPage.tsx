@@ -6809,7 +6809,7 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
           </section>
         )}
 
-        {type !== 'guides' && <LinBox placement="guide" />}
+        <LinBox placement="guide" />
         <section className="rounded-2xl border border-gray-100 bg-white/70 p-4">
           <h2 className="text-base font-bold text-gray-950">Related guides</h2>
           <div className="mt-3 flex flex-wrap gap-2">
