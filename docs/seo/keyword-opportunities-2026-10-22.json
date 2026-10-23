@@ -703,7 +703,10 @@
           "observation": "Distinguishes untranslated business names but presents a single interface-language sequence."
         }
       ],
-      "growthOutcomeEstablished": false
+      "growthOutcomeEstablished": false,
+      "formalVerifiedOn": "2026-10-23",
+      "formalVerifiedAtUtc": "2026-10-23T03:58:21.931116+00:00",
+      "rankingOrClickGainConfirmed": false
     }
   ]
 }

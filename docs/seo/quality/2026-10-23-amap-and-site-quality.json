@@ -312,14 +312,129 @@
       "curatedGuidePages": 70
     },
     "campaignRouteHttp": "PASS with in-process local HTTP server",
-    "actualBrowserInteraction": "pending"
+    "actualBrowserInteraction": {
+      "status": "PASS",
+      "date": "2026-10-23",
+      "phoneSymptomPairs": 12,
+      "allResultLinksTargetExistingSections": true,
+      "clickedResultNavigation": "PASS iPhone target",
+      "incompleteInputResetsResult": "PASS",
+      "contactBylineAndEmailPaidHrefs": "PASS without clicking outbound links",
+      "homeH1TitleFormContact": "PASS",
+      "planFormBeforeContact": "PASS",
+      "pricingContactBeforeDigitalPasses": "PASS",
+      "desktopViewportCssWidth": 1348,
+      "desktopHorizontalOverflow": false,
+      "mobileViewportVisualTest": "not performed; responsive markup/CSS reviewed, not a phone/device test",
+      "liveAmapUrl": "https://chinaeasebuddy.com/amap-english-mode-guide-2026/#amap-language-help",
+      "screenshot": "docs/seo/quality/amap-web-diagnostic-2026-10-23-1792727858334.jpg",
+      "screenshotIsPhoneAppEvidence": false
+    },
+    "publicHtmlFormalSnapshot": "PASS on downloaded production responses",
+    "pageQualityFormal": {
+      "status": "PASS",
+      "checkedPages": 78,
+      "visiblePlanningHelpPages": 73,
+      "curatedGuidePages": 70
+    }
   },
   "release": {
-    "status": "validated_pending_publication",
+    "status": "live_verified",
     "baseCommit": "939f10dbe819ba3ad375f5377953974a60fbcb78",
-    "codeCommit": null,
-    "deployment": null,
-    "formalVerification": null
+    "codeCommit": "14daa28d2dedbadbda1fd1d64ff999563baea975",
+    "deployment": {
+      "id": "903f4dfb-313f-495d-9a1b-20325e998936",
+      "status": "success",
+      "url": "https://dash.cloudflare.com/?to=/fd645e0ab48daa380ddaef68de2726b0/pages/view/chinaease-buddy/903f4dfb-313f-495d-9a1b-20325e998936"
+    },
+    "formalVerification": {
+      "requestUserAgent": "Googlebot",
+      "pages200": 78,
+      "sitemapPages": 76,
+      "checkedPages": 78,
+      "visiblePlanningHelpPages": 73,
+      "curatedGuidePages": 70,
+      "correctRawEmailAndMailto": true,
+      "matchingCanonicalRelatedLinksFaqSchemaAndAnchors": true,
+      "sitemapMatchesTestedBuild": true,
+      "existingRedirectHeadChecks": [
+        {
+          "path": "/how-to-use-didi-in-china-foreigners/",
+          "status": 301,
+          "location": "/didi-in-china-for-foreigners/",
+          "pass": true
+        },
+        {
+          "path": "/how-to-pay-in-china-as-foreigner/",
+          "status": 301,
+          "location": "/china-payment-guide/",
+          "pass": true
+        },
+        {
+          "path": "/china-esim-internet-vpn-guide/",
+          "status": 301,
+          "location": "/china-esim-internet-guide/",
+          "pass": true
+        },
+        {
+          "path": "/how-much-does-china-trip-cost-2026-calculator/",
+          "status": 301,
+          "location": "/china-travel-budget/",
+          "pass": true
+        },
+        {
+          "path": "/china-emergency-numbers",
+          "status": 308,
+          "location": "/china-emergency-numbers/",
+          "pass": true
+        }
+      ],
+      "curlContactChecks": [
+        {
+          "path": "/",
+          "curlGooglebotRawEmailAndMailto": "PASS"
+        },
+        {
+          "path": "/plan/",
+          "curlGooglebotRawEmailAndMailto": "PASS"
+        },
+        {
+          "path": "/pricing/",
+          "curlGooglebotRawEmailAndMailto": "PASS"
+        },
+        {
+          "path": "/amap-english-mode-guide-2026/",
+          "curlGooglebotRawEmailAndMailto": "PASS"
+        }
+      ],
+      "indexingOrRankingEstablished": false
+    },
+    "codeCommits": [
+      "14daa28d2dedbadbda1fd1d64ff999563baea975",
+      "dc9a6e48f674736cd2c4bf217483d79111c54dfd"
+    ],
+    "finalCodeCommit": "dc9a6e48f674736cd2c4bf217483d79111c54dfd",
+    "firstCompleteFormalVerificationAtUtc": "2026-10-23T03:58:21.931116+00:00",
+    "stages": [
+      {
+        "codeCommit": "14daa28d2dedbadbda1fd1d64ff999563baea975",
+        "deployment": {
+          "id": "1143a5d8-8a57-4769-9b73-96b9e06864b1",
+          "status": "success",
+          "url": "https://dash.cloudflare.com/?to=/fd645e0ab48daa380ddaef68de2726b0/pages/view/chinaease-buddy/1143a5d8-8a57-4769-9b73-96b9e06864b1"
+        },
+        "formalFinding": "All78pages200 and existing redirects pass; public contact text/mailto transformed by Cloudflare email obfuscation. Not complete acceptance."
+      },
+      {
+        "codeCommit": "dc9a6e48f674736cd2c4bf217483d79111c54dfd",
+        "deployment": {
+          "id": "903f4dfb-313f-495d-9a1b-20325e998936",
+          "status": "success",
+          "url": "https://dash.cloudflare.com/?to=/fd645e0ab48daa380ddaef68de2726b0/pages/view/chinaease-buddy/903f4dfb-313f-495d-9a1b-20325e998936"
+        },
+        "formalFinding": "Scoped Cloudflare email_off comments preserve only the intended public contact box. All78page acceptance passes."
+      }
+    ]
   },
   "outcomes": {
     "currentIndexReport": null,
@@ -360,11 +475,37 @@
       "at": "2026-10-23T03:41:43.932513+00:00",
       "type": "implementation_and_local_acceptance",
       "searchOutcomeEvidenceAdded": false
+    },
+    {
+      "at": "2026-10-23T04:04:49.332684+00:00",
+      "type": "formal_release_and_interaction_verified",
+      "codeCommits": [
+        "14daa28d2dedbadbda1fd1d64ff999563baea975",
+        "dc9a6e48f674736cd2c4bf217483d79111c54dfd"
+      ],
+      "sourceDataAdded": false,
+      "newPostChangeGscOrInspectionEvidence": false,
+      "googleRecrawlRankingOrClickGainConfirmed": false
     }
   ],
   "dailyAutomation": {
     "id": "6ad478cc72188191aed60e564ebb1b16",
-    "status": "prompt_update_pending",
-    "scheduleToRetain": "13:00 Asia/Calcutta daily"
+    "status": "updated_confirmed",
+    "scheduleToRetain": "13:00 Asia/Calcutta daily",
+    "updatedAt": "2026-10-23T03:48:15.222466+00:00",
+    "schedule": "BEGIN:VEVENT\nDTSTART;TZID=Asia/Calcutta:20261022T130000\nRRULE:FREQ=DAILY\nEND:VEVENT",
+    "timezone": "Asia/Calcutta",
+    "isEnabled": true,
+    "scheduleUnchanged": true,
+    "fullReviewAndAuthorisedImplementationRequired": true
+  },
+  "performanceReview": {
+    "buildSharedAppChunkBytesApprox": 1866720,
+    "buildGzipBytesApprox": 560140,
+    "fieldCoreWebVitals": null,
+    "mobilePerformanceProfile": null,
+    "measuredFieldFailure": false,
+    "newRegressionEstablished": false,
+    "nextAction": "Profile mobile load/layout/interaction and shared chunk loading before selecting a scoped performance change."
   }
 }

@@ -42,3 +42,17 @@ The structured record contains actual validation/release evidence and affected U
 After formal verification, preserve complete October 24–30 and October 24–November 20 provisional windows, plus equal adjacent reference windows. Reporting latency and later recrawl may require additional windows. Shared links/service blocks affect other current experiments; do not claim clean causal attribution. The October 21/22 windows and observations remain historical records.
 
 The daily task must fully review one supported existing page and implement worthwhile verified improvements. Keep the calculator/budget strategic priority, but do not churn their recent versions merely to tick a daily edit box. Candidate next full reviews include DiDi payment, metro payment and TenPayGo after checking the actual visitor task, current sources and recent changes. Missing data cannot justify invented ranks, fake device evidence, a new article quota or a promised top-five date.
+
+## Final verification — October 23
+
+Code commits `14daa28d2dedbadbda1fd1d64ff999563baea975` and `dc9a6e48f674736cd2c4bf217483d79111c54dfd`; final Cloudflare deployment `903f4dfb-313f-495d-9a1b-20325e998936` succeeded. Formal Googlebot responses verified at 03:58:21 UTC: 78 pages return 200, 73 contact blocks and 70 curated guide navigations pass, and the 76-URL sitemap matches the tested build. Existing four 301s and emergency 308 pass HEAD/location checks. Actual curl also verifies raw visible email and mailto on home, plan, pricing and Amap.
+
+The first deployed version exposed an edge-only defect: Cloudflare rewrote the public email and mailto, despite local HTML passing. A contact-box-only `email_off` comment fixes this without a zone setting change, following [Cloudflare's documented exclusion](https://developers.cloudflare.com/waf/tools/scrape-shield/email-address-obfuscation/). Acceptance was repeated on completed downloads after the fix; it was not relaxed to hide the failure.
+
+Live browser checks pass for all 12 diagnostic choices, real result-link navigation, incomplete-input reset and contact targets. Home/plan/pricing retain the form/pass flows and intended contact placement. Desktop width1348px has no horizontal overflow. No mobile viewport visual test or real Amap phone test is claimed. The following screenshot documents our website UI, not the Amap phone app.
+
+The build still reports a large shared application chunk (about1.87MB uncompressed,560KB gzip). This is a concrete performance-investigation candidate, not a measured mobile Core Web Vitals failure or a new regression established by this review. Field loading/stability/interaction data and a mobile performance profile remain unknown; this batch does not claim to have solved that separate issue.
+
+![Deployed website diagnostic, not a phone-app test](amap-web-diagnostic-2026-10-23-1792727858334.jpg)
+
+The existing daily automation prompt was successfully updated on October23. Its enabled state and 13:00 Asia/Calcutta schedule are unchanged. It now requires the full quality standard, substantive supported work, relevant regressions, authorised publication and formal verification, alongside the retained GSC evidence discipline.

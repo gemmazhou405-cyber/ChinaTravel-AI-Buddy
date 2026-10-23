@@ -153,7 +153,7 @@
       "url": "https://chinaeasebuddy.com/amap-english-mode-guide-2026/",
       "priority": 3,
       "reason": "Relevant China-navigation support, but app-language searches may include residents or general users.",
-      "workState": "Current setup version retained; classify exact-page queries before treating clicks as tourist-related.",
+      "workState": "October23full-quality version formally verified;12-device/symptom UI paths and raw contact pass. Retain for page-query/crawl and complete-window outcomes; no ranking gain established.",
       "baseline": {
         "clicks": 1.0,
         "impressions": 95.0,
@@ -387,6 +387,13 @@
       "sourceRecord": "docs/seo/quality/2026-10-23-amap-and-site-quality.json",
       "newSearchOutcomeEvidence": false,
       "priorityOrderRetained": true
+    },
+    {
+      "date": "2026-10-23",
+      "type": "full_quality_release_and_daily_prompt_verified",
+      "sourceRecord": "docs/seo/quality/2026-10-23-amap-and-site-quality.json",
+      "newSearchOutcomeEvidence": false,
+      "scheduleUnchanged": true
     }
   ],
   "keywordEvidence": "docs/seo/keyword-opportunities-2026-10-22.json",
