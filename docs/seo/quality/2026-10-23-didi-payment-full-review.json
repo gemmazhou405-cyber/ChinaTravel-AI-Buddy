@@ -1,0 +1,154 @@
+{
+  "changeId": "SEO-2026-10-23-DIDI-PAYMENT-STATUS",
+  "url": "https://chinaeasebuddy.com/didi-payment-for-foreigners/",
+  "reviewedOn": "2026-10-23",
+  "status": "local_verified_pending_release",
+  "baseCommit": "4007961f414243ca2de22f356d5885c484d4bb36",
+  "primaryJob": "Choose a payment route for a China ride, confirm settlement and resolve a conflicting trip/bank state without blind duplicate payment.",
+  "selection": {
+    "calculatorAndBudget": "Keep recent October22 versions; priority retained. No new post-change GSC evidence read. No new verified task gap selected there today.",
+    "recentDidiChanges": "Payment body October20; main DiDi setup October21 is a separate intent. Shared contact/navigation October23 and same-day consolidation overlap observations.",
+    "confirmedGap": "Live source-before HTML has six generic sections; pending/paid/unpaid mentioned in prose but no explicit state comparison, resolution criterion or support evidence workflow.",
+    "candidateQueries": [
+      "how to pay for didi in china",
+      "didi payment pending china",
+      "didi payment failed foreign card"
+    ],
+    "queryPositions": null,
+    "monthlyVolume": null,
+    "keywordDifficulty": null,
+    "visitorIdentityConfirmed": false
+  },
+  "baseline": {
+    "sourceRecord": "docs/seo/optimization-tracker.md",
+    "historicalPageClicks": 0,
+    "historicalPageImpressions": 22,
+    "historicalPageAveragePosition": 8.45,
+    "exactPageQueryPairs": null,
+    "note": "Historical source record, not a current outcome; didi pay whole-site clue is not attributed to this page. Actual baseline dates not newly established in this review."
+  },
+  "eightDimensions": [
+    {
+      "dimension": "Intent",
+      "before": "Payment page has broad route/setup answer; urgent settlement decision buried in decline prose.",
+      "after": "Quick answer and first section lead with same-booking trip state versus bank state. Keep H1/title/description/canonical and distinct payment scope."
+    },
+    {
+      "dimension": "Completeness",
+      "before": "Saved-card setup called a test; receipt check lacks explicit pass condition.",
+      "after": "Separate saved-card setup from completed purchase test; five state branches each give next action and resolution check; official trip support versus issuer responsibilities; preserve setup, fares, airport fallback and five FAQs."
+    },
+    {
+      "dimension": "Evidence",
+      "before": "Two general government sources; no current operator feature evidence.",
+      "after": "Add official DiDi iPhone listing and Visa issuer/transaction guidance, checked October23. Advertised availability is not guaranteed acceptance; no foreign DiDi market support policy imported; no universal refund/hold deadline stated.",
+      "unknown": "No actual app/device transaction, issuer test or current mini-program menu record."
+    },
+    {
+      "dimension": "Original help",
+      "before": "General retry/backup advice.",
+      "after": "A five-state reconciliation matrix and official-support case preparation connect the trip record to pending/settled bank evidence; explicit resolution criterion avoids guessing from a bank alert. Illustrative states and message are editorial tools, not observed customer cases."
+    },
+    {
+      "dimension": "Mobile usability",
+      "before": "Shared sections, contents anchors and overflow-contained tables.",
+      "after": "Keep existing renderer; new table uses same wrapper and semantic header cells. Static anchors audited; no new JS control.",
+      "unknown": "Playwright launch failed: no installed Chromium executable. No mobile screenshot, visual pass, interaction latency or field CWV claim."
+    },
+    {
+      "dimension": "Trust and conversion",
+      "before": "Existing owner-supplied LinBox and automated form.",
+      "after": "Retain contact/form scope and promises; explicitly route payment disputes to operator/issuer, with redacted evidence and no sensitive data sent to ChinaEase. No fabricated author test, photo, review or transaction."
+    },
+    {
+      "dimension": "Architecture",
+      "before": "Main DiDi setup and separate payment guide; seven topic related links.",
+      "after": "Retain distinct jobs and current seven links; no merge, new URL, self-link, navigation or contact edit. Existing permanent redirects untouched."
+    },
+    {
+      "dimension": "Rendering and measurement",
+      "before": "Payment article JSON shared by React and static renderer.",
+      "after": "Same shared JSON supplies nine sections, five existing FAQs and four sources. Canonical/FAQ schema/anchors verified. Only target real-content dates advance; no new funnel event or conversion claim."
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://apps.apple.com/us/app/didi-china-ride-hailing/id554499054",
+      "checkedOn": "2026-10-23",
+      "supports": "Operator advertises international bank-card options and English in-app customer service; not transaction-specific acceptance."
+    },
+    {
+      "url": "https://www.visa.co.uk/contact-us.html",
+      "checkedOn": "2026-10-23",
+      "supports": "Issuer contact for individual transaction records and general distinction between authorization and final settlement; not DiDi-specific release timing."
+    }
+  ],
+  "competingAnswers": [
+    {
+      "url": "https://wayschina.com/en/articles/didi-guide",
+      "readOn": "2026-10-23",
+      "scope": "General install, signup, card/Alipay, pickup and driver guide; not an official payment policy source."
+    },
+    {
+      "url": "https://www.trip.com/blog/didi-guide/",
+      "readOn": "2026-10-23",
+      "scope": "General app guide including linking, payment failure and backups; not authority for issuer acceptance or refund timing."
+    }
+  ],
+  "competitorLimit": "Public retrieval sample only, not target-country/device Google top-five audit. No competitor policy claim used as evidence.",
+  "validation": {
+    "typecheck": "PASS",
+    "build": "PASS",
+    "lint": "PASS; existing PricingPlans fast-refresh warning",
+    "publicHtml": "PASS",
+    "pageQuality": {
+      "status": "PASS",
+      "sitemapPages": 69,
+      "checkedPages": 71,
+      "visiblePlanningHelpPages": 68,
+      "curatedGuidePages": 63
+    },
+    "leadSource": "PASS",
+    "tripEmailFlow": "PASS mocked requests",
+    "transitCalculator": "PASS",
+    "campaignLandings": "PASS",
+    "amapHelp": "PASS 12 paths and invalid states",
+    "mobileVisual": "NOT VERIFIED: browser executable missing",
+    "realDidiPhonePayment": "NOT VERIFIED"
+  },
+  "release": {
+    "codeCommit": null,
+    "deployment": null,
+    "formalVerification": null
+  },
+  "outcomes": {
+    "newPostChangeGscEvidenceRead": false,
+    "modifiedAfterGoogleCrawl": "待确认",
+    "indexStatus": null,
+    "sameQueryRankChange": null,
+    "strongRelevantClickChange": null,
+    "topFiveConfirmed": false
+  },
+  "overlap": "Shared contact/related changes and consolidation on October23 affect recent experiments. No clean causal attribution; old baselines/windows retained.",
+  "provisionalWindowsPendingFormalVerification": {
+    "sevenDay": [
+      "2026-10-24",
+      "2026-10-30"
+    ],
+    "referenceSevenDay": [
+      "2026-10-17",
+      "2026-10-23"
+    ],
+    "twentyEightDay": [
+      "2026-10-24",
+      "2026-11-20"
+    ],
+    "referenceTwentyEightDay": [
+      "2026-09-26",
+      "2026-10-23"
+    ],
+    "referenceIsCleanControl": false
+  },
+  "nextPage": "Review Alipay metro payment task against actual current sources and recent changes; do not edit solely for daily quota.",
+  "observations": []
+}
