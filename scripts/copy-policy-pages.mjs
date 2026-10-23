@@ -5090,7 +5090,7 @@ function staticTripCostEstimator() {
 }
 
 function staticPageContent(page, meta) {
-  if (meta.customBody) return page === 'plan' ? meta.customBody.replace('</main>', `${renderPlanningHelp(planningHelp, 'plan')}</main>`) : meta.customBody;
+  if (meta.customBody) return page === 'plan' ? meta.customBody.replace('      <p style="margin: 0; color: #6b7678;', `${renderPlanningHelp(planningHelp, 'plan')}      <p style="margin: 0; color: #6b7678;`) : meta.customBody;
   const heading = meta.heading || meta.title.split('|')[0].trim();
   const [ctaLabel, ctaHref] = staticCtas[page] || ['Open ChinaEase Buddy', '/'];
   const faqItems = meta.faqs || [

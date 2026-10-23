@@ -33,7 +33,10 @@ export default function PlanLanding() {
       <main className="flex-1">
         {/* TripPlanLead (standalone) renders its own <h1> + one-line subtitle + CTA + form. */}
         <TripPlanLead standalone />
-        <div className="mx-auto max-w-2xl px-4 pb-8"><LinBox placement="plan" /></div>
+        <div className="mx-auto max-w-2xl px-4 pb-8">
+          <LinBox placement="plan" />
+          <p className="text-xs leading-relaxed text-ink-tertiary">ChinaEase Buddy is a digital travel toolkit. It is not an official travel authority, visa service, immigration service, medical service, legal service, financial service, hotel booking service, or flight booking service. Always confirm important travel, payment, health and entry information with official sources or service providers.</p>
+        </div>
       </main>
 
       <footer className="border-t border-hairline bg-surface">
