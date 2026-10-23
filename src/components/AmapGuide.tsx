@@ -1,12 +1,13 @@
 import { Fragment } from 'react';
 import content from '../data/amapEnglishSetup.json';
-import { parseInline, shotIds, splitShots } from '../lib/amapGuideMarkup.mjs';
+import { parseInline, shotIds, shotMaxWidth, splitShots } from '../lib/amapGuideMarkup.mjs';
 
 type Block =
   | { type: 'p'; text: string }
   | { type: 'note'; text: string }
   | { type: 'ol' | 'ul'; items: string[] }
-  | { type: 'table'; headers: string[]; rows: string[][] };
+  | { type: 'table'; headers: string[]; rows: string[][] }
+  | { type: 'shots'; ids: string[]; labels?: string[] };
 type Section = { id: string; title: string; blocks: Block[]; subsections?: Section[] };
 type Shot = { src: string; width: number; height: number; alt: string };
 
@@ -30,21 +31,32 @@ export function AmapRichText({ text }: { text: string }) {
   );
 }
 
+// Rows wrap on narrow screens and stay centred.
+function ShotRow({ ids, labels = [] }: { ids: string[]; labels?: string[] }) {
+  const maxWidth = shotMaxWidth(ids.length);
+  return (
+    <div className="my-3 flex flex-wrap justify-center gap-4">
+      {ids.map((id, index) => {
+        const shot = screenshots[id];
+        return (
+          <figure key={id} className="w-full" style={{ maxWidth, flex: `1 1 ${Math.min(maxWidth, 160)}px` }}>
+            <img src={shot.src} width={shot.width} height={shot.height} alt={shot.alt} loading={id === firstShotId ? undefined : 'lazy'} decoding="async" className="block h-auto w-full rounded-2xl border border-[#155e63]/15" />
+            <figcaption className="mt-1.5 text-xs text-gray-500">
+              {labels[index] && <strong className="block text-sm text-gray-900">{labels[index]}</strong>}
+              {content.screenshotCaption}
+            </figcaption>
+          </figure>
+        );
+      })}
+    </div>
+  );
+}
+
 function Flow({ text, paragraphClassName = 'text-sm leading-relaxed text-gray-600 md:text-base' }: { text: string; paragraphClassName?: string }) {
   return (
     <>
       {splitShots(text).map((segment, index) => segment.type === 'shots' ? (
-        <div key={index} className="my-3 flex flex-wrap gap-4">
-          {segment.ids.map((id) => {
-            const shot = screenshots[id];
-            return (
-              <figure key={id} className="w-full max-w-[300px] flex-[1_1_220px]">
-                <img src={shot.src} width={shot.width} height={shot.height} alt={shot.alt} loading={id === firstShotId ? undefined : 'lazy'} decoding="async" className="block h-auto w-full rounded-2xl border border-[#155e63]/15" />
-                <figcaption className="mt-1.5 text-xs text-gray-500">{content.screenshotCaption}</figcaption>
-              </figure>
-            );
-          })}
-        </div>
+        <ShotRow key={index} ids={segment.ids} />
       ) : (
         <p key={index} className={paragraphClassName}><AmapRichText text={segment.text.trim()} /></p>
       ))}
@@ -54,6 +66,7 @@ function Flow({ text, paragraphClassName = 'text-sm leading-relaxed text-gray-60
 
 function GuideBlock({ block }: { block: Block }) {
   if (block.type === 'p') return <Flow text={block.text} />;
+  if (block.type === 'shots') return <ShotRow ids={block.ids} labels={block.labels} />;
   if (block.type === 'note') {
     return (
       <aside aria-label="Local note" className="rounded-xl border border-amber-300/60 border-l-4 border-l-amber-600 bg-amber-50 px-4 py-3 text-sm leading-relaxed text-amber-950 md:text-base">

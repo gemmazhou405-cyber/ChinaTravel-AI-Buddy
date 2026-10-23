@@ -5,4 +5,6 @@ export type ShotSegment = { type: 'text'; text: string } | { type: 'shots'; ids:
 export function parseInline(text: string): InlineToken[];
 export function splitShots(text: string): ShotSegment[];
 export function plainText(text: string): string;
-export function shotIds(content: { sections: Array<{ blocks: Array<{ text?: string; items?: string[] }>; subsections?: Array<{ blocks: Array<{ text?: string; items?: string[] }> }> }> }): string[];
+type ShotBlock = { text?: string; items?: string[]; ids?: string[] };
+export function shotIds(content: { sections: Array<{ blocks: ShotBlock[]; subsections?: Array<{ blocks: ShotBlock[] }> }> }): string[];
+export function shotMaxWidth(count: number): number;

@@ -1,4 +1,4 @@
-import { parseInline, splitShots } from '../src/lib/amapGuideMarkup.mjs';
+import { parseInline, shotMaxWidth, splitShots } from '../src/lib/amapGuideMarkup.mjs';
 
 const escape = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
 const linkStyle = 'color:#155e63;font-weight:600;text-underline-offset:4px;';
@@ -19,23 +19,27 @@ export function renderAmapInline(text) {
 export function createAmapGuideRenderer(content) {
   let renderedShots = 0;
 
-  const figure = (id) => {
+  const figure = (id, maxWidth, label) => {
     const shot = content.screenshots[id];
     if (!shot) throw new Error(`Amap guide: missing screenshot ${id}`);
     const lazy = renderedShots > 0 ? ' loading="lazy"' : '';
     renderedShots += 1;
-    return `<figure style="margin:0;flex:1 1 220px;max-width:300px;">
+    return `<figure style="margin:0;flex:1 1 ${Math.min(maxWidth, 160)}px;max-width:${maxWidth}px;">
       <img src="${escape(shot.src)}" width="${shot.width}" height="${shot.height}" alt="${escape(shot.alt)}"${lazy} decoding="async" style="display:block;width:100%;height:auto;border:1px solid rgba(21,94,99,0.14);border-radius:18px;">
-      <figcaption style="margin:6px 0 0;color:#6b7678;font-size:0.8rem;line-height:1.5;">${escape(content.screenshotCaption)}</figcaption>
+      <figcaption style="margin:6px 0 0;color:#6b7678;font-size:0.8rem;line-height:1.5;">${label ? `<strong style="display:block;color:#122022;font-size:0.9rem;">${escape(label)}</strong>` : ''}${escape(content.screenshotCaption)}</figcaption>
     </figure>`;
   };
 
+  // Rows wrap on narrow screens and stay centred.
+  const shotRow = (ids, labels = []) => `<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin:12px 0 16px;">${ids.map((id, index) => figure(id, shotMaxWidth(ids.length), labels[index])).join('')}</div>`;
+
   const flow = (text, paragraphStyle = textStyle) => splitShots(text).map((segment) => segment.type === 'shots'
-    ? `<div style="display:flex;flex-wrap:wrap;gap:16px;margin:12px 0 16px;">${segment.ids.map(figure).join('')}</div>`
+    ? shotRow(segment.ids)
     : `<p style="${paragraphStyle}">${renderAmapInline(segment.text.trim())}</p>`).join('');
 
   const block = (item) => {
     if (item.type === 'p') return flow(item.text);
+    if (item.type === 'shots') return shotRow(item.ids, item.labels);
     if (item.type === 'note') return `<aside aria-label="Local note" style="margin:0 0 16px;padding:14px 16px;border:1px solid rgba(180,120,20,0.28);border-left:4px solid #b7791f;border-radius:14px;background:#fff7e6;color:#4a3b1f;line-height:1.7;"><p style="margin:0;"><strong style="letter-spacing:0.04em;">LOCAL NOTE:</strong> ${renderAmapInline(item.text)}</p></aside>`;
     if (item.type === 'table') return `<div style="margin:0 0 16px;overflow-x:auto;">
       <table style="width:100%;min-width:520px;border-collapse:collapse;color:#536365;">

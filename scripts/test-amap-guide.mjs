@@ -22,5 +22,10 @@ const ids = new Set([...html.matchAll(/ id="([^"]+)"/g)].map((match) => match[1]
 for (const id of ['switch', 'english-grayed-out', 'search', 'sign-in', 'taxi', 'metro', 'hi-china', 'menu-translation', 'offline', 'troubleshooting']) assert(ids.has(id), `Anchor #${id} exists`);
 for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) assert(ids.has(id), `In-page link #${id} resolves`);
 assert(html.includes('href="https://www.fiverr.com/s/p3dZbQR"'));
+assert(images.every((tag) => tag.includes('width="640"')), 'Screenshots are 640px wide');
+for (const step of [1, 2, 3, 4]) assert(html.includes(`>Step ${step}</strong>`), `Step ${step} label`);
+const rowWidths = [...html.matchAll(/justify-content:center;[^>]*>((?:\s*<figure[\s\S]*?<\/figure>)+)\s*<\/div>/g)].map(([, row]) => [...row.matchAll(/max-width:(\d+)px/g)].map((m) => Number(m[1])));
+assert.deepEqual(rowWidths.map((row) => row.length), [4, 1, 2, 2, 1, 1, 1, 1, 3, 1, 1], 'Screenshot rows: steps, pairs and the ordering trio');
+assert(rowWidths.every((row) => row.every((width) => width === (row.length >= 3 ? 220 : 300))), 'Row widths: 220px for rows of 3+, otherwise 300px');
 assert(!html.includes('[[shot:') && !html.includes('**'), 'No raw markup leaks into HTML');
 console.log(`PASS ${used.length} screenshots, ${ids.size} anchors, in-page links and setup CTA.`);

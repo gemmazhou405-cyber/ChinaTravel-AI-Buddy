@@ -22,24 +22,24 @@
   },
   "screenshotCaption": "Screenshot from my iPhone, Dongguan, October 2026",
   "screenshots": {
-    "1": { "src": "/images/amap/amap-english-01.webp", "width": 1080, "height": 2337, "alt": "Amap My page in English, with the gear icon for Settings at the top right and the My tab selected at the bottom right" },
-    "2": { "src": "/images/amap/amap-english-02.webp", "width": 1080, "height": 2337, "alt": "Amap Settings page listing General, Language, Message Notifications and Storage Space" },
-    "3": { "src": "/images/amap/amap-english-03.webp", "width": 1080, "height": 2337, "alt": "Amap Language Settings with English selected and a banner asking you to restart the app after changing the language" },
-    "4": { "src": "/images/amap/amap-english-04.webp", "width": 1080, "height": 2337, "alt": "Amap home screen in English after a restart, showing the Find places search bar and shortcuts including Ride, Hi China and Subway Map" },
-    "5": { "src": "/images/amap/amap-english-05.webp", "width": 1080, "height": 2337, "alt": "Amap language settings in Chinese with Simplified Chinese selected and English, Spanish, Portuguese, French, German and Thai grayed out" },
-    "6": { "src": "/images/amap/amap-english-06.webp", "width": 1080, "height": 2337, "alt": "Amap English search for Jihotel listing several Ji Hotel branches in Dongguan, each with its Chinese name, rating and distance" },
-    "7": { "src": "/images/amap/amap-english-07.webp", "width": 1080, "height": 2337, "alt": "Amap English search for Subway station listing nearby stations with English and Chinese names, Line 1 tags and a Nearest label" },
-    "8": { "src": "/images/amap/amap-english-08.webp", "width": 1080, "height": 2337, "alt": "Amap Welcome sign-in screen with a phone number field and other login methods: Email Login, WeChat, Apple, Google, Alipay and Taobao" },
-    "9": { "src": "/images/amap/amap-english-09.webp", "width": 1080, "height": 2337, "alt": "Amap sign-in region picker listing country codes China +86, Hong Kong +852, Macau +853, Taiwan +886 and Japan +81" },
-    "10": { "src": "/images/amap/amap-english-10.webp", "width": 1080, "height": 2337, "alt": "Amap ride booking from Subway Station Exit A showing a 24.9 km route, Discount Express at 34.4 to 38.1 CNY selected with 3 of 13 platforms, Express and Flash fares, and a Confirm button" },
-    "11": { "src": "/images/amap/amap-english-11.webp", "width": 1080, "height": 2337, "alt": "Amap public transport route showing journey time options, an intercity train leg with the departure time, the station entrance and exit to use, and a GO button with get-off reminder" },
-    "12": { "src": "/images/amap/amap-english-12.webp", "width": 1080, "height": 2337, "alt": "Amap Songshan Lake subway station page with entrance and exit tabs, Line 1 fare range CN¥2-11, first and last trains, next-train countdown and a View Translation button" },
-    "13": { "src": "/images/amap/amap-english-13.webp", "width": 1080, "height": 2337, "alt": "Amap Hi China page with China travel guide, Menu Translation and Ride tiles, an arrival guide prompt, Trip planner, Check entry requirements, Arrival card and Emergency help" },
-    "14": { "src": "/images/amap/amap-english-14.webp", "width": 1080, "height": 2337, "alt": "Amap menu translation showing Stir-fried Fresh Beef with its Chinese name, Spicy and Beef tags, an English description and a price of 69 CNY with a dollar estimate" },
-    "15": { "src": "/images/amap/amap-english-15.webp", "width": 1080, "height": 2337, "alt": "Amap Dietary Preferences panel with severe allergy options, dietary restrictions such as No pork and Gluten-Free, spiciness levels and a Confirm and show to staff button" },
-    "16": { "src": "/images/amap/amap-english-16.webp", "width": 1080, "height": 2337, "alt": "Amap Order Food card to show staff, with a polite request in Chinese, dietary preferences, two ordered dishes, an estimated total of 84 CNY and a split bill for two people" },
-    "17": { "src": "/images/amap/amap-english-17.webp", "width": 1080, "height": 2337, "alt": "Amap Face-to-Face translation screen showing Hi and 你好 translated between English and Chinese" },
-    "18": { "src": "/images/amap/amap-english-18.webp", "width": 1080, "height": 2337, "alt": "Amap Arrival Guide with three checklists: Immigration Clearance, Network Connection for airport Wi-Fi and SIM card, and Go to hotel" }
+    "1": { "src": "/images/amap/amap-english-01.webp", "width": 640, "height": 1385, "alt": "Amap My page in English, with the gear icon for Settings at the top right and the My tab selected at the bottom right" },
+    "2": { "src": "/images/amap/amap-english-02.webp", "width": 640, "height": 1385, "alt": "Amap Settings page listing General, Language, Message Notifications and Storage Space" },
+    "3": { "src": "/images/amap/amap-english-03.webp", "width": 640, "height": 1385, "alt": "Amap Language Settings with English selected and a banner asking you to restart the app after changing the language" },
+    "4": { "src": "/images/amap/amap-english-04.webp", "width": 640, "height": 1385, "alt": "Amap home screen in English after a restart, showing the Find places search bar and shortcuts including Ride, Hi China and Subway Map" },
+    "5": { "src": "/images/amap/amap-english-05.webp", "width": 640, "height": 1385, "alt": "Amap language settings in Chinese with Simplified Chinese selected and English, Spanish, Portuguese, French, German and Thai grayed out" },
+    "6": { "src": "/images/amap/amap-english-06.webp", "width": 640, "height": 1385, "alt": "Amap English search for Jihotel listing several Ji Hotel branches in Dongguan, each with its Chinese name, rating and distance" },
+    "7": { "src": "/images/amap/amap-english-07.webp", "width": 640, "height": 1385, "alt": "Amap English search for Subway station listing nearby stations with English and Chinese names, Line 1 tags and a Nearest label" },
+    "8": { "src": "/images/amap/amap-english-08.webp", "width": 640, "height": 1385, "alt": "Amap Welcome sign-in screen with a phone number field and other login methods: Email Login, WeChat, Apple, Google, Alipay and Taobao" },
+    "9": { "src": "/images/amap/amap-english-09.webp", "width": 640, "height": 1385, "alt": "Amap sign-in region picker listing country codes China +86, Hong Kong +852, Macau +853, Taiwan +886 and Japan +81" },
+    "10": { "src": "/images/amap/amap-english-10.webp", "width": 640, "height": 1385, "alt": "Amap ride booking from Subway Station Exit A showing a 24.9 km route, Discount Express at 34.4 to 38.1 CNY selected with 3 of 13 platforms, Express and Flash fares, and a Confirm button" },
+    "11": { "src": "/images/amap/amap-english-11.webp", "width": 640, "height": 1385, "alt": "Amap public transport route showing journey time options, an intercity train leg with the departure time, the station entrance and exit to use, and a GO button with get-off reminder" },
+    "12": { "src": "/images/amap/amap-english-12.webp", "width": 640, "height": 1385, "alt": "Amap Songshan Lake subway station page with entrance and exit tabs, Line 1 fare range CN¥2-11, first and last trains, next-train countdown and a View Translation button" },
+    "13": { "src": "/images/amap/amap-english-13.webp", "width": 640, "height": 1385, "alt": "Amap Hi China page with China travel guide, Menu Translation and Ride tiles, an arrival guide prompt, Trip planner, Check entry requirements, Arrival card and Emergency help" },
+    "14": { "src": "/images/amap/amap-english-14.webp", "width": 640, "height": 1385, "alt": "Amap menu translation showing Stir-fried Fresh Beef with its Chinese name, Spicy and Beef tags, an English description and a price of 69 CNY with a dollar estimate" },
+    "15": { "src": "/images/amap/amap-english-15.webp", "width": 640, "height": 1385, "alt": "Amap Dietary Preferences panel with severe allergy options, dietary restrictions such as No pork and Gluten-Free, spiciness levels and a Confirm and show to staff button" },
+    "16": { "src": "/images/amap/amap-english-16.webp", "width": 640, "height": 1385, "alt": "Amap Order Food card to show staff, with a polite request in Chinese, dietary preferences, two ordered dishes, an estimated total of 84 CNY and a split bill for two people" },
+    "17": { "src": "/images/amap/amap-english-17.webp", "width": 640, "height": 1385, "alt": "Amap Face-to-Face translation screen showing Hi and 你好 translated between English and Chinese" },
+    "18": { "src": "/images/amap/amap-english-18.webp", "width": 640, "height": 1385, "alt": "Amap Arrival Guide with three checklists: Immigration Clearance, Network Connection for airport Wi-Fi and SIM card, and Go to hotel" }
   },
   "sections": [
     {
@@ -55,11 +55,12 @@
       "title": "How to switch Amap to English, step by step",
       "blocks": [
         { "type": "ol", "items": [
-          "Tap **My** (我的), bottom right. [[shot:1]]",
-          "Tap the **gear icon** (设置 Settings), top right. [[shot:2]]",
-          "Tap **Language** (语言设置) and choose **English**. [[shot:3]]",
-          "**Close Amap completely** (swipe it away) and reopen it. [[shot:4]]"
+          "Tap **My** (我的), bottom right.",
+          "Tap the **gear icon** (设置 Settings), top right.",
+          "Tap **Language** (语言设置) and choose **English**.",
+          "**Close Amap completely** (swipe it away) and reopen it."
         ] },
+        { "type": "shots", "ids": ["1", "2", "3", "4"], "labels": ["Step 1", "Step 2", "Step 3", "Step 4"] },
         { "type": "p", "text": "That's three taps to the language list. The same list also has Spanish, Portuguese, French, German, Thai, Japanese and more." },
         { "type": "note", "text": "After switching to English, you need to close Amap and restart it before the language updates. Otherwise the languages get mixed up." },
         { "type": "p", "text": "**Android:** you can also try Settings → System → Languages → App languages → AMap → English. This works on supported phones; Google notes some steps need Android 14 or later." }
@@ -136,8 +137,9 @@
           "id": "menu-translation",
           "title": "Order food with Menu Translation",
           "blocks": [
-            { "type": "p", "text": "Take a photo of a Chinese menu and Amap turns it into an English one: each dish gets an English name above the Chinese, tags such as spicy, pork or seafood, a short description, and the price in yuan with an approximate dollar amount. [[shot:14]]" },
-            { "type": "p", "text": "Tap **+** to add dishes and set your **Dietary Preferences**: severe allergies (peanut, tree nuts, crustaceans, milk, egg and more), restrictions such as no pork or gluten-free, and how spicy you want it. [[shot:15]] Amap then builds a card to **show the staff**: a polite request in Chinese, your dishes, your dietary preferences and the estimated total, with a bill splitter underneath. [[shot:16]]" },
+            { "type": "p", "text": "Take a photo of a Chinese menu and Amap turns it into an English one: each dish gets an English name above the Chinese, tags such as spicy, pork or seafood, a short description, and the price in yuan with an approximate dollar amount." },
+            { "type": "p", "text": "Tap **+** to add dishes and set your **Dietary Preferences**: severe allergies (peanut, tree nuts, crustaceans, milk, egg and more), restrictions such as no pork or gluten-free, and how spicy you want it. Amap then builds a card to **show the staff**: a polite request in Chinese, your dishes, your dietary preferences and the estimated total, with a bill splitter underneath." },
+            { "type": "shots", "ids": ["14", "15", "16"] },
             { "type": "p", "text": "Amap marks these translations as machine-generated and asks you to check them. If you have a severe allergy, add it in Dietary Preferences so it shows on the card, and confirm with the staff before you eat." },
             { "type": "p", "text": "More on ordering: [How to order food in China](/china-food-ordering-guide/)." }
           ]

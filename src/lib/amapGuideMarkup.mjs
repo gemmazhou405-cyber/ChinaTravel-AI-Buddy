@@ -36,9 +36,15 @@ export function plainText(text) {
   return parseInline(text.replace(SHOT, ' ').trim()).map(({ text: value }) => value).join('');
 }
 
+// Screenshot ids in page order, from inline markers and standalone screenshot rows.
 export function shotIds(content) {
-  const texts = content.sections.flatMap((section) => [section, ...(section.subsections || [])])
+  return content.sections.flatMap((section) => [section, ...(section.subsections || [])])
     .flatMap(({ blocks }) => blocks)
-    .flatMap((block) => block.text ? [block.text] : block.items || []);
-  return texts.flatMap((text) => [...text.matchAll(SHOT)].map((match) => match[1]));
+    .flatMap((block) => block.ids || (block.text ? [block.text] : block.items || [])
+      .flatMap((text) => [...text.matchAll(SHOT)].map((match) => match[1])));
+}
+
+// Screenshot width by row size: single images 300px, pairs 300px each, rows of three or more 220px each.
+export function shotMaxWidth(count) {
+  return count >= 3 ? 220 : 300;
 }
