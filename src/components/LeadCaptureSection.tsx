@@ -274,7 +274,7 @@ export default function LeadCaptureSection() {
                     onChange={(event) => setConsent(event.target.checked)}
                     className="mt-0.5 h-4 w-4 shrink-0 accent-jade"
                   />
-                  <span>I agree that ChinaEase Buddy may verify this number and contact me about this trip-plan request. See our <a href="/privacy" className="font-semibold text-jade underline">Privacy Notice</a>.</span>
+                  <span>I agree that ChinaEase Buddy may verify this number and contact me about this trip-plan request. See our <a href="/privacy/" className="font-semibold text-jade underline">Privacy Notice</a>.</span>
                 </label>
 
                 {error && <p role="alert" className="text-sm font-semibold text-red-600">{errorCopy(error)}</p>}

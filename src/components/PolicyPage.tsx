@@ -38,6 +38,8 @@ import wechatVerificationHelp from '../data/wechatVerificationHelp.json';
 import shenzhenItineraryPlanning from '../data/shenzhenItineraryPlanning.json';
 import layoverAirportPlanning from '../data/layoverAirportPlanning.json';
 import didiAppSetup from '../data/didiAppSetup.json';
+// Content folded in from guides that now 301 to these pages; the static prerender applies the same file.
+import mergedGuideAdditions from '../data/mergedGuideAdditions.json';
 import VisaFreeCheckerPage from './VisaFreeCheckerPage';
 import TransitCalculatorPage from './TransitCalculatorPage';
 import TransitAnswerPage from './TransitAnswerPage';
@@ -664,7 +666,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
           { label: 'DiDi in China for Foreigners', description: 'Set up rides, pickup points, payment and safety checks.', href: '/didi-in-china-for-foreigners/' },
           { label: 'China Train Travel Guide', description: 'Book high-speed rail with a foreign passport and board correctly.', href: '/china-train-travel-guide/' },
           { label: 'China Metro Guide', description: 'Buy tickets, transfer lines and find the correct station exit.', href: '/china-metro-guide/' },
-          { label: 'AMap in English', description: 'Search places and navigate China with English map support.', href: '/amap-in-english/' },
+          { label: 'AMap in English', description: 'Search places and navigate China with English map support.', href: '/amap-english-mode-guide-2026/' },
         ],
       },
       {
@@ -701,7 +703,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China travel safety guide', href: '/china-travel-safety-guide/' },
       { label: 'China travel budget', href: '/china-travel-budget/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
-      { label: 'AMap in English', href: '/amap-in-english/' },
+      { label: 'AMap in English', href: '/amap-english-mode-guide-2026/' },
       { label: 'China metro guide', href: '/china-metro-guide/' },
       { label: 'DiDi in China for foreigners', href: '/didi-in-china-for-foreigners/' },
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
@@ -730,14 +732,14 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China eSIM and internet guide', href: '/china-esim-internet-guide/' },
       { label: 'China train booking', href: '/china-train-booking-foreigners-12306/' },
       { label: 'First-time China itineraries', href: '/china-itinerary-first-time-7-10-14-days/' },
-      { label: 'Is China safe for tourists?', href: '/is-china-safe-for-tourists-2026/' },
-      { label: 'Best apps for China travel', href: '/best-apps-for-china-travel-2026/' },
+      { label: 'Is China safe for tourists?', href: '/china-travel-safety-guide/' },
+      { label: 'Best apps for China travel', href: '/china-travel-apps/' },
       { label: 'How to use DiDi in China', href: '/didi-in-china-for-foreigners/' },
       { label: 'Beijing and Shanghai layover guide', href: '/beijing-shanghai-layover-240-hour-guide/' },
       { label: 'China travel budget', href: '/china-travel-budget/' },
-      { label: 'China hotels without rejection', href: '/china-hotels-for-foreigners-no-rejection-guide/' },
-      { label: 'Google Maps and Amap guide', href: '/does-google-maps-work-in-china-amap-guide/' },
-      { label: 'Great Wall from Beijing', href: '/how-to-visit-great-wall-from-beijing-2026/' },
+      { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
+      { label: 'Google Maps and Amap guide', href: '/amap-vs-google-maps-china/' },
+      { label: 'Great Wall from Beijing', href: '/great-wall-of-china-day-trip-from-beijing/' },
       { label: 'What to eat in China', href: '/what-to-eat-in-china-first-time-guide/' },
       { label: 'WeChat for foreigners', href: '/how-to-use-wechat-as-foreigner-2026/' },
       { label: 'NIA 12367 accommodation registration', href: '/nia-12367-online-accommodation-registration-guide/' },
@@ -1513,7 +1515,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
       { label: 'WeChat Pay for foreigners', href: '/wechat-pay-for-foreigners/' },
       { label: 'Emergency numbers in China', href: '/china-emergency-numbers/' },
-      { label: 'AMap in English', href: '/amap-in-english/' },
+      { label: 'AMap in English', href: '/amap-english-mode-guide-2026/' },
       { label: 'First trip to China', href: '/first-trip-to-china/' },
       { label: 'Get a free China itinerary', href: '/#trip-plan' },
     ],
@@ -1729,7 +1731,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
         title: 'Is it safe to travel to China right now?',
         items: [
           'Separate everyday tourist safety from legal and geopolitical risk. Street crime may be relatively uncommon while laws, restricted areas, business disputes, or a traveler\'s professional background can create different risks.',
-          'As reviewed on 7 October 2026, the US Department of State rates mainland China Level 2, “Exercise increased caution,” citing arbitrary enforcement of local laws, exit bans, and the risk of unjust arrest or detention.',
+          'The US Department of State currently rates mainland China Level 2, “Exercise increased caution.” Its advisory reissued on September 4, 2026 cites arbitrary enforcement of local laws, exit bans, and the risk of unjust arrest or detention.',
           'UK guidance says serious crime against foreign nationals is relatively rare, but isolated violent incidents have occurred and ordinary precautions remain necessary.',
           'Travel advice varies by nationality and can change quickly. Read the current government advisory for your passport, not only social-media accounts or an old travel video.',
           'Hong Kong and Macao have separate entry, legal, emergency, and travel-advisory pages. Do not treat a mainland China guide as complete advice for either place.',
@@ -1868,7 +1870,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       },
     ],
     related: [
-      { label: 'Is China safe for US citizens?', href: '/is-china-safe-for-tourists-2026/' },
+      { label: 'Is China safe for US citizens?', href: '/china-travel-safety-guide/' },
       { label: 'Emergency numbers in China', href: '/china-emergency-numbers/' },
       { label: 'Essential Chinese travel phrases', href: '/chinese-travel-phrases/' },
       { label: 'China travel apps', href: '/china-travel-apps/' },
@@ -2249,7 +2251,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China eSIM & internet guide', href: '/china-esim-internet-guide/' },
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
       { label: 'First trip to China', href: '/first-trip-to-china/' },
-      { label: 'AMap in English', href: '/amap-in-english/' },
+      { label: 'AMap in English', href: '/amap-english-mode-guide-2026/' },
       { label: 'China metro guide', href: '/china-metro-guide/' },
       { label: 'DiDi without Chinese', href: '/didi-in-china-for-foreigners/' },
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
@@ -2756,7 +2758,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     related: [
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
       { label: 'First trip to China', href: '/first-trip-to-china/' },
-      { label: 'AMap in English', href: '/amap-in-english/' },
+      { label: 'AMap in English', href: '/amap-english-mode-guide-2026/' },
       { label: 'Apps to download before China', href: '/china-travel-apps/' },
       { label: 'DiDi in China for foreigners', href: '/didi-in-china-for-foreigners/' },
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
@@ -2946,7 +2948,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'How to pay for DiDi in China', href: '/didi-payment-for-foreigners/' },
       { label: 'China airport arrival guide', href: '/china-airport-arrival-guide/' },
       { label: 'Apps to download before China', href: '/china-travel-apps/' },
-      { label: 'AMap in English', href: '/amap-in-english/' },
+      { label: 'AMap in English', href: '/amap-english-mode-guide-2026/' },
       { label: 'China metro guide', href: '/china-metro-guide/' },
       { label: 'China train travel guide', href: '/china-train-travel-guide/' },
       { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
@@ -4400,7 +4402,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     { label: 'Get my free China itinerary', href: '/#trip-plan' },
   ]),
   'amap-vs-google-maps-china': guideFromArticle(mapsComparisonGuide, '/amap-vs-google-maps-china/', 'Get my China itinerary', [
-    { label: 'Amap In English', href: '/amap-in-english/' },
+    { label: 'Amap In English', href: '/amap-english-mode-guide-2026/' },
     { label: 'China Travel Apps', href: '/china-travel-apps/' },
     { label: 'China Metro Guide', href: '/china-metro-guide/' },
     { label: 'Didi In China For Foreigners', href: '/didi-in-china-for-foreigners/' },
@@ -5536,7 +5538,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { question: 'How soon must a private stay be registered?', answer: 'The general rule is within 24 hours after arrival at the non-hotel residence.' },
       { question: 'Is online registration legally valid?', answer: 'The NIA states that completed online registration has the same legal effect as on-site registration where the online service applies.' },
     ],
-    related: [{ label: 'Hotel rejection guide', href: '/china-hotels-for-foreigners-no-rejection-guide/' }, { label: 'Full China hotels guide', href: '/china-hotels-for-foreigners/' }, { label: 'China travel checklist', href: '/china-travel-checklist/' }],
+    related: [{ label: 'Hotel rejection guide', href: '/china-hotels-for-foreigners/' }, { label: 'Full China hotels guide', href: '/china-hotels-for-foreigners/' }, { label: 'China travel checklist', href: '/china-travel-checklist/' }],
     sources: [{ label: 'NIA policy interpretation: online accommodation registration', href: 'https://english.www.gov.cn/services/visitchina/202603/21/content_WS69ce124cc6d00ca5f9a0a368.html' }],
   },
   'amap-english-mode-guide-2026': {
@@ -5555,7 +5557,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     isArticle: true,
     sections: amapEnglishSetup.sections,
     faqs: amapEnglishSetup.faqs,
-    related: [{ label: 'Full Amap navigation guide', href: '/amap-in-english/' }, { label: 'Google Maps alternative guide', href: '/does-google-maps-work-in-china-amap-guide/' }],
+    related: [{ label: 'Full Amap navigation guide', href: '/amap-english-mode-guide-2026/' }, { label: 'Google Maps alternative guide', href: '/amap-vs-google-maps-china/' }],
     sources: amapEnglishSetup.sources,
   },
   'alipay-metro-qr-transport-code-guide': {
@@ -5649,7 +5651,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     sections: wechatVerificationHelp.sections,
     faqs: wechatVerificationHelp.faqs,
     sources: wechatVerificationHelp.sources,
-    related: [{ label: 'Complete WeChat setup guide', href: '/how-to-use-wechat-as-foreigner-2026/' }, { label: 'WeChat Pay guide', href: '/wechat-pay-for-foreigners/' }, { label: 'Best China travel apps', href: '/best-apps-for-china-travel-2026/' }],
+    related: [{ label: 'Complete WeChat setup guide', href: '/how-to-use-wechat-as-foreigner-2026/' }, { label: 'WeChat Pay guide', href: '/wechat-pay-for-foreigners/' }, { label: 'Best China travel apps', href: '/china-travel-apps/' }],
   },
   'china-hotels-for-foreigners-no-rejection-guide': {
     path: '/china-hotels-for-foreigners-no-rejection-guide/',
@@ -5764,7 +5766,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { question: 'Does Apple Maps work in China?', answer: 'Apple Maps is commonly usable in mainland China and can be a convenient English-language option, though local feature availability varies.' },
       { question: 'Should I use Baidu Maps?', answer: 'Baidu Maps has strong local coverage, but Amap Global or Apple Maps is usually easier for visitors who need an English interface.' },
     ],
-    related: [{ label: 'Full Amap English guide', href: '/amap-in-english/' }, { label: 'Best China travel apps', href: '/best-apps-for-china-travel-2026/' }, { label: 'DiDi guide', href: '/didi-in-china-for-foreigners/' }],
+    related: [{ label: 'Full Amap English guide', href: '/amap-english-mode-guide-2026/' }, { label: 'Best China travel apps', href: '/china-travel-apps/' }, { label: 'DiDi guide', href: '/didi-in-china-for-foreigners/' }],
     sources: [{ label: 'Shanghai government: Amap English map', href: 'https://english.shanghai.gov.cn/en-InFocus/20250123/78d115a256af4c29a607b3d326ac2d8a.html' }, { label: 'Shanghai government: multilingual Amap services', href: 'https://english.shanghai.gov.cn/en-EasyShanghai/20260713/379bcea6e1bd4defaa7db2451d68d3dd.html' }],
   },
   'how-to-visit-great-wall-from-beijing-2026': {
@@ -5836,7 +5838,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { question: 'Can foreigners use WeChat Pay?', answer: 'Eligible foreign visitors can link supported international bank cards after completing the required identity and bank verification.' },
       { question: 'Should I use WeChat Pay or Alipay?', answer: 'Prepare both. WeChat Pay is useful for merchants and mini-programs inside WeChat, while many visitors find Alipay easier as a primary travel wallet.' },
     ],
-    related: [{ label: 'Full WeChat Pay guide', href: '/wechat-pay-for-foreigners/' }, { label: 'China payment setup', href: '/china-payment-guide/' }, { label: 'Best China travel apps', href: '/best-apps-for-china-travel-2026/' }],
+    related: [{ label: 'Full WeChat Pay guide', href: '/wechat-pay-for-foreigners/' }, { label: 'China payment setup', href: '/china-payment-guide/' }, { label: 'Best China travel apps', href: '/china-travel-apps/' }],
     sources: [{ label: 'Chinese government: payment guide for overseas visitors', href: 'https://english.www.gov.cn/news/202404/11/content_WS6617c858c6d0868f4e8e5f4d.html' }],
   },
   'is-china-safe-for-tourists-2026': {
@@ -5864,7 +5866,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { question: 'Is China safe for children and families?', answer: 'China can be practical for family travel. Plan for crowds, carry medicine and hotel details, use child-appropriate restraints where available, and agree on a meeting point.' },
       { question: 'What emergency numbers should I save?', answer: 'Save 110 for police, 120 for ambulance, and 119 for fire. Ask hotel, station, or attraction staff to help call if language is a barrier.' },
     ],
-    related: [{ label: 'Full China travel safety guide', href: '/china-travel-safety-guide/' }, { label: 'Emergency numbers', href: '/china-emergency-numbers/' }, { label: 'China visa-free checker', href: '/china-visa-free-checker/' }, { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' }, { label: 'Essential travel apps', href: '/best-apps-for-china-travel-2026/' }, { label: 'First trip to China', href: '/first-trip-to-china/' }],
+    related: [{ label: 'Full China travel safety guide', href: '/china-travel-safety-guide/' }, { label: 'Emergency numbers', href: '/china-emergency-numbers/' }, { label: 'China visa-free checker', href: '/china-visa-free-checker/' }, { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' }, { label: 'Essential travel apps', href: '/china-travel-apps/' }, { label: 'First trip to China', href: '/first-trip-to-china/' }],
     sources: [{ label: 'US Department of State: China Travel Advisory', href: 'https://travel.state.gov/en/international-travel/travel-advisories/china.html' }, { label: 'US Department of State: Smart Traveler Enrollment Program', href: 'https://travel.state.gov/en/international-travel/travel-advisories/smart-traveler-enrollment-program.html' }, { label: 'CDC: China traveler health guidance', href: 'https://wwwnc.cdc.gov/travel/destinations/traveler/none/china' }],
   },
   'best-apps-for-china-travel-2026': {
@@ -5917,7 +5919,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { question: 'Can I enter a destination in English?', answer: 'Many major places can be found in English, but saving the Chinese hotel or destination name and address is the safest backup.' },
       { question: 'What if the driver cannot find me?', answer: 'Send the exact gate, floor, zone, or nearby landmark. At airports and stations, confirm that you are in the official ride-hailing pickup area.' },
     ],
-    related: [{ label: 'Full DiDi guide', href: '/didi-in-china-for-foreigners/' }, { label: 'China payment guide', href: '/china-payment-guide/' }, { label: 'Best China travel apps', href: '/best-apps-for-china-travel-2026/' }],
+    related: [{ label: 'Full DiDi guide', href: '/didi-in-china-for-foreigners/' }, { label: 'China payment guide', href: '/china-payment-guide/' }, { label: 'Best China travel apps', href: '/china-travel-apps/' }],
     sources: [{ label: 'Shanghai government: online ride-hailing for foreign visitors', href: 'https://english.shanghai.gov.cn/en-UsefulApps/20240206/976515bc601f4803b9ce2f64ae9f0cd3.html' }, { label: 'DiDi official website', href: 'https://www.didiglobal.com/' }],
   },
   'beijing-shanghai-layover-240-hour-guide': {
@@ -6236,6 +6238,23 @@ guidePages['china-240-hour-visa-free-transit-2026'].related.unshift(
   { label: '240-hour transit calculator', href: '/china-240-hour-transit-calculator/' },
   { label: 'China visa-free checker', href: '/china-visa-free-checker/' },
 );
+
+function insertAfter<T>(list: T[], index: number, item: T) {
+  list.splice(index === -1 ? list.length : index + 1, 0, item);
+}
+
+for (const [type, additions] of Object.entries(mergedGuideAdditions)) {
+  const page = guidePages[type as GuidePageType];
+  Object.assign(page, { sections: [...page.sections], faqs: [...page.faqs] });
+  for (const { after, ...section } of additions.sections as Array<GuidePageData['sections'][number] & { after: string }>) {
+    insertAfter(page.sections, page.sections.findIndex(({ title }) => title === after), section);
+  }
+  for (const { after, ...faq } of additions.faqs) {
+    insertAfter(page.faqs, page.faqs.findIndex(({ question }) => question === after), faq);
+  }
+  page.sources = [...(page.sources || []), ...additions.sources];
+  Object.assign(page, { reviewed: additions.reviewed, lastReviewed: additions.reviewed, lastModified: additions.modified });
+}
 
 function setMetaContent(selector: string, attr: 'content', value: string) {
   let element = document.head.querySelector<HTMLMetaElement>(selector);
@@ -6724,7 +6743,7 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
 
         {isItineraryPage && featuredFaqs.length === 0 && (
           <>
-            <RelatedGuidesForForeigners />
+            <RelatedGuidesForForeigners currentPath={page.path} />
             <section className="border-y border-[#155e63]/15 py-6 text-center">
               <button
                 type="button"
@@ -6768,7 +6787,7 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
 
         {featuredFaqs.length > 0 && !page.ctaBeforeFeaturedFaqs && (
           <>
-            {isItineraryPage && <RelatedGuidesForForeigners />}
+            {isItineraryPage && <RelatedGuidesForForeigners currentPath={page.path} />}
             <section className="border-y border-[#155e63]/15 py-6 text-center">
               <button
                 type="button"

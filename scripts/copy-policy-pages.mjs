@@ -44,6 +44,8 @@ const wechatVerificationHelp = JSON.parse(await readFile('src/data/wechatVerific
 const shenzhenItineraryPlanning = JSON.parse(await readFile('src/data/shenzhenItineraryPlanning.json', 'utf8'));
 const layoverAirportPlanning = JSON.parse(await readFile('src/data/layoverAirportPlanning.json', 'utf8'));
 const didiAppSetup = JSON.parse(await readFile('src/data/didiAppSetup.json', 'utf8'));
+// Content folded in from guides that now 301 to these pages; src/components/PolicyPage.tsx applies the same file.
+const mergedGuideAdditions = JSON.parse(await readFile('src/data/mergedGuideAdditions.json', 'utf8'));
 
 const pageMeta = {
   plan: {
@@ -91,7 +93,7 @@ const pageMeta = {
       ['China Travel Safety Guide', 'Understand crime, scams, transport, local laws, health, weather, and emergency planning.', '/china-travel-safety-guide/'],
       ['China Travel Budget', 'Estimate daily costs, trip totals, transport, food, hotels, and seasonal price changes.', '/china-travel-budget/'],
       ['China Travel Apps', 'Prepare Alipay, WeChat, Amap, Didi, and Trip.com before arrival.', '/china-travel-apps/'],
-      ['AMap in English', 'Search places, plan walking and metro routes, and navigate stations and entrances.', '/amap-in-english/'],
+      ['AMap in English', 'Search places, plan walking and metro routes, and navigate stations and entrances.', '/amap-english-mode-guide-2026/'],
       ['China Metro Guide', 'Buy tickets, pass security, transfer lines, and choose the correct station exit.', '/china-metro-guide/'],
       ['DiDi in China for Foreigners', 'Book rides, find the correct pickup point, verify the car, and handle payment.', '/didi-in-china-for-foreigners/'],
       ['China Train Travel Guide', 'Book high-speed train tickets with a foreign passport and board with confidence.', '/china-train-travel-guide/'],
@@ -817,7 +819,7 @@ const pageMeta = {
         title: 'Is it safe to travel to China right now?',
         items: [
           'Separate everyday tourist safety from legal and geopolitical risk. Street crime may be relatively uncommon while laws, restricted areas, business disputes, or a traveler\'s professional background can create different risks.',
-          'As reviewed on 7 October 2026, the US Department of State rates mainland China Level 2, “Exercise increased caution,” citing arbitrary enforcement of local laws, exit bans, and the risk of unjust arrest or detention.',
+          'The US Department of State currently rates mainland China Level 2, “Exercise increased caution.” Its advisory reissued on September 4, 2026 cites arbitrary enforcement of local laws, exit bans, and the risk of unjust arrest or detention.',
           'UK guidance says serious crime against foreign nationals is relatively rare, but isolated violent incidents have occurred and ordinary precautions remain necessary.',
           'Travel advice varies by nationality and can change quickly. Read the current government advisory for your passport, not only social-media accounts or an old travel video.',
           'Hong Kong and Macao have separate entry, legal, emergency, and travel-advisory pages. Do not treat a mainland China guide as complete advice for either place.',
@@ -4279,6 +4281,25 @@ for (const [slug, content] of Object.entries(focusedPageContent)) {
   Object.assign(pageMeta[slug], content);
 }
 
+function insertAfter(list, index, item, label) {
+  if (index === -1) throw new Error(`mergedGuideAdditions: "${label}" not found`);
+  list.splice(index + 1, 0, item);
+}
+
+for (const [slug, additions] of Object.entries(mergedGuideAdditions)) {
+  const meta = pageMeta[slug];
+  // Copy first: other pages spread these arrays from the same meta object.
+  Object.assign(meta, { contentSections: [...meta.contentSections], faqs: [...meta.faqs] });
+  for (const { after, ...section } of additions.sections) {
+    insertAfter(meta.contentSections, meta.contentSections.findIndex(({ title }) => title === after), section, `${slug} / ${after}`);
+  }
+  for (const { after, question, answer } of additions.faqs) {
+    insertAfter(meta.faqs, meta.faqs.findIndex(([existing]) => existing === after), [question, answer], `${slug} / ${after}`);
+  }
+  meta.sourceLinks = [...(meta.sourceLinks || []), ...additions.sources.map(({ label, href }) => [label, href])];
+  Object.assign(meta, { lastReviewed: additions.reviewed, lastModified: additions.modified });
+}
+
 pageMeta['china-online-arrival-card-2026'] = {
   ...arrivalCardGuide,
   article: true,
@@ -4411,7 +4432,7 @@ const relatedLinks = [
   ['China travel AI itinerary generator', '/china-travel-ai-itinerary-generator/'],
   ['240-hour transit and high-speed rail', '/240-hour-transit-zone-map-high-speed-rail/'],
   ['WeChat verification without a friend', '/wechat-verification-without-friend-qr-2026/'],
-  ['AMap in English', '/amap-in-english/'],
+  ['AMap in English', '/amap-english-mode-guide-2026/'],
   ['China metro guide', '/china-metro-guide/'],
   ['DiDi in China for foreigners', '/didi-in-china-for-foreigners/'],
   ['China train travel guide', '/china-train-travel-guide/'],
@@ -4447,14 +4468,14 @@ const relatedLinks = [
   ['China eSIM guide', '/china-esim-internet-guide/'],
   ['China train booking', '/china-train-booking-foreigners-12306/'],
   ['China itineraries', '/china-itinerary-first-time-7-10-14-days/'],
-  ['China tourist safety 2026', '/is-china-safe-for-tourists-2026/'],
-  ['Best apps for China travel', '/best-apps-for-china-travel-2026/'],
+  ['China tourist safety 2026', '/china-travel-safety-guide/'],
+  ['Best apps for China travel', '/china-travel-apps/'],
   ['DiDi for foreigners', '/didi-in-china-for-foreigners/'],
   ['Beijing and Shanghai layover guide', '/beijing-shanghai-layover-240-hour-guide/'],
   ['China travel budget', '/china-travel-budget/'],
-  ['China hotels without rejection', '/china-hotels-for-foreigners-no-rejection-guide/'],
-  ['Google Maps and Amap guide', '/does-google-maps-work-in-china-amap-guide/'],
-  ['Great Wall from Beijing', '/how-to-visit-great-wall-from-beijing-2026/'],
+  ['China hotels for foreigners', '/china-hotels-for-foreigners/'],
+  ['Google Maps and Amap guide', '/amap-vs-google-maps-china/'],
+  ['Great Wall from Beijing', '/great-wall-of-china-day-trip-from-beijing/'],
   ['What to eat in China', '/what-to-eat-in-china-first-time-guide/'],
   ['WeChat for foreigners', '/how-to-use-wechat-as-foreigner-2026/'],
   ['FAQ', '/faq/'],
@@ -4507,7 +4528,7 @@ const pageRelatedLinks = {
     ['Get my free China itinerary', '/#trip-plan'],
   ],
   'amap-vs-google-maps-china': [
-    ['Amap In English', '/amap-in-english/'],
+    ['Amap In English', '/amap-english-mode-guide-2026/'],
     ['China Travel Apps', '/china-travel-apps/'],
     ['China Metro Guide', '/china-metro-guide/'],
     ['Didi In China For Foreigners', '/didi-in-china-for-foreigners/'],
@@ -4528,7 +4549,7 @@ const pageRelatedLinks = {
   'china-travel-apps': [
     ['First trip to China', '/first-trip-to-china/'],
     ['China airport arrival guide', '/china-airport-arrival-guide/'],
-    ['AMap in English', '/amap-in-english/'],
+    ['AMap in English', '/amap-english-mode-guide-2026/'],
     ['China metro guide', '/china-metro-guide/'],
     ['DiDi without Chinese', '/didi-in-china-for-foreigners/'],
     ['How to pay for DiDi in China', '/didi-payment-for-foreigners/'],
@@ -4549,7 +4570,7 @@ const pageRelatedLinks = {
     ['How to pay for DiDi in China', '/didi-payment-for-foreigners/'],
     ['China airport arrival guide', '/china-airport-arrival-guide/'],
     ['Apps to download before China', '/china-travel-apps/'],
-    ['AMap in English', '/amap-in-english/'],
+    ['AMap in English', '/amap-english-mode-guide-2026/'],
     ['China metro guide', '/china-metro-guide/'],
     ['China train travel guide', '/china-train-travel-guide/'],
     ['10-day China itinerary', '/10-day-china-itinerary/'],
@@ -4570,7 +4591,7 @@ const pageRelatedLinks = {
   'china-metro-guide': [
     ['China airport arrival guide', '/china-airport-arrival-guide/'],
     ['First trip to China', '/first-trip-to-china/'],
-    ['AMap in English', '/amap-in-english/'],
+    ['AMap in English', '/amap-english-mode-guide-2026/'],
     ['Apps to download before China', '/china-travel-apps/'],
     ['DiDi in China for foreigners', '/didi-in-china-for-foreigners/'],
     ['China train travel guide', '/china-train-travel-guide/'],
@@ -4924,7 +4945,7 @@ const pageRelatedLinks = {
     ['Alipay for foreigners', '/alipay-for-foreigners/'],
     ['WeChat Pay for foreigners', '/wechat-pay-for-foreigners/'],
     ['Emergency numbers in China', '/china-emergency-numbers/'],
-    ['AMap in English', '/amap-in-english/'],
+    ['AMap in English', '/amap-english-mode-guide-2026/'],
     ['First trip to China', '/first-trip-to-china/'],
     ['Get a free China itinerary', '/#trip-plan'],
   ],
@@ -4941,7 +4962,7 @@ const pageRelatedLinks = {
     ['Open the free phrase tools', '/?journey=china'],
   ],
   'china-travel-safety-guide': [
-    ['Is China safe for US citizens?', '/is-china-safe-for-tourists-2026/'],
+    ['Is China safe for US citizens?', '/china-travel-safety-guide/'],
     ['Emergency numbers in China', '/china-emergency-numbers/'],
     ['Essential Chinese travel phrases', '/chinese-travel-phrases/'],
     ['China travel apps', '/china-travel-apps/'],
@@ -4958,7 +4979,7 @@ const pageRelatedLinks = {
     ['Emergency numbers in China', '/china-emergency-numbers/'],
     ['China visa-free checker', '/china-visa-free-checker/'],
     ['China hotels for foreigners', '/china-hotels-for-foreigners/'],
-    ['Essential China travel apps', '/best-apps-for-china-travel-2026/'],
+    ['Essential China travel apps', '/china-travel-apps/'],
     ['First trip to China', '/first-trip-to-china/'],
   ],
   'china-travel-budget': [
@@ -5030,12 +5051,12 @@ function isItineraryPage(page) {
   return page.includes('itinerary') && page !== 'china-travel-ai-itinerary-generator';
 }
 
-function staticRelatedGuidesForForeigners() {
+function staticRelatedGuidesForForeigners(page) {
   return `
     <nav aria-label="Related guides for foreign visitors" style="margin: 0 0 24px; padding: 20px; border: 1px solid rgba(21, 94, 99, 0.14); border-radius: 20px; background: rgba(21, 94, 99, 0.05);">
       <h2 style="margin: 0 0 12px; font-size: 1.25rem;">Related guides for foreign visitors</h2>
       <div style="display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
-        ${relatedGuidesForForeigners.map(([label, href]) => `<a href="${escapeAttr(href)}" style="display: flex; align-items: center; justify-content: space-between; min-height: 44px; border: 1px solid rgba(21, 94, 99, 0.12); border-radius: 14px; background: #fff; color: #155e63; padding: 10px 12px; font-weight: 700; text-decoration: none;"><span>${escapeHtml(label)}</span><span aria-hidden="true">&rarr;</span></a>`).join('')}
+        ${relatedGuidesForForeigners.filter(([, href]) => href !== `/${page}/`).map(([label, href]) => `<a href="${escapeAttr(href)}" style="display: flex; align-items: center; justify-content: space-between; min-height: 44px; border: 1px solid rgba(21, 94, 99, 0.12); border-radius: 14px; background: #fff; color: #155e63; padding: 10px 12px; font-weight: 700; text-decoration: none;"><span>${escapeHtml(label)}</span><span aria-hidden="true">&rarr;</span></a>`).join('')}
       </div>
     </nav>
   `;
@@ -5106,7 +5127,7 @@ function staticPageContent(page, meta) {
             <p style="margin: 0; color: #536365; line-height: 1.7;">${escapeHtml(answer)}</p>
           </article>
         `).join('');
-  const primaryCta = `<p style="margin: 0 0 28px;"><a href="${escapeAttr(ctaHref)}" style="display: inline-flex; border-radius: 999px; background: #155e63; color: #fffdf8; padding: 12px 18px; font-weight: 700; text-decoration: none;">${escapeHtml(ctaLabel)}</a></p>`;
+  const primaryCta = ctaHref === `/${page}/` ? '' : `<p style="margin: 0 0 28px;"><a href="${escapeAttr(ctaHref)}" style="display: inline-flex; border-radius: 999px; background: #155e63; color: #fffdf8; padding: 12px 18px; font-weight: 700; text-decoration: none;">${escapeHtml(ctaLabel)}</a></p>`;
 
   return `
     <main id="static-seo-content" style="max-width: 960px; margin: 0 auto; padding: 48px 20px; color: #122022; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
@@ -5211,7 +5232,7 @@ function staticPageContent(page, meta) {
           ${renderFaqItems(featuredFaqItems)}
         </section>
       ` : ''}
-      ${isItineraryPage(page) ? staticRelatedGuidesForForeigners() : ''}
+      ${isItineraryPage(page) ? staticRelatedGuidesForForeigners(page) : ''}
       ${meta.ctaBeforeFeaturedFaqs ? '' : primaryCta}
       ${remainingFaqItems.length > 0 ? `
         <section aria-labelledby="${featuredFaqItems.length > 0 ? 'more-faq' : 'faq'}" style="margin: 0 0 24px;">
@@ -5395,7 +5416,10 @@ const permanentRedirectSources = new Set(
     .filter((line) => line && !line.startsWith('#'))
     .map((line) => line.split(/\s+/))
     .filter((parts) => parts.length >= 3 && parts.at(-1) === '301')
-    .map(([sourcePath]) => sourcePath.replace(/^\//, '').replace(/\/$/, '')),
+    .map(([sourcePath, targetPath]) => [sourcePath, targetPath].map((path) => path.replace(/^\//, '').replace(/\/$/, '')))
+    // A trailing-slash rule (/page -> /page/) keeps the page itself in the sitemap.
+    .filter(([sourcePage, targetPage]) => sourcePage !== targetPage)
+    .map(([sourcePage]) => sourcePage),
 );
 const indexableCampaignPages = ['partners/china-visa-checker'];
 const sitemapPages = [''].concat(

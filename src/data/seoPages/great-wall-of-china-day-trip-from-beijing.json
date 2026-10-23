@@ -2,9 +2,9 @@
   "title": "Great Wall Day Trip from Beijing: Mutianyu or Badaling? (2026) | ChinaEase Buddy",
   "heading": "Great Wall Day Trip from Beijing: Mutianyu or Badaling? (2026)",
   "description": "Plan a Great Wall day trip from Beijing in 2026. Compare Mutianyu and Badaling, tickets, transport, cable cars, walking, weather and return timing.",
-  "quickAnswer": "For a first Great Wall day trip from Beijing, choose one section and give it most of the day. Mutianyu suits travellers who want a planned road transfer and a choice of walking or cableway access; Badaling can suit those who prefer its rail connection. Check the official ticket channel and your exact transport before choosing, because cableways, shuttles, opening hours and return services are separate decisions. Do not schedule the Forbidden City and a distant Wall section as two full visits in one day.",
-  "lastReviewed": "September 25, 2026",
-  "lastModified": "2026-09-25",
+  "quickAnswer": "For a first Great Wall day trip from Beijing, choose one section and give it most of the day. Mutianyu suits travellers who want a planned road transfer and a choice of walking or cableway access; Badaling can suit those who prefer the high-speed train from Beijing North or Qinghe to Badaling Great Wall station. Check the official ticket channel and your exact transport before choosing, because cableways, shuttles, opening hours and return services are separate decisions. Do not schedule the Forbidden City and a distant Wall section as two full visits in one day.",
+  "lastReviewed": "October 23, 2026",
+  "lastModified": "2026-10-23",
   "article": true,
   "contentSections": [
     {
@@ -17,13 +17,62 @@
       "items": ["The easiest choice depends on where you stay, the available tickets, the forecast and your walking ability, not a universal ranking.", "The Great Wall extends over many sections; a ticket or transport arrangement for one is not valid everywhere.", "Do not enter closed or unrestored areas for an uncrowded photograph."]
     },
     {
+      "title": "Beijing to the Great Wall: choose your transport",
+      "table": {
+        "headers": [
+          "Route",
+          "How to start",
+          "Check before booking"
+        ],
+        "rows": [
+          [
+            "Badaling by high-speed train",
+            "Search Beijing North (北京北) or Qinghe (清河) to Badaling Great Wall (八达岭长城) on Railway 12306",
+            "Choose the actual departure station, travel date and a workable return train"
+          ],
+          [
+            "Mutianyu by public bus",
+            "Check the Dongzhimen to Huairou connection and onward local bus",
+            "Allow for waiting, transfers and the scenic-area approach"
+          ],
+          [
+            "Mutianyu by tourist coach or booked car",
+            "Use the named operator and pickup point on your booking",
+            "Confirm the return pickup, inclusions and cancellation terms"
+          ]
+        ]
+      },
+      "items": [
+        "Transport sources checked October 22, 2026. Timetables, pickup points and availability can change; use the current operator notice for your date.",
+        "The train route goes to Badaling. A train ticket to Badaling Great Wall is not a transfer to Mutianyu; decide which section you will visit before buying transport."
+      ]
+    },
+    {
       "title": "Mutianyu: understand the ticket layers",
       "ordered": true,
       "items": ["Open the official Mutianyu ticket page and select your actual visit date and entry product. Check passport or identity requirements and cancellation terms.", "Decide whether you need only entry or also a shuttle. The official visitor notice says the shuttle service area is some distance from the ticket gate and uses a separate ticket.", "If you want to avoid a steep climb, compare the specific cable car, ropeway and slide products. The official site warns that different operators' tickets are not interchangeable.", "Confirm your chosen ascent and descent points before assuming a round-trip product returns you from a different route.", "Build a return buffer around the last transport service. Prices, operating hours and night-tour arrangements can change, so check the current official page."]
     },
     {
-      "title": "Badaling: check the complete train journey",
-      "items": ["Search the actual train date and station names on 12306 if using rail; do not rely on an old blog timetable.", "Check travel from your Beijing hotel to the departure station, then from the arrival station to the ticketed Wall entrance.", "Match the admission arrangement and accepted identity document to your booking. An available train does not guarantee an attraction ticket.", "Book a return that leaves room for walking, rest, queues and getting back to the station. Keep a road-transfer alternative only if it is genuinely available.", "If the rail timings or tickets do not fit, Mutianyu with a confirmed round-trip transfer may be a simpler choice for your group."]
+      "title": "Mutianyu from Beijing: public bus or direct transfer",
+      "ordered": true,
+      "items": [
+        "The operator's published public route uses the 916 Express from Dongzhimen to Huairou Beidajie, then a local H23 or H24 connection. Its detailed transport page also lists H7, H35 and H36. These are published route options, not a live service confirmation: check the current stop, direction and last return before travelling.",
+        "For a tourist coach, use the exact operator, departure address and return instructions on your reservation. Published services have different pickup locations, so the words Dongzhimen or Qianmen alone are not enough to locate your bus.",
+        "At Mutianyu, the scenic-area shuttle is a separate local transfer. A ticket described as a shuttle bus ticket does not by itself mean transport from Beijing is included. Verify every leg of a package.",
+        "Keep the return pickup point, time and operator contact offline. If taking public buses, plan both connections back to Beijing and an alternative if a service is unavailable; do not rely on an unsolicited private-car offer as your only return."
+      ]
+    },
+    {
+      "title": "Badaling by train: book the exact stations",
+      "ordered": true,
+      "items": [
+        "Search the actual date on Railway 12306 for Beijing North (北京北) or Qinghe (清河) to Badaling Great Wall (八达岭长城). Compare the trip from your hotel to each departure station, then check the available train rather than choosing only the shortest rail ride.",
+        "Book with your name and the accepted identity document requested by the seller. The 12306 English site accepts valid foreign passports under its rules. Carry the valid document used for the ticket; a booking screenshot or itinerary sheet is not a substitute for it.",
+        "Check the return journey before paying for your day. Your train booking and Great Wall admission are separate purchases; keep both confirmations available offline.",
+        "Leave time for reaching the station, security, identity checks and boarding. The rail journey does not include the transfer from your hotel or the walk from the arrival station to the attraction.",
+        "On arrival, follow current signs for your booked entry or cableway. Before leaving the wall, work back from the return train departure and allow time to descend, reach the station and board.",
+        "If the rail timings or tickets do not fit, Mutianyu with a confirmed round-trip transfer may be a simpler choice for your group."
+      ]
     },
     {
       "title": "A realistic Great Wall day",
@@ -33,11 +82,12 @@
         ["Afternoon", "Descend in time for the booked shuttle, rail or driver return", "Last services and road traffic matter"],
         ["Evening", "Easy dinner near your hotel rather than another ticketed attraction", "Allow recovery after travel and stairs"]
       ]},
-      "items": ["Wear shoes with grip; exposed steps and ramps may be tiring even for regular walkers.", "Bring water, sun protection and a layer. Rain, ice, wind or poor visibility may require a shorter visit or postponement.", "For children or limited mobility, pick a smaller accessible section and confirm each transport segment before buying."]
+      "items": ["Wear shoes with grip; exposed steps and ramps may be tiring even for regular walkers.", "Bring water, sun protection and a layer. Rain, ice, wind or poor visibility may require a shorter visit or postponement.", "For children or limited mobility, pick a smaller accessible section and confirm each transport segment before buying.", "Set a turnaround point from your confirmed return transport. Include the descent, any local shuttle, the walk to the pickup point or station and boarding time; do not plan to arrive exactly at departure.", "Keep a later flight or intercity train separate from a tightly timed Wall visit. If the return cannot be confirmed, shorten or postpone the excursion rather than relying on an uncertain last service."]
     },
     {
       "title": "Tickets, transport and common mistakes",
-      "items": ["Confirm the official section name, date, entrance and QR or passport entry rule. Screenshots of an old ticket do not establish current admission.", "A cableway ticket, entrance ticket, shuttle ticket, tour transfer and train ticket may all be separate products. Read the inclusions before paying.", "If a driver or tour advertises a 'Great Wall trip', ask which section, pickup location, waiting time, return location and cancellation rule it includes.", "Do not assume a route with one cable car company can descend via another. Use the exact operators and stations shown on current official maps.", "Leave the Wall if a weather notice, closure or unsafe conditions require it; there is no need to complete a route just because it was preplanned."]
+      "table": {"headers": ["Product", "What to check", "Common mistake"], "rows": [["Transport from Beijing", "Train seat, coach booking or agreed car service, including the return", "Assuming attraction admission includes the journey from your hotel"], ["Great Wall admission", "Correct section, date, identity details and current entry arrangements", "Buying Badaling entry while arranging transport to Mutianyu"], ["Mutianyu scenic-area shuttle", "Whether your chosen product includes the local shuttle", "Confusing the local shuttle with a coach from Beijing"], ["Cable car, chairlift or toboggan", "Ascent and descent operator, stops and weather restrictions", "Assuming different operators accept the same ticket"]]},
+      "items": ["Build a total from your live transport quote, admission, optional lifts and food. Check current prices and allow for changes to the journey time.", "Confirm the official section name, date, entrance and QR or passport entry rule. Screenshots of an old ticket do not establish current admission.", "A cableway ticket, entrance ticket, shuttle ticket, tour transfer and train ticket may all be separate products. Read the inclusions before paying.", "If a driver or tour advertises a 'Great Wall trip', ask which section, pickup location, waiting time, return location and cancellation rule it includes.", "Do not assume a route with one cable car company can descend via another. Use the exact operators and stations shown on current official maps.", "Leave the Wall if a weather notice, closure or unsafe conditions require it; there is no need to complete a route just because it was preplanned."]
     },
     {
       "title": "Fit the Wall into a first Beijing visit",
@@ -50,12 +100,22 @@
     ["Do I need a cable car at Mutianyu?", "No, but it can reduce climbing. Check the exact ascent and descent product, operator and return point before paying."],
     ["Can I buy Great Wall tickets on arrival?", "Policies and capacity vary by section and date. Check the current official booking channel and carry the identity document required by your reservation."],
     ["How much time should I allow?", "Treat the Wall as most of a day including Beijing transfers, entry, walking and return. Exact hours depend on the section, route and weather."],
+    ["Can I visit the Great Wall from Beijing without a tour?", "Yes. For Badaling, check trains from Beijing North or Qinghe to Badaling Great Wall on Railway 12306. For Mutianyu, arrange the public-bus connections, a verified coach or a booked car. Confirm admission separately and plan the return before leaving Beijing."],
+    ["Which train station should I use for the Great Wall?", "For the high-speed route to Badaling, search Badaling Great Wall (八达岭长城) as the destination, with Beijing North (北京北) or Qinghe (清河) as the departure. Check your actual train and your hotel-to-station journey. This train route is not transport to Mutianyu."],
+    ["Can I get to Mutianyu by public bus?", "The scenic operator publishes a 916 Express connection from Dongzhimen to Huairou Beidajie, then H23 or H24; its detailed guide lists additional local routes. Check current operation, the correct stop and the return connections for your date. This is a transfer route, not a direct train."],
+    ["Does the Mutianyu shuttle ticket include a bus from Beijing?", "A scenic-area shuttle ticket refers to the local transfer at Mutianyu. It does not by itself include a coach from Beijing. Read the exact package inclusions and keep the city departure point and the scenic-area shuttle stop separate in your plan."],
+    ["Are train tickets, admission and cable cars included together?", "Treat them as separate products unless your booked package explicitly includes each one. For Mutianyu, check the chosen lift operator and ascent/descent product; the official visitor notice says cable-car and ropeway/slide tickets are not interchangeable. Save all booking confirmations."],
+    ["How should I plan the return from the Great Wall?", "Confirm the return train or coach before departure. Allow for walking off the wall, any lift or shuttle queue, transfer to the pickup point or station, and boarding checks. Save the operator contact offline and avoid making an uncertain final service your only option."],
     ["Can ChinaEase Buddy plan my Wall day?", "Yes. Share your Beijing hotel, visit date, section preference, walking ability and any fixed onward train or flight."]
   ],
   "sourceLinks": [
     ["Mutianyu Great Wall official ticket booking", "https://en.mutianyugreatwall.com/reservation-center/tickets"],
     ["Mutianyu Great Wall official visitor notice", "https://en.mutianyugreatwall.com/article/4DlCYuBZ75h"],
     ["Beijing government: Mutianyu Great Wall", "https://english.beijing.gov.cn/specials/ticketing/attractions/202407/t20240717_3751593.html"],
-    ["China Railway 12306 English", "https://www.12306.cn/en/"]
+    ["China Railway 12306 English", "https://www.12306.cn/en/"],
+    ["Beijing government: high-speed rail stations and the Badaling Great Wall route", "https://english.beijing.gov.cn/latest/news/202412/t20241211_3963033.html"],
+    ["Railway 12306: identity documents, e-tickets and travel rules", "https://www.12306.cn/en/faq.html"],
+    ["Mutianyu official transport options", "https://en.mutianyugreatwall.com/article/4DlBQNxqZum"],
+    ["Mutianyu official day-trip and public-bus guide", "https://en.mutianyugreatwall.com/article/4DlCBdg5GgT"]
   ]
 }

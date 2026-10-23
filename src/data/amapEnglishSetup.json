@@ -1,6 +1,6 @@
 {
-  "heading": "How to Change Amap to English on iPhone & Android",
-  "intro": "Use this page to set the interface language and check whether an English search leads to the right place. If menus are already English but a hotel or station is still in Chinese, go straight to the place-name checks. For walking, metro and station-entrance planning after setup, use the separate Amap navigation guide.",
+  "heading": "How to Use Amap in English: Setup, Address Search & Metro Routes",
+  "intro": "Start by setting the interface language and checking that an English search leads to the right place. Then use the same app to find the correct hotel branch or station, plan walking and metro routes, and choose the right entrance or exit.",
   "quickAnswer": "Amap Global lists English support. Update the official app and choose English in a first-run language picker or language setting if offered. If that control is missing, use the iPhone or Android checks below. English menus, Chinese business names and an incorrect destination are different problems: choose what you see in the helper to get the relevant next step. Keep the hotel or station name in Chinese for checking the result.",
   "reviewed": "October 23, 2026",
   "modified": "2026-10-23",
@@ -188,20 +188,82 @@
       "title": "Before you rely on Amap at the airport",
       "items": [
         "Open the app and check the interface before departure, while you still have time to troubleshoot.",
+        "Allow location access while using the app if you want live positioning and turn-by-turn guidance; review other permissions instead of accepting them automatically.",
         "Keep the hotel name, complete Chinese address and contact details outside the app.",
-        "Prepare mobile data or a working connection for live checks. Do not assume a saved screenshot is live navigation.",
+        "Prepare mobile data and a charged phone or power bank. Live search, traffic and route updates depend on connectivity; a saved screenshot is not live navigation.",
         "Confirm the airport terminal or railway station on the ticket and check the last part of the route to the actual entrance.",
         "For a ride, check the separate pickup and payment requirements in the DiDi guide or the service you choose."
       ]
     },
     {
-      "title": "Continue with routes after language setup",
+      "title": "Search for the correct place",
+      "items": [
+        "Start with the full English place name, but use the Chinese name or address when English search returns no result or the wrong result.",
+        "For hotels, restaurants, shops, hospitals and attractions with several branches, compare the district, street, phone number, photos and distance.",
+        "For a large attraction, search for the ticket entrance or visitor entrance rather than the centre point of the entire site.",
+        "For a railway station or airport, confirm the complete station name, terminal, departure level, arrival level or pickup area.",
+        "Do not assume the first search result is correct. Save the verified place before starting the route."
+      ]
+    },
+    {
+      "title": "Plan walking and metro routes",
+      "items": [
+        "Choose the route mode you actually need: walking, public transport, driving, cycling or another option shown in your version.",
+        "For public transport, compare the departure time, total duration, number of transfers, walking distance and last-service information shown in the app.",
+        "Check the named metro station entrance when entering and the recommended station exit at your destination. The wrong exit can add a long surface walk.",
+        "For walking routes, zoom in around large roads, elevated walkways, shopping centres, parks and compounds to confirm the accessible entrance.",
+        "Route details and service availability can change. Follow official signs and staff instructions when they differ from the map."
+      ]
+    },
+    {
+      "title": "Use Amap at airports and railway stations",
+      "items": [
+        "Confirm the airport terminal or the full railway-station name before leaving your hotel; major cities can have several distant stations and terminals.",
+        "Search for the correct entrance, departure hall, metro connection, taxi queue or ride-hailing pickup point instead of the general station pin.",
+        "Leave extra time for security, walking inside the complex and finding the correct gate or waiting area.",
+        "Once inside, treat official signs, screens, tickets and staff instructions as the final authority. Indoor routes and access controls may change faster than the map."
+      ]
+    },
+    {
+      "title": "Amap maps and ride-hailing are different tasks",
+      "items": [
+        "Amap is useful for place search, route planning, live traffic and navigation. Some versions can also display ride-hailing services.",
+        "A ride-hailing entry inside Amap does not guarantee the same English support, payment methods, identity checks or customer service as the standalone DiDi route.",
+        "Before ordering a car, confirm the pickup pin, destination, service category, estimated fare, payment method and vehicle details shown on your screen.",
+        "For a dedicated step-by-step ride guide, use the separate DiDi in China for Foreigners page."
+      ]
+    },
+    {
+      "title": "What to save for weak or missing mobile data",
+      "items": [
+        "Take screenshots of the full route, key turns, metro line and transfer stations, destination entrance and return route.",
+        "Keep your hotel name, Chinese address, phone number and nearest metro station in your notes.",
+        "Assume that live search, traffic and route recalculation require internet unless your exact app version clearly confirms an offline feature.",
+        "Carry a second data option or know where to find official station, hotel or visitor-service help."
+      ]
+    },
+    {
+      "title": "Common Amap route problems and fixes",
+      "items": [
+        "Wrong branch: compare the district, street, phone number, photos, opening information and distance before choosing.",
+        "Location appears wrong: check GPS and location permission, confirm mobile data, step outside dense buildings and wait for the position to refresh.",
+        "Walking route ends at the wrong side: look for the named gate or entrance and zoom in for footbridges, tunnels, compounds or road barriers.",
+        "Public-transport route is unavailable or no longer practical: check a later route, another station entrance, an official taxi queue or DiDi."
+      ]
+    },
+    {
+      "title": "Useful Chinese map phrases",
+      "items": [
+        "这个地址在哪里？ — Where is this address?",
+        "请问最近的地铁站入口在哪里？ — Where is the nearest metro entrance?",
+        "我应该从哪个出口出去？ — Which exit should I use?",
+        "这是正确的火车站吗？ — Is this the correct railway station?",
+        "请带我到这个地址。 — Please take me to this address."
+      ]
+    },
+    {
+      "title": "Compare maps and prepare mobile data",
       "links": [
-        {
-          "label": "Amap navigation: addresses, walking, metro and entrances",
-          "description": "Continue after language setup with the actual hotel, station and walking route.",
-          "href": "/amap-in-english/"
-        },
         {
           "label": "Amap vs Google Maps in China",
           "description": "Choose a map for your China trip and keep a practical backup.",
@@ -247,6 +309,30 @@
     {
       "question": "What should I check after switching Amap to English?",
       "answer": "Check a main control, then try a destination you can verify from a ticket or booking. Confirm its city, branch, airport terminal or station and final entrance. Save the Chinese destination details outside the app for arrival."
+    },
+    {
+      "question": "Can foreigners use Amap in China?",
+      "answer": "Yes. Overseas users can download Amap from supported official app stores and use it for place search and route planning. Some account-based or transaction features may require additional setup."
+    },
+    {
+      "question": "Do I need a Chinese phone number for Amap?",
+      "answer": "Basic map search and route planning may be available without a Chinese number, but login, saved data, ride-hailing or other account features can vary. Follow the requirements shown in your current version and keep access to your travel phone number."
+    },
+    {
+      "question": "Can Amap plan metro and walking routes?",
+      "answer": "Yes. Amap provides public-transport and walking route planning. Check the station entrance, destination exit, transfers, walking distance and current service information before starting."
+    },
+    {
+      "question": "Does Google Maps work in mainland China?",
+      "answer": "Do not rely on Google Maps as your only map on an ordinary mainland China connection. Access to some international services can be restricted, so prepare Amap and save essential addresses and screenshots before travel."
+    },
+    {
+      "question": "Does Amap work offline?",
+      "answer": "Some capabilities can vary by device and version. Unless your version clearly confirms an offline feature, assume search, live traffic and route recalculation need mobile data and save route screenshots as a backup."
+    },
+    {
+      "question": "Should I use Amap or DiDi?",
+      "answer": "Use Amap mainly for maps, place search, walking and public-transport routes, and navigation. Use DiDi when you want a dedicated ride-hailing flow with pickup, vehicle, trip, payment and support details."
     }
   ],
   "sources": [
@@ -273,10 +359,22 @@
     {
       "label": "Shanghai government: AMap in English",
       "href": "https://english.shanghai.gov.cn/en-UsefulApps/20241213/59a549d4bdf1440c8e86251d5ac7d5a9.html"
+    },
+    {
+      "label": "Amap official mobile website",
+      "href": "https://mobile.amap.com/"
+    },
+    {
+      "label": "Shanghai government: essential apps for visitors",
+      "href": "https://english.shanghai.gov.cn/en-UsefulApps/20231214/3cac2d8cc7f847da92a72252bae06705.html"
+    },
+    {
+      "label": "UK travel advice: internet access in China",
+      "href": "https://www.gov.uk/foreign-travel-advice/china/safety-and-security#internet-access"
     }
   ],
-  "metaTitle": "Amap in English: iPhone & Android Setup and Fixes",
-  "metaDescription": "Change Amap to English on iPhone or Android. Find the right fix for missing language settings, Chinese place names and wrong search results, with official downloads.",
+  "metaTitle": "Amap in English: Setup, Address Search & Metro Routes (2026)",
+  "metaDescription": "Change Amap to English on iPhone or Android, then find the right hotel branch, plan metro and walking routes, and check station entrances and exits.",
   "evidenceNote": "Based on official app listings and platform documentation. Menu availability varies by app version and phone. The search examples below are checks to perform on your device; they are not a claim of a completed phone test.",
   "helper": {
     "heading": "Find the right Amap English fix",

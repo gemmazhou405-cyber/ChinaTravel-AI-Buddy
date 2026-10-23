@@ -287,12 +287,8 @@
   ],
   "china-travel-apps": [
     {
-      "label": "Change Amap to English",
+      "label": "Amap in English: setup and routes",
       "href": "/amap-english-mode-guide-2026/"
-    },
-    {
-      "label": "Use Amap for addresses and routes",
-      "href": "/amap-in-english/"
     },
     {
       "label": "Amap vs Google Maps in China",
@@ -369,36 +365,6 @@
     {
       "label": "China airport arrival checklist",
       "href": "/china-airport-arrival-guide/"
-    },
-    {
-      "label": "First trip to China",
-      "href": "/first-trip-to-china/"
-    }
-  ],
-  "amap-in-english": [
-    {
-      "label": "Change Amap to English",
-      "href": "/amap-english-mode-guide-2026/"
-    },
-    {
-      "label": "Amap vs Google Maps in China",
-      "href": "/amap-vs-google-maps-china/"
-    },
-    {
-      "label": "Set up and use DiDi",
-      "href": "/didi-in-china-for-foreigners/"
-    },
-    {
-      "label": "Apps for a first China trip",
-      "href": "/china-travel-apps/"
-    },
-    {
-      "label": "Mobile data and internet in China",
-      "href": "/china-esim-internet-guide/"
-    },
-    {
-      "label": "China metro guide",
-      "href": "/china-metro-guide/"
     },
     {
       "label": "First trip to China",
@@ -1161,12 +1127,8 @@
   ],
   "amap-vs-google-maps-china": [
     {
-      "label": "Change Amap to English",
+      "label": "Amap in English: setup and routes",
       "href": "/amap-english-mode-guide-2026/"
-    },
-    {
-      "label": "Use Amap for addresses and routes",
-      "href": "/amap-in-english/"
     },
     {
       "label": "Set up and use DiDi",
@@ -1221,12 +1183,8 @@
   ],
   "china-esim-internet-guide": [
     {
-      "label": "Change Amap to English",
+      "label": "Amap in English: setup and routes",
       "href": "/amap-english-mode-guide-2026/"
-    },
-    {
-      "label": "Use Amap for addresses and routes",
-      "href": "/amap-in-english/"
     },
     {
       "label": "Amap vs Google Maps in China",
@@ -1251,12 +1209,8 @@
   ],
   "china-sim-card-for-foreigners": [
     {
-      "label": "Change Amap to English",
+      "label": "Amap in English: setup and routes",
       "href": "/amap-english-mode-guide-2026/"
-    },
-    {
-      "label": "Use Amap for addresses and routes",
-      "href": "/amap-in-english/"
     },
     {
       "label": "Amap vs Google Maps in China",
@@ -1589,10 +1543,6 @@
   ],
   "amap-english-mode-guide-2026": [
     {
-      "label": "Use Amap for addresses and routes",
-      "href": "/amap-in-english/"
-    },
-    {
       "label": "Amap vs Google Maps in China",
       "href": "/amap-vs-google-maps-china/"
     },
@@ -1749,108 +1699,6 @@
       "href": "/first-trip-to-china/"
     }
   ],
-  "china-hotels-for-foreigners-no-rejection-guide": [
-    {
-      "label": "Can Foreigners Stay in Any Hotel in China? (2026 Guide)",
-      "href": "/china-hotels-for-foreigners/"
-    },
-    {
-      "label": "Register a non-hotel stay",
-      "href": "/nia-12367-online-accommodation-registration-guide/"
-    },
-    {
-      "label": "China airport arrival checklist",
-      "href": "/china-airport-arrival-guide/"
-    },
-    {
-      "label": "Paying in China",
-      "href": "/china-payment-guide/"
-    },
-    {
-      "label": "Mobile data and internet in China",
-      "href": "/china-esim-internet-guide/"
-    },
-    {
-      "label": "China Travel Checklist for First-Time Visitors",
-      "href": "/china-travel-checklist/"
-    },
-    {
-      "label": "First trip to China",
-      "href": "/first-trip-to-china/"
-    },
-    {
-      "label": "Apps for a first China trip",
-      "href": "/china-travel-apps/"
-    }
-  ],
-  "does-google-maps-work-in-china-amap-guide": [
-    {
-      "label": "Change Amap to English",
-      "href": "/amap-english-mode-guide-2026/"
-    },
-    {
-      "label": "Use Amap for addresses and routes",
-      "href": "/amap-in-english/"
-    },
-    {
-      "label": "Amap vs Google Maps in China",
-      "href": "/amap-vs-google-maps-china/"
-    },
-    {
-      "label": "Set up and use DiDi",
-      "href": "/didi-in-china-for-foreigners/"
-    },
-    {
-      "label": "Apps for a first China trip",
-      "href": "/china-travel-apps/"
-    },
-    {
-      "label": "Mobile data and internet in China",
-      "href": "/china-esim-internet-guide/"
-    },
-    {
-      "label": "China metro guide",
-      "href": "/china-metro-guide/"
-    },
-    {
-      "label": "First trip to China",
-      "href": "/first-trip-to-china/"
-    }
-  ],
-  "how-to-visit-great-wall-from-beijing-2026": [
-    {
-      "label": "Book trains with a foreign passport",
-      "href": "/china-train-booking-foreigners-12306/"
-    },
-    {
-      "label": "How to Book China High-Speed Trains Without Chinese ID",
-      "href": "/china-train-travel-guide/"
-    },
-    {
-      "label": "China metro guide",
-      "href": "/china-metro-guide/"
-    },
-    {
-      "label": "Set up and use DiDi",
-      "href": "/didi-in-china-for-foreigners/"
-    },
-    {
-      "label": "Beijing Airport to City Centre: PEK vs PKX Transfers (2026)",
-      "href": "/beijing-airport-to-city-guide/"
-    },
-    {
-      "label": "Great Wall Day Trip from Beijing: Mutianyu or Badaling? (2026)",
-      "href": "/great-wall-of-china-day-trip-from-beijing/"
-    },
-    {
-      "label": "China airport arrival checklist",
-      "href": "/china-airport-arrival-guide/"
-    },
-    {
-      "label": "First trip to China",
-      "href": "/first-trip-to-china/"
-    }
-  ],
   "what-to-eat-in-china-first-time-guide": [
     {
       "label": "Choose a 7-, 10- or 14-day China route",
@@ -1913,74 +1761,6 @@
     {
       "label": "China travel budget calculator",
       "href": "/china-travel-budget/"
-    },
-    {
-      "label": "First trip to China",
-      "href": "/first-trip-to-china/"
-    }
-  ],
-  "is-china-safe-for-tourists-2026": [
-    {
-      "label": "Is It Safe to Travel to China in 2026?",
-      "href": "/china-travel-safety-guide/"
-    },
-    {
-      "label": "Emergency Numbers in China for Travelers",
-      "href": "/china-emergency-numbers/"
-    },
-    {
-      "label": "Can Foreigners Stay in Any Hotel in China? (2026 Guide)",
-      "href": "/china-hotels-for-foreigners/"
-    },
-    {
-      "label": "China airport arrival checklist",
-      "href": "/china-airport-arrival-guide/"
-    },
-    {
-      "label": "Mobile data and internet in China",
-      "href": "/china-esim-internet-guide/"
-    },
-    {
-      "label": "Paying in China",
-      "href": "/china-payment-guide/"
-    },
-    {
-      "label": "First trip to China",
-      "href": "/first-trip-to-china/"
-    },
-    {
-      "label": "China Travel Checklist for First-Time Visitors",
-      "href": "/china-travel-checklist/"
-    }
-  ],
-  "best-apps-for-china-travel-2026": [
-    {
-      "label": "Choose a 7-, 10- or 14-day China route",
-      "href": "/china-itinerary-first-time-7-10-14-days/"
-    },
-    {
-      "label": "China travel budget calculator",
-      "href": "/china-travel-budget/"
-    },
-    {
-      "label": "China Travel Checklist for First-Time Visitors",
-      "href": "/china-travel-checklist/"
-    },
-    {
-      "label": "Best Time to Visit China: Weather and Crowds by Month (2026)",
-      "href": "/best-time-to-visit-china/"
-    },
-    {
-      "label": "7-Day China Itinerary for First-Time Visitors (2026)",
-      "href": "/7-day-china-itinerary/"
-    },
-    {
-      "label": "10-Day China Itinerary for First-Time Visitors",
-      "href": "/10-day-china-itinerary/"
-    },
-    {
-      "label": "14-Day China Itinerary for First-Time Visitors (2026)",
-      "href": "/14-day-china-itinerary/"
     },
     {
       "label": "First trip to China",

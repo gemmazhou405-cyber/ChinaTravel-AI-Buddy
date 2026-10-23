@@ -680,7 +680,7 @@ export default function ChatModal({ onClose, passState, refreshPassState, onOpen
 
                   <p className="mt-2 text-xs leading-relaxed text-ink-tertiary">
                     {t('lead.consent')}{' '}
-                    <a href="/privacy" className="underline hover:text-ink-secondary">
+                    <a href="/privacy/" className="underline hover:text-ink-secondary">
                       {t('lead.consentLink')}
                     </a>
                   </p>

@@ -7,7 +7,7 @@ const relatedGuides = [
   { label: '3-day Beijing itinerary', href: '/3-day-beijing-itinerary/' },
 ];
 
-export function RelatedGuidesForForeigners() {
+export function RelatedGuidesForForeigners({ currentPath }: { currentPath: string }) {
   return (
     <nav
       aria-label="Related guides for foreign visitors"
@@ -15,7 +15,7 @@ export function RelatedGuidesForForeigners() {
     >
       <h2 className="text-lg font-bold text-gray-950">Related guides for foreign visitors</h2>
       <div className="mt-3 grid gap-2 sm:grid-cols-2">
-        {relatedGuides.map((guide) => (
+        {relatedGuides.filter((guide) => guide.href !== currentPath).map((guide) => (
           <a
             key={guide.href}
             href={guide.href}

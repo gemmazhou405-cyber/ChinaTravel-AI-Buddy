@@ -30,7 +30,7 @@ const pages = [
     path: '/guides/',
     h1: /China Travel Guides/i,
     keywords: ['Entry rules and arrival', 'Payments and daily essentials', 'Transport and navigation', 'Routes, timing and itineraries', 'China Visa-Free Travel Guide', 'China Airport Arrival Guide', 'China Food Ordering Guide', 'China Travel Apps', 'DiDi in China for Foreigners', 'China Train Travel Guide', '7-Day China Itinerary', '10-Day China Itinerary', '14-Day China Itinerary', '3-Day Dali Itinerary', 'China Golden Week 2026 Travel Guide'],
-    links: ["/china-visa-free-checker/", "/china-visa-free-travel-guide/", "/china-240-hour-visa-free-transit-2026/", "/china-airport-arrival-guide/", "/beijing-airport-to-city-guide/", "/nia-12367-online-accommodation-registration-guide/", "/china-hotels-for-foreigners/", "/china-food-ordering-guide/", "/china-travel-safety-guide/", "/china-travel-apps/", "/china-esim-internet-guide/", "/amap-in-english/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/china-train-travel-guide/", "/china-itinerary-first-time-7-10-14-days/", "/7-day-china-itinerary/", "/10-day-china-itinerary/", "/14-day-china-itinerary/", "/3-day-dali-itinerary/", "/china-golden-week-2026-travel-guide/", "/faq/", "/china-travel-budget/", "/china-travel-checklist/", "/best-time-to-visit-china/", "/first-trip-to-china/"],
+    links: ["/china-visa-free-checker/", "/china-visa-free-travel-guide/", "/china-240-hour-visa-free-transit-2026/", "/china-airport-arrival-guide/", "/beijing-airport-to-city-guide/", "/nia-12367-online-accommodation-registration-guide/", "/china-hotels-for-foreigners/", "/china-food-ordering-guide/", "/china-travel-safety-guide/", "/china-travel-apps/", "/china-esim-internet-guide/", "/amap-english-mode-guide-2026/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/china-train-travel-guide/", "/china-itinerary-first-time-7-10-14-days/", "/7-day-china-itinerary/", "/10-day-china-itinerary/", "/14-day-china-itinerary/", "/3-day-dali-itinerary/", "/china-golden-week-2026-travel-guide/", "/faq/", "/china-travel-budget/", "/china-travel-checklist/", "/best-time-to-visit-china/", "/first-trip-to-china/"],
   },
   {
     path: '/didi-payment-for-foreigners/',
@@ -47,8 +47,8 @@ const pages = [
   {
     path: '/amap-vs-google-maps-china/',
     h1: /AMap vs Google Maps in China.*2026/i,
-    keywords: ['Chinese', 'metro exit', 'offline', 'Google Maps'],
-    links: ["/amap-in-english/", "/china-travel-apps/", "/#trip-plan", "/amap-english-mode-guide-2026/", "/didi-in-china-for-foreigners/", "/china-esim-internet-guide/", "/china-metro-guide/", "/first-trip-to-china/"],
+    keywords: ['Chinese', 'metro exit', 'offline', 'Google Maps', 'Apple Maps', 'Baidu Maps'],
+    links: ["/amap-english-mode-guide-2026/", "/china-travel-apps/", "/#trip-plan", "/didi-in-china-for-foreigners/", "/china-esim-internet-guide/", "/china-metro-guide/", "/first-trip-to-china/"],
   },
   {
     path: '/china-payment-guide/',
@@ -89,14 +89,8 @@ const pages = [
   {
     path: '/china-travel-safety-guide/',
     h1: /Is It Safe to Travel to China.*2026/i,
-    keywords: ['Level 2', 'tea-house', 'unmarked', 'original passport', 'tap water', 'Typhoons', '110', '120', '119'],
+    keywords: ['Level 2', 'September 4, 2026', 'Smart Traveler Enrollment Program', 'tea-house', 'unmarked', 'original passport', 'tap water', 'Typhoons', '110', '120', '119'],
     links: ["/#trip-plan", "/china-emergency-numbers/", "/china-hotels-for-foreigners/", "/china-payment-guide/", "/china-airport-arrival-guide/", "/first-trip-to-china/", "/china-esim-internet-guide/", "/china-travel-checklist/"],
-  },
-  {
-    path: '/is-china-safe-for-tourists-2026/',
-    h1: /Is China Safe for US Citizens.*2026/i,
-    keywords: ['US citizens', 'Level 2', 'September 4, 2026', 'exit bans', 'Smart Traveler Enrollment Program', '110', '120', '119'],
-    links: ["/china-travel-safety-guide/", "/china-emergency-numbers/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/china-airport-arrival-guide/", "/china-esim-internet-guide/", "/china-payment-guide/", "/china-travel-checklist/"],
   },
   {
     path: '/china-travel-budget/',
@@ -109,13 +103,13 @@ const pages = [
     path: '/china-travel-apps/',
     h1: /Essential China Travel Apps to Set Up Before Arrival/i,
     keywords: ['Alipay', 'WeChat', 'AMap Global', 'DiDi', 'Trip.com', 'Railway 12306', 'offline translation'],
-    links: ["/#trip-plan", "/amap-in-english/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/china-esim-internet-guide/", "/amap-english-mode-guide-2026/", "/amap-vs-google-maps-china/", "/first-trip-to-china/"],
+    links: ["/#trip-plan", "/amap-english-mode-guide-2026/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/china-esim-internet-guide/", "/amap-vs-google-maps-china/", "/first-trip-to-china/"],
   },
   {
-    path: '/amap-in-english/',
-    h1: /How to Use Amap in China.*Addresses.*Metro/i,
-    keywords: ['English', 'place search', 'walking', 'public transport', 'Chinese address', 'station exit'],
-    links: ["/#trip-plan", "/first-trip-to-china/", "/china-travel-apps/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/amap-english-mode-guide-2026/", "/amap-vs-google-maps-china/", "/china-esim-internet-guide/"],
+    path: '/amap-english-mode-guide-2026/',
+    h1: /How to Use Amap in English.*Setup.*Metro/i,
+    keywords: ['iPhone', 'Android', 'Search for the correct place', 'Plan walking and metro routes', 'station exit', 'Useful Chinese map phrases'],
+    links: ["/amap-vs-google-maps-china/", "/china-esim-internet-guide/", "/china-travel-apps/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/first-trip-to-china/"],
   },
   {
     path: '/china-metro-guide/',
@@ -172,7 +166,7 @@ const pages = [
     path: '/3-day-beijing-itinerary/',
     h1: /3-Day Beijing Itinerary for First-Time Visitors.*2026/i,
     keywords: ['Palace Museum', 'Great Wall', 'Temple of Heaven', 'Tiananmen', 'Wangfujing', 'Qianmen', 'Railway 12306', 'If your three days include a Monday', '20:00 China time', 'seven days ahead', 'separately charged attractions', 'Wumen', 'Dashilan'],
-    links: ["/beijing-airport-to-city-guide/", "/how-to-visit-great-wall-from-beijing-2026/", "/china-travel-budget/#cost-estimator", "/#trip-plan", "/3-day-shanghai-itinerary/", "/best-time-to-visit-china/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/3-day-xian-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-booking-foreigners-12306/"],
+    links: ["/beijing-airport-to-city-guide/", "/great-wall-of-china-day-trip-from-beijing/", "/china-travel-budget/#cost-estimator", "/#trip-plan", "/3-day-shanghai-itinerary/", "/best-time-to-visit-china/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/3-day-xian-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-booking-foreigners-12306/"],
   },
   {
     path: '/3-day-shanghai-itinerary/',
@@ -274,7 +268,7 @@ const pages = [
     path: '/china-esim-internet-guide/',
     h1: /How to Get an eSIM in China.*2026 Internet Guide/i,
     keywords: ['How do I get an eSIM in China?', 'travel eSIM', 'data roaming', 'mainland China', 'Google', 'APN'],
-    links: ["/#trip-plan", "/first-trip-to-china/", "/china-travel-apps/", "/amap-english-mode-guide-2026/", "/amap-in-english/", "/amap-vs-google-maps-china/", "/didi-in-china-for-foreigners/", "/china-metro-guide/"],
+    links: ["/#trip-plan", "/first-trip-to-china/", "/china-travel-apps/", "/amap-english-mode-guide-2026/", "/amap-vs-google-maps-china/", "/didi-in-china-for-foreigners/", "/china-metro-guide/"],
   },
   {
     path: '/alipay-for-foreigners/',
@@ -484,8 +478,14 @@ try {
     '/how-to-use-didi-in-china-foreigners/',
     '/china-esim-internet-vpn-guide/',
     '/china-visa-free-guide-2026/',
+    '/amap-in-english/',
+    '/does-google-maps-work-in-china-amap-guide/',
+    '/how-to-visit-great-wall-from-beijing-2026/',
+    '/is-china-safe-for-tourists-2026/',
+    '/china-hotels-for-foreigners-no-rejection-guide/',
+    '/best-apps-for-china-travel-2026/',
   ];
-  const canonicalDestinations = ['/china-travel-budget/', '/china-payment-guide/', '/didi-in-china-for-foreigners/', '/china-esim-internet-guide/', '/china-visa-free-travel-guide/'];
+  const canonicalDestinations = ['/china-travel-budget/', '/china-payment-guide/', '/didi-in-china-for-foreigners/', '/china-esim-internet-guide/', '/china-visa-free-travel-guide/', '/amap-english-mode-guide-2026/', '/amap-vs-google-maps-china/', '/great-wall-of-china-day-trip-from-beijing/', '/china-travel-safety-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/'];
   results.push({ path: '/sitemap.xml', name: 'HTTP 200', pass: sitemapResponse.status === 200, detail: `status ${sitemapResponse.status}` });
   for (const path of redirectSources) {
     results.push({ path: '/sitemap.xml', name: 'redirect excluded', pass: !sitemap.includes(`<loc>${ORIGIN}${path}</loc>`), detail: path });
