@@ -1,0 +1,79 @@
+{
+  "utc": "2026-10-23T05:55:01.494252+00:00",
+  "origin": "https://chinaeasebuddy.com",
+  "mode": "HEAD",
+  "rows": [
+    {
+      "path": "/",
+      "ua": "Mozilla/5.0",
+      "run": 1,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "public, max-age=0, must-revalidate",
+      "raw_headers": "HTTP/1.1 200 OK\ndate: Fri, 23 Oct 2026 05:54:12 GMT\n\nHTTP/2 200 \ndate: Fri, 23 Oct 2026 05:54:12 GMT\ncontent-type: text/html; charset=utf-8\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Odo5PLDe1EAWyYJ4THqt235uGDmn8sHMqgutQgluZXapp9bp3vYqzz7lSKDZJ%2BE%2Ftlualfy1g6NXMYSKsaoVS0X55JjgU2RUbGmhYMbKbXOicGbIghmMl9LzBEnu7umQpXIBmDo%2BqJO9D4gb4gQE4Qw%3D\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\naccess-control-allow-origin: *\ncache-control: public, max-age=0, must-revalidate\nx-content-type-options: nosniff\nreferrer-policy: strict-origin-when-cross-origin\nserver: envoy\ncf-cache-status: DYNAMIC\ncf-ray: a4ee7c5ede3f27e1-ORD\nalt-svc: h3=\":443\"; ma=86400\nx-envoy-upstream-service-time: 54"
+    },
+    {
+      "path": "/",
+      "ua": "Mozilla/5.0",
+      "run": 2,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "public, max-age=0, must-revalidate",
+      "raw_headers": "HTTP/1.1 200 OK\ndate: Fri, 23 Oct 2026 05:54:19 GMT\n\nHTTP/2 200 \ndate: Fri, 23 Oct 2026 05:54:20 GMT\ncontent-type: text/html; charset=utf-8\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=FXmDVxlOxHjjl3MegkXRQiHXXdcUTEj7JwaRaqhu8wKqAQI9NA4DlZ5REOJfeNQ3CzJeUIkn%2F3Uwh%2B7QDBr%2BlGL8GFZPztfpgKj%2B7apih6Lztx%2Fq6sze0v50EZOHZAa7beNw0MYhWnTM7L3XMAl4rYI%3D\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\naccess-control-allow-origin: *\ncache-control: public, max-age=0, must-revalidate\nx-content-type-options: nosniff\nreferrer-policy: strict-origin-when-cross-origin\nserver: envoy\ncf-cache-status: DYNAMIC\ncf-ray: a4ee7c8b0bab27e1-ORD\nalt-svc: h3=\":443\"; ma=86400\nx-envoy-upstream-service-time: 48"
+    },
+    {
+      "path": "/",
+      "ua": "Googlebot",
+      "run": 1,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "public, max-age=0, must-revalidate",
+      "raw_headers": "HTTP/1.1 200 OK\ndate: Fri, 23 Oct 2026 05:54:26 GMT\n\nHTTP/2 200 \ndate: Fri, 23 Oct 2026 05:54:26 GMT\ncontent-type: text/html; charset=utf-8\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=I8L08Jz7LQyPS%2Fnrlj0MbmMgwyeJe9jH8g32TdZrTI9bHLAZTRebG6uImlcCw9sL%2FRd2w1SlXfwtsDEJ%2BHpjAIQZA5bGe4EbYYf4opuDE69K7B%2Fnn9G1hmMc5acAlZ8TtZJh8OgzsXLhpXeFAGDFrUc%3D\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\naccess-control-allow-origin: *\ncache-control: public, max-age=0, must-revalidate\nx-content-type-options: nosniff\nreferrer-policy: strict-origin-when-cross-origin\nserver: envoy\ncf-cache-status: DYNAMIC\ncf-ray: a4ee7cb389ee27e1-ORD\nalt-svc: h3=\":443\"; ma=86400\nx-envoy-upstream-service-time: 56"
+    },
+    {
+      "path": "/",
+      "ua": "Googlebot",
+      "run": 2,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "public, max-age=0, must-revalidate",
+      "raw_headers": "HTTP/1.1 200 OK\ndate: Fri, 23 Oct 2026 05:54:30 GMT\n\nHTTP/2 200 \ndate: Fri, 23 Oct 2026 05:54:30 GMT\ncontent-type: text/html; charset=utf-8\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=pz9wmdrHT4BztaIlXbpXE8m%2FsXt%2FZtE440zTFH6Mq8TDyiG%2Fj2ytdewkHJP1Dx1rc5ST7lmCREJ0UeLFj3D1fJD6y2EXSCMPdnFxstG3ToLiueagXZ5pbb0i%2FtW5ULlMCvzYoukf8h813kWPjTkNrcw%3D\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\naccess-control-allow-origin: *\ncache-control: public, max-age=0, must-revalidate\nx-content-type-options: nosniff\nreferrer-policy: strict-origin-when-cross-origin\nserver: envoy\ncf-cache-status: DYNAMIC\ncf-ray: a4ee7cce08a227e1-ORD\nalt-svc: h3=\":443\"; ma=86400\nx-envoy-upstream-service-time: 57"
+    },
+    {
+      "path": "/didi-in-china-for-foreigners/",
+      "ua": "Mozilla/5.0",
+      "run": 1,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "public, max-age=0, must-revalidate",
+      "raw_headers": "HTTP/1.1 200 OK\ndate: Fri, 23 Oct 2026 05:54:38 GMT\n\nHTTP/2 200 \ndate: Fri, 23 Oct 2026 05:54:38 GMT\ncontent-type: text/html; charset=utf-8\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=gBc37WR6qE6jB3u854%2F5z6fQ4pecAr6bNRjz4iOi0WE5ACo6tL746W4WFkXdxxSV%2Bdvpm2fcs%2FpF70bTQjkMAhmwqwJGiCIX9UV7rbBRscFKGlQSi%2BmIJNSzvtViaIJ%2FQPjzqfu72C2lsBN85nJUOTc%3D\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\naccess-control-allow-origin: *\ncache-control: public, max-age=0, must-revalidate\nx-content-type-options: nosniff\nreferrer-policy: strict-origin-when-cross-origin\nserver: envoy\ncf-cache-status: DYNAMIC\ncf-ray: a4ee7cfe2d9f27e1-ORD\nalt-svc: h3=\":443\"; ma=86400\nx-envoy-upstream-service-time: 42"
+    },
+    {
+      "path": "/didi-in-china-for-foreigners/",
+      "ua": "Mozilla/5.0",
+      "run": 2,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "public, max-age=0, must-revalidate",
+      "raw_headers": "HTTP/1.1 200 OK\ndate: Fri, 23 Oct 2026 05:54:46 GMT\n\nHTTP/2 200 \ndate: Fri, 23 Oct 2026 05:54:46 GMT\ncontent-type: text/html; charset=utf-8\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=hp75Gf%2BJx09mHZLdOG0FA3RTYgeHHq2oVf7UQoHvW3F8d1NEz4P3hYMHdWRog07VMijz7Vpx7nSmBsPzGyrB3Ad0gzLCczakqKx15rzDS7z7cV1lymYxIOy%2BuIKonAKjDAokmSHnA9yE2aH8IAbHGHU%3D\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\naccess-control-allow-origin: *\ncache-control: public, max-age=0, must-revalidate\nx-content-type-options: nosniff\nreferrer-policy: strict-origin-when-cross-origin\nserver: envoy\ncf-cache-status: DYNAMIC\ncf-ray: a4ee7d2e49cd27e1-ORD\nalt-svc: h3=\":443\"; ma=86400\nx-envoy-upstream-service-time: 56"
+    },
+    {
+      "path": "/didi-in-china-for-foreigners/",
+      "ua": "Googlebot",
+      "run": 1,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "public, max-age=0, must-revalidate",
+      "raw_headers": "HTTP/1.1 200 OK\ndate: Fri, 23 Oct 2026 05:54:53 GMT\n\nHTTP/2 200 \ndate: Fri, 23 Oct 2026 05:54:53 GMT\ncontent-type: text/html; charset=utf-8\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=xHHueyT%2BAOZDpr1WjEqm6enalqbDtKn3hiGfAsKLBoMujMk%2Ffg3sxqHck6nXgCeTh1bkxNiX1tt6A5xQ0j00%2F2iVsWJZ13mTyY6A0EvTUBzmNeUQv%2FWEtb761GfZGFroYA9ctEd8tbf6Vb0n7SczNzc%3D\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\naccess-control-allow-origin: *\ncache-control: public, max-age=0, must-revalidate\nx-content-type-options: nosniff\nreferrer-policy: strict-origin-when-cross-origin\nserver: envoy\ncf-cache-status: DYNAMIC\ncf-ray: a4ee7d5e18bb27e1-ORD\nalt-svc: h3=\":443\"; ma=86400\nx-envoy-upstream-service-time: 27"
+    },
+    {
+      "path": "/didi-in-china-for-foreigners/",
+      "ua": "Googlebot",
+      "run": 2,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "no-store",
+      "raw_headers": "HTTP/1.1 200 OK\ndate: Fri, 23 Oct 2026 05:55:01 GMT\n\nHTTP/2 200 \ndate: Fri, 23 Oct 2026 05:55:01 GMT\ncontent-type: text/html; charset=utf-8\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=dyDrW9cUeIBkZdszPB%2FHL3bPH1kBjVQ9Pp3e6Sg9wfLZSFeUbotJy3cUAaoe9MVb%2Fj7Tz0tZCaHmMrBMytOwwN9wh6Ng2%2F52dsBPOq3EQrY0oRIYEICptESiahuFrgOVsaEIAevN52HC5LPjHNUqmb8%3D\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\naccess-control-allow-origin: *\ncache-control: no-store\nx-content-type-options: nosniff\ncdn-cache-control: no-store\nreferrer-policy: strict-origin-when-cross-origin\nserver: envoy\ncf-cache-status: DYNAMIC\ncf-ray: a4ee7d8e28bd27e1-ORD\nalt-svc: h3=\":443\"; ma=86400\nx-envoy-upstream-service-time: 32"
+    }
+  ]
+}

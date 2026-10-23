@@ -1,0 +1,60 @@
+{
+  "utc": "2026-10-23T05:57:41.245104+00:00",
+  "origin": "https://chinaeasebuddy.com",
+  "mode": "GET",
+  "rows": [
+    {
+      "path": "/",
+      "identical": true,
+      "plain_sha256": "806f2cea99b0481c54a1c31d182637ac3671d22cfb6eac6b284354db63c7089d",
+      "cb_sha256": "806f2cea99b0481c54a1c31d182637ac3671d22cfb6eac6b284354db63c7089d",
+      "bytes": 18926,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "no-store",
+      "cb-cache-control": "no-store"
+    },
+    {
+      "path": "/pricing/",
+      "identical": true,
+      "plain_sha256": "fdf8a1537bb00f992662a6af771f7667c8a57573a27dc625adbf8508b2b24744",
+      "cb_sha256": "fdf8a1537bb00f992662a6af771f7667c8a57573a27dc625adbf8508b2b24744",
+      "bytes": 16685,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "no-store",
+      "cb-cache-control": "no-store"
+    },
+    {
+      "path": "/amap-english-mode-guide-2026/",
+      "identical": true,
+      "plain_sha256": "5a8dff1c28701f0c2d9e8fd96ea280a5cad1f18034959016901487d8a822cd33",
+      "cb_sha256": "5a8dff1c28701f0c2d9e8fd96ea280a5cad1f18034959016901487d8a822cd33",
+      "bytes": 46094,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "no-store",
+      "cb-cache-control": "no-store"
+    },
+    {
+      "path": "/didi-in-china-for-foreigners/",
+      "identical": true,
+      "plain_sha256": "cfdf705eaea285856392b15c6f1c6524a9a2ce4c229a753449c982fc310c2206",
+      "cb_sha256": "cfdf705eaea285856392b15c6f1c6524a9a2ce4c229a753449c982fc310c2206",
+      "bytes": 41755,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "no-store",
+      "cb-cache-control": "no-store"
+    },
+    {
+      "path": "/plan/",
+      "no_query": true,
+      "linbox_before_disclaimer": true,
+      "cache-control": "no-store",
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "sha256": "23b2c71418cdb27f351090df301b95c4426cac535df2f0aeb312046e07d5c545"
+    }
+  ]
+}

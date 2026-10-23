@@ -1,0 +1,70 @@
+{
+  "utc": "2026-10-23T05:40:20Z",
+  "note": "Transcribed requested header fields from initial eight curl -sI tool outputs; full raw output was shown in tool results. Each initial response HTTP 200.",
+  "rows": [
+    {
+      "path": "/",
+      "ua": "Mozilla/5.0",
+      "run": 1,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "public, max-age=0, must-revalidate"
+    },
+    {
+      "path": "/",
+      "ua": "Mozilla/5.0",
+      "run": 2,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "public, max-age=0, must-revalidate"
+    },
+    {
+      "path": "/",
+      "ua": "Googlebot",
+      "run": 1,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "public, max-age=0, must-revalidate"
+    },
+    {
+      "path": "/",
+      "ua": "Googlebot",
+      "run": 2,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "public, max-age=0, must-revalidate"
+    },
+    {
+      "path": "/didi-in-china-for-foreigners/",
+      "ua": "Mozilla/5.0",
+      "run": 1,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "public, max-age=0, must-revalidate"
+    },
+    {
+      "path": "/didi-in-china-for-foreigners/",
+      "ua": "Mozilla/5.0",
+      "run": 2,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "public, max-age=0, must-revalidate"
+    },
+    {
+      "path": "/didi-in-china-for-foreigners/",
+      "ua": "Googlebot",
+      "run": 1,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "public, max-age=0, must-revalidate"
+    },
+    {
+      "path": "/didi-in-china-for-foreigners/",
+      "ua": "Googlebot",
+      "run": 2,
+      "cf-cache-status": "DYNAMIC",
+      "age": "ABSENT",
+      "cache-control": "public, max-age=0, must-revalidate"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "path": "/assets/index-kX_6D7Rs.js",
+    "exit": 0,
+    "cache-control": "public, max-age=14400, must-revalidate",
+    "cf-cache-status": "MISS",
+    "age": null
+  },
+  {
+    "path": "/assets/index-LxoUhywD.css",
+    "exit": 0,
+    "cache-control": "public, max-age=14400, must-revalidate",
+    "cf-cache-status": "REVALIDATED",
+    "age": null
+  },
+  {
+    "path": "/logo.png",
+    "exit": 0,
+    "cache-control": "public, max-age=14400, must-revalidate",
+    "cf-cache-status": "REVALIDATED",
+    "age": null
+  }
+]
