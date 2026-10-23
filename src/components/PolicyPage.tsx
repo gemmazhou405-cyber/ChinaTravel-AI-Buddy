@@ -4,7 +4,8 @@ import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
 import { unsubscribeNewsletter } from '../lib/newsletter';
 import { RelatedGuidesForForeigners } from './RelatedGuidesForForeigners';
 import LinBox from './LinBox';
-import AmapLanguageHelp from './AmapLanguageHelp';
+import { AmapByline, AmapCtaCard, AmapFaqAnswer, AmapGuideBody, AmapQuickAnswer } from './AmapGuide';
+import { plainText } from '../lib/amapGuideMarkup.mjs';
 import planningHelp from '../data/planningHelp.json';
 import guideRelatedLinks from '../data/guideRelatedLinks.json';
 import suzhouGuide from '../data/seoPages/3-day-suzhou-itinerary.json';
@@ -5372,19 +5373,18 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   'amap-english-mode-guide-2026': {
     path: '/amap-english-mode-guide-2026/',
     title: amapEnglishSetup.heading,
-    intro: amapEnglishSetup.intro,
+    intro: '',
     metaTitle: amapEnglishSetup.metaTitle,
     metaDescription: amapEnglishSetup.metaDescription,
-    quickAnswer: amapEnglishSetup.quickAnswer,
-    ctaLabel: 'Convert my address into an Amap-ready search',
-    midCtaLabel: 'Prepare my saved places',
-    ctaHref: '/',
-    buddyPrompt: 'Convert these destinations into English and Chinese Amap-ready searches: [places/addresses]. Also give me short taxi messages.',
+    quickAnswer: amapEnglishSetup.quickAnswer.map(plainText).join(' '),
+    // The page renders its own body, CTA card and linked FAQ answers (AmapGuide); these fields feed the schema.
+    ctaLabel: amapEnglishSetup.cta.label,
+    ctaHref: amapEnglishSetup.cta.href,
     reviewed: amapEnglishSetup.reviewed,
     lastModified: amapEnglishSetup.modified,
     isArticle: true,
-    sections: amapEnglishSetup.sections,
-    faqs: amapEnglishSetup.faqs,
+    sections: [],
+    faqs: amapEnglishSetup.faqs.map(({ question, answer }) => ({ question, answer: plainText(answer) })),
     related: [{ label: 'Full Amap navigation guide', href: '/amap-english-mode-guide-2026/' }, { label: 'Google Maps alternative guide', href: '/amap-vs-google-maps-china/' }],
     sources: amapEnglishSetup.sources,
   },
@@ -5472,7 +5472,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { title: '15 Dishes to Put on Your List', items: ['Jianbing: a savory breakfast crepe with egg, sauces, herbs, and a crisp filling.', 'Xiaolongbao: steamed soup dumplings associated with Jiangnan and Shanghai.', 'Shengjianbao: pan-fried buns with a crisp base and juicy filling.', 'Peking duck: roast duck served with thin pancakes, scallion, cucumber, and sauce.', 'Zhajiangmian: Beijing-style noodles with fermented soybean meat sauce.', 'Biangbiang noodles: wide, hand-pulled Shaanxi noodles.', 'Roujiamo: chopped meat in a crisp flatbread, strongly associated with Shaanxi.', 'Hot pot: broth-based communal cooking, especially famous in Chongqing and Sichuan.', 'Mapo tofu: tofu with minced meat, chili, and Sichuan pepper in the classic version.', 'Kung pao chicken: diced chicken with chili and peanuts.', 'Lanzhou beef noodles: hand-pulled noodles in a clear beef broth.', 'Jiaozi: boiled, steamed, or pan-fried dumplings.', 'Yangzhou fried rice: rice with egg and mixed ingredients in the classic style.', 'Lamb skewers: cumin-seasoned grilled meat associated with northwestern flavors.', 'Seasonal stir-fried greens: a useful balance to richer shared dishes.'] },
       { title: 'Order by City', table: { headers: ['City or region', 'Good starting choices'], rows: [['Beijing', 'Peking duck, zhajiangmian, dumplings'], ['Shanghai / Jiangnan', 'Xiaolongbao, shengjianbao, braised dishes'], ["Xi'an / Shaanxi", 'Biangbiang noodles, roujiamo, lamb dishes'], ['Chengdu / Sichuan', 'Mapo tofu, hot pot, dry-fried dishes'], ['Guangzhou / Guangdong', 'Dim sum, roast meats, seafood, soups']] } },
       { title: 'Food Safety and Allergies', items: ['Choose busy, clean-looking vendors that cook food thoroughly and serve it hot.', 'Drink sealed bottled or properly treated water when safety is uncertain.', 'Allergy communication is difficult because sauces, broths, oils, and shared equipment may contain hidden ingredients.', 'Show a specific Chinese allergy card and confirm with staff; Buddy provides communication support, not a medical guarantee.'] },
-      { title: 'How to Order', links: [{ label: 'How to order food in China', description: 'QR menus, dietary needs, serious allergies and paying at the table.', href: '/china-food-ordering-guide/' }], items: ['Use photo menus, displayed dishes, or a translation tool, but confirm portion size before ordering.', 'Shared dishes are common; a rough starting point is one dish per person plus one additional vegetable or staple for the table.', 'Ask whether the price is per dish, per person, per 500 grams, or by live weight when seafood and market ingredients are involved.', 'Keep Alipay or WeChat Pay ready and carry a cash backup.'] },
+      { title: 'How to Order', links: [{ label: 'How to order food in China', description: 'QR menus, dietary needs, serious allergies and paying at the table.', href: '/china-food-ordering-guide/' }, { label: 'Amap\'s menu translation', description: 'Turn a photo of a Chinese menu into English dish names, tags and prices.', href: '/amap-english-mode-guide-2026/#menu-translation' }], items: ['Use photo menus, displayed dishes, or a translation tool, but confirm portion size before ordering.', 'Shared dishes are common; a rough starting point is one dish per person plus one additional vegetable or staple for the table.', 'Ask whether the price is per dish, per person, per 500 grams, or by live weight when seafood and market ingredients are involved.', 'Keep Alipay or WeChat Pay ready and carry a cash backup.'] },
     ],
     faqs: [
       { question: 'What food should I try first in China?', answer: 'Start with the regional specialties of your destination, such as Peking duck in Beijing, xiaolongbao in Shanghai, biangbiang noodles in Xi’an, or hot pot in Chengdu and Chongqing.' },
@@ -5687,8 +5687,8 @@ function insertAfter<T>(list: T[], index: number, item: T) {
 }
 
 type GuideContentAdditions = Record<string, {
-  reviewed: string;
-  modified: string;
+  reviewed?: string;
+  modified?: string;
   sections: Array<GuidePageData['sections'][number] & { after: string }>;
   faqs: Array<GuidePageData['faqs'][number] & { after: string }>;
   sources: NonNullable<GuidePageData['sources']>;
@@ -5711,7 +5711,8 @@ for (const [type, additions] of Object.entries(guideContentAdditions as GuideCon
     return extra ? { ...section, links: [...(section.links || []), ...extra.links] } : section;
   });
   page.sources = [...(page.sources || []), ...additions.sources];
-  Object.assign(page, { reviewed: additions.reviewed, lastReviewed: additions.reviewed, lastModified: additions.modified });
+  // Link-only additions leave the page's dates alone.
+  if (additions.reviewed) Object.assign(page, { reviewed: additions.reviewed, lastReviewed: additions.reviewed, lastModified: additions.modified });
 }
 
 function setMetaContent(selector: string, attr: 'content', value: string) {
@@ -5836,7 +5837,7 @@ function useGuideSeo(page: GuidePageData) {
   }, [page]);
 }
 
-function PageShell({ title, intro, children, planningByline = false }: { title: string; intro: string; children: ReactNode; planningByline?: boolean }) {
+function PageShell({ title, intro, children, planningByline = false, byline }: { title: string; intro: string; children: ReactNode; planningByline?: boolean; byline?: ReactNode }) {
   const assetBase = import.meta.env.BASE_URL;
 
   return (
@@ -5853,10 +5854,10 @@ function PageShell({ title, intro, children, planningByline = false }: { title: 
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-[#155e63]">ChinaEase Buddy</p>
               <h1 className="text-3xl font-bold tracking-tight text-gray-950 md:text-4xl">{title}</h1>
-              {planningByline && <a href="#lin-help" className="mt-2 inline-block text-sm font-semibold text-[#155e63] underline underline-offset-4">{planningHelp.byline}</a>}
+              {byline ?? (planningByline && <a href="#lin-help" className="mt-2 inline-block text-sm font-semibold text-[#155e63] underline underline-offset-4">{planningHelp.byline}</a>)}
             </div>
           </div>
-          <p className="mb-6 max-w-3xl text-sm leading-relaxed text-gray-500 md:text-base">{intro}</p>
+          {intro && <p className="mb-6 max-w-3xl text-sm leading-relaxed text-gray-500 md:text-base">{intro}</p>}
           {children}
         </div>
       </div>
@@ -6028,6 +6029,7 @@ function FilterableCountryChecklist({ groups }: { groups: Array<{ region: string
 
 function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?: string | null; onAskBuddy?: (prefill?: string) => void }) {
   const page = guidePages[type];
+  const isAmapGuide = type === 'amap-english-mode-guide-2026';
   const isItineraryPage = type.includes('itinerary') && type !== 'china-travel-ai-itinerary-generator';
   const featuredFaqs = page.featuredFaqCount ? page.faqs.slice(0, page.featuredFaqCount) : [];
   const remainingFaqs = page.featuredFaqCount ? page.faqs.slice(page.featuredFaqCount) : page.faqs;
@@ -6061,7 +6063,7 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
   }, [type, userId]);
 
   return (
-    <PageShell title={page.title} intro={page.intro} planningByline={type !== 'guides'}>
+    <PageShell title={page.title} intro={page.intro} planningByline={type !== 'guides'} byline={isAmapGuide ? <AmapByline /> : undefined}>
       <div className="space-y-6">
         {type !== 'guides' && (
           <nav aria-label="Breadcrumb" className="text-sm">
@@ -6075,9 +6077,9 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
         )}
         <section className="rounded-2xl border border-[#155e63]/15 bg-[#155e63]/5 p-4 md:p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-[#155e63]">Quick answer</p>
-          <p className="mt-2 text-sm leading-relaxed text-gray-700 md:text-base">{page.quickAnswer}</p>
+          {isAmapGuide ? <AmapQuickAnswer /> : <p className="mt-2 text-sm leading-relaxed text-gray-700 md:text-base">{page.quickAnswer}</p>}
           <p className="mt-3 text-xs font-semibold text-gray-500">Last reviewed: {page.reviewed ?? page.lastReviewed ?? 'June 12, 2026'}</p>
-          {featuredFaqs.length === 0 && !isItineraryPage && (
+          {featuredFaqs.length === 0 && !isItineraryPage && !isAmapGuide && (
             <button
               type="button"
               onClick={handlePrimaryCta}
@@ -6088,13 +6090,13 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
           )}
         </section>
 
-        {type === 'amap-english-mode-guide-2026' && <>
-          <AmapLanguageHelp />
-          <p className="text-xs leading-relaxed text-gray-500">{amapEnglishSetup.evidenceNote}</p>
+        {isAmapGuide && <>
+          <AmapCtaCard />
+          <AmapGuideBody />
         </>}
         {type === 'china-travel-budget' && <ChinaTripCostEstimator />}
 
-        <nav className="rounded-2xl border border-gray-100 bg-white/70 p-4">
+        {!isAmapGuide && <nav className="rounded-2xl border border-gray-100 bg-white/70 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">On this page</p>
           <div className="mt-3 flex flex-wrap gap-2">
             {type === 'china-travel-budget' && (
@@ -6109,7 +6111,7 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
               FAQ
             </a>
           </div>
-        </nav>
+        </nav>}
 
         <div className="grid gap-4 md:grid-cols-2">
           {page.sections.map((section, sectionIndex) => (
@@ -6267,7 +6269,7 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
                   {faq.question}
                   <span className="float-right text-[#155e63] group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">{faq.answer}</p>
+                <p className="mt-2 text-sm leading-relaxed text-gray-600">{isAmapGuide ? <AmapFaqAnswer question={faq.question} /> : faq.answer}</p>
               </details>
             ))}
           </div>

@@ -107,9 +107,9 @@ const pages = [
   },
   {
     path: '/amap-english-mode-guide-2026/',
-    h1: /How to Use Amap in English.*Setup.*Metro/i,
-    keywords: ['iPhone', 'Android', 'Search for the correct place', 'Plan walking and metro routes', 'station exit', 'Useful Chinese map phrases'],
-    links: ["/amap-vs-google-maps-china/", "/china-esim-internet-guide/", "/china-travel-apps/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/first-trip-to-china/"],
+    h1: /How to Use Amap in English: Switch the Language, Book a Taxi, Ride the Metro/i,
+    keywords: ['AMap Global', 'English grayed out', 'Discount Express', 'get-off reminder', 'Menu Translation', 'LOCAL NOTE', 'Phrases to show drivers and staff'],
+    links: ["/amap-vs-google-maps-china/", "/china-esim-internet-guide/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/alipay-for-foreigners/", "/china-food-ordering-guide/", "/china-airport-arrival-guide/"],
   },
   {
     path: '/china-metro-guide/',

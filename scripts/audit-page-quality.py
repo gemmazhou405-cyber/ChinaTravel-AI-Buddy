@@ -133,20 +133,22 @@ for pathname in sorted(audit_paths):
     if slug == 'amap-english-mode-guide-2026':
         require(h1[0].text().strip() == amap['heading'], 'Amap: H1 differs from shared content')
         body_text = document.find('main')[0].text()
-        require(amap['evidenceNote'] in ' '.join(body_text.split()), 'Amap: evidence scope missing')
+        require(amap['byline']['tested'] in ' '.join(body_text.split()), 'Amap: tested-on byline missing')
         for section in amap['sections']:
-            section_id = re.sub('[^a-z0-9]+', '-', section['title'].lower())
-            require(section_id in ids, f'Amap: missing section {section_id}')
+            for section_id in [section['id'], *[sub['id'] for sub in section.get('subsections', [])]]:
+                require(section_id in ids, f'Amap: missing section {section_id}')
         schemas = [json.loads(node.text()) for node in document.find('script', type='application/ld+json')]
         faqs = []
         for schema in schemas:
             for item in schema.get('@graph', [schema]):
                 if item.get('@type') == 'FAQPage':
                     faqs.extend(item['mainEntity'])
-        expected_faqs = [(item['question'], item['answer']) for item in amap['faqs']]
+        plain = lambda text: re.sub(r'\*\*(.+?)\*\*|\*(.+?)\*|\[([^\]]+)\]\([^)]+\)', lambda m: next(g for g in m.groups() if g is not None), text)
+        expected_faqs = [(item['question'], plain(item['answer'])) for item in amap['faqs']]
         require([(q['name'], q['acceptedAnswer']['text']) for q in faqs] == expected_faqs, 'Amap: FAQ schema does not match shared visible answers')
+        flat_text = re.sub(r'\s+([.,;:])', r'\1', ' '.join(body_text.split()))
         for question, answer in expected_faqs:
-            require(question in body_text and answer in body_text, f'Amap: FAQ missing from visible HTML: {question}')
+            require(question in flat_text and answer in flat_text, f'Amap: FAQ missing from visible HTML: {question}')
 
 if errors:
     print('\n'.join(f'FAIL {error}' for error in errors))

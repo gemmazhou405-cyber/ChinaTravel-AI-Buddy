@@ -3,7 +3,8 @@ import { join } from 'node:path';
 import { TRIP_COST_STYLES, estimateTripCost, formatTripCostRange } from '../src/lib/tripCostEstimate.mjs';
 
 import { renderPlanningHelp } from './render-planning-help.mjs';
-import { renderAmapLanguageHelp } from './render-amap-help.mjs';
+import { createAmapGuideRenderer, renderAmapInline } from './render-amap-guide.mjs';
+import { plainText } from '../src/lib/amapGuideMarkup.mjs';
 const planningHelp = JSON.parse(await readFile('src/data/planningHelp.json', 'utf8'));
 const guideRelatedLinks = JSON.parse(await readFile('src/data/guideRelatedLinks.json', 'utf8'));
 
@@ -3191,9 +3192,9 @@ Object.assign(pageMeta, {
     title: amapEnglishSetup.metaTitle,
     heading: amapEnglishSetup.heading,
     description: amapEnglishSetup.metaDescription,
-    intro: amapEnglishSetup.intro,
-    quickAnswer: amapEnglishSetup.quickAnswer,
-    faqs: amapEnglishSetup.faqs.map(({ question, answer }) => [question, answer]),
+    quickAnswer: amapEnglishSetup.quickAnswer.map(plainText).join(' '),
+    // FAQPage JSON-LD takes the plain answer; the visible answer keeps its links.
+    faqs: amapEnglishSetup.faqs.map(({ question, answer }) => [question, plainText(answer)]),
     sourceLinks: amapEnglishSetup.sources.map(({ label, href }) => [label, href]),
     lastReviewed: amapEnglishSetup.reviewed,
     lastModified: amapEnglishSetup.modified,
@@ -3629,12 +3630,6 @@ for (const page of transitAnswers.pages) {
 
 // Give focused search pages their own answer instead of reusing a broader guide's sections.
 const focusedPageContent = {
-  "amap-english-mode-guide-2026": {
-    contentSections: amapEnglishSetup.sections,
-    lastReviewed: amapEnglishSetup.reviewed,
-    lastModified: amapEnglishSetup.modified,
-    article: true,
-  },
   "alipay-metro-qr-transport-code-guide": {
     "contentSections": [
       {
@@ -3712,7 +3707,7 @@ const focusedPageContent = {
           "Check whether portions are shared and whether a menu price is per item or by weight.",
           "Choose a busy, clearly priced restaurant and keep a translation fallback."
         ],
-        "links": [{ "label": "How to order food in China", "description": "QR menus, dietary needs, serious allergies and paying at the table.", "href": "/china-food-ordering-guide/" }]
+        "links": [{ "label": "How to order food in China", "description": "QR menus, dietary needs, serious allergies and paying at the table.", "href": "/china-food-ordering-guide/" }, { "label": "Amap's menu translation", "description": "Turn a photo of a Chinese menu into English dish names, tags and prices.", "href": "/amap-english-mode-guide-2026/#menu-translation" }]
       }
     ],
     "lastReviewed": "October 23, 2026",
@@ -3781,7 +3776,8 @@ for (const [slug, additions] of Object.entries(guideContentAdditions)) {
     meta.contentSections[index] = { ...meta.contentSections[index], links: [...(meta.contentSections[index].links || []), ...links] };
   }
   meta.sourceLinks = [...(meta.sourceLinks || []), ...additions.sources.map(({ label, href }) => [label, href])];
-  Object.assign(meta, { lastReviewed: additions.reviewed, lastModified: additions.modified });
+  // Link-only additions leave the page's dates alone.
+  if (additions.reviewed) Object.assign(meta, { lastReviewed: additions.reviewed, lastModified: additions.modified });
 }
 
 pageMeta['china-online-arrival-card-2026'] = {
@@ -3877,7 +3873,6 @@ const staticCtas = {
   'what-to-eat-in-china-first-time-guide': ['Ask Buddy what to order', '/'],
   'how-to-use-wechat-as-foreigner-2026': ['Build my WeChat setup checklist', '/'],
   'nia-12367-online-accommodation-registration-guide': ['Get your free personalized trip starter', '/#trip-plan'],
-  'amap-english-mode-guide-2026': ['Convert my address into an Amap-ready search', '/'],
   'alipay-metro-qr-transport-code-guide': ['Ask Buddy for my city metro setup', '/'],
   'china-travel-ai-itinerary-generator': ['Get my free itinerary', '/plan/'],
   'wechat-verification-without-friend-qr-2026': ['Review my WeChat verification options', '/'],
@@ -4567,13 +4562,15 @@ function staticPageContent(page, meta) {
   const featuredFaqCount = meta.featuredFaqCount || 0;
   const featuredFaqItems = faqItems.slice(0, featuredFaqCount);
   const remainingFaqItems = featuredFaqCount > 0 ? faqItems.slice(featuredFaqCount) : faqItems;
+  const amapGuide = page === 'amap-english-mode-guide-2026' ? createAmapGuideRenderer(amapEnglishSetup) : null;
+  const amapAnswers = new Map(amapEnglishSetup.faqs.map(({ question, answer }) => [question, answer]));
   const renderFaqItems = (items) => items.map(([question, answer]) => `
           <article style="margin: 0 0 14px; padding: 18px; border: 1px solid rgba(21, 94, 99, 0.12); border-radius: 18px; background: rgba(248, 243, 234, 0.72);">
             <h3 style="margin: 0 0 8px; font-size: 1rem;">${escapeHtml(question)}</h3>
-            <p style="margin: 0; color: #536365; line-height: 1.7;">${escapeHtml(answer)}</p>
+            <p style="margin: 0; color: #536365; line-height: 1.7;">${amapGuide ? renderAmapInline(amapAnswers.get(question)) : escapeHtml(answer)}</p>
           </article>
         `).join('');
-  const primaryCta = ctaHref === `/${page}/` ? '' : `<p style="margin: 0 0 28px;"><a href="${escapeAttr(ctaHref)}" style="display: inline-flex; border-radius: 999px; background: #155e63; color: #fffdf8; padding: 12px 18px; font-weight: 700; text-decoration: none;">${escapeHtml(ctaLabel)}</a></p>`;
+  const primaryCta = amapGuide || ctaHref === `/${page}/` ? '' : `<p style="margin: 0 0 28px;"><a href="${escapeAttr(ctaHref)}" style="display: inline-flex; border-radius: 999px; background: #155e63; color: #fffdf8; padding: 12px 18px; font-weight: 700; text-decoration: none;">${escapeHtml(ctaLabel)}</a></p>`;
 
   return `
     <main id="static-seo-content" style="max-width: 960px; margin: 0 auto; padding: 48px 20px; color: #122022; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
@@ -4586,14 +4583,14 @@ function staticPageContent(page, meta) {
         </nav>
       ` : ''}
       <h1 style="margin: 0 0 18px; font-size: clamp(2rem, 6vw, 3.75rem); line-height: 1.05; letter-spacing: -0.03em;">${escapeHtml(heading)}</h1>
-      ${!['guides', 'pricing', 'terms', 'privacy', 'refund', 'contact', 'about', 'unsubscribe'].includes(page) ? `<p style="margin:0 0 20px;"><a href="#lin-help" style="color:#155e63;font-weight:600;">${escapeHtml(planningHelp.byline)}</a></p>` : ''}
+      ${amapGuide ? amapGuide.byline('#lin-help') : !['guides', 'pricing', 'terms', 'privacy', 'refund', 'contact', 'about', 'unsubscribe'].includes(page) ? `<p style="margin:0 0 20px;"><a href="#lin-help" style="color:#155e63;font-weight:600;">${escapeHtml(planningHelp.byline)}</a></p>` : ''}
       ${page === 'pricing' ? `${renderPlanningHelp(planningHelp, 'pricing')}<section aria-labelledby="digital-pass-scope"><h2 id="digital-pass-scope">${escapeHtml(planningHelp.digitalHeading)}</h2><p>${escapeHtml(planningHelp.digitalScope)}</p></section>` : ''}
       <section aria-labelledby="quick-answer" style="margin: 0 0 24px; padding: 22px; border: 1px solid rgba(21, 94, 99, 0.14); border-radius: 22px; background: #fffdf8;">
         <h2 id="quick-answer" style="margin: 0 0 10px; font-size: 1.25rem;">Quick answer</h2>
-        <p style="margin: 0; color: #536365; line-height: 1.7;">${escapeHtml(meta.quickAnswer || meta.description)}</p>
+        ${amapGuide ? amapGuide.quickAnswer() : `<p style="margin: 0; color: #536365; line-height: 1.7;">${escapeHtml(meta.quickAnswer || meta.description)}</p>`}
       </section>
+      ${amapGuide ? amapGuide.cta() : ''}
       <p style="margin: 0 0 20px; color: #6b7678; font-size: 0.9rem;">Last reviewed: ${escapeHtml(meta.lastReviewed || 'June 12, 2026')}</p>
-      ${page === 'amap-english-mode-guide-2026' ? renderAmapLanguageHelp(amapEnglishSetup) : ''}
       ${page === 'china-travel-budget' ? staticTripCostEstimator() : ''}
       ${meta.sections && page === 'guides' ? `
         <nav aria-label="China travel guide categories" style="margin: 0 0 24px;">
@@ -4624,7 +4621,7 @@ function staticPageContent(page, meta) {
           </div>
         </section>
       ` : ''}
-      ${meta.contentSections ? meta.contentSections.map((section, sectionIndex) => `
+      ${amapGuide ? amapGuide.body() : meta.contentSections ? meta.contentSections.map((section, sectionIndex) => `
         <section aria-labelledby="${escapeAttr(section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-'))}" style="margin: 0 0 24px; padding: 20px; border: 1px solid rgba(21, 94, 99, 0.12); border-radius: 20px; background: rgba(255, 253, 248, 0.72);">
           ${!['china-train-booking-foreigners-12306', 'china-itinerary-first-time-7-10-14-days'].includes(page) ? `<span id="guide-section-${sectionIndex}" aria-hidden="true"></span>` : ''}
           <h2 id="${escapeAttr(section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-'))}" style="margin: 0 0 12px; font-size: 1.25rem;">${escapeHtml(section.title)}</h2>
@@ -4655,7 +4652,7 @@ function staticPageContent(page, meta) {
               ${section.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
             </${section.ordered ? 'ol' : 'ul'}>
           ` : ''}
-          ${['amap-english-mode-guide-2026', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary', '10-day-china-itinerary', '3-day-shanghai-itinerary', '3-day-chongqing-itinerary', 'china-airport-arrival-guide', 'china-food-ordering-guide', 'what-to-eat-in-china-first-time-guide'].includes(page) && section.links ? `
+          ${['china-travel-apps', 'amap-vs-google-maps-china', 'china-metro-guide', '3-day-shenzhen-itinerary', '3-day-guangzhou-itinerary', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary', '10-day-china-itinerary', '3-day-shanghai-itinerary', '3-day-chongqing-itinerary', 'china-airport-arrival-guide', 'china-food-ordering-guide', 'what-to-eat-in-china-first-time-guide'].includes(page) && section.links ? `
             <ul style="margin: 12px 0 0; padding-left: 20px; color: #536365; line-height: 1.8;">
               ${section.links.map(({ label, description, href }) => `<li><a href="${escapeAttr(href)}"${href.startsWith('http') ? ' rel="noopener noreferrer"' : ''} style="color: #155e63; text-underline-offset: 4px;">${escapeHtml(label)}</a>: ${escapeHtml(description)}</li>`).join('')}
             </ul>

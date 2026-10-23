@@ -1,472 +1,214 @@
 {
-  "heading": "How to Use Amap in English: Setup, Address Search & Metro Routes",
-  "intro": "Start by setting the interface language and checking that an English search leads to the right place. Then use the same app to find the correct hotel branch or station, plan walking and metro routes, and choose the right entrance or exit.",
-  "quickAnswer": "Amap Global lists English support. Update the official app and choose English in a first-run language picker or language setting if offered. If that control is missing, use the iPhone or Android checks below. English menus, Chinese business names and an incorrect destination are different problems: choose what you see in the helper to get the relevant next step. Keep the hotel or station name in Chinese for checking the result.",
+  "metaTitle": "How to Use Amap in English (2026): Switch, Taxi & Metro",
+  "metaDescription": "Tested on my phone in China, Oct 2026: switch Amap to English, fix grayed-out English, compare taxi fares, find metro exits and translate menus.",
+  "heading": "How to Use Amap in English: Switch the Language, Book a Taxi, Ride the Metro",
+  "byline": {
+    "name": "Maintained by Lin",
+    "tested": "Tested on iPhone 14 (iOS 18.5), AMap Global 17.2, Dongguan, October 23, 2026"
+  },
   "reviewed": "October 23, 2026",
   "modified": "2026-10-23",
+  "quickAnswer": [
+    "Download **AMap Global** (publisher: AutoNavi). In Amap, tap **My → ⚙️ Settings → Language → English**, then close Amap completely and reopen it. Amap itself reminds you to restart after changing the language.",
+    "This works when your phone is set to a non-Chinese language and region, as most visitors' phones already are. (English grayed out? [Here's the fix](#english-grayed-out).)",
+    "The app's buttons and route directions switch fully, but many shop and street names stay in Chinese, so keep your hotel's Chinese address handy.",
+    "*Tested on iPhone 14, Dongguan, October 23, 2026.*",
+    "Jump to: [English grayed out?](#english-grayed-out) · [Book a taxi](#taxi) · [Metro exits](#metro) · [Menu translation](#menu-translation) · [Offline](#offline)"
+  ],
+  "cta": {
+    "text": "**Flying soon?** If you'd rather not troubleshoot at the airport, I'll get Amap, Alipay and DiDi working on your phone before you fly.",
+    "label": "See the app setup service on Fiverr →",
+    "href": "https://www.fiverr.com/s/p3dZbQR"
+  },
+  "screenshotCaption": "Screenshot from my iPhone, Dongguan, October 2026",
+  "screenshots": {
+    "1": { "src": "/images/amap/amap-english-01.webp", "width": 1080, "height": 2337, "alt": "Amap My page in English, with the gear icon for Settings at the top right and the My tab selected at the bottom right" },
+    "2": { "src": "/images/amap/amap-english-02.webp", "width": 1080, "height": 2337, "alt": "Amap Settings page listing General, Language, Message Notifications and Storage Space" },
+    "3": { "src": "/images/amap/amap-english-03.webp", "width": 1080, "height": 2337, "alt": "Amap Language Settings with English selected and a banner asking you to restart the app after changing the language" },
+    "4": { "src": "/images/amap/amap-english-04.webp", "width": 1080, "height": 2337, "alt": "Amap home screen in English after a restart, showing the Find places search bar and shortcuts including Ride, Hi China and Subway Map" },
+    "5": { "src": "/images/amap/amap-english-05.webp", "width": 1080, "height": 2337, "alt": "Amap language settings in Chinese with Simplified Chinese selected and English, Spanish, Portuguese, French, German and Thai grayed out" },
+    "6": { "src": "/images/amap/amap-english-06.webp", "width": 1080, "height": 2337, "alt": "Amap English search for Jihotel listing several Ji Hotel branches in Dongguan, each with its Chinese name, rating and distance" },
+    "7": { "src": "/images/amap/amap-english-07.webp", "width": 1080, "height": 2337, "alt": "Amap English search for Subway station listing nearby stations with English and Chinese names, Line 1 tags and a Nearest label" },
+    "8": { "src": "/images/amap/amap-english-08.webp", "width": 1080, "height": 2337, "alt": "Amap Welcome sign-in screen with a phone number field and other login methods: Email Login, WeChat, Apple, Google, Alipay and Taobao" },
+    "9": { "src": "/images/amap/amap-english-09.webp", "width": 1080, "height": 2337, "alt": "Amap sign-in region picker listing country codes China +86, Hong Kong +852, Macau +853, Taiwan +886 and Japan +81" },
+    "10": { "src": "/images/amap/amap-english-10.webp", "width": 1080, "height": 2337, "alt": "Amap ride booking from Subway Station Exit A showing a 24.9 km route, Discount Express at 34.4 to 38.1 CNY selected with 3 of 13 platforms, Express and Flash fares, and a Confirm button" },
+    "11": { "src": "/images/amap/amap-english-11.webp", "width": 1080, "height": 2337, "alt": "Amap public transport route showing journey time options, an intercity train leg with the departure time, the station entrance and exit to use, and a GO button with get-off reminder" },
+    "12": { "src": "/images/amap/amap-english-12.webp", "width": 1080, "height": 2337, "alt": "Amap Songshan Lake subway station page with entrance and exit tabs, Line 1 fare range CN¥2-11, first and last trains, next-train countdown and a View Translation button" },
+    "13": { "src": "/images/amap/amap-english-13.webp", "width": 1080, "height": 2337, "alt": "Amap Hi China page with China travel guide, Menu Translation and Ride tiles, an arrival guide prompt, Trip planner, Check entry requirements, Arrival card and Emergency help" },
+    "14": { "src": "/images/amap/amap-english-14.webp", "width": 1080, "height": 2337, "alt": "Amap menu translation showing Stir-fried Fresh Beef with its Chinese name, Spicy and Beef tags, an English description and a price of 69 CNY with a dollar estimate" },
+    "15": { "src": "/images/amap/amap-english-15.webp", "width": 1080, "height": 2337, "alt": "Amap Dietary Preferences panel with severe allergy options, dietary restrictions such as No pork and Gluten-Free, spiciness levels and a Confirm and show to staff button" },
+    "16": { "src": "/images/amap/amap-english-16.webp", "width": 1080, "height": 2337, "alt": "Amap Order Food card to show staff, with a polite request in Chinese, dietary preferences, two ordered dishes, an estimated total of 84 CNY and a split bill for two people" },
+    "17": { "src": "/images/amap/amap-english-17.webp", "width": 1080, "height": 2337, "alt": "Amap Face-to-Face translation screen showing Hi and 你好 translated between English and Chinese" },
+    "18": { "src": "/images/amap/amap-english-18.webp", "width": 1080, "height": 2337, "alt": "Amap Arrival Guide with three checklists: Immigration Clearance, Network Connection for airport Wi-Fi and SIM card, and Go to hotel" }
+  },
   "sections": [
     {
-      "title": "Choose the official Amap download for your phone",
-      "items": [
-        "Use the official app-store links below and compare the app name and publisher. Amap is also known as Gaode / 高德地图; the official store listing uses AMap Global. Store availability can differ by country and device.",
-        "For iPhone, the listing identifies AutoNavi Information Technology Co. Ltd. and includes English among its languages. The Android link below is for package com.autonavi.minimap. Avoid choosing an unrelated app solely because its title says English maps."
+      "id": "download",
+      "title": "Download the right app: AMap Global",
+      "blocks": [
+        { "type": "p", "text": "In the App Store and Google Play the app is called **AMap Global**, published by **AutoNavi Information Technology**. It's the same app Chinese drivers and locals use: in China's App Store it's listed as 高德地图 (Gaode), with the same publisher. Ignore look-alike apps with \"English map\" in their name." },
+        { "type": "p", "text": "Update before you fly: newer features such as English taxi booking only appear in recent versions." }
+      ]
+    },
+    {
+      "id": "switch",
+      "title": "How to switch Amap to English, step by step",
+      "blocks": [
+        { "type": "ol", "items": [
+          "Tap **My** (我的), bottom right. [[shot:1]]",
+          "Tap the **gear icon** (设置 Settings), top right. [[shot:2]]",
+          "Tap **Language** (语言设置) and choose **English**. [[shot:3]]",
+          "**Close Amap completely** (swipe it away) and reopen it. [[shot:4]]"
+        ] },
+        { "type": "p", "text": "That's three taps to the language list. The same list also has Spanish, Portuguese, French, German, Thai, Japanese and more." },
+        { "type": "note", "text": "After switching to English, you need to close Amap and restart it before the language updates. Otherwise the languages get mixed up." },
+        { "type": "p", "text": "**Android:** you can also try Settings → System → Languages → App languages → AMap → English. This works on supported phones; Google notes some steps need Android 14 or later." }
       ],
-      "links": [
+      "subsections": [
         {
-          "label": "Amap Global for iPhone and iPad",
-          "description": "Official Apple App Store listing; check its current Languages section.",
-          "href": "https://apps.apple.com/us/app/amap-global/id461703208"
-        },
-        {
-          "label": "Amap Global for Android",
-          "description": "Official Google Play listing, package com.autonavi.minimap.",
-          "href": "https://play.google.com/store/apps/details?id=com.autonavi.minimap"
+          "id": "english-grayed-out",
+          "title": "English grayed out?",
+          "blocks": [
+            { "type": "p", "text": "If your phone is set to Chinese, Amap's language list shows English and the other foreign languages grayed out (greyed out). [[shot:5]] This mostly catches overseas Chinese visitors or anyone who uses their phone in Chinese. The fix: go to **iPhone Settings → General → Language & Region**, set the iPhone language to **English** and the region to a country outside mainland China (I used United Kingdom), then choose English in Amap and restart it." }
+          ]
         }
       ]
     },
     {
-      "title": "English interface and Chinese place names are different",
-      "table": {
-        "headers": [
-          "What you see",
-          "What it tells you",
-          "Next check"
-        ],
-        "rows": [
-          [
-            "English main controls",
-            "The interface is using English",
-            "Check the actual destination next"
-          ],
-          [
-            "Chinese hotel, shop or entrance name",
-            "That listing may retain its local name",
-            "Compare the Chinese name and address with your confirmation"
-          ],
-          [
-            "English search results with similar names",
-            "The search term is ambiguous",
-            "Verify city, branch, airport terminal or railway station"
-          ]
-        ]
-      },
-      "items": [
-        "Changing the interface language and selecting the right destination are separate tasks. Preserve the Chinese booking details even after English is enabled.",
-        "For a driver or hotel receptionist, the Chinese property name, branch and entrance are more useful than an unverified English translation. Ask the property to confirm them if the booking is unclear."
+      "id": "search",
+      "title": "Search in English, and what stays in Chinese",
+      "blocks": [
+        { "type": "p", "text": "The app's buttons and turn-by-turn directions switch to English. Since July 2025, Amap also shows English names and descriptions for key places such as major attractions, hotels and restaurants. Smaller shops, bus stops and many residential compounds still appear in Chinese, and so do some details: on station pages, for example, the facilities list (toilets, baby rooms) is in Chinese. Tap **View Translation** to translate it." },
+        { "type": "p", "text": "**English search works, but watch the branch** [[shot:6]] [[shot:7]]" },
+        { "type": "ul", "items": [
+          "I searched for Ji Hotel in English and got five branches of the same chain in one city, each with its Chinese name underneath. Pick the branch whose Chinese name matches your booking confirmation.",
+          "Searching \"subway station\" listed the nearby stations with English and Chinese names, the line number, and a **Nearest** tag.",
+          "Your own hotel by its Chinese name always works best. Copy the name from your booking confirmation."
+        ] },
+        { "type": "p", "text": "**Watch out for twins:** Shanghai Hongqiao Railway Station (上海虹桥站) and Shanghai Hongqiao International Airport (上海虹桥国际机场) are different places, and Pudong Airport (上海浦东国际机场) is another airport again. Match the name on your ticket." }
       ]
     },
     {
-      "title": "How to switch Amap to English",
-      "ordered": true,
-      "items": [
-        "Update the official Amap app and open it with a working internet connection.",
-        "If a first-run language picker appears, select English. Otherwise look in the app settings for Language, 语言 or 语言设置. Use the menu translations below when needed.",
-        "Reopen Amap and check a main control such as search or the route screen. A change in a spoken navigation voice is not sufficient evidence that the interface changed.",
-        "If English or the language control is absent, use the relevant phone-specific section. If menus are English but a listing remains Chinese, use the place-name checks instead."
+      "id": "sign-in",
+      "title": "Do you need a Chinese phone number?",
+      "blocks": [
+        { "type": "p", "text": "No. According to Amap, its main features work without logging in. To book a taxi you do sign in, and you don't need a Chinese SIM for that either: the sign-in screen offers country codes beyond mainland China, Amap's August 2026 update says numbers from 65 countries and regions work, and you can skip the phone number entirely by signing in with **email, Apple or Google** (or WeChat, Alipay or Taobao). [[shot:8]] [[shot:9]]" },
+        { "type": "p", "text": "To pay for rides, link a card to Alipay or WeChat Pay first: [Alipay for foreigners](/alipay-for-foreigners/) · [WeChat Pay for foreigners](/wechat-pay-for-foreigners/)." }
       ]
     },
     {
-      "title": "Chinese menu labels to look for",
-      "items": [
-        "These translations help you recognise controls; they are not a fixed sequence of taps."
+      "id": "taxi",
+      "title": "Book a taxi in English inside Amap",
+      "blocks": [
+        { "type": "p", "text": "Since August 2026, AMap Global lets international visitors book rides in English. Tap **Ride** on the Home screen (or the ride icon on any route screen), set your destination, choose a car type, check the fare estimate and pickup point, then confirm. Amap sends your request to a network of ride-hailing and taxi operators in one tap. [[shot:10]]" },
+        { "type": "p", "text": "What I saw on two trips in Dongguan on October 23, 2026 (fares change with time and traffic):" },
+        { "type": "table", "headers": ["Ride type", "What it's for", "14 km, 32 min", "25 km, 56 min"], "rows": [
+          ["Discount Express", "Cheapest; no extra charge for traffic jams (the price is recalculated if you change the trip)", "19–23 CNY", "34–38 CNY"],
+          ["Express", "Everyday rides", "about 24 CNY", "44–71 CNY"],
+          ["Flash", "Faster pickup", "36–39 CNY", "74–80 CNY"],
+          ["Taxi", "Regular taxi", "about 49 CNY", "about 96 CNY"]
+        ] },
+        { "type": "p", "text": "On the longer trip, Discount Express cost less than half the taxi fare." },
+        { "type": "p", "text": "You can tick **several ride types at once**, and each one goes out to several ride platforms (mine showed \"Selected 3/13\"), so more drivers can pick up your request. If the pickup pin is in the wrong spot, tap the pickup label on the map to move it. Before you confirm, Amap asks you to accept the third-party ride terms. You can also book **For Others**. I stopped before booking, so I haven't tested the payment step." },
+        { "type": "note", "text": "A small number of roads don't allow pickups, and the app detects this automatically, so check exactly where your pickup point is. When you get in, check the license plate." },
+        { "type": "p", "text": "**Amap or DiDi?** Amap books across several operators from the map you're already using. DiDi is a single platform with its own English app. Step-by-step DiDi setup: [DiDi in China for foreigners](/didi-in-china-for-foreigners/)." }
+      ]
+    },
+    {
+      "id": "metro",
+      "title": "Metro and walking routes: pick the right entrance",
+      "blocks": [
+        { "type": "p", "text": "Search your destination, then tap the **bus icon** (Public Transport) on the route screen. Amap lists several options with total journey times. Each leg shows the line (intercity trains as well as metro), how many stops, where to get off, when the next train leaves, and **which station entrance to use** plus how far you'll walk to it. [[shot:11]]" },
+        { "type": "p", "text": "Tap **GO** to start the route with a **get-off reminder**, so you don't miss your stop." },
+        { "type": "p", "text": "Tap any station to see its entrances and exits, the fare range, first and last train times in each direction, and a live countdown to the next train with how crowded it is. [[shot:12]] For the whole network, use the **Subway Map** shortcut on the Home screen." },
+        { "type": "note", "text": "When you take the metro, look carefully at which entrance you use. Most stations have elevators for luggage, so look out for them." },
+        { "type": "p", "text": "For walking routes, zoom in near big roads, footbridges and malls to check where the entrance actually is. More on metro tickets and gates: [China metro guide](/china-metro-guide/)." }
+      ]
+    },
+    {
+      "id": "hi-china",
+      "title": "Hi China: menu translation and more tools for visitors",
+      "blocks": [
+        { "type": "p", "text": "On the Home screen, tap **Hi China**: it's in the shortcut icons below the search bar, right under **Drive**. It's Amap's one-stop page for international visitors. [[shot:13]]" }
       ],
-      "table": {
-        "headers": [
-          "Chinese label",
-          "English meaning"
-        ],
-        "rows": [
-          [
-            "我的",
-            "Me / profile"
-          ],
-          [
-            "设置",
-            "Settings"
-          ],
-          [
-            "通用设置",
-            "General settings, if this menu is present"
-          ],
-          [
-            "语言 / 语言设置",
-            "Language / language settings"
-          ],
-          [
-            "英文 / 英语",
-            "English"
-          ]
-        ]
-      }
-    },
-    {
-      "title": "iPhone: check the app language",
-      "items": [
-        "Start with the in-app language picker or settings. The official iPhone listing includes English, but a particular menu position is not guaranteed across versions.",
-        "In iPhone Settings, find the Amap app entry and look for an app-language preference if offered. Recent iOS versions group individual app settings under Apps. Select English, then reopen Amap and inspect the main controls.",
-        "If no app-language choice appears, return to the in-app checks and official update. Keep the Chinese destination from your booking available. A missing language control alone does not establish that changing your App Store country will solve it."
-      ]
-    },
-    {
-      "title": "Android: check App languages",
-      "ordered": true,
-      "items": [
-        "Check the language setting inside the official Amap app first.",
-        "On supported Android phones, open Settings, System, Languages, then App languages. Choose Amap and English only if they appear. Google notes that some of these instructions require Android 14 or later; manufacturer wording can differ.",
-        "If the setting is offered but does not take effect, restart the app with a working network connection.",
-        "If Amap or English is missing from that list, the system-level control is not available for that installed setup. Use the in-app setting and the Chinese destination fallback while checking the current official app information."
-      ]
-    },
-    {
-      "title": "If English is missing or Amap is still in Chinese",
-      "table": {
-        "headers": [
-          "What you see",
-          "What to check next"
-        ],
-        "rows": [
-          [
-            "Main menus are Chinese",
-            "Try the language picker or your phone-specific checks; inspect a main control after reopening."
-          ],
-          [
-            "English / Language is missing",
-            "Check the official app and version. The system app-language control only works for supported apps and languages."
-          ],
-          [
-            "Menus are English; a hotel or attraction is Chinese",
-            "Keep the interface setting and verify the place with its Chinese booking name."
-          ],
-          [
-            "English search returns the wrong branch",
-            "Use the Chinese address, city and exact hotel branch before planning a route."
-          ],
-          [
-            "An airport and a station share a place name",
-            "Compare the Chinese suffix: 机场 is airport and 站 is station. Confirm the terminal or station named on the ticket."
-          ],
-          [
-            "A service asks for sign-in or payment verification",
-            "Handle that service requirement separately; changing the interface language does not complete it."
-          ]
-        ]
-      }
-    },
-    {
-      "title": "Test an English place search before travel",
-      "items": [
-        "These are destination-checking examples. Compare the live app result with your ticket or booking before selecting it.",
-        "For a hotel, use the Chinese property name and complete address from the confirmation. Add the branch and entrance if the property provides them. Save that information outside the app for arrival.",
-        "Before starting a route, check that its destination pin and final entrance match the booking. Language setup alone does not establish that the selected destination is correct."
-      ],
-      "table": {
-        "headers": [
-          "English search to try",
-          "Chinese name to compare",
-          "Check before choosing"
-        ],
-        "rows": [
-          [
-            "Shanghai Hongqiao Railway Station",
-            "上海虹桥站",
-            "Railway station, not the airport"
-          ],
-          [
-            "Shanghai Hongqiao International Airport",
-            "上海虹桥国际机场",
-            "Airport and correct terminal, not the railway station"
-          ],
-          [
-            "Shanghai Pudong International Airport",
-            "上海浦东国际机场",
-            "Different airport from Hongqiao; use the airport and terminal on your ticket"
-          ]
-        ]
-      }
-    },
-    {
-      "title": "Before you rely on Amap at the airport",
-      "items": [
-        "Open the app and check the interface before departure, while you still have time to troubleshoot.",
-        "Allow location access while using the app if you want live positioning and turn-by-turn guidance; review other permissions instead of accepting them automatically.",
-        "Keep the hotel name, complete Chinese address and contact details outside the app.",
-        "Prepare mobile data and a charged phone or power bank. Live search, traffic and route updates depend on connectivity; a saved screenshot is not live navigation.",
-        "Confirm the airport terminal or railway station on the ticket and check the last part of the route to the actual entrance.",
-        "For a ride, check the separate pickup and payment requirements in the DiDi guide or the service you choose."
-      ]
-    },
-    {
-      "title": "Search for the correct place",
-      "items": [
-        "Start with the full English place name, but use the Chinese name or address when English search returns no result or the wrong result.",
-        "For hotels, restaurants, shops, hospitals and attractions with several branches, compare the district, street, phone number, photos and distance.",
-        "For a large attraction, search for the ticket entrance or visitor entrance rather than the centre point of the entire site.",
-        "For a railway station or airport, confirm the complete station name, terminal, departure level, arrival level or pickup area.",
-        "Do not assume the first search result is correct. Save the verified place before starting the route."
-      ]
-    },
-    {
-      "title": "Plan walking and metro routes",
-      "items": [
-        "Choose the route mode you actually need: walking, public transport, driving, cycling or another option shown in your version.",
-        "For public transport, compare the departure time, total duration, number of transfers, walking distance and last-service information shown in the app.",
-        "Check the named metro station entrance when entering and the recommended station exit at your destination. The wrong exit can add a long surface walk.",
-        "For walking routes, zoom in around large roads, elevated walkways, shopping centres, parks and compounds to confirm the accessible entrance.",
-        "Route details and service availability can change. Follow official signs and staff instructions when they differ from the map."
-      ]
-    },
-    {
-      "title": "Use Amap at airports and railway stations",
-      "items": [
-        "Confirm the airport terminal or the full railway-station name before leaving your hotel; major cities can have several distant stations and terminals.",
-        "Search for the correct entrance, departure hall, metro connection, taxi queue or ride-hailing pickup point instead of the general station pin.",
-        "Leave extra time for security, walking inside the complex and finding the correct gate or waiting area.",
-        "Once inside, treat official signs, screens, tickets and staff instructions as the final authority. Indoor routes and access controls may change faster than the map."
-      ]
-    },
-    {
-      "title": "Amap maps and ride-hailing are different tasks",
-      "items": [
-        "Amap is useful for place search, route planning, live traffic and navigation. Some versions can also display ride-hailing services.",
-        "A ride-hailing entry inside Amap does not guarantee the same English support, payment methods, identity checks or customer service as the standalone DiDi route.",
-        "Before ordering a car, confirm the pickup pin, destination, service category, estimated fare, payment method and vehicle details shown on your screen.",
-        "For a dedicated step-by-step ride guide, use the separate DiDi in China for Foreigners page."
-      ]
-    },
-    {
-      "title": "What to save for weak or missing mobile data",
-      "items": [
-        "Take screenshots of the full route, key turns, metro line and transfer stations, destination entrance and return route.",
-        "Keep your hotel name, Chinese address, phone number and nearest metro station in your notes.",
-        "Assume that live search, traffic and route recalculation require internet unless your exact app version clearly confirms an offline feature.",
-        "Carry a second data option or know where to find official station, hotel or visitor-service help."
-      ]
-    },
-    {
-      "title": "Common Amap route problems and fixes",
-      "items": [
-        "Wrong branch: compare the district, street, phone number, photos, opening information and distance before choosing.",
-        "Location appears wrong: check GPS and location permission, confirm mobile data, step outside dense buildings and wait for the position to refresh.",
-        "Walking route ends at the wrong side: look for the named gate or entrance and zoom in for footbridges, tunnels, compounds or road barriers.",
-        "Public-transport route is unavailable or no longer practical: check a later route, another station entrance, an official taxi queue or DiDi."
-      ]
-    },
-    {
-      "title": "Useful Chinese map phrases",
-      "items": [
-        "这个地址在哪里？ — Where is this address?",
-        "请问最近的地铁站入口在哪里？ — Where is the nearest metro entrance?",
-        "我应该从哪个出口出去？ — Which exit should I use?",
-        "这是正确的火车站吗？ — Is this the correct railway station?",
-        "请带我到这个地址。 — Please take me to this address."
-      ]
-    },
-    {
-      "title": "Compare maps and prepare mobile data",
-      "links": [
+      "subsections": [
         {
-          "label": "Amap vs Google Maps in China",
-          "description": "Choose a map for your China trip and keep a practical backup.",
-          "href": "/amap-vs-google-maps-china/"
+          "id": "menu-translation",
+          "title": "Order food with Menu Translation",
+          "blocks": [
+            { "type": "p", "text": "Take a photo of a Chinese menu and Amap turns it into an English one: each dish gets an English name above the Chinese, tags such as spicy, pork or seafood, a short description, and the price in yuan with an approximate dollar amount. [[shot:14]]" },
+            { "type": "p", "text": "Tap **+** to add dishes and set your **Dietary Preferences**: severe allergies (peanut, tree nuts, crustaceans, milk, egg and more), restrictions such as no pork or gluten-free, and how spicy you want it. [[shot:15]] Amap then builds a card to **show the staff**: a polite request in Chinese, your dishes, your dietary preferences and the estimated total, with a bill splitter underneath. [[shot:16]]" },
+            { "type": "p", "text": "Amap marks these translations as machine-generated and asks you to check them. If you have a severe allergy, add it in Dietary Preferences so it shows on the card, and confirm with the staff before you eat." },
+            { "type": "p", "text": "More on ordering: [How to order food in China](/china-food-ordering-guide/)." }
+          ]
         },
         {
-          "label": "China mobile data and internet guide",
-          "description": "Prepare connectivity for arrival and live route checks.",
-          "href": "/china-esim-internet-guide/"
+          "id": "other-hi-china-tools",
+          "title": "Other tools in Hi China",
+          "blocks": [
+            { "type": "ul", "items": [
+              "**Face-to-Face Translation**: type in English or Chinese and both appear on screen, for quick back-and-forth with staff or drivers. [[shot:17]]",
+              "**Arrival Guide**: three checklists for landing: immigration and the arrival card; getting online (airport free Wi-Fi in three steps, and buying a SIM card at the airport from China's three main carriers: physical SIMs only, passport required); and getting to your hotel by ride, airport pickup, airport bus or metro. The Wi-Fi and SIM checklist includes phrases in Chinese with pinyin. [[shot:18]] See also: [China airport arrival guide](/china-airport-arrival-guide/).",
+              "**Ride**, **Public transport**, **Walk** and **Bike**: shortcuts to Amap's navigation features.",
+              "**Trip planner**, **Check entry requirements** (visa-free eligibility), **Arrival card** (official online form), **Hotels**, **Cultural Notes** and **Emergency help**."
+            ] },
+            { "type": "note", "text": "The food-ordering feature is good: take a photo and it recognizes the menu automatically, then you pick your dishes and show the order straight to the staff. It's especially useful when you don't speak the language. The Walk feature feels a bit pointless." }
+          ]
         }
+      ]
+    },
+    {
+      "id": "offline",
+      "title": "Offline maps and weak signal",
+      "blocks": [
+        { "type": "p", "text": "Many guides tell you to download offline maps from **Me → Offline Maps**. In the October 2026 English version (17.2), I couldn't find that entry anywhere. Amap's update notes mention offline navigation, but I couldn't confirm how to use it from the English interface. So don't count on offline maps: screenshot your hotel's Chinese address and key routes, and get a working data plan before you land: [China eSIM & internet guide](/china-esim-internet-guide/)." },
+        { "type": "note", "text": "You can download offline maps in advance if your version of the app has the feature, or use Amap at street level in an open area." }
+      ]
+    },
+    {
+      "id": "troubleshooting",
+      "title": "Still in Chinese? Quick fixes",
+      "blocks": [
+        { "type": "table", "headers": ["Problem", "Fix"], "rows": [
+          ["English is grayed out in Amap's language list", "Set your iPhone language to English and region outside mainland China, then choose English in Amap and restart it ([details](#english-grayed-out))"],
+          ["Chose English but the app is still in Chinese, or a mix of both", "Close Amap fully and reopen it; the change only applies after a restart"],
+          ["Can't find the Language option", "It's in My → ⚙️ Settings → Language. If it isn't there, update AMap Global to the latest version"],
+          ["App in English, hotel name in Chinese", "That's normal. Search by the Chinese name or paste the Chinese address from your booking"],
+          ["Wrong branch, airport or station", "Compare the district, street and distance. Use the full Chinese name and match the terminal or station on your ticket"],
+          ["Can't book a taxi", "Sign in (email, Apple or Google work), link Alipay or WeChat Pay, and update the app"]
+        ] }
+      ]
+    },
+    {
+      "id": "phrases",
+      "title": "Phrases to show drivers and staff",
+      "blocks": [
+        { "type": "ul", "items": [
+          "这个地址在哪里？ — Where is this address?",
+          "请问最近的地铁站入口在哪里？ — Where is the nearest metro entrance?",
+          "我应该从哪个出口出去？ — Which exit should I use?",
+          "这是正确的火车站吗？ — Is this the correct railway station?",
+          "请带我到这个地址。 — Please take me to this address."
+        ] }
       ]
     }
   ],
   "faqs": [
-    {
-      "question": "How do I change Amap to English?",
-      "answer": "Update the official app and choose English in its first-run picker or language settings if offered. Language can appear as 语言 or 语言设置. If the control is missing, check the app-language options on your phone; availability and menu order vary by version."
-    },
-    {
-      "question": "Can I use Amap in English on iPhone?",
-      "answer": "The official Amap Global App Store listing includes English. Check the in-app language picker and the app-specific language preference in iPhone Settings if available, then reopen the app. Individual place names and service screens may still contain Chinese."
-    },
-    {
-      "question": "How do I change Amap language on Android?",
-      "answer": "Try the app language settings first. On supported phones, Settings, System, Languages and App languages is another place to check. This only works when the installed app supports the Android control and lists English; it is not available for every build."
-    },
-    {
-      "question": "Why is Amap still in Chinese after I choose English?",
-      "answer": "Check whether only a place listing is Chinese or the main controls are also unchanged. Reopen the updated app with a working connection and review its language setting. Use the Chinese destination name from your booking while you check; changing the interface does not translate all content."
-    },
-    {
-      "question": "Can I search Amap using an English address?",
-      "answer": "Try the English place name, then confirm its Chinese name, city and exact branch or entrance. If results are missing or ambiguous, paste the Chinese address from the booking. An airport and a railway station can share a district name but be different destinations."
-    },
-    {
-      "question": "Are Amap, Gaode and AMap Global the same map service?",
-      "answer": "Amap is also known as Gaode or 高德地图, and its official international app-store listing is named AMap Global. Use the official store link and compare the publisher or Android package rather than installing an unrelated app with a similar English name."
-    },
-    {
-      "question": "Does choosing English translate every hotel and shop name?",
-      "answer": "An English interface does not guarantee an English label for every listing, entrance or service. Keep the Chinese name and full address from your booking and compare them with the selected map result."
-    },
-    {
-      "question": "What should I check after switching Amap to English?",
-      "answer": "Check a main control, then try a destination you can verify from a ticket or booking. Confirm its city, branch, airport terminal or station and final entrance. Save the Chinese destination details outside the app for arrival."
-    },
-    {
-      "question": "Can foreigners use Amap in China?",
-      "answer": "Yes. Overseas users can download Amap from supported official app stores and use it for place search and route planning. Some account-based or transaction features may require additional setup."
-    },
-    {
-      "question": "Do I need a Chinese phone number for Amap?",
-      "answer": "Basic map search and route planning may be available without a Chinese number, but login, saved data, ride-hailing or other account features can vary. Follow the requirements shown in your current version and keep access to your travel phone number."
-    },
-    {
-      "question": "Can Amap plan metro and walking routes?",
-      "answer": "Yes. Amap provides public-transport and walking route planning. Check the station entrance, destination exit, transfers, walking distance and current service information before starting."
-    },
-    {
-      "question": "Does Google Maps work in mainland China?",
-      "answer": "Do not rely on Google Maps as your only map on an ordinary mainland China connection. Access to some international services can be restricted, so prepare Amap and save essential addresses and screenshots before travel."
-    },
-    {
-      "question": "Does Amap work offline?",
-      "answer": "Some capabilities can vary by device and version. Unless your version clearly confirms an offline feature, assume search, live traffic and route recalculation need mobile data and save route screenshots as a backup."
-    },
-    {
-      "question": "Should I use Amap or DiDi?",
-      "answer": "Use Amap mainly for maps, place search, walking and public-transport routes, and navigation. Use DiDi when you want a dedicated ride-hailing flow with pickup, vehicle, trip, payment and support details."
-    }
+    { "question": "Does Amap have an English version?", "answer": "Yes. Switch it in My → Settings → Language, then restart Amap. Since July 2025 Amap also supports 14 more languages, including Spanish, French, German, Japanese, Korean, Russian and Arabic." },
+    { "question": "Why is English grayed out in Amap?", "answer": "In my test, English and the other foreign languages were grayed out while my iPhone was set to Chinese. Setting the iPhone to English with a region outside mainland China unlocked them." },
+    { "question": "Is Amap free?", "answer": "Yes. Downloading and using the map is free; you only pay for rides you book." },
+    { "question": "Do I need a VPN to use Amap in China?", "answer": "No. Amap is a Chinese app and works on Chinese mobile networks without a VPN." },
+    { "question": "Do I need a Chinese phone number?", "answer": "No. The main features work without an account. To book taxis you sign in, and you can use email, Apple or Google instead of a phone number; Amap says numbers from 65 countries and regions also work." },
+    { "question": "Can Amap translate a Chinese menu?", "answer": "Yes. In Hi China, Menu Translation turns a photo of a Chinese menu into English dish names with tags and prices, then shows your order to the staff in Chinese. Confirm allergies with the staff." },
+    { "question": "Does Amap work offline?", "answer": "Don't count on it. Amap's update notes mention offline navigation, but in the October 2026 English version I couldn't find an Offline Maps entry. Save screenshots of key addresses and routes, and get a data plan." },
+    { "question": "Is Amap better than Google Maps in China?", "answer": "For mainland China, yes. See [Amap vs Google Maps in China](/amap-vs-google-maps-china/)." }
   ],
   "sources": [
-    {
-      "label": "Amap Global: official Apple App Store listing",
-      "href": "https://apps.apple.com/us/app/amap-global/id461703208"
-    },
-    {
-      "label": "Amap Global: official Google Play listing",
-      "href": "https://play.google.com/store/apps/details?id=com.autonavi.minimap"
-    },
-    {
-      "label": "Google: change app language on Android",
-      "href": "https://support.google.com/android/answer/12395118?hl=en"
-    },
-    {
-      "label": "Apple: per-app language settings in iOS",
-      "href": "https://developer.apple.com/videos/play/wwdc2019/403/"
-    },
-    {
-      "label": "Shanghai government: Amap for international visitors",
-      "href": "https://english.shanghai.gov.cn/en-EasyShanghai/20260713/379bcea6e1bd4defaa7db2451d68d3dd.html"
-    },
-    {
-      "label": "Shanghai government: AMap in English",
-      "href": "https://english.shanghai.gov.cn/en-UsefulApps/20241213/59a549d4bdf1440c8e86251d5ac7d5a9.html"
-    },
-    {
-      "label": "Amap official mobile website",
-      "href": "https://mobile.amap.com/"
-    },
-    {
-      "label": "Shanghai government: essential apps for visitors",
-      "href": "https://english.shanghai.gov.cn/en-UsefulApps/20231214/3cac2d8cc7f847da92a72252bae06705.html"
-    },
-    {
-      "label": "UK travel advice: internet access in China",
-      "href": "https://www.gov.uk/foreign-travel-advice/china/safety-and-security#internet-access"
-    }
-  ],
-  "metaTitle": "Amap in English: Setup, Address Search & Metro Routes (2026)",
-  "metaDescription": "Change Amap to English on iPhone or Android, then find the right hotel branch, plan metro and walking routes, and check station entrances and exits.",
-  "evidenceNote": "Based on official app listings and platform documentation. Menu availability varies by app version and phone. The search examples below are checks to perform on your device; they are not a claim of a completed phone test.",
-  "helper": {
-    "heading": "Find the right Amap English fix",
-    "intro": "Choose your phone and the screen you actually see. Menu availability depends on the app version and phone.",
-    "deviceQuestion": "Which phone are you using?",
-    "issueQuestion": "What is happening?",
-    "emptyState": "Choose both answers to see the next checks. You can also use the section links below.",
-    "devices": [
-      {
-        "id": "iphone",
-        "label": "iPhone"
-      },
-      {
-        "id": "android",
-        "label": "Android"
-      },
-      {
-        "id": "other",
-        "label": "Not sure / another device"
-      }
-    ],
-    "platformFixes": {
-      "iphone": {
-        "title": "Check the iPhone app-language options",
-        "steps": [
-          "Update the official Amap app, then check its in-app language picker or settings.",
-          "In iPhone Settings, find the Amap app and look for a language preference if one is offered. Choose English, reopen Amap and check the main controls.",
-          "If no language control is available, keep a Chinese destination name ready and use the troubleshooting checks below."
-        ],
-        "href": "#iphone-check-the-app-language",
-        "label": "Open the iPhone checks"
-      },
-      "android": {
-        "title": "Check Android app-language support",
-        "steps": [
-          "Check the official Amap app language setting first.",
-          "On supported phones, open Settings, System, Languages, then App languages; choose Amap and English only if both are listed.",
-          "If the app or language is absent, use the in-app setting or supported alternatives below. Reopen the updated app with a connection."
-        ],
-        "href": "#android-check-app-languages",
-        "label": "Open the Android checks"
-      },
-      "other": {
-        "title": "Start with the app-language picker",
-        "steps": [
-          "Verify the official Amap app and update it. Look for Language, 语言 or 语言设置.",
-          "Select English if offered and reopen the app. Check whether the main controls changed before expecting every place name to be translated."
-        ],
-        "href": "#how-to-switch-amap-to-english",
-        "label": "Open the in-app steps"
-      }
-    },
-    "issues": [
-      {
-        "id": "menus_chinese",
-        "label": "The main menus are Chinese",
-        "platformSpecific": true
-      },
-      {
-        "id": "no_language_option",
-        "label": "I cannot find English / Language",
-        "platformSpecific": true,
-        "beforeSteps": [
-          "Check that the missing option is the app-interface language control, rather than the name of a place or a spoken navigation voice."
-        ]
-      },
-      {
-        "id": "place_names",
-        "label": "Menus are English; place names are Chinese",
-        "fix": {
-          "title": "Check the place, rather than repeating language setup",
-          "steps": [
-            "A translated interface does not guarantee an English name for every business or entrance.",
-            "Copy the Chinese name and address from your hotel or ticket. Compare city, branch and entrance with the selected map result."
-          ],
-          "href": "#english-interface-and-chinese-place-names-are-different",
-          "label": "Open the place-name checks"
-        }
-      },
-      {
-        "id": "wrong_result",
-        "label": "English search finds the wrong place",
-        "fix": {
-          "title": "Verify the exact destination",
-          "steps": [
-            "Compare the Chinese destination name from your booking with the map result.",
-            "Check the city, hotel branch, airport terminal or railway-station name before starting a route."
-          ],
-          "href": "#test-an-english-place-search-before-travel",
-          "label": "Open the destination examples"
-        }
-      }
-    ]
-  }
+    { "label": "AMap Global on the App Store", "href": "https://apps.apple.com/us/app/amap-global/id461703208" },
+    { "label": "AMap Global on Google Play", "href": "https://play.google.com/store/apps/details?id=com.autonavi.minimap" },
+    { "label": "Shanghai government — China's first multilingual map adds 14 new languages (July 2025)", "href": "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20250711/8f2fcf3c6b624a56a6b2c0d8152ea2f2.html" },
+    { "label": "Amap brings ride-hailing to international visitors in China (PR Newswire, August 2026)", "href": "https://tirto.id/amap-brings-ride-hailing-to-international-visitors-in-china-hA5e" },
+    { "label": "Shanghai government — Amap for international visitors (July 2026)", "href": "https://english.shanghai.gov.cn/en-EasyShanghai/20260713/379bcea6e1bd4defaa7db2451d68d3dd.html" },
+    { "label": "Google — change app language on Android", "href": "https://support.google.com/android/answer/12395118" }
+  ]
 }

@@ -165,7 +165,18 @@
       }
     ],
     "sources": [],
-    "sectionLinks": [],
+    "sectionLinks": [
+      {
+        "section": "Maps: use AMap Global and save Chinese addresses",
+        "links": [
+          {
+            "label": "How to switch Amap to English",
+            "description": "Tested steps with screenshots: My → Settings → Language, then restart the app.",
+            "href": "/amap-english-mode-guide-2026/"
+          }
+        ]
+      }
+    ],
     "removeFaqs": []
   },
   "china-airport-arrival-guide": {
@@ -194,6 +205,16 @@
             "href": "/beijing-airport-to-city-guide/"
           }
         ]
+      },
+      {
+        "section": "Before your flight: prepare the arrival file",
+        "links": [
+          {
+            "label": "Switch Amap to English before you land",
+            "description": "Three taps in the app, then a restart; plus the fix if English is grayed out.",
+            "href": "/amap-english-mode-guide-2026/"
+          }
+        ]
       }
     ],
     "removeFaqs": [
@@ -214,6 +235,106 @@
             "label": "What to eat in China",
             "description": "Fifteen regional dishes to look for on a first visit, and where each is strongest.",
             "href": "/what-to-eat-in-china-first-time-guide/"
+          }
+        ]
+      },
+      {
+        "section": "QR, photo, paper, and counter menus",
+        "links": [
+          {
+            "label": "Translate a Chinese menu with Amap",
+            "description": "Photograph the menu, set allergies, then show a Chinese order card to staff.",
+            "href": "/amap-english-mode-guide-2026/#menu-translation"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "amap-vs-google-maps-china": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "Which app for which task?",
+        "links": [
+          {
+            "label": "Step-by-step Amap English setup",
+            "description": "Switch the language, search in English, book a taxi and find metro entrances.",
+            "href": "/amap-english-mode-guide-2026/"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "china-metro-guide": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "Choose the right station exit",
+        "links": [
+          {
+            "label": "Find the right metro entrance in Amap",
+            "description": "Amap route screens name the station entrance to use and offer a get-off reminder.",
+            "href": "/amap-english-mode-guide-2026/#metro"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "didi-in-china-for-foreigners": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "Choose how you will open DiDi",
+        "links": [
+          {
+            "label": "Book a taxi in English inside Amap",
+            "description": "Amap sends one request to several ride and taxi operators; fares from a test in October 2026.",
+            "href": "/amap-english-mode-guide-2026/#taxi"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "3-day-shenzhen-itinerary": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "Airport, trains, Metro and border planning",
+        "links": [
+          {
+            "label": "Use Amap in English",
+            "description": "Switch the app to English and check metro entrances before you set out.",
+            "href": "/amap-english-mode-guide-2026/"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "3-day-guangzhou-itinerary": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "Airport, train and Metro planning",
+        "links": [
+          {
+            "label": "Use Amap in English",
+            "description": "Switch the app to English and check metro entrances before you set out.",
+            "href": "/amap-english-mode-guide-2026/"
           }
         ]
       }
