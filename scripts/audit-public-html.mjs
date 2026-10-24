@@ -14,13 +14,6 @@ const pages = [
     links: ["/guides/", "/china-240-hour-visa-free-transit-2026/", "/china-visa-free-checker/", "/china-online-arrival-card-2026/", "/china-airport-arrival-guide/", "/nia-12367-online-accommodation-registration-guide/", "/first-trip-to-china/", "/china-travel-checklist/"],
   },
   {
-    path: '/china-train-booking-foreigners-12306/',
-    h1: /China.*350 km\/h Trains.*Foreigners/i,
-    keywords: ['passport', 'verification', 'Boarding: No Paper Ticket', 'Top Routes to Book'],
-    links: ["/guides/", "/china-train-travel-guide/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/beijing-airport-to-city-guide/", "/great-wall-of-china-day-trip-from-beijing/", "/china-airport-arrival-guide/", "/first-trip-to-china/"],
-    checkLocalAnchors: true,
-  },
-  {
     path: '/',
     h1: /Plan your first China trip with local help/i,
     keywords: ['ChinaEase Buddy', 'Travel Passes', 'itinerary', 'Free tools for planning your China trip'],
@@ -43,7 +36,7 @@ const pages = [
     path: '/beijing-airport-to-city-guide/',
     h1: /Beijing Airport to City Centre.*PEK vs PKX.*2026/i,
     keywords: ['PEK', 'PKX', 'Caoqiao', 'Dongzhimen'],
-    links: ["/china-airport-arrival-guide/", "/#trip-plan", "/china-train-booking-foreigners-12306/", "/china-train-travel-guide/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/great-wall-of-china-day-trip-from-beijing/", "/first-trip-to-china/"],
+    links: ["/china-airport-arrival-guide/", "/#trip-plan", "/china-train-travel-guide/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/great-wall-of-china-day-trip-from-beijing/", "/first-trip-to-china/"],
   },
   {
     path: '/amap-vs-google-maps-china/',
@@ -122,19 +115,21 @@ const pages = [
     path: '/china-metro-guide/',
     h1: /China Metro Guide for Foreigners.*2026/i,
     keywords: ['single-journey ticket', 'overseas bank card', 'security', 'transfer', 'station exit', 'last train'],
-    links: ["/#trip-plan", "/china-airport-arrival-guide/", "/first-trip-to-china/", "/didi-in-china-for-foreigners/", "/china-train-travel-guide/", "/china-train-booking-foreigners-12306/", "/beijing-airport-to-city-guide/", "/great-wall-of-china-day-trip-from-beijing/"],
+    links: ["/#trip-plan", "/china-airport-arrival-guide/", "/first-trip-to-china/", "/didi-in-china-for-foreigners/", "/china-train-travel-guide/", "/beijing-airport-to-city-guide/", "/great-wall-of-china-day-trip-from-beijing/"],
   },
   {
     path: '/didi-in-china-for-foreigners/',
     h1: /How to Use DiDi in China as a Foreigner/i,
     keywords: ['global mobile number login', 'Upfront Fare', 'pickup point', 'last digits', 'Safety Hotline', 'lost item'],
-    links: ["/didi-payment-for-foreigners/", "/amap-english-mode-guide-2026/#taxi", "/alipay-for-foreigners/", "/china-airport-arrival-guide/", "/beijing-airport-to-city-guide/", "/china-train-booking-foreigners-12306/", "/china-metro-guide/", "/first-trip-to-china/"],
+    links: ["/didi-payment-for-foreigners/", "/amap-english-mode-guide-2026/#taxi", "/alipay-for-foreigners/", "/china-airport-arrival-guide/", "/beijing-airport-to-city-guide/", "/china-train-travel-guide/", "/china-metro-guide/", "/first-trip-to-china/"],
   },
   {
     path: '/china-train-travel-guide/',
     h1: /How to Book China High-Speed Trains Without Chinese ID/i,
-    keywords: ['foreign passport', 'Railway 12306', 'Trip.com', 'e-ticket', 'station', 'refund'],
-    links: ["/#trip-plan", "/first-trip-to-china/", "/china-metro-guide/", "/china-train-booking-foreigners-12306/", "/didi-in-china-for-foreigners/", "/beijing-airport-to-city-guide/", "/great-wall-of-china-day-trip-from-beijing/", "/china-airport-arrival-guide/"],
+    keywords: ['12306', 'email address', '15 days before departure', 'Change fees', 'Refund fees', 'child ticket'],
+    // The merged 12306 page's headline must not come back here.
+    forbiddenPhrases: ['350 km/h'],
+    links: ["/didi-in-china-for-foreigners/", "/amap-english-mode-guide-2026/#metro", "/china-metro-guide/", "/alipay-metro-qr-transport-code-guide/", "/china-airport-arrival-guide/", "/beijing-airport-to-city-guide/", "/great-wall-of-china-day-trip-from-beijing/", "/first-trip-to-china/"],
   },
   {
     path: '/china-itinerary-first-time-7-10-14-days/',
@@ -148,14 +143,14 @@ const pages = [
     h1: /7-Day China Itinerary for First-Time Visitors.*2026/i,
     keywords: ['open-jaw', 'Beijing', 'Xi\'an', 'Shanghai', 'Palace Museum', 'Terracotta Warriors', 'RMB 350', '12306', '7 days in China means 6 hotel nights', 'Recommended 7-day China itinerary: Beijing and Shanghai', 'No hotel night included', 'Day 4 is an intercity travel day', 'normally closes on Mondays'],
     forbiddenPhrases: ['three nights in Beijing, two in Xi\'an, and two in Shanghai'],
-    links: ["/3-day-beijing-itinerary/", "/3-day-shanghai-itinerary/", "/china-travel-budget/#cost-estimator", "/china-train-booking-foreigners-12306/", "https://young.dpm.org.cn/en/category/279", "/#trip-plan", "/china-itinerary-first-time-7-10-14-days/", "/10-day-china-itinerary/", "/14-day-china-itinerary/", "/best-time-to-visit-china/", "/china-travel-budget/", "/china-payment-guide/", "/first-trip-to-china/", "/china-travel-checklist/"],
+    links: ["/3-day-beijing-itinerary/", "/3-day-shanghai-itinerary/", "/china-travel-budget/#cost-estimator", "/china-train-travel-guide/", "https://young.dpm.org.cn/en/category/279", "/#trip-plan", "/china-itinerary-first-time-7-10-14-days/", "/10-day-china-itinerary/", "/14-day-china-itinerary/", "/best-time-to-visit-china/", "/china-travel-budget/", "/china-payment-guide/", "/first-trip-to-china/", "/china-travel-checklist/"],
   },
   {
     path: '/10-day-china-itinerary/',
     h1: /10-Day China Itinerary for First-Time Visitors/i,
     keywords: ['Beijing', 'Xi\'an', 'Shanghai', 'Palace Museum', 'Terracotta Warriors', 'high-speed train', '10 days in China: 9 hotel nights and 2 transfer days', 'No hotel night included', 'Day 7 is the Shanghai transfer', 'six main full sightseeing days'],
     forbiddenPhrases: ['three nights in Xi\'an for the Terracotta Warriors and Tang-era culture'],
-    links: ["/3-day-beijing-itinerary/", "/3-day-xian-itinerary/", "/3-day-shanghai-itinerary/", "/china-train-booking-foreigners-12306/", "/china-travel-budget/#cost-estimator", "/#trip-plan", "/china-itinerary-first-time-7-10-14-days/", "/first-trip-to-china/", "/7-day-china-itinerary/", "/14-day-china-itinerary/", "/best-time-to-visit-china/", "/china-travel-budget/", "/china-travel-checklist/"],
+    links: ["/3-day-beijing-itinerary/", "/3-day-xian-itinerary/", "/3-day-shanghai-itinerary/", "/china-train-travel-guide/", "/china-travel-budget/#cost-estimator", "/#trip-plan", "/china-itinerary-first-time-7-10-14-days/", "/first-trip-to-china/", "/7-day-china-itinerary/", "/14-day-china-itinerary/", "/best-time-to-visit-china/", "/china-travel-budget/", "/china-travel-checklist/"],
   },
   {
     path: '/14-day-china-itinerary/',
@@ -173,79 +168,79 @@ const pages = [
     path: '/3-day-beijing-itinerary/',
     h1: /3-Day Beijing Itinerary for First-Time Visitors.*2026/i,
     keywords: ['Palace Museum', 'Great Wall', 'Temple of Heaven', 'Tiananmen', 'Wangfujing', 'Qianmen', 'Railway 12306', 'If your three days include a Monday', '20:00 China time', 'seven days ahead', 'separately charged attractions', 'Wumen', 'Dashilan'],
-    links: ["/beijing-airport-to-city-guide/", "/great-wall-of-china-day-trip-from-beijing/", "/china-travel-budget/#cost-estimator", "/#trip-plan", "/3-day-shanghai-itinerary/", "/best-time-to-visit-china/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/3-day-xian-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-booking-foreigners-12306/"],
+    links: ["/beijing-airport-to-city-guide/", "/great-wall-of-china-day-trip-from-beijing/", "/china-travel-budget/#cost-estimator", "/#trip-plan", "/3-day-shanghai-itinerary/", "/best-time-to-visit-china/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/3-day-xian-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-travel-guide/"],
   },
   {
     path: '/3-day-shanghai-itinerary/',
     h1: /3-Day Shanghai Itinerary for First-Time Visitors.*2026/i,
     keywords: ['The Bund', 'Yuyuan Garden', 'Wukang Road', 'Pudong', 'People\'s Square', 'Hongqiao', 'Railway 12306', 'A Monday–Wednesday Shanghai itinerary alternative', 'Shanghai Museum East vs People\'s Square: choose the right venue', 'July 9, 2026 to November 14, 2027', 'Tuesday, except national holidays'],
-    links: ["https://www.yugarden.com.cn/page/articleview/message.html", "https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-east", "https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-west", "/#trip-plan", "/3-day-beijing-itinerary/", "/best-time-to-visit-china/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/3-day-suzhou-itinerary/", "/3-day-hangzhou-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-booking-foreigners-12306/"],
+    links: ["https://www.yugarden.com.cn/page/articleview/message.html", "https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-east", "https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-west", "/#trip-plan", "/3-day-beijing-itinerary/", "/best-time-to-visit-china/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/3-day-suzhou-itinerary/", "/3-day-hangzhou-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-travel-guide/"],
   },
   {
     path: '/3-day-xian-itinerary/',
     h1: /3-Day Xi'an Itinerary for First-Time Visitors.*2026/i,
     keywords: ['Terracotta Army', 'city wall', 'Muslim Quarter', 'Shaanxi History Museum', 'Big Wild Goose Pagoda', 'Xi\'an North', 'Railway 12306'],
-    links: ["/#trip-plan", "/3-day-beijing-itinerary/", "/3-day-shanghai-itinerary/", "/best-time-to-visit-china/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-booking-foreigners-12306/"],
+    links: ["/#trip-plan", "/3-day-beijing-itinerary/", "/3-day-shanghai-itinerary/", "/best-time-to-visit-china/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-travel-guide/"],
   },
   {
     path: '/3-day-chongqing-itinerary/',
     h1: /3-Day Chongqing Itinerary for First-Time Visitors.*2026/i,
     keywords: ['Hongya Cave', 'Liziba', 'Three Gorges Museum', 'Jiefangbei', 'Ciqikou', 'Dazu Rock Carvings', 'Railway 12306', 'Three Gorges Museum: entry rules and a Monday alternative', 'Monday, except national statutory holidays', 'November 3, 2025', 'Sunday–Tuesday', 'Zengjiayan', '236 Renmin Road'],
-    links: ["https://whlyw.cq.gov.cn/zwxx_221/bmdt/tzgg/202511/t20251103_15136009.html", "https://www.cq.gov.cn/zjcq/cycq/jplyxl/dsy/dsjp/202608/t20260826_15982331.html", "https://english.cq.gov.cn/specials/explore/PhotoPerfectSpots/202608/t20260810_15912642.html", "/#trip-plan", "/3-day-xian-itinerary/", "/3-day-beijing-itinerary/", "/best-time-to-visit-china/", "/china-metro-guide/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/3-day-chengdu-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-booking-foreigners-12306/"],
+    links: ["https://whlyw.cq.gov.cn/zwxx_221/bmdt/tzgg/202511/t20251103_15136009.html", "https://www.cq.gov.cn/zjcq/cycq/jplyxl/dsy/dsjp/202608/t20260826_15982331.html", "https://english.cq.gov.cn/specials/explore/PhotoPerfectSpots/202608/t20260810_15912642.html", "/#trip-plan", "/3-day-xian-itinerary/", "/3-day-beijing-itinerary/", "/best-time-to-visit-china/", "/china-metro-guide/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/3-day-chengdu-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-travel-guide/"],
   },
   {
     path: '/3-day-chengdu-itinerary/',
     h1: /3-Day Chengdu Itinerary for First-Time Visitors.*2026/i,
     keywords: ['Panda Base', 'People\'s Park', 'Sichuan food', 'Leshan', 'Sanxingdui', 'Tianfu International Airport', 'Railway 12306'],
-    links: ["/#trip-plan", "/3-day-chongqing-itinerary/", "/best-time-to-visit-china/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/chengdu-panda-base-guide/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-booking-foreigners-12306/"],
+    links: ["/#trip-plan", "/3-day-chongqing-itinerary/", "/best-time-to-visit-china/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/chengdu-panda-base-guide/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-travel-guide/"],
   },
   {
     path: '/3-day-guilin-yangshuo-itinerary/',
     h1: /3-Day Guilin and Yangshuo Itinerary.*2026/i,
     keywords: ['Li River', 'Yulong River', 'Xingping', 'Longji', 'Yangshuo railway station', 'Guilin West', 'Railway 12306'],
-    links: ["/#trip-plan", "/10-day-china-itinerary/", "/14-day-china-itinerary/", "/best-time-to-visit-china/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-booking-foreigners-12306/"],
+    links: ["/#trip-plan", "/10-day-china-itinerary/", "/14-day-china-itinerary/", "/best-time-to-visit-china/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-travel-guide/"],
   },
   {
     path: '/3-day-zhangjiajie-itinerary/',
     h1: /3-Day Zhangjiajie Itinerary for First-Time Visitors.*2026/i,
     keywords: ['Wulingyuan', 'Zhangjiajie National Forest Park', 'Tianmen Mountain', 'Yuanjiajie', 'Tianzi Mountain', 'Zhangjiajie West', 'Railway 12306', 'Tianmen Mountain cable car closure: October 2026 route update', 'Tianmen Cave Express Cableway', 'October 13', 'Route sources checked October 22, 2026'],
-    links: ["https://hunan.voc.com.cn/news/202610/33962893.html", "https://feng.ifeng.com/c/8x6kU0WWUpE", "/#trip-plan", "/10-day-china-itinerary/", "/14-day-china-itinerary/", "/best-time-to-visit-china/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-booking-foreigners-12306/"],
+    links: ["https://hunan.voc.com.cn/news/202610/33962893.html", "https://feng.ifeng.com/c/8x6kU0WWUpE", "/#trip-plan", "/10-day-china-itinerary/", "/14-day-china-itinerary/", "/best-time-to-visit-china/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-travel-guide/"],
   },
   {
     path: '/3-day-shenzhen-itinerary/',
     h1: /3-Day Shenzhen Itinerary for First-Time Visitors.*2026/i,
     keywords: ['Shenzhen Museum', 'Lianhuashan Park', 'OCT-LOFT', 'Nantou Ancient Town', 'Shenzhen Bay', 'Dapeng', 'Huaqiangbei', 'Line 11', 'Railway 12306'],
-    links: ["/#trip-plan", "/3-day-shanghai-itinerary/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/3-day-guangzhou-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-booking-foreigners-12306/", "/best-time-to-visit-china/"],
+    links: ["/#trip-plan", "/3-day-shanghai-itinerary/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/3-day-guangzhou-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-travel-guide/", "/best-time-to-visit-china/"],
   },
   {
     path: '/3-day-guangzhou-itinerary/',
     h1: /3-Day Guangzhou Itinerary for First-Time Visitors.*2026/i,
     keywords: ['Chen Clan Ancestral Hall', 'Yongqingfang', 'Shamian Island', 'Canton Tower', 'Pearl River', 'dim sum', 'Baiyun International Airport', 'Guangzhou South', 'Railway 12306'],
-    links: ["/#trip-plan", "/3-day-shenzhen-itinerary/", "/china-hotels-for-foreigners/", "/best-time-to-visit-china/", "/first-trip-to-china/", "/3-day-shanghai-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-booking-foreigners-12306/"],
+    links: ["/#trip-plan", "/3-day-shenzhen-itinerary/", "/china-hotels-for-foreigners/", "/best-time-to-visit-china/", "/first-trip-to-china/", "/3-day-shanghai-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-travel-guide/"],
   },
   {
     path: '/3-day-hangzhou-itinerary/',
     h1: /3-Day Hangzhou Itinerary for First-Time Visitors.*2026/i,
     keywords: ['West Lake', 'Lingyin', 'Feilai Peak', 'Longjing', 'Grand Canal', 'Hefang Street', 'Xixi Wetland', 'Hangzhou East', 'Railway 12306'],
-    links: ["/#trip-plan", "/3-day-shanghai-itinerary/", "/china-hotels-for-foreigners/", "/best-time-to-visit-china/", "/first-trip-to-china/", "/3-day-suzhou-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-booking-foreigners-12306/"],
+    links: ["/#trip-plan", "/3-day-shanghai-itinerary/", "/china-hotels-for-foreigners/", "/best-time-to-visit-china/", "/first-trip-to-china/", "/3-day-suzhou-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-travel-guide/"],
   },
   {
     path: '/3-day-suzhou-itinerary/',
     h1: /3-Day Suzhou Itinerary for First-Time Visitors.*2026/i,
     keywords: ["Humble Administrator's Garden", 'Pingjiang Road', 'Lingering Garden', 'Suzhou Museum', 'Suzhou North', '12306'],
-    links: ["/#trip-plan", "/3-day-shanghai-itinerary/", "/3-day-hangzhou-itinerary/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-booking-foreigners-12306/", "/best-time-to-visit-china/"],
+    links: ["/#trip-plan", "/3-day-shanghai-itinerary/", "/3-day-hangzhou-itinerary/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-travel-guide/", "/best-time-to-visit-china/"],
   },
   {
     path: '/3-day-nanjing-itinerary/',
     h1: /3-Day Nanjing Itinerary for First-Time Visitors.*2026/i,
     keywords: ['Sun Yat-sen Mausoleum', 'Ming Xiaoling', 'Nanjing Museum', 'Nanjing Massacre Memorial Hall', 'Qinhuai River', 'Nanjing South', '12306', 'Nanjing Museum and the Memorial Hall: separate reservations', 'service centre green-channel window', 'A Monday–Wednesday Nanjing itinerary alternative', 'Yunjin Road', 'Daxinggong'],
-    links: ["https://www.njmuseum.com/zh/visitIndex", "https://www.19371213.com.cn/guide/how/", "https://www.19371213.com.cn/information/notices/202610/t20261008_5921665.html", "/#trip-plan", "/3-day-shanghai-itinerary/", "/3-day-suzhou-itinerary/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-booking-foreigners-12306/", "/best-time-to-visit-china/"],
+    links: ["https://www.njmuseum.com/zh/visitIndex", "https://www.19371213.com.cn/guide/how/", "https://www.19371213.com.cn/information/notices/202610/t20261008_5921665.html", "/#trip-plan", "/3-day-shanghai-itinerary/", "/3-day-suzhou-itinerary/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-travel-guide/", "/best-time-to-visit-china/"],
   },
   {
     path: '/3-day-dali-itinerary/',
     h1: /3-Day Dali Itinerary for First-Time Visitors.*2026/i,
     keywords: ['Dali Old Town', 'Three Pagodas', 'Erhai', 'Xizhou', 'Cangshan', 'Xiaguan', '12306'],
-    links: ["/#trip-plan", "/14-day-china-itinerary/", "/china-hotels-for-foreigners/", "/best-time-to-visit-china/", "/first-trip-to-china/", "/10-day-china-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-booking-foreigners-12306/"],
+    links: ["/#trip-plan", "/14-day-china-itinerary/", "/china-hotels-for-foreigners/", "/best-time-to-visit-china/", "/first-trip-to-china/", "/10-day-china-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-travel-guide/"],
   },
   {
     path: '/china-golden-week-2026-travel-guide/',
@@ -257,13 +252,13 @@ const pages = [
     path: '/great-wall-of-china-day-trip-from-beijing/',
     h1: /Great Wall Day Trip from Beijing.*Mutianyu or Badaling.*2026/i,
     keywords: ['Mutianyu', 'Badaling', 'cableway', 'shuttle', '12306', 'Forbidden City'],
-    links: ["/#trip-plan", "/china-train-travel-guide/", "/first-trip-to-china/", "/china-train-booking-foreigners-12306/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/beijing-airport-to-city-guide/", "/china-airport-arrival-guide/"],
+    links: ["/#trip-plan", "/china-train-travel-guide/", "/first-trip-to-china/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/beijing-airport-to-city-guide/", "/china-airport-arrival-guide/"],
   },
   {
     path: '/chengdu-panda-base-guide/',
     h1: /Chengdu Panda Base Guide.*Tickets.*Route.*Visiting Tips.*2026/i,
     keywords: ['CNY 55', 'CNY 30', 'real-name', '14 days', 'passport', 'South Gate', 'West Gate', 'sightseeing bus', 'Sun Nursery House', 'pandas'],
-    links: ["/#trip-plan", "/china-train-travel-guide/", "/first-trip-to-china/", "/china-train-booking-foreigners-12306/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/beijing-airport-to-city-guide/", "/great-wall-of-china-day-trip-from-beijing/", "/china-airport-arrival-guide/"],
+    links: ["/#trip-plan", "/china-train-travel-guide/", "/first-trip-to-china/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/beijing-airport-to-city-guide/", "/great-wall-of-china-day-trip-from-beijing/", "/china-airport-arrival-guide/"],
   },
   {
     path: '/best-time-to-visit-china/',
@@ -502,8 +497,9 @@ try {
     '/china-hotels-for-foreigners-no-rejection-guide/',
     '/best-apps-for-china-travel-2026/',
     '/240-hour-transit-zone-map-high-speed-rail/',
+    '/china-train-booking-foreigners-12306/',
   ];
-  const canonicalDestinations = ['/china-travel-budget/', '/china-payment-guide/', '/didi-in-china-for-foreigners/', '/china-esim-internet-guide/', '/china-visa-free-travel-guide/', '/amap-english-mode-guide-2026/', '/amap-vs-google-maps-china/', '/great-wall-of-china-day-trip-from-beijing/', '/china-travel-safety-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/'];
+  const canonicalDestinations = ['/china-train-travel-guide/', '/china-travel-budget/', '/china-payment-guide/', '/didi-in-china-for-foreigners/', '/china-esim-internet-guide/', '/china-visa-free-travel-guide/', '/amap-english-mode-guide-2026/', '/amap-vs-google-maps-china/', '/great-wall-of-china-day-trip-from-beijing/', '/china-travel-safety-guide/', '/china-hotels-for-foreigners/', '/china-travel-apps/'];
   results.push({ path: '/sitemap.xml', name: 'HTTP 200', pass: sitemapResponse.status === 200, detail: `status ${sitemapResponse.status}` });
   for (const path of redirectSources) {
     results.push({ path: '/sitemap.xml', name: 'redirect excluded', pass: !sitemap.includes(`<loc>${ORIGIN}${path}</loc>`), detail: path });
@@ -513,6 +509,17 @@ try {
   }
 } catch (error) {
   results.push({ path: '/sitemap.xml', name: 'HTTP 200', pass: false, detail: error instanceof Error ? error.message : 'fetch failed' });
+}
+
+// Merged pages must answer with a single 301 to their destination.
+for (const [source, destination] of [['/china-train-booking-foreigners-12306/', '/china-train-travel-guide/']]) {
+  try {
+    const response = await fetch(`${REQUEST_ORIGIN}${source}`, { redirect: 'manual', headers: { 'User-Agent': 'ChinaEaseBuddyLaunchAudit/1.0 (+https://chinaeasebuddy.com)' } });
+    const location = new URL(response.headers.get('location') || '', `${REQUEST_ORIGIN}${source}`).pathname;
+    results.push({ path: source, name: '301 redirect', pass: response.status === 301 && location === destination, detail: `${response.status} -> ${location}` });
+  } catch (error) {
+    results.push({ path: source, name: '301 redirect', pass: false, detail: error instanceof Error ? error.message : 'fetch failed' });
+  }
 }
 
 const pad = (value, len) => String(value).padEnd(len, ' ');

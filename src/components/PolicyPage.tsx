@@ -13,7 +13,6 @@ import nanjingGuide from '../data/seoPages/3-day-nanjing-itinerary.json';
 import daliGuide from '../data/seoPages/3-day-dali-itinerary.json';
 import goldenWeekGuide from '../data/seoPages/china-golden-week-2026-travel-guide.json';
 import greatWallGuide from '../data/seoPages/great-wall-of-china-day-trip-from-beijing.json';
-import trainBookingContent from '../data/trainBookingContent.json';
 import emergencyGuideContent from '../data/emergencyGuideContent.json';
 import tripCostEstimatorContent from '../data/tripCostEstimatorContent.json';
 import beijingThreeDayPlanning from '../data/beijingThreeDayPlanning.json';
@@ -37,6 +36,7 @@ import amapEnglishSetup from '../data/amapEnglishSetup.json';
 import alipayMetroGuide from '../data/alipayMetroGuide.json';
 import wechatVerificationGuide from '../data/wechatVerificationGuide.json';
 import airportArrivalGuide from '../data/airportArrivalGuide.json';
+import trainGuide from '../data/trainGuide.json';
 import shenzhenItineraryPlanning from '../data/shenzhenItineraryPlanning.json';
 import layoverAirportPlanning from '../data/layoverAirportPlanning.json';
 import didiGuide from '../data/didiGuide.json';
@@ -96,7 +96,6 @@ type GuidePageType =
   | 'china-payment-guide'
   | 'china-travel-checklist'
   | 'china-emergency-numbers'
-  | 'china-train-booking-foreigners-12306'
   | 'china-itinerary-first-time-7-10-14-days'
   | 'beijing-shanghai-layover-240-hour-guide'
   | 'what-to-eat-in-china-first-time-guide'
@@ -721,7 +720,6 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'China 240-hour visa-free transit guide', href: '/china-240-hour-visa-free-transit-2026/' },
       { label: 'How to pay in China', href: '/china-payment-guide/' },
       { label: 'China eSIM and internet guide', href: '/china-esim-internet-guide/' },
-      { label: 'China train booking', href: '/china-train-booking-foreigners-12306/' },
       { label: 'First-time China itineraries', href: '/china-itinerary-first-time-7-10-14-days/' },
       { label: 'Is China safe for tourists?', href: '/china-travel-safety-guide/' },
       { label: 'Best apps for China travel', href: '/china-travel-apps/' },
@@ -2095,164 +2093,21 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'china-train-travel-guide': {
     path: '/china-train-travel-guide/',
-    title: 'How to Book China High-Speed Trains Without Chinese ID',
-    intro:
-      'A step-by-step guide to booking China high-speed trains with a foreign passport, choosing the right station, and boarding without confusion.',
-    metaTitle: 'China Train Travel for Foreigners: High-Speed Rail (2026)',
-    metaDescription:
-      'Book China trains with a foreign passport on 12306 or at a station. Check online identity verification, exact station names and e-ticket boarding steps.',
-    quickAnswer:
-      'Foreign visitors can buy China train tickets with a valid passport through the official Railway 12306 system, a booking service such as Trip.com, or a station ticket counter. Online passport identity verification is available, but if it fails, follow the current 12306 instructions or ask at a staffed counter. Enter the passenger name and passport number exactly as shown on the document, check the full station name, and carry the same original passport to enter, board, and exit. Most journeys use an e-ticket; an itinerary sheet or screenshot does not replace the passport used for booking.',
-    ctaLabel: 'Get my free China itinerary',
-    ctaHref: '/#trip-plan',
-    lastReviewed: 'October 19, 2026',
-    lastModified: '2026-10-19',
+    title: trainGuide.heading,
+    intro: '',
+    metaTitle: trainGuide.metaTitle,
+    metaDescription: trainGuide.metaDescription,
+    quickAnswer: quickAnswerText(trainGuide.quickAnswer),
+    // Rendered like the Amap guide (AmapGuide components); this guide has no CTA card, only LinBox.
+    ctaLabel: '',
+    ctaHref: '',
+    reviewed: trainGuide.reviewed,
+    lastModified: trainGuide.modified,
     isArticle: true,
-    sections: [
-      {
-        title: 'Choose where to book',
-        table: {
-          headers: ['Booking channel', 'Best for', 'Check before paying'],
-          rows: [
-            ['Railway 12306', 'Booking directly with the official operator', 'Account and passport verification, payment options, live change and refund rules'],
-            ['Trip.com', 'A familiar English third-party booking flow', 'Final price, service fees, support, issuance status, and refund terms'],
-            ['Station counter', 'Online verification failure or staff help', 'Bring the original passport for every passenger and allow extra time'],
-          ],
-        },
-        items: [
-          'Use the same booking channel to manage an order when possible, because third-party support and Railway 12306 handle their own orders differently.',
-          'China Railway states that it does not handle ticketing problems caused by other websites, so save the third party\'s support details if you use one.',
-        ],
-      },
-      {
-        title: 'Prepare these details before searching',
-        items: [
-          'The exact passport name, passport number, nationality, and date of birth for every passenger.',
-          'The full departure and arrival station names. Beijing, Shanghai, Guangzhou, Shenzhen, and many other cities have multiple major stations.',
-          'A train and arrival time that still leaves enough time for hotel check-in, local transport, or a connecting flight.',
-          'A payment method accepted by your chosen booking channel and access to the phone number or email used for verification.',
-          'A backup train or travel time in case your preferred service sells out.',
-        ],
-      },
-      {
-        title: 'Book on the official Railway 12306 service',
-        ordered: true,
-        items: [
-          'Use the official English website or official app, create an account, and add each traveler under the passenger list.',
-          'Select passport as the identity-document type and copy every character carefully. Do not shorten, translate, or rearrange the name unless the system specifically instructs you.',
-          'Complete the identity-verification steps shown for the account. If online verification does not complete, follow the current 12306 prompt or ask at a staffed station counter.',
-          'Search by the exact stations and date, then compare departure time, journey length, arrival station, seat class, and transfer risk.',
-          'Pay within the displayed time and save the order number, train number, carriage, seat, station names, and departure time offline.',
-        ],
-      },
-      {
-        title: 'Book through Trip.com or another sales agent',
-        items: [
-          'Check whether the result is an immediately issued ticket, a request to purchase when sales open, or a waitlist-style service.',
-          'Review the final amount, currency, service fee, cancellation terms, and customer-support channel before payment.',
-          'Enter passport details exactly as printed and check the confirmation again after the ticket is issued.',
-          'For changes or refunds, begin with the company that issued the order.',
-        ],
-      },
-      {
-        title: 'Understand the ticket and train details',
-        items: [
-          'G, D, and C services are commonly shown for high-speed or intercity rail, while other letter prefixes and numbers can indicate conventional services. Compare journey time rather than relying only on the train letter.',
-          'Second class is the standard high-speed-rail choice for most travelers; first class and business class offer more space at a higher price when available.',
-          'Confirm both station names, not only the cities. A ticket to Shanghai Hongqiao is different from a ticket to Shanghai Station.',
-          'Your confirmation should show the train number, date, departure and arrival stations, departure time, carriage, and seat after issuance.',
-        ],
-      },
-      {
-        title: 'Enter the station and board the train',
-        ordered: true,
-        items: [
-          'Go to the exact station printed in the booking and allow generous time for finding the entrance, security, identity checks, and the correct waiting area.',
-          'Use the original passport entered during booking. An itinerary sheet, reimbursement receipt, order screenshot, or passport copy does not replace it.',
-          'At stations where the automatic gate does not read a foreign passport, use a staffed or manual verification lane and show the passport.',
-          'Complete the security check, then find the waiting room or gate shown on the station displays. Gate information can appear closer to departure.',
-          'When boarding opens, follow the platform and carriage signs, then match the carriage and seat number in your confirmation.',
-          'Keep the passport available after arrival because it may be required again to exit the destination station.',
-        ],
-      },
-      {
-        title: 'Changes, refunds, and missed trains',
-        items: [
-          'Railway 12306 supports ticket changes and refunds, subject to seat availability, timing, ticket status, and the current fee rules shown for the order.',
-          'A ticket can generally be changed only once under the official rules, and some destination changes must be requested before a stated deadline.',
-          'If you booked through a third party, use that provider first and check whether its service fees are refundable.',
-          'Do not assume a screenshot or an unused ticket lets you take a later train. Use the official change process or ask station staff immediately.',
-          'Rules can be adjusted temporarily, so use the live order page and station announcements as the final authority.',
-        ],
-      },
-      {
-        title: 'Common problems and what to do',
-        items: [
-          'Passport will not scan: use the staffed gate or identity-verification lane rather than repeatedly trying the automatic gate.',
-          'Name or passport number is wrong: contact the issuer before travel; do not assume staff can ignore a mismatch at the gate.',
-          'Wrong station: check the Chinese and English station name before leaving the hotel and allow extra time when cities have multiple stations.',
-          'No ticket available: check another departure time, seat class, nearby station, or route, but avoid unverified resellers.',
-          'Lost passport: contact the relevant authority and station staff immediately. A phone photo alone is not a substitute for the required document.',
-          'No mobile data: keep the order number, train details, hotel address, and booking-support information available offline.',
-        ],
-      },
-    ],
-    faqs: [
-      {
-        question: 'Can foreigners buy China train tickets with a passport?',
-        answer:
-          'Yes. China Railway states that foreign passengers can purchase real-name tickets with a valid passport accepted under the applicable rules. The passport details must match the passenger and the original document should be carried for travel.',
-      },
-      {
-        question: 'Should I use Railway 12306 or Trip.com?',
-        answer:
-          'Use Railway 12306 if you want to book directly with the official operator and can complete its account setup. Trip.com can offer a more familiar English booking flow, but check the final price, service fees, support, and refund terms.',
-      },
-      {
-        question: 'Do I need to collect a paper train ticket?',
-        answer:
-          'Usually not for an e-ticket. The valid passport used to purchase the ticket is the key travel document. An itinerary sheet or reimbursement receipt cannot be used as the ticket.',
-      },
-      {
-        question: 'What if the station gate cannot scan my passport?',
-        answer:
-          'Use a staffed or manual verification lane and show the original passport. Arrive with enough time for security and identity checks rather than waiting until boarding closes.',
-      },
-      {
-        question: 'How early should I arrive at a China railway station?',
-        answer:
-          'China Railway advises passengers to reserve enough time because station entrances, security, identity checks, waiting rooms, and platforms can involve queues and walking. For an unfamiliar large station, arriving roughly 45 to 60 minutes early is a practical buffer, but follow local instructions.',
-      },
-      {
-        question: 'Can I change or refund a China train ticket?',
-        answer:
-          'Yes, subject to the current rules, timing, ticket status, fees, and seat availability. Manage the booking through the original issuer and read the live conditions before confirming.',
-      },
-      {
-        question: 'Why does the exact station name matter?',
-        answer:
-          'Large Chinese cities often have several railway stations located far apart. Check the complete departure and arrival station names before booking and again before leaving for the station.',
-      },
-    ],
-    related: [
-      { label: 'First trip to China', href: '/first-trip-to-china/' },
-      { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
-      { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
-      { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
-      { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' },
-      { label: 'China travel apps', href: '/china-travel-apps/' },
-      { label: 'China metro guide', href: '/china-metro-guide/' },
-      { label: 'China eSIM & internet guide', href: '/china-esim-internet-guide/' },
-      { label: 'China payment guide', href: '/china-payment-guide/' },
-      { label: 'China travel checklist', href: '/china-travel-checklist/' },
-      { label: 'Get a free China itinerary', href: '/#trip-plan' },
-    ],
-    sources: [
-      { label: 'Railway 12306 English website', href: 'https://www.12306.cn/en/index.html' },
-      { label: 'Railway 12306 official English FAQ', href: 'https://www.12306.cn/en/faq.html' },
-      { label: 'China Government: passport online identity verification', href: 'https://english.www.gov.cn/news/202311/28/content_WS6565e903c6d0868f4e8e1b58.html' },
-      { label: 'Trip.com official website', href: 'https://www.trip.com/' },
-    ],
+    sections: [],
+    faqs: trainGuide.faqs.map(({ question, answer }) => ({ question, answer: plainText(answer) })),
+    related: [{ label: 'How to Use DiDi in China as a Foreigner', href: '/didi-in-china-for-foreigners/' }],
+    sources: trainGuide.sources,
   },
   'china-metro-guide': {
     path: '/china-metro-guide/',
@@ -5094,7 +4949,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { question: 'What information should I provide?', answer: 'Provide dates, cities, interests, budget, pace, mobility needs, and fixed bookings. Do not provide passport numbers, card details, or other unnecessary sensitive data.' },
       { question: 'Can Buddy create Chinese addresses and phrases?', answer: 'Yes. Buddy can format destination names, hotel messages, pickup phrases, and planning notes for local apps.' },
     ],
-    related: [{ label: '7, 10 and 14-day itinerary guide', href: '/china-itinerary-first-time-7-10-14-days/' }, { label: 'China travel budget', href: '/china-travel-budget/' }, { label: 'China train booking guide', href: '/china-train-booking-foreigners-12306/' }],
+    related: [{ label: '7, 10 and 14-day itinerary guide', href: '/china-itinerary-first-time-7-10-14-days/' }, { label: 'China travel budget', href: '/china-travel-budget/' }, { label: 'China train booking guide', href: '/china-train-travel-guide/' }],
   },
   'wechat-verification-without-friend-qr-2026': {
     path: '/wechat-verification-without-friend-qr-2026/',
@@ -5183,28 +5038,8 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     lastModified: layoverAirportPlanning.modified,
     sections: layoverAirportPlanning.sections,
     faqs: layoverAirportPlanning.faqs,
-    related: [{ label: 'Complete visa-free transit guide', href: '/china-visa-free-travel-guide/' }, { label: 'China train booking', href: '/china-train-booking-foreigners-12306/' }, { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' }],
+    related: [{ label: 'Complete visa-free transit guide', href: '/china-visa-free-travel-guide/' }, { label: 'China train travel guide', href: '/china-train-travel-guide/' }, { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' }],
     sources: layoverAirportPlanning.sources,
-  },
-  'china-train-booking-foreigners-12306': {
-    path: '/china-train-booking-foreigners-12306/',
-    title: "China's 350 km/h Trains Are Open to Foreigners",
-    intro: 'Foreign passport holders can book high-speed rail tickets through the official 12306 website or app. Your verified passport is linked to the e-ticket, so no Chinese ID is required.',
-    metaTitle: '12306 for Foreigners: Book China Train Tickets in English',
-    metaDescription: 'Foreigners can buy China bullet train tickets on 12306 English with passport. No Chinese ID needed. E-ticket linked to passport, scan to board.',
-    quickAnswer: trainBookingContent.quickAnswer,
-    ctaLabel: 'Ask Buddy to plan my train booking',
-    midCtaLabel: 'Get help with my route and booking date',
-    ctaHref: '/',
-    buddyPrompt: 'Help me book a China train. My route is [city] to [city], travel date is [date], passenger passport country is [country], and I prefer [fastest/cheapest/most comfortable].',
-    reviewed: trainBookingContent.reviewed,
-    lastModified: trainBookingContent.modified,
-    isArticle: true,
-    howTo: trainBookingContent.howTo,
-    sections: trainBookingContent.sections,
-    faqs: trainBookingContent.faqs,
-    related: [{ label: 'China itinerary planner', href: '/china-itinerary-first-time-7-10-14-days/' }, { label: 'China visa-free travel guide', href: '/china-visa-free-travel-guide/' }, { label: 'China payment guide', href: '/china-payment-guide/' }],
-    sources: trainBookingContent.sources,
   },
   'china-itinerary-first-time-7-10-14-days': {
     path: '/china-itinerary-first-time-7-10-14-days/',
@@ -5222,7 +5057,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     isArticle: true,
     sections: firstTimeItineraryContent.sections,
     faqs: firstTimeItineraryContent.faqs,
-    related: [{ label: '7-day China itinerary', href: '/7-day-china-itinerary/' }, { label: '10-day China itinerary', href: '/10-day-china-itinerary/' }, { label: '14-day China itinerary', href: '/14-day-china-itinerary/' }, { label: 'First trip to China guide', href: '/first-trip-to-china/' }, { label: 'China train booking guide', href: '/china-train-booking-foreigners-12306/' }, { label: 'China travel budget', href: '/china-travel-budget/' }, { label: 'China visa-free travel guide', href: '/china-visa-free-travel-guide/' }, { label: 'China eSIM guide', href: '/china-esim-internet-guide/' }],
+    related: [{ label: '7-day China itinerary', href: '/7-day-china-itinerary/' }, { label: '10-day China itinerary', href: '/10-day-china-itinerary/' }, { label: '14-day China itinerary', href: '/14-day-china-itinerary/' }, { label: 'First trip to China guide', href: '/first-trip-to-china/' }, { label: 'China train booking guide', href: '/china-train-travel-guide/' }, { label: 'China travel budget', href: '/china-travel-budget/' }, { label: 'China visa-free travel guide', href: '/china-visa-free-travel-guide/' }, { label: 'China eSIM guide', href: '/china-esim-internet-guide/' }],
     sources: firstTimeItineraryContent.sources,
   },
   faq: {
@@ -5696,6 +5531,7 @@ const richGuides: Partial<Record<GuidePageType, GuideContent>> = {
   'didi-in-china-for-foreigners': didiGuide as GuideContent,
   'wechat-verification-without-friend-qr-2026': wechatVerificationGuide as GuideContent,
   'china-airport-arrival-guide': airportArrivalGuide as GuideContent,
+  'china-train-travel-guide': trainGuide as GuideContent,
 };
 
 function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?: string | null; onAskBuddy?: (prefill?: string) => void }) {
@@ -5794,7 +5630,7 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
               key={section.title}
               className={`rounded-2xl border border-gray-100 bg-white/80 p-4 shadow-sm${section.table ? ' md:col-span-2' : ''}`}
             >
-              {!['china-train-booking-foreigners-12306', 'china-itinerary-first-time-7-10-14-days'].includes(type) && <span id={`guide-section-${sectionIndex}`} aria-hidden="true" />}
+              {!['china-itinerary-first-time-7-10-14-days'].includes(type) && <span id={`guide-section-${sectionIndex}`} aria-hidden="true" />}
               <h2 className="text-lg font-bold text-gray-950">{section.title}</h2>
               {((type === 'china-visa-free-travel-guide' && section.title === '240-hour visa-free transit: the route is essential') ||
                 (type === 'china-240-hour-visa-free-transit-2026' && section.title === 'How the 10-day clock is calculated')) && (
@@ -6064,7 +5900,6 @@ export function getPolicyPageType(pathname: string): PageType | null {
   if (cleanPath.endsWith('/china-payment-guide')) return 'china-payment-guide';
   if (cleanPath.endsWith('/china-travel-checklist')) return 'china-travel-checklist';
   if (cleanPath.endsWith('/china-emergency-numbers')) return 'china-emergency-numbers';
-  if (cleanPath.endsWith('/china-train-booking-foreigners-12306')) return 'china-train-booking-foreigners-12306';
   if (cleanPath.endsWith('/china-itinerary-first-time-7-10-14-days')) return 'china-itinerary-first-time-7-10-14-days';
   if (cleanPath.endsWith('/beijing-shanghai-layover-240-hour-guide')) return 'beijing-shanghai-layover-240-hour-guide';
   if (cleanPath.endsWith('/what-to-eat-in-china-first-time-guide')) return 'what-to-eat-in-china-first-time-guide';

@@ -13,7 +13,8 @@ type Shot = { src: string; width: number; height: number; alt: string };
 export type GuideContent = {
   byline: { name: string; tested: string };
   quickAnswer: Array<string | { type: 'ol' | 'ul'; items: string[] }>;
-  cta: { text: string; label: string; href: string; placement?: string };
+  // Optional: some guides end with LinBox only.
+  cta?: { text: string; label: string; href: string; placement?: string };
   screenshotCaption?: string;
   pairShotMaxWidth?: number;
   screenshots?: Record<string, Shot>;
@@ -101,8 +102,8 @@ function GuideBlock({ block }: { block: Block }) {
             </tr>
           </thead>
           <tbody>
-            {block.rows.map((row) => (
-              <tr key={row[0]} className="border-b border-gray-100 last:border-0">
+            {block.rows.map((row, rowIndex) => (
+              <tr key={rowIndex} className="border-b border-gray-100 last:border-0">
                 {row.map((cell, index) => <td key={index} className={`py-2 pr-4 align-top leading-relaxed text-gray-600${index === 0 ? ' font-semibold text-gray-800' : ''}`}><AmapRichText text={cell} /></td>)}
               </tr>
             ))}
@@ -145,6 +146,7 @@ export function AmapQuickAnswer() {
 
 export function AmapCtaCard() {
   const content = useGuide();
+  if (!content.cta) return null;
   return (
     <aside aria-label="App setup help" className="rounded-2xl border border-[#155e63]/20 bg-[#155e63]/5 p-4 md:p-5">
       <p className="text-sm leading-relaxed text-gray-800 md:text-base"><AmapRichText text={content.cta.text} /></p>

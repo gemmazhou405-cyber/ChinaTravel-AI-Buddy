@@ -617,24 +617,6 @@
     ],
     "removeFaqs": []
   },
-  "china-train-travel-guide": {
-    "sections": [],
-    "faqs": [],
-    "sources": [],
-    "sectionLinks": [
-      {
-        "section": "Prepare these details before searching",
-        "links": [
-          {
-            "label": "3-day Guangzhou itinerary",
-            "description": "Chen Clan Ancestral Hall, Shamian, Canton Tower, dim sum, Metro, airport and train advice.",
-            "href": "/3-day-guangzhou-itinerary/"
-          }
-        ]
-      }
-    ],
-    "removeFaqs": []
-  },
   "3-day-suzhou-itinerary": {
     "sections": [],
     "faqs": [],

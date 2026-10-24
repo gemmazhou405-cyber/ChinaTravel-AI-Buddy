@@ -1,0 +1,119 @@
+{
+  "metaTitle": "China Train Tickets for Foreigners (2026): Booking on 12306",
+  "metaDescription": "Book China trains with just a passport on 12306's English site: what it asks for, the 15-day sale window, change and refund fees, and boarding.",
+  "heading": "How to Book China High-Speed Trains Without Chinese ID",
+  "byline": {
+    "name": "Maintained by Lin",
+    "tested": "Rules checked against 12306's official English site and FAQ, October 24, 2026"
+  },
+  "reviewed": "October 24, 2026",
+  "modified": "2026-10-24",
+  "quickAnswer": [
+    "Yes, you can book China's trains with just your passport. The short version:",
+    { "type": "ul", "items": [
+      "**Where:** 12306, China Railway's official site, has an English version and an app. It only accepts foreign passports, and it asks for an email address, not a Chinese phone number.",
+      "**When:** tickets go on sale 15 days before departure. Sales run from 5:00 to 1:00 the next day (5:00 to 23:30 on Tuesdays).",
+      "**Paying:** foreign bank cards and mobile payment apps both work online.",
+      "**Boarding:** there's no paper ticket. Show the passport you booked with at the station entrance, on the train and at the exit.",
+      "**Changes and refunds:** you can change a ticket once, free if it's more than 48 hours before departure. Refunds are free 8 days or more before departure; after that the fee is 5%, 10% or 20%."
+    ] },
+    "Jump to: [Book on 12306](#book) · [Other ways to buy](#channels) · [At the station](#station) · [Change fees](#change) · [Refund fees](#refund) · [Children](#children)"
+  ],
+  "sections": [
+    {
+      "id": "book",
+      "title": "Book on 12306's English site, step by step",
+      "blocks": [
+        { "type": "ol", "items": [
+          "Go to 12306's English website (12306.cn/en) or the 12306 app and create an account. The form asks for your nationality, your name and passport number as they appear in your passport, the passport's expiry date, your date of birth and gender, plus a username, password and email address. There's no phone number field.",
+          "Verify your passport. After you enter your details, the system can verify you automatically, or you can upload a photo of your passport's photo page for a manual check. Since November 2023 you no longer need to do this at a station counter.",
+          "Search for your train. Big cities have several stations, so check the exact station name.",
+          "Pick a seat class: second class is the standard choice; first and business class cost more.",
+          "Add each passenger's passport details, then pay. Online, 12306 takes foreign bank cards and mobile payment apps.",
+          "12306 sends notifications to your email. Keep your order details somewhere you can open offline."
+        ] }
+      ]
+    },
+    {
+      "id": "channels",
+      "title": "Other ways to buy",
+      "blocks": [
+        { "type": "ul", "items": [
+          "**At a station ticket window:** bring your passport. Windows take foreign and Chinese bank cards, cash in yuan and mobile payment apps.",
+          "**Not at the ticket machines:** the station's self-service machines don't take passports; they only accept foreign permanent residence ID cards.",
+          "**Through a travel agent or booking site:** compare the total price, including any service fee, with 12306 for the same train and seat. If something goes wrong, you deal with the agent first."
+        ] }
+      ]
+    },
+    {
+      "id": "station",
+      "title": "At the station",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Show the passport you booked with to get into the station, at the ticket gate, on the train and when you leave the station at the other end.",
+          "Leave time for queues at security, the ID check and the ticket gate. At a big station you don't know, 45 to 60 minutes is a sensible buffer.",
+          "If the automatic gate won't read your passport, use the staffed lane next to it.",
+          "Your gate number appears on the departure screens shortly before departure."
+        ] }
+      ]
+    },
+    {
+      "id": "change",
+      "title": "Change fees",
+      "blocks": [
+        { "type": "p", "text": "You can change a ticket (or its arrival station) **once**." },
+        { "type": "table", "headers": ["When you change", "Changing to", "Fee"], "rows": [
+          ["More than 48 hours before departure", "Any train", "Free"],
+          ["24 to 48 hours before departure", "A train leaving by midnight on your original travel date", "Free"],
+          ["24 to 48 hours before departure", "A train on a later date", "5% of the lower fare"],
+          ["Less than 24 hours before departure", "A train on a later date", "15% of the lower fare"],
+          ["After your train has left", "A train the same day", "Free"],
+          ["After your train has left", "A train the next day or later", "40% of the lower fare"]
+        ] },
+        { "type": "p", "text": "To change your arrival station, do it at least 48 hours before departure; after that change, no other changes are allowed. A changed ticket can't be refunded once the train has left." }
+      ]
+    },
+    {
+      "id": "refund",
+      "title": "Refund fees",
+      "blocks": [
+        { "type": "table", "headers": ["When you refund", "Fee"], "rows": [
+          ["8 days or more before departure", "Free"],
+          ["More than 48 hours before departure", "5% of the fare"],
+          ["24 to 48 hours before departure", "10%"],
+          ["Less than 24 hours before departure", "20%"]
+        ] },
+        { "type": "p", "text": "**Bought the wrong ticket?** For trains from February 2, 2026, a ticket bought on the 12306 website, app or Alipay mini program can be refunded free within 30 minutes of paying, as long as it's more than 4 hours before departure. You can do this once a day." }
+      ]
+    },
+    {
+      "id": "children",
+      "title": "Children's tickets",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Each paying adult can bring one child under 6 for free, without a seat of their own.",
+          "Children aged 6 to 14 need a child ticket.",
+          "From 14, children need a full-price ticket."
+        ] }
+      ]
+    }
+  ],
+  "faqs": [
+    { "question": "Can foreigners book China train tickets online?", "answer": "Yes, on 12306's English website or app, with a foreign passport. Verify your passport first; it can be done online." },
+    { "question": "Do I need a Chinese phone number for 12306?", "answer": "No. The English site's sign-up form asks for an email address, not a phone number." },
+    { "question": "Can I pay with a foreign card?", "answer": "Yes. China's 2025 government guide for foreign visitors says 12306's English site and app take foreign bank cards and mobile payment apps." },
+    { "question": "How far ahead can I book?", "answer": "15 days before departure. Sales run from 5:00 to 1:00 the next day, or 5:00 to 23:30 on Tuesdays." },
+    { "question": "Do I need a paper ticket?", "answer": "No. Show the passport you booked with at the entrance, on the train and at the exit." },
+    { "question": "Can I change my train?", "answer": "Once. It's free more than 48 hours before departure; closer to departure, see the change fee table." },
+    { "question": "How much does a refund cost?", "answer": "It's free 8 days or more before departure, then 5%, 10% or 20% depending on how close to departure you refund." },
+    { "question": "Can I use the ticket machines at the station?", "answer": "Not with a passport. They only accept foreign permanent residence ID cards, so use a ticket window." }
+  ],
+  "sources": [
+    { "label": "12306 English website", "href": "https://www.12306.cn/en/index.html" },
+    { "label": "12306 English registration page", "href": "https://www.12306.cn/en/register.html" },
+    { "label": "12306 English FAQ (changes, refunds, children's tickets, sales hours)", "href": "https://www.12306.cn/en/faq.html" },
+    { "label": "Guide to Working and Living in China for Foreign Business People, 2025 edition (Ministry of Commerce, China State Railway Group and others; in Chinese)", "href": "https://gothenburg.china-consulate.gov.cn/zytz/202505/P020250506826658303527.pdf" },
+    { "label": "Xinhua via the Chinese government's English site: online passport verification for foreign passengers (November 2023)", "href": "https://english.www.gov.cn/news/202311/28/content_WS6565e903c6d0868f4e8e1b58.html" },
+    { "label": "Xinhua: tickets go on sale 15 days before departure (February 2026, in Chinese)", "href": "https://www.news.cn/20260201/96c15e86150e4f81b518f210b70179ed/c.html" }
+  ]
+}
