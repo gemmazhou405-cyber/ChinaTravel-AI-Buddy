@@ -185,6 +185,16 @@
             "href": "/chinese-travel-phrases/"
           }
         ]
+      },
+      {
+        "section": "Payments: prepare Alipay and a backup",
+        "links": [
+          {
+            "label": "who can verify your WeChat account",
+            "description": "Helpers need an account over six months old and can verify at most three accounts a year.",
+            "href": "/wechat-verification-without-friend-qr-2026/#helper"
+          }
+        ]
       }
     ],
     "removeFaqs": []
@@ -484,6 +494,19 @@
             "href": "/tenpaygo-for-tourists/"
           }
         ]
+      },
+      {
+        "section": [
+          "Alipay, WeChat Pay, cards, and cash",
+          "Alipay vs WeChat Pay — which should I use?"
+        ],
+        "links": [
+          {
+            "label": "if WeChat asks a friend to verify you",
+            "description": "Who can help, what else to try, and how to pay at WeChat Pay shops without an account.",
+            "href": "/wechat-verification-without-friend-qr-2026/"
+          }
+        ]
       }
     ],
     "removeFaqs": []
@@ -716,6 +739,16 @@
             "href": "/tenpaygo-for-tourists/"
           }
         ]
+      },
+      {
+        "section": "Set up WeChat Pay before your flight",
+        "links": [
+          {
+            "label": "stuck on friend verification",
+            "description": "Who can verify you, what else to try, and how to pay without a WeChat account.",
+            "href": "/wechat-verification-without-friend-qr-2026/"
+          }
+        ]
       }
     ],
     "removeFaqs": []
@@ -732,24 +765,6 @@
             "label": "The ¥200 fee rule for airport rides",
             "description": "Through Alipay or WeChat Pay with a foreign card, a ride over ¥200 may carry a 3% fee.",
             "href": "/didi-payment-for-foreigners/#fees"
-          }
-        ]
-      }
-    ],
-    "removeFaqs": []
-  },
-  "wechat-verification-without-friend-qr-2026": {
-    "sections": [],
-    "faqs": [],
-    "sources": [],
-    "sectionLinks": [
-      {
-        "section": "If registration is unfinished before departure",
-        "links": [
-          {
-            "label": "pay WeChat Pay shops without a WeChat account",
-            "description": "TenPayGo signs up with an email and pays at shops that take WeChat Pay.",
-            "href": "/tenpaygo-for-tourists/"
           }
         ]
       }

@@ -1,0 +1,102 @@
+{
+  "metaTitle": "WeChat Verification Without a Friend (2026): What to Try",
+  "metaDescription": "No friend to scan your WeChat QR code? See who can verify you (accounts 6+ months old, 3 a year), what else to try, and how to pay without WeChat.",
+  "heading": "WeChat Verification Without a Friend: Registration & QR Help",
+  "byline": {
+    "name": "Maintained by Lin",
+    "tested": "Checked against WeChat's help center and the Eye Shenzhen guide, October 24, 2026"
+  },
+  "reviewed": "October 24, 2026",
+  "modified": "2026-10-24",
+  "quickAnswer": [
+    "Not every WeChat sign-up asks for a friend. If yours does, here's what to know:",
+    { "type": "ul", "items": [
+      "**Who can help:** someone whose WeChat account is more than six months old, who hasn't verified anyone in the past month (three accounts a year at most), hasn't been blocked in the past month and, if they're in mainland China, has turned on WeChat Pay. Even then, approval isn't guaranteed.",
+      "**No helper?** If your screen offers another way, such as verifying a bank card or turning on Weixin Pay, use it. Otherwise, contact WeChat through the feedback form in its help center, with a screenshot of the error.",
+      "**Still stuck?** You can pay at shops that take WeChat Pay without a WeChat account. [TenPayGo](/tenpaygo-for-tourists/) signs you up with just an email; I tested it."
+    ] },
+    "Jump to: [Sign up](#sign-up) · [Who can help](#helper) · [No helper](#no-helper) · [Pay without WeChat](#plan-b) · [WeChat Pay checks](#wechat-pay)"
+  ],
+  "cta": {
+    "text": "**Flying soon?** I'll help you set up WeChat, Alipay and TenPayGo before you fly, so you're not stuck at a verification screen when you land.",
+    "label": "See the app setup service on Fiverr →",
+    "href": "https://www.fiverr.com/s/p3dZbQR",
+    "placement": "wechat-setup"
+  },
+  "sections": [
+    {
+      "id": "sign-up",
+      "title": "Sign up first: the official routes",
+      "blocks": [
+        { "type": "p", "text": "WeChat's help center lists three ways to sign up:" },
+        { "type": "ul", "items": [
+          "**With a phone number:** tap **Sign up via Mobile**, choose your country or region code, enter your number and set a password. The code may arrive as an automated voice call, so make sure international numbers aren't blocked on your phone.",
+          "**With Facebook:** tap **Sign up via Facebook**.",
+          "**With Apple (iPhone only):** tap **Sign up with Apple**."
+        ] },
+        { "type": "p", "text": "If WeChat then shows you a QR code and asks a friend to scan it, that's the friend verification step." }
+      ]
+    },
+    {
+      "id": "helper",
+      "title": "Who can be your helper",
+      "blocks": [
+        { "type": "p", "text": "According to the Eye Shenzhen guide, your helper must:" },
+        { "type": "ul", "items": [
+          "have signed up to WeChat more than six months ago",
+          "not have verified another account in the past month (one person can verify at most three accounts a year)",
+          "not have been blocked in the past month",
+          "have turned on WeChat Pay, if they're in mainland China"
+        ] },
+        { "type": "p", "text": "Even when all four are true, approval isn't guaranteed, and a helper in mainland China is recommended." },
+        { "type": "p", "text": "**Does your helper need to be with you?** No. Many people send the QR code to their helper as a screenshot through another messaging app, and the helper scans it with WeChat. Only send it to someone you know, and never post it publicly." }
+      ]
+    },
+    {
+      "id": "no-helper",
+      "title": "No helper? What else to try",
+      "blocks": [
+        { "type": "ol", "items": [
+          "**Use another option if your screen offers one.** Some sign-ups let you verify a bank card or turn on Weixin Pay instead of asking a friend.",
+          "**If your account is restricted later,** WeChat's help center says to follow the on-screen instructions and pick one of the options shown, such as asking friends to assist or an ID check. If there are no instructions, open the WeChat Team chat and tap the restriction notice.",
+          "**Contact WeChat support** through the feedback form in its help center. Include a full screenshot or a screen recording of the error.",
+          "**Don't pay a stranger to verify you, and don't buy an account.** You'd be handing your sign-up to someone you don't know."
+        ] }
+      ]
+    },
+    {
+      "id": "plan-b",
+      "title": "Plan B: pay without WeChat",
+      "blocks": [
+        { "type": "p", "text": "Most visitors want WeChat so they can pay. You can do that without a WeChat account:" },
+        { "type": "ul", "items": [
+          "**TenPayGo**, Tencent's app for visitors, pays at shops that take WeChat Pay. I signed up with just an email and a code, and linked a UK Mastercard without being charged. [My TenPayGo test](/tenpaygo-for-tourists/)",
+          "**Alipay** works at most shops too, and also covers DiDi rides and metro ride codes. [Alipay for foreigners](/alipay-for-foreigners/)"
+        ] }
+      ]
+    },
+    {
+      "id": "wechat-pay",
+      "title": "WeChat Pay has its own identity check",
+      "blocks": [
+        { "type": "p", "text": "Friend verification is about your WeChat account. Adding a foreign card to WeChat Pay is a separate step: go to **Me → Pay and Services → Wallet → Bank Cards**, add the card and enter your identity details. If you use a passport, you'll be asked to upload a copy. Your phone number doesn't have to be Chinese, as long as it can receive SMS codes." },
+        { "type": "p", "text": "WeChat's help center says payments under ¥200 have no transaction fee and payments above ¥200 have a 3% fee. Foreign cards can't be used for red packets or money transfers. More: [WeChat Pay for foreigners](/wechat-pay-for-foreigners/)." }
+      ]
+    }
+  ],
+  "faqs": [
+    { "question": "Can I verify WeChat without a friend?", "answer": "Sometimes. If your sign-up screen offers another way, such as verifying a bank card or turning on Weixin Pay, you can use that. If it only shows a QR code for a friend to scan, you need a helper or WeChat support." },
+    { "question": "Who can verify my WeChat account?", "answer": "Someone who signed up to WeChat more than six months ago, hasn't verified anyone in the past month, hasn't been blocked in the past month and, if they're in mainland China, has turned on WeChat Pay." },
+    { "question": "How many accounts can one person verify?", "answer": "At most three a year, and only one in any month, according to the Eye Shenzhen guide." },
+    { "question": "Can a friend verify me from another country?", "answer": "They don't need to be with you: send the QR code as a screenshot through another app. A helper in mainland China is recommended, though." },
+    { "question": "My helper scanned the code but it failed. Why?", "answer": "Check the four rules above with your helper: an account under six months old, or one that verified someone in the past month, won't work. Even when everything checks out, approval isn't guaranteed, so try another helper or contact WeChat support." },
+    { "question": "Can I use WeChat Pay without a WeChat account?", "answer": "Not WeChat Pay itself, but TenPayGo pays at the same shops and signs you up with just an email." },
+    { "question": "Should I pay someone online to verify my account?", "answer": "No. You'd be handing your sign-up to a stranger." }
+  ],
+  "sources": [
+    { "label": "WeChat Help Center: Step-by-step guidance to create a WeChat account", "href": "https://cs.help.wechat.com/hc/en-us/articles/16403968439055-Step-by-step-guidance-to-create-a-WeChat-Account" },
+    { "label": "WeChat Help Center: Step-by-step guidance to remove account restrictions", "href": "https://cs.help.wechat.com/hc/en-us/articles/16403894198543-Step-by-step-guidance-to-remove-account-restrictions" },
+    { "label": "WeChat Help Center: How to set up international cards for Weixin Pay", "href": "https://cs.help.wechat.com/hc/en-us/articles/11975770896271-How-to-Set-Up-International-Cards-for-Weixin-Pay" },
+    { "label": "Eye Shenzhen: How to register for a WeChat, Xiaohongshu, Douyin or Weibo account (October 2024)", "href": "https://www.eyeshenzhen.com/content/2024-10/11/content_31264749.htm" }
+  ]
+}

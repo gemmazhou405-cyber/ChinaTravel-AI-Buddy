@@ -316,6 +316,14 @@ const pages = [
     links: ["/china-payment-guide/", "/alipay-for-foreigners/", "/wechat-pay-for-foreigners/", "/wechat-verification-without-friend-qr-2026/", "/alipay-metro-qr-transport-code-guide/", "/didi-payment-for-foreigners/", "/3-day-shenzhen-itinerary/", "/first-trip-to-china/"],
   },
   {
+    path: '/wechat-verification-without-friend-qr-2026/',
+    h1: /WeChat Verification Without a Friend: Registration & QR Help/i,
+    keywords: ['six months', 'three accounts a year', 'Eye Shenzhen', 'feedback form', 'TenPayGo', 'Last reviewed'],
+    // The fake button and sections removed in the October 24, 2026 rebuild must not come back.
+    forbiddenPhrases: ['Review my WeChat verification options', 'If registration is unfinished before departure'],
+    links: ["/tenpaygo-for-tourists/", "/wechat-pay-for-foreigners/", "/alipay-for-foreigners/", "/china-payment-guide/", "/china-travel-apps/", "/china-esim-internet-guide/", "/didi-payment-for-foreigners/", "/first-trip-to-china/"],
+  },
+  {
     path: '/nia-12367-online-accommodation-registration-guide/',
     h1: /How Foreigners Can Register Accommodation Online in China/i,
     keywords: ['September 21, 2026', 'within 24 hours', 'NIA 12367', 'Hotel vs non-hotel stays'],

@@ -35,7 +35,7 @@ import arrivalCardGuide from '../data/seoPages/china-online-arrival-card-2026.js
 import visaFreeCheckerGuide from '../data/seoPages/china-visa-free-checker.json';
 import amapEnglishSetup from '../data/amapEnglishSetup.json';
 import alipayMetroGuide from '../data/alipayMetroGuide.json';
-import wechatVerificationHelp from '../data/wechatVerificationHelp.json';
+import wechatVerificationGuide from '../data/wechatVerificationGuide.json';
 import shenzhenItineraryPlanning from '../data/shenzhenItineraryPlanning.json';
 import layoverAirportPlanning from '../data/layoverAirportPlanning.json';
 import didiGuide from '../data/didiGuide.json';
@@ -5274,21 +5274,21 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'wechat-verification-without-friend-qr-2026': {
     path: '/wechat-verification-without-friend-qr-2026/',
-    title: wechatVerificationHelp.heading,
-    intro: wechatVerificationHelp.intro,
-    metaTitle: 'WeChat Verification Without a Friend: Safe Registration Options (2026)',
-    metaDescription: 'No friend to scan your WeChat QR code? Check the exact in-app verification or appeal options, contact official support if blocked, and avoid paid scans.',
-    quickAnswer: wechatVerificationHelp.quickAnswer,
-    ctaLabel: 'Troubleshoot my WeChat verification',
-    midCtaLabel: 'Build my safe recovery checklist',
-    ctaHref: '/',
-    buddyPrompt: 'Help me understand this WeChat verification screen and list safe official next steps. The message says: [paste the message without phone numbers, codes, or personal data].',
-    reviewed: wechatVerificationHelp.reviewed,
-    lastModified: wechatVerificationHelp.modified,
-    sections: wechatVerificationHelp.sections,
-    faqs: wechatVerificationHelp.faqs,
-    sources: wechatVerificationHelp.sources,
-    related: [{ label: 'Complete WeChat setup guide', href: '/how-to-use-wechat-as-foreigner-2026/' }, { label: 'WeChat Pay guide', href: '/wechat-pay-for-foreigners/' }, { label: 'Best China travel apps', href: '/china-travel-apps/' }],
+    title: wechatVerificationGuide.heading,
+    intro: '',
+    metaTitle: wechatVerificationGuide.metaTitle,
+    metaDescription: wechatVerificationGuide.metaDescription,
+    quickAnswer: quickAnswerText(wechatVerificationGuide.quickAnswer),
+    // Rendered like the Amap guide (AmapGuide components); these fields feed the schema.
+    ctaLabel: wechatVerificationGuide.cta.label,
+    ctaHref: wechatVerificationGuide.cta.href,
+    reviewed: wechatVerificationGuide.reviewed,
+    lastModified: wechatVerificationGuide.modified,
+    isArticle: true,
+    sections: [],
+    faqs: wechatVerificationGuide.faqs.map(({ question, answer }) => ({ question, answer: plainText(answer) })),
+    related: [{ label: 'How to Use TenPayGo in China: Sign Up, Link a Card, Pay', href: '/tenpaygo-for-tourists/' }],
+    sources: wechatVerificationGuide.sources,
   },
   'what-to-eat-in-china-first-time-guide': {
     path: '/what-to-eat-in-china-first-time-guide/',
@@ -5870,6 +5870,7 @@ const richGuides: Partial<Record<GuidePageType, GuideContent>> = {
   'didi-payment-for-foreigners': didiPaymentGuide as GuideContent,
   'tenpaygo-for-tourists': tenPayGoGuide as GuideContent,
   'didi-in-china-for-foreigners': didiGuide as GuideContent,
+  'wechat-verification-without-friend-qr-2026': wechatVerificationGuide as GuideContent,
 };
 
 function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?: string | null; onAskBuddy?: (prefill?: string) => void }) {

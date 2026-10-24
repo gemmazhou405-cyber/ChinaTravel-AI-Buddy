@@ -1645,35 +1645,35 @@
   ],
   "wechat-verification-without-friend-qr-2026": [
     {
-      "label": "Paying in China",
-      "href": "/china-payment-guide/"
-    },
-    {
-      "label": "Alipay for Foreigners: Setup & Payment Guide (2026)",
-      "href": "/alipay-for-foreigners/"
+      "label": "How to Use TenPayGo in China: Sign Up, Link a Card, Pay",
+      "href": "/tenpaygo-for-tourists/"
     },
     {
       "label": "WeChat Pay for Foreigners: Setup and Payment Guide (2026)",
       "href": "/wechat-pay-for-foreigners/"
     },
     {
-      "label": "Pay for a DiDi ride",
+      "label": "Alipay for Foreigners: Setup & Payment Guide (2026)",
+      "href": "/alipay-for-foreigners/"
+    },
+    {
+      "label": "How to Pay in China as a Foreigner",
+      "href": "/china-payment-guide/"
+    },
+    {
+      "label": "Essential China Travel Apps to Set Up Before Arrival",
+      "href": "/china-travel-apps/"
+    },
+    {
+      "label": "How to Get an eSIM in China (2026 Internet Guide)",
+      "href": "/china-esim-internet-guide/"
+    },
+    {
+      "label": "DiDi Pay for Foreigners: How to Pay for DiDi in China",
       "href": "/didi-payment-for-foreigners/"
     },
     {
-      "label": "How to Use TenPayGo in China: Sign Up, Link a Card, Pay",
-      "href": "/tenpaygo-for-tourists/"
-    },
-    {
-      "label": "How to Pay for the Metro in China: Alipay Ride Code or Tap Your Card",
-      "href": "/alipay-metro-qr-transport-code-guide/"
-    },
-    {
-      "label": "China travel budget calculator",
-      "href": "/china-travel-budget/"
-    },
-    {
-      "label": "First trip to China",
+      "label": "First Trip to China: What to Know Before You Go",
       "href": "/first-trip-to-china/"
     }
   ],

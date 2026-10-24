@@ -41,7 +41,7 @@ const transitAnswers = JSON.parse(await readFile('src/data/transitAnswers.json',
 const calculatorContent = JSON.parse(await readFile('src/data/transitCalculatorContent.json', 'utf8'));
 const amapEnglishSetup = JSON.parse(await readFile('src/data/amapEnglishSetup.json', 'utf8'));
 const alipayMetroGuide = JSON.parse(await readFile('src/data/alipayMetroGuide.json', 'utf8'));
-const wechatVerificationHelp = JSON.parse(await readFile('src/data/wechatVerificationHelp.json', 'utf8'));
+const wechatVerificationGuide = JSON.parse(await readFile('src/data/wechatVerificationGuide.json', 'utf8'));
 const shenzhenItineraryPlanning = JSON.parse(await readFile('src/data/shenzhenItineraryPlanning.json', 'utf8'));
 const layoverAirportPlanning = JSON.parse(await readFile('src/data/layoverAirportPlanning.json', 'utf8'));
 const didiGuide = JSON.parse(await readFile('src/data/didiGuide.json', 'utf8'));
@@ -3106,16 +3106,15 @@ Object.assign(pageMeta, {
     lastModified: '2026-09-27',
   },
   'wechat-verification-without-friend-qr-2026': {
-    ...pageMeta['wechat-pay-for-foreigners'],
-    title: 'WeChat Verification Without a Friend: Safe Registration Options (2026)',
-    heading: wechatVerificationHelp.heading,
-    description: 'No friend to scan your WeChat QR code? Check the exact in-app verification or appeal options, contact official support if blocked, and avoid paid scans.',
-    intro: wechatVerificationHelp.intro,
-    quickAnswer: wechatVerificationHelp.quickAnswer,
-    faqs: wechatVerificationHelp.faqs.map(({ question, answer }) => [question, answer]),
-    sourceLinks: wechatVerificationHelp.sources.map(({ label, href }) => [label, href]),
-    lastReviewed: wechatVerificationHelp.reviewed,
-    lastModified: wechatVerificationHelp.modified,
+    article: true,
+    title: wechatVerificationGuide.metaTitle,
+    heading: wechatVerificationGuide.heading,
+    description: wechatVerificationGuide.metaDescription,
+    quickAnswer: quickAnswerText(wechatVerificationGuide.quickAnswer),
+    faqs: wechatVerificationGuide.faqs.map(({ question, answer }) => [question, plainText(answer)]),
+    sourceLinks: wechatVerificationGuide.sources.map(({ label, href }) => [label, href]),
+    lastReviewed: wechatVerificationGuide.reviewed,
+    lastModified: wechatVerificationGuide.modified,
   },
   'what-to-eat-in-china-first-time-guide': {
     ...pageMeta['china-food-ordering-guide'],
@@ -3534,12 +3533,6 @@ const focusedPageContent = {
     "lastModified": "2026-10-05",
     "article": true
   },
-  "wechat-verification-without-friend-qr-2026": {
-    contentSections: wechatVerificationHelp.sections,
-    lastReviewed: wechatVerificationHelp.reviewed,
-    lastModified: wechatVerificationHelp.modified,
-    article: true,
-  },
   "what-to-eat-in-china-first-time-guide": {
     "contentSections": [
       {
@@ -3724,7 +3717,6 @@ const staticCtas = {
   'how-to-use-wechat-as-foreigner-2026': ['Build my WeChat setup checklist', '/'],
   'nia-12367-online-accommodation-registration-guide': ['Get your free personalized trip starter', '/#trip-plan'],
   'china-travel-ai-itinerary-generator': ['Get my free itinerary', '/plan/'],
-  'wechat-verification-without-friend-qr-2026': ['Review my WeChat verification options', '/'],
   faq: ['Open the free toolkit', '/'],
 };
 
@@ -4406,6 +4398,7 @@ const richGuides = {
   'didi-payment-for-foreigners': didiPaymentGuide,
   'tenpaygo-for-tourists': tenPayGoGuide,
   'didi-in-china-for-foreigners': didiGuide,
+  'wechat-verification-without-friend-qr-2026': wechatVerificationGuide,
 };
 
 function staticPageContent(page, meta) {
