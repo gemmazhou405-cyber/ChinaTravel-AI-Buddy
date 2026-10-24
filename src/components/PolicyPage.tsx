@@ -773,7 +773,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       'A decision guide to ordinary 30-day visa-free entry, 240-hour visa-free transit, 24-hour transit, route rules, approved ports, and travel documents.',
     metaTitle: 'China Visa-Free Travel Guide (2026) | ChinaEase Buddy',
     metaDescription:
-      'Eligible passport holders can visit China visa-free for up to 30 days, or use 240-hour transit en route to a third country. Compare the routes and ports.',
+      'Eligible ordinary-passport holders can visit China visa-free for up to 30 days for approved purposes, or use 240-hour transit en route to a third country.',
     quickAnswer:
       'First decide which policy fits your passport and route. China\'s ordinary visa-free entry lets eligible ordinary-passport holders visit for up to 30 days for approved purposes without needing a third-country itinerary. The separate 240-hour visa-free transit policy is available to eligible nationals only when they travel through mainland China to a third country or region, use an approved port, remain within the permitted area, and hold a confirmed onward ticket. A return trip such as London–Beijing–London is not third-country transit. Policies can change, and admission is still subject to border inspection, so verify your nationality, passport, purpose, route, ports, and exact dates with the official sources immediately before travel.',
     ctaLabel: 'Get my free China itinerary',
@@ -1150,7 +1150,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       'A practical hotel guide for foreign-passport booking, check-in, accommodation registration, payments, late arrivals, and front-desk problems.',
     metaTitle: 'Can Foreigners Stay in Any Hotel in China? (2026)',
     metaDescription:
-      'Yes. Hotels should not refuse foreigners just because they lack a foreign-guest qualification. Book with passport details; the hotel registers your stay.',
+      'Foreigners can book hotels in China with a passport. Authorities say hotels must not refuse overseas guests just for lacking a foreign-guest qualification.',
     quickAnswer:
       'Foreign visitors can book and stay in hotels in China using a valid passport. In 2024, China\'s public security, commerce, and immigration authorities said hotels must not refuse overseas guests merely because the property claims to lack a special foreign-guest qualification. In practice, some front desks may still be unfamiliar with passport registration, especially at small or newly opened properties. Before a non-refundable booking, confirm the exact property can register your passport, save the written confirmation, enter every guest\'s name exactly as shown on the passport, and notify the hotel if you will arrive late. A hotel normally completes the accommodation registration for its guests; a private or non-hotel stay follows separate local registration procedures.',
     ctaLabel: 'Get my free China itinerary',
@@ -1707,7 +1707,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       'A practical, evidence-based safety guide for crime, scams, solo and female travel, transport, local laws, health, weather, and emergencies in mainland China.',
     metaTitle: 'Is It Safe to Travel to China? Tourist Safety Guide (2026)',
     metaDescription:
-      'Many tourists visit mainland China without serious incidents; serious crime against foreigners is relatively rare. Learn scams, laws and emergency steps.',
+      'Many tourists visit mainland China without serious incidents; UK guidance says serious crime against foreigners is relatively rare. Know scams and laws.',
     quickAnswer:
       'Many tourists visit mainland China without serious incidents, and UK guidance says serious crime against foreign nationals is relatively rare. That does not make every trip risk-free. Use verified transport, avoid common tourist scams, follow local laws, prepare payment and mobile-data backups, and know how to contact emergency services. Government advisories also highlight broad national-security laws, possible exit bans, and restrictions in sensitive areas, so check the current advice for your nationality and itinerary before departure.',
     ctaLabel: 'Get my free China itinerary',
@@ -1886,7 +1886,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       'A practical RMB budget for hotels, food, local transport, trains, attractions, mobile data, and 5-, 10-, or 14-day trips in mainland China.',
     metaTitle: 'China Trip Cost 2026: Daily Budget & Cost Calculator',
     metaDescription:
-      'A China trip costs about RMB 350–650 a day on a budget or RMB 800–1,500 mid-range per person, excluding flights. Compare 5-, 10- and 14-day totals.',
+      'China trip cost: plan RMB 350–650 a day on a budget or RMB 800–1,500 mid-range per person, excluding international flights. See 5-, 10- and 14-day totals.',
     quickAnswer:
       'For planning, allow roughly RMB 350–650 per person per day for a budget trip, RMB 800–1,500 for a mid-range trip, or RMB 1,800–3,000+ for a comfortable trip. These are ChinaEase planning ranges, not official averages or fixed prices. They exclude international flights and assume normal travel dates; your route, room-sharing, city, booking date, exchange rate, and holiday demand can change the total substantially. Check exact hotel, attraction, airline, and China Railway 12306 prices before booking.',
     ctaLabel: 'Get my free China itinerary',
@@ -2429,7 +2429,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     intro: 'A practical guide to tickets, overseas cards, transport QR codes, security, transfers, station exits, luggage, and late trains.',
     metaTitle: 'China Metro Guide for Foreigners (2026) | ChinaEase Buddy',
     metaDescription:
-      'Foreign visitors can ride China\'s metro with a single-journey ticket from an English machine; some cities also take transport QR codes or overseas cards.',
+      'Foreign visitors can ride China\'s metro with a single-journey ticket from an English machine; some cities also take QR codes or selected overseas cards.',
     quickAnswer:
       'Foreign visitors can use metro systems in major Chinese cities, but ticket and payment options vary by city. The most dependable first-ride method is to plan the route in AMap, note the destination station and exit, then buy a single-journey ticket from an English-language machine or staffed counter. Some cities also support Alipay or WeChat transport QR codes, local transit cards, or direct contactless payment with selected overseas bank cards. Check the signs on the machine and gate instead of assuming one payment method works nationwide, keep the same ticket, card, or QR method for entry and exit, and allow time for the security check.',
     ctaLabel: 'Get my free China itinerary',
@@ -2811,7 +2811,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     intro: sevenDayItineraryContent.intro,
     metaTitle: '7-Day China Itinerary for First-Time Visitors (2026)',
     metaDescription:
-      'A 7-day China itinerary can cover Beijing, Xi\'an and Shanghai. See day-by-day timing, train advice, booking priorities, costs and alternatives.',
+      'A 7-day China itinerary works well as three nights in Beijing and three in Shanghai, with a faster Xi\'an option. See day-by-day timing, trains and costs.',
     quickAnswer: sevenDayItineraryContent.quickAnswer,
     ctaLabel: 'Get my personalised 7-day itinerary',
     ctaHref: '/#trip-plan',
@@ -3127,7 +3127,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       'A practical comparison for first-time China visitors choosing between imperial Beijing and fast-moving Shanghai—or deciding how to combine both.',
     metaTitle: 'Beijing or Shanghai: Which Should You Visit? (2026)',
     metaDescription:
-      'Choose Beijing for imperial history and the Great Wall, or Shanghai for modern city life and waterfront architecture. With seven days or more, visit both.',
+      'Choose Beijing for imperial history and the Great Wall, or Shanghai for modern city life and waterfront views. With seven days or more, consider both.',
     quickAnswer:
       'Choose Beijing if your first priority is imperial history, the Palace Museum, the Great Wall, monumental landmarks, and a stronger sense of China\'s political and historical centre. Choose Shanghai if you prefer a more compact urban introduction, waterfront architecture, modern city life, neighbourhood walks, easier short stays, and convenient onward travel through eastern China. For a trip of seven days or more, the strongest answer is often both: enter through Beijing, spend three to four full days there, take a high-speed train to Shanghai, spend two to three full days there, and fly home from Shanghai. Check live flights, rail schedules, attraction reservations, weather, and entry rules before fixing the order.',
     ctaLabel: 'Get my personalised China itinerary',
@@ -4246,7 +4246,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       'A month-by-month planning guide for choosing China travel dates around regional weather, public-holiday crowds, prices, and the route you actually want.',
     metaTitle: 'Best Time to Visit China: Month-by-Month Guide (2026)',
     metaDescription:
-      'April to May and September to October are the easiest windows for a first China trip. Compare regions, weather risks, holiday crowds and prices by month.',
+      'For a classic Beijing, Xi\'an and Shanghai trip, April to May and September to October are useful starting windows. Compare regions, weather and crowds.',
     quickAnswer:
       'For a classic first trip through Beijing, Xi\'an, and Shanghai, late spring and autumn usually offer the easiest balance of outdoor sightseeing and manageable temperatures. April to May and September to October are useful starting windows, but avoid assuming the whole country shares one climate and check the exact public-holiday dates before booking. Northern China, the humid east and south, high-altitude western regions, and tropical Hainan can need completely different timing. Choose the route first, then compare city-level climate, current forecasts, weather warnings, holiday crowds, and live prices for your exact dates.',
     ctaLabel: 'Get my itinerary for the right season',
@@ -4453,7 +4453,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       'A practical, provider-neutral guide to choosing, installing, activating, and troubleshooting mobile data for a trip to mainland China.',
     metaTitle: 'China eSIM for Tourists (2026): Buy, Install & Get Online',
     metaDescription:
-      'Get a China travel eSIM: check your unlocked phone, buy a plan covering mainland China, install on Wi-Fi before departure and activate data after landing.',
+      'China travel eSIM: check your phone is unlocked, buy a plan covering mainland China, install it on Wi-Fi before you fly, then follow the activation steps.',
     quickAnswer:
       'To get an eSIM for China, first confirm that your phone is carrier-unlocked and eSIM-compatible. Choose a travel plan that explicitly covers mainland China, buy and install it on reliable Wi-Fi before your flight, then follow the provider\'s activation timing and select it for mobile data after landing. Do not assume every China eSIM gives access to Google or other restricted services: routing, phone-number support, hotspot rules, speed limits, and activation policies differ by plan.',
     ctaLabel: 'Get my free China itinerary',
@@ -4950,7 +4950,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     intro: 'A practical setup, merchant QR payment, fees, and troubleshooting guide for tourists using an international bank card.',
     metaTitle: 'WeChat Pay for Foreigners (2026): Cards, Fees & Setup',
     metaDescription:
-      'Foreigners can use WeChat Pay in China by linking an eligible international card. Learn the fees, how to scan merchant QR codes and fix failed payments.',
+      'Foreigners can use WeChat Pay in China by linking an eligible international card. See how fees work, how to scan merchant QR codes and fix failed payments.',
     quickAnswer:
       'Foreign visitors, including US citizens, may be able to use WeChat Pay in mainland China when the payment feature is available on their account and an eligible international card passes identity, issuer, and transaction checks. Register the standard WeChat app with a mobile number you can access, open the payment or wallet area shown in your version, add the card, and complete any requested verification. Set it up before departure and keep Alipay, a physical card, and some RMB as backups.',
     ctaLabel: 'Get my free China itinerary',
