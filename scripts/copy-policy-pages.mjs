@@ -42,6 +42,7 @@ const calculatorContent = JSON.parse(await readFile('src/data/transitCalculatorC
 const amapEnglishSetup = JSON.parse(await readFile('src/data/amapEnglishSetup.json', 'utf8'));
 const alipayMetroGuide = JSON.parse(await readFile('src/data/alipayMetroGuide.json', 'utf8'));
 const wechatVerificationGuide = JSON.parse(await readFile('src/data/wechatVerificationGuide.json', 'utf8'));
+const airportArrivalGuide = JSON.parse(await readFile('src/data/airportArrivalGuide.json', 'utf8'));
 const shenzhenItineraryPlanning = JSON.parse(await readFile('src/data/shenzhenItineraryPlanning.json', 'utf8'));
 const layoverAirportPlanning = JSON.parse(await readFile('src/data/layoverAirportPlanning.json', 'utf8'));
 const didiGuide = JSON.parse(await readFile('src/data/didiGuide.json', 'utf8'));
@@ -267,138 +268,15 @@ const pageMeta = {
     ],
   },
   'china-airport-arrival-guide': {
-    title: 'China Airport Arrival Guide 2026: Immigration to Hotel',
-    heading: 'China Airport Arrival: From Immigration to Your Hotel',
-    description:
-      'After landing in China, clear immigration, collect bags and pass Customs. Then check mobile data and payment before an official ride or airport train.',
-    quickAnswer:
-      'Before flying, confirm the entry rules for your exact passport, route, purpose, and travel dates, then complete China\'s free official online arrival card if it applies to you. Keep your passport, visa or other entry basis, accommodation details, and onward booking accessible offline. After landing, follow the airport signs through immigration, baggage claim, and Customs; connect your phone, test a payment backup, and use an official airport train, metro, taxi queue, or verified ride-hailing pickup. The arrival card is not a visa or permission to enter, and the final entry decision belongs to the immigration authorities.',
-    lastReviewed: 'October 18, 2026',
-    lastModified: '2026-10-18',
     article: true,
-    contentSections: [
-      {
-        title: 'After landing: five steps before leaving the airport',
-        ordered: true,
-        items: [
-          'Follow International Arrivals to immigration. Have your passport, applicable entry documents and arrival-card details ready; the time needed varies by airport and queue.',
-          'Collect your checked bags and report any missing or damaged luggage to the airline before leaving the baggage area.',
-          'Follow the Customs signs and declare goods when required. Ask a Customs officer if you are unsure which channel applies.',
-          'In the public arrivals area, connect your phone and check a usable payment method. Keep your hotel address in Chinese and a backup payment method accessible.',
-          'Choose an official airport train, metro, taxi queue or verified ride-hailing pickup that works for your terminal, luggage and arrival time.',
-        ],
-      },
-      {
-        title: 'Before your flight: prepare the arrival file',
-        ordered: true,
-        items: [
-          'Confirm your visa, visa-free, or transit eligibility for your exact passport, route, purpose, and dates through an official Chinese embassy, consulate, or immigration source. Do not treat a general travel guide as an entry decision.',
-          'Complete the free official National Immigration Administration online arrival card if required. The official form is available at s.nia.gov.cn/ArrivalCardFillingPC/. Beware of unofficial websites that charge a fee.',
-          'Save your passport details, accommodation name, full address and phone number in both English and Chinese. Keep the first-night booking and any relevant onward ticket available offline.',
-          'Install your eSIM before departure when the provider instructs you to, prepare Alipay or WeChat Pay, and carry a physical bank card plus some backup cash.',
-          'Screenshot the airport terminal, hotel address, airport-transfer plan, and a backup route in case mobile data or an app fails after landing.',
-        ],
-      },
-      {
-        title: 'China arrival card: use the official free service',
-        items: [
-          'China\'s National Immigration Administration introduced online arrival-card submission for foreign travelers from 20 November 2025.',
-          'The official service is free. It is available through the NIA website and official government channels; the direct web form is linked in the sources below.',
-          'If you have not completed it before travel, the NIA says you can normally submit it at the arrival port using a mobile phone, airport device, official QR code, or paper card.',
-          'Some traveler categories are exempt. Check the current NIA instructions rather than assuming the form applies to everyone.',
-          'An arrival card does not replace a visa, visa-free eligibility, transit permission, passport inspection, or an immigration officer\'s entry decision.',
-        ],
-      },
-      {
-        title: 'Immigration after landing',
-        ordered: true,
-        items: [
-          'Follow signs for International Arrivals, Immigration, or Border Inspection. Use the transit route only when you are actually remaining in or following the airport\'s international-transfer process.',
-          'Keep your passport and applicable visa or entry documents ready, along with the arrival-card confirmation and accommodation or onward details when relevant.',
-          'Answer questions clearly and consistently. If you do not understand a request, politely ask the officer to repeat it or request language help.',
-          'Follow the instructions shown at that airport for photographs, fingerprints, inspection lanes, or additional checks; the process can differ by traveler and port.',
-          'If a document or eligibility issue arises, speak with immigration or airline staff. China\'s NIA service hotline is 12367 within China.',
-        ],
-      },
-      {
-        title: 'Baggage claim and Customs',
-        items: [
-          'Check the airport screen for your flight\'s baggage belt and keep the baggage receipt until you have collected and inspected every checked bag.',
-          'Report missing or damaged baggage to the airline or baggage-service desk before leaving the controlled claim area, and keep the written report or reference number.',
-          'At Customs, follow the current declaration signs and declare goods when required. Personal-use and duty-free rules depend on the goods, quantity, value, and current Customs rules.',
-          'If you are uncertain whether something must be declared, ask a Customs officer before choosing an exit channel. Do not rely on an old allowance screenshot or a social-media post.',
-          'Keep medicines in their original packaging and carry supporting documents when relevant; restricted goods and medicine rules should be checked before departure.',
-        ],
-      },
-      {
-        title: 'Connect your phone and test payment',
-        items: [
-          'Turn on the travel eSIM or roaming line exactly as your provider instructs, select it for mobile data, and prevent the home line from using unintended roaming data.',
-          'Airport Wi-Fi can be a temporary bridge, but login or verification requirements vary. Save essential information offline before flying.',
-          'If an eSIM does not connect, check the selected data line, data-roaming setting, APN instructions, phone restart, and provider support. Do not delete the eSIM unless the provider tells you to.',
-          'Open Alipay or WeChat Pay only after you have a stable connection and test a small purchase when practical.',
-          'Keep a second wallet, physical card, and some RMB as backups. A linked international card can still fail because of verification, issuer, network, or merchant rules.',
-        ],
-      },
-      {
-        title: 'Choose a verified airport transfer',
-        items: [
-          'Airport rail or metro: usually clear and economical, but confirm the terminal, operating hours, destination station, transfers, luggage route, and final station exit.',
-          'Official taxi queue: follow airport signs to the staffed or marked taxi rank. Show the hotel name and address in Chinese and ask for a receipt.',
-          'DiDi or another approved ride-hailing service: confirm the numbered pickup zone, terminal, car model, licence plate, and driver details before entering.',
-          'Hotel transfer: confirm the meeting point, driver contact, flight-number tracking, and late-arrival policy directly with the hotel.',
-          'Avoid unsolicited drivers who approach you inside the terminal. When confused, return to an official transport desk, taxi queue, or clearly marked pickup area.',
-        ],
-      },
-      {
-        title: 'Hotel check-in and late-night arrivals',
-        items: [
-          'Keep the passport for every guest and the booking name ready. Tell the hotel in advance when your flight lands late or after the normal reception hours.',
-          'Save the hotel name, Chinese address, phone number, nearest entrance, and a screenshot of the booking confirmation.',
-          'Check whether the airport train or metro will still operate after immigration and baggage claim, not merely at the scheduled landing time.',
-          'If the planned transport has stopped, use the official taxi queue or a verified ride-hailing pickup instead of accepting an unmarked ride.',
-          'Hotels normally handle the accommodation registration process for their guests. For a private or non-hotel stay, confirm the current local registration steps with the host and local authorities.',
-        ],
-      },
-      {
-        title: 'Your first-hour backup plan',
-        items: [
-          'No mobile data: connect to official airport Wi-Fi or visit the information or telecom desk, then contact the eSIM or roaming provider.',
-          'Payment failure: try the second wallet, a physical card, or cash; do not keep repeating a blocked transaction without checking the message.',
-          'Cannot find the ride: verify the terminal and pickup-zone number, then use the in-app bilingual message or return to the official taxi queue.',
-          'Missing baggage: report it before leaving baggage claim and give the airline a reachable phone number and hotel address.',
-          'Entry or document problem: speak with immigration, the airline, or airport staff and use official channels such as the NIA 12367 service.',
-        ],
-      },
-      {
-        title: 'Useful airport phrases',
-        items: [
-          '国际到达在哪里？ — Where are international arrivals?',
-          '入境检查在哪里？ — Where is immigration?',
-          '我的行李没有到。 — My baggage did not arrive.',
-          '海关申报在哪里？ — Where is the Customs declaration area?',
-          '官方出租车上车点在哪里？ — Where is the official taxi pickup?',
-          '请带我到这个地址。 — Please take me to this address.',
-          '请帮我联系这家酒店。 — Please help me contact this hotel.',
-        ],
-      },
-    ],
-    faqs: [
-      ['Do I need to complete a China arrival card?', 'Many foreign travelers entering China need an arrival card, but the National Immigration Administration lists exemptions for specific traveler categories. Check the current official instructions for your exact journey.'],
-      ['Is the China online arrival card free?', 'Yes. The National Immigration Administration states that the official online arrival-card service is free and warns travelers about unofficial websites that charge fees.'],
-      ['Can I fill in the arrival card after landing?', 'Yes. The NIA says travelers who have not completed it before travel can normally submit it at the port through official mobile or QR channels, on-site devices, or a paper card.'],
-      ['What documents should I keep ready at immigration?', 'Keep your passport and applicable visa or entry documents ready. It is also sensible to have your arrival-card confirmation, first accommodation details, and onward booking available when relevant to your route.'],
-      ['Should I wait until the airport to set up mobile data and payments?', 'No. Install and prepare your eSIM or roaming plan and payment apps before departure. After landing, activate them according to the provider instructions and test them while you still have airport help and Wi-Fi available.'],
-      ['What is the safest way to travel from a China airport to the city?', 'Use the official airport rail or metro, the marked taxi queue, a confirmed hotel transfer, or a verified ride-hailing pickup. Choose based on operating hours, terminal, luggage, destination, and arrival time.'],
-      ['What should I do for a late-night arrival?', 'Notify the hotel, save its Chinese address and phone number, check transport operating hours against your realistic exit time, and keep the official taxi queue or verified ride-hailing service as a backup.'],
-    ],
-    sourceLinks: [
-      ['National Immigration Administration: warning about fake arrival-card websites', 'https://en.nia.gov.cn/n147418/n147463/c191530/content.html'],
-      ['Official China online arrival card form', 'https://s.nia.gov.cn/ArrivalCardFillingPC/'],
-      ['Chinese Embassy in the United States: online arrival card guidance', 'https://us.china-embassy.gov.cn/eng/lsfw/zj/qz2021/202512/t20251203_11765346.htm'],
-      ['General Administration of Customs of China', 'https://english.customs.gov.cn/'],
-      ['People\'s Bank of China: payment guide for visitors', 'https://english.www.gov.cn/news/202403/15/content_WS65f3b5d9c6d0868f4e8e52ea.html'],
-    ],
+    title: airportArrivalGuide.metaTitle,
+    heading: airportArrivalGuide.heading,
+    description: airportArrivalGuide.metaDescription,
+    quickAnswer: quickAnswerText(airportArrivalGuide.quickAnswer),
+    faqs: airportArrivalGuide.faqs.map(({ question, answer }) => [question, plainText(answer)]),
+    sourceLinks: airportArrivalGuide.sources.map(({ label, href }) => [label, href]),
+    lastReviewed: airportArrivalGuide.reviewed,
+    lastModified: airportArrivalGuide.modified,
   },
   'china-hotels-for-foreigners': {
     title: 'Can Foreigners Stay in Any Hotel in China? (2026)',
@@ -3600,6 +3478,13 @@ function insertAfter(list, index, item, label) {
   list.splice(requireIndex(index, label) + 1, 0, item);
 }
 
+pageMeta['china-online-arrival-card-2026'] = {
+  ...arrivalCardGuide,
+  article: true,
+  featuredFaqCount: 3,
+  ctaBeforeFeaturedFaqs: true,
+};
+
 for (const [slug, additions] of Object.entries(guideContentAdditions)) {
   const meta = pageMeta[slug];
   // Copy first: other pages spread these arrays from the same meta object.
@@ -3625,13 +3510,6 @@ for (const [slug, additions] of Object.entries(guideContentAdditions)) {
   // Link-only additions leave the page's dates alone.
   if (additions.reviewed) Object.assign(meta, { lastReviewed: additions.reviewed, lastModified: additions.modified });
 }
-
-pageMeta['china-online-arrival-card-2026'] = {
-  ...arrivalCardGuide,
-  article: true,
-  featuredFaqCount: 3,
-  ctaBeforeFeaturedFaqs: true,
-};
 
 const pages = Object.keys(pageMeta);
 const noindexPages = new Set(['about', 'plan', 'pricing', 'refund', 'unsubscribe']);
@@ -3669,7 +3547,6 @@ const staticCtas = {
   'china-travel-apps': ['Get my free China itinerary', '/#trip-plan'],
   'china-visa-free-travel-guide': ['Get my free China itinerary', '/#trip-plan'],
   'china-online-arrival-card-2026': ['Plan my arrival and first China days', '/#trip-plan'],
-  'china-airport-arrival-guide': ['Get my free China itinerary', '/#trip-plan'],
   'china-hotels-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
   'china-food-ordering-guide': ['Get my free China itinerary', '/#trip-plan'],
   'chinese-travel-phrases': ['Open the free phrase tools', '/?journey=china'],
@@ -4399,6 +4276,7 @@ const richGuides = {
   'tenpaygo-for-tourists': tenPayGoGuide,
   'didi-in-china-for-foreigners': didiGuide,
   'wechat-verification-without-friend-qr-2026': wechatVerificationGuide,
+  'china-airport-arrival-guide': airportArrivalGuide,
 };
 
 function staticPageContent(page, meta) {
@@ -4504,7 +4382,7 @@ function staticPageContent(page, meta) {
               ${section.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
             </${section.ordered ? 'ol' : 'ul'}>
           ` : ''}
-          ${['wechat-verification-without-friend-qr-2026', 'wechat-pay-for-foreigners', 'beijing-airport-to-city-guide', 'china-travel-apps', '7-day-china-itinerary', '14-day-china-itinerary', '10-day-china-itinerary', 'china-travel-budget', 'china-train-travel-guide', '3-day-suzhou-itinerary', 'amap-vs-google-maps-china', 'china-metro-guide', 'alipay-for-foreigners', 'china-payment-guide', '3-day-shenzhen-itinerary', '3-day-guangzhou-itinerary', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary', '10-day-china-itinerary', '3-day-shanghai-itinerary', '3-day-chongqing-itinerary', 'china-airport-arrival-guide', 'china-food-ordering-guide', 'what-to-eat-in-china-first-time-guide'].includes(page) && section.links ? `
+          ${['china-travel-checklist', 'china-online-arrival-card-2026', 'wechat-verification-without-friend-qr-2026', 'wechat-pay-for-foreigners', 'beijing-airport-to-city-guide', 'china-travel-apps', '7-day-china-itinerary', '14-day-china-itinerary', '10-day-china-itinerary', 'china-travel-budget', 'china-train-travel-guide', '3-day-suzhou-itinerary', 'amap-vs-google-maps-china', 'china-metro-guide', 'alipay-for-foreigners', 'china-payment-guide', '3-day-shenzhen-itinerary', '3-day-guangzhou-itinerary', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary', '10-day-china-itinerary', '3-day-shanghai-itinerary', '3-day-chongqing-itinerary', 'china-airport-arrival-guide', 'china-food-ordering-guide', 'what-to-eat-in-china-first-time-guide'].includes(page) && section.links ? `
             <ul style="margin: 12px 0 0; padding-left: 20px; color: #536365; line-height: 1.8;">
               ${section.links.map(({ label, description, href }) => `<li><a href="${escapeAttr(href)}"${href.startsWith('http') ? ' rel="noopener noreferrer"' : ''} style="color: #155e63; text-underline-offset: 4px;">${escapeHtml(label)}</a>: ${escapeHtml(description)}</li>`).join('')}
             </ul>

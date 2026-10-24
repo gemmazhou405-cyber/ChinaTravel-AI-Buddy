@@ -74,6 +74,7 @@ rich_guides = {
     'tenpaygo-for-tourists': ('TenPayGo', load_json('src/data/tenpaygoGuide.json')),
     'didi-in-china-for-foreigners': ('DiDi guide', load_json('src/data/didiGuide.json')),
     'wechat-verification-without-friend-qr-2026': ('WeChat verification', load_json('src/data/wechatVerificationGuide.json')),
+    'china-airport-arrival-guide': ('Airport arrival', load_json('src/data/airportArrivalGuide.json')),
 }
 # Sections removed in a rebuild must not come back.
 removed_headings = {

@@ -65,9 +65,9 @@ const pages = [
   },
   {
     path: '/china-airport-arrival-guide/',
-    h1: /China Airport Arrival.*Immigration.*Hotel/i,
-    keywords: ['arrival card', 'Immigration', 'Baggage', 'Customs', 'eSIM', 'airport transfer'],
-    links: ["/#trip-plan", "/first-trip-to-china/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/china-train-booking-foreigners-12306/", "/china-train-travel-guide/", "/beijing-airport-to-city-guide/", "/great-wall-of-china-day-trip-from-beijing/"],
+    h1: /China Airport Arrival: From Immigration to Your Hotel/i,
+    keywords: ['arrival card', 'fingerprints', '¥20,000', 'green channel', 'ride-hailing pickup area', 'Last reviewed'],
+    links: ["/china-online-arrival-card-2026/", "/china-240-hour-visa-free-transit-2026/", "/china-esim-internet-guide/", "/alipay-metro-qr-transport-code-guide/", "/didi-in-china-for-foreigners/", "/tenpaygo-for-tourists/", "/beijing-airport-to-city-guide/", "/first-trip-to-china/"],
   },
   {
     path: '/china-hotels-for-foreigners/',

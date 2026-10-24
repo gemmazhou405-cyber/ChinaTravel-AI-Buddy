@@ -1,0 +1,148 @@
+{
+  "metaTitle": "China Airport Arrival Guide (2026): Arrival Card to Taxi",
+  "metaDescription": "Landing in China: the free online arrival card, fingerprints for ages 14-70, customs limits like ¥20,000 in cash, then metro, taxi or DiDi into town.",
+  "heading": "China Airport Arrival: From Immigration to Your Hotel",
+  "byline": {
+    "name": "Maintained by Lin",
+    "tested": "Rules checked against China's National Immigration Administration and China Customs, October 24, 2026"
+  },
+  "reviewed": "October 24, 2026",
+  "modified": "2026-10-24",
+  "quickAnswer": [
+    "Landing in China takes four steps:",
+    { "type": "ol", "items": [
+      "**Arrival card:** fill it in free online before you fly, or at the airport. Some travelers are exempt, including passengers transiting within 24 hours who don't leave the airport.",
+      "**Immigration:** show your passport and your visa or entry permit. If you're 14 to 70, your fingerprints are taken.",
+      "**Customs:** use the green channel unless you're carrying ¥20,000 or more in cash (or US$5,000 or more in foreign currency), 1.5 liters or more of alcohol, 400 or more cigarettes, or goods worth ¥2,000 or more that will stay in China.",
+      "**Into the city:** in Beijing, Shanghai, Guangzhou and Shenzhen you can tap a Visa or Mastercard at the metro gate. Otherwise take the official taxi queue, or a DiDi from the ride-hailing pickup area."
+    ] },
+    "Jump to: [Before you fly](#before) · [Arrival card](#arrival-card) · [Immigration](#immigration) · [Customs](#customs) · [Data and payment](#phone) · [Into the city](#transfer) · [Late arrivals](#late) · [Phrases](#phrases)"
+  ],
+  "cta": {
+    "text": "**Flying soon?** I'll get your eSIM, Alipay and DiDi working on your phone before you fly, so the airport is the easy part.",
+    "label": "See the app setup service on Fiverr →",
+    "href": "https://www.fiverr.com/s/p3dZbQR",
+    "placement": "arrival-setup"
+  },
+  "sections": [
+    {
+      "id": "before",
+      "title": "Before you fly",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Check whether you need a visa or can enter visa-free: [China visa-free travel guide](/china-visa-free-travel-guide/) · [240-hour visa-free transit](/china-240-hour-visa-free-transit-2026/).",
+          "Fill in the arrival card online (next section).",
+          "Install an eSIM or set up roaming before you fly: [eSIM guide](/china-esim-internet-guide/).",
+          "Set up a way to pay: [Alipay](/alipay-for-foreigners/), or [TenPayGo](/tenpaygo-for-tourists/) for shops that take WeChat Pay.",
+          "Save your hotel's address in Chinese and take a screenshot of your booking."
+        ] }
+      ]
+    },
+    {
+      "id": "arrival-card",
+      "title": "The arrival card",
+      "blocks": [
+        { "type": "p", "text": "Since November 20, 2025, you can fill in China's arrival card online before you travel. It's free; the National Immigration Administration warns about websites that charge for it." },
+        { "type": "ul", "items": [
+          "**Where:** the National Immigration Administration website, the Government Service Platform, the NIA 12367 app, or the WeChat or Alipay mini program.",
+          "**Didn't do it in advance?** At the immigration area you can scan a QR code, use the self-service devices or fill in a paper card.",
+          "**Who's exempt:** seven groups, including holders of a Foreign Permanent Resident ID Card, group visa holders, and passengers transiting within 24 hours who stay inside the airport's restricted area.",
+          "**Questions:** the immigration hotline is +86-10-12367."
+        ] },
+        { "type": "p", "text": "Step by step: [how to fill in China's online arrival card](/china-online-arrival-card-2026/)." }
+      ]
+    },
+    {
+      "id": "immigration",
+      "title": "Immigration",
+      "blocks": [
+        { "type": "ol", "items": [
+          "Give the officer your passport and your visa or other entry permit.",
+          "If you're aged 14 to 70, your fingerprints are taken. Holders of diplomatic passports are among those exempt.",
+          "Your address in China must be accurate. If you're staying in a hotel, use its full address."
+        ] },
+        { "type": "p", "text": "Some airports have automatic e-channels, but they're mainly for foreigners with a Chinese permanent residence ID or a long-term residence permit. Most visitors use the staffed counters." }
+      ]
+    },
+    {
+      "id": "customs",
+      "title": "Baggage and customs",
+      "blocks": [
+        { "type": "p", "text": "If your bag is missing or damaged, report it at the airline's baggage desk before you leave the baggage hall." },
+        { "type": "p", "text": "Then choose a customs channel: **green** if you have nothing to declare, **red** if you're carrying any of these:" },
+        { "type": "table", "headers": ["Declare if you're carrying", "Limit"], "rows": [
+          ["Chinese yuan in cash", "¥20,000 or more"],
+          ["Foreign currency in cash", "US$5,000 or more in total"],
+          ["Alcoholic drinks of 12% or stronger", "1,500 ml or more"],
+          ["Cigarettes / cigars / tobacco", "400 or more / 100 or more / 500 g or more"],
+          ["Personal items that will stay in China (non-residents)", "Worth ¥2,000 or more"]
+        ] },
+        { "type": "p", "text": "Fruit, solanaceous vegetables (such as tomatoes, peppers and eggplants), live animals other than pet cats and dogs, and animal products are banned when they come from places with animal or plant disease outbreaks. Leave them at home." }
+      ]
+    },
+    {
+      "id": "phone",
+      "title": "Before you leave the airport: data and a test payment",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Switch on your eSIM or roaming and check that you have data.",
+          "Make one small payment, like a bottle of water, to check that Alipay, WeChat Pay or TenPayGo works with your card.",
+          "Keep a physical card and some cash as a backup."
+        ] }
+      ]
+    },
+    {
+      "id": "transfer",
+      "title": "Getting into the city",
+      "blocks": [
+        { "type": "ul", "items": [
+          "**Metro:** in Beijing (including both airport express lines), Shanghai, Guangzhou and Shenzhen you can tap a contactless Visa or Mastercard at the gate; in Shenzhen, use a gate that shows your card's logo. Elsewhere, use Alipay's ride code. [How to pay for the metro](/alipay-metro-qr-transport-code-guide/#card)",
+          "**DiDi:** follow the signs for the ride-hailing pickup area (网约车上车点), check the pickup point in the app, and confirm the last digits of your phone number with the driver. [How to use DiDi](/didi-in-china-for-foreigners/#pickup)",
+          "**Long rides:** an airport ride can cost more than ¥200. Paid through Alipay or WeChat Pay with a foreign card, that may add a 3% fee. [DiDi fees](/didi-payment-for-foreigners/#fees)",
+          "**Taxi:** use the official taxi queue, and ignore anyone who offers you a ride inside the terminal.",
+          "**Beijing:** [Beijing airport to the city: PEK vs PKX](/beijing-airport-to-city-guide/)"
+        ] }
+      ]
+    },
+    {
+      "id": "late",
+      "title": "Late arrivals",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Tell your hotel if you'll arrive late.",
+          "Check the last metro or airport train before you land. After that, use the taxi queue or DiDi.",
+          "If you're staying somewhere other than a hotel, such as a friend's home, you must register with the local police within 24 hours of arriving: [how to register your stay online](/nia-12367-online-accommodation-registration-guide/)."
+        ] }
+      ]
+    },
+    {
+      "id": "phrases",
+      "title": "Phrases to show at the airport",
+      "blocks": [
+        { "type": "table", "headers": ["English", "Show this"], "rows": [
+          ["Where is the metro?", "地铁在哪里？"],
+          ["Where is the taxi queue?", "出租车在哪里排队？"],
+          ["Where is the ride-hailing pickup area?", "网约车上车点在哪里？"],
+          ["Please take me to this address.", "请带我去这个地址。"],
+          ["My luggage hasn't arrived.", "我的行李没有到。"],
+          ["Where can I buy a SIM card?", "哪里可以买电话卡？"]
+        ] }
+      ]
+    }
+  ],
+  "faqs": [
+    { "question": "Do I need to fill in an arrival card?", "answer": "Most foreign visitors do. You can do it free online before you fly, or at the airport. Some groups are exempt, such as Foreign Permanent Resident ID Card holders and passengers transiting within 24 hours who stay inside the airport." },
+    { "question": "Is the online arrival card free?", "answer": "Yes. The National Immigration Administration warns about websites that charge for it." },
+    { "question": "Will my fingerprints be taken?", "answer": "Yes, if you're aged 14 to 70. There are some exemptions, such as diplomatic passport holders." },
+    { "question": "How much cash can I bring into China?", "answer": "Declare it at customs if you're carrying ¥20,000 or more in Chinese yuan, or US$5,000 or more in foreign currency." },
+    { "question": "What's the easiest way from the airport to the city?", "answer": "In Beijing, Shanghai, Guangzhou and Shenzhen, the metro: just tap your card at the gate. Otherwise, the official taxi queue or a DiDi from the ride-hailing pickup area." },
+    { "question": "Should I set up payments before I fly?", "answer": "Yes. Then make one small test payment at the airport before you leave." }
+  ],
+  "sources": [
+    { "label": "National Immigration Administration: online arrival card form", "href": "https://s.nia.gov.cn/ArrivalCardFillingPC/" },
+    { "label": "National Immigration Administration: warning about fake arrival card websites", "href": "https://en.nia.gov.cn/n147418/n147463/c191530/content.html" },
+    { "label": "Chinese Embassy in Sweden: Notice on the online filling of China's arrival card (November 2025)", "href": "https://se.china-embassy.gov.cn/eng/lsyfw/202511/t20251126_11760567.htm" },
+    { "label": "National Immigration Administration: Welcome to China (fingerprints, e-channels, entry documents)", "href": "https://www.nia.gov.cn/2022en/files/basic-html/page10.html" },
+    { "label": "General Administration of Customs, via the Shanghai government: customs clearance guide for inbound passengers", "href": "https://english.shanghai.gov.cn/en-CustomsClearance/20231212/9a3c7f512d464e0798be3fc76c8dd6f2.html" }
+  ]
+}

@@ -69,31 +69,35 @@
   ],
   "china-airport-arrival-guide": [
     {
-      "label": "Book trains with a foreign passport",
-      "href": "/china-train-booking-foreigners-12306/"
+      "label": "How to Fill in China's Online Arrival Card in 2026",
+      "href": "/china-online-arrival-card-2026/"
     },
     {
-      "label": "How to Book China High-Speed Trains Without Chinese ID",
-      "href": "/china-train-travel-guide/"
+      "label": "China 240-Hour Visa-Free Transit 2026: 57 Countries, 65 Ports & 10-Day Rules",
+      "href": "/china-240-hour-visa-free-transit-2026/"
     },
     {
-      "label": "China metro guide",
-      "href": "/china-metro-guide/"
+      "label": "How to Get an eSIM in China (2026 Internet Guide)",
+      "href": "/china-esim-internet-guide/"
     },
     {
-      "label": "Set up and use DiDi",
+      "label": "How to Pay for the Metro in China: Alipay Ride Code or Tap Your Card",
+      "href": "/alipay-metro-qr-transport-code-guide/"
+    },
+    {
+      "label": "How to Use DiDi in China as a Foreigner",
       "href": "/didi-in-china-for-foreigners/"
+    },
+    {
+      "label": "How to Use TenPayGo in China: Sign Up, Link a Card, Pay",
+      "href": "/tenpaygo-for-tourists/"
     },
     {
       "label": "Beijing Airport to City Centre: PEK vs PKX Transfers (2026)",
       "href": "/beijing-airport-to-city-guide/"
     },
     {
-      "label": "Great Wall Day Trip from Beijing: Mutianyu or Badaling? (2026)",
-      "href": "/great-wall-of-china-day-trip-from-beijing/"
-    },
-    {
-      "label": "First trip to China",
+      "label": "First Trip to China: What to Know Before You Go",
       "href": "/first-trip-to-china/"
     }
   ],

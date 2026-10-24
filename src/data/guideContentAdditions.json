@@ -199,68 +199,6 @@
     ],
     "removeFaqs": []
   },
-  "china-airport-arrival-guide": {
-    "reviewed": "October 23, 2026",
-    "modified": "2026-10-23",
-    "sections": [],
-    "faqs": [],
-    "sources": [],
-    "sectionLinks": [
-      {
-        "section": "China arrival card: use the official free service",
-        "links": [
-          {
-            "label": "China arrival card online 2026",
-            "description": "Who needs the card, the official link and QR code, and what to do if you could not fill it in before the flight.",
-            "href": "/china-online-arrival-card-2026/"
-          }
-        ]
-      },
-      {
-        "section": "Choose a verified airport transfer",
-        "links": [
-          {
-            "label": "Beijing airport to city centre",
-            "description": "Compare PEK and PKX express trains, taxis and late-arrival transfers.",
-            "href": "/beijing-airport-to-city-guide/"
-          }
-        ]
-      },
-      {
-        "section": "Before your flight: prepare the arrival file",
-        "links": [
-          {
-            "label": "Switch Amap to English before you land",
-            "description": "Three taps in the app, then a restart; plus the fix if English is grayed out.",
-            "href": "/amap-english-mode-guide-2026/"
-          }
-        ]
-      },
-      {
-        "section": "Choose a verified airport transfer",
-        "links": [
-          {
-            "label": "The ¥200 fee rule for airport rides",
-            "description": "Through Alipay or WeChat Pay with a foreign card, a ride over ¥200 may carry a 3% fee.",
-            "href": "/didi-payment-for-foreigners/#fees"
-          }
-        ]
-      },
-      {
-        "section": "Choose a verified airport transfer",
-        "links": [
-          {
-            "label": "how to use DiDi in English",
-            "description": "Switch DiDi to English, check the pickup point and confirm your phone digits with the driver.",
-            "href": "/didi-in-china-for-foreigners/"
-          }
-        ]
-      }
-    ],
-    "removeFaqs": [
-      "Can I fill in the arrival card after landing?"
-    ]
-  },
   "china-food-ordering-guide": {
     "reviewed": "October 23, 2026",
     "modified": "2026-10-23",
@@ -765,6 +703,55 @@
             "label": "The ¥200 fee rule for airport rides",
             "description": "Through Alipay or WeChat Pay with a foreign card, a ride over ¥200 may carry a 3% fee.",
             "href": "/didi-payment-for-foreigners/#fees"
+          }
+        ]
+      },
+      {
+        "section": "Confirm which airport you are using",
+        "links": [
+          {
+            "label": "arrival card, immigration and customs first",
+            "description": "What happens between landing and the airport exit, step by step.",
+            "href": "/china-airport-arrival-guide/"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "china-travel-checklist": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": [
+          "Hotels and arrival details",
+          "Hotels, arrivals, and transport"
+        ],
+        "links": [
+          {
+            "label": "arrival card, immigration and customs",
+            "description": "The free online arrival card, fingerprints for ages 14 to 70 and customs limits such as ¥20,000 in cash.",
+            "href": "/china-airport-arrival-guide/"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "china-online-arrival-card-2026": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "After the card: plan the first hour",
+        "links": [
+          {
+            "label": "after the arrival card: immigration, customs and getting into the city",
+            "description": "Fingerprints for ages 14 to 70, customs limits, then the metro, taxi queue or DiDi.",
+            "href": "/china-airport-arrival-guide/"
           }
         ]
       }
