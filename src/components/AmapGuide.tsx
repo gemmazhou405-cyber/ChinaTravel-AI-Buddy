@@ -15,6 +15,7 @@ export type GuideContent = {
   quickAnswer: Array<string | { type: 'ol' | 'ul'; items: string[] }>;
   cta: { text: string; label: string; href: string; placement?: string };
   screenshotCaption?: string;
+  pairShotMaxWidth?: number;
   screenshots?: Record<string, Shot>;
   sections: Section[];
   faqs: Array<{ question: string; answer: string }>;
@@ -49,7 +50,7 @@ function ShotRow({ ids, labels = [] }: { ids: string[]; labels?: string[] }) {
   const content = useGuide();
   const screenshots = content.screenshots ?? {};
   const firstShotId = shotIds(content)[0];
-  const maxWidth = shotMaxWidth(ids.length);
+  const maxWidth = shotMaxWidth(ids.length, content.pairShotMaxWidth);
   return (
     <div className="my-3 flex flex-wrap justify-center gap-4">
       {ids.map((id, index) => {

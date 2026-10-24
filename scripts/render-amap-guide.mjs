@@ -31,7 +31,7 @@ export function createAmapGuideRenderer(content) {
   };
 
   // Rows wrap on narrow screens and stay centred.
-  const shotRow = (ids, labels = []) => `<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin:12px 0 16px;">${ids.map((id, index) => figure(id, shotMaxWidth(ids.length), labels[index])).join('')}</div>`;
+  const shotRow = (ids, labels = []) => `<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin:12px 0 16px;">${ids.map((id, index) => figure(id, shotMaxWidth(ids.length, content.pairShotMaxWidth), labels[index])).join('')}</div>`;
 
   const flow = (text, paragraphStyle = textStyle) => splitShots(text).map((segment) => segment.type === 'shots'
     ? shotRow(segment.ids)

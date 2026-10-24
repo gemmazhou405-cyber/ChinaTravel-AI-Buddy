@@ -364,6 +364,16 @@
             "href": "/alipay-metro-qr-transport-code-guide/#card"
           }
         ]
+      },
+      {
+        "section": "Airport, trains, Metro and border planning",
+        "links": [
+          {
+            "label": "TenPayGo's Shenzhen Transit Card",
+            "description": "Top up ¥50, ¥100 or ¥200 for Shenzhen metro and buses; at least ¥35 stays on the card.",
+            "href": "/tenpaygo-for-tourists/#transit"
+          }
+        ]
       }
     ],
     "removeFaqs": []
@@ -415,6 +425,16 @@
             "href": "/didi-payment-for-foreigners/#alipay-wechat"
           }
         ]
+      },
+      {
+        "section": "If your payment fails",
+        "links": [
+          {
+            "label": "TenPayGo as a backup",
+            "description": "Pays at shops that take WeChat Pay, without a WeChat account.",
+            "href": "/tenpaygo-for-tourists/#compare"
+          }
+        ]
       }
     ],
     "removeFaqs": []
@@ -447,6 +467,19 @@
             "label": "Pay for DiDi with a foreign card",
             "description": "The DiDi app, Alipay or WeChat Pay, and what to do if your card is declined.",
             "href": "/didi-payment-for-foreigners/"
+          }
+        ]
+      },
+      {
+        "section": [
+          "Alipay, WeChat Pay, cards, and cash",
+          "Alipay vs WeChat Pay — which should I use?"
+        ],
+        "links": [
+          {
+            "label": "TenPayGo, tested",
+            "description": "Email-only sign-up, a ¥0 card check and Apple Pay in one tap, on October 24, 2026.",
+            "href": "/tenpaygo-for-tourists/"
           }
         ]
       }
@@ -651,6 +684,16 @@
             "href": "/didi-payment-for-foreigners/#alipay-wechat"
           }
         ]
+      },
+      {
+        "section": "Set up WeChat Pay before your flight",
+        "links": [
+          {
+            "label": "No WeChat account? TenPayGo pays WeChat Pay shops with just an email",
+            "description": "Tencent's app for visitors: sign up with an email, link a foreign card or Apple Pay.",
+            "href": "/tenpaygo-for-tourists/"
+          }
+        ]
       }
     ],
     "removeFaqs": []
@@ -667,6 +710,24 @@
             "label": "The ¥200 fee rule for airport rides",
             "description": "Through Alipay or WeChat Pay with a foreign card, a ride over ¥200 may carry a 3% fee.",
             "href": "/didi-payment-for-foreigners/#fees"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "wechat-verification-without-friend-qr-2026": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "If registration is unfinished before departure",
+        "links": [
+          {
+            "label": "pay WeChat Pay shops without a WeChat account",
+            "description": "TenPayGo signs up with an email and pays at shops that take WeChat Pay.",
+            "href": "/tenpaygo-for-tourists/"
           }
         ]
       }

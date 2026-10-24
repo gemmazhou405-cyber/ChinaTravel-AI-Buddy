@@ -1087,7 +1087,7 @@
       "href": "/china-payment-guide/"
     },
     {
-      "label": "TenPayGo for Tourists Visiting China",
+      "label": "How to Use TenPayGo in China: Sign Up, Link a Card, Pay",
       "href": "/tenpaygo-for-tourists/"
     },
     {
@@ -1255,7 +1255,7 @@
       "href": "/didi-payment-for-foreigners/"
     },
     {
-      "label": "TenPayGo for Tourists Visiting China",
+      "label": "How to Use TenPayGo in China: Sign Up, Link a Card, Pay",
       "href": "/tenpaygo-for-tourists/"
     },
     {
@@ -1285,7 +1285,7 @@
       "href": "/didi-payment-for-foreigners/"
     },
     {
-      "label": "TenPayGo for Tourists Visiting China",
+      "label": "How to Use TenPayGo in China: Sign Up, Link a Card, Pay",
       "href": "/tenpaygo-for-tourists/"
     },
     {
@@ -1315,7 +1315,7 @@
       "href": "/didi-payment-for-foreigners/"
     },
     {
-      "label": "TenPayGo for Tourists Visiting China",
+      "label": "How to Use TenPayGo in China: Sign Up, Link a Card, Pay",
       "href": "/tenpaygo-for-tourists/"
     },
     {
@@ -1597,7 +1597,7 @@
       "href": "/didi-payment-for-foreigners/"
     },
     {
-      "label": "TenPayGo for Tourists Visiting China",
+      "label": "How to Use TenPayGo in China: Sign Up, Link a Card, Pay",
       "href": "/tenpaygo-for-tourists/"
     },
     {
@@ -1657,7 +1657,7 @@
       "href": "/didi-payment-for-foreigners/"
     },
     {
-      "label": "TenPayGo for Tourists Visiting China",
+      "label": "How to Use TenPayGo in China: Sign Up, Link a Card, Pay",
       "href": "/tenpaygo-for-tourists/"
     },
     {
@@ -1725,7 +1725,7 @@
       "href": "/didi-payment-for-foreigners/"
     },
     {
-      "label": "TenPayGo for Tourists Visiting China",
+      "label": "How to Use TenPayGo in China: Sign Up, Link a Card, Pay",
       "href": "/tenpaygo-for-tourists/"
     },
     {
@@ -1777,7 +1777,7 @@
   ],
   "tenpaygo-for-tourists": [
     {
-      "label": "Paying in China",
+      "label": "How to Pay in China as a Foreigner",
       "href": "/china-payment-guide/"
     },
     {
@@ -1789,19 +1789,23 @@
       "href": "/wechat-pay-for-foreigners/"
     },
     {
-      "label": "Pay for a DiDi ride",
-      "href": "/didi-payment-for-foreigners/"
+      "label": "WeChat Verification Without a Friend: Registration & QR Help",
+      "href": "/wechat-verification-without-friend-qr-2026/"
     },
     {
       "label": "How to Pay for the Metro in China: Alipay Ride Code or Tap Your Card",
       "href": "/alipay-metro-qr-transport-code-guide/"
     },
     {
-      "label": "China travel budget calculator",
-      "href": "/china-travel-budget/"
+      "label": "DiDi Pay for Foreigners: How to Pay for DiDi in China",
+      "href": "/didi-payment-for-foreigners/"
     },
     {
-      "label": "First trip to China",
+      "label": "3-Day Shenzhen Itinerary for First-Time Visitors (2026)",
+      "href": "/3-day-shenzhen-itinerary/"
+    },
+    {
+      "label": "First Trip to China: What to Know Before You Go",
       "href": "/first-trip-to-china/"
     }
   ],

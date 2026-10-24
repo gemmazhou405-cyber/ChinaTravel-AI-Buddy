@@ -70,6 +70,13 @@ related = load_json('src/data/guideRelatedLinks.json')
 rich_guides = {
     'amap-english-mode-guide-2026': ('Amap', load_json('src/data/amapEnglishSetup.json')),
     'alipay-metro-qr-transport-code-guide': ('Alipay metro', load_json('src/data/alipayMetroGuide.json')),
+    'didi-payment-for-foreigners': ('DiDi payment', load_json('src/data/didiPaymentGuide.json')),
+    'tenpaygo-for-tourists': ('TenPayGo', load_json('src/data/tenpaygoGuide.json')),
+}
+# Sections removed in a rebuild must not come back.
+removed_headings = {
+    'didi-payment-for-foreigners': ['Payment problem now', 'First-trip checklist', 'Evidence and what still needs a real-device test'],
+    'tenpaygo-for-tourists': ['What Early TenPayGo Users Are Reporting', 'Known limitations and unconfirmed details', 'Payment limits explained', 'Setup checklist', 'Troubleshooting'],
 }
 locations = [node.text for node in ET.parse(DIST / 'sitemap.xml').getroot().iter() if node.tag.endswith('}loc')]
 paths = {urlparse(url).path for url in locations}
@@ -154,6 +161,8 @@ for pathname in sorted(audit_paths):
         flat_text = re.sub(r'\s+([.,;:])', r'\1', ' '.join(body_text.split()))
         for question, answer in expected_faqs:
             require(question in flat_text and answer in flat_text, f'{name}: FAQ missing from visible HTML: {question}')
+        for heading in removed_headings.get(slug, []):
+            require(heading.lower() not in flat_text.lower(), f'{name}: removed section is back: {heading}')
 
 if errors:
     print('\n'.join(f'FAIL {error}' for error in errors))

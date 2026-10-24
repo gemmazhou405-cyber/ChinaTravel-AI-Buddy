@@ -8,4 +8,4 @@ export function plainText(text: string): string;
 export function quickAnswerText(entries: Array<string | { type: string; items: string[] }>): string;
 type ShotBlock = { type?: string; text?: string; items?: string[]; ids?: string[] };
 export function shotIds(content: { sections: Array<{ blocks: ShotBlock[]; subsections?: Array<{ blocks: ShotBlock[] }> }> }): string[];
-export function shotMaxWidth(count: number): number;
+export function shotMaxWidth(count: number, pairMaxWidth?: number): number;

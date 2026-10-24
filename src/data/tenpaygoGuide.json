@@ -1,0 +1,176 @@
+{
+  "metaTitle": "TenPayGo Review (2026): I Tested Sign-Up, Cards & Apple Pay",
+  "metaDescription": "TenPayGo, tested in China: email-only sign-up, a ¥0 card check with my UK Mastercard, Apple Pay in one tap, and the Shenzhen transit card's ¥35 minimum.",
+  "heading": "How to Use TenPayGo in China: Sign Up, Link a Card, Pay",
+  "byline": {
+    "name": "Maintained by Lin",
+    "tested": "Tested on iPhone 14 (iOS 18.5), TenPayGo 1.1.2, Dongguan, October 24, 2026"
+  },
+  "reviewed": "October 24, 2026",
+  "modified": "2026-10-24",
+  "quickAnswer": [
+    "TenPayGo is Tencent's payment app for visitors to China. It pays at shops that take WeChat Pay (called Weixin Pay in the app), and you don't need a WeChat account or a Chinese phone number. I set it up on October 24, 2026:",
+    { "type": "ul", "items": [
+      "**Sign-up:** an email address and the code it sends you. It didn't ask for a phone number, passport or face scan.",
+      "**Cards:** I linked a UK Mastercard. My bank asked me to approve a ¥0.00 check, so nothing was charged. Apple Pay took one tap.",
+      "**Shenzhen metro and buses:** the Shenzhen Transit Card is in the app. Top up ¥50, ¥100 or ¥200; at least ¥35 has to stay on the card.",
+      "**Outside Shenzhen** it has no metro code yet, so keep Alipay as well."
+    ] },
+    "Jump to: [Sign up](#sign-up) · [Link a card](#link-card) · [Pay](#pay) · [Fees](#fees) · [Shenzhen metro](#transit) · [E-wallets](#wallets) · [vs Alipay and WeChat Pay](#compare)"
+  ],
+  "cta": {
+    "text": "**Flying soon?** I'll get TenPayGo, Alipay and your card working on your phone before you fly, so your first payment in China isn't a test.",
+    "label": "See the app setup service on Fiverr →",
+    "href": "https://www.fiverr.com/s/p3dZbQR",
+    "placement": "tenpaygo-setup"
+  },
+  "screenshotCaption": "Screenshot from my iPhone, Dongguan, October 2026",
+  "pairShotMaxWidth": 220,
+  "screenshots": {
+    "1": { "src": "/images/tenpaygo/tenpaygo-01.webp", "width": 640, "height": 1385, "alt": "TenPayGo sign-up screen asking only for an email address" },
+    "2": { "src": "/images/tenpaygo/tenpaygo-02.webp", "width": 640, "height": 1385, "alt": "TenPayGo asking you to draw a gesture password on nine dots" },
+    "3": { "src": "/images/tenpaygo/tenpaygo-03.webp", "width": 640, "height": 1385, "alt": "TenPayGo setup screen showing Visa, Mastercard, UnionPay, American Express, JCB, Diners Club, Discover and Apple Pay" },
+    "4": { "src": "/images/tenpaygo/tenpaygo-04.webp", "width": 640, "height": 1385, "alt": "Mastercard ID Check from Monzo showing a ¥0.00 check from Weixin Firefly" },
+    "5": { "src": "/images/tenpaygo/tenpaygo-05.webp", "width": 640, "height": 1385, "alt": "Monzo app asking to approve a CN¥0 payment to Tencent" },
+    "6": { "src": "/images/tenpaygo/tenpaygo-06.webp", "width": 640, "height": 1385, "alt": "TenPayGo asking you to set a 6-digit payment PIN" },
+    "7": { "src": "/images/tenpaygo/tenpaygo-07.webp", "width": 640, "height": 1385, "alt": "TenPayGo Pay tab with Apple Pay and a Mastercard linked, each with a Pay code button" },
+    "8": { "src": "/images/tenpaygo/tenpaygo-08.webp", "width": 640, "height": 1385, "alt": "TenPayGo explaining Scan to pay with a WeChat Pay merchant QR code" },
+    "9": { "src": "/images/tenpaygo/tenpaygo-09.webp", "width": 640, "height": 1385, "alt": "TenPayGo payment code screen, with the code blurred" },
+    "10": { "src": "/images/tenpaygo/tenpaygo-10.webp", "width": 640, "height": 1385, "alt": "Shenzhen Transit Card (Shenzhen Tong) in TenPayGo with a Top up button" },
+    "11": { "src": "/images/tenpaygo/tenpaygo-11.webp", "width": 640, "height": 1385, "alt": "Top-up options of ¥50, ¥100 and ¥200 with a note that ¥35 must stay on the card" },
+    "12": { "src": "/images/tenpaygo/tenpaygo-12.webp", "width": 640, "height": 1385, "alt": "TenPayGo list of supported overseas e-wallets, part 1" },
+    "13": { "src": "/images/tenpaygo/tenpaygo-13.webp", "width": 640, "height": 1385, "alt": "TenPayGo list of supported overseas e-wallets, part 2" },
+    "14": { "src": "/images/tenpaygo/tenpaygo-14.webp", "width": 640, "height": 1385, "alt": "TenPayGo Go tab with Taxi & Ride, Bus & Metro and Tax Refund" }
+  },
+  "sections": [
+    {
+      "id": "what",
+      "title": "What TenPayGo is",
+      "blocks": [
+        { "type": "p", "text": "Tencent launched TenPayGo on September 24, 2026 for people visiting China. It isn't WeChat. It's a separate app that pays at shops that accept WeChat Pay. You pay with a foreign card, Apple Pay or a supported overseas e-wallet; Chinese bank cards can't be used." },
+        { "type": "p", "text": "The app is in English and has two tabs: **Pay**, for your cards and payment codes, and **Go**, for the Shenzhen transit card, a driver translation tool and tax refunds (Shenzhen only)." },
+        { "type": "p", "text": "Get it from the App Store or Google Play. The developer is Tencent Technology (Shenzhen) Company Limited. It's in app stores in more than 30 countries, so you can set it up before you fly." }
+      ]
+    },
+    {
+      "id": "sign-up",
+      "title": "Sign up with just an email",
+      "blocks": [
+        { "type": "ol", "items": [
+          "Open the app and enter your email. Tick the box to agree to the terms and tap **Next**. There's also a **Skip** button if you want to look around first.",
+          "Enter the code TenPayGo emails you.",
+          "Draw a gesture password (a pattern on nine dots), then draw it again to confirm."
+        ] },
+        { "type": "shots", "ids": ["1", "2"] },
+        { "type": "note", "text": "The email needs a verification code, and that's it. No other details were required." },
+        { "type": "p", "text": "It didn't ask for a phone number, passport, name, nationality or a face scan." }
+      ]
+    },
+    {
+      "id": "link-card",
+      "title": "Link a card or Apple Pay",
+      "blocks": [
+        { "type": "p", "text": "The setup screen shows the seven card networks TenPayGo accepts: Visa, Mastercard, UnionPay, American Express, JCB, Diners Club and Discover. The card has to be issued outside mainland China." },
+        { "type": "shots", "ids": ["3"] },
+        { "type": "p", "text": "How it went with my card, a Mastercard from Monzo, a UK bank:" },
+        { "type": "ol", "items": [
+          "On the **Pay** tab, I opened **Bank Card** and entered the card details.",
+          "My bank's security check (Mastercard ID Check) opened and asked me to approve in the Monzo app. The amount was **¥0.00**. The merchant showed as \"Weixin Firefly\" on the check and as \"Tencent\" in my banking app. Nothing was charged.",
+          "TenPayGo then asked me to set a **6-digit payment PIN**. This is separate from the gesture password."
+        ] },
+        { "type": "shots", "ids": ["4", "5", "6"] },
+        { "type": "p", "text": "**Apple Pay:** tap the **+** under Apple Pay." },
+        { "type": "note", "text": "Apple Pay is a single tap, as long as Apple Pay is already set up on your phone." },
+        { "type": "p", "text": "Once linked, each payment method gets its own **Pay code** button." },
+        { "type": "shots", "ids": ["7"] }
+      ]
+    },
+    {
+      "id": "pay",
+      "title": "Pay at a shop: scan or show your code",
+      "blocks": [
+        { "type": "p", "text": "The app shows two ways to pay, the same as WeChat Pay:" },
+        { "type": "ul", "items": [
+          "**Scan to pay:** tap the scan button (bottom right), scan the shop's WeChat Pay QR code, check the amount and confirm.",
+          "**Show your code:** tap **Pay code** under the card or Apple Pay you want to use and let the cashier scan it. You can switch the payment method on the code screen. Then confirm on your phone."
+        ] },
+        { "type": "shots", "ids": ["8", "9"] },
+        { "type": "p", "text": "Never send a photo of your payment code to anyone: whoever scans it can take a payment." }
+      ]
+    },
+    {
+      "id": "fees",
+      "title": "Fees",
+      "blocks": [
+        { "type": "ul", "items": [
+          "**Linking a card:** my bank's check was for ¥0.00.",
+          "**Paying:** the app store listing doesn't mention fees. TenPayGo runs on Weixin Pay, and for foreign cards Weixin Pay and Alipay generally charge no fee on payments of ¥200 or less. Above ¥200, a 3% fee may apply to the whole amount (Shanghai government, September 2026). GDToday's launch report says any fee is shown before you confirm, so check the confirmation screen.",
+          "**Your bank** may add its own foreign transaction fee."
+        ] }
+      ]
+    },
+    {
+      "id": "transit",
+      "title": "Shenzhen metro and buses: the Transit Card",
+      "blocks": [
+        { "type": "p", "text": "In the **Go** tab, open **Bus & Metro → Transit Card**. You'll see a Shenzhen Transit Card (深圳通, Shenzhen Tong). To start using it, top up ¥50, ¥100 or ¥200. The app says at least ¥35 (about US$5) has to stay on the card, enough for the highest single-trip fare in Shenzhen." },
+        { "type": "shots", "ids": ["10", "11"] },
+        { "type": "p", "text": "Shenzhen's government said the service would be fully available in October 2026, and that you don't need a Chinese phone number or a physical card. After topping up, you scan the code to ride Shenzhen's metro and buses." },
+        { "type": "p", "text": "I didn't top up, so I can't tell you yet how leftover balance is refunded." },
+        { "type": "p", "text": "**Other cities:** TenPayGo has no transit code there yet. In Beijing, Shanghai, Guangzhou and Shenzhen you can [tap a contactless Visa or Mastercard at the metro gate](/alipay-metro-qr-transport-code-guide/#card); elsewhere, use Alipay's ride code." }
+      ]
+    },
+    {
+      "id": "wallets",
+      "title": "Overseas e-wallets",
+      "blocks": [
+        { "type": "p", "text": "If you use one of these wallets at home, you can pay Weixin Pay QR codes with it. On October 24, 2026, the list in the app had 12: Starryblu, BCEL One, Hipay, MoMo, ShopeePay Singapore, ShopeePay Thailand, Travel Wallet, Zalopay, KB Star Banking, LiquidPay, Octopus and Shinhan SOL Pay. GDToday's launch report said about 60 are expected by the end of 2026." },
+        { "type": "shots", "ids": ["12", "13"] },
+        { "type": "note", "text": "For an e-wallet, you just switch it on. It didn't ask me to link anything." },
+        { "type": "p", "text": "I don't use any of these wallets, so I couldn't test a payment with one." }
+      ]
+    },
+    {
+      "id": "go",
+      "title": "What else is in the Go tab",
+      "blocks": [
+        { "type": "ul", "items": [
+          "**Taxi & Ride:** the only button is **Translate with Driver**. To book a ride, use DiDi or Amap: [paying for DiDi with a foreign card](/didi-payment-for-foreigners/) · [booking a taxi in Amap](/amap-english-mode-guide-2026/#taxi).",
+          "**Bus & Metro:** the Shenzhen Transit Card above.",
+          "**Tax Refund:** \"Available in Shenzhen only\", according to the app."
+        ] },
+        { "type": "shots", "ids": ["14"] }
+      ]
+    },
+    {
+      "id": "compare",
+      "title": "TenPayGo, Alipay or WeChat Pay?",
+      "blocks": [
+        { "type": "table", "headers": ["", "TenPayGo", "Alipay", "WeChat Pay"], "rows": [
+          ["Sign-up", "Email and a code", "Phone number, then link a card", "A WeChat account; new accounts may need an existing user to verify you"],
+          ["Pays at", "Shops that take WeChat Pay", "Shops that take Alipay", "Shops that take WeChat Pay"],
+          ["Metro codes", "Shenzhen only", "Ride codes in many cities", "Ride codes in many cities"],
+          ["DiDi rides", "Not in the app", "DiDi mini program inside Alipay", "DiDi mini program inside WeChat"]
+        ] },
+        { "type": "p", "text": "**My advice:** make Alipay your main app and add TenPayGo as the backup for shops that only take WeChat Pay. It's most useful if WeChat won't let you sign up: [WeChat verification without a friend's QR code](/wechat-verification-without-friend-qr-2026/)." }
+      ]
+    }
+  ],
+  "faqs": [
+    { "question": "Is TenPayGo really from Tencent?", "answer": "Yes. The developer in the App Store is Tencent Technology (Shenzhen) Company Limited, and Tencent launched the app on September 24, 2026. The app's About page lists customer service at +86 95017." },
+    { "question": "Do I need a Chinese phone number or a WeChat account?", "answer": "No. I signed up with an email address and a code; it didn't ask for a phone number, passport or face scan." },
+    { "question": "Which cards can I link?", "answer": "Cards from Visa, Mastercard, UnionPay, American Express, JCB, Diners Club and Discover, issued outside mainland China. I linked a UK Mastercard. You can also add Apple Pay." },
+    { "question": "Will linking my card charge me?", "answer": "Not in my test. My bank's security check was for ¥0.00, shown as \"Weixin Firefly\" and \"Tencent\"." },
+    { "question": "Does TenPayGo charge fees?", "answer": "Its app store listing doesn't mention fees. It runs on Weixin Pay, which for foreign cards generally charges nothing on payments of ¥200 or less and may charge 3% of the whole amount above that. Check the confirmation screen before you pay." },
+    { "question": "Can I use TenPayGo on the metro?", "answer": "In Shenzhen, yes: top up the Shenzhen Transit Card in the Go tab (¥50, ¥100 or ¥200; at least ¥35 has to stay on the card). In Beijing, Shanghai and Guangzhou, tap your card at the gate; elsewhere, use Alipay's ride code." },
+    { "question": "Can I pay with my home e-wallet?", "answer": "Only if it's on the in-app list. On October 24, 2026 it had 12 wallets, including MoMo, Zalopay, ShopeePay, Octopus and KB Star Banking." },
+    { "question": "Should I use TenPayGo instead of Alipay?", "answer": "Use both. Alipay covers DiDi and metro codes in many cities; TenPayGo adds WeChat Pay shops without a WeChat account." }
+  ],
+  "sources": [
+    { "label": "TenPayGo, official App Store listing (developer: Tencent Technology (Shenzhen) Company Limited)", "href": "https://apps.apple.com/us/app/tenpaygo/id6778755338" },
+    { "label": "TenPayGo on Google Play", "href": "https://play.google.com/store/apps/details?id=com.tencent.wxpai" },
+    { "label": "Shenzhen Release, the Shenzhen government's information office, via The Paper: email-only sign-up, the Shenzhen Tong transit code from October 2026, tax refunds (September 2026, in Chinese)", "href": "https://m.thepaper.cn/newsDetail_forward_34149855" },
+    { "label": "GDToday: TenPayGo launch details, card networks, e-wallets and fees shown before payment (September 2026)", "href": "https://www.newsgd.com/node_99363c4f3b/4a9d25e095.shtml" },
+    { "label": "Shanghai government: Pay with overseas bank cards, with the ¥200 / 3% rule (September 2026)", "href": "https://english.shanghai.gov.cn/en-Individuals-BankingandPayments-Payments/20260921/c2c94d06a0454c8fa05386b80d0ae865.html" }
+  ]
+}

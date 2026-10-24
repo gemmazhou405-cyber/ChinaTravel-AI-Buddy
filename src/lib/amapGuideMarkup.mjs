@@ -50,7 +50,7 @@ export function shotIds(content) {
       .flatMap((text) => [...text.matchAll(SHOT)].map((match) => match[1])));
 }
 
-// Screenshot width by row size: single images 300px, pairs 300px each, rows of three or more 220px each.
-export function shotMaxWidth(count) {
-  return count >= 3 ? 220 : 300;
+// Screenshot width by row size: single images 300px, pairs 300px each (or the guide's pairShotMaxWidth), rows of three or more 220px each.
+export function shotMaxWidth(count, pairMaxWidth = 300) {
+  return count >= 3 ? 220 : count === 2 ? pairMaxWidth : 300;
 }

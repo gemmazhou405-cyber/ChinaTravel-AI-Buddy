@@ -29,7 +29,7 @@ import didiPaymentGuide from '../data/didiPaymentGuide.json';
 import beijingAirportGuide from '../data/seoPages/beijing-airport-to-city-guide.json';
 import mapsComparisonGuide from '../data/seoPages/amap-vs-google-maps-china.json';
 import transit240Guide from '../data/seoPages/china-240-hour-visa-free-transit-2026.json';
-import tenPayGoGuide from '../data/seoPages/tenpaygo-for-tourists.json';
+import tenPayGoGuide from '../data/tenpaygoGuide.json';
 import accommodationRegistrationGuide from '../data/seoPages/china-online-accommodation-registration-12367.json';
 import arrivalCardGuide from '../data/seoPages/china-online-arrival-card-2026.json';
 import visaFreeCheckerGuide from '../data/seoPages/china-visa-free-checker.json';
@@ -740,17 +740,24 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'FAQ', href: '/faq/' },
     ],
   },
-  'tenpaygo-for-tourists': guideFromArticle(
-    tenPayGoGuide,
-    '/tenpaygo-for-tourists/',
-    'Get my free China trip starter',
-    [
-      { label: 'China payment guide', href: '/china-payment-guide/' },
-      { label: 'WeChat Pay for foreigners', href: '/wechat-pay-for-foreigners/' },
-      { label: 'Alipay for foreigners', href: '/alipay-for-foreigners/' },
-      { label: 'China travel checklist', href: '/china-travel-checklist/' },
-    ],
-  ),
+  'tenpaygo-for-tourists': {
+    path: '/tenpaygo-for-tourists/',
+    title: tenPayGoGuide.heading,
+    intro: '',
+    metaTitle: tenPayGoGuide.metaTitle,
+    metaDescription: tenPayGoGuide.metaDescription,
+    quickAnswer: quickAnswerText(tenPayGoGuide.quickAnswer),
+    // Rendered like the Amap guide (AmapGuide components); these fields feed the schema.
+    ctaLabel: tenPayGoGuide.cta.label,
+    ctaHref: tenPayGoGuide.cta.href,
+    reviewed: tenPayGoGuide.reviewed,
+    lastModified: tenPayGoGuide.modified,
+    isArticle: true,
+    sections: [],
+    faqs: tenPayGoGuide.faqs.map(({ question, answer }) => ({ question, answer: plainText(answer) })),
+    related: [{ label: 'How to Pay in China as a Foreigner', href: '/china-payment-guide/' }],
+    sources: tenPayGoGuide.sources,
+  },
   'china-visa-free-checker': {
     path: '/china-visa-free-checker/',
     title: visaFreeCheckerGuide.heading,
@@ -5675,7 +5682,7 @@ Object.assign(
   { featuredFaqCount: 3, ctaBeforeFeaturedFaqs: true, buddyPrompt: undefined },
 );
 
-guidePages['china-payment-guide'].related.unshift({ label: 'TenPayGo for tourists', href: '/tenpaygo-for-tourists/' });
+guidePages['china-payment-guide'].related.unshift({ label: 'How to Use TenPayGo in China: Sign Up, Link a Card, Pay', href: '/tenpaygo-for-tourists/' });
 guidePages['china-hotels-for-foreigners'].related.unshift({ label: 'Online accommodation registration', href: '/nia-12367-online-accommodation-registration-guide/' });
 guidePages['china-airport-arrival-guide'].related.unshift({ label: 'Register a non-hotel stay with NIA 12367', href: '/nia-12367-online-accommodation-registration-guide/' });
 guidePages['china-airport-arrival-guide'].related.unshift({ label: 'China visa-free checker', href: '/china-visa-free-checker/' });
@@ -6037,6 +6044,7 @@ const richGuides: Partial<Record<GuidePageType, GuideContent>> = {
   'amap-english-mode-guide-2026': amapEnglishSetup as GuideContent,
   'alipay-metro-qr-transport-code-guide': alipayMetroGuide as GuideContent,
   'didi-payment-for-foreigners': didiPaymentGuide as GuideContent,
+  'tenpaygo-for-tourists': tenPayGoGuide as GuideContent,
 };
 
 function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?: string | null; onAskBuddy?: (prefill?: string) => void }) {

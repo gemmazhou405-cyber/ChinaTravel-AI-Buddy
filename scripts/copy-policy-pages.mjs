@@ -31,7 +31,7 @@ const didiPaymentGuide = JSON.parse(await readFile('src/data/didiPaymentGuide.js
 const beijingAirportGuide = JSON.parse(await readFile('src/data/seoPages/beijing-airport-to-city-guide.json', 'utf8'));
 const mapsComparisonGuide = JSON.parse(await readFile('src/data/seoPages/amap-vs-google-maps-china.json', 'utf8'));
 const transit240Guide = JSON.parse(await readFile('src/data/seoPages/china-240-hour-visa-free-transit-2026.json', 'utf8'));
-const tenPayGoGuide = JSON.parse(await readFile('src/data/seoPages/tenpaygo-for-tourists.json', 'utf8'));
+const tenPayGoGuide = JSON.parse(await readFile('src/data/tenpaygoGuide.json', 'utf8'));
 const accommodationRegistrationGuide = JSON.parse(await readFile('src/data/seoPages/china-online-accommodation-registration-12367.json', 'utf8'));
 const visaFreeCheckerGuide = JSON.parse(await readFile('src/data/seoPages/china-visa-free-checker.json', 'utf8'));
 // Online arrival card guide; the same file feeds the React route in src/components/PolicyPage.tsx
@@ -85,7 +85,7 @@ const pageMeta = {
       ['China 240-Hour Visa-Free Transit 2026', 'Check 57 eligible countries, 65 designated ports, permitted stay areas, route rules, and the official 10-day clock.', '/china-240-hour-visa-free-transit-2026/'],
       ['China Visa-Free Checker', 'Compare verified ordinary-passport, 30-day, transit, mutual-agreement, and Hainan rules for a planned route.', '/china-visa-free-checker/'],
       ['China 240-Hour Visa-Free Transit Calculator', 'Enter your recorded entry date to calculate the transit exit deadline in China time. Check eligibility separately.', '/china-240-hour-transit-calculator/'],
-      ['TenPayGo for Tourists', 'Read confirmed launch facts, funding methods, a cautious setup checklist, limits, and payment backups.', '/tenpaygo-for-tourists/'],
+      ['How to Use TenPayGo in China: Sign Up, Link a Card, Pay', 'Sign up with an email, link a foreign card or Apple Pay, pay at WeChat Pay shops, and top up the Shenzhen Transit Card.', '/tenpaygo-for-tourists/'],
       ['China Visa-Free Travel Guide', 'Compare 30-day visa-free entry, 240-hour visa-free transit, and the documents each route requires.', '/china-visa-free-travel-guide/'],
       ['China Arrival Card Online 2026', 'Use the free official NIA form, check exemptions, and prepare your entry details.', '/china-online-arrival-card-2026/'],
       ['China Airport Arrival Guide', 'Follow immigration, baggage, customs, mobile data, payment, and airport-transfer steps after landing.', '/china-airport-arrival-guide/'],
@@ -3437,8 +3437,15 @@ Object.assign(pageMeta['3-day-shenzhen-itinerary'], {
 });
 
 pageMeta['tenpaygo-for-tourists'] = {
-  ...tenPayGoGuide,
   article: true,
+  title: tenPayGoGuide.metaTitle,
+  heading: tenPayGoGuide.heading,
+  description: tenPayGoGuide.metaDescription,
+  quickAnswer: quickAnswerText(tenPayGoGuide.quickAnswer),
+  faqs: tenPayGoGuide.faqs.map(({ question, answer }) => [question, plainText(answer)]),
+  sourceLinks: tenPayGoGuide.sources.map(({ label, href }) => [label, href]),
+  lastReviewed: tenPayGoGuide.reviewed,
+  lastModified: tenPayGoGuide.modified,
 };
 
 pageMeta['nia-12367-online-accommodation-registration-guide'] = {
@@ -3836,7 +3843,6 @@ const staticCtas = {
   'china-240-hour-visa-free-transit-2026': ['Check my visa-free transit itinerary', '/#trip-plan'],
   'china-240-hour-transit-calculator': ['Get my free China trip plan', '/plan/'],
   'china-visa-free-checker': ['Get my free trip starter', '/#trip-plan'],
-  'tenpaygo-for-tourists': ['Get my free China trip starter', '/#trip-plan'],
   'alipay-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
   'wechat-pay-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
   'china-payment-guide': ['Get my free China itinerary', '/#trip-plan'],
@@ -3856,7 +3862,7 @@ const staticCtas = {
 const relatedLinks = [
   ['All guides', '/guides/'],
   ['China visa-free checker', '/china-visa-free-checker/'],
-  ['TenPayGo for tourists', '/tenpaygo-for-tourists/'],
+  ['How to Use TenPayGo in China: Sign Up, Link a Card, Pay', '/tenpaygo-for-tourists/'],
   ['China eSIM & internet guide', '/china-esim-internet-guide/'],
   ['China visa-free travel guide', '/china-visa-free-travel-guide/'],
   ['China online arrival card', '/china-online-arrival-card-2026/'],
@@ -4352,7 +4358,7 @@ const pageRelatedLinks = {
     ['Get a free China itinerary', '/#trip-plan'],
   ],
   'china-payment-guide': [
-    ['TenPayGo for tourists', '/tenpaygo-for-tourists/'],
+    ['How to Use TenPayGo in China: Sign Up, Link a Card, Pay', '/tenpaygo-for-tourists/'],
     ['Open payment phrases', '/?journey=china&tool=pay'],
     ['Alipay for Foreigners', '/alipay-for-foreigners/'],
     ['WeChat Pay for Foreigners', '/wechat-pay-for-foreigners/'],
@@ -4529,6 +4535,7 @@ const richGuides = {
   'amap-english-mode-guide-2026': amapEnglishSetup,
   'alipay-metro-qr-transport-code-guide': alipayMetroGuide,
   'didi-payment-for-foreigners': didiPaymentGuide,
+  'tenpaygo-for-tourists': tenPayGoGuide,
 };
 
 function staticPageContent(page, meta) {
@@ -4634,7 +4641,7 @@ function staticPageContent(page, meta) {
               ${section.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
             </${section.ordered ? 'ol' : 'ul'}>
           ` : ''}
-          ${['wechat-pay-for-foreigners', 'beijing-airport-to-city-guide', 'china-travel-apps', '7-day-china-itinerary', '14-day-china-itinerary', '10-day-china-itinerary', 'china-travel-budget', 'china-train-travel-guide', '3-day-suzhou-itinerary', 'amap-vs-google-maps-china', 'china-metro-guide', 'alipay-for-foreigners', 'china-payment-guide', '3-day-shenzhen-itinerary', '3-day-guangzhou-itinerary', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary', '10-day-china-itinerary', '3-day-shanghai-itinerary', '3-day-chongqing-itinerary', 'china-airport-arrival-guide', 'china-food-ordering-guide', 'what-to-eat-in-china-first-time-guide'].includes(page) && section.links ? `
+          ${['wechat-verification-without-friend-qr-2026', 'wechat-pay-for-foreigners', 'beijing-airport-to-city-guide', 'china-travel-apps', '7-day-china-itinerary', '14-day-china-itinerary', '10-day-china-itinerary', 'china-travel-budget', 'china-train-travel-guide', '3-day-suzhou-itinerary', 'amap-vs-google-maps-china', 'china-metro-guide', 'alipay-for-foreigners', 'china-payment-guide', '3-day-shenzhen-itinerary', '3-day-guangzhou-itinerary', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary', '10-day-china-itinerary', '3-day-shanghai-itinerary', '3-day-chongqing-itinerary', 'china-airport-arrival-guide', 'china-food-ordering-guide', 'what-to-eat-in-china-first-time-guide'].includes(page) && section.links ? `
             <ul style="margin: 12px 0 0; padding-left: 20px; color: #536365; line-height: 1.8;">
               ${section.links.map(({ label, description, href }) => `<li><a href="${escapeAttr(href)}"${href.startsWith('http') ? ' rel="noopener noreferrer"' : ''} style="color: #155e63; text-underline-offset: 4px;">${escapeHtml(label)}</a>: ${escapeHtml(description)}</li>`).join('')}
             </ul>
