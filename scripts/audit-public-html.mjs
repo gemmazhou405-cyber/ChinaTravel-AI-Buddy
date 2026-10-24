@@ -35,8 +35,9 @@ const pages = [
   {
     path: '/didi-payment-for-foreigners/',
     h1: /DiDi Pay for Foreigners.*How to Pay for DiDi in China/i,
-    keywords: ['foreign bank card', 'Alipay', 'WeChat Pay', 'trip receipt', 'backup'],
-    links: ["/alipay-for-foreigners/", "/#trip-plan", "/china-payment-guide/", "/wechat-pay-for-foreigners/", "/tenpaygo-for-tourists/", "/alipay-metro-qr-transport-code-guide/", "/china-travel-budget/", "/first-trip-to-china/"],
+    keywords: ['foreign bank card', 'Alipay', 'WeChat Pay', '¥200', 'pending authorization', 'backup'],
+    forbiddenPhrases: ['real-device test', 'Payment problem now', 'tested'],
+    links: ["/didi-in-china-for-foreigners/", "/amap-english-mode-guide-2026/#taxi", "/alipay-for-foreigners/", "/china-payment-guide/", "/wechat-pay-for-foreigners/", "/tenpaygo-for-tourists/", "/alipay-metro-qr-transport-code-guide/", "/first-trip-to-china/"],
   },
   {
     path: '/beijing-airport-to-city-guide/',

@@ -27,7 +27,7 @@ const shanghaiVisitPlanning = JSON.parse(await readFile('src/data/shanghaiVisitP
 const chongqingVisitPlanning = JSON.parse(await readFile('src/data/chongqingVisitPlanning.json', 'utf8'));
 const firstTimeItineraryContent = JSON.parse(await readFile('src/data/firstTimeItineraryContent.json', 'utf8'));
 const pandaBaseGuide = JSON.parse(await readFile('src/data/seoPages/chengdu-panda-base-guide.json', 'utf8'));
-const didiPaymentGuide = JSON.parse(await readFile('src/data/seoPages/didi-payment-for-foreigners.json', 'utf8'));
+const didiPaymentGuide = JSON.parse(await readFile('src/data/didiPaymentGuide.json', 'utf8'));
 const beijingAirportGuide = JSON.parse(await readFile('src/data/seoPages/beijing-airport-to-city-guide.json', 'utf8'));
 const mapsComparisonGuide = JSON.parse(await readFile('src/data/seoPages/amap-vs-google-maps-china.json', 'utf8'));
 const transit240Guide = JSON.parse(await readFile('src/data/seoPages/china-240-hour-visa-free-transit-2026.json', 'utf8'));
@@ -2464,7 +2464,17 @@ const pageMeta = {
   'china-golden-week-2026-travel-guide': goldenWeekGuide,
   'great-wall-of-china-day-trip-from-beijing': greatWallGuide,
   'chengdu-panda-base-guide': pandaBaseGuide,
-  'didi-payment-for-foreigners': didiPaymentGuide,
+  'didi-payment-for-foreigners': {
+    article: true,
+    title: didiPaymentGuide.metaTitle,
+    heading: didiPaymentGuide.heading,
+    description: didiPaymentGuide.metaDescription,
+    quickAnswer: quickAnswerText(didiPaymentGuide.quickAnswer),
+    faqs: didiPaymentGuide.faqs.map(({ question, answer }) => [question, plainText(answer)]),
+    sourceLinks: didiPaymentGuide.sources.map(({ label, href }) => [label, href]),
+    lastReviewed: didiPaymentGuide.reviewed,
+    lastModified: didiPaymentGuide.modified,
+  },
   'beijing-airport-to-city-guide': beijingAirportGuide,
   'amap-vs-google-maps-china': mapsComparisonGuide,
   'best-time-to-visit-china': {
@@ -3818,7 +3828,6 @@ const staticCtas = {
   'china-golden-week-2026-travel-guide': ['Get my Golden Week China itinerary', '/#trip-plan'],
   'great-wall-of-china-day-trip-from-beijing': ['Get my Beijing itinerary', '/#trip-plan'],
   'chengdu-panda-base-guide': ['Get my Chengdu itinerary', '/#trip-plan'],
-  'didi-payment-for-foreigners': ['Get my China transport plan', '/#trip-plan'],
   'beijing-airport-to-city-guide': ['Get my Beijing itinerary', '/#trip-plan'],
   'amap-vs-google-maps-china': ['Get my China itinerary', '/#trip-plan'],
   'best-time-to-visit-china': ['Get my itinerary for the right season', '/#trip-plan'],
@@ -4519,6 +4528,7 @@ function staticTripCostEstimator() {
 const richGuides = {
   'amap-english-mode-guide-2026': amapEnglishSetup,
   'alipay-metro-qr-transport-code-guide': alipayMetroGuide,
+  'didi-payment-for-foreigners': didiPaymentGuide,
 };
 
 function staticPageContent(page, meta) {
@@ -4624,7 +4634,7 @@ function staticPageContent(page, meta) {
               ${section.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
             </${section.ordered ? 'ol' : 'ul'}>
           ` : ''}
-          ${['china-travel-apps', '7-day-china-itinerary', '14-day-china-itinerary', '10-day-china-itinerary', 'china-travel-budget', 'china-train-travel-guide', '3-day-suzhou-itinerary', 'amap-vs-google-maps-china', 'china-metro-guide', 'alipay-for-foreigners', 'china-payment-guide', '3-day-shenzhen-itinerary', '3-day-guangzhou-itinerary', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary', '10-day-china-itinerary', '3-day-shanghai-itinerary', '3-day-chongqing-itinerary', 'china-airport-arrival-guide', 'china-food-ordering-guide', 'what-to-eat-in-china-first-time-guide'].includes(page) && section.links ? `
+          ${['wechat-pay-for-foreigners', 'beijing-airport-to-city-guide', 'china-travel-apps', '7-day-china-itinerary', '14-day-china-itinerary', '10-day-china-itinerary', 'china-travel-budget', 'china-train-travel-guide', '3-day-suzhou-itinerary', 'amap-vs-google-maps-china', 'china-metro-guide', 'alipay-for-foreigners', 'china-payment-guide', '3-day-shenzhen-itinerary', '3-day-guangzhou-itinerary', 'beijing-shanghai-layover-240-hour-guide', 'didi-in-china-for-foreigners', 'china-emergency-numbers', '3-day-beijing-itinerary', '7-day-china-itinerary', '10-day-china-itinerary', '3-day-shanghai-itinerary', '3-day-chongqing-itinerary', 'china-airport-arrival-guide', 'china-food-ordering-guide', 'what-to-eat-in-china-first-time-guide'].includes(page) && section.links ? `
             <ul style="margin: 12px 0 0; padding-left: 20px; color: #536365; line-height: 1.8;">
               ${section.links.map(({ label, description, href }) => `<li><a href="${escapeAttr(href)}"${href.startsWith('http') ? ' rel="noopener noreferrer"' : ''} style="color: #155e63; text-underline-offset: 4px;">${escapeHtml(label)}</a>: ${escapeHtml(description)}</li>`).join('')}
             </ul>

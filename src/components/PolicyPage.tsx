@@ -25,7 +25,7 @@ import chongqingVisitPlanning from '../data/chongqingVisitPlanning.json';
 import ChinaTripCostEstimator from './ChinaTripCostEstimator';
 import firstTimeItineraryContent from '../data/firstTimeItineraryContent.json';
 import pandaBaseGuide from '../data/seoPages/chengdu-panda-base-guide.json';
-import didiPaymentGuide from '../data/seoPages/didi-payment-for-foreigners.json';
+import didiPaymentGuide from '../data/didiPaymentGuide.json';
 import beijingAirportGuide from '../data/seoPages/beijing-airport-to-city-guide.json';
 import mapsComparisonGuide from '../data/seoPages/amap-vs-google-maps-china.json';
 import transit240Guide from '../data/seoPages/china-240-hour-visa-free-transit-2026.json';
@@ -4215,14 +4215,24 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     { label: 'First trip to China', href: '/first-trip-to-china/' },
     { label: 'Get my Chengdu itinerary', href: '/#trip-plan' },
   ]),
-  'didi-payment-for-foreigners': guideFromArticle(didiPaymentGuide, '/didi-payment-for-foreigners/', 'Get my China transport plan', [
-    { label: 'Didi In China For Foreigners', href: '/didi-in-china-for-foreigners/' },
-    { label: 'Alipay For Foreigners', href: '/alipay-for-foreigners/' },
-    { label: 'Wechat Pay For Foreigners', href: '/wechat-pay-for-foreigners/' },
-    { label: 'China Payment Guide', href: '/china-payment-guide/' },
-    { label: 'Beijing Airport to City Guide', href: '/beijing-airport-to-city-guide/' },
-    { label: 'Get my free China itinerary', href: '/#trip-plan' },
-  ]),
+  'didi-payment-for-foreigners': {
+    path: '/didi-payment-for-foreigners/',
+    title: didiPaymentGuide.heading,
+    intro: '',
+    metaTitle: didiPaymentGuide.metaTitle,
+    metaDescription: didiPaymentGuide.metaDescription,
+    quickAnswer: quickAnswerText(didiPaymentGuide.quickAnswer),
+    // Rendered like the Amap guide (AmapGuide components); these fields feed the schema.
+    ctaLabel: didiPaymentGuide.cta.label,
+    ctaHref: didiPaymentGuide.cta.href,
+    reviewed: didiPaymentGuide.reviewed,
+    lastModified: didiPaymentGuide.modified,
+    isArticle: true,
+    sections: [],
+    faqs: didiPaymentGuide.faqs.map(({ question, answer }) => ({ question, answer: plainText(answer) })),
+    related: [{ label: 'How to Use DiDi in China as a Foreigner', href: '/didi-in-china-for-foreigners/' }],
+    sources: didiPaymentGuide.sources,
+  },
   'beijing-airport-to-city-guide': guideFromArticle(beijingAirportGuide, '/beijing-airport-to-city-guide/', 'Get my Beijing itinerary', [
     { label: 'China Airport Arrival Guide', href: '/china-airport-arrival-guide/' },
     { label: 'DiDi Payment for Foreigners', href: '/didi-payment-for-foreigners/' },
@@ -5702,8 +5712,8 @@ for (const [type, additions] of Object.entries(guideContentAdditions as GuideCon
   page.faqs = page.faqs.filter(({ question }) => !additions.removeFaqs.includes(question));
   page.sections = page.sections.map((section) => {
     // `section` may list several titles when the static page and the app name the same section differently.
-    const extra = additions.sectionLinks.find((entry) => [entry.section].flat().includes(section.title));
-    return extra ? { ...section, links: [...(section.links || []), ...extra.links] } : section;
+    const extra = additions.sectionLinks.filter((entry) => [entry.section].flat().includes(section.title)).flatMap((entry) => entry.links);
+    return extra.length ? { ...section, links: [...(section.links || []), ...extra] } : section;
   });
   // No added sources: keep the page's own list (or its default one).
   if (additions.sources.length) page.sources = [...(page.sources || []), ...additions.sources];
@@ -6026,6 +6036,7 @@ function FilterableCountryChecklist({ groups }: { groups: Array<{ region: string
 const richGuides: Partial<Record<GuidePageType, GuideContent>> = {
   'amap-english-mode-guide-2026': amapEnglishSetup as GuideContent,
   'alipay-metro-qr-transport-code-guide': alipayMetroGuide as GuideContent,
+  'didi-payment-for-foreigners': didiPaymentGuide as GuideContent,
 };
 
 function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?: string | null; onAskBuddy?: (prefill?: string) => void }) {

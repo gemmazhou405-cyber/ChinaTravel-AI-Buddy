@@ -1067,8 +1067,12 @@
   ],
   "didi-payment-for-foreigners": [
     {
-      "label": "Paying in China",
-      "href": "/china-payment-guide/"
+      "label": "How to Use DiDi in China as a Foreigner",
+      "href": "/didi-in-china-for-foreigners/"
+    },
+    {
+      "label": "How to Use Amap in English: Switch the Language, Book a Taxi, Ride the Metro",
+      "href": "/amap-english-mode-guide-2026/#taxi"
     },
     {
       "label": "Alipay for Foreigners: Setup & Payment Guide (2026)",
@@ -1079,6 +1083,10 @@
       "href": "/wechat-pay-for-foreigners/"
     },
     {
+      "label": "How to Pay in China as a Foreigner",
+      "href": "/china-payment-guide/"
+    },
+    {
       "label": "TenPayGo for Tourists Visiting China",
       "href": "/tenpaygo-for-tourists/"
     },
@@ -1087,11 +1095,7 @@
       "href": "/alipay-metro-qr-transport-code-guide/"
     },
     {
-      "label": "China travel budget calculator",
-      "href": "/china-travel-budget/"
-    },
-    {
-      "label": "First trip to China",
+      "label": "First Trip to China: What to Know Before You Go",
       "href": "/first-trip-to-china/"
     }
   ],

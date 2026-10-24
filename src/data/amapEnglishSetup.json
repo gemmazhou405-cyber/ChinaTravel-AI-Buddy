@@ -112,7 +112,8 @@
         { "type": "p", "text": "On the longer trip, Discount Express cost less than half the taxi fare." },
         { "type": "p", "text": "You can tick **several ride types at once**, and each one goes out to several ride platforms (mine showed \"Selected 3/13\"), so more drivers can pick up your request. If the pickup pin is in the wrong spot, tap the pickup label on the map to move it. Before you confirm, Amap asks you to accept the third-party ride terms. You can also book **For Others**. I stopped before booking, so I haven't tested the payment step." },
         { "type": "note", "text": "A small number of roads don't allow pickups, and the app detects this automatically, so check exactly where your pickup point is. When you get in, check the license plate." },
-        { "type": "p", "text": "**Amap or DiDi?** Amap books across several operators from the map you're already using. DiDi is a single platform with its own English app. Step-by-step DiDi setup: [DiDi in China for foreigners](/didi-in-china-for-foreigners/)." }
+        { "type": "p", "text": "**Amap or DiDi?** Amap books across several operators from the map you're already using. DiDi is a single platform with its own English app. Step-by-step DiDi setup: [DiDi in China for foreigners](/didi-in-china-for-foreigners/)." },
+        { "type": "p", "text": "Before your first ride, read about [paying for DiDi with a foreign card](/didi-payment-for-foreigners/)." }
       ]
     },
     {

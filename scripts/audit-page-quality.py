@@ -133,7 +133,7 @@ for pathname in sorted(audit_paths):
         expected = [item['href'] for item in related[slug]]
         require(hrefs == expected and 5 <= len(hrefs) <= 8, f'{pathname}: wrong related links/count')
         require(len(set(hrefs)) == len(hrefs) and pathname not in hrefs, f'{pathname}: duplicate or self-related link')
-        require(all(href in paths for href in hrefs), f'{pathname}: related link outside canonical sitemap')
+        require(all(href.split('#')[0] in paths for href in hrefs), f'{pathname}: related link outside canonical sitemap')
     if slug in rich_guides:
         name, guide = rich_guides[slug]
         require(h1[0].text().strip() == guide['heading'], f'{name}: H1 differs from shared content')

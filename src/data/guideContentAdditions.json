@@ -225,6 +225,16 @@
             "href": "/amap-english-mode-guide-2026/"
           }
         ]
+      },
+      {
+        "section": "Choose a verified airport transfer",
+        "links": [
+          {
+            "label": "The ¥200 fee rule for airport rides",
+            "description": "Through Alipay or WeChat Pay with a foreign card, a ride over ¥200 may carry a 3% fee.",
+            "href": "/didi-payment-for-foreigners/#fees"
+          }
+        ]
       }
     ],
     "removeFaqs": [
@@ -321,6 +331,16 @@
             "href": "/amap-english-mode-guide-2026/#taxi"
           }
         ]
+      },
+      {
+        "section": "How to pay for a DiDi ride in China",
+        "links": [
+          {
+            "label": "How to pay for DiDi with a foreign card",
+            "description": "Three ways to pay: the DiDi app, Alipay or WeChat Pay, plus the ¥200 fee rule.",
+            "href": "/didi-payment-for-foreigners/"
+          }
+        ]
       }
     ],
     "removeFaqs": []
@@ -385,6 +405,16 @@
             "href": "/alipay-metro-qr-transport-code-guide/#alipay-ride-code"
           }
         ]
+      },
+      {
+        "section": "How to pay at a merchant",
+        "links": [
+          {
+            "label": "Book DiDi inside Alipay",
+            "description": "Open the DiDi mini program in Alipay; the fare is charged to your linked card.",
+            "href": "/didi-payment-for-foreigners/#alipay-wechat"
+          }
+        ]
       }
     ],
     "removeFaqs": []
@@ -404,6 +434,19 @@
             "label": "metro: Alipay ride code or card tap",
             "description": "Tap a contactless card in Beijing, Shanghai, Guangzhou and Shenzhen, or set up the Alipay ride code.",
             "href": "/alipay-metro-qr-transport-code-guide/"
+          }
+        ]
+      },
+      {
+        "section": [
+          "Transport and attraction payments",
+          "Merchant QR codes and transport payments"
+        ],
+        "links": [
+          {
+            "label": "Pay for DiDi with a foreign card",
+            "description": "The DiDi app, Alipay or WeChat Pay, and what to do if your card is declined.",
+            "href": "/didi-payment-for-foreigners/"
           }
         ]
       }
@@ -588,6 +631,42 @@
             "label": "3-day Nanjing itinerary",
             "description": "Sun Yat-sen Mausoleum, Nanjing Museum, the Qinhuai River, city walls and train tips.",
             "href": "/3-day-nanjing-itinerary/"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "wechat-pay-for-foreigners": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "What may be different with an international card",
+        "links": [
+          {
+            "label": "Book DiDi inside WeChat",
+            "description": "Open the DiDi mini program in WeChat; the fare is paid with WeChat Pay.",
+            "href": "/didi-payment-for-foreigners/#alipay-wechat"
+          }
+        ]
+      }
+    ],
+    "removeFaqs": []
+  },
+  "beijing-airport-to-city-guide": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [
+      {
+        "section": "Choose rail, official taxi or booked ride",
+        "links": [
+          {
+            "label": "The ¥200 fee rule for airport rides",
+            "description": "Through Alipay or WeChat Pay with a foreign card, a ride over ¥200 may carry a 3% fee.",
+            "href": "/didi-payment-for-foreigners/#fees"
           }
         ]
       }
