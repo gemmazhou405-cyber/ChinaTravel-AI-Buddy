@@ -1,0 +1,157 @@
+{
+  "metaTitle": "DiDi in China (2026): How to Use the App in English, Tested",
+  "metaDescription": "Tested in Dongguan: switch DiDi to English, compare upfront fares with taxi estimates, check your pickup point and tell the driver your phone digits.",
+  "heading": "How to Use DiDi in China as a Foreigner",
+  "byline": {
+    "name": "Maintained by Lin",
+    "tested": "Tested on iPhone 14 (iOS 18.5), DiDi 7.2.14, Dongguan, October 24, 2026"
+  },
+  "reviewed": "October 24, 2026",
+  "modified": "2026-10-24",
+  "quickAnswer": [
+    "Yes, foreigners can use DiDi, and the app works in English. I tested it in Dongguan on October 24, 2026:",
+    { "type": "ul", "items": [
+      "**English:** Account → gear icon → Language → English → 完成 (Done) → Confirm.",
+      "**Search:** typing place names in English worked. Still check the pin on the map.",
+      "**Prices:** app rides show an **Upfront Fare**, a fixed price. Taxis show **Est.**, an estimate.",
+      "**Getting in:** check your pickup point before you set off, and confirm the last digits of your phone number with the driver. The trip may not start without them.",
+      "**Paying:** online with WeChat Pay, Alipay or a card, or cash on taxi trips. [How to pay for DiDi with a foreign card](/didi-payment-for-foreigners/)"
+    ] },
+    "Jump to: [Download](#download) · [English](#english) · [Book](#book) · [Pickup](#pickup) · [During the ride](#ride) · [Pay](#pay) · [Help](#help) · [Phrases](#phrases)"
+  ],
+  "cta": {
+    "text": "**Flying soon?** I'll get DiDi, Alipay and WeChat Pay working on your phone before you fly, so your first ride from the airport just works.",
+    "label": "See the app setup service on Fiverr →",
+    "href": "https://www.fiverr.com/s/p3dZbQR",
+    "placement": "didi-guide-setup"
+  },
+  "screenshotCaption": "Screenshot from my iPhone, Dongguan, October 2026",
+  "pairShotMaxWidth": 220,
+  "screenshots": {
+    "1": { "src": "/images/didi/didi-01.webp", "width": 640, "height": 1385, "alt": "DiDi language settings with English selected, alongside Simplified Chinese, Traditional Chinese and Korean" },
+    "2": { "src": "/images/didi/didi-02.webp", "width": 640, "height": 1385, "alt": "DiDi home screen in English with the Where to? box, map blurred for privacy" },
+    "3": { "src": "/images/didi/didi-03.webp", "width": 640, "height": 1385, "alt": "DiDi ride options in English with upfront fares for Economy, Standard, Priority and Premium and estimates for taxis" },
+    "4": { "src": "/images/didi/didi-04.webp", "width": 640, "height": 1385, "alt": "DiDi asking to choose Pay Online or Cash, with cash only for taxi trips" },
+    "5": { "src": "/images/didi/didi-05.webp", "width": 640, "height": 1385, "alt": "DiDi payment methods listing a credit or debit card option for UnionPay, Visa, Mastercard, JCB and Diners, plus Apple Pay and Alipay" },
+    "6": { "src": "/images/didi/didi-06.webp", "width": 640, "height": 1385, "alt": "DiDi customer service asking you to choose English or Chinese, with a Safety Hotline button" }
+  },
+  "sections": [
+    {
+      "id": "download",
+      "title": "Download the right app",
+      "blocks": [
+        { "type": "p", "text": "DiDi's app for mainland China is sold by Didi Chuxing (Beijing) Network Platform Technology Co., Ltd. Its name in the App Store changes from country to country (in the US store it's \"DiDi China: Ride Hailing\"), so check the seller before you download." },
+        { "type": "p", "text": "DiDi's listing says the app is in English and supports \"global mobile number login\". You'll need to receive one SMS code to sign up." },
+        { "type": "p", "text": "Already set up Alipay or WeChat? DiDi also runs inside both as a mini program, so you can book without installing the app." }
+      ]
+    },
+    {
+      "id": "english",
+      "title": "Switch DiDi to English",
+      "blocks": [
+        { "type": "ol", "items": [
+          "Tap **Account** (bottom right), then the **gear icon** (top right).",
+          "Tap **Language** and choose **English**. The other options are Simplified Chinese, Traditional Chinese and Korean.",
+          "Tap **完成** (Done) at the top right, then **Confirm**."
+        ] },
+        { "type": "shots", "ids": ["1"] },
+        { "type": "p", "text": "A few things stay in Chinese, including that 完成 button and some coupon names." }
+      ]
+    },
+    {
+      "id": "book",
+      "title": "Book a ride step by step",
+      "blocks": [
+        { "type": "ol", "items": [
+          "Tap **Where to?** and type your destination. Searching in English worked in my test.",
+          "Check the pickup point (see the next section).",
+          "Pick a ride type. You can tick several at once to get a car sooner; the bottom bar then shows a price range.",
+          "If you ticked Taxi, DiDi asks how you'll pay: **Pay Online** or **Cash**.",
+          "Tap **Confirm**."
+        ] },
+        { "type": "shots", "ids": ["2", "3"] },
+        { "type": "p", "text": "What DiDi showed me for a 3.1 km, 9-minute trip in Dongguan:" },
+        { "type": "table", "headers": ["Ride type", "DiDi's description", "Price shown"], "rows": [
+          ["Economy", "The most affordable rides", "Upfront Fare 10 CNY"],
+          ["Standard", "Everyday rides", "Upfront Fare 11.1 CNY"],
+          ["Priority", "Shorter waiting time", "Upfront Fare 11.9 CNY"],
+          ["Taxi", "—", "Est. 14.1 CNY"],
+          ["Comfort Taxi", "—", "Est. 14.1 CNY"],
+          ["Premium", "High end cars, top drivers", "Upfront Fare 20.2 CNY"]
+        ] },
+        { "type": "p", "text": "An **Upfront Fare** is a fixed price for the trip. **Est.** on taxis is an estimate." },
+        { "type": "p", "text": "English place names aren't always right. In my test, a mall in Dongguan showed up as \"Wanda Plaza (Beijing Wukesong Branch)\". Check the pin on the map, not just the name." }
+      ]
+    },
+    {
+      "id": "pickup",
+      "title": "Pickup and getting in",
+      "blocks": [
+        { "type": "note", "text": "Some roads don't allow cars to stop, so DiDi moves your pickup to the nearest point where you can get in. Check the pickup point before you set off." },
+        { "type": "note", "text": "Before you get in, confirm the last digits of your phone number with the driver, or the trip may not start. If you don't speak Chinese, just show the driver the digits on your phone." },
+        { "type": "p", "text": "Check that the plate number matches the one in the app before you get in. At airports and big railway stations, follow the signs for the ride-hailing pickup area (网约车上车点)." },
+        { "type": "p", "text": "Most drivers only speak Chinese, but DiDi's in-app chat translates between English and Chinese." }
+      ]
+    },
+    {
+      "id": "ride",
+      "title": "During the ride",
+      "blocks": [
+        { "type": "note", "text": "Once you're in, check that the route matches the one in the app. If it doesn't, ask the driver, or contact DiDi's customer service straight away." },
+        { "type": "p", "text": "In an emergency, call 110 (police)." }
+      ]
+    },
+    {
+      "id": "pay",
+      "title": "Paying for DiDi",
+      "blocks": [
+        { "type": "p", "text": "When you book, DiDi offers two ways to pay:" },
+        { "type": "ul", "items": [
+          "**Pay Online:** WeChat Pay, Alipay or a credit or debit card. In the app's payment methods, the card option lists UnionPay, Visa, Mastercard, JCB and Diners. Apple Pay is on the list too.",
+          "**Cash:** only on taxi trips, and coupons can't be used."
+        ] },
+        { "type": "shots", "ids": ["4", "5"] },
+        { "type": "p", "text": "Paying with a foreign card, the fees, and what to do if your card is declined: [how to pay for DiDi in China](/didi-payment-for-foreigners/)." }
+      ]
+    },
+    {
+      "id": "help",
+      "title": "Help, lost items and wrong fares",
+      "blocks": [
+        { "type": "p", "text": "DiDi's customer service (DiDi Service in the app) starts with an AI assistant and asks whether you want English or 中文. There's a **Safety Hotline** button at the top right, and **Switch Trip** lets you pick the ride you need help with. DiDi says its English customer service runs 24/7." },
+        { "type": "shots", "ids": ["6"] },
+        { "type": "p", "text": "For a wrong fare or a lost item, take a screenshot of the trip first, then raise it with customer service." }
+      ]
+    },
+    {
+      "id": "phrases",
+      "title": "Phrases to show your driver",
+      "blocks": [
+        { "type": "table", "headers": ["English", "Show this"], "rows": [
+          ["The last digits of my phone number are ____", "我的手机尾号是 ____"],
+          ["I'm at the pickup point. Where are you?", "我在上车点，你在哪里？"],
+          ["I don't speak Chinese. Please send me a message.", "我不会说中文，请发消息给我。"],
+          ["Please follow the route in the app.", "请按导航路线走。"],
+          ["Please stop here.", "请在这里停车。"],
+          ["Could you open the trunk, please?", "麻烦开一下后备箱。"]
+        ] }
+      ]
+    }
+  ],
+  "faqs": [
+    { "question": "Can foreigners use DiDi in China?", "answer": "Yes. The app works in English, and DiDi says it supports global mobile number login. You'll need to receive one SMS code to sign up." },
+    { "question": "Which DiDi app should I download?", "answer": "The one sold by Didi Chuxing (Beijing) Network Platform Technology Co., Ltd. Its name varies by App Store country; in the US store it's \"DiDi China: Ride Hailing\"." },
+    { "question": "How do I change DiDi to English?", "answer": "Account → gear icon → Language → English → 完成 (Done) → Confirm." },
+    { "question": "Can I search for places in English?", "answer": "Yes, it worked in my test. English names can be wrong, though, so check the pin on the map." },
+    { "question": "What does \"Upfront Fare\" mean?", "answer": "It's the fixed price for an app ride. Taxis show \"Est.\", an estimate." },
+    { "question": "Can I pay DiDi in cash?", "answer": "Only on taxi trips: choose Cash when DiDi asks how you'll pay. Coupons can't be used with cash." },
+    { "question": "Why does the driver ask for my phone number?", "answer": "To check you're the right passenger. Confirm the last digits; the trip may not start without them. If you don't speak Chinese, show the digits on your phone." },
+    { "question": "What if the driver takes a different route?", "answer": "Ask the driver, or contact DiDi's customer service straight away." }
+  ],
+  "sources": [
+    { "label": "DiDi's official App Store listing (English interface, global mobile number login, in-app translation, international bank cards, 24/7 English customer service)", "href": "https://apps.apple.com/us/app/didi-china-ride-hailing/id554499054" },
+    { "label": "Beijing government: Transportation for new arrivals (foreign numbers work, the last four digits of your phone number, most drivers speak Chinese) (August 2024)", "href": "https://english.beijing.gov.cn/latest/specials/essentialtipsfornewarrivals/transportation/202408/t20240830_3785706.html" },
+    { "label": "Guangzhou Foreign Affairs Office via GDToday: DiDi's English version and the Alipay and WeChat mini programs (April 2025)", "href": "https://www.newsgd.com/node_5c070fdd03/95a7622cf1.shtml" },
+    { "label": "DiDi China official Google Play listing", "href": "https://play.google.com/store/apps/details?id=com.sdu.didi.psnger" }
+  ]
+}

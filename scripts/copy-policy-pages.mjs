@@ -44,7 +44,7 @@ const alipayMetroGuide = JSON.parse(await readFile('src/data/alipayMetroGuide.js
 const wechatVerificationHelp = JSON.parse(await readFile('src/data/wechatVerificationHelp.json', 'utf8'));
 const shenzhenItineraryPlanning = JSON.parse(await readFile('src/data/shenzhenItineraryPlanning.json', 'utf8'));
 const layoverAirportPlanning = JSON.parse(await readFile('src/data/layoverAirportPlanning.json', 'utf8'));
-const didiAppSetup = JSON.parse(await readFile('src/data/didiAppSetup.json', 'utf8'));
+const didiGuide = JSON.parse(await readFile('src/data/didiGuide.json', 'utf8'));
 // Extra sections, FAQs and in-body links (including content folded in from guides that now 301 here);
 // src/components/PolicyPage.tsx applies the same file.
 const guideContentAdditions = JSON.parse(await readFile('src/data/guideContentAdditions.json', 'utf8'));
@@ -1354,145 +1354,15 @@ const pageMeta = {
     ],
   },
   'didi-in-china-for-foreigners': {
-    title: 'DiDi in China for Foreigners: App, Payment & Rides (2026)',
-    heading: 'How to Use DiDi in China as a Foreigner',
-    description:
-      'Use DiDi in China with an international number, English interface, Alipay or WeChat Pay, safe pickup checks, driver messages and payment backups.',
-    quickAnswer:
-      'Foreign visitors can use the DiDi China ride-hailing app with an international mobile number and an English interface, or access DiDi through supported WeChat and Alipay routes. Before requesting a car, save the exact destination in Chinese, confirm the pickup pin and meeting point, compare the service type and estimated fare, and prepare a payment method shown in your version. When the car arrives, match the licence plate and vehicle details before entering.',
-    lastReviewed: 'October 11, 2026',
-    lastModified: didiAppSetup.modified,
     article: true,
-    contentSections: [
-      {
-        title: 'Quick answers: payment and driver contact',
-        table: {
-          headers: ['Question', 'What to do'],
-          rows: [
-            ['Which payment method can I use?', 'Use the payment options shown in the route where you booked. The DiDi app, Alipay, and WeChat can present different choices, so verify one before requesting the ride and keep a backup.'],
-            ['What if payment fails?', 'Do not repeatedly approve the same charge. Reopen the completed trip, check its payment status or outstanding fare, try another option offered in that booking route, and use trip-specific support if the issue remains unresolved.'],
-            ['What if the driver calls?', 'Use bilingual in-app messaging where available and send the exact zone, gate, floor, or landmark. Ask nearby staff for brief help if needed, and review any cancellation fee before cancelling.'],
-          ],
-        },
-        items: [
-          'Payment choices and account availability can vary by app version, account, card issuer, and transaction. Keep a second wallet, a physical card, and some RMB as practical backups.',
-        ],
-      },
-      {
-        title: 'Choose how you will open DiDi',
-        items: [
-          'DiDi China app: the official store listing advertises an English interface, global mobile-number login, bilingual driver messaging, and multiple payment methods for inbound visitors.',
-          'Alipay: the English version can provide a DiDi ride-hailing entry, with payment handled through the options available in Alipay.',
-          'WeChat: Ride Hailing may appear inside Services, with the fare paid through the available WeChat Pay route.',
-          'Menus, services, and payment choices can vary by phone, region, account, and app version. Set up and test the route you plan to use before arrival.',
-        ],
-      },
-      didiAppSetup.downloadSection,
-      didiAppSetup.problemSection,
-      {
-        title: 'Prepare before requesting your first ride',
-        ordered: true,
-        items: [
-          'Install the official DiDi China app or confirm that the DiDi entry opens inside your prepared Alipay or WeChat account.',
-          'Register with a mobile number you can access and switch to English if that option is available.',
-          'Complete any identity or payment verification requested by the app or wallet.',
-          'Save your hotel, airport terminal, railway station, and first destinations in Chinese as well as English.',
-          'Allow location access only while using the app if that matches your preference, then check that the pickup pin follows your real position.',
-          'Keep mobile data, a charged phone, and a backup payment and transport option.',
-        ],
-      },
-      {
-        title: 'Book a DiDi ride step by step',
-        ordered: true,
-        items: [
-          'Enter the destination and select the correct branch, entrance, terminal, or station building rather than relying only on the general place name.',
-          'Move or confirm the pickup pin and read the pickup description before choosing a car.',
-          'Compare the service category, estimated price, passenger capacity, and pickup time shown in the app.',
-          'Request the ride and wait for the driver and vehicle details to appear.',
-          'Use the in-app translated message function when possible instead of moving the conversation to another channel.',
-          'At pickup, match the licence plate, vehicle model or colour, and driver information before entering.',
-          'Confirm the destination and follow the route in the app. After arrival, check the final fare and payment status.',
-        ],
-      },
-      {
-        title: 'Airport and railway-station pickup points',
-        items: [
-          'Large airports and stations can have separate ride-hailing zones, floors, gates, car parks, or numbered pickup areas.',
-          'Do not place the order until you know the terminal or station exit and can reach the selected pickup area.',
-          'Use the pickup instructions shown in the app and send the exact zone, floor, gate, or pillar number to the driver.',
-          'If the location is confusing, ask airport, station, or hotel staff to confirm the official ride-hailing pickup point.',
-          'Avoid accepting an unsolicited off-platform ride from someone approaching you inside the terminal.',
-        ],
-      },
-      {
-        title: 'Verify the car and ride safely',
-        items: [
-          'Match the licence plate shown in the app before opening the door. Do not enter a different car because the driver knows your destination.',
-          'The driver may ask for the last four digits of the registered phone number as a pickup confirmation.',
-          'Wear the seat belt and keep the trip visible in the app. Use the app\'s sharing or safety functions when available.',
-          'Keep communication and payment inside the platform when possible, and do not share payment passwords or verification codes.',
-          'For an immediate safety emergency, leave the vehicle when safe and contact local emergency services such as police on 110.',
-        ],
-      },
-      {
-        title: 'How to pay for a DiDi ride in China',
-        items: [
-          'The payment method depends on whether you booked through the DiDi app, Alipay, or WeChat and on the options available to your account.',
-          'Review the estimated fare and service category before confirming; tolls, waiting, route changes, and other displayed charges can affect the final amount.',
-          'Wait for the trip to end in the app before assuming payment is complete, and check whether any action is still required.',
-          'Keep the digital trip record or request a receipt when you may need to identify the vehicle, challenge a charge, or report a lost item.',
-          'Carry a second digital wallet, a physical card, and some RMB rather than relying on one payment route.',
-        ],
-      },
-      {
-        title: 'If the driver calls or cannot find you',
-        items: [
-          'Send a translated in-app message with the exact pickup zone, gate, floor, or nearby landmark.',
-          'Share a photo only if it does not expose sensitive personal information and the platform provides an appropriate route.',
-          'Ask nearby staff to speak briefly with the driver if communication is blocking the pickup.',
-          'Before cancelling, review any cancellation warning or fee shown in the app and confirm that the driver has not already arrived.',
-          'If no car accepts the request, try an official taxi queue, public transport, or another supported ride-hailing category.',
-        ],
-      },
-      {
-        title: 'Useful driver messages',
-        items: [
-          '我在网约车上车点。 — I am at the ride-hailing pickup point.',
-          '我在二号门。 — I am at Gate 2.',
-          '请问您的车牌号是多少？ — What is your licence plate number?',
-          '请送我到这个地址。 — Please take me to this address.',
-          '请在这里停车。 — Please stop here.',
-          '我把东西落在车上了。 — I left something in the car.',
-        ],
-      },
-      {
-        title: 'If you have a fare, support, or lost-item problem',
-        ordered: true,
-        items: [
-          'Open the completed trip in the same app or mini-program used to book it.',
-          'Save the trip number, time, route, licence plate, charge, and relevant screenshots.',
-          'Use the trip-specific help or in-app customer-service route rather than contacting an unrelated regional DiDi service.',
-          'For a lost item, report it promptly without publishing the driver\'s personal information.',
-          'If the issue involves an urgent safety risk or suspected crime, contact local authorities as well as the platform.',
-        ],
-      },
-    ],
-    faqs: [
-      ['Can foreigners use DiDi in China?', 'Yes. The official DiDi China app advertises an English interface and global mobile-number login for inbound visitors. DiDi may also be available through supported Alipay and WeChat routes.'],
-      [didiAppSetup.downloadFaq.question, didiAppSetup.downloadFaq.answer],
-      [didiAppSetup.foreignNumberFaq.question, didiAppSetup.foreignNumberFaq.answer],
-      [didiAppSetup.englishFaq.question, didiAppSetup.englishFaq.answer],
-      ['How do I pay for DiDi in China?', 'Follow the payment choices shown in the booking route you use. The DiDi app, Alipay, and WeChat can present different options, so prepare and verify your payment method before requesting a car.'],
-      ['How do I find my DiDi at an airport or railway station?', 'Check the terminal or station exit first, then follow the app to the designated ride-hailing zone. Send the driver the floor, gate, zone, or pillar number and verify the licence plate at pickup.'],
-      ['What if the DiDi driver calls me in Chinese?', 'Use the app\'s bilingual messaging where available, send a short pickup description, or ask nearby staff to help with a brief call. Save essential pickup phrases in Chinese before traveling.'],
-      ['How do I report a lost item or incorrect charge?', 'Open the completed trip, save its details and screenshots, and use the trip-specific help or customer-service route inside the same app or mini-program used to book it.'],
-    ],
-    sourceLinks: [
-      ['Shanghai government: How to use DiDi Chuxing', 'https://english.shanghai.gov.cn/en-UsefulApps/20240206/976515bc601f4803b9ce2f64ae9f0cd3.html'],
-      ['DiDi China official Google Play listing', 'https://play.google.com/store/apps/details?id=com.sdu.didi.psnger'],
-      ['DiDi China official Apple App Store listing', 'https://apps.apple.com/us/app/didi-china-ride-hailing/id554499054'],
-      ['DiDi official customer-support direction', 'https://didiglobal.com/contact'],
-    ],
+    title: didiGuide.metaTitle,
+    heading: didiGuide.heading,
+    description: didiGuide.metaDescription,
+    quickAnswer: quickAnswerText(didiGuide.quickAnswer),
+    faqs: didiGuide.faqs.map(({ question, answer }) => [question, plainText(answer)]),
+    sourceLinks: didiGuide.sources.map(({ label, href }) => [label, href]),
+    lastReviewed: didiGuide.reviewed,
+    lastModified: didiGuide.modified,
   },
   'china-metro-guide': {
     title: 'China Metro Guide for Foreigners (2026) | ChinaEase Buddy',
@@ -3813,7 +3683,6 @@ const staticCtas = {
   'china-travel-safety-guide': ['Get my free China itinerary', '/#trip-plan'],
   'china-travel-budget': ['Get my free China itinerary', '/#trip-plan'],
   'china-metro-guide': ['Get my free China itinerary', '/#trip-plan'],
-  'didi-in-china-for-foreigners': ['Get my free China itinerary', '/#trip-plan'],
   'china-train-travel-guide': ['Get my free China itinerary', '/#trip-plan'],
   '7-day-china-itinerary': ['Get my personalised 7-day itinerary', '/#trip-plan'],
   '10-day-china-itinerary': ['Get my personalised 10-day itinerary', '/#trip-plan'],
@@ -4536,6 +4405,7 @@ const richGuides = {
   'alipay-metro-qr-transport-code-guide': alipayMetroGuide,
   'didi-payment-for-foreigners': didiPaymentGuide,
   'tenpaygo-for-tourists': tenPayGoGuide,
+  'didi-in-china-for-foreigners': didiGuide,
 };
 
 function staticPageContent(page, meta) {

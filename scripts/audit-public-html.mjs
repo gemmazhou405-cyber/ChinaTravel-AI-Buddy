@@ -36,7 +36,7 @@ const pages = [
     path: '/didi-payment-for-foreigners/',
     h1: /DiDi Pay for Foreigners.*How to Pay for DiDi in China/i,
     keywords: ['foreign bank card', 'Alipay', 'WeChat Pay', '¥200', 'pending authorization', 'backup'],
-    forbiddenPhrases: ['real-device test', 'Payment problem now', 'tested'],
+    forbiddenPhrases: ['real-device test', 'Payment problem now', 'tested', "don't plan on cash", "doesn't name the card networks"],
     links: ["/didi-in-china-for-foreigners/", "/amap-english-mode-guide-2026/#taxi", "/alipay-for-foreigners/", "/china-payment-guide/", "/wechat-pay-for-foreigners/", "/tenpaygo-for-tourists/", "/alipay-metro-qr-transport-code-guide/", "/first-trip-to-china/"],
   },
   {
@@ -127,8 +127,8 @@ const pages = [
   {
     path: '/didi-in-china-for-foreigners/',
     h1: /How to Use DiDi in China as a Foreigner/i,
-    keywords: ['international mobile number', 'English interface', 'licence plate', 'ride-hailing pickup point', 'bilingual', 'lost item'],
-    links: ["/#trip-plan", "/china-airport-arrival-guide/", "/first-trip-to-china/", "/china-metro-guide/", "/china-train-travel-guide/", "/china-train-booking-foreigners-12306/", "/beijing-airport-to-city-guide/", "/great-wall-of-china-day-trip-from-beijing/"],
+    keywords: ['global mobile number login', 'Upfront Fare', 'pickup point', 'last digits', 'Safety Hotline', 'lost item'],
+    links: ["/didi-payment-for-foreigners/", "/amap-english-mode-guide-2026/#taxi", "/alipay-for-foreigners/", "/china-airport-arrival-guide/", "/beijing-airport-to-city-guide/", "/china-train-booking-foreigners-12306/", "/china-metro-guide/", "/first-trip-to-china/"],
   },
   {
     path: '/china-train-travel-guide/',

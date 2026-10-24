@@ -4,18 +4,18 @@
   "heading": "DiDi Pay for Foreigners: How to Pay for DiDi in China",
   "byline": {
     "name": "Maintained by Lin",
-    "tested": "Rules checked against DiDi's official app listing and Chinese government payment guides, October 24, 2026"
+    "tested": "Checked in the DiDi app (7.2.14) and against official sources, October 24, 2026"
   },
   "reviewed": "October 24, 2026",
   "modified": "2026-10-24",
   "quickAnswer": [
     "Yes, you can pay for DiDi with a foreign card. There are three ways:",
     { "type": "ol", "items": [
-      "**In the DiDi China app.** Add your card in the app. DiDi's official listing says the app works in English, accepts foreign phone numbers and takes international bank cards.",
+      "**In the DiDi China app.** Add your card in the app. DiDi's official listing says the app works in English, accepts foreign phone numbers and takes international bank cards. In the app, the card option lists UnionPay, Visa, Mastercard, JCB and Diners.",
       "**Through Alipay.** Open the DiDi mini program inside Alipay. The fare is charged to the card you linked in Alipay.",
       "**Through WeChat.** The same, paid with WeChat Pay."
     ] },
-    "If you pay through Alipay or WeChat Pay with a foreign card, rides of ¥200 or less are generally fee-free. Above ¥200, a 3% fee may apply to the whole fare. And don't plan on cash: DiDi rides are paid in the app.",
+    "If you pay through Alipay or WeChat Pay with a foreign card, rides of ¥200 or less are generally fee-free. Above ¥200, a 3% fee may apply to the whole fare. Cash only works on taxi trips: DiDi lets you choose Cash when you book a taxi, and coupons can't be used then.",
     "Jump to: [Which to choose](#compare) · [DiDi app](#card) · [Alipay or WeChat](#alipay-wechat) · [Fees](#fees) · [Declined card](#declined) · [Wrong or double charge](#charges)"
   ],
   "cta": {
@@ -23,6 +23,13 @@
     "label": "See the app setup service on Fiverr →",
     "href": "https://www.fiverr.com/s/p3dZbQR",
     "placement": "didi-setup"
+  },
+  "screenshotCaption": "Screenshot from my iPhone, Dongguan, October 2026",
+  "pairShotMaxWidth": 220,
+  "screenshots": {
+    "4": { "src": "/images/didi/didi-04.webp", "width": 640, "height": 1385, "alt": "DiDi asking to choose Pay Online or Cash, with cash only for taxi trips" },
+    "5": { "src": "/images/didi/didi-05.webp", "width": 640, "height": 1385, "alt": "DiDi payment methods listing a credit or debit card option for UnionPay, Visa, Mastercard, JCB and Diners, plus Apple Pay and Alipay" },
+    "7": { "src": "/images/didi/didi-07.webp", "width": 640, "height": 1385, "alt": "DiDi My Wallet page with the Payment Methods entry" }
   },
   "sections": [
     {
@@ -32,11 +39,13 @@
         { "type": "p", "text": "All three work with a foreign bank card. They differ in what you set up and what you may pay in fees." },
         { "type": "table", "headers": ["", "DiDi China app", "DiDi inside Alipay", "DiDi inside WeChat"], "rows": [
           ["You need", "The app, plus a phone number that can receive an SMS code (foreign numbers work)", "Alipay with your card linked", "WeChat Pay with your card linked"],
-          ["Cards", "International bank cards. DiDi's listing doesn't name the card networks", "Cards with UnionPay, Visa, Mastercard, American Express, JCB, Diners Club or Discover logos may be accepted", "Same as Alipay"],
+          ["Cards", "UnionPay, Visa, Mastercard, JCB and Diners, as listed in the app (October 2026)", "Cards with UnionPay, Visa, Mastercard, American Express, JCB, Diners Club or Discover logos may be accepted", "Same as Alipay"],
           ["Fees", "Paying with your card: no wallet fee. Your bank may charge a foreign transaction fee", "¥200 or less: generally none. Above ¥200: may be 3% of the whole fare", "Same as Alipay"],
           ["Extras", "English app, translated chat with drivers, 24/7 English customer service", "No extra app to install", "No extra app to install"]
         ] },
-        { "type": "p", "text": "**My advice: set up two.** Add your card in the DiDi app, and link a card in Alipay as well. If DiDi declines your card, open DiDi inside Alipay and you're still on your way." }
+        { "type": "p", "text": "**My advice: set up two.** Add your card in the DiDi app, and link a card in Alipay as well. If DiDi declines your card, open DiDi inside Alipay and you're still on your way." },
+        { "type": "p", "text": "Booking a taxi? DiDi also lets you pay cash on taxi trips, as long as you don't use a coupon." },
+        { "type": "shots", "ids": ["4"] }
       ]
     },
     {
@@ -45,10 +54,11 @@
       "blocks": [
         { "type": "ol", "items": [
           "Install **DiDi China: Ride Hailing**, the app for mainland China. Sign in with your phone number (you'll need to receive one SMS code) and switch the app to English. Full setup: [how to use DiDi in China](/didi-in-china-for-foreigners/).",
-          "Add your international bank card in the app's payment settings. Your bank may ask you to confirm with a code or in its app.",
+          "In **Account**, open **My Wallet**, then **Payment Methods**, and enable **Credit / Debit Card**. The app lists UnionPay, Visa, Mastercard, JCB and Diners. Your bank may ask you to confirm with a code or in its app.",
           "When you book, check the payment method on the booking screen before you confirm. If it shows Alipay or WeChat Pay instead of your card, the wallet fee rule below applies.",
           "The fare is charged when the ride ends. Open the trip afterwards to check it's marked as paid."
         ] },
+        { "type": "shots", "ids": ["7", "5"] },
         { "type": "p", "text": "Before you fly, turn on overseas and online payments in your banking app, or tell your bank you'll be in China, so your first DiDi charge isn't blocked as suspicious." }
       ]
     },
@@ -104,10 +114,10 @@
   ],
   "faqs": [
     { "question": "Can I pay for DiDi with a foreign credit card?", "answer": "Yes. DiDi's official listing says the DiDi China app accepts international bank cards. You can also link your card in Alipay or WeChat Pay and book through the DiDi mini program there." },
-    { "question": "Which cards does DiDi accept?", "answer": "DiDi's listing doesn't name the card networks for its app. Through Alipay or WeChat Pay, cards with UnionPay, Visa, Mastercard, American Express, JCB, Diners Club or Discover logos may be accepted." },
+    { "question": "Which cards does DiDi accept?", "answer": "In the app, the Credit / Debit Card option lists UnionPay, Visa, Mastercard, JCB and Diners (checked October 24, 2026). Through Alipay or WeChat Pay, cards with UnionPay, Visa, Mastercard, American Express, JCB, Diners Club or Discover logos may be accepted." },
     { "question": "Do I need Alipay or WeChat Pay to use DiDi?", "answer": "No. The DiDi China app works on its own with a foreign phone number and a foreign bank card. Alipay is a good backup if your card is declined." },
     { "question": "Is there a fee for paying DiDi with a foreign card?", "answer": "Through Alipay or WeChat Pay, rides of ¥200 or less are generally fee-free; above ¥200, a 3% fee may apply to the whole fare. Your bank may also charge its own foreign transaction fee." },
-    { "question": "Can I pay the DiDi driver in cash?", "answer": "Plan on paying in the app. Beijing's government guide for new arrivals says DiDi \"is not a cash-friendly transportation system\". If you want to pay cash, take a street taxi." },
+    { "question": "Can I pay the DiDi driver in cash?", "answer": "Only on taxi trips. When you book DiDi's Taxi option, the app asks whether you'll pay online or in cash; coupons can't be used with cash. Other ride types are paid online." },
     { "question": "What if DiDi charged me twice?", "answer": "Check the trip in DiDi first. A second amount in your bank app is often a pending authorization that drops off. If DiDi itself shows two payments, contact its in-app English support." }
   ],
   "sources": [

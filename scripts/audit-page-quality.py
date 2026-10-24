@@ -72,10 +72,11 @@ rich_guides = {
     'alipay-metro-qr-transport-code-guide': ('Alipay metro', load_json('src/data/alipayMetroGuide.json')),
     'didi-payment-for-foreigners': ('DiDi payment', load_json('src/data/didiPaymentGuide.json')),
     'tenpaygo-for-tourists': ('TenPayGo', load_json('src/data/tenpaygoGuide.json')),
+    'didi-in-china-for-foreigners': ('DiDi guide', load_json('src/data/didiGuide.json')),
 }
 # Sections removed in a rebuild must not come back.
 removed_headings = {
-    'didi-payment-for-foreigners': ['Payment problem now', 'First-trip checklist', 'Evidence and what still needs a real-device test'],
+    'didi-payment-for-foreigners': ['Payment problem now', 'First-trip checklist', 'Evidence and what still needs a real-device test', "don't plan on cash", "doesn't name the card networks"],
     'tenpaygo-for-tourists': ['What Early TenPayGo Users Are Reporting', 'Known limitations and unconfirmed details', 'Payment limits explained', 'Setup checklist', 'Troubleshooting'],
 }
 locations = [node.text for node in ET.parse(DIST / 'sitemap.xml').getroot().iter() if node.tag.endswith('}loc')]
