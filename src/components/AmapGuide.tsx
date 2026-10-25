@@ -17,6 +17,9 @@ export type GuideContent = {
   cta?: { text: string; label: string; href: string; placement?: string };
   screenshotCaption?: string;
   pairShotMaxWidth?: number;
+  // Screenshots far down a page can all load lazily; a guide can also keep the page's own CTA.
+  lazyAllShots?: boolean;
+  keepPageCta?: boolean;
   screenshots?: Record<string, Shot>;
   sections: Section[];
   faqs: Array<{ question: string; answer: string }>;
@@ -58,11 +61,11 @@ function ShotRow({ ids, labels = [] }: { ids: string[]; labels?: string[] }) {
         const shot = screenshots[id];
         return (
           <figure key={id} className="w-full" style={{ maxWidth, flex: `1 1 ${Math.min(maxWidth, 160)}px` }}>
-            <img src={shot.src} width={shot.width} height={shot.height} alt={shot.alt} loading={id === firstShotId ? undefined : 'lazy'} decoding="async" className="block h-auto w-full rounded-2xl border border-[#155e63]/15" />
-            <figcaption className="mt-1.5 text-xs text-gray-500">
+            <img src={shot.src} width={shot.width} height={shot.height} alt={shot.alt} loading={id === firstShotId && !content.lazyAllShots ? undefined : 'lazy'} decoding="async" className="block h-auto w-full rounded-2xl border border-[#155e63]/15" />
+            {(labels[index] || content.screenshotCaption) && <figcaption className="mt-1.5 text-xs text-gray-500">
               {labels[index] && <strong className="block text-sm text-gray-900">{labels[index]}</strong>}
               {content.screenshotCaption}
-            </figcaption>
+            </figcaption>}
           </figure>
         );
       })}

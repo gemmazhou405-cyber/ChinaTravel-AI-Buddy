@@ -89,9 +89,9 @@ const pages = [
   {
     path: '/china-travel-budget/',
     h1: /How Much Does a Trip to China Cost.*2026 Budget Guide/i,
-    keywords: ['RMB 350', 'RMB 800', 'RMB 1,800', 'international flights', '12306', 'peak', 'solo travelers', 'China trip cost calculator: 7, 10 and 14-day estimates', 'Per person for 10 days', 'All 1 traveler for 10 days', 'RMB 2,450–4,550', 'RMB 25,200–42,000+'],
+    keywords: ['RMB 350', 'RMB 800', 'RMB 1,800', 'international flights', '12306', 'peak', 'solo travelers', 'China trip cost calculator: 7, 10 and 14-day estimates', 'Per person for 10 days', 'All 1 traveler for 10 days', 'RMB 2,450–4,550', 'RMB 25,200–42,000+', 'Real prices I checked in October 2026', '¥553–667', '¥6.72 to the US dollar'],
     checkLocalAnchors: true,
-    links: ["#cost-estimator", "/#trip-plan", "/7-day-china-itinerary/", "/10-day-china-itinerary/", "/14-day-china-itinerary/", "/best-time-to-visit-china/", "/first-trip-to-china/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-checklist/"],
+    links: ["#cost-estimator", "#real-prices", "/#trip-plan", "/7-day-china-itinerary/", "/10-day-china-itinerary/", "/14-day-china-itinerary/", "/best-time-to-visit-china/", "/first-trip-to-china/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-checklist/"],
   },
   {
     path: '/china-travel-apps/',

@@ -4,7 +4,7 @@ import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
 import { unsubscribeNewsletter } from '../lib/newsletter';
 import { RelatedGuidesForForeigners } from './RelatedGuidesForForeigners';
 import LinBox from './LinBox';
-import { AmapByline, AmapCtaCard, AmapFaqAnswer, AmapGuideBody, AmapQuickAnswer, GuideProvider, type GuideContent } from './AmapGuide';
+import { AmapByline, AmapCtaCard, AmapFaqAnswer, AmapGuideBody, AmapQuickAnswer, AmapRichText, GuideProvider, type GuideContent } from './AmapGuide';
 import { plainText, quickAnswerText } from '../lib/amapGuideMarkup.mjs';
 import planningHelp from '../data/planningHelp.json';
 import guideRelatedLinks from '../data/guideRelatedLinks.json';
@@ -37,6 +37,7 @@ import alipayMetroGuide from '../data/alipayMetroGuide.json';
 import wechatVerificationGuide from '../data/wechatVerificationGuide.json';
 import airportArrivalGuide from '../data/airportArrivalGuide.json';
 import trainGuide from '../data/trainGuide.json';
+import budgetGuide from '../data/budgetGuide.json';
 import shenzhenItineraryPlanning from '../data/shenzhenItineraryPlanning.json';
 import layoverAirportPlanning from '../data/layoverAirportPlanning.json';
 import didiGuide from '../data/didiGuide.json';
@@ -140,6 +141,8 @@ interface GuidePageData {
   sections: Array<{
     title: string;
     items?: string[];
+    // One-sentence notes with inline links, from guideContentAdditions sectionNotes.
+    notes?: string[];
     links?: Array<{
       label: string;
       description: string;
@@ -1710,220 +1713,22 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'china-travel-budget': {
     path: '/china-travel-budget/',
-    title: 'How Much Does a Trip to China Cost? 2026 Budget Guide',
+    title: budgetGuide.heading,
     intro:
       'A practical RMB budget for hotels, food, local transport, trains, attractions, mobile data, and 5-, 10-, or 14-day trips in mainland China.',
-    metaTitle: 'China Trip Cost 2026: Daily Budget & Cost Calculator',
-    metaDescription:
-      'China trip cost: plan RMB 350–650 a day on a budget or RMB 800–1,500 mid-range per person, excluding international flights. See 5-, 10- and 14-day totals.',
-    quickAnswer:
-      'For planning, allow roughly RMB 350–650 per person per day for a budget trip, RMB 800–1,500 for a mid-range trip, or RMB 1,800–3,000+ for a comfortable trip. These are ChinaEase planning ranges, not official averages or fixed prices. They exclude international flights and assume normal travel dates; your route, room-sharing, city, booking date, exchange rate, and holiday demand can change the total substantially. Check exact hotel, attraction, airline, and China Railway 12306 prices before booking.',
+    metaTitle: budgetGuide.metaTitle,
+    metaDescription: budgetGuide.metaDescription,
+    quickAnswer: quickAnswerText(budgetGuide.quickAnswer),
+    // Rendered like the Amap guide (AmapGuide components) after the calculator; keeps its own itinerary CTA.
     ctaLabel: 'Get my free China itinerary',
     ctaHref: '/#trip-plan',
-    lastReviewed: 'October 7, 2026',
-    lastModified: '2026-10-22',
+    reviewed: budgetGuide.reviewed,
+    lastModified: budgetGuide.modified,
     isArticle: true,
-    sections: [
-      {
-        title: 'Daily China travel budget at a glance',
-        table: {
-          headers: ['Travel style', 'Planning range per person/day', 'Typical approach'],
-          rows: [
-            ['Budget', 'RMB 350–650', 'Hostel or simple room, local meals, metro and bus, selective paid sights'],
-            ['Mid-range', 'RMB 800–1,500', 'Comfortable hotel, mixed dining, metro plus some DiDi, several paid sights'],
-            ['Comfortable', 'RMB 1,800–3,000+', 'Higher-grade hotel, frequent taxis, premium meals, tours or shows'],
-          ],
-        },
-        items: [
-          'Use the table as a first planning envelope, not a quotation. Exact prices change by destination, date, room type, booking channel, and availability.',
-          'Daily ranges exclude international flights and major intercity transport. The longer-trip examples below add a broad domestic transport allowance.',
-          'Solo travelers usually pay the full hotel-room price. Two people sharing one room may have a lower per-person accommodation cost.',
-        ],
-      },
-      {
-        title: 'What the estimates include — and exclude',
-        items: [
-          'Included in the daily estimate: accommodation, ordinary meals, city transport, common attraction tickets, and a modest allowance for small travel expenses.',
-          'Excluded: flights to and from China, visas where required, travel insurance, shopping, nightlife, medical care, luxury experiences, private guides, and large exchange or card fees.',
-          'Intercity high-speed rail and domestic flights depend heavily on route and class, so price the exact journey separately using the official Railway 12306 service or the airline.',
-          'All figures are in renminbi (RMB). Convert them using the live rate offered by your card, bank, or regulated payment provider; a fixed foreign-currency conversion would become outdated quickly.',
-        ],
-      },
-      {
-        title: 'Accommodation: usually the biggest variable',
-        items: [
-          'Hostel bed or very basic room: plan around RMB 100–250 per night where available.',
-          'Simple chain hotel or typical three-star room: often budget around RMB 250–600 per room per night.',
-          'Comfortable four-star room: a useful planning range is RMB 600–1,200+ per room per night.',
-          'Luxury and landmark hotels can start above RMB 1,200 and rise far beyond it. Central Beijing, Shanghai, Shenzhen, resort areas, and major events often cost more.',
-          'Confirm that the property accepts your passport details and can complete foreign-guest registration. Compare the final price, taxes, breakfast, cancellation, deposit, and room type—not only the search result headline.',
-        ],
-      },
-      {
-        title: 'Food: inexpensive locally, but easy to scale up',
-        items: [
-          'Simple breakfast, bakery item, or snack: roughly RMB 10–30.',
-          'Local noodle, rice, dumpling, or canteen-style meal: roughly RMB 25–60 per person.',
-          'Casual sit-down restaurant: roughly RMB 60–150 per person before premium drinks or special dishes.',
-          'Hotpot, specialty restaurants, imported food, cocktails, and fine dining can reach RMB 120–300+ per person.',
-          'Ordering several shared dishes may be good value for a group but expensive for one person. Check menu units, portion size, tea charges, service charges, and seafood prices before confirming.',
-        ],
-      },
-      {
-        title: 'Local transport: metro, bus, and DiDi',
-        items: [
-          'A metro-and-bus day can often fit within roughly RMB 10–30, depending on city and distance.',
-          'For a day mixing public transport with one or two app-booked rides, allow roughly RMB 80–250.',
-          'Airport transfers, tolls, late-night travel, congestion, vehicle class, and long cross-city journeys can raise the cost.',
-          'Save the destination in Chinese, confirm the pickup point and licence plate, and never accept an unmetered or unverified ride simply because the initial quote sounds cheap.',
-        ],
-      },
-      {
-        title: 'High-speed rail and domestic flights',
-        items: [
-          'There is no useful single “China train price.” Distance, route, train type, seat class, and date determine the fare.',
-          'Search the exact origin, destination, date, and class on the official Railway 12306 English website. Use a booking platform only after comparing its service fee and conditions.',
-          'Domestic flights can beat rail on very long routes, but include airport transfers, baggage rules, check-in time, and disruption risk in the comparison.',
-          'Leave room in the budget for one route change or replacement ticket, especially during busy periods when the cheapest seats may be unavailable.',
-        ],
-      },
-      {
-        title: 'Attractions, tours, and entertainment',
-        items: [
-          'Many parks, neighborhoods, museums, and public spaces are free, while common major paid sights may fall around RMB 40–200. This is only a planning range.',
-          'Theme parks, performances, cable cars, private tours, premium museum exhibitions, and bundled excursions can cost much more.',
-          'Some popular attractions require advance real-name reservations even when admission is free. Use the attraction’s official channel and enter the passport name exactly.',
-          'Build a daily sightseeing allowance from your actual list rather than multiplying one average ticket price across the trip.',
-        ],
-      },
-      {
-        title: 'Mobile data, payment, and small extras',
-        items: [
-          'For an eSIM, roaming package, or local connectivity plan, a broad trip allowance of RMB 50–300 may be reasonable, but coverage, data volume, duration, and provider vary.',
-          'Keep at least two payment methods. The People’s Bank of China visitor guide explains mobile payment, bank card, and cash options for overseas visitors.',
-          'Your card issuer or payment provider may add foreign-exchange or cross-border fees. Those charges are separate from the merchant price.',
-          'Also budget for luggage storage, laundry, bottled water, delivery, hotel deposits, and occasional booking-platform fees.',
-        ],
-      },
-      {
-        title: 'Estimated total for 5, 10, or 14 days',
-        table: {
-          headers: ['Trip length', 'Budget', 'Mid-range', 'Comfortable'],
-          rows: [
-            ['5 days', 'RMB 2,500–4,500', 'RMB 5,000–9,000', 'RMB 10,000–18,000+'],
-            ['10 days', 'RMB 4,500–8,000', 'RMB 9,000–18,000', 'RMB 20,000–36,000+'],
-            ['14 days', 'RMB 6,500–11,000', 'RMB 13,000–25,000', 'RMB 28,000–50,000+'],
-          ],
-        },
-        items: [
-          'These totals are planning envelopes for one person and include a broad allowance for domestic intercity travel. International flights remain excluded.',
-          'A fast multi-city route generally costs more than a slower stay in one or two places. A couple sharing rooms may spend less per person than two solo travelers.',
-          'Price the fixed items first—hotels, long-distance transport, and must-see tickets—then use a daily allowance for food, local transport, and flexible activities.',
-        ],
-      },
-      {
-        title: 'When and where China costs more',
-        items: [
-          'Chinese New Year, the Labor Day holiday, the National Day holiday, school holidays, major trade fairs, and peak summer dates can tighten availability and raise accommodation or transport costs.',
-          'Central districts in Beijing, Shanghai, Shenzhen, Guangzhou, Hangzhou, and popular resort destinations usually need a higher hotel allowance than smaller or less-visited cities.',
-          'Remote natural areas may have inexpensive rooms but costly transfers, guides, cable cars, or limited alternatives.',
-          'Book critical transport and accommodation earlier for peak dates, but compare cancellation rules before paying a non-refundable rate.',
-        ],
-      },
-      {
-        title: 'Reduce cost without weakening the trip',
-        ordered: true,
-        items: [
-          'Choose fewer bases and stay longer in each city; this cuts station transfers, repeated check-in time, and expensive one-night bookings.',
-          'Stay near a useful metro interchange rather than paying the highest premium for a famous landmark address.',
-          'Use metro and bus for predictable daytime journeys, then reserve DiDi for luggage, late arrivals, or locations poorly served by public transport.',
-          'Mix free neighborhoods, parks, markets, and museums with a small number of paid priority sights.',
-          'Eat where prices and portions are clear, and keep one premium meal as a deliberate experience instead of an accidental daily pattern.',
-          'Track spending in RMB and review it every two or three days so a small recurring overspend does not surprise you at the end.',
-        ],
-      },
-      {
-        title: 'Build your personal China budget',
-        ordered: true,
-        items: [
-          'List the cities, nights, room arrangement, and travel dates. Mark any Chinese public holiday or major event.',
-          'Add live hotel prices and the exact 12306 or airline fares for every intercity leg.',
-          'Add must-see attraction prices from official booking channels and any private tour or performance you already know you want.',
-          'Choose a realistic daily amount for meals and city transport based on your travel style.',
-          'Add mobile data, insurance, visa costs if applicable, payment fees, shopping, and a contingency of roughly 10–15 percent.',
-          'Keep international flights separate so you can compare the cost of the China portion clearly.',
-        ],
-      },
-      {
-        title: 'Budget mistakes to avoid',
-        items: [
-          'Treating a national daily average as a guaranteed price for Beijing, Shanghai, a remote scenic area, or a public holiday.',
-          'Forgetting that a solo traveler pays for the whole room while a couple can split it.',
-          'Comparing a rail fare with a flight headline price without airport transfers, baggage, and time.',
-          'Using an old fixed USD conversion instead of the live rate and fees that will actually apply to your payment method.',
-          'Relying on one wallet or card and then paying costly last-minute alternatives when it fails.',
-          'Leaving no contingency for rebooking, illness, weather, lost items, or an itinerary change.',
-        ],
-      },
-    ],
-    faqs: [
-      tripCostEstimatorContent.faq,
-      {
-        question: 'How much money do I need per day in China?',
-        answer:
-          'As a planning range, allow about RMB 350–650 for budget travel, RMB 800–1,500 for mid-range travel, or RMB 1,800–3,000+ for comfortable travel per person per day. These are not official averages or fixed prices.',
-      },
-      {
-        question: 'Is China cheap for tourists?',
-        answer:
-          'Local food and public transport can be inexpensive, while central hotels, premium attractions, private tours, nightlife, and fast multi-city travel can raise the total quickly. Whether China feels cheap depends on your route, room standard, travel dates, and home currency.',
-      },
-      {
-        question: 'How much should I budget for 10 days in China?',
-        answer:
-          'A useful planning envelope is RMB 4,500–8,000 for a budget trip, RMB 9,000–18,000 for mid-range travel, or RMB 20,000–36,000+ for a comfortable trip. This excludes international flights and is not a quotation.',
-      },
-      {
-        question: 'Are high-speed trains expensive in China?',
-        answer:
-          'The fare depends on distance, route, train type, seat class, and date. Search the exact journey on the official Railway 12306 service instead of relying on one national average.',
-      },
-      {
-        question: 'Do I need cash in China?',
-        answer:
-          'Mobile payment is widely used, but foreign visitors should keep a backup. Official visitor guidance covers mobile payment, bank cards, and cash; prepare at least two usable payment methods and check your provider’s fees.',
-      },
-      {
-        question: 'Does the budget include international flights?',
-        answer:
-          'No. The daily and trip ranges exclude international flights. The 5-, 10-, and 14-day totals include only a broad domestic intercity travel allowance, which you should replace with live route prices.',
-      },
-      {
-        question: 'When is travel in China most expensive?',
-        answer:
-          'Demand is often higher around Chinese New Year, Labor Day, National Day, school holidays, major events, and peak summer dates. Exact effects vary by city, route, and booking date.',
-      },
-    ],
-    related: [
-      { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
-      { label: 'How to order food in China', href: '/china-food-ordering-guide/' },
-      { label: 'China payment guide', href: '/china-payment-guide/' },
-      { label: 'China train travel guide', href: '/china-train-travel-guide/' },
-      { label: 'China metro guide', href: '/china-metro-guide/' },
-      { label: 'DiDi in China for foreigners', href: '/didi-in-china-for-foreigners/' },
-      { label: 'China eSIM & internet guide', href: '/china-esim-internet-guide/' },
-      { label: 'China travel apps', href: '/china-travel-apps/' },
-      { label: '7-day China itinerary', href: '/7-day-china-itinerary/' },
-      { label: '10-day China itinerary', href: '/10-day-china-itinerary/' },
-      { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
-      { label: 'Best time to visit China', href: '/best-time-to-visit-china/' },
-      { label: 'First trip to China', href: '/first-trip-to-china/' },
-      { label: 'Get a free China itinerary', href: '/#trip-plan' },
-    ],
-    sources: [
-      { label: 'China Railway 12306 English website', href: 'https://www.12306.cn/en/' },
-      { label: 'People\'s Bank of China: payment guide for visitors', href: 'https://english.www.gov.cn/news/202403/15/content_WS65f3b5d9c6d0868f4e8e52ea.html' },
-    ],
+    sections: [],
+    faqs: budgetGuide.faqs.map(({ question, answer }) => ({ question, answer: plainText(answer) })),
+    related: [{ label: '7-day China itinerary', href: '/7-day-china-itinerary/' }],
+    sources: budgetGuide.sources,
   },
   'china-travel-apps': {
     path: '/china-travel-apps/',
@@ -5187,6 +4992,7 @@ type GuideContentAdditions = Record<string, {
   faqs: Array<GuidePageData['faqs'][number] & { after: string }>;
   sources: NonNullable<GuidePageData['sources']>;
   sectionLinks: Array<{ section: string | string[]; links: NonNullable<GuidePageData['sections'][number]['links']> }>;
+  sectionNotes?: Array<{ section: string | string[]; text: string }>;
   removeFaqs: string[];
 }>;
 
@@ -5203,7 +5009,8 @@ for (const [type, additions] of Object.entries(guideContentAdditions as GuideCon
   page.sections = page.sections.map((section) => {
     // `section` may list several titles when the static page and the app name the same section differently.
     const extra = additions.sectionLinks.filter((entry) => [entry.section].flat().includes(section.title)).flatMap((entry) => entry.links);
-    return extra.length ? { ...section, links: [...(section.links || []), ...extra] } : section;
+    const notes = (additions.sectionNotes || []).filter((entry) => [entry.section].flat().includes(section.title)).map((entry) => entry.text);
+    return extra.length || notes.length ? { ...section, links: [...(section.links || []), ...extra], notes: [...(section.notes || []), ...notes] } : section;
   });
   // No added sources: keep the page's own list (or its default one).
   if (additions.sources.length) page.sources = [...(page.sources || []), ...additions.sources];
@@ -5532,6 +5339,7 @@ const richGuides: Partial<Record<GuidePageType, GuideContent>> = {
   'wechat-verification-without-friend-qr-2026': wechatVerificationGuide as GuideContent,
   'china-airport-arrival-guide': airportArrivalGuide as GuideContent,
   'china-train-travel-guide': trainGuide as GuideContent,
+  'china-travel-budget': budgetGuide as GuideContent,
 };
 
 function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?: string | null; onAskBuddy?: (prefill?: string) => void }) {
@@ -5589,7 +5397,7 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
           <p className="text-xs font-semibold uppercase tracking-wide text-[#155e63]">Quick answer</p>
           {isAmapGuide ? <AmapQuickAnswer /> : <p className="mt-2 text-sm leading-relaxed text-gray-700 md:text-base">{page.quickAnswer}</p>}
           <p className="mt-3 text-xs font-semibold text-gray-500">Last reviewed: {page.reviewed ?? page.lastReviewed ?? 'June 12, 2026'}</p>
-          {featuredFaqs.length === 0 && !isItineraryPage && !isAmapGuide && (
+          {featuredFaqs.length === 0 && !isItineraryPage && (!isAmapGuide || richGuide?.keepPageCta) && (
             <button
               type="button"
               onClick={handlePrimaryCta}
@@ -5600,11 +5408,11 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
           )}
         </section>
 
+        {type === 'china-travel-budget' && <ChinaTripCostEstimator />}
         {isAmapGuide && <>
           <AmapCtaCard />
           <AmapGuideBody />
         </>}
-        {type === 'china-travel-budget' && <ChinaTripCostEstimator />}
 
         {!isAmapGuide && <nav className="rounded-2xl border border-gray-100 bg-white/70 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">On this page</p>
@@ -5694,6 +5502,7 @@ function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?:
                   </ul>
                 )
               )}
+              {section.notes?.map((note) => <p key={note} className="mt-3 text-sm leading-relaxed text-gray-600"><AmapRichText text={note} /></p>)}
             </section>
           ))}
         </div>

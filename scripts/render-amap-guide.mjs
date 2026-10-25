@@ -22,11 +22,11 @@ export function createAmapGuideRenderer(content) {
   const figure = (id, maxWidth, label) => {
     const shot = content.screenshots[id];
     if (!shot) throw new Error(`Amap guide: missing screenshot ${id}`);
-    const lazy = renderedShots > 0 ? ' loading="lazy"' : '';
+    const lazy = renderedShots > 0 || content.lazyAllShots ? ' loading="lazy"' : '';
     renderedShots += 1;
     return `<figure style="margin:0;flex:1 1 ${Math.min(maxWidth, 160)}px;max-width:${maxWidth}px;">
       <img src="${escape(shot.src)}" width="${shot.width}" height="${shot.height}" alt="${escape(shot.alt)}"${lazy} decoding="async" style="display:block;width:100%;height:auto;border:1px solid rgba(21,94,99,0.14);border-radius:18px;">
-      <figcaption style="margin:6px 0 0;color:#6b7678;font-size:0.8rem;line-height:1.5;">${label ? `<strong style="display:block;color:#122022;font-size:0.9rem;">${escape(label)}</strong>` : ''}${escape(content.screenshotCaption)}</figcaption>
+      ${label || content.screenshotCaption ? `<figcaption style="margin:6px 0 0;color:#6b7678;font-size:0.8rem;line-height:1.5;">${label ? `<strong style="display:block;color:#122022;font-size:0.9rem;">${escape(label)}</strong>` : ''}${escape(content.screenshotCaption || '')}</figcaption>` : ''}
     </figure>`;
   };
 

@@ -140,7 +140,13 @@
       }
     ],
     "sectionLinks": [],
-    "removeFaqs": []
+    "removeFaqs": [],
+    "sectionNotes": [
+      {
+        "section": "Choose a useful location, not just a cheap room",
+        "text": "For what rooms cost, see [hotel prices I checked in central Beijing and Shanghai](/china-travel-budget/#real-prices)."
+      }
+    ]
   },
   "china-travel-apps": {
     "reviewed": "October 23, 2026",
@@ -599,24 +605,6 @@
     ],
     "removeFaqs": []
   },
-  "china-travel-budget": {
-    "sections": [],
-    "faqs": [],
-    "sources": [],
-    "sectionLinks": [
-      {
-        "section": "Accommodation: usually the biggest variable",
-        "links": [
-          {
-            "label": "3-day Shenzhen itinerary",
-            "description": "Futian, Shenzhen Bay, Nantou, food, hotels, Metro and airport transfers.",
-            "href": "/3-day-shenzhen-itinerary/"
-          }
-        ]
-      }
-    ],
-    "removeFaqs": []
-  },
   "3-day-suzhou-itinerary": {
     "sections": [],
     "faqs": [],
@@ -739,5 +727,18 @@
       }
     ],
     "removeFaqs": []
+  },
+  "china-itinerary-first-time-7-10-14-days": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [],
+    "removeFaqs": [],
+    "sectionNotes": [
+      {
+        "section": "Quick Picker",
+        "text": "To budget your route, see [what a China trip costs in 2026](/china-travel-budget/)."
+      }
+    ]
   }
 }

@@ -1,0 +1,252 @@
+{
+  "metaTitle": "China Trip Cost (2026): Real Prices & Budget Calculator",
+  "metaDescription": "China trip cost per day, from prices I checked in October 2026: Beijing–Shanghai train ¥553–667, a Wangfujing hotel ¥255, a 3 km DiDi ride ¥10.",
+  "heading": "How Much Does a Trip to China Cost? 2026 Budget Guide",
+  "byline": {
+    "name": "Maintained by Lin",
+    "tested": "Prices checked in Dongguan and in the 12306 and Ctrip apps, October 23–25, 2026 · Ticket and metro prices from official sources"
+  },
+  "reviewed": "October 25, 2026",
+  "modified": "2026-10-25",
+  "keepPageCta": true,
+  "lazyAllShots": true,
+  "pairShotMaxWidth": 220,
+  "quickAnswer": [
+    "Plan on **¥350–650 a day** on a budget, **¥800–1,500** mid-range and **¥1,800–3,000+** for a comfortable trip, per person, before international flights. At October 2026 exchange rates (US$1 ≈ ¥6.7), that's about **US$50–100**, **US$120–220** and **US$270–450+** a day.",
+    "These are my planning ranges, not official averages. Here's what things cost when I checked in October 2026:",
+    { "type": "ul", "items": [
+      "**Metro:** ¥3–6 for rides up to 32 km in Beijing (official fares).",
+      "**Ride-hailing:** DiDi quoted me ¥10 for a 3.1 km Economy ride in Dongguan; a taxi was estimated at ¥14.1.",
+      "**High-speed train:** Beijing to Shanghai in second class was ¥553–667 on 12306 for November 4.",
+      "**Hotels near Wangfujing, Beijing, for November 4:** ¥255 at a budget chain and ¥598 at a mid-range chain, both on Wangfujing. The cheapest I saw were ¥59–71, 2–3.4 km away.",
+      "**Food in Dongguan:** breakfast about ¥10, coffee ¥10–20, a bottle of water ¥2.",
+      "**Big sights:** Forbidden City ¥40 (November–March) or ¥60 (April–October); Terracotta Army ¥120.",
+      "**Card fees:** with a foreign card in Alipay or Weixin Pay, payments up to ¥200 are generally free; above that, 3% may apply."
+    ] },
+    "[See every price I checked](#real-prices)"
+  ],
+  "screenshots": {
+    "1": { "src": "/images/budget/budget-01.webp", "width": 640, "height": 1206, "alt": "12306 app listing Beijing South to Shanghai high-speed trains for November 4, 2026, with second-class fares from ¥553 to ¥667" },
+    "2": { "src": "/images/budget/budget-02.webp", "width": 640, "height": 1097, "alt": "Ctrip hotel search near Wangfujing, Beijing, for November 4, 2026, showing rooms at ¥598 and ¥255 a night" }
+  },
+  "sections": [
+    {
+      "id": "real-prices",
+      "title": "Real prices I checked in October 2026",
+      "blocks": [
+        { "type": "p", "text": "I'm based in Dongguan, a big city between Guangzhou and Shenzhen. Below is what I usually pay there, plus prices I looked up in apps on October 23–25, 2026. Train and hotel prices are for Wednesday, November 4, 2026. Apps change prices with the date and demand, so treat these as examples, not quotes." },
+        { "type": "p", "text": "**Everyday spending in Dongguan (what I usually pay)**" },
+        { "type": "table", "headers": ["What", "Price"], "rows": [
+          ["Breakfast", "about ¥10"],
+          ["Coffee", "¥10–20"],
+          ["Bottle of water", "¥2"],
+          ["Snack", "a few yuan"],
+          ["Fruit, one purchase", "¥20–30"],
+          ["A pen, paid with TenPayGo and a UK Mastercard", "¥4.90, no card fee"]
+        ] },
+        { "type": "p", "text": "**Rides in Dongguan (quoted in the apps; I didn't book)**" },
+        { "type": "table", "headers": ["Trip", "Cheapest app ride", "Taxi"], "rows": [
+          ["3.1 km (DiDi, October 24)", "¥10", "about ¥14.1"],
+          ["14 km, 32 min (Amap, October 23)", "¥19–23", "about ¥49"],
+          ["25 km, 56 min (Amap, October 23)", "¥34–38", "about ¥96"]
+        ] },
+        { "type": "p", "text": "**High-speed trains (12306, second class, November 4)**" },
+        { "type": "table", "headers": ["Route", "Second class", "Journey time"], "rows": [
+          ["Beijing South → Shanghai", "¥553–667", "4 h 41 min – 6 h 5 min"],
+          ["Beijing West → Xi'an North", "¥494–587", "4 h 10 min – 5 h 46 min"],
+          ["Guangzhou East → Shenzhen", "¥72", "1 h 27 min"]
+        ] },
+        { "type": "p", "text": "**Hotels (Ctrip, one room for one night, November 4)**" },
+        { "type": "table", "headers": ["Search", "Top of the default list", "Cheapest I saw"], "rows": [
+          ["Near Wangfujing, Beijing", "¥598 (Lavande) and ¥255 (Super 8 Hotel Premier), both on Wangfujing", "¥59–71, 2–3.4 km away"],
+          ["Near East Nanjing Road, Shanghai", "¥539 and ¥273, two Hanting hotels 1.4 km away", "¥30–31 for a dorm bed, 2.3–4.9 km away"]
+        ] },
+        { "type": "p", "text": "I searched in Ctrip, Trip.com's Chinese app. The prices include the discounts Ctrip showed my account, and Trip.com's English app may show different prices. The cheapest places came in well under the ranges further down this page, but they were 2–5 km from the center, and the cheapest Shanghai beds were rated 1.7–3.4 out of 5. If you book somewhere very cheap, read [how hotel check-in works for foreigners](/china-hotels-for-foreigners/) first." },
+        { "type": "shots", "ids": ["1", "2"] },
+        { "type": "p", "text": "*Screenshots from the 12306 and Ctrip apps (Chinese versions), October 25, 2026.*" }
+      ]
+    },
+    {
+      "id": "daily-china-travel-budget-at-a-glance",
+      "title": "Daily China travel budget at a glance",
+      "blocks": [
+        { "type": "table", "headers": ["Travel style", "Planning range per person/day", "Typical approach"], "rows": [
+          ["Budget", "RMB 350–650", "Hostel or simple room, local meals, metro and bus, selective paid sights"],
+          ["Mid-range", "RMB 800–1,500", "Comfortable hotel, mixed dining, metro plus some DiDi, several paid sights"],
+          ["Comfortable", "RMB 1,800–3,000+", "Higher-grade hotel, frequent taxis, premium meals, tours or shows"]
+        ] },
+        { "type": "ul", "items": [
+          "Use these figures as a first planning envelope, not a quotation. Exact prices change by destination, date, room type, booking channel, and availability.",
+          "Daily ranges exclude international flights and major intercity transport. The longer-trip examples below add a broad domestic transport allowance.",
+          "Solo travelers usually pay the full hotel-room price. Two people sharing one room may have a lower per-person accommodation cost."
+        ] }
+      ]
+    },
+    {
+      "id": "what-the-estimates-include-and-exclude",
+      "title": "What the estimates include — and exclude",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Included in the daily estimate: accommodation, ordinary meals, city transport, common attraction tickets, and a modest allowance for small travel expenses.",
+          "Excluded: flights to and from China, visas where required, travel insurance, shopping, nightlife, medical care, luxury experiences, private guides, and large exchange or card fees.",
+          "Intercity trains and flights aren't in the daily figures. See the [train fares I checked](#real-prices) and the trip totals below."
+        ] },
+        { "type": "p", "text": "Prices are in Chinese yuan (RMB, ¥). On October 16, 2026, the official reference rate was ¥6.72 to the US dollar, ¥8.90 to the pound and ¥7.52 to the euro. Some guides still convert at ¥7 or more to the dollar, which makes China look a little cheaper in dollars than it is now. Check the live rate before you go." },
+        { "type": "table", "headers": ["Style", "Per person per day", "US$", "£", "€"], "rows": [
+          ["Budget", "¥350–650", "50–100", "40–70", "50–90"],
+          ["Mid-range", "¥800–1,500", "120–220", "90–170", "110–200"],
+          ["Comfortable", "¥1,800–3,000+", "270–450+", "200–340+", "240–400+"]
+        ] }
+      ]
+    },
+    {
+      "id": "accommodation-usually-the-biggest-variable",
+      "title": "Accommodation: usually the biggest variable",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Hostel bed or very basic room: plan around RMB 100–250 per night where available.",
+          "Simple chain hotel or typical three-star room: often budget around RMB 250–600 per room per night.",
+          "Comfortable four-star room: a useful planning range is RMB 600–1,200+ per room per night.",
+          "Luxury and landmark hotels can start above RMB 1,200 and rise far beyond it. Central business and tourist districts often cost more.",
+          "Compare the final price, taxes, breakfast, cancellation, deposit, and room type—not only the search result headline."
+        ] },
+        { "type": "p", "text": "**What I found for November 4, 2026:** on Wangfujing in Beijing, ¥255 at a budget chain and ¥598 at a mid-range chain; in Shanghai, two Hanting hotels 1.4 km from East Nanjing Road at ¥273 and ¥539. [All the prices](#real-prices)" },
+        { "type": "p", "text": "[3-day Shenzhen itinerary](/3-day-shenzhen-itinerary/): Futian, Shenzhen Bay, Nantou, food, hotels, Metro and airport transfers." }
+      ]
+    },
+    {
+      "id": "food-inexpensive-locally-but-easy-to-scale-up",
+      "title": "Food: inexpensive locally, but easy to scale up",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Simple breakfast, bakery item, or snack: roughly RMB 10–30.",
+          "Local noodle, rice, dumpling, or canteen-style meal: roughly RMB 25–60 per person.",
+          "Casual sit-down restaurant: roughly RMB 60–150 per person before premium drinks or special dishes.",
+          "Hotpot, specialty restaurants, imported food, cocktails, and fine dining can reach RMB 120–300+ per person.",
+          "Check menu units, portion size, tea charges, service charges, and seafood prices before confirming."
+        ] },
+        { "type": "p", "text": "**What I usually pay in Dongguan:** breakfast about ¥10, coffee ¥10–20, a bottle of water ¥2, fruit ¥20–30." }
+      ]
+    },
+    {
+      "id": "local-and-intercity-transport",
+      "title": "Local and intercity transport",
+      "blocks": [
+        { "type": "p", "text": "**Metro.** Fares go by distance. In Beijing, a ride of up to 6 km costs ¥3, 6–12 km ¥4, 12–22 km ¥5 and 22–32 km ¥6, then ¥1 more for every extra 20 km. The Capital Airport Express is a flat ¥25. In Shanghai, it's ¥3 for the first 6 km, then ¥1 more for every 10 km. Shanghai held a hearing on raising metro fares in September 2026, so check before you go. In Beijing, Shanghai, Guangzhou and Shenzhen you can [tap a contactless Visa or Mastercard at the gate](/alipay-metro-qr-transport-code-guide/#card). A metro-and-bus day comes to about ¥10–30." },
+        { "type": "p", "text": "**Taxis and ride-hailing.** In Dongguan, DiDi quoted me ¥10 for a 3.1 km Economy ride, against a taxi estimate of ¥14.1. On a 25 km trip, the cheapest ride in Amap was ¥34–38 and a taxi about ¥96. App rides show a fixed upfront fare; taxis show an estimate. [How to use DiDi in English](/didi-in-china-for-foreigners/)" },
+        { "type": "p", "text": "**High-speed trains.** Long trips are the biggest transport cost. On 12306 for November 4, 2026, second class was ¥553–667 from Beijing to Shanghai, ¥494–587 from Beijing to Xi'an and ¥72 from Guangzhou East to Shenzhen ([details](#real-prices)). On the same route, faster trains cost more. Slow conventional trains are much cheaper but take far longer: K507 from Beijing West to Xi'an East was ¥152.5 for a hard seat, for a 15 h 48 min trip. [How to book on 12306](/china-train-travel-guide/)" },
+        { "type": "p", "text": "**Domestic flights.** Domestic flights can beat rail on very long routes, but include airport transfers, baggage rules, check-in time, and disruption risk." }
+      ]
+    },
+    {
+      "id": "attractions-mobile-data-payment-and-extras",
+      "title": "Attractions, mobile data, payment, and extras",
+      "blocks": [
+        { "type": "p", "text": "**Tickets.** Many public spaces are free, and most big paid sights cost about ¥40–200. Official adult prices for some of the big ones:" },
+        { "type": "table", "headers": ["Sight", "Adult ticket", "Good to know"], "rows": [
+          ["Forbidden City (Palace Museum), Beijing", "¥60 April–October, ¥40 November–March", "Treasure Gallery and Hall of Clocks ¥10 each. Book online with your passport number"],
+          ["Mutianyu Great Wall, Beijing", "¥45", "The shuttle bus and the cable car or toboggan cost extra"],
+          ["National Museum of China, Beijing", "Free", "Book up to 7 days ahead; real-name entry, so bring your passport"],
+          ["Terracotta Army, Xi'an", "¥120", "Same price all year. Book on the official website or WeChat"],
+          ["Chengdu Panda Base", "¥55", "Free for children 6 and under or under 1.3 m"],
+          ["The Bund (Shanghai), West Lake (Hangzhou)", "Free", "Public waterfronts"]
+        ] },
+        { "type": "p", "text": "**Mobile data.** Allow about ¥50–300 for an eSIM, roaming or a local SIM, depending on how long you stay and how much data you use. [China eSIM & internet guide](/china-esim-internet-guide/)" },
+        { "type": "p", "text": "**Payment fees.** With a foreign card in Alipay or Weixin Pay, payments of ¥200 or less generally have no fee. Above ¥200, a 3% fee may apply to the whole amount (Shanghai government, September 2026): on a ¥300 dinner, that's ¥9. When I paid ¥4.90 for a pen with [TenPayGo](/tenpaygo-for-tourists/), which runs on Weixin Pay, the ¥0.15 (3%) fee was crossed out. Your own bank may add a foreign transaction fee. Set up at least two ways to pay: see the [payment guide for visitors](https://english.www.gov.cn/news/202403/15/content_WS65f3b5d9c6d0868f4e8e52ea.html)." }
+      ]
+    },
+    {
+      "id": "estimated-total-for-5-10-or-14-days",
+      "title": "Estimated total for 5, 10, or 14 days",
+      "blocks": [
+        { "type": "table", "headers": ["Trip length", "Budget", "Mid-range", "Comfortable"], "rows": [
+          ["5 days", "RMB 2,500–4,500", "RMB 5,000–9,000", "RMB 10,000–18,000+"],
+          ["10 days", "RMB 4,500–8,000", "RMB 9,000–18,000", "RMB 20,000–36,000+"],
+          ["14 days", "RMB 6,500–11,000", "RMB 13,000–25,000", "RMB 28,000–50,000+"]
+        ] },
+        { "type": "p", "text": "The daily tables above leave out intercity travel; these totals add an allowance for it. For scale, one long high-speed trip, such as Beijing to Xi'an or Beijing to Shanghai, was ¥494–667 in second class when I checked 12306 for November 4." },
+        { "type": "ul", "items": [
+          "These totals are planning envelopes for one person and include a broad allowance for domestic intercity travel. International flights remain excluded.",
+          "A fast multi-city route generally costs more than a slower stay in one or two places. A couple sharing rooms may spend less per person than two solo travelers.",
+          "Price hotels, long-distance transport, and must-see tickets first, then add a daily allowance for food, local transport, and flexible activities."
+        ] }
+      ]
+    },
+    {
+      "id": "when-and-where-china-costs-more",
+      "title": "When and where China costs more",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Chinese New Year, the Labor Day holiday, the National Day holiday, school holidays, major trade fairs, and peak summer dates can tighten availability and raise costs.",
+          "Central districts in Beijing, Shanghai, Shenzhen, Guangzhou, Hangzhou, and popular resort destinations usually need a higher hotel allowance.",
+          "Remote natural areas may have inexpensive rooms but costly transfers, guides, cable cars, or limited alternatives.",
+          "Book critical transport and accommodation earlier for peak dates, but compare cancellation rules before paying a non-refundable rate."
+        ] }
+      ]
+    },
+    {
+      "id": "reduce-cost-without-weakening-the-trip",
+      "title": "Reduce cost without weakening the trip",
+      "blocks": [
+        { "type": "ol", "items": [
+          "Choose fewer bases and stay longer in each city to reduce transfers and repeated one-night bookings.",
+          "Stay near a useful metro interchange rather than paying the highest premium for a famous landmark address.",
+          "Use public transport for predictable journeys, then reserve DiDi for luggage, late arrivals, or poorly connected places.",
+          "Mix free neighborhoods, parks, markets, and museums with a small number of paid priority sights.",
+          "Track spending in RMB every two or three days so a recurring overspend does not surprise you at the end."
+        ] }
+      ]
+    },
+    {
+      "id": "build-your-personal-china-budget",
+      "title": "Build your personal China budget",
+      "blocks": [
+        { "type": "ol", "items": [
+          "List the cities, nights, room arrangement, and travel dates. Mark any Chinese public holiday or major event.",
+          "Add live hotel prices and the exact 12306 or airline fares for every intercity leg.",
+          "Add must-see attraction prices from official booking channels and any private tour or performance.",
+          "Choose a realistic daily amount for meals and city transport based on your travel style.",
+          "Add mobile data, insurance, visa costs if applicable, payment fees, shopping, and a contingency of roughly 10–15 percent.",
+          "Keep international flights separate so you can compare the cost of the China portion clearly."
+        ] }
+      ]
+    },
+    {
+      "id": "budget-mistakes-to-avoid",
+      "title": "Budget mistakes to avoid",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Treating a national daily average as a guaranteed price for a major city, remote scenic area, or public holiday.",
+          "Forgetting that a solo traveler pays for the whole room while a couple can split it.",
+          "Comparing a rail fare with a flight headline price without airport transfers, baggage, and time.",
+          "Using an old fixed USD conversion instead of the live rate and fees that apply to your payment method.",
+          "Relying on one wallet or card and leaving no contingency for rebooking, illness, weather, or lost items."
+        ] }
+      ]
+    }
+  ],
+  "faqs": [
+    { "question": "How can I calculate a China travel budget for two people?", "answer": "Enter two travelers in the calculator. It multiplies the per-person range, so it doesn't count what you save by sharing a room. Hotel prices are per room, so two people sharing pay about half each for accommodation; meals, tickets and train seats are per person." },
+    { "question": "How much money do I need per day in China?", "answer": "Plan on ¥350–650 per person a day on a budget, ¥800–1,500 mid-range and ¥1,800–3,000+ for comfortable travel, before international flights. At October 2026 rates, that's about US$50–100, US$120–220 and US$270–450+." },
+    { "question": "Is China cheap for tourists?", "answer": "Day to day, yes. When I checked in October 2026, a Beijing metro ride cost ¥3–6, a 3 km DiDi ride in Dongguan was quoted at ¥10, and breakfast cost me about ¥10. The big costs are hotels in central Beijing and Shanghai, long train trips (Beijing to Shanghai was ¥553–667 in second class) and paid sights." },
+    { "question": "How much should I budget for 10 days in China?", "answer": "About ¥4,500–8,000 per person on a budget, ¥9,000–18,000 mid-range and ¥20,000–36,000+ comfortable, including intercity trains but not international flights. At October 2026 rates, that's roughly US$670–1,190, US$1,340–2,680 and US$2,980–5,360+." },
+    { "question": "Are high-speed trains expensive in China?", "answer": "Long trips add up. On 12306 for November 4, 2026, second class was ¥553–667 from Beijing to Shanghai, ¥494–587 from Beijing to Xi'an and ¥72 from Guangzhou East to Shenzhen. On the same route, faster trains cost more, and first class costs more than second." },
+    { "question": "Do I need cash in China?", "answer": "Mobile payment is widely used, but foreign visitors should keep a backup. Official visitor guidance covers mobile payment, bank cards, and cash; prepare at least two usable methods." },
+    { "question": "Does the budget include international flights?", "answer": "No. The daily and trip ranges exclude international flights. The trip totals include only a broad domestic intercity travel allowance, which you should replace with live route prices." },
+    { "question": "When is travel in China most expensive?", "answer": "Demand is often higher around Chinese New Year, Labor Day, National Day, school holidays, major events, and peak summer dates. Exact effects vary by city, route, and booking date." },
+    { "question": "Is there a fee for paying with a foreign card in China?", "answer": "With a foreign card in Alipay or Weixin Pay, payments of ¥200 or less are generally free; above ¥200, a 3% fee may apply to the whole amount. When I paid ¥4.90 with TenPayGo and a UK Mastercard, the fee line showed ¥0.00. Your own bank may also charge a foreign transaction fee." }
+  ],
+  "sources": [
+    { "label": "China Railway 12306 (English)", "href": "https://www.12306.cn/en/" },
+    { "label": "People's Bank of China: payment guide for visitors", "href": "https://english.www.gov.cn/news/202403/15/content_WS65f3b5d9c6d0868f4e8e52ea.html" },
+    { "label": "Shanghai government: Pay with overseas bank cards, with the ¥200 / 3% rule (September 2026)", "href": "https://english.shanghai.gov.cn/en-Individuals-BankingandPayments-Payments/20260921/c2c94d06a0454c8fa05386b80d0ae865.html" },
+    { "label": "Beijing government: About Subway Fares (April 2025)", "href": "https://english.beijing.gov.cn/specials/beijinglifeonthesubway/noticeforpassengers/202504/t20250423_4072294.html" },
+    { "label": "Shanghai government: Shanghai seeks public opinion on metro fare adjustment (August 2026)", "href": "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20260820/6676e7847de746e9aef956c40460bd84.html" },
+    { "label": "Visit Beijing: The Palace Museum", "href": "https://english.visitbeijing.com.cn/special/35211decffa0df13234b0ec0b6eaa70b/a09086a79d9ad908daa236f25a5ed16b" },
+    { "label": "Beijing government: Mutianyu Great Wall", "href": "https://english.beijing.gov.cn/specials/ticketing/attractions/202407/t20240717_3751593.html" },
+    { "label": "Beijing government: National Museum of China opening notice (July 2026)", "href": "https://english.beijing.gov.cn/whatson/events/Tips/202607/t20260724_4783113.html" },
+    { "label": "Emperor Qinshihuang's Mausoleum Site Museum: Ticketing", "href": "https://www.bmy.com.cn/jingtai/bmyweb/ticketing.html" },
+    { "label": "Chengdu Research Base of Giant Panda Breeding: Tickets", "href": "https://www.panda.org.cn/en/service/ticket/" },
+    { "label": "Xinhua: Market exchange rates in China, October 16, 2026 (via The Star)", "href": "https://www.thestar.com.my/news/world/2026/10/16/market-exchange-rates-in-china----oct-16" }
+  ]
+}

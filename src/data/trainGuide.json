@@ -31,7 +31,8 @@
           "Pick a seat class: second class is the standard choice; first and business class cost more.",
           "Add each passenger's passport details, then pay. Online, 12306 takes foreign bank cards and mobile payment apps.",
           "12306 sends notifications to your email. Keep your order details somewhere you can open offline."
-        ] }
+        ] },
+        { "type": "p", "text": "For sample fares, see [the second-class fares I checked on popular routes](/china-travel-budget/#real-prices)." }
       ]
     },
     {

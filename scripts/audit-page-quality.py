@@ -76,6 +76,7 @@ rich_guides = {
     'wechat-verification-without-friend-qr-2026': ('WeChat verification', load_json('src/data/wechatVerificationGuide.json')),
     'china-airport-arrival-guide': ('Airport arrival', load_json('src/data/airportArrivalGuide.json')),
     'china-train-travel-guide': ('Train guide', load_json('src/data/trainGuide.json')),
+    'china-travel-budget': ('Budget', load_json('src/data/budgetGuide.json')),
 }
 # Sections removed in a rebuild must not come back.
 removed_headings = {
@@ -167,6 +168,13 @@ for pathname in sorted(audit_paths):
         flat_text = re.sub(r'\s+([.,;:])', r'\1', ' '.join(body_text.split()))
         for question, answer in expected_faqs:
             require(question in flat_text and answer in flat_text, f'{name}: FAQ missing from visible HTML: {question}')
+        # The budget page must keep its checked prices and every source behind them.
+        if slug == 'china-travel-budget':
+            require('real-prices' in ids, 'Budget: missing #real-prices')
+            source_hrefs = {node.attrs.get('href') for node in document.find('a')}
+            for source in guide['sources']:
+                require(source['href'] in source_hrefs, f"Budget: source link missing: {source['href']}")
+            require(len(guide['sources']) == 11, 'Budget: expected 11 sources')
         for heading in removed_headings.get(slug, []):
             require(heading.lower() not in flat_text.lower(), f'{name}: removed section is back: {heading}')
 
