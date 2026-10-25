@@ -305,7 +305,7 @@ const pages = [
   {
     path: '/tenpaygo-for-tourists/',
     h1: /How to Use TenPayGo in China: Sign Up, Link a Card, Pay/i,
-    keywords: ['September 24, 2026', 'Weixin Firefly', 'Apple Pay', 'WeChat Pay', 'Shenzhen Transit Card', 'Last reviewed'],
+    keywords: ['September 24, 2026', 'Weixin Firefly', 'Apple Pay', 'WeChat Pay', 'Shenzhen Transit Card', 'International Card Fee', 'My test, October 25, 2026', 'Last reviewed'],
     // Sections removed in the October 24, 2026 rebuild must not come back.
     forbiddenPhrases: ['What Early TenPayGo Users Are Reporting', 'Known limitations and unconfirmed details', 'Payment limits explained', 'Setup checklist', 'Troubleshooting'],
     links: ["/china-payment-guide/", "/alipay-for-foreigners/", "/wechat-pay-for-foreigners/", "/wechat-verification-without-friend-qr-2026/", "/alipay-metro-qr-transport-code-guide/", "/didi-payment-for-foreigners/", "/3-day-shenzhen-itinerary/", "/first-trip-to-china/"],

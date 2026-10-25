@@ -1,18 +1,19 @@
 {
-  "metaTitle": "TenPayGo Review (2026): I Tested Sign-Up, Cards & Apple Pay",
-  "metaDescription": "TenPayGo, tested in China: email-only sign-up, a ¥0 card check with my UK Mastercard, Apple Pay in one tap, and the Shenzhen transit card's ¥35 minimum.",
+  "metaTitle": "TenPayGo Review (2026): I Tested Sign-Up, Payment & Fees",
+  "metaDescription": "TenPayGo, tested in China: email-only sign-up, a UK Mastercard, a ¥4.90 shop payment with the 3% card fee waived, and the Shenzhen transit card.",
   "heading": "How to Use TenPayGo in China: Sign Up, Link a Card, Pay",
   "byline": {
     "name": "Maintained by Lin",
-    "tested": "Tested on iPhone 14 (iOS 18.5), TenPayGo 1.1.2, Dongguan, October 24, 2026"
+    "tested": "Tested on iPhone 14 (iOS 18.5), TenPayGo 1.1.2, Dongguan, October 24–25, 2026"
   },
-  "reviewed": "October 24, 2026",
-  "modified": "2026-10-24",
+  "reviewed": "October 25, 2026",
+  "modified": "2026-10-25",
   "quickAnswer": [
-    "TenPayGo is Tencent's payment app for visitors to China. It pays at shops that take WeChat Pay (called Weixin Pay in the app), and you don't need a WeChat account or a Chinese phone number. I set it up on October 24, 2026:",
+    "TenPayGo is Tencent's payment app for visitors to China. It pays at shops that take WeChat Pay (called Weixin Pay in the app), and you don't need a WeChat account or a Chinese phone number. I set it up on October 24, 2026, and paid at a shop the next day:",
     { "type": "ul", "items": [
       "**Sign-up:** an email address and the code it sends you. It didn't ask for a phone number, passport or face scan.",
       "**Cards:** I linked a UK Mastercard. My bank asked me to approve a ¥0.00 check, so nothing was charged. Apple Pay took one tap.",
+      "**Paying:** I showed my payment code at a shop and paid ¥4.90. The ¥0.15 international card fee (3%) was crossed out, so I paid no fee.",
       "**Shenzhen metro and buses:** the Shenzhen Transit Card is in the app. Top up ¥50, ¥100 or ¥200; at least ¥35 has to stay on the card.",
       "**Outside Shenzhen** it has no metro code yet, so keep Alipay as well."
     ] },
@@ -40,7 +41,9 @@
     "11": { "src": "/images/tenpaygo/tenpaygo-11.webp", "width": 640, "height": 1385, "alt": "Top-up options of ¥50, ¥100 and ¥200 with a note that ¥35 must stay on the card" },
     "12": { "src": "/images/tenpaygo/tenpaygo-12.webp", "width": 640, "height": 1385, "alt": "TenPayGo list of supported overseas e-wallets, part 1" },
     "13": { "src": "/images/tenpaygo/tenpaygo-13.webp", "width": 640, "height": 1385, "alt": "TenPayGo list of supported overseas e-wallets, part 2" },
-    "14": { "src": "/images/tenpaygo/tenpaygo-14.webp", "width": 640, "height": 1385, "alt": "TenPayGo Go tab with Taxi & Ride, Bus & Metro and Tax Refund" }
+    "14": { "src": "/images/tenpaygo/tenpaygo-14.webp", "width": 640, "height": 1385, "alt": "TenPayGo Go tab with Taxi & Ride, Bus & Metro and Tax Refund" },
+    "15": { "src": "/images/tenpaygo/tenpaygo-15.webp", "width": 640, "height": 1385, "alt": "TenPayGo confirmation screen for a ¥4.90 payment, with the International Card Fee shown as ¥0.00 and ¥0.15 crossed out" },
+    "16": { "src": "/images/tenpaygo/tenpaygo-16.webp", "width": 640, "height": 1385, "alt": "TenPayGo Payment Successful screen for ¥4.90 with no international card fee" }
   },
   "sections": [
     {
@@ -95,6 +98,8 @@
           "**Show your code:** tap **Pay code** under the card or Apple Pay you want to use and let the cashier scan it. You can switch the payment method on the code screen. Then confirm on your phone."
         ] },
         { "type": "shots", "ids": ["8", "9"] },
+        { "type": "p", "text": "**My test, October 25, 2026:** I paid ¥4.90 at a shop in Dongguan by showing my payment code. After the cashier scanned it, TenPayGo showed a confirmation screen with the shop's name, the amount, an International Card Fee line and the card it would charge. I tapped **Pay** and it went through." },
+        { "type": "shots", "ids": ["15", "16"] },
         { "type": "p", "text": "Never send a photo of your payment code to anyone: whoever scans it can take a payment." }
       ]
     },
@@ -104,7 +109,7 @@
       "blocks": [
         { "type": "ul", "items": [
           "**Linking a card:** my bank's check was for ¥0.00.",
-          "**Paying:** the app store listing doesn't mention fees. TenPayGo runs on Weixin Pay, and for foreign cards Weixin Pay and Alipay generally charge no fee on payments of ¥200 or less. Above ¥200, a 3% fee may apply to the whole amount (Shanghai government, September 2026). GDToday's launch report says any fee is shown before you confirm, so check the confirmation screen.",
+          "**Paying:** on my ¥4.90 payment, the International Card Fee line showed ¥0.00, with ¥0.15 (3%) crossed out, so no fee was charged. TenPayGo runs on Weixin Pay, and for foreign cards Weixin Pay and Alipay generally charge no fee on payments of ¥200 or less; above ¥200, a 3% fee may apply to the whole amount (Shanghai government, September 2026). The fee line appears before you tap Pay, so check it on bigger payments.",
           "**Your bank** may add its own foreign transaction fee."
         ] }
       ]
@@ -161,7 +166,7 @@
     { "question": "Do I need a Chinese phone number or a WeChat account?", "answer": "No. I signed up with an email address and a code; it didn't ask for a phone number, passport or face scan." },
     { "question": "Which cards can I link?", "answer": "Cards from Visa, Mastercard, UnionPay, American Express, JCB, Diners Club and Discover, issued outside mainland China. I linked a UK Mastercard. You can also add Apple Pay." },
     { "question": "Will linking my card charge me?", "answer": "Not in my test. My bank's security check was for ¥0.00, shown as \"Weixin Firefly\" and \"Tencent\"." },
-    { "question": "Does TenPayGo charge fees?", "answer": "Its app store listing doesn't mention fees. It runs on Weixin Pay, which for foreign cards generally charges nothing on payments of ¥200 or less and may charge 3% of the whole amount above that. Check the confirmation screen before you pay." },
+    { "question": "Does TenPayGo charge fees?", "answer": "On my ¥4.90 test payment, the International Card Fee was ¥0.00, with the usual 3% (¥0.15) crossed out. For foreign cards, Weixin Pay generally charges no fee on payments of ¥200 or less and may charge 3% of the whole amount above that, so check the fee line before you tap Pay." },
     { "question": "Can I use TenPayGo on the metro?", "answer": "In Shenzhen, yes: top up the Shenzhen Transit Card in the Go tab (¥50, ¥100 or ¥200; at least ¥35 has to stay on the card). In Beijing, Shanghai and Guangzhou, tap your card at the gate; elsewhere, use Alipay's ride code." },
     { "question": "Can I pay with my home e-wallet?", "answer": "Only if it's on the in-app list. On October 24, 2026 it had 12 wallets, including MoMo, Zalopay, ShopeePay, Octopus and KB Star Banking." },
     { "question": "Should I use TenPayGo instead of Alipay?", "answer": "Use both. Alipay covers DiDi and metro codes in many cities; TenPayGo adds WeChat Pay shops without a WeChat account." }
