@@ -41,7 +41,7 @@ const pages = [
   {
     path: '/amap-vs-google-maps-china/',
     h1: /AMap vs Google Maps in China.*2026/i,
-    keywords: ['Chinese', 'metro exit', 'offline', 'Google Maps', 'Apple Maps', 'Baidu Maps'],
+    keywords: ['Google Maps', 'VPN', 'No route found', '5.7 km', 'Canton Tower', 'Ruixing Coffee', 'Before you fly'],
     links: ["/amap-english-mode-guide-2026/", "/china-travel-apps/", "/#trip-plan", "/didi-in-china-for-foreigners/", "/china-esim-internet-guide/", "/china-metro-guide/", "/first-trip-to-china/"],
   },
   {

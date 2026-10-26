@@ -28,7 +28,7 @@ const firstTimeItineraryContent = JSON.parse(await readFile('src/data/firstTimeI
 const pandaBaseGuide = JSON.parse(await readFile('src/data/pandaBaseGuide.json', 'utf8'));
 const didiPaymentGuide = JSON.parse(await readFile('src/data/didiPaymentGuide.json', 'utf8'));
 const beijingAirportGuide = JSON.parse(await readFile('src/data/seoPages/beijing-airport-to-city-guide.json', 'utf8'));
-const mapsComparisonGuide = JSON.parse(await readFile('src/data/seoPages/amap-vs-google-maps-china.json', 'utf8'));
+const mapsComparisonGuide = JSON.parse(await readFile('src/data/mapsGuide.json', 'utf8'));
 const transit240Guide = JSON.parse(await readFile('src/data/seoPages/china-240-hour-visa-free-transit-2026.json', 'utf8'));
 const tenPayGoGuide = JSON.parse(await readFile('src/data/tenpaygoGuide.json', 'utf8'));
 const accommodationRegistrationGuide = JSON.parse(await readFile('src/data/seoPages/china-online-accommodation-registration-12367.json', 'utf8'));
@@ -1997,7 +1997,17 @@ const pageMeta = {
     lastModified: didiPaymentGuide.modified,
   },
   'beijing-airport-to-city-guide': beijingAirportGuide,
-  'amap-vs-google-maps-china': mapsComparisonGuide,
+  'amap-vs-google-maps-china': {
+    article: true,
+    title: mapsComparisonGuide.metaTitle,
+    heading: mapsComparisonGuide.heading,
+    description: mapsComparisonGuide.metaDescription,
+    quickAnswer: quickAnswerText(mapsComparisonGuide.quickAnswer),
+    faqs: mapsComparisonGuide.faqs.map(({ question, answer }) => [question, plainText(answer)]),
+    sourceLinks: mapsComparisonGuide.sources.map(({ label, href }) => [label, href]),
+    lastReviewed: mapsComparisonGuide.reviewed,
+    lastModified: mapsComparisonGuide.modified,
+  },
   'best-time-to-visit-china': {
     title: 'Best Time to Visit China: Month-by-Month Guide (2026)',
     heading: 'Best Time to Visit China: Weather and Crowds by Month (2026)',
@@ -4038,6 +4048,7 @@ const richGuides = {
   'china-train-travel-guide': trainGuide,
   'china-travel-budget': budgetGuide,
   'chengdu-panda-base-guide': pandaBaseGuide,
+  'amap-vs-google-maps-china': mapsComparisonGuide,
 };
 
 function staticPageContent(page, meta) {

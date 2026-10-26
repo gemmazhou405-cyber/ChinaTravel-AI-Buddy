@@ -21,6 +21,8 @@ export type GuideContent = {
   lazyAllShots?: boolean;
   keepPageCta?: boolean;
   screenshots?: Record<string, Shot>;
+  // Optional blocks shown before the first section (such as a comparison table).
+  lead?: Block[];
   sections: Section[];
   faqs: Array<{ question: string; answer: string }>;
 };
@@ -161,9 +163,10 @@ export function AmapCtaCard() {
 }
 
 export function AmapGuideBody() {
-  const { sections } = useGuide();
+  const { sections, lead } = useGuide();
   return (
     <div className="space-y-4">
+      {lead && <div className="space-y-3">{lead.map((block, index) => <GuideBlock key={index} block={block} />)}</div>}
       {sections.map((section) => (
         <section key={section.id} aria-labelledby={section.id} className="space-y-3 rounded-2xl border border-gray-100 bg-white/80 p-4 shadow-sm md:p-5">
           <h2 id={section.id} className="text-lg font-bold text-gray-950 md:text-xl">{section.title}</h2>

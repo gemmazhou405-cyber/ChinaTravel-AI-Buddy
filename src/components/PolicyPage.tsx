@@ -26,7 +26,7 @@ import firstTimeItineraryContent from '../data/firstTimeItineraryContent.json';
 import pandaBaseGuide from '../data/pandaBaseGuide.json';
 import didiPaymentGuide from '../data/didiPaymentGuide.json';
 import beijingAirportGuide from '../data/seoPages/beijing-airport-to-city-guide.json';
-import mapsComparisonGuide from '../data/seoPages/amap-vs-google-maps-china.json';
+import mapsComparisonGuide from '../data/mapsGuide.json';
 import transit240Guide from '../data/seoPages/china-240-hour-visa-free-transit-2026.json';
 import tenPayGoGuide from '../data/tenpaygoGuide.json';
 import accommodationRegistrationGuide from '../data/seoPages/china-online-accommodation-registration-12367.json';
@@ -3565,14 +3565,24 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     { label: 'China Esim Internet Guide', href: '/china-esim-internet-guide/' },
     { label: 'Get my free China itinerary', href: '/#trip-plan' },
   ]),
-  'amap-vs-google-maps-china': guideFromArticle(mapsComparisonGuide, '/amap-vs-google-maps-china/', 'Get my China itinerary', [
-    { label: 'Amap In English', href: '/amap-english-mode-guide-2026/' },
-    { label: 'China Travel Apps', href: '/china-travel-apps/' },
-    { label: 'China Metro Guide', href: '/china-metro-guide/' },
-    { label: 'Didi In China For Foreigners', href: '/didi-in-china-for-foreigners/' },
-    { label: 'China Esim Internet Guide', href: '/china-esim-internet-guide/' },
-    { label: 'Get my free China itinerary', href: '/#trip-plan' },
-  ]),
+  'amap-vs-google-maps-china': {
+    path: '/amap-vs-google-maps-china/',
+    title: mapsComparisonGuide.heading,
+    intro: '',
+    metaTitle: mapsComparisonGuide.metaTitle,
+    metaDescription: mapsComparisonGuide.metaDescription,
+    quickAnswer: quickAnswerText(mapsComparisonGuide.quickAnswer),
+    // Rendered like the Amap guide (AmapGuide components); keeps its own itinerary CTA as well as the gig card.
+    ctaLabel: 'Get my China itinerary',
+    ctaHref: '/#trip-plan',
+    reviewed: mapsComparisonGuide.reviewed,
+    lastModified: mapsComparisonGuide.modified,
+    isArticle: true,
+    sections: [],
+    faqs: mapsComparisonGuide.faqs.map(({ question, answer }) => ({ question, answer: plainText(answer) })),
+    related: [{ label: 'Amap in English', href: '/amap-english-mode-guide-2026/' }],
+    sources: mapsComparisonGuide.sources,
+  },
   'best-time-to-visit-china': {
     path: '/best-time-to-visit-china/',
     title: 'Best Time to Visit China: Weather and Crowds by Month (2026)',
@@ -5350,6 +5360,7 @@ const richGuides: Partial<Record<GuidePageType, GuideContent>> = {
   'china-train-travel-guide': trainGuide as GuideContent,
   'china-travel-budget': budgetGuide as GuideContent,
   'chengdu-panda-base-guide': pandaBaseGuide as GuideContent,
+  'amap-vs-google-maps-china': mapsComparisonGuide as GuideContent,
 };
 
 function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?: string | null; onAskBuddy?: (prefill?: string) => void }) {

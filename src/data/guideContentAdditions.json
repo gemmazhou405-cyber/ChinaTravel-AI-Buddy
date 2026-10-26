@@ -212,6 +212,10 @@
       {
         "section": "Translation and offline information",
         "text": "For QR menus, dietary needs and allergies, see [how to order food in China](/china-food-ordering-guide/)."
+      },
+      {
+        "section": "Maps: use AMap Global and save Chinese addresses",
+        "text": "For how Google Maps and Amap compared on the same searches, see [my Google Maps vs Amap test in China](/amap-vs-google-maps-china/)."
       }
     ]
   },
@@ -239,24 +243,6 @@
             "label": "Translate a Chinese menu with Amap",
             "description": "Photograph the menu, set allergies, then show a Chinese order card to staff.",
             "href": "/amap-english-mode-guide-2026/#menu-translation"
-          }
-        ]
-      }
-    ],
-    "removeFaqs": []
-  },
-  "amap-vs-google-maps-china": {
-    "sections": [],
-    "faqs": [],
-    "sources": [],
-    "sectionLinks": [
-      {
-        "section": "Which app for which task?",
-        "links": [
-          {
-            "label": "Step-by-step Amap English setup",
-            "description": "Switch the language, search in English, book a taxi and find metro entrances.",
-            "href": "/amap-english-mode-guide-2026/"
           }
         ]
       }
@@ -821,6 +807,19 @@
       {
         "section": "Day 2: Chengdu Panda Base",
         "text": "For tickets, gates and the metro route, see the [Chengdu Panda Base guide](/chengdu-panda-base-guide/)."
+      }
+    ]
+  },
+  "china-esim-internet-guide": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [],
+    "removeFaqs": [],
+    "sectionNotes": [
+      {
+        "section": "Internet access in mainland China",
+        "text": "Wondering whether Google Maps works here? See [my Google Maps vs Amap test in China](/amap-vs-google-maps-china/)."
       }
     ]
   }

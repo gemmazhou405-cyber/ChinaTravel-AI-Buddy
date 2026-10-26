@@ -1,0 +1,127 @@
+{
+  "metaTitle": "Does Google Maps Work in China? I Tested It vs Amap (2026)",
+  "metaDescription": "Tested in China, October 2026: without a VPN Google Maps didn't load; with one it found no transit route. Amap found 3 routes and 5 Luckins within 1 km.",
+  "heading": "AMap vs Google Maps in China: Which Should Tourists Use? (2026)",
+  "byline": {
+    "name": "Maintained by Lin",
+    "tested": "Tested on iPhone 14 (iOS 18.5) with Google Maps and AMap Global 17.2, Dongguan, October 26, 2026"
+  },
+  "reviewed": "October 26, 2026",
+  "modified": "2026-10-26",
+  "keepPageCta": true,
+  "pairShotMaxWidth": 220,
+  "quickAnswer": [
+    "Not on its own. I tested both apps on my iPhone in Dongguan on October 26, 2026:",
+    { "type": "ul", "items": [
+      "**Without a VPN,** Google Maps didn't load. The map stayed blank and the search kept spinning.",
+      "**With a VPN,** it found Canton Tower, with photos, a 4.6 rating and opening hours.",
+      "**Public transport:** from Canton Tower to Guangzhou South Railway Station, Google Maps said \"No route found\". Amap, in English, gave me three routes; the fastest took 40 minutes and cost ¥5.",
+      "**Satellite view:** the Canton Tower pin sat on rooftops, and a road name ran across buildings instead of along the road.",
+      "**Shops and cafés:** Google Maps sent me to a Luckin Coffee 5.7 km from Canton Tower, 1 hour 27 minutes on foot. Amap listed five Luckin branches within 1 km, the nearest 345 m away."
+    ] },
+    "**Use Amap to get around.** Google Maps is still handy for photos and reviews of big sights, if you can get it to load.",
+    "Jump to: [Without a VPN](#no-vpn) · [Public transport](#transit) · [Satellite view](#satellite) · [Shops and cafés](#places) · [What to use](#what-to-use)"
+  ],
+  "cta": {
+    "text": "**Flying soon?** If you'd rather not troubleshoot at the airport, I'll get Amap, Alipay and DiDi working on your phone before you fly.",
+    "label": "See the app setup service on Fiverr →",
+    "href": "https://www.fiverr.com/s/p3dZbQR",
+    "placement": "maps-setup"
+  },
+  "lead": [
+    { "type": "table", "headers": ["What I tested", "Google Maps", "Amap (English)"], "rows": [
+      ["Opens without a VPN", "No: blank map, search kept loading", "Yes"],
+      ["Finds Canton Tower", "Yes, with a VPN: photos, 4.6 rating, hours", "Yes"],
+      ["Public transport, Canton Tower → Guangzhou South Railway Station", "\"No route found\"", "3 routes: 40 min (¥5), 46 min (¥5), bus 301A 1 h 29 min (¥3)"],
+      ["Luckin Coffee from Canton Tower", "Picked one 5.7 km away (1 h 27 min on foot)", "5 within 1 km; nearest 345 m"],
+      ["Satellite view", "Pin and road name off the photo", "Not tested"],
+      ["Ride for the same trip", "Not tested", "Offered: 33 min, from ¥26"]
+    ] }
+  ],
+  "screenshots": {
+    "1": { "src": "/images/maps/maps-01.webp", "width": 640, "height": 1316, "alt": "Google Maps on a Chinese connection without a VPN: a blank map and a search for Canton Tower that keeps loading" },
+    "2": { "src": "/images/maps/maps-02.webp", "width": 640, "height": 1316, "alt": "Google Maps with a VPN showing Canton Tower with photos, a 4.6 rating and opening hours" },
+    "3": { "src": "/images/maps/maps-03.webp", "width": 640, "height": 1156, "alt": "Google Maps satellite view where the Canton Tower pin sits on rooftops and a road name crosses buildings" },
+    "4": { "src": "/images/maps/maps-04.webp", "width": 640, "height": 796, "alt": "Google Maps showing no public transport route from Canton Tower to Guangzhou South Railway Station" },
+    "5": { "src": "/images/maps/maps-05.webp", "width": 640, "height": 1288, "alt": "Amap in English showing three public transport routes from Canton Tower to Guangzhou South Railway Station, the fastest 40 minutes for ¥5" },
+    "6": { "src": "/images/maps/maps-06.webp", "width": 640, "height": 1254, "alt": "Google Maps walking directions from Canton Tower to a Luckin Coffee 5.7 km away, 1 hour 27 minutes on foot" },
+    "7": { "src": "/images/maps/maps-07.webp", "width": 640, "height": 1281, "alt": "Amap search near Canton Tower listing Luckin Coffee branches from 345 m away, several named Ruixing Coffee" }
+  },
+  "sections": [
+    {
+      "id": "no-vpn",
+      "title": "Without a VPN, Google Maps doesn't load",
+      "blocks": [
+        { "type": "p", "text": "On a normal Chinese connection, Google Maps opened to a blank map: no streets, just my location dot, and the search for Canton Tower kept spinning. Google's services, Maps included, are blocked in mainland China. With a VPN on, the same search loaded straight away, with photos, a 4.6 rating from 1,153 reviews and opening hours." },
+        { "type": "p", "text": "Not sure how you'll get online in China? See the [China eSIM and internet guide](/china-esim-internet-guide/)." },
+        { "type": "shots", "ids": ["1", "2"] },
+        { "type": "p", "text": "*Left: no VPN. Right: with a VPN. My phone is set to Chinese, so Google Maps shows Chinese menus. Dongguan, October 26, 2026.*" }
+      ]
+    },
+    {
+      "id": "transit",
+      "title": "Public transport: Google found no route, Amap found three",
+      "blocks": [
+        { "type": "p", "text": "I asked both apps for public transport from Canton Tower to Guangzhou South Railway Station. Google Maps answered \"No route found\" (找不到路线). Amap, in English, gave me three:" },
+        { "type": "table", "headers": ["Route", "Time", "Fare"], "rows": [
+          ["Metro Line 3 → Guangfo Line → Line 2", "40 min", "¥5"],
+          ["Metro Line 3 → Line 7", "46 min", "¥5"],
+          ["Bus 301A, no changes (plus 1.9 km of walking)", "1 h 29 min", "¥3"]
+        ] },
+        { "type": "p", "text": "Amap also showed the next Line 3 train as \"Approaching\" and offered a ride for the same trip: 33 minutes, from ¥26. [How to use the metro in Amap](/amap-english-mode-guide-2026/#metro) · [Book a taxi in Amap](/amap-english-mode-guide-2026/#taxi)" },
+        { "type": "shots", "ids": ["4", "5"] },
+        { "type": "p", "text": "*Left: Google Maps, \"No route found\". Right: Amap, three routes with fares. October 26, 2026.*" }
+      ]
+    },
+    {
+      "id": "satellite",
+      "title": "Satellite view doesn't line up",
+      "blocks": [
+        { "type": "p", "text": "Zoomed in on satellite view, the Canton Tower pin sat on rooftops next to a row of bars, with no tower underneath, and the label for Yuejiang West Road ran across buildings instead of along the road. In mainland China, Google's street map uses China's required shifted coordinates but its satellite photos don't, so the two can be 50 to 500 meters apart. If you follow a pin on satellite view, you may end up at the wrong spot." },
+        { "type": "shots", "ids": ["3"] },
+        { "type": "p", "text": "*Google Maps satellite view at Canton Tower, October 26, 2026.*" }
+      ]
+    },
+    {
+      "id": "places",
+      "title": "Shops and cafés",
+      "blocks": [
+        { "type": "p", "text": "I looked for the coffee chain Luckin Coffee from Canton Tower in both apps. Google Maps picked a branch 5.7 km away: 1 hour 27 minutes on foot, with no public transport option. Amap listed five branches within 1 km, the nearest 345 m away, each with a rating." },
+        { "type": "p", "text": "In Amap's English mode, many branches show up as \"Ruixing Coffee\", the pinyin of Luckin's Chinese name (瑞幸咖啡). If \"Luckin\" finds nothing, search for that instead." },
+        { "type": "shots", "ids": ["6", "7"] },
+        { "type": "p", "text": "*Left: Google Maps sent me to a Luckin 5.7 km away. Right: Amap listed five within 1 km. October 26, 2026.*" }
+      ]
+    },
+    {
+      "id": "what-to-use",
+      "title": "What to use instead",
+      "blocks": [
+        { "type": "ul", "items": [
+          "**Amap** for directions, public transport and taxis. It works in English: [how to switch Amap to English](/amap-english-mode-guide-2026/#switch).",
+          "**DiDi** if you want a separate taxi app: [DiDi in English](/didi-in-china-for-foreigners/).",
+          "**Google Maps**, if you can get it to load, for photos and reviews of big sights. Check the location in Amap before you set off."
+        ] },
+        { "type": "p", "text": "**Before you fly**" },
+        { "type": "ul", "items": [
+          "Save your hotel in Amap, and keep a screenshot of its address in Chinese to show drivers.",
+          "Check the route from your arrival airport or station to your hotel.",
+          "Sort out mobile data before you land."
+        ] }
+      ]
+    }
+  ],
+  "faqs": [
+    { "question": "Does Google Maps work in China?", "answer": "Not on its own. When I tested it on October 26, 2026, it didn't load without a VPN. With a VPN it found Canton Tower, but no public transport route to Guangzhou South Railway Station." },
+    { "question": "Does Google Maps work in China with a VPN?", "answer": "It loads and finds big sights with photos, ratings and hours. On my test it found no public transport route, and on satellite view its pin and road names didn't line up with the photo." },
+    { "question": "Is Google Maps accurate in China?", "answer": "Not reliably. In mainland China its street map and satellite photos can be 50 to 500 meters apart, and on my test the Canton Tower pin sat on rooftops, not on the tower." },
+    { "question": "What map app should I use in China?", "answer": "Amap. It works in English, plans public transport with fares, and books taxis. For Canton Tower to Guangzhou South Railway Station it gave me three routes, the fastest 40 minutes for ¥5." },
+    { "question": "Can I use Amap in English?", "answer": "Yes. AMap Global has an English mode; here's [how to switch it](/amap-english-mode-guide-2026/#switch)." },
+    { "question": "Can Google Maps find shops and restaurants in China?", "answer": "Not well. From Canton Tower, Google Maps sent me to a Luckin Coffee 5.7 km away, while Amap listed five branches within 1 km, the nearest 345 m away." }
+  ],
+  "sources": [
+    { "label": "Wikipedia: Restrictions on geographic data in China", "href": "https://en.wikipedia.org/wiki/Restrictions_on_geographic_data_in_China" },
+    { "label": "Shanghai government: Amap for international visitors (July 2026)", "href": "https://english.shanghai.gov.cn/en-EasyShanghai/20260713/379bcea6e1bd4defaa7db2451d68d3dd.html" },
+    { "label": "Amap brings ride-hailing to international visitors in China (PR Newswire, August 2026)", "href": "https://tirto.id/amap-brings-ride-hailing-to-international-visitors-in-china-hA5e" },
+    { "label": "AMap Global on the App Store", "href": "https://apps.apple.com/us/app/amap-global/id461703208" }
+  ]
+}

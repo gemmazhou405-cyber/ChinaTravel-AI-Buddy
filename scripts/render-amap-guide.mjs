@@ -60,7 +60,8 @@ export function createAmapGuideRenderer(content) {
       <p style="margin:0 0 14px;color:#122022;line-height:1.7;">${renderAmapInline(content.cta.text)}</p>
       <a href="${escape(content.cta.href)}" target="_blank" rel="noopener noreferrer" data-planning-help="fiverr" data-planning-placement="${escape(content.cta.placement || 'amap-setup')}" style="display:inline-flex;min-height:44px;align-items:center;border-radius:999px;background:#155e63;color:#fffdf8;padding:10px 18px;font-weight:700;text-decoration:none;">${escape(content.cta.label)}</a>
     </aside>`,
-    body: () => content.sections.map((section) => `
+    // Optional lead blocks (such as a comparison table) come before the first section.
+    body: () => (content.lead ? `<div style="margin:0 0 24px;">${content.lead.map(block).join('')}</div>` : '') + content.sections.map((section) => `
       <section aria-labelledby="${escape(section.id)}" style="margin:0 0 24px;padding:20px;border:1px solid rgba(21,94,99,0.12);border-radius:20px;background:rgba(255,253,248,0.72);">
         <h2 id="${escape(section.id)}" style="margin:0 0 12px;font-size:1.25rem;">${escape(section.title)}</h2>
         ${section.blocks.map(block).join('')}
