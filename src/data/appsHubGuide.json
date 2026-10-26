@@ -106,7 +106,8 @@
           "Save your hotel's name, address and phone number in Chinese, in a note and as a screenshot.",
           "Sort out mobile data: an eSIM or a roaming plan.",
           "Before you leave, test a login, a payment, a route and offline translation."
-        ] }
+        ] },
+        { "type": "p", "text": "For everything else to sort out before you fly, see [my China travel checklist](/china-travel-checklist/)." }
       ]
     },
     {

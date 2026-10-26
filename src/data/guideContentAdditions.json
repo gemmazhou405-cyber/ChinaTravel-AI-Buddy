@@ -518,50 +518,6 @@
       }
     ]
   },
-  "china-travel-checklist": {
-    "sections": [],
-    "faqs": [],
-    "sources": [],
-    "sectionLinks": [
-      {
-        "section": [
-          "Hotels and arrival details",
-          "Hotels, arrivals, and transport"
-        ],
-        "links": [
-          {
-            "label": "arrival card, immigration and customs",
-            "description": "The free online arrival card, fingerprints for ages 14 to 70 and customs limits such as ¥20,000 in cash.",
-            "href": "/china-airport-arrival-guide/"
-          }
-        ]
-      }
-    ],
-    "removeFaqs": [],
-    "sectionNotes": [
-      {
-        "section": [
-          "Hotels and arrival details",
-          "Hotels, arrivals, and transport"
-        ],
-        "text": "To fill in the arrival card before you land, see [how to complete China's online arrival card](/china-online-arrival-card-2026/)."
-      },
-      {
-        "section": [
-          "Documents, health, and emergency backups",
-          "Money, documents, and safety backups"
-        ],
-        "text": "To check which visa-free option fits your passport and route, see the [China visa-free travel guide](/china-visa-free-travel-guide/)."
-      },
-      {
-        "section": [
-          "Apps and connectivity",
-          "Connectivity and app setup"
-        ],
-        "text": "For all the apps to set up before you fly, see [the China travel apps I tested](/china-travel-apps/)."
-      }
-    ]
-  },
   "china-online-arrival-card-2026": {
     "sections": [],
     "faqs": [],

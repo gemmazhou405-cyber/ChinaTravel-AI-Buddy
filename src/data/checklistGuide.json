@@ -1,0 +1,145 @@
+{
+  "metaTitle": "China Travel Checklist (2026): What to Do Before You Fly",
+  "metaDescription": "What I'd set up before a first trip to China in 2026: the free arrival card, Alipay with a foreign card, Amap and DiDi in English, trains and hotels.",
+  "heading": "China Travel Checklist for First-Time Visitors",
+  "byline": {
+    "name": "Maintained by Lin",
+    "tested": "Apps, payments and hotel booking tested in China, October 2026 · Entry rules checked against official sources"
+  },
+  "reviewed": "October 26, 2026",
+  "modified": "2026-10-26",
+  "keepPageCta": true,
+  "quickAnswer": [
+    "Before a first trip to China:",
+    { "type": "ol", "items": [
+      "**Visa:** check whether your passport can enter visa-free.",
+      "**Arrival card:** fill it in free online before you fly, or at the airport.",
+      "**Payment:** link a foreign card to Alipay, set up a second way to pay, and carry a physical card and some cash.",
+      "**Apps:** install Amap and DiDi and switch both to English. Google Maps didn't load without a VPN when I tested it in China.",
+      "**Mobile data:** set up an eSIM or roaming before you fly.",
+      "**Trains:** book on 12306 or Trip.com. Tickets go on sale 15 days before departure.",
+      "**Hotels:** check the \"Guests Accepted\" line on Trip.com, and save the address in Chinese.",
+      "**Emergencies:** save 110 (police), 120 (ambulance) and 119 (fire)."
+    ] },
+    "Jump to: [Payment](#payment-preparation) · [Apps and data](#apps-and-connectivity) · [Entry](#entry) · [Hotels](#hotels-and-arrival-details) · [Documents and emergencies](#documents-health-and-emergency-backups) · [The day before](#the-final-24-hour-check) · [After landing](#after-landing)"
+  ],
+  "cta": {
+    "text": "**Flying soon?** I'll help you set up Alipay, TenPayGo, Amap and DiDi before you fly, so nothing gets stuck at a verification screen when you land.",
+    "label": "See the app setup service on Fiverr →",
+    "href": "https://www.fiverr.com/s/p3dZbQR",
+    "placement": "checklist-setup"
+  },
+  "screenshots": {},
+  "sections": [
+    {
+      "id": "payment-preparation",
+      "title": "Payment: two ways to pay, plus cash",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Link a Visa, Mastercard or other foreign card to **Alipay** before you fly. With a foreign card in Alipay or Weixin Pay, payments of ¥200 or less are generally free; above ¥200, a 3% fee may apply to the whole amount (Shanghai government, September 2026).",
+          "Set up a second way to pay. I signed up for **TenPayGo** with just an email, linked a UK Mastercard and paid ¥4.90 in a shop; the 3% card fee was waived. [TenPayGo, tested](/tenpaygo-for-tourists/)",
+          "Carry a physical card and some yuan. A linked card can still fail at a verification step.",
+          "Make sure you can receive your bank's security texts in China. Never share a payment PIN or one-time code with anyone offering to help you set up.",
+          "In Beijing, Shanghai, Guangzhou and Shenzhen you can tap a contactless Visa or Mastercard at metro gates. [Metro: card or ride code](/alipay-metro-qr-transport-code-guide/#card)"
+        ] },
+        { "type": "p", "text": "[Alipay for foreigners](/alipay-for-foreigners/) · [China payment guide](/china-payment-guide/)" }
+      ]
+    },
+    {
+      "id": "apps-and-connectivity",
+      "title": "Apps and mobile data",
+      "blocks": [
+        { "type": "ul", "items": [
+          "**Amap** for maps, public transport and taxis. To switch it to English: **My** → gear icon → **Language** → **English**, then close and reopen the app. [Amap in English](/amap-english-mode-guide-2026/)",
+          "**DiDi** for rides: **Account** → gear icon → **Language** → **English** → **完成** (Done) → **Confirm**. [DiDi in English](/didi-in-china-for-foreigners/)",
+          "**Not Google Maps.** When I tested it in China on October 26, 2026, it didn't load without a VPN, and with one it found no public transport route. [My Google Maps vs Amap test](/amap-vs-google-maps-china/)",
+          "**WeChat** for messages. When you sign up, it may ask an existing user to verify you. [WeChat verification](/wechat-verification-without-friend-qr-2026/)",
+          "**12306 or Trip.com** for trains. 12306's English site takes foreign passports and asks for an email, not a Chinese phone number. Tickets go on sale 15 days before departure, and you board with your passport. [China train tickets](/china-train-travel-guide/)",
+          "**Mobile data:** on ordinary mainland networks, Google, Facebook, YouTube, X and some other services are blocked or restricted. Set up an eSIM or roaming before you fly, and check what your plan covers. [China eSIM guide](/china-esim-internet-guide/)",
+          "Download an offline translation app with Chinese, and test it in airplane mode."
+        ] },
+        { "type": "p", "text": "For all the apps I tested, see [China travel apps](/china-travel-apps/)." }
+      ]
+    },
+    {
+      "id": "entry",
+      "title": "Entry: visa, arrival card and customs",
+      "blocks": [
+        { "type": "ul", "items": [
+          "**Visa:** check whether you can enter visa-free with your passport, or use 240-hour visa-free transit if you're flying on to a third country. [China visa-free travel guide](/china-visa-free-travel-guide/) · [240-hour visa-free transit](/china-240-hour-visa-free-transit-2026/)",
+          "**Arrival card:** since November 20, 2025, you can fill it in online before you travel, on the National Immigration Administration website, the NIA 12367 app, or the WeChat or Alipay mini program. It's free; ignore websites that charge. You can also do it at the airport. [How to fill in the arrival card](/china-online-arrival-card-2026/)",
+          "**Fingerprints:** if you're 14 to 70, they're taken at immigration.",
+          "**Customs:** declare ¥20,000 or more in yuan cash, or US$5,000 or more in foreign currency."
+        ] },
+        { "type": "p", "text": "Step by step from the plane: [arrival card, immigration and customs](/china-airport-arrival-guide/)" }
+      ]
+    },
+    {
+      "id": "hotels-and-arrival-details",
+      "title": "Hotels and getting from the airport",
+      "blocks": [
+        { "type": "ul", "items": [
+          "On Trip.com, open the hotel's **Policies** tab and read the **Guests Accepted** line before you book. When I checked a hotel near Wangfujing in October 2026, it said \"Guests from all countries/regions are welcome at this property.\" [How I checked](/china-hotels-for-foreigners/#check-before-booking)",
+          "Save the hotel's name, address and phone number in Chinese, plus a screenshot of the booking. A driver may need the Chinese address even when the brand name is familiar.",
+          "Staying somewhere other than a hotel, such as a friend's home? Register with the local police within 24 hours. [Register your stay online](/nia-12367-online-accommodation-registration-guide/)",
+          "In Beijing, hotels don't put out toothbrushes, combs or razors unless you ask, so pack your own.",
+          "Check your arrival terminal and the last metro or airport train. If you land late, plan on the taxi queue or DiDi."
+        ] }
+      ]
+    },
+    {
+      "id": "documents-health-and-emergency-backups",
+      "title": "Documents, health and emergencies",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Keep your passport, onward ticket and first hotel booking easy to reach. Use the same passport name for flights, trains and hotels.",
+          "Keep any medication documents you need with you.",
+          "If you have a food allergy, carry it written in Chinese, and confirm with restaurant staff: translation tools can miss ingredients.",
+          "Save 110 for police, 120 for an ambulance and 119 for fire, plus your embassy, insurer and hotel, in an offline note."
+        ] }
+      ]
+    },
+    {
+      "id": "the-final-24-hour-check",
+      "title": "The day before you fly",
+      "blocks": [
+        { "type": "ol", "items": [
+          "Charge your phone and power bank, and save your tickets and bookings for offline use.",
+          "Open each app once more: log in, find your hotel in Amap, check your card in Alipay.",
+          "Check your arrival terminal, the last metro or airport train, and your hotel's reception hours.",
+          "Share your arrival plan with someone at home."
+        ] }
+      ]
+    },
+    {
+      "id": "after-landing",
+      "title": "In the first hour after landing",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Switch on your eSIM or roaming and check that you have data.",
+          "Make one small payment, like a bottle of water, to check that your payment app works with your card.",
+          "Into the city: tap your card at the metro gate in Beijing, Shanghai, Guangzhou or Shenzhen, use the official taxi queue, or book DiDi from the ride-hailing pickup area. Before you get in, confirm the last digits of your phone number with the driver."
+        ] },
+        { "type": "p", "text": "[From the plane to your hotel](/china-airport-arrival-guide/)" }
+      ]
+    }
+  ],
+  "faqs": [
+    { "question": "What should first-time visitors prepare before going to China?", "answer": "Check your visa options, fill in the arrival card, set up Alipay plus a second way to pay, install Amap and DiDi in English, sort out mobile data, and save your hotel address in Chinese. Carry a physical card and some cash too." },
+    { "question": "Do I need to fill in an arrival card for China?", "answer": "Most foreign visitors do. Since November 20, 2025, you can fill it in free online before you fly, or do it at the airport. Some travelers are exempt, such as passengers transiting within 24 hours who stay inside the airport." },
+    { "question": "Can I use my foreign bank card in China?", "answer": "Yes, through Alipay or Weixin Pay: payments of ¥200 or less are generally free, and above ¥200 a 3% fee may apply. In Beijing, Shanghai, Guangzhou and Shenzhen you can also tap a contactless Visa or Mastercard at metro gates. Carry some cash as a backup." },
+    { "question": "Does Google Maps work in China?", "answer": "Not on its own. When I tested it in China on October 26, 2026, it didn't load without a VPN, and with one it found no public transport route. Use Amap, which works in English." },
+    { "question": "Should I save my hotel address in Chinese?", "answer": "Yes. A Chinese hotel address is helpful for taxis, ride-hailing pickups, hotel returns, and asking locals for directions. Before you book, also check the hotel's \"Guests Accepted\" line on Trip.com." },
+    { "question": "Do I need offline phrases in China?", "answer": "Offline phrases are useful when mobile data is weak, apps are unavailable, or you need to show a clear Chinese sentence quickly." }
+  ],
+  "sources": [
+    { "label": "National Immigration Administration: online arrival card", "href": "https://s.nia.gov.cn/ArrivalCardFillingPC/" },
+    { "label": "Chinese Embassy in Sweden: Notice on the online filling of China's arrival card (November 2025)", "href": "https://se.china-embassy.gov.cn/eng/lsyfw/202511/t20251126_11760567.htm" },
+    { "label": "National Immigration Administration: Welcome to China (fingerprints)", "href": "https://www.nia.gov.cn/2022en/files/basic-html/page10.html" },
+    { "label": "China Customs, via the Shanghai government: customs guide for inbound passengers", "href": "https://english.shanghai.gov.cn/en-CustomsClearance/20231212/9a3c7f512d464e0798be3fc76c8dd6f2.html" },
+    { "label": "Shanghai government: Pay with overseas bank cards, with the ¥200 / 3% rule (September 2026)", "href": "https://english.shanghai.gov.cn/en-Individuals-BankingandPayments-Payments/20260921/c2c94d06a0454c8fa05386b80d0ae865.html" },
+    { "label": "Shanghai government: Hotels told not to turn away foreign guests (May 2024)", "href": "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20240529/6ff842313deb45e1b14cf5fd2a01d065.html" },
+    { "label": "China Railway 12306 (English)", "href": "https://www.12306.cn/en/index.html" },
+    { "label": "UK government: China internet access advice", "href": "https://www.gov.uk/foreign-travel-advice/china/safety-and-security#internet-access" }
+  ]
+}

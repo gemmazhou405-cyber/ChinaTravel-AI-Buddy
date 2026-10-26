@@ -46,6 +46,7 @@ const trainGuide = JSON.parse(await readFile('src/data/trainGuide.json', 'utf8')
 const budgetGuide = JSON.parse(await readFile('src/data/budgetGuide.json', 'utf8'));
 const appsHubGuide = JSON.parse(await readFile('src/data/appsHubGuide.json', 'utf8'));
 const hotelsGuide = JSON.parse(await readFile('src/data/hotelsGuide.json', 'utf8'));
+const checklistGuide = JSON.parse(await readFile('src/data/checklistGuide.json', 'utf8'));
 const shenzhenItineraryPlanning = JSON.parse(await readFile('src/data/shenzhenItineraryPlanning.json', 'utf8'));
 const layoverAirportPlanning = JSON.parse(await readFile('src/data/layoverAirportPlanning.json', 'utf8'));
 const didiGuide = JSON.parse(await readFile('src/data/didiGuide.json', 'utf8'));
@@ -2406,14 +2407,15 @@ const pageMeta = {
     ],
   },
   'china-travel-checklist': {
-    title: 'China Travel Checklist for First-Time Visitors | ChinaEase Buddy',
-    description:
-      'Before a first trip to China, prepare travel apps, two payment methods, mobile data, Chinese hotel addresses, emergency numbers and passport details.',
-    faqs: [
-      ['What should first-time visitors prepare before going to China?', 'Prepare local apps, payment methods, Chinese hotel addresses, emergency numbers, offline phrases, passport details, and transport bookings.'],
-      ['Should I save my hotel address in Chinese?', 'Yes. A Chinese hotel address is helpful for taxis, ride-hailing pickups, hotel returns, and asking locals for directions.'],
-      ['Do I need offline phrases in China?', 'Offline phrases are useful when mobile data is weak, apps are unavailable, or you need to show a clear Chinese sentence quickly.'],
-    ],
+    article: true,
+    title: checklistGuide.metaTitle,
+    heading: checklistGuide.heading,
+    description: checklistGuide.metaDescription,
+    quickAnswer: quickAnswerText(checklistGuide.quickAnswer),
+    faqs: checklistGuide.faqs.map(({ question, answer }) => [question, plainText(answer)]),
+    sourceLinks: checklistGuide.sources.map(({ label, href }) => [label, href]),
+    lastReviewed: checklistGuide.reviewed,
+    lastModified: checklistGuide.modified,
   },
   'china-emergency-numbers': {
     title: 'Emergency Numbers in China for Travelers | ChinaEase Buddy',
@@ -2615,43 +2617,6 @@ pageMeta['china-payment-guide'].faqs.unshift(
     'Alipay is often simpler as a dedicated payment and travel-services app, while WeChat Pay is convenient when you also use WeChat messaging and mini programs. Neither is universally better: set up both if possible, test them before relying on them, and carry a physical card and some RMB cash.',
   ],
 );
-
-Object.assign(pageMeta['china-travel-checklist'], {
-  quickAnswer: 'Prepare local travel apps, at least two payment methods, reliable mobile data, Chinese hotel addresses, emergency numbers, offline phrases, passport details, and exact airport or railway information before departure. Save important confirmations offline and verify time-sensitive entry rules with official sources.',
-  lastReviewed: 'September 30, 2026',
-  lastModified: '2026-09-30',
-  article: true,
-  contentSections: [
-    { title: 'Apps and connectivity', items: [
-      'Install Alipay, WeChat, Amap, DiDi, Trip.com, and Railway 12306 where they fit your route. Register and complete any identity checks before departure while your usual phone number and email are available.',
-      'Confirm that your phone is unlocked and supports the SIM, eSIM, or roaming plan you intend to use. Save the provider activation instructions offline and follow its timing for installation and activation.',
-      'Download offline copies of flight details, hotel confirmations, Chinese addresses, insurance contacts, and the first-day route. Do not depend on one app or one connection for arrival-critical information.',
-    ] },
-    { title: 'Payment preparation', items: [
-      'Try to link an eligible international card to Alipay or WeChat Pay, but keep a second wallet, a physical card, and some RMB cash because setup and merchant acceptance can vary.',
-      'Check foreign-transaction fees and make sure you can receive security messages from the card issuer. Never share a payment PIN or one-time password with someone offering informal setup help.',
-      'Save a Chinese phrase asking whether Alipay, WeChat Pay, a bank card, or cash is accepted. Preserve receipts for hotel deposits, attraction tickets, and transport bookings.',
-    ] },
-    { title: 'Hotels and arrival details', items: [
-      'Ask the accommodation to confirm foreign-passport check-in, reception hours, late-arrival arrangements, and the full Chinese address before paying a non-refundable rate.',
-      'Save the hotel name, address, phone number, map pin, nearest entrance, and a screenshot of the booking. A driver may need the Chinese address even when the English brand name is familiar.',
-      'Check the exact airport terminal or railway station. Large cities have multiple airports and stations, so copy the destination directly from the ticket into the map or ride-hailing app.',
-      'For a late arrival, compare the last airport rail or metro with a realistic immigration and baggage time. Keep the official taxi queue, a verified hotel transfer, or a DiDi pickup as alternatives.',
-    ] },
-    { title: 'Documents, health, and emergency backups', items: [
-      'Keep your passport, entry documents, onward booking, first accommodation details, and required medication documents accessible. Verify visa and entry requirements with the relevant official authority for your passport and route.',
-      'Prepare clear Chinese food-allergy or dietary phrases when needed. Translation tools may miss ingredients or cross-contact, so travelers with severe allergies should confirm directly with restaurant staff and follow professional medical advice.',
-      'Save 110 for police, 120 for ambulance, and 119 for fire. Add embassy or consulate, insurer, airline, accommodation, and trusted personal contacts to an offline note.',
-      'Use the passport name consistently for flights, trains, and hotels. Leave extra time for station security and staffed passport checks, especially on the first rail journey.',
-    ] },
-    { title: 'The final 24-hour check', ordered: true, items: [
-      'Review weather, official transport notices, attraction reservations, and the opening status of the first planned venue.',
-      'Charge the phone and power bank, download confirmations, and test access to the payment and navigation apps.',
-      'Share the arrival plan with a trusted contact and keep the first hotel address available without unlocking every personal file on the phone.',
-      'Recheck the departure airport, arrival terminal, onward route, hotel reception time, and how you will travel from the airport after baggage collection.',
-    ] },
-  ],
-});
 
 pageMeta['3-day-guilin-yangshuo-itinerary'].contentSections.push({
   title: 'Foreigner essentials: transport, payment, and hotels',
@@ -3824,6 +3789,7 @@ const richGuides = {
   'amap-vs-google-maps-china': mapsComparisonGuide,
   'china-travel-apps': appsHubGuide,
   'china-hotels-for-foreigners': hotelsGuide,
+  'china-travel-checklist': checklistGuide,
 };
 
 function staticPageContent(page, meta) {

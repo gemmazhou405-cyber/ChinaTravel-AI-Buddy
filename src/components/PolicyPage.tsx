@@ -40,6 +40,7 @@ import trainGuide from '../data/trainGuide.json';
 import budgetGuide from '../data/budgetGuide.json';
 import appsHubGuide from '../data/appsHubGuide.json';
 import hotelsGuide from '../data/hotelsGuide.json';
+import checklistGuide from '../data/checklistGuide.json';
 import shenzhenItineraryPlanning from '../data/shenzhenItineraryPlanning.json';
 import layoverAirportPlanning from '../data/layoverAirportPlanning.json';
 import didiGuide from '../data/didiGuide.json';
@@ -489,40 +490,6 @@ guidePages['china-payment-guide'].sections.push(
       'A merchant-presented QR code and a personal transfer QR code can follow different rules. If a foreign card cannot fund a transfer-style payment, ask the merchant for its standard checkout code or use another method.',
       'Metro and bus payment options are city-specific. Some visitors activate a transport code inside Alipay, while others use a ticket machine, staffed counter, or local transit app. Keep a backup for the first ride.',
       'For DiDi, trains, hotels, and attractions, the payment method shown in one app may differ from what is accepted at an on-site counter. Read the checkout screen and preserve the booking receipt until the service is complete.',
-    ],
-  },
-);
-
-Object.assign(guidePages['china-travel-checklist'], {
-  ctaLabel: 'Get my free China itinerary',
-  ctaHref: '/#trip-plan',
-  lastReviewed: 'September 30, 2026',
-  lastModified: '2026-09-30',
-  isArticle: true,
-});
-guidePages['china-travel-checklist'].sections.push(
-  {
-    title: 'Connectivity and app setup',
-    items: [
-      'Confirm that your phone is unlocked and supports the SIM, eSIM, or roaming plan you intend to use. Install the provider profile and save activation instructions before departure, but follow the provider timing for activation.',
-      'Sign in to Alipay, WeChat, Amap, DiDi, Trip.com, and Railway 12306 where relevant. Keep access to your usual mobile number and email because identity or security checks may be required.',
-      'Download offline copies of flight details, accommodation addresses, insurance contacts, and the first day route. Do not rely on one app or one connection for information needed immediately after landing.',
-    ],
-  },
-  {
-    title: 'Hotels, arrivals, and transport',
-    items: [
-      'Ask the accommodation to confirm foreign-passport check-in, late-arrival arrangements, the full Chinese address, phone number, and nearest entrance or station exit. Keep the reply with the booking confirmation.',
-      'Check the exact airport terminal or railway station. Large cities have multiple airports and stations whose English names can look similar, so copy the destination directly from the ticket into your map or ride-hailing app.',
-      'For a late arrival, compare the final airport rail or metro departure with a realistic immigration and baggage time. Save the official taxi queue location and a verified hotel transfer or DiDi pickup as alternatives.',
-    ],
-  },
-  {
-    title: 'Money, documents, and safety backups',
-    items: [
-      'Prepare at least two payment methods and some RMB cash. Tell your card issuer about the trip when appropriate, and never share a one-time password or payment PIN with a stranger offering setup help.',
-      'Keep your passport, entry documents, onward booking, accommodation details, and emergency contacts accessible. Store secure copies separately, but do not leave sensitive identity images in a public photo album or shared device.',
-      'Save 110 for police, 120 for ambulance, and 119 for fire. ChinaEase Buddy provides reference information and phrases, not emergency, medical, legal, immigration, or financial services.',
     ],
   },
 );
@@ -4269,71 +4236,25 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   'china-travel-checklist': {
     path: '/china-travel-checklist/',
-    title: 'China Travel Checklist for First-Time Visitors',
-    intro: 'A practical pre-trip checklist for apps, payments, phrases, hotel addresses, and emergency basics.',
-    metaTitle: 'China Travel Checklist for First-Time Visitors | ChinaEase Buddy',
-    metaDescription:
-      'Before a first trip to China, prepare travel apps, two payment methods, mobile data, Chinese hotel addresses, emergency numbers and passport details.',
-    quickAnswer:
-      'Before traveling to China, prepare key apps, payment options, your hotel address in Chinese, emergency numbers, offline phrases, passport details, and train booking information.',
-    ctaLabel: 'Open the free checklist',
-    ctaHref: '/?journey=before&tool=checklist',
-    sections: [
-      {
-        title: 'Before you fly',
-        items: [
-          'Download Alipay, WeChat, Amap, Didi, and Trip.com.',
-          'Try payment setup before arrival and keep a backup option.',
-          'Save your hotel address in Chinese.',
-          'Save 110, 120, and 119 emergency numbers.',
-          'Prepare offline translation phrases for taxis, hotels, food, and payment.',
-        ],
-      },
-      {
-        title: 'Documents and transport',
-        items: [
-          'Keep your passport accessible for hotel check-in and train travel.',
-          'Use your passport name consistently when booking trains or hotels.',
-          'Screenshot booking confirmations and addresses.',
-          'Check airport transfer options before landing.',
-        ],
-      },
-      {
-        title: 'Food and health reminders',
-        items: [
-          'Prepare allergy phrases in Chinese if needed.',
-          'Know how to ask about peanuts, shellfish, gluten, meat, or spicy food.',
-          'Bring routine medication according to applicable rules and official guidance.',
-        ],
-      },
-    ],
-    faqs: [
-      {
-        question: 'What should first-time visitors prepare before going to China?',
-        answer:
-          'Prepare local apps, payment methods, Chinese hotel addresses, emergency numbers, offline phrases, passport details, and transport bookings.',
-      },
-      {
-        question: 'Should I save my hotel address in Chinese?',
-        answer:
-          'Yes. A Chinese hotel address is helpful for taxis, ride-hailing pickups, hotel returns, and asking locals for directions.',
-      },
-      {
-        question: 'Do I need offline phrases in China?',
-        answer:
-          'Offline phrases are useful when mobile data is weak, apps are unavailable, or you need to show a clear Chinese sentence quickly.',
-      },
-      {
-        question: 'Is this checklist visa advice?',
-        answer:
-          'No. This checklist is general travel preparation only. Confirm entry, visa, and document requirements with official sources.',
-      },
-    ],
+    title: checklistGuide.heading,
+    intro: '',
+    metaTitle: checklistGuide.metaTitle,
+    metaDescription: checklistGuide.metaDescription,
+    quickAnswer: quickAnswerText(checklistGuide.quickAnswer),
+    // Rendered like the Amap guide (AmapGuide components); keeps its own itinerary CTA as well as the gig card.
+    ctaLabel: 'Get my free China itinerary',
+    ctaHref: '/#trip-plan',
+    reviewed: checklistGuide.reviewed,
+    lastModified: checklistGuide.modified,
+    isArticle: true,
+    sections: [],
+    faqs: checklistGuide.faqs.map(({ question, answer }) => ({ question, answer: plainText(answer) })),
     related: [
       { label: 'Apps to download before China', href: '/china-travel-apps/' },
       { label: 'China payment guide', href: '/china-payment-guide/' },
       { label: 'Emergency numbers in China', href: '/china-emergency-numbers/' },
     ],
+    sources: checklistGuide.sources,
   },
   'china-emergency-numbers': {
     path: '/china-emergency-numbers/',
@@ -5050,6 +4971,7 @@ const richGuides: Partial<Record<GuidePageType, GuideContent>> = {
   'amap-vs-google-maps-china': mapsComparisonGuide as GuideContent,
   'china-travel-apps': appsHubGuide as GuideContent,
   'china-hotels-for-foreigners': hotelsGuide as GuideContent,
+  'china-travel-checklist': checklistGuide as GuideContent,
 };
 
 function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?: string | null; onAskBuddy?: (prefill?: string) => void }) {

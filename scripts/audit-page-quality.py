@@ -81,6 +81,7 @@ rich_guides = {
     'amap-vs-google-maps-china': ('Maps test', load_json('src/data/mapsGuide.json')),
     'china-travel-apps': ('Apps hub', load_json('src/data/appsHubGuide.json')),
     'china-hotels-for-foreigners': ('Hotels', load_json('src/data/hotelsGuide.json')),
+    'china-travel-checklist': ('Checklist', load_json('src/data/checklistGuide.json')),
 }
 # Sections removed in a rebuild must not come back.
 removed_headings = {
@@ -210,6 +211,16 @@ for pathname in sorted(audit_paths):
             require('check-before-booking' in ids, 'Hotels: missing #check-before-booking')
             source_hrefs = {node.attrs.get('href') for node in document.find('a')}
             require('https://english.shanghai.gov.cn/en-Latest-WhatsNew/20240529/6ff842313deb45e1b14cf5fd2a01d065.html' in source_hrefs, 'Hotels: Shanghai government source (2024-05-29) missing')
+        # The checklist must keep its eight anchors and eight sources, and drop the old title suffix.
+        if slug == 'china-travel-checklist':
+            for anchor in ['quick-answer', 'payment-preparation', 'apps-and-connectivity', 'entry', 'hotels-and-arrival-details', 'documents-health-and-emergency-backups', 'the-final-24-hour-check', 'after-landing']:
+                require(anchor in ids, f'Checklist: missing #{anchor}')
+            source_hrefs = {node.attrs.get('href') for node in document.find('a')}
+            for source in guide['sources']:
+                require(source['href'] in source_hrefs, f"Checklist: source link missing: {source['href']}")
+            require(len(guide['sources']) == 8, 'Checklist: expected 8 sources')
+            title_node = document.find('title')
+            require('| ChinaEase Buddy' not in (title_node[0].text() if title_node else ''), 'Checklist: title still ends with "| ChinaEase Buddy"')
         for heading in removed_headings.get(slug, []):
             require(heading.lower() not in flat_text.lower(), f'{name}: removed section is back: {heading}')
 

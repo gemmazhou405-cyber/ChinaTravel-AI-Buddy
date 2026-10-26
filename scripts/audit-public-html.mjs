@@ -291,8 +291,10 @@ const pages = [
   {
     path: '/china-travel-checklist/',
     h1: /China Travel Checklist/i,
-    keywords: ['apps', 'payment methods', 'Hotel address', 'Emergency numbers'],
-    links: ["/#trip-plan", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/best-time-to-visit-china/", "/7-day-china-itinerary/", "/10-day-china-itinerary/", "/14-day-china-itinerary/", "/first-trip-to-china/"],
+    keywords: ['Alipay', 'Amap', 'DiDi', 'arrival card', 'Guests Accepted', '110', '¥200', '15 days before departure'],
+    // The old title suffix is gone.
+    forbiddenPhrases: ['| ChinaEase Buddy'],
+    links: ["/#trip-plan", "https://www.fiverr.com/s/p3dZbQR", "/china-airport-arrival-guide/", "/china-online-arrival-card-2026/", "/china-visa-free-travel-guide/", "/china-travel-apps/", "/alipay-metro-qr-transport-code-guide/#card", "/china-hotels-for-foreigners/#check-before-booking", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/best-time-to-visit-china/", "/7-day-china-itinerary/", "/10-day-china-itinerary/", "/14-day-china-itinerary/", "/first-trip-to-china/"],
   },
   {
     path: '/china-emergency-numbers/',
