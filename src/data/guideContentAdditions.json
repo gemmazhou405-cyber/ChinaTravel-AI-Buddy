@@ -145,6 +145,10 @@
       {
         "section": "Choose a useful location, not just a cheap room",
         "text": "For what rooms cost, see [hotel prices I checked in central Beijing and Shanghai](/china-travel-budget/#real-prices)."
+      },
+      {
+        "section": "Hotels versus private or non-hotel stays",
+        "text": "For a home, rented apartment or other non-hotel stay, see [how to register your stay online with NIA 12367](/nia-12367-online-accommodation-registration-guide/)."
       }
     ]
   },
@@ -203,7 +207,13 @@
         ]
       }
     ],
-    "removeFaqs": []
+    "removeFaqs": [],
+    "sectionNotes": [
+      {
+        "section": "Translation and offline information",
+        "text": "For QR menus, dietary needs and allergies, see [how to order food in China](/china-food-ordering-guide/)."
+      }
+    ]
   },
   "china-food-ordering-guide": {
     "reviewed": "October 23, 2026",
@@ -687,7 +697,13 @@
         ]
       }
     ],
-    "removeFaqs": []
+    "removeFaqs": [],
+    "sectionNotes": [
+      {
+        "section": "Arrival and payment checklist",
+        "text": "Before you land, see [how to fill in China's online arrival card](/china-online-arrival-card-2026/)."
+      }
+    ]
   },
   "china-travel-checklist": {
     "sections": [],
@@ -708,7 +724,23 @@
         ]
       }
     ],
-    "removeFaqs": []
+    "removeFaqs": [],
+    "sectionNotes": [
+      {
+        "section": [
+          "Hotels and arrival details",
+          "Hotels, arrivals, and transport"
+        ],
+        "text": "To fill in the arrival card before you land, see [how to complete China's online arrival card](/china-online-arrival-card-2026/)."
+      },
+      {
+        "section": [
+          "Documents, health, and emergency backups",
+          "Money, documents, and safety backups"
+        ],
+        "text": "To check which visa-free option fits your passport and route, see the [China visa-free travel guide](/china-visa-free-travel-guide/)."
+      }
+    ]
   },
   "china-online-arrival-card-2026": {
     "sections": [],
@@ -738,6 +770,40 @@
       {
         "section": "Quick Picker",
         "text": "To budget your route, see [what a China trip costs in 2026](/china-travel-budget/)."
+      },
+      {
+        "section": "Route 2: Culture Plus Nature",
+        "text": "For a nature-focused stop in Yunnan, see [a 3-day Dali itinerary](/3-day-dali-itinerary/) with Erhai Lake and Cangshan."
+      }
+    ]
+  },
+  "best-time-to-visit-china": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [],
+    "removeFaqs": [],
+    "sectionNotes": [
+      {
+        "section": "Choose timing by region",
+        "text": "Considering Yunnan? See [a 3-day Dali itinerary](/3-day-dali-itinerary/) covering the old town, Erhai Lake and Cangshan."
+      }
+    ]
+  },
+  "china-240-hour-visa-free-transit-2026": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [],
+    "removeFaqs": [],
+    "sectionNotes": [
+      {
+        "section": "65 designated ports and permitted stay areas",
+        "text": "Planning time in Yunnan? See [a 3-day Dali itinerary](/3-day-dali-itinerary/)."
+      },
+      {
+        "section": "30-day visa-free entry vs 240-hour transit",
+        "text": "For both options explained in full, see the [China visa-free travel guide](/china-visa-free-travel-guide/)."
       }
     ]
   }
