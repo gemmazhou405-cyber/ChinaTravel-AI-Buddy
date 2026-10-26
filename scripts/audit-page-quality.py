@@ -77,6 +77,7 @@ rich_guides = {
     'china-airport-arrival-guide': ('Airport arrival', load_json('src/data/airportArrivalGuide.json')),
     'china-train-travel-guide': ('Train guide', load_json('src/data/trainGuide.json')),
     'china-travel-budget': ('Budget', load_json('src/data/budgetGuide.json')),
+    'chengdu-panda-base-guide': ('Panda Base', load_json('src/data/pandaBaseGuide.json')),
 }
 # Sections removed in a rebuild must not come back.
 removed_headings = {
@@ -175,6 +176,14 @@ for pathname in sorted(audit_paths):
             for source in guide['sources']:
                 require(source['href'] in source_hrefs, f"Budget: source link missing: {source['href']}")
             require(len(guide['sources']) == 11, 'Budget: expected 11 sources')
+        # The Panda Base page must keep its five anchors and all six official sources.
+        if slug == 'chengdu-panda-base-guide':
+            for anchor in ['tickets', 'hours', 'gates', 'getting-there', 'inside']:
+                require(anchor in ids, f'Panda Base: missing #{anchor}')
+            source_hrefs = {node.attrs.get('href') for node in document.find('a')}
+            for source in guide['sources']:
+                require(source['href'] in source_hrefs, f"Panda Base: source link missing: {source['href']}")
+            require(len(guide['sources']) == 6, 'Panda Base: expected 6 sources')
         for heading in removed_headings.get(slug, []):
             require(heading.lower() not in flat_text.lower(), f'{name}: removed section is back: {heading}')
 

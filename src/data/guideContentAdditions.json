@@ -774,6 +774,10 @@
       {
         "section": "Route 2: Culture Plus Nature",
         "text": "For a nature-focused stop in Yunnan, see [a 3-day Dali itinerary](/3-day-dali-itinerary/) with Erhai Lake and Cangshan."
+      },
+      {
+        "section": "Route 3: Pandas and Mountains",
+        "text": "For Panda Base tickets, hours and which gate to use, see the [Chengdu Panda Base guide](/chengdu-panda-base-guide/)."
       }
     ]
   },
@@ -804,6 +808,19 @@
       {
         "section": "30-day visa-free entry vs 240-hour transit",
         "text": "For both options explained in full, see the [China visa-free travel guide](/china-visa-free-travel-guide/)."
+      }
+    ]
+  },
+  "3-day-chengdu-itinerary": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [],
+    "removeFaqs": [],
+    "sectionNotes": [
+      {
+        "section": "Day 2: Chengdu Panda Base",
+        "text": "For tickets, gates and the metro route, see the [Chengdu Panda Base guide](/chengdu-panda-base-guide/)."
       }
     ]
   }

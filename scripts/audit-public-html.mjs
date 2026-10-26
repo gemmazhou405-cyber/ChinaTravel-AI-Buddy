@@ -257,7 +257,7 @@ const pages = [
   {
     path: '/chengdu-panda-base-guide/',
     h1: /Chengdu Panda Base Guide.*Tickets.*Route.*Visiting Tips.*2026/i,
-    keywords: ['CNY 55', 'CNY 30', 'real-name', '14 days', 'passport', 'South Gate', 'West Gate', 'sightseeing bus', 'Sun Nursery House', 'pandas'],
+    keywords: ['¥55', '¥30', 'real-name', '14 days', 'passport', 'South Gate', 'West Gate', 'sightseeing bus', 'Sun Giant Panda Nursery House', 'Bamboo Tower', 'Junqu General Hospital'],
     links: ["/#trip-plan", "/china-train-travel-guide/", "/first-trip-to-china/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/beijing-airport-to-city-guide/", "/great-wall-of-china-day-trip-from-beijing/", "/china-airport-arrival-guide/"],
   },
   {

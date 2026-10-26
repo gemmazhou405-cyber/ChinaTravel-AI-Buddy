@@ -25,7 +25,7 @@ const tenDayItineraryContent = JSON.parse(await readFile('src/data/tenDayItinera
 const shanghaiVisitPlanning = JSON.parse(await readFile('src/data/shanghaiVisitPlanning.json', 'utf8'));
 const chongqingVisitPlanning = JSON.parse(await readFile('src/data/chongqingVisitPlanning.json', 'utf8'));
 const firstTimeItineraryContent = JSON.parse(await readFile('src/data/firstTimeItineraryContent.json', 'utf8'));
-const pandaBaseGuide = JSON.parse(await readFile('src/data/seoPages/chengdu-panda-base-guide.json', 'utf8'));
+const pandaBaseGuide = JSON.parse(await readFile('src/data/pandaBaseGuide.json', 'utf8'));
 const didiPaymentGuide = JSON.parse(await readFile('src/data/didiPaymentGuide.json', 'utf8'));
 const beijingAirportGuide = JSON.parse(await readFile('src/data/seoPages/beijing-airport-to-city-guide.json', 'utf8'));
 const mapsComparisonGuide = JSON.parse(await readFile('src/data/seoPages/amap-vs-google-maps-china.json', 'utf8'));
@@ -1974,7 +1974,17 @@ const pageMeta = {
   '3-day-dali-itinerary': daliGuide,
   'china-golden-week-2026-travel-guide': goldenWeekGuide,
   'great-wall-of-china-day-trip-from-beijing': greatWallGuide,
-  'chengdu-panda-base-guide': pandaBaseGuide,
+  'chengdu-panda-base-guide': {
+    article: true,
+    title: pandaBaseGuide.metaTitle,
+    heading: pandaBaseGuide.heading,
+    description: pandaBaseGuide.metaDescription,
+    quickAnswer: quickAnswerText(pandaBaseGuide.quickAnswer),
+    faqs: pandaBaseGuide.faqs.map(({ question, answer }) => [question, plainText(answer)]),
+    sourceLinks: pandaBaseGuide.sources.map(({ label, href }) => [label, href]),
+    lastReviewed: pandaBaseGuide.reviewed,
+    lastModified: pandaBaseGuide.modified,
+  },
   'didi-payment-for-foreigners': {
     article: true,
     title: didiPaymentGuide.metaTitle,
@@ -4027,6 +4037,7 @@ const richGuides = {
   'china-airport-arrival-guide': airportArrivalGuide,
   'china-train-travel-guide': trainGuide,
   'china-travel-budget': budgetGuide,
+  'chengdu-panda-base-guide': pandaBaseGuide,
 };
 
 function staticPageContent(page, meta) {

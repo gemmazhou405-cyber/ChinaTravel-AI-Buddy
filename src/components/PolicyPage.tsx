@@ -23,7 +23,7 @@ import shanghaiVisitPlanning from '../data/shanghaiVisitPlanning.json';
 import chongqingVisitPlanning from '../data/chongqingVisitPlanning.json';
 import ChinaTripCostEstimator from './ChinaTripCostEstimator';
 import firstTimeItineraryContent from '../data/firstTimeItineraryContent.json';
-import pandaBaseGuide from '../data/seoPages/chengdu-panda-base-guide.json';
+import pandaBaseGuide from '../data/pandaBaseGuide.json';
 import didiPaymentGuide from '../data/didiPaymentGuide.json';
 import beijingAirportGuide from '../data/seoPages/beijing-airport-to-city-guide.json';
 import mapsComparisonGuide from '../data/seoPages/amap-vs-google-maps-china.json';
@@ -3521,15 +3521,24 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
     { label: 'First trip to China', href: '/first-trip-to-china/' },
     { label: 'Get my Beijing itinerary', href: '/#trip-plan' },
   ]),
-  'chengdu-panda-base-guide': guideFromArticle(pandaBaseGuide, '/chengdu-panda-base-guide/', 'Get my Chengdu itinerary', [
-    { label: '3-day Chengdu itinerary', href: '/3-day-chengdu-itinerary/' },
-    { label: '14-day China itinerary', href: '/14-day-china-itinerary/' },
-    { label: 'China train travel guide', href: '/china-train-travel-guide/' },
-    { label: 'China hotels for foreigners', href: '/china-hotels-for-foreigners/' },
-    { label: 'China Golden Week 2026 travel guide', href: '/china-golden-week-2026-travel-guide/' },
-    { label: 'First trip to China', href: '/first-trip-to-china/' },
-    { label: 'Get my Chengdu itinerary', href: '/#trip-plan' },
-  ]),
+  'chengdu-panda-base-guide': {
+    path: '/chengdu-panda-base-guide/',
+    title: pandaBaseGuide.heading,
+    intro: '',
+    metaTitle: pandaBaseGuide.metaTitle,
+    metaDescription: pandaBaseGuide.metaDescription,
+    quickAnswer: quickAnswerText(pandaBaseGuide.quickAnswer),
+    // Rendered like the Amap guide (AmapGuide components); keeps its own itinerary CTA, no CTA card.
+    ctaLabel: 'Get my Chengdu itinerary',
+    ctaHref: '/#trip-plan',
+    reviewed: pandaBaseGuide.reviewed,
+    lastModified: pandaBaseGuide.modified,
+    isArticle: true,
+    sections: [],
+    faqs: pandaBaseGuide.faqs.map(({ question, answer }) => ({ question, answer: plainText(answer) })),
+    related: [{ label: '3-day Chengdu itinerary', href: '/3-day-chengdu-itinerary/' }],
+    sources: pandaBaseGuide.sources,
+  },
   'didi-payment-for-foreigners': {
     path: '/didi-payment-for-foreigners/',
     title: didiPaymentGuide.heading,
@@ -5340,6 +5349,7 @@ const richGuides: Partial<Record<GuidePageType, GuideContent>> = {
   'china-airport-arrival-guide': airportArrivalGuide as GuideContent,
   'china-train-travel-guide': trainGuide as GuideContent,
   'china-travel-budget': budgetGuide as GuideContent,
+  'chengdu-panda-base-guide': pandaBaseGuide as GuideContent,
 };
 
 function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?: string | null; onAskBuddy?: (prefill?: string) => void }) {
