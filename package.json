@@ -26,6 +26,7 @@
     "test:campaign-attribution": "node scripts/test-campaign-attribution.mjs",
     "test:campaign-redirects": "node scripts/test-campaign-redirects.mjs",
     "test:amap-guide": "node scripts/test-amap-guide.mjs",
+    "indexnow": "node scripts/indexnow.mjs",
     "audit:page-quality": "python scripts/audit-page-quality.py"
   },
   "dependencies": {
