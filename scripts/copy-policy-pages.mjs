@@ -45,6 +45,7 @@ const airportArrivalGuide = JSON.parse(await readFile('src/data/airportArrivalGu
 const trainGuide = JSON.parse(await readFile('src/data/trainGuide.json', 'utf8'));
 const budgetGuide = JSON.parse(await readFile('src/data/budgetGuide.json', 'utf8'));
 const appsHubGuide = JSON.parse(await readFile('src/data/appsHubGuide.json', 'utf8'));
+const hotelsGuide = JSON.parse(await readFile('src/data/hotelsGuide.json', 'utf8'));
 const shenzhenItineraryPlanning = JSON.parse(await readFile('src/data/shenzhenItineraryPlanning.json', 'utf8'));
 const layoverAirportPlanning = JSON.parse(await readFile('src/data/layoverAirportPlanning.json', 'utf8'));
 const didiGuide = JSON.parse(await readFile('src/data/didiGuide.json', 'utf8'));
@@ -280,138 +281,15 @@ const pageMeta = {
     lastModified: airportArrivalGuide.modified,
   },
   'china-hotels-for-foreigners': {
-    title: 'Can Foreigners Stay in Any Hotel in China? (2026)',
-    heading: 'Can Foreigners Stay in Any Hotel in China? (2026 Guide)',
-    description:
-      'Foreigners can book hotels in China with a passport. Authorities say hotels must not refuse overseas guests just for lacking a foreign-guest qualification.',
-    quickAnswer:
-      'Foreign visitors can book and stay in hotels in China using a valid passport. In 2024, China\'s public security, commerce, and immigration authorities said hotels must not refuse overseas guests merely because the property claims to lack a special foreign-guest qualification. In practice, some front desks may still be unfamiliar with passport registration, especially at small or newly opened properties. Before a non-refundable booking, confirm the exact property can register your passport, save the written confirmation, enter every guest\'s name exactly as shown on the passport, and notify the hotel if you will arrive late. A hotel normally completes the accommodation registration for its guests; a private or non-hotel stay follows separate local registration procedures.',
-    lastReviewed: 'October 20, 2026',
-    lastModified: '2026-10-20',
     article: true,
-    contentSections: [
-      {
-        title: 'Can foreigners stay in any hotel in China?',
-        items: [
-          'China\'s public security, commerce, and immigration authorities stated in 2024 that hotels must not refuse overseas travelers merely on the basis that they lack a so-called foreign-related qualification.',
-          'Hotels still need to verify each guest\'s identity and report the required accommodation information to the local public security authority.',
-          'A property may still be unavailable for ordinary reasons such as no rooms, renovation, age restrictions, or a booking problem. The policy does not guarantee a room at every property on every date.',
-          'Operational mistakes can still occur when staff are unfamiliar with foreign passports or the registration system. Confirming directly before a restrictive booking reduces arrival risk.',
-          'Special locations, controlled areas, or unusual accommodation types may have additional local requirements. Check the exact property and destination rather than relying on a general statement.',
-        ],
-      },
-      {
-        title: 'How to book a China hotel with a foreign passport',
-        ordered: true,
-        items: [
-          'Confirm the exact hotel name, branch, street address, and city. Chinese chains can have several properties with almost identical English names.',
-          'Ask in writing whether the property can check in guests using your passport nationality and document type. Save the reply in the booking app and as a screenshot.',
-          'Choose free cancellation or pay-at-property terms when the hotel is small, remote, newly listed, or has few recent international reviews.',
-          'Check the reception hours and late-arrival rule. A confirmed reservation can still be released when the property is not told about a post-midnight arrival.',
-          'Review room occupancy, breakfast, window type, smoking status, lift access, deposit, tax, cancellation deadline, and whether every guest is included in the booking.',
-        ],
-      },
-      {
-        title: 'Use the passport name correctly',
-        items: [
-          'Enter the surname and given names as the booking form instructs and as they appear in the machine-readable passport. Avoid nicknames and translated names.',
-          'Bring the original valid passport for every foreign guest, including children. A photo or photocopy may not be sufficient for identity verification and registration.',
-          'If the booking is under one traveler but a different person arrives first, add the arriving guest to the reservation or contact the property in advance.',
-          'For a recently renewed passport, make sure the booking and any visa or entry details use the current document number where required.',
-          'Keep the reservation number, payment receipt, cancellation terms, and the hotel\'s written confirmation accessible offline.',
-        ],
-      },
-      {
-        title: 'Choose a useful location, not just a cheap room',
-        items: [
-          'Search the hotel\'s Chinese address in AMap and confirm the distance to the correct metro station exit, railway station, airport route, or attraction entrance.',
-          'Check the full railway-station or airport name. A low room price can be poor value if it creates long transfers or an expensive late-night ride.',
-          'Read recent reviews for noise, construction, smoke, heating or air-conditioning, lift access, reception service, and foreign-passport check-in experiences.',
-          'Save the hotel name, address, phone number, nearest landmark, and entrance photo in Chinese for taxi and DiDi drivers.',
-          'For the first night, prioritize a 24-hour reception and a straightforward airport transfer over a difficult apartment or unstaffed self-check-in.',
-        ],
-      },
-      {
-        title: 'Payment, deposits, and receipts',
-        items: [
-          'Check whether the booking is prepaid, guaranteed by card, or payable at the property. A card used to guarantee a room may not be the final payment method.',
-          'International-card acceptance varies. Prepare Alipay or WeChat Pay where available, a physical card, and some RMB as backups.',
-          'Hotels may request a refundable deposit for the room or incidental charges. Confirm the amount, payment route, release timing, and receipt before paying.',
-          'Do not assume the price includes every tax, breakfast, extra bed, or child charge. Review the final booking summary and property policy.',
-          'If you need a formal invoice, ask the property before checkout what information and payment evidence it requires.',
-        ],
-      },
-      {
-        title: 'China hotel check-in with a foreign passport',
-        ordered: true,
-        items: [
-          'Show the original passport for every guest and the reservation confirmation. Staff may scan or manually enter passport and entry information.',
-          'Confirm the room type, number of nights, breakfast, deposit, checkout time, and payment status before accepting the key.',
-          'The hotel normally completes the required accommodation registration and submits the guest information to the local public security authority.',
-          'Ask for the Wi-Fi name and password, hotel card or Chinese address, breakfast location, and the best entrance for taxis or ride-hailing.',
-          'Inspect the room promptly and report a wrong room type, smoke smell, damage, missing item, or safety problem before settling in.',
-        ],
-      },
-      {
-        title: 'Late-night arrival plan',
-        items: [
-          'Message or call the hotel with the booking number, flight or train number, and realistic arrival time. Ask the property to hold the room for late arrival.',
-          'Confirm that reception is staffed at your arrival time; self-check-in instructions designed for a Chinese ID card may not work with a foreign passport.',
-          'Save the hotel\'s Chinese name, address, phone number, entrance image, and a screenshot of the late-arrival confirmation.',
-          'Check airport rail and metro operating hours against the time you are likely to leave baggage claim, not the scheduled landing time.',
-          'Keep an official taxi queue or verified DiDi pickup as the transport backup and one alternative hotel with 24-hour reception as an emergency option.',
-        ],
-      },
-      {
-        title: 'If a hotel refuses your passport at the desk',
-        ordered: true,
-        items: [
-          'Stay calm and ask whether a manager or experienced staff member can complete the foreign-passport registration.',
-          'Show the written booking confirmation and politely explain that national authorities have said hotels should not refuse overseas guests merely for lacking foreign-guest qualification.',
-          'Ask the property to state the exact reason for refusal in the booking platform message. Save the reservation, payment, chat, and front-desk details.',
-          'Contact the booking platform while you are still at the property and request a penalty-free cancellation, refund, and immediate alternative accommodation.',
-          'If the issue cannot be resolved quickly, prioritize a safe replacement hotel. Later complaints can be directed through the platform or relevant local service channels with documentation.',
-        ],
-      },
-      {
-        title: 'Hotels versus private or non-hotel stays',
-        items: [
-          'When you stay in a hotel, the hotel is responsible for completing and reporting the accommodation registration required for its guests.',
-          'When a foreign visitor stays in a home, apartment, friend\'s residence, or another non-hotel address, the foreign visitor or host generally must register with the local public security authority within 24 hours of arrival.',
-          'From September 21, 2026, the National Immigration Administration expanded online non-hotel accommodation registration nationwide.',
-          'The service can be accessed through the NIA government-service website, the NIA 12367 app, or official WeChat and Alipay mini-programs; in-person registration remains available.',
-          'When the online service fails or an address cannot be matched, ask the host and local public security authority for help or call 12367.',
-        ],
-      },
-      {
-        title: 'Useful Chinese hotel phrases',
-        items: [
-          '请确认可以用外国护照入住。 — Please confirm that I can check in with a foreign passport.',
-          '这是我的预订确认。 — This is my booking confirmation.',
-          '我会很晚到，请帮我保留房间。 — I will arrive late; please hold the room.',
-          '请帮我办理住宿登记。 — Please help me complete the accommodation registration.',
-          '押金是多少？什么时候退？ — How much is the deposit, and when will it be returned?',
-          '请告诉我不能入住的具体原因。 — Please tell me the exact reason I cannot check in.',
-          '请在预订平台上确认退款。 — Please confirm the refund in the booking platform.',
-        ],
-      },
-    ],
-    faqs: [
-      ['Can foreigners stay in any hotel in China?', 'National authorities have said hotels must not refuse overseas guests merely because they lack a special foreign-guest qualification. However, room availability, property policy, local conditions, and staff familiarity can still affect a specific stay, so confirm before a restrictive booking.'],
-      ['Which hotels in China accept foreigners?', 'National authorities have said hotels must not reject overseas guests merely because they lack a special foreign-guest qualification. In practice, choose a property that can register your passport, confirm the exact branch in writing, and prefer flexible cancellation when staff experience is uncertain.'],
-      ['How can I confirm a China hotel accepts my foreign passport?', 'Message the exact property before booking and ask whether it can check in your passport nationality and document type. Save the reply, use every guest\'s passport name, confirm reception hours, and avoid a non-refundable rate when the answer is unclear.'],
-      ['Do Chinese hotels need a special licence to accept foreigners?', 'In 2024, public security, commerce, and immigration authorities stated that hotels must not use a lack of foreign-related qualification as the reason to refuse overseas guests. Hotels still have identity-checking and guest-registration duties.'],
-      ['Do I need my passport to check in?', 'Yes. Bring the original valid passport for every foreign guest. The hotel needs identity and travel-document information for check-in and accommodation registration.'],
-      ['Do I need to register with the police if I stay in a hotel?', 'The hotel normally handles and reports the accommodation registration for its guests. A private home, apartment, or other non-hotel stay follows a separate process and generally requires registration within 24 hours.'],
-      ['Can I book a China hotel through an international booking website?', 'Yes, but verify the exact property, passport check-in, guest names, cancellation terms, payment route, and late-arrival policy. A platform listing does not replace direct confirmation when the booking risk is high.'],
-      ['Can I pay a China hotel with a foreign credit card?', 'Some hotels accept international cards, while others use Alipay, WeChat Pay, cash, or domestic payment routes. Confirm the property\'s current options and keep more than one payment method.'],
-      ['What should I do if a hotel refuses me at check-in?', 'Ask for a manager, show the written confirmation, request the exact reason in writing, and contact the booking platform for a refund and replacement. Prioritize safe alternative accommodation instead of prolonging a late-night dispute.'],
-    ],
-    sourceLinks: [
-      ['Government response: hotels and overseas guests', 'https://www.tljq.gov.cn/jqrmzf/zdhy/pc/content/content_1798623211000737792.html'],
-      ['National Immigration Administration: nationwide online non-hotel registration', 'https://www.nia.gov.cn/n897453/c1806111/content.html'],
-      ['People\'s Bank of China: payment guide for visitors', 'https://english.www.gov.cn/news/202403/15/content_WS65f3b5d9c6d0868f4e8e52ea.html'],
-    ],
+    title: hotelsGuide.metaTitle,
+    heading: hotelsGuide.heading,
+    description: hotelsGuide.metaDescription,
+    quickAnswer: quickAnswerText(hotelsGuide.quickAnswer),
+    faqs: hotelsGuide.faqs.map(({ question, answer }) => [question, plainText(answer)]),
+    sourceLinks: hotelsGuide.sources.map(({ label, href }) => [label, href]),
+    lastReviewed: hotelsGuide.reviewed,
+    lastModified: hotelsGuide.modified,
   },
   'china-food-ordering-guide': {
     title: 'How to Order Food in China (2026) | ChinaEase Buddy',
@@ -3945,6 +3823,7 @@ const richGuides = {
   'chengdu-panda-base-guide': pandaBaseGuide,
   'amap-vs-google-maps-china': mapsComparisonGuide,
   'china-travel-apps': appsHubGuide,
+  'china-hotels-for-foreigners': hotelsGuide,
 };
 
 function staticPageContent(page, meta) {

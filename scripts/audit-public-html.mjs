@@ -65,7 +65,7 @@ const pages = [
   {
     path: '/china-hotels-for-foreigners/',
     h1: /Can Foreigners Stay in Any Hotel in China.*2026 Guide/i,
-    keywords: ['foreign passport', 'foreign-related qualification', 'Which hotels in China accept foreigners', 'accommodation registration', 'late arrival', 'deposit', '24 hours'],
+    keywords: ['foreign passport', 'foreign-related qualification', 'Which hotels in China accept foreigners', 'accommodation registration', 'late arrival', 'deposit', '24 hours', 'Guests Accepted', '外宾适用', 'Do I need my passport number to book a hotel in China?'],
     links: ["/#trip-plan", "/china-airport-arrival-guide/", "/first-trip-to-china/", "/china-payment-guide/", "/nia-12367-online-accommodation-registration-guide/", "/china-esim-internet-guide/", "/china-travel-checklist/", "/china-travel-apps/"],
   },
   {

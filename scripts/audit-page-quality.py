@@ -80,6 +80,7 @@ rich_guides = {
     'chengdu-panda-base-guide': ('Panda Base', load_json('src/data/pandaBaseGuide.json')),
     'amap-vs-google-maps-china': ('Maps test', load_json('src/data/mapsGuide.json')),
     'china-travel-apps': ('Apps hub', load_json('src/data/appsHubGuide.json')),
+    'china-hotels-for-foreigners': ('Hotels', load_json('src/data/hotelsGuide.json')),
 }
 # Sections removed in a rebuild must not come back.
 removed_headings = {
@@ -204,6 +205,11 @@ for pathname in sorted(audit_paths):
             for source in guide['sources']:
                 require(source['href'] in source_hrefs, f"Apps hub: source link missing: {source['href']}")
             require(len(guide['sources']) == 7, 'Apps hub: expected 7 sources')
+        # The hotels page must keep its tested booking check and the Shanghai government source.
+        if slug == 'china-hotels-for-foreigners':
+            require('check-before-booking' in ids, 'Hotels: missing #check-before-booking')
+            source_hrefs = {node.attrs.get('href') for node in document.find('a')}
+            require('https://english.shanghai.gov.cn/en-Latest-WhatsNew/20240529/6ff842313deb45e1b14cf5fd2a01d065.html' in source_hrefs, 'Hotels: Shanghai government source (2024-05-29) missing')
         for heading in removed_headings.get(slug, []):
             require(heading.lower() not in flat_text.lower(), f'{name}: removed section is back: {heading}')
 
