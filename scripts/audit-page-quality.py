@@ -83,6 +83,7 @@ rich_guides = {
 removed_headings = {
     'didi-payment-for-foreigners': ['Payment problem now', 'First-trip checklist', 'Evidence and what still needs a real-device test', "don't plan on cash", "doesn't name the card networks"],
     'china-train-travel-guide': ['350 km/h'],
+    'chengdu-panda-base-guide': ['without a Chinese ID card'],
     'wechat-verification-without-friend-qr-2026': ['Review my WeChat verification options', 'If registration is unfinished before departure', 'What to send official WeChat support'],
     'tenpaygo-for-tourists': ['What Early TenPayGo Users Are Reporting', 'Known limitations and unconfirmed details', 'Payment limits explained', 'Setup checklist', 'Troubleshooting'],
 }

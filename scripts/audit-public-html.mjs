@@ -257,7 +257,9 @@ const pages = [
   {
     path: '/chengdu-panda-base-guide/',
     h1: /Chengdu Panda Base Guide.*Tickets.*Route.*Visiting Tips.*2026/i,
-    keywords: ['¥55', '¥30', 'real-name', '14 days', 'passport', 'South Gate', 'West Gate', 'sightseeing bus', 'Sun Giant Panda Nursery House', 'Bamboo Tower', 'Junqu General Hospital'],
+    keywords: ['¥55', '¥30', 'real-name', '14 days', 'passport', 'South Gate', 'West Gate', 'sightseeing bus', 'Sun Giant Panda Nursery House', 'Bamboo Tower', 'Junqu General Hospital', 'Trip.com', 'original ID documents'],
+    // The January notice's entry-lane wording conflicts with the official ticket page.
+    forbiddenPhrases: ['without a Chinese ID card'],
     links: ["/#trip-plan", "/china-train-travel-guide/", "/first-trip-to-china/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/beijing-airport-to-city-guide/", "/great-wall-of-china-day-trip-from-beijing/", "/china-airport-arrival-guide/"],
   },
   {
