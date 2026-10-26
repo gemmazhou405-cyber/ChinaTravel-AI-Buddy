@@ -79,12 +79,14 @@ rich_guides = {
     'china-travel-budget': ('Budget', load_json('src/data/budgetGuide.json')),
     'chengdu-panda-base-guide': ('Panda Base', load_json('src/data/pandaBaseGuide.json')),
     'amap-vs-google-maps-china': ('Maps test', load_json('src/data/mapsGuide.json')),
+    'china-travel-apps': ('Apps hub', load_json('src/data/appsHubGuide.json')),
 }
 # Sections removed in a rebuild must not come back.
 removed_headings = {
     'didi-payment-for-foreigners': ['Payment problem now', 'First-trip checklist', 'Evidence and what still needs a real-device test', "don't plan on cash", "doesn't name the card networks"],
     'china-train-travel-guide': ['350 km/h'],
     'chengdu-panda-base-guide': ['without a Chinese ID card'],
+    'china-travel-apps': ['ChinaEase Buddy: a web-based toolkit'],
     'wechat-verification-without-friend-qr-2026': ['Review my WeChat verification options', 'If registration is unfinished before departure', 'What to send official WeChat support'],
     'tenpaygo-for-tourists': ['What Early TenPayGo Users Are Reporting', 'Known limitations and unconfirmed details', 'Payment limits explained', 'Setup checklist', 'Troubleshooting'],
 }
@@ -194,6 +196,14 @@ for pathname in sorted(audit_paths):
             for source in guide['sources']:
                 require(source['href'] in source_hrefs, f"Maps test: source link missing: {source['href']}")
             require(len(guide['sources']) == 4, 'Maps test: expected 4 sources')
+        # The apps hub must keep its nine anchors and all seven sources.
+        if slug == 'china-travel-apps':
+            for anchor in ['at-a-glance', 'pay', 'getting-around', 'trains', 'wechat', 'translation', 'before', 'internet', 'mistakes']:
+                require(anchor in ids, f'Apps hub: missing #{anchor}')
+            source_hrefs = {node.attrs.get('href') for node in document.find('a')}
+            for source in guide['sources']:
+                require(source['href'] in source_hrefs, f"Apps hub: source link missing: {source['href']}")
+            require(len(guide['sources']) == 7, 'Apps hub: expected 7 sources')
         for heading in removed_headings.get(slug, []):
             require(heading.lower() not in flat_text.lower(), f'{name}: removed section is back: {heading}')
 

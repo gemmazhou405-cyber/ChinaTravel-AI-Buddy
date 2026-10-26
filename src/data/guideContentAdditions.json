@@ -152,73 +152,6 @@
       }
     ]
   },
-  "china-travel-apps": {
-    "reviewed": "October 23, 2026",
-    "modified": "2026-10-23",
-    "sections": [
-      {
-        "after": "Translation and offline information",
-        "title": "Useful apps after landing",
-        "items": [
-          "Meituan for food delivery and local services where its interface and payment route are practical for you.",
-          "Official city metro apps, mini-programs, or station maps for line and exit planning.",
-          "The city transport code inside Alipay for local bus or metro rides where your city supports it; it is different from the merchant payment QR.",
-          "Your eSIM provider's app or account page, with setup and support instructions saved offline."
-        ]
-      }
-    ],
-    "faqs": [
-      {
-        "after": "Do I need a Chinese phone number for every app?",
-        "question": "Can I use Uber in China?",
-        "answer": "Uber is not the standard ride-hailing option in mainland China. Use DiDi, a ride-hailing service inside Alipay or WeChat, or an official taxi queue."
-      }
-    ],
-    "sources": [],
-    "sectionLinks": [
-      {
-        "section": "Maps: use AMap Global and save Chinese addresses",
-        "links": [
-          {
-            "label": "How to switch Amap to English",
-            "description": "Tested steps with screenshots: My → Settings → Language, then restart the app.",
-            "href": "/amap-english-mode-guide-2026/"
-          }
-        ]
-      },
-      {
-        "section": "Translation and offline information",
-        "links": [
-          {
-            "label": "Chinese phrases for travelers",
-            "description": "Characters, pinyin and English for taxis, hotels, food, payments, trains and emergencies.",
-            "href": "/chinese-travel-phrases/"
-          }
-        ]
-      },
-      {
-        "section": "Payments: prepare Alipay and a backup",
-        "links": [
-          {
-            "label": "who can verify your WeChat account",
-            "description": "Helpers need an account over six months old and can verify at most three accounts a year.",
-            "href": "/wechat-verification-without-friend-qr-2026/#helper"
-          }
-        ]
-      }
-    ],
-    "removeFaqs": [],
-    "sectionNotes": [
-      {
-        "section": "Translation and offline information",
-        "text": "For QR menus, dietary needs and allergies, see [how to order food in China](/china-food-ordering-guide/)."
-      },
-      {
-        "section": "Maps: use AMap Global and save Chinese addresses",
-        "text": "For how Google Maps and Amap compared on the same searches, see [my Google Maps vs Amap test in China](/amap-vs-google-maps-china/)."
-      }
-    ]
-  },
   "china-food-ordering-guide": {
     "reviewed": "October 23, 2026",
     "modified": "2026-10-23",
@@ -725,6 +658,13 @@
           "Money, documents, and safety backups"
         ],
         "text": "To check which visa-free option fits your passport and route, see the [China visa-free travel guide](/china-visa-free-travel-guide/)."
+      },
+      {
+        "section": [
+          "Apps and connectivity",
+          "Connectivity and app setup"
+        ],
+        "text": "For all the apps to set up before you fly, see [the China travel apps I tested](/china-travel-apps/)."
       }
     ]
   },

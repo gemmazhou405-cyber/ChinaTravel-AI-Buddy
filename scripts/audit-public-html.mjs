@@ -96,7 +96,9 @@ const pages = [
   {
     path: '/china-travel-apps/',
     h1: /Essential China Travel Apps to Set Up Before Arrival/i,
-    keywords: ['Alipay', 'WeChat', 'AMap Global', 'DiDi', 'Trip.com', 'Railway 12306', 'offline translation'],
+    keywords: ['Alipay', 'WeChat', 'TenPayGo', 'Amap', 'DiDi', 'Trip.com', '12306', 'offline translation app'],
+    // The site's own web tool is no longer listed as a China app.
+    forbiddenPhrases: ['ChinaEase Buddy: a web-based toolkit'],
     links: ["/#trip-plan", "/amap-english-mode-guide-2026/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/china-esim-internet-guide/", "/amap-vs-google-maps-china/", "/first-trip-to-china/"],
   },
   {

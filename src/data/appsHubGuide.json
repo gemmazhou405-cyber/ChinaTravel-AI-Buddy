@@ -1,0 +1,151 @@
+{
+  "metaTitle": "Best China Travel Apps (2026): What I Tested in China",
+  "metaDescription": "The apps to set up before China, from my tests in October 2026: Amap and DiDi in English, TenPayGo with a UK card, and Google Maps without a VPN.",
+  "heading": "Essential China Travel Apps to Set Up Before Arrival",
+  "byline": {
+    "name": "Maintained by Lin",
+    "tested": "Amap, DiDi, TenPayGo and Google Maps tested on iPhone 14, Dongguan, October 23–26, 2026 · Other apps checked against official sources"
+  },
+  "reviewed": "October 26, 2026",
+  "modified": "2026-10-26",
+  "keepPageCta": true,
+  "lazyAllShots": true,
+  "pairShotMaxWidth": 220,
+  "quickAnswer": [
+    "Set these up before you fly, and test each one while you still have Wi-Fi and your home number:",
+    { "type": "ul", "items": [
+      "**Alipay** to pay in shops and use the metro ride code.",
+      "**WeChat** for messages, plus **TenPayGo** if WeChat Pay won't work for you.",
+      "**Amap** for maps, public transport and taxis. It works in English.",
+      "**DiDi** for rides. It works in English too.",
+      "**12306** or **Trip.com** for train tickets.",
+      "An **offline translation app**, and your hotel's address saved in Chinese."
+    ] },
+    "I tested four of these on my iPhone in Dongguan in October 2026: Amap, DiDi, TenPayGo and Google Maps. Google Maps didn't load at all without a VPN. The rest comes from official sources.",
+    "Jump to: [At a glance](#at-a-glance) · [Paying](#pay) · [Maps and rides](#getting-around) · [Trains](#trains) · [WeChat](#wechat) · [Translation](#translation) · [Before you fly](#before)"
+  ],
+  "cta": {
+    "text": "**Flying soon?** I'll help you set up Alipay, TenPayGo, Amap and DiDi before you fly, so nothing gets stuck at a verification screen when you land.",
+    "label": "See the app setup service on Fiverr →",
+    "href": "https://www.fiverr.com/s/p3dZbQR",
+    "placement": "apps-setup"
+  },
+  "screenshots": {
+    "1": { "src": "/images/maps/maps-05.webp", "width": 640, "height": 1288, "alt": "Amap in English showing three public transport routes from Canton Tower to Guangzhou South Railway Station, the fastest 40 minutes for ¥5" },
+    "2": { "src": "/images/didi/didi-03.webp", "width": 640, "height": 1385, "alt": "DiDi ride options in English with upfront fares for Economy, Standard, Priority and Premium and estimates for taxis" },
+    "3": { "src": "/images/tenpaygo/tenpaygo-15.webp", "width": 640, "height": 1385, "alt": "TenPayGo confirmation screen for a ¥4.90 payment, with the International Card Fee shown as ¥0.00 and ¥0.15 crossed out" }
+  },
+  "sections": [
+    {
+      "id": "at-a-glance",
+      "title": "The apps at a glance",
+      "blocks": [
+        { "type": "table", "headers": ["App", "Use it for", "What I found", "Full guide"], "rows": [
+          ["Alipay", "Paying in shops; the metro ride code", "With a foreign card, payments up to ¥200 are generally free; above that, 3% may apply", "[Metro: card or ride code](/alipay-metro-qr-transport-code-guide/) · [Alipay](/alipay-for-foreigners/)"],
+          ["WeChat", "Messages, calls, Weixin Pay", "Sign-up may ask an existing user to verify you", "[WeChat verification](/wechat-verification-without-friend-qr-2026/)"],
+          ["TenPayGo (tested)", "Paying where WeChat Pay works, without WeChat", "Signed up with just an email, linked a UK Mastercard and paid ¥4.90 at a shop; the 3% card fee was waived", "[TenPayGo](/tenpaygo-for-tourists/)"],
+          ["Amap (tested)", "Maps, public transport, taxis", "Works in English. From Canton Tower to Guangzhou South station it gave me 3 routes, the fastest 40 minutes for ¥5", "[Amap in English](/amap-english-mode-guide-2026/)"],
+          ["DiDi (tested)", "Taxis and ride-hailing", "Works in English. A 3.1 km Economy ride was quoted at ¥10; a taxi, about ¥14.1", "[DiDi](/didi-in-china-for-foreigners/)"],
+          ["12306 or Trip.com", "Train tickets", "12306's English site takes foreign passports and asks for an email, not a Chinese phone number", "[Train tickets](/china-train-travel-guide/)"],
+          ["Google Maps (tested)", "Not for China", "Didn't load without a VPN; with one, it found no public transport route", "[Google Maps vs Amap](/amap-vs-google-maps-china/)"]
+        ] },
+        { "type": "shots", "ids": ["1", "2", "3"] },
+        { "type": "p", "text": "*From my tests: Amap (October 26), DiDi (October 24) and TenPayGo (October 25), 2026.*" }
+      ]
+    },
+    {
+      "id": "pay",
+      "title": "Paying: Alipay first, TenPayGo as a backup",
+      "blocks": [
+        { "type": "p", "text": "**Alipay** is the main one: link a foreign card, then pay by scanning a shop's QR code or showing yours. With a foreign card in Alipay or Weixin Pay, payments of ¥200 or less are generally free; above ¥200, a 3% fee may apply to the whole amount (Shanghai government, September 2026)." },
+        { "type": "p", "text": "**TenPayGo** is Tencent's payment app for visitors. It pays at shops that take WeChat Pay, without a WeChat account. I signed up with just an email, linked a UK Mastercard, and paid ¥4.90 at a shop in Dongguan; the 3% card fee was crossed out." },
+        { "type": "p", "text": "Carry a physical bank card and some yuan as well. A linked card can still fail because of a verification step, your bank's checks or the shop's setup." },
+        { "type": "p", "text": "[Alipay for foreigners](/alipay-for-foreigners/) · [China payment guide](/china-payment-guide/) · [TenPayGo, tested](/tenpaygo-for-tourists/)" }
+      ]
+    },
+    {
+      "id": "getting-around",
+      "title": "Maps and rides: Amap and DiDi, not Google Maps",
+      "blocks": [
+        { "type": "p", "text": "**Amap** works in English: tap **My**, then the gear icon, then **Language** → **English**, and close and reopen the app. You can sign in with email, Apple or Google, book taxis inside it, and get public transport routes with fares. [Amap in English](/amap-english-mode-guide-2026/)" },
+        { "type": "p", "text": "**Google Maps** didn't load at all on a Chinese connection when I tested it on October 26, 2026. With a VPN it found Canton Tower, but no public transport route, and it sent me to a Luckin Coffee 5.7 km away while Amap listed five within 1 km. [My Google Maps vs Amap test](/amap-vs-google-maps-china/)" },
+        { "type": "p", "text": "**DiDi** works in English too: **Account** → gear icon → **Language** → **English** → **完成** (Done) → **Confirm**. App rides show a fixed upfront fare and taxis show an estimate; taxi trips can be paid in cash. [DiDi in English](/didi-in-china-for-foreigners/) · [Paying for DiDi](/didi-payment-for-foreigners/)" },
+        { "type": "note", "text": "Before you get in, confirm the last digits of your phone number with the driver, or the trip may not start. If you don't speak Chinese, just show the driver the digits on your phone." },
+        { "type": "p", "text": "For the metro you don't always need an app: in Beijing, Shanghai, Guangzhou and Shenzhen you can tap a contactless Visa or Mastercard at the gate. [Metro: card or Alipay ride code](/alipay-metro-qr-transport-code-guide/)" }
+      ]
+    },
+    {
+      "id": "trains",
+      "title": "Trains: 12306 or Trip.com",
+      "blocks": [
+        { "type": "p", "text": "**12306** is China Railway's official site and app, with an English version. It only accepts foreign passports and asks for an email address, not a Chinese phone number. Tickets go on sale 15 days before departure, and there's no paper ticket: you show the passport you booked with. **Trip.com** also sells China train tickets in English. For Beijing to Shanghai in second class, I saw ¥553–667 on 12306 for November 4. [China train tickets](/china-train-travel-guide/) · [What a China trip costs](/china-travel-budget/)" }
+      ]
+    },
+    {
+      "id": "wechat",
+      "title": "WeChat: messages first",
+      "blocks": [
+        { "type": "p", "text": "WeChat is China's main messaging app, and hotels, guides and new friends will often ask for your WeChat. When you sign up, it may ask an existing user to verify you. If you don't have anyone, read [WeChat verification without a friend](/wechat-verification-without-friend-qr-2026/). If WeChat Pay won't work for you, TenPayGo still lets you pay at the same shops." }
+      ]
+    },
+    {
+      "id": "translation",
+      "title": "Translation and menus",
+      "blocks": [
+        { "type": "p", "text": "Amap's **Hi China** tools, in the shortcut icons below the search bar, include **Menu Translation**: photograph a menu and you get English dish names, flavor tags and prices. Set your allergies, then show staff a Chinese order card. Amap asks you to double-check the results, so confirm allergies with staff. [Menu translation in Amap](/amap-english-mode-guide-2026/#menu-translation)" },
+        { "type": "p", "text": "Also download an offline translation app with Chinese, and test it in airplane mode before you fly. Keep your hotel address, allergies and tickets as screenshots too. [Chinese phrases for travelers](/chinese-travel-phrases/) · [How to order food in China](/china-food-ordering-guide/)" }
+      ]
+    },
+    {
+      "id": "before",
+      "title": "Set everything up before you fly",
+      "blocks": [
+        { "type": "ol", "items": [
+          "Download each app from your phone's official app store, and check it's the real one, not a look-alike.",
+          "Register with a phone number or email you can still use in China, and finish any card or identity checks.",
+          "Save your hotel's name, address and phone number in Chinese, in a note and as a screenshot.",
+          "Sort out mobile data: an eSIM or a roaming plan.",
+          "Before you leave, test a login, a payment, a route and offline translation."
+        ] }
+      ]
+    },
+    {
+      "id": "internet",
+      "title": "Internet access changes which apps work",
+      "blocks": [
+        { "type": "p", "text": "On ordinary mainland mobile networks and Wi-Fi, Google, Facebook, YouTube, X and some other services are blocked or restricted. Roaming plans and travel eSIMs handle this differently by provider and plan, so check the exact plan before you buy. [China eSIM and internet guide](/china-esim-internet-guide/)" }
+      ]
+    },
+    {
+      "id": "mistakes",
+      "title": "Common setup mistakes",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Downloading a look-alike app or the wrong regional version.",
+          "Losing access to the phone number you used for verification after changing SIM settings.",
+          "Relying on one wallet, one map or one internet connection with no backup.",
+          "Arriving without your hotel address and first destination saved in Chinese.",
+          "Deleting an eSIM while troubleshooting, or keeping tickets only inside an online account."
+        ] }
+      ]
+    }
+  ],
+  "faqs": [
+    { "question": "What apps should I download before visiting China?", "answer": "Alipay, WeChat, Amap, DiDi, and 12306 or Trip.com, plus an offline translation app. Add TenPayGo if WeChat Pay doesn't work for you. Set them up and test them before you fly." },
+    { "question": "Is Amap available in English?", "answer": "Yes. Tap My, then the gear icon, then Language → English, and close and reopen the app. I tested it on an iPhone in October 2026." },
+    { "question": "Does Google Maps work in mainland China?", "answer": "Not on its own. When I tested it on October 26, 2026, it didn't load without a VPN, and with one it found no public transport route. Use Amap instead." },
+    { "question": "Can I book China train tickets with a foreign passport?", "answer": "Yes. 12306's English site only accepts foreign passports and asks for an email address, not a Chinese phone number. Trip.com also sells train tickets. Carry the passport you booked with." },
+    { "question": "Should I set these apps up before arriving in China?", "answer": "Yes. Install, register, verify and test them before you leave, while you have reliable internet and your usual phone number. Keep a backup for paying, maps and offline information in case one setup fails." },
+    { "question": "Do I need a Chinese phone number for every app?", "answer": "No. In my tests, TenPayGo signed me up with just an email, and Amap lets you sign in with email, Apple or Google. 12306's English site asks for an email instead of a phone number. Other apps vary, so keep access to your home number." },
+    { "question": "Can I use Uber in China?", "answer": "Uber isn't the usual ride-hailing app in mainland China. Use DiDi or the ride option in Amap, or join an official taxi queue." }
+  ],
+  "sources": [
+    { "label": "AMap Global official Google Play listing", "href": "https://play.google.com/store/apps/details?id=com.autonavi.minimap" },
+    { "label": "Alipay official Google Play listing", "href": "https://play.google.com/store/apps/details?id=com.eg.android.AlipayGphone" },
+    { "label": "WeChat official Google Play listing", "href": "https://play.google.com/store/apps/details?id=com.tencent.mm" },
+    { "label": "Railway 12306 English website", "href": "https://www.12306.cn/en/index.html" },
+    { "label": "Trip.com official website", "href": "https://www.trip.com/" },
+    { "label": "UK government China internet-access advice", "href": "https://www.gov.uk/foreign-travel-advice/china/safety-and-security#internet-access" },
+    { "label": "Shanghai government: Pay with overseas bank cards, with the ¥200 / 3% rule (September 2026)", "href": "https://english.shanghai.gov.cn/en-Individuals-BankingandPayments-Payments/20260921/c2c94d06a0454c8fa05386b80d0ae865.html" }
+  ]
+}
