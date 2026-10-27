@@ -155,7 +155,7 @@ export function AmapCtaCard() {
   return (
     <aside aria-label="App setup help" className="rounded-2xl border border-[#155e63]/20 bg-[#155e63]/5 p-4 md:p-5">
       <p className="text-sm leading-relaxed text-gray-800 md:text-base"><AmapRichText text={content.cta.text} /></p>
-      <a href={content.cta.href} target="_blank" rel="noopener noreferrer" data-planning-help="fiverr" data-planning-placement={content.cta.placement ?? 'amap-setup'} className="mt-3 inline-flex min-h-11 items-center rounded-full bg-[#155e63] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#0e4a4e]">
+      <a href={content.cta.href} data-planning-help="app-setup" data-planning-placement={content.cta.placement ?? 'amap-setup'} className="mt-3 inline-flex min-h-11 items-center rounded-full bg-[#155e63] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#0e4a4e]">
         {content.cta.label}
       </a>
     </aside>

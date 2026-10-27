@@ -21,7 +21,12 @@ assert.equal((html.match(new RegExp(content.screenshotCaption, 'g')) || []).leng
 const ids = new Set([...html.matchAll(/ id="([^"]+)"/g)].map((match) => match[1]));
 for (const id of ['switch', 'english-grayed-out', 'search', 'sign-in', 'taxi', 'metro', 'hi-china', 'menu-translation', 'offline', 'troubleshooting']) assert(ids.has(id), `Anchor #${id} exists`);
 for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) assert(ids.has(id), `In-page link #${id} resolves`);
-assert(html.includes('href="https://www.fiverr.com/s/p3dZbQR"'));
+assert.equal(content.cta.href, '/amap-english-mode-guide-2026/#switch');
+const setupCta = guide.cta();
+assert(setupCta.includes(`href="${content.cta.href}"`), 'Setup CTA uses the existing free Amap guide');
+assert(setupCta.includes('data-planning-help="app-setup"'), 'Setup CTA has its own analytics action');
+assert(!setupCta.includes('target="_blank"'), 'Internal setup link uses normal navigation');
+assert(!/fiverr/i.test(setupCta), 'Setup CTA has no deprecated external service destination');
 assert(images.every((tag) => tag.includes('width="640"')), 'Screenshots are 640px wide');
 for (const step of [1, 2, 3, 4]) assert(html.includes(`>Step ${step}</strong>`), `Step ${step} label`);
 const rowWidths = [...html.matchAll(/justify-content:center;[^>]*>((?:\s*<figure[\s\S]*?<\/figure>)+)\s*<\/div>/g)].map(([, row]) => [...row.matchAll(/max-width:(\d+)px/g)].map((m) => Number(m[1])));

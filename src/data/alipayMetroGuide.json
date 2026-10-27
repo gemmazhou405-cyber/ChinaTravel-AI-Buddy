@@ -20,9 +20,9 @@
     "Jump to: [Tap your card](#card) · [Alipay ride code](#alipay-ride-code) · [At the gate](#gate) · [Other options](#other-options)"
   ],
   "cta": {
-    "text": "**Flying soon?** I'll get Alipay, WeChat Pay and your metro code working on your phone before you fly, so you're not troubleshooting at the gate.",
-    "label": "See the app setup service on Fiverr →",
-    "href": "https://www.fiverr.com/s/p3dZbQR",
+    "text": "**Preparing to use the metro?** Follow the free Alipay ride-code steps and check the payment method linked to your code.",
+    "label": "Follow the free metro ride-code steps →",
+    "href": "/alipay-metro-qr-transport-code-guide/#alipay-ride-code",
     "placement": "metro-setup"
   },
   "sections": [

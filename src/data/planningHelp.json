@@ -1,12 +1,18 @@
 {
   "name": "Lin",
   "heading": "Planning a China trip? Send me your dates or route.",
-  "body": "I'm Lin — Chinese, lived abroad for years, and in China right now. Send me your dates or draft route and I'll reply within 48 hours with the 3 biggest route, timing or booking risks. Free. If you want me to review or rework the whole trip, that's a paid plan on Fiverr.",
+  "body": "I'm Lin — Chinese, lived abroad for years, and in China right now. Send me your dates or draft route and I'll reply within 48 hours with the 3 biggest route, timing or booking risks. Free. Human customized itinerary planning is a separate paid service.",
   "email": "lin@chinaeasebuddy.com",
   "emailLabel": "Email Lin your route",
   "emailHref": "mailto:lin@chinaeasebuddy.com?subject=My%20China%20route",
-  "paidLabel": "See personal planning prices on Fiverr",
-  "paidHref": "https://www.fiverr.com/s/jyjZ6ma",
+  "paidLabel": "Ask about paid trip planning",
+  "paidHref": "mailto:lin@chinaeasebuddy.com?subject=Paid%20China%20trip%20planning&body=Travel%20dates%3A%0ACities%3A%0ANumber%20of%20travelers%3A%0ADo%20you%20already%20have%20an%20itinerary%3F%0AMain%20questions%20%2F%20priorities%3A%0A%0APlease%20do%20not%20include%20passport%20numbers%2C%20payment%20details%20or%20other%20sensitive%20information.",
+  "paidServices": [
+    "Itinerary review & fix — from $20",
+    "Custom China itinerary — from $40",
+    "Guide / private driver — ask for a quote"
+  ],
+  "serviceNote": "Guide and private driver services start with an inquiry and are quoted after consultation. ChinaEase may match or coordinate third-party providers.",
   "note": "Include your travel dates, cities and main questions. Please leave out passport numbers, payment details and other sensitive information.",
   "byline": "Maintained by Lin",
   "imagePath": null,

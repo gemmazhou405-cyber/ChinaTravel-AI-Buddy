@@ -18,6 +18,7 @@
     "test:release-fixes": "node scripts/test-release-fixes.mjs",
     "test:pass-entitlements": "node scripts/test-pass-entitlements.mjs",
     "test:premium-upgrade": "node scripts/test-premium-upgrade.mjs",
+    "test:planning-help": "node scripts/test-planning-help.mjs",
     "test:free-chat-quota": "node scripts/test-free-chat-quota.mjs",
     "email:samples": "node scripts/send-trip-email-samples.mjs",
     "audit:public-html": "node scripts/audit-public-html.mjs",

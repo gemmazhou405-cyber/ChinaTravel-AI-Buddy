@@ -159,12 +159,12 @@ function initPlanningLinkTracking() {
   document.addEventListener('click', (event) => {
     const anchor = event.target instanceof Element ? event.target.closest<HTMLAnchorElement>('a[data-planning-help]') : null;
     const action = anchor?.dataset.planningHelp;
-    if (action !== 'email' && action !== 'fiverr') return;
+    if (action !== 'email' && action !== 'paid-planning' && action !== 'app-setup') return;
     const placement = anchor?.dataset.planningPlacement;
     const safePlacement = placement && /^[a-z0-9_-]{1,24}$/.test(placement) ? placement : 'guide';
     void trackEvent('cta_clicked', {
-      ctaName: action === 'email' ? 'planning_email_click' : 'planning_fiverr_click',
-      destination: action === 'email' ? 'email' : 'fiverr',
+      ctaName: action === 'email' ? 'planning_email_click' : action === 'paid-planning' ? 'planning_paid_planning_click' : 'app_setup_guide_click',
+      destination: action === 'email' ? 'email' : action === 'paid-planning' ? 'paid-planning' : 'app-setup-guide',
       tool: `planning_help_${safePlacement}`,
     });
   });
