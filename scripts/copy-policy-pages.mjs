@@ -710,7 +710,7 @@ const pageMeta = {
   pricing: {
     lastModified: '2026-10-23',
     title: 'Pricing | ChinaEase Buddy',
-    description: 'Compare one-time Trip Pass and Group Pass options for the full Premium Toolkit and Buddy AI messages. Human customized itinerary planning is priced separately on Fiverr.',
+    description: 'Compare one-time Trip Pass and Group Pass options for the full Premium Toolkit and Buddy AI messages. Human customized itinerary planning is a separate paid service.',
     sections: [
       ['Free', 'Basic toolkit for apps, payments, transport, food, hotels, emergency help, and limited Buddy AI access.', '/?journey=china&tool=food'],
       ['Trip Pass', 'USD 9.90 one-time travel pass with the full Premium Toolkit, all premium phrase cards and 50 Buddy AI messages for 14 days on up to 2 devices.', '/pricing/'],
