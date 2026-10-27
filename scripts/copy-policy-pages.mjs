@@ -11,7 +11,7 @@ const guideRelatedLinks = JSON.parse(await readFile('src/data/guideRelatedLinks.
 const siteUrl = 'https://chinaeasebuddy.com';
 const distDir = 'dist';
 const source = join(distDir, 'index.html');
-const suzhouGuide = JSON.parse(await readFile('src/data/seoPages/3-day-suzhou-itinerary.json', 'utf8'));
+const suzhouGuide = JSON.parse(await readFile('src/data/suzhouGuide.json', 'utf8'));
 const nanjingGuide = JSON.parse(await readFile('src/data/seoPages/3-day-nanjing-itinerary.json', 'utf8'));
 const daliGuide = JSON.parse(await readFile('src/data/seoPages/3-day-dali-itinerary.json', 'utf8'));
 const goldenWeekGuide = JSON.parse(await readFile('src/data/seoPages/china-golden-week-2026-travel-guide.json', 'utf8'));
@@ -1743,7 +1743,17 @@ const pageMeta = {
     faqs: [['Are three days enough for Hangzhou?', 'Yes for West Lake, Lingyin and one additional canal, museum, wetland or historic-area day. Add time for several outer-city sites or a distant water town.'], ['Can Hangzhou be a day trip from Shanghai?', 'Yes, but station transfers and West Lake travel reduce usable time. Staying one or two nights produces a calmer visit and gives you early morning or evening at the lake.'], ['Where should I stay in Hangzhou?', 'For a first visit, choose the east or north side of West Lake near useful transport. Stay by Hangzhou East only when an early or late train is the main constraint.'], ['Do I need a full day for West Lake?', 'A full day is appropriate if you want a causeway, gardens, historic sites, a boat or tea break without rushing. A short visit should focus on one side rather than circling the entire lake.'], ['Do I need to reserve Lingyin Temple?', 'Reservation, ticket and identity-document arrangements can change and may involve separate scenic-area access. Check the current official instructions before the visit.'], ['Which Hangzhou railway station should I use?', 'Use the exact station printed on your ticket. Hangzhou East, Hangzhou, Hangzhou West and Hangzhou South are different stations with very different transfer times.'], ['Can ChinaEase Buddy personalise this Hangzhou itinerary?', 'Yes. Share your dates, hotel, arrival station, walking ability, tea or heritage interests, group, weather tolerance, and onward city for a practical route.']],
     sourceLinks: [['UNESCO: West Lake Cultural Landscape of Hangzhou', 'https://whc.unesco.org/en/list/1334/'], ['UNESCO: The Grand Canal', 'https://whc.unesco.org/en/list/1443/'], ['Hangzhou city international portal', 'https://www.ehangzhou.gov.cn/'], ['China Railway 12306 English website', 'https://www.12306.cn/en/index.html']],
   },
-  '3-day-suzhou-itinerary': suzhouGuide,
+  '3-day-suzhou-itinerary': {
+    article: true,
+    title: suzhouGuide.metaTitle,
+    heading: suzhouGuide.heading,
+    description: suzhouGuide.metaDescription,
+    quickAnswer: quickAnswerText(suzhouGuide.quickAnswer),
+    faqs: suzhouGuide.faqs.map(({ question, answer }) => [question, plainText(answer)]),
+    sourceLinks: suzhouGuide.sources.map(({ label, href }) => [label, href]),
+    lastReviewed: suzhouGuide.reviewed,
+    lastModified: suzhouGuide.modified,
+  },
   '3-day-nanjing-itinerary': nanjingGuide,
   '3-day-dali-itinerary': daliGuide,
   'china-golden-week-2026-travel-guide': goldenWeekGuide,
@@ -3790,6 +3800,7 @@ const richGuides = {
   'china-travel-apps': appsHubGuide,
   'china-hotels-for-foreigners': hotelsGuide,
   'china-travel-checklist': checklistGuide,
+  '3-day-suzhou-itinerary': suzhouGuide,
 };
 
 function staticPageContent(page, meta) {

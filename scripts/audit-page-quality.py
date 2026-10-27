@@ -82,6 +82,7 @@ rich_guides = {
     'china-travel-apps': ('Apps hub', load_json('src/data/appsHubGuide.json')),
     'china-hotels-for-foreigners': ('Hotels', load_json('src/data/hotelsGuide.json')),
     'china-travel-checklist': ('Checklist', load_json('src/data/checklistGuide.json')),
+    '3-day-suzhou-itinerary': ('Suzhou', load_json('src/data/suzhouGuide.json')),
 }
 # Sections removed in a rebuild must not come back.
 removed_headings = {
@@ -221,6 +222,15 @@ for pathname in sorted(audit_paths):
             require(len(guide['sources']) == 8, 'Checklist: expected 8 sources')
             title_node = document.find('title')
             require('| ChinaEase Buddy' not in (title_node[0].text() if title_node else ''), 'Checklist: title still ends with "| ChinaEase Buddy"')
+        # The Suzhou itinerary must keep its nine anchors and ten sources, and the old "check official channels" line must not return.
+        if slug == '3-day-suzhou-itinerary':
+            for anchor in ['quick-answer', 'three-days-at-a-glance', 'tickets', 'day-1-gardens-museum-and-pingjiang-road', 'day-2-lingering-garden-and-the-western-old-city', 'day-3-choose-one-sensible-extension', 'where-to-stay-and-how-to-arrive-from-shanghai', 'bookings-crowds-and-weather', 'how-to-adapt-the-route']:
+                require(anchor in ids, f'Suzhou: missing #{anchor}')
+            source_hrefs = {node.attrs.get('href') for node in document.find('a')}
+            for source in guide['sources']:
+                require(source['href'] in source_hrefs, f"Suzhou: source link missing: {source['href']}")
+            require(len(guide['sources']) == 10, 'Suzhou: expected 10 sources')
+            require('avoid quoting an old ticket price' not in flat_text.lower(), 'Suzhou: old "Avoid quoting an old ticket price" line is back')
         for heading in removed_headings.get(slug, []):
             require(heading.lower() not in flat_text.lower(), f'{name}: removed section is back: {heading}')
 
