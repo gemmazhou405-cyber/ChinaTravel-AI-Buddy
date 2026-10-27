@@ -8,7 +8,7 @@ import { AmapByline, AmapCtaCard, AmapFaqAnswer, AmapGuideBody, AmapQuickAnswer,
 import { plainText, quickAnswerText } from '../lib/amapGuideMarkup.mjs';
 import planningHelp from '../data/planningHelp.json';
 import guideRelatedLinks from '../data/guideRelatedLinks.json';
-import suzhouGuide from '../data/seoPages/3-day-suzhou-itinerary.json';
+import suzhouGuide from '../data/suzhouGuide.json';
 import nanjingGuide from '../data/seoPages/3-day-nanjing-itinerary.json';
 import daliGuide from '../data/seoPages/3-day-dali-itinerary.json';
 import goldenWeekGuide from '../data/seoPages/china-golden-week-2026-travel-guide.json';
@@ -3082,17 +3082,18 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   '3-day-suzhou-itinerary': {
     path: '/3-day-suzhou-itinerary/',
     title: suzhouGuide.heading,
-    intro: suzhouGuide.description,
-    metaTitle: suzhouGuide.title,
-    metaDescription: suzhouGuide.description,
-    quickAnswer: suzhouGuide.quickAnswer,
+    intro: '',
+    metaTitle: suzhouGuide.metaTitle,
+    metaDescription: suzhouGuide.metaDescription,
+    quickAnswer: quickAnswerText(suzhouGuide.quickAnswer),
+    // Rendered like the Amap guide (AmapGuide components); keeps its own itinerary CTA.
     ctaLabel: 'Get my personalised Suzhou itinerary',
     ctaHref: '/#trip-plan',
-    lastReviewed: suzhouGuide.lastReviewed,
-    lastModified: suzhouGuide.lastModified,
+    reviewed: suzhouGuide.reviewed,
+    lastModified: suzhouGuide.modified,
     isArticle: true,
-    sections: suzhouGuide.contentSections,
-    faqs: suzhouGuide.faqs.map(([question, answer]) => ({ question, answer })),
+    sections: [],
+    faqs: suzhouGuide.faqs.map(({ question, answer }) => ({ question, answer: plainText(answer) })),
     related: [
       { label: '3-day Nanjing itinerary', href: '/3-day-nanjing-itinerary/' },
       { label: '3-day Shanghai itinerary', href: '/3-day-shanghai-itinerary/' },
@@ -3104,7 +3105,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'First trip to China', href: '/first-trip-to-china/' },
       { label: 'Get my personalised Suzhou itinerary', href: '/#trip-plan' },
     ],
-    sources: suzhouGuide.sourceLinks.map(([label, href]) => ({ label, href })),
+    sources: suzhouGuide.sources,
   },
   '3-day-nanjing-itinerary': {
     path: '/3-day-nanjing-itinerary/',
@@ -4974,6 +4975,7 @@ const richGuides: Partial<Record<GuidePageType, GuideContent>> = {
   'china-travel-apps': appsHubGuide as GuideContent,
   'china-hotels-for-foreigners': hotelsGuide as GuideContent,
   'china-travel-checklist': checklistGuide as GuideContent,
+  '3-day-suzhou-itinerary': suzhouGuide as GuideContent,
 };
 
 function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?: string | null; onAskBuddy?: (prefill?: string) => void }) {

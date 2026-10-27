@@ -342,7 +342,13 @@
         ]
       }
     ],
-    "removeFaqs": []
+    "removeFaqs": [],
+    "sectionNotes": [
+      {
+        "section": "Three days in Shanghai at a glance",
+        "text": "If you add Suzhou, see my [3-day Suzhou itinerary](/3-day-suzhou-itinerary/), with garden tickets and booking rules for 2026."
+      }
+    ]
   },
   "7-day-china-itinerary": {
     "sections": [],
@@ -422,24 +428,6 @@
             "label": "Guilin and Yangshuo itinerary for three days",
             "description": "Li River, Yulong River and Xingping routes, hotels and transfers.",
             "href": "/3-day-guilin-yangshuo-itinerary/"
-          }
-        ]
-      }
-    ],
-    "removeFaqs": []
-  },
-  "3-day-suzhou-itinerary": {
-    "sections": [],
-    "faqs": [],
-    "sources": [],
-    "sectionLinks": [
-      {
-        "section": "Where to stay and how to arrive from Shanghai",
-        "links": [
-          {
-            "label": "3-day Nanjing itinerary",
-            "description": "Sun Yat-sen Mausoleum, Nanjing Museum, the Qinhuai River, city walls and train tips.",
-            "href": "/3-day-nanjing-itinerary/"
           }
         ]
       }
@@ -610,6 +598,32 @@
       {
         "section": "Internet access in mainland China",
         "text": "Wondering whether Google Maps works here? See [my Google Maps vs Amap test in China](/amap-vs-google-maps-china/)."
+      }
+    ]
+  },
+  "3-day-hangzhou-itinerary": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [],
+    "removeFaqs": [],
+    "sectionNotes": [
+      {
+        "section": "Adjust this itinerary",
+        "text": "If you add Suzhou, see my [3-day Suzhou itinerary](/3-day-suzhou-itinerary/), with garden tickets and booking rules for 2026."
+      }
+    ]
+  },
+  "3-day-nanjing-itinerary": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [],
+    "removeFaqs": [],
+    "sectionNotes": [
+      {
+        "section": "Where to stay and how to arrive",
+        "text": "If you add Suzhou, see my [3-day Suzhou itinerary](/3-day-suzhou-itinerary/), with garden tickets and booking rules for 2026."
       }
     ]
   }
