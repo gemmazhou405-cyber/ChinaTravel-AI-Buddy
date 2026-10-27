@@ -9,7 +9,7 @@ import { plainText, quickAnswerText } from '../lib/amapGuideMarkup.mjs';
 import planningHelp from '../data/planningHelp.json';
 import guideRelatedLinks from '../data/guideRelatedLinks.json';
 import suzhouGuide from '../data/suzhouGuide.json';
-import nanjingGuide from '../data/seoPages/3-day-nanjing-itinerary.json';
+import nanjingGuide from '../data/nanjingGuide.json';
 import daliGuide from '../data/seoPages/3-day-dali-itinerary.json';
 import goldenWeekGuide from '../data/seoPages/china-golden-week-2026-travel-guide.json';
 import greatWallGuide from '../data/seoPages/great-wall-of-china-day-trip-from-beijing.json';
@@ -3109,17 +3109,18 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   '3-day-nanjing-itinerary': {
     path: '/3-day-nanjing-itinerary/',
     title: nanjingGuide.heading,
-    intro: nanjingGuide.description,
-    metaTitle: nanjingGuide.title,
-    metaDescription: nanjingGuide.description,
-    quickAnswer: nanjingGuide.quickAnswer,
+    intro: '',
+    metaTitle: nanjingGuide.metaTitle,
+    metaDescription: nanjingGuide.metaDescription,
+    quickAnswer: quickAnswerText(nanjingGuide.quickAnswer),
+    // Rendered like the Amap guide (AmapGuide components); keeps its own itinerary CTA.
     ctaLabel: 'Get my personalised Nanjing itinerary',
     ctaHref: '/#trip-plan',
-    lastReviewed: nanjingGuide.lastReviewed,
-    lastModified: nanjingGuide.lastModified,
+    reviewed: nanjingGuide.reviewed,
+    lastModified: nanjingGuide.modified,
     isArticle: true,
-    sections: nanjingGuide.contentSections,
-    faqs: nanjingGuide.faqs.map(([question, answer]) => ({ question, answer })),
+    sections: [],
+    faqs: nanjingGuide.faqs.map(({ question, answer }) => ({ question, answer: plainText(answer) })),
     related: [
       { label: '3-day Shanghai itinerary', href: '/3-day-shanghai-itinerary/' },
       { label: '3-day Suzhou itinerary', href: '/3-day-suzhou-itinerary/' },
@@ -3130,7 +3131,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'First trip to China', href: '/first-trip-to-china/' },
       { label: 'Get my personalised Nanjing itinerary', href: '/#trip-plan' },
     ],
-    sources: nanjingGuide.sourceLinks.map(([label, href]) => ({ label, href })),
+    sources: nanjingGuide.sources,
   },
   '3-day-dali-itinerary': {
     path: '/3-day-dali-itinerary/',
@@ -4976,6 +4977,7 @@ const richGuides: Partial<Record<GuidePageType, GuideContent>> = {
   'china-travel-checklist': checklistGuide as GuideContent,
   '3-day-suzhou-itinerary': suzhouGuide as GuideContent,
   '3-day-beijing-itinerary': beijingGuide as GuideContent,
+  '3-day-nanjing-itinerary': nanjingGuide as GuideContent,
 };
 
 function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?: string | null; onAskBuddy?: (prefill?: string) => void }) {

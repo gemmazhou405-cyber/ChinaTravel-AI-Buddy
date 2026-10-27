@@ -12,7 +12,7 @@ const siteUrl = 'https://chinaeasebuddy.com';
 const distDir = 'dist';
 const source = join(distDir, 'index.html');
 const suzhouGuide = JSON.parse(await readFile('src/data/suzhouGuide.json', 'utf8'));
-const nanjingGuide = JSON.parse(await readFile('src/data/seoPages/3-day-nanjing-itinerary.json', 'utf8'));
+const nanjingGuide = JSON.parse(await readFile('src/data/nanjingGuide.json', 'utf8'));
 const daliGuide = JSON.parse(await readFile('src/data/seoPages/3-day-dali-itinerary.json', 'utf8'));
 const goldenWeekGuide = JSON.parse(await readFile('src/data/seoPages/china-golden-week-2026-travel-guide.json', 'utf8'));
 const greatWallGuide = JSON.parse(await readFile('src/data/seoPages/great-wall-of-china-day-trip-from-beijing.json', 'utf8'));
@@ -1753,7 +1753,17 @@ const pageMeta = {
     lastReviewed: suzhouGuide.reviewed,
     lastModified: suzhouGuide.modified,
   },
-  '3-day-nanjing-itinerary': nanjingGuide,
+  '3-day-nanjing-itinerary': {
+    article: true,
+    title: nanjingGuide.metaTitle,
+    heading: nanjingGuide.heading,
+    description: nanjingGuide.metaDescription,
+    quickAnswer: quickAnswerText(nanjingGuide.quickAnswer),
+    faqs: nanjingGuide.faqs.map(({ question, answer }) => [question, plainText(answer)]),
+    sourceLinks: nanjingGuide.sources.map(({ label, href }) => [label, href]),
+    lastReviewed: nanjingGuide.reviewed,
+    lastModified: nanjingGuide.modified,
+  },
   '3-day-dali-itinerary': daliGuide,
   'china-golden-week-2026-travel-guide': goldenWeekGuide,
   'great-wall-of-china-day-trip-from-beijing': greatWallGuide,
@@ -3801,6 +3811,7 @@ const richGuides = {
   'china-travel-checklist': checklistGuide,
   '3-day-suzhou-itinerary': suzhouGuide,
   '3-day-beijing-itinerary': beijingGuide,
+  '3-day-nanjing-itinerary': nanjingGuide,
 };
 
 function staticPageContent(page, meta) {

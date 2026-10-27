@@ -178,7 +178,7 @@ const pages = [
     path: '/3-day-shanghai-itinerary/',
     h1: /3-Day Shanghai Itinerary for First-Time Visitors.*2026/i,
     keywords: ['The Bund', 'Yuyuan Garden', 'Wukang Road', 'Pudong', 'People\'s Square', 'Hongqiao', 'Railway 12306', 'A Monday–Wednesday Shanghai itinerary alternative', 'Shanghai Museum East vs People\'s Square: choose the right venue', 'July 9, 2026 to November 14, 2027', 'Tuesday, except national holidays'],
-    links: ["https://www.yugarden.com.cn/page/articleview/message.html", "https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-east", "https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-west", "/#trip-plan", "/3-day-suzhou-itinerary/", "/3-day-beijing-itinerary/", "/best-time-to-visit-china/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/3-day-suzhou-itinerary/", "/3-day-hangzhou-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-travel-guide/"],
+    links: ["/3-day-nanjing-itinerary/", "https://www.yugarden.com.cn/page/articleview/message.html", "https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-east", "https://www.shanghaimuseum.net/mu/frontend/pg/en/service/visit-west", "/#trip-plan", "/3-day-suzhou-itinerary/", "/3-day-beijing-itinerary/", "/best-time-to-visit-china/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/3-day-suzhou-itinerary/", "/3-day-hangzhou-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-travel-guide/"],
   },
   {
     path: '/3-day-xian-itinerary/',
@@ -239,8 +239,10 @@ const pages = [
   {
     path: '/3-day-nanjing-itinerary/',
     h1: /3-Day Nanjing Itinerary for First-Time Visitors.*2026/i,
-    keywords: ['Sun Yat-sen Mausoleum', 'Ming Xiaoling', 'Nanjing Museum', 'Nanjing Massacre Memorial Hall', 'Qinhuai River', 'Nanjing South', '12306', 'Nanjing Museum and the Memorial Hall: separate reservations', 'service centre green-channel window', 'A Monday–Wednesday Nanjing itinerary alternative', 'Yunjin Road', 'Daxinggong'],
-    links: ["https://www.njmuseum.com/zh/visitIndex", "https://www.19371213.com.cn/guide/how/", "https://www.19371213.com.cn/information/notices/202610/t20261008_5921665.html", "/#trip-plan", "/3-day-suzhou-itinerary/", "/3-day-shanghai-itinerary/", "/3-day-suzhou-itinerary/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-travel-guide/", "/best-time-to-visit-china/"],
+    keywords: ['Sun Yat-sen Mausoleum', 'Ming Xiaoling', 'Nanjing Museum', 'Nanjing Massacre Memorial Hall', 'Qinhuai River', 'Nanjing South', '12306', 'Nanjing Museum and the Memorial Hall: separate reservations', 'service centre green-channel window', 'A Monday–Wednesday Nanjing itinerary alternative', 'Yunjin Road', 'Daxinggong', 'Tickets, hours and Monday closures', 'Muxuyuan station', '¥80 by day, ¥100 at night'],
+    // The page now carries its own October 2026 check note.
+    forbiddenPhrases: ['Avoid relying on old blog prices'],
+    links: ["/china-train-travel-guide/", "/china-hotels-for-foreigners/#check-before-booking", "https://www.njmuseum.com/zh/visitIndex", "https://www.19371213.com.cn/guide/how/", "https://www.19371213.com.cn/information/notices/202610/t20261008_5921665.html", "/#trip-plan", "/3-day-suzhou-itinerary/", "/3-day-shanghai-itinerary/", "/3-day-suzhou-itinerary/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-travel-guide/", "/best-time-to-visit-china/"],
   },
   {
     path: '/3-day-dali-itinerary/',

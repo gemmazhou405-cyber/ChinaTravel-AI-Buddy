@@ -84,6 +84,7 @@ rich_guides = {
     'china-travel-checklist': ('Checklist', load_json('src/data/checklistGuide.json')),
     '3-day-suzhou-itinerary': ('Suzhou', load_json('src/data/suzhouGuide.json')),
     '3-day-beijing-itinerary': ('Beijing', load_json('src/data/beijingGuide.json')),
+    '3-day-nanjing-itinerary': ('Nanjing', load_json('src/data/nanjingGuide.json')),
 }
 # Sections removed in a rebuild must not come back.
 removed_headings = {
@@ -241,6 +242,15 @@ for pathname in sorted(audit_paths):
                 require(source['href'] in source_hrefs, f"Beijing: source link missing: {source['href']}")
             require(len(guide['sources']) == 15, 'Beijing: expected 15 sources')
             require('checked on october 22, 2026' not in flat_text.lower(), 'Beijing: old "checked on October 22, 2026" note is back')
+        # The Nanjing itinerary must keep its eleven anchors and nine sources, and the old blog-price line must not return.
+        if slug == '3-day-nanjing-itinerary':
+            for anchor in ['quick-answer', 'three-days-at-a-glance', 'tickets', 'nanjing-museum-and-the-memorial-hall-separate-reservations', 'a-monday-wednesday-nanjing-itinerary-alternative', 'day-1-the-zhongshan-scenic-area', 'day-2-museum-and-remembrance', 'day-3-walls-southern-lanes-and-qinhuai', 'where-to-stay-and-how-to-arrive', 'reservations-pacing-and-weather', 'adapt-the-route-to-your-interests']:
+                require(anchor in ids, f'Nanjing: missing #{anchor}')
+            source_hrefs = {node.attrs.get('href') for node in document.find('a')}
+            for source in guide['sources']:
+                require(source['href'] in source_hrefs, f"Nanjing: source link missing: {source['href']}")
+            require(len(guide['sources']) == 9, 'Nanjing: expected 9 sources')
+            require('avoid relying on old blog prices' not in flat_text.lower(), 'Nanjing: old "Avoid relying on old blog prices" line is back')
         for heading in removed_headings.get(slug, []):
             require(heading.lower() not in flat_text.lower(), f'{name}: removed section is back: {heading}')
 
