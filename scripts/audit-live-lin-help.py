@@ -84,11 +84,16 @@ def check(url):
             for key in ['heading', 'body', 'note', 'emailLabel', 'paidLabel']:
                 if COPY[key] not in text:
                     row['errors'].append(f'box missing {key}')
+            for service in COPY['paidServices']:
+                if service not in text:
+                    row['errors'].append(f'box missing service {service}')
+            if COPY['serviceNote'] not in text:
+                row['errors'].append('provider coordination scope missing')
             if 'Digital message passes do not include this service.' in text or 'AI' in text.split():
                 row['errors'].append('unwanted box copy')
             paid = box.find('a', href=COPY['paidHref'])
-            if len(paid) != 1 or paid[0].attrs.get('target') != '_blank' or not {'noopener', 'noreferrer'} <= set(paid[0].attrs.get('rel', '').split()):
-                row['errors'].append('Fiverr link invalid')
+            if len(paid) != 1 or paid[0].attrs.get('data-planning-help') != 'paid-planning' or not paid[0].attrs.get('href', '').startswith(f"mailto:{COPY['email']}?"):
+                row['errors'].append('ChinaEase paid planning inquiry invalid')
         if row['email'] != 'YES':
             row['errors'].append('visible email/mailto missing')
         if article:

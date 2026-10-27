@@ -136,12 +136,15 @@ for pathname in sorted(audit_paths):
         text = ' '.join(box.text().split())
         for key in ['heading', 'body', 'email', 'note']:
             require(help_copy[key] in text, f'{pathname}: visible planning help missing {key}')
+        for service in help_copy['paidServices']:
+            require(service in text, f'{pathname}: paid service scope missing {service}')
+        require(help_copy['serviceNote'] in text, f'{pathname}: provider coordination scope missing')
         require(not re.search(r'\bAI\b|£249|£29', text), f'{pathname}: unverified planning promise')
         email_links = box.find('a', href=help_copy['emailHref'])
         paid_links = box.find('a', href=help_copy['paidHref'])
         require(len(email_links) == 1 and len(paid_links) == 1, f'{pathname}: planning destinations missing')
         if paid_links:
-            require(paid_links[0].attrs.get('target') == '_blank' and {'noopener', 'noreferrer'} <= set(paid_links[0].attrs.get('rel', '').split()), f'{pathname}: paid link window protection missing')
+            require(paid_links[0].attrs.get('data-planning-help') == 'paid-planning' and paid_links[0].attrs.get('href', '').startswith(f"mailto:{help_copy['email']}?"), f'{pathname}: ChinaEase paid planning inquiry missing')
         if slug not in {'', 'plan', 'pricing', 'guides', 'partners/china-visa-checker'}:
             require(len(document.find('a', href='#lin-help')) == 1 and document.find('a', href='#lin-help')[0].text().strip() == help_copy['byline'], f'{pathname}: planning contact byline missing')
     if slug == 'pricing':

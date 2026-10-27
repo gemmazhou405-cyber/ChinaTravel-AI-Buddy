@@ -18,9 +18,9 @@
     "Jump to: [Sign up](#sign-up) · [Who can help](#helper) · [No helper](#no-helper) · [Pay without WeChat](#plan-b) · [WeChat Pay checks](#wechat-pay)"
   ],
   "cta": {
-    "text": "**Flying soon?** I'll help you set up WeChat, Alipay and TenPayGo before you fly, so you're not stuck at a verification screen when you land.",
-    "label": "See the app setup service on Fiverr →",
-    "href": "https://www.fiverr.com/s/p3dZbQR",
+    "text": "**Stuck at WeChat verification?** See the options described in this free guide, plus payment alternatives if you cannot complete registration.",
+    "label": "See WeChat verification options →",
+    "href": "/wechat-verification-without-friend-qr-2026/#no-helper",
     "placement": "wechat-setup"
   },
   "sections": [

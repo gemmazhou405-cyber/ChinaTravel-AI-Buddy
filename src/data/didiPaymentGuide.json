@@ -19,9 +19,9 @@
     "Jump to: [Which to choose](#compare) · [DiDi app](#card) · [Alipay or WeChat](#alipay-wechat) · [Fees](#fees) · [Declined card](#declined) · [Wrong or double charge](#charges)"
   ],
   "cta": {
-    "text": "**Flying soon?** I'll get DiDi, Alipay and WeChat Pay working on your phone before you fly, so your first ride from the airport isn't a payment puzzle.",
-    "label": "See the app setup service on Fiverr →",
-    "href": "https://www.fiverr.com/s/p3dZbQR",
+    "text": "**Need another way to pay for a DiDi ride?** See how the Alipay and WeChat mini programs work in this free guide, and check your linked payment method before travel.",
+    "label": "See DiDi payment setup options →",
+    "href": "/didi-payment-for-foreigners/#alipay-wechat",
     "placement": "didi-setup"
   },
   "screenshotCaption": "Screenshot from my iPhone, Dongguan, October 2026",
