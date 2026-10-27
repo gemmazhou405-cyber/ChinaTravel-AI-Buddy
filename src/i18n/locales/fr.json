@@ -212,11 +212,11 @@
         "title": "Assistant de phrase personnalisée",
         "subtitle": "Créez une phrase quand une demande d’hôtel est spécifique.",
         "body": "Créez des cartes chinoises personnalisées pour vos situations réelles de voyage.",
-        "available": "Disponible avec Group Pass",
+        "available": "Disponible avec Trip Pass ou Group Pass",
         "placeholder": "Que voulez-vous dire ?",
         "generate": "Créer une carte chinoise",
-        "upgrade": "Passer à Group Pass",
-        "upgradeToast": "Débloquez les cartes personnalisées avec Group Pass."
+        "upgrade": "Passer à Trip Pass ou Group Pass",
+        "upgradeToast": "Débloquez les cartes personnalisées avec Trip Pass ou Group Pass."
       },
       "cityGuide": {
         "title": "Guide de ville",
@@ -436,9 +436,9 @@
           "desc": "Boîte à outils de base pour les situations courantes en Chine.",
           "cta": "Commencer gratuitement",
           "features": [
-            "Boîte à outils complète : apps, paiements, nourriture, transport et urgences",
+            "Outils de base : apps, paiements, nourriture, transport et urgences",
             "10 messages Buddy AI par jour",
-            "Cartes de phrases et guides de voyage inclus"
+            "Cartes de phrases gratuites et guides de voyage publics"
           ]
         },
         "trip": {
@@ -446,9 +446,11 @@
           "desc": "Aide de voyage supplémentaire pour une personne pendant un séjour en Chine",
           "cta": "Obtenir Trip Pass",
           "features": [
-            "50 réponses Buddy AI",
+            "50 messages Buddy AI",
             "Valable 14 jours",
-            "Pour un voyageur, tout le séjour"
+            "Jusqu’à 2 appareils",
+            "Boîte à outils Premium complète",
+            "Toutes les cartes de phrases premium débloquées"
           ]
         },
         "group": {
@@ -456,9 +458,11 @@
           "desc": "Aide supplémentaire pour couples, familles ou petits groupes utilisant un seul compte partagé",
           "cta": "Obtenir Group Pass",
           "features": [
-            "200 réponses Buddy AI",
+            "200 messages Buddy AI",
             "Valable 14 jours",
-            "Un pass partagé pour couples, familles ou groupes"
+            "Jusqu’à 5 appareils avec un pass partagé",
+            "Boîte à outils Premium complète",
+            "Toutes les cartes de phrases premium débloquées"
           ]
         }
       },
@@ -543,7 +547,7 @@
         "activeButton": "Pass actif",
         "expires": "Expire le {{date}}"
       },
-      "upgradePrompt": "Passez à la version supérieure pour plus de messages Buddy AI."
+      "upgradePrompt": "Choisissez Trip Pass ou Group Pass pour débloquer tous les outils Premium et plus de messages Buddy AI."
     },
     "chat": {
       "title": "Demander à Buddy",

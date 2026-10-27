@@ -89,7 +89,7 @@ export default function PhraseCardItem({ card, isLocked = false, showToast, onLo
           <div className="absolute inset-0 z-10 flex items-center justify-center rounded-2xl bg-white/70 backdrop-blur-[1px]">
             <button
               type="button"
-              onClick={onLockedClick}
+              onClick={() => onLockedClick?.()}
               className="flex items-center gap-1.5 rounded-full bg-[#155e63] px-3 py-1.5 text-xs font-semibold text-white shadow-sm"
             >
               🔒 {t('common.upgradeToUnlock')}

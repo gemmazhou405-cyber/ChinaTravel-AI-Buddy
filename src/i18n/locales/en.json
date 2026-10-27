@@ -212,11 +212,11 @@
         "title": "Custom Phrase Helper",
         "subtitle": "Create a phrase when hotel needs get specific.",
         "body": "Create custom Chinese cards for your real travel situations.",
-        "available": "Available with Group Pass",
+        "available": "Available with Trip Pass or Group Pass",
         "placeholder": "What do you want to say?",
         "generate": "Generate Chinese Card",
-        "upgrade": "Upgrade to Group Pass",
-        "upgradeToast": "Unlock custom phrase cards with Group Pass."
+        "upgrade": "Upgrade to Trip Pass or Group Pass",
+        "upgradeToast": "Unlock custom phrase cards with Trip Pass or Group Pass."
       },
       "cityGuide": {
         "title": "City Guide",
@@ -436,9 +436,9 @@
           "desc": "Basic China travel toolkit for common travel situations.",
           "cta": "Start Free",
           "features": [
-            "Full toolkit: apps, payments, food, transport, and emergencies",
+            "Basic tools: apps, payments, food, transport, and emergencies",
             "10 Buddy AI messages per day",
-            "Phrase cards and travel guides included"
+            "Free phrase cards and public travel guides"
           ]
         },
         "trip": {
@@ -446,9 +446,11 @@
           "desc": "Extra travel help for one traveler during a China trip",
           "cta": "Get Trip Pass",
           "features": [
-            "50 Buddy AI answers",
+            "50 Buddy AI messages",
             "Valid for 14 days",
-            "For one traveler, the whole trip"
+            "Up to 2 devices",
+            "Full Premium Toolkit",
+            "All premium phrase cards unlocked"
           ]
         },
         "group": {
@@ -456,9 +458,11 @@
           "desc": "Extra travel help for couples, families, or small groups using one shared account",
           "cta": "Get Group Pass",
           "features": [
-            "200 Buddy AI answers",
+            "200 Buddy AI messages",
             "Valid for 14 days",
-            "One shared pass for couples, families, or groups"
+            "Up to 5 devices on one shared pass",
+            "Full Premium Toolkit",
+            "All premium phrase cards unlocked"
           ]
         }
       },
@@ -543,7 +547,7 @@
         "activeButton": "Active pass",
         "expires": "Expires {{date}}"
       },
-      "upgradePrompt": "Upgrade to get more Buddy AI messages."
+      "upgradePrompt": "Choose Trip Pass or Group Pass to unlock the full Premium Toolkit and more Buddy AI messages."
     },
     "chat": {
       "title": "Ask Buddy",

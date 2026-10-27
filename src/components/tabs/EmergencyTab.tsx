@@ -249,7 +249,7 @@ export default function EmergencyTab({ passState, showToast, onAskBuddy, onUpgra
                   <span className="text-2xl">{cat.emoji}</span>
                   <p className="text-xs font-semibold text-gray-800 mt-1.5 leading-tight">{cat.title}</p>
                   <p className="text-[10px] text-gray-400 mt-0.5 leading-snug">{cat.description}</p>
-                  {locked && <p className="text-[9px] text-[#155e63] font-medium mt-1.5">Trip Pass only</p>}
+                  {locked && <p className="text-[9px] text-[#155e63] font-medium mt-1.5">Trip Pass / Group Pass</p>}
                 </button>
               );
             })}

@@ -212,11 +212,11 @@
         "title": "Individueller Satzhelfer",
         "subtitle": "Erstelle einen Satz, wenn Hotelwünsche spezieller sind.",
         "body": "Erstelle individuelle chinesische Karten für echte Reisesituationen.",
-        "available": "Verfügbar mit Group Pass",
+        "available": "Verfügbar mit Trip Pass oder Group Pass",
         "placeholder": "Was möchtest du sagen?",
         "generate": "Chinesische Karte erstellen",
-        "upgrade": "Auf Group Pass upgraden",
-        "upgradeToast": "Individuelle Phrase Cards mit Group Pass freischalten."
+        "upgrade": "Auf Trip Pass oder Group Pass upgraden",
+        "upgradeToast": "Individuelle Phrase Cards mit Trip Pass oder Group Pass freischalten."
       },
       "cityGuide": {
         "title": "Stadtguide",
@@ -436,9 +436,9 @@
           "desc": "Basis-Toolkit für typische Reisesituationen in China.",
           "cta": "Kostenlos starten",
           "features": [
-            "Vollständiges Toolkit: Apps, Zahlungen, Essen, Transport und Notfälle",
+            "Basis-Tools: Apps, Zahlungen, Essen, Transport und Notfälle",
             "10 Buddy-KI-Nachrichten pro Tag",
-            "Phrasekarten und Reiseführer inklusive"
+            "Kostenlose Phrasekarten und öffentliche Reiseführer"
           ]
         },
         "trip": {
@@ -446,9 +446,11 @@
           "desc": "Zusätzliche Reisehilfe für eine Person während einer China-Reise",
           "cta": "Trip Pass erhalten",
           "features": [
-            "50 Buddy-KI-Antworten",
+            "50 Buddy-KI-Nachrichten",
             "14 Tage gültig",
-            "Für eine Person, die gesamte Reise"
+            "Bis zu 2 Geräte",
+            "Vollständiges Premium-Toolkit",
+            "Alle Premium-Phrasekarten freigeschaltet"
           ]
         },
         "group": {
@@ -456,9 +458,11 @@
           "desc": "Zusätzliche Reisehilfe für Paare, Familien oder kleine Gruppen mit einem geteilten Konto",
           "cta": "Group Pass erhalten",
           "features": [
-            "200 Buddy-KI-Antworten",
+            "200 Buddy-KI-Nachrichten",
             "14 Tage gültig",
-            "Ein gemeinsamer Pass für Paare, Familien oder Gruppen"
+            "Bis zu 5 Geräte mit einem gemeinsamen Pass",
+            "Vollständiges Premium-Toolkit",
+            "Alle Premium-Phrasekarten freigeschaltet"
           ]
         }
       },
@@ -543,7 +547,7 @@
         "activeButton": "Aktiver Pass",
         "expires": "Läuft ab am {{date}}"
       },
-      "upgradePrompt": "Upgrade für mehr Buddy-KI-Nachrichten."
+      "upgradePrompt": "Wähle Trip Pass oder Group Pass für das vollständige Premium-Toolkit und mehr Buddy-KI-Nachrichten."
     },
     "chat": {
       "title": "Buddy fragen",
