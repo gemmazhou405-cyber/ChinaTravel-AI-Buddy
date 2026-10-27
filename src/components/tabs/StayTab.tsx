@@ -7,7 +7,7 @@ import ToolDisclosure from '../ToolDisclosure';
 import CitySurvivalPack from '../CitySurvivalPack';
 import { hotelCards, universalCards } from '../../data/phraseCards';
 import type { PassState } from '../../hooks/usePass';
-import { isGroup, isTripOrGroup } from '../../lib/membership';
+import { isTripOrGroup } from '../../lib/membership';
 import { cityPacks } from '../../data/cityPacks';
 
 const TIPS = [
@@ -49,7 +49,7 @@ export default function StayTab({ passState, showToast, onAskBuddy, onUpgradeCli
     pinyin: 'Qǐngwèn wǒ zuì wǎn jǐ diǎn tuìfáng?',
   };
   const hasFullAccess = isTripOrGroup(passState);
-  const canUseCustomPhraseHelper = isGroup(passState);
+  const canUseCustomPhraseHelper = hasFullAccess;
   const selectedCity = cityPacks.find((city) => city.cityId === selectedCityId) || cityPacks[0];
   const isCityLocked = (cityId: string) => !hasFullAccess && cityId !== 'shanghai';
 

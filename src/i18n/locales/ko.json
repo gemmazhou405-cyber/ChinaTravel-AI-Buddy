@@ -212,11 +212,11 @@
         "title": "맞춤 문장 도우미",
         "subtitle": "호텔 상황이 구체적일 때 문장을 만드세요.",
         "body": "실제 여행 상황에 맞는 중국어 카드를 만듭니다.",
-        "available": "Group Pass에서 사용 가능",
+        "available": "Trip Pass 또는 Group Pass에서 사용 가능",
         "placeholder": "무엇이라고 말하고 싶나요?",
         "generate": "중국어 카드 만들기",
-        "upgrade": "Group Pass로 업그레이드",
-        "upgradeToast": "맞춤 문장 카드는 Group Pass로 잠금 해제됩니다."
+        "upgrade": "Trip Pass 또는 Group Pass로 업그레이드",
+        "upgradeToast": "맞춤 문장 카드는 Trip Pass 또는 Group Pass로 잠금 해제됩니다."
       },
       "cityGuide": {
         "title": "도시 가이드",
@@ -436,9 +436,9 @@
           "desc": "중국 여행의 일반적인 상황을 위한 기본 툴킷.",
           "cta": "무료 시작",
           "features": [
-            "전체 툴킷: 앱, 결제, 음식, 교통, 긴급 상황",
+            "기본 도구: 앱, 결제, 음식, 교통, 긴급 상황",
             "Buddy AI 메시지 하루 10개",
-            "문장 카드 및 여행 가이드 포함"
+            "무료 문장 카드 및 공개 여행 가이드"
           ]
         },
         "trip": {
@@ -446,9 +446,11 @@
           "desc": "중국 여행 중 1명을 위한 추가 여행 도움",
           "cta": "Trip Pass 받기",
           "features": [
-            "Buddy AI 답변 50개",
+            "Buddy AI 메시지 50개",
             "14일간 유효",
-            "여행자 1명, 여행 내내 사용 가능"
+            "최대 2대의 기기",
+            "프리미엄 툴킷 전체 이용",
+            "모든 프리미엄 문장 카드 잠금 해제"
           ]
         },
         "group": {
@@ -456,9 +458,11 @@
           "desc": "하나의 공유 계정을 사용하는 커플, 가족 또는 소규모 그룹을 위한 추가 여행 도움",
           "cta": "Group Pass 받기",
           "features": [
-            "Buddy AI 답변 200개",
+            "Buddy AI 메시지 200개",
             "14일간 유효",
-            "커플, 가족 또는 그룹이 함께 쓰는 공유 패스"
+            "공유 패스 하나로 최대 5대의 기기",
+            "프리미엄 툴킷 전체 이용",
+            "모든 프리미엄 문장 카드 잠금 해제"
           ]
         }
       },
@@ -543,7 +547,7 @@
         "activeButton": "활성 패스",
         "expires": "{{date}} 만료"
       },
-      "upgradePrompt": "Buddy AI 메시지를 더 사용하려면 업그레이드하세요."
+      "upgradePrompt": "Trip Pass 또는 Group Pass로 프리미엄 툴킷 전체와 추가 Buddy AI 메시지를 이용하세요."
     },
     "chat": {
       "title": "Buddy에게 질문",

@@ -710,14 +710,14 @@ const pageMeta = {
   pricing: {
     lastModified: '2026-10-23',
     title: 'Pricing | ChinaEase Buddy',
-    description: 'Personal itinerary reviews are priced separately on Fiverr. Compare optional Buddy AI message passes; digital passes do not include personal planning.',
+    description: 'Compare one-time Trip Pass and Group Pass options for the full Premium Toolkit and Buddy AI messages. Human customized itinerary planning is a separate paid service.',
     sections: [
       ['Free', 'Basic toolkit for apps, payments, transport, food, hotels, emergency help, and limited Buddy AI access.', '/?journey=china&tool=food'],
-      ['Trip Pass', 'USD 9.90 one-time travel pass with 50 Buddy AI messages for 14 days.', '/pricing/'],
-      ['Group Pass', 'USD 29.90 one-time travel pass with 200 Buddy AI messages for 14 days on one shared account.', '/pricing/'],
+      ['Trip Pass', 'USD 9.90 one-time travel pass with the full Premium Toolkit, all premium phrase cards and 50 Buddy AI messages for 14 days on up to 2 devices.', '/pricing/'],
+      ['Group Pass', 'USD 29.90 one-time travel pass with the full Premium Toolkit, all premium phrase cards and 200 Buddy AI messages for 14 days on up to 5 devices sharing one pass.', '/pricing/'],
     ],
     faqs: [
-      ['How do paid passes work?', `Paid passes cover Buddy AI messages and are purchased through Gumroad. ${planningHelp.digitalScope} Access is activated after purchase using your sale ID.`],
+      ['How do paid passes work?', `${planningHelp.digitalScope} Passes are purchased through Gumroad and activated after purchase using your sale ID.`],
       ['How is payment processed?', 'Payments are processed securely by Gumroad. ChinaEase Buddy never sees or stores your card details.'],
       ['Is there auto-renewal?', 'No. ChinaEase Buddy passes are one-time travel passes with no auto-renewal.'],
     ],
