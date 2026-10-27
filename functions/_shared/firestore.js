@@ -364,3 +364,58 @@ export async function queryCollection(env, collectionId, field, value, limit = 1
       id: row.document.name.split('/').pop(),
     }));
 }
+
+// Read-only pagination for the server-generated millisecond fields used by growth
+// reporting. Filter/order on one indexed field; filter environment in memory so a
+// production-environment/date composite index is not required.
+export async function queryNumericRangePage(env, {
+  collectionId, dateField, from, to, fields, limit = 200, cursor = null, readTime = null, signal,
+}) {
+  if (!Number.isInteger(limit) || limit < 1 || limit > 200
+    || !Number.isSafeInteger(from) || !Number.isSafeInteger(to) || from >= to) {
+    throw new Error('invalid_range_query');
+  }
+  const structuredQuery = {
+    select: { fields: [...new Set([dateField, ...fields])].map((fieldPath) => ({ fieldPath })) },
+    from: [{ collectionId }],
+    where: {
+      compositeFilter: {
+        op: 'AND',
+        filters: [
+          { fieldFilter: { field: { fieldPath: dateField }, op: 'GREATER_THAN_OR_EQUAL', value: firestoreValue(from) } },
+          { fieldFilter: { field: { fieldPath: dateField }, op: 'LESS_THAN', value: firestoreValue(to) } },
+        ],
+      },
+    },
+    orderBy: [
+      { field: { fieldPath: dateField }, direction: 'ASCENDING' },
+      { field: { fieldPath: '__name__' }, direction: 'ASCENDING' },
+    ],
+    limit,
+    ...(cursor ? { startAt: { values: [cursor.dateValue, { referenceValue: cursor.name }], before: false } } : {}),
+  };
+  const token = await serviceAccountToken(env);
+  const response = await fetch(`https://firestore.googleapis.com/v1/${databaseRoot(env)}:runQuery`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ structuredQuery, ...(readTime ? { readTime } : {}) }),
+    signal: signal ? AbortSignal.any([signal, AbortSignal.timeout(FIRESTORE_TIMEOUT_MS)]) : AbortSignal.timeout(FIRESTORE_TIMEOUT_MS),
+  });
+  if (!response.ok) throw new Error('firestore_range_query_failed');
+  const rows = await response.json();
+  if (!Array.isArray(rows)) throw new Error('firestore_range_query_invalid');
+  const documents = rows.filter((row) => row.document).map((row) => row.document);
+  const snapshotTime = readTime || rows.findLast((row) => typeof row.readTime === 'string')?.readTime;
+  if (documents.length > limit || !snapshotTime) throw new Error('firestore_range_query_invalid');
+  const last = documents.at(-1);
+  if (last && (!last.name || !last.fields?.[dateField])) throw new Error('firestore_range_query_invalid');
+  const nextCursor = last && documents.length === limit
+    ? { name: last.name, dateValue: last.fields[dateField] }
+    : null;
+  if (nextCursor && cursor?.name === nextCursor.name) throw new Error('firestore_range_query_not_advancing');
+  return {
+    documents: documents.map(fromFirestoreDocument),
+    cursor: nextCursor,
+    readTime: snapshotTime,
+  };
+}
