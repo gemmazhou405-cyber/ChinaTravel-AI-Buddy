@@ -18,7 +18,7 @@ const goldenWeekGuide = JSON.parse(await readFile('src/data/seoPages/china-golde
 const greatWallGuide = JSON.parse(await readFile('src/data/seoPages/great-wall-of-china-day-trip-from-beijing.json', 'utf8'));
 const emergencyGuideContent = JSON.parse(await readFile('src/data/emergencyGuideContent.json', 'utf8'));
 const tripCostEstimatorContent = JSON.parse(await readFile('src/data/tripCostEstimatorContent.json', 'utf8'));
-const beijingThreeDayPlanning = JSON.parse(await readFile('src/data/beijingThreeDayPlanning.json', 'utf8'));
+const beijingGuide = JSON.parse(await readFile('src/data/beijingGuide.json', 'utf8'));
 const zhangjiajieTianmenUpdate = JSON.parse(await readFile('src/data/zhangjiajieTianmenUpdate.json', 'utf8'));
 const sevenDayItineraryContent = JSON.parse(await readFile('src/data/sevenDayItineraryContent.json', 'utf8'));
 const tenDayItineraryContent = JSON.parse(await readFile('src/data/tenDayItineraryContent.json', 'utf8'));
@@ -1285,16 +1285,15 @@ const pageMeta = {
     ],
   },
   '3-day-beijing-itinerary': {
-    title: '3-Day Beijing Itinerary for First-Time Visitors (2026)',
-    heading: '3-Day Beijing Itinerary for First-Time Visitors (2026)',
-    description: 'Plan three days in Beijing with the Palace Museum, Great Wall, Temple of Heaven, hutongs, hotel areas, bookings, transport, costs, and alternatives.',
-    quickAnswer: beijingThreeDayPlanning.quickAnswer,
-    lastReviewed: 'September 21, 2026',
-    lastModified: beijingThreeDayPlanning.modified,
     article: true,
-    contentSections: beijingThreeDayPlanning.sections,
-    faqs: beijingThreeDayPlanning.faqs.map(({ question, answer }) => [question, answer]),
-    sourceLinks: beijingThreeDayPlanning.sources.map(({ label, href }) => [label, href]),
+    title: beijingGuide.metaTitle,
+    heading: beijingGuide.heading,
+    description: beijingGuide.metaDescription,
+    quickAnswer: quickAnswerText(beijingGuide.quickAnswer),
+    faqs: beijingGuide.faqs.map(({ question, answer }) => [question, plainText(answer)]),
+    sourceLinks: beijingGuide.sources.map(({ label, href }) => [label, href]),
+    lastReviewed: beijingGuide.reviewed,
+    lastModified: beijingGuide.modified,
   },
   '3-day-shanghai-itinerary': {
     title: '3-Day Shanghai Itinerary for First-Time Visitors (2026)',
@@ -3801,6 +3800,7 @@ const richGuides = {
   'china-hotels-for-foreigners': hotelsGuide,
   'china-travel-checklist': checklistGuide,
   '3-day-suzhou-itinerary': suzhouGuide,
+  '3-day-beijing-itinerary': beijingGuide,
 };
 
 function staticPageContent(page, meta) {

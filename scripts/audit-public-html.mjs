@@ -36,7 +36,7 @@ const pages = [
     path: '/beijing-airport-to-city-guide/',
     h1: /Beijing Airport to City Centre.*PEK vs PKX.*2026/i,
     keywords: ['PEK', 'PKX', 'Caoqiao', 'Dongzhimen'],
-    links: ["/china-airport-arrival-guide/", "/#trip-plan", "/china-train-travel-guide/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/great-wall-of-china-day-trip-from-beijing/", "/first-trip-to-china/"],
+    links: ["/3-day-beijing-itinerary/", "/china-airport-arrival-guide/", "/#trip-plan", "/china-train-travel-guide/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/great-wall-of-china-day-trip-from-beijing/", "/first-trip-to-china/"],
   },
   {
     path: '/amap-vs-google-maps-china/',
@@ -169,8 +169,10 @@ const pages = [
   {
     path: '/3-day-beijing-itinerary/',
     h1: /3-Day Beijing Itinerary for First-Time Visitors.*2026/i,
-    keywords: ['Palace Museum', 'Great Wall', 'Temple of Heaven', 'Tiananmen', 'Wangfujing', 'Qianmen', 'Railway 12306', 'If your three days include a Monday', '20:00 China time', 'seven days ahead', 'separately charged attractions', 'Wumen', 'Dashilan'],
-    links: ["/beijing-airport-to-city-guide/", "/great-wall-of-china-day-trip-from-beijing/", "/china-travel-budget/#cost-estimator", "/#trip-plan", "/3-day-shanghai-itinerary/", "/best-time-to-visit-china/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/3-day-xian-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-travel-guide/"],
+    keywords: ['Palace Museum', 'Great Wall', 'Temple of Heaven', 'Tiananmen', 'Wangfujing', 'Qianmen', '12306', 'If your three days include a Monday', '20:00 Beijing time', '7 days before your visit', 'Meridian Gate', 'Dashilan', '¥60 April–October', 'Jingshan Park'],
+    // The page now carries its own October 2026 check note.
+    forbiddenPhrases: ['checked on October 22, 2026'],
+    links: ["/beijing-airport-to-city-guide/", "/great-wall-of-china-day-trip-from-beijing/", "/china-travel-budget/#cost-estimator", "/#trip-plan", "/china-travel-budget/#real-prices", "/china-hotels-for-foreigners/#check-before-booking", "/alipay-metro-qr-transport-code-guide/#card", "/didi-in-china-for-foreigners/#book", "/3-day-nanjing-itinerary/", "/3-day-shanghai-itinerary/", "/best-time-to-visit-china/", "/china-hotels-for-foreigners/", "/first-trip-to-china/", "/3-day-xian-itinerary/", "/china-itinerary-first-time-7-10-14-days/", "/china-travel-budget/", "/china-train-travel-guide/"],
   },
   {
     path: '/3-day-shanghai-itinerary/',
@@ -256,7 +258,7 @@ const pages = [
     path: '/great-wall-of-china-day-trip-from-beijing/',
     h1: /Great Wall Day Trip from Beijing.*Mutianyu or Badaling.*2026/i,
     keywords: ['Mutianyu', 'Badaling', 'cableway', 'shuttle', '12306', 'Forbidden City'],
-    links: ["/#trip-plan", "/china-train-travel-guide/", "/first-trip-to-china/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/beijing-airport-to-city-guide/", "/china-airport-arrival-guide/"],
+    links: ["/3-day-beijing-itinerary/", "/#trip-plan", "/china-train-travel-guide/", "/first-trip-to-china/", "/china-metro-guide/", "/didi-in-china-for-foreigners/", "/beijing-airport-to-city-guide/", "/china-airport-arrival-guide/"],
   },
   {
     path: '/chengdu-panda-base-guide/',

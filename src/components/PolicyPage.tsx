@@ -15,7 +15,7 @@ import goldenWeekGuide from '../data/seoPages/china-golden-week-2026-travel-guid
 import greatWallGuide from '../data/seoPages/great-wall-of-china-day-trip-from-beijing.json';
 import emergencyGuideContent from '../data/emergencyGuideContent.json';
 import tripCostEstimatorContent from '../data/tripCostEstimatorContent.json';
-import beijingThreeDayPlanning from '../data/beijingThreeDayPlanning.json';
+import beijingGuide from '../data/beijingGuide.json';
 import zhangjiajieTianmenUpdate from '../data/zhangjiajieTianmenUpdate.json';
 import sevenDayItineraryContent from '../data/sevenDayItineraryContent.json';
 import tenDayItineraryContent from '../data/tenDayItineraryContent.json';
@@ -2297,20 +2297,19 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
   },
   '3-day-beijing-itinerary': {
     path: '/3-day-beijing-itinerary/',
-    title: '3-Day Beijing Itinerary for First-Time Visitors (2026)',
-    intro:
-      'A realistic first Beijing plan covering the imperial centre, the Great Wall, the Temple of Heaven, hutongs, reservations, transport, and backup options.',
-    metaTitle: '3-Day Beijing Itinerary for First-Time Visitors (2026)',
-    metaDescription:
-      'Plan three days in Beijing with the Palace Museum, Great Wall, Temple of Heaven, hutongs, hotel areas, bookings, transport, costs, and alternatives.',
-    quickAnswer: beijingThreeDayPlanning.quickAnswer,
+    title: beijingGuide.heading,
+    intro: '',
+    metaTitle: beijingGuide.metaTitle,
+    metaDescription: beijingGuide.metaDescription,
+    quickAnswer: quickAnswerText(beijingGuide.quickAnswer),
+    // Rendered like the Amap guide (AmapGuide components); keeps its own itinerary CTA.
     ctaLabel: 'Get my personalised Beijing itinerary',
     ctaHref: '/#trip-plan',
-    lastReviewed: 'September 21, 2026',
-    lastModified: beijingThreeDayPlanning.modified,
+    reviewed: beijingGuide.reviewed,
+    lastModified: beijingGuide.modified,
     isArticle: true,
-    sections: beijingThreeDayPlanning.sections,
-    faqs: beijingThreeDayPlanning.faqs,
+    sections: [],
+    faqs: beijingGuide.faqs.map(({ question, answer }) => ({ question, answer: plainText(answer) })),
     related: [
       { label: '3-day Shanghai itinerary', href: '/3-day-shanghai-itinerary/' },
       { label: 'Beijing vs Shanghai', href: '/beijing-vs-shanghai/' },
@@ -2325,7 +2324,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       { label: 'First trip to China', href: '/first-trip-to-china/' },
       { label: 'Get a personalised Beijing itinerary', href: '/#trip-plan' },
     ],
-    sources: beijingThreeDayPlanning.sources,
+    sources: beijingGuide.sources,
   },
   '3-day-shanghai-itinerary': {
     path: '/3-day-shanghai-itinerary/',
@@ -4976,6 +4975,7 @@ const richGuides: Partial<Record<GuidePageType, GuideContent>> = {
   'china-hotels-for-foreigners': hotelsGuide as GuideContent,
   'china-travel-checklist': checklistGuide as GuideContent,
   '3-day-suzhou-itinerary': suzhouGuide as GuideContent,
+  '3-day-beijing-itinerary': beijingGuide as GuideContent,
 };
 
 function GuidePage({ type, userId, onAskBuddy }: { type: GuidePageType; userId?: string | null; onAskBuddy?: (prefill?: string) => void }) {

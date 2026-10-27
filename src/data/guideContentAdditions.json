@@ -278,34 +278,6 @@
     ],
     "removeFaqs": []
   },
-  "3-day-beijing-itinerary": {
-    "sections": [],
-    "faqs": [],
-    "sources": [],
-    "sectionLinks": [
-      {
-        "section": "Transport and daily pace",
-        "links": [
-          {
-            "label": "tap your Visa at the metro gate",
-            "description": "Contactless Visa, Mastercard, Amex and JCB cards work at the metro gates; no app or ticket needed.",
-            "href": "/alipay-metro-qr-transport-code-guide/#card"
-          }
-        ]
-      },
-      {
-        "section": "Transport and daily pace",
-        "links": [
-          {
-            "label": "book a DiDi in English",
-            "description": "Switch the app to English, compare upfront fares with taxi estimates and check your pickup point.",
-            "href": "/didi-in-china-for-foreigners/#book"
-          }
-        ]
-      }
-    ],
-    "removeFaqs": []
-  },
   "3-day-shanghai-itinerary": {
     "sections": [],
     "faqs": [],
@@ -503,6 +475,10 @@
       {
         "section": "Arrival and payment checklist",
         "text": "Before you land, see [how to fill in China's online arrival card](/china-online-arrival-card-2026/)."
+      },
+      {
+        "section": "Arrival and payment checklist",
+        "text": "Once you're in the city, see my [3-day Beijing itinerary](/3-day-beijing-itinerary/), with Forbidden City booking times and prices."
       }
     ]
   },
@@ -624,6 +600,19 @@
       {
         "section": "Where to stay and how to arrive",
         "text": "If you add Suzhou, see my [3-day Suzhou itinerary](/3-day-suzhou-itinerary/), with garden tickets and booking rules for 2026."
+      }
+    ]
+  },
+  "great-wall-of-china-day-trip-from-beijing": {
+    "sections": [],
+    "faqs": [],
+    "sources": [],
+    "sectionLinks": [],
+    "removeFaqs": [],
+    "sectionNotes": [
+      {
+        "section": "Fit the Wall into a first Beijing visit",
+        "text": "For the rest of your time in Beijing, see my [3-day Beijing itinerary](/3-day-beijing-itinerary/), with Forbidden City booking times and prices."
       }
     ]
   }

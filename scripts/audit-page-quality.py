@@ -83,6 +83,7 @@ rich_guides = {
     'china-hotels-for-foreigners': ('Hotels', load_json('src/data/hotelsGuide.json')),
     'china-travel-checklist': ('Checklist', load_json('src/data/checklistGuide.json')),
     '3-day-suzhou-itinerary': ('Suzhou', load_json('src/data/suzhouGuide.json')),
+    '3-day-beijing-itinerary': ('Beijing', load_json('src/data/beijingGuide.json')),
 }
 # Sections removed in a rebuild must not come back.
 removed_headings = {
@@ -231,6 +232,15 @@ for pathname in sorted(audit_paths):
                 require(source['href'] in source_hrefs, f"Suzhou: source link missing: {source['href']}")
             require(len(guide['sources']) == 10, 'Suzhou: expected 10 sources')
             require('avoid quoting an old ticket price' not in flat_text.lower(), 'Suzhou: old "Avoid quoting an old ticket price" line is back')
+        # The Beijing itinerary must keep its eleven anchors and fifteen sources, and the old check-date note must not return.
+        if slug == '3-day-beijing-itinerary':
+            for anchor in ['quick-answer', 'three-days-in-beijing-at-a-glance', 'tickets', 'if-your-three-days-include-a-monday', 'day-1-beijing-imperial-centre', 'day-2-great-wall-day-trip', 'day-3-temple-of-heaven-qianmen-and-local-beijing', 'book-these-before-the-trip', 'where-to-stay-for-a-three-day-visit', 'transport-and-daily-pace', 'adjust-the-itinerary-for-your-trip']:
+                require(anchor in ids, f'Beijing: missing #{anchor}')
+            source_hrefs = {node.attrs.get('href') for node in document.find('a')}
+            for source in guide['sources']:
+                require(source['href'] in source_hrefs, f"Beijing: source link missing: {source['href']}")
+            require(len(guide['sources']) == 15, 'Beijing: expected 15 sources')
+            require('checked on october 22, 2026' not in flat_text.lower(), 'Beijing: old "checked on October 22, 2026" note is back')
         for heading in removed_headings.get(slug, []):
             require(heading.lower() not in flat_text.lower(), f'{name}: removed section is back: {heading}')
 
