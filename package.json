@@ -13,6 +13,7 @@
     "test:visa-checker": "node scripts/test-visa-checker.mjs",
     "test:transit-calculator": "node scripts/test-transit-calculator.mjs",
     "test:trip-email-flow": "node scripts/test-trip-email-flow.mjs",
+    "test:trip-plan-form": "node scripts/test-trip-plan-form.mjs",
     "test:lead-source": "node scripts/test-lead-source.mjs",
     "test:trip-lead-quota": "node scripts/test-trip-lead-quota.mjs",
     "test:release-fixes": "node scripts/test-release-fixes.mjs",
