@@ -1,0 +1,61 @@
+name: Free itinerary review
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/free-itinerary-review.yml'
+      - 'functions/_shared/itinerary-email.js'
+      - 'src/components/home/TripPlanForm.tsx'
+      - 'src/data/planningHelp.json'
+      - 'src/i18n/locales/*.json'
+      - 'scripts/test-trip-email-flow.mjs'
+      - 'scripts/test-trip-plan-form.mjs'
+      - 'scripts/test-lead-source.mjs'
+      - 'scripts/test-trip-lead-quota.mjs'
+      - 'scripts/test-planning-help.mjs'
+      - 'scripts/test-growth-summary.mjs'
+      - 'scripts/test-release-fixes.mjs'
+      - 'package.json'
+      - 'package-lock.json'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: free-itinerary-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '26.8.1'
+          cache: npm
+      - run: npm ci
+      - name: Install isolated browser test tooling
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/chinaease-browsers
+        run: |
+          npm install --prefix "$RUNNER_TEMP/chinaease-browser-tests" --no-save --package-lock=false playwright@1.62.1
+          "$RUNNER_TEMP/chinaease-browser-tests/node_modules/.bin/playwright" install --with-deps chromium
+      - run: npm run typecheck
+      - run: npm run build
+      - name: Run email, form, planning and growth regressions
+        env:
+          NODE_PATH: ${{ runner.temp }}/chinaease-browser-tests/node_modules
+          PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/chinaease-browsers
+        run: |
+          npm run test:trip-email-flow
+          npm run test:trip-plan-form
+          npm run test:lead-source
+          npm run test:trip-lead-quota
+          npm run test:planning-help
+          npm run test:growth-summary
+          npm run test:release-fixes
