@@ -1,11 +1,7 @@
-import { getDoc, patchDoc, queryOneWithId } from '../_shared/firestore.js';
+import { queryOneWithId } from '../_shared/firestore.js';
+import { bindPassDevice } from '../_shared/entitlements.js';
 import { sessionCookieHeader, sha256hex, signSessionToken } from '../_shared/session.js';
 import { hashIp } from '../_shared/ip-hash.js';
-
-const TIERS = {
-  trip:  { maxDevices: 2 },
-  group: { maxDevices: 5 },
-};
 
 // Strip formatting dashes so "ABCD-EFGH-IJKL" → "ABCDEFGHIJKL"
 function normalizeCode(code) {
@@ -50,22 +46,22 @@ export async function onRequestPost({ request, env }) {
   const code = `${rawCode.slice(0, 4)}-${rawCode.slice(4, 8)}-${rawCode.slice(8, 12)}`;
   const hash = await sha256hex(code);
 
-  const pass = await queryOneWithId(env, 'passes', 'recoveryCodeHash', hash).catch(() => null);
+  let pass;
+  try {
+    pass = await queryOneWithId(env, 'passes', 'recoveryCodeHash', hash);
+  } catch {
+    return json({ error: 'recovery_unavailable' }, 503);
+  }
   if (!pass) return json({ error: 'invalid_code' }, 401);
 
-  const config = TIERS[pass.tier] || { maxDevices: 2 };
-  const devices = Array.isArray(pass.devices) ? pass.devices : [];
-  const alreadyBound = devices.some((d) => d.id === deviceId);
-
-  if (!alreadyBound) {
-    if (devices.length >= config.maxDevices) {
-      return json({ error: 'max_devices_reached', maxDevices: config.maxDevices }, 403);
-    }
-    const now = Date.now();
-    await patchDoc(env, `passes/${pass.id}`, {
-      devices: [...devices, { id: deviceId, boundAt: now, lastSeenAt: now }],
-    }, ['devices']);
+  let bound;
+  try {
+    bound = await bindPassDevice(env, pass.id, deviceId);
+  } catch {
+    return json({ error: 'recovery_unavailable' }, 503);
   }
+  if (!bound.ok) return json({ error: bound.error, ...(bound.maxDevices ? { maxDevices: bound.maxDevices } : {}) }, bound.status);
+  pass = { ...bound.pass, id: pass.id };
 
   const token = await signSessionToken(env.SESSION_SECRET, pass.id, deviceId);
   const now = Date.now();

@@ -1208,6 +1208,7 @@
         "expires": "Expires {{date}}",
         "expired": "Expired",
         "devicesTitle": "Devices",
+        "devicesLoadError": "기기를 불러오지 못했습니다. 이 창을 닫았다가 다시 열어 주세요.",
         "devicesCount": "{{count}} of {{max}} devices",
         "removeDevice": "Remove",
         "removing": "Removing…",

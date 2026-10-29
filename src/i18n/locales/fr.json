@@ -1208,6 +1208,7 @@
         "expires": "Expires {{date}}",
         "expired": "Expired",
         "devicesTitle": "Devices",
+        "devicesLoadError": "Impossible de charger les appareils. Fermez puis rouvrez cette fenêtre pour réessayer.",
         "devicesCount": "{{count}} of {{max}} devices",
         "removeDevice": "Remove",
         "removing": "Removing…",

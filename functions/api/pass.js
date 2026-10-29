@@ -1,5 +1,5 @@
-import { getDoc } from '../_shared/firestore.js';
 import { verifySessionCookie } from '../_shared/session.js';
+import { getPassForAccess, isPassCurrent, isPassDeviceBound } from '../_shared/entitlements.js';
 
 const TIERS = {
   trip:  { maxDevices: 2 },
@@ -19,11 +19,12 @@ export async function onRequestGet({ request, env }) {
 
   let pass;
   try {
-    pass = await getDoc(env, `passes/${session.passId}`);
+    pass = await getPassForAccess(env, session.passId);
   } catch {
     return json({ tier: 'free' });
   }
   if (!pass) return json({ tier: 'free' });
+  if (!isPassDeviceBound(pass, session.deviceId)) return json({ tier: 'free' });
 
   const now = Date.now();
   const expired = Boolean(pass.expiresAt && pass.expiresAt < now);
@@ -32,7 +33,7 @@ export async function onRequestGet({ request, env }) {
   const maxDevices = TIERS[pass.tier]?.maxDevices ?? 2;
 
   return json({
-    tier: expired ? 'free' : (pass.tier ?? 'free'),
+    tier: isPassCurrent(pass) ? pass.tier : 'free',
     expiresAt: pass.expiresAt ?? null,
     messagesUsed: pass.messagesUsed ?? 0,
     messageAllowance: pass.messageAllowance ?? 0,

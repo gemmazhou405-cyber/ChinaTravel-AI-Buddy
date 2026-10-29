@@ -26,11 +26,15 @@ const docs = new Map();
 const sales = new Map();
 const unexpectedFetches = [];
 let firestoreDown = false;
+let revision = 0;
 const json = (body, status = 200) => new Response(JSON.stringify(body), {
   status, headers: { 'Content-Type': 'application/json' },
 });
 const read = (path) => fromFirestoreDocument(docs.get(path));
-const write = (path, data) => docs.set(path, { name: `${root}/${path}`, ...toFirestoreDocument(data) });
+const write = (path, data) => docs.set(path, {
+  name: `${root}/${path}`, ...toFirestoreDocument(data),
+  updateTime: new Date(1_700_000_000_000 + ++revision).toISOString(),
+});
 
 const originalFetch = globalThis.fetch;
 globalThis.fetch = async (input, init = {}) => {
@@ -51,16 +55,32 @@ globalThis.fetch = async (input, init = {}) => {
       const found = [...docs.entries()].find(([key, doc]) => key.startsWith(`${from[0].collectionId}/`) && fromFirestoreDocument(doc)[field.fieldPath] === wanted);
       return json(found ? [{ document: found[1] }] : []);
     }
+    if (url.pathname.endsWith(':commit')) {
+      // Firestore validates all preconditions before applying the atomic write set.
+      for (const write of body.writes || []) {
+        const path = (write.update?.name || write.delete).replace(`${root}/`, '');
+        const existing = docs.get(path);
+        if (write.currentDocument?.exists === false && existing) return json({ error: 'already_exists' }, 409);
+        if (write.currentDocument?.updateTime && existing?.updateTime !== write.currentDocument.updateTime) {
+          return json({ error: 'failed_precondition' }, 409);
+        }
+      }
+      for (const entry of body.writes || []) {
+        const path = (entry.update?.name || entry.delete).replace(`${root}/`, '');
+        if (entry.delete) docs.delete(path);
+        else write(path, entry.updateMask ? { ...read(path), ...fromFirestoreDocument(entry.update) } : fromFirestoreDocument(entry.update));
+      }
+      return json({ writeResults: (body.writes || []).map(() => ({ updateTime: new Date(1_700_000_000_000 + revision).toISOString() })) });
+    }
     if ((init.method || 'GET') === 'GET') return docs.has(path) ? json(docs.get(path)) : json({}, 404);
     if (init.method === 'POST') {
       const key = `${path}/${url.searchParams.get('documentId')}`;
       if (docs.has(key)) return json({ error: 'already_exists' }, 409);
-      docs.set(key, { name: `${root}/${key}`, fields: body.fields });
+      write(key, fromFirestoreDocument(body));
       return json(docs.get(key));
     }
     if (init.method === 'PATCH') {
-      const fields = { ...(docs.get(path)?.fields || {}), ...body.fields };
-      docs.set(path, { name: `${root}/${path}`, fields });
+      write(path, { ...read(path), ...fromFirestoreDocument(body) });
       return json(docs.get(path));
     }
   }

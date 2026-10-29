@@ -1208,6 +1208,7 @@
         "expires": "Expires {{date}}",
         "expired": "Expired",
         "devicesTitle": "Devices",
+        "devicesLoadError": "デバイスを読み込めませんでした。この画面を閉じて、もう一度開いてください。",
         "devicesCount": "{{count}} of {{max}} devices",
         "removeDevice": "Remove",
         "removing": "Removing…",

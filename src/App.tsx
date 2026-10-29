@@ -269,6 +269,7 @@ export default function App() {
         <PassDashboard
           passState={passState}
           onClose={() => setDashOpen(false)}
+          onDevicesChanged={refreshPassState}
           onAddDevice={() => { setDashOpen(false); setClaimInitialTab('recover'); setClaimOpen(true); }}
         />
       )}
