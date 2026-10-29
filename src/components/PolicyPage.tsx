@@ -1,4 +1,8 @@
 import { useEffect, useState, type ReactNode } from 'react';
+import { useTranslation } from 'react-i18next';
+import type { PassState } from '../hooks/usePass';
+import { isTripOrGroup } from '../lib/membership';
+import { gumroadCheckoutUrl } from '../lib/gumroad';
 import { ArrowLeft, Check } from 'lucide-react';
 import { initAttribution, trackEvent, trackEventOnce } from '../lib/analytics';
 import { unsubscribeNewsletter } from '../lib/newsletter';
@@ -117,6 +121,7 @@ interface Props {
   type: PageType;
   userId?: string | null;
   onAskBuddy?: (prefill?: string) => void;
+  passState?: PassState | null;
 }
 
 interface GuidePageData {
@@ -213,8 +218,8 @@ function guideFromArticle(
 const contactEmail = 'lin@chinaeasebuddy.com';
 const siteUrl = 'https://chinaeasebuddy.com';
 const gumroadLinks = {
-  trip: import.meta.env.VITE_GUMROAD_TRIP_URL || 'https://chinaease.gumroad.com/l/trip-pass',
-  group: import.meta.env.VITE_GUMROAD_GROUP_URL || 'https://chinaease.gumroad.com/l/group-pass',
+  trip: gumroadCheckoutUrl('trip'),
+  group: gumroadCheckoutUrl('group'),
 } as const;
 const standardDisclaimer =
   'ChinaEase Buddy is a digital travel toolkit. It is not an official travel authority, visa service, immigration service, medical service, legal service, financial service, hotel booking service, or flight booking service. Always confirm important travel, payment, health, and entry information with official sources or service providers.';
@@ -4530,7 +4535,7 @@ const guidePages: Record<GuidePageType, GuidePageData> = {
       {
         question: 'How do paid passes work?',
         answer:
-          'Paid passes are one-time digital travel passes purchased through Gumroad. Access is activated immediately after purchase using your sale ID.',
+          'Paid passes are one-time digital travel passes purchased through Gumroad. Activate with the Order ID on your Gumroad receipt. Access is enabled only after server verification; returning from checkout does not activate a Pass.',
       },
       {
         question: 'Is ChinaEase Buddy an official travel service?',
@@ -4798,7 +4803,8 @@ function PageShell({ title, intro, children, planningByline = false, byline }: {
   );
 }
 
-function PricingPage() {
+function PricingPage({ passState }: { passState?: PassState | null }) {
+  const { t } = useTranslation();
   useNoIndexPage(true);
   return (
     <PageShell
@@ -4808,6 +4814,7 @@ function PricingPage() {
       <LinBox placement="pricing" className="mb-6" />
       <h2 className="mb-2 text-xl font-bold text-gray-950">{planningHelp.digitalHeading}</h2>
       <p className="mb-5 text-sm leading-relaxed text-gray-700">{planningHelp.digitalScope}</p>
+      <p id="pricing-pass-purchase-notice" className="mb-5 text-sm leading-relaxed text-gray-700">{t('pay.checkout.separatePassNotice')}</p>
       <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
         {pricingPlans.map((plan) => (
           <div
@@ -4817,6 +4824,9 @@ function PricingPage() {
             }`}
           >
             <h2 className={`text-sm font-semibold ${plan.featured ? 'text-white' : 'text-gray-950'}`}>{plan.name}</h2>
+            {isTripOrGroup(passState ?? null) && plan.plan === `${passState?.tier}_pass` && (
+              <p className="mt-2 text-xs font-semibold">{t('pay.checkout.currentPass')}</p>
+            )}
             <p className={`mt-2 text-3xl font-bold ${plan.featured ? 'text-white' : 'text-gray-950'}`}>{plan.price}</p>
             <p className={`mt-1 text-xs ${plan.featured ? 'text-white/70' : 'text-gray-500'}`}>{plan.note}</p>
             <ul className="mt-5 space-y-2">
@@ -4831,6 +4841,7 @@ function PricingPage() {
               href={plan.href}
               target={plan.plan === 'free' ? undefined : '_blank'}
               rel={plan.plan === 'free' ? undefined : 'noopener noreferrer'}
+              aria-describedby={plan.plan === 'free' ? undefined : 'pricing-pass-purchase-notice'}
               onClick={() => {
                 void trackEvent('cta_clicked', {
                   ctaName: plan.cta,
@@ -4843,12 +4854,15 @@ function PricingPage() {
                 plan.featured ? 'bg-white text-[#155e63] hover:bg-gray-50' : 'border border-[#155e63]/15 bg-[#155e63]/5 text-[#155e63] hover:bg-[#155e63]/10'
               }`}
             >
-              {plan.cta}
+              {isTripOrGroup(passState ?? null) && plan.plan === `${passState?.tier}_pass`
+                ? t('pay.checkout.buyAgain', { pass: plan.name }) : plan.cta}
             </a>
           </div>
         ))}
       </div>
       <div className="mt-5 rounded-2xl border border-[#155e63]/10 bg-[#155e63]/5 p-4">
+        <a href="/?activate=1" className="mb-3 inline-block text-sm font-semibold text-[#155e63] underline">{t('pass.claim.title')}</a>
+        <p className="mb-3 text-xs leading-relaxed text-gray-600">{t('pass.claim.receiptHint')}</p>
         <p className="text-sm font-semibold text-[#155e63]">One-time payment · No auto-renewal.</p>
         <p className="mt-2 text-xs leading-relaxed text-gray-600">
           How is payment processed? Payments are processed securely by Gumroad. ChinaEase Buddy never sees or stores your card details.
@@ -5361,8 +5375,8 @@ export function getPolicyPageType(pathname: string): PageType | null {
   return null;
 }
 
-export default function PolicyPage({ type, userId, onAskBuddy }: Props) {
-  if (type === 'pricing') return <PricingPage />;
+export default function PolicyPage({ type, userId, onAskBuddy, passState }: Props) {
+  if (type === 'pricing') return <PricingPage passState={passState} />;
   if (type === 'china-visa-free-checker') return <VisaFreeCheckerPage />;
   if (type === 'china-240-hour-transit-calculator') return <TransitCalculatorPage />;
   if (isTransitAnswerSlug(type)) return <TransitAnswerPage slug={type} />;

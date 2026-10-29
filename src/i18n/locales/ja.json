@@ -545,7 +545,10 @@
       "checkout": {
         "activePass": "有効なトラベルパスがすでにあります。",
         "activeButton": "有効なパス",
-        "expires": "{{date}}まで有効"
+        "expires": "{{date}}まで有効",
+        "currentPass": "現在のパス",
+        "buyAgain": "{{pass}}をもう一度購入",
+        "separatePassNotice": "購入ごとに独立したパスが作成されます。メッセージ数と有効期間は合算・移行されず、以前の購入が自動的に返金されることもありません。新しいパスを有効化すると、このブラウザのパスが切り替わります。以前のパスに戻るには、元の注文IDまたは復旧コードを保存してください。"
       },
       "upgradePrompt": "Trip PassまたはGroup Passを選ぶと、プレミアムツールキット全機能と追加のBuddy AIメッセージを利用できます。"
     },
@@ -1168,23 +1171,24 @@
     "pass": {
       "claim": {
         "title": "Activate Your Pass",
-        "subtitle": "Enter your Gumroad sale ID from your confirmation email.",
-        "saleIdLabel": "Gumroad Sale ID",
-        "saleIdPlaceholder": "e.g. abcd1234",
+        "subtitle": "Gumroadの領収書に記載された注文IDを入力してください。",
+        "saleIdLabel": "Gumroad注文ID",
+        "saleIdPlaceholder": "英字や記号を含む注文ID全体をコピー",
         "submit": "Activate Pass",
         "submitting": "Activating…",
-        "errorNotFound": "Sale ID not found. Check your Gumroad receipt email.",
+        "errorNotFound": "注文を確認できませんでした。Gumroadの領収書から注文IDをコピーし直してください。",
         "errorAlreadyClaimed": "This sale is already linked. Try recovering with your recovery code.",
         "errorMaxDevices": "This pass has reached its device limit.",
         "errorGeneric": "Something went wrong. Please try again.",
         "switchToRecover": "Have a recovery code instead?",
         "successTitle": "Pass Activated!",
         "recoveryCodeLabel": "Your recovery code",
-        "recoveryCodeNote": "今すぐスクリーンショットを撮ってください。中国ではGmailなど海外のメールアプリがブロックされます。このコードを紛失するとアクセスを回復する方法がありません。",
+        "recoveryCodeNote": "旅行前にこのコードを保存して、別の端末でこのパスを復旧できるようにしてください。元のGumroad注文IDも保管してください。",
         "copyCode": "Copy",
         "copied": "Copied!",
         "confirmSaved": "回復コードのスクリーンショットを撮るか、書き留めました",
-        "done": "Start using your pass"
+        "done": "Start using your pass",
+        "receiptHint": "Gumroadの領収書メールの上部にある「Order ID」を探し、英字や記号を含めて全体をコピーしてください。購入時のメールアドレスだけではパスは有効になりません。"
       },
       "recover": {
         "title": "Recover Access",
@@ -1197,7 +1201,7 @@
         "errorMaxDevices": "This pass has reached its device limit.",
         "errorRateLimited": "Too many attempts. Please try again in an hour.",
         "errorGeneric": "Something went wrong. Please try again.",
-        "switchToClaim": "Have a Gumroad sale ID instead?",
+        "switchToClaim": "注文IDをお持ちですか？",
         "successTitle": "Access Restored!",
         "done": "Continue"
       },

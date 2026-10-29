@@ -13,6 +13,8 @@ for (const path of [
   'functions/api/leads/trip.js', 'functions/api/gumroad/webhook.js',
   'src/App.tsx', 'src/hooks/usePass.ts', 'src/components/PassDashboard.tsx',
   'src/components/ClaimModal.tsx', 'src/lib/membership.ts', 'src/lib/deviceId.ts',
+  'src/components/PricingPlans.tsx', 'src/components/home/HomePasses.tsx',
+  'src/components/PolicyPage.tsx', 'src/lib/gumroad.ts', 'scripts/copy-policy-pages.mjs',
   'scripts/test-pass-*.mjs', 'scripts/test-paid-chat-quota.mjs', '.env.example',
 ]) assert.ok(paths.includes(`- '${path}'`), `${path} must trigger the membership gate`);
 
@@ -20,6 +22,7 @@ const gate = workflow.split('      - name: Run membership and access regressions
 for (const command of [
   'npm run test:pass-ci', 'npm run test:pass-p0', 'npm run test:pass-entitlements',
   'npm run test:pass-dashboard', 'npm run test:pass-firestore -- --self-test',
+  'npm run test:pass-purchase-flow',
   'npm run test:buddy', 'npm run test:free-chat-quota', 'npm run test:paid-chat-quota',
 ]) {
   assert.ok(gate.split('\n').some((line) => line.trim() === command), `${command} must run in CI`);

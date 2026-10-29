@@ -82,7 +82,8 @@ export default function App() {
   const [toast, setToast] = useState<string | null>(null);
   const [toolOpen, setToolOpen] = useState(Boolean(landing.tab));
   const [deepTool, setDeepTool] = useState<string | null>(landing.tool);
-  const [claimOpen, setClaimOpen] = useState(false);
+  // A return link opens the form only; URL parameters never activate a Pass.
+  const [claimOpen, setClaimOpen] = useState(() => new URLSearchParams(window.location.search).get('activate') === '1');
   const [claimInitialTab, setClaimInitialTab] = useState<'claim' | 'recover'>('claim');
   const [dashOpen, setDashOpen] = useState(false);
   const { passState, refreshPassState } = usePass();
@@ -167,7 +168,7 @@ export default function App() {
   if (policyPageType) {
     return (
       <div className="min-h-screen bg-canvas pb-[env(safe-area-inset-bottom)] font-sans">
-        <PolicyPage type={policyPageType} userId={undefined} onAskBuddy={openBuddy} />
+        <PolicyPage type={policyPageType} userId={undefined} onAskBuddy={openBuddy} passState={passState} />
         <Footer onOpenEmergency={() => { window.location.href = '/?journey=emergency'; }} />
         <ChatButton onClick={() => openBuddy()} />
         {chatOpen && (

@@ -21,6 +21,7 @@
     "test:pass-entitlements": "node scripts/test-pass-entitlements.mjs",
     "test:pass-p0": "node scripts/test-pass-p0.mjs",
     "test:pass-dashboard": "node scripts/test-pass-dashboard.mjs",
+    "test:pass-purchase-flow": "node scripts/test-pass-purchase-flow.mjs",
     "test:pass-firestore": "node scripts/test-pass-firestore.mjs",
     "test:premium-upgrade": "node scripts/test-premium-upgrade.mjs",
     "test:planning-help": "node scripts/test-planning-help.mjs",

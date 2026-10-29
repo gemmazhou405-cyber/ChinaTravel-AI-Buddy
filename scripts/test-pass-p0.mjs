@@ -30,6 +30,7 @@ const root = `projects/${baseEnv.FIREBASE_PROJECT_ID}/databases/(default)/docume
 const docs = new Map();
 const sales = new Map();
 const unexpected = [];
+const gumroadLookupPaths = [];
 let revision = 0;
 let readDown = false;
 let orderReadDown = false;
@@ -47,6 +48,7 @@ function write(path, value) {
 }
 function reset() {
   docs.clear(); sales.clear(); unexpected.length = 0;
+  gumroadLookupPaths.length = 0;
   readDown = false; orderReadDown = false; writeDown = false; aiCalls = 0; envelopeSuccess = true;
   queryBarrier = null;
   storeFault = null;
@@ -61,6 +63,7 @@ globalThis.fetch = async (input, init = {}) => {
   const url = new URL(String(input));
   if (url.hostname === 'oauth2.googleapis.com') return json({ access_token: 'local-oauth', expires_in: 3600 });
   if (url.hostname === 'api.gumroad.com') {
+    gumroadLookupPaths.push(url.pathname);
     const sale = sales.get(decodeURIComponent(url.pathname.split('/').pop()));
     return sale ? json({ success: envelopeSuccess, sale }) : json({ success: false }, 404);
   }
@@ -351,6 +354,46 @@ try {
     assert.equal(passesFor('fixture-sale').length, 1);
     assert.equal(second.body.expiresAt, first.body.expiresAt);
   });
+  for (const [oldTier, newTier] of [['trip', 'group'], ['trip', 'trip'], ['group', 'trip'], ['group', 'group']]) {
+    await test(`${oldTier} to new ${newTier}: independent purchase preserves the old Pass and recovery`, async () => {
+      const original = await activate('original-order', oldTier);
+      const oldPath = passesFor('original-order')[0][0];
+      write(oldPath, { ...read(oldPath), messagesUsed: 7 });
+      const oldPass = structuredClone(read(oldPath));
+      sales.set('new-order', validSale(newTier));
+      const purchased = await post(claim, 'claim', { saleId: 'new-order', deviceId: 'owner-device' }, original.cookie);
+      assert.equal(purchased.status, 200);
+      assert.equal(purchased.body.tier, newTier);
+      assert.notEqual(purchased.cookie, original.cookie, 'activating a distinct order returns its own Pass session');
+      assert.equal(passesFor('original-order').length, 1);
+      assert.equal(passesFor('new-order').length, 1);
+      assert.deepEqual(read(oldPath), oldPass, 'new activation cannot transfer/reset old usage, validity, devices or recovery hash');
+      const current = await get(getPass, 'pass', purchased.cookie);
+      assert.equal(current.body.tier, newTier);
+      assert.equal(current.body.messagesUsed, 0);
+      assert.equal(current.body.messageAllowance, newTier === 'trip' ? 50 : 200);
+      const previous = await get(getPass, 'pass', original.cookie);
+      assert.equal(previous.body.tier, oldTier, 'old valid Cookie still refers to its independent Pass');
+      assert.equal(previous.body.messagesUsed, 7);
+      assert.equal(previous.body.expiresAt, oldPass.expiresAt);
+      const recovered = await post(recover, 'recover', { code: original.body.recoveryCode, deviceId: 'owner-device' });
+      assert.equal(recovered.status, 200);
+      assert.equal(recovered.body.tier, oldTier);
+      assert.equal(recovered.body.expiresAt, oldPass.expiresAt);
+      assert.deepEqual(read(oldPath), oldPass, 'restoring the already-bound old device cannot reset its rights');
+      assert.equal((await get(getPass, 'pass', purchased.cookie)).body.tier, newTier);
+    });
+  }
+  for (const tier of ['trip', 'group']) {
+    await test(`${tier}: opaque receipt reference is preserved and encoded for server-side Gumroad lookup`, async () => {
+      const saleId = `Receipt_${tier}-OpaqueValue==`;
+      const activated = await activate(saleId, tier);
+      assert.equal(activated.body.tier, tier);
+      assert.deepEqual(gumroadLookupPaths, [`/v2/sales/${encodeURIComponent(saleId)}`]);
+      assert.equal(read(passesFor(saleId)[0][0]).gumroadSaleId, saleId);
+      assert.equal((await get(getPass, 'pass', activated.cookie)).body.tier, tier);
+    });
+  }
   await test('concurrent first activation creates only one pass', async () => {
     sales.set('concurrent-sale', validSale('group'));
     overlapQueries();
