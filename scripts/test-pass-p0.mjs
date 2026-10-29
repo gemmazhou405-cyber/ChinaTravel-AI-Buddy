@@ -299,20 +299,46 @@ try {
     noGrant(await post(claim, 'claim', { saleId: 'fixture-sale', deviceId: 'second-device' }));
     assert.equal(read(path).devices.length, 1);
   });
-  for (const [tier, wrongPermalink] of [['trip', 'mbgkxz'], ['group', 'oentc']]) {
-    await test(`${tier}: product ID and permalink must agree`, async () => {
-      const saleId = `${tier}-wrong-permalink`;
-      sales.set(saleId, validSale(tier, { product_permalink: wrongPermalink }));
-      noGrant(await post(claim, 'claim', { saleId, deviceId: 'fixture-device' }));
-      assert.equal(passesFor(saleId).length, 0);
-    });
-  }
-  for (const [label, extra] of [['refunded', { refunded: true }], ['disputed', { disputed: true }], ['chargedback', { chargedback: true }], ['unpaid', { paid: false }], ['non-boolean-paid', { paid: 'false' }]]) {
-    await test(`${label} sale cannot grant new access`, async () => {
-      sales.set(label, validSale('trip', extra));
-      noGrant(await post(claim, 'claim', { saleId: label, deviceId: 'fixture-device' }));
-      assert.equal(passesFor(label).length, 0);
-    });
+  for (const [tier, allowance, maxDevices, otherTierPermalink] of [['trip', 50, 2, 'mbgkxz'], ['group', 200, 5, 'oentc']]) {
+    for (const [label, permalink] of [
+      ['original permalink', `Original${tier}Code`],
+      ['different custom permalink', `${tier}-custom-slug`],
+      ['other-tier name and permalink', otherTierPermalink],
+    ]) {
+      await test(`${tier}: strict Product ID grants only its tier with ${label}`, async () => {
+        const saleId = `${tier}-permalink-contract`;
+        sales.set(saleId, validSale(tier, { product_permalink: permalink, product_name: tier === 'trip' ? 'Group Pass fixture' : 'Trip Pass fixture' }));
+        const result = await post(claim, 'claim', { saleId, deviceId: 'fixture-device' }, undefined, {
+          ...baseEnv, GUMROAD_TRIP_PERMALINK: 'trip-public-slug', GUMROAD_GROUP_PERMALINK: 'group-public-slug',
+        });
+        assert.equal(result.status, 200);
+        assert.ok(result.cookie, 'verified activation must mint a session cookie');
+        assert.equal(result.body.tier, tier, 'name and permalink cannot change the ID-derived tier');
+        assert.equal(result.body.messageAllowance, allowance);
+        assert.equal(result.body.maxDevices, maxDevices);
+        assert.equal(passesFor(saleId).length, 1);
+        const state = await get(getPass, 'pass', result.cookie);
+        assert.equal(state.body.tier, tier);
+        assert.equal(state.body.remaining, allowance);
+        assert.equal(state.body.maxDevices, maxDevices);
+      });
+    }
+    for (const [label, productId] of [['unknown', 'unrelated-product'], ['near-match', `${baseEnv[`GUMROAD_${tier.toUpperCase()}_PRODUCT_ID`]}-wrong`], ['missing', undefined]]) {
+      await test(`${tier}: ${label} Product ID cannot use name or permalink to grant access`, async () => {
+        const saleId = `${tier}-${label}-product`;
+        sales.set(saleId, validSale(tier, { product_id: productId, product_name: `${tier} Pass fixture`, product_permalink: tier === 'trip' ? 'oentc' : 'mbgkxz' }));
+        noGrant(await post(claim, 'claim', { saleId, deviceId: 'fixture-device' }));
+        assert.equal(passesFor(saleId).length, 0);
+      });
+    }
+    for (const [label, extra] of [['refunded', { refunded: true }], ['disputed', { disputed: true }], ['chargedback', { chargedback: true }], ['unpaid', { paid: false }], ['non-boolean-paid', { paid: 'false' }]]) {
+      await test(`${tier}: ${label} sale cannot grant new access`, async () => {
+        const saleId = `${tier}-${label}`;
+        sales.set(saleId, validSale(tier, extra));
+        noGrant(await post(claim, 'claim', { saleId, deviceId: 'fixture-device' }));
+        assert.equal(passesFor(saleId).length, 0);
+      });
+    }
   }
   await test('provider unsuccessful envelope cannot grant access', async () => {
     sales.set('provider-failure', validSale()); envelopeSuccess = false;

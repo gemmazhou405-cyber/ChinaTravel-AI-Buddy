@@ -27,19 +27,14 @@ async function verifyGumroadSale(env, saleId) {
   const data = await res.json().catch(() => null);
   const sale = data?.sale;
   if (data?.success !== true || !sale || sale.refunded || sale.disputed || sale.chargedback || sale.paid !== true) return null;
-  return { email: sale.email || '', productId: sale.product_id || '', permalink: sale.product_permalink || '' };
+  return { email: sale.email || '', productId: sale.product_id || '' };
 }
 
-function mapTier(env, sale) {
-  const tier = sale.productId === env.GUMROAD_TRIP_PRODUCT_ID ? 'trip'
-    : sale.productId === env.GUMROAD_GROUP_PRODUCT_ID ? 'group' : null;
-  if (!tier) return null;
-  if (sale.permalink) {
-    const permalinkTier = sale.permalink === (env.GUMROAD_TRIP_PERMALINK || 'oentc') ? 'trip'
-      : sale.permalink === (env.GUMROAD_GROUP_PERMALINK || 'mbgkxz') ? 'group' : null;
-    if (permalinkTier !== tier) return null;
-  }
-  return tier;
+function mapTier(env, productId) {
+  // Public custom URLs may differ from the Sales API's original permalink.
+  // Only the configured API Product IDs determine entitlement.
+  return productId === env.GUMROAD_TRIP_PRODUCT_ID ? 'trip'
+    : productId === env.GUMROAD_GROUP_PRODUCT_ID ? 'group' : null;
 }
 
 export function onRequestOptions() {
@@ -76,7 +71,7 @@ export async function onRequestPost({ request, env }) {
   // 1. Verify with Gumroad
   const sale = await verifyGumroadSale(env, saleId);
   if (!sale) return json({ error: 'invalid_sale' }, 400);
-  const tier = mapTier(env, sale);
+  const tier = mapTier(env, sale.productId);
   if (!tier) return json({ error: 'invalid_sale' }, 400);
 
   async function existingSession(existing) {
