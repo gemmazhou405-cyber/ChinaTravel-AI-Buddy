@@ -17,6 +17,11 @@ on:
       - 'src/hooks/usePass.ts'
       - 'src/components/PassDashboard.tsx'
       - 'src/components/ClaimModal.tsx'
+      - 'src/components/PricingPlans.tsx'
+      - 'src/components/home/HomePasses.tsx'
+      - 'src/components/PolicyPage.tsx'
+      - 'src/lib/gumroad.ts'
+      - 'scripts/copy-policy-pages.mjs'
       - 'src/lib/membership.ts'
       - 'src/lib/deviceId.ts'
       - 'src/components/home/TripPlanForm.tsx'
@@ -77,6 +82,7 @@ jobs:
           npm run test:pass-p0
           npm run test:pass-entitlements
           npm run test:pass-dashboard
+          npm run test:pass-purchase-flow
           npm run test:pass-firestore -- --self-test
           npm run test:buddy
           npm run test:free-chat-quota

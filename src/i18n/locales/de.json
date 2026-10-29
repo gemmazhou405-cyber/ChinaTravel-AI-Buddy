@@ -545,7 +545,10 @@
       "checkout": {
         "activePass": "Du hast bereits einen aktiven Travel Pass.",
         "activeButton": "Aktiver Pass",
-        "expires": "Läuft ab am {{date}}"
+        "expires": "Läuft ab am {{date}}",
+        "currentPass": "Aktueller Pass",
+        "buyAgain": "Weiteren {{pass}} kaufen",
+        "separatePassNotice": "Jeder Kauf erstellt einen eigenen Pass. Nachrichten und Gültigkeit werden weder addiert noch übertragen; frühere Käufe werden nicht automatisch erstattet. Die Aktivierung eines neuen Passes wechselt den Pass in diesem Browser. Bewahre die bisherige Bestell-ID oder den Wiederherstellungscode auf, um zum alten Pass zurückzukehren."
       },
       "upgradePrompt": "Wähle Trip Pass oder Group Pass für das vollständige Premium-Toolkit und mehr Buddy-KI-Nachrichten."
     },
@@ -1168,23 +1171,24 @@
     "pass": {
       "claim": {
         "title": "Activate Your Pass",
-        "subtitle": "Enter your Gumroad sale ID from your confirmation email.",
-        "saleIdLabel": "Gumroad Sale ID",
-        "saleIdPlaceholder": "e.g. abcd1234",
+        "subtitle": "Gib die Bestell-ID aus deinem Gumroad-Beleg ein.",
+        "saleIdLabel": "Gumroad-Bestell-ID",
+        "saleIdPlaceholder": "Vollständige Bestell-ID mit Buchstaben und Symbolen kopieren",
         "submit": "Activate Pass",
         "submitting": "Activating…",
-        "errorNotFound": "Sale ID not found. Check your Gumroad receipt email.",
+        "errorNotFound": "Die Bestellung konnte nicht verifiziert werden. Kopiere die ID erneut aus deinem Gumroad-Beleg.",
         "errorAlreadyClaimed": "This sale is already linked. Try recovering with your recovery code.",
         "errorMaxDevices": "This pass has reached its device limit.",
         "errorGeneric": "Something went wrong. Please try again.",
         "switchToRecover": "Have a recovery code instead?",
         "successTitle": "Pass Activated!",
         "recoveryCodeLabel": "Your recovery code",
-        "recoveryCodeNote": "Machen Sie jetzt einen Screenshot — Gmail und ausländische E-Mail-Apps sind in China gesperrt. Wenn Sie diesen Code verlieren, gibt es keine Möglichkeit, den Zugang wiederherzustellen.",
+        "recoveryCodeNote": "Speichere diesen Code vor der Reise, um diesen Pass auf einem anderen Gerät wiederherzustellen. Bewahre auch die ursprüngliche Gumroad-Bestell-ID auf.",
         "copyCode": "Copy",
         "copied": "Copied!",
         "confirmSaved": "Ich habe meinen Wiederherstellungscode gespeichert oder aufgeschrieben",
-        "done": "Start using your pass"
+        "done": "Start using your pass",
+        "receiptHint": "Suche oben in der Gumroad-Beleg-E-Mail nach „Order ID“ und kopiere die vollständige ID mit Buchstaben und Symbolen. Die Kauf-E-Mail-Adresse allein aktiviert keinen Pass."
       },
       "recover": {
         "title": "Recover Access",
@@ -1197,7 +1201,7 @@
         "errorMaxDevices": "This pass has reached its device limit.",
         "errorRateLimited": "Too many attempts. Please try again in an hour.",
         "errorGeneric": "Something went wrong. Please try again.",
-        "switchToClaim": "Have a Gumroad sale ID instead?",
+        "switchToClaim": "Du hast eine Bestell-ID?",
         "successTitle": "Access Restored!",
         "done": "Continue"
       },

@@ -204,11 +204,13 @@ export default function ClaimModal({ initialTab = 'claim', onClose, onPassActiva
         {tab === 'claim' && claimScreen === 'form' && (
           <form onSubmit={handleClaim} className="space-y-4">
             <div>
-              <label className="mb-1.5 block text-sm font-medium text-ink">
+              <label htmlFor="gumroad-order-id" className="mb-1.5 block text-sm font-medium text-ink">
                 {t('pass.claim.saleIdLabel')}
               </label>
               <input
+                id="gumroad-order-id"
                 type="text"
+                aria-describedby="gumroad-order-id-hint"
                 value={saleId}
                 onChange={(e) => setSaleId(e.target.value)}
                 placeholder={t('pass.claim.saleIdPlaceholder')}
@@ -216,6 +218,7 @@ export default function ClaimModal({ initialTab = 'claim', onClose, onPassActiva
                 spellCheck={false}
                 className="w-full rounded-lg border border-hairline bg-stone-50 px-3.5 py-2.5 text-sm text-ink placeholder:text-ink-tertiary focus:border-jade focus:outline-none focus:ring-2 focus:ring-jade/20"
               />
+              <p id="gumroad-order-id-hint" className="mt-2 text-xs leading-relaxed text-ink-tertiary">{t('pass.claim.receiptHint')}</p>
             </div>
             {claimError && (
               <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{claimError}</p>

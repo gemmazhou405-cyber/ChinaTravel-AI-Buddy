@@ -6,6 +6,7 @@ import { renderPlanningHelp } from './render-planning-help.mjs';
 import { createAmapGuideRenderer, renderAmapInline } from './render-amap-guide.mjs';
 import { plainText, quickAnswerText } from '../src/lib/amapGuideMarkup.mjs';
 const planningHelp = JSON.parse(await readFile('src/data/planningHelp.json', 'utf8'));
+const passCopy = JSON.parse(await readFile('src/i18n/locales/en.json', 'utf8')).translation;
 const guideRelatedLinks = JSON.parse(await readFile('src/data/guideRelatedLinks.json', 'utf8'));
 
 const siteUrl = 'https://chinaeasebuddy.com';
@@ -717,7 +718,7 @@ const pageMeta = {
       ['Group Pass', 'USD 29.90 one-time travel pass with the full Premium Toolkit, all premium phrase cards and 200 Buddy AI messages for 14 days on up to 5 devices sharing one pass.', '/pricing/'],
     ],
     faqs: [
-      ['How do paid passes work?', `${planningHelp.digitalScope} Passes are purchased through Gumroad and activated after purchase using your sale ID.`],
+      ['How do paid passes work?', `${planningHelp.digitalScope} Passes are purchased through Gumroad. Activate with the Order ID on your receipt; returning from checkout does not activate a Pass.`],
       ['How is payment processed?', 'Payments are processed securely by Gumroad. ChinaEase Buddy never sees or stores your card details.'],
       ['Is there auto-renewal?', 'No. ChinaEase Buddy passes are one-time travel passes with no auto-renewal.'],
     ],
@@ -2469,7 +2470,7 @@ const pageMeta = {
     faqs: [
       ['What is ChinaEase Buddy?', 'ChinaEase Buddy is a web-based digital China travel toolkit for foreign visitors. It helps with phrase cards, payments, food, transport, hotels, emergency references, and Buddy AI travel questions.'],
       ['Is ChinaEase Buddy free?', 'ChinaEase Buddy has a free starting plan with core tools and limited Buddy AI usage. Paid passes may unlock additional digital access, but checkout availability can vary during early access.'],
-      ['How do paid passes work?', 'Paid passes are one-time digital travel passes purchased through Gumroad. Access is activated immediately after purchase using your sale ID.'],
+      ['How do paid passes work?', 'Paid passes are one-time digital travel passes purchased through Gumroad. Activate with the Order ID on your Gumroad receipt. Access is enabled only after server verification; returning from checkout does not activate a Pass.'],
       ['What emergency numbers should travelers know in China?', 'Travelers should know 110 for police, 120 for ambulance, and 119 for fire. In urgent situations, contact local emergency services directly.'],
     ],
   },
@@ -3849,7 +3850,7 @@ function staticPageContent(page, meta) {
       ` : ''}
       <h1 style="margin: 0 0 18px; font-size: clamp(2rem, 6vw, 3.75rem); line-height: 1.05; letter-spacing: -0.03em;">${escapeHtml(heading)}</h1>
       ${amapGuide ? amapGuide.byline('#lin-help') : !['guides', 'pricing', 'terms', 'privacy', 'refund', 'contact', 'about', 'unsubscribe'].includes(page) ? `<p style="margin:0 0 20px;"><a href="#lin-help" style="color:#155e63;font-weight:600;">${escapeHtml(planningHelp.byline)}</a></p>` : ''}
-      ${page === 'pricing' ? `${renderPlanningHelp(planningHelp, 'pricing')}<section aria-labelledby="digital-pass-scope"><h2 id="digital-pass-scope">${escapeHtml(planningHelp.digitalHeading)}</h2><p>${escapeHtml(planningHelp.digitalScope)}</p></section>` : ''}
+      ${page === 'pricing' ? `${renderPlanningHelp(planningHelp, 'pricing')}<section aria-labelledby="digital-pass-scope"><h2 id="digital-pass-scope">${escapeHtml(planningHelp.digitalHeading)}</h2><p>${escapeHtml(planningHelp.digitalScope)}</p><p>${escapeHtml(passCopy.pay.checkout.separatePassNotice)}</p><p><a href="/?activate=1">${escapeHtml(passCopy.pass.claim.title)}</a></p><p>${escapeHtml(passCopy.pass.claim.receiptHint)}</p></section>` : ''}
       <section aria-labelledby="quick-answer" style="margin: 0 0 24px; padding: 22px; border: 1px solid rgba(21, 94, 99, 0.14); border-radius: 22px; background: #fffdf8;">
         <h2 id="quick-answer" style="margin: 0 0 10px; font-size: 1.25rem;">Quick answer</h2>
         ${amapGuide ? amapGuide.quickAnswer() : `<p style="margin: 0; color: #536365; line-height: 1.7;">${escapeHtml(meta.quickAnswer || meta.description)}</p>`}

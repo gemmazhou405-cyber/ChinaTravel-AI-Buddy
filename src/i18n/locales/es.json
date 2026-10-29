@@ -545,7 +545,10 @@
       "checkout": {
         "activePass": "Ya tienes un pase de viaje activo.",
         "activeButton": "Pase activo",
-        "expires": "Vence el {{date}}"
+        "expires": "Vence el {{date}}",
+        "currentPass": "Pass actual",
+        "buyAgain": "Comprar otro {{pass}}",
+        "separatePassNotice": "Cada compra crea un Pass independiente. Los mensajes y la validez no se acumulan ni se transfieren, y las compras anteriores no se reembolsan automáticamente. Al activar un nuevo Pass se cambia el Pass de este navegador; guarda el ID de pedido o código de recuperación anterior para volver a usarlo."
       },
       "upgradePrompt": "Elige Trip Pass o Group Pass para desbloquear el kit Premium completo y más mensajes de Buddy AI."
     },
@@ -1168,23 +1171,24 @@
     "pass": {
       "claim": {
         "title": "Activate Your Pass",
-        "subtitle": "Enter your Gumroad sale ID from your confirmation email.",
-        "saleIdLabel": "Gumroad Sale ID",
-        "saleIdPlaceholder": "e.g. abcd1234",
+        "subtitle": "Introduce el ID de pedido que aparece en tu recibo de Gumroad.",
+        "saleIdLabel": "ID de pedido de Gumroad",
+        "saleIdPlaceholder": "Copia el ID completo, incluidas letras y símbolos",
         "submit": "Activate Pass",
         "submitting": "Activating…",
-        "errorNotFound": "Sale ID not found. Check your Gumroad receipt email.",
+        "errorNotFound": "No se pudo verificar el pedido. Vuelve a copiar el ID desde tu recibo de Gumroad.",
         "errorAlreadyClaimed": "This sale is already linked. Try recovering with your recovery code.",
         "errorMaxDevices": "This pass has reached its device limit.",
         "errorGeneric": "Something went wrong. Please try again.",
         "switchToRecover": "Have a recovery code instead?",
         "successTitle": "Pass Activated!",
         "recoveryCodeLabel": "Your recovery code",
-        "recoveryCodeNote": "Haz una captura de pantalla ahora — Gmail y las apps de correo extranjeras están bloqueadas en China. Si pierdes este código, no habrá forma de recuperar el acceso.",
+        "recoveryCodeNote": "Guarda este código antes de viajar para recuperar este Pass en otro dispositivo. Conserva también el ID de pedido original de Gumroad.",
         "copyCode": "Copy",
         "copied": "Copied!",
         "confirmSaved": "He tomado una captura de pantalla o anotado mi código de recuperación",
-        "done": "Start using your pass"
+        "done": "Start using your pass",
+        "receiptHint": "En el correo del recibo de Gumroad, busca «Order ID» cerca del principio y cópialo completo, incluidas letras y símbolos. El correo de compra por sí solo no activa el Pass."
       },
       "recover": {
         "title": "Recover Access",
@@ -1197,7 +1201,7 @@
         "errorMaxDevices": "This pass has reached its device limit.",
         "errorRateLimited": "Too many attempts. Please try again in an hour.",
         "errorGeneric": "Something went wrong. Please try again.",
-        "switchToClaim": "Have a Gumroad sale ID instead?",
+        "switchToClaim": "¿Ya tienes un ID de pedido?",
         "successTitle": "Access Restored!",
         "done": "Continue"
       },
