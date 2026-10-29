@@ -79,13 +79,9 @@ async function getActivePaidPass(request, env) {
   try {
     const session = await verifySessionCookie(request.headers.get('Cookie'), env.SESSION_SECRET);
     if (!session?.passId) return { active: false, passId: null, pass: null };
-    const entitlement = await activePassForId(env, session.passId);
+    const entitlement = await activePassForId(env, session.passId, session.deviceId);
     const pass = entitlement.pass;
-    const active = Boolean(
-      pass
-      && ['trip', 'group'].includes(pass.tier)
-      && (!pass.expiresAt || pass.expiresAt > Date.now()),
-    );
+    const active = entitlement.active;
     return { active, passId: session.passId, pass };
   } catch {
     return { active: false, passId: null, pass: null };

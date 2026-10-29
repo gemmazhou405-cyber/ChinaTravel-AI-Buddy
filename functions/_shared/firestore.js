@@ -115,7 +115,8 @@ async function firestoreFetch(env, path, init = {}) {
     },
     signal: init.signal ?? AbortSignal.timeout(FIRESTORE_TIMEOUT_MS),
   });
-  if (res.status === 404) return null;
+  // Only a document read may represent absence. A failed write must reject.
+  if (res.status === 404 && (!init.method || init.method === 'GET')) return null;
   if (!res.ok) {
     const text = await res.text();
     throw new Error(`firestore_error:${res.status}:${text.slice(0, 240)}`);

@@ -1,5 +1,6 @@
 import { createDoc, getDoc, patchDoc, queryOneWithId } from '../_shared/firestore.js';
 import { generateRecoveryCode, sessionCookieHeader, sha256hex, signSessionToken } from '../_shared/session.js';
+import { bindPassDevice, isSaleAccessRevoked } from '../_shared/entitlements.js';
 
 const TIERS = {
   trip:  { messageAllowance: 50,  validDays: 14, maxDevices: 2 },
@@ -25,15 +26,15 @@ async function verifyGumroadSale(env, saleId) {
   if (!res.ok) return null;
   const data = await res.json().catch(() => null);
   const sale = data?.sale;
-  if (!sale || sale.refunded || sale.disputed || !sale.paid) return null;
-  return { email: sale.email || '', productId: sale.product_id || '', productName: sale.product_name || '' };
+  if (data?.success !== true || !sale || sale.refunded || sale.disputed || sale.chargedback || sale.paid !== true) return null;
+  return { email: sale.email || '', productId: sale.product_id || '' };
 }
 
-function mapTier(env, productId, productName) {
-  if (env.GUMROAD_TRIP_PRODUCT_ID && productId === env.GUMROAD_TRIP_PRODUCT_ID) return 'trip';
-  if (env.GUMROAD_GROUP_PRODUCT_ID && productId === env.GUMROAD_GROUP_PRODUCT_ID) return 'group';
-  // Fallback: name-based match when product IDs not configured
-  return /group/i.test(productName) ? 'group' : 'trip';
+function mapTier(env, productId) {
+  // Public custom URLs may differ from the Sales API's original permalink.
+  // Only the configured API Product IDs determine entitlement.
+  return productId === env.GUMROAD_TRIP_PRODUCT_ID ? 'trip'
+    : productId === env.GUMROAD_GROUP_PRODUCT_ID ? 'group' : null;
 }
 
 export function onRequestOptions() {
@@ -45,6 +46,10 @@ export function onRequestOptions() {
 
 export async function onRequestPost({ request, env }) {
   if (!env.SESSION_SECRET) return json({ error: 'server_configuration_error' }, 503);
+  if (!env.GUMROAD_TRIP_PRODUCT_ID || !env.GUMROAD_GROUP_PRODUCT_ID
+    || env.GUMROAD_TRIP_PRODUCT_ID === env.GUMROAD_GROUP_PRODUCT_ID) {
+    return json({ error: 'server_configuration_error' }, 503);
+  }
 
   let body;
   try {
@@ -57,55 +62,76 @@ export async function onRequestPost({ request, env }) {
   const deviceId = String(body.deviceId ?? '').replace(/[^a-zA-Z0-9-]/g, '').slice(0, 64);
   if (!saleId || !deviceId) return json({ error: 'bad_request' }, 400);
 
+  try {
+    if (await isSaleAccessRevoked(env, saleId)) return json({ error: 'pass_revoked' }, 403);
+  } catch {
+    return json({ error: 'activation_unavailable' }, 503);
+  }
+
   // 1. Verify with Gumroad
   const sale = await verifyGumroadSale(env, saleId);
   if (!sale) return json({ error: 'invalid_sale' }, 400);
+  const tier = mapTier(env, sale.productId);
+  if (!tier) return json({ error: 'invalid_sale' }, 400);
 
-  // 2. Dedup — same sale claimed before?
-  const existing = await queryOneWithId(env, 'passes', 'gumroadSaleId', saleId).catch(() => null);
-  if (existing) {
-    const config = TIERS[existing.tier] || TIERS.trip;
+  async function existingSession(existing) {
+    if (existing.gumroadSaleId !== saleId || existing.tier !== tier) return json({ error: 'invalid_sale' }, 400);
+    const bound = await bindPassDevice(env, existing.id, deviceId, tier);
+    if (!bound.ok) return json({ error: bound.error, ...(bound.maxDevices ? { maxDevices: bound.maxDevices } : {}) }, bound.status);
     const token = await signSessionToken(env.SESSION_SECRET, existing.id, deviceId);
-    const alreadyHasDevice = Array.isArray(existing.devices) && existing.devices.some((d) => d.id === deviceId);
-    if (!alreadyHasDevice && Array.isArray(existing.devices) && existing.devices.length < config.maxDevices) {
-      const now = Date.now();
-      await patchDoc(env, `passes/${existing.id}`, {
-        devices: [...existing.devices, { id: deviceId, boundAt: now, lastSeenAt: now }],
-      }, ['devices']).catch(() => {});
-    }
     return json(
-      { alreadyClaimed: true, tier: existing.tier, expiresAt: existing.expiresAt },
+      { alreadyClaimed: true, tier, expiresAt: bound.pass.expiresAt },
       200,
       { 'Set-Cookie': sessionCookieHeader(token) },
     );
   }
 
-  // 3. Map tier
-  const tier = mapTier(env, sale.productId, sale.productName);
-  const config = TIERS[tier] || TIERS.trip;
+  // Retain legacy random-ID passes; a database failure is not "no prior claim".
+  try {
+    const existing = await queryOneWithId(env, 'passes', 'gumroadSaleId', saleId);
+    if (existing) return await existingSession(existing);
+  } catch {
+    return json({ error: 'activation_unavailable' }, 503);
+  }
+
+  // A stable document key makes simultaneous first claims compete on one pass.
+  const passId = `sale-${await sha256hex(saleId)}`;
+  const config = TIERS[tier];
   const now = Date.now();
-  const passId = crypto.randomUUID();
   const recoveryCode = generateRecoveryCode();
   const recoveryCodeHash = await sha256hex(recoveryCode);
   const expiresAt = now + config.validDays * 86_400_000;
 
-  // 4. Create pass document
-  await createDoc(env, 'passes', passId, {
-    tier,
-    gumroadSaleId: saleId,
-    email: sale.email,
-    createdAt: now,
-    expiresAt,
-    messageAllowance: config.messageAllowance,
-    messagesUsed: 0,
-    itineraryRequestLimit: 20,
-    itineraryRequestsUsed: 0,
-    devices: [{ id: deviceId, boundAt: now, lastSeenAt: now }],
-    recoveryCodeHash,
-    marketingConsent: body.marketingConsent
-      ? { granted: true, at: now, source: 'checkout' }
-      : { granted: false },
-  });
+  try {
+    const created = await createDoc(env, 'passes', passId, {
+      tier,
+      gumroadSaleId: saleId,
+      email: sale.email,
+      createdAt: now,
+      expiresAt,
+      messageAllowance: config.messageAllowance,
+      messagesUsed: 0,
+      itineraryRequestLimit: 20,
+      itineraryRequestsUsed: 0,
+      devices: [{ id: deviceId, boundAt: now, lastSeenAt: now }],
+      recoveryCodeHash,
+      marketingConsent: body.marketingConsent
+        ? { granted: true, at: now, source: 'checkout' }
+        : { granted: false },
+    });
+    if (created?.gumroadSaleId !== saleId || created?.tier !== tier
+      || created?.recoveryCodeHash !== recoveryCodeHash) {
+      throw new Error('pass_creation_not_confirmed');
+    }
+  } catch (error) {
+    if (/firestore_error:409:/.test(String(error?.message))) {
+      try {
+        const existing = await getDoc(env, `passes/${passId}`);
+        if (existing) return await existingSession({ ...existing, id: passId });
+      } catch { /* fail closed below */ }
+    }
+    return json({ error: 'activation_unavailable' }, 503);
+  }
 
   // 5. Mark sale as claimed (best-effort)
   await patchDoc(env, `gumroadSales/${saleId}`, { status: 'claimed', passId, claimedAt: now })

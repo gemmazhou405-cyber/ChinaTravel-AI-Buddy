@@ -58,6 +58,7 @@ export default function ClaimModal({ initialTab = 'claim', onClose, onPassActiva
   const claimErrorKey = (code: string) => {
     // Error codes returned by functions/api/claim.js
     if (code === 'invalid_sale') return t('pass.claim.errorNotFound');
+    if (code === 'max_devices_reached') return t('pass.claim.errorMaxDevices');
     return t('pass.claim.errorGeneric');
   };
 

@@ -5,7 +5,20 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/free-itinerary-review.yml'
-      - 'functions/_shared/itinerary-email.js'
+      - 'functions/_shared/**'
+      - 'functions/api/claim.js'
+      - 'functions/api/recover.js'
+      - 'functions/api/pass.js'
+      - 'functions/api/devices/**'
+      - 'functions/api/buddy/**'
+      - 'functions/api/leads/trip.js'
+      - 'functions/api/gumroad/webhook.js'
+      - 'src/App.tsx'
+      - 'src/hooks/usePass.ts'
+      - 'src/components/PassDashboard.tsx'
+      - 'src/components/ClaimModal.tsx'
+      - 'src/lib/membership.ts'
+      - 'src/lib/deviceId.ts'
       - 'src/components/home/TripPlanForm.tsx'
       - 'src/data/planningHelp.json'
       - 'src/i18n/locales/*.json'
@@ -16,6 +29,12 @@ on:
       - 'scripts/test-planning-help.mjs'
       - 'scripts/test-growth-summary.mjs'
       - 'scripts/test-release-fixes.mjs'
+      - 'scripts/test-pass-*.mjs'
+      - 'scripts/test-buddy-phase1.mjs'
+      - 'scripts/test-free-chat-quota.mjs'
+      - 'scripts/test-paid-chat-quota.mjs'
+      - 'docs/pass-p0-launch-readiness.md'
+      - '.env.example'
       - 'package.json'
       - 'package-lock.json'
 
@@ -47,6 +66,21 @@ jobs:
           "$RUNNER_TEMP/chinaease-browser-tests/node_modules/.bin/playwright" install --with-deps chromium
       - run: npm run typecheck
       - run: npm run build
+      - name: Run membership and access regressions
+        shell: bash
+        env:
+          NODE_PATH: ${{ runner.temp }}/chinaease-browser-tests/node_modules
+          PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/chinaease-browsers
+        run: |
+          set -euo pipefail
+          npm run test:pass-ci
+          npm run test:pass-p0
+          npm run test:pass-entitlements
+          npm run test:pass-dashboard
+          npm run test:pass-firestore -- --self-test
+          npm run test:buddy
+          npm run test:free-chat-quota
+          npm run test:paid-chat-quota
       - name: Run email, form, planning and growth regressions
         env:
           NODE_PATH: ${{ runner.temp }}/chinaease-browser-tests/node_modules

@@ -1208,6 +1208,7 @@
         "expires": "Expires {{date}}",
         "expired": "Expired",
         "devicesTitle": "Devices",
+        "devicesLoadError": "Couldn't load devices. Close and reopen this window to try again.",
         "devicesCount": "{{count}} of {{max}} devices",
         "removeDevice": "Remove",
         "removing": "Removing…",

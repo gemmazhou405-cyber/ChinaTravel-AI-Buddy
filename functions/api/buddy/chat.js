@@ -1,6 +1,6 @@
 import { clientIp, errorResponse, jsonResponse, optionsResponse, withCors } from '../../_shared/http.js';
-import { getDoc, patchDoc } from '../../_shared/firestore.js';
-import { verifySessionCookie } from '../../_shared/session.js';
+import { sha256hex, verifySessionCookie } from '../../_shared/session.js';
+import { reservePassChatMessage, settlePassChatMessage } from '../../_shared/pass-chat-quota.js';
 import { hashIp } from '../../_shared/ip-hash.js';
 import { FREE_CHAT_DAILY_LIMIT, releaseFreeChatMessage, reserveFreeChatMessage } from '../../_shared/free-chat-quota.js';
 
@@ -126,37 +126,14 @@ function normalizeContext(context) {
   return total <= MAX_CONTEXT_CHARS ? normalized : null;
 }
 
-async function reservePassUsage(env, passId) {
-  const pass = await getDoc(env, `passes/${passId}`);
-  if (!pass) return { ok: false, status: 401, code: 'invalid_pass' };
-  const now = Date.now();
-  if (pass.expiresAt && pass.expiresAt < now) {
-    return { ok: false, status: 402, code: 'pass_expired', tier: pass.tier };
-  }
-  const used = pass.messagesUsed ?? 0;
-  const allowance = pass.messageAllowance ?? 0;
-  if (used >= allowance) {
-    return { ok: false, status: 402, code: 'quota_exhausted', tier: pass.tier, remaining: 0 };
-  }
-  await patchDoc(env, `passes/${passId}`, { messagesUsed: used + 1 }, ['messagesUsed']);
-  return { ok: true, pass, before: used };
-}
-
-async function rollbackPassUsage(env, passId, before) {
-  try {
-    const pass = await getDoc(env, `passes/${passId}`);
-    if (pass && (pass.messagesUsed ?? 0) > before) {
-      await patchDoc(env, `passes/${passId}`, { messagesUsed: before }, ['messagesUsed']);
-    }
-  } catch {
-    // Rollback failure is non-fatal
-  }
+function confirmedFailure(message) {
+  return Object.assign(new Error(message), { quotaRefundSafe: true });
 }
 
 async function callCozeStream(env, userId, message, context, deadlineAt) {
-  if (!env.COZE_WORKER_URL || !validBotId(env.COZE_BOT_ID)) throw new Error('service_unavailable');
+  if (!env.COZE_WORKER_URL || !validBotId(env.COZE_BOT_ID)) throw confirmedFailure('service_unavailable');
   const availableForWorker = remainingMs(deadlineAt) - POST_WORKER_BUFFER_MS;
-  if (availableForWorker < WORKER_MIN_TIMEOUT_MS) throw timeoutError();
+  if (availableForWorker < WORKER_MIN_TIMEOUT_MS) throw confirmedFailure('upstream_timeout');
   const workerTimeoutMs = Math.min(WORKER_MAX_TIMEOUT_MS, Math.max(WORKER_MIN_TIMEOUT_MS, availableForWorker));
   const fetchTimeoutMs = Math.max(1000, Math.min(workerTimeoutMs + 1200, remainingMs(deadlineAt) - 1500));
   try {
@@ -183,21 +160,24 @@ async function callCozeStream(env, userId, message, context, deadlineAt) {
       try { errorPayload = await res.json(); } catch {}
       const providerCode = errorPayload.code || errorPayload.error || `http_${res.status}`;
       logBuddy('warn', 'stream_worker_non_ok', { status: res.status, providerCode });
-      if (errorPayload.error === 'upstream_timeout') throw new Error('upstream_timeout');
-      if (errorPayload.error === 'coze_configuration_error' || providerCode === 4200) throw new Error(`service_unavailable:${providerCode}`);
-      throw new Error(`upstream_error:${providerCode}`);
+      if (errorPayload.error === 'upstream_timeout' || res.status === 504) throw timeoutError();
+      if (errorPayload.error === 'coze_configuration_error' || providerCode === 4200) throw confirmedFailure(`service_unavailable:${providerCode}`);
+      throw confirmedFailure(`upstream_error:${providerCode}`);
     }
+    if (!res.body) throw confirmedFailure('upstream_empty_reply');
     return res; // HTTP 200 — text/event-stream body ready to pipe
   } catch (error) {
-    if (error?.name === 'AbortError' || error?.name === 'TimeoutError' || error?.message === 'upstream_timeout') throw timeoutError();
+    if (error?.name === 'AbortError' || error?.name === 'TimeoutError' || error?.message === 'upstream_timeout') {
+      throw Object.assign(timeoutError(), { quotaRefundSafe: error.quotaRefundSafe === true });
+    }
     throw error;
   }
 }
 
 async function callCoze(env, userId, message, context, deadlineAt) {
-  if (!env.COZE_WORKER_URL || !validBotId(env.COZE_BOT_ID)) throw new Error('service_unavailable');
+  if (!env.COZE_WORKER_URL || !validBotId(env.COZE_BOT_ID)) throw confirmedFailure('service_unavailable');
   const availableForWorker = remainingMs(deadlineAt) - POST_WORKER_BUFFER_MS;
-  if (availableForWorker < WORKER_MIN_TIMEOUT_MS) throw timeoutError();
+  if (availableForWorker < WORKER_MIN_TIMEOUT_MS) throw confirmedFailure('upstream_timeout');
   const workerTimeoutMs = Math.min(WORKER_MAX_TIMEOUT_MS, Math.max(WORKER_MIN_TIMEOUT_MS, availableForWorker));
   const fetchTimeoutMs = Math.max(1000, Math.min(workerTimeoutMs + 1200, remainingMs(deadlineAt) - 1500));
   try {
@@ -230,19 +210,21 @@ async function callCoze(env, userId, message, context, deadlineAt) {
       try { errorPayload = responseText ? JSON.parse(responseText) : {}; } catch { errorPayload = {}; }
       const providerCode = errorPayload.code || errorPayload.error || `http_${res.status}`;
       logBuddy('warn', 'upstream_non_ok', { status: res.status, providerCode, responseLength: responseText.length });
-      if (errorPayload.error === 'upstream_timeout') throw new Error('upstream_timeout');
-      if (errorPayload.error === 'coze_configuration_error' || providerCode === 4200) throw new Error(`service_unavailable:${providerCode}`);
-      throw new Error(`upstream_error:${providerCode}`);
+      if (errorPayload.error === 'upstream_timeout' || res.status === 504) throw timeoutError();
+      if (errorPayload.error === 'coze_configuration_error' || providerCode === 4200) throw confirmedFailure(`service_unavailable:${providerCode}`);
+      throw confirmedFailure(`upstream_error:${providerCode}`);
     }
     let data;
     try { data = JSON.parse(responseText); } catch {
-      throw new Error('upstream_error:non_json');
+      throw confirmedFailure('upstream_error:non_json');
     }
     const reply = extractReply(data);
-    if (!reply) throw new Error('upstream_empty_reply');
+    if (!reply) throw confirmedFailure('upstream_empty_reply');
     return reply.slice(0, MAX_REPLY_CHARS);
   } catch (error) {
-    if (error?.name === 'AbortError' || error?.name === 'TimeoutError' || error?.message === 'upstream_timeout') throw timeoutError();
+    if (error?.name === 'AbortError' || error?.name === 'TimeoutError' || error?.message === 'upstream_timeout') {
+      throw Object.assign(timeoutError(), { quotaRefundSafe: error.quotaRefundSafe === true });
+    }
     throw error;
   }
 }
@@ -317,7 +299,12 @@ async function handlePost(request, env, deadlineAt) {
     assertTimeRemaining(deadlineAt, 9000);
     logBuddy('info', 'reserve_start', { passId: session.passId.slice(0, 8) });
     try {
-      reservation = await reservePassUsage(env, session.passId);
+      // Bind request identity to message/transport. Context can legitimately be
+      // rebuilt by the existing UI when retrying a confirmed failed request.
+      reservation = await withTimeout(reservePassChatMessage(env, {
+        passId: session.passId, deviceId: session.deviceId, requestId,
+        inputHash: await sha256hex(JSON.stringify({ message, stream: wantsStream })),
+      }), Math.max(1000, remainingMs(deadlineAt) - WORKER_MIN_TIMEOUT_MS - POST_WORKER_BUFFER_MS), 'paid_reservation_timeout');
     } catch (error) {
       logBuddy('error', 'reserve_failed', { errorCode: error instanceof Error ? error.message.split(':')[0] : 'unknown' });
       return errorResponse(request, env, 503, 'upstream_error', 'Buddy is temporarily unavailable.');
@@ -361,11 +348,16 @@ async function handlePost(request, env, deadlineAt) {
   }
 
   // Called only when the AI failed or timed out before any reply content was sent.
-  const refundUsage = async () => {
+  const settlePaidUsage = async (outcome) => {
+    if (!reservation?.ok) return;
+    const cleanupBudget = Math.max(500, Math.min(CLEANUP_TIMEOUT_MS, remainingMs(deadlineAt) - 500));
+    // Settlement uncertainty must never turn an already successful AI reply into
+    // a refund. A still-reserved record continues to block duplicate calls.
+    await withTimeout(settlePassChatMessage(env, reservation, outcome), cleanupBudget, 'quota_settlement_timeout').catch(() => {});
+  };
+  const refundUsage = async (safePaidRefund) => {
     const rollbackBudget = Math.max(500, Math.min(CLEANUP_TIMEOUT_MS, remainingMs(deadlineAt) - 500));
-    if (session && reservation?.ok) {
-      await withTimeout(rollbackPassUsage(env, session.passId, reservation.before), rollbackBudget, 'rollback_timeout').catch(() => {});
-    }
+    if (session && reservation?.ok && safePaidRefund) await settlePaidUsage('released');
     if (freeReservation?.ok) {
       await withTimeout(releaseFreeChatMessage(env, freeReservation), rollbackBudget, 'rollback_timeout').catch(() => {});
     }
@@ -374,9 +366,9 @@ async function handlePost(request, env, deadlineAt) {
   const usageInfo = session && reservation
     ? {
       tier: reservation.pass.tier,
-      messagesUsed: reservation.before + 1,
+      messagesUsed: reservation.count,
       messageAllowance: reservation.pass.messageAllowance,
-      remaining: Math.max(0, (reservation.pass.messageAllowance ?? 0) - (reservation.before + 1)),
+      remaining: Math.max(0, (reservation.pass.messageAllowance ?? 0) - reservation.count),
     }
     : {
       tier: 'free',
@@ -391,7 +383,7 @@ async function handlePost(request, env, deadlineAt) {
       workerRes = await callCozeStream(env, userId, message, context, deadlineAt);
     } catch (error) {
       // Worker returned non-200 before stream started — safe to roll back quota
-      await refundUsage();
+      await refundUsage(error?.quotaRefundSafe === true);
       const reason = error instanceof Error && error.message === 'upstream_timeout'
         ? 'upstream_timeout'
         : error instanceof Error && error.message?.startsWith('service_unavailable')
@@ -411,8 +403,15 @@ async function handlePost(request, env, deadlineAt) {
     const encoder = new TextEncoder();
     const decoder = new TextDecoder();
     let sseBuf = '';
+    let contentStarted = false;
+    let streamOutcome = null;
+    const settleStream = async (outcome) => {
+      if (!reservation?.ok || streamOutcome) return;
+      streamOutcome = outcome;
+      await settlePaidUsage(outcome);
+    };
     const usageInjector = new TransformStream({
-      transform(chunk, controller) {
+      async transform(chunk, controller) {
         sseBuf += decoder.decode(chunk, { stream: true });
         const events = sseBuf.split('\n\n');
         sseBuf = events.pop() ?? '';
@@ -420,13 +419,30 @@ async function handlePost(request, env, deadlineAt) {
           const trimmed = event.trim();
           if (!trimmed) continue;
           if (trimmed.startsWith('data:')) {
+            let parsed;
             try {
-              const parsed = JSON.parse(trimmed.slice('data:'.length).trim());
-              if (parsed.done === true) {
+              parsed = JSON.parse(trimmed.slice('data:'.length).trim());
+            } catch { /* pass through non-JSON events unchanged */ }
+            if (typeof parsed?.delta === 'string' && parsed.delta.length > 0) {
+              contentStarted = true;
+              await settleStream('consumed');
+            }
+            if (parsed?.error && reservation?.ok) {
+              if (!contentStarted) await settleStream('released');
+              controller.enqueue(encoder.encode(`${event}\n\n`));
+              controller.terminate(); // A refunded stream may never emit later content.
+              return;
+            }
+            if (parsed?.done === true) {
+              if (reservation?.ok && !contentStarted) {
+                await settleStream('released');
+                controller.enqueue(encoder.encode('data: {"error":"upstream_empty_reply"}\n\n'));
+              } else {
                 controller.enqueue(encoder.encode(`data: ${JSON.stringify({ done: true, usage: usageInfo })}\n\n`));
-                continue;
               }
-            } catch { /* pass through non-done events unchanged */ }
+              if (reservation?.ok) { controller.terminate(); return; }
+              continue;
+            }
           }
           controller.enqueue(encoder.encode(`${event}\n\n`));
         }
@@ -444,6 +460,7 @@ async function handlePost(request, env, deadlineAt) {
 
   try {
     const reply = await callCoze(env, userId, message, context, deadlineAt);
+    await settlePaidUsage('consumed');
     logBuddy('info', 'completed', { tier: usageTier });
     return withCors(jsonResponse({ status: 'completed', reply, usage: usageInfo }), request, env);
   } catch (error) {
@@ -458,8 +475,9 @@ async function handlePost(request, env, deadlineAt) {
       errorCode: error instanceof Error ? error.message.split(':').slice(0, 2).join(':') : 'unknown',
     });
 
-    // No answer was returned, so give the message back (pass or free quota).
-    await refundUsage();
+    // Definite failures release only their own paid reservation. An unknown
+    // network outcome stays reserved; free-tier behaviour remains unchanged.
+    await refundUsage(error?.quotaRefundSafe === true);
 
     return errorResponse(
       request,
