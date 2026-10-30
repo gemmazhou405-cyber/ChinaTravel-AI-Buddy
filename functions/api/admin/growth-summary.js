@@ -31,7 +31,7 @@ async function readRecent(env, config, from, to, signal) {
 
 export async function onRequest({ request, env }) {
   const token = /^Bearer\s+(\S+)\s*$/i.exec(request.headers.get('Authorization') || '')?.[1];
-  if (!token || typeof env.ADMIN_SECRET !== 'string' || !env.ADMIN_SECRET || token !== env.ADMIN_SECRET) {
+  if (!token || typeof env.GROWTH_REPORT_SECRET !== 'string' || !env.GROWTH_REPORT_SECRET || token !== env.GROWTH_REPORT_SECRET) {
     return json({ error: 'unauthorized' }, 401, { 'WWW-Authenticate': 'Bearer' });
   }
   if (request.method !== 'GET') return json({ error: 'method_not_allowed' }, 405, { Allow: 'GET' });

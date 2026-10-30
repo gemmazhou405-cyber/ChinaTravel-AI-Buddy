@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import { generateKeyPairSync } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { onRequest } from '../functions/api/admin/growth-summary.js';
+import { onRequestPost as activate } from '../functions/api/admin/activate.js';
 import { MAX_RECORDS_PER_COLLECTION, PAGE_SIZE, buildGrowthSummary } from '../functions/_shared/growth-summary.js';
 import { fromFirestoreDocument, toFirestoreDocument } from '../functions/_shared/firestore.js';
 
@@ -16,7 +17,8 @@ const { privateKey } = generateKeyPairSync('rsa', {
   publicKeyEncoding: { type: 'spki', format: 'pem' },
 });
 const env = {
-  ADMIN_SECRET: 'local-growth-report-test-secret',
+  GROWTH_REPORT_SECRET: 'local-readonly-growth-test-secret',
+  ADMIN_SECRET: 'local-admin-activation-test-secret',
   FIREBASE_PROJECT_ID: 'growth-report-test',
   FIREBASE_CLIENT_EMAIL: 'report@growth-report-test.iam.gserviceaccount.com',
   FIREBASE_PRIVATE_KEY: privateKey,
@@ -24,6 +26,7 @@ const env = {
 const databaseRoot = `projects/${env.FIREBASE_PROJECT_ID}/databases/(default)/documents`;
 const collections = { analyticsEvents: [], tripLeads: [], gumroadSales: [] };
 const requests = [];
+const networkCalls = [];
 let failure = false;
 let counter = 0;
 const originalFetch = globalThis.fetch;
@@ -41,6 +44,7 @@ function setAt(object, path, value) {
 function reset() {
   for (const key of Object.keys(collections)) collections[key] = [];
   requests.length = 0;
+  networkCalls.length = 0;
   failure = false;
   counter = 0;
 }
@@ -64,13 +68,14 @@ function filterMatches(filter, data) {
 
 globalThis.fetch = async (input, init = {}) => {
   const url = new URL(String(input));
+  networkCalls.push(url.hostname);
   if (url.hostname === 'oauth2.googleapis.com') return json({ access_token: 'local-read-token', expires_in: 3600 });
   assert.equal(url.hostname, 'firestore.googleapis.com', 'no unmocked network destination');
   assert.ok(url.pathname.endsWith('/documents:runQuery'), 'the report uses read-only queries, never Firestore writes');
   assert.equal(init.method, 'POST', 'runQuery uses its documented transport method');
   const body = JSON.parse(init.body);
   requests.push(body);
-  if (failure) return json({ error: 'leak@example.test +13125551212 SALE-PRIVATE-DO-NOT-RETURN REQUEST-PRIVATE-DO-NOT-RETURN' }, 503);
+  if (failure) return json({ error: `leak@example.test +13125551212 SALE-PRIVATE-DO-NOT-RETURN REQUEST-PRIVATE-DO-NOT-RETURN ${env.GROWTH_REPORT_SECRET} ${env.ADMIN_SECRET}` }, 503);
   const query = body.structuredQuery;
   const collection = query.from[0].collectionId;
   assert.ok(Object.hasOwn(collections, collection));
@@ -112,7 +117,7 @@ globalThis.fetch = async (input, init = {}) => {
 };
 Date.now = () => NOW;
 
-async function report({ authorization = `Bearer ${env.ADMIN_SECRET}`, environment = env, method = 'GET' } = {}) {
+async function report({ authorization = `Bearer ${env.GROWTH_REPORT_SECRET}`, environment = env, method = 'GET' } = {}) {
   const headers = authorization === null ? {} : { Authorization: authorization };
   const response = await onRequest({ request: new Request('https://chinaeasebuddy.com/api/admin/growth-summary', { method, headers }), env: environment });
   assert.match(response.headers.get('Cache-Control') || '', /no-store/, 'successes and failures are never cached');
@@ -120,8 +125,8 @@ async function report({ authorization = `Bearer ${env.ADMIN_SECRET}`, environmen
 }
 function assertNoIdentity(body) {
   const serialized = JSON.stringify(body);
-  for (const forbidden of ['leak@example.test', '+13125551212', '+1 (312) 555-1212', 'SALE-PRIVATE-DO-NOT-RETURN', 'REQUEST-PRIVATE-DO-NOT-RETURN', 'IP-HASH-PRIVATE', 'Jane-Smith', 'private-document-']) {
-    assert.ok(!serialized.includes(forbidden), `response never contains ${forbidden}`);
+  for (const forbidden of ['leak@example.test', '+13125551212', '+1 (312) 555-1212', 'SALE-PRIVATE-DO-NOT-RETURN', 'REQUEST-PRIVATE-DO-NOT-RETURN', 'IP-HASH-PRIVATE', 'Jane-Smith', 'private-document-', env.GROWTH_REPORT_SECRET, env.ADMIN_SECRET]) {
+    assert.ok(!serialized.includes(forbidden), 'response never contains private fixture data or credentials');
   }
   const walk = (value) => {
     if (!value || typeof value !== 'object') return;
@@ -135,14 +140,44 @@ function assertNoIdentity(body) {
 
 try {
   for (const options of [
-    { authorization: null }, { authorization: 'Bearer wrong' }, { authorization: env.ADMIN_SECRET },
-    { environment: { ...env, ADMIN_SECRET: undefined } },
-    { environment: { ...env, ADMIN_SECRET: '' } },
+    { authorization: null }, { authorization: 'Bearer wrong' }, { authorization: env.GROWTH_REPORT_SECRET },
+    { authorization: `Bearer ${env.ADMIN_SECRET}` },
+    { authorization: `Bearer ${env.ADMIN_SECRET}`, environment: { ...env, GROWTH_REPORT_SECRET: undefined } },
+    ...[undefined, null, '', '   ', 123, true, {}, []].map((secret) => ({ environment: { ...env, GROWTH_REPORT_SECRET: secret } })),
   ]) {
-    const { response } = await report(options);
+    const { response, body } = await report(options);
     assert.equal(response.status, 401);
     assert.equal(requests.length, 0, 'unauthorized requests never query the database');
+    assert.equal(networkCalls.length, 0, 'unauthorized requests never make an OAuth or database request');
+    assertNoIdentity(body);
   }
+
+  // Exercise the actual write-handler auth boundary without reaching any write path.
+  for (const environment of [env, { ...env, ADMIN_SECRET: undefined }]) {
+    const request = new Request('https://chinaeasebuddy.com/api/admin/activate', {
+      method: 'POST', headers: { Authorization: `Bearer ${env.GROWTH_REPORT_SECRET}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tier: 'not-a-tier' }),
+    });
+    let bodyReads = 0;
+    const readBody = request.json.bind(request);
+    request.json = async () => { bodyReads++; return readBody(); };
+    const response = await activate({ request, env: environment });
+    assert.equal(response.status, 401, 'a growth-report key never grants activation access');
+    assert.equal(bodyReads, 0, 'unauthorized activation does not parse the body');
+    assert.equal(request.bodyUsed, false);
+    assert.equal(networkCalls.length, 0, 'unauthorized activation never reaches a network/database call');
+    assertNoIdentity(await response.json());
+  }
+  const activationRequest = new Request('https://chinaeasebuddy.com/api/admin/activate', {
+    method: 'POST', headers: { Authorization: `Bearer ${env.ADMIN_SECRET}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ tier: 'not-a-tier' }),
+  });
+  const activation = await activate({ request: activationRequest, env });
+  assert.equal(activation.status, 400, 'the original admin credential still passes activation authentication');
+  assert.equal((await activation.json()).error, 'invalid_tier', 'invalid tier ends the authorized request before any writes');
+  assert.equal(activationRequest.bodyUsed, true);
+  assert.equal(networkCalls.length, 0, 'admin-auth compatibility check performs no network or database writes');
+
   assert.equal((await report({ method: 'POST' })).response.status, 405);
   assert.equal(requests.length, 0, 'non-GET never queries or mutates data');
 
@@ -153,6 +188,8 @@ try {
   assert.equal(empty.body.ratioType, 'aggregate_event_ratios');
   assert.equal(empty.body.windows.last7Days.ratios.tripStarterStartToSubmit.value, null);
   assert.equal(empty.body.windows.last30Days.paidPasses.revenue, null);
+  assertNoIdentity(empty.body);
+  assert.equal((await report({ environment: { ...env, ADMIN_SECRET: undefined } })).response.status, 200, 'report access depends only on its own credential');
 
   reset();
   for (let i = 0; i < 2; i++) event('trip_form_view');
@@ -305,7 +342,7 @@ try {
   assert.equal(labelCounts('utmSource').google, 1);
   assert.equal(labelCounts('utmSource')['other/redacted'], 1, 'phone-like sources are never reflected');
   assertNoIdentity(attributionFallback);
-  console.log('PASS: protected read-only growth report; production-only analytics, windows, statuses, privacy, revenue null, top-ten breakdowns, snapshot pagination, exact/over safety cap, and sanitized failures.');
+  console.log('PASS: isolated read-only growth credential, activation boundary, production-only analytics, windows, statuses, privacy, revenue null, top-ten breakdowns, snapshot pagination, exact/over safety cap, and sanitized failures.');
 } finally {
   globalThis.fetch = originalFetch;
   Date.now = originalNow;

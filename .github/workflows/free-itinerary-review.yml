@@ -13,6 +13,7 @@ on:
       - 'functions/api/buddy/**'
       - 'functions/api/leads/trip.js'
       - 'functions/api/gumroad/webhook.js'
+      - 'functions/api/admin/**'
       - 'src/App.tsx'
       - 'src/hooks/usePass.ts'
       - 'src/components/PassDashboard.tsx'
@@ -33,6 +34,8 @@ on:
       - 'scripts/test-trip-lead-quota.mjs'
       - 'scripts/test-planning-help.mjs'
       - 'scripts/test-growth-summary.mjs'
+      - 'scripts/report-growth.mjs'
+      - 'scripts/test-report-growth.mjs'
       - 'scripts/test-release-fixes.mjs'
       - 'scripts/test-pass-*.mjs'
       - 'scripts/test-buddy-phase1.mjs'
@@ -98,4 +101,5 @@ jobs:
           npm run test:trip-lead-quota
           npm run test:planning-help
           npm run test:growth-summary
+          npm run test:report-growth
           npm run test:release-fixes
