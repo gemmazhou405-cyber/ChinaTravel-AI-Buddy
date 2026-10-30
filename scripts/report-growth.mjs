@@ -1,4 +1,4 @@
-// Local client for the protected, aggregate-only growth endpoint. Never follows redirects.
+// Local client for the aggregate-only growth endpoint, using its dedicated read-only secret. Never follows redirects.
 import { pathToFileURL } from 'node:url';
 
 export async function runReport({ env = process.env, fetcher = globalThis.fetch, write = (text) => process.stdout.write(text) } = {}) {
@@ -6,9 +6,9 @@ export async function runReport({ env = process.env, fetcher = globalThis.fetch,
     write(`Growth report failed: ${message}\n`);
     return 1;
   };
-  const secret = typeof env.ADMIN_SECRET === 'string' ? env.ADMIN_SECRET.trim() : '';
+  const secret = typeof env.GROWTH_REPORT_SECRET === 'string' ? env.GROWTH_REPORT_SECRET.trim() : '';
   const configuredUrl = typeof env.GROWTH_REPORT_URL === 'string' ? env.GROWTH_REPORT_URL.trim() : '';
-  if (!secret || !configuredUrl) return fail('set GROWTH_REPORT_URL and ADMIN_SECRET.');
+  if (!secret || !configuredUrl) return fail('set GROWTH_REPORT_URL and GROWTH_REPORT_SECRET.');
 
   let url;
   try {
@@ -24,7 +24,7 @@ export async function runReport({ env = process.env, fetcher = globalThis.fetch,
   ) {
     return fail('use the exact growth-summary endpoint over HTTPS, or loopback HTTP, without credentials, query, or fragment.');
   }
-  if (/[\r\n]/.test(secret)) return fail('ADMIN_SECRET contains invalid header characters.');
+  if (/[\r\n]/.test(secret)) return fail('GROWTH_REPORT_SECRET contains invalid header characters.');
 
   try {
     const response = await fetcher(url.href, {

@@ -1,25 +1,65 @@
 # Protected growth summary
 
-Implementation/audit base: `04b2b11f62c589a8c4abc63ef5d399c54d7c1a4e` (latest main pulled before this work).
+Original schema audit base: `04b2b11f62c589a8c4abc63ef5d399c54d7c1a4e`.
+Dedicated report-credential update base: `7d98f2f7092eb55e8b1b915b0dffe0d2a4975883`; aggregation behavior is unchanged.
 The audit below describes the current production-code schema and emitters. No live production collections or secrets were accessed for this change.
 
 ## Endpoint and operation
 
 `GET /api/admin/growth-summary`
 
-Send `Authorization: Bearer <ADMIN_SECRET>`, using the same existing secret as `/api/admin/activate`. Missing/invalid credentials (including missing server secret) return HTTP 401 before any database access. Authenticated non-GET requests return 405. Every response has `Cache-Control: no-store`; no CORS allowance, public frontend link, dashboard, raw documents, or new tracking is added.
+Send `Authorization: Bearer <GROWTH_REPORT_SECRET>`. This separate read-only credential authorizes only GET requests to this aggregate report; it does not authorize `/api/admin/activate`. Keep the existing `ADMIN_SECRET` unchanged for activation, use a different random value for `GROWTH_REPORT_SECRET`, and never reuse the admin credential. There is no `ADMIN_SECRET` fallback for the report. Missing/invalid report credentials (including a missing server report secret) return HTTP 401 before any database access. Authenticated non-GET requests return 405. Every response has `Cache-Control: no-store`; no CORS allowance, public frontend link, dashboard, raw documents, or new tracking is added.
+
+This separates application-level endpoint authorization only. It does not issue Firestore credentials or change the existing Firebase service account's IAM permissions, database access, or report queries.
 
 The response is aggregate-only: `complete`, `generatedAt`, `ratioType`, `windows.last7Days`, `windows.last30Days`, and explicit `limitations`. Each window gives UTC `from`/`to`, analytics counts, lead counts/current outcomes/top-ten breakdowns, recorded pass purchases/statuses, and aggregate event ratios. Intervals are rolling 7/30 × 24 hours, inclusive at `from` and exclusive at the server request timestamp `to`.
 
 Optional local command:
 
 ```sh
-# Configure these securely in the local environment; do not commit secrets.
+# Run only after the matching server change is deployed and the report secret is configured.
+# Supply GROWTH_REPORT_SECRET securely; never use ADMIN_SECRET for this command.
 # GROWTH_REPORT_URL is the full HTTPS URL ending in /api/admin/growth-summary.
 npm run report:growth
 ```
 
-The command reads `GROWTH_REPORT_URL` and `ADMIN_SECRET`, does not follow redirects, accepts HTTP only on loopback for local testing, and prints complete aggregate JSON. It never prints the secret, error response bodies, or failed partial reports. Do not put the secret in a URL or shell command history.
+The command reads only `GROWTH_REPORT_URL` and `GROWTH_REPORT_SECRET`, does not follow redirects, accepts HTTP only on loopback for local testing, and prints complete aggregate JSON. It never prints the secret, error response bodies, or failed partial reports. Do not put the secret in a URL or shell command history. The hidden-input example below supplies the report credential only to the report subprocess, without exporting it into the parent shell.
+
+### Configure the separate report credential after approval
+
+These are instructions for a later authorized configuration change and deployment; they are not actions performed by this code change. No production report request is required to prepare the change.
+
+1. In a trusted password manager, generate a new cryptographically random value with at least 256 bits of entropy (for example, 64 random hexadecimal characters). Save it in a password-manager entry labelled `ChinaEase / chinaease-buddy / Production / GROWTH_REPORT_SECRET`. Generate a different value from `ADMIN_SECRET`; do not retrieve or copy the admin secret. Do not place either secret in chat, command arguments/history, the repository, `.env` files, temporary files, or report artifacts.
+2. Using the official Wrangler CLI in an interactive terminal and the already authorized Cloudflare account, run the following command. It creates or updates an encrypted Pages secret in **`chinaease-buddy` / Production**. Confirm the account/project and that no existing `GROWTH_REPORT_SECRET` binding would be overwritten; if one already exists, stop for review. Enter the new report value only at the hidden `Enter a secret value:` prompt. Do not pipe or redirect secret input. Do not run any command that changes `ADMIN_SECRET`.
+
+   ```sh
+   npx wrangler pages secret put GROWTH_REPORT_SECRET --project-name chinaease-buddy --env production
+   ```
+
+   The official [Pages CLI reference](https://developers.cloudflare.com/workers/wrangler/commands/pages/#pages-secret-put) documents `pages secret put`, `--project-name`, and `--env`. The [Wrangler implementation](https://github.com/cloudflare/workers-sdk/blob/b1ced56e11378efe3742c6eb51f96e70d572f0a4/packages/wrangler/src/pages/secret/index.ts#L129-L181) uses a secret-input prompt in an interactive terminal and writes a `secret_text` binding to the selected environment. Outside an interactive terminal it reads stdin instead; do not use that mode for this procedure.
+3. Deploy the reviewed server/client change only through the separately approved release process. Adding the secret alone does not switch the authentication logic of already deployed code. Before that deployment, the old production report endpoint still uses its old admin credential; the updated local report command has no fallback and cannot use the new report key against the old endpoint. After the matching deployment, the report accepts only `GROWTH_REPORT_SECRET`, while `/api/admin/activate` continues to use the unchanged `ADMIN_SECRET`. If the new secret is missing or invalid, the report returns 401 rather than falling back to admin access. A code rollback may restore the old report authentication, so reassess this boundary before using the report after a rollback.
+4. Once the new deployment and secret configuration are confirmed, run the report from the repository root with the same value stored in the password manager. This example refuses non-TTY input and refuses `getpass` fallback to echoed input. The code itself may be entered in shell history; the secret is entered later, without echo, and is never written to a file or command argument.
+
+   ```sh
+   python3 -c '
+   import getpass, os, subprocess, sys, warnings
+
+   if not sys.stdin.isatty() or not sys.stderr.isatty():
+       raise SystemExit("Use an interactive terminal; secret input was not requested.")
+   with warnings.catch_warnings():
+       warnings.simplefilter("error", getpass.GetPassWarning)
+       secret = getpass.getpass("Production GROWTH_REPORT_SECRET (hidden): ")
+   if not secret or any(char.isspace() for char in secret):
+       raise SystemExit("The report secret must be nonempty and contain no whitespace.")
+   child_env = os.environ.copy()
+   child_env.pop("ADMIN_SECRET", None)
+   child_env["GROWTH_REPORT_SECRET"] = secret
+   child_env["GROWTH_REPORT_URL"] = "https://chinaeasebuddy.com/api/admin/growth-summary"
+   raise SystemExit(subprocess.run(["npm", "run", "report:growth"], env=child_env).returncode)
+   '
+   ```
+
+   The report subprocess receives the secret in its environment only. Do not enable shell tracing, print the child environment, or save the secret to a local configuration file. Keep the password-manager entry as the retained copy.
 
 ## Audit: existing data models
 
@@ -86,7 +126,7 @@ On an overflow the endpoint returns HTTP 503 with `complete:false`, `error:repor
 
 No new composite index is required. The report relies on the normal ascending single-field indexes for `analyticsEvents.createdAt`, `tripLeads.createdAt`, and `gumroadSales.receivedAt`; their default document-name tie-breaker serves cursor ordering. If an administrator has disabled one of these automatic indexes, it must be re-enabled. Production index exemptions were not queried. Pagination and field projection follow the [Firestore StructuredQuery reference](https://firebase.google.com/docs/firestore/reference/rest/v1/StructuredQuery), [runQuery read-time reference](https://firebase.google.com/docs/firestore/reference/rest/v1/projects.databases.documents/runQuery), and [single-field index documentation](https://firebase.google.com/docs/firestore/query-data/index-overview).
 
-Production needs no new secret, database, service, or frontend configuration beyond the existing `ADMIN_SECRET` and already configured Firebase service-account variables/permissions. `GROWTH_REPORT_URL` is local CLI configuration only. No secret value is committed or used during tests.
+Production needs the separate encrypted `GROWTH_REPORT_SECRET` in addition to the already configured Firebase service-account variables/permissions. Keep the existing `ADMIN_SECRET` unchanged for activation; no database, service, or frontend configuration is added. `GROWTH_REPORT_URL` is local CLI configuration only. No secret value is committed or used during tests. Follow the configuration/deployment boundary above before using the updated report command.
 
 ## Local verification
 
