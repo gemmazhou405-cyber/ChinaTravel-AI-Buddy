@@ -3,21 +3,13 @@ import planningHelp from '../data/planningHelp.json';
 import { useTranslation } from 'react-i18next';
 import type { PassState } from '../hooks/usePass';
 import { trackEvent, trackGumroadClick } from '../lib/analytics';
+import { gumroadCheckoutUrl } from '../lib/gumroad';
 
 export const PLANS = [
   { key: 'free',  price: '$0',     periodKey: '',            highlighted: false },
   { key: 'trip',  price: '$9.90',  periodKey: 'pay.oneTime', highlighted: true  },
   { key: 'group', price: '$29.90', periodKey: 'pay.oneTime', highlighted: false },
 ] as const;
-
-const GUMROAD_TRIP_URL  = import.meta.env.VITE_GUMROAD_TRIP_URL  || 'https://chinaease.gumroad.com/l/trip-pass';
-const GUMROAD_GROUP_URL = import.meta.env.VITE_GUMROAD_GROUP_URL || 'https://chinaease.gumroad.com/l/group-pass';
-
-function gumroadUrl(plan: string) {
-  if (plan === 'trip') return GUMROAD_TRIP_URL;
-  if (plan === 'group') return GUMROAD_GROUP_URL;
-  return '#';
-}
 
 interface Props {
   passState: PassState | null;
@@ -52,13 +44,8 @@ export default function PricingPlans({ passState, showToast, onCtaClick }: Props
       return;
     }
 
-    if (hasActivePaidPass) {
-      showToast(t('pay.checkout.activePass'));
-      return;
-    }
-
     trackGumroadClick(plan as 'trip' | 'group');
-    window.open(gumroadUrl(plan), '_blank', 'noopener,noreferrer');
+    window.open(gumroadCheckoutUrl(plan as 'trip' | 'group'), '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -69,6 +56,7 @@ export default function PricingPlans({ passState, showToast, onCtaClick }: Props
       </div>
 
       <p className="mb-5 text-sm font-semibold leading-relaxed text-gray-700">{planningHelp.digitalHeading}. {planningHelp.digitalScope}</p>
+      <p id="toolkit-pass-purchase-notice" className="mb-5 text-sm leading-relaxed text-gray-600">{t('pay.checkout.separatePassNotice')}</p>
 
       {passState && passState.tier !== 'free' && !passState.expired && (
         <p className="text-xs text-gray-500 mb-3">
@@ -94,6 +82,9 @@ export default function PricingPlans({ passState, showToast, onCtaClick }: Props
             <h3 className={`font-semibold text-sm ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
               {t(`pay.plans.${plan.key}.name`)}
             </h3>
+            {hasActivePaidPass && passState?.tier === plan.key && (
+              <span className={`mt-2 inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ${plan.highlighted ? 'bg-white/15 text-white' : 'bg-[#155e63]/10 text-[#155e63]'}`}>{t('pay.checkout.currentPass')}</span>
+            )}
             <div className="mt-2 mb-1">
               <span className={`text-2xl font-bold ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>{plan.price}</span>
               {plan.periodKey && (
@@ -113,14 +104,14 @@ export default function PricingPlans({ passState, showToast, onCtaClick }: Props
             </ul>
             <button
               onClick={() => handlePlanCta(plan.key)}
-              disabled={plan.key !== 'free' && hasActivePaidPass}
-              className={`w-full py-2.5 rounded-xl text-sm font-semibold transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed ${
+              aria-describedby={plan.key === 'free' ? undefined : 'toolkit-pass-purchase-notice'}
+              className={`w-full py-2.5 rounded-xl text-sm font-semibold transition-all active:scale-95 ${
                 plan.highlighted
                   ? 'bg-white text-[#155e63] hover:bg-gray-50 font-bold'
                   : 'bg-white border-2 border-gray-200 text-gray-700 hover:bg-gray-50'
               }`}
             >
-              {plan.key !== 'free' && hasActivePaidPass ? t('pay.checkout.activeButton') : t(`pay.plans.${plan.key}.cta`)}
+              {hasActivePaidPass && passState?.tier === plan.key ? t('pay.checkout.buyAgain', { pass: t(`pay.plans.${plan.key}.name`) }) : t(`pay.plans.${plan.key}.cta`)}
             </button>
           </div>
         ))}

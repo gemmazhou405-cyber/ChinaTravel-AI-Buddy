@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import type { PassState } from '../hooks/usePass';
 
 interface Device {
-  deviceId: string;
+  id: string;
   boundAt: number;
 }
 
@@ -11,12 +11,14 @@ interface Props {
   passState: PassState;
   onClose: () => void;
   onAddDevice: () => void;
+  onDevicesChanged?: () => void | Promise<void>;
 }
 
-export default function PassDashboard({ passState, onClose, onAddDevice }: Props) {
+export default function PassDashboard({ passState, onClose, onAddDevice, onDevicesChanged }: Props) {
   const { t } = useTranslation();
   const [devices, setDevices] = useState<Device[]>([]);
   const [loadingDevices, setLoadingDevices] = useState(true);
+  const [devicesLoadError, setDevicesLoadError] = useState(false);
   const [removing, setRemoving] = useState<string | null>(null);
 
   useEffect(() => {
@@ -26,11 +28,27 @@ export default function PassDashboard({ passState, onClose, onAddDevice }: Props
   }, [onClose]);
 
   useEffect(() => {
-    fetch('/api/devices', { credentials: 'include' })
-      .then((r) => r.json())
-      .then((data) => setDevices(Array.isArray(data.devices) ? data.devices : []))
-      .catch(() => setDevices([]))
-      .finally(() => setLoadingDevices(false));
+    let mounted = true;
+    const controller = new AbortController();
+    async function loadDevices() {
+      try {
+        const res = await fetch('/api/devices', { credentials: 'include', signal: controller.signal });
+        if (!res.ok) throw new Error('device_list_unavailable');
+        const data = await res.json();
+        if (!Array.isArray(data?.devices) || !data.devices.every((device: Device) =>
+          device && typeof device.id === 'string' && device.id.length > 0
+          && typeof device.boundAt === 'number' && Number.isFinite(device.boundAt))) {
+          throw new Error('invalid_device_list');
+        }
+        if (mounted) setDevices(data.devices);
+      } catch {
+        if (mounted) setDevicesLoadError(true);
+      } finally {
+        if (mounted) setLoadingDevices(false);
+      }
+    }
+    void loadDevices();
+    return () => { mounted = false; controller.abort(); };
   }, []);
 
   const handleRemove = async (deviceId: string) => {
@@ -42,9 +60,14 @@ export default function PassDashboard({ passState, onClose, onAddDevice }: Props
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ deviceId }),
       });
-      if (res.ok) {
-        setDevices((prev) => prev.filter((d) => d.deviceId !== deviceId));
-      }
+      if (!res.ok) return;
+      const result = await res.json();
+      if (!result.removed) return;
+      setDevices((prev) => prev.filter((d) => d.id !== deviceId));
+      if (result.loggedOut) onClose();
+      await onDevicesChanged?.();
+    } catch {
+      // A failed removal leaves the displayed devices unchanged and can be retried.
     } finally {
       setRemoving(null);
     }
@@ -59,6 +82,7 @@ export default function PassDashboard({ passState, onClose, onAddDevice }: Props
     new Date(ts).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
 
   const tierName = passState.tier === 'group' ? 'Group Pass' : 'Trip Pass';
+  const deviceCount = loadingDevices || devicesLoadError ? undefined : devices.length;
 
   return (
     <div
@@ -132,9 +156,9 @@ export default function PassDashboard({ passState, onClose, onAddDevice }: Props
         <div className="mb-5">
           <div className="mb-2 flex items-center justify-between">
             <h3 className="text-sm font-semibold text-ink">{t('pass.dashboard.devicesTitle')}</h3>
-            {passState.deviceCount != null && passState.maxDevices != null && (
+            {deviceCount != null && passState.maxDevices != null && (
               <span className="text-xs text-ink-tertiary">
-                {t('pass.dashboard.devicesCount', { count: passState.deviceCount, max: passState.maxDevices })}
+                {t('pass.dashboard.devicesCount', { count: deviceCount, max: passState.maxDevices })}
               </span>
             )}
           </div>
@@ -145,27 +169,29 @@ export default function PassDashboard({ passState, onClose, onAddDevice }: Props
                 <div key={i} className="h-10 animate-pulse rounded-lg bg-stone-100" />
               ))}
             </div>
+          ) : devicesLoadError ? (
+            <p role="alert" className="text-sm text-red-700">{t('pass.dashboard.devicesLoadError')}</p>
           ) : devices.length === 0 ? (
             <p className="text-sm text-ink-tertiary">{t('pass.dashboard.addDevice')}</p>
           ) : (
             <ul className="space-y-2">
               {devices.map((device) => (
                 <li
-                  key={device.deviceId}
+                  key={device.id}
                   className="flex items-center justify-between rounded-lg border border-hairline bg-stone-50 px-3.5 py-2.5"
                 >
                   <div className="min-w-0">
                     <p className="truncate font-mono text-xs text-ink-secondary">
-                      {device.deviceId.slice(0, 8)}…
+                      {device.id.slice(0, 8)}…
                     </p>
                     <p className="text-[11px] text-ink-tertiary">Added {formatDeviceDate(device.boundAt)}</p>
                   </div>
                   <button
-                    onClick={() => handleRemove(device.deviceId)}
-                    disabled={removing === device.deviceId}
+                    onClick={() => handleRemove(device.id)}
+                    disabled={removing === device.id}
                     className="ml-3 shrink-0 rounded-lg px-2.5 py-1 text-xs font-medium text-red-600 transition-colors hover:bg-red-50 disabled:opacity-50"
                   >
-                    {removing === device.deviceId ? t('pass.dashboard.removing') : t('pass.dashboard.removeDevice')}
+                    {removing === device.id ? t('pass.dashboard.removing') : t('pass.dashboard.removeDevice')}
                   </button>
                 </li>
               ))}
@@ -175,7 +201,8 @@ export default function PassDashboard({ passState, onClose, onAddDevice }: Props
 
         {/* Add device / footer */}
         <div className="flex items-center gap-3">
-          {passState.deviceCount != null && passState.maxDevices != null && passState.deviceCount < passState.maxDevices && (
+          {deviceCount != null && passState.maxDevices != null && deviceCount < passState.maxDevices
+            && passState.tier !== 'free' && !passState.expired && (
             <button
               onClick={onAddDevice}
               className="flex-1 rounded-xl border border-jade/30 py-2.5 text-sm font-medium text-jade transition-colors hover:bg-jade-wash"

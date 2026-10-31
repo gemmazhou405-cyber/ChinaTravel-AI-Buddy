@@ -1,4 +1,4 @@
-import { getDoc, patchDoc } from '../../_shared/firestore.js';
+import { removePassDevice } from '../../_shared/entitlements.js';
 import { clearCookieHeader, verifySessionCookie } from '../../_shared/session.js';
 
 function json(data, status = 200, extraHeaders = {}) {
@@ -26,14 +26,14 @@ export async function onRequestPost({ request, env }) {
   const targetId = String(body.deviceId ?? '').trim();
   if (!targetId) return json({ error: 'bad_request' }, 400);
 
-  const pass = await getDoc(env, `passes/${session.passId}`).catch(() => null);
-  if (!pass) return json({ error: 'unauthorized' }, 401);
-
-  const devices = Array.isArray(pass.devices) ? pass.devices : [];
-  const updated = devices.filter((d) => d.id !== targetId);
-  if (updated.length === devices.length) return json({ removed: false });
-
-  await patchDoc(env, `passes/${session.passId}`, { devices: updated }, ['devices']);
+  let result;
+  try {
+    result = await removePassDevice(env, session.passId, session.deviceId, targetId);
+  } catch {
+    return json({ error: 'device_update_unavailable' }, 503);
+  }
+  if (!result.ok) return json({ error: result.error }, result.status);
+  if (!result.removed) return json({ removed: false });
 
   // If removing own device, clear cookie
   const removingSelf = targetId === session.deviceId;

@@ -67,12 +67,11 @@ assert.doesNotMatch(buddySource, /UPSTREAM_TIMEOUT_MS = 35000/, 'Pages Function 
 assert.match(buddySource, /X-ChinaEase-Timeout-Ms/, 'Pages Function passes remaining budget to Worker');
 assert.match(buddySource, /assertTimeRemaining\(deadlineAt, 9000\)/, 'Pages Function fails fast if there is not enough time before Worker call');
 assert.match(buddySource, /signal: AbortSignal\.timeout\(fetchTimeoutMs\)/, 'Pages Function aborts Worker calls before platform timeout');
-assert.match(buddySource, /withTimeout\(rollbackPassUsage/, 'Pages Function bounds rollback work after upstream timeout');
 assert.match(buddySource, /504, 'upstream_timeout'/, 'Pages Function returns JSON 504 for timeout');
 assert.match(buddySource, /Buddy is temporarily unavailable\. Please try again\./, 'Pages timeout returns JSON-safe user message');
-assert.match(buddySource, /patchDoc\(env, `passes\/\$\{passId\}`, \{ messagesUsed: used \+ 1 \}/, 'successful reservation charges quota once');
+// Paid reservations, retries and request-specific releases are exercised by the
+// behavioral test-paid-chat-quota suite; do not require the old read/PATCH counter.
 assert.match(buddySource, /REQUEST_ID_RE\.test\(requestId\)/, 'Buddy requests require a valid request id');
-assert.match(buddySource, /rollbackPassUsage/, 'timed-out requests attempt quota rollback');
 assert.match(buddySource, /validBotId/, 'Pages Function validates bot id');
 assert.match(buddySource, /missing_internal_secret/, 'Pages Function rejects missing production internal secret');
 assert.match(buddySource, /status: 'completed', reply, usage: usageInfo/, 'Pages Function returns the normalized completed reply');

@@ -1,8 +1,10 @@
 // End-to-end test of how /api/buddy/chat charges pass holders, with an in-memory Firestore
-// (transactions, document reads and patches) and a mock AI worker. No network access.
+// (transactions, document reads, preconditioned commits for the pass ledger) and a mock AI
+// worker. No network access.
 // Covers: a pass holder uses the 10 free daily messages first, then pass messages; both used up
 // returns quota_exhausted; an expired pass falls back to the free quota; free users are unchanged;
-// an AI failure refunds whichever message was actually used; a missing pass is rejected; and if
+// a confirmed AI failure refunds whichever message was actually used (an uncertain timeout keeps a
+// pass message charged, per the pass ledger's rule); a missing pass is rejected; and if
 // the free counter is unavailable a pass holder is charged to the pass instead of being refused.
 import assert from 'node:assert/strict';
 import { generateKeyPairSync } from 'node:crypto';
@@ -32,6 +34,10 @@ const env = {
 // ---- In-memory Firestore: transactions for the free counter, GET/PATCH for pass documents ----
 const ROOT = `projects/${env.FIREBASE_PROJECT_ID}/databases/(default)/documents`;
 const docs = new Map(); // path -> fields (Firestore REST value shapes)
+const updateTimes = new Map(); // path -> updateTime string
+let clock = 0;
+const touch = (path) => { const t = `2026-01-01T00:00:00.${String(++clock).padStart(6, '0')}Z`; updateTimes.set(path, t); return t; };
+const failedPrecondition = () => json({ error: { code: 400, status: 'FAILED_PRECONDITION', message: 'precondition' } }, 400);
 let txCounter = 0;
 let transactionsDown = false;
 let aiMode = 'ok';
@@ -71,17 +77,33 @@ globalThis.fetch = async (input, init = {}) => {
       }));
     }
     if (url.pathname.endsWith(':commit')) {
-      for (const write of body.writes) docs.set(write.update.name.replace(`${ROOT}/`, ''), write.update.fields);
+      for (const write of body.writes) {
+        const path = write.update.name.replace(`${ROOT}/`, '');
+        const cur = write.currentDocument;
+        if (cur?.exists === false && docs.has(path)) return failedPrecondition();
+        if (cur?.updateTime && updateTimes.get(path) !== cur.updateTime) return failedPrecondition();
+      }
+      for (const write of body.writes) {
+        const path = write.update.name.replace(`${ROOT}/`, '');
+        const mask = write.updateMask?.fieldPaths;
+        const fields = write.update.fields || {};
+        if (mask) {
+          const merged = { ...(docs.get(path) || {}) };
+          for (const key of mask) if (key in fields) merged[key] = fields[key]; else delete merged[key];
+          docs.set(path, merged);
+        } else docs.set(path, fields);
+        touch(path);
+      }
       return json({ writeResults: body.writes.map(() => ({})) });
     }
     const path = decodeURIComponent(url.pathname.replace(`/v1/${ROOT}/`, ''));
-    if (method === 'GET') return docs.has(path) ? json({ name: `${ROOT}/${path}`, fields: docs.get(path) }) : json({}, 404);
+    if (method === 'GET') return docs.has(path) ? json({ name: `${ROOT}/${path}`, fields: docs.get(path), updateTime: updateTimes.get(path) }) : json({}, 404);
     if (method === 'PATCH') {
       const mask = url.searchParams.getAll('updateMask.fieldPaths');
       const merged = { ...(docs.get(path) || {}) };
       for (const [key, value] of Object.entries(body.fields)) if (!mask.length || mask.includes(key)) merged[key] = value;
       docs.set(path, merged);
-      return json({ name: `${ROOT}/${path}`, fields: merged });
+      return json({ name: `${ROOT}/${path}`, fields: merged, updateTime: touch(path) });
     }
     return json({}, 404);
   }
@@ -96,7 +118,9 @@ globalThis.fetch = async (input, init = {}) => {
 
 const DAY_MS = 86_400_000;
 function putPass(passId, { tier = 'trip', allowance = 3, used = 0, expiresAt = Date.now() + 14 * DAY_MS } = {}) {
-  docs.set(`passes/${passId}`, toFirestoreDocument({ tier, messageAllowance: allowance, messagesUsed: used, expiresAt }).fields);
+  const devices = [{ id: 'device-1' }];
+  docs.set(`passes/${passId}`, toFirestoreDocument({ tier, messageAllowance: allowance, messagesUsed: used, expiresAt, devices }).fields);
+  touch(`passes/${passId}`);
 }
 const passUsed = (passId) => read(`passes/${passId}`).messagesUsed;
 const freeCount = async (ip) => read(freeChatUsagePath(await hashIp(env, ip)))?.count ?? 0;
@@ -184,10 +208,10 @@ assert.equal(await freeCount(IP_ROLLBACK), 10, 'free count not released, it was 
 aiMode = 'timeout';
 const timedOutPass = await chat(IP_ROLLBACK, { passId: PASS_RB, stream: true });
 assert.equal(timedOutPass.status, 504);
-assert.equal(passUsed(PASS_RB), 0, 'pass message refunded after a stream timeout');
-assert.equal(await freeCount(IP_ROLLBACK), 10);
+assert.equal(passUsed(PASS_RB), 1, 'an uncertain timeout keeps the pass message charged (pass ledger rule)');
+assert.equal(await freeCount(IP_ROLLBACK), 10, 'free count not released, it was not charged');
 aiMode = 'ok';
-pass('AI failure or timeout refunds the side actually charged (free or pass), not the other');
+pass('Confirmed AI failure refunds the side actually charged (free or pass), not the other; free is also refunded on timeout, pass keeps the ledger rule');
 
 // 5. Expired pass: treated as a free user, 10 a day, then the free-limit message.
 const IP_EXPIRED = '203.0.113.70';

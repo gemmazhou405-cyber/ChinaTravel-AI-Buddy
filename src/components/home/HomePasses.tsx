@@ -4,17 +4,9 @@ import type { CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { PassState } from '../../hooks/usePass';
 import { trackEvent, trackGumroadClick } from '../../lib/analytics';
+import { gumroadCheckoutUrl } from '../../lib/gumroad';
 import { PLANS } from '../PricingPlans';
 import { useRevealOnView } from '../../hooks/useRevealOnView';
-
-const GUMROAD_TRIP_URL = import.meta.env.VITE_GUMROAD_TRIP_URL || 'https://chinaease.gumroad.com/l/trip-pass';
-const GUMROAD_GROUP_URL = import.meta.env.VITE_GUMROAD_GROUP_URL || 'https://chinaease.gumroad.com/l/group-pass';
-
-function gumroadUrl(plan: string) {
-  if (plan === 'trip') return GUMROAD_TRIP_URL;
-  if (plan === 'group') return GUMROAD_GROUP_URL;
-  return '#';
-}
 
 interface Props {
   passState: PassState | null;
@@ -22,7 +14,7 @@ interface Props {
   onOpenToolkit: () => void;
 }
 
-export default function HomePasses({ passState, showToast, onOpenToolkit }: Props) {
+export default function HomePasses({ passState, onOpenToolkit }: Props) {
   const { t } = useTranslation();
   const { ref, revealed } = useRevealOnView<HTMLElement>();
 
@@ -45,13 +37,8 @@ export default function HomePasses({ passState, showToast, onOpenToolkit }: Prop
       return;
     }
 
-    if (hasActivePaidPass) {
-      showToast(t('pay.checkout.activePass'));
-      return;
-    }
-
     trackGumroadClick(plan as 'trip' | 'group');
-    window.open(gumroadUrl(plan), '_blank', 'noopener,noreferrer');
+    window.open(gumroadCheckoutUrl(plan as 'trip' | 'group'), '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -61,10 +48,11 @@ export default function HomePasses({ passState, showToast, onOpenToolkit }: Prop
           {t('home.passes.header')}
         </h2>
         <p className="mt-4 max-w-3xl text-sm font-semibold leading-relaxed text-ink-secondary">{planningHelp.digitalHeading}. {planningHelp.digitalScope}</p>
+        <p id="home-pass-purchase-notice" className="mt-3 max-w-3xl text-sm leading-relaxed text-ink-secondary">{t('pay.checkout.separatePassNotice')}</p>
         <div className="mt-10 grid gap-4 md:mt-14 md:grid-cols-3 md:gap-6">
           {PLANS.map(({ key, price, periodKey, highlighted }, planIndex) => {
             const isFree = key === 'free';
-            const paidDisabled = !isFree && hasActivePaidPass;
+            const isCurrentPass = hasActivePaidPass && passState?.tier === key;
             return (
               <div
                 key={key}
@@ -78,6 +66,7 @@ export default function HomePasses({ passState, showToast, onOpenToolkit }: Prop
                 style={{ '--reveal-index': planIndex + 1 } as CSSProperties}
               >
                 <h3 className="text-xl font-semibold text-ink">{t(`pay.plans.${key}.name`)}</h3>
+                {isCurrentPass && <span className="mt-2 inline-flex rounded-full bg-jade/10 px-2.5 py-1 text-xs font-semibold text-jade">{t('pay.checkout.currentPass')}</span>}
                 <p className="mt-1 text-sm leading-snug text-ink-tertiary">{t(`pay.plans.${key}.desc`)}</p>
                 <p className="mt-4">
                   <span className="text-[32px] font-semibold tracking-tight text-ink">{price}</span>
@@ -97,14 +86,14 @@ export default function HomePasses({ passState, showToast, onOpenToolkit }: Prop
                 </ul>
                 <button
                   onClick={() => handleCta(key)}
-                  disabled={paidDisabled}
-                  className={`mt-8 w-full rounded-lg px-6 py-3.5 text-base font-semibold transition-[background-color,border-color,transform,opacity] duration-hover ease-out active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jade ${
+                  aria-describedby={isFree ? undefined : 'home-pass-purchase-notice'}
+                  className={`mt-8 w-full rounded-lg px-6 py-3.5 text-base font-semibold transition-[background-color,border-color,transform,opacity] duration-hover ease-out active:scale-[0.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jade ${
                     highlighted
                       ? 'bg-jade text-white hover:-translate-y-0.5 hover:bg-jade-dark'
                       : 'border border-hairline bg-surface text-ink hover:-translate-y-0.5 hover:border-ink-tertiary'
                   }`}
                 >
-                  {paidDisabled ? t('pay.checkout.activeButton') : t(`pay.plans.${key}.cta`)}
+                  {isCurrentPass ? t('pay.checkout.buyAgain', { pass: t(`pay.plans.${key}.name`) }) : t(`pay.plans.${key}.cta`)}
                 </button>
               </div>
             );

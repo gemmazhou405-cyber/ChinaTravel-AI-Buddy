@@ -303,8 +303,8 @@ for (const email of [us, uk, unknown]) {
   assert.match(email.text, /What time do your flights land and leave/);
   assert.doesNotMatch(email.text, /\bvpn\b|covid|guaranteed|100%/i);
   assert.ok(email.text.indexOf('DO THESE FIRST') < email.text.indexOf('YOUR DAY-BY-DAY DRAFT'));
-  assert.ok(email.text.indexOf('YOUR DAY-BY-DAY DRAFT') < email.text.indexOf('A FEW QUESTIONS'));
-  assert.ok(email.text.indexOf('A FEW QUESTIONS') < email.text.indexOf('\nLin\n'));
+  assert.ok(email.text.indexOf('YOUR DAY-BY-DAY DRAFT') < email.text.indexOf('A FEW DETAILS TO SHARE'));
+  assert.ok(email.text.indexOf('A FEW DETAILS TO SHARE') < email.text.indexOf('\nLin\n'));
   assert.ok(email.text.indexOf('\nLin\n') < email.text.indexOf('What you told us:'), 'form summary sits at the end');
 }
 

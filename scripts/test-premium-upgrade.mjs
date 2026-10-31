@@ -15,9 +15,14 @@ const english = readJson('../src/i18n/locales/en.json').translation;
 const restaurantCards = readJson('../docs/launch/phrase-cards.json').categories.find(({ id }) => id === 'restaurant').cards;
 const config = loadEnv(process.env.CHINAEASE_TEST_MODE || 'production', fileURLToPath(new URL('..', import.meta.url)), 'VITE_GUMROAD_');
 const checkoutUrls = {
-  trip: config.VITE_GUMROAD_TRIP_URL || 'https://chinaease.gumroad.com/l/trip-pass',
-  group: config.VITE_GUMROAD_GROUP_URL || 'https://chinaease.gumroad.com/l/group-pass',
+  trip: config.VITE_GUMROAD_TRIP_URL || 'https://chinaeasebuddy.gumroad.com/l/oentc',
+  group: config.VITE_GUMROAD_GROUP_URL || 'https://chinaeasebuddy.gumroad.com/l/mbgkxz',
 };
+for (const tier of ['trip', 'group']) {
+  const url = new URL(checkoutUrls[tier]);
+  url.searchParams.set('wanted', 'true');
+  checkoutUrls[tier] = url.href;
+}
 assert.notEqual(checkoutUrls.trip, checkoutUrls.group, 'passes retain separate product destinations');
 const browser = await chromium.launch({ headless: true });
 const errors = [];
@@ -73,6 +78,18 @@ async function assertUnlocked(category, text = english) {
 }
 
 try {
+  const returned = await session();
+  await returned.page.goto(`${base.href}?activate=1&paid=true&tier=group&sale_id=unverified&order_id=unverified`);
+  const returnDialog = returned.page.getByRole('dialog');
+  await returnDialog.getByRole('heading', { name: english.pass.claim.title, exact: true }).waitFor();
+  assert.equal(await returnDialog.getByLabel(english.pass.claim.saleIdLabel, { exact: true }).inputValue(), '', 'return parameters do not prefill an unverified order');
+  assert.equal(returned.requests.length, 0, 'returning from checkout cannot automatically claim or recover a Pass');
+  await returnDialog.getByRole('button', { name: 'Close', exact: true }).click();
+  const returnCategory = await food(returned.page);
+  assert.ok(await returnCategory.getByRole('button', { name: new RegExp(english.common.upgradeToUnlock) }).count(), 'forged paid/tier/order URL parameters leave free features locked');
+  await returned.context.close();
+  console.log('PASS: checkout return opens the Order ID form only; forged payment parameters cannot grant access.');
+
   const free = await session();
   let category = await food(free.page, english, true);
   const showCards = category.getByRole('button', { name: english.common.showCard, exact: true });
