@@ -19,10 +19,11 @@
     "Jump to: [Which to choose](#compare) · [DiDi app](#card) · [Alipay or WeChat](#alipay-wechat) · [Fees](#fees) · [Declined card](#declined) · [Wrong or double charge](#charges)"
   ],
   "cta": {
-    "text": "**Need another way to pay for a DiDi ride?** See how the Alipay and WeChat mini programs work in this free guide, and check your linked payment method before travel.",
-    "label": "See DiDi payment setup options →",
-    "href": "/didi-payment-for-foreigners/#alipay-wechat",
-    "placement": "didi-setup"
+    "text": "**Planning your China route?** Send me your dates and cities, and I'll reply within 48 hours with the 3 biggest risks. Free.",
+    "label": "Email Lin your route →",
+    "href": "mailto:lin@chinaeasebuddy.com?subject=My%20China%20route",
+    "action": "email",
+    "placement": "didi-payment"
   },
   "screenshotCaption": "Screenshot from my iPhone, Dongguan, October 2026",
   "pairShotMaxWidth": 220,

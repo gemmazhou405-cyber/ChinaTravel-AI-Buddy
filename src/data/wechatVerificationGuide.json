@@ -18,10 +18,11 @@
     "Jump to: [Sign up](#sign-up) · [Who can help](#helper) · [No helper](#no-helper) · [Pay without WeChat](#plan-b) · [WeChat Pay checks](#wechat-pay)"
   ],
   "cta": {
-    "text": "**Stuck at WeChat verification?** See the options described in this free guide, plus payment alternatives if you cannot complete registration.",
-    "label": "See WeChat verification options →",
-    "href": "/wechat-verification-without-friend-qr-2026/#no-helper",
-    "placement": "wechat-setup"
+    "text": "**Planning your China route?** Send me your dates and cities, and I'll reply within 48 hours with the 3 biggest risks. Free.",
+    "label": "Email Lin your route →",
+    "href": "mailto:lin@chinaeasebuddy.com?subject=My%20China%20route",
+    "action": "email",
+    "placement": "wechat-verification"
   },
   "sections": [
     {

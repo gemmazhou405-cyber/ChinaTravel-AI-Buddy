@@ -25,10 +25,11 @@
     "Jump to: [At a glance](#at-a-glance) · [Paying](#pay) · [Maps and rides](#getting-around) · [Trains](#trains) · [WeChat](#wechat) · [Translation](#translation) · [Before you fly](#before)"
   ],
   "cta": {
-    "text": "**Preparing your phone before travel?** Use the free app setup checklist for downloads, account checks, mobile data and a backup payment method.",
-    "label": "Open the free app setup checklist →",
-    "href": "/china-travel-apps/#before",
-    "placement": "apps-setup"
+    "text": "**Planning your China route?** Send me your dates and cities, and I'll reply within 48 hours with the 3 biggest risks. Free.",
+    "label": "Email Lin your route →",
+    "href": "mailto:lin@chinaeasebuddy.com?subject=My%20China%20route",
+    "action": "email",
+    "placement": "travel-apps"
   },
   "screenshots": {
     "1": { "src": "/images/maps/maps-05.webp", "width": 640, "height": 1288, "alt": "Amap in English showing three public transport routes from Canton Tower to Guangzhou South Railway Station, the fastest 40 minutes for ¥5" },

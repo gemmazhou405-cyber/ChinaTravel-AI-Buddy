@@ -221,7 +221,7 @@
       "cityGuide": {
         "title": "Stadtguide",
         "subtitle": "Wähle deine Stadt für Ankunft, Transport, Zahlung, Essen und Sicherheit.",
-        "upgradeToast": "Stadt-Survival-Packs mit Trip Pass freischalten.",
+        "upgradeToast": "Stadt-Survival-Packs mit Trip Pass oder Group Pass freischalten.",
         "survivalPack": "{{city}} Survival Pack",
         "bestTime": "Beste Zeit: {{time}}",
         "shanghaiFree": "Shanghai gratis",
@@ -446,7 +446,7 @@
           "desc": "Zusätzliche Reisehilfe für eine Person während einer China-Reise",
           "cta": "Trip Pass erhalten",
           "features": [
-            "50 Buddy-KI-Nachrichten",
+            "50 zusätzliche Buddy-KI-Nachrichten, neben 10 Gratis-Nachrichten pro Tag",
             "14 Tage gültig",
             "Bis zu 2 Geräte",
             "Vollständiges Premium-Toolkit",
@@ -458,7 +458,7 @@
           "desc": "Zusätzliche Reisehilfe für Paare, Familien oder kleine Gruppen mit einem geteilten Konto",
           "cta": "Group Pass erhalten",
           "features": [
-            "200 Buddy-KI-Nachrichten",
+            "200 zusätzliche Buddy-KI-Nachrichten, neben 10 Gratis-Nachrichten pro Tag",
             "14 Tage gültig",
             "Bis zu 5 Geräte mit einem gemeinsamen Pass",
             "Vollständiges Premium-Toolkit",
@@ -573,8 +573,8 @@
       "verifyEmailHint": "Prüfe deinen Posteingang und aktualisiere nach der Bestätigung.",
       "rateLimited": "Bitte warte einen Moment, bevor du eine weitere Nachricht sendest.",
       "serviceUnavailable": "Buddy ist vorübergehend nicht verfügbar. Bitte versuche es später erneut.",
-      "quotaExhausted": "Sie haben alle Pass-Nachrichten verbraucht.",
-      "freeQuotaExhausted": "Sie haben das heutige Gratis-Limit (10 Nachrichten) erreicht. Holen Sie sich einen Pass für mehr.",
+      "quotaExhausted": "Sie haben die 10 Gratis-Nachrichten von heute und alle Pass-Nachrichten verbraucht. Die Gratis-Nachrichten werden um 08:00 Uhr Pekinger Zeit (00:00 UTC) zurückgesetzt.",
+      "freeQuotaExhausted": "Sie haben das heutige Gratis-Limit (10 Nachrichten) erreicht. Es wird um 08:00 Uhr Pekinger Zeit (00:00 UTC) zurückgesetzt – oder holen Sie sich einen Pass für zusätzliche Nachrichten.",
       "retry": "Erneut versuchen",
       "getPass": "Einen Pass erhalten",
       "openToolkit": "Toolkit öffnen"

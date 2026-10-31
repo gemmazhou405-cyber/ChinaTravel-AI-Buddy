@@ -305,43 +305,74 @@ async function handlePost(request, env, deadlineAt) {
     }, { status: 503 }), request, env);
   }
 
-  // Authenticate — session cookie for pass holders, IP quota for free users
+  // Every visitor gets FREE_CHAT_DAILY_LIMIT free messages per salted IP hash per UTC day, counted
+  // in a Firestore transaction. An active pass adds its messages on top: the free ones are used
+  // first, then the pass. An expired pass is treated as no pass. Firestore is the only source of
+  // truth; if the free counter is unavailable, free users are refused so AI calls are never
+  // unmetered, and pass holders fall back to their pass.
   const session = await verifySessionCookie(request.headers.get('Cookie'), env.SESSION_SECRET);
+  let pass = null;
   let reservation = null;
   let freeReservation = null;
   let userId;
   let usageTier;
 
   if (session) {
-    // Pass holder path
     assertTimeRemaining(deadlineAt, 9000);
-    logBuddy('info', 'reserve_start', { passId: session.passId.slice(0, 8) });
     try {
-      reservation = await reservePassUsage(env, session.passId);
+      pass = await getDoc(env, `passes/${session.passId}`);
     } catch (error) {
-      logBuddy('error', 'reserve_failed', { errorCode: error instanceof Error ? error.message.split(':')[0] : 'unknown' });
+      logBuddy('error', 'pass_lookup_failed', { errorCode: error instanceof Error ? error.message.split(':')[0] : 'unknown' });
       return errorResponse(request, env, 503, 'upstream_error', 'Buddy is temporarily unavailable.');
     }
-    if (!reservation.ok) {
-      return withCors(jsonResponse({
-        error: reservation.code,
-        tier: reservation.tier,
-        remaining: reservation.remaining ?? 0,
-        message: reservation.code === 'quota_exhausted'
-          ? 'Buddy AI quota exhausted.'
-          : reservation.code === 'pass_expired'
-            ? 'Your pass has expired.'
+    if (!pass) {
+      return withCors(jsonResponse({ error: 'invalid_pass', remaining: 0, message: 'Unable to process request.' }, { status: 401 }), request, env);
+    }
+    if (pass.expiresAt && pass.expiresAt < Date.now()) pass = null;
+  }
+
+  const ipHash = await hashIp(env, ip);
+  freeReservation = await reserveFreeChatMessage(env, ipHash);
+
+  if (pass) {
+    if (!freeReservation.ok) {
+      logBuddy('info', 'reserve_start', { passId: session.passId.slice(0, 8), freeCode: freeReservation.code });
+      try {
+        reservation = await reservePassUsage(env, session.passId);
+      } catch (error) {
+        logBuddy('error', 'reserve_failed', { errorCode: error instanceof Error ? error.message.split(':')[0] : 'unknown' });
+        return errorResponse(request, env, 503, 'upstream_error', 'Buddy is temporarily unavailable.');
+      }
+      if (!reservation.ok) {
+        if (freeReservation.code === 'free_quota_unavailable') {
+          logBuddy('error', 'free_quota_unavailable');
+          return withCors(jsonResponse({
+            error: 'free_quota_unavailable',
+            message: 'Buddy is busy right now. Please try again in a few minutes.',
+          }, { status: 503 }), request, env);
+        }
+        // The pass expired between the two reads: the visitor is now a free user who has used today's messages.
+        if (reservation.code === 'pass_expired') {
+          return withCors(jsonResponse({
+            error: 'free_quota_exhausted',
+            limit: FREE_CHAT_DAILY_LIMIT,
+            message: 'Daily free quota reached. Get a pass to continue.',
+          }, { status: 429 }), request, env);
+        }
+        return withCors(jsonResponse({
+          error: reservation.code,
+          tier: reservation.tier,
+          remaining: reservation.remaining ?? 0,
+          message: reservation.code === 'quota_exhausted'
+            ? "Today's free messages and all pass messages are used."
             : 'Unable to process request.',
-      }, { status: reservation.status || 402 }), request, env);
+        }, { status: reservation.status || 402 }), request, env);
+      }
+      freeReservation = null;
     }
     userId = `pass:${session.passId.slice(0, 16)}`;
-    usageTier = reservation.pass.tier;
+    usageTier = pass.tier;
   } else {
-    // Free tier path: FREE_CHAT_DAILY_LIMIT messages per salted IP hash per UTC day, counted in
-    // a Firestore transaction. Firestore is the only source of truth; if it is unavailable the
-    // request is refused so AI calls are never unmetered.
-    const ipHash = await hashIp(env, ip);
-    freeReservation = await reserveFreeChatMessage(env, ipHash);
     if (!freeReservation.ok && freeReservation.code === 'free_quota_exhausted') {
       return withCors(jsonResponse({
         error: 'free_quota_exhausted',
@@ -361,6 +392,7 @@ async function handlePost(request, env, deadlineAt) {
   }
 
   // Called only when the AI failed or timed out before any reply content was sent.
+  // Gives back whichever message this request actually used: the pass one or the free one.
   const refundUsage = async () => {
     const rollbackBudget = Math.max(500, Math.min(CLEANUP_TIMEOUT_MS, remainingMs(deadlineAt) - 500));
     if (session && reservation?.ok) {
@@ -371,15 +403,21 @@ async function handlePost(request, env, deadlineAt) {
     }
   };
 
-  const usageInfo = session && reservation
+  // For pass holders, messagesUsed / messageAllowance count pass messages only.
+  const passMessagesUsed = reservation?.ok ? reservation.before + 1 : (pass?.messagesUsed ?? 0);
+  const usageInfo = pass
     ? {
-      tier: reservation.pass.tier,
-      messagesUsed: reservation.before + 1,
-      messageAllowance: reservation.pass.messageAllowance,
-      remaining: Math.max(0, (reservation.pass.messageAllowance ?? 0) - (reservation.before + 1)),
+      tier: pass.tier,
+      chargedTo: reservation?.ok ? 'pass' : 'free',
+      messagesUsed: passMessagesUsed,
+      messageAllowance: pass.messageAllowance,
+      remaining: Math.max(0, (pass.messageAllowance ?? 0) - passMessagesUsed),
+      freeMessagesUsed: freeReservation?.ok ? freeReservation.count : FREE_CHAT_DAILY_LIMIT,
+      freeLimit: FREE_CHAT_DAILY_LIMIT,
     }
     : {
       tier: 'free',
+      chargedTo: 'free',
       messagesUsed: freeReservation?.count,
       messageAllowance: FREE_CHAT_DAILY_LIMIT,
       remaining: Math.max(0, FREE_CHAT_DAILY_LIMIT - (freeReservation?.count ?? 0)),

@@ -20,10 +20,11 @@
     "Jump to: [Tap your card](#card) · [Alipay ride code](#alipay-ride-code) · [At the gate](#gate) · [Other options](#other-options)"
   ],
   "cta": {
-    "text": "**Preparing to use the metro?** Follow the free Alipay ride-code steps and check the payment method linked to your code.",
-    "label": "Follow the free metro ride-code steps →",
-    "href": "/alipay-metro-qr-transport-code-guide/#alipay-ride-code",
-    "placement": "metro-setup"
+    "text": "**Planning your China route?** Send me your dates and cities, and I'll reply within 48 hours with the 3 biggest risks. Free.",
+    "label": "Email Lin your route →",
+    "href": "mailto:lin@chinaeasebuddy.com?subject=My%20China%20route",
+    "action": "email",
+    "placement": "alipay-metro"
   },
   "sections": [
     {

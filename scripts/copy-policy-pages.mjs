@@ -708,13 +708,14 @@ const pageMeta = {
     sourceLinks: budgetGuide.sources.map(({ label, href }) => [label, href]),
   },
   pricing: {
-    lastModified: '2026-10-23',
+    lastReviewed: 'October 27, 2026',
+    lastModified: '2026-10-27',
     title: 'Pricing | ChinaEase Buddy',
     description: 'Compare one-time Trip Pass and Group Pass options for the full Premium Toolkit and Buddy AI messages. Human customized itinerary planning is a separate paid service.',
     sections: [
       ['Free', 'Basic toolkit for apps, payments, transport, food, hotels, emergency help, and limited Buddy AI access.', '/?journey=china&tool=food'],
-      ['Trip Pass', 'USD 9.90 one-time travel pass with the full Premium Toolkit, all premium phrase cards and 50 Buddy AI messages for 14 days on up to 2 devices.', '/pricing/'],
-      ['Group Pass', 'USD 29.90 one-time travel pass with the full Premium Toolkit, all premium phrase cards and 200 Buddy AI messages for 14 days on up to 5 devices sharing one pass.', '/pricing/'],
+      ['Trip Pass', 'USD 9.90 one-time travel pass with the full Premium Toolkit, all premium phrase cards and 50 extra Buddy AI messages (on top of 10 free a day) for 14 days on up to 2 devices.', '/pricing/'],
+      ['Group Pass', 'USD 29.90 one-time travel pass with the full Premium Toolkit, all premium phrase cards and 200 extra Buddy AI messages (on top of 10 free a day) for 14 days on up to 5 devices sharing one pass.', '/pricing/'],
     ],
     faqs: [
       ['How do paid passes work?', `${planningHelp.digitalScope} Passes are purchased through Gumroad and activated after purchase using your sale ID.`],

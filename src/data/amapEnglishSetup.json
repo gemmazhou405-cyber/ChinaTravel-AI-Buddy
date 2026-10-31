@@ -16,9 +16,11 @@
     "Jump to: [English grayed out?](#english-grayed-out) · [Book a taxi](#taxi) · [Metro exits](#metro) · [Menu translation](#menu-translation) · [Offline](#offline)"
   ],
   "cta": {
-    "text": "**Setting up Amap before your trip?** Follow the free guide to switch it to English, then check the taxi and metro steps before you travel.",
-    "label": "Follow the free Amap setup steps →",
-    "href": "/amap-english-mode-guide-2026/#switch"
+    "text": "**Planning your China route?** Send me your dates and cities, and I'll reply within 48 hours with the 3 biggest risks. Free.",
+    "label": "Email Lin your route →",
+    "href": "mailto:lin@chinaeasebuddy.com?subject=My%20China%20route",
+    "action": "email",
+    "placement": "amap-english"
   },
   "screenshotCaption": "Screenshot from my iPhone, Dongguan, October 2026",
   "screenshots": {

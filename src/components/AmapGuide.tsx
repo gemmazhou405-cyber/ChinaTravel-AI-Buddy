@@ -14,7 +14,8 @@ export type GuideContent = {
   byline: { name: string; tested: string };
   quickAnswer: Array<string | { type: 'ol' | 'ul'; items: string[] }>;
   // Optional: some guides end with LinBox only.
-  cta?: { text: string; label: string; href: string; placement?: string };
+  // action 'email' marks the free route check, tracked like the planning box email; otherwise the card links to a setup guide.
+  cta?: { text: string; label: string; href: string; action?: 'email' | 'app-setup'; placement?: string };
   screenshotCaption?: string;
   pairShotMaxWidth?: number;
   // Screenshots far down a page can all load lazily; a guide can also keep the page's own CTA.
@@ -153,9 +154,9 @@ export function AmapCtaCard() {
   const content = useGuide();
   if (!content.cta) return null;
   return (
-    <aside aria-label="App setup help" className="rounded-2xl border border-[#155e63]/20 bg-[#155e63]/5 p-4 md:p-5">
+    <aside aria-label={content.cta.action === 'email' ? 'Free route check' : 'App setup help'} className="rounded-2xl border border-[#155e63]/20 bg-[#155e63]/5 p-4 md:p-5">
       <p className="text-sm leading-relaxed text-gray-800 md:text-base"><AmapRichText text={content.cta.text} /></p>
-      <a href={content.cta.href} data-planning-help="app-setup" data-planning-placement={content.cta.placement ?? 'amap-setup'} className="mt-3 inline-flex min-h-11 items-center rounded-full bg-[#155e63] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#0e4a4e]">
+      <a href={content.cta.href} data-planning-help={content.cta.action === 'email' ? 'email' : 'app-setup'} data-planning-placement={content.cta.placement ?? 'amap-setup'} className="mt-3 inline-flex min-h-11 items-center rounded-full bg-[#155e63] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#0e4a4e]">
         {content.cta.label}
       </a>
     </aside>

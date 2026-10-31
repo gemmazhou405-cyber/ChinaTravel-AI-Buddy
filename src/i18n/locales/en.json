@@ -221,7 +221,7 @@
       "cityGuide": {
         "title": "City Guide",
         "subtitle": "Pick your city for arrival, transport, payment, food, and safety basics.",
-        "upgradeToast": "Unlock city survival packs with Trip Pass.",
+        "upgradeToast": "Unlock city survival packs with Trip Pass or Group Pass.",
         "survivalPack": "{{city}} Survival Pack",
         "bestTime": "Best time: {{time}}",
         "shanghaiFree": "Shanghai free",
@@ -446,7 +446,7 @@
           "desc": "Extra travel help for one traveler during a China trip",
           "cta": "Get Trip Pass",
           "features": [
-            "50 Buddy AI messages",
+            "50 extra Buddy AI messages, on top of 10 free a day",
             "Valid for 14 days",
             "Up to 2 devices",
             "Full Premium Toolkit",
@@ -458,7 +458,7 @@
           "desc": "Extra travel help for couples, families, or small groups using one shared account",
           "cta": "Get Group Pass",
           "features": [
-            "200 Buddy AI messages",
+            "200 extra Buddy AI messages, on top of 10 free a day",
             "Valid for 14 days",
             "Up to 5 devices on one shared pass",
             "Full Premium Toolkit",
@@ -573,8 +573,8 @@
       "verifyEmailHint": "Check your inbox and refresh after verification.",
       "rateLimited": "Please wait a moment before sending another message.",
       "serviceUnavailable": "Buddy is temporarily unavailable. Please try again later.",
-      "quotaExhausted": "You've used all your pass messages.",
-      "freeQuotaExhausted": "You've reached today's free limit (10 messages). Get a pass for more.",
+      "quotaExhausted": "You've used today's 10 free messages and all your pass messages. Free messages reset at 08:00 Beijing time (00:00 UTC).",
+      "freeQuotaExhausted": "You've reached today's free limit (10 messages). It resets at 08:00 Beijing time (00:00 UTC), or get a pass for extra messages.",
       "retry": "Try again",
       "getPass": "Get a Pass",
       "openToolkit": "Open Toolkit"

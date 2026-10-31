@@ -221,7 +221,7 @@
       "cityGuide": {
         "title": "Guide de ville",
         "subtitle": "Choisissez une ville pour l’arrivée, le transport, le paiement, la nourriture et la sécurité.",
-        "upgradeToast": "Débloquez les packs de survie ville avec Trip Pass.",
+        "upgradeToast": "Débloquez les packs de survie ville avec Trip Pass ou Group Pass.",
         "survivalPack": "Pack de survie {{city}}",
         "bestTime": "Meilleure période : {{time}}",
         "shanghaiFree": "Shanghai gratuit",
@@ -446,7 +446,7 @@
           "desc": "Aide de voyage supplémentaire pour une personne pendant un séjour en Chine",
           "cta": "Obtenir Trip Pass",
           "features": [
-            "50 messages Buddy AI",
+            "50 messages Buddy AI supplémentaires, en plus de 10 gratuits par jour",
             "Valable 14 jours",
             "Jusqu’à 2 appareils",
             "Boîte à outils Premium complète",
@@ -458,7 +458,7 @@
           "desc": "Aide supplémentaire pour couples, familles ou petits groupes utilisant un seul compte partagé",
           "cta": "Obtenir Group Pass",
           "features": [
-            "200 messages Buddy AI",
+            "200 messages Buddy AI supplémentaires, en plus de 10 gratuits par jour",
             "Valable 14 jours",
             "Jusqu’à 5 appareils avec un pass partagé",
             "Boîte à outils Premium complète",
@@ -573,8 +573,8 @@
       "verifyEmailHint": "Vérifiez votre boîte de réception puis actualisez après vérification.",
       "rateLimited": "Veuillez patienter un instant avant d’envoyer un autre message.",
       "serviceUnavailable": "Buddy est temporairement indisponible. Veuillez réessayer plus tard.",
-      "quotaExhausted": "Vous avez utilisé tous vos messages de pass.",
-      "freeQuotaExhausted": "Vous avez atteint la limite gratuite du jour (10 messages). Obtenez un pass pour plus.",
+      "quotaExhausted": "Vous avez utilisé les 10 messages gratuits du jour et tous vos messages de pass. Les messages gratuits sont réinitialisés à 08:00, heure de Pékin (00:00 UTC).",
+      "freeQuotaExhausted": "Vous avez atteint la limite gratuite du jour (10 messages). Elle est réinitialisée à 08:00, heure de Pékin (00:00 UTC), ou obtenez un pass pour des messages supplémentaires.",
       "retry": "Réessayer",
       "getPass": "Obtenir un Pass",
       "openToolkit": "Ouvrir la boîte à outils"

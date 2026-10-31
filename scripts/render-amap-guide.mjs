@@ -56,9 +56,10 @@ export function createAmapGuideRenderer(content) {
     quickAnswer: () => content.quickAnswer.map((entry, index) => typeof entry === 'string'
       ? `<p style="margin:${index === content.quickAnswer.length - 1 ? '0' : '0 0 12px'};color:#536365;line-height:1.7;">${renderAmapInline(entry)}</p>`
       : block(entry)).join(''),
-    cta: () => !content.cta ? '' : `<aside aria-label="App setup help" style="margin:0 0 24px;padding:20px 22px;border:1px solid rgba(21,94,99,0.22);border-radius:22px;background:rgba(21,94,99,0.06);">
+    // A card with action "email" is the free route check (tracked like the planning box email); others link to a setup guide.
+    cta: () => !content.cta ? '' : `<aside aria-label="${content.cta.action === 'email' ? 'Free route check' : 'App setup help'}" style="margin:0 0 24px;padding:20px 22px;border:1px solid rgba(21,94,99,0.22);border-radius:22px;background:rgba(21,94,99,0.06);">
       <p style="margin:0 0 14px;color:#122022;line-height:1.7;">${renderAmapInline(content.cta.text)}</p>
-      <a href="${escape(content.cta.href)}" data-planning-help="app-setup" data-planning-placement="${escape(content.cta.placement || 'amap-setup')}" style="display:inline-flex;min-height:44px;align-items:center;border-radius:999px;background:#155e63;color:#fffdf8;padding:10px 18px;font-weight:700;text-decoration:none;">${escape(content.cta.label)}</a>
+      <a href="${escape(content.cta.href)}" data-planning-help="${content.cta.action === 'email' ? 'email' : 'app-setup'}" data-planning-placement="${escape(content.cta.placement || 'amap-setup')}" style="display:inline-flex;min-height:44px;align-items:center;border-radius:999px;background:#155e63;color:#fffdf8;padding:10px 18px;font-weight:700;text-decoration:none;">${escape(content.cta.label)}</a>
     </aside>`,
     // Optional lead blocks (such as a comparison table) come before the first section.
     body: () => (content.lead ? `<div style="margin:0 0 24px;">${content.lead.map(block).join('')}</div>` : '') + content.sections.map((section) => `

@@ -20,6 +20,7 @@
     "test:premium-upgrade": "node scripts/test-premium-upgrade.mjs",
     "test:planning-help": "node scripts/test-planning-help.mjs",
     "test:free-chat-quota": "node scripts/test-free-chat-quota.mjs",
+    "test:pass-chat-quota": "node scripts/test-pass-chat-quota.mjs",
     "email:samples": "node scripts/send-trip-email-samples.mjs",
     "audit:public-html": "node scripts/audit-public-html.mjs",
     "audit:seo-inventory": "node scripts/audit-seo-inventory.mjs",

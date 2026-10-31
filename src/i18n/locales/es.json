@@ -221,7 +221,7 @@
       "cityGuide": {
         "title": "Guía de ciudad",
         "subtitle": "Elige tu ciudad para llegada, transporte, pagos, comida y seguridad.",
-        "upgradeToast": "Desbloquea packs de supervivencia de ciudad con Trip Pass.",
+        "upgradeToast": "Desbloquea packs de supervivencia de ciudad con Trip Pass o Group Pass.",
         "survivalPack": "Pack de supervivencia de {{city}}",
         "bestTime": "Mejor época: {{time}}",
         "shanghaiFree": "Shanghái gratis",
@@ -446,7 +446,7 @@
           "desc": "Ayuda extra para un viajero durante un viaje por China",
           "cta": "Obtener Trip Pass",
           "features": [
-            "50 mensajes de Buddy AI",
+            "50 mensajes extra de Buddy AI, además de 10 gratis al día",
             "Válido por 14 días",
             "Hasta 2 dispositivos",
             "Kit Premium completo",
@@ -458,7 +458,7 @@
           "desc": "Ayuda extra para parejas, familias o grupos pequeños que usan una cuenta compartida",
           "cta": "Obtener Group Pass",
           "features": [
-            "200 mensajes de Buddy AI",
+            "200 mensajes extra de Buddy AI, además de 10 gratis al día",
             "Válido por 14 días",
             "Hasta 5 dispositivos con un pass compartido",
             "Kit Premium completo",
@@ -573,8 +573,8 @@
       "verifyEmailHint": "Revisa tu bandeja de entrada y actualiza después de verificar.",
       "rateLimited": "Espera un momento antes de enviar otro mensaje.",
       "serviceUnavailable": "Buddy no está disponible temporalmente. Inténtalo de nuevo más tarde.",
-      "quotaExhausted": "Has usado todos los mensajes de tu pass.",
-      "freeQuotaExhausted": "Has alcanzado el límite gratuito de hoy (10 mensajes). Consigue un pass para más.",
+      "quotaExhausted": "Has usado los 10 mensajes gratuitos de hoy y todos los mensajes de tu pass. Los mensajes gratuitos se renuevan a las 08:00, hora de Pekín (00:00 UTC).",
+      "freeQuotaExhausted": "Has alcanzado el límite gratuito de hoy (10 mensajes). Se renueva a las 08:00, hora de Pekín (00:00 UTC), o consigue un pass para tener mensajes extra.",
       "retry": "Reintentar",
       "getPass": "Obtener un Pass",
       "openToolkit": "Abrir el kit de herramientas"

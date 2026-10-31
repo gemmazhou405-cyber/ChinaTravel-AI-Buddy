@@ -20,10 +20,11 @@
     "Jump to: [Sign up](#sign-up) · [Link a card](#link-card) · [Pay](#pay) · [Fees](#fees) · [Shenzhen metro](#transit) · [E-wallets](#wallets) · [vs Alipay and WeChat Pay](#compare)"
   ],
   "cta": {
-    "text": "**Setting up TenPayGo?** Follow the free sign-up and card-linking steps, and keep another way to pay as a backup.",
-    "label": "Follow the free TenPayGo setup steps →",
-    "href": "/tenpaygo-for-tourists/#sign-up",
-    "placement": "tenpaygo-setup"
+    "text": "**Planning your China route?** Send me your dates and cities, and I'll reply within 48 hours with the 3 biggest risks. Free.",
+    "label": "Email Lin your route →",
+    "href": "mailto:lin@chinaeasebuddy.com?subject=My%20China%20route",
+    "action": "email",
+    "placement": "tenpaygo"
   },
   "screenshotCaption": "Screenshot from my iPhone, Dongguan, October 2026",
   "pairShotMaxWidth": 220,

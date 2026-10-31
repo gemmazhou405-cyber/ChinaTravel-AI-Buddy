@@ -20,10 +20,11 @@
     "Jump to: [Download](#download) · [English](#english) · [Book](#book) · [Pickup](#pickup) · [During the ride](#ride) · [Pay](#pay) · [Help](#help) · [Phrases](#phrases)"
   ],
   "cta": {
-    "text": "**Preparing for your first ride?** Follow the free DiDi guide to find the right app, switch to English and check the available payment methods.",
-    "label": "Open the free DiDi setup guide →",
-    "href": "/didi-in-china-for-foreigners/#download",
-    "placement": "didi-guide-setup"
+    "text": "**Planning your China route?** Send me your dates and cities, and I'll reply within 48 hours with the 3 biggest risks. Free.",
+    "label": "Email Lin your route →",
+    "href": "mailto:lin@chinaeasebuddy.com?subject=My%20China%20route",
+    "action": "email",
+    "placement": "didi"
   },
   "screenshotCaption": "Screenshot from my iPhone, Dongguan, October 2026",
   "pairShotMaxWidth": 220,

@@ -239,7 +239,7 @@ const pricingPlans = [
     price: '$9.90',
     note: 'One-time payment',
     features: [
-      '50 Buddy AI messages',
+      '50 extra Buddy AI messages, on top of 10 free a day',
       'Valid for 14 days',
       'Up to 2 devices',
       'Full Premium Toolkit, including all premium phrase cards',
@@ -256,7 +256,7 @@ const pricingPlans = [
     price: '$29.90',
     note: 'One-time payment',
     features: [
-      '200 Buddy AI messages',
+      '200 extra Buddy AI messages, on top of 10 free a day',
       'Valid for 14 days',
       'Up to 5 devices on one shared pass',
       'Full Premium Toolkit, including all premium phrase cards',

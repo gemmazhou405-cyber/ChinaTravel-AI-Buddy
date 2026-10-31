@@ -10,9 +10,11 @@ const readJson = async (path) => JSON.parse(await readFile(path, 'utf8'));
 const planning = await readJson('src/data/planningHelp.json');
 const expectedServices = [
   'Itinerary review & fix — from $20',
-  'Custom China itinerary — from $40',
-  'Guide / private driver — ask for a quote',
+  'Custom China itinerary (Trip Plan) — $39',
+  'Licensed English-speaking guides — I can recommend some; you book and pay them directly',
 ];
+// Wording that must not appear anywhere users can see it.
+const retiredPhrases = /private driver|third-party providers|quoted separately|from \$40/i;
 const decode = (value) => value.replace(/&(?:amp|quot|#39|apos|lt|gt|#\d+|#x[\da-f]+);/gi, (entity) => {
   const names = { '&amp;': '&', '&quot;': '"', '&#39;': "'", '&apos;': "'", '&lt;': '<', '&gt;': '>' };
   if (names[entity.toLowerCase()]) return names[entity.toLowerCase()];
@@ -29,11 +31,10 @@ assert.equal(planning.emailLabel, 'Email Lin your route', 'free route-help label
 assert.equal(planning.emailHref, 'mailto:lin@chinaeasebuddy.com?subject=My%20China%20route', 'free route-help mail remains unchanged');
 assert.equal(planning.paidLabel, 'Ask about paid trip planning');
 assert.deepEqual(planning.paidServices, expectedServices);
-assert.match(planning.serviceNote, /inquiry/i);
-assert.match(planning.serviceNote, /quoted after consultation/i);
-assert.match(planning.serviceNote, /may match or coordinate third-party providers/i);
+assert.equal(planning.serviceNote, "I only recommend guides; I don't take payment for guide or driver services.");
 assert.doesNotMatch(`${planning.body} ${planning.digitalScope}`, /fiverr/i);
-assert.match(planning.digitalScope, /Human customized itinerary planning is a separate paid service\./);
+assert.equal(planning.digitalScope, 'Trip Pass and Group Pass include the full Premium Toolkit, all premium phrase cards and extra Buddy AI messages for 14 days: your first 10 messages each day are free, and pass messages are used after that. One-time payment, no auto-renewal. Human customized itinerary planning is a separate paid service. Lin can recommend licensed English-speaking guides, whom you book and pay directly.');
+assert.doesNotMatch(JSON.stringify(planning), retiredPhrases, 'planning data has no retired guide or driver wording');
 const inquiry = new URL(planning.paidHref);
 assert.equal(inquiry.protocol, 'mailto:');
 assert.equal(inquiry.pathname, planning.email);
@@ -59,7 +60,7 @@ function checkPlanningBox(html, expectedPlacement, where) {
   assert.equal(paid.attributes['data-planning-placement'], expectedPlacement);
   assert.equal(free.attributes['data-planning-placement'], expectedPlacement);
   for (const service of expectedServices) assert.ok(textOf(html).includes(service), `${where}: ${service}`);
-  assert.ok(textOf(html).includes(planning.serviceNote), `${where}: inquiry/third-party provider boundary`);
+  assert.ok(textOf(html).includes(planning.serviceNote), `${where}: guides are recommended only`);
   assert.doesNotMatch(html, /fiverr(?:\.com)?/i, `${where}: no deprecated planning destination or label`);
 }
 
@@ -165,6 +166,7 @@ for (const path of await htmlFiles('dist')) {
   const html = await readFile(path, 'utf8');
   built.set(path, html);
   assert.ok(anchorsOf(html).every(({ attributes }) => !/fiverr\.com/i.test(attributes.href ?? '')), `${path}: no public CTA points to the deprecated destination`);
+  assert.doesNotMatch(textOf(html), retiredPhrases, `${path}: no retired guide or driver wording`);
   const boxes = [...html.matchAll(/<section\b[^>]*\bdata-planning-help-box\b[^>]*>[\s\S]*?<\/section>/gi)];
   if (boxes.length) planningPageCount += 1;
   for (const [box] of boxes) {
@@ -178,15 +180,30 @@ for (const path of ['dist/index.html', 'dist/plan/index.html', 'dist/pricing/ind
 }
 assert.ok(planningPageCount > 0, 'generated output contains shared planning help');
 
+// Seven guide cards offer the free route check by email, tracked like the planning box email.
+const routeCheckCards = {
+  amapEnglishSetup: ['/amap-english-mode-guide-2026/', 'amap-english'],
+  tenpaygoGuide: ['/tenpaygo-for-tourists/', 'tenpaygo'],
+  didiGuide: ['/didi-in-china-for-foreigners/', 'didi'],
+  didiPaymentGuide: ['/didi-payment-for-foreigners/', 'didi-payment'],
+  alipayMetroGuide: ['/alipay-metro-qr-transport-code-guide/', 'alipay-metro'],
+  wechatVerificationGuide: ['/wechat-verification-without-friend-qr-2026/', 'wechat-verification'],
+  appsHubGuide: ['/china-travel-apps/', 'travel-apps'],
+};
+for (const [name, [route, placement]] of Object.entries(routeCheckCards)) {
+  const content = await readJson(`src/data/${name}.json`);
+  assert.equal(content.cta.href, planning.emailHref, `${name}: card is the free route check`);
+  assert.equal(content.cta.label, 'Email Lin your route →');
+  assert.equal(content.cta.text, "**Planning your China route?** Send me your dates and cities, and I'll reply within 48 hours with the 3 biggest risks. Free.");
+  const cards = anchorsOf(built.get(`dist${route}index.html`) ?? '').filter(({ attributes }) => attributes.href === planning.emailHref && attributes['data-planning-placement'] === placement);
+  assert.equal(cards.length, 1, `${route}: one route-check card`);
+  assert.equal(cards[0].attributes['data-planning-help'], 'email', `${route}: tracked as planning_email_click, not app-setup`);
+  assert.equal(cards[0].attributes.target, undefined, `${route}: email does not open a blank tab`);
+  assert.equal(anchorsOf(built.get(`dist${route}index.html`)).filter(({ attributes }) => attributes['data-planning-help'] === 'app-setup').length, 0, `${route}: no app-setup card left`);
+}
+// The other three cards still link to a related page.
 const appDestinations = {
-  amapEnglishSetup: ['/amap-english-mode-guide-2026/', '/amap-english-mode-guide-2026/#switch'],
   mapsGuide: ['/amap-vs-google-maps-china/', '/amap-english-mode-guide-2026/#download'],
-  wechatVerificationGuide: ['/wechat-verification-without-friend-qr-2026/', '/wechat-verification-without-friend-qr-2026/#no-helper'],
-  tenpaygoGuide: ['/tenpaygo-for-tourists/', '/tenpaygo-for-tourists/#sign-up'],
-  didiGuide: ['/didi-in-china-for-foreigners/', '/didi-in-china-for-foreigners/#download'],
-  didiPaymentGuide: ['/didi-payment-for-foreigners/', '/didi-payment-for-foreigners/#alipay-wechat'],
-  alipayMetroGuide: ['/alipay-metro-qr-transport-code-guide/', '/alipay-metro-qr-transport-code-guide/#alipay-ride-code'],
-  appsHubGuide: ['/china-travel-apps/', '/china-travel-apps/#before'],
   checklistGuide: ['/china-travel-checklist/', '/china-travel-apps/#before'],
   airportArrivalGuide: ['/china-airport-arrival-guide/', '/china-travel-checklist/#apps-and-connectivity'],
 };
@@ -202,4 +219,4 @@ for (const [name, [route, expectedHref]] of Object.entries(appDestinations)) {
   assert.ok(targetHtml, `${route}: target page exists`);
   assert.ok([...targetHtml.matchAll(/\bid="([^"]+)"/g)].some(([, id]) => id === target.hash.slice(1)), `${route}: ${target.hash} resolves`);
 }
-console.log(`PASS: ${planningPageCount} generated planning-help pages, six representative routes, and all ten intent-specific setup CTAs.`);
+console.log(`PASS: ${planningPageCount} generated planning-help pages, six representative routes, seven route-check cards and three setup CTAs.`);

@@ -21,12 +21,13 @@ assert.equal((html.match(new RegExp(content.screenshotCaption, 'g')) || []).leng
 const ids = new Set([...html.matchAll(/ id="([^"]+)"/g)].map((match) => match[1]));
 for (const id of ['switch', 'english-grayed-out', 'search', 'sign-in', 'taxi', 'metro', 'hi-china', 'menu-translation', 'offline', 'troubleshooting']) assert(ids.has(id), `Anchor #${id} exists`);
 for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) assert(ids.has(id), `In-page link #${id} resolves`);
-assert.equal(content.cta.href, '/amap-english-mode-guide-2026/#switch');
+assert.equal(content.cta.href, 'mailto:lin@chinaeasebuddy.com?subject=My%20China%20route');
 const setupCta = guide.cta();
-assert(setupCta.includes(`href="${content.cta.href}"`), 'Setup CTA uses the existing free Amap guide');
-assert(setupCta.includes('data-planning-help="app-setup"'), 'Setup CTA has its own analytics action');
-assert(!setupCta.includes('target="_blank"'), 'Internal setup link uses normal navigation');
-assert(!/fiverr/i.test(setupCta), 'Setup CTA has no deprecated external service destination');
+assert(setupCta.includes(`href="${content.cta.href}"`), 'CTA card is the free route check by email');
+assert(setupCta.includes('data-planning-help="email"'), 'CTA card is tracked like the planning box email');
+assert(setupCta.includes('data-planning-placement="amap-english"'), 'CTA card uses the page placement');
+assert(!setupCta.includes('target="_blank"'), 'Email link does not open a blank tab');
+assert(!/fiverr/i.test(setupCta), 'CTA card has no deprecated external service destination');
 assert(images.every((tag) => tag.includes('width="640"')), 'Screenshots are 640px wide');
 for (const step of [1, 2, 3, 4]) assert(html.includes(`>Step ${step}</strong>`), `Step ${step} label`);
 const rowWidths = [...html.matchAll(/justify-content:center;[^>]*>((?:\s*<figure[\s\S]*?<\/figure>)+)\s*<\/div>/g)].map(([, row]) => [...row.matchAll(/max-width:(\d+)px/g)].map((m) => Number(m[1])));

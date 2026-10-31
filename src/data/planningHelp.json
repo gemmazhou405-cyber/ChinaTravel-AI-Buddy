@@ -9,10 +9,10 @@
   "paidHref": "mailto:lin@chinaeasebuddy.com?subject=Paid%20China%20trip%20planning&body=Travel%20dates%3A%0ACities%3A%0ANumber%20of%20travelers%3A%0ADo%20you%20already%20have%20an%20itinerary%3F%0AMain%20questions%20%2F%20priorities%3A%0A%0APlease%20do%20not%20include%20passport%20numbers%2C%20payment%20details%20or%20other%20sensitive%20information.",
   "paidServices": [
     "Itinerary review & fix — from $20",
-    "Custom China itinerary — from $40",
-    "Guide / private driver — ask for a quote"
+    "Custom China itinerary (Trip Plan) — $39",
+    "Licensed English-speaking guides — I can recommend some; you book and pay them directly"
   ],
-  "serviceNote": "Guide and private driver services start with an inquiry and are quoted after consultation. ChinaEase may match or coordinate third-party providers.",
+  "serviceNote": "I only recommend guides; I don't take payment for guide or driver services.",
   "note": "Include your travel dates, cities and main questions. Please leave out passport numbers, payment details and other sensitive information.",
   "byline": "Maintained by Lin",
   "imagePath": null,
@@ -20,5 +20,5 @@
   "homeHeading": "Plan your first China trip with local help.",
   "homeDescription": "Plan your first China trip with practical guides, a free itinerary preview and personal route-planning help from Lin. Check entry, transport, payments and arrival details.",
   "digitalHeading": "Premium Toolkit and Buddy AI travel passes",
-  "digitalScope": "Trip Pass and Group Pass include the full Premium Toolkit, all premium phrase cards and a Buddy AI message allowance for 14 days. One-time payment, no auto-renewal. Human customized itinerary planning is a separate paid service. Guide and private driver services are quoted separately after consultation."
+  "digitalScope": "Trip Pass and Group Pass include the full Premium Toolkit, all premium phrase cards and extra Buddy AI messages for 14 days: your first 10 messages each day are free, and pass messages are used after that. One-time payment, no auto-renewal. Human customized itinerary planning is a separate paid service. Lin can recommend licensed English-speaking guides, whom you book and pay directly."
 }
