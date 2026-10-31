@@ -410,44 +410,6 @@
     ],
     "removeFaqs": []
   },
-  "wechat-pay-for-foreigners": {
-    "sections": [],
-    "faqs": [],
-    "sources": [],
-    "sectionLinks": [
-      {
-        "section": "What may be different with an international card",
-        "links": [
-          {
-            "label": "Book DiDi inside WeChat",
-            "description": "Open the DiDi mini program in WeChat; the fare is paid with WeChat Pay.",
-            "href": "/didi-payment-for-foreigners/#alipay-wechat"
-          }
-        ]
-      },
-      {
-        "section": "Set up WeChat Pay before your flight",
-        "links": [
-          {
-            "label": "No WeChat account? TenPayGo pays WeChat Pay shops with just an email",
-            "description": "Tencent's app for visitors: sign up with an email, link a foreign card or Apple Pay.",
-            "href": "/tenpaygo-for-tourists/"
-          }
-        ]
-      },
-      {
-        "section": "Set up WeChat Pay before your flight",
-        "links": [
-          {
-            "label": "stuck on friend verification",
-            "description": "Who can verify you, what else to try, and how to pay without a WeChat account.",
-            "href": "/wechat-verification-without-friend-qr-2026/"
-          }
-        ]
-      }
-    ],
-    "removeFaqs": []
-  },
   "beijing-airport-to-city-guide": {
     "sections": [],
     "faqs": [],

@@ -158,7 +158,8 @@
           ["Metro codes", "Shenzhen only", "Ride codes in many cities", "Ride codes in many cities"],
           ["DiDi rides", "Not in the app", "DiDi mini program inside Alipay", "DiDi mini program inside WeChat"]
         ] },
-        { "type": "p", "text": "**My advice:** make Alipay your main app and add TenPayGo as the backup for shops that only take WeChat Pay. It's most useful if WeChat won't let you sign up: [WeChat verification without a friend's QR code](/wechat-verification-without-friend-qr-2026/)." }
+        { "type": "p", "text": "**My advice:** make Alipay your main app and add TenPayGo as the backup for shops that only take WeChat Pay. It's most useful if WeChat won't let you sign up: [WeChat verification without a friend's QR code](/wechat-verification-without-friend-qr-2026/)." },
+        { "type": "p", "text": "Linking a card in WeChat itself? Fees, limits and the PayPal option: [WeChat Pay for foreigners](/wechat-pay-for-foreigners/)." }
       ]
     }
   ],
