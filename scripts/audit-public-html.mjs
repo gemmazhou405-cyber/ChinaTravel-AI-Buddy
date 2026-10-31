@@ -291,8 +291,10 @@ const pages = [
   {
     path: '/wechat-pay-for-foreigners/',
     h1: /WeChat Pay for Foreigners.*Setup and Payment Guide.*2026/i,
-    keywords: ['international card', 'QR code', 'Chinese bank account', 'person-to-person transfers', 'US citizens', 'charging standards', 'cross-border', 'Weixin Pay', 'payment failed'],
-    links: ["/#trip-plan", "/first-trip-to-china/", "/alipay-for-foreigners/", "/china-payment-guide/", "/didi-payment-for-foreigners/", "/tenpaygo-for-tourists/", "/alipay-metro-qr-transport-code-guide/", "/china-travel-budget/"],
+    // October 31, 2026 rebuild: card, TenPayGo or PayPal, with a mailto route card instead of the trip form.
+    keywords: ['international card', 'QR code', 'TenPayGo', 'PayPal', 'Chinese bank account', 'US citizens', 'Weixin Pay', 'payment failed', 'Email Lin your route'],
+    forbiddenPhrases: ['Fees are not safely described', 'may be able to use WeChat Pay', 'charging standards'],
+    links: ["mailto:lin@chinaeasebuddy.com?subject=My%20China%20route", "/first-trip-to-china/", "/alipay-for-foreigners/", "/china-payment-guide/", "/didi-payment-for-foreigners/", "/didi-payment-for-foreigners/#alipay-wechat", "/tenpaygo-for-tourists/", "/wechat-verification-without-friend-qr-2026/", "/alipay-metro-qr-transport-code-guide/", "/china-travel-budget/"],
   },
   {
     path: '/china-travel-checklist/',
