@@ -1,0 +1,94 @@
+{
+  "path": "/how-to-use-wechat-as-foreigner-2026/",
+  "title": "How to Use WeChat as a Foreigner in 2026",
+  "intro": "Set up messaging, account recovery, WeChat Pay, QR contacts, and mini-programs before your trip, while keeping Alipay and other backups available.",
+  "metaTitle": "How to Use WeChat as a Foreigner (2026): Registration, Verification & Pay",
+  "metaDescription": "Set up WeChat before China using a foreign mobile number. Learn registration, possible security verification, WeChat Pay card linking, QR contacts, and mini-programs.",
+  "quickAnswer": "Download the official WeChat app, register with a reachable foreign or Chinese mobile number, complete any security verification shown, and set recovery options before travel. Eligible foreign users can link supported international bank cards to WeChat Pay. Verification, features, limits, fees, and merchant acceptance vary, so keep Alipay, a physical card, and some RMB as backups.",
+  "ctaLabel": "Build my WeChat setup checklist",
+  "midCtaLabel": "Troubleshoot my WeChat setup",
+  "ctaHref": "/",
+  "buddyPrompt": "Help me set up WeChat for China. I am stuck at [registration/security verification/WeChat Pay/mini-program], my phone is [model], and my card is [type].",
+  "reviewed": "October 5, 2026",
+  "modified": "2026-10-05",
+  "sections": [
+    {
+      "title": "Register Before You Arrive",
+      "ordered": true,
+      "items": [
+        "Download the official WeChat app and register with a mobile number you can continue to access.",
+        "Use your real account details and complete the security checks shown in the app.",
+        "If WeChat requests assistance from an existing user, follow the exact in-app process; not every registration requires the same verification.",
+        "Add an email or other available recovery method and review privacy and login settings.",
+        "Test messaging and save your account details before departure."
+      ]
+    },
+    {
+      "title": "Set Up WeChat Pay",
+      "ordered": true,
+      "items": [
+        "Open the wallet or payment section available in your WeChat account.",
+        "Complete identity verification with your passport when requested.",
+        "Link a supported Visa, Mastercard, American Express, JCB, Diners Club, Discover, or other card currently shown as eligible.",
+        "Complete the issuing bank’s verification step and review the limits and fees displayed in the app.",
+        "Test the payment route in China and retain Alipay, a physical card, and RMB cash as backups."
+      ]
+    },
+    {
+      "title": "Contacts, QR Codes, and Mini-Programs",
+      "items": [
+        "Use personal QR codes to add local contacts without spelling usernames.",
+        "Official accounts can provide attraction notices, bookings, and customer service, but verify the account before paying or sharing information.",
+        "Mini-programs can support transport, food, attractions, hotels, and other services without installing a separate app.",
+        "Do not scan unknown QR codes or share login, payment, or SMS verification codes."
+      ]
+    },
+    {
+      "title": "Common Setup Problems",
+      "items": [
+        "Security verification can vary by phone number, device, region, account history, and risk controls.",
+        "A card can fail because of issuer authorization, identity mismatch, unsupported settings, or app limits.",
+        "Changing devices, numbers, or networks repeatedly may trigger additional security checks.",
+        "Use official in-app support and never pay an unknown person to “unlock” or verify an account."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can foreigners register for WeChat?",
+      "answer": "Yes. Foreign users can register with supported international mobile numbers, subject to the security verification displayed for that account."
+    },
+    {
+      "question": "Do I always need another user to verify my account?",
+      "answer": "No. Verification requirements vary. Follow the exact official in-app instructions rather than assuming every account needs friend-assisted verification."
+    },
+    {
+      "question": "Can foreigners use WeChat Pay?",
+      "answer": "Eligible foreign visitors can link supported international bank cards after completing the required identity and bank verification."
+    },
+    {
+      "question": "Should I use WeChat Pay or Alipay?",
+      "answer": "Prepare both. WeChat Pay is useful for merchants and mini-programs inside WeChat, while many visitors find Alipay easier as a primary travel wallet."
+    }
+  ],
+  "related": [
+    {
+      "label": "Full WeChat Pay guide",
+      "href": "/wechat-pay-for-foreigners/"
+    },
+    {
+      "label": "China payment setup",
+      "href": "/china-payment-guide/"
+    },
+    {
+      "label": "Best China travel apps",
+      "href": "/china-travel-apps/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Chinese government: payment guide for overseas visitors",
+      "href": "https://english.www.gov.cn/news/202404/11/content_WS6617c858c6d0868f4e8e5f4d.html"
+    }
+  ]
+}

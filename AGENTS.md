@@ -16,7 +16,7 @@
 - 导游：只推荐持证英文导游，客户自己和导游预订、付款。不报价，不经手导游或司机的钱，不提供私人司机。英文文案以 planningHelp.json 里的 paidServices 和 serviceNote 为准。
 - 付费咨询走邮件 lin@chinaeasebuddy.com。网站不链 Fiverr。网站上的 Gumroad 链接只用于 Trip Pass 和 Group Pass，不链 Gumroad 上的 Trip Plan 商品。
 - Buddy 消息：每天先用免费 10 条，再扣 Pass；Pass 用完或过期后照样有每天免费 10 条。上游超时、说不清 AI 有没有回复时，Pass 那条不退，免费那条退。改额度逻辑后跑 npm run test:pass-chat-quota。
-- 7 个 App 设置类页面的卡片是免费路线检查：mailto:lin@chinaeasebuddy.com?subject=My%20China%20route，按钮 "Email Lin your route →"。地图对比、出行清单、机场入境 3 页的卡片链到其他指南。
+- App 设置和支付类页面（现在 8 页）的卡片是免费路线检查：mailto:lin@chinaeasebuddy.com?subject=My%20China%20route，按钮 "Email Lin your route →"。地图对比、出行清单、机场入境 3 页的卡片链到其他指南。
 
 ## 已知情况
 
