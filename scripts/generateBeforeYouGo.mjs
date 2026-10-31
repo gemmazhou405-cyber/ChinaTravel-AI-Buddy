@@ -1,3 +1,4 @@
+// Legacy one-off script. src/data/beforeYouGo/*.json is now edited by hand; re-running this script overwrites those edits.
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';

@@ -14,8 +14,8 @@
     },
     {
       "id": "doc_002",
-      "task": "Apply for China tourist visa (L visa)",
-      "detail": "Most nationalities need a visa. Submit application to the Chinese embassy/consulate or a visa center 4-8 weeks before departure. Requirements include passport photo, itinerary, hotel bookings, and proof of funds",
+      "task": "Apply for a China tourist visa (L visa) if you need one",
+      "detail": "Many passports can now visit China visa-free for up to 30 days (see the next item). If yours can't, or you need a longer stay, apply at a Chinese embassy, consulate or visa center 4-8 weeks before departure. You'll usually need a passport photo, itinerary, hotel bookings and proof of funds",
       "priority": "critical",
       "category": "visa",
       "canDoOnline": true,
@@ -23,8 +23,8 @@
     },
     {
       "id": "doc_003",
-      "task": "Check if you qualify for visa-free transit",
-      "detail": "China offers 144-hour visa-free transit in major cities for citizens of 54 countries. Also check the 15-day visa-free entry policy for select nationalities. Verify current policies on the official National Immigration Administration website",
+      "task": "Check if you qualify for visa-free entry or transit",
+      "detail": "Many ordinary passports can enter China visa-free for up to 30 days. If you're flying on to a third country, many nationalities can also transit visa-free for up to 240 hours (10 days); this replaced the old 72-hour and 144-hour transit. These rules have end dates and change often, so check your passport and route with the China Visa-Free Checker (chinaeasebuddy.com/china-visa-free-checker/) close to your trip, then confirm on the National Immigration Administration website",
       "priority": "high",
       "category": "visa",
       "canDoOnline": true,
@@ -51,7 +51,7 @@
     {
       "id": "doc_006",
       "task": "Register with your country's embassy in China",
-      "detail": "Enroll in your government's traveler enrollment program (e.g., US STEP program, UK LOCATE) so your embassy can contact you in an emergency",
+      "detail": "Enroll in your government's traveler program if it has one (e.g., the US STEP program) or sign up for its travel advice alerts, so your embassy can contact you in an emergency",
       "priority": "high",
       "category": "emergency",
       "canDoOnline": true,
@@ -95,9 +95,9 @@
     },
     {
       "id": "doc_011",
-      "task": "Complete China health declaration",
-      "detail": "Fill out the health declaration form via the China Customs app or WeChat mini-program within 24 hours before arrival",
-      "priority": "critical",
+      "task": "Fill in China's arrival card online (if you need one)",
+      "detail": "China Customs dropped the routine health declaration on November 1, 2023; travelers with symptoms like fever, cough, vomiting or diarrhea should still declare them to customs on arrival. Foreign visitors who need an arrival card can submit it free before landing on the National Immigration Administration website, NIA 12367, or its WeChat or Alipay mini program, or fill it in at the port. Guide: chinaeasebuddy.com/china-online-arrival-card-2026/",
+      "priority": "high",
       "category": "entry",
       "canDoOnline": true,
       "timeNeeded": "24 hours before"
